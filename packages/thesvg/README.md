@@ -1,90 +1,83 @@
-# thesvg
+<p align="center">
+  <a href="https://thesvg.org">
+    <img src="https://raw.githubusercontent.com/GLINCKER/thesvg/main/public/logo.svg" alt="theSVG" width="120" height="120" />
+  </a>
+</p>
 
-3,800+ brand SVG icons for developers. Tree-shakeable, typed, dual ESM/CJS.
+<h3 align="center">thesvg</h3>
 
-This is the convenience package for [`@the-svg/icons`](https://www.npmjs.com/package/@the-svg/icons). Both packages contain the same icons.
+<p align="center">
+  3,800+ brand SVG icons for developers. Tree-shakeable, typed, open source.
+  <br />
+  <a href="https://thesvg.org"><strong>Browse all icons &rarr;</strong></a>
+</p>
 
-Browse all icons at [thesvg.org](https://thesvg.org).
+<p align="center">
+  <a href="https://www.npmjs.com/package/thesvg"><img src="https://img.shields.io/npm/v/thesvg?color=F97316&label=npm" alt="npm version" /></a>
+  <a href="https://www.npmjs.com/package/thesvg"><img src="https://img.shields.io/npm/dm/thesvg?color=F97316" alt="npm downloads" /></a>
+  <a href="https://github.com/GLINCKER/thesvg/blob/main/packages/thesvg/LICENSE"><img src="https://img.shields.io/npm/l/thesvg?color=F97316" alt="license" /></a>
+  <a href="https://github.com/GLINCKER/thesvg"><img src="https://img.shields.io/github/stars/GLINCKER/thesvg?style=social" alt="GitHub stars" /></a>
+</p>
 
-## Installation
+---
+
+This is the convenience package for [`@the-svg/icons`](https://www.npmjs.com/package/@the-svg/icons). Both packages contain the same 3,800+ icons.
+
+## Install
 
 ```bash
 npm install thesvg
-pnpm add thesvg
-bun add thesvg
+```
+
+## Quick Start
+
+```ts
+import github from "thesvg/github";
+
+github.svg;        // raw SVG string
+github.title;      // "GitHub"
+github.hex;        // "181717"
+github.categories; // ["DevTool", "VCS"]
+github.variants;   // { default: "<svg...>", mono: "<svg...>" }
 ```
 
 ## Usage
 
-### Import a single icon (tree-shakeable)
-
 ```ts
-import github from "thesvg/github";
+// Named exports
+import { svg, title, hex } from "thesvg/github";
 
-console.log(github.svg);        // raw SVG string
-console.log(github.title);      // "GitHub"
-console.log(github.hex);        // "181717"
-console.log(github.categories); // ["DevTool", "VCS"]
-console.log(github.variants);   // { default: "<svg...>", mono: "<svg...>" }
-```
+// Barrel import (includes all icons)
+import { github, vercel, stripe } from "thesvg";
 
-### Named exports
-
-```ts
-import { svg, title, hex, categories, variants } from "thesvg/github";
-```
-
-### Barrel import
-
-> Importing from the root includes all icons. Prefer individual imports when bundle size matters.
-
-```ts
-import { github, vercel, tailwindcss } from "thesvg";
-```
-
-### Render in React
-
-```tsx
+// React
 import { svg } from "thesvg/github";
+const Logo = () => <div dangerouslySetInnerHTML={{ __html: svg }} />;
 
-export function GithubLogo() {
-  return <div dangerouslySetInnerHTML={{ __html: svg }} />;
-}
-```
-
-### Check available variants
-
-```ts
-import github from "thesvg/github";
-
-// Keys: "default", "mono", "light", "dark", "wordmark", etc.
-const monoSvg = github.variants["mono"];
-```
-
-## Icon module shape
-
-```ts
-interface IconModule {
-  slug: string;       // URL-safe slug, e.g. "github"
-  title: string;      // Brand name, e.g. "GitHub"
-  hex: string;        // Brand color without "#", e.g. "181717"
-  categories: string[];
-  aliases: string[];
-  svg: string;        // Raw SVG string (default variant)
-  variants: Record<string, string>;
-  license: string;
-  url: string;
-}
+// Variants
+import icon from "thesvg/github";
+const dark = icon.variants["dark"];
 ```
 
 ## CDN
 
 ```html
-<img src="https://thesvg.org/icons/github/default.svg" alt="GitHub" width="24" height="24" />
+<img src="https://thesvg.org/icons/github/default.svg" alt="GitHub" width="24" />
 ```
+
+## Packages
+
+| Package | Description |
+|---------|-------------|
+| [`thesvg`](https://www.npmjs.com/package/thesvg) | Convenience wrapper (this package) |
+| [`@the-svg/icons`](https://www.npmjs.com/package/@the-svg/icons) | Core icon data |
+| `@the-svg/react` | React components (coming soon) |
+| `@the-svg/cli` | CLI tool (coming soon) |
 
 ## License
 
-Icons are distributed under their respective upstream licenses. The package itself is MIT.
+MIT. Icons under their respective upstream licenses.
 
-Built with data from [thesvg.org](https://thesvg.org).
+<p align="center">
+  <a href="https://thesvg.org">thesvg.org</a>
+</p>

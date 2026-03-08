@@ -1,124 +1,142 @@
-# @thesvg/icons
+<p align="center">
+  <a href="https://thesvg.org">
+    <img src="https://raw.githubusercontent.com/GLINCKER/thesvg/main/public/logo.svg" alt="theSVG" width="120" height="120" />
+  </a>
+</p>
 
-Tree-shakeable SVG icon data for 3,800+ brand logos from [thesvg.org](https://thesvg.org).
+<h3 align="center">@the-svg/icons</h3>
 
-Each icon is a standalone module that exports the raw SVG string and metadata.
-Only the icons you import are included in your bundle.
+<p align="center">
+  3,800+ brand SVG icons for developers. Tree-shakeable, typed, open source.
+  <br />
+  <a href="https://thesvg.org"><strong>Browse all icons &rarr;</strong></a>
+</p>
 
-## Installation
+<p align="center">
+  <a href="https://www.npmjs.com/package/@the-svg/icons"><img src="https://img.shields.io/npm/v/@the-svg/icons?color=F97316&label=npm" alt="npm version" /></a>
+  <a href="https://www.npmjs.com/package/@the-svg/icons"><img src="https://img.shields.io/npm/dm/@the-svg/icons?color=F97316" alt="npm downloads" /></a>
+  <a href="https://github.com/GLINCKER/thesvg/blob/main/packages/icons/LICENSE"><img src="https://img.shields.io/npm/l/@the-svg/icons?color=F97316" alt="license" /></a>
+  <a href="https://github.com/GLINCKER/thesvg"><img src="https://img.shields.io/github/stars/GLINCKER/thesvg?style=social" alt="GitHub stars" /></a>
+</p>
+
+---
+
+## Install
 
 ```bash
-npm install @thesvg/icons
-pnpm add @thesvg/icons
-bun add @thesvg/icons
+npm install @the-svg/icons
+```
+
+Also available as [`thesvg`](https://www.npmjs.com/package/thesvg) for convenience:
+
+```bash
+npm install thesvg
+```
+
+## Quick Start
+
+```ts
+// Import a single icon (tree-shakeable - only this icon ships to your bundle)
+import github from "@the-svg/icons/github";
+
+github.svg;        // raw SVG string
+github.title;      // "GitHub"
+github.hex;        // "181717"
+github.categories; // ["DevTool", "VCS"]
+github.variants;   // { default: "<svg...>", mono: "<svg...>" }
 ```
 
 ## Usage
 
-### Import a single icon (tree-shakeable)
+### Named exports
 
 ```ts
-import github from "@thesvg/icons/github";
-
-console.log(github.svg);        // raw SVG string
-console.log(github.title);      // "GitHub"
-console.log(github.hex);        // "181717"
-console.log(github.categories); // ["DevTool", "VCS"]
-console.log(github.variants);   // { default: "<svg…>", mono: "<svg…>" }
+import { svg, title, hex, categories, variants } from "@the-svg/icons/github";
 ```
 
-### Named exports from the icon module
+### Barrel import
 
 ```ts
-import { svg, title, hex, categories, variants } from "@thesvg/icons/github";
+import { github, vercel, stripe } from "@the-svg/icons";
 ```
 
-### Import many icons from the barrel
+> **Note:** Barrel imports include all icons and skip tree-shaking. Prefer per-icon imports.
 
-> Note: importing from the root barrel includes all icons and prevents tree-shaking.
-> Prefer individual imports when bundle size matters.
-
-```ts
-import { github, vercel, tailwindcss } from "@thesvg/icons";
-```
-
-### Render in a React component
+### React
 
 ```tsx
-function BrandLogo({ slug }: { slug: string }) {
-  // Dynamic import at runtime
-  return (
-    <div
-      dangerouslySetInnerHTML={{ __html: svg }}
-    />
-  );
-}
+import { svg } from "@the-svg/icons/github";
 
-// Or statically with a specific icon
-import { svg } from "@thesvg/icons/github";
-
-export function GithubLogo() {
+export function GitHubLogo() {
   return <div dangerouslySetInnerHTML={{ __html: svg }} />;
 }
 ```
 
-### Check available variants
+### Variants
+
+Each icon can have multiple variants: `default`, `mono`, `light`, `dark`, `wordmark`, and more.
 
 ```ts
-import github from "@thesvg/icons/github";
+import github from "@the-svg/icons/github";
 
-// github.variants is a Record<string, string> of all SVG strings
-// Keys depend on which variants the icon has, e.g.:
-// "default", "mono", "light", "dark", "wordmark", "wordmarkLight", "wordmarkDark"
-
+const darkSvg = github.variants["dark"];
 const monoSvg = github.variants["mono"];
 ```
 
-## Icon module shape
+## Icon Shape
 
-Every icon module exports the following:
+Every icon module exports:
 
 ```ts
 interface IconModule {
-  slug: string;      // URL-safe slug, e.g. "github"
-  title: string;     // Brand name, e.g. "GitHub"
-  hex: string;       // Brand color without "#", e.g. "181717"
-  categories: string[];
-  aliases: string[];
-  svg: string;       // Raw SVG string for the default variant
-  variants: Record<string, string>; // All variant SVG strings
-  license: string;   // SPDX identifier, e.g. "CC0-1.0"
-  url: string;       // Source URL for the brand asset
+  slug: string;                    // "github"
+  title: string;                   // "GitHub"
+  hex: string;                     // "181717"
+  categories: string[];            // ["DevTool", "VCS"]
+  aliases: string[];               // ["gh"]
+  svg: string;                     // raw SVG (default variant)
+  variants: Record<string, string>;// all variant SVGs
+  license: string;                 // "MIT"
+  url: string;                     // brand URL
 }
 ```
 
-## Tree-shaking
+## Tree-Shaking
 
-`@thesvg/icons` is marked `"sideEffects": false`. When bundled with webpack,
-Rollup, Vite, or esbuild, only the icons you import will be included.
+The package is marked `"sideEffects": false`. Bundlers (webpack, Vite, Rollup, esbuild) will only include icons you import.
 
 ```ts
-// Only github ends up in your bundle
-import github from "@thesvg/icons/github";
+// Your bundle only includes the GitHub icon (~3KB), not all 3,800+
+import github from "@the-svg/icons/github";
 ```
 
 ## CDN
 
-For quick prototyping without a bundler, use the thesvg API directly:
-
-```
-https://thesvg.org/icons/{slug}/default.svg
-```
-
-Example:
+Use icons directly without a bundler:
 
 ```html
-<img src="https://thesvg.org/icons/github/default.svg" alt="GitHub" width="24" height="24" />
+<img src="https://thesvg.org/icons/github/default.svg" alt="GitHub" width="24" />
 ```
+
+## Packages
+
+| Package | Description |
+|---------|-------------|
+| [`@the-svg/icons`](https://www.npmjs.com/package/@the-svg/icons) | Core icon data (this package) |
+| [`thesvg`](https://www.npmjs.com/package/thesvg) | Convenience wrapper |
+| `@the-svg/react` | React components (coming soon) |
+| `@the-svg/cli` | CLI tool (coming soon) |
+
+## Contributing
+
+Found a missing icon or incorrect data? [Open an issue](https://github.com/GLINCKER/thesvg/issues) or [submit an icon](https://thesvg.org/submit) on the website.
 
 ## License
 
-Icons are distributed under their respective upstream licenses (CC0-1.0, MIT, etc.).
-See each icon's `license` field. The package itself is MIT.
+Icons are distributed under their respective upstream licenses (CC0-1.0, MIT, etc.). See each icon's `license` field.
 
-Built with data from [thesvg.org](https://thesvg.org).
+The package code is [MIT](./LICENSE).
+
+<p align="center">
+  <a href="https://thesvg.org">thesvg.org</a>
+</p>
