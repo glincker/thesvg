@@ -201,9 +201,9 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
 
         <div className="max-h-[90vh] overflow-y-auto">
         {/* Top section: preview + info side by side on desktop */}
-        <div className="flex flex-col sm:flex-row">
+        <div className="flex flex-col md:flex-row">
           {/* Preview area */}
-          <div className="icon-preview-bg relative flex shrink-0 items-center justify-center p-8 sm:w-56">
+          <div className="icon-preview-bg relative flex shrink-0 items-center justify-center p-8 md:w-56">
             <img
               src={currentPath}
               alt={icon.title}
@@ -275,7 +275,7 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
 
             {/* Variant pills */}
             {variants.length > 1 && (
-              <div className="scrollbar-none flex gap-1 overflow-x-auto">
+              <div className="flex flex-wrap gap-1">
                 {variants.map(([key]) => (
                   <button
                     key={key}
@@ -301,7 +301,7 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
                   key={fmt.value}
                   type="button"
                   className={cn(
-                    "flex h-8 items-center gap-1.5 rounded-lg border px-3 text-[11px] font-medium transition-colors",
+                    "flex h-7 items-center gap-1.5 rounded-lg border px-2 text-[11px] font-medium transition-colors sm:h-8 sm:px-3",
                     copiedFormat === fmt.value
                       ? "border-green-500/30 bg-green-500/10 text-green-600 dark:text-green-400"
                       : "border-border bg-card text-muted-foreground hover:bg-accent hover:text-accent-foreground"
@@ -318,7 +318,7 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
               ))}
               <button
                 type="button"
-                className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+                className="flex h-7 w-7 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground sm:h-8 sm:w-8"
                 onClick={handleDownload}
               >
                 <Download className="h-3.5 w-3.5" />
@@ -360,7 +360,7 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
           <p className="mb-2 text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
             Size Preview
           </p>
-          <div className="flex items-end gap-4">
+          <div className="flex flex-wrap items-end gap-2 sm:gap-4">
             {DEMO_SIZES.map((size) => (
               <div key={size} className="flex flex-col items-center gap-1">
                 <div className="icon-preview-bg flex items-center justify-center rounded-md p-1">

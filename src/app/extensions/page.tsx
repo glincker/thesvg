@@ -312,8 +312,8 @@ export default function ExtensionsPage() {
       </div>
 
       {/* Build an Extension CTA */}
-      <div className="mt-16 rounded-xl border border-border bg-card p-8">
-        <div className="flex items-start gap-4">
+      <div className="mt-16 rounded-xl border border-border bg-card p-6 sm:p-8">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-muted text-foreground">
             <Code2 className="h-5 w-5" />
           </div>
@@ -326,7 +326,7 @@ export default function ExtensionsPage() {
               extension, or workflow using the endpoints below - then open a PR to add it to this
               page.
             </p>
-            <div className="mb-5 space-y-2 rounded-lg bg-muted/50 p-4 font-mono text-xs text-muted-foreground">
+            <div className="mb-5 space-y-2 overflow-x-auto rounded-lg bg-muted/50 p-4 font-mono text-xs text-muted-foreground">
               <div>
                 <span className="text-foreground/60">CDN</span>{" "}
                 <span>

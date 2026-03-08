@@ -44,7 +44,7 @@ export function SearchBar({
         type="text"
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        placeholder="Search 3,800+ brand icons..."
+        placeholder="Search icons..."
         className="h-9 w-full rounded-lg border border-border/60 bg-card/60 pr-20 pl-9 text-sm backdrop-blur-sm outline-none transition-all placeholder:text-muted-foreground/50 focus:border-ring focus:bg-card focus:ring-1 focus:ring-ring"
         aria-label="Search icons"
       />

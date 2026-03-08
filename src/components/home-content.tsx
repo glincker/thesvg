@@ -163,7 +163,7 @@ export function HomeContent({ icons, categoryCounts, count }: HomeContentProps) 
       <div className="md:pl-56">
         {/* Sticky toolbar - single compact row */}
         <div className="sticky top-14 z-20 border-b border-border/30 bg-background/95 backdrop-blur-xl">
-          <div className="mx-auto flex max-w-7xl items-center gap-2 px-3 py-1.5 sm:px-4">
+          <div className="mx-auto flex max-w-7xl items-center gap-1.5 px-3 py-1.5 sm:gap-2 sm:px-4">
             {/* Search - takes remaining space */}
             <div className="flex-1">
               <SearchBar

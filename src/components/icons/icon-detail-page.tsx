@@ -167,7 +167,7 @@ export function IconDetailPage({ icon, relatedIcons = [] }: IconDetailPageProps)
       {/* Breadcrumb */}
       <nav
         aria-label="Breadcrumb"
-        className="mb-6 flex items-center gap-1.5 text-xs text-muted-foreground"
+        className="mb-6 flex min-w-0 items-center gap-1.5 text-xs text-muted-foreground"
       >
         <Link
           href="/"
@@ -188,11 +188,11 @@ export function IconDetailPage({ icon, relatedIcons = [] }: IconDetailPageProps)
           </>
         )}
         <span>/</span>
-        <span className="text-foreground">{icon.title}</span>
+        <span className="min-w-0 truncate text-foreground">{icon.title}</span>
       </nav>
 
       {/* Main two-column layout */}
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[320px_1fr]">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[280px_1fr]">
         {/* Left column: large preview */}
         <div className="flex flex-col gap-4">
           {/* Preview card */}
@@ -239,7 +239,7 @@ export function IconDetailPage({ icon, relatedIcons = [] }: IconDetailPageProps)
             <p className="mb-3 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
               Size Preview
             </p>
-            <div className="flex items-end justify-between">
+            <div className="flex flex-wrap items-end gap-2 sm:gap-4">
               {DEMO_SIZES.map((size) => (
                 <div key={size} className="flex flex-col items-center gap-1.5">
                   <div className="icon-preview-bg flex items-center justify-center rounded-lg p-1.5">
@@ -488,7 +488,7 @@ export function IconDetailPage({ icon, relatedIcons = [] }: IconDetailPageProps)
             Related in{" "}
             <span className="text-muted-foreground">{primaryCategory}</span>
           </h2>
-          <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8">
             {relatedIcons.map((rel) => (
               <Link
                 key={rel.slug}
