@@ -163,10 +163,11 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: pnpm
-          registry-url: https://registry.npmjs.org
 
-      - name: Upgrade npm for OIDC
-        run: npm install -g npm@latest
+      - name: Configure npm for OIDC publishing
+        run: |
+          npm install -g npm@latest
+          npm config set registry https://registry.npmjs.org/
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
