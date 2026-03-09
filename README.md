@@ -27,7 +27,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/GLINCKER/thesvg">
+  <a href="https://thesvg.org">
     <img src="https://raw.githubusercontent.com/GLINCKER/thesvg/main/public/og-image.png" alt="theSVG - The Open SVG Brand Library" width="800" />
   </a>
 </p>
@@ -194,7 +194,7 @@ If you are a brand owner and would like an icon updated or removed, please [open
 
 <p align="center">
   <a href="https://thesvg.org">
-    <img src="https://raw.githubusercontent.com/GLINCKER/thesvg/main/public/og-image.png" alt="theSVG - The Open SVG Brand Library" width="800" />
+    <img src="https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F5dmyayve2vx8x2clcvt1.png" alt="theSVG - The Open SVG Brand Library" width="800" />
   </a>
 </p>
 
