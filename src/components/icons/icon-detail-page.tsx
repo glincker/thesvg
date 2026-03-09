@@ -803,7 +803,15 @@ export function IconDetailPage({ icon, relatedIcons = [] }: IconDetailPageProps)
               rel="noopener noreferrer"
               className="underline underline-offset-2 hover:text-muted-foreground"
             >
-              {new URL(icon.url).hostname.replace(/^www\./, "")}
+              {(() => {
+                if (!icon.url) return null;
+                try {
+                  return new URL(icon.url).hostname.replace(/^www\./, "");
+                } catch {
+                  // Fallback: display the raw URL string if parsing fails
+                  return icon.url;
+                }
+              })()}
             </a>
             .
           </>
