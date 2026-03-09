@@ -151,7 +151,7 @@ export function Header() {
             </Button>
 
             <Link href="/" className="group/logo flex items-center gap-1.5">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
+              { }
               <img
                 src="/logo-transparent.svg"
                 alt="theSVG"
@@ -181,6 +181,7 @@ export function Header() {
                 aria-label="Search icons"
                 role="combobox"
                 aria-expanded={showDropdown}
+                aria-controls="header-search-listbox"
                 aria-autocomplete="list"
               />
               <div className="absolute top-1/2 right-2.5 flex -translate-y-1/2 items-center gap-1">
@@ -203,6 +204,7 @@ export function Header() {
               {showDropdown && (
                 <div
                   ref={dropdownRef}
+                  id="header-search-listbox"
                   className="absolute top-full left-0 right-0 z-50 mt-1.5 overflow-hidden rounded-xl border border-border/40 bg-background/95 shadow-[0_8px_30px_-4px_rgba(0,0,0,0.15)] backdrop-blur-2xl backdrop-saturate-150 dark:border-white/[0.1] dark:bg-[rgba(10,10,10,0.95)] dark:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.6)]"
                   role="listbox"
                 >
@@ -224,7 +226,7 @@ export function Header() {
                             : "text-foreground hover:bg-accent/50"
                         }`}
                       >
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        { }
                         <img
                           src={icon.variants.default}
                           alt=""
@@ -276,7 +278,7 @@ export function Header() {
                 aria-label="npm"
                 className="inline-flex h-7 w-7 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
+                { }
                 <img
                   src="/icons/npm/default.svg"
                   alt="npm"

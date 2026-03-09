@@ -150,7 +150,7 @@ function SvgPreview({ dataUrl, name }: { dataUrl: string; name: string }) {
           <div className="icon-preview-bg flex flex-wrap items-end gap-3 rounded-lg p-4">
             {SIZES.map((size) => (
               <div key={size} className="flex flex-col items-center gap-1">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
+                { }
                 <img
                   src={dataUrl}
                   alt={name}
@@ -171,7 +171,7 @@ function SvgPreview({ dataUrl, name }: { dataUrl: string; name: string }) {
           <div className="dark flex flex-wrap items-end gap-3 rounded-lg bg-[oklch(0.18_0.008_260)] p-4">
             {SIZES.map((size) => (
               <div key={size} className="flex flex-col items-center gap-1">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
+                { }
                 <img
                   src={dataUrl}
                   alt={name}
@@ -546,7 +546,7 @@ export function SubmitForm({
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-center gap-3">
                 <div className="icon-preview-bg flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  { }
                   <img
                     src={fileState.dataUrl}
                     alt={fileState.name}

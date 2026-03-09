@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { getAllIcons, getCategoryCounts, getIconCount, getVariantCount } from "@/lib/icons";
+import { getAllIcons, getCategoryCounts, getIconCount } from "@/lib/icons";
 import { HomeContent } from "@/components/home-content";
 
 const jsonLd = {

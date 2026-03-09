@@ -14,7 +14,7 @@ import {
   Globe,
   Heart,
   Home,
-  Image,
+  Image as ImageIcon,
   Link2,
   Loader2,
   Terminal,
@@ -391,7 +391,7 @@ export function IconDetailPage({ icon, relatedIcons = [] }: IconDetailPageProps)
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-xs text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
                   >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    { }
                     <img
                       src={`https://www.google.com/s2/favicons?domain=${hostname}&sz=32`}
                       alt=""
@@ -402,21 +402,18 @@ export function IconDetailPage({ icon, relatedIcons = [] }: IconDetailPageProps)
                   </a>
                 );
               })()}
-              {icon.guidelines && (() => {
-                const hostname = new URL(icon.guidelines).hostname.replace("www.", "");
-                return (
-                  <a
-                    href={icon.guidelines}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-xs text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-                  >
-                    <Globe className="h-3.5 w-3.5" />
-                    <span className="flex-1 truncate">Brand guidelines</span>
-                    <ArrowUpRight className="h-3 w-3 opacity-50" />
-                  </a>
-                );
-              })()}
+              {icon.guidelines && (
+                <a
+                  href={icon.guidelines}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-xs text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+                >
+                  <Globe className="h-3.5 w-3.5" />
+                  <span className="flex-1 truncate">Brand guidelines</span>
+                  <ArrowUpRight className="h-3 w-3 opacity-50" />
+                </a>
+              )}
             </div>
           )}
         </div>
@@ -591,7 +588,7 @@ export function IconDetailPage({ icon, relatedIcons = [] }: IconDetailPageProps)
           {/* Export PNG */}
           <div>
             <div className="mb-3 flex items-center gap-2">
-              <Image className="h-3.5 w-3.5 text-orange-500/70" />
+              <ImageIcon className="h-3.5 w-3.5 text-orange-500/70" aria-hidden="true" />
               <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                 Export PNG
               </p>
@@ -659,7 +656,7 @@ export function IconDetailPage({ icon, relatedIcons = [] }: IconDetailPageProps)
                       )}
                     >
                       {tab.iconSlug && (
-                        /* eslint-disable-next-line @next/next/no-img-element */
+                         
                         <img
                           src={`/icons/${tab.iconSlug}/default.svg`}
                           alt=""

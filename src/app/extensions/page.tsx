@@ -287,7 +287,7 @@ const STATUS_CONFIG: Record<Status, { dot: string; label: string }> = {
 function BrandIcon({ slug, fallback }: { slug?: string; fallback?: React.ReactNode }) {
   if (slug) {
     return (
-      /* eslint-disable-next-line @next/next/no-img-element */
+       
       <img
         src={`/icons/${slug}/default.svg`}
         alt=""

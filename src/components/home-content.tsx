@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, useCallback, useEffect, useRef } from "react";
+import { useMemo, useCallback, useEffect, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ArrowDownAZ, ArrowDownZA, ArrowUpDown, Grid3X3, LayoutGrid, X } from "lucide-react";
 import type { IconEntry } from "@/lib/icons";
@@ -12,6 +12,8 @@ import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { useFavoritesStore } from "@/lib/stores/favorites-store";
 import { useSidebarStore } from "@/lib/stores/sidebar-store";
 import { useSearchStore } from "@/lib/stores/search-store";
+
+const SORT_OPTIONS = ["default", "az", "za"] as const;
 
 interface HomeContentProps {
   icons: IconEntry[];
@@ -45,7 +47,9 @@ export function HomeContent({ icons, categoryCounts, count }: HomeContentProps) 
   }, [queryParam, setGlobalQuery]);
 
   const searchParamsRef = useRef(searchParams);
-  searchParamsRef.current = searchParams;
+  useEffect(() => {
+    searchParamsRef.current = searchParams;
+  }, [searchParams]);
 
   const updateUrl = useCallback(
     (updates: Record<string, string | null>) => {
@@ -94,7 +98,6 @@ export function HomeContent({ icons, categoryCounts, count }: HomeContentProps) 
     setSidebarOpen(false);
   }, [updateUrl, favoritesParam, setSidebarOpen]);
 
-  const SORT_OPTIONS = ["default", "az", "za"] as const;
   const handleSortCycle = useCallback(() => {
     const current = sortParam || "default";
     const idx = SORT_OPTIONS.indexOf(current as typeof SORT_OPTIONS[number]);

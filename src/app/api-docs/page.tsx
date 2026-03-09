@@ -4,7 +4,6 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getCategoryCounts, getIconCount, getAllCategories } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
-import { CopyButton } from "@/components/api-docs/copy-button";
 import { CodeBlock } from "@/components/api-docs/code-block";
 import { TableOfContents } from "@/components/api-docs/table-of-contents";
 

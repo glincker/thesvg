@@ -70,7 +70,6 @@ export function HomeHero({
   icons,
   categoryCounts,
   count,
-  onSelectIcon,
   onCategorySelect,
 }: HomeHeroProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -191,9 +190,9 @@ export function HomeHero({
                 }}
               >
                 <div className={`${pos.size} rounded-xl bg-background/30 p-1.5 backdrop-blur-sm`}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  { }
                   <img src={icon.variants.light || icon.variants.default} alt="" className="h-full w-full object-contain dark:hidden" />
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  { }
                   <img src={icon.variants.dark || icon.variants.default} alt="" className="hidden h-full w-full object-contain dark:block" />
                 </div>
               </div>

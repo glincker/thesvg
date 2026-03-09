@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import posthog from "posthog-js";
 import {
   ArrowRight,
@@ -339,7 +339,7 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 rounded-lg border border-border/50 px-2.5 py-1.5 text-[11px] text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
                   >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    { }
                     <img
                       src={`https://www.google.com/s2/favicons?domain=${new URL(icon.url).hostname}&sz=32`}
                       alt=""
