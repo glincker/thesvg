@@ -12,12 +12,17 @@ interface Arguments {
   query: string;
 }
 
-export default async function CopyIcon(props: LaunchProps<{ arguments: Arguments }>) {
+export default async function CopyIcon(
+  props: LaunchProps<{ arguments: Arguments }>,
+) {
   const { query } = props.arguments;
   const { defaultVariant } = getPreferenceValues<Preferences>();
 
   try {
-    const toast = await showToast({ style: Toast.Style.Animated, title: "Searching..." });
+    const toast = await showToast({
+      style: Toast.Style.Animated,
+      title: "Searching...",
+    });
 
     // Search for the icon
     const results = await searchIcons(query, undefined, 1);
@@ -32,7 +37,8 @@ export default async function CopyIcon(props: LaunchProps<{ arguments: Arguments
 
     // Get full icon data with inline SVG
     const detail = await getIcon(match.slug);
-    const variant = detail.variants[defaultVariant] ?? detail.variants["default"];
+    const variant =
+      detail.variants[defaultVariant] ?? detail.variants["default"];
 
     if (!variant?.svg) {
       toast.style = Toast.Style.Failure;
@@ -41,6 +47,8 @@ export default async function CopyIcon(props: LaunchProps<{ arguments: Arguments
     }
 
     await Clipboard.copy(variant.svg);
+    toast.style = Toast.Style.Success;
+    toast.title = `Copied ${match.title} SVG`;
     await showHUD(`Copied ${match.title} SVG`);
   } catch (error) {
     await showToast({
