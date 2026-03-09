@@ -29,17 +29,18 @@ Please contact us:
 
 We take all trademark requests seriously and will respond within 48 hours. Removal requests are honored promptly, typically within 24 hours.
 
-## DMCA / Takedown Process
+## Copyright (DMCA) Takedown Process
 
-If you believe any content on thesvg.org infringes your copyright or trademark rights:
+If you believe any content on thesvg.org infringes your copyright under the Digital Millennium Copyright Act (DMCA):
 
 1. Send a written notice to **support@glincker.com** identifying:
-   - The trademarked material in question
+   - The copyrighted material in question
    - Your contact information
    - A statement that you are the rights holder or authorized to act on their behalf
 2. We will acknowledge receipt within 48 hours
 3. We will remove the identified material within 24 hours of verification
 
+For concerns about trademark use, please refer to the **For Brand Owners** section above.
 ## Contributors
 
 When submitting icons, contributors must ensure:
