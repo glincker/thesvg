@@ -1,0 +1,34 @@
+<svg version="1.1" id="Layer_1" xmlns:x="ns_extend;" xmlns:i="ns_ai;" xmlns:graph="ns_graphs;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 51.74 70" style="enable-background:new 0 0 51.74 70;" xml:space="preserve">
+ <style type="text/css">
+  .st0{fill:#C31A13;}
+	.st1{fill:#FCBF2D;}
+	.st2{fill:#A2050D;}
+	.st3{fill:#F86920;}
+	.st4{fill:#E22F19;}
+	.st5{fill:#FA9326;}
+ </style>
+ <metadata>
+  <sfw xmlns="ns_sfw;">
+   <slices>
+   </slices>
+   <sliceSourceBounds bottomLeftOrigin="true" height="70" width="51.74" x="133.74" y="164.75">
+   </sliceSourceBounds>
+  </sfw>
+ </metadata>
+ <g>
+  <path class="st0" d="M0,24.81h51.74v-1.52c-0.07-4.05-1.12-8.01-3.04-11.57l-0.91-1.52H3.95c-0.44,0.41-0.77,0.94-0.91,1.52
+		C1.11,15.27,0.07,19.23,0,23.29V24.81z M0,24.81">
+  </path>
+  <path class="st1" d="M2.28,56.76l0.76,1.52C6.24,64.37,12.93,70,25.87,70s19.48-5.48,22.83-11.71l0.61-1.52H2.28z M2.28,56.76">
+  </path>
+  <path class="st2" d="M3.04,11.71H48.7C45.35,5.63,38.65,0,25.87,0S6.24,5.48,3.04,11.71L3.04,11.71z M3.04,11.71">
+  </path>
+  <path class="st3" d="M0,35v13.24h51.74V33.48H0V35z M0,35">
+  </path>
+  <rect y="23.29" class="st4" width="51.74" height="11.71">
+  </rect>
+  <path class="st5" d="M3.04,58.29H48.7c1.93-3.56,2.97-7.52,3.04-11.57H0C0.07,50.77,1.12,54.73,3.04,58.29L3.04,58.29z M3.04,58.29
+		">
+  </path>
+ </g>
+</svg>

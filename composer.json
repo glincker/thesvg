@@ -1,0 +1,18 @@
+{
+	"name": "thesvg/thesvg",
+	"description": "4,000+ brand SVG icons for developers and designers",
+	"homepage": "https://thesvg.org/",
+	"keywords": [
+		"svg",
+		"icons",
+		"brand",
+		"logos",
+		"brand-icons"
+	],
+	"support": {
+		"issues": "https://github.com/GLINCKER/thesvg/issues",
+		"source": "https://github.com/GLINCKER/thesvg",
+		"docs": "https://thesvg.org/api-docs"
+	},
+	"license": "MIT"
+}

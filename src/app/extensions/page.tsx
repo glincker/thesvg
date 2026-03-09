@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { getCategoryCounts } from "@/lib/icons";
+import { getCategoryCounts, getFormattedIconCount } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 
 export const metadata: Metadata = {
@@ -43,6 +43,8 @@ interface Category {
   items: Integration[];
 }
 
+const iconCount = getFormattedIconCount();
+
 const CATEGORIES: Category[] = [
   {
     id: "npm",
@@ -52,7 +54,7 @@ const CATEGORIES: Category[] = [
     items: [
       {
         name: "thesvg",
-        description: "The official npm package. All 3,847 icons, tree-shakeable, typed.",
+        description: `The official npm package. All ${iconCount}+ icons, tree-shakeable, typed.`,
         status: "available",
         cta: "npm",
         href: "https://www.npmjs.com/package/thesvg",
@@ -68,7 +70,7 @@ const CATEGORIES: Category[] = [
       },
       {
         name: "@thesvg/react",
-        description: "3,847 typed React components. forwardRef, tree-shakeable, dark mode aware.",
+        description: `${iconCount}+ typed React components. forwardRef, tree-shakeable, dark mode aware.`,
         status: "available",
         cta: "npm",
         href: "https://www.npmjs.com/package/@thesvg/react",

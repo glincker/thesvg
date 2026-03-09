@@ -1,0 +1,26 @@
+<svg version="1.1" id="Layer_1" xmlns:x="ns_extend;" xmlns:i="ns_ai;" xmlns:graph="ns_graphs;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50.6 48" style="enable-background:new 0 0 50.6 48;" xml:space="preserve">
+ <style type="text/css">
+  .st0{fill:#FFB000;}
+	.st1{fill:#64BA00;}
+	.st2{fill:#F96E10;}
+	.st3{fill:#0298EC;}
+ </style>
+ <metadata>
+  <sfw xmlns="ns_sfw;">
+   <slices>
+   </slices>
+   <sliceSourceBounds bottomLeftOrigin="true" height="48" width="50.6" x="0" y="31.6">
+   </sliceSourceBounds>
+  </sfw>
+ </metadata>
+ <g>
+  <path class="st0" d="M26.1,32.7l4.4,7.6L26.1,48h-8.7L13,40.3l4.4-7.6H26.1z">
+  </path>
+  <path class="st1" d="M26.1,14.2l4.4,7.6l-4.4,7.7h-8.7L13,21.9l4.4-7.6H26.1z">
+  </path>
+  <path class="st2" d="M10.7,24.8l3.6,6.3l-3.6,6.3H3.6L0,31.1l3.6-6.3H10.7z">
+  </path>
+  <path class="st3" d="M45,0l5.7,10L45,20H33.6L28,10l5.7-10H45z">
+  </path>
+ </g>
+</svg>
