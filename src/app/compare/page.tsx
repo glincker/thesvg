@@ -169,7 +169,7 @@ const FEATURES: {
     icon: Package,
     items: [
       { feature: "Figma plugin", thesvg: "no", simpleicons: "yes", svgl: "yes", lucide: "yes", fontawesome: "yes", iconify: "yes", devicon: "no" },
-      { feature: "Raycast extension", thesvg: "no", simpleicons: "yes", svgl: "yes", lucide: "yes", fontawesome: "no", iconify: "no", devicon: "no" },
+      { feature: "Raycast extension", thesvg: "yes", simpleicons: "yes", svgl: "yes", lucide: "yes", fontawesome: "no", iconify: "no", devicon: "no" },
       { feature: "VS Code extension", thesvg: "no", simpleicons: "no", svgl: "yes", lucide: "yes", fontawesome: "yes", iconify: "yes", devicon: "no" },
       { feature: "Composer/Packagist", thesvg: "yes", simpleicons: "yes", svgl: "no", lucide: "no", fontawesome: "yes", iconify: "no", devicon: "no" },
     ],

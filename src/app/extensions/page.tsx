@@ -198,10 +198,10 @@ const CATEGORIES: Category[] = [
       },
       {
         name: "Raycast Extension",
-        description: "Quick search and copy. Paste SVG or CDN URL in one keystroke.",
-        status: "coming-soon",
+        description: "Search 4,000+ brand icons, copy SVG or CDN URL in one keystroke. Filter by category, preview variants.",
+        status: "available",
         cta: "GitHub",
-        href: "https://github.com/GLINCKER/thesvg/issues",
+        href: "https://github.com/GLINCKER/thesvg/tree/main/extensions/raycast",
         iconSlug: "raycast",
       },
       {
