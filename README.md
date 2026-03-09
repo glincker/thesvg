@@ -14,10 +14,10 @@
 
 <p align="center">
   <a href="https://www.npmjs.com/package/thesvg"><img src="https://img.shields.io/npm/v/thesvg?style=flat-square&color=F97316&label=npm" alt="npm" /></a>
-  <a href="https://www.npmjs.com/package/thesvg"><img src="https://img.shields.io/npm/dm/thesvg?style=flat-square&color=F97316" alt="downloads" /></a>
-  <a href="https://github.com/GLINCKER/thesvg/stargazers"><img src="https://img.shields.io/github/stars/GLINCKER/thesvg?style=flat-square" alt="stars" /></a>
+  <a href="https://www.npmjs.com/package/thesvg"><img src="https://img.shields.io/npm/dm/thesvg?style=flat-square&color=F97316&label=downloads" alt="downloads" /></a>
+  <a href="https://github.com/GLINCKER/thesvg/stargazers"><img src="https://img.shields.io/github/stars/GLINCKER/thesvg?style=flat-square&label=stars" alt="stars" /></a>
+  <a href="https://github.com/GLINCKER/thesvg"><img src="https://img.shields.io/badge/icons-4%2C007-F97316?style=flat-square" alt="4,007 icons" /></a>
   <a href="https://github.com/GLINCKER/thesvg/blob/main/LICENSE"><img src="https://img.shields.io/github/license/GLINCKER/thesvg?style=flat-square" alt="license" /></a>
-  <a href="https://thesvg.org"><img src="https://img.shields.io/badge/website-thesvg.org-black?style=flat-square" alt="website" /></a>
 </p>
 
 <p align="center">
@@ -221,6 +221,5 @@ If you are a brand owner and would like an icon updated or removed, please [open
 
 <p align="center">
   <a href="https://thesvg.org">thesvg.org</a> &nbsp;&bull;&nbsp;
-  <a href="https://twitter.com/thesvgorg">Twitter</a> &nbsp;&bull;&nbsp;
   <a href="https://github.com/GLINCKER/thesvg/issues">Issues</a>
 </p>
