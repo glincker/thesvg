@@ -42,7 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // Individual icon pages - 3,847 entries
+  // Individual icon pages
   const icons = getAllIcons();
   const iconPages: MetadataRoute.Sitemap = icons.map((icon) => ({
     url: `${baseUrl}/icon/${icon.slug}`,

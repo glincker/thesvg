@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 220.93 131.94">
+ <defs>
+  <style>
+   .cls-1{fill:#2b2869;}
+  </style>
+  <symbol id="Mark_Purple" data-name="Mark Purple" viewBox="0 0 220.93 131.94">
+   <polygon class="cls-1" points="0 0 75.47 0 120.31 65.97 86.7 115.44 111.72 115.44 145.46 65.97 100.61 0 175.95 0 220.93 65.97 175.95 131.94 150.93 131.94 195.77 65.97 162.2 16.49 137.05 16.49 170.62 65.97 125.78 131.94 50.31 131.94 95.15 65.97 61.41 16.49 36.25 16.49 70.13 65.97 25.16 131.94 0 131.94 44.98 65.97 0 0">
+   </polygon>
+  </symbol>
+ </defs>
+ <title>
+  chevron-purple
+ </title>
+ <g id="Layer_2" data-name="Layer 2">
+  <g id="Layer_1-2" data-name="Layer 1">
+   <use width="220.93" height="131.94" href="#Mark_Purple">
+   </use>
+  </g>
+ </g>
+</svg>

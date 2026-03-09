@@ -1,6 +1,13 @@
 import { Suspense } from "react";
-import { getAllIcons, getCategoryCounts, getIconCount } from "@/lib/icons";
+import {
+  getAllIcons,
+  getCategoryCounts,
+  getIconCount,
+  getFormattedIconCount,
+} from "@/lib/icons";
 import { HomeContent } from "@/components/home-content";
+
+const count = getFormattedIconCount();
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -9,8 +16,7 @@ const jsonLd = {
       "@type": "WebSite",
       name: "theSVG",
       url: "https://thesvg.org",
-      description:
-        "Free, open-source library of 3,847 brand SVG icons. Search, copy, and ship brand icons with npm packages, React components, CLI, CDN, and MCP server.",
+      description: `Free, open-source library of ${count}+ brand SVG icons. Search, copy, and ship brand icons with npm packages, React components, CLI, CDN, and MCP server.`,
       potentialAction: {
         "@type": "SearchAction",
         target: {
@@ -44,7 +50,7 @@ const jsonLd = {
 export default function Home() {
   const icons = getAllIcons();
   const categoryCounts = getCategoryCounts();
-  const count = getIconCount();
+  const iconCount = getIconCount();
 
   return (
     <>
@@ -53,7 +59,11 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Suspense>
-        <HomeContent icons={icons} categoryCounts={categoryCounts} count={count} />
+        <HomeContent
+          icons={icons}
+          categoryCounts={categoryCounts}
+          count={iconCount}
+        />
       </Suspense>
     </>
   );

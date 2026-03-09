@@ -62,6 +62,10 @@ export function getIconCount(): number {
   return icons.length;
 }
 
+export function getFormattedIconCount(): string {
+  return icons.length.toLocaleString("en-US");
+}
+
 export function getVariantCount(): number {
   let count = 0;
   for (const icon of icons) {

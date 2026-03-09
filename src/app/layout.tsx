@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { getFormattedIconCount } from "@/lib/icons";
 import "./globals.css";
 
 const inter = Inter({
@@ -12,13 +13,14 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const count = getFormattedIconCount();
+
 export const metadata: Metadata = {
   title: {
-    default: "theSVG - 3,847 Free Brand SVG Icons for Developers and Designers",
+    default: `theSVG - ${count}+ Free Brand SVG Icons for Developers and Designers`,
     template: "%s | theSVG",
   },
-  description:
-    "Search, copy, and ship 3,847 brand SVG icons. Free, open-source library with npm packages, React components, CLI, CDN, and MCP server. Tree-shakeable, typed, zero config.",
+  description: `Search, copy, and ship ${count}+ brand SVG icons. Free, open-source library with npm packages, React components, CLI, CDN, and MCP server. Tree-shakeable, typed, zero config.`,
   keywords: [
     "svg",
     "brand icons",
@@ -35,9 +37,8 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL("https://thesvg.org"),
   openGraph: {
-    title: "theSVG - 3,847 Free Brand SVG Icons for Developers and Designers",
-    description:
-      "Search, copy, and ship 3,847 brand SVG icons. Free, open-source library with npm packages, React components, CLI, CDN, and MCP server for AI assistants.",
+    title: `theSVG - ${count}+ Free Brand SVG Icons for Developers and Designers`,
+    description: `Search, copy, and ship ${count}+ brand SVG icons. Free, open-source library with npm packages, React components, CLI, CDN, and MCP server for AI assistants.`,
     url: "https://thesvg.org",
     siteName: "theSVG",
     type: "website",
@@ -47,15 +48,14 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "theSVG - 3,847 brand SVG icons for developers",
+        alt: `theSVG - ${count}+ brand SVG icons for developers`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "theSVG - 3,847 Free Brand SVG Icons for Developers and Designers",
-    description:
-      "Search, copy, and ship 3,847 brand SVG icons. Free, open-source library with npm packages, React components, CLI, CDN, and MCP server for AI assistants.",
+    title: `theSVG - ${count}+ Free Brand SVG Icons for Developers and Designers`,
+    description: `Search, copy, and ship ${count}+ brand SVG icons. Free, open-source library with npm packages, React components, CLI, CDN, and MCP server for AI assistants.`,
     images: ["/og-image.png"],
   },
   icons: {
