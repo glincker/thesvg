@@ -97,20 +97,36 @@ SVG files live in `public/icons/{slug}/{variant}.svg`.
 
 ## Brand Icon Guidelines
 
-- We only include official brand assets
-- If a brand requests removal, we comply immediately
-- Icons should represent the brand accurately
+- We only include official brand assets - no fan-made or modified logos
+- Icons should represent the brand accurately as it appears in official materials
 - Do not modify brand colors unless providing a mono variant
+- Check the brand's public guidelines or press kit before submitting
+- If a brand has explicit restrictions on third-party use, note it in the PR
+
+### Brands that restrict distribution
+
+Some companies actively enforce trademark restrictions on third-party icon
+distribution. Before submitting, check whether the brand allows it. If you are
+unsure, submit anyway and we will review.
+
+If a brand owner requests removal, we comply within 24 hours. See our
+[Trademark Policy](./TRADEMARK.md) for details.
 
 ## Legal
 
 By contributing, you agree that your contributions will be licensed under the
 project's [MIT License](./LICENSE).
 
-All brand icons remain the property of their respective owners. We distribute
-them for identification purposes under fair use.
+All brand icons remain the property of their respective owners. Icons are
+provided for identification and development purposes only, consistent with
+nominative fair use of trademarks. thesvg is not affiliated with, endorsed by,
+or sponsored by any of the brands whose icons appear in our library.
+
+For trademark concerns, see [TRADEMARK.md](./TRADEMARK.md) or contact
+[support@glincker.com](mailto:support@glincker.com).
 
 ## Questions?
 
 - [Open a discussion](https://github.com/GLINCKER/thesvg/discussions)
 - [Browse existing issues](https://github.com/GLINCKER/thesvg/issues)
+- [Contact us](https://thesvg.org/contact)

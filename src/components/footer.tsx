@@ -20,6 +20,9 @@ export function Footer() {
               <Link href="/submit" className="transition-colors hover:text-foreground">
                 Submit
               </Link>
+              <Link href="/contact" className="transition-colors hover:text-foreground">
+                Contact
+              </Link>
               <a
                 href="https://github.com/glincker/thesvg"
                 target="_blank"
@@ -44,8 +47,17 @@ export function Footer() {
           <div className="border-t border-border pt-4">
             <p className="text-center text-[11px] leading-relaxed text-muted-foreground/70">
               All brand logos and trademarks are the property of their respective owners.
-              Icons are provided for reference and development purposes only.
+              Icons are provided for identification and development purposes only.
               This project is not affiliated with or endorsed by any of the brands listed.
+              For official assets, visit the brand&apos;s website.{" "}
+              <a
+                href="https://github.com/GLINCKER/thesvg/blob/main/TRADEMARK.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 transition-colors hover:text-muted-foreground"
+              >
+                Trademark Policy
+              </a>
             </p>
             <p className="mt-2 flex items-center justify-center gap-1 text-[11px] text-muted-foreground/50">
               Built with <Heart className="h-2.5 w-2.5 fill-red-500/50 text-red-500/50" /> by the open-source community
