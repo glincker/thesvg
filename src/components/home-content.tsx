@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, useCallback, useEffect, useRef } from "react";
+import { useMemo, useCallback, useEffect, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ArrowDownAZ, ArrowDownZA, ArrowUpDown, Grid3X3, LayoutGrid, X } from "lucide-react";
 import type { IconEntry } from "@/lib/icons";
@@ -12,6 +12,8 @@ import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { useFavoritesStore } from "@/lib/stores/favorites-store";
 import { useSidebarStore } from "@/lib/stores/sidebar-store";
 import { useSearchStore } from "@/lib/stores/search-store";
+
+const SORT_OPTIONS = ["default", "az", "za"] as const;
 
 interface HomeContentProps {
   icons: IconEntry[];
@@ -44,12 +46,9 @@ export function HomeContent({ icons, categoryCounts, count }: HomeContentProps) 
     setGlobalQuery(queryParam);
   }, [queryParam, setGlobalQuery]);
 
-  const searchParamsRef = useRef(searchParams);
-  searchParamsRef.current = searchParams;
-
   const updateUrl = useCallback(
     (updates: Record<string, string | null>) => {
-      const params = new URLSearchParams(searchParamsRef.current.toString());
+      const params = new URLSearchParams(searchParams.toString());
       for (const [key, value] of Object.entries(updates)) {
         if (value === null || value === "") {
           params.delete(key);
@@ -60,13 +59,13 @@ export function HomeContent({ icons, categoryCounts, count }: HomeContentProps) 
       const qs = params.toString();
       router.replace(qs ? `/?${qs}` : "/", { scroll: false });
     },
-    [router]
+    [router, searchParams]
   );
 
   // Sync global search store changes to URL with debounce
   useEffect(() => {
     // Skip if query already matches URL to avoid loops
-    const currentUrlQuery = searchParamsRef.current.get("q") || "";
+    const currentUrlQuery = searchParams.get("q") || "";
     if (globalQuery === currentUrlQuery) return;
 
     if (debounceRef.current) clearTimeout(debounceRef.current);
@@ -76,7 +75,7 @@ export function HomeContent({ icons, categoryCounts, count }: HomeContentProps) 
     return () => {
       if (debounceRef.current) clearTimeout(debounceRef.current);
     };
-  }, [globalQuery, updateUrl]);
+  }, [globalQuery, updateUrl, searchParams]);
 
   const handleCategorySelect = useCallback(
     (category: string | null) => {
@@ -94,7 +93,6 @@ export function HomeContent({ icons, categoryCounts, count }: HomeContentProps) 
     setSidebarOpen(false);
   }, [updateUrl, favoritesParam, setSidebarOpen]);
 
-  const SORT_OPTIONS = ["default", "az", "za"] as const;
   const handleSortCycle = useCallback(() => {
     const current = sortParam || "default";
     const idx = SORT_OPTIONS.indexOf(current as typeof SORT_OPTIONS[number]);

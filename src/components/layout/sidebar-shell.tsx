@@ -1,6 +1,5 @@
 "use client";
 
-import { getCategoryCounts } from "@/lib/icons";
 import { Sidebar } from "@/components/layout/sidebar";
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { useSidebarStore } from "@/lib/stores/sidebar-store";

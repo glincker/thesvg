@@ -151,7 +151,6 @@ export function Header() {
             </Button>
 
             <Link href="/" className="group/logo flex items-center gap-1.5">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/logo-transparent.svg"
                 alt="theSVG"
@@ -181,6 +180,7 @@ export function Header() {
                 aria-label="Search icons"
                 role="combobox"
                 aria-expanded={showDropdown}
+                aria-controls="header-search-listbox"
                 aria-autocomplete="list"
               />
               <div className="absolute top-1/2 right-2.5 flex -translate-y-1/2 items-center gap-1">
@@ -198,63 +198,63 @@ export function Header() {
                   {isMac ? "\u2318K" : "^K"}
                 </kbd>
               </div>
-
-              {/* Search dropdown */}
-              {showDropdown && (
-                <div
-                  ref={dropdownRef}
-                  className="absolute top-full left-0 right-0 z-50 mt-1.5 overflow-hidden rounded-xl border border-border/40 bg-background/95 shadow-[0_8px_30px_-4px_rgba(0,0,0,0.15)] backdrop-blur-2xl backdrop-saturate-150 dark:border-white/[0.1] dark:bg-[rgba(10,10,10,0.95)] dark:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.6)]"
-                  role="listbox"
-                >
-                  <div className="px-2 py-1.5">
-                    <p className="px-2 py-1 text-[10px] font-medium uppercase tracking-wider text-muted-foreground/50">
-                      Suggestions
-                    </p>
-                    {suggestions.map((icon, i) => (
-                      <button
-                        key={icon.slug}
-                        type="button"
-                        role="option"
-                        aria-selected={i === selectedIdx}
-                        onMouseEnter={() => setSelectedIdx(i)}
-                        onClick={() => navigateToIcon(icon.slug)}
-                        className={`flex w-full items-center gap-3 rounded-lg px-2 py-2 text-left transition-colors ${
-                          i === selectedIdx
-                            ? "bg-accent text-accent-foreground"
-                            : "text-foreground hover:bg-accent/50"
-                        }`}
-                      >
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={icon.variants.default}
-                          alt=""
-                          className="h-6 w-6 shrink-0 rounded object-contain"
-                        />
-                        <div className="min-w-0 flex-1">
-                          <p className="truncate text-sm font-medium">{icon.title}</p>
-                          <p className="truncate text-[11px] text-muted-foreground">
-                            {icon.categories[0] || icon.slug}
-                          </p>
-                        </div>
-                        <span className="shrink-0 text-[10px] text-muted-foreground/50">
-                          {icon.slug}
-                        </span>
-                      </button>
-                    ))}
-                  </div>
-                  <div className="border-t border-border/30 px-3 py-1.5 dark:border-white/[0.04]">
-                    <p className="text-[10px] text-muted-foreground/50">
-                      <kbd className="rounded border border-border/30 px-1 font-mono dark:border-white/[0.06]">&uarr;&darr;</kbd>{" "}
-                      navigate{" "}
-                      <kbd className="rounded border border-border/30 px-1 font-mono dark:border-white/[0.06]">&crarr;</kbd>{" "}
-                      select{" "}
-                      <kbd className="rounded border border-border/30 px-1 font-mono dark:border-white/[0.06]">esc</kbd>{" "}
-                      close
-                    </p>
-                  </div>
-                </div>
-              )}
             </div>
+
+            {/* Search dropdown - positioned relative to form for full-width on mobile */}
+            {showDropdown && (
+              <div
+                ref={dropdownRef}
+                id="header-search-listbox"
+                className="absolute top-full right-0 left-0 z-50 mx-auto mt-1.5 max-w-xl overflow-hidden rounded-xl border border-border/40 bg-background/95 shadow-[0_8px_30px_-4px_rgba(0,0,0,0.15)] backdrop-blur-2xl backdrop-saturate-150 dark:border-white/[0.1] dark:bg-[rgba(10,10,10,0.95)] dark:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.6)]"
+                role="listbox"
+              >
+                <div className="px-2 py-1.5">
+                  <p className="px-2 py-1 text-[10px] font-medium uppercase tracking-wider text-muted-foreground/50">
+                    Suggestions
+                  </p>
+                  {suggestions.map((icon, i) => (
+                    <button
+                      key={icon.slug}
+                      type="button"
+                      role="option"
+                      aria-selected={i === selectedIdx}
+                      onMouseEnter={() => setSelectedIdx(i)}
+                      onClick={() => navigateToIcon(icon.slug)}
+                      className={`flex w-full items-center gap-2 rounded-lg px-2 py-2 text-left transition-colors sm:gap-3 ${
+                        i === selectedIdx
+                          ? "bg-accent text-accent-foreground"
+                          : "text-foreground hover:bg-accent/50"
+                      }`}
+                    >
+                      <img
+                        src={icon.variants.default}
+                        alt=""
+                        className="h-6 w-6 shrink-0 rounded object-contain"
+                      />
+                      <div className="min-w-0 flex-1">
+                        <p className="truncate text-sm font-medium">{icon.title}</p>
+                        <p className="truncate text-[11px] text-muted-foreground">
+                          {icon.categories[0] || icon.slug}
+                        </p>
+                      </div>
+                      <span className="hidden shrink-0 text-[10px] text-muted-foreground/50 sm:inline">
+                        {icon.slug}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+                <div className="hidden border-t border-border/30 px-3 py-1.5 sm:block dark:border-white/[0.04]">
+                  <p className="text-[10px] text-muted-foreground/50">
+                    <kbd className="rounded border border-border/30 px-1 font-mono dark:border-white/[0.06]">&uarr;&darr;</kbd>{" "}
+                    navigate{" "}
+                    <kbd className="rounded border border-border/30 px-1 font-mono dark:border-white/[0.06]">&crarr;</kbd>{" "}
+                    select{" "}
+                    <kbd className="rounded border border-border/30 px-1 font-mono dark:border-white/[0.06]">esc</kbd>{" "}
+                    close
+                  </p>
+                </div>
+              </div>
+            )}
           </form>
 
           {/* Right: actions */}
@@ -276,7 +276,6 @@ export function Header() {
                 aria-label="npm"
                 className="inline-flex h-7 w-7 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/icons/npm/default.svg"
                   alt="npm"
