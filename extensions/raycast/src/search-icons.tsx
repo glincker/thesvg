@@ -69,7 +69,11 @@ export default function SearchIcons() {
       {icons.length === 0 && !isLoading && (
         <List.EmptyView
           title="No icons found"
-          description={searchText ? `No results for "${searchText}"` : "Try a different category"}
+          description={
+            searchText
+              ? `No results for "${searchText}"`
+              : "Try a different category"
+          }
           icon={Icon.MagnifyingGlass}
         />
       )}
@@ -97,19 +101,19 @@ function IconListItem({ icon }: { icon: IconEntry }) {
           <ActionPanel.Section title="Copy">
             <CopySvgAction slug={icon.slug} title={icon.title} />
             <Action.CopyToClipboard
-              title="Copy CDN URL"
+              title="Copy Direct URL"
               content={getIconUrl(icon.slug)}
               shortcut={{ modifiers: ["cmd", "shift"], key: "c" }}
             />
             <Action.CopyToClipboard
-              title="Copy jsDelivr URL"
+              title="Copy JsDelivr URL"
               content={getCdnUrl(icon.slug)}
               shortcut={{ modifiers: ["cmd", "opt"], key: "c" }}
             />
           </ActionPanel.Section>
           <ActionPanel.Section title="Open">
             <Action.OpenInBrowser
-              title="Open on theSVG"
+              title="Open on TheSVG"
               url={getIconPageUrl(icon.slug)}
               shortcut={{ modifiers: ["cmd"], key: "o" }}
             />
@@ -138,9 +142,13 @@ function CopySvgAction({ slug, title }: { slug: string; title: string }) {
       shortcut={{ modifiers: ["cmd"], key: "c" }}
       onAction={async () => {
         try {
-          const toast = await showToast({ style: Toast.Style.Animated, title: "Fetching SVG..." });
+          const toast = await showToast({
+            style: Toast.Style.Animated,
+            title: "Fetching SVG...",
+          });
           const detail = await getIcon(slug);
-          const variant = detail.variants[defaultVariant] ?? detail.variants["default"];
+          const variant =
+            detail.variants[defaultVariant] ?? detail.variants["default"];
           if (variant?.svg) {
             await Clipboard.copy(variant.svg);
             toast.style = Toast.Style.Success;
@@ -161,9 +169,18 @@ function CopySvgAction({ slug, title }: { slug: string; title: string }) {
   );
 }
 
+function escapeMarkdown(text: string): string {
+  return text.replace(/[[\]()#*`\\>_~|!]/g, "\\$&");
+}
+
 function isVisibleHex(hex: string): boolean {
   const lower = hex.toLowerCase();
-  return lower !== "fff" && lower !== "ffffff" && lower !== "000" && lower !== "000000";
+  return (
+    lower !== "fff" &&
+    lower !== "ffffff" &&
+    lower !== "000" &&
+    lower !== "000000"
+  );
 }
 
 function IconDetailView({ slug }: { slug: string }) {
@@ -179,14 +196,15 @@ function IconDetailView({ slug }: { slug: string }) {
     ? `<img src="${getIconUrl(slug)}" width="128" height="128" />`
     : "";
 
+  const safeTitle = escapeMarkdown(icon.title);
   const markdown = `
-# ${icon.title}
+# ${safeTitle}
 
 ${svgPreview}
 
 ## Variants (${variantKeys.length})
 
-${variantKeys.map((v) => `- \`${v}\` - [Preview](${getIconUrl(slug, v)})`).join("\n")}
+${variantKeys.map((v) => `- \`${escapeMarkdown(v)}\` - [Preview](${getIconUrl(encodeURIComponent(slug), encodeURIComponent(v))})`).join("\n")}
 
 ## SVG Source
 
@@ -208,7 +226,10 @@ ${defaultSvg.substring(0, 2000)}${defaultSvg.length > 2000 ? "\n... (truncated)"
             <Detail.Metadata.Label
               title="Color"
               text={`#${icon.hex}`}
-              icon={{ source: Icon.CircleFilled, tintColor: `#${icon.hex}` as Color }}
+              icon={{
+                source: Icon.CircleFilled,
+                tintColor: `#${icon.hex}` as Color,
+              }}
             />
           )}
           <Detail.Metadata.TagList title="Categories">
@@ -222,7 +243,11 @@ ${defaultSvg.substring(0, 2000)}${defaultSvg.length > 2000 ? "\n... (truncated)"
           />
           <Detail.Metadata.Separator />
           {icon.url && (
-            <Detail.Metadata.Link title="Website" text={icon.url} target={icon.url} />
+            <Detail.Metadata.Link
+              title="Website"
+              text={icon.url}
+              target={icon.url}
+            />
           )}
           <Detail.Metadata.Link
             title="theSVG Page"
@@ -257,11 +282,11 @@ ${defaultSvg.substring(0, 2000)}${defaultSvg.length > 2000 ? "\n... (truncated)"
           </ActionPanel.Section>
           <ActionPanel.Section title="Copy URLs">
             <Action.CopyToClipboard
-              title="Copy CDN URL"
+              title="Copy Direct URL"
               content={getIconUrl(slug)}
             />
             <Action.CopyToClipboard
-              title="Copy jsDelivr URL"
+              title="Copy JsDelivr URL"
               content={getCdnUrl(slug)}
             />
             {hexVisible && (
@@ -273,7 +298,7 @@ ${defaultSvg.substring(0, 2000)}${defaultSvg.length > 2000 ? "\n... (truncated)"
           </ActionPanel.Section>
           <ActionPanel.Section title="Open">
             <Action.OpenInBrowser
-              title="Open on theSVG"
+              title="Open on TheSVG"
               url={getIconPageUrl(slug)}
             />
             {icon.url && (

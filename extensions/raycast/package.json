@@ -1,10 +1,10 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "thesvg",
-  "title": "theSVG",
+  "title": "TheSVG",
   "description": "Search, preview, and copy 4,000+ brand SVG icons from thesvg.org",
   "icon": "extension-icon.png",
-  "author": "glincker",
+  "author": "thegdsks",
   "categories": ["Design Tools", "Developer Tools"],
   "license": "MIT",
   "commands": [
