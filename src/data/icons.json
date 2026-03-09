@@ -1920,6 +1920,22 @@
     "url": "https://commons.wikimedia.org/wiki/File:American_Express_logo_(2018).svg"
   },
   {
+    "slug": "ameriprise-financial",
+    "title": "Ameriprise Financial",
+    "aliases": [
+      "Ameriprise"
+    ],
+    "hex": "006DB6",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/ameriprise-financial/default.svg"
+    },
+    "license": "Fair Use",
+    "url": "https://www.ameriprise.com"
+  },
+  {
     "slug": "amg",
     "title": "AMG",
     "aliases": [],
@@ -3905,6 +3921,21 @@
     "url": "https://atom.io/"
   },
   {
+    "slug": "atproto",
+    "title": "AT Protocol",
+    "aliases": [],
+    "hex": "0085FF",
+    "categories": [
+      "Social",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/atproto/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://atproto.com"
+  },
+  {
     "slug": "auchan",
     "title": "Auchan",
     "aliases": [],
@@ -4467,6 +4498,21 @@
     "url": "https://cohere.com/research/aya"
   },
   {
+    "slug": "azure-blob",
+    "title": "Azure Blob Storage",
+    "aliases": [],
+    "hex": "0078D4",
+    "categories": [
+      "Cloud",
+      "Microsoft"
+    ],
+    "variants": {
+      "default": "/icons/azure-blob/default.svg"
+    },
+    "license": "Custom",
+    "url": "https://azure.microsoft.com/en-us/products/storage/blobs"
+  },
+  {
     "slug": "azureai",
     "title": "AzureAI",
     "aliases": [],
@@ -4811,6 +4857,21 @@
     },
     "license": "CC0-1.0",
     "url": "https://barmenia.de"
+  },
+  {
+    "slug": "base",
+    "title": "Base",
+    "aliases": [],
+    "hex": "0052FF",
+    "categories": [
+      "Crypto",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/base/default.svg"
+    },
+    "license": "Custom",
+    "url": "https://base.org"
   },
   {
     "slug": "base-ui",
@@ -7228,6 +7289,22 @@
     "url": "https://capcut.com"
   },
   {
+    "slug": "capital-one",
+    "title": "Capital One",
+    "aliases": [
+      "CapitalOne"
+    ],
+    "hex": "004977",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/capital-one/default.svg"
+    },
+    "license": "Fair Use",
+    "url": "https://www.capitalone.com"
+  },
+  {
     "slug": "caprover",
     "title": "CapRover",
     "aliases": [],
@@ -7674,6 +7751,22 @@
     },
     "license": "CC0-1.0",
     "url": "https://www.charlesproxy.com"
+  },
+  {
+    "slug": "charles-schwab",
+    "title": "Charles Schwab",
+    "aliases": [
+      "Schwab"
+    ],
+    "hex": "00A0DF",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/charles-schwab/default.svg"
+    },
+    "license": "Fair Use",
+    "url": "https://www.schwab.com"
   },
   {
     "slug": "chartdotjs",
@@ -8176,6 +8269,23 @@
     },
     "license": "CC0-1.0",
     "url": "https://www.cisco.com/"
+  },
+  {
+    "slug": "citibank",
+    "title": "Citibank",
+    "aliases": [
+      "Citi",
+      "Citigroup"
+    ],
+    "hex": "003B70",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/citibank/default.svg"
+    },
+    "license": "Fair Use",
+    "url": "https://www.citigroup.com"
   },
   {
     "slug": "citrix",
@@ -10119,6 +10229,20 @@
     "license": "CC0-1.0",
     "url": "https://www.corsair.com",
     "guidelines": "https://www.corsair.com/press"
+  },
+  {
+    "slug": "costco",
+    "title": "Costco",
+    "aliases": [],
+    "hex": "E31837",
+    "categories": [
+      "Shopping"
+    ],
+    "variants": {
+      "default": "/icons/costco/default.svg"
+    },
+    "license": "Fair Use",
+    "url": "https://www.costco.com"
   },
   {
     "slug": "couchbase",
@@ -12658,6 +12782,26 @@
     },
     "license": "MIT",
     "url": "https://dphn.ai"
+  },
+  {
+    "slug": "dominos",
+    "title": "Domino's",
+    "aliases": [
+      "Dominos Pizza",
+      "DPZ"
+    ],
+    "hex": "006491",
+    "categories": [
+      "Food"
+    ],
+    "variants": {
+      "default": "/icons/dominos/default.svg",
+      "light": "/icons/dominos/light.svg",
+      "wordmark": "/icons/dominos/wordmark.svg",
+      "wordmarkDark": "/icons/dominos/wordmark-dark.svg"
+    },
+    "license": "Fair Use",
+    "url": "https://www.dominos.com"
   },
   {
     "slug": "domo",
@@ -15609,6 +15753,21 @@
     "url": "https://github.com/fireship-io/fireship.io/blob/987da97305a5968b99347aa748f928a4667336f8/hugo/layouts/partials/svg/logo.svg"
   },
   {
+    "slug": "firestore",
+    "title": "Cloud Firestore",
+    "aliases": [],
+    "hex": "FFCA28",
+    "categories": [
+      "Database",
+      "Google"
+    ],
+    "variants": {
+      "default": "/icons/firestore/default.svg"
+    },
+    "license": "Custom",
+    "url": "https://firebase.google.com/docs/firestore"
+  },
+  {
     "slug": "firewalla",
     "title": "Firewalla",
     "aliases": [],
@@ -16095,6 +16254,21 @@
     },
     "license": "CC0-1.0",
     "url": "https://github.com/flyway/flywaydb.org/blob/8a7923cb9ead016442d4c5caf2e8ba5a9bfad5cf/assets/logo/flyway-logo.png"
+  },
+  {
+    "slug": "flywheel",
+    "title": "Flywheel",
+    "aliases": [],
+    "hex": "18C6AD",
+    "categories": [
+      "Hosting",
+      "CMS"
+    ],
+    "variants": {
+      "default": "/icons/flywheel/default.svg"
+    },
+    "license": "Custom",
+    "url": "https://getflywheel.com"
   },
   {
     "slug": "fmod",
@@ -23509,6 +23683,21 @@
     "guidelines": "https://www.jhipster.tech/artwork"
   },
   {
+    "slug": "jigsawstack",
+    "title": "JigsawStack",
+    "aliases": [],
+    "hex": "7C3AED",
+    "categories": [
+      "AI",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/jigsawstack/default.svg"
+    },
+    "license": "Custom",
+    "url": "https://jigsawstack.com"
+  },
+  {
     "slug": "jimeng",
     "title": "Jimeng (即梦)",
     "aliases": [],
@@ -24042,6 +24231,21 @@
     },
     "license": "CC0-1.0",
     "url": "https://commons.wikimedia.org/wiki/File:K6-logo.svg"
+  },
+  {
+    "slug": "kafka",
+    "title": "Apache Kafka",
+    "aliases": [],
+    "hex": "231F20",
+    "categories": [
+      "Software",
+      "Database"
+    ],
+    "variants": {
+      "default": "/icons/kafka/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kafka.apache.org"
   },
   {
     "slug": "kaggle",
@@ -28616,6 +28820,22 @@
     "url": "https://www.mcdonalds.com/gb/en-gb/newsroom.html"
   },
   {
+    "slug": "mcdonalds",
+    "title": "McDonald's",
+    "aliases": [
+      "McDonalds"
+    ],
+    "hex": "FBC817",
+    "categories": [
+      "Food"
+    ],
+    "variants": {
+      "default": "/icons/mcdonalds/default.svg"
+    },
+    "license": "Fair Use",
+    "url": "https://www.mcdonalds.com"
+  },
+  {
     "slug": "mclaren",
     "title": "McLaren",
     "aliases": [],
@@ -28979,6 +29199,22 @@
     },
     "license": "CC0-1.0",
     "url": "https://www.mercadopago.com/developers/"
+  },
+  {
+    "slug": "mercedes-benz",
+    "title": "Mercedes-Benz",
+    "aliases": [
+      "Mercedes"
+    ],
+    "hex": "00ADEF",
+    "categories": [
+      "Automotive"
+    ],
+    "variants": {
+      "default": "/icons/mercedes-benz/default.svg"
+    },
+    "license": "Fair Use",
+    "url": "https://www.mercedes-benz.com"
   },
   {
     "slug": "merck",
@@ -30040,6 +30276,21 @@
     "guidelines": "https://brand.mixpanel.com"
   },
   {
+    "slug": "mjml",
+    "title": "MJML",
+    "aliases": [],
+    "hex": "F45E43",
+    "categories": [
+      "Framework",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/mjml/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://mjml.io"
+  },
+  {
     "slug": "mlb",
     "title": "MLB",
     "aliases": [
@@ -30066,6 +30317,21 @@
     },
     "license": "CC0-1.0",
     "url": "https://github.com/mlflow/mlflow/blob/855881f93703b15ffe643003fb4d7c84f0ec2502/assets/icon.svg"
+  },
+  {
+    "slug": "mobilizon",
+    "title": "Mobilizon",
+    "aliases": [],
+    "hex": "3F51B5",
+    "categories": [
+      "Social",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/mobilizon/default.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://joinmobilizon.org"
   },
   {
     "slug": "mobx",
@@ -30510,6 +30776,20 @@
     },
     "license": "CC0-1.0",
     "url": "https://app.moqups.com"
+  },
+  {
+    "slug": "morgan-stanley",
+    "title": "Morgan Stanley",
+    "aliases": [],
+    "hex": "003986",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/morgan-stanley/default.svg"
+    },
+    "license": "Fair Use",
+    "url": "https://www.morganstanley.com"
   },
   {
     "slug": "morph",
@@ -31467,6 +31747,21 @@
     "license": "CC0-1.0",
     "url": "https://www.netapp.com",
     "guidelines": "https://www.netapp.com/company/legal/trademark-guidelines/"
+  },
+  {
+    "slug": "netbeans",
+    "title": "Apache NetBeans",
+    "aliases": [],
+    "hex": "1B6AC6",
+    "categories": [
+      "Software",
+      "Devtool"
+    ],
+    "variants": {
+      "default": "/icons/netbeans/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://netbeans.apache.org"
   },
   {
     "slug": "netbsd",
@@ -33529,6 +33824,21 @@
     "guidelines": "https://www.openapis.org/faq/style-guide"
   },
   {
+    "slug": "openbao",
+    "title": "OpenBao",
+    "aliases": [],
+    "hex": "FFEC6E",
+    "categories": [
+      "Security",
+      "Cloud"
+    ],
+    "variants": {
+      "default": "/icons/openbao/default.svg"
+    },
+    "license": "MPL-2.0",
+    "url": "https://openbao.org"
+  },
+  {
     "slug": "openbootcamp",
     "title": "OpenBootcamp",
     "aliases": [],
@@ -34250,6 +34560,21 @@
     "license": "CC0-1.0",
     "url": "https://github.com/optuna/optuna-dashboard/blob/b45523d328ef4796306dd64a93f27ff37c9a36b7/jupyterlab/img/optuna_logo.svg",
     "guidelines": "https://optuna.org"
+  },
+  {
+    "slug": "oracle",
+    "title": "Oracle",
+    "aliases": [],
+    "hex": "F80000",
+    "categories": [
+      "Database",
+      "Cloud"
+    ],
+    "variants": {
+      "default": "/icons/oracle/default.svg"
+    },
+    "license": "Fair Use",
+    "url": "https://www.oracle.com"
   },
   {
     "slug": "orange",
@@ -35094,6 +35419,21 @@
       "mono": "/icons/passport/mono.svg"
     },
     "license": "CC0-1.0",
+    "url": "https://www.passportjs.org"
+  },
+  {
+    "slug": "passport-js",
+    "title": "Passport.js",
+    "aliases": [],
+    "hex": "34E27A",
+    "categories": [
+      "Library",
+      "Authentication"
+    ],
+    "variants": {
+      "default": "/icons/passport-js/default.svg"
+    },
+    "license": "MIT",
     "url": "https://www.passportjs.org"
   },
   {
@@ -36274,6 +36614,22 @@
     },
     "license": "MIT",
     "url": "https://app.pixverse.ai"
+  },
+  {
+    "slug": "pizza-hut",
+    "title": "Pizza Hut",
+    "aliases": [
+      "PizzaHut"
+    ],
+    "hex": "EE3A43",
+    "categories": [
+      "Food"
+    ],
+    "variants": {
+      "default": "/icons/pizza-hut/default.svg"
+    },
+    "license": "Fair Use",
+    "url": "https://www.pizzahut.com"
   },
   {
     "slug": "pkgsrc",
@@ -40542,6 +40898,21 @@
     "url": "https://riseup.net/en/about-us/images"
   },
   {
+    "slug": "risingwave",
+    "title": "RisingWave",
+    "aliases": [],
+    "hex": "005DF7",
+    "categories": [
+      "Database",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/risingwave/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://risingwave.com"
+  },
+  {
     "slug": "ritz-carlton",
     "title": "Ritz Carlton",
     "aliases": [],
@@ -43789,6 +44160,21 @@
     "url": "https://www.sonarsource.com"
   },
   {
+    "slug": "sonarqube",
+    "title": "SonarQube",
+    "aliases": [],
+    "hex": "4E9BCD",
+    "categories": [
+      "Devtool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/sonarqube/default.svg"
+    },
+    "license": "LGPL-3.0",
+    "url": "https://www.sonarsource.com/products/sonarqube/"
+  },
+  {
     "slug": "sonarqube-cloud",
     "title": "SonarQube Cloud",
     "aliases": [
@@ -45580,6 +45966,20 @@
     },
     "license": "CC0-1.0",
     "url": "https://subversion.apache.org/logo"
+  },
+  {
+    "slug": "subway",
+    "title": "Subway",
+    "aliases": [],
+    "hex": "008C15",
+    "categories": [
+      "Food"
+    ],
+    "variants": {
+      "default": "/icons/subway/default.svg"
+    },
+    "license": "Fair Use",
+    "url": "https://www.subway.com"
   },
   {
     "slug": "suckless",
@@ -48370,6 +48770,21 @@
     "url": "https://app.transifex.com/contact/"
   },
   {
+    "slug": "transloadit",
+    "title": "Transloadit",
+    "aliases": [],
+    "hex": "1BB1E5",
+    "categories": [
+      "Software",
+      "Cloud"
+    ],
+    "variants": {
+      "default": "/icons/transloadit/default.svg"
+    },
+    "license": "Custom",
+    "url": "https://transloadit.com"
+  },
+  {
     "slug": "transmission",
     "title": "Transmission",
     "aliases": [],
@@ -49888,6 +50303,21 @@
     "guidelines": "https://uphold.com/en-us/brand-assets"
   },
   {
+    "slug": "upi",
+    "title": "UPI",
+    "aliases": [],
+    "hex": "589635",
+    "categories": [
+      "Payment",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/upi/default.svg"
+    },
+    "license": "Custom",
+    "url": "https://www.npci.org.in/what-we-do/upi/product-overview"
+  },
+  {
     "slug": "uplabs",
     "title": "UpLabs",
     "aliases": [],
@@ -49927,6 +50357,21 @@
     },
     "license": "CC0-1.0",
     "url": "https://upptime.js.org"
+  },
+  {
+    "slug": "uppy",
+    "title": "Uppy",
+    "aliases": [],
+    "hex": "1BB1E5",
+    "categories": [
+      "Library",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/uppy/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://uppy.io"
   },
   {
     "slug": "ups",
@@ -50529,6 +50974,21 @@
     "license": "CC0-1.0",
     "url": "https://vercel.com/",
     "guidelines": "https://vercel.com/geist/brands"
+  },
+  {
+    "slug": "vercel-blob",
+    "title": "Vercel Blob",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Cloud",
+      "Hosting"
+    ],
+    "variants": {
+      "default": "/icons/vercel-blob/default.svg"
+    },
+    "license": "Custom",
+    "url": "https://vercel.com/docs/storage/vercel-blob"
   },
   {
     "slug": "verdaccio",
@@ -52104,6 +52564,21 @@
     "guidelines": "https://www.jetbrains.com/company/brand"
   },
   {
+    "slug": "webstudio",
+    "title": "Webstudio",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Software",
+      "Design"
+    ],
+    "variants": {
+      "default": "/icons/webstudio/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://webstudio.is"
+  },
+  {
     "slug": "webtoon",
     "title": "WEBTOON",
     "aliases": [],
@@ -52210,6 +52685,22 @@
     },
     "license": "CC0-1.0",
     "url": "https://commons.wikimedia.org/wiki/File:WeMoApp.svg"
+  },
+  {
+    "slug": "wendys",
+    "title": "Wendy's",
+    "aliases": [
+      "Wendys"
+    ],
+    "hex": "E2203C",
+    "categories": [
+      "Food"
+    ],
+    "variants": {
+      "default": "/icons/wendys/default.svg"
+    },
+    "license": "Fair Use",
+    "url": "https://www.wendys.com"
   },
   {
     "slug": "wenxin",
@@ -53853,6 +54344,20 @@
     "url": "https://github.com/YunoHost/doc/blob/0157b052481407b3c06cc2892de225f14c42520b/images/ynh_logo_black.svg"
   },
   {
+    "slug": "zabbix",
+    "title": "Zabbix",
+    "aliases": [],
+    "hex": "D40000",
+    "categories": [
+      "Analytics"
+    ],
+    "variants": {
+      "default": "/icons/zabbix/default.svg"
+    },
+    "license": "GPL-2.0",
+    "url": "https://www.zabbix.com"
+  },
+  {
     "slug": "zaim",
     "title": "Zaim",
     "aliases": [],
@@ -54568,102 +55073,5 @@
     },
     "license": "CC0-1.0",
     "url": "https://www.zyte.com"
-  },
-  {
-    "slug": "zabbix",
-    "title": "Zabbix",
-    "aliases": [],
-    "hex": "D40000",
-    "categories": [
-      "Analytics"
-    ],
-    "variants": {
-      "default": "/icons/zabbix/default.svg"
-    },
-    "license": "GPL-2.0",
-    "url": "https://www.zabbix.com"
-  },
-  {
-    "slug": "openbao",
-    "title": "OpenBao",
-    "aliases": [],
-    "hex": "FFEC6E",
-    "categories": [
-      "Security",
-      "Cloud"
-    ],
-    "variants": {
-      "default": "/icons/openbao/default.svg"
-    },
-    "license": "MPL-2.0",
-    "url": "https://openbao.org"
-  },
-  {
-    "slug": "capital-one",
-    "title": "Capital One",
-    "aliases": [
-      "CapitalOne"
-    ],
-    "hex": "004977",
-    "categories": [
-      "Finance"
-    ],
-    "variants": {
-      "default": "/icons/capital-one/default.svg"
-    },
-    "license": "Fair Use",
-    "url": "https://www.capitalone.com"
-  },
-  {
-    "slug": "ameriprise-financial",
-    "title": "Ameriprise Financial",
-    "aliases": [
-      "Ameriprise"
-    ],
-    "hex": "006DB6",
-    "categories": [
-      "Finance"
-    ],
-    "variants": {
-      "default": "/icons/ameriprise-financial/default.svg"
-    },
-    "license": "Fair Use",
-    "url": "https://www.ameriprise.com"
-  },
-  {
-    "slug": "pizza-hut",
-    "title": "Pizza Hut",
-    "aliases": [
-      "PizzaHut"
-    ],
-    "hex": "EE3A43",
-    "categories": [
-      "Food"
-    ],
-    "variants": {
-      "default": "/icons/pizza-hut/default.svg"
-    },
-    "license": "Fair Use",
-    "url": "https://www.pizzahut.com"
-  },
-  {
-    "slug": "dominos",
-    "title": "Domino's",
-    "aliases": [
-      "Dominos Pizza",
-      "DPZ"
-    ],
-    "hex": "006491",
-    "categories": [
-      "Food"
-    ],
-    "variants": {
-      "default": "/icons/dominos/default.svg",
-      "light": "/icons/dominos/light.svg",
-      "wordmark": "/icons/dominos/wordmark.svg",
-      "wordmarkDark": "/icons/dominos/wordmark-dark.svg"
-    },
-    "license": "Fair Use",
-    "url": "https://www.dominos.com"
   }
 ]
