@@ -802,20 +802,31 @@ export function IconDetailPage({ icon, relatedIcons = [] }: IconDetailPageProps)
               target="_blank"
               rel="noopener noreferrer"
               className="underline underline-offset-2 hover:text-muted-foreground"
-            >
-              {(() => {
-                if (!icon.url) return null;
-                try {
-                  return new URL(icon.url).hostname.replace(/^www\./, "");
-                } catch {
-                  // Fallback: display the raw URL string if parsing fails
-                  return icon.url;
-                }
-              })()}
-            </a>
-            .
-          </>
-        )}
+        {icon.url &&
+          (() => {
+            try {
+              const urlObj = new URL(icon.url);
+              if (urlObj.protocol !== "http:" && urlObj.protocol !== "https:") {
+                return null;
+              }
+              return (
+                <>
+                  For official brand assets, visit{" "}
+                  <a
+                    href={urlObj.toString()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-2 hover:text-muted-foreground"
+                  >
+                    {urlObj.hostname.replace(/^www\./, "")}
+                  </a>
+                  .
+                </>
+              );
+            } catch {
+              return null;
+            }
+          })()}
       </p>
     </div>
   );
