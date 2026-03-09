@@ -1,21 +1,24 @@
 const BASE_URL = "https://thesvg.org";
 
+export interface Preferences {
+  defaultVariant: string;
+}
+
+// Search API only returns slug, title, categories, variants (keys)
 export interface IconEntry {
   slug: string;
   title: string;
   categories: string[];
-  hex: string;
   variants: string[];
-  url?: string;
 }
 
+// Detail API returns full data including hex, url, inline SVGs
 export interface IconDetail {
   name: string;
   title: string;
   categories: string[];
   hex: string;
-  url?: string;
-  guidelines?: string;
+  url: string | null;
   variants: Record<
     string,
     {

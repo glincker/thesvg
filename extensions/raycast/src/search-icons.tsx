@@ -11,7 +11,7 @@ import {
   Toast,
 } from "@raycast/api";
 import { useCachedPromise } from "@raycast/utils";
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import {
   searchIcons,
   getIcon,
@@ -20,12 +20,8 @@ import {
   getIconPageUrl,
   getCdnUrl,
   type IconEntry,
-  type SearchResult,
+  type Preferences,
 } from "./api";
-
-interface Preferences {
-  defaultVariant: string;
-}
 
 export default function SearchIcons() {
   const [searchText, setSearchText] = useState("");
@@ -33,14 +29,9 @@ export default function SearchIcons() {
 
   const { data: categories } = useCachedPromise(getCategories);
 
-  const fetchIcons = useCallback(
-    () => searchIcons(searchText || undefined, category, 100),
-    [searchText, category],
-  );
-
   const { data, isLoading } = useCachedPromise(
-    fetchIcons,
-    [],
+    searchIcons,
+    [searchText || undefined, category, 100],
     { keepPreviousData: true },
   );
 
@@ -88,7 +79,6 @@ export default function SearchIcons() {
 
 function IconListItem({ icon }: { icon: IconEntry }) {
   const iconUrl = getIconUrl(icon.slug);
-  const hexColor = icon.hex && icon.hex !== "fff" && icon.hex !== "000" ? `#${icon.hex}` : undefined;
 
   return (
     <List.Item
@@ -99,9 +89,6 @@ function IconListItem({ icon }: { icon: IconEntry }) {
       accessories={[
         ...(icon.variants.length > 1
           ? [{ text: `${icon.variants.length} variants`, icon: Icon.Layers }]
-          : []),
-        ...(hexColor
-          ? [{ tag: { value: icon.hex, color: hexColor as Color } }]
           : []),
       ]}
       keywords={[icon.slug, ...icon.categories]}
@@ -119,13 +106,6 @@ function IconListItem({ icon }: { icon: IconEntry }) {
               content={getCdnUrl(icon.slug)}
               shortcut={{ modifiers: ["cmd", "opt"], key: "c" }}
             />
-            {icon.hex && (
-              <Action.CopyToClipboard
-                title={`Copy Color #${icon.hex}`}
-                content={`#${icon.hex}`}
-                shortcut={{ modifiers: ["cmd", "shift"], key: "h" }}
-              />
-            )}
           </ActionPanel.Section>
           <ActionPanel.Section title="Open">
             <Action.OpenInBrowser
@@ -133,13 +113,6 @@ function IconListItem({ icon }: { icon: IconEntry }) {
               url={getIconPageUrl(icon.slug)}
               shortcut={{ modifiers: ["cmd"], key: "o" }}
             />
-            {icon.url && (
-              <Action.OpenInBrowser
-                title="Open Brand Website"
-                url={icon.url}
-                shortcut={{ modifiers: ["cmd", "shift"], key: "o" }}
-              />
-            )}
           </ActionPanel.Section>
           <ActionPanel.Section title="View">
             <Action.Push
@@ -188,6 +161,11 @@ function CopySvgAction({ slug, title }: { slug: string; title: string }) {
   );
 }
 
+function isVisibleHex(hex: string): boolean {
+  const lower = hex.toLowerCase();
+  return lower !== "fff" && lower !== "ffffff" && lower !== "000" && lower !== "000000";
+}
+
 function IconDetailView({ slug }: { slug: string }) {
   const { data: icon, isLoading } = useCachedPromise(getIcon, [slug]);
 
@@ -217,18 +195,22 @@ ${defaultSvg.substring(0, 2000)}${defaultSvg.length > 2000 ? "\n... (truncated)"
 \`\`\`
 `;
 
+  const hexVisible = icon.hex && isVisibleHex(icon.hex);
+
   return (
     <Detail
       isLoading={isLoading}
       markdown={markdown}
       metadata={
         <Detail.Metadata>
-          <Detail.Metadata.Label title="Slug" text={icon.name} />
-          <Detail.Metadata.Label
-            title="Color"
-            text={`#${icon.hex}`}
-            icon={{ source: Icon.CircleFilled, tintColor: `#${icon.hex}` as Color }}
-          />
+          <Detail.Metadata.Label title="Slug" text={slug} />
+          {hexVisible && (
+            <Detail.Metadata.Label
+              title="Color"
+              text={`#${icon.hex}`}
+              icon={{ source: Icon.CircleFilled, tintColor: `#${icon.hex}` as Color }}
+            />
+          )}
           <Detail.Metadata.TagList title="Categories">
             {icon.categories.map((cat) => (
               <Detail.Metadata.TagList.Item key={cat} text={cat} />
@@ -242,17 +224,10 @@ ${defaultSvg.substring(0, 2000)}${defaultSvg.length > 2000 ? "\n... (truncated)"
           {icon.url && (
             <Detail.Metadata.Link title="Website" text={icon.url} target={icon.url} />
           )}
-          {icon.guidelines && (
-            <Detail.Metadata.Link
-              title="Brand Guidelines"
-              text="View Guidelines"
-              target={icon.guidelines}
-            />
-          )}
           <Detail.Metadata.Link
             title="theSVG Page"
-            text={`thesvg.org/icon/${icon.name}`}
-            target={getIconPageUrl(icon.name)}
+            text={`thesvg.org/icon/${slug}`}
+            target={getIconPageUrl(slug)}
           />
           <Detail.Metadata.Separator />
           <Detail.Metadata.Label title="CDN" text={getIconUrl(slug)} />
@@ -289,10 +264,12 @@ ${defaultSvg.substring(0, 2000)}${defaultSvg.length > 2000 ? "\n... (truncated)"
               title="Copy jsDelivr URL"
               content={getCdnUrl(slug)}
             />
-            <Action.CopyToClipboard
-              title="Copy Color"
-              content={`#${icon.hex}`}
-            />
+            {hexVisible && (
+              <Action.CopyToClipboard
+                title="Copy Color"
+                content={`#${icon.hex}`}
+              />
+            )}
           </ActionPanel.Section>
           <ActionPanel.Section title="Open">
             <Action.OpenInBrowser
