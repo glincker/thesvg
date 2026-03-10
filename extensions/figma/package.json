@@ -1,0 +1,14 @@
+{
+  "name": "thesvg-figma",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Browse and insert 4,000+ brand SVG logos from theSVG into your Figma designs",
+  "scripts": {
+    "build": "node esbuild.config.mjs",
+    "dev": "node esbuild.config.mjs --watch"
+  },
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.103.0",
+    "esbuild": "^0.24.0"
+  }
+}

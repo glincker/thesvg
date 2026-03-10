@@ -1,0 +1,13 @@
+{
+  "name": "theSVG",
+  "id": "1612997159050367763",
+  "api": "1.0.0",
+  "editorType": ["figma"],
+  "main": "build/main.js",
+  "ui": "build/ui.html",
+  "documentAccess": "dynamic-page",
+  "networkAccess": {
+    "allowedDomains": ["https://www.thesvg.org", "https://cdn.jsdelivr.net"],
+    "reasoning": "Fetches SVG brand icons from the theSVG API and loads icon previews from jsDelivr CDN"
+  }
+}
