@@ -60,5 +60,9 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "publishConfig": {
+    "provenance": true,
+    "access": "public"
   }
 }

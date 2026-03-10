@@ -3,22 +3,12 @@ name: Release
 on:
   push:
     branches: [main]
-  workflow_dispatch:
-    inputs:
-      release_type:
-        description: "Release type"
-        required: true
-        default: "patch"
-        type: choice
-        options:
-          - patch
-          - minor
-          - major
 
 permissions:
   contents: write
   packages: write
   id-token: write
+  pull-requests: write
 
 concurrency:
   group: release-${{ github.ref }}
@@ -28,146 +18,22 @@ env:
   NODE_VERSION: "20"
 
 jobs:
-  detect-release:
-    name: Detect Release
-    runs-on: ubuntu-latest
-    outputs:
-      should_release: ${{ steps.check.outputs.should_release }}
-      release_type: ${{ steps.check.outputs.release_type }}
-      changed_icons: ${{ steps.changes.outputs.icons }}
-      changed_cli: ${{ steps.changes.outputs.cli }}
-      changed_mcp: ${{ steps.changes.outputs.mcp }}
-      changed_react: ${{ steps.changes.outputs.react }}
-
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Detect release from commits
-        id: check
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "should_release=true" >> $GITHUB_OUTPUT
-            echo "release_type=${{ github.event.inputs.release_type }}" >> $GITHUB_OUTPUT
-            echo "Manual release: ${{ github.event.inputs.release_type }}"
-            exit 0
-          fi
-
-          LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
-          if [ -n "$LAST_TAG" ]; then
-            COMMITS=$(git log --pretty=format:"%s" ${LAST_TAG}..HEAD)
-          else
-            COMMITS=$(git log --pretty=format:"%s" -20)
-          fi
-
-          echo "Commits since last tag:"
-          echo "$COMMITS"
-
-          NON_MAINTENANCE=$(echo "$COMMITS" | grep -v -E '^\[skip ci\]|^chore: bump version|^chore\(deps|^Merge pull request.*dependabot' || true)
-          if [ -z "$NON_MAINTENANCE" ]; then
-            echo "should_release=false" >> $GITHUB_OUTPUT
-            echo "Skipping: only maintenance commits"
-            exit 0
-          fi
-
-          RELEASE_TYPE=""
-          if echo "$COMMITS" | grep -qE '^feat!|^fix!|^refactor!|BREAKING CHANGE'; then
-            RELEASE_TYPE="major"
-          elif echo "$COMMITS" | grep -qE '^feat(\(|:)'; then
-            RELEASE_TYPE="minor"
-          elif echo "$COMMITS" | grep -qE '^fix(\(|:)|^perf(\(|:)|^refactor(\(|:)'; then
-            RELEASE_TYPE="patch"
-          fi
-
-          if [ -n "$RELEASE_TYPE" ]; then
-            echo "should_release=true" >> $GITHUB_OUTPUT
-            echo "release_type=$RELEASE_TYPE" >> $GITHUB_OUTPUT
-            echo "Detected: $RELEASE_TYPE release"
-          else
-            echo "should_release=false" >> $GITHUB_OUTPUT
-            echo "No releasable commits found"
-          fi
-
-      - name: Detect changed packages
-        id: changes
-        run: |
-          LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
-          DIFF_BASE="${LAST_TAG:-HEAD~20}"
-
-          # Check which packages have file changes since last tag
-          # icons: changes to icon data, build scripts, or the icons source
-          if git diff --name-only "$DIFF_BASE"..HEAD | grep -qE '^(packages/icons/|src/data/icons\.json|public/icons/)'; then
-            echo "icons=true" >> $GITHUB_OUTPUT
-            echo "Changed: icons"
-          else
-            echo "icons=false" >> $GITHUB_OUTPUT
-            echo "Unchanged: icons"
-          fi
-
-          # cli: changes to CLI source code
-          if git diff --name-only "$DIFF_BASE"..HEAD | grep -qE '^packages/cli/'; then
-            echo "cli=true" >> $GITHUB_OUTPUT
-            echo "Changed: cli"
-          else
-            echo "cli=false" >> $GITHUB_OUTPUT
-            echo "Unchanged: cli"
-          fi
-
-          # mcp: changes to MCP server source
-          if git diff --name-only "$DIFF_BASE"..HEAD | grep -qE '^packages/mcp/'; then
-            echo "mcp=true" >> $GITHUB_OUTPUT
-            echo "Changed: mcp"
-          else
-            echo "mcp=false" >> $GITHUB_OUTPUT
-            echo "Unchanged: mcp"
-          fi
-
-          # react: changes to react package or icon data (react rebuilds from icons.json)
-          if git diff --name-only "$DIFF_BASE"..HEAD | grep -qE '^(packages/react/|src/data/icons\.json|public/icons/)'; then
-            echo "react=true" >> $GITHUB_OUTPUT
-            echo "Changed: react"
-          else
-            echo "react=false" >> $GITHUB_OUTPUT
-            echo "Unchanged: react"
-          fi
-
-          # For manual dispatch, release everything
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "icons=true" >> $GITHUB_OUTPUT
-            echo "cli=true" >> $GITHUB_OUTPUT
-            echo "mcp=true" >> $GITHUB_OUTPUT
-            echo "react=true" >> $GITHUB_OUTPUT
-            echo "Manual dispatch: releasing all packages"
-          fi
-
-          # Summary: did any package change?
-          ICONS=$(grep -c "icons=true" "$GITHUB_OUTPUT" 2>/dev/null || echo 0)
-          CLI=$(grep -c "cli=true" "$GITHUB_OUTPUT" 2>/dev/null || echo 0)
-          MCP=$(grep -c "mcp=true" "$GITHUB_OUTPUT" 2>/dev/null || echo 0)
-          REACT=$(grep -c "react=true" "$GITHUB_OUTPUT" 2>/dev/null || echo 0)
-          if [ "$ICONS" = "0" ] && [ "$CLI" = "0" ] && [ "$MCP" = "0" ] && [ "$REACT" = "0" ]; then
-            echo "No packages changed - Vercel handles web-only deployment"
-          fi
-
   release:
     name: Release
     runs-on: ubuntu-latest
-    needs: detect-release
-    # Only release if commit type warrants it AND at least one package changed
-    # Web-only changes (src/, components, pages) are handled by Vercel automatically
-    if: |
-      needs.detect-release.outputs.should_release == 'true' &&
-      (needs.detect-release.outputs.changed_icons == 'true' ||
-       needs.detect-release.outputs.changed_cli == 'true' ||
-       needs.detect-release.outputs.changed_mcp == 'true' ||
-       needs.detect-release.outputs.changed_react == 'true')
     environment: npm-publish
 
     steps:
+      - name: Generate app token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.BOT_APP_ID }}
+          private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+
       - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ steps.app-token.outputs.token }}
           fetch-depth: 0
 
       - name: Install pnpm
@@ -188,254 +54,33 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      # --- Icons (always bumped as the version source) ---
-      - name: Build & validate icons
-        if: needs.detect-release.outputs.changed_icons == 'true'
-        working-directory: packages/icons
+      - name: Build all packages
         run: |
-          npm run build
-          npm run audit
-          npm run validate
+          cd packages/icons && npm run build && cd ../..
+          cd packages/thesvg && node scripts/build-reexports.mjs && cd ../..
+          cd packages/cli && npm run build && cd ../..
+          cd packages/mcp && npm run build && cd ../..
+          cd packages/react && npm run build && cd ../..
+          cd packages/vue && npm run build && cd ../..
+          cd packages/svelte && npm run build && cd ../..
 
-      - name: Bump version
-        id: bump
-        run: |
-          RELEASE_TYPE="${{ needs.detect-release.outputs.release_type }}"
-          CHANGED_ICONS="${{ needs.detect-release.outputs.changed_icons }}"
-          CHANGED_CLI="${{ needs.detect-release.outputs.changed_cli }}"
-          CHANGED_MCP="${{ needs.detect-release.outputs.changed_mcp }}"
-          CHANGED_REACT="${{ needs.detect-release.outputs.changed_react }}"
-
-          # Icons + thesvg wrapper always bump together (version source of truth)
-          cd packages/icons
-          NEW_VERSION=$(npm version "$RELEASE_TYPE" --no-git-tag-version | sed 's/^v//')
-          echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
-          echo "Bumped @thesvg/icons to: $NEW_VERSION"
-
-          cd ../thesvg
-          npm version "$NEW_VERSION" --no-git-tag-version
-          echo "Bumped thesvg to: $NEW_VERSION (workspace:* resolves @thesvg/icons at publish)"
-
-          # Only bump packages that changed
-          if [ "$CHANGED_CLI" = "true" ]; then
-            cd ../cli
-            npm version "$NEW_VERSION" --no-git-tag-version
-            echo "Bumped @thesvg/cli to: $NEW_VERSION"
-          fi
-
-          if [ "$CHANGED_MCP" = "true" ]; then
-            cd "$GITHUB_WORKSPACE/packages/mcp"
-            npm version "$NEW_VERSION" --no-git-tag-version
-            echo "Bumped @thesvg/mcp-server to: $NEW_VERSION"
-          fi
-
-          if [ "$CHANGED_REACT" = "true" ]; then
-            cd "$GITHUB_WORKSPACE/packages/react"
-            npm version "$NEW_VERSION" --no-git-tag-version
-            echo "Bumped @thesvg/react to: $NEW_VERSION"
-          fi
-
-          # Summary
-          echo ""
-          echo "=== Release Summary ==="
-          echo "Version: $NEW_VERSION ($RELEASE_TYPE)"
-          echo "icons+thesvg: always"
-          echo "cli: $CHANGED_CLI"
-          echo "mcp: $CHANGED_MCP"
-          echo "react: $CHANGED_REACT"
-
-      - name: Sync lockfile after version bumps
-        run: pnpm install --no-frozen-lockfile
-
-      # --- Build changed packages ---
-      - name: Build icons (needed by thesvg wrapper)
-        if: needs.detect-release.outputs.changed_icons != 'true'
-        working-directory: packages/icons
-        run: npm run build
-
-      - name: Build thesvg wrapper
-        working-directory: packages/thesvg
-        run: node scripts/build-reexports.mjs
-
-      - name: Build CLI
-        if: needs.detect-release.outputs.changed_cli == 'true'
-        working-directory: packages/cli
-        run: npm run build
-
-      - name: Build MCP server
-        if: needs.detect-release.outputs.changed_mcp == 'true'
-        working-directory: packages/mcp
-        run: npm run build
-
-      - name: Build React components
-        if: needs.detect-release.outputs.changed_react == 'true'
-        working-directory: packages/react
-        run: npm run build
-
-      # --- Publish changed packages ---
-      - name: Publish @thesvg/icons
-        if: needs.detect-release.outputs.changed_icons == 'true'
-        working-directory: packages/icons
-        run: |
-          VERSION=${{ steps.bump.outputs.new_version }}
-          if npm view @thesvg/icons@$VERSION version 2>/dev/null; then
-            echo "Version $VERSION already exists, skipping"
-          else
-            npm publish --provenance --access public
-            echo "Published @thesvg/icons@$VERSION"
-          fi
-
-      - name: Publish thesvg
-        working-directory: packages/thesvg
-        run: |
-          VERSION=${{ steps.bump.outputs.new_version }}
-          if npm view thesvg@$VERSION version 2>/dev/null; then
-            echo "Version $VERSION already exists, skipping"
-          else
-            npm publish --provenance --access public
-            echo "Published thesvg@$VERSION"
-          fi
-
-      - name: Publish @thesvg/cli
-        if: needs.detect-release.outputs.changed_cli == 'true'
-        working-directory: packages/cli
-        run: |
-          VERSION=${{ steps.bump.outputs.new_version }}
-          if npm view @thesvg/cli@$VERSION version 2>/dev/null; then
-            echo "Version $VERSION already exists, skipping"
-          else
-            npm publish --provenance --access public
-            echo "Published @thesvg/cli@$VERSION"
-          fi
-
-      - name: Publish @thesvg/mcp-server
-        if: needs.detect-release.outputs.changed_mcp == 'true'
-        working-directory: packages/mcp
-        run: |
-          VERSION=${{ steps.bump.outputs.new_version }}
-          if npm view @thesvg/mcp-server@$VERSION version 2>/dev/null; then
-            echo "Version $VERSION already exists, skipping"
-          else
-            npm publish --provenance --access public
-            echo "Published @thesvg/mcp-server@$VERSION"
-          fi
-
-      - name: Publish @thesvg/react
-        if: needs.detect-release.outputs.changed_react == 'true'
-        working-directory: packages/react
-        run: |
-          VERSION=${{ steps.bump.outputs.new_version }}
-          if npm view @thesvg/react@$VERSION version 2>/dev/null; then
-            echo "Version $VERSION already exists, skipping"
-          else
-            npm publish --provenance --access public
-            echo "Published @thesvg/react@$VERSION"
-          fi
-
-      # --- Commit & tag ---
-      - name: Commit version bump
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-
-          # Stage package.json files that were bumped + updated lockfile
-          git add packages/icons/package.json packages/thesvg/package.json pnpm-lock.yaml
-
-          CHANGED_CLI="${{ needs.detect-release.outputs.changed_cli }}"
-          CHANGED_MCP="${{ needs.detect-release.outputs.changed_mcp }}"
-          CHANGED_REACT="${{ needs.detect-release.outputs.changed_react }}"
-
-          [ "$CHANGED_CLI" = "true" ] && git add packages/cli/package.json
-          [ "$CHANGED_MCP" = "true" ] && git add packages/mcp/package.json
-          [ "$CHANGED_REACT" = "true" ] && git add packages/react/package.json
-
-          # Build release summary for commit message
-          PKGS="icons, thesvg"
-          [ "$CHANGED_CLI" = "true" ] && PKGS="$PKGS, cli"
-          [ "$CHANGED_MCP" = "true" ] && PKGS="$PKGS, mcp"
-          [ "$CHANGED_REACT" = "true" ] && PKGS="$PKGS, react"
-
-          if ! git diff --staged --quiet; then
-            git commit -m "chore(release): v${{ steps.bump.outputs.new_version }} ($PKGS) [skip ci]"
-            git push
-          fi
+      - name: Create Release PR or Publish
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          publish: pnpm changeset publish
+          commit: "chore(release): version packages [skip ci]"
+          title: "chore(release): version packages"
+        env:
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+          NPM_TOKEN: ""
 
       - name: Create git tag
+        if: steps.changesets.outputs.published == 'true'
         run: |
-          TAG_NAME="v${{ steps.bump.outputs.new_version }}"
-          if git rev-parse "$TAG_NAME" >/dev/null 2>&1; then
-            echo "Tag $TAG_NAME already exists"
-          else
-            git tag "$TAG_NAME"
-            git push origin "$TAG_NAME"
+          ICONS_VERSION=$(node -p "require('./packages/icons/package.json').version")
+          TAG="v${ICONS_VERSION}"
+          if ! git rev-parse "$TAG" >/dev/null 2>&1; then
+            git tag "$TAG"
+            git push origin "$TAG"
           fi
-
-      - name: Generate release notes
-        run: |
-          VERSION="${{ steps.bump.outputs.new_version }}"
-          PREV_TAG=$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || echo "")
-          CHANGED_CLI="${{ needs.detect-release.outputs.changed_cli }}"
-          CHANGED_MCP="${{ needs.detect-release.outputs.changed_mcp }}"
-          CHANGED_REACT="${{ needs.detect-release.outputs.changed_react }}"
-          CHANGED_ICONS="${{ needs.detect-release.outputs.changed_icons }}"
-
-          if [ -n "$PREV_TAG" ]; then
-            FEAT=$(git log --pretty=format:"- %s" ${PREV_TAG}..HEAD | grep -E "^- feat" | head -10 || true)
-            FIXES=$(git log --pretty=format:"- %s" ${PREV_TAG}..HEAD | grep -E "^- fix" | head -10 || true)
-            PERF=$(git log --pretty=format:"- %s" ${PREV_TAG}..HEAD | grep -E "^- (perf|refactor)" | head -5 || true)
-          else
-            FEAT="- Initial release with 3,847 brand icons"
-            FIXES=""
-            PERF=""
-          fi
-
-          cat > release_notes.md << 'NOTES_EOF'
-          ## What's Changed
-          NOTES_EOF
-
-          if [ -n "$FEAT" ]; then
-            echo "" >> release_notes.md
-            echo "### Features" >> release_notes.md
-            echo "$FEAT" >> release_notes.md
-          fi
-
-          if [ -n "$FIXES" ]; then
-            echo "" >> release_notes.md
-            echo "### Bug Fixes" >> release_notes.md
-            echo "$FIXES" >> release_notes.md
-          fi
-
-          if [ -n "$PERF" ]; then
-            echo "" >> release_notes.md
-            echo "### Improvements" >> release_notes.md
-            echo "$PERF" >> release_notes.md
-          fi
-
-          # Packages published section
-          echo "" >> release_notes.md
-          echo "### Packages Published" >> release_notes.md
-          [ "$CHANGED_ICONS" = "true" ] && echo "- \`@thesvg/icons@${VERSION}\`" >> release_notes.md
-          echo "- \`thesvg@${VERSION}\`" >> release_notes.md
-          [ "$CHANGED_CLI" = "true" ] && echo "- \`@thesvg/cli@${VERSION}\`" >> release_notes.md
-          [ "$CHANGED_MCP" = "true" ] && echo "- \`@thesvg/mcp-server@${VERSION}\`" >> release_notes.md
-          [ "$CHANGED_REACT" = "true" ] && echo "- \`@thesvg/react@${VERSION}\`" >> release_notes.md
-
-          cat >> release_notes.md << INSTALL_EOF
-
-          ### Install
-          \`\`\`bash
-          npm install @thesvg/icons@${VERSION}
-          # or
-          npm install thesvg@${VERSION}
-          \`\`\`
-
-          **Full Changelog**: https://github.com/GLINCKER/thesvg/compare/${PREV_TAG:-v0.1.0}...v${VERSION}
-          INSTALL_EOF
-
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: v${{ steps.bump.outputs.new_version }}
-          name: v${{ steps.bump.outputs.new_version }}
-          body_path: release_notes.md
-          draft: false
