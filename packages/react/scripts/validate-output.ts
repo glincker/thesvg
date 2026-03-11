@@ -65,6 +65,18 @@ for (const file of files) {
     console.error(`FAIL: ${file} contains XML prolog`);
     errors++;
   }
+
+  // Check for DOCTYPE declarations
+  if (file !== "types.js" && file !== "index.js" && /<!DOCTYPE/i.test(content)) {
+    console.error(`FAIL: ${file} contains DOCTYPE declaration`);
+    errors++;
+  }
+
+  // Check for inline <style> blocks (not valid React JSX)
+  if (file !== "types.js" && file !== "index.js" && /<style[\s>]/i.test(content)) {
+    console.error(`FAIL: ${file} contains <style> element`);
+    errors++;
+  }
 }
 
 if (errors > 0) {

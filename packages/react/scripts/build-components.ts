@@ -166,6 +166,10 @@ function convertAttrToJsx(attr: string, value: string): string | null {
   if (attr === "xmlns" || attr.startsWith("xmlns:")) return null;
   // Drop Inkscape/Sodipodi-specific attributes (not valid in JSX)
   if (attr.startsWith("inkscape:") || attr.startsWith("sodipodi:")) return null;
+  // Drop xml:space and other xml: prefixed attributes
+  if (attr.startsWith("xml:")) return null;
+  // Drop namespace-prefixed attributes from Inkscape metadata (dc:, cc:, rdf:)
+  if (attr.startsWith("dc:") || attr.startsWith("cc:") || attr.startsWith("rdf:")) return null;
   // class -> className
   if (attr === "class") return `className=${value}`;
   // xlink:href -> href
@@ -200,16 +204,19 @@ function svgToJsxInner(svgContent: string): { inner: string; viewBox: string; fi
     .replace(/<\/svg>\s*$/, "")
     .trim();
 
-  // Strip XML prologs and comments (from Inkscape exports etc.)
-  inner = inner.replace(/<\?xml[^?]*\?>/g, "");
-  inner = inner.replace(/<!--[\s\S]*?-->/g, "");
+  // Strip non-JSX XML/HTML constructs
+  inner = inner.replace(/<\?xml[^?]*\?>/g, "");         // XML prologs
+  inner = inner.replace(/<!DOCTYPE[^>]*>/gi, "");        // DOCTYPE declarations
+  inner = inner.replace(/<!--[\s\S]*?-->/g, "");         // HTML/XML comments
 
-  // Strip Inkscape/Sodipodi metadata elements (not valid JSX)
+  // Strip elements that are invalid in JSX
   inner = inner.replace(/<sodipodi:[^>]*(?:\/>|>[\s\S]*?<\/sodipodi:[^>]+>)/g, "");
   inner = inner.replace(/<metadata[\s\S]*?<\/metadata>/g, "");
+  inner = inner.replace(/<style[\s\S]*?<\/style>/g, ""); // Inline CSS <style> blocks
+  // Strip RDF/DC/CC namespace elements (from Inkscape metadata)
+  inner = inner.replace(/<(rdf|dc|cc):[^>]*(?:\/>|>[\s\S]*?<\/\1:[^>]+>)/g, "");
 
   // Strip nested <svg> wrappers from Inkscape exports (keep their children)
-  // These have xmlns:dc, xmlns:cc etc. that produce malformed JSX
   inner = inner.replace(/<svg[^>]*>/gs, "");
   inner = inner.replace(/<\/svg>/g, "");
 
@@ -612,6 +619,18 @@ function validateOutput(): boolean {
     // Check for XML prolog or Inkscape metadata in JSX
     if (file !== "types.js" && file !== "index.js" && /<\?xml/.test(content)) {
       console.error(`  FAIL: ${file} contains XML prolog`);
+      errors++;
+    }
+
+    // Check for DOCTYPE declarations
+    if (file !== "types.js" && file !== "index.js" && /<!DOCTYPE/i.test(content)) {
+      console.error(`  FAIL: ${file} contains DOCTYPE declaration`);
+      errors++;
+    }
+
+    // Check for inline <style> blocks (not valid React JSX)
+    if (file !== "types.js" && file !== "index.js" && /<style[\s>]/i.test(content)) {
+      console.error(`  FAIL: ${file} contains <style> element`);
       errors++;
     }
   }
