@@ -11,13 +11,48 @@
  *   bun run scripts/validate-output.ts
  */
 
-import { readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const DIST = resolve(__dirname, "../dist");
+const REPO_ROOT = resolve(__dirname, "../../..");
+const ICONS_PUBLIC = resolve(REPO_ROOT, "public/icons");
+
+const PRIMARY_VARIANTS = ["default", "color", "mono", "light", "dark", "wordmark"];
+
+interface RootPaint {
+  fill?: string;
+  stroke?: string;
+}
+
+function extractRootPaint(content: string): RootPaint {
+  const svgTag = content.match(/<svg[^>]*>/s);
+  if (!svgTag) return {};
+
+  const fillMatch = svgTag[0].match(/\bfill=["']([^"']+)["']/);
+  const strokeMatch = svgTag[0].match(/\bstroke=["']([^"']+)["']/);
+
+  return {
+    fill: fillMatch?.[1],
+    stroke: strokeMatch?.[1],
+  };
+}
+
+function primarySvgPath(slug: string): string | null {
+  const iconDir = join(ICONS_PUBLIC, slug);
+  if (!existsSync(iconDir)) return null;
+
+  for (const variant of PRIMARY_VARIANTS) {
+    const candidate = join(iconDir, `${variant}.svg`);
+    if (existsSync(candidate)) return candidate;
+  }
+
+  const svgFiles = readdirSync(iconDir).filter((file) => file.endsWith(".svg")).sort();
+  return svgFiles.length > 0 ? join(iconDir, svgFiles[0]) : null;
+}
 
 let errors = 0;
 let checked = 0;
@@ -76,6 +111,30 @@ for (const file of files) {
   if (file !== "types.js" && file !== "index.js" && /<style[\s>]/i.test(content)) {
     console.error(`FAIL: ${file} contains <style> element`);
     errors++;
+  }
+
+  if (file !== "types.js" && file !== "index.js") {
+    const slug = file.replace(/\.js$/, "");
+    const svgPath = primarySvgPath(slug);
+
+    if (svgPath) {
+      const sourcePaint = extractRootPaint(readFileSync(svgPath, "utf8"));
+      const outputPaint = extractRootPaint(content);
+
+      if ((sourcePaint.fill ?? "none") !== (outputPaint.fill ?? "none")) {
+        console.error(
+          `FAIL: ${file} changed root fill from "${sourcePaint.fill ?? "none"}" to "${outputPaint.fill ?? "none"}"`,
+        );
+        errors++;
+      }
+
+      if ((sourcePaint.stroke ?? "") !== (outputPaint.stroke ?? "")) {
+        console.error(
+          `FAIL: ${file} changed root stroke from "${sourcePaint.stroke ?? ""}" to "${outputPaint.stroke ?? ""}"`,
+        );
+        errors++;
+      }
+    }
   }
 }
 

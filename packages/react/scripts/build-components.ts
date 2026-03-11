@@ -109,16 +109,26 @@ function extractViewBox(svgContent: string): string {
   return match ? match[1] : "0 0 24 24";
 }
 
+interface RootSvgPaint {
+  fill: string;
+  stroke?: string;
+}
+
 /**
- * Extract the fill attribute from the outer <svg> element.
- * Returns "none" as default (most brand SVGs use fill="none").
+ * Extract root paint attributes from the outer <svg> element.
+ * `fill="none"` is still a valid explicit fill, so we preserve it as-is.
  */
-function extractSvgFill(svgContent: string): string {
-  // Only look at the opening <svg ...> tag
-  const svgTag = svgContent.match(/^<svg[^>]*>/s);
-  if (!svgTag) return "none";
+function extractRootSvgPaint(svgContent: string): RootSvgPaint {
+  const svgTag = svgContent.match(/<svg[^>]*>/s);
+  if (!svgTag) return { fill: "none" };
+
   const fillMatch = svgTag[0].match(/\bfill=["']([^"']+)["']/);
-  return fillMatch ? fillMatch[1] : "none";
+  const strokeMatch = svgTag[0].match(/\bstroke=["']([^"']+)["']/);
+
+  return {
+    fill: fillMatch ? fillMatch[1] : "none",
+    stroke: strokeMatch ? strokeMatch[1] : undefined,
+  };
 }
 
 /**
@@ -192,9 +202,14 @@ function convertAttrToJsx(attr: string, value: string): string | null {
  * The conversion is done with targeted regex replacements that are sufficient
  * for well-formed SVG files produced by design tools / icon libraries.
  */
-function svgToJsxInner(svgContent: string): { inner: string; viewBox: string; fill: string } {
+function svgToJsxInner(svgContent: string): {
+  inner: string;
+  viewBox: string;
+  fill: string;
+  stroke?: string;
+} {
   const viewBox = extractViewBox(svgContent);
-  const fill = extractSvgFill(svgContent);
+  const { fill, stroke } = extractRootSvgPaint(svgContent);
 
   // Strip outer <svg ...> wrapper tags
   let inner = svgContent
@@ -230,7 +245,7 @@ function svgToJsxInner(svgContent: string): { inner: string; viewBox: string; fi
     },
   );
 
-  return { inner, viewBox, fill };
+  return { inner, viewBox, fill, stroke };
 }
 
 // ---------------------------------------------------------------------------
@@ -303,7 +318,7 @@ function generateEsmComponent(icon: RawIcon): string {
     ].join("\n");
   }
 
-  const { inner, viewBox, fill } = svgToJsxInner(svgContent);
+  const { inner, viewBox, fill, stroke } = svgToJsxInner(svgContent);
 
   // Indent the inner SVG content for readability
   const indentedInner = inner
@@ -324,6 +339,7 @@ function generateEsmComponent(icon: RawIcon): string {
     `        ref={ref}`,
     `        viewBox={viewBox}`,
     `        fill="${fill}"`,
+    ...(stroke ? [`        stroke="${stroke}"`] : []),
     `        xmlns="http://www.w3.org/2000/svg"`,
     `        {...props}`,
     `      >`,
@@ -362,7 +378,7 @@ function generateCjsComponent(icon: RawIcon): string {
     ].join("\n");
   }
 
-  const { inner, viewBox, fill } = svgToJsxInner(svgContent);
+  const { inner, viewBox, fill, stroke } = svgToJsxInner(svgContent);
 
   // For CJS we emit pre-compiled JSX using React.createElement calls.
   // This avoids requiring a JSX transform in the CJS output.
@@ -380,7 +396,7 @@ function generateCjsComponent(icon: RawIcon): string {
     `const ${componentName} = react_1.forwardRef(function ${componentName}({ viewBox = '${viewBox}', ...props }, ref) {`,
     `  return react_1.createElement(`,
     `    'svg',`,
-    `    Object.assign({ ref, viewBox, fill: '${fill}', xmlns: 'http://www.w3.org/2000/svg' }, props),`,
+    `    Object.assign({ ref, viewBox, fill: '${fill}',${stroke ? ` stroke: '${stroke}',` : ""} xmlns: 'http://www.w3.org/2000/svg' }, props),`,
     `    ...${JSON.stringify(innerJsxToCjs, null, 2)}`,
     `      .map(function(el) {`,
     `        if (typeof el === 'string') return el;`,
