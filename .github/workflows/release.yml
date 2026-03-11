@@ -139,20 +139,11 @@ jobs:
           echo "Generated changeset: $CHANGESET_FILE"
           cat "$CHANGESET_FILE"
 
-          # Commit and push the changeset
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add "$CHANGESET_FILE"
-          git commit -m "chore: auto-generate changeset for ${COMMIT_MSG}"
-          git push
-
           echo "generated=true" >> "$GITHUB_OUTPUT"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # If we just pushed an auto-changeset, the next push event will handle it
       - name: Check for pending changesets
-        if: steps.auto-changeset.outputs.generated != 'true'
         id: check
         run: |
           if ls .changeset/*.md 2>/dev/null | grep -v README.md | head -1 > /dev/null 2>&1; then
@@ -162,7 +153,7 @@ jobs:
           fi
 
       - name: Create Release PR or Publish
-        if: steps.auto-changeset.outputs.generated != 'true'
+        if: steps.check.outputs.has_changesets == 'true'
         id: changesets
         uses: changesets/action@v1
         with:
@@ -175,7 +166,7 @@ jobs:
           NPM_TOKEN: ""
 
       - name: Create git tag for release
-        if: steps.auto-changeset.outputs.generated != 'true' && steps.changesets.outputs.published == 'true'
+        if: steps.changesets.outputs.published == 'true'
         run: |
           # Create per-package tags from publishedPackages
           PUBLISHED='${{ steps.changesets.outputs.publishedPackages }}'
@@ -189,7 +180,7 @@ jobs:
           fi
 
       - name: Auto-merge Version Packages PR
-        if: steps.auto-changeset.outputs.generated != 'true' && steps.check.outputs.has_changesets == 'true' && steps.changesets.outputs.published != 'true'
+        if: steps.check.outputs.has_changesets == 'true' && steps.changesets.outputs.published != 'true'
         run: |
           # Find the open Version Packages PR and enable auto-merge
           PR_NUMBER=$(gh pr list --state open --head changeset-release/main --json number --jq '.[0].number')
