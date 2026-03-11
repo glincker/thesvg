@@ -56,6 +56,15 @@ jobs:
           cd packages/vue && npm run build && cd ../..
           cd packages/svelte && npm run build && cd ../..
 
+      - name: Check for pending changesets
+        id: check
+        run: |
+          if ls .changeset/*.md 2>/dev/null | grep -v README.md | head -1 > /dev/null 2>&1; then
+            echo "has_changesets=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changesets=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Create Release PR or Publish
         id: changesets
         uses: changesets/action@v1
@@ -63,16 +72,33 @@ jobs:
           publish: pnpm changeset publish
           commit: "chore(release): version packages [skip ci]"
           title: "chore(release): version packages"
+          createGithubReleases: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ""
 
-      - name: Create git tag
+      - name: Create git tag for release
         if: steps.changesets.outputs.published == 'true'
         run: |
-          ICONS_VERSION=$(node -p "require('./packages/icons/package.json').version")
-          TAG="v${ICONS_VERSION}"
-          if ! git rev-parse "$TAG" >/dev/null 2>&1; then
-            git tag "$TAG"
-            git push origin "$TAG"
+          # Create per-package tags from publishedPackages
+          PUBLISHED='${{ steps.changesets.outputs.publishedPackages }}'
+          if [ -n "$PUBLISHED" ] && [ "$PUBLISHED" != "[]" ]; then
+            echo "$PUBLISHED" | jq -r '.[] | "\(.name)@\(.version)"' | while read TAG; do
+              if ! git rev-parse "$TAG" >/dev/null 2>&1; then
+                git tag "$TAG"
+                git push origin "$TAG" || true
+              fi
+            done
           fi
+
+      - name: Auto-merge Version Packages PR
+        if: steps.check.outputs.has_changesets == 'true' && steps.changesets.outputs.published != 'true'
+        run: |
+          # Find the open Version Packages PR and enable auto-merge
+          PR_NUMBER=$(gh pr list --state open --head changeset-release/main --json number --jq '.[0].number')
+          if [ -n "$PR_NUMBER" ]; then
+            echo "Enabling auto-merge on Version Packages PR #$PR_NUMBER"
+            gh pr merge "$PR_NUMBER" --squash --auto
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

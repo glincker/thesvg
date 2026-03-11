@@ -5,10 +5,10 @@
     { "repo": "GLINCKER/thesvg" }
   ],
   "commit": false,
-  "fixed": [
+  "fixed": [],
+  "linked": [
     ["@thesvg/icons", "thesvg", "@thesvg/react", "@thesvg/vue", "@thesvg/svelte"]
   ],
-  "linked": [],
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
