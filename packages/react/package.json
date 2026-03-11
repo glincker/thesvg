@@ -1,6 +1,6 @@
 {
   "name": "@thesvg/react",
-  "version": "0.8.0",
+  "version": "1.0.0",
   "description": "Typed React SVG components for all 3,800+ brand icons from thesvg.org",
   "type": "module",
   "sideEffects": false,
@@ -48,6 +48,8 @@
   ],
   "scripts": {
     "build": "tsx scripts/build-components.ts",
+    "validate": "tsx scripts/validate-output.ts",
+    "test": "tsx scripts/validate-output.ts",
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {

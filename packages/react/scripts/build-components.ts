@@ -19,7 +19,7 @@
  *     index.d.ts     Type barrel
  */
 
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -118,8 +118,33 @@ function kebabToCamel(attr: string): string {
 }
 
 /**
+ * Convert a CSS style string like "mask-type:alpha;display:inline"
+ * into a JSX style object expression like `{{ maskType: "alpha", display: "inline" }}`.
+ */
+function convertStyleStringToJsx(styleStr: string): string {
+  // Strip surrounding quotes if present
+  const raw = styleStr.replace(/^["']|["']$/g, "");
+  const declarations = raw
+    .split(";")
+    .map((d) => d.trim())
+    .filter((d) => d.length > 0);
+
+  const entries = declarations.map((decl) => {
+    const colonIdx = decl.indexOf(":");
+    if (colonIdx === -1) return null;
+    const prop = decl.slice(0, colonIdx).trim();
+    const val = decl.slice(colonIdx + 1).trim();
+    const camelProp = kebabToCamel(prop);
+    return `${camelProp}: "${val}"`;
+  }).filter(Boolean);
+
+  return `{{ ${entries.join(", ")} }}`;
+}
+
+/**
  * Convert SVG attributes to JSX-safe equivalents.
  * - class -> className
+ * - style="..." -> style={{ ... }} (object form for React)
  * - kebab-case -> camelCase
  * - Removes xmlns (React adds it automatically)
  * - Converts xlink:href -> href (xlink is deprecated)
@@ -131,6 +156,10 @@ function convertAttrToJsx(attr: string, value: string): string | null {
   if (attr === "class") return `className=${value}`;
   // xlink:href -> href
   if (attr === "xlink:href") return `href=${value}`;
+  // style="..." -> style={{ ... }} (React requires object, not string)
+  if (attr === "style") {
+    return `style=${convertStyleStringToJsx(value)}`;
+  }
   // Convert kebab-case to camelCase
   const camel = kebabToCamel(attr);
   return `${camel}=${value}`;
@@ -230,9 +259,8 @@ function generateEsmComponent(icon: RawIcon): string {
       `// WARNING: SVG source not found for slug "${icon.slug}"`,
       ``,
       `import { forwardRef } from 'react';`,
-      `import type { SVGProps } from 'react';`,
       ``,
-      `const ${componentName} = forwardRef<SVGSVGElement, SVGProps<SVGSVGElement>>(`,
+      `const ${componentName} = forwardRef(`,
       `  function ${componentName}(props, ref) {`,
       `    return null;`,
       `  }`,
@@ -256,9 +284,8 @@ function generateEsmComponent(icon: RawIcon): string {
     `// Auto-generated. Do not edit.`,
     ``,
     `import { forwardRef } from 'react';`,
-    `import type { SVGProps } from 'react';`,
     ``,
-    `const ${componentName} = forwardRef<SVGSVGElement, SVGProps<SVGSVGElement>>(`,
+    `const ${componentName} = forwardRef(`,
     `  function ${componentName}({ viewBox = '${viewBox}', ...props }, ref) {`,
     `    return (`,
     `      <svg`,
@@ -346,7 +373,7 @@ function generateCjsComponent(icon: RawIcon): string {
  */
 interface CjsNode {
   type: string;
-  props: Record<string, string>;
+  props: Record<string, string | Record<string, string>>;
   children: CjsNode[];
 }
 
@@ -370,11 +397,26 @@ function convertJsxToCjs(jsxInner: string): CjsNode[] {
     const matchEnd = tagMatch.index + tagMatch[0].length;
 
     // Parse attributes from the raw attr string
-    const props: Record<string, string> = {};
+    const props: Record<string, string | Record<string, string>> = {};
     const attrRe = /([a-zA-Z][a-zA-Z0-9:_-]*)=["']([^"']*)["']/g;
     let attrMatch: RegExpExecArray | null;
     while ((attrMatch = attrRe.exec(attrsRaw)) !== null) {
-      props[attrMatch[1]] = attrMatch[2];
+      const attrName = attrMatch[1];
+      const attrVal = attrMatch[2];
+      if (attrName === "style") {
+        // Convert CSS style string to object for React createElement
+        const styleObj: Record<string, string> = {};
+        attrVal.split(";").filter((d) => d.trim()).forEach((decl) => {
+          const colonIdx = decl.indexOf(":");
+          if (colonIdx === -1) return;
+          const cssProp = decl.slice(0, colonIdx).trim();
+          const cssVal = decl.slice(colonIdx + 1).trim();
+          styleObj[kebabToCamel(cssProp)] = cssVal;
+        });
+        props[attrName] = styleObj;
+      } else {
+        props[attrName] = attrVal;
+      }
     }
 
     const node: CjsNode = { type: tagName, props, children: [] };
@@ -441,8 +483,6 @@ function generateEsmBarrel(entries: Array<{ slug: string; componentName: string 
     `// @thesvg/react`,
     `// Auto-generated barrel. Do not edit.`,
     ``,
-    `export type { SvgIconProps } from './types.js';`,
-    ``,
   ];
   for (const { slug, componentName } of entries) {
     lines.push(`export { default as ${componentName} } from './${slug}.js';`);
@@ -498,6 +538,56 @@ function generateTypesDeclaration(): string {
 }
 
 // ---------------------------------------------------------------------------
+// Build validation
+// ---------------------------------------------------------------------------
+
+function validateOutput(): boolean {
+  console.log("\nValidating output...");
+  const files = readdirSync(DIST).filter((f) => f.endsWith(".js"));
+  let errors = 0;
+
+  // Sample up to 20 files plus always check index.js
+  const sampled = new Set<string>(["index.js", "types.js"]);
+  const candidates = files.filter((f) => f !== "index.js" && f !== "types.js");
+  const step = Math.max(1, Math.floor(candidates.length / 18));
+  for (let i = 0; i < candidates.length && sampled.size < 20; i += step) {
+    sampled.add(candidates[i]);
+  }
+
+  for (const file of sampled) {
+    const content = readFileSync(join(DIST, file), "utf8");
+
+    // Check for TypeScript-only syntax in .js files
+    if (/\bimport\s+type\b/.test(content)) {
+      console.error(`  FAIL: ${file} contains "import type"`);
+      errors++;
+    }
+    if (/\bexport\s+type\s*\{/.test(content)) {
+      console.error(`  FAIL: ${file} contains "export type {}"`);
+      errors++;
+    }
+    if (/forwardRef</.test(content)) {
+      console.error(`  FAIL: ${file} contains generic type params on forwardRef`);
+      errors++;
+    }
+
+    // Check for string-form style attributes (style="...") in JSX
+    // Skip types.js which has no components
+    if (file !== "types.js" && file !== "index.js" && /style="[^"]*"/.test(content)) {
+      console.error(`  FAIL: ${file} contains style="..." string attribute`);
+      errors++;
+    }
+  }
+
+  if (errors === 0) {
+    console.log(`  PASS: Validated ${sampled.size} files, no issues found.`);
+    return true;
+  }
+  console.error(`  ${errors} validation error(s) found.`);
+  return false;
+}
+
+// ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 
@@ -549,9 +639,15 @@ function main(): void {
 
   console.log(`\nDone. Built ${entries.length} components (${skipped} had no SVG source).`);
   if (skipped > 0) {
-    console.log(`  ${skipped} icons emitted null placeholder components — check SVG paths.`);
+    console.log(`  ${skipped} icons emitted null placeholder components - check SVG paths.`);
   }
   console.log(`Output: ${DIST}`);
+
+  // Validate output
+  const valid = validateOutput();
+  if (!valid) {
+    process.exit(1);
+  }
 }
 
 main();
