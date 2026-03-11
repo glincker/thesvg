@@ -22,8 +22,9 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     environment: npm-publish
-    # Skip release commits to avoid infinite loops
-    if: "!startsWith(github.event.head_commit.message, 'chore(release)')"
+    # Skip version commits to avoid infinite loops (auto-changeset is
+    # guarded separately so it won't re-generate on version commits)
+    if: "!startsWith(github.event.head_commit.message, 'chore(release): version packages')"
 
     steps:
       - uses: actions/checkout@v4
@@ -143,32 +144,26 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Check for pending changesets
-        id: check
-        run: |
-          if ls .changeset/*.md 2>/dev/null | grep -v README.md | head -1 > /dev/null 2>&1; then
-            echo "has_changesets=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "has_changesets=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Create Release PR or Publish
-        if: steps.check.outputs.has_changesets == 'true'
+      # Version and publish in a single run. changesets/action handles:
+      # - If pending changesets: runs `changeset version`, commits, then publishes
+      # - If no pending changesets but bumped versions: publishes directly
+      # We skip the PR flow entirely to avoid the GITHUB_TOKEN trigger limitation.
+      - name: Version and Publish
         id: changesets
         uses: changesets/action@v1
         with:
+          version: pnpm changeset version
           publish: pnpm changeset publish
-          commit: "chore(release): version packages [skip ci]"
+          commit: "chore(release): version packages"
           title: "chore(release): version packages"
           createGithubReleases: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ""
 
-      - name: Create git tag for release
+      - name: Create git tags for release
         if: steps.changesets.outputs.published == 'true'
         run: |
-          # Create per-package tags from publishedPackages
           PUBLISHED='${{ steps.changesets.outputs.publishedPackages }}'
           if [ -n "$PUBLISHED" ] && [ "$PUBLISHED" != "[]" ]; then
             echo "$PUBLISHED" | jq -r '.[] | "\(.name)@\(.version)"' | while read TAG; do
@@ -178,15 +173,3 @@ jobs:
               fi
             done
           fi
-
-      - name: Auto-merge Version Packages PR
-        if: steps.check.outputs.has_changesets == 'true' && steps.changesets.outputs.published != 'true'
-        run: |
-          # Find the open Version Packages PR and enable auto-merge
-          PR_NUMBER=$(gh pr list --state open --head changeset-release/main --json number --jq '.[0].number')
-          if [ -n "$PR_NUMBER" ]; then
-            echo "Enabling auto-merge on Version Packages PR #$PR_NUMBER"
-            gh pr merge "$PR_NUMBER" --squash --auto
-          fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
