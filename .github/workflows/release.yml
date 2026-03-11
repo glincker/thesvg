@@ -22,6 +22,8 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     environment: npm-publish
+    # Skip release commits to avoid infinite loops
+    if: "!startsWith(github.event.head_commit.message, 'chore(release)')"
 
     steps:
       - uses: actions/checkout@v4
@@ -56,7 +58,101 @@ jobs:
           cd packages/vue && npm run build && cd ../..
           cd packages/svelte && npm run build && cd ../..
 
+      - name: Auto-generate changeset if missing
+        id: auto-changeset
+        run: |
+          # Check if there are already pending changesets
+          EXISTING=$(ls .changeset/*.md 2>/dev/null | grep -v README.md | head -1 || true)
+          if [ -n "$EXISTING" ]; then
+            echo "Changeset already exists, skipping auto-generation"
+            echo "generated=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Detect which packages changed in the last commit
+          CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD 2>/dev/null || git diff --name-only HEAD HEAD 2>/dev/null || echo "")
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "No changed files detected"
+            echo "generated=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Map changed directories to package names
+          PACKAGES=""
+          if echo "$CHANGED_FILES" | grep -q "^packages/icons/\|^icons/"; then
+            PACKAGES="$PACKAGES \"@thesvg/icons\": patch"$'\n'
+          fi
+          if echo "$CHANGED_FILES" | grep -q "^packages/react/"; then
+            PACKAGES="$PACKAGES \"@thesvg/react\": patch"$'\n'
+          fi
+          if echo "$CHANGED_FILES" | grep -q "^packages/vue/"; then
+            PACKAGES="$PACKAGES \"@thesvg/vue\": patch"$'\n'
+          fi
+          if echo "$CHANGED_FILES" | grep -q "^packages/svelte/"; then
+            PACKAGES="$PACKAGES \"@thesvg/svelte\": patch"$'\n'
+          fi
+          if echo "$CHANGED_FILES" | grep -q "^packages/thesvg/"; then
+            PACKAGES="$PACKAGES \"thesvg\": patch"$'\n'
+          fi
+          if echo "$CHANGED_FILES" | grep -q "^packages/cli/"; then
+            PACKAGES="$PACKAGES \"@thesvg/cli\": patch"$'\n'
+          fi
+          if echo "$CHANGED_FILES" | grep -q "^packages/mcp/"; then
+            PACKAGES="$PACKAGES \"@thesvg/mcp-server\": patch"$'\n'
+          fi
+
+          # If icons changed, also bump framework packages (they re-export icons)
+          if echo "$CHANGED_FILES" | grep -q "^packages/icons/\|^icons/"; then
+            if ! echo "$PACKAGES" | grep -q "@thesvg/react"; then
+              PACKAGES="$PACKAGES \"@thesvg/react\": patch"$'\n'
+            fi
+            if ! echo "$PACKAGES" | grep -q "@thesvg/vue"; then
+              PACKAGES="$PACKAGES \"@thesvg/vue\": patch"$'\n'
+            fi
+            if ! echo "$PACKAGES" | grep -q "@thesvg/svelte"; then
+              PACKAGES="$PACKAGES \"@thesvg/svelte\": patch"$'\n'
+            fi
+            if ! echo "$PACKAGES" | grep -q "\"thesvg\""; then
+              PACKAGES="$PACKAGES \"thesvg\": patch"$'\n'
+            fi
+          fi
+
+          if [ -z "$PACKAGES" ]; then
+            echo "No publishable package changes detected"
+            echo "generated=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Extract commit summary for changelog
+          COMMIT_MSG=$(git log -1 --pretty=format:"%s")
+
+          # Generate changeset file
+          CHANGESET_FILE=".changeset/auto-$(date +%s).md"
+          {
+            echo "---"
+            echo "$PACKAGES"
+            echo "---"
+            echo ""
+            echo "$COMMIT_MSG"
+          } > "$CHANGESET_FILE"
+
+          echo "Generated changeset: $CHANGESET_FILE"
+          cat "$CHANGESET_FILE"
+
+          # Commit and push the changeset
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "$CHANGESET_FILE"
+          git commit -m "chore: auto-generate changeset for ${COMMIT_MSG}"
+          git push
+
+          echo "generated=true" >> "$GITHUB_OUTPUT"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # If we just pushed an auto-changeset, the next push event will handle it
       - name: Check for pending changesets
+        if: steps.auto-changeset.outputs.generated != 'true'
         id: check
         run: |
           if ls .changeset/*.md 2>/dev/null | grep -v README.md | head -1 > /dev/null 2>&1; then
@@ -66,6 +162,7 @@ jobs:
           fi
 
       - name: Create Release PR or Publish
+        if: steps.auto-changeset.outputs.generated != 'true'
         id: changesets
         uses: changesets/action@v1
         with:
@@ -78,7 +175,7 @@ jobs:
           NPM_TOKEN: ""
 
       - name: Create git tag for release
-        if: steps.changesets.outputs.published == 'true'
+        if: steps.auto-changeset.outputs.generated != 'true' && steps.changesets.outputs.published == 'true'
         run: |
           # Create per-package tags from publishedPackages
           PUBLISHED='${{ steps.changesets.outputs.publishedPackages }}'
@@ -92,7 +189,7 @@ jobs:
           fi
 
       - name: Auto-merge Version Packages PR
-        if: steps.check.outputs.has_changesets == 'true' && steps.changesets.outputs.published != 'true'
+        if: steps.auto-changeset.outputs.generated != 'true' && steps.check.outputs.has_changesets == 'true' && steps.changesets.outputs.published != 'true'
         run: |
           # Find the open Version Packages PR and enable auto-merge
           PR_NUMBER=$(gh pr list --state open --head changeset-release/main --json number --jq '.[0].number')
