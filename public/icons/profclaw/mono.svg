@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+  <title>profClaw</title>
+  <!-- Body (from safari-pinned-tab.svg scaled 100→24) -->
+  <ellipse cx="12" cy="12.96" rx="5.76" ry="5.28"/>
+  <!-- Legs -->
+  <rect x="9.36" y="17.52" width="1.92" height="2.4" rx=".96"/>
+  <rect x="12.72" y="17.52" width="1.92" height="2.4" rx=".96"/>
+  <!-- Left claw + white chevron -->
+  <ellipse cx="4.8" cy="12.96" rx="1.92" ry="1.44"/>
+  <path d="M3.6,11.76 L4.8,12.96 L6,11.76" stroke="#fff" stroke-width=".36" fill="none" stroke-linecap="round"/>
+  <!-- Right claw + white chevron -->
+  <ellipse cx="19.2" cy="12.96" rx="1.92" ry="1.44"/>
+  <path d="M18,11.76 L19.2,12.96 L20.4,11.76" stroke="#fff" stroke-width=".36" fill="none" stroke-linecap="round"/>
+  <!-- Left antenna -->
+  <line x1="9.36" y1="8.16" x2="7.44" y2="4.8" stroke="currentColor" stroke-width=".53" stroke-linecap="round"/>
+  <circle cx="7.2" cy="4.32" r=".84"/>
+  <!-- Right antenna -->
+  <line x1="14.64" y1="8.16" x2="16.56" y2="4.8" stroke="currentColor" stroke-width=".53" stroke-linecap="round"/>
+  <circle cx="16.8" cy="4.32" r=".84"/>
+  <!-- Eyes (white cutouts, matching brand safari-pinned-tab) -->
+  <circle cx="10.32" cy="12.24" r="1.44" fill="#fff"/>
+  <circle cx="13.68" cy="12.24" r="1.44" fill="#fff"/>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1a1a2e">
+  <title>profClaw</title>
+  <!-- Body (adapted from profclaw-favicon-shadow.svg) -->
+  <ellipse cx="12" cy="12.96" rx="5.76" ry="5.28"/>
+  <!-- Belly glow -->
+  <ellipse cx="11.52" cy="11.76" rx="3.12" ry="2.16" fill="#f43f5e" opacity=".06"/>
+  <!-- Legs -->
+  <rect x="9.36" y="17.52" width="1.92" height="2.4" rx=".96" opacity=".8"/>
+  <rect x="12.72" y="17.52" width="1.92" height="2.4" rx=".96" opacity=".8"/>
+  <!-- Left claw + coral chevron (matching favicon-shadow) -->
+  <ellipse cx="4.8" cy="12.96" rx="1.92" ry="1.44" opacity=".8"/>
+  <path d="M3.6,11.76 L4.8,12.96 L6,11.76" stroke="#f43f5e" stroke-width=".43" fill="none" stroke-linecap="round" opacity=".3"/>
+  <!-- Right claw + coral chevron -->
+  <ellipse cx="19.2" cy="12.96" rx="1.92" ry="1.44" opacity=".8"/>
+  <path d="M18,11.76 L19.2,12.96 L20.4,11.76" stroke="#f43f5e" stroke-width=".43" fill="none" stroke-linecap="round" opacity=".3"/>
+  <!-- Left antenna + 2-layer coral tip (from favicon-shadow 3-layer, simplified) -->
+  <line x1="9.36" y1="8.16" x2="7.44" y2="4.8" stroke="#1a1a2e" stroke-width=".53" stroke-linecap="round" opacity=".8"/>
+  <circle cx="7.2" cy="4.32" r=".84" fill="#f43f5e" opacity=".45"/>
+  <circle cx="7.2" cy="4.32" r=".36" fill="#fb7185" opacity=".8"/>
+  <!-- Right antenna + 2-layer coral tip -->
+  <line x1="14.64" y1="8.16" x2="16.56" y2="4.8" stroke="#1a1a2e" stroke-width=".53" stroke-linecap="round" opacity=".8"/>
+  <circle cx="16.8" cy="4.32" r=".84" fill="#f43f5e" opacity=".45"/>
+  <circle cx="16.8" cy="4.32" r=".36" fill="#fb7185" opacity=".8"/>
+  <!-- Eyes (white whites + dark pupils + highlights, matching favicon-shadow) -->
+  <circle cx="10.32" cy="12.24" r="1.56" fill="#fff"/>
+  <circle cx="13.68" cy="12.24" r="1.56" fill="#fff"/>
+  <circle cx="10.68" cy="12" r=".84" fill="#4c0519"/>
+  <circle cx="14.04" cy="12" r=".84" fill="#4c0519"/>
+  <circle cx="11.04" cy="11.64" r=".34" fill="#fff"/>
+  <circle cx="14.4" cy="11.64" r=".34" fill="#fff"/>
+  <circle cx="10.32" cy="12.6" r=".17" fill="#fff" opacity=".4"/>
+  <circle cx="13.68" cy="12.6" r=".17" fill="#fff" opacity=".4"/>
+</svg>

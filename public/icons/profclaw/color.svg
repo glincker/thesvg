@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <title>profClaw</title>
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fb7185"/>
+      <stop offset="100%" stop-color="#e11d48"/>
+    </linearGradient>
+  </defs>
+  <!-- Body with gradient (from profclaw-mark-coral.svg) -->
+  <ellipse cx="12" cy="12.96" rx="5.76" ry="5.28" fill="url(#body)"/>
+  <!-- Belly highlight -->
+  <ellipse cx="11.52" cy="11.76" rx="3.12" ry="2.16" fill="#fda4af" opacity=".15"/>
+  <!-- Legs -->
+  <rect x="9.36" y="17.52" width="1.92" height="2.4" rx=".96" fill="#be123c"/>
+  <rect x="12.72" y="17.52" width="1.92" height="2.4" rx=".96" fill="#be123c"/>
+  <!-- Left claw + chevron -->
+  <ellipse cx="4.8" cy="12.96" rx="1.92" ry="1.44" fill="#be123c"/>
+  <path d="M3.6,11.76 L4.8,12.96 L6,11.76" stroke="#4c0519" stroke-width=".43" fill="none" stroke-linecap="round"/>
+  <!-- Right claw + chevron -->
+  <ellipse cx="19.2" cy="12.96" rx="1.92" ry="1.44" fill="#be123c"/>
+  <path d="M18,11.76 L19.2,12.96 L20.4,11.76" stroke="#4c0519" stroke-width=".43" fill="none" stroke-linecap="round"/>
+  <!-- Left antenna -->
+  <line x1="9.36" y1="8.16" x2="7.44" y2="4.8" stroke="#be123c" stroke-width=".53" stroke-linecap="round"/>
+  <circle cx="7.2" cy="4.32" r=".84" fill="#fda4af"/>
+  <circle cx="7.2" cy="4.32" r=".31" fill="#fff" opacity=".35"/>
+  <!-- Right antenna -->
+  <line x1="14.64" y1="8.16" x2="16.56" y2="4.8" stroke="#be123c" stroke-width=".53" stroke-linecap="round"/>
+  <circle cx="16.8" cy="4.32" r=".84" fill="#fda4af"/>
+  <circle cx="16.8" cy="4.32" r=".31" fill="#fff" opacity=".35"/>
+  <!-- Eyes -->
+  <circle cx="10.32" cy="12.24" r="1.56" fill="#fff"/>
+  <circle cx="13.68" cy="12.24" r="1.56" fill="#fff"/>
+  <circle cx="10.68" cy="12" r=".84" fill="#4c0519"/>
+  <circle cx="14.04" cy="12" r=".84" fill="#4c0519"/>
+  <circle cx="11.04" cy="11.64" r=".34" fill="#fff"/>
+  <circle cx="14.4" cy="11.64" r=".34" fill="#fff"/>
+  <circle cx="10.32" cy="12.6" r=".17" fill="#fff" opacity=".3"/>
+  <circle cx="13.68" cy="12.6" r=".17" fill="#fff" opacity=".3"/>
+  <!-- Smile -->
+  <path d="M10.8,15.12 Q12,16.32 13.68,14.88" stroke="#9f1239" stroke-width=".48" fill="none" stroke-linecap="round"/>
+</svg>

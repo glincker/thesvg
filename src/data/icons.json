@@ -35390,6 +35390,23 @@
     "url": "https://github.com/milvus-io/artwork/blob/e30bffa2b0632b0d4cefcdd4e1a2c09fee5b0d28/icon/black/milvus-icon-black.svg"
   },
   {
+    "slug": "mimiclaw",
+    "title": "MimiClaw",
+    "aliases": [],
+    "hex": "ff4f40",
+    "categories": [
+      "AI",
+      "Software",
+      "IoT"
+    ],
+    "variants": {
+      "default": "/icons/mimiclaw/default.svg",
+      "mono": "/icons/mimiclaw/mono.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/memovai/mimiclaw"
+  },
+  {
     "slug": "minds",
     "title": "Minds",
     "aliases": [],
@@ -39911,11 +39928,12 @@
     "aliases": [],
     "hex": "ff4d4d",
     "categories": [
+      "AI",
       "Software",
       "Platform"
     ],
     "variants": {
-      "default": "/icons/openclaw-moltbot-clawdbot/color.svg",
+      "default": "/icons/openclaw-moltbot-clawdbot/default.svg",
       "color": "/icons/openclaw-moltbot-clawdbot/color.svg",
       "mono": "/icons/openclaw-moltbot-clawdbot/mono.svg"
     },
@@ -42686,6 +42704,23 @@
     "url": "https://picarto.tv/site/press"
   },
   {
+    "slug": "picoclaw",
+    "title": "PicoClaw",
+    "aliases": [],
+    "hex": "2d6a8a",
+    "categories": [
+      "AI",
+      "Software",
+      "IoT"
+    ],
+    "variants": {
+      "default": "/icons/picoclaw/default.svg",
+      "mono": "/icons/picoclaw/mono.svg"
+    },
+    "license": "MIT",
+    "url": "https://picoclaw.io"
+  },
+  {
     "slug": "picnic",
     "title": "Picnic",
     "aliases": [],
@@ -44764,6 +44799,26 @@
     "license": "CC0-1.0",
     "url": "https://www.producthunt.com/",
     "guidelines": "https://www.producthunt.com/branding"
+  },
+  {
+    "slug": "profclaw",
+    "title": "profClaw",
+    "aliases": [],
+    "hex": "f43f5e",
+    "categories": [
+      "AI",
+      "Software",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/profclaw/default.svg",
+      "mono": "/icons/profclaw/mono.svg",
+      "light": "/icons/profclaw/light.svg",
+      "dark": "/icons/profclaw/dark.svg",
+      "color": "/icons/profclaw/color.svg"
+    },
+    "license": "MIT",
+    "url": "https://profclaw.ai"
   },
   {
     "slug": "progate",

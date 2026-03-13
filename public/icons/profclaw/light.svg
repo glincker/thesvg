@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#ffffff">
+  <title>profClaw</title>
+  <!-- Body (from profclaw-mono-white.svg scaled 100→24) -->
+  <ellipse cx="12" cy="12.96" rx="5.76" ry="5.28" opacity=".95"/>
+  <!-- Belly highlight -->
+  <ellipse cx="11.52" cy="12" rx="3.36" ry="2.4" opacity=".15"/>
+  <!-- Legs -->
+  <rect x="9.36" y="17.52" width="1.92" height="2.4" rx=".96" opacity=".7"/>
+  <rect x="12.72" y="17.52" width="1.92" height="2.4" rx=".96" opacity=".7"/>
+  <!-- Left claw + chevron -->
+  <ellipse cx="4.8" cy="12.96" rx="1.92" ry="1.44" opacity=".7"/>
+  <path d="M3.6,11.76 L4.8,12.96 L6,11.76" stroke="#08080d" stroke-width=".36" fill="none" stroke-linecap="round" opacity=".5"/>
+  <!-- Right claw + chevron -->
+  <ellipse cx="19.2" cy="12.96" rx="1.92" ry="1.44" opacity=".7"/>
+  <path d="M18,11.76 L19.2,12.96 L20.4,11.76" stroke="#08080d" stroke-width=".36" fill="none" stroke-linecap="round" opacity=".5"/>
+  <!-- Left antenna -->
+  <line x1="9.36" y1="8.16" x2="7.44" y2="4.8" stroke="#ffffff" stroke-width=".53" stroke-linecap="round" opacity=".7"/>
+  <circle cx="7.2" cy="4.32" r=".84" opacity=".85"/>
+  <!-- Right antenna -->
+  <line x1="14.64" y1="8.16" x2="16.56" y2="4.8" stroke="#ffffff" stroke-width=".53" stroke-linecap="round" opacity=".7"/>
+  <circle cx="16.8" cy="4.32" r=".84" opacity=".85"/>
+  <!-- Eyes (dark sockets + white pupils, matching brand mono-white) -->
+  <circle cx="10.32" cy="12.24" r="1.44" fill="#08080d"/>
+  <circle cx="13.68" cy="12.24" r="1.44" fill="#08080d"/>
+  <circle cx="10.68" cy="11.88" r=".53" fill="#fff"/>
+  <circle cx="14.04" cy="11.88" r=".53" fill="#fff"/>
+</svg>
