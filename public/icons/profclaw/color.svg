@@ -1,7 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#f43f5e">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <title>profClaw</title>
-  <!-- Body -->
-  <ellipse cx="12" cy="13" rx="5.8" ry="5.3"/>
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fb7185"/>
+      <stop offset="100%" stop-color="#e11d48"/>
+    </linearGradient>
+  </defs>
+  <!-- Body with gradient -->
+  <ellipse cx="12" cy="13" rx="5.8" ry="5.3" fill="url(#body)"/>
   <!-- Belly highlight -->
   <ellipse cx="11.5" cy="11.8" rx="3.1" ry="2.2" fill="#fda4af" opacity=".15"/>
   <!-- Legs -->

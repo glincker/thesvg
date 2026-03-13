@@ -1,12 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
   <title>profClaw</title>
+  <!-- Body -->
   <ellipse cx="12" cy="13" rx="5.8" ry="5.3" opacity=".95"/>
+  <!-- Legs -->
   <rect x="9.4" y="17.5" width="1.9" height="2.4" rx="1" opacity=".7"/>
   <rect x="12.7" y="17.5" width="1.9" height="2.4" rx="1" opacity=".7"/>
+  <!-- Left claw + chevron -->
   <ellipse cx="4.8" cy="13" rx="1.9" ry="1.4" opacity=".7"/>
+  <path d="M3.6,11.8 L4.8,13 L6,11.8" stroke="currentColor" stroke-width=".43" fill="none" stroke-linecap="round" opacity=".4"/>
+  <!-- Right claw + chevron -->
   <ellipse cx="19.2" cy="13" rx="1.9" ry="1.4" opacity=".7"/>
+  <path d="M18,11.8 L19.2,13 L20.4,11.8" stroke="currentColor" stroke-width=".43" fill="none" stroke-linecap="round" opacity=".4"/>
+  <!-- Left antenna -->
   <line x1="9.4" y1="8.2" x2="7.4" y2="4.8" stroke="currentColor" stroke-width=".55" stroke-linecap="round" opacity=".7"/>
   <circle cx="7.2" cy="4.3" r=".85" opacity=".85"/>
+  <!-- Right antenna -->
   <line x1="14.6" y1="8.2" x2="16.6" y2="4.8" stroke="currentColor" stroke-width=".55" stroke-linecap="round" opacity=".7"/>
   <circle cx="16.8" cy="4.3" r=".85" opacity=".85"/>
+  <!-- Eyes (opacity-based depth) -->
+  <circle cx="10.3" cy="12.2" r="1.4" opacity=".15"/>
+  <circle cx="13.7" cy="12.2" r="1.4" opacity=".15"/>
+  <circle cx="10.7" cy="12" r=".75"/>
+  <circle cx="14.1" cy="12" r=".75"/>
 </svg>

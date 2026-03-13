@@ -44814,7 +44814,8 @@
       "default": "/icons/profclaw/default.svg",
       "mono": "/icons/profclaw/mono.svg",
       "light": "/icons/profclaw/light.svg",
-      "dark": "/icons/profclaw/dark.svg"
+      "dark": "/icons/profclaw/dark.svg",
+      "color": "/icons/profclaw/color.svg"
     },
     "license": "MIT",
     "url": "https://profclaw.ai"
