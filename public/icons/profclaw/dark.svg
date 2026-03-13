@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="#1a1a2e">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1a1a2e">
   <title>profClaw</title>
-  <ellipse cx="50" cy="54" rx="24" ry="22" opacity=".95"/>
-  <rect x="39" y="73" width="8" height="10" rx="4" opacity=".7"/>
-  <rect x="53" y="73" width="8" height="10" rx="4" opacity=".7"/>
-  <ellipse cx="20" cy="54" rx="8" ry="6" opacity=".7"/>
-  <ellipse cx="80" cy="54" rx="8" ry="6" opacity=".7"/>
-  <line x1="39" y1="34" x2="31" y2="20" stroke="#1a1a2e" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
-  <circle cx="30" cy="18" r="3.5" opacity=".85"/>
-  <line x1="61" y1="34" x2="69" y2="20" stroke="#1a1a2e" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
-  <circle cx="70" cy="18" r="3.5" opacity=".85"/>
+  <ellipse cx="12" cy="13" rx="5.8" ry="5.3" opacity=".95"/>
+  <rect x="9.4" y="17.5" width="1.9" height="2.4" rx="1" opacity=".7"/>
+  <rect x="12.7" y="17.5" width="1.9" height="2.4" rx="1" opacity=".7"/>
+  <ellipse cx="4.8" cy="13" rx="1.9" ry="1.4" opacity=".7"/>
+  <ellipse cx="19.2" cy="13" rx="1.9" ry="1.4" opacity=".7"/>
+  <line x1="9.4" y1="8.2" x2="7.4" y2="4.8" stroke="#8892b0" stroke-width=".55" stroke-linecap="round" opacity=".7"/>
+  <circle cx="7.2" cy="4.3" r=".85" fill="#8892b0" opacity=".85"/>
+  <line x1="14.6" y1="8.2" x2="16.6" y2="4.8" stroke="#8892b0" stroke-width=".55" stroke-linecap="round" opacity=".7"/>
+  <circle cx="16.8" cy="4.3" r=".85" fill="#8892b0" opacity=".85"/>
 </svg>

@@ -44737,25 +44737,6 @@
     "url": "https://processingfoundation.org"
   },
   {
-    "slug": "profclaw",
-    "title": "profClaw",
-    "aliases": [],
-    "hex": "f43f5e",
-    "categories": [
-      "AI",
-      "Software",
-      "Self-Hosted"
-    ],
-    "variants": {
-      "default": "/icons/profclaw/default.svg",
-      "mono": "/icons/profclaw/mono.svg",
-      "light": "/icons/profclaw/light.svg",
-      "dark": "/icons/profclaw/dark.svg"
-    },
-    "license": "MIT",
-    "url": "https://profclaw.ai"
-  },
-  {
     "slug": "processon",
     "title": "ProcessOn",
     "aliases": [],
@@ -44818,6 +44799,25 @@
     "license": "CC0-1.0",
     "url": "https://www.producthunt.com/",
     "guidelines": "https://www.producthunt.com/branding"
+  },
+  {
+    "slug": "profclaw",
+    "title": "profClaw",
+    "aliases": [],
+    "hex": "f43f5e",
+    "categories": [
+      "AI",
+      "Software",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/profclaw/default.svg",
+      "mono": "/icons/profclaw/mono.svg",
+      "light": "/icons/profclaw/light.svg",
+      "dark": "/icons/profclaw/dark.svg"
+    },
+    "license": "MIT",
+    "url": "https://profclaw.ai"
   },
   {
     "slug": "progate",
