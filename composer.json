@@ -10,8 +10,8 @@
 		"brand-icons"
 	],
 	"support": {
-		"issues": "https://github.com/GLINCKER/thesvg/issues",
-		"source": "https://github.com/GLINCKER/thesvg",
+		"issues": "https://github.com/glincker/thesvg/issues",
+		"source": "https://github.com/glincker/thesvg",
 		"docs": "https://thesvg.org/api-docs"
 	},
 	"license": "MIT"

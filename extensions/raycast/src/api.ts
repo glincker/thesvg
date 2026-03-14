@@ -88,5 +88,5 @@ export function getIconPageUrl(slug: string): string {
 }
 
 export function getCdnUrl(slug: string, variant = "default"): string {
-  return `https://cdn.jsdelivr.net/gh/GLINCKER/thesvg@main/public/icons/${slug}/${variant}.svg`;
+  return `https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/${slug}/${variant}.svg`;
 }

@@ -39,7 +39,7 @@ Where available, we link to official brand guidelines on each icon's detail page
 
 We respect intellectual property rights. If you are a brand owner or authorized representative:
 
-- **Request removal**: [Open an issue](https://github.com/GLINCKER/thesvg/issues/new?template=icon_removal.yml) or email [support@glincker.com](mailto:support@glincker.com)
+- **Request removal**: [Open an issue](https://github.com/glincker/thesvg/issues/new?template=icon_removal.yml) or email [support@glincker.com](mailto:support@glincker.com)
 - **Update your icon**: Submit the correct version via issue or pull request
 - **Add usage guidelines**: Let us know your guidelines URL and we will link to it
 

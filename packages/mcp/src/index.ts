@@ -4,7 +4,7 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { z } from "zod";
 
 const BASE_URL = "https://thesvg.org/api";
-const CDN_BASE = "https://cdn.jsdelivr.net/gh/GLINCKER/thesvg@main/public";
+const CDN_BASE = "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public";
 
 // --- Types ---
 

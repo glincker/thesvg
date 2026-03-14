@@ -9,11 +9,11 @@
   "homepage": "https://thesvg.org",
   "repository": {
     "type": "git",
-    "url": "https://github.com/GLINCKER/thesvg.git",
+    "url": "https://github.com/glincker/thesvg.git",
     "directory": "packages/thesvg"
   },
   "bugs": {
-    "url": "https://github.com/GLINCKER/thesvg/issues"
+    "url": "https://github.com/glincker/thesvg/issues"
   },
   "keywords": [
     "svg",

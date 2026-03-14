@@ -21,12 +21,12 @@ where guidelines can typically be found.
 
 We make every effort to ensure icons are accurate and up-to-date. However, brands
 may update their logos at any time. If you notice an outdated or incorrect icon,
-please [open an issue](https://github.com/GLINCKER/thesvg/issues).
+please [open an issue](https://github.com/glincker/thesvg/issues).
 
 ## Removal Requests
 
 If you are a brand owner and would like your icon removed or updated, please
-[open an issue](https://github.com/GLINCKER/thesvg/issues) or email
+[open an issue](https://github.com/glincker/thesvg/issues) or email
 hello@thesvg.org. We will process removal requests promptly.
 
 ## License

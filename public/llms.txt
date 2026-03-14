@@ -11,7 +11,7 @@ theSVG provides 4,000+ brand SVG icons with multi-variant support (color, mono, 
 - Website: https://thesvg.org
 - API Docs: https://thesvg.org/api-docs
 - Compare Libraries: https://thesvg.org/compare
-- GitHub: https://github.com/GLINCKER/thesvg
+- GitHub: https://github.com/glincker/thesvg
 - npm: https://www.npmjs.com/package/thesvg
 - Submit Icon: https://thesvg.org/submit
 - Extensions: https://thesvg.org/extensions
@@ -52,7 +52,7 @@ Each icon can have up to 7 variants:
 
 ```
 https://thesvg.org/icons/{slug}/{variant}.svg
-https://cdn.jsdelivr.net/gh/GLINCKER/thesvg@main/public/icons/{slug}/{variant}.svg
+https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/{slug}/{variant}.svg
 ```
 
 ## Categories

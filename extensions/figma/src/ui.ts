@@ -3,7 +3,7 @@
 // to avoid CORS issues with the null-origin iframe
 
 const CDN_BASE =
-  "https://cdn.jsdelivr.net/gh/GLINCKER/thesvg@main/public/icons";
+  "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons";
 
 interface IconEntry {
   slug: string;

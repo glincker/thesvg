@@ -5,7 +5,7 @@ import path from "path";
 
 const BASE_URL = "https://thesvg.org";
 const CDN_BASE =
-  "https://cdn.jsdelivr.net/gh/GLINCKER/thesvg@main/public/icons";
+  "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons";
 
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",

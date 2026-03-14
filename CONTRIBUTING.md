@@ -31,7 +31,7 @@ The easiest way to contribute is to submit a new brand icon:
 - **Broken icon** - SVG doesn't render correctly
 - **Package bug** - import errors, TypeScript issues, build problems
 
-Use the appropriate [issue template](https://github.com/GLINCKER/thesvg/issues/new/choose).
+Use the appropriate [issue template](https://github.com/glincker/thesvg/issues/new/choose).
 
 ### Improve the Code
 
@@ -47,7 +47,7 @@ Use the appropriate [issue template](https://github.com/GLINCKER/thesvg/issues/n
 
 ```bash
 # Clone the repo
-git clone https://github.com/GLINCKER/thesvg.git
+git clone https://github.com/glincker/thesvg.git
 cd thesvg
 
 # Install dependencies
@@ -127,6 +127,6 @@ For trademark concerns, see [TRADEMARK.md](./TRADEMARK.md) or contact
 
 ## Questions?
 
-- [Open a discussion](https://github.com/GLINCKER/thesvg/discussions)
-- [Browse existing issues](https://github.com/GLINCKER/thesvg/issues)
+- [Open a discussion](https://github.com/glincker/thesvg/discussions)
+- [Browse existing issues](https://github.com/glincker/thesvg/issues)
 - [Contact us](https://thesvg.org/contact)

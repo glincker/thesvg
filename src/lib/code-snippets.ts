@@ -1,7 +1,7 @@
 export type SnippetFormat = "react" | "vue" | "html" | "nextjs" | "css" | "cli" | "mcp";
 
 const CDN_BASE =
-  "https://cdn.jsdelivr.net/gh/GLINCKER/thesvg@main/public/icons";
+  "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons";
 const SITE_BASE = "https://thesvg.org/icons";
 
 /**

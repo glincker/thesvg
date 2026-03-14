@@ -44,4 +44,4 @@ Example: `Copy Brand Icon` > `github` copies the GitHub SVG to your clipboard.
 
 - [thesvg.org](https://thesvg.org) - Browse all icons
 - [API Docs](https://thesvg.org/api-docs) - REST API reference
-- [GitHub](https://github.com/GLINCKER/thesvg) - Source code
+- [GitHub](https://github.com/glincker/thesvg) - Source code

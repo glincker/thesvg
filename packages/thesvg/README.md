@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://github.com/GLINCKER/thesvg">
-    <img src="https://raw.githubusercontent.com/GLINCKER/thesvg/main/public/og-image.png" alt="theSVG - 3,847 Brand SVG Icons" width="700" />
+  <a href="https://github.com/glincker/thesvg">
+    <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" alt="theSVG - 3,847 Brand SVG Icons" width="700" />
   </a>
 </p>
 
@@ -15,8 +15,8 @@
 <p align="center">
   <a href="https://www.npmjs.com/package/thesvg"><img src="https://img.shields.io/npm/v/thesvg?color=F97316&label=npm" alt="npm version" /></a>
   <a href="https://www.npmjs.com/package/thesvg"><img src="https://img.shields.io/npm/dm/thesvg?color=F97316" alt="npm downloads" /></a>
-  <a href="https://github.com/GLINCKER/thesvg/blob/main/packages/thesvg/LICENSE"><img src="https://img.shields.io/npm/l/thesvg?color=F97316" alt="license" /></a>
-  <a href="https://github.com/GLINCKER/thesvg"><img src="https://img.shields.io/github/stars/GLINCKER/thesvg?style=social" alt="GitHub stars" /></a>
+  <a href="https://github.com/glincker/thesvg/blob/main/packages/thesvg/LICENSE"><img src="https://img.shields.io/npm/l/thesvg?color=F97316" alt="license" /></a>
+  <a href="https://github.com/glincker/thesvg"><img src="https://img.shields.io/github/stars/glincker/thesvg?style=social" alt="GitHub stars" /></a>
 </p>
 
 ---

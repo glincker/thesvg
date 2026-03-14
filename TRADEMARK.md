@@ -25,7 +25,7 @@ We respect your intellectual property. If you are a brand owner or authorized re
 Please contact us:
 
 - **Email**: [support@glincker.com](mailto:support@glincker.com)
-- **GitHub Issue**: [Open a trademark issue](https://github.com/GLINCKER/thesvg/issues/new?labels=trademark&title=Trademark+Request:+[Brand+Name])
+- **GitHub Issue**: [Open a trademark issue](https://github.com/glincker/thesvg/issues/new?labels=trademark&title=Trademark+Request:+[Brand+Name])
 
 We take all trademark requests seriously and will respond within 48 hours. Removal requests are honored promptly, typically within 24 hours.
 

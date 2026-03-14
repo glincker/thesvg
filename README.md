@@ -1,9 +1,9 @@
 <p align="center">
   <a href="https://thesvg.org">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/GLINCKER/thesvg/main/public/logo-wordmark.svg" />
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/GLINCKER/thesvg/main/public/logo-wordmark-dark.svg" />
-      <img src="https://raw.githubusercontent.com/GLINCKER/thesvg/main/public/logo-wordmark-dark.svg" alt="theSVG" height="48" />
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-wordmark.svg" />
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-wordmark-dark.svg" />
+      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-wordmark-dark.svg" alt="theSVG" height="48" />
     </picture>
   </a>
 </p>
@@ -15,9 +15,9 @@
 <p align="center">
   <a href="https://www.npmjs.com/package/thesvg"><img src="https://img.shields.io/npm/v/thesvg?style=flat-square&color=F97316&label=npm" alt="npm" /></a>
   <a href="https://www.npmjs.com/package/thesvg"><img src="https://img.shields.io/npm/dm/thesvg?style=flat-square&color=F97316&label=downloads" alt="downloads" /></a>
-  <a href="https://github.com/GLINCKER/thesvg/stargazers"><img src="https://img.shields.io/github/stars/GLINCKER/thesvg?style=flat-square&label=stars" alt="stars" /></a>
-  <a href="https://github.com/GLINCKER/thesvg"><img src="https://img.shields.io/badge/icons-4%2C007-F97316?style=flat-square" alt="4,007 icons" /></a>
-  <a href="https://github.com/GLINCKER/thesvg/blob/main/LICENSE"><img src="https://img.shields.io/github/license/GLINCKER/thesvg?style=flat-square" alt="license" /></a>
+  <a href="https://github.com/glincker/thesvg/stargazers"><img src="https://img.shields.io/github/stars/glincker/thesvg?style=flat-square&label=stars" alt="stars" /></a>
+  <a href="https://github.com/glincker/thesvg"><img src="https://img.shields.io/badge/icons-4%2C007-F97316?style=flat-square" alt="4,007 icons" /></a>
+  <a href="https://github.com/glincker/thesvg/blob/main/LICENSE"><img src="https://img.shields.io/github/license/glincker/thesvg?style=flat-square" alt="license" /></a>
 </p>
 
 <p align="center">
@@ -34,7 +34,7 @@
 
 <p align="center">
   <a href="https://thesvg.org">
-    <img src="https://raw.githubusercontent.com/GLINCKER/thesvg/main/public/og-image.png" alt="theSVG - 4,000+ brand SVG icons" width="720" />
+    <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" alt="theSVG - 4,000+ brand SVG icons" width="720" />
   </a>
 </p>
 
@@ -93,7 +93,7 @@ Use any icon directly without installing:
 <img src="https://thesvg.org/icons/github/default.svg" width="32" height="32" alt="GitHub" />
 
 <!-- From jsDelivr -->
-<img src="https://cdn.jsdelivr.net/gh/GLINCKER/thesvg@main/public/icons/github/default.svg" width="32" height="32" alt="GitHub" />
+<img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/github/default.svg" width="32" height="32" alt="GitHub" />
 ```
 
 **URL pattern:** `https://thesvg.org/icons/{slug}/{variant}.svg`
@@ -135,7 +135,7 @@ import { Github, Figma } from "@thesvg/vue";
 ### CDN
 
 ```html
-<img src="https://cdn.jsdelivr.net/gh/GLINCKER/thesvg@main/public/icons/github/default.svg" width="32" height="32" alt="GitHub" />
+<img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/github/default.svg" width="32" height="32" alt="GitHub" />
 ```
 
 ### CLI
@@ -188,12 +188,12 @@ Icons are organized into 55+ categories:
 
 Every brand deserves a place. No gatekeeping.
 
-**Submit an icon:** [thesvg.org/submit](https://thesvg.org/submit) or open a [pull request](https://github.com/GLINCKER/thesvg/pulls).
+**Submit an icon:** [thesvg.org/submit](https://thesvg.org/submit) or open a [pull request](https://github.com/glincker/thesvg/pulls).
 
 **Development setup:**
 
 ```bash
-git clone https://github.com/GLINCKER/thesvg.git
+git clone https://github.com/glincker/thesvg.git
 cd thesvg
 pnpm install
 pnpm dev     # http://localhost:3333
@@ -205,7 +205,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for full guidelines.
 
 All brand names, logos, and trademarks are the property of their respective owners. theSVG provides these icons for development and design purposes only under nominative fair use. Use of brand assets must comply with each brand's usage guidelines.
 
-If you are a brand owner and would like an icon updated or removed, please [open an issue](https://github.com/GLINCKER/thesvg/issues) or email **support@glincker.com**. See our [Legal Notice](https://thesvg.org/legal), [TRADEMARK.md](./TRADEMARK.md), and [LEGAL.md](./LEGAL.md) for full details.
+If you are a brand owner and would like an icon updated or removed, please [open an issue](https://github.com/glincker/thesvg/issues) or email **support@glincker.com**. See our [Legal Notice](https://thesvg.org/legal), [TRADEMARK.md](./TRADEMARK.md), and [LEGAL.md](./LEGAL.md) for full details.
 
 ## License
 
@@ -213,11 +213,11 @@ If you are a brand owner and would like an icon updated or removed, please [open
 
 ## Star History
 
-<a href="https://star-history.com/#GLINCKER/thesvg&Date">
+<a href="https://star-history.com/#glincker/thesvg&Date">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=GLINCKER/thesvg&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=GLINCKER/thesvg&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=GLINCKER/thesvg&type=Date" width="600" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date" width="600" />
  </picture>
 </a>
 
@@ -225,5 +225,5 @@ If you are a brand owner and would like an icon updated or removed, please [open
 
 <p align="center">
   <a href="https://thesvg.org">thesvg.org</a> &nbsp;&bull;&nbsp;
-  <a href="https://github.com/GLINCKER/thesvg/issues">Issues</a>
+  <a href="https://github.com/glincker/thesvg/issues">Issues</a>
 </p>

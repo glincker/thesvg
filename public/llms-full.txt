@@ -117,7 +117,7 @@ Returns all categories with icon counts.
 
 ### jsDelivr CDN
 ```
-https://cdn.jsdelivr.net/gh/GLINCKER/thesvg@main/public/icons/{slug}/{variant}.svg
+https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/{slug}/{variant}.svg
 ```
 
 ## Framework Examples
@@ -197,7 +197,7 @@ MIT for the codebase and tooling. Brand icons are property of their respective t
 ## Links
 
 - Website: https://thesvg.org
-- GitHub: https://github.com/GLINCKER/thesvg
+- GitHub: https://github.com/glincker/thesvg
 - npm: https://www.npmjs.com/package/thesvg
 - API Docs: https://thesvg.org/api-docs
 - Compare Libraries: https://thesvg.org/compare
