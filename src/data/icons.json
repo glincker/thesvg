@@ -7691,6 +7691,21 @@
     "url": "https://www.britishairways.com"
   },
   {
+    "slug": "british-council",
+    "title": "British Council",
+    "aliases": [],
+    "hex": "00A7DB",
+    "categories": [
+      "Education"
+    ],
+    "variants": {
+      "default": "/icons/british-council/default.svg",
+      "mono": "/icons/british-council/mono.svg"
+    },
+    "license": "TODO",
+    "url": "https://www.britishcouncil.org"
+  },
+  {
     "slug": "broadcom",
     "title": "Broadcom",
     "aliases": [],
