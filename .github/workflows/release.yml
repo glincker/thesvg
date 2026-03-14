@@ -23,9 +23,11 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     environment: npm-publish
-    # Skip version commits to avoid infinite loops (auto-changeset is
-    # guarded separately so it won't re-generate on version commits)
-    if: "!startsWith(github.event.head_commit.message, 'chore(release): version packages')"
+    # Skip version commits on push (prevents infinite loop).
+    # workflow_dispatch always runs so you can manually trigger publish.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      !startsWith(github.event.head_commit.message, 'chore(release): version packages')
 
     steps:
       - uses: actions/checkout@v4
@@ -145,32 +147,55 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Version and publish in a single run. changesets/action handles:
-      # - If pending changesets: runs `changeset version`, commits, then publishes
-      # - If no pending changesets but bumped versions: publishes directly
-      # We skip the PR flow entirely to avoid the GITHUB_TOKEN trigger limitation.
-      - name: Version and Publish
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          version: pnpm changeset version
-          publish: pnpm changeset publish
-          commit: "chore(release): version packages"
-          title: "chore(release): version packages"
-          createGithubReleases: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ""
-
-      - name: Create git tags for release
-        if: steps.changesets.outputs.published == 'true'
+      - name: Setup git identity
         run: |
-          PUBLISHED='${{ steps.changesets.outputs.publishedPackages }}'
-          if [ -n "$PUBLISHED" ] && [ "$PUBLISHED" != "[]" ]; then
-            echo "$PUBLISHED" | jq -r '.[] | "\(.name)@\(.version)"' | while read TAG; do
-              if ! git rev-parse "$TAG" >/dev/null 2>&1; then
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      # Version + commit + publish directly (no PR flow).
+      # This avoids the GITHUB_TOKEN limitation where changesets/action
+      # creates a "Version Packages" PR instead of publishing.
+      - name: Version packages
+        id: version
+        run: |
+          PENDING=$(ls .changeset/*.md 2>/dev/null | grep -v README.md | head -1 || true)
+          if [ -n "$PENDING" ]; then
+            echo "Found pending changesets, versioning..."
+            pnpm changeset version
+            git add .
+            git commit -m "chore(release): version packages"
+            git push origin main
+            echo "versioned=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No pending changesets, skipping version step"
+            echo "versioned=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Publish to npm
+        id: publish
+        run: |
+          OUTPUT=$(pnpm changeset publish 2>&1) || true
+          echo "$OUTPUT"
+          if echo "$OUTPUT" | grep -q "New tag:"; then
+            echo "published=true" >> "$GITHUB_OUTPUT"
+            echo "$OUTPUT" | grep "New tag:" | sed 's/.*New tag: *//' > /tmp/published-tags.txt
+          else
+            echo "No new packages to publish"
+            echo "published=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create git tags and GitHub releases
+        if: steps.publish.outputs.published == 'true'
+        run: |
+          if [ -f /tmp/published-tags.txt ]; then
+            while IFS= read -r TAG; do
+              if [ -n "$TAG" ] && ! git rev-parse "$TAG" >/dev/null 2>&1; then
+                echo "Creating tag: $TAG"
                 git tag "$TAG"
                 git push origin "$TAG" || true
+                gh release create "$TAG" --title "$TAG" --generate-notes || true
               fi
-            done
+            done < /tmp/published-tags.txt
           fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
