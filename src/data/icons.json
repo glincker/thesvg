@@ -7696,13 +7696,14 @@
     "aliases": [],
     "hex": "00A7DB",
     "categories": [
-      "Education"
+      "Education",
+      "Non-profit"
     ],
     "variants": {
       "default": "/icons/british-council/default.svg",
       "mono": "/icons/british-council/mono.svg"
     },
-    "license": "TODO",
+    "license": "PD",
     "url": "https://www.britishcouncil.org"
   },
   {
