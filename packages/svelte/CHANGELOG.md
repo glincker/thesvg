@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 1.0.5
+
+### Patch Changes
+
+- feat: add British Council icon ([#30](https://github.com/GLINCKER/thesvg/issues/30))
+
 ## 1.0.4
 
 ### Patch Changes
