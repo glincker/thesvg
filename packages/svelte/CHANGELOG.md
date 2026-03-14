@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 1.0.5
+
+### Patch Changes
+
+- chore(release): version packages ([#25](https://github.com/GLINCKER/thesvg/issues/25))
+
 ## 1.0.4
 
 ### Patch Changes
