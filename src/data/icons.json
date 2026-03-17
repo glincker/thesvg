@@ -56131,6 +56131,28 @@
     "url": "https://www.irishtimes.com"
   },
   {
+    "slug": "the-lawyers-global",
+    "title": "The Lawyers Global",
+    "aliases": ["TLG"],
+    "hex": "031F3D",
+    "categories": [
+      "Community"
+    ],
+    "variants": {
+      "default": "/icons/the-lawyers-global/default.svg",
+      "light": "/icons/the-lawyers-global/light.svg",
+      "dark": "/icons/the-lawyers-global/dark.svg",
+      "mono": "/icons/the-lawyers-global/mono.svg",
+      "color": "/icons/the-lawyers-global/color.svg",
+      "gold": "/icons/the-lawyers-global/gold.svg",
+      "wordmark": "/icons/the-lawyers-global/wordmark.svg",
+      "wordmarkDark": "/icons/the-lawyers-global/wordmarkDark.svg"
+    },
+    "license": "custom",
+    "url": "https://www.thelawyersglobal.org",
+    "guidelines": "https://www.thelawyersglobal.org/media/branding/brand-identity-guidelines"
+  },
+  {
     "slug": "the-mighty",
     "title": "The Mighty",
     "aliases": [],
