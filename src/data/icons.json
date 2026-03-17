@@ -30432,14 +30432,20 @@
     "slug": "langchain",
     "title": "LangChain",
     "aliases": [],
-    "hex": "1C3C3C",
+    "hex": "030710",
     "categories": [
       "Software",
       "Platform"
     ],
     "variants": {
       "default": "/icons/langchain/default.svg",
-      "mono": "/icons/langchain/mono.svg"
+      "mono": "/icons/langchain/mono.svg",
+      "color": "/icons/langchain/color.svg",
+      "dark": "/icons/langchain/dark.svg",
+      "wordmark": "/icons/langchain/wordmark.svg",
+      "wordmarkDark": "/icons/langchain/wordmark-dark.svg",
+      "lockup": "/icons/langchain/lockup.svg",
+      "lockupDark": "/icons/langchain/lockup-dark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://www.langchain.com"
