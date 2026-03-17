@@ -1,5 +1,11 @@
 # @thesvg/vue
 
+## 1.0.7
+
+### Patch Changes
+
+- feat: add dateAdded field and recently added icons section ([#42](https://github.com/glincker/thesvg/issues/42))
+
 ## 1.0.6
 
 ### Patch Changes
