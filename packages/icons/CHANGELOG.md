@@ -1,5 +1,11 @@
 # @thesvg/icons
 
+## 2.0.1
+
+### Patch Changes
+
+- Merge pull request [#51](https://github.com/glincker/thesvg/issues/51) from glincker/changeset-release/main
+
 ## 2.0.0
 
 ### Major Changes

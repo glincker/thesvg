@@ -1,6 +1,6 @@
 {
   "name": "@thesvg/icons",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Tree-shakeable SVG icon components and raw SVG strings from thesvg.org - 3,800+ brand icons",
   "type": "module",
   "sideEffects": false,
