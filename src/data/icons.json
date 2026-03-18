@@ -2502,6 +2502,102 @@
     "collection": "brands"
   },
   {
+    "slug": "amazon",
+    "title": "Amazon",
+    "aliases": [
+      "amazon.com"
+    ],
+    "hex": "FF9900",
+    "categories": [
+      "E-commerce",
+      "Cloud"
+    ],
+    "variants": {
+      "default": "/icons/amazon/default.svg"
+    },
+    "license": "Fair use",
+    "url": "https://amazon.com",
+    "dateAdded": "2026-03-18",
+    "collection": "brands"
+  },
+  {
+    "slug": "amazon-fire-tv",
+    "title": "Amazon Fire TV",
+    "aliases": [
+      "fire tv",
+      "firetv",
+      "fire stick"
+    ],
+    "hex": "FC4C01",
+    "categories": [
+      "Entertainment",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/amazon-fire-tv/default.svg"
+    },
+    "license": "Fair use",
+    "url": "https://amazon.com/firetv",
+    "dateAdded": "2026-03-18",
+    "collection": "brands"
+  },
+  {
+    "slug": "amazon-kindle",
+    "title": "Amazon Kindle",
+    "aliases": [
+      "kindle"
+    ],
+    "hex": "1A1A1A",
+    "categories": [
+      "E-commerce",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/amazon-kindle/default.svg",
+      "wordmark": "/icons/amazon-kindle/wordmark.svg"
+    },
+    "license": "Fair use",
+    "url": "https://amazon.com/kindle",
+    "dateAdded": "2026-03-18",
+    "collection": "brands"
+  },
+  {
+    "slug": "amazon-music",
+    "title": "Amazon Music",
+    "aliases": [],
+    "hex": "34D1D9",
+    "categories": [
+      "Music",
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/amazon-music/default.svg"
+    },
+    "license": "Fair use",
+    "url": "https://music.amazon.com",
+    "dateAdded": "2026-03-18",
+    "collection": "brands"
+  },
+  {
+    "slug": "amazon-prime",
+    "title": "Amazon Prime",
+    "aliases": [
+      "prime"
+    ],
+    "hex": "0779FF",
+    "categories": [
+      "E-commerce",
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/amazon-prime/default.svg"
+    },
+    "license": "Fair use",
+    "url": "https://amazon.com/prime",
+    "dateAdded": "2026-03-18",
+    "collection": "brands"
+  },
+  {
     "slug": "amazon-q",
     "title": "Amazon Q",
     "aliases": [],
@@ -87498,6 +87594,26 @@
     "license": "CC0-1.0",
     "url": "https://wheniwork.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "whole-foods-market",
+    "title": "Whole Foods Market",
+    "aliases": [
+      "whole foods",
+      "wholefoods"
+    ],
+    "hex": "00674B",
+    "categories": [
+      "Food"
+    ],
+    "variants": {
+      "default": "/icons/whole-foods-market/default.svg",
+      "wordmark": "/icons/whole-foods-market/wordmark.svg"
+    },
+    "license": "Fair use",
+    "url": "https://wholefoodsmarket.com",
+    "dateAdded": "2026-03-18",
     "collection": "brands"
   },
   {
