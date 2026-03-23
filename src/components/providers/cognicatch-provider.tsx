@@ -4,11 +4,11 @@ import { AdaptiveToastProvider } from "@cognicatch/react";
 import { useTheme } from "next-themes";
 
 export function CognicatchProvider() {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   return (
     <AdaptiveToastProvider 
-      theme={theme as "light" | "dark" | "system"} 
+      theme={(resolvedTheme ?? "light") as "light" | "dark"} 
     />
   );
 }
