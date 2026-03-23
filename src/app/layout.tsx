@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { getFormattedIconCount } from "@/lib/icons";
+import { CognicatchProvider } from "@/components/providers/cognicatch-provider";
 import "./globals.css";
 
 const inter = Inter({
@@ -110,6 +111,7 @@ export default function RootLayout({
           storageKey="thesvg-theme"
           disableTransitionOnChange
         >
+          <CognicatchProvider />
           <Suspense>
             <Header />
           </Suspense>

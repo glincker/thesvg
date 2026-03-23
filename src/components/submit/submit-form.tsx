@@ -17,6 +17,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
+import { adaptiveToast } from '@cognicatch/react'
 import { validateSvg, type ValidationResult } from "@/lib/svg-validation";
 
 const GITHUB_ISSUES_URL =
@@ -330,6 +331,7 @@ export function SubmitForm({
 
   const processFile = useCallback((file: File) => {
     if (!file.name.endsWith(".svg")) {
+      adaptiveToast.error("Not supported", "Please upload only .svg files")
       return;
     }
 

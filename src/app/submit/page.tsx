@@ -9,6 +9,7 @@ import {
   Upload,
   Zap,
 } from "lucide-react";
+import { AdaptiveErrorBoundary } from "@/components/providers/cognicatch-boundary"
 import type { Metadata } from "next";
 import { getAllCategories, getCategoryCounts, getIconCount } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
@@ -172,7 +173,14 @@ export default function SubmitPage() {
                   </p>
                 </div>
                 <div className="p-5">
-                  <SubmitForm availableCategories={categories} />
+                  <AdaptiveErrorBoundary 
+                    mode="manual" 
+                    severity="medium" 
+                    title="Something went wrong" 
+                    description="An error occurred while loading the submit form. Our team is already investigating the issue."
+                  >
+                    <SubmitForm availableCategories={categories} />
+                  </AdaptiveErrorBoundary>
                 </div>
               </div>
             </div>
