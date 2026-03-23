@@ -1,5 +1,11 @@
 # @thesvg/vue
 
+## 2.0.2
+
+### Patch Changes
+
+- Merge pull request [#61](https://github.com/glincker/thesvg/issues/61) from glincker/changeset-release/main
+
 ## 2.0.1
 
 ### Patch Changes

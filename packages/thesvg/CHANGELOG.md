@@ -1,5 +1,14 @@
 # thesvg
 
+## 2.0.2
+
+### Patch Changes
+
+- Merge pull request [#61](https://github.com/glincker/thesvg/issues/61) from glincker/changeset-release/main
+
+- Updated dependencies []:
+  - @thesvg/icons@2.0.2
+
 ## 2.0.1
 
 ### Patch Changes
