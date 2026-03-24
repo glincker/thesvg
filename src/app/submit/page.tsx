@@ -9,7 +9,7 @@ import {
   Upload,
   Zap,
 } from "lucide-react";
-import { AdaptiveErrorBoundary } from "@/components/providers/cognicatch-boundary"
+import { AdaptiveErrorBoundary } from "@/components/providers/cognicatch-boundary";
 import type { Metadata } from "next";
 import { getAllCategories, getCategoryCounts, getIconCount } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
