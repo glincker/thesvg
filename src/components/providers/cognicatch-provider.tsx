@@ -5,10 +5,11 @@ import { useTheme } from "next-themes";
 
 export function CognicatchProvider() {
   const { resolvedTheme } = useTheme();
+  const theme: "light" | "dark" = resolvedTheme === "dark" ? "dark" : "light";
 
   return (
     <AdaptiveToastProvider 
-      theme={(resolvedTheme ?? "light") as "light" | "dark"} 
+      theme={theme} 
     />
   );
 }
