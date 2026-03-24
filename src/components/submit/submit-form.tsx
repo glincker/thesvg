@@ -17,7 +17,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
-import { adaptiveToast } from '@cognicatch/react'
+import { adaptiveToast } from "@cognicatch/react";
 import { validateSvg, type ValidationResult } from "@/lib/svg-validation";
 
 const GITHUB_ISSUES_URL =
