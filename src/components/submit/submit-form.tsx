@@ -330,8 +330,9 @@ export function SubmitForm({
   }
 
   const processFile = useCallback((file: File) => {
-    if (!file.name.endsWith(".svg")) {
-      adaptiveToast.error("Not supported", "Please upload only .svg files")
+    const fileName = file.name.toLowerCase();
+    if (!fileName.endsWith(".svg")) {
+      adaptiveToast.error("Not supported", "Please upload only .svg files");
       return;
     }
 
