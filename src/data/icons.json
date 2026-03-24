@@ -107508,5 +107508,21 @@
     "url": "https://www.zyte.com",
     "dateAdded": "2026-03-07",
     "collection": "brands"
+  },
+  {
+    "slug": "kiro",
+    "title": "Kiro",
+    "aliases": [],
+    "hex": "9046FF",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/kiro/default.svg"
+    },
+    "license": "Unknown",
+    "url": "https://kiro.dev",
+    "collection": "brands",
+    "dateAdded": "2026-03-24"
   }
 ]
