@@ -70,6 +70,7 @@ const COLLECTION_LABELS: Record<string, { label: string; description: string }> 
   aws: { label: "AWS Architecture", description: "AWS service and resource icons (2026-Q1)" },
   azure: { label: "Azure Services", description: "Microsoft Azure service icons (2026-Q1)" },
   gcp: { label: "Google Cloud", description: "Google Cloud Platform icons (2026-Q1)" },
+  k8s: { label: "Kubernetes", description: "Official Kubernetes architecture icons" },
 };
 
 const ALL_SLIDES = [

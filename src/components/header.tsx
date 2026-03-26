@@ -482,6 +482,18 @@ export function Header() {
                 <span className="hidden lg:inline">npm</span>
               </a>
               <a
+                href="https://www.raycast.com/thegdsks/thesvg"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View on Raycast"
+                className="hidden items-center gap-1.5 rounded-lg border border-border/50 px-2.5 py-1.5 text-xs font-medium text-muted-foreground transition-all hover:border-[#FF6363]/30 hover:bg-[#FF6363]/5 hover:text-[#FF6363] sm:inline-flex dark:border-white/[0.06] dark:hover:border-[#FF6363]/30"
+              >
+                <svg className="h-4 w-4" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M3.997 5.063v2.043l-1.907 1.903L0 6.919l3.997-1.856Zm6.94 6.94L9.081 16l-2.09-2.09 1.904-1.908h2.043Zm4.018-7.054L16 3.997l-3.997-3.996-1.053 1.052 2.945 2.944-1.904 1.908v2.043l4.964-4.989ZM3.997 12.003l-2.944-2.944L0 10.003 3.997 16l.952-.948-2.945-2.944 1.908-1.908-.004-2.043Zm8.003-8V2.855L8.145.999 7.05 2.052l2.944 2.944L8.09 6.904h2.043l1.866-1.86ZM6.904 8.089l-1.86 1.865v1.093l-.994.956 2.09 2.09 1.001-1.046h1.048l1.909-1.904-2.09-2.09-2.054 2.051 2.044-2.043L6.904 8.09Z" />
+                </svg>
+                <span className="hidden lg:inline">Raycast</span>
+              </a>
+              <a
                 href="https://github.com/GLINCKER/thesvg"
                 target="_blank"
                 rel="noopener noreferrer"

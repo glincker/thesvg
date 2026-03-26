@@ -41,6 +41,7 @@ const COLLECTION_META: Record<string, { icon: typeof Cloud; label: string; color
   aws: { icon: Cloud, label: "AWS Architecture", color: "text-[#ff9900]" },
   azure: { icon: Cloud, label: "Azure Services", color: "text-[#0078d4]" },
   gcp: { icon: Cloud, label: "Google Cloud", color: "text-[#4285f4]" },
+  k8s: { icon: Cloud, label: "Kubernetes", color: "text-[#326CE5]" },
 };
 
 interface SidebarProps {

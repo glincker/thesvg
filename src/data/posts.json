@@ -34,5 +34,14 @@
     "author": "theSVG Team",
     "tags": ["milestone", "roadmap"],
     "body": "With 5,500+ icons across brands, AWS, Azure, and GCP, theSVG has grown from a brand icon library into something bigger: **the one place developers go for any SVG icon**.\n\n## What makes theSVG different\n\n- **One library, every icon type**: Brand logos, cloud service icons, and more, all in one search\n- **Every format**: SVG, JSX, Vue, Svelte, CDN, CLI, MCP server\n- **No gatekeeping**: Submit any icon, no approval politics\n- **Developer-first**: npm packages, tree-shakeable, typed, zero config\n\n## What we are working on next\n\n- **Kubernetes and CNCF icons**: The cloud-native ecosystem deserves coverage\n- **Figma plugin**: Insert icons directly into your designs\n- **VS Code extension**: Search and insert icons while coding\n- **Community submissions at scale**: Streamlined review and merge process\n- **Icon comparison**: See AWS Lambda vs Azure Functions vs Cloud Functions side by side\n\n## Get involved\n\ntheSVG is open source. Submit icons, report issues, or contribute code on [GitHub](https://github.com/GLINCKER/thesvg)."
+  },
+  {
+    "slug": "raycast-extension-launch",
+    "title": "thesvg is Now on Raycast",
+    "excerpt": "Search and copy any of our 5,600 icons directly from Raycast. No browser needed.",
+    "date": "2026-03-26",
+    "author": "theSVG Team",
+    "tags": ["release", "raycast", "integration"],
+    "body": "The thesvg Raycast extension is live on the Raycast Store.\n\n## What it does\n\nSearch across all 5,600 icons from Raycast. Brands, AWS, Azure, GCP. Type a name, hit enter, get the SVG on your clipboard. No browser, no tab switching.\n\nYou can also:\n- Copy the CDN URL instead of the raw SVG\n- Filter by collection (brands, AWS, Azure, GCP)\n- Preview icons before copying\n- Open the icon detail page on thesvg.org\n\n## Install\n\nOpen Raycast, search for \"thesvg\" in the Store, and install. Or visit the store page directly:\n\nhttps://www.raycast.com/thegdsks/thesvg\n\n## Why Raycast\n\nWhen you need an icon while coding, opening a browser tab breaks your flow. With the Raycast extension you stay in your editor. Hit the hotkey, type \"lambda\", copy, paste. Done.\n\nThis is one of several integrations we're building. npm packages, CLI, MCP server for AI tools, and now Raycast. The goal is to get icons into your workflow wherever you already are."
   }
 ]

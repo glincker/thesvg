@@ -1,0 +1,24 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg_grad" x1="0" y1="0" x2="0" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1a1a1a" />
+      <stop offset="1" stop-color="#050505" />
+    </linearGradient>
+    <linearGradient id="shine_grad" x1="0" y1="0" x2="0" y2="1" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.3" />
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+    <filter id="stack_glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#10B981" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="128" fill="url(#bg_grad)" stroke="#333" stroke-width="2" />
+
+  <g transform="translate(256, 260) rotate(-12) translate(-256, -260)">
+    <rect x="136" y="240" width="240" height="240" rx="48" fill="#064E3B" />
+    <rect x="136" y="170" width="240" height="240" rx="48" fill="#10B981" fill-opacity="0.9" filter="url(#stack_glow)" />
+    <rect x="136" y="100" width="240" height="240" rx="48" fill="#FFFFFF" />
+    <rect x="136" y="100" width="240" height="240" rx="48" fill="url(#shine_grad)" style="mix-blend-mode:overlay" />
+  </g>
+</svg>

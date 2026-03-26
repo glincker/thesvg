@@ -48664,6 +48664,23 @@
     "collection": "brands"
   },
   {
+    "slug": "eshopos-logo",
+    "title": "Eshopos",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Ecommerce",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/eshopos-logo/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://dukalinks.co.ke",
+    "dateAdded": "2026-03-26",
+    "collection": "brands"
+  },
+  {
     "slug": "eslgaming",
     "title": "ESLGaming",
     "aliases": [],
@@ -66174,6 +66191,880 @@
     "collection": "brands"
   },
   {
+    "slug": "k8s-api-server",
+    "title": "API Server",
+    "aliases": [
+      "api"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Control Plane"
+    ],
+    "variants": {
+      "default": "/icons/k8s-api-server/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "control-plane"
+    }
+  },
+  {
+    "slug": "k8s-cloud-controller-manager",
+    "title": "Cloud Controller Manager",
+    "aliases": [
+      "c-c-m"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Control Plane"
+    ],
+    "variants": {
+      "default": "/icons/k8s-cloud-controller-manager/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "control-plane"
+    }
+  },
+  {
+    "slug": "k8s-clusterrole",
+    "title": "ClusterRole",
+    "aliases": [
+      "c-role"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Security"
+    ],
+    "variants": {
+      "default": "/icons/k8s-clusterrole/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-clusterrolebinding",
+    "title": "ClusterRoleBinding",
+    "aliases": [
+      "crb"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Security"
+    ],
+    "variants": {
+      "default": "/icons/k8s-clusterrolebinding/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-configmap",
+    "title": "ConfigMap",
+    "aliases": [
+      "cm"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Config"
+    ],
+    "variants": {
+      "default": "/icons/k8s-configmap/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-controller-manager",
+    "title": "Controller Manager",
+    "aliases": [
+      "c-m"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Control Plane"
+    ],
+    "variants": {
+      "default": "/icons/k8s-controller-manager/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "control-plane"
+    }
+  },
+  {
+    "slug": "k8s-cronjob",
+    "title": "CronJob",
+    "aliases": [
+      "cronjob"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Compute"
+    ],
+    "variants": {
+      "default": "/icons/k8s-cronjob/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-customresourcedefinition",
+    "title": "CustomResourceDefinition",
+    "aliases": [
+      "crd"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Extensibility"
+    ],
+    "variants": {
+      "default": "/icons/k8s-customresourcedefinition/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-daemonset",
+    "title": "DaemonSet",
+    "aliases": [
+      "ds"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Compute"
+    ],
+    "variants": {
+      "default": "/icons/k8s-daemonset/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-deployment",
+    "title": "Deployment",
+    "aliases": [
+      "deploy"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Compute"
+    ],
+    "variants": {
+      "default": "/icons/k8s-deployment/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-endpoints",
+    "title": "Endpoints",
+    "aliases": [
+      "ep"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Networking"
+    ],
+    "variants": {
+      "default": "/icons/k8s-endpoints/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-etcd-cluster",
+    "title": "etcd Cluster",
+    "aliases": [
+      "etcd"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Infrastructure"
+    ],
+    "variants": {
+      "default": "/icons/k8s-etcd-cluster/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "infrastructure"
+    }
+  },
+  {
+    "slug": "k8s-group",
+    "title": "Group",
+    "aliases": [
+      "group"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Identity"
+    ],
+    "variants": {
+      "default": "/icons/k8s-group/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-horizontalpodautoscaler",
+    "title": "HorizontalPodAutoscaler",
+    "aliases": [
+      "hpa"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Autoscaling"
+    ],
+    "variants": {
+      "default": "/icons/k8s-horizontalpodautoscaler/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-ingress",
+    "title": "Ingress",
+    "aliases": [
+      "ing"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Networking"
+    ],
+    "variants": {
+      "default": "/icons/k8s-ingress/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-job",
+    "title": "Job",
+    "aliases": [
+      "job"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Compute"
+    ],
+    "variants": {
+      "default": "/icons/k8s-job/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-kube-proxy",
+    "title": "kube-proxy",
+    "aliases": [
+      "k-proxy"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Control Plane"
+    ],
+    "variants": {
+      "default": "/icons/k8s-kube-proxy/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "control-plane"
+    }
+  },
+  {
+    "slug": "k8s-kubelet",
+    "title": "kubelet",
+    "aliases": [
+      "kubelet"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Control Plane"
+    ],
+    "variants": {
+      "default": "/icons/k8s-kubelet/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "control-plane"
+    }
+  },
+  {
+    "slug": "k8s-limitrange",
+    "title": "LimitRange",
+    "aliases": [
+      "limits"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Config"
+    ],
+    "variants": {
+      "default": "/icons/k8s-limitrange/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-namespace",
+    "title": "Namespace",
+    "aliases": [
+      "ns"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Config"
+    ],
+    "variants": {
+      "default": "/icons/k8s-namespace/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-networkpolicy",
+    "title": "NetworkPolicy",
+    "aliases": [
+      "netpol"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Networking"
+    ],
+    "variants": {
+      "default": "/icons/k8s-networkpolicy/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-persistentvolume",
+    "title": "PersistentVolume",
+    "aliases": [
+      "pv"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Storage"
+    ],
+    "variants": {
+      "default": "/icons/k8s-persistentvolume/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-persistentvolumeclaim",
+    "title": "PersistentVolumeClaim",
+    "aliases": [
+      "pvc"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Storage"
+    ],
+    "variants": {
+      "default": "/icons/k8s-persistentvolumeclaim/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-pod",
+    "title": "Pod",
+    "aliases": [
+      "pod"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Compute"
+    ],
+    "variants": {
+      "default": "/icons/k8s-pod/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-podsecuritypolicy",
+    "title": "PodSecurityPolicy",
+    "aliases": [
+      "psp"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Security"
+    ],
+    "variants": {
+      "default": "/icons/k8s-podsecuritypolicy/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-replicaset",
+    "title": "ReplicaSet",
+    "aliases": [
+      "rs"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Compute"
+    ],
+    "variants": {
+      "default": "/icons/k8s-replicaset/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-resourcequota",
+    "title": "ResourceQuota",
+    "aliases": [
+      "quota"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Config"
+    ],
+    "variants": {
+      "default": "/icons/k8s-resourcequota/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-role",
+    "title": "Role",
+    "aliases": [
+      "role"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Security"
+    ],
+    "variants": {
+      "default": "/icons/k8s-role/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-rolebinding",
+    "title": "RoleBinding",
+    "aliases": [
+      "rb"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Security"
+    ],
+    "variants": {
+      "default": "/icons/k8s-rolebinding/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-scheduler",
+    "title": "Scheduler",
+    "aliases": [
+      "sched"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Control Plane"
+    ],
+    "variants": {
+      "default": "/icons/k8s-scheduler/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "control-plane"
+    }
+  },
+  {
+    "slug": "k8s-secret",
+    "title": "Secret",
+    "aliases": [
+      "secret"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Config"
+    ],
+    "variants": {
+      "default": "/icons/k8s-secret/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-service",
+    "title": "Service",
+    "aliases": [
+      "svc"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Networking"
+    ],
+    "variants": {
+      "default": "/icons/k8s-service/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-serviceaccount",
+    "title": "ServiceAccount",
+    "aliases": [
+      "sa"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Security"
+    ],
+    "variants": {
+      "default": "/icons/k8s-serviceaccount/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-statefulset",
+    "title": "StatefulSet",
+    "aliases": [
+      "sts"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Compute"
+    ],
+    "variants": {
+      "default": "/icons/k8s-statefulset/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-storageclass",
+    "title": "StorageClass",
+    "aliases": [
+      "sc"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Storage"
+    ],
+    "variants": {
+      "default": "/icons/k8s-storageclass/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-user",
+    "title": "User",
+    "aliases": [
+      "user"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Identity"
+    ],
+    "variants": {
+      "default": "/icons/k8s-user/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-volume",
+    "title": "Volume",
+    "aliases": [
+      "vol"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Storage"
+    ],
+    "variants": {
+      "default": "/icons/k8s-volume/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "resource"
+    }
+  },
+  {
+    "slug": "k8s-worker-node",
+    "title": "Worker Node",
+    "aliases": [
+      "node"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Infrastructure"
+    ],
+    "variants": {
+      "default": "/icons/k8s-worker-node/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kubernetes.io",
+    "dateAdded": "2026-03-26",
+    "collection": "k8s",
+    "collectionVersion": "2026",
+    "collectionMeta": {
+      "type": "infrastructure"
+    }
+  },
+  {
     "slug": "kafka",
     "title": "Apache Kafka",
     "aliases": [],
@@ -74724,6 +75615,21 @@
     "collection": "brands"
   },
   {
+    "slug": "monistic-logo",
+    "title": "Monistic",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/monistic-logo/default.svg"
+    },
+    "license": "MIT",
+    "dateAdded": "2026-03-26",
+    "collection": "brands"
+  },
+  {
     "slug": "monkey-tie",
     "title": "monkey tie",
     "aliases": [],
@@ -77094,6 +78000,24 @@
     "license": "CC0-1.0",
     "url": "https://nim-lang.org",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "nimoxis",
+    "title": "Nimoxis",
+    "aliases": [],
+    "hex": "635BFF",
+    "categories": [
+      "AI",
+      "Software",
+      "Cloud"
+    ],
+    "variants": {
+      "default": "/icons/nimoxis/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://nimoxis.com",
+    "dateAdded": "2026-03-26",
     "collection": "brands"
   },
   {
@@ -91648,6 +92572,23 @@
     "url": "https://www.shopify.com",
     "guidelines": "https://www.shopify.com/brand-assets",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "shopline",
+    "title": "SHOPLINE",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Ecommerce",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/shopline/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://www.shopline.com",
+    "dateAdded": "2026-03-26",
     "collection": "brands"
   },
   {

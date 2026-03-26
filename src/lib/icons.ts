@@ -1,6 +1,6 @@
 import iconsData from "@/data/icons.json";
 
-export type Collection = "brands" | "aws" | "gcp" | "azure" | "emojis";
+export type Collection = "brands" | "aws" | "gcp" | "azure" | "emojis" | "k8s";
 
 export interface IconEntry {
   slug: string;
