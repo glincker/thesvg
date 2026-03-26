@@ -1,5 +1,14 @@
 # thesvg
 
+## 2.1.1
+
+### Patch Changes
+
+- Merge branch 'main' of https://github.com/GLINCKER/thesvg
+
+- Updated dependencies []:
+  - @thesvg/icons@2.1.1
+
 ## 2.1.0
 
 ### Minor Changes
