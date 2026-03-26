@@ -1,6 +1,6 @@
 {
   "name": "@thesvg/svelte",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Typed Svelte SVG components for all 4000+ brand icons from thesvg.org",
   "type": "module",
   "sideEffects": false,

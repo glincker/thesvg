@@ -1,5 +1,11 @@
 # @thesvg/react
 
+## 2.1.0
+
+### Minor Changes
+
+- [`1f56737`](https://github.com/glincker/thesvg/commit/1f567372a3211f2fe7e49ee147299b8f8409b4a1) Thanks [@thegdsks](https://github.com/thegdsks)! - Add Kubernetes icon collection, Raycast integration, and community icons. Total: 5,645 icons.
+
 ## 2.0.1
 
 ### Patch Changes
