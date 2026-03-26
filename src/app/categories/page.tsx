@@ -12,7 +12,7 @@ import { SidebarShell } from "@/components/layout/sidebar-shell";
 export const metadata: Metadata = {
   title: "Browse All Categories",
   description:
-    "Explore all icon categories on theSVG. Browse 5,500+ brand, AWS, Azure, and GCP SVG icons organized by category.",
+    "Explore all icon categories on theSVG. Browse 5,600+ brand, AWS, Azure, and GCP SVG icons organized by category.",
   keywords: [
     "SVG icon categories",
     "brand icon categories",

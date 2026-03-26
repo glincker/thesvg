@@ -20,7 +20,7 @@ import { SidebarShell } from "@/components/layout/sidebar-shell";
 export const metadata: Metadata = {
   title: "Extensions & Integrations - VS Code, Figma, React, CLI",
   description:
-    "Use 5,500+ free SVG icons in VS Code, Figma, Raycast, React, Vue, CLI, and more. npm packages, MCP server, and CDN integrations.",
+    "Use 5,600+ free SVG icons in VS Code, Figma, Raycast, React, Vue, CLI, and more. npm packages, MCP server, and CDN integrations.",
   keywords: [
     "SVG icon VS Code extension",
     "SVG icon Figma plugin",
@@ -231,7 +231,7 @@ const CATEGORIES: Category[] = [
       },
       {
         name: "Raycast Extension",
-        description: "Search 5,500+ icons, copy SVG or CDN URL in one keystroke. Filter by category, preview variants.",
+        description: "Search 5,600+ icons, copy SVG or CDN URL in one keystroke. Filter by category, preview variants.",
         status: "available",
         cta: "GitHub",
         href: "https://github.com/GLINCKER/thesvg/tree/main/extensions/raycast",

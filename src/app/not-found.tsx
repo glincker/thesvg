@@ -51,7 +51,7 @@ export default function NotFound() {
         This icon might have been moved, renamed, or doesn&apos;t exist yet.
       </p>
       <p className="mb-8 max-w-md text-xs text-muted-foreground/60">
-        We have 5,500+ icons across brands, AWS, Azure, and GCP. Try searching for what you need.
+        We have 5,600+ icons across brands, AWS, Azure, and GCP. Try searching for what you need.
       </p>
 
       {/* Actions */}
