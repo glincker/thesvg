@@ -67,20 +67,17 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
   }, [icon, activeVariant]);
 
   const prevSlugRef = useRef<string | null>(null);
-  useEffect(() => {
-    if (!icon) return;
+  if (icon && icon.slug !== prevSlugRef.current) {
+    prevSlugRef.current = icon.slug;
     setActiveVariant("default");
-    if (icon.slug !== prevSlugRef.current) {
-      prevSlugRef.current = icon.slug;
-      posthog.capture("icon_viewed", {
-        icon_slug: icon.slug,
-        icon_title: icon.title,
-        categories: icon.categories,
-        variant_count: Object.values(icon.variants).filter(Boolean).length,
-        source: "quick_preview",
-      });
-    }
-  }, [icon]);
+    posthog.capture("icon_viewed", {
+      icon_slug: icon.slug,
+      icon_title: icon.title,
+      categories: icon.categories,
+      variant_count: Object.values(icon.variants).filter(Boolean).length,
+      source: "quick_preview",
+    });
+  }
 
   const handleCopy = useCallback(
     async (format: CopyFormat) => {

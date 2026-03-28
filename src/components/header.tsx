@@ -85,7 +85,7 @@ export function Header() {
   const searchParams = useSearchParams();
   const inputRef = useRef<HTMLInputElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const [isMac, setIsMac] = useState(false);
+  const isMac = typeof navigator !== "undefined" && navigator.userAgent.includes("Mac");
   const [focused, setFocused] = useState(false);
   const [selectedIdx, setSelectedIdx] = useState(-1);
 
@@ -127,10 +127,6 @@ export function Header() {
 
   const isHome = pathname === "/";
 
-  useEffect(() => {
-    setIsMac(navigator.userAgent.includes("Mac"));
-  }, []);
-
   // Search suggestions
   const suggestions = useMemo(() => {
     if (!query.trim() || query.length < 2) return [];
@@ -142,9 +138,11 @@ export function Header() {
   const showDropdown = focused && (hasQuery ? suggestions.length > 0 : true);
 
   // Reset selected index when suggestions change
-  useEffect(() => {
+  const prevSuggestionsRef = useRef(suggestions);
+  if (prevSuggestionsRef.current !== suggestions) {
+    prevSuggestionsRef.current = suggestions;
     setSelectedIdx(-1);
-  }, [suggestions]);
+  }
 
   // Close dropdown on click outside
   useEffect(() => {

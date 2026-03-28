@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Anchor, ArrowRight, Clock, Cloud, Package, Shapes, Sparkles, Zap } from "lucide-react";
 import Link from "next/link";
 import type { Collection, IconEntry } from "@/lib/icons";
@@ -245,7 +245,7 @@ interface HomeHeroProps {
 
 export function HomeHero({
   icons,
-  categoryCounts,
+  categoryCounts: _categoryCounts,
   count,
   recentIcons,
   collections,
@@ -265,9 +265,11 @@ export function HomeHero({
   );
 
   // Reset slide when collection changes
-  useEffect(() => {
+  const prevCollectionRef = useRef(activeCollection);
+  if (prevCollectionRef.current !== activeCollection) {
+    prevCollectionRef.current = activeCollection;
     setCurrentSlide(0);
-  }, [activeCollection]);
+  }
 
   // Auto-rotate carousel through collection slides
   useEffect(() => {
@@ -341,7 +343,7 @@ export function HomeHero({
     return slugs
       .map((s) => icons.find((i) => i.slug === s))
       .filter(Boolean) as IconEntry[];
-  }, [icons, currentSlide]);
+  }, [icons, currentSlide, collectionSlides, fallbackSlide]);
 
   // Predefined positions for floating icons (scattered, not grid)
   const FLOAT_POSITIONS = [

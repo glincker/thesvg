@@ -83,10 +83,12 @@ export function HelpFab() {
   // Stagger tip animations on open
   useEffect(() => {
     if (!mounted) return;
-    setVisibleTips([]);
-    const timers = TIPS.map((_, i) =>
-      setTimeout(() => setVisibleTips((prev) => [...prev, i]), 80 + i * 60)
-    );
+    const timers = [
+      setTimeout(() => setVisibleTips([]), 0),
+      ...TIPS.map((_, i) =>
+        setTimeout(() => setVisibleTips((prev) => [...prev, i]), 80 + i * 60)
+      ),
+    ];
     return () => timers.forEach(clearTimeout);
   }, [mounted]);
 
