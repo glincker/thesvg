@@ -1,13 +1,9 @@
 import { ImageResponse } from "next/og";
-import { getAllIcons, getIconBySlug } from "@/lib/icons";
+import { getIconBySlug } from "@/lib/icons";
 
-export const runtime = "nodejs";
+export const runtime = "edge";
 export const contentType = "image/png";
 export const size = { width: 1200, height: 630 };
-
-export function generateStaticParams() {
-  return getAllIcons().map((icon) => ({ slug: icon.slug }));
-}
 
 function hexToRgba(hex: string, alpha: number): string {
   const safe = hex.length >= 6 ? hex.slice(0, 6) : hex.padEnd(6, "0");
