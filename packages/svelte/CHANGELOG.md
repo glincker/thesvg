@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 2.1.1
+
+### Patch Changes
+
+- Merge pull request [#74](https://github.com/glincker/thesvg/issues/74) from glincker/fix/broken-svg-icons
+
 ## 2.1.0
 
 ### Minor Changes
