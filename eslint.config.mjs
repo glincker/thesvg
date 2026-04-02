@@ -14,6 +14,7 @@ const eslintConfig = defineConfig([
     "packages/*/node_modules/**",
     "scripts/**",
     "docs-local/**",
+    "extensions/**/dist/**",
   ]),
   {
     rules: {
