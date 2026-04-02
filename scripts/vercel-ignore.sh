@@ -32,6 +32,10 @@ fi
 
 # For other branches: only build if app-relevant files changed
 CHANGED=$(git diff HEAD~1 --name-only 2>/dev/null || echo "")
+if [[ -z "$CHANGED" ]]; then
+  echo ">> Skipping: no files changed on $BRANCH"
+  exit 0
+fi
 
 # Skip if only docs, scripts, or config changed
 if echo "$CHANGED" | grep -qvE '^(docs-local/|scripts/|\.changeset/|\.github/|CLAUDE\.md|CONTRIBUTING\.md|README\.md|LICENSE)'; then
