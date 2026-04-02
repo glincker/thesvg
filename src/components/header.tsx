@@ -138,11 +138,9 @@ export function Header() {
   const showDropdown = focused && (hasQuery ? suggestions.length > 0 : true);
 
   // Reset selected index when suggestions change
-  const prevSuggestionsRef = useRef(suggestions);
-  if (prevSuggestionsRef.current !== suggestions) {
-    prevSuggestionsRef.current = suggestions;
+  useEffect(() => {
     setSelectedIdx(-1);
-  }
+  }, [suggestions]);
 
   // Close dropdown on click outside
   useEffect(() => {

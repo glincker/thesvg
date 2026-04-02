@@ -265,11 +265,9 @@ export function HomeHero({
   );
 
   // Reset slide when collection changes
-  const prevCollectionRef = useRef(activeCollection);
-  if (prevCollectionRef.current !== activeCollection) {
-    prevCollectionRef.current = activeCollection;
+  useEffect(() => {
     setCurrentSlide(0);
-  }
+  }, [activeCollection]);
 
   // Auto-rotate carousel through collection slides
   useEffect(() => {
