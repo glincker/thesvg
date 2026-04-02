@@ -138,11 +138,9 @@ export function Header() {
   const showDropdown = focused && (hasQuery ? suggestions.length > 0 : true);
 
   // Reset selected index when suggestions change
-  const prevSuggestionsRef = useRef(suggestions);
-  if (prevSuggestionsRef.current !== suggestions) {
-    prevSuggestionsRef.current = suggestions;
+  useEffect(() => {
     setSelectedIdx(-1);
-  }
+  }, [suggestions]);
 
   // Close dropdown on click outside
   useEffect(() => {
@@ -332,7 +330,7 @@ export function Header() {
                   </button>
                 )}
                 <kbd className="hidden rounded border border-border/40 bg-muted/50 px-1.5 py-0.5 font-mono text-[10px] text-muted-foreground/50 sm:inline-block dark:border-white/[0.06]">
-                  {isMac ? "\u2318K" : "^K"}
+                  {isMac ? "⌘K" : "^K"}
                 </kbd>
               </div>
             </div>
