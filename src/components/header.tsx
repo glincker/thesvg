@@ -85,7 +85,7 @@ export function Header() {
   const searchParams = useSearchParams();
   const inputRef = useRef<HTMLInputElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const isMac = typeof navigator !== "undefined" && navigator.userAgent.includes("Mac");
+  const [isMac, setIsMac] = useState(false);
   const [focused, setFocused] = useState(false);
   const [selectedIdx, setSelectedIdx] = useState(-1);
 
