@@ -1,0 +1,14 @@
+<svg width="280" height="56" viewBox="0 0 280 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00f0c0"/>
+      <stop offset="100%" stop-color="#008f6e"/>
+    </linearGradient>
+  </defs>
+  <rect y="4" width="48" height="48" rx="10.5" fill="url(#bg)"/>
+  <rect x="9.6" y="11.2" width="28.8" height="5.6" rx="2" fill="#0a0e12"/>
+  <rect x="9.6" y="11.2" width="7.2" height="33.6" rx="2" fill="#0a0e12"/>
+  <rect x="18.4" y="18.4" width="20" height="8.8" rx="2.4" fill="#0a0e12"/>
+  <rect x="18.4" y="28.8" width="20" height="16" rx="2.4" fill="#0a0e12"/>
+  <text x="60" y="37" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="28" letter-spacing="-0.5" fill="currentColor">Filagram</text>
+</svg>
