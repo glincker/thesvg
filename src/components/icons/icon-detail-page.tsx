@@ -414,6 +414,7 @@ export function IconDetailPage({
                   <Link
                     key={rel.slug}
                     href={`/icon/${rel.slug}`}
+                    prefetch={false}
                     className="group flex flex-col items-center gap-1.5 rounded-xl border border-border bg-card p-2.5 shadow-sm transition-all hover:border-foreground/20 hover:bg-accent hover:shadow-md"
                   >
                     <div className="icon-preview-bg flex h-10 w-10 items-center justify-center rounded-lg p-1.5">

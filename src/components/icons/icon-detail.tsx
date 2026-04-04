@@ -358,6 +358,7 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
           <div className="border-t border-border/30 p-3 sm:p-4">
             <Link
               href={`/icon/${icon.slug}`}
+              prefetch={false}
               onClick={onClose}
               className="group/cta flex w-full items-center justify-center gap-2 rounded-xl bg-foreground py-2.5 text-sm font-semibold text-background transition-all hover:opacity-90 active:scale-[0.99]"
             >
