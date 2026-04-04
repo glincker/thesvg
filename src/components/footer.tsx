@@ -22,9 +22,8 @@ const PRODUCT_LINKS: FooterLink[] = [
 ];
 
 const RESOURCE_LINKS: FooterLink[] = [
-  { label: "API Docs", href: "/api-docs" },
   { label: "npm Package", href: "https://www.npmjs.com/package/thesvg", external: true },
-  { label: "CDN Usage", href: "/api-docs" },
+  { label: "CDN Usage", href: "/extensions" },
   { label: "Compare", href: "/compare" },
 ];
 

@@ -67,7 +67,8 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
   }, [icon, activeVariant]);
 
   const prevSlugRef = useRef<string | null>(null);
-  if (icon && icon.slug !== prevSlugRef.current) {
+  useEffect(() => {
+    if (!icon || icon.slug === prevSlugRef.current) return;
     prevSlugRef.current = icon.slug;
     setActiveVariant("default");
     posthog.capture("icon_viewed", {
@@ -77,7 +78,7 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
       variant_count: Object.values(icon.variants).filter(Boolean).length,
       source: "quick_preview",
     });
-  }
+  }, [icon]);
 
   const handleCopy = useCallback(
     async (format: CopyFormat) => {

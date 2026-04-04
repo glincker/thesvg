@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { ArrowRight, Cloud, FileText, Github, Menu, Moon, Package, Plus, Search, Shapes, Sparkles, Sun, X, Zap } from "lucide-react";
+import { ArrowRight, Cloud, FileText, Github, Menu, Moon, Package, Plus, Search, Shapes, Sparkles, Sun, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -138,11 +138,9 @@ export function Header() {
   const showDropdown = focused && (hasQuery ? suggestions.length > 0 : true);
 
   // Reset selected index when suggestions change
-  const prevSuggestionsRef = useRef(suggestions);
-  if (prevSuggestionsRef.current !== suggestions) {
-    prevSuggestionsRef.current = suggestions;
+  useEffect(() => {
     setSelectedIdx(-1);
-  }
+  }, [suggestions]);
 
   // Close dropdown on click outside
   useEffect(() => {
@@ -416,7 +414,6 @@ export function Header() {
                       { href: "/extensions", icon: Package, label: "Extensions & Integrations" },
                       { href: "/blog", icon: FileText, label: "Blog & Updates" },
                       { href: "/submit", icon: Sparkles, label: "Submit an Icon" },
-                      { href: "/api-docs", icon: Zap, label: "API Reference" },
                     ].map((item) => (
                       <Link
                         key={item.href}

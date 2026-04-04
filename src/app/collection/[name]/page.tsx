@@ -87,6 +87,8 @@ export function generateStaticParams() {
   return VALID_COLLECTIONS.map((name) => ({ name }));
 }
 
+export const dynamicParams = false;
+
 interface PageProps {
   params: Promise<{ name: string }>;
 }

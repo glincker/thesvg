@@ -404,10 +404,10 @@ export default function ComparePage() {
               <ArrowRight className="h-3.5 w-3.5" />
             </Link>
             <Link
-              href="/api-docs"
+              href="/extensions"
               className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-accent dark:border-white/[0.08]"
             >
-              API Docs
+              Extensions
             </Link>
           </div>
         </div>

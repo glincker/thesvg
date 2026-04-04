@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { getAllIcons, getAllCategories } from "@/lib/icons";
 import postsData from "@/data/posts.json";
 
+export const dynamic = "force-static";
+
 const BASE_URL = "https://thesvg.org";
 const CDN_BASE =
   "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons";
@@ -30,7 +32,6 @@ export default function sitemap({ id }: { id: number }): MetadataRoute.Sitemap {
       { url: `${BASE_URL}/categories`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
       { url: `${BASE_URL}/compare`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
       { url: `${BASE_URL}/extensions`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-      { url: `${BASE_URL}/api-docs`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
       { url: `${BASE_URL}/submit`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
       { url: `${BASE_URL}/blog`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.8 },
       { url: `${BASE_URL}/legal`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },

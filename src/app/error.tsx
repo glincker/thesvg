@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Link from "next/link";
 import { AlertTriangle, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -31,9 +32,9 @@ export default function Error({
           <RefreshCw className="h-4 w-4" />
           Try again
         </Button>
-        <a href="/">
+        <Link href="/">
           <Button>Go home</Button>
-        </a>
+        </Link>
       </div>
     </div>
   );

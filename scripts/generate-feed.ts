@@ -1,4 +1,5 @@
-import postsData from "@/data/posts.json";
+import { readFileSync, writeFileSync } from "fs";
+import { join } from "path";
 
 interface Post {
   slug: string;
@@ -10,14 +11,23 @@ interface Post {
   body: string;
 }
 
-export function GET() {
-  const posts = (postsData as Post[]).sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
+function escapeXml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
 
-  const items = posts
-    .map(
-      (post) => `    <item>
+const postsPath = join(__dirname, "../src/data/posts.json");
+const posts = (JSON.parse(readFileSync(postsPath, "utf-8")) as Post[]).sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+);
+
+const items = posts
+  .map(
+    (post) => `    <item>
       <title>${escapeXml(post.title)}</title>
       <link>https://thesvg.org/blog/${post.slug}</link>
       <guid isPermaLink="true">https://thesvg.org/blog/${post.slug}</guid>
@@ -26,10 +36,10 @@ export function GET() {
       <author>team@thesvg.org (${post.author})</author>
       ${post.tags.map((t) => `<category>${escapeXml(t)}</category>`).join("\n      ")}
     </item>`
-    )
-    .join("\n");
+  )
+  .join("\n");
 
-  const rss = `<?xml version="1.0" encoding="UTF-8"?>
+const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>theSVG Blog</title>
@@ -42,19 +52,6 @@ ${items}
   </channel>
 </rss>`;
 
-  return new Response(rss, {
-    headers: {
-      "Content-Type": "application/rss+xml; charset=utf-8",
-      "Cache-Control": "public, max-age=3600, s-maxage=3600",
-    },
-  });
-}
-
-function escapeXml(str: string): string {
-  return str
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&apos;");
-}
+const outPath = join(__dirname, "../public/feed.xml");
+writeFileSync(outPath, rss, "utf-8");
+console.log(`Generated feed.xml with ${posts.length} posts`);

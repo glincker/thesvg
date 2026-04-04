@@ -103,7 +103,7 @@ const ALL_SLIDES = [
     title: "One Package, Every Brand",
     description: "Tree-shakeable, typed, dual ESM/CJS. Import any icon with zero config.",
     cta: { label: "View on npm", href: "https://www.npmjs.com/package/thesvg" },
-    ctaSecondary: { label: "API Docs", href: "/api-docs" },
+    ctaSecondary: { label: "Extensions", href: "/extensions" },
     gradient: "from-blue-50/50 via-background to-blue-50/30 dark:from-blue-950/20 dark:via-background dark:to-blue-950/10",
     accent: "border-blue-200/50 bg-blue-50/80 text-blue-600 dark:border-blue-500/20 dark:bg-blue-500/10 dark:text-blue-400",
     blob: "bg-blue-400/10 dark:bg-blue-500/5",
@@ -265,11 +265,9 @@ export function HomeHero({
   );
 
   // Reset slide when collection changes
-  const prevCollectionRef = useRef(activeCollection);
-  if (prevCollectionRef.current !== activeCollection) {
-    prevCollectionRef.current = activeCollection;
+  useEffect(() => {
     setCurrentSlide(0);
-  }
+  }, [activeCollection]);
 
   // Auto-rotate carousel through collection slides
   useEffect(() => {

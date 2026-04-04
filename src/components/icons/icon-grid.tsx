@@ -30,11 +30,9 @@ export function IconGrid({ icons, view = "comfortable" }: IconGridProps) {
   const hasMore = visibleCount < icons.length;
 
   // Reset visible count when icons list changes (new search/filter)
-  const prevIconsRef = useRef(icons);
-  if (prevIconsRef.current !== icons) {
-    prevIconsRef.current = icons;
+  useEffect(() => {
     setVisibleCount(INITIAL_COUNT);
-  }
+  }, [icons]);
 
   // Intersection observer for infinite scroll
   useEffect(() => {

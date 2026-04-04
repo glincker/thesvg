@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>theSVG Blog</title>
+    <link>https://thesvg.org/blog</link>
+    <description>Announcements, releases, and updates from theSVG - the open SVG brand library</description>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 04 Apr 2026 00:44:11 GMT</lastBuildDate>
+    <atom:link href="https://thesvg.org/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>thesvg is Now on Raycast</title>
+      <link>https://thesvg.org/blog/raycast-extension-launch</link>
+      <guid isPermaLink="true">https://thesvg.org/blog/raycast-extension-launch</guid>
+      <description>Search and copy any of our 5,600 icons directly from Raycast. No browser needed.</description>
+      <pubDate>Thu, 26 Mar 2026 00:00:00 GMT</pubDate>
+      <author>team@thesvg.org (theSVG Team)</author>
+      <category>release</category>
+      <category>raycast</category>
+      <category>integration</category>
+    </item>
+    <item>
+      <title>Azure and Google Cloud Icons Join theSVG</title>
+      <link>https://thesvg.org/blog/azure-gcp-icons-launch</link>
+      <guid isPermaLink="true">https://thesvg.org/blog/azure-gcp-icons-launch</guid>
+      <description>626 Microsoft Azure service icons and 214 Google Cloud Platform icons are now available. theSVG is now the largest free cloud icon library.</description>
+      <pubDate>Sun, 22 Mar 2026 00:00:00 GMT</pubDate>
+      <author>team@thesvg.org (theSVG Team)</author>
+      <category>release</category>
+      <category>azure</category>
+      <category>gcp</category>
+      <category>cloud</category>
+    </item>
+    <item>
+      <title>5,600+ Icons: Building the Definitive SVG Icon Hub</title>
+      <link>https://thesvg.org/blog/5500-icons-milestone</link>
+      <guid isPermaLink="true">https://thesvg.org/blog/5500-icons-milestone</guid>
+      <description>From brand logos to cloud architecture diagrams, theSVG now covers every icon a developer needs. Here is our vision for what comes next.</description>
+      <pubDate>Sun, 22 Mar 2026 00:00:00 GMT</pubDate>
+      <author>team@thesvg.org (theSVG Team)</author>
+      <category>milestone</category>
+      <category>roadmap</category>
+    </item>
+    <item>
+      <title>739 Official AWS Architecture Icons Now Available</title>
+      <link>https://thesvg.org/blog/aws-architecture-icons</link>
+      <guid isPermaLink="true">https://thesvg.org/blog/aws-architecture-icons</guid>
+      <description>Every AWS service, resource, and category icon from the official 2026-Q1 icon set. Lambda, EC2, S3, and 736 more.</description>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 GMT</pubDate>
+      <author>team@thesvg.org (theSVG Team)</author>
+      <category>release</category>
+      <category>aws</category>
+      <category>cloud</category>
+    </item>
+    <item>
+      <title>Introducing theSVG: The Open SVG Brand Library</title>
+      <link>https://thesvg.org/blog/introducing-thesvg</link>
+      <guid isPermaLink="true">https://thesvg.org/blog/introducing-thesvg</guid>
+      <description>We launched theSVG with 4,000+ brand SVG icons. Free, open-source, and community-driven. Here is why we built it and what is next.</description>
+      <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
+      <author>team@thesvg.org (theSVG Team)</author>
+      <category>launch</category>
+      <category>open-source</category>
+    </item>
+  </channel>
+</rss>
