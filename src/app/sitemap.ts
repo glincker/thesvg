@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { getAllIcons, getAllCategories } from "@/lib/icons";
 import postsData from "@/data/posts.json";
 
+export const dynamic = "force-static";
+
 const BASE_URL = "https://thesvg.org";
 const CDN_BASE =
   "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons";
