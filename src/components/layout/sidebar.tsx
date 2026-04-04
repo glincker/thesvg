@@ -4,7 +4,6 @@ import { useState } from "react";
 import {
   Blocks,
   Bot,
-  Braces,
   ChevronRight,
   Cloud,
   Code,
@@ -179,14 +178,6 @@ export function Sidebar({
             })}
           </div>
         </div>
-
-        <Link
-          href="/api-docs"
-          className={cn(navItemClass, pathname === "/api-docs" && activeClass)}
-        >
-          <Braces className="h-4 w-4 shrink-0 transition-transform duration-200 group-hover:scale-110" />
-          API
-        </Link>
 
         <Link
           href="/blog"

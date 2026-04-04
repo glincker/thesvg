@@ -178,7 +178,7 @@ const CATEGORIES: Category[] = [
         description: "Use CDN URLs directly. Zero config, always up to date.",
         status: "available",
         cta: "Docs",
-        href: "/api-docs",
+        href: "https://www.jsdelivr.com/package/gh/glincker/thesvg",
         iconSlug: "framer",
       },
     ],
@@ -202,15 +202,15 @@ const CATEGORIES: Category[] = [
         description: "Serve any icon via global CDN. Use directly in HTML, CSS, or markdown.",
         status: "available",
         cta: "Docs",
-        href: "/api-docs",
+        href: "https://www.jsdelivr.com/package/gh/glincker/thesvg",
         iconSlug: "jsdelivr",
       },
       {
         name: "REST API",
-        description: "Open API. Search, fetch metadata, retrieve SVGs programmatically.",
-        status: "available",
-        cta: "Docs",
-        href: "/api-docs",
+        description: "Paid API coming soon at api.thesvg.org. Search, fetch metadata, retrieve SVGs programmatically.",
+        status: "coming-soon",
+        cta: "Coming Soon",
+        href: "https://github.com/GLINCKER/thesvg",
         iconFallback: <Code className="h-6 w-6 text-muted-foreground" />,
       },
     ],
@@ -463,19 +463,19 @@ export default function ExtensionsPage() {
                 workflow, then open a PR to list it here.
               </p>
 
-              {/* API endpoints */}
+              {/* CDN endpoints */}
               <div className="mb-6 space-y-1.5 rounded-lg border border-border/40 bg-background/50 p-4 font-mono text-xs">
                 <div className="flex gap-3">
                   <span className="w-8 shrink-0 text-orange-500/80">GET</span>
-                  <span className="text-muted-foreground">thesvg.org/icons/<span className="text-foreground/60">{"{slug}"}</span>/<span className="text-foreground/60">{"{variant}"}</span>.svg</span>
+                  <span className="text-muted-foreground">cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/<span className="text-foreground/60">{"{slug}"}</span>/default.svg</span>
                 </div>
                 <div className="flex gap-3">
                   <span className="w-8 shrink-0 text-orange-500/80">GET</span>
-                  <span className="text-muted-foreground">thesvg.org/api/icons?q=<span className="text-foreground/60">{"{query}"}</span></span>
+                  <span className="text-muted-foreground">cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/<span className="text-foreground/60">{"{slug}"}</span>/<span className="text-foreground/60">{"{variant}"}</span>.svg</span>
                 </div>
                 <div className="flex gap-3">
                   <span className="w-8 shrink-0 text-orange-500/80">GET</span>
-                  <span className="text-muted-foreground">thesvg.org/api/registry/<span className="text-foreground/60">{"{slug}"}</span></span>
+                  <span className="text-muted-foreground">cdn.jsdelivr.net/gh/glincker/thesvg@main/data/icons.json</span>
                 </div>
               </div>
 
@@ -490,13 +490,15 @@ export default function ExtensionsPage() {
                   <Github className="h-4 w-4" />
                   View on GitHub
                 </a>
-                <Link
-                  href="/api-docs"
+                <a
+                  href="https://www.jsdelivr.com/package/gh/glincker/thesvg"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
                 >
                   <Code className="h-4 w-4" />
-                  API Reference
-                </Link>
+                  CDN Docs
+                </a>
               </div>
             </div>
           </div>
