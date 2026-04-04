@@ -14,6 +14,8 @@ export async function generateStaticParams() {
   return icons.map((icon) => ({ slug: icon.slug }));
 }
 
+export const dynamicParams = false;
+
 const CDN_BASE = "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons";
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
