@@ -108500,5 +108500,80 @@
     "url": "https://www.zyte.com",
     "dateAdded": "2026-03-07",
     "collection": "brands"
+  },
+  {
+    "slug": "tsdown",
+    "title": "tsdown",
+    "aliases": [],
+    "hex": "ff7e17",
+    "categories": ["Developer Tools"],
+    "variants": {
+      "default": "/icons/tsdown/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://tsdown.dev/",
+    "guidelines": "https://tsdown.dev/",
+    "collection": "brands",
+    "dateAdded": "2026-04-03"
+  },
+  {
+    "slug": "uxuy",
+    "title": "UXUY",
+    "aliases": ["uxuy-logo-black"],
+    "hex": "FE4200",
+    "categories": ["Web3", "DEX"],
+    "variants": {
+      "default": "/icons/uxuy/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.uxuy.com/",
+    "guidelines": "https://docs.uxuy.com/contact-us/brand-logo/",
+    "collection": "brands",
+    "dateAdded": "2026-04-03"
+  },
+  {
+    "slug": "timesheet",
+    "title": "Timesheet",
+    "aliases": ["timesheet-logo", "timesheet.io"],
+    "hex": "ff8800",
+    "categories": ["SaaS", "Productivity", "Business"],
+    "variants": {
+      "default": "/icons/timesheet/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://timesheet.io",
+    "collection": "brands",
+    "dateAdded": "2026-04-03"
+  },
+  {
+    "slug": "kvant-system",
+    "title": "Kvant System",
+    "aliases": [],
+    "hex": "00C28D",
+    "categories": ["Cybersecurity"],
+    "variants": {
+      "default": "/icons/kvant-system/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://kvantsystem.uz/",
+    "guidelines": "https://kvantsystem.uz/brand-guidelines",
+    "collection": "brands",
+    "dateAdded": "2026-04-03"
+  },
+  {
+    "slug": "filagram",
+    "title": "Filagram",
+    "aliases": [],
+    "hex": "00f0c0",
+    "categories": ["Software", "File Sharing"],
+    "variants": {
+      "default": "/icons/filagram/default.svg",
+      "dark": "/icons/filagram/dark.svg",
+      "wordmark": "/icons/filagram/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "https://filagram.com",
+    "collection": "brands",
+    "dateAdded": "2026-04-03"
   }
 ]
