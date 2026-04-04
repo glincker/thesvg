@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Check, Link2 } from "lucide-react";
+import posthog from "posthog-js";
 import { cn } from "@/lib/utils";
 
 interface ShareButtonsProps {
@@ -67,6 +68,11 @@ export function ShareButtons({ url, title, tags, vertical = false }: ShareButton
     await navigator.clipboard.writeText(url);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+    posthog.capture("blog_link_copied", { url });
+  };
+
+  const handleShare = (platform: string) => {
+    posthog.capture("blog_post_shared", { platform, url });
   };
 
   if (vertical) {
@@ -83,6 +89,7 @@ export function ShareButtons({ url, title, tags, vertical = false }: ShareButton
             target="_blank"
             rel="noopener noreferrer"
             title={`Share on ${platform.name}`}
+            onClick={() => handleShare(platform.name)}
             className={cn(
               "flex h-10 w-10 items-center justify-center rounded-xl border border-border/50 text-muted-foreground/60 shadow-sm transition-all duration-200 hover:scale-110 hover:shadow-md dark:border-white/[0.08]",
               platform.hoverColor
@@ -121,6 +128,7 @@ export function ShareButtons({ url, title, tags, vertical = false }: ShareButton
           href={platform.buildUrl(url, title, tags)}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => handleShare(platform.name)}
           className={cn(
             "inline-flex items-center gap-1.5 rounded-lg border border-border/50 px-3 py-1.5 text-xs font-medium text-muted-foreground transition-all duration-200 dark:border-white/[0.08]",
             platform.hoverColor

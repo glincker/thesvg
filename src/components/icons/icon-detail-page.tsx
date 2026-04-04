@@ -119,8 +119,9 @@ export function IconDetailPage({
   const handleDownload = useCallback(async () => {
     if (!currentPath || downloaded) return;
     try {
-      const res = await fetch(currentPath);
-      const blob = await res.blob();
+      const blob = svgContent
+        ? new Blob([svgContent], { type: "image/svg+xml" })
+        : await fetch(currentPath).then((r) => r.blob());
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
@@ -144,7 +145,7 @@ export function IconDetailPage({
     } catch {
       window.open(currentPath, "_blank");
     }
-  }, [currentPath, icon.slug, activeVariant, downloaded, icon.title]);
+  }, [currentPath, svgContent, icon.slug, activeVariant, downloaded, icon.title]);
 
   const primaryCategory = icon.categories[0] ?? null;
 
@@ -396,6 +397,7 @@ export function IconDetailPage({
           {/* Export PNG with visual cards */}
           <PngExport
             currentPath={currentPath}
+            svgContent={svgContent}
             slug={icon.slug}
             activeVariant={activeVariant}
           />

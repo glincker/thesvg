@@ -2,11 +2,13 @@
 
 import { useCallback, useState } from "react";
 import { Download, Loader2, Image as ImageIcon } from "lucide-react";
+import posthog from "posthog-js";
 import { svgToPng, downloadPng } from "@/lib/svg-to-png";
 import { cn } from "@/lib/utils";
 
 interface PngExportProps {
   currentPath: string;
+  svgContent: string;
   slug: string;
   activeVariant: string;
 }
@@ -19,7 +21,7 @@ const PNG_SIZES = [
   { size: 512, display: 44 },
 ];
 
-export function PngExport({ currentPath, slug, activeVariant }: PngExportProps) {
+export function PngExport({ currentPath, svgContent, slug, activeVariant }: PngExportProps) {
   const [exportingSize, setExportingSize] = useState<number | null>(null);
   const [exportError, setExportError] = useState<string | null>(null);
 
@@ -29,12 +31,17 @@ export function PngExport({ currentPath, slug, activeVariant }: PngExportProps) 
       setExportingSize(size);
       setExportError(null);
       try {
-        const blob = await svgToPng(currentPath, size);
+        const blob = await svgToPng(svgContent || currentPath, size);
         const variantSuffix =
           activeVariant !== "default"
             ? `-${activeVariant.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase()}`
             : "";
         downloadPng(blob, `${slug}${variantSuffix}-${size}px`);
+        posthog.capture("icon_png_exported", {
+          icon_slug: slug,
+          variant: activeVariant,
+          size_px: size,
+        });
       } catch {
         setExportError("Could not convert this SVG to PNG. Try another variant.");
         setTimeout(() => setExportError(null), 3000);

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Check, Copy } from "lucide-react";
+import posthog from "posthog-js";
 import { getJsDelivrUrl } from "@/components/icons/shared/icon-constants";
 
 interface QuickCommandsProps {
@@ -18,6 +19,11 @@ export function QuickCommands({ slug, activeVariant }: QuickCommandsProps) {
     navigator.clipboard.writeText(text);
     setCopiedCmd(key);
     setTimeout(() => setCopiedCmd(null), 1500);
+    posthog.capture("quick_command_copied", {
+      icon_slug: slug,
+      variant: activeVariant,
+      command_type: key,
+    });
   };
 
   return (

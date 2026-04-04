@@ -10,13 +10,14 @@
  * If the SVG has no viewBox or dimensions, it falls back to rendering at the
  * requested size directly.
  */
-export async function svgToPng(svgUrl: string, size: number): Promise<Blob> {
-  // 1. Fetch the SVG source text
-  const response = await fetch(svgUrl);
-  if (!response.ok) {
-    throw new Error(`Failed to fetch SVG: ${response.statusText}`);
-  }
-  const svgText = await response.text();
+export async function svgToPng(svgSource: string, size: number): Promise<Blob> {
+  // 1. Resolve SVG source text - accept raw SVG markup or a URL
+  const svgText = svgSource.trimStart().startsWith("<")
+    ? svgSource
+    : await fetch(svgSource).then((r) => {
+        if (!r.ok) throw new Error(`Failed to fetch SVG: ${r.statusText}`);
+        return r.text();
+      });
 
   // 2. Parse the SVG to extract viewBox so the canvas renders proportionally.
   //    We clone the SVG string, inject explicit width/height, then create a
