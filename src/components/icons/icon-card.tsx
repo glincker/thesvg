@@ -108,6 +108,7 @@ export const IconCard = memo(function IconCard({
     return (
       <Link
         href={`/icon/${icon.slug}`}
+        prefetch={false}
         className="group relative flex w-full min-w-0 flex-col items-center gap-1.5 overflow-hidden rounded-xl border border-border/40 bg-card/80 p-3 transition-all duration-200 hover:border-border hover:bg-card hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
       >
         <div
@@ -143,6 +144,7 @@ export const IconCard = memo(function IconCard({
   return (
     <Link
       href={`/icon/${icon.slug}`}
+      prefetch={false}
       className="group relative flex h-full min-w-0 flex-col items-center rounded-xl border border-border/40 bg-card/80 transition-all duration-200 hover:border-border hover:bg-card hover:shadow-lg hover:shadow-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring dark:hover:shadow-black/20"
     >
       {/* Favorite toggle */}
