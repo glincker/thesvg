@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ScrollToTop } from "@/components/scroll-to-top";
+import { PostHogProvider } from "@/components/posthog-provider";
 import { getFormattedIconCount } from "@/lib/icons";
 import "./globals.css";
 
@@ -120,6 +121,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ScrollToTop />
+          <PostHogProvider />
           <Suspense>
             <Header />
           </Suspense>

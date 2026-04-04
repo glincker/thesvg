@@ -104,10 +104,16 @@ export function IconDetailPage({
 
   useEffect(() => {
     if (!currentPath) return;
+    let cancelled = false;
     fetch(currentPath)
       .then((r) => r.text())
-      .then(setSvgContent)
-      .catch(() => setSvgContent(""));
+      .then((text) => {
+        if (!cancelled) setSvgContent(text);
+      })
+      .catch(() => {
+        if (!cancelled) setSvgContent("");
+      });
+    return () => { cancelled = true; };
   }, [currentPath]);
 
   const handleDownload = useCallback(async () => {
