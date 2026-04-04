@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { Search, X } from "lucide-react";
 import posthog from "posthog-js";
 
@@ -16,12 +16,12 @@ export function SearchBar({
   onChange,
 }: SearchBarProps) {
   const inputRef = useRef<HTMLInputElement>(null);
-  const [isMac, setIsMac] = useState(false);
+  const isMac = useSyncExternalStore(
+    () => () => {},
+    () => navigator.userAgent.includes("Mac"),
+    () => false,
+  );
   const searchTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  useEffect(() => {
-    setIsMac(navigator.userAgent.includes("Mac"));
-  }, []);
 
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {

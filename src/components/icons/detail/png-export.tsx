@@ -49,7 +49,7 @@ export function PngExport({ currentPath, svgContent, slug, activeVariant }: PngE
         setExportingSize(null);
       }
     },
-    [currentPath, activeVariant, slug, exportingSize]
+    [currentPath, svgContent, activeVariant, slug, exportingSize]
   );
 
   return (
