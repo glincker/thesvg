@@ -108525,7 +108525,7 @@
     "variants": {
       "default": "/icons/uxuy/default.svg"
     },
-    "license": "TODO",
+    "license": "brand-use",
     "url": "https://www.uxuy.com/",
     "guidelines": "https://docs.uxuy.com/contact-us/brand-logo/",
     "collection": "brands",
@@ -108540,7 +108540,7 @@
     "variants": {
       "default": "/icons/timesheet/default.svg"
     },
-    "license": "TODO",
+    "license": "brand-use",
     "url": "https://timesheet.io",
     "collection": "brands",
     "dateAdded": "2026-04-03"
@@ -108554,7 +108554,7 @@
     "variants": {
       "default": "/icons/kvant-system/default.svg"
     },
-    "license": "TODO",
+    "license": "brand-use",
     "url": "https://kvantsystem.uz/",
     "guidelines": "https://kvantsystem.uz/brand-guidelines",
     "collection": "brands",
@@ -108563,7 +108563,7 @@
   {
     "slug": "filagram",
     "title": "Filagram",
-    "aliases": ["fileroost"],
+    "aliases": [],
     "hex": "00f0c0",
     "categories": ["Software", "File Sharing"],
     "variants": {
