@@ -1,5 +1,11 @@
 # @thesvg/react
 
+## 2.1.2
+
+### Patch Changes
+
+- feat: add tsdown, UXUY, Timesheet, Kvant System, and Filagram icons ([#86](https://github.com/glincker/thesvg/issues/86))
+
 ## 2.1.1
 
 ### Patch Changes
