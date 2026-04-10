@@ -53,9 +53,12 @@ CLAUDE.md
 .claude/
 .env.local
 
+# generated API files (built from icons.json at build time)
+public/api/
+
 # marketing assets (exported PNGs - too large for OSS repo)
 public/banners/
 posthog-setup-report.md
 
 # import scripts (internal tooling - not for public repo)
-scripts/
+/scripts/
