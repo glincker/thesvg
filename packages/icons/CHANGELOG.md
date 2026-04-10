@@ -1,5 +1,11 @@
 # @thesvg/icons
 
+## 2.1.3
+
+### Patch Changes
+
+- feat: add requested icons + fix Raycast extension ([#93](https://github.com/glincker/thesvg/issues/93))
+
 ## 2.1.2
 
 ### Patch Changes
