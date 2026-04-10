@@ -2,7 +2,7 @@
  * Generates static JSON API files in public/api/ for the Raycast extension
  * and any other consumers that need a REST-like interface.
  *
- * Run: npx tsx scripts/generate-api.ts
+ * Run: npx tsx src/scripts/generate-api.ts
  *
  * Outputs:
  *   public/api/registry.json      - all icons (lightweight: slug, title, categories, variant keys)
@@ -10,7 +10,7 @@
  *   public/api/registry/<slug>.json - per-icon detail (includes inline SVGs)
  */
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from "fs";
 import { join } from "path";
 
 const ROOT = join(__dirname, "../..");
@@ -34,7 +34,8 @@ interface IconEntry {
 }
 
 function readSvgFile(relativePath: string): string {
-  const fullPath = join(ROOT, "public", relativePath);
+  const safePath = relativePath.replace(/^\//, "");
+  const fullPath = join(ROOT, "public", safePath);
   if (!existsSync(fullPath)) return "";
   try {
     return readFileSync(fullPath, "utf-8").trim();
@@ -46,14 +47,15 @@ function readSvgFile(relativePath: string): string {
 function main() {
   const icons: IconEntry[] = JSON.parse(readFileSync(ICONS_JSON, "utf-8"));
 
-  // Ensure directories
+  // Clean previous output and ensure directories
+  if (existsSync(PUBLIC_API)) {
+    rmSync(PUBLIC_API, { recursive: true });
+  }
   mkdirSync(REGISTRY_DIR, { recursive: true });
 
   // --- registry.json (lightweight list) ---
   const registryList = {
     total: icons.length,
-    count: icons.length,
-    limit: icons.length,
     icons: icons.map((icon) => ({
       slug: icon.slug,
       title: icon.title,
@@ -96,6 +98,7 @@ function main() {
     const detail = {
       name: icon.slug,
       title: icon.title,
+      aliases: icon.aliases,
       categories: icon.categories,
       hex: icon.hex,
       url: icon.url || null,
