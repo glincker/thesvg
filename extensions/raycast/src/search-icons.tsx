@@ -19,7 +19,11 @@ import {
   getIconUrl,
   getIconPageUrl,
   getCdnUrl,
+  toJsx,
+  toHtmlImg,
+  toDataUri,
   type IconEntry,
+  type IconDetail,
   type Preferences,
 } from "./api";
 
@@ -42,7 +46,7 @@ export default function SearchIcons() {
       isLoading={isLoading}
       searchText={searchText}
       onSearchTextChange={setSearchText}
-      searchBarPlaceholder="Search 4,000+ brand icons..."
+      searchBarPlaceholder="Search 5,600+ brand icons..."
       filtering={false}
       searchBarAccessory={
         <List.Dropdown
@@ -95,7 +99,7 @@ function IconListItem({ icon }: { icon: IconEntry }) {
           ? [{ text: `${icon.variants.length} variants`, icon: Icon.Layers }]
           : []),
       ]}
-      keywords={[icon.slug, ...icon.categories]}
+      keywords={[icon.slug, ...icon.categories, ...icon.aliases]}
       actions={
         <ActionPanel>
           <ActionPanel.Section title="Copy">
@@ -166,6 +170,53 @@ function CopySvgAction({ slug, title }: { slug: string; title: string }) {
         }
       }}
     />
+  );
+}
+
+function CopyFormatsSection({
+  icon,
+  variant,
+}: {
+  icon: IconDetail;
+  variant: string;
+}) {
+  const svg = icon.variants[variant]?.svg ?? icon.variants["default"]?.svg;
+  if (!svg) return null;
+
+  const hexVisible = icon.hex && isVisibleHex(icon.hex);
+
+  return (
+    <ActionPanel.Section title="Copy As">
+      <Action.CopyToClipboard
+        title="Copy as JSX Component"
+        content={toJsx(svg, icon.slug)}
+        icon={Icon.Code}
+        shortcut={{ modifiers: ["cmd", "shift"], key: "j" }}
+      />
+      <Action.CopyToClipboard
+        title="Copy as HTML Img Tag"
+        content={toHtmlImg(icon.slug, icon.title)}
+        icon={Icon.Globe}
+        shortcut={{ modifiers: ["cmd", "shift"], key: "h" }}
+      />
+      <Action.CopyToClipboard
+        title="Copy as Data URI"
+        content={toDataUri(svg)}
+        icon={Icon.Link}
+        shortcut={{ modifiers: ["cmd", "shift"], key: "d" }}
+      />
+      {hexVisible && (
+        <Action.CopyToClipboard
+          title="Copy Hex Color"
+          content={`#${icon.hex}`}
+          icon={{
+            source: Icon.CircleFilled,
+            tintColor: `#${icon.hex}` as Color,
+          }}
+          shortcut={{ modifiers: ["cmd", "shift"], key: "x" }}
+        />
+      )}
+    </ActionPanel.Section>
   );
 }
 
@@ -261,7 +312,7 @@ ${defaultSvg.substring(0, 2000)}${defaultSvg.length > 2000 ? "\n... (truncated)"
       }
       actions={
         <ActionPanel>
-          <ActionPanel.Section title="Copy">
+          <ActionPanel.Section title="Copy SVG">
             {variantKeys.map((variant) => (
               <Action
                 key={variant}
@@ -280,6 +331,7 @@ ${defaultSvg.substring(0, 2000)}${defaultSvg.length > 2000 ? "\n... (truncated)"
               />
             ))}
           </ActionPanel.Section>
+          <CopyFormatsSection icon={icon} variant="default" />
           <ActionPanel.Section title="Copy URLs">
             <Action.CopyToClipboard
               title="Copy Direct URL"
@@ -289,12 +341,6 @@ ${defaultSvg.substring(0, 2000)}${defaultSvg.length > 2000 ? "\n... (truncated)"
               title="Copy JsDelivr URL"
               content={getCdnUrl(slug)}
             />
-            {hexVisible && (
-              <Action.CopyToClipboard
-                title="Copy Color"
-                content={`#${icon.hex}`}
-              />
-            )}
           </ActionPanel.Section>
           <ActionPanel.Section title="Open">
             <Action.OpenInBrowser
