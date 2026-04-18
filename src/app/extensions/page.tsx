@@ -127,7 +127,7 @@ const CATEGORIES: Category[] = [
     items: [
       {
         name: "VS Code",
-        description: "Search 5,650+ icons from the command palette. Copy SVG, JSX, CDN link, or insert at cursor.",
+        description: `Search ${iconCount} icons from the command palette. Copy SVG, JSX, CDN link, or insert at cursor.`,
         status: "available",
         cta: "Install",
         href: "https://marketplace.visualstudio.com/items?itemName=glincker.thesvg",
