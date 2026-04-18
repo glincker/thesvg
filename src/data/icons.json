@@ -108631,5 +108631,24 @@
     "url": "https://filagram.com",
     "collection": "brands",
     "dateAdded": "2026-04-03"
+  },
+  {
+    "slug": "lutece",
+    "title": "Lutece",
+    "aliases": [],
+    "hex": "0527D2",
+    "categories": [
+      "CMS",
+      "Framework",
+      "Non-profit"
+    ],
+    "variants": {
+      "default": "/icons/lutece/default.svg"
+    },
+    "license": "BSD-3-Clause",
+    "url": "https://lutece.paris.fr",
+    "guidelines": "https://lutece.paris.fr",
+    "collection": "brands",
+    "dateAdded": "2026-04-18"
   }
 ]
