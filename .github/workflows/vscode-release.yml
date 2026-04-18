@@ -1,0 +1,71 @@
+name: Release - VS Code Extension
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'extensions/vscode/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    name: Publish to VS Code Marketplace
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect version bump
+        id: version
+        run: |
+          CURRENT=$(node -p "require('./extensions/vscode/package.json').version")
+          PREVIOUS=$(git show HEAD~1:extensions/vscode/package.json 2>/dev/null | jq -r '.version' 2>/dev/null || echo "")
+          echo "current=$CURRENT" >> "$GITHUB_OUTPUT"
+          echo "previous=$PREVIOUS" >> "$GITHUB_OUTPUT"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "Manual dispatch; publishing $CURRENT"
+            echo "bumped=true" >> "$GITHUB_OUTPUT"
+          elif [ -z "$PREVIOUS" ]; then
+            echo "First-time addition of extensions/vscode; skipping auto-publish (publish manually once, then future bumps auto-release)."
+            echo "bumped=false" >> "$GITHUB_OUTPUT"
+          elif [ "$CURRENT" != "$PREVIOUS" ]; then
+            echo "Version bumped $PREVIOUS -> $CURRENT; publishing"
+            echo "bumped=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Version unchanged ($CURRENT); skipping publish."
+            echo "bumped=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/setup-node@v4
+        if: steps.version.outputs.bumped == 'true'
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: extensions/vscode/package-lock.json
+
+      - name: Install dependencies
+        if: steps.version.outputs.bumped == 'true'
+        working-directory: extensions/vscode
+        run: npm ci
+
+      - name: Publish to Marketplace
+        if: steps.version.outputs.bumped == 'true'
+        working-directory: extensions/vscode
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+        run: npx vsce publish
+
+      - name: Tag release
+        if: steps.version.outputs.bumped == 'true'
+        run: |
+          TAG="vscode@${{ steps.version.outputs.current }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git rev-parse "$TAG" >/dev/null 2>&1; then
+            git tag "$TAG"
+            git push origin "$TAG"
+          fi
