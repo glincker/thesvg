@@ -4,7 +4,7 @@ Search and copy 5,650+ SVG icons directly from VS Code. Brand logos, AWS, Azure,
 
 ## Features
 
-- **Search** across 5,650+ icons from the command palette (`Cmd+Shift+I`)
+- **Search** across 5,650+ icons from the command palette (`Cmd+Shift+Alt+I`)
 - **Copy SVG** to clipboard with one keystroke
 - **Copy as JSX** for React projects
 - **Copy CDN link** (jsDelivr) for HTML/CSS
@@ -14,12 +14,14 @@ Search and copy 5,650+ SVG icons directly from VS Code. Brand logos, AWS, Azure,
 
 ## Usage
 
-1. Press `Cmd+Shift+I` (or `Ctrl+Shift+I` on Windows/Linux)
+1. Press `Cmd+Shift+Alt+I` (or `Ctrl+Shift+Alt+I` on Windows/Linux)
 2. Type an icon name (e.g. "lambda", "stripe", "compute")
 3. Select an icon
 4. Choose an action (copy SVG, copy JSX, copy CDN, insert, etc.)
 
 Or use the command palette (`Cmd+Shift+P`) and search for "theSVG".
+
+> The default shortcut avoids `Ctrl+Shift+I`, which VS Code uses to open the Developer Tools on Windows and Linux. Remap from `File > Preferences > Keyboard Shortcuts` if you prefer a shorter chord.
 
 ## Commands
 

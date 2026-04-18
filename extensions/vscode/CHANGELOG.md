@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.2
+
+- Default shortcut changed to `Cmd/Ctrl+Shift+Alt+I` to avoid the built-in Developer Tools chord on Windows and Linux
+- Registry and SVG fetches now have a 15s timeout and are cancellable from the progress notification
+- `Copy as JSX` handles more SVG attributes: `xlink:*`, `for`, `tabindex`, and inline `style="..."` strings are converted to valid JSX
+
 ## 0.1.1
 
 - Switch icon registry to `thesvg.org/api/registry.json` (post Cloudflare migration)

@@ -19,12 +19,38 @@ interface RegistryResponse {
   icons: IconEntry[];
 }
 
+const FETCH_TIMEOUT_MS = 15_000;
+
 let iconsCache: IconEntry[] | null = null;
 
-async function fetchIcons(): Promise<IconEntry[]> {
+async function fetchWithTimeout(
+  url: string,
+  token?: vscode.CancellationToken,
+  ms: number = FETCH_TIMEOUT_MS
+): Promise<Response> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), ms);
+  const cancelSub = token?.onCancellationRequested(() => controller.abort());
+  try {
+    return await fetch(url, { signal: controller.signal });
+  } catch (err) {
+    if (token?.isCancellationRequested) {
+      throw new Error("Cancelled");
+    }
+    if (controller.signal.aborted) {
+      throw new Error(`Request timed out after ${ms / 1000}s: ${url}`);
+    }
+    throw err;
+  } finally {
+    clearTimeout(timeout);
+    cancelSub?.dispose();
+  }
+}
+
+async function fetchIcons(token?: vscode.CancellationToken): Promise<IconEntry[]> {
   if (iconsCache) return iconsCache;
 
-  const response = await fetch(REGISTRY_URL);
+  const response = await fetchWithTimeout(REGISTRY_URL, token);
   if (!response.ok) {
     throw new Error(`Failed to fetch icons: ${response.status}`);
   }
@@ -42,25 +68,48 @@ function getCdnUrl(slug: string, variant: string = "default"): string {
 }
 
 async function fetchSvgContent(slug: string, variant: string = "default"): Promise<string> {
-  const response = await fetch(getIconUrl(slug, variant));
+  const response = await fetchWithTimeout(getIconUrl(slug, variant));
   if (!response.ok) {
     throw new Error(`Failed to fetch SVG: ${response.status}`);
   }
   return response.text();
 }
 
+function kebabOrNsToCamel(name: string): string {
+  return name.replace(/[-:]([a-z])/g, (_, c: string) => c.toUpperCase());
+}
+
+function convertInlineStyle(styleBody: string): string {
+  const props = styleBody
+    .split(";")
+    .map((rule) => rule.trim())
+    .filter(Boolean)
+    .map((rule) => {
+      const idx = rule.indexOf(":");
+      if (idx === -1) return null;
+      const key = kebabOrNsToCamel(rule.slice(0, idx).trim());
+      const value = rule.slice(idx + 1).trim().replace(/"/g, '\\"');
+      return `${key}: "${value}"`;
+    })
+    .filter((p): p is string => p !== null)
+    .join(", ");
+  return ` style={{${props}}}`;
+}
+
 function svgToJsx(svg: string, title: string): string {
   const componentName = title.replace(/[^a-zA-Z0-9]/g, "") + "Icon";
+
   const jsxBody = svg
-    .replace(/class=/g, "className=")
-    .replace(/fill-rule=/g, "fillRule=")
-    .replace(/clip-rule=/g, "clipRule=")
-    .replace(/stroke-width=/g, "strokeWidth=")
-    .replace(/stroke-linecap=/g, "strokeLinecap=")
-    .replace(/stroke-linejoin=/g, "strokeLinejoin=")
-    .replace(/fill-opacity=/g, "fillOpacity=")
-    .replace(/stroke-opacity=/g, "strokeOpacity=")
-    .replace(/xmlns:xlink=/g, "xmlnsXlink=");
+    // Camel-case hyphenated or namespaced attribute names (stroke-width, xlink:href, etc.)
+    .replace(/(\s)([a-z]+(?:[-:][a-z]+)+)(\s*=)/g, (_m, ws: string, name: string, eq: string) =>
+      `${ws}${kebabOrNsToCamel(name)}${eq}`
+    )
+    // React-reserved single-word attributes
+    .replace(/(\s)class=/g, "$1className=")
+    .replace(/(\s)for=/g, "$1htmlFor=")
+    .replace(/(\s)tabindex=/g, "$1tabIndex=")
+    // Inline style="..." -> style={{...}}
+    .replace(/\sstyle="([^"]*)"/g, (_m, body: string) => convertInlineStyle(body));
 
   return `function ${componentName}(props) {\n  return (\n    ${jsxBody}\n  );\n}`;
 }
@@ -83,9 +132,9 @@ async function showIconPicker(): Promise<IconEntry | undefined> {
     {
       location: vscode.ProgressLocation.Notification,
       title: "theSVG: Loading icons...",
-      cancellable: false,
+      cancellable: true,
     },
-    () => fetchIcons()
+    (_progress, token) => fetchIcons(token)
   );
 
   const quickPick = vscode.window.createQuickPick<IconQuickPickItem>();
