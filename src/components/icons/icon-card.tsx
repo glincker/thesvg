@@ -1,8 +1,9 @@
 "use client";
 
-import { memo, useCallback, useState } from "react";
+import { memo, useCallback, useRef, useState } from "react";
 import { Check, Copy, Download, Eye, Heart } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import posthog from "posthog-js";
 import type { IconEntry } from "@/lib/icons";
 import { useFavoritesStore } from "@/lib/stores/favorites-store";
@@ -20,8 +21,16 @@ export const IconCard = memo(function IconCard({
   compact = false,
 }: IconCardProps) {
   const [copied, setCopied] = useState(false);
+  const router = useRouter();
+  const prefetched = useRef(false);
   const toggleFavorite = useFavoritesStore((s) => s.toggleFavorite);
   const isFavorite = useFavoritesStore((s) => s.favorites.includes(icon.slug));
+
+  const handleHoverPrefetch = useCallback(() => {
+    if (prefetched.current) return;
+    prefetched.current = true;
+    router.prefetch(`/icon/${icon.slug}`);
+  }, [router, icon.slug]);
 
   const handleCopy = useCallback(
     async (e: React.MouseEvent) => {
@@ -109,6 +118,9 @@ export const IconCard = memo(function IconCard({
       <Link
         href={`/icon/${icon.slug}`}
         prefetch={false}
+        onMouseEnter={handleHoverPrefetch}
+        onFocus={handleHoverPrefetch}
+        onTouchStart={handleHoverPrefetch}
         className="group relative flex w-full min-w-0 flex-col items-center gap-1.5 overflow-hidden rounded-xl border border-border/40 bg-card/80 p-3 transition-all duration-200 hover:border-border hover:bg-card hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
       >
         <div
@@ -145,6 +157,9 @@ export const IconCard = memo(function IconCard({
     <Link
       href={`/icon/${icon.slug}`}
       prefetch={false}
+      onMouseEnter={handleHoverPrefetch}
+      onFocus={handleHoverPrefetch}
+      onTouchStart={handleHoverPrefetch}
       className="group relative flex h-full min-w-0 flex-col items-center rounded-xl border border-border/40 bg-card/80 transition-all duration-200 hover:border-border hover:bg-card hover:shadow-lg hover:shadow-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring dark:hover:shadow-black/20"
     >
       {/* Favorite toggle */}

@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import posthog from "posthog-js";
 import Link from "next/link";
-import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import { useSearchParams, usePathname } from "next/navigation";
 import {
   ArrowUpRight,
   Check,
@@ -34,7 +34,6 @@ export function IconDetailPage({
   relatedIcons = [],
 }: IconDetailPageProps) {
   const searchParams = useSearchParams();
-  const router = useRouter();
   const pathname = usePathname();
 
   // Read variant from URL param, fallback to "default"
@@ -69,9 +68,14 @@ export function IconDetailPage({
       const qs = params.toString();
       const queryString = qs ? `?${qs}` : "";
       const newUrl = `${pathname}${queryString}`;
-      router.replace(newUrl, { scroll: false });
+      // Avoid router.replace here: it re-runs App Router reconciliation and
+      // triggers loading.tsx, causing a visible flash. Active variant is
+      // already tracked in local state; the URL update is for shareability.
+      if (typeof window !== "undefined") {
+        window.history.replaceState(null, "", newUrl);
+      }
     },
-    [searchParams, pathname, router, icon.slug],
+    [searchParams, pathname, icon.slug],
   );
 
   const variants = Object.entries(icon.variants).filter(
