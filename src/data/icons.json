@@ -108643,11 +108643,11 @@
       "Non-profit"
     ],
     "variants": {
-      "default": "/icons/lutece/default.svg"
+      "default": "/icons/lutece/default.svg",
+      "mono": "/icons/lutece/mono.svg"
     },
     "license": "BSD-3-Clause",
     "url": "https://lutece.paris.fr",
-    "guidelines": "https://lutece.paris.fr",
     "collection": "brands",
     "dateAdded": "2026-04-18"
   }
