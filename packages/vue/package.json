@@ -1,6 +1,6 @@
 {
   "name": "@thesvg/vue",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "Typed Vue 3 SVG components for all 4000+ brand icons from thesvg.org",
   "type": "module",
   "sideEffects": false,
