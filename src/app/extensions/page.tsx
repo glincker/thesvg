@@ -127,10 +127,10 @@ const CATEGORIES: Category[] = [
     items: [
       {
         name: "VS Code",
-        description: "Fuzzy search, inline preview, one-click paste. Cmd+Shift+P to insert.",
-        status: "coming-soon",
-        cta: "GitHub",
-        href: "https://github.com/GLINCKER/thesvg/issues",
+        description: `Search ${iconCount} icons from the command palette. Copy SVG, JSX, CDN link, or insert at cursor.`,
+        status: "available",
+        cta: "Install",
+        href: "https://marketplace.visualstudio.com/items?itemName=glincker.thesvg",
         iconSlug: "visual-studio-code",
       },
       {
@@ -231,10 +231,10 @@ const CATEGORIES: Category[] = [
       },
       {
         name: "Raycast Extension",
-        description: "Search 5,600+ icons, copy SVG or CDN URL in one keystroke. Filter by category, preview variants.",
+        description: `Search ${iconCount} icons, copy SVG or CDN URL in one keystroke. Filter by category, preview variants.`,
         status: "available",
-        cta: "GitHub",
-        href: "https://github.com/GLINCKER/thesvg/tree/main/extensions/raycast",
+        cta: "Install",
+        href: "https://www.raycast.com/thegdsks/thesvg",
         iconSlug: "raycast",
       },
       {
