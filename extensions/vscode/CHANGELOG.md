@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3
+
+- Remove the default keybinding. Invoke via the command palette (`theSVG: Search Icons`) or bind your own under `Preferences: Open Keyboard Shortcuts`. Avoids shadowing any built-in VS Code chord.
+
 ## 0.1.2
 
 - Default shortcut changed to `Cmd/Ctrl+Shift+Alt+I` to avoid the built-in Developer Tools chord on Windows and Linux
