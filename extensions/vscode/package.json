@@ -1,0 +1,81 @@
+{
+  "name": "thesvg",
+  "displayName": "theSVG - SVG Icon Search",
+  "description": "Search and copy 5,650+ SVG icons (brands, AWS, Azure, GCP, Kubernetes) directly from VS Code",
+  "version": "0.1.1",
+  "publisher": "glincker",
+  "license": "MIT",
+  "icon": "assets/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/glincker/thesvg"
+  },
+  "homepage": "https://thesvg.org",
+  "bugs": {
+    "url": "https://github.com/glincker/thesvg/issues"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Snippets"
+  ],
+  "keywords": [
+    "svg",
+    "icons",
+    "brand",
+    "aws",
+    "azure",
+    "gcp",
+    "kubernetes",
+    "logo",
+    "architecture"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "thesvg.search",
+        "title": "theSVG: Search Icons"
+      },
+      {
+        "command": "thesvg.copySvg",
+        "title": "theSVG: Copy SVG"
+      },
+      {
+        "command": "thesvg.copyJsx",
+        "title": "theSVG: Copy as JSX"
+      },
+      {
+        "command": "thesvg.copyCdn",
+        "title": "theSVG: Copy CDN Link"
+      },
+      {
+        "command": "thesvg.insertSvg",
+        "title": "theSVG: Insert SVG at Cursor"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "thesvg.search",
+        "key": "ctrl+shift+i",
+        "mac": "cmd+shift+i"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --minify",
+    "watch": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --watch",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "esbuild": "^0.20.0",
+    "@vscode/vsce": "^2.22.0",
+    "typescript": "^5.3.0"
+  }
+}
