@@ -1,5 +1,11 @@
 # @thesvg/icons
 
+## 2.1.4
+
+### Patch Changes
+
+- feat: add Pedi App icon ([#99](https://github.com/glincker/thesvg/issues/99))
+
 ## 2.1.3
 
 ### Patch Changes
