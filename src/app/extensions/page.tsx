@@ -231,7 +231,7 @@ const CATEGORIES: Category[] = [
       },
       {
         name: "Raycast Extension",
-        description: "Search 5,650+ icons, copy SVG or CDN URL in one keystroke. Filter by category, preview variants.",
+        description: `Search ${iconCount} icons, copy SVG or CDN URL in one keystroke. Filter by category, preview variants.`,
         status: "available",
         cta: "Install",
         href: "https://www.raycast.com/thegdsks/thesvg",
