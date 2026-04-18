@@ -59,7 +59,16 @@ export function IconDetailPage({
         variant,
         source: "detail_page",
       });
-      const params = new URLSearchParams(searchParams.toString());
+      // history.replaceState (used below) bypasses the Next router, so
+      // useSearchParams does not refresh after the first update. Read the
+      // current query from window.location.search so repeated variant clicks
+      // preserve any other params (e.g. utm tags, future filters) rather than
+      // folding them back to whatever useSearchParams captured on mount.
+      const currentSearch =
+        typeof window !== "undefined"
+          ? window.location.search
+          : `?${searchParams.toString()}`;
+      const params = new URLSearchParams(currentSearch);
       if (variant === "default") {
         params.delete("variant");
       } else {

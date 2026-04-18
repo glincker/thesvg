@@ -22,13 +22,16 @@ export const IconCard = memo(function IconCard({
 }: IconCardProps) {
   const [copied, setCopied] = useState(false);
   const router = useRouter();
-  const prefetched = useRef(false);
+  // Track the slug we last prefetched, not a boolean, so virtualised/windowed
+  // parents that reuse IconCard instances with different icons still prefetch
+  // when the prop changes.
+  const prefetchedSlug = useRef<string | null>(null);
   const toggleFavorite = useFavoritesStore((s) => s.toggleFavorite);
   const isFavorite = useFavoritesStore((s) => s.favorites.includes(icon.slug));
 
   const handleHoverPrefetch = useCallback(() => {
-    if (prefetched.current) return;
-    prefetched.current = true;
+    if (prefetchedSlug.current === icon.slug) return;
+    prefetchedSlug.current = icon.slug;
     router.prefetch(`/icon/${icon.slug}`);
   }, [router, icon.slug]);
 
