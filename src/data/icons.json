@@ -108666,7 +108666,8 @@
     ],
     "variants": {
       "default": "/icons/pedi-app/default.svg",
-      "wordmark": "/icons/pedi-app/wordmark.svg"
+      "wordmark": "/icons/pedi-app/wordmark.svg",
+      "wordmarkDark": "/icons/pedi-app/wordmarkDark.svg"
     },
     "license": "brand-use",
     "url": "https://pedi.ph",
