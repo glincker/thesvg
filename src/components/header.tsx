@@ -497,6 +497,22 @@ export function Header() {
                 <span className="hidden lg:inline">Raycast</span>
               </a>
               <a
+                href="https://marketplace.visualstudio.com/items?itemName=glincker.thesvg"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Install the VS Code extension"
+                className="hidden items-center gap-1.5 rounded-lg border border-border/50 px-2.5 py-1.5 text-xs font-medium text-muted-foreground transition-all hover:border-[#007ACC]/30 hover:bg-[#007ACC]/5 hover:text-[#007ACC] sm:inline-flex dark:border-white/[0.06] dark:hover:border-[#007ACC]/30"
+              >
+                <img
+                  src="/icons/visual-studio-code/default.svg"
+                  alt="VS Code"
+                  width={16}
+                  height={16}
+                  className="h-4 w-4"
+                />
+                <span className="hidden lg:inline">VS Code</span>
+              </a>
+              <a
                 href="https://github.com/GLINCKER/thesvg"
                 target="_blank"
                 rel="noopener noreferrer"
