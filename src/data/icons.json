@@ -89744,6 +89744,23 @@
     "collection": "brands"
   },
   {
+    "slug": "roborock",
+    "title": "Roborock",
+    "aliases": [],
+    "hex": "EA0029",
+    "categories": [
+      "IoT"
+    ],
+    "variants": {
+      "default": "/icons/roborock/default.svg",
+      "mono": "/icons/roborock/mono.svg"
+    },
+    "license": "TODO",
+    "url": "https://us.roborock.com/",
+    "dateAdded": "2026-04-20",
+    "collection": "brands"
+  },
+  {
     "slug": "robot-framework",
     "title": "Robot Framework",
     "aliases": [],
