@@ -51697,6 +51697,25 @@
     "collection": "brands"
   },
   {
+    "slug": "fpt-play",
+    "title": "FPT Play",
+    "aliases": [
+      "fptplay"
+    ],
+    "hex": "F26F21",
+    "categories": [
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/fpt-play/default.svg",
+      "mono": "/icons/fpt-play/mono.svg"
+    },
+    "license": "TODO",
+    "url": "https://fptplay.vn/",
+    "dateAdded": "2026-04-20",
+    "collection": "brands"
+  },
+  {
     "slug": "framer",
     "title": "Framer",
     "aliases": [],
