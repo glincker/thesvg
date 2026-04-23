@@ -1,5 +1,11 @@
 # @thesvg/icons
 
+## 2.1.5
+
+### Patch Changes
+
+- fix: mark Roborock and FPT Play licenses as Proprietary ([#112](https://github.com/glincker/thesvg/issues/112))
+
 ## 2.1.4
 
 ### Patch Changes
