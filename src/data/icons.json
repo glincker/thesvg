@@ -89379,6 +89379,25 @@
     "collection": "brands"
   },
   {
+    "slug": "rewarble",
+    "title": "Rewarble",
+    "aliases": [],
+    "hex": "0A0827",
+    "categories": [
+      "Payment",
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/rewarble/default.svg",
+      "mono": "/icons/rewarble/mono.svg",
+      "light": "/icons/rewarble/light.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.rewarble.com",
+    "dateAdded": "2026-04-26",
+    "collection": "brands"
+  },
+  {
     "slug": "rewe",
     "title": "REWE",
     "aliases": [],
@@ -106662,7 +106681,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Gift Card",
+      "Gaming",
       "Platform"
     ],
     "variants": {
