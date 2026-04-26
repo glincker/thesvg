@@ -91901,6 +91901,22 @@
     "collection": "brands"
   },
   {
+    "slug": "selector-logo",
+    "title": "Selector Logo",
+    "aliases": [],
+    "hex": "FF5721",
+    "categories": [
+      "Networking"
+    ],
+    "variants": {
+      "default": "/icons/selector-logo/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://selector.ai",
+    "dateAdded": "2026-04-26",
+    "collection": "brands"
+  },
+  {
     "slug": "selenium",
     "title": "Selenium",
     "aliases": [],
