@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "lsof -ti:3333 | xargs kill -9 2>/dev/null; next dev --port 3333",
+    "dev": "next dev --port 3333",
     "build": "tsx src/scripts/generate-api.ts && next build",
     "start": "next start",
     "lint": "eslint"
