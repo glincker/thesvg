@@ -1,6 +1,8 @@
-// Registry API client - uses Node 18+ native fetch
+// Registry API client - fetches the static manifest and filters client-side.
+// thesvg ships as a static site; there is no dynamic API.
 
 const BASE_URL = "https://thesvg.org";
+const REGISTRY_PATH = "/api/registry.json";
 
 export interface IconVariants {
   default: string;
@@ -31,23 +33,41 @@ export interface IconListResponse {
   icons: IconEntry[];
 }
 
-function isIconEntry(value: unknown): value is IconEntry {
+interface RegistryIcon {
+  slug: string;
+  title: string;
+  aliases: string[];
+  categories: string[];
+  hex: string;
+  url: string | null;
+  variants: string[];
+}
+
+interface RegistryDocument {
+  total: number;
+  icons: RegistryIcon[];
+}
+
+function isRegistryIcon(value: unknown): value is RegistryIcon {
   if (typeof value !== "object" || value === null) return false;
   const v = value as Record<string, unknown>;
   return (
     typeof v["slug"] === "string" &&
     typeof v["title"] === "string" &&
-    typeof v["variants"] === "object" &&
-    v["variants"] !== null
+    Array.isArray(v["aliases"]) &&
+    Array.isArray(v["categories"]) &&
+    typeof v["hex"] === "string" &&
+    Array.isArray(v["variants"])
   );
 }
 
-function isIconListResponse(value: unknown): value is IconListResponse {
+function isRegistryDocument(value: unknown): value is RegistryDocument {
   if (typeof value !== "object" || value === null) return false;
   const v = value as Record<string, unknown>;
   return (
     typeof v["total"] === "number" &&
-    Array.isArray(v["icons"])
+    Array.isArray(v["icons"]) &&
+    v["icons"].every(isRegistryIcon)
   );
 }
 
@@ -61,8 +81,12 @@ export class ApiError extends Error {
   }
 }
 
-async function apiFetch(path: string): Promise<unknown> {
-  const url = `${BASE_URL}${path}`;
+let cachedRegistry: RegistryDocument | null = null;
+
+async function fetchRegistry(): Promise<RegistryDocument> {
+  if (cachedRegistry) return cachedRegistry;
+
+  const url = `${BASE_URL}${REGISTRY_PATH}`;
   let response: Response;
 
   try {
@@ -73,11 +97,8 @@ async function apiFetch(path: string): Promise<unknown> {
   }
 
   if (!response.ok) {
-    if (response.status === 404) {
-      throw new ApiError(`Not found: ${url}`, 404);
-    }
     throw new ApiError(
-      `Request failed with status ${response.status}: ${url}`,
+      `Failed to fetch registry: HTTP ${response.status}`,
       response.status
     );
   }
@@ -89,20 +110,50 @@ async function apiFetch(path: string): Promise<unknown> {
     throw new ApiError(`Invalid JSON response from ${url}`);
   }
 
+  if (!isRegistryDocument(json)) {
+    throw new ApiError("Unexpected registry shape");
+  }
+
+  cachedRegistry = json;
   return json;
+}
+
+function variantsArrayToObject(slug: string, variants: string[]): IconVariants {
+  const result: Record<string, string> = {
+    default: `/icons/${slug}/default.svg`,
+  };
+  for (const variant of variants) {
+    if (variant === "default") continue;
+    const filename = variant.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+    result[variant] = `/icons/${slug}/${filename}.svg`;
+  }
+  return result as unknown as IconVariants;
+}
+
+function toIconEntry(icon: RegistryIcon): IconEntry {
+  const entry: IconEntry = {
+    slug: icon.slug,
+    title: icon.title,
+    aliases: icon.aliases,
+    hex: icon.hex,
+    categories: icon.categories,
+    variants: variantsArrayToObject(icon.slug, icon.variants),
+    license: "See registry",
+  };
+  if (icon.url) entry.url = icon.url;
+  return entry;
 }
 
 /**
  * Fetch a single icon by slug from the registry.
  */
 export async function fetchIcon(slug: string): Promise<IconEntry> {
-  const data = await apiFetch(`/api/icons/${encodeURIComponent(slug)}`);
-
-  if (!isIconEntry(data)) {
-    throw new ApiError(`Unexpected response shape for icon "${slug}"`);
+  const registry = await fetchRegistry();
+  const found = registry.icons.find((i) => i.slug === slug);
+  if (!found) {
+    throw new ApiError(`Not found: ${slug}`, 404);
   }
-
-  return data;
+  return toIconEntry(found);
 }
 
 /**
@@ -113,27 +164,35 @@ export async function fetchIconList(options?: {
   query?: string;
   limit?: number;
 }): Promise<IconListResponse> {
-  const params = new URLSearchParams();
+  const registry = await fetchRegistry();
+  let icons = registry.icons;
 
   if (options?.category) {
-    params.set("category", options.category);
+    const wanted = options.category.toLowerCase();
+    icons = icons.filter((i) =>
+      i.categories.some((c) => c.toLowerCase() === wanted)
+    );
   }
+
   if (options?.query) {
-    params.set("q", options.query);
-  }
-  if (options?.limit !== undefined) {
-    params.set("limit", String(options.limit));
-  }
-
-  const qs = params.toString();
-  const path = `/api/icons${qs ? `?${qs}` : ""}`;
-  const data = await apiFetch(path);
-
-  if (!isIconListResponse(data)) {
-    throw new ApiError("Unexpected response shape for icon list");
+    const q = options.query.toLowerCase();
+    icons = icons.filter((i) => {
+      if (i.slug.toLowerCase().includes(q)) return true;
+      if (i.title.toLowerCase().includes(q)) return true;
+      return i.aliases.some((a) => a.toLowerCase().includes(q));
+    });
   }
 
-  return data;
+  const total = icons.length;
+  const limit = options?.limit;
+  const limited = limit !== undefined ? icons.slice(0, limit) : icons;
+
+  return {
+    total,
+    offset: 0,
+    limit: limit ?? total,
+    icons: limited.map(toIconEntry),
+  };
 }
 
 /**

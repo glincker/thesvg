@@ -76369,6 +76369,24 @@
     "collection": "brands"
   },
   {
+    "slug": "myaccessi",
+    "title": "myAccessi",
+    "aliases": [],
+    "hex": "683CE8",
+    "categories": [
+      "Accessibility",
+      "AI",
+      "Devtool"
+    ],
+    "variants": {
+      "default": "/icons/myaccessi/default.svg"
+    },
+    "license": "Proprietary",
+    "url": "https://myaccessi.com",
+    "dateAdded": "2026-04-25",
+    "collection": "brands"
+  },
+  {
     "slug": "myanimelist",
     "title": "MyAnimeList",
     "aliases": [
@@ -91911,7 +91929,7 @@
     "variants": {
       "default": "/icons/selector-logo/default.svg"
     },
-    "license": "MIT",
+    "license": "Proprietary",
     "url": "https://selector.ai",
     "dateAdded": "2026-04-26",
     "collection": "brands"

@@ -183,20 +183,36 @@ Not every icon has all variants. `default` is always present.
 
 ## API
 
+thesvg ships as a fully static site, served from a CDN. There is no dynamic API; instead, two pre-built JSON manifests cover every use case. Search, filter, and pagination happen on the client.
+
 Base URL: `https://thesvg.org`
 
 | Endpoint | Description |
 |----------|-------------|
-| `GET /api/icons?q=github&category=AI&limit=20` | Search icons |
-| `GET /api/icons/{slug}` | Get single icon with all metadata |
-| `GET /api/categories` | List categories with counts |
-| `GET /api/registry/{slug}` | shadcn-style registry endpoint |
-| `GET /icons/{slug}/{variant}.svg` | Raw SVG file |
+| `GET /api/registry.json` | Full icon manifest (slug, title, aliases, categories, hex, url, variant keys) |
+| `GET /api/categories.json` | Category list with counts |
+| `GET /icons/{slug}/{variant}.svg` | Raw SVG file (e.g. `/icons/openai/default.svg`) |
 
 ```bash
-# Example: search for AI icons
-curl "https://thesvg.org/api/icons?q=openai&limit=5"
+# Fetch the manifest once, filter client-side
+curl "https://thesvg.org/api/registry.json" | jq '.icons[] | select(.slug | contains("openai"))'
+
+# Then pull the SVG you want
+curl "https://thesvg.org/icons/openai/default.svg"
 ```
+
+### Mirrors
+
+For high-traffic apps, use jsDelivr (free, GitHub-backed) instead of hitting `thesvg.org` directly:
+
+```
+https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/api/registry.json
+https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/{slug}/{variant}.svg
+```
+
+You can also clone the repo (~30 MB) and self-host. The codebase is MIT-licensed; individual brand icons remain trademarks of their respective owners (see [LEGAL.md](./LEGAL.md)).
+
+> A gated, token-based API is on the roadmap at `api.thesvg.org` for advanced features (search relevance, usage analytics, webhooks). Until then, the static manifest above is the supported integration path.
 
 ## Categories
 
