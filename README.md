@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/glincker-thesvg-badge.png)](https://mseep.ai/app/glincker-thesvg)
+
 <p align="center">
   <a href="https://thesvg.org">
     <picture>
