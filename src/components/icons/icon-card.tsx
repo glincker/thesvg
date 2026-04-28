@@ -36,8 +36,7 @@ export const IconCard = memo(function IconCard({
   }, [router, icon.slug]);
 
   const handleCopy = useCallback(
-    async (e: React.MouseEvent) => {
-      e.stopPropagation();
+    async () => {
       try {
         const res = await fetch(icon.variants.default);
         const svg = await res.text();
@@ -63,8 +62,7 @@ export const IconCard = memo(function IconCard({
   );
 
   const handleDownload = useCallback(
-    async (e: React.MouseEvent) => {
-      e.stopPropagation();
+    async () => {
       try {
         const res = await fetch(icon.variants.default);
         const blob = await res.blob();
@@ -92,17 +90,14 @@ export const IconCard = memo(function IconCard({
   );
 
   const handleFavorite = useCallback(
-    (e: React.MouseEvent) => {
-      e.stopPropagation();
+    () => {
       toggleFavorite(icon.slug);
     },
     [icon.slug, toggleFavorite]
   );
 
   const handlePreview = useCallback(
-    (e: React.MouseEvent) => {
-      e.preventDefault();
-      e.stopPropagation();
+    () => {
       onSelect(icon);
     },
     [icon, onSelect]
@@ -129,7 +124,7 @@ export const IconCard = memo(function IconCard({
           aria-label={isFavorite ? `Remove ${icon.title} from favorites` : `Add ${icon.title} to favorites`}
           aria-pressed={isFavorite}
           className={cn(
-            "absolute top-1.5 right-1.5 flex h-5 w-5 items-center justify-center rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+            "absolute top-1.5 right-1.5 z-10 flex h-5 w-5 items-center justify-center rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
             isFavorite
               ? "text-red-500 opacity-100"
               : "text-muted-foreground opacity-0 hover:text-red-500 group-hover:opacity-100 group-focus-within:opacity-100"
@@ -204,7 +199,6 @@ export const IconCard = memo(function IconCard({
         prefetch={false}
         onMouseEnter={handleHoverPrefetch}
         onTouchStart={handleHoverPrefetch}
-        tabIndex={0}
         className="flex w-full flex-1 flex-col items-center rounded-t-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
         aria-label={`View ${icon.title} icon details`}
       >
@@ -213,14 +207,14 @@ export const IconCard = memo(function IconCard({
             <>
               <img
                 src={lightSrc}
-                alt={icon.title}
+                alt=""
                 className="h-9 w-9 object-contain transition-transform duration-200 group-hover:scale-110 dark:hidden sm:h-10 sm:w-10"
                 loading="lazy"
                 decoding="async"
               />
               <img
                 src={darkSrc}
-                alt={icon.title}
+                alt=""
                 className="hidden h-9 w-9 object-contain transition-transform duration-200 group-hover:scale-110 dark:block sm:h-10 sm:w-10"
                 loading="lazy"
                 decoding="async"
@@ -229,7 +223,7 @@ export const IconCard = memo(function IconCard({
           ) : (
             <img
               src={icon.variants.default}
-              alt={icon.title}
+              alt=""
               className="h-9 w-9 object-contain transition-transform duration-200 group-hover:scale-110 sm:h-10 sm:w-10"
               loading="lazy"
               decoding="async"
