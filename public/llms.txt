@@ -9,7 +9,6 @@ theSVG provides 4,000+ brand SVG icons with multi-variant support (color, mono, 
 ## Links
 
 - Website: https://thesvg.org
-- API Docs: https://thesvg.org/api-docs
 - Compare Libraries: https://thesvg.org/compare
 - GitHub: https://github.com/glincker/thesvg
 - npm: https://www.npmjs.com/package/thesvg
@@ -28,14 +27,15 @@ theSVG provides 4,000+ brand SVG icons with multi-variant support (color, mono, 
 
 ## API
 
+thesvg ships as a static site. There are no dynamic search endpoints; fetch the manifest once and filter client-side.
+
 Base URL: https://thesvg.org
 
 - `GET /icons/{slug}/{variant}.svg` - Direct SVG file (CDN)
-- `GET /api/registry?q={query}&category={cat}&limit={n}` - Search icons
-- `GET /api/registry/{slug}` - Full icon metadata with inline SVG
-- `GET /api/categories` - List all categories with counts
+- `GET /api/registry.json` - Full icon manifest (slug, title, aliases, categories, hex, url, license, variant keys)
+- `GET /api/categories.json` - All categories with counts
 
-No authentication required. CORS enabled.
+No authentication required. CORS enabled. A gated, token-based API at api.thesvg.org is on the roadmap for advanced search and analytics.
 
 ## Icon Variants
 

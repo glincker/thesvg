@@ -28,35 +28,70 @@ figma.showUI(__html__, {
   title: "theSVG",
 });
 
-async function searchIcons(query?: string, category?: string) {
-  const parts: string[] = [];
-  if (query) parts.push("q=" + encodeURIComponent(query));
-  if (category && category !== "all") parts.push("category=" + encodeURIComponent(category));
-  parts.push("limit=100");
+interface RegistryIcon {
+  slug: string;
+  title: string;
+  aliases: string[];
+  categories: string[];
+  hex: string;
+  url: string | null;
+  license: string;
+  variants: string[];
+}
 
-  const res = await fetch(API_BASE + "/api/registry?" + parts.join("&"));
+interface RegistryDocument {
+  total: number;
+  icons: RegistryIcon[];
+}
+
+let cachedRegistry: RegistryDocument | null = null;
+
+async function loadRegistry(): Promise<RegistryDocument> {
+  if (cachedRegistry) return cachedRegistry;
+  const res = await fetch(API_BASE + "/api/registry.json");
   if (!res.ok) throw new Error(`API error: ${res.status}`);
-  return res.json();
+  cachedRegistry = (await res.json()) as RegistryDocument;
+  return cachedRegistry;
+}
+
+async function searchIcons(query?: string, category?: string) {
+  const registry = await loadRegistry();
+  let icons = registry.icons;
+
+  if (category && category !== "all") {
+    const wanted = category.toLowerCase();
+    icons = icons.filter((i) =>
+      i.categories.some((c) => c.toLowerCase() === wanted)
+    );
+  }
+
+  if (query) {
+    const q = query.toLowerCase();
+    icons = icons.filter(
+      (i) =>
+        i.slug.toLowerCase().includes(q) ||
+        i.title.toLowerCase().includes(q) ||
+        i.aliases.some((a) => a.toLowerCase().includes(q))
+    );
+  }
+
+  return {
+    total: icons.length,
+    count: Math.min(icons.length, 100),
+    limit: 100,
+    icons: icons.slice(0, 100),
+  };
 }
 
 async function getIconSvg(slug: string): Promise<string> {
-  const res = await fetch(
-    `${API_BASE}/api/registry/${encodeURIComponent(slug)}`
-  );
-  if (!res.ok) throw new Error(`Failed to fetch: ${res.status}`);
-
-  const data = await res.json();
-  const variant = data.variants["default"];
-
-  if (!variant || !variant.svg) {
-    throw new Error("SVG not available");
-  }
-
-  return variant.svg;
+  const url = `${API_BASE}/icons/${encodeURIComponent(slug)}/default.svg`;
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Failed to fetch SVG: ${res.status}`);
+  return res.text();
 }
 
 async function loadCategories() {
-  const res = await fetch(`${API_BASE}/api/categories`);
+  const res = await fetch(`${API_BASE}/api/categories.json`);
   if (!res.ok) throw new Error(`API error: ${res.status}`);
   const data = await res.json();
   return data.categories;

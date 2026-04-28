@@ -3,7 +3,9 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 
-const BASE_URL = "https://thesvg.org/api";
+const BASE_URL = "https://thesvg.org";
+const REGISTRY_URL = `${BASE_URL}/api/registry.json`;
+const CATEGORIES_URL = `${BASE_URL}/api/categories.json`;
 const CDN_BASE = "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public";
 
 // --- Types ---
@@ -11,14 +13,16 @@ const CDN_BASE = "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public";
 interface RegistryIcon {
   slug: string;
   title: string;
+  aliases: string[];
   categories: string[];
+  hex: string;
+  url: string | null;
+  license: string;
   variants: string[];
 }
 
-interface RegistryListResponse {
+interface RegistryDocument {
   total: number;
-  count: number;
-  limit: number;
   icons: RegistryIcon[];
 }
 
@@ -33,6 +37,7 @@ interface IconDetail {
   categories: string[];
   hex: string;
   url?: string;
+  license: string;
   variants: Record<string, VariantDetail>;
   cdn: {
     jsdelivr: string;
@@ -51,32 +56,84 @@ interface CategoriesResponse {
 
 // --- Helpers ---
 
-async function fetchRegistry(query?: string, limit = 50): Promise<RegistryIcon[]> {
-  const params = new URLSearchParams();
-  if (query) params.set("q", query);
-  params.set("limit", String(limit));
-  const url = `${BASE_URL}/registry${params.toString() ? `?${params}` : ""}`;
-  const res = await fetch(url);
+let cachedRegistry: RegistryDocument | null = null;
+
+async function loadRegistry(): Promise<RegistryDocument> {
+  if (cachedRegistry) return cachedRegistry;
+  const res = await fetch(REGISTRY_URL);
   if (!res.ok) {
     throw new Error(`Registry fetch failed: ${res.status} ${res.statusText}`);
   }
-  const data = (await res.json()) as RegistryListResponse;
-  return data.icons;
+  cachedRegistry = (await res.json()) as RegistryDocument;
+  return cachedRegistry;
+}
+
+function variantToFilename(variant: string): string {
+  return variant.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+}
+
+async function fetchSvgContent(slug: string, variant: string): Promise<string> {
+  const filename = variantToFilename(variant);
+  const url = `${BASE_URL}/icons/${encodeURIComponent(slug)}/${filename}.svg`;
+  const res = await fetch(url);
+  if (!res.ok) {
+    throw new Error(`SVG fetch failed: ${res.status} ${url}`);
+  }
+  return res.text();
+}
+
+async function fetchRegistry(query?: string, limit = 50): Promise<RegistryIcon[]> {
+  const registry = await loadRegistry();
+  let icons = registry.icons;
+  if (query) {
+    const q = query.toLowerCase();
+    icons = icons.filter(
+      (i) =>
+        i.slug.toLowerCase().includes(q) ||
+        i.title.toLowerCase().includes(q) ||
+        i.aliases.some((a) => a.toLowerCase().includes(q))
+    );
+  }
+  return icons.slice(0, limit);
 }
 
 async function fetchIconDetail(slug: string): Promise<IconDetail> {
-  const res = await fetch(`${BASE_URL}/registry/${encodeURIComponent(slug)}`);
-  if (!res.ok) {
-    if (res.status === 404) {
-      throw new Error(`Icon not found: "${slug}"`);
-    }
-    throw new Error(`Icon fetch failed: ${res.status} ${res.statusText}`);
+  const registry = await loadRegistry();
+  const icon = registry.icons.find((i) => i.slug === slug);
+  if (!icon) {
+    throw new Error(`Icon not found: "${slug}"`);
   }
-  return (await res.json()) as IconDetail;
+
+  const variants: Record<string, VariantDetail> = {};
+  for (const variant of icon.variants) {
+    const filename = variantToFilename(variant);
+    const directUrl = `${BASE_URL}/icons/${slug}/${filename}.svg`;
+    try {
+      const svg = await fetchSvgContent(slug, variant);
+      variants[variant] = { url: directUrl, svg };
+    } catch {
+      // skip variants whose SVG file is missing
+    }
+  }
+
+  const detail: IconDetail = {
+    name: icon.slug,
+    title: icon.title,
+    categories: icon.categories,
+    hex: icon.hex,
+    license: icon.license,
+    variants,
+    cdn: {
+      jsdelivr: `${CDN_BASE}/icons/${slug}/default.svg`,
+      direct: `${BASE_URL}/icons/${slug}/default.svg`,
+    },
+  };
+  if (icon.url) detail.url = icon.url;
+  return detail;
 }
 
 async function fetchCategories(): Promise<Category[]> {
-  const res = await fetch(`${BASE_URL}/categories`);
+  const res = await fetch(CATEGORIES_URL);
   if (!res.ok) {
     throw new Error(`Categories fetch failed: ${res.status} ${res.statusText}`);
   }

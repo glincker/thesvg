@@ -40,7 +40,7 @@ This rebuilds on file changes. Reload the plugin in Figma to see updates.
 
 ## How it works
 
-The plugin uses the [theSVG Registry API](https://thesvg.org/api-docs) to search and fetch SVG icons. Icons are inserted as native Figma vector nodes using `figma.createNodeFromSvg()`.
+The plugin fetches the static manifest at [/api/registry.json](https://thesvg.org/api/registry.json) and pulls SVGs directly from `/icons/{slug}/default.svg`. Icons are inserted as native Figma vector nodes using `figma.createNodeFromSvg()`.
 
 ## Publishing
 

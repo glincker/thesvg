@@ -206,9 +206,11 @@ curl "https://thesvg.org/icons/openai/default.svg"
 For high-traffic apps, use jsDelivr (free, GitHub-backed) instead of hitting `thesvg.org` directly:
 
 ```
-https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/api/registry.json
+https://cdn.jsdelivr.net/gh/glincker/thesvg@main/src/data/icons.json
 https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/{slug}/{variant}.svg
 ```
+
+`src/data/icons.json` is the source-of-truth manifest (the same data that builds `/api/registry.json`, with full per-icon fields including `license` and `dateAdded`).
 
 You can also clone the repo (~30 MB) and self-host. The codebase is MIT-licensed; individual brand icons remain trademarks of their respective owners (see [LEGAL.md](./LEGAL.md)).
 

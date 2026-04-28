@@ -40,6 +40,7 @@ interface RegistryIcon {
   categories: string[];
   hex: string;
   url: string | null;
+  license: string;
   variants: string[];
 }
 
@@ -57,6 +58,7 @@ function isRegistryIcon(value: unknown): value is RegistryIcon {
     Array.isArray(v["aliases"]) &&
     Array.isArray(v["categories"]) &&
     typeof v["hex"] === "string" &&
+    typeof v["license"] === "string" &&
     Array.isArray(v["variants"])
   );
 }
@@ -138,7 +140,7 @@ function toIconEntry(icon: RegistryIcon): IconEntry {
     hex: icon.hex,
     categories: icon.categories,
     variants: variantsArrayToObject(icon.slug, icon.variants),
-    license: "See registry",
+    license: icon.license,
   };
   if (icon.url) entry.url = icon.url;
   return entry;
