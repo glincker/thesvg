@@ -1,11 +1,11 @@
 "use client";
 
-import { useMemo, useCallback, useEffect, useRef } from "react";
+import { useMemo, useCallback, useEffect, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import posthog from "posthog-js";
 import { ArrowDownAZ, ArrowDownZA, ArrowUpDown, Grid3X3, LayoutGrid, X } from "lucide-react";
 import type { Collection, IconEntry } from "@/lib/icons";
-import { searchIcons } from "@/lib/search";
+import { loadIconsManifest, prefetchIconsManifest } from "@/lib/icons-manifest";
 import { Sidebar } from "@/components/layout/sidebar";
 import { IconGrid } from "@/components/icons/icon-grid";
 import { HomeHero } from "@/components/home-hero";
@@ -19,7 +19,6 @@ import { useSearchStore } from "@/lib/stores/search-store";
 const SORT_OPTIONS = ["default", "az", "za"] as const;
 
 interface HomeContentProps {
-  icons: IconEntry[];
   categoryCounts: { name: string; count: number }[];
   count: number;
   recentIcons: IconEntry[];
@@ -27,7 +26,7 @@ interface HomeContentProps {
   defaultCollection?: Collection;
 }
 
-export function HomeContent({ icons, categoryCounts, count, recentIcons, collections, defaultCollection }: HomeContentProps) {
+export function HomeContent({ categoryCounts, count, recentIcons, collections, defaultCollection }: HomeContentProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -47,9 +46,27 @@ export function HomeContent({ icons, categoryCounts, count, recentIcons, collect
 
   const query = globalQuery;
   const debounceRef = useRef<ReturnType<typeof setTimeout>>(null);
-  // On collection pages (defaultCollection set), the hero/filtered view logic differs:
-  // show hero when only collection is active (no search/category/sort/favorites)
   const isDefaultView = !query.trim() && !categoryParam && !sortParam && !favoritesParam && (!collectionParam || !!defaultCollection);
+
+  // Lazy-loaded full icons manifest. null = not yet loaded; [] = loading/empty.
+  const [allIcons, setAllIcons] = useState<IconEntry[] | null>(null);
+  const [manifestError, setManifestError] = useState(false);
+
+  // Prefetch the manifest while the hero is shown so it's ready when the user searches.
+  useEffect(() => {
+    if (isDefaultView) {
+      prefetchIconsManifest();
+    }
+  }, [isDefaultView]);
+
+  // Load the manifest when the user leaves the default (hero) view.
+  useEffect(() => {
+    if (!isDefaultView && allIcons === null && !manifestError) {
+      loadIconsManifest()
+        .then((icons) => setAllIcons(icons))
+        .catch(() => setManifestError(true));
+    }
+  }, [isDefaultView, allIcons, manifestError]);
 
   // Sync global store from URL (e.g. shared link)
   useEffect(() => {
@@ -129,15 +146,17 @@ export function HomeContent({ icons, categoryCounts, count, recentIcons, collect
     updateUrl({ view: viewParam === "compact" ? null : "compact" });
   }, [updateUrl, viewParam]);
 
-  // Filter icons by collection first, then apply other filters
+  // Filter icons by collection first, then apply other filters.
+  // allIcons is null until manifest is fetched.
   const collectionIcons = useMemo(() => {
-    if (!collectionParam) return icons;
-    return icons.filter((icon) => icon.collection === collectionParam);
-  }, [icons, collectionParam]);
+    if (!allIcons) return null;
+    if (!collectionParam) return allIcons;
+    return allIcons.filter((icon) => icon.collection === collectionParam);
+  }, [allIcons, collectionParam]);
 
   // Compute categories for the active collection
   const activeCategoryCounts = useMemo(() => {
-    if (!collectionParam) return categoryCounts;
+    if (!collectionIcons || !collectionParam) return categoryCounts;
     const counts = new Map<string, number>();
     for (const icon of collectionIcons) {
       for (const c of icon.categories) {
@@ -149,7 +168,13 @@ export function HomeContent({ icons, categoryCounts, count, recentIcons, collect
       .sort((a, b) => a.name.localeCompare(b.name));
   }, [collectionParam, collectionIcons, categoryCounts]);
 
-  const filtered = useMemo(() => {
+  const [filtered, setFiltered] = useState<IconEntry[]>([]);
+  const filterKey = `${query}|${categoryParam ?? ""}|${sortParam ?? ""}|${favoritesParam}|${collectionParam ?? ""}`;
+
+  useEffect(() => {
+    if (!collectionIcons) return;
+
+    let active = true;
     let result = collectionIcons;
 
     // Favorites filter
@@ -166,9 +191,19 @@ export function HomeContent({ icons, categoryCounts, count, recentIcons, collect
       );
     }
 
-    // Search
+    // Lazy-load Fuse.js only when there is a search query
     if (query.trim()) {
-      result = searchIcons(result, query);
+      import("@/lib/search").then(({ searchIcons }) => {
+        if (!active) return;
+        let searched = searchIcons(result, query);
+        if (sortParam === "az") {
+          searched = [...searched].sort((a, b) => a.title.localeCompare(b.title));
+        } else if (sortParam === "za") {
+          searched = [...searched].sort((a, b) => b.title.localeCompare(a.title));
+        }
+        setFiltered(searched);
+      });
+      return () => { active = false; };
     }
 
     // Sort
@@ -178,10 +213,19 @@ export function HomeContent({ icons, categoryCounts, count, recentIcons, collect
       result = [...result].sort((a, b) => b.title.localeCompare(a.title));
     }
 
-    return result;
-  }, [collectionIcons, query, categoryParam, sortParam, favoritesParam, favorites]);
+    setFiltered(result);
+    return () => { active = false; };
+  // filterKey captures all search/filter/sort deps; collectionIcons and favorites are the data deps
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [collectionIcons, filterKey, favorites]);
 
-  const activeCount = collectionParam ? collectionIcons.length : count;
+  const activeCount = collectionParam && allIcons
+    ? allIcons.filter((i) => i.collection === collectionParam).length
+    : count;
+
+  // Stable key for IconGrid so it remounts naturally when filters change,
+  // resetting internal visibleCount without a secondary useEffect setState loop.
+  const gridKey = filterKey;
 
   const sidebarContent = (
     <Sidebar
@@ -224,13 +268,12 @@ export function HomeContent({ icons, categoryCounts, count, recentIcons, collect
       {/* Main content area */}
       <div className="md:pl-58">
         {isDefaultView ? (
-          /* ── Hero landing ── */
+          /* Hero landing */
           <div className="mx-auto max-w-7xl px-3 py-4 sm:px-4">
             <HomeHero
-              icons={icons}
+              recentIcons={recentIcons}
               categoryCounts={categoryCounts}
               count={count}
-              recentIcons={recentIcons}
               collections={collections}
               defaultCollection={defaultCollection}
               onSelectIcon={() => {}}
@@ -239,14 +282,18 @@ export function HomeContent({ icons, categoryCounts, count, recentIcons, collect
             />
           </div>
         ) : (
-          /* ── Filtered view ── */
+          /* Filtered view */
           <>
             {/* Sticky toolbar - count + controls */}
             <div className="sticky top-[3.75rem] z-20 border-b border-border/30 bg-background/95 backdrop-blur-xl">
               <div className="mx-auto flex max-w-7xl items-center gap-1.5 px-3 py-1.5 sm:gap-2 sm:px-4">
                 {/* Count label */}
                 <p className="flex-1 text-sm text-muted-foreground">
-                  {favoritesParam
+                  {manifestError ? (
+                    <span className="text-destructive">Failed to load icons</span>
+                  ) : !allIcons ? (
+                    <span className="animate-pulse">Loading...</span>
+                  ) : favoritesParam
                     ? `${filtered.length} fav${filtered.length !== 1 ? "s" : ""}`
                     : filtered.length === activeCount
                       ? `${activeCount.toLocaleString()}`
@@ -348,7 +395,13 @@ export function HomeContent({ icons, categoryCounts, count, recentIcons, collect
 
             {/* Grid */}
             <div className="mx-auto max-w-7xl px-3 py-2 sm:px-4">
-              <IconGrid icons={filtered} view={viewParam} />
+              {manifestError ? (
+                <p className="py-24 text-center text-sm text-muted-foreground">
+                  Failed to load icons. Please refresh and try again.
+                </p>
+              ) : (
+                <IconGrid key={gridKey} icons={filtered} view={viewParam} />
+              )}
             </div>
           </>
         )}

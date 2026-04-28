@@ -7,13 +7,14 @@
  * Outputs:
  *   public/api/registry.json      - all icons (slug, title, aliases, categories, hex, url, variant keys)
  *   public/api/categories.json    - category list with counts
+ *   public/api/icons-full.json    - full icon manifest (all fields) for client-side lazy loading
  *
  * Note: Individual per-icon detail files are NOT generated to stay within
  * Cloudflare Pages' 20,000 file deployment limit. Extensions should fetch
  * SVG content directly from /icons/{slug}/{variant}.svg.
  */
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from "fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync, copyFileSync } from "fs";
 import { join } from "path";
 
 const ROOT = join(__dirname, "../..");
@@ -77,6 +78,13 @@ function main() {
     JSON.stringify({ categories }),
   );
   console.log(`  categories.json: ${categories.length} categories`);
+
+  // --- icons-full.json (full manifest for client-side lazy loading) ---
+  // Copied verbatim so the client can fetch it on demand instead of receiving
+  // the entire 2.5 MB array serialized into the initial HTML payload.
+  copyFileSync(ICONS_JSON, join(PUBLIC_API, "icons-full.json"));
+  console.log(`  icons-full.json: ${icons.length} icons (full manifest)`);
+
   console.log("API generation complete.");
 }
 

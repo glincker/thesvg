@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { ArrowRight, Cloud, FileText, Github, Menu, Moon, Package, Plus, Search, Shapes, Sparkles, Sun, X } from "lucide-react";
@@ -9,8 +9,8 @@ import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { useSidebarStore } from "@/lib/stores/sidebar-store";
 import { useSearchStore } from "@/lib/stores/search-store";
-import { getAllIcons, type IconEntry } from "@/lib/icons";
-import { searchIcons } from "@/lib/search";
+import type { IconEntry } from "@/lib/icons";
+import { loadIconsManifest } from "@/lib/icons-manifest";
 import { cn } from "@/lib/utils";
 
 /** Inline AWS logo - text inherits currentColor, arrow stays orange */
@@ -65,14 +65,6 @@ function SubmitButton() {
       </span>
     </Link>
   );
-}
-
-const ICONS_CACHE: { current: IconEntry[] | null } = { current: null };
-function getCachedIcons(): IconEntry[] {
-  if (!ICONS_CACHE.current) {
-    ICONS_CACHE.current = getAllIcons();
-  }
-  return ICONS_CACHE.current;
 }
 
 export function Header() {
@@ -142,20 +134,27 @@ export function Header() {
 
   const isHome = pathname === "/";
 
-  // Search suggestions
-  const suggestions = useMemo(() => {
-    if (!query.trim() || query.length < 2) return [];
-    const icons = getCachedIcons();
-    return searchIcons(icons, query).slice(0, 6);
-  }, [query]);
-
+  const [suggestions, setSuggestions] = useState<IconEntry[]>([]);
   const hasQuery = query.trim().length >= 2;
   const showDropdown = focused && (hasQuery ? suggestions.length > 0 : true);
 
-  // Reset selected index when suggestions change
+  // Lazy-load the manifest and Fuse.js when the user types a search query
   useEffect(() => {
-    setSelectedIdx(-1);
-  }, [suggestions]);
+    if (!hasQuery) {
+      setSuggestions([]);
+      setSelectedIdx(-1);
+      return;
+    }
+    let active = true;
+    Promise.all([loadIconsManifest(), import("@/lib/search")]).then(([icons, { searchIcons }]) => {
+      if (!active) return;
+      setSuggestions(searchIcons(icons, query).slice(0, 6));
+      setSelectedIdx(-1);
+    }).catch(() => {
+      if (active) setSuggestions([]);
+    });
+    return () => { active = false; };
+  }, [query, hasQuery]);
 
   // Close dropdown on click outside
   useEffect(() => {

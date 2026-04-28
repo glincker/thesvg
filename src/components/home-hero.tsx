@@ -1,9 +1,10 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Anchor, ArrowRight, Clock, Cloud, Package, Shapes, Sparkles, Zap } from "lucide-react";
 import Link from "next/link";
 import type { Collection, IconEntry } from "@/lib/icons";
+import { loadIconsManifest } from "@/lib/icons-manifest";
 import { IconCard } from "@/components/icons/icon-card";
 import { IconGrid } from "@/components/icons/icon-grid";
 import { IconDetail } from "@/components/icons/icon-detail";
@@ -232,7 +233,6 @@ const ALL_SLIDES = [
 const SLIDE_DURATION = 6000;
 
 interface HomeHeroProps {
-  icons: IconEntry[];
   categoryCounts: { name: string; count: number }[];
   count: number;
   recentIcons: IconEntry[];
@@ -244,7 +244,6 @@ interface HomeHeroProps {
 }
 
 export function HomeHero({
-  icons,
   categoryCounts: _categoryCounts,
   count,
   recentIcons,
@@ -253,6 +252,17 @@ export function HomeHero({
   onCategorySelect,
   onCollectionSelect,
 }: HomeHeroProps) {
+  // Lazy-load the full icons manifest for decorative elements (floating icons,
+  // popular grids, category rows). The hero carousel content renders immediately;
+  // icons appear progressively as the manifest loads.
+  const [icons, setIcons] = useState<IconEntry[]>([]);
+  useEffect(() => {
+    loadIconsManifest()
+      .then(setIcons)
+      .catch(() => {
+        // Decorative elements are non-critical; silently ignore load failures
+      });
+  }, []);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [selectedIcon, setSelectedIcon] = useState<IconEntry | null>(null);
@@ -482,7 +492,7 @@ export function HomeHero({
 
       {/* Collection tabs */}
       {collections.length > 1 && (
-        <div className="flex items-center gap-1.5" role="tablist" aria-label="Icon collections">
+        <div className="flex flex-wrap items-center gap-1.5" role="tablist" aria-label="Icon collections">
           {collections.map((col) => {
             const info = COLLECTION_LABELS[col.name];
             const isActive = activeCollection === col.name;
@@ -493,7 +503,7 @@ export function HomeHero({
                 role="tab"
                 aria-selected={isActive}
                 onClick={() => setActiveCollection(col.name)}
-                className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
+                className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 sm:gap-2 sm:px-4 sm:py-2 sm:text-sm ${
                   isActive
                     ? "bg-foreground text-background shadow-sm"
                     : "text-muted-foreground hover:bg-accent hover:text-foreground dark:hover:bg-white/[0.06]"

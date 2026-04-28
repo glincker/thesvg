@@ -29,23 +29,21 @@ export function IconGrid({ icons, view = "comfortable" }: IconGridProps) {
 
   const hasMore = visibleCount < icons.length;
 
-  // Reset visible count when icons list changes (new search/filter)
-  useEffect(() => {
-    setVisibleCount(INITIAL_COUNT);
-  }, [icons]);
-
-  // Intersection observer for infinite scroll
+  // Intersection observer for infinite scroll.
+  // The parent passes a stable `key` derived from the active query+category so
+  // React remounts this component with fresh state when filters change — no
+  // secondary setState loop is needed to reset visibleCount.
   useEffect(() => {
     const sentinel = sentinelRef.current;
     if (!sentinel) return;
 
+    const total = icons.length;
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting && !loadingRef.current) {
           loadingRef.current = true;
           setVisibleCount((prev) => {
-            const next = Math.min(prev + LOAD_MORE_COUNT, icons.length);
-            // Release lock after a short delay to prevent burst loading
+            const next = Math.min(prev + LOAD_MORE_COUNT, total);
             setTimeout(() => { loadingRef.current = false; }, 200);
             return next;
           });
@@ -56,6 +54,8 @@ export function IconGrid({ icons, view = "comfortable" }: IconGridProps) {
 
     observer.observe(sentinel);
     return () => observer.disconnect();
+    // icons.length is the only sentinel-rebuild trigger; visibleCount changes
+    // are handled inside the callback via closure over `total`.
   }, [icons.length]);
 
   const handleSelect = useCallback((icon: IconEntry) => {
