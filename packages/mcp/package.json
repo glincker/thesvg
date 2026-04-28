@@ -1,6 +1,6 @@
 {
   "name": "@thesvg/mcp-server",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "MCP server for searching and fetching brand SVGs from thesvg.org",
   "type": "module",
   "license": "MIT",

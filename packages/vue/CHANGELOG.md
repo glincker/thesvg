@@ -1,5 +1,11 @@
 # @thesvg/vue
 
+## 2.1.6
+
+### Patch Changes
+
+- fix: API docs + CLI registry call, add Selector Logo and myAccessi icons ([#115](https://github.com/glincker/thesvg/issues/115))
+
 ## 2.1.5
 
 ### Patch Changes
