@@ -12,7 +12,7 @@
 	"support": {
 		"issues": "https://github.com/glincker/thesvg/issues",
 		"source": "https://github.com/glincker/thesvg",
-		"docs": "https://thesvg.org/api-docs"
+		"docs": "https://github.com/glincker/thesvg#api"
 	},
 	"license": "MIT"
 }

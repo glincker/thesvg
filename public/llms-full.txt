@@ -30,8 +30,10 @@ npx @thesvg/cli search "ai"
 
 ### Use via API
 ```bash
-curl "https://thesvg.org/api/registry/github"
-curl "https://thesvg.org/api/registry?q=openai&limit=5"
+# fetch the manifest once, filter client-side
+curl "https://thesvg.org/api/registry.json"
+# direct SVG
+curl "https://thesvg.org/icons/openai/default.svg"
 ```
 
 ### Use via MCP Server (AI Assistants)
@@ -82,43 +84,42 @@ interface IconEntry {
 
 ## API Reference
 
+thesvg ships as a fully static site. There is no dynamic search endpoint. Fetch the manifest once and filter client-side.
+
 Base URL: `https://thesvg.org`
 
 ### Direct SVG (CDN)
 ```
 GET /icons/{slug}/{variant}.svg
 ```
-Returns raw SVG with `image/svg+xml` content type. Cached 24h.
+Returns raw SVG with `image/svg+xml` content type, served from Cloudflare CDN.
 
 Example: `https://thesvg.org/icons/github/default.svg`
 
-### Search Icons
+### Icon Manifest
 ```
-GET /api/registry?q={query}&category={category}&limit={number}
+GET /api/registry.json
 ```
-Returns JSON array of matching icons with metadata.
+Returns the full manifest as `{ total, icons: [...] }`. Each icon has: `slug`, `title`, `aliases`, `categories`, `hex`, `url`, `license`, `variants` (array of variant keys). Use this to power search, filtering, and listing.
 
-Parameters:
-- `q` (optional) - Search query, fuzzy matches name/slug/aliases
-- `category` (optional) - Filter by category name
-- `limit` (optional) - Max results (default: 50, max: 200)
+### Categories
+```
+GET /api/categories.json
+```
+Returns all categories with icon counts as `{ categories: [{ name, count }, ...] }`.
 
-### Get Single Icon
-```
-GET /api/registry/{slug}
-```
-Returns full metadata including inline SVG content for all variants.
+### jsDelivr Mirror
 
-### List Categories
+For high-traffic apps, use jsDelivr instead of `thesvg.org` directly:
 ```
-GET /api/categories
-```
-Returns all categories with icon counts.
-
-### jsDelivr CDN
-```
+https://cdn.jsdelivr.net/gh/glincker/thesvg@main/src/data/icons.json
 https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/{slug}/{variant}.svg
 ```
+`src/data/icons.json` is the source-of-truth manifest with all per-icon fields including `dateAdded` and `collection`.
+
+### Roadmap
+
+A gated, token-based API with relevance search and webhooks is planned at `api.thesvg.org`.
 
 ## Framework Examples
 
@@ -199,7 +200,6 @@ MIT for the codebase and tooling. Brand icons are property of their respective t
 - Website: https://thesvg.org
 - GitHub: https://github.com/glincker/thesvg
 - npm: https://www.npmjs.com/package/thesvg
-- API Docs: https://thesvg.org/api-docs
 - Compare Libraries: https://thesvg.org/compare
 - Legal: https://thesvg.org/legal
 - Submit Icon: https://thesvg.org/submit

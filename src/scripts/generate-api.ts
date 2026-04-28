@@ -54,6 +54,7 @@ function main() {
       categories: icon.categories,
       hex: icon.hex,
       url: icon.url || null,
+      license: icon.license,
       variants: Object.keys(icon.variants).filter((k) => icon.variants[k]),
     })),
   };
