@@ -355,6 +355,9 @@ export function HomeHero({
 
   return (
     <div className="space-y-8 pb-6">
+      {/* Visually hidden h1 for screen readers and SEO */}
+      <h1 className="sr-only">thesvg - The Open SVG Brand Library</h1>
+
       {/* Hero carousel - lifted card with depth */}
       <div className="relative">
         {/* Bottom shadow layer for lifted effect */}
@@ -490,7 +493,7 @@ export function HomeHero({
                 role="tab"
                 aria-selected={isActive}
                 onClick={() => setActiveCollection(col.name)}
-                className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all ${
+                className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
                   isActive
                     ? "bg-foreground text-background shadow-sm"
                     : "text-muted-foreground hover:bg-accent hover:text-foreground dark:hover:bg-white/[0.06]"

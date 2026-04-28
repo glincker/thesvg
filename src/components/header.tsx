@@ -90,6 +90,15 @@ export function Header() {
     () => navigator.userAgent.includes("Mac"),
     () => false,
   );
+  const prefersReducedMotion = useSyncExternalStore(
+    (cb) => {
+      const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+      mq.addEventListener("change", cb);
+      return () => mq.removeEventListener("change", cb);
+    },
+    () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+    () => false,
+  );
   const [focused, setFocused] = useState(false);
   const [selectedIdx, setSelectedIdx] = useState(-1);
 
@@ -104,7 +113,7 @@ export function Header() {
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    if (query || focused) return;
+    if (query || focused || prefersReducedMotion) return;
     const brand = PLACEHOLDER_BRANDS[placeholderIdx];
     const timer = setTimeout(() => {
       if (!isDeleting) {
@@ -123,11 +132,13 @@ export function Header() {
       }
     }, isDeleting ? 40 : 80);
     return () => clearTimeout(timer);
-  }, [charIdx, isDeleting, placeholderIdx, query, focused]);
+  }, [charIdx, isDeleting, placeholderIdx, query, focused, prefersReducedMotion]);
 
   const dynamicPlaceholder = query || focused
     ? "Search icons..."
-    : `Search "${PLACEHOLDER_BRANDS[placeholderIdx].slice(0, charIdx)}"`;
+    : prefersReducedMotion
+      ? `Search "${PLACEHOLDER_BRANDS[0]}"`
+      : `Search "${PLACEHOLDER_BRANDS[placeholderIdx].slice(0, charIdx)}"`;
 
   const isHome = pathname === "/";
 
@@ -252,7 +263,7 @@ export function Header() {
             <Link
               href="/"
               className={cn(
-                "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all",
+                "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                 !activeCollection
                   ? "bg-foreground text-background shadow-sm"
                   : "text-muted-foreground hover:bg-accent hover:text-foreground"
@@ -265,7 +276,7 @@ export function Header() {
             <Link
               href="/collection/aws"
               className={cn(
-                "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all",
+                "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                 activeCollection === "aws"
                   ? "bg-foreground text-background shadow-sm"
                   : "text-muted-foreground hover:bg-accent hover:text-foreground"
@@ -278,7 +289,7 @@ export function Header() {
             <Link
               href="/collection/gcp"
               className={cn(
-                "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all",
+                "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                 activeCollection === "gcp"
                   ? "bg-foreground text-background shadow-sm"
                   : "text-muted-foreground hover:bg-accent hover:text-foreground"
@@ -291,7 +302,7 @@ export function Header() {
             <Link
               href="/collection/azure"
               className={cn(
-                "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all",
+                "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                 activeCollection === "azure"
                   ? "bg-foreground text-background shadow-sm"
                   : "text-muted-foreground hover:bg-accent hover:text-foreground"
