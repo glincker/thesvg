@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import {
-  getAllIcons,
   getCategoryCounts,
   getIconCount,
   getRecentlyAddedIcons,
   getCollections,
+  getCollectionCount,
   type Collection,
 } from "@/lib/icons";
 import { HomeContent } from "@/components/home-content";
@@ -135,7 +135,6 @@ export default async function CollectionPage({ params }: PageProps) {
     notFound();
   }
 
-  const icons = getAllIcons();
   const categoryCounts = getCategoryCounts();
   const iconCount = getIconCount();
   const recentIcons = getRecentlyAddedIcons(12);
@@ -143,6 +142,7 @@ export default async function CollectionPage({ params }: PageProps) {
 
   const collectionName = name as Collection;
   const meta = COLLECTION_META[name];
+  const collectionItemCount = getCollectionCount(collectionName);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -155,7 +155,7 @@ export default async function CollectionPage({ params }: PageProps) {
       name: "theSVG",
       url: "https://thesvg.org",
     },
-    numberOfItems: icons.filter((i) => i.collection === name).length,
+    numberOfItems: collectionItemCount,
     provider: {
       "@type": "Organization",
       name: "theSVG",
@@ -171,7 +171,6 @@ export default async function CollectionPage({ params }: PageProps) {
       />
       <Suspense>
         <HomeContent
-          icons={icons}
           categoryCounts={categoryCounts}
           count={iconCount}
           recentIcons={recentIcons}

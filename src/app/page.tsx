@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 import {
-  getAllIcons,
   getCategoryCounts,
   getIconCount,
   getFormattedIconCount,
@@ -50,7 +49,6 @@ const jsonLd = {
 };
 
 export default function Home() {
-  const icons = getAllIcons();
   const categoryCounts = getCategoryCounts();
   const iconCount = getIconCount();
   const recentIcons = getRecentlyAddedIcons(12);
@@ -64,7 +62,6 @@ export default function Home() {
       />
       <Suspense>
         <HomeContent
-          icons={icons}
           categoryCounts={categoryCounts}
           count={iconCount}
           recentIcons={recentIcons}

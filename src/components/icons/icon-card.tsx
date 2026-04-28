@@ -116,7 +116,9 @@ export const IconCard = memo(function IconCard({
       <article
         className="group relative flex w-full min-w-0 flex-col items-center gap-1.5 overflow-hidden rounded-xl border border-border/40 bg-card/80 p-3 transition-all duration-200 hover:border-border hover:bg-card hover:shadow-md"
         onMouseEnter={handleHoverPrefetch}
+        onTouchStart={handleHoverPrefetch}
         onFocus={handleHoverPrefetch}
+        style={{ contentVisibility: "auto", containIntrinsicSize: "0 120px" }}
       >
         <button
           type="button"
@@ -161,7 +163,9 @@ export const IconCard = memo(function IconCard({
     <article
       className="group relative flex h-full min-w-0 flex-col items-center rounded-xl border border-border/40 bg-card/80 transition-all duration-200 hover:border-border hover:bg-card hover:shadow-lg hover:shadow-black/5 dark:hover:shadow-black/20"
       onMouseEnter={handleHoverPrefetch}
+      onTouchStart={handleHoverPrefetch}
       onFocus={handleHoverPrefetch}
+      style={{ contentVisibility: "auto", containIntrinsicSize: "0 180px" }}
     >
       {/* Favorite toggle */}
       <button
