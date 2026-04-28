@@ -191,8 +191,11 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
       );
     }
 
-    // Lazy-load Fuse.js only when there is a search query
+    // Lazy-load Fuse.js only when there is a search query.
+    // Clear stale results immediately so the previous query's matches don't
+    // linger while Fuse downloads / runs.
     if (query.trim()) {
+      setFiltered([]);
       import("@/lib/search").then(({ searchIcons }) => {
         if (!active) return;
         let searched = searchIcons(result, query);
@@ -219,8 +222,8 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [collectionIcons, filterKey, favorites]);
 
-  const activeCount = collectionParam && allIcons
-    ? allIcons.filter((i) => i.collection === collectionParam).length
+  const activeCount = collectionParam && collectionIcons
+    ? collectionIcons.length
     : count;
 
   // Stable key for IconGrid so it remounts naturally when filters change,
@@ -399,6 +402,10 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                 <p className="py-24 text-center text-sm text-muted-foreground">
                   Failed to load icons. Please refresh and try again.
                 </p>
+              ) : !allIcons ? (
+                <div className="flex justify-center py-24">
+                  <div className="h-6 w-6 animate-spin rounded-full border-2 border-muted-foreground/30 border-t-foreground" />
+                </div>
               ) : (
                 <IconGrid key={gridKey} icons={filtered} view={viewParam} />
               )}

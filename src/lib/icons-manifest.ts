@@ -12,15 +12,27 @@ import type { IconEntry } from "@/lib/icons";
 let cachedIcons: IconEntry[] | null = null;
 let fetchPromise: Promise<IconEntry[]> | null = null;
 
+async function fetchManifest(): Promise<IconEntry[]> {
+  const res = await fetch("/api/icons-full.json");
+  if (res.ok) {
+    return res.json() as Promise<IconEntry[]>;
+  }
+
+  // Dev fallback: `pnpm dev` doesn't run generate-api.ts, so /api/icons-full.json
+  // may 404. Fall back to the source-of-truth manifest at build-time only.
+  if (process.env.NODE_ENV !== "production") {
+    const mod = await import("@/data/icons.json");
+    return mod.default as IconEntry[];
+  }
+
+  throw new Error(`Failed to load icons manifest: ${res.status}`);
+}
+
 export async function loadIconsManifest(): Promise<IconEntry[]> {
   if (cachedIcons) return cachedIcons;
 
   if (!fetchPromise) {
-    fetchPromise = fetch("/api/icons-full.json")
-      .then((res) => {
-        if (!res.ok) throw new Error(`Failed to load icons manifest: ${res.status}`);
-        return res.json() as Promise<IconEntry[]>;
-      })
+    fetchPromise = fetchManifest()
       .then((data) => {
         cachedIcons = data;
         return data;
