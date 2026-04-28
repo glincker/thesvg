@@ -368,6 +368,9 @@ export function IconDetailPage({
               <Button
                 size="sm"
                 onClick={handleDownload}
+                aria-label={downloaded ? `${icon.title} downloaded` : `Download ${icon.title} SVG`}
+                aria-live="polite"
+                aria-atomic="true"
                 className={cn(
                   "relative overflow-hidden transition-all duration-300",
                   downloaded
@@ -376,13 +379,13 @@ export function IconDetailPage({
                 )}
               >
                 {downloaded ? (
-                  <Check className="mr-1.5 h-4 w-4 animate-bounce" />
+                  <Check className="mr-1.5 h-4 w-4 motion-safe:animate-bounce" />
                 ) : (
                   <Download className="mr-1.5 h-4 w-4" />
                 )}
                 {downloaded ? "Downloaded!" : "Download"}
                 {downloaded && (
-                  <span className="absolute inset-0 animate-ping rounded-lg bg-green-400/20" />
+                  <span className="absolute inset-0 motion-safe:animate-ping rounded-lg bg-green-400/20" />
                 )}
               </Button>
             </div>
