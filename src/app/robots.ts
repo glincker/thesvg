@@ -9,6 +9,17 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "*",
         allow: "/",
       },
+      // Explicit allow for AI crawlers to find the machine-readable index at /llms.txt
+      {
+        userAgent: [
+          "GPTBot",
+          "Claude-Web",
+          "Amazonbot",
+          "PerplexityBot",
+          "anthropic-ai",
+        ],
+        allow: ["/", "/llms.txt"],
+      },
     ],
     sitemap: "https://thesvg.org/sitemap.xml",
   };

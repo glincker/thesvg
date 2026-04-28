@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getAllIcons, getAllCategories } from "@/lib/icons";
+import { getAllIcons } from "@/lib/icons";
 import postsData from "@/data/posts.json";
 
 export const dynamic = "force-static";
@@ -9,10 +9,10 @@ const CDN_BASE =
   "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons";
 
 // Next.js will generate /sitemap/0.xml, /sitemap/1.xml, etc.
-// Sitemaps: 0=static+categories, 1=brands, 2=aws, 3=azure, 4=gcp
+// Sitemaps: 0=static pages, 1=brands, 2=aws, 3=azure, 4=gcp
 export async function generateSitemaps() {
   return [
-    { id: 0 }, // static pages + categories
+    { id: 0 }, // static pages
     { id: 1 }, // brand icons
     { id: 2 }, // aws icons
     { id: 3 }, // azure icons
@@ -23,10 +23,10 @@ export async function generateSitemaps() {
 export default function sitemap({ id }: { id: number }): MetadataRoute.Sitemap {
   const now = new Date();
   const icons = getAllIcons();
-  const categories = getAllCategories();
 
   if (id === 0) {
-    // Static pages + category pages
+    // Static pages only - category ?category=foo querystrings are omitted
+    // as they are duplicate content of / from a search engine perspective.
     const staticPages: MetadataRoute.Sitemap = [
       { url: BASE_URL, lastModified: now, changeFrequency: "daily", priority: 1.0 },
       { url: `${BASE_URL}/categories`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
@@ -47,13 +47,6 @@ export default function sitemap({ id }: { id: number }): MetadataRoute.Sitemap {
       priority: 0.7,
     }));
 
-    const categoryPages: MetadataRoute.Sitemap = categories.map((cat) => ({
-      url: `${BASE_URL}/?category=${encodeURIComponent(cat)}`,
-      lastModified: now,
-      changeFrequency: "weekly" as const,
-      priority: 0.7,
-    }));
-
     // Collection landing pages (proper URL paths for indexing)
     const collectionPages: MetadataRoute.Sitemap = [
       { url: `${BASE_URL}/collection/brands`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.9 },
@@ -62,7 +55,7 @@ export default function sitemap({ id }: { id: number }): MetadataRoute.Sitemap {
       { url: `${BASE_URL}/collection/gcp`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.9 },
     ];
 
-    return [...staticPages, ...collectionPages, ...categoryPages, ...blogPages];
+    return [...staticPages, ...collectionPages, ...blogPages];
   }
 
   // Map id to collection

@@ -78,20 +78,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       url: `https://thesvg.org/icon/${slug}`,
       type: "website",
       siteName: "theSVG",
-      images: [
-        {
-          url: "/og-image.png",
-          width: 1200,
-          height: 630,
-          alt: `${icon.title} SVG Icon - theSVG`,
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: ["/og-image.png"],
     },
     alternates: {
       canonical: `https://thesvg.org/icon/${slug}`,

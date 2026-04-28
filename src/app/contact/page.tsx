@@ -6,6 +6,29 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Get in touch with the thesvg team. Report issues, request icon removal, or ask questions.",
+  openGraph: {
+    title: "Contact | theSVG",
+    description:
+      "Get in touch with the thesvg team. Report issues, request icon removal, or ask questions.",
+    url: "https://thesvg.org/contact",
+    siteName: "theSVG",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "theSVG - The Open SVG Brand Library",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact | theSVG",
+    description:
+      "Get in touch with the thesvg team. Report issues, request icon removal, or ask questions.",
+    images: ["/og-image.png"],
+  },
+  alternates: { canonical: "https://thesvg.org/contact" },
 };
 
 const CONTACT_CHANNELS = [
