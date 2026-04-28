@@ -3,6 +3,11 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { getAllIcons, getIconBySlug } from "@/lib/icons";
 
+// Pin to Node.js runtime so node:fs/promises and node:path are available.
+// Edge runtime would crash for any slug not in generateStaticParams (e.g., a
+// social crawler hitting a path that wasn't pre-rendered).
+export const runtime = "nodejs";
+
 export const alt = "Brand SVG icon on thesvg.org";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -17,14 +22,36 @@ export async function generateStaticParams() {
 }
 
 /**
+ * Normalize an icons.json `hex` value to a 6-digit form suitable for parsing.
+ * Accepts 3 or 6 digit hex (with or without leading #), strips alpha if present.
+ * Returns null when the input is unparseable.
+ */
+function normalizeHex(raw: string): string | null {
+  const stripped = raw.replace(/^#/, "");
+  if (/^[0-9a-fA-F]{3}$/.test(stripped)) {
+    // Expand 3-digit to 6-digit (#abc -> #aabbcc)
+    return stripped.split("").map((c) => c + c).join("");
+  }
+  if (/^[0-9a-fA-F]{6}$/.test(stripped)) {
+    return stripped;
+  }
+  if (/^[0-9a-fA-F]{8}$/.test(stripped)) {
+    // Drop alpha channel
+    return stripped.substring(0, 6);
+  }
+  return null;
+}
+
+/**
  * Returns true when the hex color is light enough that white text / white icon
  * would be hard to read. We switch to a dark-on-light layout in that case.
+ * Uses raw sRGB values weighted by BT.709 coefficients - close enough for an
+ * OG image; full gamma correction is unnecessary at this fidelity.
  */
 function isLightHex(hex: string): boolean {
   const r = parseInt(hex.substring(0, 2), 16);
   const g = parseInt(hex.substring(2, 4), 16);
   const b = parseInt(hex.substring(4, 6), 16);
-  // Perceived luminance (ITU-R BT.709)
   const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
   return luminance > 180;
 }
@@ -74,7 +101,9 @@ export default async function Image({ params }: ImageProps) {
   const icon = getIconBySlug(slug);
 
   const title = icon?.title ?? slug;
-  const rawHex = (icon?.hex ?? "1a1a2e").replace("#", "");
+  // Normalize to 6-digit hex; fall back to a neutral dark slate when the
+  // entry has an empty, missing, or malformed hex (e.g., 3-digit, alpha).
+  const rawHex = normalizeHex(icon?.hex ?? "") ?? "1a1a2e";
   const brandColor = `#${rawHex}`;
 
   const light = isLightHex(rawHex);
