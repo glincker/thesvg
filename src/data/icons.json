@@ -112636,5 +112636,44 @@
     "url": "",
     "collection": "brands",
     "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "carbon",
+    "title": "Carbon",
+    "aliases": [
+      "Carbon Language"
+    ],
+    "hex": "000000",
+    "categories": [
+      "Design",
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/carbon/default.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "fusion",
+    "title": "Fusion",
+    "aliases": [
+      "Autodesk Fusion",
+      "Autodesk Fusion 360"
+    ],
+    "hex": "FF6A00",
+    "categories": [
+      "Design"
+    ],
+    "variants": {
+      "default": "/icons/fusion/default.svg",
+      "mono": "/icons/fusion/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
   }
 ]
