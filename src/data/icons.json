@@ -111113,5 +111113,471 @@
     "url": "",
     "collection": "brands",
     "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "akka",
+    "title": "Akka",
+    "aliases": [
+      "Akka Framework"
+    ],
+    "hex": "15A9CE",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/akka/default.svg",
+      "wordmark": "/icons/akka/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "angularjs",
+    "title": "Angularjs",
+    "aliases": [],
+    "hex": "C4473A",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/angularjs/default.svg",
+      "mono": "/icons/angularjs/mono.svg",
+      "wordmark": "/icons/angularjs/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "angularmaterial",
+    "title": "Angularmaterial",
+    "aliases": [],
+    "hex": "FFA726",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/angularmaterial/default.svg",
+      "mono": "/icons/angularmaterial/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "datatables",
+    "title": "Datatables",
+    "aliases": [],
+    "hex": "FFFFFF",
+    "categories": [
+      "Framework",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/datatables/default.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "denojs",
+    "title": "Denojs",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Framework",
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/denojs/default.svg",
+      "wordmark": "/icons/denojs/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "djangorest",
+    "title": "Djangorest",
+    "aliases": [
+      "Django REST framework"
+    ],
+    "hex": "A30000",
+    "categories": [
+      "Framework",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/djangorest/default.svg",
+      "mono": "/icons/djangorest/mono.svg",
+      "wordmark": "/icons/djangorest/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "dotnetcore",
+    "title": "Dotnetcore",
+    "aliases": [
+      ".netcore"
+    ],
+    "hex": "623697",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/dotnetcore/default.svg",
+      "mono": "/icons/dotnetcore/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "dropwizard",
+    "title": "Dropwizard",
+    "aliases": [],
+    "hex": "24265D",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/dropwizard/default.svg",
+      "mono": "/icons/dropwizard/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "entityframeworkcore",
+    "title": "Entityframeworkcore",
+    "aliases": [
+      "Ef core",
+      "Entity framework core"
+    ],
+    "hex": "512BD4",
+    "categories": [
+      "Framework",
+      "Database"
+    ],
+    "variants": {
+      "default": "/icons/entityframeworkcore/default.svg",
+      "mono": "/icons/entityframeworkcore/mono.svg",
+      "line": "/icons/entityframeworkcore/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "feathersjs",
+    "title": "Feathersjs",
+    "aliases": [],
+    "hex": "333333",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/feathersjs/default.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "filamentphp",
+    "title": "Filamentphp",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/filamentphp/default.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "foundation",
+    "title": "Foundation",
+    "aliases": [],
+    "hex": "008CBA",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/foundation/default.svg",
+      "mono": "/icons/foundation/mono.svg",
+      "wordmark": "/icons/foundation/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "grails",
+    "title": "Grails",
+    "aliases": [
+      "Grails Framework"
+    ],
+    "hex": "FEB571",
+    "categories": [
+      "Framework",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/grails/default.svg",
+      "mono": "/icons/grails/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "jeet",
+    "title": "Jeet",
+    "aliases": [],
+    "hex": "FF664A",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/jeet/default.svg",
+      "mono": "/icons/jeet/mono.svg",
+      "wordmark": "/icons/jeet/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "karatelabs",
+    "title": "Karatelabs",
+    "aliases": [
+      "Karate"
+    ],
+    "hex": "000000",
+    "categories": [
+      "Framework",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/karatelabs/default.svg",
+      "mono": "/icons/karatelabs/mono.svg",
+      "wordmark": "/icons/karatelabs/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "laminas",
+    "title": "Laminas",
+    "aliases": [
+      "Laminas Project",
+      "Zend Framework"
+    ],
+    "hex": "013755",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/laminas/default.svg",
+      "line": "/icons/laminas/line.svg",
+      "wordmark": "/icons/laminas/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "libgdx",
+    "title": "Libgdx",
+    "aliases": [],
+    "hex": "E74A45",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/libgdx/default.svg",
+      "mono": "/icons/libgdx/mono.svg",
+      "line": "/icons/libgdx/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "magento",
+    "title": "Magento",
+    "aliases": [],
+    "hex": "F26322",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/magento/default.svg",
+      "line": "/icons/magento/line.svg",
+      "wordmark": "/icons/magento/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "materializecss",
+    "title": "Materializecss",
+    "aliases": [
+      "Materialize",
+      "Materialize CSS",
+      "Materialize css"
+    ],
+    "hex": "EB7077",
+    "categories": [
+      "Framework",
+      "Design"
+    ],
+    "variants": {
+      "default": "/icons/materializecss/default.svg",
+      "mono": "/icons/materializecss/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "mithril",
+    "title": "Mithril",
+    "aliases": [
+      "Mithril.js"
+    ],
+    "hex": "010002",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/mithril/default.svg",
+      "line": "/icons/mithril/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "opencl",
+    "title": "Opencl",
+    "aliases": [],
+    "hex": "000",
+    "categories": [
+      "Framework",
+      "Language",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/opencl/default.svg",
+      "mono": "/icons/opencl/mono.svg",
+      "line": "/icons/opencl/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "phalcon",
+    "title": "Phalcon",
+    "aliases": [],
+    "hex": "76C39B",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/phalcon/default.svg",
+      "mono": "/icons/phalcon/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "reactnative",
+    "title": "Reactnative",
+    "aliases": [
+      "React Native"
+    ],
+    "hex": "61DAFB",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/reactnative/default.svg",
+      "wordmark": "/icons/reactnative/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "vuestorefront",
+    "title": "Vuestorefront",
+    "aliases": [],
+    "hex": "5ECF7B",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/vuestorefront/default.svg",
+      "mono": "/icons/vuestorefront/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "waku",
+    "title": "Waku",
+    "aliases": [],
+    "hex": "DD2E44",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/waku/default.svg",
+      "mono": "/icons/waku/mono.svg",
+      "line": "/icons/waku/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
   }
 ]
