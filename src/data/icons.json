@@ -111579,5 +111579,423 @@
     "url": "",
     "collection": "brands",
     "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "aarch64",
+    "title": "Aarch64",
+    "aliases": [
+      "Arm64"
+    ],
+    "hex": "16358C",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/aarch64/default.svg",
+      "mono": "/icons/aarch64/mono.svg",
+      "line": "/icons/aarch64/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "apex",
+    "title": "Apex",
+    "aliases": [],
+    "hex": "0D9DDA",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/apex/default.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "apl",
+    "title": "Apl",
+    "aliases": [
+      "A Programming Language"
+    ],
+    "hex": "24A148",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/apl/default.svg",
+      "mono": "/icons/apl/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "awk",
+    "title": "Awk",
+    "aliases": [
+      "The awk programming language"
+    ],
+    "hex": "0A094D",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/awk/default.svg",
+      "wordmark": "/icons/awk/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "ceylon",
+    "title": "Ceylon",
+    "aliases": [
+      "Eclipseceylon",
+      "Ceylonlang"
+    ],
+    "hex": "AB710A",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/ceylon/default.svg",
+      "mono": "/icons/ceylon/mono.svg",
+      "wordmark": "/icons/ceylon/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "clarity",
+    "title": "Clarity",
+    "aliases": [
+      "Clarity Lang"
+    ],
+    "hex": "13171A",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/clarity/default.svg",
+      "mono": "/icons/clarity/mono.svg",
+      "wordmark": "/icons/clarity/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "clojurescript",
+    "title": "Clojurescript",
+    "aliases": [],
+    "hex": "96CA4B",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/clojurescript/default.svg",
+      "mono": "/icons/clojurescript/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "css3",
+    "title": "Css3",
+    "aliases": [
+      "Cascadingstylesheets3"
+    ],
+    "hex": "3D8FC6",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/css3/default.svg",
+      "mono": "/icons/css3/mono.svg",
+      "wordmark": "/icons/css3/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "dyalog",
+    "title": "Dyalog",
+    "aliases": [],
+    "hex": "FF6A13",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/dyalog/default.svg",
+      "mono": "/icons/dyalog/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "embeddedc",
+    "title": "Embeddedc",
+    "aliases": [],
+    "hex": "444444",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/embeddedc/default.svg",
+      "mono": "/icons/embeddedc/mono.svg",
+      "wordmark": "/icons/embeddedc/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "grpc",
+    "title": "Grpc",
+    "aliases": [
+      "Grpcio",
+      "Google Remote Procedure Call"
+    ],
+    "hex": "00B0AD",
+    "categories": [
+      "Language",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/grpc/default.svg",
+      "mono": "/icons/grpc/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "jule",
+    "title": "Jule",
+    "aliases": [
+      "Julelang"
+    ],
+    "hex": "5F7389",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/jule/default.svg",
+      "wordmark": "/icons/jule/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "love2d",
+    "title": "Love2d",
+    "aliases": [
+      "Löve"
+    ],
+    "hex": "FFF",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/love2d/default.svg",
+      "mono": "/icons/love2d/mono.svg",
+      "line": "/icons/love2d/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "maya",
+    "title": "Maya",
+    "aliases": [],
+    "hex": "149B9A",
+    "categories": [
+      "Language",
+      "Gaming"
+    ],
+    "variants": {
+      "default": "/icons/maya/default.svg",
+      "mono": "/icons/maya/mono.svg",
+      "wordmark": "/icons/maya/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "objectivec",
+    "title": "Objectivec",
+    "aliases": [],
+    "hex": "0B5A9D",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/objectivec/default.svg",
+      "mono": "/icons/objectivec/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "prolog",
+    "title": "Prolog",
+    "aliases": [
+      "Swi Prolog"
+    ],
+    "hex": "F46C30",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/prolog/default.svg",
+      "mono": "/icons/prolog/mono.svg",
+      "wordmark": "/icons/prolog/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "rect",
+    "title": "Rect",
+    "aliases": [
+      "Rectlang"
+    ],
+    "hex": "262626",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/rect/default.svg",
+      "mono": "/icons/rect/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "rexx",
+    "title": "Rexx",
+    "aliases": [],
+    "hex": "D81511",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/rexx/default.svg",
+      "mono": "/icons/rexx/mono.svg",
+      "wordmark": "/icons/rexx/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "threedsmax",
+    "title": "Threedsmax",
+    "aliases": [
+      "Autodesk 3ds Max",
+      "3dsmax"
+    ],
+    "hex": "37A5CC",
+    "categories": [
+      "Language",
+      "Gaming"
+    ],
+    "variants": {
+      "default": "/icons/threedsmax/default.svg",
+      "mono": "/icons/threedsmax/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "visualbasic",
+    "title": "Visualbasic",
+    "aliases": [
+      "Vb"
+    ],
+    "hex": "004E8C",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/visualbasic/default.svg",
+      "mono": "/icons/visualbasic/mono.svg",
+      "line": "/icons/visualbasic/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "vyper",
+    "title": "Vyper",
+    "aliases": [
+      "Vyperlang"
+    ],
+    "hex": "9F4CF2",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/vyper/default.svg",
+      "wordmark": "/icons/vyper/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "xamarin",
+    "title": "Xamarin",
+    "aliases": [],
+    "hex": "3498DB",
+    "categories": [
+      "Language",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/xamarin/default.svg",
+      "wordmark": "/icons/xamarin/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
   }
 ]
