@@ -44,10 +44,6 @@ function slugify(value) {
     .slice(0, 64);
 }
 
-function categorySlug(value) {
-  return slugify(value).replace(/^app-services$/, "app-services");
-}
-
 function detectKind(issue) {
   const labels = (issue.labels || []).map((l) => (typeof l === "string" ? l : l.name));
   const title = (issue.title || "").toLowerCase();
@@ -93,16 +89,6 @@ function getField(body, label) {
   return null;
 }
 
-function getCheckboxList(body, label) {
-  const section = getField(body, label);
-  if (!section) return [];
-  return section
-    .split("\n")
-    .map((line) => line.match(/^\s*-\s*\[([ xX])\]\s*(.+)$/))
-    .filter(Boolean)
-    .map((m) => ({ checked: m[1].toLowerCase() === "x", text: m[2].trim() }));
-}
-
 function extractFirstSvg(body) {
   if (!body) return null;
   const fence = body.match(/```(?:svg|xml|html)?\s*\n([\s\S]*?<svg[\s\S]*?<\/svg>[\s\S]*?)\n```/i);
@@ -128,6 +114,26 @@ function validateSvg(svg) {
     errors.push("contains third-party attribution watermark");
   }
   return { ok: errors.length === 0, errors, bytes };
+}
+
+/**
+ * Submitters often paste a ready-made icons.json entry inside a fenced
+ * ```json``` block. The form template doesn't have a License field, so we
+ * fall back to lifting the value out of that snippet (often "TODO" while
+ * the submitter waits for a maintainer to pick a value).
+ */
+function extractLicenseFromJsonSnippet(body) {
+  if (!body) return null;
+  const fence = body.match(/```json\s*\n([\s\S]*?)\n```/i);
+  if (!fence) return null;
+  try {
+    const parsed = JSON.parse(fence[1]);
+    if (parsed && typeof parsed.license === "string") return parsed.license.trim();
+  } catch {
+    // fenced block isn't valid JSON, fall through
+  }
+  const m = fence[1].match(/"license"\s*:\s*"([^"]+)"/i);
+  return m ? m[1].trim() : null;
 }
 
 function parseHex(value) {
@@ -222,7 +228,7 @@ function main() {
     .filter(Boolean)
     .filter((s) => s !== "-" && s.toLowerCase() !== "todo");
 
-  const license = getField(body, "License");
+  const license = getField(body, "License") || extractLicenseFromJsonSnippet(body);
   const svg = extractFirstSvg(body);
   const svgCheck = validateSvg(svg);
 
@@ -234,14 +240,16 @@ function main() {
   if (kind === KIND_REQUEST) labels.push("icon-request");
   if (kind === KIND_UPDATE) labels.push("icon-update");
   for (const cat of categories) {
-    const cs = categorySlug(cat);
+    const cs = slugify(cat);
     if (KNOWN_CATEGORY_SLUGS.has(cs)) labels.push(`category:${cs}`);
   }
   if (dup && kind === KIND_REQUEST) labels.push(STATUS_LABEL.duplicate);
   if (kind === KIND_REQUEST && !svg) labels.push(STATUS_LABEL.needsSvg);
   if (svg && !svgCheck.ok) {
-    if (svgCheck.errors.some((e) => e.includes("50KB"))) labels.push(STATUS_LABEL.oversize);
-    else labels.push(STATUS_LABEL.invalidSvg);
+    const oversize = svgCheck.errors.some((e) => e.includes("50KB"));
+    const otherErrors = svgCheck.errors.some((e) => !e.includes("50KB"));
+    if (oversize) labels.push(STATUS_LABEL.oversize);
+    if (otherErrors) labels.push(STATUS_LABEL.invalidSvg);
   }
   if (kind === KIND_REQUEST && license && /^todo$/i.test(license.trim())) {
     labels.push(STATUS_LABEL.needsLicense);

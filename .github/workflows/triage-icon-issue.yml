@@ -16,6 +16,8 @@ jobs:
   triage:
     name: Auto-label & comment
     runs-on: ubuntu-latest
+    env:
+      TRIAGE_OUTPUT: ${{ github.workspace }}/triage.json
     steps:
       - uses: actions/checkout@v4
         with:
@@ -30,27 +32,46 @@ jobs:
 
       - name: Run triage
         id: triage
-        env:
-          TRIAGE_OUTPUT: ${{ runner.temp }}/triage.json
         run: node .github/scripts/triage-issue.mjs
 
       - name: Apply labels and comment
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Apply labels and comment
-        uses: actions/github-script@v7
-        env:
-          TRIAGE_OUTPUT: ${{ runner.temp }}/triage.json
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            const fs = require('fs');
+            const path = process.env.TRIAGE_OUTPUT;
+            const decision = JSON.parse(fs.readFileSync(path, 'utf8'));
             if (decision.skipped) {
               core.info(`triage skipped: ${decision.reason}`);
               return;
             }
             const { owner, repo } = context.repo;
             const issue_number = decision.issue;
+
+            // Labels this workflow owns - cleared on every run so edits do
+            // not leave stale state (e.g. triage:needs-svg sticking around
+            // after the submitter pasted an SVG).
+            const isManagedLabel = (name) =>
+              name === "icons" ||
+              name === "icon-request" ||
+              name === "icon-update" ||
+              name === "duplicate" ||
+              name.startsWith("triage:") ||
+              name.startsWith("category:");
+
+            const issue = await github.rest.issues.get({ owner, repo, issue_number });
+            const desired = new Set(decision.labels);
+            for (const lbl of issue.data.labels || []) {
+              const name = typeof lbl === "string" ? lbl : lbl.name;
+              if (isManagedLabel(name) && !desired.has(name)) {
+                try {
+                  await github.rest.issues.removeLabel({ owner, repo, issue_number, name });
+                } catch (e) {
+                  if (e.status !== 404) throw e;
+                }
+              }
+            }
 
             // Idempotent label creation
             const labelColors = {
