@@ -18,12 +18,14 @@
   <a href="https://github.com/glincker/thesvg/stargazers"><img src="https://img.shields.io/github/stars/glincker/thesvg?style=flat-square&label=stars" alt="stars" /></a>
   <a href="https://github.com/glincker/thesvg"><img src="https://img.shields.io/badge/icons-5%2C600%2B-F97316?style=flat-square" alt="5,600+ icons" /></a>
   <a href="https://github.com/glincker/thesvg/blob/main/LICENSE"><img src="https://img.shields.io/github/license/glincker/thesvg?style=flat-square" alt="license" /></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=glincker.thesvg"><img src="https://img.shields.io/visual-studio-marketplace/v/glincker.thesvg?style=flat-square&color=007ACC&label=VS%20Code&logo=visualstudiocode" alt="VS Code" /></a>
   <a href="https://www.raycast.com/thegdsks/thesvg"><img src="https://img.shields.io/badge/Raycast-Store-FF6363?style=flat-square&logo=raycast" alt="Raycast" /></a>
 </p>
 
 <p align="center">
   <a href="https://thesvg.org"><strong>Browse Icons</strong></a> &nbsp;&bull;&nbsp;
   <a href="#install">Install</a> &nbsp;&bull;&nbsp;
+  <a href="#extensions">Extensions</a> &nbsp;&bull;&nbsp;
   <a href="#cdn">CDN</a> &nbsp;&bull;&nbsp;
   <a href="#api">API</a> &nbsp;&bull;&nbsp;
   <a href="#packages">Packages</a> &nbsp;&bull;&nbsp;
@@ -103,6 +105,25 @@ npm install @thesvg/icons
 | [`@thesvg/svelte`](https://www.npmjs.com/package/@thesvg/svelte) | Typed Svelte components | [![npm](https://img.shields.io/npm/v/@thesvg/svelte?style=flat-square&color=F97316)](https://www.npmjs.com/package/@thesvg/svelte) |
 | [`@thesvg/cli`](https://www.npmjs.com/package/@thesvg/cli) | CLI tool (`npx @thesvg/cli add github`) | [![npm](https://img.shields.io/npm/v/@thesvg/cli?style=flat-square&color=F97316)](https://www.npmjs.com/package/@thesvg/cli) |
 | [`@thesvg/mcp-server`](https://www.npmjs.com/package/@thesvg/mcp-server) | MCP server for AI assistants | [![npm](https://img.shields.io/npm/v/@thesvg/mcp-server?style=flat-square&color=F97316)](https://www.npmjs.com/package/@thesvg/mcp-server) |
+
+## Extensions
+
+Use theSVG icons everywhere you build, design, and ship. Browse the full ecosystem at [thesvg.org/extensions](https://thesvg.org/extensions).
+
+| Extension | Status | Description |
+|-----------|--------|-------------|
+| [VS Code](https://marketplace.visualstudio.com/items?itemName=glincker.thesvg) | Published | Search 5,600+ icons from the command palette. Copy SVG, JSX, CDN link, or insert at cursor. |
+| [Raycast](https://www.raycast.com/thegdsks/thesvg) | Published | Search, preview, and copy any brand SVG in one keystroke. Filter by category, preview variants. |
+| [MCP Server](https://www.npmjs.com/package/@thesvg/mcp-server) | Published | AI tool calls for Claude, Cursor, Windsurf. Fetch icons by name or category. |
+| [`@thesvg/cli`](https://www.npmjs.com/package/@thesvg/cli) | Published | shadcn-style installer. `npx @thesvg/cli add github` drops the SVG into your project. |
+| [CDN via jsDelivr](https://www.jsdelivr.com/package/gh/glincker/thesvg) | Published | Serve any icon via global CDN. Drop into HTML, CSS, Markdown, Notion, Webflow, Framer. |
+| [Figma Plugin](https://github.com/glincker/thesvg/issues?q=label%3Aextension) | Planned | Browse, search by name or color, drag straight onto your canvas. |
+| [JetBrains](https://github.com/glincker/thesvg/issues?q=label%3Aextension) | Open | IntelliJ, WebStorm, PyCharm, Rider tool window. Help wanted. |
+| [Neovim](https://github.com/glincker/thesvg/issues?q=label%3Aextension) | Open | Telescope picker with floating preview. Help wanted. |
+| [Alfred Workflow](https://github.com/glincker/thesvg/issues?q=label%3Aextension) | Open | macOS quick access. Search anywhere, copy to clipboard. Help wanted. |
+| [Sketch / Blender / Webflow / Notion](https://github.com/glincker/thesvg/issues?q=label%3Aextension) | Open | Tracking issues open. Build a plugin and we will list it here. |
+
+> **Build your own:** the API and CDN are fully open with no auth required. Ship a plugin or workflow, then open a PR and we will add it to the table.
 
 ## CDN
 
