@@ -37,7 +37,7 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.27.1",
+    "@modelcontextprotocol/sdk": "^1.29.0",
     "zod": "^3.24.2"
   },
   "devDependencies": {
