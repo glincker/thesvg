@@ -1,5 +1,11 @@
 # @thesvg/cli
 
+## 0.5.3
+
+### Patch Changes
+
+- ci: path-filter the build, add labeler + dependabot + auto-merge ([#139](https://github.com/glincker/thesvg/issues/139))
+
 ## 0.5.2
 
 ### Patch Changes
