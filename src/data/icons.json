@@ -108743,5 +108743,111 @@
     "url": "https://pedi.ph",
     "collection": "brands",
     "dateAdded": "2026-04-18"
+  },
+  {
+    "slug": "tecno",
+    "title": "Tecno",
+    "aliases": [
+      "Tecno Mobile"
+    ],
+    "hex": "0064FE",
+    "categories": [
+      "Hardware"
+    ],
+    "variants": {
+      "default": "/icons/tecno/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.tecno-mobile.com",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "alem-tv",
+    "title": "Alem TV",
+    "aliases": [],
+    "hex": "199F45",
+    "categories": [
+      "Entertainment",
+      "App Services"
+    ],
+    "variants": {
+      "default": "/icons/alem-tv/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://alemtv.tm",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "gozle",
+    "title": "Gozle",
+    "aliases": [],
+    "hex": "00ACEE",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/gozle/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://gozle.org",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "amul-info",
+    "title": "Amul Info",
+    "aliases": [],
+    "hex": "BC9545",
+    "categories": [
+      "Other",
+      "App Services"
+    ],
+    "variants": {
+      "default": "/icons/amul-info/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://amulinfo.com",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "pocket",
+    "title": "Pocket",
+    "aliases": [
+      "getpocket"
+    ],
+    "hex": "EF4056",
+    "categories": [
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/pocket/default.svg",
+      "wordmark": "/icons/pocket/wordmark.svg"
+    },
+    "license": "brand-use",
+    "url": "https://getpocket.com",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "eshop-os",
+    "title": "eshopOS",
+    "aliases": [
+      "eshop"
+    ],
+    "hex": "10B981",
+    "categories": [
+      "E-commerce",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/eshop-os/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://eshop-os.com",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
   }
 ]
