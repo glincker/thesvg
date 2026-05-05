@@ -108794,5 +108794,22 @@
     "url": "https://gozle.org",
     "collection": "brands",
     "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "amul-info",
+    "title": "Amul Info",
+    "aliases": [],
+    "hex": "BC9545",
+    "categories": [
+      "Other",
+      "App Services"
+    ],
+    "variants": {
+      "default": "/icons/amul-info/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://amulinfo.com",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
   }
 ]
