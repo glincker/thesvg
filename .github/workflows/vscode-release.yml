@@ -15,7 +15,7 @@ jobs:
     name: Publish to VS Code Marketplace
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -40,7 +40,7 @@ jobs:
             echo "bumped=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         if: steps.version.outputs.bumped == 'true'
         with:
           node-version: '20'
