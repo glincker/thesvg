@@ -1,5 +1,11 @@
 # @thesvg/react
 
+## 2.1.8
+
+### Patch Changes
+
+- ci: path-filter the build, add labeler + dependabot + auto-merge ([#139](https://github.com/glincker/thesvg/issues/139))
+
 ## 2.1.7
 
 ### Patch Changes
