@@ -109352,5 +109352,998 @@
     "url": "https://www.zabka.pl",
     "collection": "brands",
     "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "acrobat-reader",
+    "title": "Acrobat Reader",
+    "aliases": [],
+    "hex": "B30B00",
+    "categories": [
+      "Software",
+      "Design"
+    ],
+    "variants": {
+      "default": "/icons/acrobat-reader/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/acrobat/pdf-reader.html",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "acrobat-reader-grayscale-app-icon",
+    "title": "Acrobat Reader (grayscale app icon)",
+    "aliases": [],
+    "hex": "808080",
+    "categories": [
+      "Software",
+      "Design"
+    ],
+    "variants": {
+      "default": "/icons/acrobat-reader-grayscale-app-icon/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/acrobat/pdf-reader.html",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "acrobat-scan",
+    "title": "Acrobat Scan",
+    "aliases": [],
+    "hex": "008CAD",
+    "categories": [
+      "Software",
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/acrobat-scan/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/acrobat/mobile/acrobat-scan.html",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "adobe-aero",
+    "title": "Adobe Aero",
+    "aliases": [],
+    "hex": "1E3101",
+    "categories": [
+      "Design",
+      "Software",
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/adobe-aero/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/aero",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "adobe-fonts",
+    "title": "Adobe Fonts",
+    "aliases": [],
+    "hex": "000B1D",
+    "categories": [
+      "Design",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/adobe-fonts/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://fonts.adobe.com",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "adobe-sign",
+    "title": "Adobe Sign",
+    "aliases": [],
+    "hex": "584CCC",
+    "categories": [
+      "Software",
+      "Platform",
+      "Communication"
+    ],
+    "variants": {
+      "default": "/icons/adobe-sign/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/sign",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "adobe-stock",
+    "title": "Adobe Stock",
+    "aliases": [],
+    "hex": "000B1D",
+    "categories": [
+      "Design"
+    ],
+    "variants": {
+      "default": "/icons/adobe-stock/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://stock.adobe.com",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "audition",
+    "title": "Audition",
+    "aliases": [],
+    "hex": "00005B",
+    "categories": [
+      "Software",
+      "Design",
+      "Entertainment",
+      "Music"
+    ],
+    "variants": {
+      "default": "/icons/audition/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/audition",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "bridge",
+    "title": "Bridge",
+    "aliases": [],
+    "hex": "000B1D",
+    "categories": [
+      "Software",
+      "Design"
+    ],
+    "variants": {
+      "default": "/icons/bridge/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/bridge",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "captivate",
+    "title": "Captivate",
+    "aliases": [],
+    "hex": "002615",
+    "categories": [
+      "Software",
+      "Design",
+      "Education",
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/captivate/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/captivate",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "captivate-prime",
+    "title": "Captivate Prime",
+    "aliases": [],
+    "hex": "002616",
+    "categories": [
+      "Software",
+      "Platform",
+      "Analytics",
+      "Communication",
+      "Education"
+    ],
+    "variants": {
+      "default": "/icons/captivate-prime/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/learning/learningmanager.html",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "capture",
+    "title": "Capture",
+    "aliases": [],
+    "hex": "000B1D",
+    "categories": [
+      "Design",
+      "Software",
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/capture/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/capture",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "character-animator",
+    "title": "Character Animator",
+    "aliases": [],
+    "hex": "00005B",
+    "categories": [
+      "Software",
+      "Design",
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/character-animator/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/character-animator",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "codex",
+    "title": "Codex",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "AI",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/codex/default.svg",
+      "light": "/icons/codex/light.svg",
+      "dark": "/icons/codex/dark.svg"
+    },
+    "license": "brand-use",
+    "url": "https://openai.com/codex/",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "coldfusion",
+    "title": "ColdFusion",
+    "aliases": [],
+    "hex": "000F34",
+    "categories": [
+      "Software",
+      "DevTool",
+      "Database"
+    ],
+    "variants": {
+      "default": "/icons/coldfusion/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/coldfusion",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "coldfusion-builder",
+    "title": "ColdFusion Builder",
+    "aliases": [],
+    "hex": "000F34",
+    "categories": [
+      "Software",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/coldfusion-builder/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/coldfusion",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "connect",
+    "title": "Connect",
+    "aliases": [],
+    "hex": "00261A",
+    "categories": [
+      "Software",
+      "Communication",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/connect/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/adobe-connect",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "digital-editions",
+    "title": "Digital Editions",
+    "aliases": [],
+    "hex": "260C00",
+    "categories": [
+      "Software",
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/digital-editions/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/solutions/ebook/digital-editions",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "dracula",
+    "title": "Dracula",
+    "aliases": [],
+    "hex": "D9D9D9",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/dracula/default.svg",
+      "light": "/icons/dracula/light.svg",
+      "dark": "/icons/dracula/dark.svg"
+    },
+    "license": "brand-use",
+    "url": "https://draculatheme.com/",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "experience-platform",
+    "title": "Experience Platform",
+    "aliases": [],
+    "hex": "000B1D",
+    "categories": [
+      "Platform",
+      "Software",
+      "Analytics"
+    ],
+    "variants": {
+      "default": "/icons/experience-platform/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://business.adobe.com/products/adobe-experience-platform",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "fill-and-sign",
+    "title": "Fill and Sign",
+    "aliases": [],
+    "hex": "AAA0FF",
+    "categories": [
+      "Software",
+      "Communication"
+    ],
+    "variants": {
+      "default": "/icons/fill-and-sign/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/acrobat/online/fill-pdf",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "fontfolio",
+    "title": "Fontfolio",
+    "aliases": [],
+    "hex": "DBDCDD",
+    "categories": [
+      "Design",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/fontfolio/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/creativecloud/services-fonts.html",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "framemaker",
+    "title": "FrameMaker",
+    "aliases": [],
+    "hex": "261A00",
+    "categories": [
+      "Software",
+      "Design"
+    ],
+    "variants": {
+      "default": "/icons/framemaker/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/framemaker",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "framemaker-server",
+    "title": "FrameMaker Server",
+    "aliases": [],
+    "hex": "FFEDCC",
+    "categories": [
+      "Software",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/framemaker-server/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/framemaker",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "fresco",
+    "title": "Fresco",
+    "aliases": [],
+    "hex": "001E36",
+    "categories": [
+      "Design",
+      "Software",
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/fresco/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/fresco",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "granola",
+    "title": "Granola",
+    "aliases": [],
+    "hex": "1E1E1E",
+    "categories": [
+      "AI"
+    ],
+    "variants": {
+      "default": "/icons/granola/default.svg",
+      "light": "/icons/granola/light.svg",
+      "dark": "/icons/granola/dark.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.granola.ai/",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "http-dynamic-streaming",
+    "title": "HTTP Dynamic Streaming",
+    "aliases": [],
+    "hex": "DBDCDD",
+    "categories": [
+      "Software",
+      "Hosting",
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/http-dynamic-streaming/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/flash/technology.html",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "illustrator-grayscale-app-icon",
+    "title": "Illustrator (grayscale app icon)",
+    "aliases": [],
+    "hex": "808080",
+    "categories": [
+      "Software",
+      "Design"
+    ],
+    "variants": {
+      "default": "/icons/illustrator-grayscale-app-icon/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/illustrator",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "incopy",
+    "title": "InCopy",
+    "aliases": [],
+    "hex": "49021F",
+    "categories": [
+      "Software",
+      "Design"
+    ],
+    "variants": {
+      "default": "/icons/incopy/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/incopy",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "indesign-server",
+    "title": "InDesign Server",
+    "aliases": [],
+    "hex": "49021F",
+    "categories": [
+      "Software",
+      "Design",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/indesign-server/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/indesign",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "interfere",
+    "title": "Interfere",
+    "aliases": [],
+    "hex": "171717",
+    "categories": [
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/interfere/default.svg",
+      "light": "/icons/interfere/light.svg",
+      "dark": "/icons/interfere/dark.svg"
+    },
+    "license": "brand-use",
+    "url": "https://interfere.com/",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "leedlime",
+    "title": "Leedlime",
+    "aliases": [],
+    "hex": "BAF250",
+    "categories": [
+      "AI",
+      "Software",
+      "Automation"
+    ],
+    "variants": {
+      "default": "/icons/leedlime/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://leedlime.com",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "lightroom-classic",
+    "title": "Lightroom Classic",
+    "aliases": [],
+    "hex": "001E36",
+    "categories": [
+      "Software",
+      "Design"
+    ],
+    "variants": {
+      "default": "/icons/lightroom-classic/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/photoshop-lightroom-classic",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "media-encoder",
+    "title": "Media Encoder",
+    "aliases": [],
+    "hex": "00005B",
+    "categories": [
+      "Software",
+      "Design",
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/media-encoder/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/media-encoder",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "media-server",
+    "title": "Media Server",
+    "aliases": [],
+    "hex": "EAEAEA",
+    "categories": [
+      "Software",
+      "Hosting",
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/media-server/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/flashmediaserver",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "openclaw",
+    "title": "OpenClaw",
+    "aliases": [],
+    "hex": "FF4D4D",
+    "categories": [
+      "AI",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/openclaw/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://openclaw.ai/",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "orshot",
+    "title": "Orshot",
+    "aliases": [],
+    "hex": "111111",
+    "categories": [
+      "Platform",
+      "Design",
+      "Automation",
+      "AI"
+    ],
+    "variants": {
+      "default": "/icons/orshot/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://orshot.com",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "photoshop-grayscale-app-icon",
+    "title": "Photoshop (grayscale app icon)",
+    "aliases": [],
+    "hex": "808080",
+    "categories": [
+      "Software",
+      "Design"
+    ],
+    "variants": {
+      "default": "/icons/photoshop-grayscale-app-icon/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/photoshop",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "photoshop-camera",
+    "title": "Photoshop Camera",
+    "aliases": [],
+    "hex": "001E36",
+    "categories": [
+      "Software",
+      "Design",
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/photoshop-camera/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/photoshop-camera",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "photoshop-elements",
+    "title": "Photoshop Elements",
+    "aliases": [],
+    "hex": "061E26",
+    "categories": [
+      "Software",
+      "Design"
+    ],
+    "variants": {
+      "default": "/icons/photoshop-elements/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/photoshop-elements",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "photoshop-express",
+    "title": "Photoshop Express",
+    "aliases": [],
+    "hex": "001E36",
+    "categories": [
+      "Software",
+      "Design",
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/photoshop-express/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/express/photoshop",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "portfolio",
+    "title": "Portfolio",
+    "aliases": [],
+    "hex": "000B1D",
+    "categories": [
+      "Software",
+      "Design",
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/portfolio/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/creativecloud/photography/portfolio",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "premiere-elements",
+    "title": "Premiere Elements",
+    "aliases": [],
+    "hex": "28092E",
+    "categories": [
+      "Software",
+      "Design",
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/premiere-elements/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/premiere-elements",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "premiere-rush",
+    "title": "Premiere Rush",
+    "aliases": [],
+    "hex": "00005B",
+    "categories": [
+      "Software",
+      "Design",
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/premiere-rush/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/premiere-rush",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "presenter-video-express",
+    "title": "Presenter Video Express",
+    "aliases": [],
+    "hex": "1A2600",
+    "categories": [
+      "Software",
+      "Education",
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/presenter-video-express/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/presenter.html",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "robohelp",
+    "title": "RoboHelp",
+    "aliases": [],
+    "hex": "002623",
+    "categories": [
+      "Software",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/robohelp/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/robohelp",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "robohelp-server",
+    "title": "RoboHelp Server",
+    "aliases": [],
+    "hex": "002623",
+    "categories": [
+      "Software",
+      "DevTool",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/robohelp-server/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/robohelp",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "runframe",
+    "title": "Runframe",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Software",
+      "DevTool",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/runframe/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://runframe.io",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "substance-3d-designer",
+    "title": "Substance 3D Designer",
+    "aliases": [],
+    "hex": "1E3101",
+    "categories": [
+      "Design",
+      "Software",
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/substance-3d-designer/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/substance3d/apps/designer.html",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "substance-3d-painter",
+    "title": "Substance 3D Painter",
+    "aliases": [],
+    "hex": "1E3101",
+    "categories": [
+      "Design",
+      "Software",
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/substance-3d-painter/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/substance3d/apps/painter.html",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "substance-3d-sampler",
+    "title": "Substance 3D Sampler",
+    "aliases": [],
+    "hex": "1E3101",
+    "categories": [
+      "Design",
+      "Software",
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/substance-3d-sampler/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/substance3d/apps/sampler.html",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "substance-3d-stager",
+    "title": "Substance 3D Stager",
+    "aliases": [],
+    "hex": "1E3101",
+    "categories": [
+      "Design",
+      "Software",
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/substance-3d-stager/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/substance3d/apps/stager.html",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "technical-communication-suite",
+    "title": "Technical Communication Suite",
+    "aliases": [],
+    "hex": "DCDCDC",
+    "categories": [
+      "Software",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/technical-communication-suite/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.adobe.com/products/technicalcommunicationsuite",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "vlt",
+    "title": "vlt",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/vlt/default.svg",
+      "light": "/icons/vlt/light.svg",
+      "dark": "/icons/vlt/dark.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.vlt.sh",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "xata",
+    "title": "Xata",
+    "aliases": [],
+    "hex": "8468F6",
+    "categories": [
+      "Database",
+      "AI"
+    ],
+    "variants": {
+      "default": "/icons/xata/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://xata.io/",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "zaia-endless",
+    "title": "Zaia Endless",
+    "aliases": [],
+    "hex": "7B65E8",
+    "categories": [
+      "Software",
+      "AI",
+      "Platform",
+      "Automation"
+    ],
+    "variants": {
+      "default": "/icons/zaia-endless/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://zaia.app/",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
   }
 ]
