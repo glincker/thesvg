@@ -108761,5 +108761,22 @@
     "url": "https://www.tecno-mobile.com",
     "collection": "brands",
     "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "alem-tv",
+    "title": "Alem TV",
+    "aliases": [],
+    "hex": "199F45",
+    "categories": [
+      "Entertainment",
+      "App Services"
+    ],
+    "variants": {
+      "default": "/icons/alem-tv/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://alemtv.tm",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
   }
 ]
