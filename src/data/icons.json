@@ -108778,5 +108778,21 @@
     "url": "https://alemtv.tm",
     "collection": "brands",
     "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "gozle",
+    "title": "Gozle",
+    "aliases": [],
+    "hex": "00ACEE",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/gozle/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://gozle.org",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
   }
 ]
