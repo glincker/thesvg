@@ -1,0 +1,55 @@
+# Auto-label PRs by which paths changed.
+# Consumed by .github/workflows/labeler.yml using actions/labeler@v5.
+
+icons:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "public/icons/**"
+          - "src/data/icons.json"
+
+ui:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "src/components/**"
+          - "src/app/**"
+          - "src/styles/**"
+          - "src/lib/**"
+          - "src/hooks/**"
+          - "*.css"
+
+ci/cd:
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".github/workflows/**"
+          - ".github/scripts/**"
+          - ".github/labeler.yml"
+          - ".github/dependabot.yml"
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/*.md"
+          - "docs-local/**"
+
+packages:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "packages/**"
+          - "extensions/vscode/**"
+          - "extensions/raycast/**"
+
+dependencies:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "package.json"
+          - "pnpm-lock.yaml"
+          - "packages/**/package.json"
+
+config:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "next.config.*"
+          - "tsconfig.json"
+          - "tailwind.config.*"
+          - "postcss.config.*"
+          - "eslint.config.*"

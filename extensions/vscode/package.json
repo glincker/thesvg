@@ -1,7 +1,7 @@
 {
   "name": "thesvg",
   "displayName": "theSVG - SVG Icon Search",
-  "description": "Search and copy 5,650+ SVG icons (brands, AWS, Azure, GCP, Kubernetes) directly from VS Code",
+  "description": "Search and copy 5,880+ SVG icons (brands, AWS, Azure, GCP, Kubernetes) directly from VS Code",
   "version": "0.1.3",
   "publisher": "glincker",
   "license": "MIT",

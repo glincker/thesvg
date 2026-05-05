@@ -3,6 +3,18 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - "**/*.md"
+      - "docs-local/**"
+      - ".github/ISSUE_TEMPLATE/**"
+      - ".github/labeler.yml"
+      - ".github/dependabot.yml"
+      - ".github/workflows/triage-icon-issue.yml"
+      - ".github/workflows/labeler.yml"
+      - ".github/workflows/dependabot-auto-merge.yml"
+      - "LICENSE"
+      - "TRADEMARK.md"
+      - "LEGAL.md"
   workflow_dispatch:
 
 permissions:

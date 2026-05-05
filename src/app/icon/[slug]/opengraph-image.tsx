@@ -88,7 +88,16 @@ function ensureViewBox(svgContent: string): string | null {
  */
 async function loadSvg(slug: string): Promise<string | null> {
   try {
-    const svgPath = join(process.cwd(), "public", "icons", slug, "default.svg");
+    // Build the path at runtime via array reduction so Turbopack's static
+    // analyzer doesn't treat `public/icons/{slug}/default.svg` as a glob
+    // pattern matching every icon SVG (~12k files) at build time. The
+    // concatenation result is identical, but the bundler can't trace it.
+    const segments: string[] = [];
+    segments.push("public");
+    segments.push("icons");
+    segments.push(slug);
+    segments.push("default.svg");
+    const svgPath = segments.reduce((acc, part) => join(acc, part), process.cwd());
     const raw = await readFile(svgPath, "utf-8");
     return ensureViewBox(raw);
   } catch {
