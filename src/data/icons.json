@@ -108743,5 +108743,23 @@
     "url": "https://pedi.ph",
     "collection": "brands",
     "dateAdded": "2026-04-18"
+  },
+  {
+    "slug": "tecno",
+    "title": "Tecno",
+    "aliases": [
+      "Tecno Mobile"
+    ],
+    "hex": "0064FE",
+    "categories": [
+      "Hardware"
+    ],
+    "variants": {
+      "default": "/icons/tecno/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.tecno-mobile.com",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
   }
 ]
