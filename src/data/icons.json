@@ -108811,5 +108811,24 @@
     "url": "https://amulinfo.com",
     "collection": "brands",
     "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "pocket",
+    "title": "Pocket",
+    "aliases": [
+      "getpocket"
+    ],
+    "hex": "EF4056",
+    "categories": [
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/pocket/default.svg",
+      "wordmark": "/icons/pocket/wordmark.svg"
+    },
+    "license": "brand-use",
+    "url": "https://getpocket.com",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
   }
 ]
