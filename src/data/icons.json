@@ -75871,7 +75871,10 @@
   {
     "slug": "moonshot",
     "title": "Moonshot (月之暗面)",
-    "aliases": [],
+    "aliases": [
+      "Moonshot AI",
+      "Kimi"
+    ],
     "hex": "16191E",
     "categories": [
       "AI",
@@ -108847,6 +108850,506 @@
     },
     "license": "CC0-1.0",
     "url": "https://eshop-os.com",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "aeromexico",
+    "title": "Aeroméxico",
+    "aliases": [],
+    "hex": "0B2343",
+    "categories": [
+      "Aviation"
+    ],
+    "variants": {
+      "default": "/icons/aeromexico/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.aeromexico.com",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "aldi-sud",
+    "title": "Aldi Süd",
+    "aliases": [],
+    "hex": "00005F",
+    "categories": [
+      "Shopping"
+    ],
+    "variants": {
+      "default": "/icons/aldi-sud/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.aldi-sued.de",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "bandr-automation",
+    "title": "B&R Automation",
+    "aliases": [],
+    "hex": "FF8800",
+    "categories": [
+      "Hardware"
+    ],
+    "variants": {
+      "default": "/icons/bandr-automation/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.br-automation.com",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "bakalari",
+    "title": "Bakaláři",
+    "aliases": [],
+    "hex": "00A2E2",
+    "categories": [
+      "Education"
+    ],
+    "variants": {
+      "default": "/icons/bakalari/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.bakalari.cz",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "cplusplus-builder",
+    "title": "C++ Builder",
+    "aliases": [],
+    "hex": "E62431",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/cplusplus-builder/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.embarcadero.com/products/cbuilder",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "cachyos",
+    "title": "CachyOS",
+    "aliases": [],
+    "hex": "00AA88",
+    "categories": [
+      "OS",
+      "Linux"
+    ],
+    "variants": {
+      "default": "/icons/cachyos/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://cachyos.org",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "cinny",
+    "title": "Cinny",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Communication"
+    ],
+    "variants": {
+      "default": "/icons/cinny/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://cinny.in",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "dicebear",
+    "title": "DiceBear",
+    "aliases": [],
+    "hex": "0284C7",
+    "categories": [
+      "Design",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/dicebear/default.svg"
+    },
+    "license": "CC-BY-SA-4.0",
+    "url": "https://www.dicebear.com",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "dungeons-dragons",
+    "title": "Dungeons & Dragons",
+    "aliases": [],
+    "hex": "ED1C24",
+    "categories": [
+      "Gaming"
+    ],
+    "variants": {
+      "default": "/icons/dungeons-dragons/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://dnd.wizards.com",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "eclipse-vert-x",
+    "title": "Eclipse Vert.x",
+    "aliases": [],
+    "hex": "782A90",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/eclipse-vert-x/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://vertx.io",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "faker",
+    "title": "Faker",
+    "aliases": [],
+    "hex": "779B2E",
+    "categories": [
+      "DevTool",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/faker/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://fakerjs.dev",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "fluxer",
+    "title": "Fluxer",
+    "aliases": [],
+    "hex": "4641D9",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/fluxer/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://fluxer.app",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "google-display-video-360",
+    "title": "Google Display & Video 360",
+    "aliases": [],
+    "hex": "34A853",
+    "categories": [
+      "Analytics"
+    ],
+    "variants": {
+      "default": "/icons/google-display-video-360/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://marketingplatform.google.com/about/display-video-360/",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "helium-browser",
+    "title": "Helium Browser",
+    "aliases": [],
+    "hex": "3450D1",
+    "categories": [
+      "Browser"
+    ],
+    "variants": {
+      "default": "/icons/helium-browser/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://github.com/imputnet/helium-macos",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "hilton-hotels-resorts",
+    "title": "Hilton Hotels & Resorts",
+    "aliases": [],
+    "hex": "1E4380",
+    "categories": [
+      "Shopping"
+    ],
+    "variants": {
+      "default": "/icons/hilton-hotels-resorts/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.hilton.com/en/brands/hilton-hotels/",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "ile-de-france-mobilites",
+    "title": "Île-de-France Mobilités",
+    "aliases": [],
+    "hex": "67B4E7",
+    "categories": [
+      "Transportation"
+    ],
+    "variants": {
+      "default": "/icons/ile-de-france-mobilites/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.iledefrance-mobilites.fr",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "l-equipe",
+    "title": "L'Équipe",
+    "aliases": [],
+    "hex": "E42829",
+    "categories": [
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/l-equipe/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.lequipe.fr",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "langchain-corporate",
+    "title": "LangChain Corporate",
+    "aliases": [],
+    "hex": "7FC8FF",
+    "categories": [
+      "AI",
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/langchain-corporate/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.langchain.com",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "metro-de-la-ciudad-de-mexico",
+    "title": "Metro de la Ciudad de México",
+    "aliases": [],
+    "hex": "F77E1C",
+    "categories": [
+      "Transportation"
+    ],
+    "variants": {
+      "default": "/icons/metro-de-la-ciudad-de-mexico/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.metro.cdmx.gob.mx",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "metro-de-paris",
+    "title": "Métro de Paris",
+    "aliases": [],
+    "hex": "003E95",
+    "categories": [
+      "Transportation"
+    ],
+    "variants": {
+      "default": "/icons/metro-de-paris/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.ratp.fr/se-deplacer/metro",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "muller",
+    "title": "Müller",
+    "aliases": [],
+    "hex": "F46519",
+    "categories": [
+      "Shopping"
+    ],
+    "variants": {
+      "default": "/icons/muller/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.mueller.de",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "obb",
+    "title": "ÖBB",
+    "aliases": [],
+    "hex": "E40327",
+    "categories": [
+      "Transportation"
+    ],
+    "variants": {
+      "default": "/icons/obb/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.oebb.at",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "picard-surgeles",
+    "title": "Picard Surgelés",
+    "aliases": [],
+    "hex": "2D4999",
+    "categories": [
+      "Shopping"
+    ],
+    "variants": {
+      "default": "/icons/picard-surgeles/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.picard.fr",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "rte",
+    "title": "RTÉ",
+    "aliases": [],
+    "hex": "00A7B3",
+    "categories": [
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/rte/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.rte.ie",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "sao-paulo-metro",
+    "title": "São Paulo Metro",
+    "aliases": [],
+    "hex": "004382",
+    "categories": [
+      "Transportation"
+    ],
+    "variants": {
+      "default": "/icons/sao-paulo-metro/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.metro.sp.gov.br",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "softcatala",
+    "title": "Softcatalà",
+    "aliases": [],
+    "hex": "BA2626",
+    "categories": [
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/softcatala/default.svg"
+    },
+    "license": "CC-BY-SA-4.0",
+    "url": "https://www.softcatala.org",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "tele-quebec",
+    "title": "Télé-Québec",
+    "aliases": [],
+    "hex": "1343FB",
+    "categories": [
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/tele-quebec/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.telequebec.tv",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "telefonica",
+    "title": "Telefónica",
+    "aliases": [],
+    "hex": "0066FF",
+    "categories": [
+      "Communication"
+    ],
+    "variants": {
+      "default": "/icons/telefonica/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.telefonica.com",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "trmnl",
+    "title": "TRMNL",
+    "aliases": [],
+    "hex": "F8654B",
+    "categories": [
+      "Hardware"
+    ],
+    "variants": {
+      "default": "/icons/trmnl/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://usetrmnl.com",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "ty",
+    "title": "ty",
+    "aliases": [],
+    "hex": "46EBE1",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/ty/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.ty.com",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "zabka",
+    "title": "Żabka",
+    "aliases": [],
+    "hex": "006420",
+    "categories": [
+      "Shopping"
+    ],
+    "variants": {
+      "default": "/icons/zabka/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.zabka.pl",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   }
