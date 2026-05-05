@@ -20,7 +20,7 @@ import { SidebarShell } from "@/components/layout/sidebar-shell";
 export const metadata: Metadata = {
   title: "Extensions & Integrations - VS Code, Figma, React, CLI",
   description:
-    "Use 5,600+ free SVG icons in VS Code, Figma, Raycast, React, Vue, CLI, and more. npm packages, MCP server, and CDN integrations.",
+    "Use 5,880+ free SVG icons in VS Code, Figma, Raycast, React, Vue, CLI, and more. npm packages, MCP server, and CDN integrations.",
   keywords: [
     "SVG icon VS Code extension",
     "SVG icon Figma plugin",

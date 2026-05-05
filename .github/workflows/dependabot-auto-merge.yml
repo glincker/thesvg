@@ -1,0 +1,53 @@
+name: Dependabot auto-merge
+
+# Auto-enables GitHub's native auto-merge on safe Dependabot PRs so they
+# merge themselves once CI passes. The human only sees major bumps and
+# production minor bumps.
+#
+# Safe means:
+#   - Any patch update (both runtime and dev dependencies)
+#   - Any minor update on a dev-only dependency
+#   - GitHub Actions bumps of any size (low blast radius, mostly version
+#     pinning)
+#
+# Anything else stays open for manual review with a "needs-review" label.
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, ready_for_review]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.user.login == 'dependabot[bot]' && !github.event.pull_request.draft
+    steps:
+      - name: Fetch dependency metadata
+        id: meta
+        uses: dependabot/fetch-metadata@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Enable auto-merge on safe updates
+        if: |
+          steps.meta.outputs.update-type == 'version-update:semver-patch' ||
+          (steps.meta.outputs.update-type == 'version-update:semver-minor' && steps.meta.outputs.dependency-type == 'direct:development') ||
+          steps.meta.outputs.package-ecosystem == 'github_actions'
+        run: gh pr merge --auto --squash --delete-branch "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Label majors and production minors for manual review
+        if: |
+          steps.meta.outputs.update-type == 'version-update:semver-major' ||
+          (steps.meta.outputs.update-type == 'version-update:semver-minor' && steps.meta.outputs.dependency-type == 'direct:production')
+        run: |
+          gh pr edit "$PR_URL" --add-label "needs-review"
+          gh pr comment "$PR_URL" --body "This update crosses a boundary that needs human review (major bump, or minor bump on a production dependency). Not auto-merging."
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

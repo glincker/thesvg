@@ -88,7 +88,7 @@ const ALL_SLIDES = [
   {
     badge: "Open Source",
     badgeIcon: Sparkles,
-    title: "5,600+ SVG Icons. Search. Copy. Ship.",
+    title: "5,880+ SVG Icons. Search. Copy. Ship.",
     description: "Search, copy, and ship brand icons in seconds. Free, open-source, and community-driven.",
     cta: { label: "Get Started", href: "/extensions" },
     ctaSecondary: { label: "Submit an Icon", href: "/submit" },

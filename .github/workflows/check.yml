@@ -3,6 +3,15 @@ name: Check
 on:
   pull_request:
     branches: [main]
+    paths-ignore:
+      - "**/*.md"
+      - "docs-local/**"
+      - ".github/ISSUE_TEMPLATE/**"
+      - ".github/labeler.yml"
+      - ".github/dependabot.yml"
+      - "LICENSE"
+      - "TRADEMARK.md"
+      - "LEGAL.md"
 
 concurrency:
   group: check-${{ github.head_ref }}

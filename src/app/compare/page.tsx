@@ -81,7 +81,7 @@ const LIBRARIES: LibInfo[] = [
   {
     name: "theSVG",
     url: "https://thesvg.org",
-    icons: "5,600+",
+    icons: "5,880+",
     focus: "Brand logos + Cloud icons",
     desc: "Largest brand SVG library with multi-variant support (light/dark/wordmark/mono). Includes AWS, Azure, and GCP cloud icons. Full toolchain: npm, React/Vue/Svelte, CLI, API, MCP server.",
     highlight: true,
