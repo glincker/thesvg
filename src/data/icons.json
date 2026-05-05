@@ -111997,5 +111997,179 @@
     "url": "",
     "collection": "brands",
     "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "corejs",
+    "title": "Corejs",
+    "aliases": [
+      "Core JS",
+      "Core.js"
+    ],
+    "hex": "000000",
+    "categories": [
+      "Library",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/corejs/default.svg",
+      "wordmark": "/icons/corejs/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "inertiajs",
+    "title": "Inertiajs",
+    "aliases": [
+      "Inertia.js"
+    ],
+    "hex": "8163EB",
+    "categories": [
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/inertiajs/default.svg",
+      "mono": "/icons/inertiajs/mono.svg",
+      "wordmark": "/icons/inertiajs/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "kaldi",
+    "title": "Kaldi",
+    "aliases": [],
+    "hex": "8C6432",
+    "categories": [
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/kaldi/default.svg",
+      "mono": "/icons/kaldi/mono.svg",
+      "line": "/icons/kaldi/line.svg",
+      "wordmark": "/icons/kaldi/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "matplotlib",
+    "title": "Matplotlib",
+    "aliases": [],
+    "hex": "11557C",
+    "categories": [
+      "Library",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/matplotlib/default.svg",
+      "mono": "/icons/matplotlib/mono.svg",
+      "wordmark": "/icons/matplotlib/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "networkx",
+    "title": "Networkx",
+    "aliases": [],
+    "hex": "2C7FB8",
+    "categories": [
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/networkx/default.svg",
+      "mono": "/icons/networkx/mono.svg",
+      "line": "/icons/networkx/line.svg",
+      "wordmark": "/icons/networkx/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "nhibernate",
+    "title": "Nhibernate",
+    "aliases": [],
+    "hex": "903A36",
+    "categories": [
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/nhibernate/default.svg",
+      "mono": "/icons/nhibernate/mono.svg",
+      "line": "/icons/nhibernate/line.svg",
+      "wordmark": "/icons/nhibernate/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "openal",
+    "title": "Openal",
+    "aliases": [],
+    "hex": "7E000D",
+    "categories": [
+      "Library",
+      "Gaming"
+    ],
+    "variants": {
+      "default": "/icons/openal/default.svg",
+      "mono": "/icons/openal/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "pixijs",
+    "title": "Pixijs",
+    "aliases": [],
+    "hex": "E72264",
+    "categories": [
+      "Library",
+      "Design"
+    ],
+    "variants": {
+      "default": "/icons/pixijs/default.svg",
+      "mono": "/icons/pixijs/mono.svg",
+      "wordmark": "/icons/pixijs/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "sdl",
+    "title": "Sdl",
+    "aliases": [
+      "Simpledirectmedialayer"
+    ],
+    "hex": "173354",
+    "categories": [
+      "Library",
+      "Gaming"
+    ],
+    "variants": {
+      "default": "/icons/sdl/default.svg",
+      "mono": "/icons/sdl/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
   }
 ]
