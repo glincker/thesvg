@@ -1,5 +1,11 @@
 # @thesvg/vue
 
+## 2.1.7
+
+### Patch Changes
+
+- Merge pull request [#130](https://github.com/glincker/thesvg/issues/130) from glincker/feat/icon-requests-batch
+
 ## 2.1.6
 
 ### Patch Changes
