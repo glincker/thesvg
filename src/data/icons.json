@@ -110334,5 +110334,2439 @@
     "url": "https://zaia.app/",
     "collection": "brands",
     "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "appcelerator",
+    "title": "Appcelerator",
+    "aliases": [],
+    "hex": "AC162C",
+    "categories": [
+      "DevTool",
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/appcelerator/default.svg",
+      "wordmark": "/icons/appcelerator/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "argocd",
+    "title": "Argocd",
+    "aliases": [],
+    "hex": "EF7B4D",
+    "categories": [
+      "DevTool",
+      "Cloud"
+    ],
+    "variants": {
+      "default": "/icons/argocd/default.svg",
+      "mono": "/icons/argocd/mono.svg",
+      "wordmark": "/icons/argocd/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "browserstack",
+    "title": "Browserstack",
+    "aliases": [],
+    "hex": "0070F0",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/browserstack/default.svg",
+      "mono": "/icons/browserstack/mono.svg",
+      "line": "/icons/browserstack/line.svg",
+      "wordmark": "/icons/browserstack/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "codeac",
+    "title": "Codeac",
+    "aliases": [
+      "Codeacio"
+    ],
+    "hex": "005096",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/codeac/default.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "codepen",
+    "title": "Codepen",
+    "aliases": [],
+    "hex": "000",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/codepen/default.svg",
+      "line": "/icons/codepen/line.svg",
+      "wordmark": "/icons/codepen/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "dataspell",
+    "title": "Dataspell",
+    "aliases": [],
+    "hex": "087CFA",
+    "categories": [
+      "DevTool",
+      "Database"
+    ],
+    "variants": {
+      "default": "/icons/dataspell/default.svg",
+      "mono": "/icons/dataspell/mono.svg",
+      "wordmark": "/icons/dataspell/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "devicon",
+    "title": "Devicon",
+    "aliases": [],
+    "hex": "60BE86",
+    "categories": [
+      "DevTool",
+      "Design"
+    ],
+    "variants": {
+      "default": "/icons/devicon/default.svg",
+      "mono": "/icons/devicon/mono.svg",
+      "line": "/icons/devicon/line.svg",
+      "wordmark": "/icons/devicon/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "gazebo",
+    "title": "Gazebo",
+    "aliases": [],
+    "hex": "F58113",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/gazebo/default.svg",
+      "mono": "/icons/gazebo/mono.svg",
+      "wordmark": "/icons/gazebo/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "githubcodespaces",
+    "title": "Githubcodespaces",
+    "aliases": [
+      "GitHub Codespaces"
+    ],
+    "hex": "24292E",
+    "categories": [
+      "DevTool",
+      "Cloud"
+    ],
+    "variants": {
+      "default": "/icons/githubcodespaces/default.svg",
+      "mono": "/icons/githubcodespaces/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "hardhat",
+    "title": "Hardhat",
+    "aliases": [],
+    "hex": "FFF100",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/hardhat/default.svg",
+      "mono": "/icons/hardhat/mono.svg",
+      "wordmark": "/icons/hardhat/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "ie10",
+    "title": "Ie10",
+    "aliases": [
+      "Internetexplorer10"
+    ],
+    "hex": "1EBBEE",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/ie10/default.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "jiraalign",
+    "title": "Jiraalign",
+    "aliases": [
+      "Jira Align"
+    ],
+    "hex": "2684FF",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/jiraalign/default.svg",
+      "mono": "/icons/jiraalign/mono.svg",
+      "wordmark": "/icons/jiraalign/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "junit",
+    "title": "Junit",
+    "aliases": [],
+    "hex": "DC514A",
+    "categories": [
+      "DevTool",
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/junit/default.svg",
+      "mono": "/icons/junit/mono.svg",
+      "line": "/icons/junit/line.svg",
+      "wordmark": "/icons/junit/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "karma",
+    "title": "Karma",
+    "aliases": [
+      "Karmarunner",
+      "Karmajs"
+    ],
+    "hex": "56C5A8",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/karma/default.svg",
+      "mono": "/icons/karma/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "kubeflow",
+    "title": "Kubeflow",
+    "aliases": [],
+    "hex": "72A1E5",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/kubeflow/default.svg",
+      "mono": "/icons/kubeflow/mono.svg",
+      "line": "/icons/kubeflow/line.svg",
+      "wordmark": "/icons/kubeflow/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "laraveljetstream",
+    "title": "Laraveljetstream",
+    "aliases": [
+      "Jetstream",
+      "Laravel Jetstream"
+    ],
+    "hex": "6875F5",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/laraveljetstream/default.svg",
+      "wordmark": "/icons/laraveljetstream/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "minitab",
+    "title": "Minitab",
+    "aliases": [],
+    "hex": "8DC63F",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/minitab/default.svg",
+      "mono": "/icons/minitab/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "netbox",
+    "title": "Netbox",
+    "aliases": [],
+    "hex": "00857D",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/netbox/default.svg",
+      "mono": "/icons/netbox/mono.svg",
+      "line": "/icons/netbox/line.svg",
+      "wordmark": "/icons/netbox/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "nimble",
+    "title": "Nimble",
+    "aliases": [],
+    "hex": "F7E941",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/nimble/default.svg",
+      "mono": "/icons/nimble/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "nodewebkit",
+    "title": "Nodewebkit",
+    "aliases": [
+      "Nwjs"
+    ],
+    "hex": "3D3B47",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/nodewebkit/default.svg",
+      "mono": "/icons/nodewebkit/mono.svg",
+      "line": "/icons/nodewebkit/line.svg",
+      "wordmark": "/icons/nodewebkit/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "norg",
+    "title": "Norg",
+    "aliases": [
+      "Neorg"
+    ],
+    "hex": "4878BE",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/norg/default.svg",
+      "mono": "/icons/norg/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "npss",
+    "title": "Npss",
+    "aliases": [],
+    "hex": "0A37B2",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/npss/default.svg",
+      "mono": "/icons/npss/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "premierepro",
+    "title": "Premierepro",
+    "aliases": [
+      "Adobepremierepro"
+    ],
+    "hex": "2A0634",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/premierepro/default.svg",
+      "mono": "/icons/premierepro/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "processing",
+    "title": "Processing",
+    "aliases": [
+      "Processingpy"
+    ],
+    "hex": "1F34AB",
+    "categories": [
+      "DevTool",
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/processing/default.svg",
+      "mono": "/icons/processing/mono.svg",
+      "line": "/icons/processing/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "pulsar",
+    "title": "Pulsar",
+    "aliases": [
+      "Pulsar Edit"
+    ],
+    "hex": "2C3E50",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/pulsar/default.svg",
+      "wordmark": "/icons/pulsar/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "qtest",
+    "title": "Qtest",
+    "aliases": [],
+    "hex": "1A62B3",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/qtest/default.svg",
+      "wordmark": "/icons/qtest/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "reach",
+    "title": "Reach",
+    "aliases": [
+      "Reach Lang"
+    ],
+    "hex": "6AC6E7",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/reach/default.svg",
+      "mono": "/icons/reach/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "reactnavigation",
+    "title": "Reactnavigation",
+    "aliases": [],
+    "hex": "7B61C1",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/reactnavigation/default.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "rspec",
+    "title": "Rspec",
+    "aliases": [],
+    "hex": "6DE1FA",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/rspec/default.svg",
+      "mono": "/icons/rspec/mono.svg",
+      "line": "/icons/rspec/line.svg",
+      "wordmark": "/icons/rspec/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "sema",
+    "title": "Sema",
+    "aliases": [
+      "Sema Software"
+    ],
+    "hex": "000",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/sema/default.svg",
+      "wordmark": "/icons/sema/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "shotgrid",
+    "title": "Shotgrid",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/shotgrid/default.svg",
+      "mono": "/icons/shotgrid/mono.svg",
+      "wordmark": "/icons/shotgrid/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "spack",
+    "title": "Spack",
+    "aliases": [],
+    "hex": "0F3A80",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/spack/default.svg",
+      "mono": "/icons/spack/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "spss",
+    "title": "Spss",
+    "aliases": [
+      "Ibmspss"
+    ],
+    "hex": "CC1E4C",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/spss/default.svg",
+      "mono": "/icons/spss/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "spyder",
+    "title": "Spyder",
+    "aliases": [],
+    "hex": "8C0000",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/spyder/default.svg",
+      "mono": "/icons/spyder/mono.svg",
+      "wordmark": "/icons/spyder/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "sqldeveloper",
+    "title": "Sqldeveloper",
+    "aliases": [],
+    "hex": "ADADAD",
+    "categories": [
+      "DevTool",
+      "Database"
+    ],
+    "variants": {
+      "default": "/icons/sqldeveloper/default.svg",
+      "mono": "/icons/sqldeveloper/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "terramate",
+    "title": "Terramate",
+    "aliases": [],
+    "hex": "FFF",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/terramate/default.svg",
+      "wordmark": "/icons/terramate/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "tex",
+    "title": "Tex",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/tex/default.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "titaniumsdk",
+    "title": "Titaniumsdk",
+    "aliases": [],
+    "hex": "BD222B",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/titaniumsdk/default.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "tomcat",
+    "title": "Tomcat",
+    "aliases": [],
+    "hex": "D1A41A",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/tomcat/default.svg",
+      "line": "/icons/tomcat/line.svg",
+      "wordmark": "/icons/tomcat/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "tortoisegit",
+    "title": "Tortoisegit",
+    "aliases": [],
+    "hex": "4B8EB4",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/tortoisegit/default.svg",
+      "mono": "/icons/tortoisegit/mono.svg",
+      "line": "/icons/tortoisegit/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "towergit",
+    "title": "Towergit",
+    "aliases": [
+      "Towergitclient"
+    ],
+    "hex": "D18900",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/towergit/default.svg",
+      "mono": "/icons/towergit/mono.svg",
+      "wordmark": "/icons/towergit/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "veevalidate",
+    "title": "Veevalidate",
+    "aliases": [],
+    "hex": "04C971",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/veevalidate/default.svg",
+      "line": "/icons/veevalidate/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "akka",
+    "title": "Akka",
+    "aliases": [
+      "Akka Framework"
+    ],
+    "hex": "15A9CE",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/akka/default.svg",
+      "wordmark": "/icons/akka/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "angularjs",
+    "title": "Angularjs",
+    "aliases": [],
+    "hex": "C4473A",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/angularjs/default.svg",
+      "mono": "/icons/angularjs/mono.svg",
+      "wordmark": "/icons/angularjs/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "angularmaterial",
+    "title": "Angularmaterial",
+    "aliases": [],
+    "hex": "FFA726",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/angularmaterial/default.svg",
+      "mono": "/icons/angularmaterial/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "datatables",
+    "title": "Datatables",
+    "aliases": [],
+    "hex": "FFFFFF",
+    "categories": [
+      "Framework",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/datatables/default.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "denojs",
+    "title": "Denojs",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Framework",
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/denojs/default.svg",
+      "wordmark": "/icons/denojs/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "djangorest",
+    "title": "Djangorest",
+    "aliases": [
+      "Django REST framework"
+    ],
+    "hex": "A30000",
+    "categories": [
+      "Framework",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/djangorest/default.svg",
+      "mono": "/icons/djangorest/mono.svg",
+      "wordmark": "/icons/djangorest/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "dotnetcore",
+    "title": "Dotnetcore",
+    "aliases": [
+      ".netcore"
+    ],
+    "hex": "623697",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/dotnetcore/default.svg",
+      "mono": "/icons/dotnetcore/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "dropwizard",
+    "title": "Dropwizard",
+    "aliases": [],
+    "hex": "24265D",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/dropwizard/default.svg",
+      "mono": "/icons/dropwizard/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "entityframeworkcore",
+    "title": "Entityframeworkcore",
+    "aliases": [
+      "Ef core",
+      "Entity framework core"
+    ],
+    "hex": "512BD4",
+    "categories": [
+      "Framework",
+      "Database"
+    ],
+    "variants": {
+      "default": "/icons/entityframeworkcore/default.svg",
+      "mono": "/icons/entityframeworkcore/mono.svg",
+      "line": "/icons/entityframeworkcore/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "feathersjs",
+    "title": "Feathersjs",
+    "aliases": [],
+    "hex": "333333",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/feathersjs/default.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "filamentphp",
+    "title": "Filamentphp",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/filamentphp/default.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "foundation",
+    "title": "Foundation",
+    "aliases": [],
+    "hex": "008CBA",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/foundation/default.svg",
+      "mono": "/icons/foundation/mono.svg",
+      "wordmark": "/icons/foundation/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "grails",
+    "title": "Grails",
+    "aliases": [
+      "Grails Framework"
+    ],
+    "hex": "FEB571",
+    "categories": [
+      "Framework",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/grails/default.svg",
+      "mono": "/icons/grails/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "jeet",
+    "title": "Jeet",
+    "aliases": [],
+    "hex": "FF664A",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/jeet/default.svg",
+      "mono": "/icons/jeet/mono.svg",
+      "wordmark": "/icons/jeet/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "karatelabs",
+    "title": "Karatelabs",
+    "aliases": [
+      "Karate"
+    ],
+    "hex": "000000",
+    "categories": [
+      "Framework",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/karatelabs/default.svg",
+      "mono": "/icons/karatelabs/mono.svg",
+      "wordmark": "/icons/karatelabs/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "laminas",
+    "title": "Laminas",
+    "aliases": [
+      "Laminas Project",
+      "Zend Framework"
+    ],
+    "hex": "013755",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/laminas/default.svg",
+      "line": "/icons/laminas/line.svg",
+      "wordmark": "/icons/laminas/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "libgdx",
+    "title": "Libgdx",
+    "aliases": [],
+    "hex": "E74A45",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/libgdx/default.svg",
+      "mono": "/icons/libgdx/mono.svg",
+      "line": "/icons/libgdx/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "magento",
+    "title": "Magento",
+    "aliases": [],
+    "hex": "F26322",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/magento/default.svg",
+      "line": "/icons/magento/line.svg",
+      "wordmark": "/icons/magento/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "materializecss",
+    "title": "Materializecss",
+    "aliases": [
+      "Materialize",
+      "Materialize CSS",
+      "Materialize css"
+    ],
+    "hex": "EB7077",
+    "categories": [
+      "Framework",
+      "Design"
+    ],
+    "variants": {
+      "default": "/icons/materializecss/default.svg",
+      "mono": "/icons/materializecss/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "mithril",
+    "title": "Mithril",
+    "aliases": [
+      "Mithril.js"
+    ],
+    "hex": "010002",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/mithril/default.svg",
+      "line": "/icons/mithril/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "opencl",
+    "title": "Opencl",
+    "aliases": [],
+    "hex": "000",
+    "categories": [
+      "Framework",
+      "Language",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/opencl/default.svg",
+      "mono": "/icons/opencl/mono.svg",
+      "line": "/icons/opencl/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "phalcon",
+    "title": "Phalcon",
+    "aliases": [],
+    "hex": "76C39B",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/phalcon/default.svg",
+      "mono": "/icons/phalcon/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "reactnative",
+    "title": "Reactnative",
+    "aliases": [
+      "React Native"
+    ],
+    "hex": "61DAFB",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/reactnative/default.svg",
+      "wordmark": "/icons/reactnative/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "vuestorefront",
+    "title": "Vuestorefront",
+    "aliases": [],
+    "hex": "5ECF7B",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/vuestorefront/default.svg",
+      "mono": "/icons/vuestorefront/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "waku",
+    "title": "Waku",
+    "aliases": [],
+    "hex": "DD2E44",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/waku/default.svg",
+      "mono": "/icons/waku/mono.svg",
+      "line": "/icons/waku/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "aarch64",
+    "title": "Aarch64",
+    "aliases": [
+      "Arm64"
+    ],
+    "hex": "16358C",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/aarch64/default.svg",
+      "mono": "/icons/aarch64/mono.svg",
+      "line": "/icons/aarch64/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "apex",
+    "title": "Apex",
+    "aliases": [],
+    "hex": "0D9DDA",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/apex/default.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "apl",
+    "title": "Apl",
+    "aliases": [
+      "A Programming Language"
+    ],
+    "hex": "24A148",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/apl/default.svg",
+      "mono": "/icons/apl/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "awk",
+    "title": "Awk",
+    "aliases": [
+      "The awk programming language"
+    ],
+    "hex": "0A094D",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/awk/default.svg",
+      "wordmark": "/icons/awk/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "ceylon",
+    "title": "Ceylon",
+    "aliases": [
+      "Eclipseceylon",
+      "Ceylonlang"
+    ],
+    "hex": "AB710A",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/ceylon/default.svg",
+      "mono": "/icons/ceylon/mono.svg",
+      "wordmark": "/icons/ceylon/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "clarity",
+    "title": "Clarity",
+    "aliases": [
+      "Clarity Lang"
+    ],
+    "hex": "13171A",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/clarity/default.svg",
+      "mono": "/icons/clarity/mono.svg",
+      "wordmark": "/icons/clarity/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "clojurescript",
+    "title": "Clojurescript",
+    "aliases": [],
+    "hex": "96CA4B",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/clojurescript/default.svg",
+      "mono": "/icons/clojurescript/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "css3",
+    "title": "Css3",
+    "aliases": [
+      "Cascadingstylesheets3"
+    ],
+    "hex": "3D8FC6",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/css3/default.svg",
+      "mono": "/icons/css3/mono.svg",
+      "wordmark": "/icons/css3/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "dyalog",
+    "title": "Dyalog",
+    "aliases": [],
+    "hex": "FF6A13",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/dyalog/default.svg",
+      "mono": "/icons/dyalog/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "embeddedc",
+    "title": "Embeddedc",
+    "aliases": [],
+    "hex": "444444",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/embeddedc/default.svg",
+      "mono": "/icons/embeddedc/mono.svg",
+      "wordmark": "/icons/embeddedc/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "grpc",
+    "title": "Grpc",
+    "aliases": [
+      "Grpcio",
+      "Google Remote Procedure Call"
+    ],
+    "hex": "00B0AD",
+    "categories": [
+      "Language",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/grpc/default.svg",
+      "mono": "/icons/grpc/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "jule",
+    "title": "Jule",
+    "aliases": [
+      "Julelang"
+    ],
+    "hex": "5F7389",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/jule/default.svg",
+      "wordmark": "/icons/jule/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "love2d",
+    "title": "Love2d",
+    "aliases": [
+      "Löve"
+    ],
+    "hex": "FFF",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/love2d/default.svg",
+      "mono": "/icons/love2d/mono.svg",
+      "line": "/icons/love2d/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "maya",
+    "title": "Maya",
+    "aliases": [],
+    "hex": "149B9A",
+    "categories": [
+      "Language",
+      "Gaming"
+    ],
+    "variants": {
+      "default": "/icons/maya/default.svg",
+      "mono": "/icons/maya/mono.svg",
+      "wordmark": "/icons/maya/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "objectivec",
+    "title": "Objectivec",
+    "aliases": [],
+    "hex": "0B5A9D",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/objectivec/default.svg",
+      "mono": "/icons/objectivec/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "prolog",
+    "title": "Prolog",
+    "aliases": [
+      "Swi Prolog"
+    ],
+    "hex": "F46C30",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/prolog/default.svg",
+      "mono": "/icons/prolog/mono.svg",
+      "wordmark": "/icons/prolog/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "rect",
+    "title": "Rect",
+    "aliases": [
+      "Rectlang"
+    ],
+    "hex": "262626",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/rect/default.svg",
+      "mono": "/icons/rect/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "rexx",
+    "title": "Rexx",
+    "aliases": [],
+    "hex": "D81511",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/rexx/default.svg",
+      "mono": "/icons/rexx/mono.svg",
+      "wordmark": "/icons/rexx/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "threedsmax",
+    "title": "Threedsmax",
+    "aliases": [
+      "Autodesk 3ds Max",
+      "3dsmax"
+    ],
+    "hex": "37A5CC",
+    "categories": [
+      "Language",
+      "Gaming"
+    ],
+    "variants": {
+      "default": "/icons/threedsmax/default.svg",
+      "mono": "/icons/threedsmax/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "visualbasic",
+    "title": "Visualbasic",
+    "aliases": [
+      "Vb"
+    ],
+    "hex": "004E8C",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/visualbasic/default.svg",
+      "mono": "/icons/visualbasic/mono.svg",
+      "line": "/icons/visualbasic/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "vyper",
+    "title": "Vyper",
+    "aliases": [
+      "Vyperlang"
+    ],
+    "hex": "9F4CF2",
+    "categories": [
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/vyper/default.svg",
+      "wordmark": "/icons/vyper/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "xamarin",
+    "title": "Xamarin",
+    "aliases": [],
+    "hex": "3498DB",
+    "categories": [
+      "Language",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/xamarin/default.svg",
+      "wordmark": "/icons/xamarin/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "corejs",
+    "title": "Corejs",
+    "aliases": [
+      "Core JS",
+      "Core.js"
+    ],
+    "hex": "000000",
+    "categories": [
+      "Library",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/corejs/default.svg",
+      "wordmark": "/icons/corejs/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "inertiajs",
+    "title": "Inertiajs",
+    "aliases": [
+      "Inertia.js"
+    ],
+    "hex": "8163EB",
+    "categories": [
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/inertiajs/default.svg",
+      "mono": "/icons/inertiajs/mono.svg",
+      "wordmark": "/icons/inertiajs/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "kaldi",
+    "title": "Kaldi",
+    "aliases": [],
+    "hex": "8C6432",
+    "categories": [
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/kaldi/default.svg",
+      "mono": "/icons/kaldi/mono.svg",
+      "line": "/icons/kaldi/line.svg",
+      "wordmark": "/icons/kaldi/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "matplotlib",
+    "title": "Matplotlib",
+    "aliases": [],
+    "hex": "11557C",
+    "categories": [
+      "Library",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/matplotlib/default.svg",
+      "mono": "/icons/matplotlib/mono.svg",
+      "wordmark": "/icons/matplotlib/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "networkx",
+    "title": "Networkx",
+    "aliases": [],
+    "hex": "2C7FB8",
+    "categories": [
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/networkx/default.svg",
+      "mono": "/icons/networkx/mono.svg",
+      "line": "/icons/networkx/line.svg",
+      "wordmark": "/icons/networkx/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "nhibernate",
+    "title": "Nhibernate",
+    "aliases": [],
+    "hex": "903A36",
+    "categories": [
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/nhibernate/default.svg",
+      "mono": "/icons/nhibernate/mono.svg",
+      "line": "/icons/nhibernate/line.svg",
+      "wordmark": "/icons/nhibernate/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "openal",
+    "title": "Openal",
+    "aliases": [],
+    "hex": "7E000D",
+    "categories": [
+      "Library",
+      "Gaming"
+    ],
+    "variants": {
+      "default": "/icons/openal/default.svg",
+      "mono": "/icons/openal/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "pixijs",
+    "title": "Pixijs",
+    "aliases": [],
+    "hex": "E72264",
+    "categories": [
+      "Library",
+      "Design"
+    ],
+    "variants": {
+      "default": "/icons/pixijs/default.svg",
+      "mono": "/icons/pixijs/mono.svg",
+      "wordmark": "/icons/pixijs/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "sdl",
+    "title": "Sdl",
+    "aliases": [
+      "Simpledirectmedialayer"
+    ],
+    "hex": "173354",
+    "categories": [
+      "Library",
+      "Gaming"
+    ],
+    "variants": {
+      "default": "/icons/sdl/default.svg",
+      "mono": "/icons/sdl/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "gcc",
+    "title": "Gcc",
+    "aliases": [
+      "Gnucompilercollection"
+    ],
+    "hex": "FFCFAB",
+    "categories": [
+      "OS"
+    ],
+    "variants": {
+      "default": "/icons/gcc/default.svg",
+      "mono": "/icons/gcc/mono.svg",
+      "line": "/icons/gcc/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "harvester",
+    "title": "Harvester",
+    "aliases": [
+      "Harvesterhci"
+    ],
+    "hex": "00A580",
+    "categories": [
+      "OS"
+    ],
+    "variants": {
+      "default": "/icons/harvester/default.svg",
+      "wordmark": "/icons/harvester/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "hyperv",
+    "title": "Hyperv",
+    "aliases": [
+      "Hyper V"
+    ],
+    "hex": "00188F",
+    "categories": [
+      "OS"
+    ],
+    "variants": {
+      "default": "/icons/hyperv/default.svg",
+      "mono": "/icons/hyperv/mono.svg",
+      "wordmark": "/icons/hyperv/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "k3os",
+    "title": "K3os",
+    "aliases": [],
+    "hex": "FD824E",
+    "categories": [
+      "OS"
+    ],
+    "variants": {
+      "default": "/icons/k3os/default.svg",
+      "line": "/icons/k3os/line.svg",
+      "wordmark": "/icons/k3os/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "msdos",
+    "title": "Msdos",
+    "aliases": [
+      "Microsoftdiskoperatingsystem"
+    ],
+    "hex": "000",
+    "categories": [
+      "OS"
+    ],
+    "variants": {
+      "default": "/icons/msdos/default.svg",
+      "mono": "/icons/msdos/mono.svg",
+      "line": "/icons/msdos/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "unix",
+    "title": "Unix",
+    "aliases": [],
+    "hex": "4051B5",
+    "categories": [
+      "OS"
+    ],
+    "variants": {
+      "default": "/icons/unix/default.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "vsphere",
+    "title": "Vsphere",
+    "aliases": [
+      "Vmwarevsphere"
+    ],
+    "hex": "0091DA",
+    "categories": [
+      "OS"
+    ],
+    "variants": {
+      "default": "/icons/vsphere/default.svg",
+      "mono": "/icons/vsphere/mono.svg",
+      "line": "/icons/vsphere/line.svg",
+      "wordmark": "/icons/vsphere/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "windows11",
+    "title": "Windows11",
+    "aliases": [],
+    "hex": "0078D4",
+    "categories": [
+      "OS"
+    ],
+    "variants": {
+      "default": "/icons/windows11/default.svg",
+      "wordmark": "/icons/windows11/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "windows8",
+    "title": "Windows8",
+    "aliases": [],
+    "hex": "00ADEF",
+    "categories": [
+      "OS"
+    ],
+    "variants": {
+      "default": "/icons/windows8/default.svg",
+      "wordmark": "/icons/windows8/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "aerospike",
+    "title": "Aerospike",
+    "aliases": [],
+    "hex": "C21417",
+    "categories": [
+      "Database"
+    ],
+    "variants": {
+      "default": "/icons/aerospike/default.svg",
+      "wordmark": "/icons/aerospike/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "dynamodb",
+    "title": "Dynamodb",
+    "aliases": [],
+    "hex": "527FFF",
+    "categories": [
+      "Database"
+    ],
+    "variants": {
+      "default": "/icons/dynamodb/default.svg",
+      "mono": "/icons/dynamodb/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "ecto",
+    "title": "Ecto",
+    "aliases": [],
+    "hex": "77BF43",
+    "categories": [
+      "Database"
+    ],
+    "variants": {
+      "default": "/icons/ecto/default.svg",
+      "wordmark": "/icons/ecto/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "firebird",
+    "title": "Firebird",
+    "aliases": [],
+    "hex": "F4790E",
+    "categories": [
+      "Database"
+    ],
+    "variants": {
+      "default": "/icons/firebird/default.svg",
+      "mono": "/icons/firebird/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "memcached",
+    "title": "Memcached",
+    "aliases": [],
+    "hex": "2A9790",
+    "categories": [
+      "Database"
+    ],
+    "variants": {
+      "default": "/icons/memcached/default.svg",
+      "mono": "/icons/memcached/mono.svg",
+      "line": "/icons/memcached/line.svg",
+      "wordmark": "/icons/memcached/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "realm",
+    "title": "Realm",
+    "aliases": [],
+    "hex": "6E60F9",
+    "categories": [
+      "Database",
+      "Cloud"
+    ],
+    "variants": {
+      "default": "/icons/realm/default.svg",
+      "mono": "/icons/realm/mono.svg",
+      "wordmark": "/icons/realm/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "spicedb",
+    "title": "Spicedb",
+    "aliases": [],
+    "hex": "FB5B62",
+    "categories": [
+      "Database"
+    ],
+    "variants": {
+      "default": "/icons/spicedb/default.svg",
+      "mono": "/icons/spicedb/mono.svg",
+      "line": "/icons/spicedb/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "yugabytedb",
+    "title": "Yugabytedb",
+    "aliases": [],
+    "hex": "FF5F3B",
+    "categories": [
+      "Database"
+    ],
+    "variants": {
+      "default": "/icons/yugabytedb/default.svg",
+      "mono": "/icons/yugabytedb/mono.svg",
+      "wordmark": "/icons/yugabytedb/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "ballerina",
+    "title": "Ballerina",
+    "aliases": [
+      "Bal"
+    ],
+    "hex": "46C0BC",
+    "categories": [
+      "Cloud"
+    ],
+    "variants": {
+      "default": "/icons/ballerina/default.svg",
+      "line": "/icons/ballerina/line.svg",
+      "wordmark": "/icons/ballerina/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "detaspace",
+    "title": "Detaspace",
+    "aliases": [
+      "Deta",
+      "Deta Space"
+    ],
+    "hex": "F73B95",
+    "categories": [
+      "Cloud",
+      "Hosting"
+    ],
+    "variants": {
+      "default": "/icons/detaspace/default.svg",
+      "line": "/icons/detaspace/line.svg",
+      "wordmark": "/icons/detaspace/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "discloud",
+    "title": "Discloud",
+    "aliases": [],
+    "hex": "57F287",
+    "categories": [
+      "Cloud",
+      "Hosting",
+      "Database",
+      "Storage"
+    ],
+    "variants": {
+      "default": "/icons/discloud/default.svg",
+      "wordmark": "/icons/discloud/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "gardener",
+    "title": "Gardener",
+    "aliases": [],
+    "hex": "009F76",
+    "categories": [
+      "Cloud"
+    ],
+    "variants": {
+      "default": "/icons/gardener/default.svg",
+      "mono": "/icons/gardener/mono.svg",
+      "line": "/icons/gardener/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "scalingo",
+    "title": "Scalingo",
+    "aliases": [],
+    "hex": "173AEE",
+    "categories": [
+      "Cloud",
+      "Hosting"
+    ],
+    "variants": {
+      "default": "/icons/scalingo/default.svg",
+      "mono": "/icons/scalingo/mono.svg",
+      "line": "/icons/scalingo/line.svg",
+      "wordmark": "/icons/scalingo/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "qodana",
+    "title": "Qodana",
+    "aliases": [],
+    "hex": "FF318C",
+    "categories": [
+      "Security"
+    ],
+    "variants": {
+      "default": "/icons/qodana/default.svg",
+      "mono": "/icons/qodana/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "ssh",
+    "title": "Ssh",
+    "aliases": [
+      "Secureshell"
+    ],
+    "hex": "231F20",
+    "categories": [
+      "Security"
+    ],
+    "variants": {
+      "default": "/icons/ssh/default.svg",
+      "wordmark": "/icons/ssh/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "teleport",
+    "title": "Teleport",
+    "aliases": [],
+    "hex": "512FC9",
+    "categories": [
+      "Security",
+      "Auth"
+    ],
+    "variants": {
+      "default": "/icons/teleport/default.svg",
+      "line": "/icons/teleport/line.svg",
+      "wordmark": "/icons/teleport/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "carbon",
+    "title": "Carbon",
+    "aliases": [
+      "Carbon Language"
+    ],
+    "hex": "000000",
+    "categories": [
+      "Design",
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/carbon/default.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "fusion",
+    "title": "Fusion",
+    "aliases": [
+      "Autodesk Fusion",
+      "Autodesk Fusion 360"
+    ],
+    "hex": "FF6A00",
+    "categories": [
+      "Design"
+    ],
+    "variants": {
+      "default": "/icons/fusion/default.svg",
+      "mono": "/icons/fusion/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "godot",
+    "title": "Godot",
+    "aliases": [],
+    "hex": "478CBF",
+    "categories": [
+      "Gaming",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/godot/default.svg",
+      "mono": "/icons/godot/mono.svg",
+      "wordmark": "/icons/godot/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "oauth",
+    "title": "Oauth",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Auth",
+      "Security"
+    ],
+    "variants": {
+      "default": "/icons/oauth/default.svg",
+      "mono": "/icons/oauth/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "openapi",
+    "title": "Openapi",
+    "aliases": [],
+    "hex": "91D400",
+    "categories": [
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/openapi/default.svg",
+      "mono": "/icons/openapi/mono.svg",
+      "line": "/icons/openapi/line.svg",
+      "wordmark": "/icons/openapi/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "sulu",
+    "title": "Sulu",
+    "aliases": [],
+    "hex": "112A46",
+    "categories": [
+      "CMS"
+    ],
+    "variants": {
+      "default": "/icons/sulu/default.svg",
+      "line": "/icons/sulu/line.svg",
+      "wordmark": "/icons/sulu/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "uwsgi",
+    "title": "Uwsgi",
+    "aliases": [
+      "Uwebservergatewayinterface"
+    ],
+    "hex": "BAD05E",
+    "categories": [
+      "Hosting"
+    ],
+    "variants": {
+      "default": "/icons/uwsgi/default.svg",
+      "mono": "/icons/uwsgi/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
   }
 ]
