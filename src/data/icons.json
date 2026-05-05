@@ -75871,7 +75871,10 @@
   {
     "slug": "moonshot",
     "title": "Moonshot (月之暗面)",
-    "aliases": [],
+    "aliases": [
+      "Moonshot AI",
+      "Kimi"
+    ],
     "hex": "16191E",
     "categories": [
       "AI",
@@ -109171,22 +109174,6 @@
     },
     "license": "CC0-1.0",
     "url": "https://www.ratp.fr/se-deplacer/metro",
-    "collection": "brands",
-    "dateAdded": "2026-05-05"
-  },
-  {
-    "slug": "moonshot-ai",
-    "title": "Moonshot AI",
-    "aliases": [],
-    "hex": "000000",
-    "categories": [
-      "AI"
-    ],
-    "variants": {
-      "default": "/icons/moonshot-ai/default.svg"
-    },
-    "license": "CC0-1.0",
-    "url": "https://www.moonshot.cn",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
