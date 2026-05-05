@@ -108849,5 +108849,517 @@
     "url": "https://eshop-os.com",
     "collection": "brands",
     "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "aeromexico",
+    "title": "Aeroméxico",
+    "aliases": [],
+    "hex": "0B2343",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/aeromexico/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "aldi-sud",
+    "title": "Aldi Süd",
+    "aliases": [],
+    "hex": "00005F",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/aldi-sud/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "b-r-automation",
+    "title": "B&R Automation",
+    "aliases": [],
+    "hex": "FF8800",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/b-r-automation/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "bakalari",
+    "title": "Bakaláři",
+    "aliases": [],
+    "hex": "00A2E2",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/bakalari/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "c-builder",
+    "title": "C++ Builder",
+    "aliases": [],
+    "hex": "E62431",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/c-builder/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "cachyos",
+    "title": "CachyOS",
+    "aliases": [],
+    "hex": "00AA88",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/cachyos/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "cinny",
+    "title": "Cinny",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/cinny/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "dicebear",
+    "title": "DiceBear",
+    "aliases": [],
+    "hex": "0284C7",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/dicebear/default.svg"
+    },
+    "license": "CC-BY-SA-4.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "dungeons-dragons",
+    "title": "Dungeons & Dragons",
+    "aliases": [],
+    "hex": "ED1C24",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/dungeons-dragons/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "eclipse-vert-x",
+    "title": "Eclipse Vert.x",
+    "aliases": [],
+    "hex": "782A90",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/eclipse-vert-x/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "faker",
+    "title": "Faker",
+    "aliases": [],
+    "hex": "779B2E",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/faker/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "fluxer",
+    "title": "Fluxer",
+    "aliases": [],
+    "hex": "4641D9",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/fluxer/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "google-display-video-360",
+    "title": "Google Display & Video 360",
+    "aliases": [],
+    "hex": "34A853",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/google-display-video-360/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "helium-browser",
+    "title": "Helium Browser",
+    "aliases": [],
+    "hex": "3450D1",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/helium-browser/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "hilton-hotels-resorts",
+    "title": "Hilton Hotels & Resorts",
+    "aliases": [],
+    "hex": "1E4380",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/hilton-hotels-resorts/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "ile-de-france-mobilites",
+    "title": "Île-de-France Mobilités",
+    "aliases": [],
+    "hex": "67B4E7",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/ile-de-france-mobilites/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "l-equipe",
+    "title": "L'Équipe",
+    "aliases": [],
+    "hex": "E42829",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/l-equipe/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "langchain-corporate",
+    "title": "LangChain Corporate",
+    "aliases": [],
+    "hex": "7FC8FF",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/langchain-corporate/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "metro-de-la-ciudad-de-mexico",
+    "title": "Metro de la Ciudad de México",
+    "aliases": [],
+    "hex": "F77E1C",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/metro-de-la-ciudad-de-mexico/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "metro-de-paris",
+    "title": "Métro de Paris",
+    "aliases": [],
+    "hex": "003E95",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/metro-de-paris/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "moonshot-ai",
+    "title": "Moonshot AI",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/moonshot-ai/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "muller",
+    "title": "Müller",
+    "aliases": [],
+    "hex": "F46519",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/muller/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "obb",
+    "title": "ÖBB",
+    "aliases": [],
+    "hex": "E40327",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/obb/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "picard-surgeles",
+    "title": "Picard Surgelés",
+    "aliases": [],
+    "hex": "2D4999",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/picard-surgeles/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "rte",
+    "title": "RTÉ",
+    "aliases": [],
+    "hex": "00A7B3",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/rte/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "sao-paulo-metro",
+    "title": "São Paulo Metro",
+    "aliases": [],
+    "hex": "004382",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/sao-paulo-metro/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "softcatala",
+    "title": "Softcatalà",
+    "aliases": [],
+    "hex": "BA2626",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/softcatala/default.svg"
+    },
+    "license": "CC-BY-SA-4.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "tele-quebec",
+    "title": "Télé-Québec",
+    "aliases": [],
+    "hex": "1343FB",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/tele-quebec/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "telefonica",
+    "title": "Telefónica",
+    "aliases": [],
+    "hex": "0066FF",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/telefonica/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "trmnl",
+    "title": "TRMNL",
+    "aliases": [],
+    "hex": "F8654B",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/trmnl/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "ty",
+    "title": "ty",
+    "aliases": [],
+    "hex": "46EBE1",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/ty/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "zabka",
+    "title": "Żabka",
+    "aliases": [],
+    "hex": "006420",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/zabka/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
   }
 ]
