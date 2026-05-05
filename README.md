@@ -117,11 +117,11 @@ Use theSVG icons everywhere you build, design, and ship. Browse the full ecosyst
 | [MCP Server](https://www.npmjs.com/package/@thesvg/mcp-server) | Published | AI tool calls for Claude, Cursor, Windsurf. Fetch icons by name or category. |
 | [`@thesvg/cli`](https://www.npmjs.com/package/@thesvg/cli) | Published | shadcn-style installer. `npx @thesvg/cli add github` drops the SVG into your project. |
 | [CDN via jsDelivr](https://www.jsdelivr.com/package/gh/glincker/thesvg) | Published | Serve any icon via global CDN. Drop into HTML, CSS, Markdown, Notion, Webflow, Framer. |
-| [Figma Plugin](https://github.com/glincker/thesvg/issues) | Planned | Browse, search by name or color, drag straight onto your canvas. |
-| [JetBrains](https://github.com/glincker/thesvg/issues) | Open | IntelliJ, WebStorm, PyCharm, Rider tool window. Help wanted. |
-| [Neovim](https://github.com/glincker/thesvg/issues) | Open | Telescope picker with floating preview. Help wanted. |
-| [Alfred Workflow](https://github.com/glincker/thesvg/issues) | Open | macOS quick access. Search anywhere, copy to clipboard. Help wanted. |
-| [Sketch / Blender / Webflow / Notion](https://github.com/glincker/thesvg/issues) | Open | Tracking issues open. Build a plugin and we will list it here. |
+| [Figma Plugin](https://github.com/glincker/thesvg/issues?q=label%3Aextension) | Planned | Browse, search by name or color, drag straight onto your canvas. |
+| [JetBrains](https://github.com/glincker/thesvg/issues?q=label%3Aextension) | Open | IntelliJ, WebStorm, PyCharm, Rider tool window. Help wanted. |
+| [Neovim](https://github.com/glincker/thesvg/issues?q=label%3Aextension) | Open | Telescope picker with floating preview. Help wanted. |
+| [Alfred Workflow](https://github.com/glincker/thesvg/issues?q=label%3Aextension) | Open | macOS quick access. Search anywhere, copy to clipboard. Help wanted. |
+| [Sketch / Blender / Webflow / Notion](https://github.com/glincker/thesvg/issues?q=label%3Aextension) | Open | Tracking issues open. Build a plugin and we will list it here. |
 
 > **Build your own:** the API and CDN are fully open with no auth required. Ship a plugin or workflow, then open a PR and we will add it to the table.
 
