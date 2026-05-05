@@ -108830,5 +108830,24 @@
     "url": "https://getpocket.com",
     "collection": "brands",
     "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "eshop-os",
+    "title": "eshopOS",
+    "aliases": [
+      "eshop"
+    ],
+    "hex": "10B981",
+    "categories": [
+      "E-commerce",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/eshop-os/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://eshop-os.com",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
   }
 ]
