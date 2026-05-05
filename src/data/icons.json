@@ -110334,5 +110334,784 @@
     "url": "https://zaia.app/",
     "collection": "brands",
     "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "appcelerator",
+    "title": "Appcelerator",
+    "aliases": [],
+    "hex": "AC162C",
+    "categories": [
+      "DevTool",
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/appcelerator/default.svg",
+      "wordmark": "/icons/appcelerator/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "argocd",
+    "title": "Argocd",
+    "aliases": [],
+    "hex": "EF7B4D",
+    "categories": [
+      "DevTool",
+      "Cloud"
+    ],
+    "variants": {
+      "default": "/icons/argocd/default.svg",
+      "mono": "/icons/argocd/mono.svg",
+      "wordmark": "/icons/argocd/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "browserstack",
+    "title": "Browserstack",
+    "aliases": [],
+    "hex": "0070F0",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/browserstack/default.svg",
+      "mono": "/icons/browserstack/mono.svg",
+      "line": "/icons/browserstack/line.svg",
+      "wordmark": "/icons/browserstack/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "codeac",
+    "title": "Codeac",
+    "aliases": [
+      "Codeacio"
+    ],
+    "hex": "005096",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/codeac/default.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "codepen",
+    "title": "Codepen",
+    "aliases": [],
+    "hex": "000",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/codepen/default.svg",
+      "line": "/icons/codepen/line.svg",
+      "wordmark": "/icons/codepen/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "dataspell",
+    "title": "Dataspell",
+    "aliases": [],
+    "hex": "087CFA",
+    "categories": [
+      "DevTool",
+      "Database"
+    ],
+    "variants": {
+      "default": "/icons/dataspell/default.svg",
+      "mono": "/icons/dataspell/mono.svg",
+      "wordmark": "/icons/dataspell/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "devicon",
+    "title": "Devicon",
+    "aliases": [],
+    "hex": "60BE86",
+    "categories": [
+      "DevTool",
+      "Design"
+    ],
+    "variants": {
+      "default": "/icons/devicon/default.svg",
+      "mono": "/icons/devicon/mono.svg",
+      "line": "/icons/devicon/line.svg",
+      "wordmark": "/icons/devicon/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "gazebo",
+    "title": "Gazebo",
+    "aliases": [],
+    "hex": "F58113",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/gazebo/default.svg",
+      "mono": "/icons/gazebo/mono.svg",
+      "wordmark": "/icons/gazebo/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "githubcodespaces",
+    "title": "Githubcodespaces",
+    "aliases": [
+      "GitHub Codespaces"
+    ],
+    "hex": "24292E",
+    "categories": [
+      "DevTool",
+      "Cloud"
+    ],
+    "variants": {
+      "default": "/icons/githubcodespaces/default.svg",
+      "mono": "/icons/githubcodespaces/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "hardhat",
+    "title": "Hardhat",
+    "aliases": [],
+    "hex": "FFF100",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/hardhat/default.svg",
+      "mono": "/icons/hardhat/mono.svg",
+      "wordmark": "/icons/hardhat/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "ie10",
+    "title": "Ie10",
+    "aliases": [
+      "Internetexplorer10"
+    ],
+    "hex": "1EBBEE",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/ie10/default.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "jiraalign",
+    "title": "Jiraalign",
+    "aliases": [
+      "Jira Align"
+    ],
+    "hex": "2684FF",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/jiraalign/default.svg",
+      "mono": "/icons/jiraalign/mono.svg",
+      "wordmark": "/icons/jiraalign/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "junit",
+    "title": "Junit",
+    "aliases": [],
+    "hex": "DC514A",
+    "categories": [
+      "DevTool",
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/junit/default.svg",
+      "mono": "/icons/junit/mono.svg",
+      "line": "/icons/junit/line.svg",
+      "wordmark": "/icons/junit/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "karma",
+    "title": "Karma",
+    "aliases": [
+      "Karmarunner",
+      "Karmajs"
+    ],
+    "hex": "56C5A8",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/karma/default.svg",
+      "mono": "/icons/karma/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "kubeflow",
+    "title": "Kubeflow",
+    "aliases": [],
+    "hex": "72A1E5",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/kubeflow/default.svg",
+      "mono": "/icons/kubeflow/mono.svg",
+      "line": "/icons/kubeflow/line.svg",
+      "wordmark": "/icons/kubeflow/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "laraveljetstream",
+    "title": "Laraveljetstream",
+    "aliases": [
+      "Jetstream",
+      "Laravel Jetstream"
+    ],
+    "hex": "6875F5",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/laraveljetstream/default.svg",
+      "wordmark": "/icons/laraveljetstream/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "minitab",
+    "title": "Minitab",
+    "aliases": [],
+    "hex": "8DC63F",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/minitab/default.svg",
+      "mono": "/icons/minitab/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "netbox",
+    "title": "Netbox",
+    "aliases": [],
+    "hex": "00857D",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/netbox/default.svg",
+      "mono": "/icons/netbox/mono.svg",
+      "line": "/icons/netbox/line.svg",
+      "wordmark": "/icons/netbox/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "nimble",
+    "title": "Nimble",
+    "aliases": [],
+    "hex": "F7E941",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/nimble/default.svg",
+      "mono": "/icons/nimble/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "nodewebkit",
+    "title": "Nodewebkit",
+    "aliases": [
+      "Nwjs"
+    ],
+    "hex": "3D3B47",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/nodewebkit/default.svg",
+      "mono": "/icons/nodewebkit/mono.svg",
+      "line": "/icons/nodewebkit/line.svg",
+      "wordmark": "/icons/nodewebkit/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "norg",
+    "title": "Norg",
+    "aliases": [
+      "Neorg"
+    ],
+    "hex": "4878BE",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/norg/default.svg",
+      "mono": "/icons/norg/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "npss",
+    "title": "Npss",
+    "aliases": [],
+    "hex": "0A37B2",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/npss/default.svg",
+      "mono": "/icons/npss/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "premierepro",
+    "title": "Premierepro",
+    "aliases": [
+      "Adobepremierepro"
+    ],
+    "hex": "2A0634",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/premierepro/default.svg",
+      "mono": "/icons/premierepro/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "processing",
+    "title": "Processing",
+    "aliases": [
+      "Processingpy"
+    ],
+    "hex": "1F34AB",
+    "categories": [
+      "DevTool",
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/processing/default.svg",
+      "mono": "/icons/processing/mono.svg",
+      "line": "/icons/processing/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "pulsar",
+    "title": "Pulsar",
+    "aliases": [
+      "Pulsar Edit"
+    ],
+    "hex": "2C3E50",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/pulsar/default.svg",
+      "wordmark": "/icons/pulsar/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "qtest",
+    "title": "Qtest",
+    "aliases": [],
+    "hex": "1A62B3",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/qtest/default.svg",
+      "wordmark": "/icons/qtest/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "reach",
+    "title": "Reach",
+    "aliases": [
+      "Reach Lang"
+    ],
+    "hex": "6AC6E7",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/reach/default.svg",
+      "mono": "/icons/reach/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "reactnavigation",
+    "title": "Reactnavigation",
+    "aliases": [],
+    "hex": "7B61C1",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/reactnavigation/default.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "rspec",
+    "title": "Rspec",
+    "aliases": [],
+    "hex": "6DE1FA",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/rspec/default.svg",
+      "mono": "/icons/rspec/mono.svg",
+      "line": "/icons/rspec/line.svg",
+      "wordmark": "/icons/rspec/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "sema",
+    "title": "Sema",
+    "aliases": [
+      "Sema Software"
+    ],
+    "hex": "000",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/sema/default.svg",
+      "wordmark": "/icons/sema/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "shotgrid",
+    "title": "Shotgrid",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/shotgrid/default.svg",
+      "mono": "/icons/shotgrid/mono.svg",
+      "wordmark": "/icons/shotgrid/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "spack",
+    "title": "Spack",
+    "aliases": [],
+    "hex": "0F3A80",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/spack/default.svg",
+      "mono": "/icons/spack/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "spss",
+    "title": "Spss",
+    "aliases": [
+      "Ibmspss"
+    ],
+    "hex": "CC1E4C",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/spss/default.svg",
+      "mono": "/icons/spss/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "spyder",
+    "title": "Spyder",
+    "aliases": [],
+    "hex": "8C0000",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/spyder/default.svg",
+      "mono": "/icons/spyder/mono.svg",
+      "wordmark": "/icons/spyder/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "sqldeveloper",
+    "title": "Sqldeveloper",
+    "aliases": [],
+    "hex": "ADADAD",
+    "categories": [
+      "DevTool",
+      "Database"
+    ],
+    "variants": {
+      "default": "/icons/sqldeveloper/default.svg",
+      "mono": "/icons/sqldeveloper/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "terramate",
+    "title": "Terramate",
+    "aliases": [],
+    "hex": "FFF",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/terramate/default.svg",
+      "wordmark": "/icons/terramate/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "tex",
+    "title": "Tex",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/tex/default.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "titaniumsdk",
+    "title": "Titaniumsdk",
+    "aliases": [],
+    "hex": "BD222B",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/titaniumsdk/default.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "tomcat",
+    "title": "Tomcat",
+    "aliases": [],
+    "hex": "D1A41A",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/tomcat/default.svg",
+      "line": "/icons/tomcat/line.svg",
+      "wordmark": "/icons/tomcat/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "tortoisegit",
+    "title": "Tortoisegit",
+    "aliases": [],
+    "hex": "4B8EB4",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/tortoisegit/default.svg",
+      "mono": "/icons/tortoisegit/mono.svg",
+      "line": "/icons/tortoisegit/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "towergit",
+    "title": "Towergit",
+    "aliases": [
+      "Towergitclient"
+    ],
+    "hex": "D18900",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/towergit/default.svg",
+      "mono": "/icons/towergit/mono.svg",
+      "wordmark": "/icons/towergit/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "veevalidate",
+    "title": "Veevalidate",
+    "aliases": [],
+    "hex": "04C971",
+    "categories": [
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/veevalidate/default.svg",
+      "line": "/icons/veevalidate/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
   }
 ]
