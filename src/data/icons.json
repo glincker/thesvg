@@ -109394,7 +109394,7 @@
     "hex": "008CAD",
     "categories": [
       "Software",
-      "Entertainment"
+      "Productivity"
     ],
     "variants": {
       "default": "/icons/acrobat-scan/default.svg"
@@ -109411,8 +109411,7 @@
     "hex": "1E3101",
     "categories": [
       "Design",
-      "Software",
-      "Entertainment"
+      "Software"
     ],
     "variants": {
       "default": "/icons/adobe-aero/default.svg"
@@ -109446,8 +109445,7 @@
     "hex": "584CCC",
     "categories": [
       "Software",
-      "Platform",
-      "Communication"
+      "Productivity"
     ],
     "variants": {
       "default": "/icons/adobe-sign/default.svg"
@@ -109479,10 +109477,9 @@
     "aliases": [],
     "hex": "00005B",
     "categories": [
-      "Software",
       "Design",
-      "Entertainment",
-      "Music"
+      "Music",
+      "Software"
     ],
     "variants": {
       "default": "/icons/audition/default.svg"
@@ -109516,9 +109513,8 @@
     "hex": "002615",
     "categories": [
       "Software",
-      "Design",
       "Education",
-      "Entertainment"
+      "Design"
     ],
     "variants": {
       "default": "/icons/captivate/default.svg"
@@ -109536,8 +109532,6 @@
     "categories": [
       "Software",
       "Platform",
-      "Analytics",
-      "Communication",
       "Education"
     ],
     "variants": {
@@ -109555,8 +109549,7 @@
     "hex": "000B1D",
     "categories": [
       "Design",
-      "Software",
-      "Entertainment"
+      "Software"
     ],
     "variants": {
       "default": "/icons/capture/default.svg"
@@ -109679,7 +109672,8 @@
     "aliases": [],
     "hex": "D9D9D9",
     "categories": [
-      "Other"
+      "Design",
+      "Software"
     ],
     "variants": {
       "default": "/icons/dracula/default.svg",
@@ -109716,7 +109710,7 @@
     "hex": "AAA0FF",
     "categories": [
       "Software",
-      "Communication"
+      "Productivity"
     ],
     "variants": {
       "default": "/icons/fill-and-sign/default.svg"
@@ -109784,8 +109778,7 @@
     "hex": "001E36",
     "categories": [
       "Design",
-      "Software",
-      "Entertainment"
+      "Software"
     ],
     "variants": {
       "default": "/icons/fresco/default.svg"
@@ -109820,8 +109813,7 @@
     "hex": "DBDCDD",
     "categories": [
       "Software",
-      "Hosting",
-      "Entertainment"
+      "Hosting"
     ],
     "variants": {
       "default": "/icons/http-dynamic-streaming/default.svg"
@@ -109871,8 +109863,8 @@
     "aliases": [],
     "hex": "49021F",
     "categories": [
-      "Software",
       "Design",
+      "Software",
       "Platform"
     ],
     "variants": {
@@ -109961,8 +109953,7 @@
     "hex": "EAEAEA",
     "categories": [
       "Software",
-      "Hosting",
-      "Entertainment"
+      "Hosting"
     ],
     "variants": {
       "default": "/icons/media-server/default.svg"
@@ -110085,8 +110076,7 @@
     "hex": "000B1D",
     "categories": [
       "Software",
-      "Design",
-      "Entertainment"
+      "Design"
     ],
     "variants": {
       "default": "/icons/portfolio/default.svg"
@@ -110139,8 +110129,7 @@
     "hex": "1A2600",
     "categories": [
       "Software",
-      "Education",
-      "Entertainment"
+      "Education"
     ],
     "variants": {
       "default": "/icons/presenter-video-express/default.svg"
