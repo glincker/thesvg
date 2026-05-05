@@ -112171,5 +112171,173 @@
     "url": "",
     "collection": "brands",
     "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "gcc",
+    "title": "Gcc",
+    "aliases": [
+      "Gnucompilercollection"
+    ],
+    "hex": "FFCFAB",
+    "categories": [
+      "OS"
+    ],
+    "variants": {
+      "default": "/icons/gcc/default.svg",
+      "mono": "/icons/gcc/mono.svg",
+      "line": "/icons/gcc/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "harvester",
+    "title": "Harvester",
+    "aliases": [
+      "Harvesterhci"
+    ],
+    "hex": "00A580",
+    "categories": [
+      "OS"
+    ],
+    "variants": {
+      "default": "/icons/harvester/default.svg",
+      "wordmark": "/icons/harvester/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "hyperv",
+    "title": "Hyperv",
+    "aliases": [
+      "Hyper V"
+    ],
+    "hex": "00188F",
+    "categories": [
+      "OS"
+    ],
+    "variants": {
+      "default": "/icons/hyperv/default.svg",
+      "mono": "/icons/hyperv/mono.svg",
+      "wordmark": "/icons/hyperv/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "k3os",
+    "title": "K3os",
+    "aliases": [],
+    "hex": "FD824E",
+    "categories": [
+      "OS"
+    ],
+    "variants": {
+      "default": "/icons/k3os/default.svg",
+      "line": "/icons/k3os/line.svg",
+      "wordmark": "/icons/k3os/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "msdos",
+    "title": "Msdos",
+    "aliases": [
+      "Microsoftdiskoperatingsystem"
+    ],
+    "hex": "000",
+    "categories": [
+      "OS"
+    ],
+    "variants": {
+      "default": "/icons/msdos/default.svg",
+      "mono": "/icons/msdos/mono.svg",
+      "line": "/icons/msdos/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "unix",
+    "title": "Unix",
+    "aliases": [],
+    "hex": "4051B5",
+    "categories": [
+      "OS"
+    ],
+    "variants": {
+      "default": "/icons/unix/default.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "vsphere",
+    "title": "Vsphere",
+    "aliases": [
+      "Vmwarevsphere"
+    ],
+    "hex": "0091DA",
+    "categories": [
+      "OS"
+    ],
+    "variants": {
+      "default": "/icons/vsphere/default.svg",
+      "mono": "/icons/vsphere/mono.svg",
+      "line": "/icons/vsphere/line.svg",
+      "wordmark": "/icons/vsphere/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "windows11",
+    "title": "Windows11",
+    "aliases": [],
+    "hex": "0078D4",
+    "categories": [
+      "OS"
+    ],
+    "variants": {
+      "default": "/icons/windows11/default.svg",
+      "wordmark": "/icons/windows11/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "windows8",
+    "title": "Windows8",
+    "aliases": [],
+    "hex": "00ADEF",
+    "categories": [
+      "OS"
+    ],
+    "variants": {
+      "default": "/icons/windows8/default.svg",
+      "wordmark": "/icons/windows8/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
   }
 ]
