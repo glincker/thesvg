@@ -112675,5 +112675,98 @@
     "url": "",
     "collection": "brands",
     "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "godot",
+    "title": "Godot",
+    "aliases": [],
+    "hex": "478CBF",
+    "categories": [
+      "Gaming",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/godot/default.svg",
+      "mono": "/icons/godot/mono.svg",
+      "wordmark": "/icons/godot/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "oauth",
+    "title": "Oauth",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Auth",
+      "Security"
+    ],
+    "variants": {
+      "default": "/icons/oauth/default.svg",
+      "mono": "/icons/oauth/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "openapi",
+    "title": "Openapi",
+    "aliases": [],
+    "hex": "91D400",
+    "categories": [
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/openapi/default.svg",
+      "mono": "/icons/openapi/mono.svg",
+      "line": "/icons/openapi/line.svg",
+      "wordmark": "/icons/openapi/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "sulu",
+    "title": "Sulu",
+    "aliases": [],
+    "hex": "112A46",
+    "categories": [
+      "CMS"
+    ],
+    "variants": {
+      "default": "/icons/sulu/default.svg",
+      "line": "/icons/sulu/line.svg",
+      "wordmark": "/icons/sulu/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "uwsgi",
+    "title": "Uwsgi",
+    "aliases": [
+      "Uwebservergatewayinterface"
+    ],
+    "hex": "BAD05E",
+    "categories": [
+      "Hosting"
+    ],
+    "variants": {
+      "default": "/icons/uwsgi/default.svg",
+      "mono": "/icons/uwsgi/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
   }
 ]
