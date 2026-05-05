@@ -112581,5 +112581,60 @@
     "url": "",
     "collection": "brands",
     "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "qodana",
+    "title": "Qodana",
+    "aliases": [],
+    "hex": "FF318C",
+    "categories": [
+      "Security"
+    ],
+    "variants": {
+      "default": "/icons/qodana/default.svg",
+      "mono": "/icons/qodana/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "ssh",
+    "title": "Ssh",
+    "aliases": [
+      "Secureshell"
+    ],
+    "hex": "231F20",
+    "categories": [
+      "Security"
+    ],
+    "variants": {
+      "default": "/icons/ssh/default.svg",
+      "wordmark": "/icons/ssh/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "teleport",
+    "title": "Teleport",
+    "aliases": [],
+    "hex": "512FC9",
+    "categories": [
+      "Security",
+      "Auth"
+    ],
+    "variants": {
+      "default": "/icons/teleport/default.svg",
+      "line": "/icons/teleport/line.svg",
+      "wordmark": "/icons/teleport/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
   }
 ]
