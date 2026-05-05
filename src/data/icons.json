@@ -112481,5 +112481,105 @@
     "url": "",
     "collection": "brands",
     "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "ballerina",
+    "title": "Ballerina",
+    "aliases": [
+      "Bal"
+    ],
+    "hex": "46C0BC",
+    "categories": [
+      "Cloud"
+    ],
+    "variants": {
+      "default": "/icons/ballerina/default.svg",
+      "line": "/icons/ballerina/line.svg",
+      "wordmark": "/icons/ballerina/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "detaspace",
+    "title": "Detaspace",
+    "aliases": [
+      "Deta",
+      "Deta Space"
+    ],
+    "hex": "F73B95",
+    "categories": [
+      "Cloud",
+      "Hosting"
+    ],
+    "variants": {
+      "default": "/icons/detaspace/default.svg",
+      "line": "/icons/detaspace/line.svg",
+      "wordmark": "/icons/detaspace/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "discloud",
+    "title": "Discloud",
+    "aliases": [],
+    "hex": "57F287",
+    "categories": [
+      "Cloud",
+      "Hosting",
+      "Database",
+      "Storage"
+    ],
+    "variants": {
+      "default": "/icons/discloud/default.svg",
+      "wordmark": "/icons/discloud/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "gardener",
+    "title": "Gardener",
+    "aliases": [],
+    "hex": "009F76",
+    "categories": [
+      "Cloud"
+    ],
+    "variants": {
+      "default": "/icons/gardener/default.svg",
+      "mono": "/icons/gardener/mono.svg",
+      "line": "/icons/gardener/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "scalingo",
+    "title": "Scalingo",
+    "aliases": [],
+    "hex": "173AEE",
+    "categories": [
+      "Cloud",
+      "Hosting"
+    ],
+    "variants": {
+      "default": "/icons/scalingo/default.svg",
+      "mono": "/icons/scalingo/mono.svg",
+      "line": "/icons/scalingo/line.svg",
+      "wordmark": "/icons/scalingo/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
   }
 ]
