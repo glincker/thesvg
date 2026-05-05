@@ -47,6 +47,12 @@ jobs:
           steps.meta.outputs.update-type == 'version-update:semver-major' ||
           (steps.meta.outputs.update-type == 'version-update:semver-minor' && steps.meta.outputs.dependency-type == 'direct:production')
         run: |
+          # Idempotently ensure the needs-review label exists before applying.
+          gh label create "needs-review" \
+            --color "fbca04" \
+            --description "Dependabot major bump or production minor; needs human review" \
+            --repo "$GITHUB_REPOSITORY" \
+            2>/dev/null || true
           gh pr edit "$PR_URL" --add-label "needs-review"
           gh pr comment "$PR_URL" --body "This update crosses a boundary that needs human review (major bump, or minor bump on a production dependency). Not auto-merging."
         env:
