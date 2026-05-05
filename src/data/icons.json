@@ -112339,5 +112339,147 @@
     "url": "",
     "collection": "brands",
     "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "aerospike",
+    "title": "Aerospike",
+    "aliases": [],
+    "hex": "C21417",
+    "categories": [
+      "Database"
+    ],
+    "variants": {
+      "default": "/icons/aerospike/default.svg",
+      "wordmark": "/icons/aerospike/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "dynamodb",
+    "title": "Dynamodb",
+    "aliases": [],
+    "hex": "527FFF",
+    "categories": [
+      "Database"
+    ],
+    "variants": {
+      "default": "/icons/dynamodb/default.svg",
+      "mono": "/icons/dynamodb/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "ecto",
+    "title": "Ecto",
+    "aliases": [],
+    "hex": "77BF43",
+    "categories": [
+      "Database"
+    ],
+    "variants": {
+      "default": "/icons/ecto/default.svg",
+      "wordmark": "/icons/ecto/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "firebird",
+    "title": "Firebird",
+    "aliases": [],
+    "hex": "F4790E",
+    "categories": [
+      "Database"
+    ],
+    "variants": {
+      "default": "/icons/firebird/default.svg",
+      "mono": "/icons/firebird/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "memcached",
+    "title": "Memcached",
+    "aliases": [],
+    "hex": "2A9790",
+    "categories": [
+      "Database"
+    ],
+    "variants": {
+      "default": "/icons/memcached/default.svg",
+      "mono": "/icons/memcached/mono.svg",
+      "line": "/icons/memcached/line.svg",
+      "wordmark": "/icons/memcached/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "realm",
+    "title": "Realm",
+    "aliases": [],
+    "hex": "6E60F9",
+    "categories": [
+      "Database",
+      "Cloud"
+    ],
+    "variants": {
+      "default": "/icons/realm/default.svg",
+      "mono": "/icons/realm/mono.svg",
+      "wordmark": "/icons/realm/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "spicedb",
+    "title": "Spicedb",
+    "aliases": [],
+    "hex": "FB5B62",
+    "categories": [
+      "Database"
+    ],
+    "variants": {
+      "default": "/icons/spicedb/default.svg",
+      "mono": "/icons/spicedb/mono.svg",
+      "line": "/icons/spicedb/line.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "yugabytedb",
+    "title": "Yugabytedb",
+    "aliases": [],
+    "hex": "FF5F3B",
+    "categories": [
+      "Database"
+    ],
+    "variants": {
+      "default": "/icons/yugabytedb/default.svg",
+      "mono": "/icons/yugabytedb/mono.svg",
+      "wordmark": "/icons/yugabytedb/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "collection": "brands",
+    "dateAdded": "2026-05-05"
   }
 ]
