@@ -108856,13 +108856,13 @@
     "aliases": [],
     "hex": "0B2343",
     "categories": [
-      "Other"
+      "Aviation"
     ],
     "variants": {
       "default": "/icons/aeromexico/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://www.aeromexico.com",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -108872,29 +108872,29 @@
     "aliases": [],
     "hex": "00005F",
     "categories": [
-      "Other"
+      "Shopping"
     ],
     "variants": {
       "default": "/icons/aldi-sud/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://www.aldi-sued.de",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
   {
-    "slug": "b-r-automation",
+    "slug": "bandr-automation",
     "title": "B&R Automation",
     "aliases": [],
     "hex": "FF8800",
     "categories": [
-      "Other"
+      "Hardware"
     ],
     "variants": {
-      "default": "/icons/b-r-automation/default.svg"
+      "default": "/icons/bandr-automation/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://www.br-automation.com",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -108904,29 +108904,29 @@
     "aliases": [],
     "hex": "00A2E2",
     "categories": [
-      "Other"
+      "Education"
     ],
     "variants": {
       "default": "/icons/bakalari/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://www.bakalari.cz",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
   {
-    "slug": "c-builder",
+    "slug": "cplusplus-builder",
     "title": "C++ Builder",
     "aliases": [],
     "hex": "E62431",
     "categories": [
-      "Other"
+      "DevTool"
     ],
     "variants": {
-      "default": "/icons/c-builder/default.svg"
+      "default": "/icons/cplusplus-builder/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://www.embarcadero.com/products/cbuilder",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -108936,13 +108936,14 @@
     "aliases": [],
     "hex": "00AA88",
     "categories": [
-      "Other"
+      "OS",
+      "Linux"
     ],
     "variants": {
       "default": "/icons/cachyos/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://cachyos.org",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -108952,13 +108953,13 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Other"
+      "Communication"
     ],
     "variants": {
       "default": "/icons/cinny/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://cinny.in",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -108968,13 +108969,14 @@
     "aliases": [],
     "hex": "0284C7",
     "categories": [
-      "Other"
+      "Design",
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/dicebear/default.svg"
     },
     "license": "CC-BY-SA-4.0",
-    "url": "",
+    "url": "https://www.dicebear.com",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -108984,13 +108986,13 @@
     "aliases": [],
     "hex": "ED1C24",
     "categories": [
-      "Other"
+      "Gaming"
     ],
     "variants": {
       "default": "/icons/dungeons-dragons/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://dnd.wizards.com",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -109000,13 +109002,13 @@
     "aliases": [],
     "hex": "782A90",
     "categories": [
-      "Other"
+      "Framework"
     ],
     "variants": {
       "default": "/icons/eclipse-vert-x/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://vertx.io",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -109016,13 +109018,14 @@
     "aliases": [],
     "hex": "779B2E",
     "categories": [
-      "Other"
+      "DevTool",
+      "Library"
     ],
     "variants": {
       "default": "/icons/faker/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://fakerjs.dev",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -109032,13 +109035,13 @@
     "aliases": [],
     "hex": "4641D9",
     "categories": [
-      "Other"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/fluxer/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://fluxer.app",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -109048,13 +109051,13 @@
     "aliases": [],
     "hex": "34A853",
     "categories": [
-      "Other"
+      "Analytics"
     ],
     "variants": {
       "default": "/icons/google-display-video-360/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://marketingplatform.google.com/about/display-video-360/",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -109064,13 +109067,13 @@
     "aliases": [],
     "hex": "3450D1",
     "categories": [
-      "Other"
+      "Browser"
     ],
     "variants": {
       "default": "/icons/helium-browser/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://github.com/imputnet/helium-macos",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -109080,13 +109083,13 @@
     "aliases": [],
     "hex": "1E4380",
     "categories": [
-      "Other"
+      "Shopping"
     ],
     "variants": {
       "default": "/icons/hilton-hotels-resorts/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://www.hilton.com/en/brands/hilton-hotels/",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -109096,13 +109099,13 @@
     "aliases": [],
     "hex": "67B4E7",
     "categories": [
-      "Other"
+      "Transportation"
     ],
     "variants": {
       "default": "/icons/ile-de-france-mobilites/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://www.iledefrance-mobilites.fr",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -109112,13 +109115,13 @@
     "aliases": [],
     "hex": "E42829",
     "categories": [
-      "Other"
+      "Entertainment"
     ],
     "variants": {
       "default": "/icons/l-equipe/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://www.lequipe.fr",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -109128,13 +109131,14 @@
     "aliases": [],
     "hex": "7FC8FF",
     "categories": [
-      "Other"
+      "AI",
+      "Framework"
     ],
     "variants": {
       "default": "/icons/langchain-corporate/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://www.langchain.com",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -109144,13 +109148,13 @@
     "aliases": [],
     "hex": "F77E1C",
     "categories": [
-      "Other"
+      "Transportation"
     ],
     "variants": {
       "default": "/icons/metro-de-la-ciudad-de-mexico/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://www.metro.cdmx.gob.mx",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -109160,13 +109164,13 @@
     "aliases": [],
     "hex": "003E95",
     "categories": [
-      "Other"
+      "Transportation"
     ],
     "variants": {
       "default": "/icons/metro-de-paris/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://www.ratp.fr/se-deplacer/metro",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -109176,13 +109180,13 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Other"
+      "AI"
     ],
     "variants": {
       "default": "/icons/moonshot-ai/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://www.moonshot.cn",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -109192,13 +109196,13 @@
     "aliases": [],
     "hex": "F46519",
     "categories": [
-      "Other"
+      "Shopping"
     ],
     "variants": {
       "default": "/icons/muller/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://www.mueller.de",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -109208,13 +109212,13 @@
     "aliases": [],
     "hex": "E40327",
     "categories": [
-      "Other"
+      "Transportation"
     ],
     "variants": {
       "default": "/icons/obb/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://www.oebb.at",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -109224,13 +109228,13 @@
     "aliases": [],
     "hex": "2D4999",
     "categories": [
-      "Other"
+      "Shopping"
     ],
     "variants": {
       "default": "/icons/picard-surgeles/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://www.picard.fr",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -109240,13 +109244,13 @@
     "aliases": [],
     "hex": "00A7B3",
     "categories": [
-      "Other"
+      "Entertainment"
     ],
     "variants": {
       "default": "/icons/rte/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://www.rte.ie",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -109256,13 +109260,13 @@
     "aliases": [],
     "hex": "004382",
     "categories": [
-      "Other"
+      "Transportation"
     ],
     "variants": {
       "default": "/icons/sao-paulo-metro/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://www.metro.sp.gov.br",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -109272,13 +109276,13 @@
     "aliases": [],
     "hex": "BA2626",
     "categories": [
-      "Other"
+      "Software"
     ],
     "variants": {
       "default": "/icons/softcatala/default.svg"
     },
     "license": "CC-BY-SA-4.0",
-    "url": "",
+    "url": "https://www.softcatala.org",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -109288,13 +109292,13 @@
     "aliases": [],
     "hex": "1343FB",
     "categories": [
-      "Other"
+      "Entertainment"
     ],
     "variants": {
       "default": "/icons/tele-quebec/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://www.telequebec.tv",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -109304,13 +109308,13 @@
     "aliases": [],
     "hex": "0066FF",
     "categories": [
-      "Other"
+      "Communication"
     ],
     "variants": {
       "default": "/icons/telefonica/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://www.telefonica.com",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -109320,13 +109324,13 @@
     "aliases": [],
     "hex": "F8654B",
     "categories": [
-      "Other"
+      "Hardware"
     ],
     "variants": {
       "default": "/icons/trmnl/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://usetrmnl.com",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -109342,7 +109346,7 @@
       "default": "/icons/ty/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://www.ty.com",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
@@ -109352,13 +109356,13 @@
     "aliases": [],
     "hex": "006420",
     "categories": [
-      "Other"
+      "Shopping"
     ],
     "variants": {
       "default": "/icons/zabka/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "",
+    "url": "https://www.zabka.pl",
     "collection": "brands",
     "dateAdded": "2026-05-05"
   }
