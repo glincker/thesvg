@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 2.1.9
+
+### Patch Changes
+
+- feat: add 3 brand icons from open requests (signalmelo, wisgate, unikoo) ([#171](https://github.com/glincker/thesvg/issues/171))
+
 ## 2.1.7
 
 ### Patch Changes
