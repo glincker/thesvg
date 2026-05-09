@@ -57161,6 +57161,24 @@
     "collection": "brands"
   },
   {
+    "slug": "genstory",
+    "title": "GenStory",
+    "aliases": [],
+    "hex": "67B7FF",
+    "categories": [
+      "AI",
+      "Design",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/genstory/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.genstory.app",
+    "collection": "brands",
+    "dateAdded": "2026-05-09"
+  },
+  {
     "slug": "gentoo",
     "title": "Gentoo",
     "aliases": [],
