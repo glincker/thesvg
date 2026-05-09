@@ -92886,6 +92886,27 @@
     "collection": "brands"
   },
   {
+    "slug": "signalmelo",
+    "title": "Signalmelo",
+    "aliases": [
+      "signalmelo-icon"
+    ],
+    "hex": "618FFF",
+    "categories": [
+      "AI",
+      "Analytics",
+      "Social"
+    ],
+    "variants": {
+      "default": "/icons/signalmelo/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.signalmelo.com/",
+    "guidelines": "https://www.signalmelo.com/about",
+    "collection": "brands",
+    "dateAdded": "2026-05-08"
+  },
+  {
     "slug": "siliconcloud-siliconflow",
     "title": "SiliconCloud (SiliconFlow)",
     "aliases": [],
@@ -101901,6 +101922,26 @@
     "collection": "brands"
   },
   {
+    "slug": "unikoo",
+    "title": "Unikoo",
+    "aliases": [
+      "unikoo-icon"
+    ],
+    "hex": "E60013",
+    "categories": [
+      "E-commerce",
+      "Shopping"
+    ],
+    "variants": {
+      "default": "/icons/unikoo/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.unikoogroup.com/",
+    "guidelines": "https://www.unikoogroup.com/pages/about-us",
+    "collection": "brands",
+    "dateAdded": "2026-05-08"
+  },
+  {
     "slug": "unilever",
     "title": "Unilever",
     "aliases": [],
@@ -106065,6 +106106,22 @@
     "guidelines": "https://wise.design/foundations/logo",
     "dateAdded": "2026-03-07",
     "collection": "brands"
+  },
+  {
+    "slug": "wisgate",
+    "title": "WisGate",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "AI"
+    ],
+    "variants": {
+      "default": "/icons/wisgate/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://wisgate.ai/",
+    "collection": "brands",
+    "dateAdded": "2026-05-08"
   },
   {
     "slug": "wish",
@@ -112768,62 +112825,5 @@
     "url": "",
     "collection": "brands",
     "dateAdded": "2026-05-05"
-  },
-  {
-    "slug": "signalmelo",
-    "title": "Signalmelo",
-    "aliases": [
-      "signalmelo-icon"
-    ],
-    "hex": "618FFF",
-    "categories": [
-      "AI",
-      "Analytics",
-      "Social"
-    ],
-    "variants": {
-      "default": "/icons/signalmelo/default.svg"
-    },
-    "license": "brand-use",
-    "url": "https://www.signalmelo.com/",
-    "guidelines": "https://www.signalmelo.com/about",
-    "collection": "brands",
-    "dateAdded": "2026-05-08"
-  },
-  {
-    "slug": "wisgate",
-    "title": "WisGate",
-    "aliases": [],
-    "hex": "000000",
-    "categories": [
-      "AI"
-    ],
-    "variants": {
-      "default": "/icons/wisgate/default.svg"
-    },
-    "license": "brand-use",
-    "url": "https://wisgate.ai/",
-    "collection": "brands",
-    "dateAdded": "2026-05-08"
-  },
-  {
-    "slug": "unikoo",
-    "title": "Unikoo",
-    "aliases": [
-      "unikoo-icon"
-    ],
-    "hex": "E60013",
-    "categories": [
-      "E-commerce",
-      "Shopping"
-    ],
-    "variants": {
-      "default": "/icons/unikoo/default.svg"
-    },
-    "license": "brand-use",
-    "url": "https://www.unikoogroup.com/",
-    "guidelines": "https://www.unikoogroup.com/pages/about-us",
-    "collection": "brands",
-    "dateAdded": "2026-05-08"
   }
 ]
