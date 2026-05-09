@@ -1,5 +1,11 @@
 # @thesvg/vue
 
+## 2.1.10
+
+### Patch Changes
+
+- feat: add genstory icon from [#160](https://github.com/glincker/thesvg/issues/160) ([#175](https://github.com/glincker/thesvg/issues/175))
+
 ## 2.1.9
 
 ### Patch Changes
