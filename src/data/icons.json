@@ -95668,6 +95668,23 @@
     "collection": "brands"
   },
   {
+    "slug": "sprint",
+    "title": "Sprint",
+    "aliases": [],
+    "hex": "FFCE00",
+    "categories": [
+      "Communication"
+    ],
+    "variants": {
+      "default": "/icons/sprint/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.sprint.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ASprint_Corporation_Logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "spyder-ide",
     "title": "Spyder IDE",
     "aliases": [],
