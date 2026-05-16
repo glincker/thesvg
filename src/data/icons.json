@@ -76565,6 +76565,23 @@
     "collection": "brands"
   },
   {
+    "slug": "mountain-dew",
+    "title": "Mountain Dew",
+    "aliases": [],
+    "hex": "00DC00",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/mountain-dew/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.mountaindew.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AMountain_Dew_2025_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "movistar",
     "title": "Movistar",
     "aliases": [],
