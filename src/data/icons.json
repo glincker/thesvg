@@ -71940,6 +71940,23 @@
     "collection": "brands"
   },
   {
+    "slug": "lipton",
+    "title": "Lipton",
+    "aliases": [],
+    "hex": "FFC700",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/lipton/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.lipton.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ALipton_logo_%282014-present%29.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "liquibase",
     "title": "Liquibase",
     "aliases": [],
