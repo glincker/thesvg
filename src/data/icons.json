@@ -41389,6 +41389,23 @@
     "collection": "brands"
   },
   {
+    "slug": "cnn-international",
+    "title": "CNN International",
+    "aliases": [],
+    "hex": "CC0000",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/cnn-international/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://edition.cnn.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ACNN_International_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "co-op",
     "title": "Co-op",
     "aliases": [],
