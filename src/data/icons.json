@@ -39332,6 +39332,23 @@
     "collection": "brands"
   },
   {
+    "slug": "cartoon-network",
+    "title": "Cartoon Network",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/cartoon-network/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.cartoonnetwork.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ACartoon_Network_1991.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "cash-app",
     "title": "Cash App",
     "aliases": [],
