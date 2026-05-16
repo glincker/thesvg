@@ -51849,6 +51849,23 @@
     "collection": "brands"
   },
   {
+    "slug": "fox-news",
+    "title": "Fox News",
+    "aliases": [],
+    "hex": "003366",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/fox-news/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.foxnews.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AFox_News_Channel_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "foxtel",
     "title": "Foxtel",
     "aliases": [],
