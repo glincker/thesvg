@@ -2765,6 +2765,23 @@
     "collection": "brands"
   },
   {
+    "slug": "amplitude",
+    "title": "Amplitude",
+    "aliases": [],
+    "hex": "1E61F0",
+    "categories": [
+      "Analytics"
+    ],
+    "variants": {
+      "default": "/icons/amplitude/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://amplitude.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AAmplitude_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "amul",
     "title": "Amul",
     "aliases": [],
