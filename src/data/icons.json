@@ -76389,6 +76389,23 @@
     "dateAdded": "2026-05-16"
   },
   {
+    "slug": "mitsubishi-motors",
+    "title": "Mitsubishi Motors",
+    "aliases": [],
+    "hex": "E60012",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/mitsubishi-motors/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.mitsubishi-motors.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AMitsubishi_Motors_SVG_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "mix",
     "title": "Mix",
     "aliases": [],
