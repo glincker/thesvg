@@ -37448,6 +37448,23 @@
     "collection": "brands"
   },
   {
+    "slug": "bnp-paribas",
+    "title": "BNP Paribas",
+    "aliases": [],
+    "hex": "00915A",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/bnp-paribas/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://group.bnpparibas",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ABGZ_BNP_Paribas_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "boardgamegeek",
     "title": "BoardGameGeek",
     "aliases": [],
