@@ -69289,6 +69289,23 @@
     "collection": "brands"
   },
   {
+    "slug": "korean-air",
+    "title": "Korean Air",
+    "aliases": [],
+    "hex": "00256C",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/korean-air/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.koreanair.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AKorean_Air_2025.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "kotlin",
     "title": "Kotlin",
     "aliases": [
