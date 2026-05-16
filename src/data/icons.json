@@ -37906,6 +37906,23 @@
     "collection": "brands"
   },
   {
+    "slug": "bradesco",
+    "title": "Bradesco",
+    "aliases": [],
+    "hex": "CC092F",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/bradesco/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.bradesco.com.br",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ABanco_Bradesco_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "braintree",
     "title": "Braintree",
     "aliases": [],
