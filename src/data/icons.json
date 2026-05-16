@@ -74455,6 +74455,23 @@
     "collection": "brands"
   },
   {
+    "slug": "micron",
+    "title": "Micron",
+    "aliases": [],
+    "hex": "008CCC",
+    "categories": [
+      "Hardware"
+    ],
+    "variants": {
+      "default": "/icons/micron/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.micron.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AMicron_Technology_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "micropython",
     "title": "MicroPython",
     "aliases": [],
