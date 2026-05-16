@@ -64488,6 +64488,23 @@
     "collection": "brands"
   },
   {
+    "slug": "intelbras",
+    "title": "Intelbras",
+    "aliases": [],
+    "hex": "E63027",
+    "categories": [
+      "Hardware"
+    ],
+    "variants": {
+      "default": "/icons/intelbras/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.intelbras.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AIntelbras_wordmark.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "intellij-idea",
     "title": "IntelliJ IDEA",
     "aliases": [],
