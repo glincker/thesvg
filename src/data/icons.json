@@ -106295,6 +106295,23 @@
     "collection": "brands"
   },
   {
+    "slug": "vudu",
+    "title": "Vudu",
+    "aliases": [],
+    "hex": "3399FF",
+    "categories": [
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/vudu/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.vudu.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AVudu_2014_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "vue",
     "title": "Vue",
     "aliases": [],
