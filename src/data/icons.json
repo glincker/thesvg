@@ -72429,6 +72429,23 @@
     "collection": "brands"
   },
   {
+    "slug": "logitech-g",
+    "title": "Logitech G",
+    "aliases": [],
+    "hex": "00B8FC",
+    "categories": [
+      "Gaming"
+    ],
+    "variants": {
+      "default": "/icons/logitech-g/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.logitechg.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ALogitech_G_logo_horiz_black.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "logmein",
     "title": "LogMeIn",
     "aliases": [],
