@@ -36214,6 +36214,23 @@
     "dateAdded": "2026-05-16"
   },
   {
+    "slug": "bbva",
+    "title": "BBVA",
+    "aliases": [],
+    "hex": "004481",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/bbva/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.bbva.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ABBVA_2019.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "beacon",
     "title": "Beacon",
     "aliases": [],
