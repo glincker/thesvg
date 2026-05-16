@@ -35745,6 +35745,23 @@
     "collection": "brands"
   },
   {
+    "slug": "bancor",
+    "title": "Bancor",
+    "aliases": [],
+    "hex": "1782FB",
+    "categories": [
+      "Crypto"
+    ],
+    "variants": {
+      "default": "/icons/bancor/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.bancor.network",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ABANCOR.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "bandcamp",
     "title": "Bandcamp",
     "aliases": [],
