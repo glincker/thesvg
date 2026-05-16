@@ -105657,6 +105657,23 @@
     "collection": "brands"
   },
   {
+    "slug": "wero",
+    "title": "Wero",
+    "aliases": [],
+    "hex": "E1004B",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/wero/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://wero-wallet.eu",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AWero_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "western-union",
     "title": "Western Union",
     "aliases": [],
