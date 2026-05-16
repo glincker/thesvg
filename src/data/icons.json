@@ -3038,6 +3038,23 @@
     "collection": "brands"
   },
   {
+    "slug": "anker",
+    "title": "Anker",
+    "aliases": [],
+    "hex": "00A2DC",
+    "categories": [
+      "Hardware"
+    ],
+    "variants": {
+      "default": "/icons/anker/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.anker.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AAnker_Innovations_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "ankermake",
     "title": "AnkerMake",
     "aliases": [],
