@@ -83298,6 +83298,23 @@
     "collection": "brands"
   },
   {
+    "slug": "pepsi",
+    "title": "Pepsi",
+    "aliases": [],
+    "hex": "004B93",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/pepsi/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.pepsi.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3APepsiCologo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "pepsico",
     "title": "PepsiCo",
     "aliases": [
