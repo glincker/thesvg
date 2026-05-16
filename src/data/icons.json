@@ -75947,6 +75947,23 @@
     "collection": "brands"
   },
   {
+    "slug": "mitsubishi-heavy",
+    "title": "Mitsubishi Heavy Industries",
+    "aliases": [],
+    "hex": "E60012",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/mitsubishi-heavy/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.mhi.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AMitsubishi_heavyindustries_mhi_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "mix",
     "title": "Mix",
     "aliases": [],
