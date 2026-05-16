@@ -78983,6 +78983,23 @@
     "collection": "brands"
   },
   {
+    "slug": "ntt-docomo",
+    "title": "NTT Docomo",
+    "aliases": [],
+    "hex": "CC0000",
+    "categories": [
+      "Communication"
+    ],
+    "variants": {
+      "default": "/icons/ntt-docomo/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.docomo.ne.jp",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ANTT-docomo-logo-2026.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "nubank",
     "title": "Nubank",
     "aliases": [],
