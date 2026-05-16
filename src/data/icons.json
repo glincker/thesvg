@@ -99546,6 +99546,23 @@
     "collection": "brands"
   },
   {
+    "slug": "tezos",
+    "title": "Tezos",
+    "aliases": [],
+    "hex": "2C7DF7",
+    "categories": [
+      "Crypto"
+    ],
+    "variants": {
+      "default": "/icons/tezos/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://tezos.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ATezos_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "tga",
     "title": "TGA",
     "aliases": [
