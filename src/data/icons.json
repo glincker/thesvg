@@ -42367,6 +42367,23 @@
     "collection": "brands"
   },
   {
+    "slug": "colgate",
+    "title": "Colgate",
+    "aliases": [],
+    "hex": "C8102E",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/colgate/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.colgate.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AColgate-Palmolive_%282025%29.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "collabora-online",
     "title": "Collabora Online",
     "aliases": [
