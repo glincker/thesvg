@@ -85110,6 +85110,23 @@
     "collection": "brands"
   },
   {
+    "slug": "ping-identity",
+    "title": "Ping Identity",
+    "aliases": [],
+    "hex": "C50000",
+    "categories": [
+      "Auth"
+    ],
+    "variants": {
+      "default": "/icons/ping-identity/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.pingidentity.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3APing_Identity_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "pingdom",
     "title": "Pingdom",
     "aliases": [],
