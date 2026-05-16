@@ -79548,6 +79548,23 @@
     "collection": "brands"
   },
   {
+    "slug": "nintendo-switch",
+    "title": "Nintendo Switch",
+    "aliases": [],
+    "hex": "E60012",
+    "categories": [
+      "Gaming"
+    ],
+    "variants": {
+      "default": "/icons/nintendo-switch/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.nintendo.com/switch",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ANintendo_Switch_2_Red_Logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "niri",
     "title": "niri",
     "aliases": [],
