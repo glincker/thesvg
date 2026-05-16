@@ -36558,6 +36558,23 @@
     "dateAdded": "2026-05-16"
   },
   {
+    "slug": "bet365",
+    "title": "Bet365",
+    "aliases": [],
+    "hex": "027B5B",
+    "categories": [
+      "Gaming"
+    ],
+    "variants": {
+      "default": "/icons/bet365/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.bet365.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ABet365_Logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "betfair",
     "title": "Betfair",
     "aliases": [],
