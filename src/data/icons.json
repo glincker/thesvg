@@ -76390,6 +76390,23 @@
     "collection": "brands"
   },
   {
+    "slug": "musescore-studio",
+    "title": "MuseScore Studio",
+    "aliases": [],
+    "hex": "1A70B8",
+    "categories": [
+      "Music"
+    ],
+    "variants": {
+      "default": "/icons/musescore-studio/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://musescore.org",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AMuseScore_Studio.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "musicbrainz",
     "title": "MusicBrainz",
     "aliases": [],
