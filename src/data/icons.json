@@ -99191,6 +99191,22 @@
     "collection": "brands"
   },
   {
+    "slug": "ticket-tailor",
+    "title": "Ticket Tailor",
+    "aliases": [],
+    "hex": "222432",
+    "categories": [
+      "E-commerce"
+    ],
+    "variants": {
+      "default": "/icons/ticket-tailor/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.tickettailor.com",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "ticketmaster",
     "title": "Ticketmaster",
     "aliases": [],
