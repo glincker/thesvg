@@ -5101,6 +5101,23 @@
     "collection": "brands"
   },
   {
+    "slug": "asiana-airlines",
+    "title": "Asiana Airlines",
+    "aliases": [],
+    "hex": "DC1A1A",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/asiana-airlines/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.flyasiana.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AAsiana_Airlines-Logo_New.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "askverdict-ai",
     "title": "AskVerdict AI",
     "aliases": [
