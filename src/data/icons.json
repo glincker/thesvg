@@ -97559,6 +97559,23 @@
     "collection": "brands"
   },
   {
+    "slug": "stc",
+    "title": "STC",
+    "aliases": [],
+    "hex": "5E50C9",
+    "categories": [
+      "Communication"
+    ],
+    "variants": {
+      "default": "/icons/stc/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.stc.com.sa",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ASTC-01.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "steam",
     "title": "Steam",
     "aliases": [],
