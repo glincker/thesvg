@@ -101104,6 +101104,23 @@
     "collection": "brands"
   },
   {
+    "slug": "tidal-music",
+    "title": "Tidal",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Music"
+    ],
+    "variants": {
+      "default": "/icons/tidal-music/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://tidal.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ATidal_%28service%29_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "tidb",
     "title": "TiDB",
     "aliases": [],
