@@ -98976,6 +98976,23 @@
     "collection": "brands"
   },
   {
+    "slug": "tech-mahindra",
+    "title": "Tech Mahindra",
+    "aliases": [],
+    "hex": "ED1F24",
+    "categories": [
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/tech-mahindra/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.techmahindra.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ATech_Mahindra_New_Logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "techcrunch",
     "title": "TechCrunch",
     "aliases": [],
