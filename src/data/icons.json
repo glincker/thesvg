@@ -46743,6 +46743,23 @@
     "collection": "brands"
   },
   {
+    "slug": "dominos-pizza",
+    "title": "Domino's Pizza",
+    "aliases": [],
+    "hex": "0078AE",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/dominos-pizza/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.dominos.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ADomino%27s_2025.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "domo",
     "title": "Domo",
     "aliases": [],
