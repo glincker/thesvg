@@ -85162,6 +85162,23 @@
     "collection": "brands"
   },
   {
+    "slug": "powerade",
+    "title": "Powerade",
+    "aliases": [],
+    "hex": "E61E25",
+    "categories": [
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/powerade/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.powerade.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3APowerade-logo-2019.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "powers",
     "title": "POWERS",
     "aliases": [],
