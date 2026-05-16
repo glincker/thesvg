@@ -47104,6 +47104,23 @@
     "collection": "brands"
   },
   {
+    "slug": "dreamworks",
+    "title": "DreamWorks Animation",
+    "aliases": [],
+    "hex": "00B5E6",
+    "categories": [
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/dreamworks/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.dreamworks.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ADreamWorks_Animation_SKG_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "dribbble",
     "title": "Dribbble",
     "aliases": [],
