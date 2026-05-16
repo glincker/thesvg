@@ -85805,6 +85805,23 @@
     "collection": "brands"
   },
   {
+    "slug": "princeton",
+    "title": "Princeton University",
+    "aliases": [],
+    "hex": "EE7F2D",
+    "categories": [
+      "Education"
+    ],
+    "variants": {
+      "default": "/icons/princeton/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.princeton.edu",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3APrinceton_Tigers_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "printables",
     "title": "Printables",
     "aliases": [],
