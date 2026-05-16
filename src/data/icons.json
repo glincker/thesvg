@@ -42589,6 +42589,23 @@
     "collection": "brands"
   },
   {
+    "slug": "commonwealth-bank",
+    "title": "Commonwealth Bank",
+    "aliases": [],
+    "hex": "FFCC00",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/commonwealth-bank/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.commbank.com.au",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ACommonwealth_Bank_Logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "compiler-explorer",
     "title": "Compiler Explorer",
     "aliases": [],
