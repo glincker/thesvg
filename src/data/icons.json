@@ -83024,6 +83024,23 @@
     "collection": "brands"
   },
   {
+    "slug": "ozon",
+    "title": "Ozon",
+    "aliases": [],
+    "hex": "005BFF",
+    "categories": [
+      "E-commerce"
+    ],
+    "variants": {
+      "default": "/icons/ozon/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.ozon.ru",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AOzon_logo_clear.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "p5dotjs",
     "title": "p5.js",
     "aliases": [],
