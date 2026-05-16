@@ -86397,6 +86397,23 @@
     "collection": "brands"
   },
   {
+    "slug": "procter-and-gamble",
+    "title": "Procter & Gamble",
+    "aliases": [],
+    "hex": "00529C",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/procter-and-gamble/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.pg.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AProcter_%26_Gamble_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "procure",
     "title": "Procure",
     "aliases": [],
