@@ -71697,6 +71697,23 @@
     "collection": "brands"
   },
   {
+    "slug": "lockheed-martin",
+    "title": "Lockheed Martin",
+    "aliases": [],
+    "hex": "002F6C",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/lockheed-martin/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.lockheedmartin.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ALockheed_Martin_logo_%282%29.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "locofy",
     "title": "Locofy",
     "aliases": [],
