@@ -68596,6 +68596,23 @@
     "collection": "brands"
   },
   {
+    "slug": "kelloggs",
+    "title": "Kellogg's",
+    "aliases": [],
+    "hex": "C8102E",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/kelloggs/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.kelloggs.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AKellogg%27s-Logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "kenmei",
     "title": "Kenmei",
     "aliases": [],
