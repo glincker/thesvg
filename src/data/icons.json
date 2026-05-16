@@ -72910,6 +72910,23 @@
     "collection": "brands"
   },
   {
+    "slug": "lucid-motors",
+    "title": "Lucid Motors",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/lucid-motors/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.lucidmotors.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ALucid_Motors_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "lucide",
     "title": "Lucide",
     "aliases": [],
