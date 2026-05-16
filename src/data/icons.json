@@ -35658,6 +35658,23 @@
     "collection": "brands"
   },
   {
+    "slug": "bajaj-auto",
+    "title": "Bajaj Auto",
+    "aliases": [],
+    "hex": "0066A6",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/bajaj-auto/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.bajajauto.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ABajaj_Auto_Ltd_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "bamboo",
     "title": "Bamboo",
     "aliases": [],
