@@ -62413,6 +62413,23 @@
     "collection": "brands"
   },
   {
+    "slug": "hershey",
+    "title": "Hershey",
+    "aliases": [],
+    "hex": "60453A",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/hershey/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.hersheys.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AHershey_company_textlogo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "hetzner",
     "title": "Hetzner",
     "aliases": [],
