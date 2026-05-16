@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 2.1.11
+
+### Patch Changes
+
+- feat: add wacheit icon from [#184](https://github.com/glincker/thesvg/issues/184) ([#189](https://github.com/glincker/thesvg/issues/189))
+
 ## 2.1.10
 
 ### Patch Changes
