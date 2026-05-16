@@ -79839,6 +79839,23 @@
     "collection": "brands"
   },
   {
+    "slug": "norilsk-nickel",
+    "title": "Norilsk Nickel",
+    "aliases": [],
+    "hex": "0066B3",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/norilsk-nickel/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.nornickel.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ANorilsk_Nickel_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "normalizedotcss",
     "title": "Normalize.css",
     "aliases": [],
