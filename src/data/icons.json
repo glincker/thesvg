@@ -98874,6 +98874,23 @@
     "collection": "brands"
   },
   {
+    "slug": "the-economist",
+    "title": "The Economist",
+    "aliases": [],
+    "hex": "E3120B",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/the-economist/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.economist.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ATheEconomistLogo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "the-finals",
     "title": "THE FINALS",
     "aliases": [],
