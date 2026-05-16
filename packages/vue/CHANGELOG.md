@@ -1,5 +1,11 @@
 # @thesvg/vue
 
+## 2.1.12
+
+### Patch Changes
+
+- feat: add autodesk-inventor icon ([#209](https://github.com/glincker/thesvg/issues/209))
+
 ## 2.1.11
 
 ### Patch Changes
