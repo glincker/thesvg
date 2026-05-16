@@ -52206,6 +52206,23 @@
     "dateAdded": "2026-05-16"
   },
   {
+    "slug": "foxconn",
+    "title": "Foxconn",
+    "aliases": [],
+    "hex": "1D2087",
+    "categories": [
+      "Hardware"
+    ],
+    "variants": {
+      "default": "/icons/foxconn/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.foxconn.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AFoxconnLOGO-cn.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "foxtel",
     "title": "Foxtel",
     "aliases": [],
