@@ -73638,6 +73638,23 @@
     "collection": "brands"
   },
   {
+    "slug": "mattel",
+    "title": "Mattel",
+    "aliases": [],
+    "hex": "DA251D",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/mattel/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.mattel.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AMattel_%282019%29.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "matter",
     "title": "Matter",
     "aliases": [],
