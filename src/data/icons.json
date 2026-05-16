@@ -99162,6 +99162,23 @@
     "collection": "brands"
   },
   {
+    "slug": "telstra",
+    "title": "Telstra",
+    "aliases": [],
+    "hex": "0099D6",
+    "categories": [
+      "Communication"
+    ],
+    "variants": {
+      "default": "/icons/telstra/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.telstra.com.au",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ATelstra_logo_%28horizontal_variant%29.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "tembo",
     "title": "Tembo",
     "aliases": [],
