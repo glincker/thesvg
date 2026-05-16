@@ -87707,6 +87707,23 @@
     "collection": "brands"
   },
   {
+    "slug": "raiffeisen-bank-international",
+    "title": "Raiffeisen Bank International",
+    "aliases": [],
+    "hex": "FED32C",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/raiffeisen-bank-international/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.rbinternational.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ARaiffeisen_Bank_International_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "railway",
     "title": "Railway",
     "aliases": [],
