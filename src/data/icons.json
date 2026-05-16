@@ -95306,6 +95306,23 @@
     "collection": "brands"
   },
   {
+    "slug": "snapple",
+    "title": "Snapple",
+    "aliases": [],
+    "hex": "FFC72C",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/snapple/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.snapple.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ASnapple_logo_%282020%29.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "sncf",
     "title": "SNCF",
     "aliases": [],
