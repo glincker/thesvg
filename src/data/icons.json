@@ -49399,6 +49399,23 @@
     "collection": "brands"
   },
   {
+    "slug": "etihad",
+    "title": "Etihad Airways",
+    "aliases": [],
+    "hex": "C49757",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/etihad/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.etihad.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AEtihad-airways-logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "etihad-airways",
     "title": "Etihad Airways",
     "aliases": [],
