@@ -78367,6 +78367,23 @@
     "collection": "brands"
   },
   {
+    "slug": "nickelodeon",
+    "title": "Nickelodeon",
+    "aliases": [],
+    "hex": "FF6600",
+    "categories": [
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/nickelodeon/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.nick.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ANickelodeon_%281984_logo%29.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "niconico",
     "title": "niconico",
     "aliases": [],
