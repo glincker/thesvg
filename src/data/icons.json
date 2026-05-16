@@ -99304,6 +99304,23 @@
     "collection": "brands"
   },
   {
+    "slug": "take-two",
+    "title": "Take-Two Interactive",
+    "aliases": [],
+    "hex": "EE2D34",
+    "categories": [
+      "Gaming"
+    ],
+    "variants": {
+      "default": "/icons/take-two/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.take2games.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ATake-TwoInteractiveBlueLogo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "take-two-interactive-software",
     "title": "Take-Two Interactive Software",
     "aliases": [],
