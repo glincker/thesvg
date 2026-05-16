@@ -41681,6 +41681,23 @@
     "collection": "brands"
   },
   {
+    "slug": "coca-cola-zero",
+    "title": "Coca-Cola Zero",
+    "aliases": [],
+    "hex": "F40009",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/coca-cola-zero/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.coca-cola.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ACoca-Cola_Zero_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "cockpit",
     "title": "Cockpit",
     "aliases": [],
