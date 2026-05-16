@@ -62780,6 +62780,23 @@
     "collection": "brands"
   },
   {
+    "slug": "honeywell",
+    "title": "Honeywell",
+    "aliases": [],
+    "hex": "DD0000",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/honeywell/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.honeywell.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AHoneywell-intelligrated-logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "hono",
     "title": "Hono",
     "aliases": [],
