@@ -70294,6 +70294,23 @@
     "collection": "brands"
   },
   {
+    "slug": "lexus",
+    "title": "Lexus",
+    "aliases": [],
+    "hex": "1A1A1A",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/lexus/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.lexus.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ALexus.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "lg",
     "title": "LG",
     "aliases": [],
