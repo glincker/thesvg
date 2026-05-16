@@ -70174,6 +70174,23 @@
     "collection": "brands"
   },
   {
+    "slug": "lego",
+    "title": "LEGO",
+    "aliases": [],
+    "hex": "FFCF00",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/lego/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.lego.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ALEGO_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "leica",
     "title": "Leica",
     "aliases": [],
