@@ -8,12 +8,16 @@ name: Stale icon issues
 # Policy:
 #   - Touched only if an issue carries a triage:needs-* label (we asked
 #     the submitter for something and they haven't replied).
-#   - 14 days of inactivity -> mark stale, post a clear "here is what we
-#     need from you to keep this open" comment.
+#   - Each triage:needs-* label gets its own step with a tailored
+#     "here is what we need from you to keep this open" comment, so a
+#     submitter sees the bullet point that actually applies to them.
+#   - 14 days of inactivity -> mark stale, post that comment.
 #   - +7 more days (21 total) -> close as not-planned with a "happy to
 #     reopen later" note. Closing is housekeeping, not rejection.
-#   - Any new comment from the submitter clears the stale label and
-#     resets the clock (remove-stale-when-updated).
+#   - Any new comment or edit clears the stale label and resets the
+#     clock (remove-stale-when-updated). This covers maintainer activity
+#     too, which is intentional: if we're actively working a thread we
+#     don't want it to close out from under us.
 #   - Pull requests are out of scope for this workflow.
 
 on:
@@ -23,41 +27,145 @@ on:
 
 permissions:
   issues: write
-  contents: read
 
 concurrency:
   group: stale-icon-issues
   cancel-in-progress: false
 
 jobs:
+  ensure-labels:
+    name: Ensure stale labels exist
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v9
+        with:
+          script: |
+            const labels = [
+              { name: "stale",       color: "ededed", description: "No submitter activity for 14 days; will close in 7" },
+              { name: "auto-closed", color: "cccccc", description: "Closed automatically by stale-icon-issues.yml" },
+            ];
+            for (const lbl of labels) {
+              try {
+                await github.rest.issues.createLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  ...lbl,
+                });
+                core.info(`created label ${lbl.name}`);
+              } catch (e) {
+                if (e.status === 422) {
+                  core.info(`label ${lbl.name} already exists`);
+                } else {
+                  throw e;
+                }
+              }
+            }
+
   stale:
     name: Mark and close blocked icon issues
     runs-on: ubuntu-latest
+    needs: ensure-labels
     steps:
-      - uses: actions/stale@v9
+      - name: Process triage:needs-svg
+        uses: actions/stale@v9
         with:
           days-before-issue-stale: 14
           days-before-issue-close: 7
           days-before-pr-stale: -1
           days-before-pr-close: -1
-          any-of-issue-labels: "triage:needs-svg,triage:needs-license,triage:invalid-svg,triage:svg-oversize"
+          any-of-issue-labels: "triage:needs-svg"
           exempt-issue-labels: "pinned,security,help-wanted,blocked-on-maintainer"
           stale-issue-label: stale
           close-issue-label: auto-closed
           close-issue-reason: not_planned
           remove-stale-when-updated: true
-          operations-per-run: 60
+          operations-per-run: 30
           ascending: true
           stale-issue-message: |
             This icon issue has been waiting on the submitter for 14 days, so it's being marked **stale**. If we don't hear back in another **7 days** it will close automatically.
 
-            Here's what we need from you to keep it open, based on the label:
+            **To keep it open:** paste the SVG source in a comment. Constraints:
+            - under 50KB
+            - valid `viewBox`
+            - no `<script>` tags or event handlers
+            - no embedded raster images (no base64 PNG / JPG)
 
-            - **`triage:needs-svg`** - paste the SVG source in a comment (under 50KB, valid `viewBox`, no scripts, no embedded raster images)
-            - **`triage:needs-license`** - link the brand assets / press page that confirms the mark is licensed for redistribution, or note the source we should record in the `guidelines` field
-            - **`triage:invalid-svg`** - the SVG we received didn't parse cleanly; please re-paste it or attach the file
-            - **`triage:svg-oversize`** - the SVG was over the 50KB limit; please re-export it with paths simplified or gradients flattened
-
-            Closing isn't a rejection. You're welcome to reopen anytime once you have the missing details.
+            Closing isn't a rejection. You're welcome to reopen anytime once you have the SVG ready.
           close-issue-message: |
-            Closing as `not-planned` since we haven't heard back for 21 days. Happy to revisit if you reopen this with the missing details. Thanks for your interest in thesvg.
+            Closing as `not-planned` since we haven't heard back for 21 days. Happy to revisit if you reopen this with the SVG. Thanks for your interest in thesvg.
+
+      - name: Process triage:needs-license
+        uses: actions/stale@v9
+        with:
+          days-before-issue-stale: 14
+          days-before-issue-close: 7
+          days-before-pr-stale: -1
+          days-before-pr-close: -1
+          any-of-issue-labels: "triage:needs-license"
+          exempt-issue-labels: "pinned,security,help-wanted,blocked-on-maintainer"
+          stale-issue-label: stale
+          close-issue-label: auto-closed
+          close-issue-reason: not_planned
+          remove-stale-when-updated: true
+          operations-per-run: 30
+          ascending: true
+          stale-issue-message: |
+            This icon issue has been waiting on the submitter for 14 days, so it's being marked **stale**. If we don't hear back in another **7 days** it will close automatically.
+
+            **To keep it open:** link the brand assets / press page that confirms the mark is licensed for redistribution, or note the source we should record in the `guidelines` field (for example a Wikimedia Commons file page, a public brand site, or the brand's own /press route).
+
+            Closing isn't a rejection. You're welcome to reopen anytime with the licensing detail.
+          close-issue-message: |
+            Closing as `not-planned` since we haven't heard back for 21 days. Happy to revisit if you reopen this with a licensing source. Thanks for your interest in thesvg.
+
+      - name: Process triage:invalid-svg
+        uses: actions/stale@v9
+        with:
+          days-before-issue-stale: 14
+          days-before-issue-close: 7
+          days-before-pr-stale: -1
+          days-before-pr-close: -1
+          any-of-issue-labels: "triage:invalid-svg"
+          exempt-issue-labels: "pinned,security,help-wanted,blocked-on-maintainer"
+          stale-issue-label: stale
+          close-issue-label: auto-closed
+          close-issue-reason: not_planned
+          remove-stale-when-updated: true
+          operations-per-run: 30
+          ascending: true
+          stale-issue-message: |
+            This icon issue has been waiting on the submitter for 14 days, so it's being marked **stale**. If we don't hear back in another **7 days** it will close automatically.
+
+            **To keep it open:** the SVG we received didn't parse cleanly. Please re-paste it as raw SVG source (not a screenshot, not a PDF export) and double check it has a top-level `<svg>` element and a valid `viewBox`.
+
+            Closing isn't a rejection. You're welcome to reopen anytime with a clean SVG.
+          close-issue-message: |
+            Closing as `not-planned` since we haven't heard back for 21 days. Happy to revisit if you reopen with a parseable SVG. Thanks for your interest in thesvg.
+
+      - name: Process triage:svg-oversize
+        uses: actions/stale@v9
+        with:
+          days-before-issue-stale: 14
+          days-before-issue-close: 7
+          days-before-pr-stale: -1
+          days-before-pr-close: -1
+          any-of-issue-labels: "triage:svg-oversize"
+          exempt-issue-labels: "pinned,security,help-wanted,blocked-on-maintainer"
+          stale-issue-label: stale
+          close-issue-label: auto-closed
+          close-issue-reason: not_planned
+          remove-stale-when-updated: true
+          operations-per-run: 30
+          ascending: true
+          stale-issue-message: |
+            This icon issue has been waiting on the submitter for 14 days, so it's being marked **stale**. If we don't hear back in another **7 days** it will close automatically.
+
+            **To keep it open:** the submitted SVG was over the 50KB limit. Common fixes:
+            - run it through [SVGO](https://github.com/svg/svgo) (default config is fine)
+            - flatten or simplify gradients
+            - remove off-canvas paths and editor metadata
+            - if it's a wordmark with a lot of text, convert to outlined paths and simplify
+
+            Closing isn't a rejection. You're welcome to reopen anytime with a smaller export.
+          close-issue-message: |
+            Closing as `not-planned` since we haven't heard back for 21 days. Happy to revisit if you reopen with an SVG under 50KB. Thanks for your interest in thesvg.
