@@ -64705,6 +64705,23 @@
     "collection": "brands"
   },
   {
+    "slug": "intercontinental",
+    "title": "InterContinental Hotels Group",
+    "aliases": [],
+    "hex": "002D5C",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/intercontinental/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.ihg.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AInterContinental-Hotels-Group-Logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "intermarche",
     "title": "Intermarche",
     "aliases": [],
