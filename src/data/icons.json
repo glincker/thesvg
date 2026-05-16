@@ -49824,6 +49824,23 @@
     "collection": "brands"
   },
   {
+    "slug": "fanta",
+    "title": "Fanta",
+    "aliases": [],
+    "hex": "F36F21",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/fanta/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.fanta.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AFanta_2023.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "fantom",
     "title": "Fantom",
     "aliases": [],
