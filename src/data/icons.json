@@ -75141,6 +75141,23 @@
     "collection": "brands"
   },
   {
+    "slug": "metlife",
+    "title": "MetLife",
+    "aliases": [],
+    "hex": "0090DA",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/metlife/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.metlife.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AMetLife-Logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "metro",
     "title": "Metro",
     "aliases": [],
