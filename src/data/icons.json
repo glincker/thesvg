@@ -65384,6 +65384,23 @@
     "collection": "brands"
   },
   {
+    "slug": "itau",
+    "title": "Itaú",
+    "aliases": [],
+    "hex": "EC7000",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/itau/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.itau.com.br",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ABanco_Ita%C3%BA_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "itchdotio",
     "title": "Itch.io",
     "aliases": [],
