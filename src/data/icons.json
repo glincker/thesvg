@@ -103547,6 +103547,23 @@
     "collection": "brands"
   },
   {
+    "slug": "viewsonic",
+    "title": "ViewSonic",
+    "aliases": [],
+    "hex": "660099",
+    "categories": [
+      "Hardware"
+    ],
+    "variants": {
+      "default": "/icons/viewsonic/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.viewsonic.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AViewSonic_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "viggle",
     "title": "Viggle",
     "aliases": [],
