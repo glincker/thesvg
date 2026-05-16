@@ -5895,6 +5895,23 @@
     "collection": "brands"
   },
   {
+    "slug": "avalanche",
+    "title": "Avalanche",
+    "aliases": [],
+    "hex": "E84142",
+    "categories": [
+      "Crypto"
+    ],
+    "variants": {
+      "default": "/icons/avalanche/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.avax.network",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AAvalanche_Blockchain_Logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "avaloniaui",
     "title": "AvaloniaUI",
     "aliases": [],
