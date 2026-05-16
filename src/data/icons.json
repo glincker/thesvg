@@ -97044,6 +97044,23 @@
     "collection": "brands"
   },
   {
+    "slug": "standard-chartered",
+    "title": "Standard Chartered",
+    "aliases": [],
+    "hex": "0473EA",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/standard-chartered/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.sc.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AStandard_Chartered_%282021%29.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "standard-resume",
     "title": "Standard Resume",
     "aliases": [],
