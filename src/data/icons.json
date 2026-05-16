@@ -68550,6 +68550,23 @@
     "collection": "brands"
   },
   {
+    "slug": "kit-kat",
+    "title": "KitKat",
+    "aliases": [],
+    "hex": "DA291C",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/kit-kat/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.kitkat.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AKitKat_US_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "kitsu",
     "title": "Kitsu",
     "aliases": [],
