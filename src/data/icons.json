@@ -52390,6 +52390,23 @@
     "collection": "brands"
   },
   {
+    "slug": "fusion-360",
+    "title": "Fusion 360",
+    "aliases": [],
+    "hex": "FF7B00",
+    "categories": [
+      "Design"
+    ],
+    "variants": {
+      "default": "/icons/fusion-360/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.autodesk.com/products/fusion-360",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AFusion360_Logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "fusionauth",
     "title": "FusionAuth",
     "aliases": [],
