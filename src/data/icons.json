@@ -5732,6 +5732,23 @@
     "collection": "brands"
   },
   {
+    "slug": "autodesk-inventor",
+    "title": "Autodesk Inventor",
+    "aliases": [],
+    "hex": "FAA21B",
+    "categories": [
+      "Design"
+    ],
+    "variants": {
+      "default": "/icons/autodesk-inventor/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.autodesk.com/products/inventor",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AAutodesk_Inventor_Logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "autodesk-maya",
     "title": "Autodesk Maya",
     "aliases": [],
