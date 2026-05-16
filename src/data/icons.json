@@ -72906,6 +72906,23 @@
     "collection": "brands"
   },
   {
+    "slug": "marvel-comics",
+    "title": "Marvel Comics",
+    "aliases": [],
+    "hex": "ED1D24",
+    "categories": [
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/marvel-comics/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.marvel.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AMarvel_Comics_2024_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "marvelapp",
     "title": "MarvelApp",
     "aliases": [],
