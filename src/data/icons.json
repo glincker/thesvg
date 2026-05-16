@@ -48869,6 +48869,23 @@
     "collection": "brands"
   },
   {
+    "slug": "eth-zurich",
+    "title": "ETH Zurich",
+    "aliases": [],
+    "hex": "1F407A",
+    "categories": [
+      "Education"
+    ],
+    "variants": {
+      "default": "/icons/eth-zurich/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://ethz.ch",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AETH_Z%C3%BCrich_Logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "ethereum",
     "title": "Ethereum",
     "aliases": [],
