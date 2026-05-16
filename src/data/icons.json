@@ -38108,6 +38108,23 @@
     "collection": "brands"
   },
   {
+    "slug": "british-telecom",
+    "title": "BT",
+    "aliases": [],
+    "hex": "6400AA",
+    "categories": [
+      "Communication"
+    ],
+    "variants": {
+      "default": "/icons/british-telecom/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.bt.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ABT_1991_wordmark.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "broadcom",
     "title": "Broadcom",
     "aliases": [],
