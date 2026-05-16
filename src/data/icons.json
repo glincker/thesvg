@@ -61478,6 +61478,23 @@
     "collection": "brands"
   },
   {
+    "slug": "heineken",
+    "title": "Heineken",
+    "aliases": [],
+    "hex": "008301",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/heineken/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.heineken.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AHeineken_Beer_-_logo_vertical_%28Netherlands%2C_1991%29.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "helium",
     "title": "Helium",
     "aliases": [],
