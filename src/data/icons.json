@@ -107037,6 +107037,23 @@
     "collection": "brands"
   },
   {
+    "slug": "world-bank",
+    "title": "World Bank",
+    "aliases": [],
+    "hex": "002F6C",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/world-bank/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.worldbank.org",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ALogo_The_World_Bank.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "world-health-organization",
     "title": "World Health Organization",
     "aliases": [],
