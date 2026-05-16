@@ -102195,6 +102195,23 @@
     "collection": "brands"
   },
   {
+    "slug": "uefa-champions-league",
+    "title": "UEFA Champions League",
+    "aliases": [],
+    "hex": "00006B",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/uefa-champions-league/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.uefa.com/uefachampionsleague",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AUEFA_Champions_League_Logo_Wordmark.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "ufc",
     "title": "UFC",
     "aliases": [],
