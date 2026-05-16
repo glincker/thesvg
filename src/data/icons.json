@@ -61056,6 +61056,23 @@
     "collection": "brands"
   },
   {
+    "slug": "harvard",
+    "title": "Harvard University",
+    "aliases": [],
+    "hex": "A41034",
+    "categories": [
+      "Education"
+    ],
+    "variants": {
+      "default": "/icons/harvard/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.harvard.edu",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AHarvard_Film_Archive_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "hashcat",
     "title": "Hashcat",
     "aliases": [],
