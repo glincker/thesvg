@@ -89549,6 +89549,23 @@
     "collection": "brands"
   },
   {
+    "slug": "reuters",
+    "title": "Reuters",
+    "aliases": [],
+    "hex": "FF8000",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/reuters/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.reuters.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AReuters_logo_2024.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "revanced",
     "title": "ReVanced",
     "aliases": [],
