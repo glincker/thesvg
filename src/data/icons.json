@@ -48570,6 +48570,23 @@
     "collection": "brands"
   },
   {
+    "slug": "electronic-arts",
+    "title": "Electronic Arts",
+    "aliases": [],
+    "hex": "FF4747",
+    "categories": [
+      "Gaming"
+    ],
+    "variants": {
+      "default": "/icons/electronic-arts/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.ea.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AElectronic_Arts_Logo_Blue.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "elegoo",
     "title": "Elegoo",
     "aliases": [],
