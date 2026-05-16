@@ -80001,6 +80001,23 @@
     "collection": "brands"
   },
   {
+    "slug": "onshape",
+    "title": "Onshape",
+    "aliases": [],
+    "hex": "1976D2",
+    "categories": [
+      "Design"
+    ],
+    "variants": {
+      "default": "/icons/onshape/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.onshape.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AOnshape_corporate_logo_2015.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "onstar",
     "title": "OnStar",
     "aliases": [],
