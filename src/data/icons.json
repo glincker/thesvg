@@ -36027,6 +36027,23 @@
     "collection": "brands"
   },
   {
+    "slug": "bbc-news",
+    "title": "BBC News",
+    "aliases": [],
+    "hex": "BB1919",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/bbc-news/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.bbc.com/news",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ABBC_News_%282008%29.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "beacon",
     "title": "Beacon",
     "aliases": [],
