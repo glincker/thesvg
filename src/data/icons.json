@@ -48649,6 +48649,23 @@
     "collection": "brands"
   },
   {
+    "slug": "eli-lilly",
+    "title": "Eli Lilly",
+    "aliases": [],
+    "hex": "E1241C",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/eli-lilly/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.lilly.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AEli_Lilly_and_Company.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "elixir",
     "title": "Elixir",
     "aliases": [],
