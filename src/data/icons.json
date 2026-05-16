@@ -39609,6 +39609,23 @@
     "collection": "brands"
   },
   {
+    "slug": "cathay-pacific",
+    "title": "Cathay Pacific",
+    "aliases": [],
+    "hex": "006564",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/cathay-pacific/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.cathaypacific.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ACathay_Pacific_Ltd._logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "cbc",
     "title": "CBC",
     "aliases": [
