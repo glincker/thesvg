@@ -80499,6 +80499,23 @@
     "collection": "brands"
   },
   {
+    "slug": "ola-cabs",
+    "title": "Ola Cabs",
+    "aliases": [],
+    "hex": "00C775",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/ola-cabs/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.olacabs.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AOla_Cabs_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "ollama",
     "title": "Ollama",
     "aliases": [],
