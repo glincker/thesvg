@@ -94588,6 +94588,23 @@
     "collection": "brands"
   },
   {
+    "slug": "skechers",
+    "title": "Skechers",
+    "aliases": [],
+    "hex": "EE2C2A",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/skechers/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.skechers.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ASkechers.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "skeleton",
     "title": "Skeleton",
     "aliases": [],
