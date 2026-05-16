@@ -81184,6 +81184,23 @@
     "collection": "brands"
   },
   {
+    "slug": "onelogin",
+    "title": "OneLogin",
+    "aliases": [],
+    "hex": "1C1F2A",
+    "categories": [
+      "Auth"
+    ],
+    "variants": {
+      "default": "/icons/onelogin/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.onelogin.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AOneLogin_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "oneplus",
     "title": "OnePlus",
     "aliases": [],
