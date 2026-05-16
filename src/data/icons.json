@@ -93260,6 +93260,23 @@
     "collection": "brands"
   },
   {
+    "slug": "sk-hynix",
+    "title": "SK Hynix",
+    "aliases": [],
+    "hex": "FF0000",
+    "categories": [
+      "Hardware"
+    ],
+    "variants": {
+      "default": "/icons/sk-hynix/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.skhynix.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ASK_Hynix.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "skaffold",
     "title": "Skaffold",
     "aliases": [],
