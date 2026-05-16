@@ -92748,6 +92748,23 @@
     "collection": "brands"
   },
   {
+    "slug": "santander",
+    "title": "Santander",
+    "aliases": [],
+    "hex": "EC0000",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/santander/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.santander.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ABanco_santander_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "sap",
     "title": "SAP",
     "aliases": [],
