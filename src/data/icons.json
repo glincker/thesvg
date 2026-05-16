@@ -91190,6 +91190,23 @@
     "collection": "brands"
   },
   {
+    "slug": "rivian",
+    "title": "Rivian",
+    "aliases": [],
+    "hex": "0066B2",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/rivian/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://rivian.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ARivian_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "roadmapdotsh",
     "title": "roadmap.sh",
     "aliases": [],
