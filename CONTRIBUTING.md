@@ -7,14 +7,36 @@ get started.
 
 ### Submit a New Icon
 
-The easiest way to contribute is to submit a new brand icon:
+You have two options:
+
+**A. Via the submit form** (easiest):
 
 1. Go to [thesvg.org/submit](https://thesvg.org/submit)
-2. Upload the SVG file
-3. Fill in the brand name, category, and website URL
-4. Submit for review
+2. Upload the SVG, fill in the brand name, category, and website URL
+3. Submit — this opens a triaged issue
 
-**Requirements for icon submissions:**
+**B. Via a direct PR** (faster if you're comfortable with git):
+
+1. Fork the repo and branch off `main`: `git checkout -b feat/icon-{slug}`
+2. Drop the SVG at `public/icons/{slug}/default.svg`
+3. Add an entry to `src/data/icons.json` at the correct alphabetical position, following the schema:
+   ```json
+   {
+     "slug": "your-brand",
+     "title": "Your Brand",
+     "aliases": [],
+     "hex": "F97316",
+     "categories": ["DevTool"],
+     "variants": { "default": "/icons/your-brand/default.svg" },
+     "license": "CC0-1.0",
+     "url": "https://yourbrand.com",
+     "collection": "brands",
+     "dateAdded": "2026-05-16"
+   }
+   ```
+4. Open a PR titled `feat: add {slug} icon`. The triage workflow will auto-label it; if everything passes (`Validate SVG`, `Lint & Build`), it'll auto-merge.
+
+**Requirements for icon submissions (both paths):**
 
 - SVG format only (no PNG, JPG, etc.)
 - Must be an official brand logo or icon
@@ -22,6 +44,8 @@ The easiest way to contribute is to submit a new brand icon:
 - File size under 50KB
 - No embedded `<script>` tags, event handlers, or `javascript:` URIs
 - No raster images embedded in the SVG
+- Brand domain at least 30 days old (we reject fresh-spun-up sites)
+- One valid category from the [issue template's dropdown](.github/ISSUE_TEMPLATE/icon_request.yml)
 - Preferably optimized with [SVGO](https://github.com/svg/svgo)
 
 ### Report an Issue

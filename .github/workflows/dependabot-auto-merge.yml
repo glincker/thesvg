@@ -1,16 +1,24 @@
 name: Dependabot auto-merge
 
-# Auto-enables GitHub's native auto-merge on safe Dependabot PRs so they
-# merge themselves once CI passes. The human only sees major bumps and
-# production minor bumps.
+# Auto-enables GitHub's native auto-merge on Dependabot PRs that match
+# our safety bands, so they merge themselves once CI passes. CI is the
+# real safety net here: every auto-merge still has to pass Lint & Build
+# and Validate SVG. The classification below is just about which bumps
+# we never want a human to gate on.
 #
-# Safe means:
-#   - Any patch update (both runtime and dev dependencies)
-#   - Any minor update on a dev-only dependency
-#   - GitHub Actions bumps of any size (low blast radius, mostly version
-#     pinning)
+# Auto-merged:
+#   - Any patch update (runtime or dev)
+#   - Any minor update (runtime or dev) — CI catches the rest
+#   - Any update on a dev-only dependency, including majors (we'll catch
+#     real breakage in Lint & Build before it can hit anyone)
+#   - Any GitHub Actions bump
 #
-# Anything else stays open for manual review with a "needs-review" label.
+# Labeled needs-review (human merges):
+#   - Production major bumps only — the one class that warrants reading
+#     the release notes before shipping
+#
+# This tier matters for autonomous-mode: nobody should need to babysit
+# the repo for routine dependency updates.
 
 on:
   pull_request:
@@ -34,7 +42,8 @@ jobs:
       - name: Enable auto-merge on safe updates
         if: |
           steps.meta.outputs.update-type == 'version-update:semver-patch' ||
-          (steps.meta.outputs.update-type == 'version-update:semver-minor' && steps.meta.outputs.dependency-type == 'direct:development') ||
+          steps.meta.outputs.update-type == 'version-update:semver-minor' ||
+          steps.meta.outputs.dependency-type == 'direct:development' ||
           steps.meta.outputs.package-ecosystem == 'github_actions' ||
           steps.meta.outputs.package-ecosystem == 'github-actions'
         run: gh pr merge --auto --squash --delete-branch "$PR_URL"
@@ -42,19 +51,18 @@ jobs:
           PR_URL: ${{ github.event.pull_request.html_url }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Label majors and production minors for manual review
+      - name: Label production majors for manual review
         if: |
-          steps.meta.outputs.update-type == 'version-update:semver-major' ||
-          (steps.meta.outputs.update-type == 'version-update:semver-minor' && steps.meta.outputs.dependency-type == 'direct:production')
+          steps.meta.outputs.update-type == 'version-update:semver-major' &&
+          steps.meta.outputs.dependency-type == 'direct:production'
         run: |
-          # Idempotently ensure the needs-review label exists before applying.
           gh label create "needs-review" \
             --color "fbca04" \
-            --description "Dependabot major bump or production minor; needs human review" \
+            --description "Dependabot production major bump; needs human review" \
             --repo "$GITHUB_REPOSITORY" \
             2>/dev/null || true
           gh pr edit "$PR_URL" --add-label "needs-review"
-          gh pr comment "$PR_URL" --body "This update crosses a boundary that needs human review (major bump, or minor bump on a production dependency). Not auto-merging."
+          gh pr comment "$PR_URL" --body "This is a major bump on a production dependency. Not auto-merging — release notes worth a read first."
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
