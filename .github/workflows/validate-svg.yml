@@ -1,0 +1,138 @@
+name: Validate SVG
+
+# Fast pre-check for PRs that add or modify icon SVGs or the icons.json
+# catalog entry. Runs in seconds and surfaces malformed SVGs, oversized
+# files, embedded scripts, or icons.json drift long before the full
+# Lint & Build job finishes.
+#
+# This job is supplementary, not a replacement. Lint & Build still gates
+# merge; this just gives quick feedback on the most common submission
+# mistakes.
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "public/icons/**"
+      - "src/data/icons.json"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-svg-${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate added / changed SVGs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Install xmllint
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends libxml2-utils
+
+      - name: Compute changed SVGs
+        id: diff
+        run: |
+          base="${{ github.event.pull_request.base.sha }}"
+          changed=$(git diff --name-only --diff-filter=ACM "$base"...HEAD -- 'public/icons/**/*.svg' || true)
+          echo "changed<<EOF" >> $GITHUB_OUTPUT
+          echo "$changed" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+          if [ -z "$changed" ]; then
+            echo "(no SVG changes to validate)"
+          else
+            echo "Changed SVGs:"
+            echo "$changed" | sed 's/^/  /'
+          fi
+
+      - name: Validate each SVG
+        if: steps.diff.outputs.changed != ''
+        run: |
+          set -e
+          max_bytes=51200
+          fail=0
+          while IFS= read -r f; do
+            [ -z "$f" ] && continue
+            [ -f "$f" ] || continue
+            echo "::group::$f"
+            size=$(wc -c < "$f")
+            echo "size: $size bytes"
+            if [ "$size" -gt "$max_bytes" ]; then
+              echo "::error file=$f::SVG is $size bytes (limit is $max_bytes)"
+              fail=1
+            fi
+            # Well-formed XML
+            if ! xmllint --noout "$f"; then
+              echo "::error file=$f::SVG is not well-formed XML"
+              fail=1
+            fi
+            # Must contain <svg> and viewBox
+            if ! grep -q '<svg' "$f"; then
+              echo "::error file=$f::missing <svg> root element"
+              fail=1
+            fi
+            if ! grep -qi 'viewBox' "$f"; then
+              echo "::error file=$f::missing viewBox attribute"
+              fail=1
+            fi
+            # Must not contain <script>, event handlers, or raster data
+            if grep -qi '<script' "$f"; then
+              echo "::error file=$f::contains <script> element"
+              fail=1
+            fi
+            if grep -qiE 'on(load|click|error|mouse|focus|key|submit)=' "$f"; then
+              echo "::error file=$f::contains inline event handler"
+              fail=1
+            fi
+            if grep -q 'data:image/' "$f"; then
+              echo "::error file=$f::contains embedded raster (data:image)"
+              fail=1
+            fi
+            echo "::endgroup::"
+          done <<< "${{ steps.diff.outputs.changed }}"
+          if [ "$fail" -eq 1 ]; then
+            echo "::error::one or more SVGs failed validation"
+            exit 1
+          fi
+
+      - name: Validate icons.json structure
+        run: |
+          set -e
+          node -e '
+            const fs = require("fs");
+            const path = "src/data/icons.json";
+            const raw = fs.readFileSync(path, "utf8");
+            const data = JSON.parse(raw);
+            if (!Array.isArray(data)) throw new Error("icons.json is not an array");
+            const slugs = new Set();
+            let prevSlug = "";
+            const issues = [];
+            for (let i = 0; i < data.length; i++) {
+              const e = data[i];
+              if (!e.slug) issues.push(`#${i}: missing slug`);
+              if (!e.title) issues.push(`#${i} (${e.slug}): missing title`);
+              if (!e.hex || !/^[0-9A-Fa-f]{6}$/.test(e.hex)) issues.push(`#${i} (${e.slug}): bad hex ${e.hex}`);
+              if (!Array.isArray(e.categories)) issues.push(`#${i} (${e.slug}): categories not array`);
+              if (!e.variants || !e.variants.default) issues.push(`#${i} (${e.slug}): missing default variant`);
+              if (slugs.has(e.slug)) issues.push(`#${i} (${e.slug}): duplicate slug`);
+              slugs.add(e.slug);
+              if (prevSlug && e.slug < prevSlug) {
+                issues.push(`#${i} (${e.slug}): out of alphabetical order (after ${prevSlug})`);
+              }
+              prevSlug = e.slug;
+            }
+            if (issues.length) {
+              console.error("icons.json issues:");
+              for (const m of issues.slice(0, 50)) console.error("  " + m);
+              if (issues.length > 50) console.error(`  ...and ${issues.length - 50} more`);
+              process.exit(1);
+            }
+            console.log(`OK: ${data.length} entries, all valid`);
+          '
