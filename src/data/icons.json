@@ -38590,6 +38590,24 @@
     "collection": "brands"
   },
   {
+    "slug": "bybit",
+    "title": "Bybit",
+    "aliases": [],
+    "hex": "F6A500",
+    "categories": [
+      "Crypto",
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/bybit/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.bybit.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File:Bybit_Logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "byju-s",
     "title": "Byju's",
     "aliases": [],
