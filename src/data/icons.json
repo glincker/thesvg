@@ -66082,6 +66082,23 @@
     "collection": "brands"
   },
   {
+    "slug": "johnson-and-johnson",
+    "title": "Johnson & Johnson",
+    "aliases": [],
+    "hex": "EE1C25",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/johnson-and-johnson/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.jnj.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AJohnson_and_Johnson_Logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "joomla",
     "title": "Joomla",
     "aliases": [],
