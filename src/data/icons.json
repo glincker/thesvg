@@ -57806,6 +57806,23 @@
     "collection": "brands"
   },
   {
+    "slug": "general-mills",
+    "title": "General Mills",
+    "aliases": [],
+    "hex": "0073D1",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/general-mills/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.generalmills.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AGeneral_Mills_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "general-motors",
     "title": "General Motors",
     "aliases": [],
