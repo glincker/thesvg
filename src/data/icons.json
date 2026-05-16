@@ -36559,6 +36559,23 @@
     "collection": "brands"
   },
   {
+    "slug": "bethesda",
+    "title": "Bethesda Game Studios",
+    "aliases": [],
+    "hex": "DC1F22",
+    "categories": [
+      "Gaming"
+    ],
+    "variants": {
+      "default": "/icons/bethesda/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://bethesda.net",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ABethesda_Game_Studios_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "better-auth",
     "title": "Better Auth",
     "aliases": [],
