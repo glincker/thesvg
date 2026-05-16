@@ -95427,6 +95427,23 @@
     "collection": "brands"
   },
   {
+    "slug": "sony-group",
+    "title": "Sony Group",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/sony-group/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.sony.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ASony_Group_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "sophnet",
     "title": "SophNet",
     "aliases": [],
