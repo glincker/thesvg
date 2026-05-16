@@ -82693,6 +82693,23 @@
     "collection": "brands"
   },
   {
+    "slug": "paramount-pictures",
+    "title": "Paramount Pictures",
+    "aliases": [],
+    "hex": "1E3A8A",
+    "categories": [
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/paramount-pictures/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.paramount.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AParamount_Pictures_2002_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "paramountplus",
     "title": "Paramount+",
     "aliases": [],
