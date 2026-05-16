@@ -109584,6 +109584,23 @@
     "collection": "brands"
   },
   {
+    "slug": "yandex-taxi",
+    "title": "Yandex Taxi",
+    "aliases": [],
+    "hex": "FFCC00",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/yandex-taxi/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://taxi.yandex.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ALogo_yandex_taxi.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "yarn",
     "title": "Yarn",
     "aliases": [],
