@@ -105544,6 +105544,23 @@
     "collection": "brands"
   },
   {
+    "slug": "warner-bros",
+    "title": "Warner Bros.",
+    "aliases": [],
+    "hex": "00ADEF",
+    "categories": [
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/warner-bros/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.warnerbros.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AWarner_Bros._%282019%29_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "warp",
     "title": "Warp",
     "aliases": [],
