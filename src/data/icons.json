@@ -81089,6 +81089,23 @@
     "collection": "brands"
   },
   {
+    "slug": "office-depot",
+    "title": "Office Depot",
+    "aliases": [],
+    "hex": "CC0000",
+    "categories": [
+      "E-commerce"
+    ],
+    "variants": {
+      "default": "/icons/office-depot/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.officedepot.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AOffice_Depot_Office_Max_Logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "oh-dear",
     "title": "Oh Dear",
     "aliases": [],
