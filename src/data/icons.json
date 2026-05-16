@@ -49129,6 +49129,23 @@
     "collection": "brands"
   },
   {
+    "slug": "european-space-agency",
+    "title": "European Space Agency",
+    "aliases": [],
+    "hex": "003247",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/european-space-agency/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.esa.int",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AESA_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "european-union",
     "title": "European Union",
     "aliases": [
