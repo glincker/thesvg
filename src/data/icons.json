@@ -73766,6 +73766,23 @@
     "collection": "brands"
   },
   {
+    "slug": "mayo-clinic",
+    "title": "Mayo Clinic",
+    "aliases": [],
+    "hex": "002F87",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/mayo-clinic/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.mayoclinic.org",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AMayo_Clinic_2023_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "maytag",
     "title": "Maytag",
     "aliases": [],
