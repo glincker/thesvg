@@ -75871,6 +75871,23 @@
     "collection": "brands"
   },
   {
+    "slug": "mms",
+    "title": "M&M's",
+    "aliases": [],
+    "hex": "8B3F00",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/mms/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.mms.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AM%26M%27s_2022.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "mobilizon",
     "title": "Mobilizon",
     "aliases": [],
