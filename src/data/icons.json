@@ -44026,6 +44026,23 @@
     "collection": "brands"
   },
   {
+    "slug": "crowdstrike",
+    "title": "CrowdStrike",
+    "aliases": [],
+    "hex": "EE0000",
+    "categories": [
+      "Security"
+    ],
+    "variants": {
+      "default": "/icons/crowdstrike/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.crowdstrike.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ACrowdStrike_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "crunchbase",
     "title": "Crunchbase",
     "aliases": [],
