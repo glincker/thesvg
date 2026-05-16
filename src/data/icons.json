@@ -87353,6 +87353,23 @@
     "collection": "brands"
   },
   {
+    "slug": "punjab-national-bank",
+    "title": "Punjab National Bank",
+    "aliases": [],
+    "hex": "82181A",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/punjab-national-bank/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.pnbindia.in",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3APunjab_National_Bank.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "puppet",
     "title": "Puppet",
     "aliases": [],
