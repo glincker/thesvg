@@ -1,10 +1,10 @@
 # theSVG for Figma
 
-Browse and insert 4,000+ brand SVG logos directly into your Figma designs.
+Browse and insert 6,000+ brand SVG logos directly into your Figma designs.
 
 ## Features
 
-- Search across 4,000+ brand icons
+- Search across 6,000+ brand icons
 - Filter by category (AI, Analytics, Browser, CMS, etc.)
 - One-click insert into your canvas
 - Icons are inserted as editable vector nodes

@@ -1,7 +1,7 @@
 // theSVG Figma Plugin - Main thread (sandbox)
 // All network requests happen here to avoid CORS issues in the iframe
 
-const API_BASE = "https://www.thesvg.org";
+const API_BASE = "https://thesvg.org";
 
 interface SearchMessage {
   type: "search";
