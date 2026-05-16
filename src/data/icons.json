@@ -84161,6 +84161,24 @@
     "collection": "brands"
   },
   {
+    "slug": "playdate",
+    "title": "Playdate",
+    "aliases": [],
+    "hex": "FFC500",
+    "categories": [
+      "Gaming",
+      "Hardware"
+    ],
+    "variants": {
+      "default": "/icons/playdate/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://play.date",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3APlaydate_Logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "player-fm",
     "title": "Player FM",
     "aliases": [],
