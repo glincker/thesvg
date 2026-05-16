@@ -43094,6 +43094,23 @@
     "collection": "brands"
   },
   {
+    "slug": "cornell-university",
+    "title": "Cornell University",
+    "aliases": [],
+    "hex": "B31B1B",
+    "categories": [
+      "Education"
+    ],
+    "variants": {
+      "default": "/icons/cornell-university/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.cornell.edu",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ACornell_%22C%22_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "corona-engine",
     "title": "Corona Engine",
     "aliases": [],
