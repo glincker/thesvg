@@ -60841,6 +60841,24 @@
     "collection": "brands"
   },
   {
+    "slug": "hancom",
+    "title": "Hancom",
+    "aliases": [],
+    "hex": "ED1C24",
+    "categories": [
+      "Productivity",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/hancom/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.hancom.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AHancom_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "handlebarsdotjs",
     "title": "Handlebars.js",
     "aliases": [],
