@@ -86173,6 +86173,23 @@
     "collection": "brands"
   },
   {
+    "slug": "pokerstars",
+    "title": "PokerStars",
+    "aliases": [],
+    "hex": "C7160D",
+    "categories": [
+      "Gaming"
+    ],
+    "variants": {
+      "default": "/icons/pokerstars/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.pokerstars.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3APokerStars_emblem.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "polar",
     "title": "Polar",
     "aliases": [],
