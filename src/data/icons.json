@@ -46181,6 +46181,23 @@
     "collection": "brands"
   },
   {
+    "slug": "disney-plus",
+    "title": "Disney+",
+    "aliases": [],
+    "hex": "113CCF",
+    "categories": [
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/disney-plus/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.disneyplus.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ADisney%2B_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "disneyplus",
     "title": "Disney+",
     "aliases": [],
