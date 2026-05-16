@@ -86142,6 +86142,23 @@
     "collection": "brands"
   },
   {
+    "slug": "pluto-tv",
+    "title": "Pluto TV",
+    "aliases": [],
+    "hex": "FFE000",
+    "categories": [
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/pluto-tv/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://pluto.tv",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3APluto_TV_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "pm2",
     "title": "PM2",
     "aliases": [],
