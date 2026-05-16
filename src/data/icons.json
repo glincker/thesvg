@@ -93645,6 +93645,24 @@
     "collection": "brands"
   },
   {
+    "slug": "smmix",
+    "title": "SMMIX",
+    "aliases": [
+      "smmix.tools"
+    ],
+    "hex": "FD5786",
+    "categories": [
+      "AI"
+    ],
+    "variants": {
+      "default": "/icons/smmix/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://smmix.tools",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "smoothcomp",
     "title": "Smoothcomp",
     "aliases": [],
