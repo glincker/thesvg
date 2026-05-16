@@ -1,5 +1,11 @@
 # @thesvg/cli
 
+## 0.5.4
+
+### Patch Changes
+
+- fix(cli): pin tsconfig types to node so the release build resolves @types/node ([#341](https://github.com/glincker/thesvg/issues/341))
+
 ## 0.5.3
 
 ### Patch Changes
