@@ -22654,6 +22654,23 @@
     "collection": "brands"
   },
   {
+    "slug": "axa",
+    "title": "AXA",
+    "aliases": [],
+    "hex": "00008F",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/axa/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.axa.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AAXA_Logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "axiom",
     "title": "Axiom",
     "aliases": [],
