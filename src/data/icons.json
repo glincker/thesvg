@@ -79733,6 +79733,23 @@
     "collection": "brands"
   },
   {
+    "slug": "novartis",
+    "title": "Novartis",
+    "aliases": [],
+    "hex": "0460A9",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/novartis/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.novartis.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ANovartis-Logo-2023.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "novelai",
     "title": "NovelAI",
     "aliases": [],
