@@ -93080,6 +93080,23 @@
     "collection": "brands"
   },
   {
+    "slug": "sberbank",
+    "title": "Sberbank",
+    "aliases": [],
+    "hex": "21A038",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/sberbank/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.sberbank.ru",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ASberbank_Logo_2020.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "scala",
     "title": "Scala",
     "aliases": [],
