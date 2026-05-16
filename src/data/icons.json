@@ -42973,6 +42973,23 @@
     "collection": "brands"
   },
   {
+    "slug": "converse",
+    "title": "Converse",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/converse/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.converse.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ACONVERSE_LOGO_BLUE.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "convertio",
     "title": "Convertio",
     "aliases": [],
