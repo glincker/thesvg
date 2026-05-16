@@ -88390,6 +88390,23 @@
     "collection": "brands"
   },
   {
+    "slug": "qatar-energy",
+    "title": "QatarEnergy",
+    "aliases": [],
+    "hex": "FAB916",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/qatar-energy/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.qatarenergy.qa",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AQatarEnergy_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "qbittorrent",
     "title": "qbittorrent",
     "aliases": [],
