@@ -106747,6 +106747,23 @@
     "collection": "brands"
   },
   {
+    "slug": "westpac",
+    "title": "Westpac",
+    "aliases": [],
+    "hex": "DA1710",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/westpac/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.westpac.com.au",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AWestpac_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "wetransfer",
     "title": "WeTransfer",
     "aliases": [],
