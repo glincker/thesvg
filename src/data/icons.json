@@ -44418,6 +44418,23 @@
     "collection": "brands"
   },
   {
+    "slug": "dai-stablecoin",
+    "title": "Dai",
+    "aliases": [],
+    "hex": "F5AC37",
+    "categories": [
+      "Crypto"
+    ],
+    "variants": {
+      "default": "/icons/dai-stablecoin/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://makerdao.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ADAI%2C_Stablecoin_of_MAKER_DAO.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "dailydotdev",
     "title": "daily.dev",
     "aliases": [],
