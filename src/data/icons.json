@@ -62033,6 +62033,23 @@
     "collection": "brands"
   },
   {
+    "slug": "hero-motocorp",
+    "title": "Hero MotoCorp",
+    "aliases": [],
+    "hex": "DD0000",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/hero-motocorp/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.heromotocorp.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AHero_MotoCorp.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "heroic-games-launcher",
     "title": "Heroic Games Launcher",
     "aliases": [],
