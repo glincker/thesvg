@@ -73535,6 +73535,23 @@
     "collection": "brands"
   },
   {
+    "slug": "maruti-suzuki",
+    "title": "Maruti Suzuki",
+    "aliases": [],
+    "hex": "EE2722",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/maruti-suzuki/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.marutisuzuki.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AMaruti_Suzuki_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "marvel-comics",
     "title": "Marvel Comics",
     "aliases": [],
