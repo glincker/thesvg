@@ -38135,6 +38135,23 @@
     "collection": "brands"
   },
   {
+    "slug": "bravo-tv",
+    "title": "Bravo",
+    "aliases": [],
+    "hex": "62388E",
+    "categories": [
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/bravo-tv/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.bravotv.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ABravo_2017_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "breaker",
     "title": "Breaker",
     "aliases": [],
