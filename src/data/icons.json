@@ -61682,6 +61682,23 @@
     "dateAdded": "2026-05-16"
   },
   {
+    "slug": "heinz",
+    "title": "Heinz",
+    "aliases": [],
+    "hex": "EC1B22",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/heinz/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.heinz.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AHeinz-logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "helium",
     "title": "Helium",
     "aliases": [],
