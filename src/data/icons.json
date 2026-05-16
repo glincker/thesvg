@@ -36541,6 +36541,23 @@
     "collection": "brands"
   },
   {
+    "slug": "best-western",
+    "title": "Best Western",
+    "aliases": [],
+    "hex": "002664",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/best-western/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.bestwestern.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ABest_Western_Hotels_%26_Resorts_icon.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "betfair",
     "title": "Betfair",
     "aliases": [],
