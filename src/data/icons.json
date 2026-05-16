@@ -67371,6 +67371,23 @@
     "collection": "brands"
   },
   {
+    "slug": "kakao-bank",
+    "title": "KakaoBank",
+    "aliases": [],
+    "hex": "FFCC00",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/kakao-bank/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.kakaobank.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AKakaoBank_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "kakaotalk",
     "title": "KakaoTalk",
     "aliases": [
