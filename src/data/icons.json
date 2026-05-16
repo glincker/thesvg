@@ -6092,6 +6092,23 @@
     "collection": "brands"
   },
   {
+    "slug": "aviva",
+    "title": "Aviva",
+    "aliases": [],
+    "hex": "FFE100",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/aviva/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.aviva.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AAviva_Full_Logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "avm",
     "title": "AVM",
     "aliases": [],
