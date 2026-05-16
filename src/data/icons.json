@@ -43628,6 +43628,23 @@
     "collection": "brands"
   },
   {
+    "slug": "credit-suisse",
+    "title": "Credit Suisse",
+    "aliases": [],
+    "hex": "00485F",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/credit-suisse/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.credit-suisse.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AAltes_Logo_Credit_Suisse.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "credly",
     "title": "Credly",
     "aliases": [],
