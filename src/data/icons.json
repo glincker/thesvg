@@ -107929,6 +107929,23 @@
     "collection": "brands"
   },
   {
+    "slug": "wildberries",
+    "title": "Wildberries",
+    "aliases": [],
+    "hex": "C8127C",
+    "categories": [
+      "E-commerce"
+    ],
+    "variants": {
+      "default": "/icons/wildberries/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.wildberries.ru",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AWildberries_2023_Pink.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "winamp",
     "title": "Winamp",
     "aliases": [],
