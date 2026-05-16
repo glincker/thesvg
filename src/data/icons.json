@@ -97301,6 +97301,23 @@
     "collection": "brands"
   },
   {
+    "slug": "staples",
+    "title": "Staples",
+    "aliases": [],
+    "hex": "CC0000",
+    "categories": [
+      "E-commerce"
+    ],
+    "variants": {
+      "default": "/icons/staples/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.staples.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AStaples%2C_Inc._logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "star-trek",
     "title": "Star Trek",
     "aliases": [],
