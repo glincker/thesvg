@@ -103497,6 +103497,23 @@
     "collection": "brands"
   },
   {
+    "slug": "uchicago",
+    "title": "University of Chicago",
+    "aliases": [],
+    "hex": "800000",
+    "categories": [
+      "Education"
+    ],
+    "variants": {
+      "default": "/icons/uchicago/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.uchicago.edu",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AUniversity_of_Chicago_wordmark.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "udacity",
     "title": "Udacity",
     "aliases": [],
