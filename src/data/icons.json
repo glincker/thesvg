@@ -70128,6 +70128,23 @@
     "collection": "brands"
   },
   {
+    "slug": "lg-energy-solution",
+    "title": "LG Energy Solution",
+    "aliases": [],
+    "hex": "A50034",
+    "categories": [
+      "Hardware"
+    ],
+    "variants": {
+      "default": "/icons/lg-energy-solution/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.lgensol.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ALG_Energy_Solution_logo_EN.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "li-ning",
     "title": "Li-Ning",
     "aliases": [],
