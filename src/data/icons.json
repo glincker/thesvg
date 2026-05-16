@@ -36041,6 +36041,23 @@
     "collection": "brands"
   },
   {
+    "slug": "bayer",
+    "title": "Bayer",
+    "aliases": [],
+    "hex": "10384F",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/bayer/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.bayer.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ALogo_Bayer.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "bazel",
     "title": "Bazel",
     "aliases": [],
