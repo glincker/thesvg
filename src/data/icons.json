@@ -58551,6 +58551,23 @@
     "collection": "brands"
   },
   {
+    "slug": "globo-tv",
+    "title": "Globo",
+    "aliases": [],
+    "hex": "FFCB05",
+    "categories": [
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/globo-tv/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://globo.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AGlobo_75.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "globus",
     "title": "Globus",
     "aliases": [],
