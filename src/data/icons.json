@@ -43170,6 +43170,23 @@
     "collection": "brands"
   },
   {
+    "slug": "coupang",
+    "title": "Coupang",
+    "aliases": [],
+    "hex": "E83036",
+    "categories": [
+      "E-commerce"
+    ],
+    "variants": {
+      "default": "/icons/coupang/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.coupang.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3ACoupang_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "coursera",
     "title": "Coursera",
     "aliases": [],
