@@ -83539,6 +83539,23 @@
     "collection": "brands"
   },
   {
+    "slug": "pfizer",
+    "title": "Pfizer",
+    "aliases": [],
+    "hex": "0093D0",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/pfizer/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.pfizer.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3APfizer.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "pfsense",
     "title": "pfSense",
     "aliases": [],
