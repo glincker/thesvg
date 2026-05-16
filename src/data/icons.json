@@ -107763,6 +107763,23 @@
     "collection": "brands"
   },
   {
+    "slug": "wistron",
+    "title": "Wistron",
+    "aliases": [],
+    "hex": "0066AB",
+    "categories": [
+      "Hardware"
+    ],
+    "variants": {
+      "default": "/icons/wistron/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.wistron.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AWistron_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "wix",
     "title": "Wix",
     "aliases": [],
