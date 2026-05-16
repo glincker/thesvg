@@ -5254,6 +5254,23 @@
     "collection": "brands"
   },
   {
+    "slug": "astrazeneca",
+    "title": "AstraZeneca",
+    "aliases": [],
+    "hex": "830051",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/astrazeneca/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.astrazeneca.com",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AAstrazeneca_text_logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "astro",
     "title": "Astro",
     "aliases": [],
