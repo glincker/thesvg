@@ -104554,6 +104554,23 @@
     "collection": "brands"
   },
   {
+    "slug": "wacheit",
+    "title": "WacheIt",
+    "aliases": [],
+    "hex": "FACC15",
+    "categories": [
+      "Analytics",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/wacheit/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://wacheit.com",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "wacom",
     "title": "Wacom",
     "aliases": [],
