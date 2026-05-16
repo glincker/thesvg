@@ -110233,6 +110233,23 @@
     "collection": "brands"
   },
   {
+    "slug": "zte",
+    "title": "ZTE",
+    "aliases": [],
+    "hex": "1C70B5",
+    "categories": [
+      "Hardware"
+    ],
+    "variants": {
+      "default": "/icons/zte/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.zte.com.cn",
+    "guidelines": "https://commons.wikimedia.org/wiki/File%3AZTE-logo.svg",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "zulip",
     "title": "Zulip",
     "aliases": [],
