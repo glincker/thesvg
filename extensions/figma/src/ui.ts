@@ -1,21 +1,29 @@
 // theSVG Figma Plugin - UI thread (iframe)
-// No network requests here - all fetches happen in the sandbox (main.ts)
-// to avoid CORS issues with the null-origin iframe
+// No network requests here; all fetches happen in the sandbox (main.ts).
 
-const CDN_BASE =
-  "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons";
+const CDN_ROOT = "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public";
 
 interface IconEntry {
   slug: string;
   title: string;
   categories: string[];
   variants: string[];
+  variantPaths: Record<string, string>;
+}
+
+interface RecentEntry {
+  slug: string;
+  title: string;
+  variant: string;
+  at: number;
 }
 
 // ---- State ----
 let currentQuery = "";
 let currentCategory = "all";
 let debounceTimer: ReturnType<typeof setTimeout> | null = null;
+let lastResults: IconEntry[] = [];
+let cachedRecents: RecentEntry[] = [];
 
 // ---- DOM refs ----
 const searchInput = document.getElementById("search") as HTMLInputElement;
@@ -23,8 +31,11 @@ const categorySelect = document.getElementById("category") as HTMLSelectElement;
 const grid = document.getElementById("grid") as HTMLDivElement;
 const status = document.getElementById("status") as HTMLDivElement;
 const loading = document.getElementById("loading") as HTMLDivElement;
+const recentsSection = document.getElementById("recents-section") as HTMLDivElement;
+const recentsRow = document.getElementById("recents-row") as HTMLDivElement;
+const recentsClear = document.getElementById("recents-clear") as HTMLButtonElement;
 
-// ---- Rendering ----
+// ---- Helpers ----
 function setLoading(show: boolean) {
   loading.style.display = show ? "flex" : "none";
   if (show) {
@@ -44,6 +55,68 @@ function escapeHtml(str: string): string {
   return div.innerHTML;
 }
 
+function postToSandbox(message: unknown) {
+  parent.postMessage({ pluginMessage: message }, "*");
+}
+
+// Build a preview URL using the actual variant path from icons.json.
+// Falls back to a guessed path when we don't have variantPaths (recents).
+function previewUrl(
+  slug: string,
+  variant = "default",
+  paths?: Record<string, string>
+) {
+  if (paths) {
+    const rel = paths[variant] || paths.default;
+    if (rel) return `${CDN_ROOT}${rel}`;
+  }
+  return `${CDN_ROOT}/icons/${encodeURIComponent(slug)}/${encodeURIComponent(variant)}.svg`;
+}
+
+// ---- Insert flow ----
+function insertIcon(slug: string, title: string, variant = "default") {
+  postToSandbox({ type: "insert", slug, name: title, variant });
+}
+
+// ---- Variant menu ----
+let openVariantMenu: HTMLDivElement | null = null;
+
+function closeVariantMenu() {
+  if (openVariantMenu) {
+    openVariantMenu.remove();
+    openVariantMenu = null;
+  }
+}
+
+function showVariantMenu(
+  anchor: HTMLElement,
+  icon: IconEntry
+) {
+  closeVariantMenu();
+  const menu = document.createElement("div");
+  menu.className = "variant-menu";
+  for (const v of icon.variants) {
+    const item = document.createElement("button");
+    item.className = "variant-item";
+    item.innerHTML = `
+      <img src="${previewUrl(icon.slug, v, icon.variantPaths)}" alt="${escapeHtml(v)}" />
+      <span>${escapeHtml(v)}</span>
+    `;
+    item.addEventListener("click", (e) => {
+      e.stopPropagation();
+      insertIcon(icon.slug, icon.title, v);
+      closeVariantMenu();
+    });
+    menu.appendChild(item);
+  }
+  const rect = anchor.getBoundingClientRect();
+  menu.style.left = `${Math.min(rect.left, window.innerWidth - 200)}px`;
+  menu.style.top = `${rect.bottom + 4}px`;
+  document.body.appendChild(menu);
+  openVariantMenu = menu;
+}
+
+// ---- Rendering ----
 function renderGrid(icons: IconEntry[]) {
   grid.innerHTML = "";
 
@@ -53,55 +126,74 @@ function renderGrid(icons: IconEntry[]) {
   }
 
   for (const icon of icons) {
-    const card = document.createElement("button");
+    const card = document.createElement("div");
     card.className = "icon-card";
-    card.title = `Insert ${icon.title}`;
     card.setAttribute("data-slug", icon.slug);
 
-    // Use jsDelivr CDN for preview (no CORS/redirect issues)
-    const previewUrl = `${CDN_BASE}/${encodeURIComponent(icon.slug)}/default.svg`;
+    const hasVariants = icon.variants.length > 1;
 
     card.innerHTML = `
-      <div class="icon-preview">
-        <img src="${previewUrl}" alt="${escapeHtml(icon.title)}" loading="lazy" />
-      </div>
-      <span class="icon-name">${escapeHtml(icon.title)}</span>
+      <button class="icon-card-main" title="Insert ${escapeHtml(icon.title)}">
+        <div class="icon-preview">
+          <img src="${previewUrl(icon.slug, "default", icon.variantPaths)}" alt="${escapeHtml(icon.title)}" loading="lazy" />
+        </div>
+        <span class="icon-name">${escapeHtml(icon.title)}</span>
+      </button>
+      ${
+        hasVariants
+          ? `<button class="variant-trigger" title="${icon.variants.length} variants" aria-label="Choose variant">${icon.variants.length}</button>`
+          : ""
+      }
     `;
 
-    card.addEventListener("click", () => {
-      // Tell the sandbox to fetch + insert
-      parent.postMessage(
-        {
-          pluginMessage: {
-            type: "insert",
-            slug: icon.slug,
-            name: icon.title,
-          },
-        },
-        "*"
-      );
-    });
+    const mainBtn = card.querySelector(".icon-card-main") as HTMLButtonElement;
+    mainBtn.addEventListener("click", () =>
+      insertIcon(icon.slug, icon.title)
+    );
+
+    if (hasVariants) {
+      const trigger = card.querySelector(
+        ".variant-trigger"
+      ) as HTMLButtonElement;
+      trigger.addEventListener("click", (e) => {
+        e.stopPropagation();
+        showVariantMenu(trigger, icon);
+      });
+    }
 
     grid.appendChild(card);
+  }
+}
+
+function renderRecents(recents: RecentEntry[]) {
+  cachedRecents = recents;
+  if (recents.length === 0) {
+    recentsSection.style.display = "none";
+    return;
+  }
+  recentsSection.style.display = "flex";
+  recentsRow.innerHTML = "";
+  for (const r of recents) {
+    const card = document.createElement("button");
+    card.className = "recent-card";
+    card.title = `Reinsert ${r.title}${r.variant !== "default" ? " (" + r.variant + ")" : ""}`;
+    card.innerHTML = `<img src="${previewUrl(r.slug, r.variant)}" alt="${escapeHtml(r.title)}" />`;
+    card.addEventListener("click", () => insertIcon(r.slug, r.title, r.variant));
+    recentsRow.appendChild(card);
   }
 }
 
 // ---- Search ----
 function performSearch() {
   setLoading(true);
-  parent.postMessage(
-    {
-      pluginMessage: {
-        type: "search",
-        query: currentQuery,
-        category: currentCategory,
-      },
-    },
-    "*"
-  );
+  postToSandbox({
+    type: "search",
+    query: currentQuery,
+    category: currentCategory,
+  });
 }
 
-// ---- Message handler (responses from sandbox) ----
+// ---- Sandbox responses ----
 window.onmessage = (event: MessageEvent) => {
   const msg = event.data.pluginMessage;
   if (!msg) return;
@@ -109,16 +201,24 @@ window.onmessage = (event: MessageEvent) => {
   if (msg.type === "search-results") {
     setLoading(false);
     const data = msg.data;
+    lastResults = data.icons;
     renderGrid(data.icons);
-    setStatus(
-      `${data.total.toLocaleString()} icon${data.total !== 1 ? "s" : ""}${currentQuery ? ` matching "${currentQuery}"` : ""}`
-    );
+    const total = data.total.toLocaleString();
+    const noun = data.total === 1 ? "icon" : "icons";
+    if (currentQuery) {
+      setStatus(`${total} ${noun} matching "${currentQuery}"`);
+    } else if (currentCategory !== "all") {
+      setStatus(`${total} ${noun} in ${currentCategory}`);
+    } else {
+      setStatus(`${total} ${noun} in the catalog`);
+    }
   }
 
   if (msg.type === "search-error") {
     setLoading(false);
     setStatus(`Error: ${msg.error}`);
-    grid.innerHTML = '<div class="empty">Failed to load icons</div>';
+    grid.innerHTML =
+      '<div class="empty">Failed to load icons. Check your connection.</div>';
   }
 
   if (msg.type === "categories") {
@@ -134,14 +234,15 @@ window.onmessage = (event: MessageEvent) => {
   if (msg.type === "insert-status") {
     const card = grid.querySelector(
       `[data-slug="${msg.slug}"]`
-    ) as HTMLButtonElement | null;
+    ) as HTMLDivElement | null;
     if (card) {
-      if (msg.status === "loading") {
-        card.classList.add("inserting");
-      } else {
-        card.classList.remove("inserting");
-      }
+      if (msg.status === "loading") card.classList.add("inserting");
+      else card.classList.remove("inserting");
     }
+  }
+
+  if (msg.type === "recents") {
+    renderRecents(msg.data);
   }
 };
 
@@ -157,6 +258,47 @@ categorySelect.addEventListener("change", () => {
   performSearch();
 });
 
+recentsClear.addEventListener("click", () => {
+  postToSandbox({ type: "clear-recents" });
+});
+
+// Insert first result on Enter from the search box
+searchInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && lastResults.length > 0) {
+    e.preventDefault();
+    const first = lastResults[0];
+    insertIcon(first.slug, first.title);
+  }
+});
+
+// Global keyboard shortcuts
+window.addEventListener("keydown", (e) => {
+  // Esc: close variant menu, then close plugin
+  if (e.key === "Escape") {
+    if (openVariantMenu) {
+      closeVariantMenu();
+      e.preventDefault();
+      return;
+    }
+    postToSandbox({ type: "close" });
+    return;
+  }
+  // Cmd/Ctrl+F focuses search
+  if ((e.metaKey || e.ctrlKey) && e.key === "f") {
+    e.preventDefault();
+    searchInput.focus();
+    searchInput.select();
+  }
+});
+
+// Click outside the variant menu closes it
+document.addEventListener("click", (e) => {
+  if (openVariantMenu && !openVariantMenu.contains(e.target as Node)) {
+    closeVariantMenu();
+  }
+});
+
 // ---- Init ----
-parent.postMessage({ pluginMessage: { type: "load-categories" } }, "*");
+postToSandbox({ type: "load-categories" });
+postToSandbox({ type: "load-recents" });
 performSearch();

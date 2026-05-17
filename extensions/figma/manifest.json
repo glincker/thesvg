@@ -7,7 +7,7 @@
   "ui": "build/ui.html",
   "documentAccess": "dynamic-page",
   "networkAccess": {
-    "allowedDomains": ["https://thesvg.org", "https://cdn.jsdelivr.net"],
-    "reasoning": "Fetches SVG brand icons from the theSVG API and loads icon previews from jsDelivr CDN"
+    "allowedDomains": ["https://cdn.jsdelivr.net"],
+    "reasoning": "Fetches the icon catalog and SVG files from the jsDelivr CDN mirror of the open-source theSVG repository"
   }
 }

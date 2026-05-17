@@ -6,9 +6,15 @@ Browse and insert 6,000+ brand SVG logos directly into your Figma designs.
 
 - Search across 6,000+ brand icons
 - Filter by category (AI, Analytics, Browser, CMS, etc.)
-- One-click insert into your canvas
-- Icons are inserted as editable vector nodes
-- Supports Figma light and dark themes
+- One-click insert as editable vector nodes
+- Variant picker for icons with light, dark, mono, or color versions (hover an icon, click the number badge in the corner)
+- Recent icons row: the last 12 you inserted, kept across sessions
+- Keyboard shortcuts: `Enter` inserts the first result, `Cmd/Ctrl+F` focuses search, `Esc` closes the plugin
+- Adapts to Figma light and dark themes automatically
+
+## How it works
+
+The plugin pulls the icon catalog and SVG files from the jsDelivr CDN mirror of the [open-source theSVG repo](https://github.com/glincker/thesvg). No traffic touches the thesvg.org website, so the plugin keeps working at full speed even during peak usage of the site. The CDN cache refreshes every few hours, so newly merged icons appear in the plugin within roughly a day of landing on `main`.
 
 ## Development
 

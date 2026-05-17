@@ -1,6 +1,6 @@
 {
   "name": "thesvg-figma",
-  "version": "1.0.1",
+  "version": "1.2.0",
   "private": true,
   "description": "Browse and insert 6,000+ brand SVG logos from theSVG into your Figma designs",
   "scripts": {

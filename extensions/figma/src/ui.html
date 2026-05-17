@@ -86,6 +86,87 @@
         text-decoration: underline;
       }
 
+      /* ---- Recents ---- */
+      .recents-section {
+        display: none;
+        flex-direction: column;
+        gap: 6px;
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--figma-color-border, #e5e5e5);
+        flex-shrink: 0;
+        background: var(--figma-color-bg-secondary, #f7f7f7);
+      }
+
+      .recents-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--figma-color-text-tertiary, #999);
+      }
+
+      .recents-clear {
+        background: none;
+        border: none;
+        color: var(--figma-color-text-tertiary, #999);
+        cursor: pointer;
+        font-size: 10px;
+        font-family: inherit;
+        padding: 2px 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .recents-clear:hover {
+        color: var(--figma-color-text-secondary, #666);
+      }
+
+      .recents-row {
+        display: flex;
+        gap: 4px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+
+      .recents-row::-webkit-scrollbar {
+        height: 4px;
+      }
+
+      .recents-row::-webkit-scrollbar-thumb {
+        background: var(--figma-color-border, #ddd);
+        border-radius: 2px;
+      }
+
+      .recent-card {
+        flex: 0 0 32px;
+        height: 32px;
+        border: 1px solid var(--figma-color-border, #e5e5e5);
+        border-radius: 4px;
+        background: var(--figma-color-bg, #fff);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        padding: 4px;
+        transition: border-color 0.15s, transform 0.1s;
+      }
+
+      .recent-card:hover {
+        border-color: var(--figma-color-border-brand, #18a0fb);
+      }
+
+      .recent-card:active {
+        transform: scale(0.92);
+      }
+
+      .recent-card img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+
       /* ---- Loading ---- */
       .loading {
         display: none;
@@ -124,19 +205,14 @@
       }
 
       .icon-card {
+        position: relative;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 4px;
-        padding: 10px 4px 6px;
+        align-items: stretch;
         border: 1px solid transparent;
         border-radius: 6px;
         background: var(--figma-color-bg-secondary, #f5f5f5);
-        cursor: pointer;
         transition: all 0.15s;
-        font-family: inherit;
-        font-size: inherit;
-        color: inherit;
       }
 
       .icon-card:hover {
@@ -144,13 +220,29 @@
         background: var(--figma-color-bg-hover, #eef);
       }
 
-      .icon-card:active {
-        transform: scale(0.95);
-      }
-
       .icon-card.inserting {
         opacity: 0.5;
         pointer-events: none;
+      }
+
+      .icon-card-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        padding: 10px 4px 6px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        width: 100%;
+        transition: transform 0.1s;
+      }
+
+      .icon-card-main:active {
+        transform: scale(0.95);
       }
 
       .icon-preview {
@@ -178,6 +270,86 @@
         color: var(--figma-color-text-secondary, #666);
       }
 
+      .variant-trigger {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        width: 16px;
+        height: 16px;
+        border: 1px solid var(--figma-color-border, #ddd);
+        border-radius: 4px;
+        background: var(--figma-color-bg, #fff);
+        color: var(--figma-color-text-secondary, #666);
+        font-size: 9px;
+        font-weight: 600;
+        font-family: inherit;
+        cursor: pointer;
+        padding: 0;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.15s, border-color 0.15s;
+      }
+
+      .icon-card:hover .variant-trigger {
+        opacity: 1;
+      }
+
+      .variant-trigger:hover {
+        border-color: var(--figma-color-border-brand, #18a0fb);
+        color: var(--figma-color-text-brand, #18a0fb);
+      }
+
+      /* ---- Variant menu (floating) ---- */
+      .variant-menu {
+        position: fixed;
+        z-index: 100;
+        background: var(--figma-color-bg, #fff);
+        border: 1px solid var(--figma-color-border, #ddd);
+        border-radius: 6px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        padding: 4px;
+        min-width: 140px;
+        max-width: 200px;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .variant-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 8px;
+        border: none;
+        background: transparent;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 11px;
+        color: var(--figma-color-text, #333);
+        text-align: left;
+        width: 100%;
+      }
+
+      .variant-item:hover {
+        background: var(--figma-color-bg-hover, #f0f6ff);
+      }
+
+      .variant-item img {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+        flex-shrink: 0;
+      }
+
+      .variant-item span {
+        text-transform: capitalize;
+      }
+
+      /* ---- Empty / scrollbar ---- */
       .empty {
         grid-column: 1 / -1;
         text-align: center;
@@ -186,7 +358,6 @@
         font-size: 12px;
       }
 
-      /* ---- Scrollbar ---- */
       .grid-container::-webkit-scrollbar {
         width: 6px;
       }
@@ -212,7 +383,7 @@
           id="search"
           class="search-input"
           type="text"
-          placeholder="Search 4,000+ brand icons..."
+          placeholder="Search 6,000+ brand icons..."
           autofocus
         />
         <select id="category" class="category-select">
@@ -220,9 +391,17 @@
         </select>
       </div>
       <div class="status-bar">
-        <span id="status">Loading...</span>
+        <span id="status">Loading catalog...</span>
         <a href="https://thesvg.org" target="_blank">thesvg.org</a>
       </div>
+    </div>
+
+    <div id="recents-section" class="recents-section">
+      <div class="recents-header">
+        <span>Recent</span>
+        <button id="recents-clear" class="recents-clear" type="button">Clear</button>
+      </div>
+      <div id="recents-row" class="recents-row"></div>
     </div>
 
     <div id="loading" class="loading">
