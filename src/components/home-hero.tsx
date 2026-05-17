@@ -365,9 +365,6 @@ export function HomeHero({
 
   return (
     <div className="space-y-8 pb-6">
-      {/* Visually hidden h1 for screen readers and SEO */}
-      <h1 className="sr-only">thesvg - The Open SVG Brand Library</h1>
-
       {/* Hero carousel - lifted card with depth */}
       <div className="relative">
         {/* Bottom shadow layer for lifted effect */}
@@ -382,7 +379,10 @@ export function HomeHero({
           {/* Top highlight edge */}
           <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent dark:via-white/10" />
 
-          <div className="relative z-10 max-w-2xl">
+          {/* Min-height reserves space so rotating slide titles/descriptions
+              of different lengths don't trigger Cumulative Layout Shift.
+              Sized to the longest expected slide content. */}
+          <div className="relative z-10 max-w-2xl min-h-[220px] sm:min-h-[240px]">
             {/* Slide content with fade */}
             <div key={currentSlide} className="animate-fade-in">
               <div className={`mb-3 inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium shadow-sm ${slide.accent}`}>
@@ -391,9 +391,9 @@ export function HomeHero({
                   ? `${count.toLocaleString()}+ icons`
                   : slide.badge}
               </div>
-              <h2 className="mb-2 text-2xl font-bold tracking-tight sm:text-3xl">
+              <h1 className="mb-2 text-2xl font-bold tracking-tight sm:text-3xl">
                 {slide.title}
-              </h2>
+              </h1>
               <p className="mb-6 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
                 {slide.description}
               </p>

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     default: `theSVG - ${count}+ Free Brand SVG Icons for Developers and Designers`,
     template: "%s | theSVG",
   },
-  description: `Search, copy, and ship ${count}+ brand SVG icons. Free, open-source library with npm packages, React components, CLI, CDN, and MCP server. Tree-shakeable, typed, zero config.`,
+  description: `Search, copy, and ship ${count}+ brand SVG icons. Open-source library with npm, React, Vue, Svelte, CLI, CDN, and MCP server support.`,
   keywords: [
     "svg",
     "brand icons",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://thesvg.org"),
   openGraph: {
     title: `theSVG - ${count}+ Free Brand SVG Icons for Developers and Designers`,
-    description: `Search, copy, and ship ${count}+ brand SVG icons. Free, open-source library with npm packages, React components, CLI, CDN, and MCP server for AI assistants.`,
+    description: `Search, copy, and ship ${count}+ brand SVG icons. Open-source library with npm, React, Vue, Svelte, CLI, CDN, and MCP server support.`,
     url: "https://thesvg.org",
     siteName: "theSVG",
     type: "website",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: `theSVG - ${count}+ Free Brand SVG Icons for Developers and Designers`,
-    description: `Search, copy, and ship ${count}+ brand SVG icons. Free, open-source library with npm packages, React components, CLI, CDN, and MCP server for AI assistants.`,
+    description: `Search, copy, and ship ${count}+ brand SVG icons. Open-source library with npm, React, Vue, Svelte, CLI, CDN, and MCP server support.`,
     images: ["/og-image.png"],
   },
   manifest: "/manifest.json",

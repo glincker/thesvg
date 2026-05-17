@@ -18,6 +18,55 @@ export const dynamicParams = false;
 
 const CDN_BASE = "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons";
 
+// Map our string licenses to canonical URLs so structured data passes
+// Google's "Invalid URL in field 'license'" check.
+const LICENSE_URLS: Record<string, string> = {
+  "CC0-1.0": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "MIT": "https://spdx.org/licenses/MIT.html",
+  "CC-BY-ND-2.0": "https://creativecommons.org/licenses/by-nd/2.0/",
+  "CC-BY-ND-4.0": "https://creativecommons.org/licenses/by-nd/4.0/",
+  "CC-BY-4.0": "https://creativecommons.org/licenses/by/4.0/",
+  "CC-BY-3.0": "https://creativecommons.org/licenses/by/3.0/",
+  "CC-BY-2.5": "https://creativecommons.org/licenses/by/2.5/",
+  "CC-BY-SA-4.0": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "CC-BY-SA-3.0": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "CC-BY-SA-2.5": "https://creativecommons.org/licenses/by-sa/2.5/",
+  "CC-BY-SA-2.0": "https://creativecommons.org/licenses/by-sa/2.0/",
+  "CC-BY-NC-4.0": "https://creativecommons.org/licenses/by-nc/4.0/",
+  "CC-BY-NC-SA-4.0": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "CC-BY-NC-SA-3.0": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
+  "CC-BY-NC-ND-4.0": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+  "Apache-2.0": "https://spdx.org/licenses/Apache-2.0.html",
+  "GPL-2.0": "https://spdx.org/licenses/GPL-2.0-only.html",
+  "GPL-2.0-only": "https://spdx.org/licenses/GPL-2.0-only.html",
+  "GPL-2.0-or-later": "https://spdx.org/licenses/GPL-2.0-or-later.html",
+  "GPL-3.0": "https://spdx.org/licenses/GPL-3.0-only.html",
+  "GPL-3.0-only": "https://spdx.org/licenses/GPL-3.0-only.html",
+  "GPL-3.0-or-later": "https://spdx.org/licenses/GPL-3.0-or-later.html",
+  "LGPL-2.1": "https://spdx.org/licenses/LGPL-2.1-only.html",
+  "LGPL-3.0": "https://spdx.org/licenses/LGPL-3.0-only.html",
+  "AGPL-3.0": "https://spdx.org/licenses/AGPL-3.0-only.html",
+  "AGPL-3.0-only": "https://spdx.org/licenses/AGPL-3.0-only.html",
+  "AGPL-3.0-or-later": "https://spdx.org/licenses/AGPL-3.0-or-later.html",
+  "MPL-2.0": "https://spdx.org/licenses/MPL-2.0.html",
+  "BSD-2-Clause": "https://spdx.org/licenses/BSD-2-Clause.html",
+  "BSD-3-Clause": "https://spdx.org/licenses/BSD-3-Clause.html",
+  "Unlicense": "https://spdx.org/licenses/Unlicense.html",
+  "PD": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "brand-use": "https://thesvg.org/legal#trademark",
+  "Fair Use": "https://thesvg.org/legal#fair-use",
+  "Fair use": "https://thesvg.org/legal#fair-use",
+  "Custom": "https://thesvg.org/legal",
+  "Proprietary": "https://thesvg.org/legal#trademark",
+  "Unknown": "https://thesvg.org/legal",
+  "TODO": "https://thesvg.org/legal",
+};
+
+function licenseToUrl(license: string | undefined): string {
+  if (!license) return "https://thesvg.org/legal";
+  return LICENSE_URLS[license] || "https://thesvg.org/legal";
+}
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const icon = getIconBySlug(slug);
@@ -120,6 +169,8 @@ export default async function IconPage({ params }: PageProps) {
     "free download",
     "open source",
   ];
+  const licenseUrl = licenseToUrl(icon.license);
+  const year = new Date().getFullYear();
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -132,7 +183,10 @@ export default async function IconPage({ params }: PageProps) {
         thumbnailUrl: `${CDN_BASE}/${slug}/default.svg`,
         url: `https://thesvg.org/icon/${slug}`,
         encodingFormat: "image/svg+xml",
-        license: icon.license,
+        license: licenseUrl,
+        acquireLicensePage: "https://thesvg.org/legal",
+        copyrightNotice: `${icon.title} logo © ${year} ${icon.title}. Distributed under ${icon.license}.`,
+        creditText: icon.title,
         width: "512",
         height: "512",
         ...(icon.url ? { sameAs: [icon.url] } : {}),
@@ -141,6 +195,11 @@ export default async function IconPage({ params }: PageProps) {
           "@type": "Organization",
           name: "theSVG",
           url: "https://thesvg.org",
+        },
+        copyrightHolder: {
+          "@type": "Organization",
+          name: icon.title,
+          ...(icon.url ? { url: icon.url } : {}),
         },
       },
       {
