@@ -67,7 +67,7 @@ jobs:
     needs: ensure-labels
     steps:
       - name: Process triage:needs-svg
-        uses: actions/stale@v9
+        uses: actions/stale@v10
         with:
           days-before-issue-stale: 14
           days-before-issue-close: 7
@@ -95,7 +95,7 @@ jobs:
             Closing as `not-planned` since we haven't heard back for 21 days. Happy to revisit if you reopen this with the SVG. Thanks for your interest in thesvg.
 
       - name: Process triage:needs-license
-        uses: actions/stale@v9
+        uses: actions/stale@v10
         with:
           days-before-issue-stale: 14
           days-before-issue-close: 7
@@ -119,7 +119,7 @@ jobs:
             Closing as `not-planned` since we haven't heard back for 21 days. Happy to revisit if you reopen this with a licensing source. Thanks for your interest in thesvg.
 
       - name: Process triage:invalid-svg
-        uses: actions/stale@v9
+        uses: actions/stale@v10
         with:
           days-before-issue-stale: 14
           days-before-issue-close: 7
@@ -143,7 +143,7 @@ jobs:
             Closing as `not-planned` since we haven't heard back for 21 days. Happy to revisit if you reopen with a parseable SVG. Thanks for your interest in thesvg.
 
       - name: Process triage:svg-oversize
-        uses: actions/stale@v9
+        uses: actions/stale@v10
         with:
           days-before-issue-stale: 14
           days-before-issue-close: 7
