@@ -1,0 +1,39 @@
+name: Update Homebrew Tap
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  bump-formula:
+    name: Bump thesvg formula
+    runs-on: ubuntu-latest
+    if: ${{ secrets.HOMEBREW_TAP_TOKEN != '' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Read CLI version from package.json
+        id: pkg
+        run: |
+          VERSION=$(jq -r '.version' packages/cli/package.json)
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+          TARBALL_URL="https://registry.npmjs.org/@thesvg/cli/-/cli-${VERSION}.tgz"
+          echo "tarball_url=${TARBALL_URL}" >> "$GITHUB_OUTPUT"
+
+      - name: Compute SHA256
+        id: sha
+        run: |
+          SHA=$(curl -fsSL "${{ steps.pkg.outputs.tarball_url }}" | sha256sum | awk '{print $1}')
+          echo "sha256=${SHA}" >> "$GITHUB_OUTPUT"
+
+      - name: Update formula in tap repo
+        uses: dawidd6/action-homebrew-bump-formula@v3
+        with:
+          token: ${{ secrets.HOMEBREW_TAP_TOKEN }}
+          tap: glincker/thesvg
+          formula: thesvg
+          tag: v${{ steps.pkg.outputs.version }}
+          revision: ${{ github.sha }}
+          force: false

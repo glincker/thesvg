@@ -209,6 +209,14 @@ const CATEGORIES: Category[] = [
         iconSlug: "jsdelivr",
       },
       {
+        name: "Homebrew",
+        description: "Install the thesvg CLI via Homebrew. brew tap glincker/thesvg && brew install thesvg.",
+        status: "available",
+        cta: "brew tap",
+        href: "https://github.com/glincker/homebrew-thesvg",
+        iconSlug: "homebrew",
+      },
+      {
         name: "REST API",
         description: "Paid API coming soon at api.thesvg.org. Search, fetch metadata, retrieve SVGs programmatically.",
         status: "coming-soon",
