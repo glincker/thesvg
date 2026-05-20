@@ -208,7 +208,13 @@ export default function App() {
                 aria-selected={isSelected}
                 onClick={() => {
                   setSelectedSlug(isSelected ? null : icon.slug);
-                  setSelectedVariant("default");
+                  // Pick the first available variant. Not every icon has a
+                  // "default" key in the registry; some only have
+                  // ["color", "mono"] or ["wordmark"]. Defaulting to
+                  // whatever the registry actually lists keeps the action
+                  // buttons in sync with the chips.
+                  const firstKey = variantKeys(icon)[0] ?? "default";
+                  setSelectedVariant(firstKey);
                 }}
               >
                 <span className="result-icon">
