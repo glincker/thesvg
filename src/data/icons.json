@@ -106615,6 +106615,25 @@
     "collection": "brands"
   },
   {
+    "slug": "vrs",
+    "title": "VRS",
+    "aliases": [
+      "Verkehrsverbund Rhein-Sieg"
+    ],
+    "hex": "007D64",
+    "categories": [
+      "Transportation"
+    ],
+    "variants": {
+      "default": "/icons/vrs/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.vrs.de",
+    "guidelines": "https://www.vrs.de/presse-medien",
+    "dateAdded": "2026-05-20",
+    "collection": "brands"
+  },
+  {
     "slug": "vsco",
     "title": "VSCO",
     "aliases": [],
