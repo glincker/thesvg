@@ -23,6 +23,7 @@
   <a href="https://www.raycast.com/thegdsks/thesvg"><img src="https://img.shields.io/badge/Raycast-Store-FF6363?style=flat-square&logo=raycast" alt="Raycast" /></a>
   <a href="https://github.com/glincker/thesvg/tree/main/extensions/alfred"><img src="https://img.shields.io/badge/Alfred-Workflow-5C1F87?style=flat-square&logo=alfred&logoColor=white" alt="Alfred" /></a>
   <a href="https://skills.sh/glincker/thesvg"><img src="https://skills.sh/b/glincker/thesvg" alt="skills.sh" /></a>
+  <a href="https://github.com/glincker/homebrew-thesvg"><img src="https://img.shields.io/badge/Homebrew-thesvg-FBB040?style=flat-square&logo=homebrew&logoColor=white" alt="Homebrew" /></a>
 </p>
 
 <p align="center">
@@ -78,8 +79,17 @@ Browse all AWS service and resource icons at [thesvg.org/collection/aws](https:/
 
 ## Install
 
+**npm**
+
 ```bash
 npm install thesvg
+```
+
+**Homebrew**
+
+```bash
+brew tap glincker/thesvg
+brew install thesvg
 ```
 
 ```ts
@@ -121,6 +131,7 @@ Use theSVG icons everywhere you build, design, and ship. Browse the full ecosyst
 | [MCP Server](https://www.npmjs.com/package/@thesvg/mcp-server) | Published | AI tool calls for Claude, Cursor, Windsurf. Fetch icons by name or category. |
 | [Agent Skill](https://skills.sh/glincker/thesvg) | Published | Drop-in skill for AI agents. Install via `npx skills add glincker/thesvg`. Teaches the icon CDN and registry. |
 | [`@thesvg/cli`](https://www.npmjs.com/package/@thesvg/cli) | Published | shadcn-style installer. `npx @thesvg/cli add github` drops the SVG into your project. |
+| [Homebrew](https://github.com/glincker/homebrew-thesvg) | Published | `brew tap glincker/thesvg && brew install thesvg` |
 | [CDN via jsDelivr](https://www.jsdelivr.com/package/gh/glincker/thesvg) | Published | Serve any icon via global CDN. Drop into HTML, CSS, Markdown, Notion, Webflow, Framer. |
 | [JetBrains](https://github.com/glincker/thesvg/issues?q=label%3Aextension) | Open | IntelliJ, WebStorm, PyCharm, Rider tool window. Help wanted. |
 | [Neovim](https://github.com/glincker/thesvg/issues?q=label%3Aextension) | Open | Telescope picker with floating preview. Help wanted. |
