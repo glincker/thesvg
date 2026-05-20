@@ -219,7 +219,7 @@ export default function App() {
               >
                 <span className="result-icon">
                   <img
-                    src={cdnUrl(icon.slug)}
+                    src={cdnUrl(icon.slug, keys[0] ?? "default")}
                     alt=""
                     width={20}
                     height={20}
