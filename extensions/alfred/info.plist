@@ -92,7 +92,7 @@
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
-				<integer>0</integer>
+				<integer>102</integer>
 				<key>script</key>
 				<string>python3 "$alfred_workflow_dir/thesvg_action.py" "{query}"</string>
 				<key>scriptargtype</key>

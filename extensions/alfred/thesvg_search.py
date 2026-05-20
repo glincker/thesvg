@@ -36,9 +36,13 @@ def load_registry() -> list[dict[str, Any]]:
     if os.path.exists(CACHE_FILE):
         age = time.time() - os.path.getmtime(CACHE_FILE)
         if age < CACHE_TTL_SECONDS:
-            with open(CACHE_FILE, encoding="utf-8") as fh:
-                data = json.load(fh)
-            return _extract_icons(data)
+            try:
+                with open(CACHE_FILE, encoding="utf-8") as fh:
+                    data = json.load(fh)
+                return _extract_icons(data)
+            except (json.JSONDecodeError, OSError):
+                # Corrupt or unreadable cache; fall through to refetch.
+                pass
 
     try:
         req = urllib.request.Request(
@@ -47,16 +51,20 @@ def load_registry() -> list[dict[str, Any]]:
         )
         with urllib.request.urlopen(req, timeout=10) as resp:
             raw = resp.read()
+        data = json.loads(raw)
+        # Only persist the cache after a successful parse.
         with open(CACHE_FILE, "wb") as fh:
             fh.write(raw)
-        data = json.loads(raw)
         return _extract_icons(data)
-    except urllib.error.URLError as exc:
-        # If network fails but a stale cache exists, use it
+    except (urllib.error.URLError, json.JSONDecodeError) as exc:
+        # If network fails but a stale cache exists, use it.
         if os.path.exists(CACHE_FILE):
-            with open(CACHE_FILE, encoding="utf-8") as fh:
-                data = json.load(fh)
-            return _extract_icons(data)
+            try:
+                with open(CACHE_FILE, encoding="utf-8") as fh:
+                    data = json.load(fh)
+                return _extract_icons(data)
+            except (json.JSONDecodeError, OSError):
+                pass
         raise RuntimeError(f"Failed to load registry: {exc}") from exc
 
 
@@ -154,7 +162,6 @@ def build_alfred_item(icon: dict[str, Any]) -> dict[str, Any]:
     variant = pick_default_variant(icon)
     cdn_url = icon_cdn_url(slug, variant)
     subtitle = build_subtitle(icon)
-    md_text = f"![{title}]({cdn_url})"
 
     return {
         "uid": slug,
