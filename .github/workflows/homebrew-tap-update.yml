@@ -19,14 +19,6 @@ jobs:
         run: |
           VERSION=$(jq -r '.version' packages/cli/package.json)
           echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
-          TARBALL_URL="https://registry.npmjs.org/@thesvg/cli/-/cli-${VERSION}.tgz"
-          echo "tarball_url=${TARBALL_URL}" >> "$GITHUB_OUTPUT"
-
-      - name: Compute SHA256
-        id: sha
-        run: |
-          SHA=$(curl -fsSL "${{ steps.pkg.outputs.tarball_url }}" | sha256sum | awk '{print $1}')
-          echo "sha256=${SHA}" >> "$GITHUB_OUTPUT"
 
       - name: Update formula in tap repo
         uses: dawidd6/action-homebrew-bump-formula@v3
@@ -35,5 +27,4 @@ jobs:
           tap: glincker/thesvg
           formula: thesvg
           tag: v${{ steps.pkg.outputs.version }}
-          revision: ${{ github.sha }}
           force: false
