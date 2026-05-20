@@ -71,11 +71,14 @@ export default defineBackground(() => {
   // Handle messages from popup requesting registry data
   chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
     if (message.type === "GET_REGISTRY") {
-      chrome.storage.local.get(CACHE_KEY).then((stored) => {
-        const entry = stored[CACHE_KEY] as CacheEntry | undefined;
-        if (entry) {
-          sendResponse({ success: true, data: entry.data, cached: true });
-        } else {
+      chrome.storage.local
+        .get(CACHE_KEY)
+        .then((stored) => {
+          const entry = stored[CACHE_KEY] as CacheEntry | undefined;
+          if (entry) {
+            sendResponse({ success: true, data: entry.data, cached: true });
+            return;
+          }
           // Fetch fresh if not cached
           fetch(REGISTRY_URL)
             .then((r) => r.json())
@@ -93,8 +96,16 @@ export default defineBackground(() => {
                 error: err instanceof Error ? err.message : "Unknown error",
               });
             });
-        }
-      });
+        })
+        .catch((err: unknown) => {
+          // chrome.storage.local.get itself can reject (corrupt storage,
+          // quota errors). Close the response channel cleanly so the popup
+          // does not hang.
+          sendResponse({
+            success: false,
+            error: err instanceof Error ? err.message : "Storage unavailable",
+          });
+        });
 
       // Return true to indicate async response
       return true;

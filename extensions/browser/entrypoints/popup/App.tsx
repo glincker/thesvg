@@ -14,6 +14,10 @@ interface RegistryResponse {
   icons: IconEntry[];
 }
 
+// NOTE: @main pins live indefinitely. A schema change to icons.json or a
+// path restructure under public/icons/ would break every installed instance
+// at once. v1.1 should pin to a release tag (e.g. @v3.0.0) and ship a
+// migration when the schema bumps.
 const REGISTRY_URL =
   "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/src/data/icons.json";
 const CDN_BASE =
@@ -241,7 +245,7 @@ export default function App() {
                   type="button"
                   className={
                     selectedVariant === v
-                      ? "variant-chip selected"
+                      ? "variant-chip active"
                       : "variant-chip"
                   }
                   onClick={() => setSelectedVariant(v)}
