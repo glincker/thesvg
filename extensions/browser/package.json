@@ -1,0 +1,29 @@
+{
+  "name": "thesvg-browser-extension",
+  "version": "0.1.0",
+  "description": "Search 6,030+ brand SVGs. Copy SVG, CDN URL, or markdown.",
+  "private": true,
+  "scripts": {
+    "dev": "wxt",
+    "dev:firefox": "wxt --browser firefox",
+    "build": "wxt build",
+    "build:firefox": "wxt build --browser firefox",
+    "build:edge": "wxt build --browser edge",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip --browser firefox",
+    "zip:edge": "wxt zip --browser edge",
+    "zip:all": "pnpm zip && pnpm zip:firefox && pnpm zip:edge",
+    "postinstall": "wxt prepare"
+  },
+  "dependencies": {
+    "fuse.js": "^7.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.0.0",
+    "wxt": "^0.19.0"
+  }
+}

@@ -21,6 +21,7 @@
   <a href="https://www.figma.com/community/plugin/1612997159050367763"><img src="https://img.shields.io/badge/Figma-Plugin-F24E1E?style=flat-square&logo=figma&logoColor=white" alt="Figma" /></a>
   <a href="https://marketplace.visualstudio.com/items?itemName=glincker.thesvg"><img src="https://img.shields.io/visual-studio-marketplace/v/glincker.thesvg?style=flat-square&color=007ACC&label=VS%20Code&logo=visualstudiocode" alt="VS Code" /></a>
   <a href="https://www.raycast.com/thegdsks/thesvg"><img src="https://img.shields.io/badge/Raycast-Store-FF6363?style=flat-square&logo=raycast" alt="Raycast" /></a>
+  <a href="https://github.com/glincker/thesvg/tree/main/extensions/browser"><img src="https://img.shields.io/badge/Chrome-Coming%20Soon-4285F4?style=flat-square&logo=googlechrome&logoColor=white" alt="Chrome" /></a>
   <a href="https://skills.sh/glincker/thesvg"><img src="https://skills.sh/b/glincker/thesvg" alt="skills.sh" /></a>
 </p>
 
@@ -121,6 +122,7 @@ Use theSVG icons everywhere you build, design, and ship. Browse the full ecosyst
 | [Agent Skill](https://skills.sh/glincker/thesvg) | Published | Drop-in skill for AI agents. Install via `npx skills add glincker/thesvg`. Teaches the icon CDN and registry. |
 | [`@thesvg/cli`](https://www.npmjs.com/package/@thesvg/cli) | Published | shadcn-style installer. `npx @thesvg/cli add github` drops the SVG into your project. |
 | [CDN via jsDelivr](https://www.jsdelivr.com/package/gh/glincker/thesvg) | Published | Serve any icon via global CDN. Drop into HTML, CSS, Markdown, Notion, Webflow, Framer. |
+| [Browser Extension](https://github.com/glincker/thesvg/tree/main/extensions/browser) | Beta | Chrome, Firefox, Edge popup with 6,030+ brand SVGs. MV3, no telemetry. |
 | [JetBrains](https://github.com/glincker/thesvg/issues?q=label%3Aextension) | Open | IntelliJ, WebStorm, PyCharm, Rider tool window. Help wanted. |
 | [Neovim](https://github.com/glincker/thesvg/issues?q=label%3Aextension) | Open | Telescope picker with floating preview. Help wanted. |
 | [Alfred Workflow](https://github.com/glincker/thesvg/issues?q=label%3Aextension) | Open | macOS quick access. Search anywhere, copy to clipboard. Help wanted. |

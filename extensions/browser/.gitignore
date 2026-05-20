@@ -1,0 +1,7 @@
+node_modules/
+.wxt/
+.output/
+dist/
+*.tsbuildinfo
+.vite/
+.DS_Store

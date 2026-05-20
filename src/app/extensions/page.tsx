@@ -265,6 +265,14 @@ const CATEGORIES: Category[] = [
     icon: <Blocks className="h-5 w-5" />,
     items: [
       {
+        name: "Browser Extension",
+        description: "Chrome, Firefox, Edge popup. Search 6,030+ brand SVGs, copy SVG, CDN URL, or markdown. MV3, no telemetry.",
+        status: "coming-soon",
+        cta: "View source",
+        href: "https://github.com/glincker/thesvg/tree/main/extensions/browser",
+        iconSlug: "google-chrome",
+      },
+      {
         name: "Webflow",
         description: "Embed icons via CDN URLs using the custom embed component.",
         status: "coming-soon",
