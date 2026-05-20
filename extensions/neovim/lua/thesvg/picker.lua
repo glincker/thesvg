@@ -13,19 +13,39 @@ local function cdn_url(slug, variant)
   return CDN_BASE .. "/" .. slug .. "/" .. variant .. ".svg"
 end
 
---- Insert text at the current cursor position. Handles multi-line text by
---- splitting on newlines (nvim_buf_set_lines rejects strings containing \n,
---- which is what an inline SVG body always contains).
+--- Capture the current insertion target (buffer, window, cursor position)
+--- at this moment. Pass the returned target table to insert_text so async
+--- inserts land in the place the user invoked the picker from, even if they
+--- moved focus during the fetch.
+---@return table target  { buf: integer, win: integer, row: integer, col: integer }
+local function capture_target()
+  local win = vim.api.nvim_get_current_win()
+  local buf = vim.api.nvim_get_current_buf()
+  local row, col = unpack(vim.api.nvim_win_get_cursor(win))
+  return { buf = buf, win = win, row = row, col = col }
+end
+
+--- Insert text at the captured target. Handles multi-line text by splitting
+--- on newlines (nvim_buf_set_lines rejects strings containing \n, which is
+--- what an inline SVG body always contains).
+---@param target table  { buf, win, row, col } captured before the async fetch
 ---@param text string
-local function insert_at_cursor(text)
-  local row, col = unpack(vim.api.nvim_win_get_cursor(0))
-  local current = vim.api.nvim_buf_get_lines(0, row - 1, row, false)[1] or ""
+local function insert_text(target, text)
+  if not vim.api.nvim_buf_is_valid(target.buf) then
+    vim.notify("[thesvg] insert target buffer no longer exists", vim.log.levels.WARN)
+    return
+  end
+
+  local row, col = target.row, target.col
+  local current = vim.api.nvim_buf_get_lines(target.buf, row - 1, row, false)[1] or ""
   local parts = vim.split(text, "\n", { plain = true })
 
   if #parts == 1 then
     local new_line = current:sub(1, col) .. parts[1] .. current:sub(col + 1)
-    vim.api.nvim_buf_set_lines(0, row - 1, row, false, { new_line })
-    vim.api.nvim_win_set_cursor(0, { row, col + #parts[1] })
+    vim.api.nvim_buf_set_lines(target.buf, row - 1, row, false, { new_line })
+    if vim.api.nvim_win_is_valid(target.win) then
+      vim.api.nvim_win_set_cursor(target.win, { row, col + #parts[1] })
+    end
     return
   end
 
@@ -36,8 +56,10 @@ local function insert_at_cursor(text)
   end
   replacement[#replacement + 1] = last_part .. current:sub(col + 1)
 
-  vim.api.nvim_buf_set_lines(0, row - 1, row, false, replacement)
-  vim.api.nvim_win_set_cursor(0, { row + #parts - 1, #last_part })
+  vim.api.nvim_buf_set_lines(target.buf, row - 1, row, false, replacement)
+  if vim.api.nvim_win_is_valid(target.win) then
+    vim.api.nvim_win_set_cursor(target.win, { row + #parts - 1, #last_part })
+  end
 end
 
 --- Derive the display variant (respects opts.variant, falls back to "default").
@@ -54,7 +76,7 @@ end
 --- Handle the action after an icon is chosen.
 ---@param icon table
 ---@param config table  plugin config
-local function on_select(icon, config)
+local function on_select(icon, config, target)
   if not icon then
     return
   end
@@ -70,12 +92,12 @@ local function on_select(icon, config)
         vim.notify("[thesvg] failed to fetch SVG: " .. (err or "unknown"), vim.log.levels.ERROR)
         return
       end
-      insert_at_cursor(vim.trim(body))
+      insert_text(target, vim.trim(body))
     end)
   else
     -- Default: insert CDN URL.
     local url = cdn_url(icon.slug, variant)
-    insert_at_cursor(url)
+    insert_text(target, url)
   end
 end
 
@@ -125,6 +147,11 @@ local function open_telescope(icons, config)
   local actions = modules.actions
   local action_state = modules.action_state
 
+  -- Capture the originating buffer / window / cursor before the picker
+  -- floats over the screen so the async insert lands in the right place
+  -- even if the user clicks away during the SVG fetch.
+  local target = capture_target()
+
   pickers.new({}, {
     prompt_title = "theSVG Icons",
     finder = finders.new_table({
@@ -143,7 +170,7 @@ local function open_telescope(icons, config)
         actions.close(prompt_bufnr)
         local selection = action_state.get_selected_entry()
         if selection then
-          on_select(selection.value, config)
+          on_select(selection.value, config, target)
         end
       end)
       return true
@@ -162,6 +189,8 @@ local function open_select(icons, config)
     items[#items + 1] = display_string(icon)
   end
 
+  local target = capture_target()
+
   vim.ui.select(items, {
     prompt = "theSVG Icons",
     format_item = function(item)
@@ -169,7 +198,7 @@ local function open_select(icons, config)
     end,
   }, function(_, idx)
     if idx then
-      on_select(icons[idx], config)
+      on_select(icons[idx], config, target)
     end
   end)
 end
