@@ -1,12 +1,19 @@
-<svg width="96" height="100" viewBox="0 0 96 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_101_6)">
-<path d="M21.76 53.94V21.44H7.56C3.38 21.44 0 24.84 0 29.02V96.2C0 99.58 4.08 101.26 6.46 98.88L22.08 83.26H66.56C70.74 83.26 74.12 79.88 74.12 75.7V61.5H29.34C25.16 61.5 21.76 58.12 21.76 53.94Z" fill="#00AC47"/>
-<path d="M88.32 0H29.34C25.16 0 21.78 3.38 21.78 7.56V21.44H66.56C70.74 21.44 74.12 24.82 74.12 29V61.48H88.32C92.5 61.48 95.88 58.1 95.88 53.92V7.56C95.88 3.38 92.5 0 88.32 0Z" fill="#5BB974"/>
-<path d="M66.56 21.44H21.76V53.92C21.76 58.1 25.14 61.48 29.32 61.48H74.1V29.02C74.12 24.84 70.74 21.44 66.56 21.44Z" fill="#00832D"/>
-</g>
-<defs>
-<clipPath id="clip0_101_6">
-<rect width="95.88" height="100" fill="white"/>
-</clipPath>
-</defs>
+<svg role="img" width="96" height="100" viewBox="0 0 311 320" xmlns="http://www.w3.org/2000/svg">
+  <title>Google Chat</title>
+  <g stroke-width="2" fill="none" stroke-linecap="butt">
+    <path stroke="#7e916f" vector-effect="non-scaling-stroke" d="M76.37.51l.01 76.47"/>
+    <path stroke="#1375eb" vector-effect="non-scaling-stroke" d="M76.38 76.98 0 76.96"/>
+    <path stroke="#f3801d" vector-effect="non-scaling-stroke" d="M235.08 1.09q-.16.06-.27.13-.17.09-.17.28l-.02 75.51"/>
+    <path stroke="#7eb426" vector-effect="non-scaling-stroke" d="M234.62 77.01h-.05"/>
+    <path stroke="#91a080" vector-effect="non-scaling-stroke" d="m76.41 77.01-.03-.03"/>
+    <path stroke="#75783e" vector-effect="non-scaling-stroke" d="m310.53 76.77-75.91.24"/>
+    <path stroke="#138495" vector-effect="non-scaling-stroke" d="M76.43 182.69 0 182.67"/>
+    <path stroke="#00983a" vector-effect="non-scaling-stroke" d="m76.44 259.13-.01-38.28"/>
+  </g>
+  <path fill="#0066da" d="m76.37.51.01 76.47L0 76.96V20.77q.85-5.96 3.53-10.01Q10.14.74 22.75.67 49.41.53 76.37.51Z"/>
+  <path fill="#fbbc04" d="m76.37.51 157.42.02a1.61 1.57-26.7 0 1 .92.29l.37.27q-.16.06-.27.13-.17.09-.17.28l-.02 75.51h-.05l-158.16.01-.03-.03Z"/>
+  <path fill="#ea4335" d="m235.08 1.09 75.45 75.68-75.91.24.02-75.51q0-.19.17-.28.11-.07.27-.13Z"/>
+  <path fill="#2684fc" d="m0 76.96 76.38.02.03.03.02 105.68L0 182.67Z"/>
+  <path fill="#00ac47" d="m310.53 76.77.47.34v161.9q-2.66 14.53-15.06 18.77-4.42 1.52-13.03 1.5-55.89-.09-112.92-.17-8.28-.01-16.8.12-.47.01-.8.34-27.9 27.77-56 56.02c-2.87 2.89-6.12 4.5-10.24 3.89q-5.76-.85-8.49-5.94-1.15-2.16-1.17-7.88-.07-23.19-.05-46.53l-.01-38.28 37.78-37.78a1.79 1.77 22.3 0 1 1.26-.52l118.3.04a.83.83 0 0 0 .83-.83l-.03-104.75h.05Z"/>
+  <path fill="#00832d" d="m76.43 182.69v38.16l.01 38.28q-23.97.14-47.53.09-9.82-.02-14.15-1.54Q2.62 253.44 0 238.88v-56.21Z"/>
 </svg>
