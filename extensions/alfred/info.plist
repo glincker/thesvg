@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.glincker.thesvg-alfred</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<!-- Script Filter (UID: script-filter-01) connects to Run Script (UID: run-script-01) -->
+		<key>script-filter-01</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>run-script-01</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Glinr</string>
+	<key>description</key>
+	<string>Search and copy brand SVGs from theSVG (thesvg.org)</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>theSVG</string>
+	<key>objects</key>
+	<array>
+		<!-- Object 1: Script Filter (keyword trigger + search) -->
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>tsvg</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>3</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Searching theSVG...</string>
+				<key>script</key>
+				<string>python3 "$alfred_workflow_dir/thesvg_search.py" "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Search 6,030+ brand SVGs</string>
+				<key>title</key>
+				<string>theSVG - Search brand icons</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>waitingsubtext</key>
+				<string>Search 6,030+ brand SVGs</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>script-filter-01</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<!-- Object 2: Run Script (action handler) -->
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>python3 "$alfred_workflow_dir/thesvg_action.py" "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>run-script-01</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Type "tsvg" followed by a brand name to search theSVG.
+
+Enter: Copy raw SVG to clipboard
+Cmd+Enter: Copy CDN URL to clipboard
+Alt+Enter: Copy markdown image syntax to clipboard
+
+The icon registry is cached for 6 hours at ~/Library/Caches/com.glincker.thesvg-alfred/</string>
+	<key>uidata</key>
+	<dict>
+		<key>script-filter-01</key>
+		<dict>
+			<key>xpos</key>
+			<real>150</real>
+			<key>ypos</key>
+			<real>150</real>
+		</dict>
+		<key>run-script-01</key>
+		<dict>
+			<key>xpos</key>
+			<real>450</real>
+			<key>ypos</key>
+			<real>150</real>
+		</dict>
+	</dict>
+	<key>version</key>
+	<string>1.0.0</string>
+	<key>webaddress</key>
+	<string>https://thesvg.org</string>
+</dict>
+</plist>
