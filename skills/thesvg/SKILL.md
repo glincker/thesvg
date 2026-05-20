@@ -23,11 +23,25 @@ Skip this skill for generic UI icons (chevrons, menus, arrows). Use Lucide, Hero
 
 ## URL pattern
 
-Every icon lives at a predictable URL. No auth, no rate limits, immutable CDN cache.
+Every icon lives at a predictable URL. No auth, no rate limits.
+
+There are two equivalent endpoints. **For agent and automation use cases, prefer jsDelivr.** It is the same choice the official thesvg Figma plugin makes for the same reasons: agents make bursty automated requests and jsDelivr's global CDN absorbs that load without affecting thesvg.org user traffic.
+
+### Primary (recommended for agents)
+
+```
+https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/{slug}/{variant}.svg
+```
+
+### Alternate (for end-user-facing UI)
 
 ```
 https://thesvg.org/icons/{slug}/{variant}.svg
 ```
+
+Both URLs serve identical content. The thesvg.org route is fine to recommend when you're embedding a URL into a user-facing page (README, HTML, blog post) because per-visitor traffic is light. The jsDelivr route is the right choice when your code itself fetches the SVG (e.g. an agent inserting icons into a generated document or running batch lookups).
+
+Path components:
 
 - `{slug}` is a lowercase, hyphenated brand identifier (`github`, `aws-lambda`, `google-cloud`, `openai`, `tailwindcss`).
 - `{variant}` is one of `default`, `mono`, `light`, `dark`, `wordmark`, `wordmarkLight`, `wordmarkDark`, `color`. `default` is always present.
@@ -35,32 +49,25 @@ https://thesvg.org/icons/{slug}/{variant}.svg
 ### Examples
 
 ```
-https://thesvg.org/icons/github/default.svg
-https://thesvg.org/icons/github/mono.svg
-https://thesvg.org/icons/stripe/default.svg
-https://thesvg.org/icons/aws-lambda/default.svg
-https://thesvg.org/icons/openai/dark.svg
+https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/github/default.svg
+https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/github/mono.svg
+https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/stripe/default.svg
+https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/aws-lambda/default.svg
+https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/openai/dark.svg
 ```
-
-### jsDelivr mirror (for high-traffic apps)
-
-```
-https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/{slug}/{variant}.svg
-```
-
-Same content, served from the GitHub-backed jsDelivr CDN.
 
 ## Finding the right slug
 
-If you're unsure of a slug, fetch the registry once and search it client-side:
+If you're unsure of a slug, fetch the registry once and search it client-side. Same primary/alternate split as the icon URLs above:
 
 ```
-GET https://thesvg.org/api/registry.json
+GET https://cdn.jsdelivr.net/gh/glincker/thesvg@main/src/data/icons.json   (recommended for agents)
+GET https://thesvg.org/api/registry.json                                   (alternate)
 ```
 
-Returns an array of `{ slug, title, aliases, categories, hex, url, variants }`. Match the user's query against `title` and `aliases` (case-insensitive substring or fuzzy match).
+Returns the icon manifest with `{ slug, title, aliases, categories, hex, url, variants }` per icon. Match the user's query against `title` and `aliases` (case-insensitive substring or fuzzy match).
 
-Smaller manifest available at the same root:
+Smaller categories manifest:
 
 ```
 GET https://thesvg.org/api/categories.json
@@ -77,7 +84,7 @@ Pick the form that best matches the user's context:
 | Markdown / README / docs | `![GitHub](https://thesvg.org/icons/github/default.svg)` |
 | HTML / web project | `<img src="https://thesvg.org/icons/github/default.svg" width="32" height="32" alt="GitHub" />` |
 | React component (their project uses `@thesvg/react`) | `import { Github } from "@thesvg/react"; <Github width={24} />` |
-| Raw SVG needed (inlining, theming) | Fetch the URL and paste the SVG body |
+| Raw SVG fetched by your agent code | Fetch `https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/github/default.svg` and paste the body |
 | CLI / shell user | `npx @thesvg/cli add github` |
 
 ## Light vs dark backgrounds

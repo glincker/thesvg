@@ -67,8 +67,15 @@ function SubmitButton() {
   );
 }
 
+const FIGMA_BADGE_EXPIRES_AT = Date.UTC(2026, 5, 3);
+
 export function Header() {
   const { theme, setTheme } = useTheme();
+  const showFigmaBadge = useSyncExternalStore(
+    () => () => {},
+    () => Date.now() < FIGMA_BADGE_EXPIRES_AT,
+    () => true,
+  );
   const toggleSidebar = useSidebarStore((s) => s.toggle);
   const query = useSearchStore((s) => s.query);
   const setQuery = useSearchStore((s) => s.setQuery);
@@ -510,8 +517,8 @@ export function Header() {
                 href="https://www.figma.com/community/plugin/1612997159050367763"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Open the Figma plugin"
-                title="Figma plugin - new"
+                aria-label={showFigmaBadge ? "Open the Figma plugin (new)" : "Open the Figma plugin"}
+                title={showFigmaBadge ? "Figma plugin - new" : "Figma plugin"}
                 className="relative hidden h-8 w-8 items-center justify-center rounded-lg border border-border/50 text-muted-foreground transition-all hover:border-[#F24E1E]/40 hover:bg-[#F24E1E]/5 hover:text-[#F24E1E] sm:inline-flex dark:border-white/[0.06] dark:hover:border-[#F24E1E]/40"
               >
                 <img
@@ -521,13 +528,15 @@ export function Header() {
                   height={16}
                   className="h-4 w-4"
                 />
-                <span
-                  aria-hidden="true"
-                  className="absolute -top-0.5 -right-0.5 flex h-2 w-2"
-                >
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange-500/60 opacity-75" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-orange-500" />
-                </span>
+                {showFigmaBadge && (
+                  <span
+                    aria-hidden="true"
+                    className="absolute -top-0.5 -right-0.5 flex h-2 w-2"
+                  >
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange-500/60 opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-orange-500" />
+                  </span>
+                )}
               </a>
               <a
                 href="https://marketplace.visualstudio.com/items?itemName=glincker.thesvg"
