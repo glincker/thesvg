@@ -1,5 +1,11 @@
 # @thesvg/vue
 
+## 3.0.1
+
+### Patch Changes
+
+- feat: add vrs icon ([#360](https://github.com/glincker/thesvg/issues/360))
+
 ## 3.0.0
 
 ### Major Changes
