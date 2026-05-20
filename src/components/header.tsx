@@ -67,8 +67,15 @@ function SubmitButton() {
   );
 }
 
+const FIGMA_BADGE_EXPIRES_AT = Date.UTC(2026, 5, 3);
+
 export function Header() {
   const { theme, setTheme } = useTheme();
+  const showFigmaBadge = useSyncExternalStore(
+    () => () => {},
+    () => Date.now() < FIGMA_BADGE_EXPIRES_AT,
+    () => true,
+  );
   const toggleSidebar = useSidebarStore((s) => s.toggle);
   const query = useSearchStore((s) => s.query);
   const setQuery = useSearchStore((s) => s.setQuery);
@@ -479,58 +486,83 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="View on npm"
-                className="hidden items-center gap-1.5 rounded-lg border border-border/50 px-2.5 py-1.5 text-xs font-medium text-muted-foreground transition-all hover:border-[#cb3837]/30 hover:bg-[#cb3837]/5 hover:text-[#cb3837] sm:inline-flex dark:border-white/[0.06] dark:hover:border-[#cb3837]/30"
+                title="npm"
+                className="hidden h-8 w-8 items-center justify-center rounded-lg border border-border/50 text-muted-foreground transition-all hover:border-[#cb3837]/30 hover:bg-[#cb3837]/5 hover:text-[#cb3837] sm:inline-flex dark:border-white/[0.06] dark:hover:border-[#cb3837]/30"
               >
                 <img
                   src="/icons/npm/default.svg"
-                  alt="npm"
+                  alt=""
                   width={18}
                   height={18}
                   className="h-[18px] w-[18px]"
                 />
-                <span className="hidden lg:inline">npm</span>
               </a>
               <a
                 href="https://www.raycast.com/thegdsks/thesvg"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="View on Raycast"
-                className="hidden items-center gap-1.5 rounded-lg border border-border/50 px-2.5 py-1.5 text-xs font-medium text-muted-foreground transition-all hover:border-[#FF6363]/30 hover:bg-[#FF6363]/5 hover:text-[#FF6363] sm:inline-flex dark:border-white/[0.06] dark:hover:border-[#FF6363]/30"
+                title="Raycast extension"
+                className="hidden h-8 w-8 items-center justify-center rounded-lg border border-border/50 text-muted-foreground transition-all hover:border-[#FF6363]/30 hover:bg-[#FF6363]/5 hover:text-[#FF6363] sm:inline-flex dark:border-white/[0.06] dark:hover:border-[#FF6363]/30"
               >
                 <img
                   src="/icons/raycast/default.svg"
-                  alt="Raycast"
+                  alt=""
                   width={16}
                   height={16}
                   className="h-4 w-4"
                 />
-                <span className="hidden lg:inline">Raycast</span>
+              </a>
+              <a
+                href="https://www.figma.com/community/plugin/1612997159050367763"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={showFigmaBadge ? "Open the Figma plugin (new)" : "Open the Figma plugin"}
+                title={showFigmaBadge ? "Figma plugin - new" : "Figma plugin"}
+                className="relative hidden h-8 w-8 items-center justify-center rounded-lg border border-border/50 text-muted-foreground transition-all hover:border-[#F24E1E]/40 hover:bg-[#F24E1E]/5 hover:text-[#F24E1E] sm:inline-flex dark:border-white/[0.06] dark:hover:border-[#F24E1E]/40"
+              >
+                <img
+                  src="/icons/figma/default.svg"
+                  alt=""
+                  width={16}
+                  height={16}
+                  className="h-4 w-4"
+                />
+                {showFigmaBadge && (
+                  <span
+                    aria-hidden="true"
+                    className="absolute -top-0.5 -right-0.5 flex h-2 w-2"
+                  >
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange-500/60 opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-orange-500" />
+                  </span>
+                )}
               </a>
               <a
                 href="https://marketplace.visualstudio.com/items?itemName=glincker.thesvg"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Install the VS Code extension"
-                className="hidden items-center gap-1.5 rounded-lg border border-border/50 px-2.5 py-1.5 text-xs font-medium text-muted-foreground transition-all hover:border-[#007ACC]/30 hover:bg-[#007ACC]/5 hover:text-[#007ACC] sm:inline-flex dark:border-white/[0.06] dark:hover:border-[#007ACC]/30"
+                title="VS Code extension"
+                className="hidden h-8 w-8 items-center justify-center rounded-lg border border-border/50 text-muted-foreground transition-all hover:border-[#007ACC]/30 hover:bg-[#007ACC]/5 hover:text-[#007ACC] sm:inline-flex dark:border-white/[0.06] dark:hover:border-[#007ACC]/30"
               >
                 <img
                   src="/icons/visual-studio-code/default.svg"
-                  alt="VS Code"
+                  alt=""
                   width={16}
                   height={16}
                   className="h-4 w-4"
                 />
-                <span className="hidden lg:inline">VS Code</span>
               </a>
               <a
                 href="https://github.com/GLINCKER/thesvg"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="View on GitHub"
-                className="inline-flex items-center gap-1.5 rounded-lg border border-border/50 px-2.5 py-1.5 text-xs font-medium text-muted-foreground transition-all hover:border-foreground/20 hover:bg-accent hover:text-foreground dark:border-white/[0.08] dark:hover:border-white/20 dark:hover:bg-white/[0.06]"
+                title="GitHub repository"
+                className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-border/50 text-muted-foreground transition-all hover:border-foreground/20 hover:bg-accent hover:text-foreground dark:border-white/[0.08] dark:hover:border-white/20 dark:hover:bg-white/[0.06]"
               >
                 <Github className="h-4 w-4" />
-                <span className="hidden lg:inline">GitHub</span>
               </a>
               <Button
                 variant="ghost"
