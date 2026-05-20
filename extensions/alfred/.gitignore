@@ -1,0 +1,3 @@
+*.alfredworkflow
+__pycache__/
+*.pyc
