@@ -234,10 +234,10 @@ const CATEGORIES: Category[] = [
       },
       {
         name: "Agent Skill",
-        description: "Drop-in skill for Claude Code, Cursor, and other AI agents. Teaches your agent the icon CDN and registry in one file.",
+        description: "Drop-in skill for Claude Code, Cursor, and other AI agents. Install via skills.sh: npx skills add glincker/thesvg",
         status: "available",
-        cta: "View skill",
-        href: "https://github.com/GLINCKER/thesvg/blob/main/skills/thesvg/SKILL.md",
+        cta: "View on skills.sh",
+        href: "https://skills.sh/glincker/thesvg",
         iconFallback: <Sparkles className="h-6 w-6 text-muted-foreground" />,
       },
       {
