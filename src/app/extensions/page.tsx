@@ -9,6 +9,7 @@ import {
   Github,
   Package,
   Palette,
+  Sparkles,
   Terminal,
   Zap,
 } from "lucide-react";
@@ -18,23 +19,25 @@ import { getCategoryCounts, getFormattedIconCount } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 
 export const metadata: Metadata = {
-  title: "Extensions & Integrations - VS Code, Figma, React, CLI",
+  title: "Extensions & Integrations - Figma, VS Code, React, CLI",
   description:
-    "Use 6,030+ free SVG icons in VS Code, Figma, Raycast, React, Vue, CLI, and more. npm packages, MCP server, and CDN integrations.",
+    "Use 6,030+ free SVG icons in Figma, VS Code, Raycast, React, Vue, CLI, and more. Official Figma plugin, npm packages, MCP server, and CDN.",
   keywords: [
-    "SVG icon VS Code extension",
+    "Figma brand icons plugin",
     "SVG icon Figma plugin",
+    "SVG icon VS Code extension",
     "brand icon npm package",
     "SVG icon React component",
     "SVG icon CLI",
     "SVG icon CDN",
     "MCP server icons",
     "Raycast SVG icons",
+    "AI agent skill icons",
   ],
   openGraph: {
     title: "Extensions & Integrations | theSVG",
     description:
-      "Use free brand SVG icons in VS Code, Figma, React, CLI, and more.",
+      "Official Figma plugin, VS Code extension, React/Vue/Svelte components, CLI, MCP server, and CDN.",
     siteName: "theSVG",
   },
   alternates: { canonical: "https://thesvg.org/extensions" },
@@ -159,10 +162,10 @@ const CATEGORIES: Category[] = [
     items: [
       {
         name: "Figma Plugin",
-        description: "Browse, search by name or color, drag into your canvas.",
-        status: "coming-soon",
-        cta: "GitHub",
-        href: "https://github.com/GLINCKER/thesvg/issues",
+        description: `Browse ${iconCount}+ brand SVGs, variant picker, recents row, keyboard shortcuts. Insert as editable vectors.`,
+        status: "available",
+        cta: "Install",
+        href: "https://www.figma.com/community/plugin/1612997159050367763",
         iconSlug: "figma",
       },
       {
@@ -228,6 +231,14 @@ const CATEGORIES: Category[] = [
         cta: "npm",
         href: "https://www.npmjs.com/package/@thesvg/mcp-server",
         iconSlug: "claude",
+      },
+      {
+        name: "Agent Skill",
+        description: "Drop-in skill for Claude Code, Cursor, and other AI agents. Teaches your agent the icon CDN and registry in one file.",
+        status: "available",
+        cta: "View skill",
+        href: "https://github.com/GLINCKER/thesvg/blob/main/skills/thesvg/SKILL.md",
+        iconFallback: <Sparkles className="h-6 w-6 text-muted-foreground" />,
       },
       {
         name: "Raycast Extension",

@@ -22,6 +22,9 @@ const PRODUCT_LINKS: FooterLink[] = [
 ];
 
 const RESOURCE_LINKS: FooterLink[] = [
+  { label: "Figma Plugin", href: "https://www.figma.com/community/plugin/1612997159050367763", external: true },
+  { label: "VS Code Extension", href: "https://marketplace.visualstudio.com/items?itemName=glincker.thesvg", external: true },
+  { label: "Raycast Extension", href: "https://www.raycast.com/thegdsks/thesvg", external: true },
   { label: "npm Package", href: "https://www.npmjs.com/package/thesvg", external: true },
   { label: "CDN Usage", href: "/extensions" },
   { label: "Compare", href: "/compare" },
@@ -194,6 +197,21 @@ export function Footer() {
                   aria-label="GitHub"
                 >
                   <Github className="h-4 w-4" />
+                </a>
+                <a
+                  href="https://www.figma.com/community/plugin/1612997159050367763"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="opacity-60 transition-opacity hover:opacity-100"
+                  aria-label="Figma plugin"
+                >
+                  <img
+                    src="/icons/figma/default.svg"
+                    alt=""
+                    width={14}
+                    height={14}
+                    className="h-3.5 w-3.5"
+                  />
                 </a>
                 <a
                   href="https://www.npmjs.com/package/thesvg"
