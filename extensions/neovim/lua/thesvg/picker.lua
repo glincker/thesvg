@@ -13,14 +13,31 @@ local function cdn_url(slug, variant)
   return CDN_BASE .. "/" .. slug .. "/" .. variant .. ".svg"
 end
 
---- Insert text at the current cursor position.
+--- Insert text at the current cursor position. Handles multi-line text by
+--- splitting on newlines (nvim_buf_set_lines rejects strings containing \n,
+--- which is what an inline SVG body always contains).
 ---@param text string
 local function insert_at_cursor(text)
   local row, col = unpack(vim.api.nvim_win_get_cursor(0))
-  local line = vim.api.nvim_buf_get_lines(0, row - 1, row, false)[1] or ""
-  local new_line = line:sub(1, col) .. text .. line:sub(col + 1)
-  vim.api.nvim_buf_set_lines(0, row - 1, row, false, { new_line })
-  vim.api.nvim_win_set_cursor(0, { row, col + #text })
+  local current = vim.api.nvim_buf_get_lines(0, row - 1, row, false)[1] or ""
+  local parts = vim.split(text, "\n", { plain = true })
+
+  if #parts == 1 then
+    local new_line = current:sub(1, col) .. parts[1] .. current:sub(col + 1)
+    vim.api.nvim_buf_set_lines(0, row - 1, row, false, { new_line })
+    vim.api.nvim_win_set_cursor(0, { row, col + #parts[1] })
+    return
+  end
+
+  local last_part = parts[#parts]
+  local replacement = { current:sub(1, col) .. parts[1] }
+  for i = 2, #parts - 1 do
+    replacement[#replacement + 1] = parts[i]
+  end
+  replacement[#replacement + 1] = last_part .. current:sub(col + 1)
+
+  vim.api.nvim_buf_set_lines(0, row - 1, row, false, replacement)
+  vim.api.nvim_win_set_cursor(0, { row + #parts - 1, #last_part })
 end
 
 --- Derive the display variant (respects opts.variant, falls back to "default").
@@ -47,14 +64,14 @@ local function on_select(icon, config)
   if config.insert_mode == "inline" then
     local http = require("thesvg.http")
     local url = cdn_url(icon.slug, variant)
-    local body, err = http.get(url, 5000)
-    if not body then
-      vim.notify("[thesvg] failed to fetch SVG: " .. (err or "unknown"), vim.log.levels.ERROR)
-      return
-    end
-    -- Trim trailing whitespace/newlines from the SVG body.
-    body = vim.trim(body)
-    insert_at_cursor(body)
+    vim.notify("[thesvg] fetching " .. icon.slug .. "...", vim.log.levels.INFO)
+    http.get_async(url, 5000, function(body, err)
+      if not body then
+        vim.notify("[thesvg] failed to fetch SVG: " .. (err or "unknown"), vim.log.levels.ERROR)
+        return
+      end
+      insert_at_cursor(vim.trim(body))
+    end)
   else
     -- Default: insert CDN URL.
     local url = cdn_url(icon.slug, variant)
@@ -87,17 +104,26 @@ end
 ---@param icons table[]
 ---@param config table
 local function open_telescope(icons, config)
-  local telescope_ok, telescope = pcall(require, "telescope")
-  if not telescope_ok then
-    vim.notify("[thesvg] telescope not found, falling back to vim.ui.select", vim.log.levels.DEBUG)
+  local ok, modules = pcall(function()
+    return {
+      telescope = require("telescope"),
+      pickers = require("telescope.pickers"),
+      finders = require("telescope.finders"),
+      conf = require("telescope.config").values,
+      actions = require("telescope.actions"),
+      action_state = require("telescope.actions.state"),
+    }
+  end)
+  if not ok then
+    vim.notify("[thesvg] telescope unavailable, falling back to vim.ui.select", vim.log.levels.DEBUG)
     return false
   end
 
-  local pickers = require("telescope.pickers")
-  local finders = require("telescope.finders")
-  local conf = require("telescope.config").values
-  local actions = require("telescope.actions")
-  local action_state = require("telescope.actions.state")
+  local pickers = modules.pickers
+  local finders = modules.finders
+  local conf = modules.conf
+  local actions = modules.actions
+  local action_state = modules.action_state
 
   pickers.new({}, {
     prompt_title = "theSVG Icons",
