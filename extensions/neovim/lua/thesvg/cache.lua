@@ -117,10 +117,16 @@ function M.get_registry(opts)
     end
   end
 
-  -- Try primary URL then fallback URL.
+  -- Try primary URL then fallback URL. Short per-URL timeout (3s) so a
+  -- network stall on first :TheSVG only freezes the editor for at most
+  -- ~6 seconds in the worst case. The whole flow is on the main thread
+  -- because :TheSVG needs the icon list to open the picker; a fully
+  -- async path is a v1.1 task. Once a successful fetch lands on disk
+  -- everything after that is instant.
+  vim.notify("[thesvg] loading registry...", vim.log.levels.INFO)
   local urls = { REGISTRY_URL, REGISTRY_URL_FALLBACK }
   for _, url in ipairs(urls) do
-    local body, err = http.get(url, 10000)
+    local body, err = http.get(url, 3000)
     if body then
       local icons, parse_err = parse_registry(body)
       if icons and #icons > 0 then
