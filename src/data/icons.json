@@ -105882,7 +105882,7 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-		{
+	{
   "slug": "vinfast",
   "title": "VinFast",
   "aliases": [],
@@ -105895,7 +105895,7 @@
   "license": "MIT",
   "url": "https://vinfast.vn/",
 	"dateAdded": "2026-05-21"
-},
+	},
   {
     "slug": "vinted",
     "title": "Vinted",
