@@ -85281,6 +85281,25 @@
     "collection": "brands"
   },
   {
+    "slug": "pinecone",
+    "title": "Pinecone",
+    "aliases": [],
+    "hex": "201D1E",
+    "categories": [
+      "AI",
+      "Database"
+    ],
+    "variants": {
+      "default": "/icons/pinecone/default.svg",
+      "mono": "/icons/pinecone/mono.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.pinecone.io",
+    "guidelines": "https://www.pinecone.io/company/",
+    "dateAdded": "2026-05-21",
+    "collection": "brands"
+  },
+  {
     "slug": "ping-identity",
     "title": "Ping Identity",
     "aliases": [],
