@@ -1,5 +1,11 @@
 # @thesvg/vue
 
+## 3.0.2
+
+### Patch Changes
+
+- feat: add vinfast icon ([#366](https://github.com/glincker/thesvg/issues/366))
+
 ## 3.0.1
 
 ### Patch Changes
