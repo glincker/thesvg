@@ -63529,7 +63529,10 @@
   {
     "slug": "hugging-face",
     "title": "Hugging Face",
-    "aliases": [],
+    "aliases": [
+      "huggingface",
+      "HuggingFace"
+    ],
     "hex": "FFD21E",
     "categories": [
       "AI",
@@ -63542,25 +63545,6 @@
     "license": "CC0-1.0",
     "url": "https://huggingface.co/",
     "guidelines": "https://huggingface.co/brand",
-    "dateAdded": "2026-03-07",
-    "collection": "brands"
-  },
-  {
-    "slug": "huggingface",
-    "title": "HuggingFace",
-    "aliases": [],
-    "hex": "fff",
-    "categories": [
-      "AI",
-      "Software"
-    ],
-    "variants": {
-      "default": "/icons/huggingface/color.svg",
-      "color": "/icons/huggingface/color.svg",
-      "mono": "/icons/huggingface/mono.svg"
-    },
-    "license": "MIT",
-    "url": "https://huggingface.co",
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
