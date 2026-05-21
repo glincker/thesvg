@@ -105882,6 +105882,20 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+		{
+  "slug": "vinfast",
+  "title": "VinFast",
+  "aliases": [],
+  "hex": "595d69",
+  "categories": ["Automotive"],
+  "variants": {
+    "default": "/icons/vinfast/default.svg",
+    "mono": "/icons/vinfast/mono.svg"
+  },
+  "license": "MIT",
+  "url": "https://vinfast.vn/",
+	"dateAdded": "2026-05-21"
+},
   {
     "slug": "vinted",
     "title": "Vinted",
