@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 3.0.3
+
+### Patch Changes
+
+- feat: add pinecone icon ([#373](https://github.com/glincker/thesvg/issues/373))
+
 ## 3.0.2
 
 ### Patch Changes
