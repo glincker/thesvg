@@ -1,5 +1,11 @@
 # @thesvg/icons
 
+## 3.0.4
+
+### Patch Changes
+
+- feat: launch google 2026 icons, svg viewer, and category routes ([#401](https://github.com/glincker/thesvg/issues/401))
+
 ## 3.0.3
 
 ### Patch Changes
