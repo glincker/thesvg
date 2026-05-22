@@ -1,5 +1,11 @@
 # @thesvg/vue
 
+## 3.0.5
+
+### Patch Changes
+
+- feat: add Vietnam Airlines icon ([#374](https://github.com/glincker/thesvg/issues/374))
+
 ## 3.0.4
 
 ### Patch Changes
