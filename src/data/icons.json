@@ -76037,6 +76037,28 @@
     "collection": "brands"
   },
   {
+    "slug": "microsoft-365-copilot",
+    "title": "Microsoft 365 Copilot",
+    "aliases": [
+      "Microsoft 365 Copilot app",
+      "M365 Copilot"
+    ],
+    "hex": "0736C4",
+    "categories": [
+      "AI",
+      "Microsoft",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-365-copilot/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://adoption.microsoft.com/en-us/copilot/app/",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-05-22",
+    "collection": "brands"
+  },
+  {
     "slug": "microsoft-access",
     "title": "Microsoft Access",
     "aliases": [],
@@ -76209,6 +76231,25 @@
     "collection": "brands"
   },
   {
+    "slug": "microsoft-loop",
+    "title": "Microsoft Loop",
+    "aliases": [],
+    "hex": "9237E3",
+    "categories": [
+      "Productivity",
+      "Microsoft",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-loop/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://adoption.microsoft.com/en-us/microsoft-loop/",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-05-22",
+    "collection": "brands"
+  },
+  {
     "slug": "microsoft-office",
     "title": "Microsoft Office",
     "aliases": [],
@@ -76274,6 +76315,25 @@
     "license": "MIT",
     "url": "https://www.microsoft.com/microsoft-365/outlook/email-and-calendar-software-application",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-planner",
+    "title": "Microsoft Planner",
+    "aliases": [],
+    "hex": "DB45E0",
+    "categories": [
+      "Productivity",
+      "Microsoft",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-planner/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://adoption.microsoft.com/en-us/microsoft-planner/",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-05-22",
     "collection": "brands"
   },
   {
