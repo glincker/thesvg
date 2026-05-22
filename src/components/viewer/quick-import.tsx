@@ -88,6 +88,12 @@ export function QuickImport({ onImport, className }: QuickImportProps) {
       setLoadingSlug(icon.slug);
       try {
         const res = await fetch(icon.variants.default);
+        if (!res.ok) {
+          // Surface the failure so the viewer's status bar can flip to
+          // "invalid" with a useful error instead of receiving the
+          // origin's HTML error page as garbage SVG content.
+          throw new Error(`Failed to load ${icon.slug} (${res.status})`);
+        }
         const text = await res.text();
         onImport(text, icon.title);
         setOpen(false);

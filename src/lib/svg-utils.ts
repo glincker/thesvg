@@ -124,6 +124,42 @@ export function minifySvg(source: string): string {
     .replace(/\s*=\s*/g, "=");
 }
 
+/**
+ * Strip the SVG payload of anything that could execute JavaScript before
+ * it is handed to dangerouslySetInnerHTML. We're not running a full
+ * sanitizer (no DOMPurify dep), but we remove the high-impact vectors:
+ *
+ *  - <script> blocks (including any sneaky <script ... > variants)
+ *  - inline event handlers (onload, onclick, onerror, on*)
+ *  - javascript:, vbscript:, data:text/html URIs in href/xlink:href
+ *  - <foreignObject> which can host arbitrary HTML
+ *
+ * This keeps the viewer safe against self-XSS today and unsafe-share
+ * scenarios if a "copy viewer link" feature ever ships.
+ */
+export function sanitizeSvgForRender(source: string): string {
+  if (typeof window === "undefined") return source;
+  if (!isLikelySvg(source)) return source;
+
+  const stripped = source
+    .replace(/<script[\s\S]*?<\/script\s*>/gi, "")
+    .replace(/<script\b[^>]*\/?>/gi, "")
+    .replace(/<foreignObject[\s\S]*?<\/foreignObject\s*>/gi, "")
+    .replace(/\son[a-z]+\s*=\s*"[^"]*"/gi, "")
+    .replace(/\son[a-z]+\s*=\s*'[^']*'/gi, "")
+    .replace(/\son[a-z]+\s*=\s*[^\s>]+/gi, "")
+    .replace(
+      /\s(?:href|xlink:href)\s*=\s*"\s*(?:javascript|vbscript|data:text\/html)[^"]*"/gi,
+      "",
+    )
+    .replace(
+      /\s(?:href|xlink:href)\s*=\s*'\s*(?:javascript|vbscript|data:text\/html)[^']*'/gi,
+      "",
+    );
+
+  return stripped;
+}
+
 // ─── Deep links ─────────────────────────────────────────────────────────────
 //
 // Native desktop apps (Photoshop, Illustrator, Sketch, Figma desktop) do not

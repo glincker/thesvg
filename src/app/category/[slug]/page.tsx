@@ -9,14 +9,8 @@ import {
   getIconsByCategory,
   getRecentlyAddedIcons,
 } from "@/lib/icons";
+import { slugifyCategory } from "@/lib/categories";
 import { HomeContent } from "@/components/home-content";
-
-function slugifyCategory(name: string): string {
-  return name
-    .toLowerCase()
-    .replaceAll(/[^a-z0-9]+/g, "-")
-    .replaceAll(/^-+|-+$/g, "");
-}
 
 function buildSlugMap(): Map<string, string> {
   const map = new Map<string, string>();

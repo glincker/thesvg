@@ -1,13 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllCategories, getAllIcons } from "@/lib/icons";
+import { slugifyCategory } from "@/lib/categories";
 import postsData from "@/data/posts.json";
-
-function slugifyCategory(name: string): string {
-  return name
-    .toLowerCase()
-    .replaceAll(/[^a-z0-9]+/g, "-")
-    .replaceAll(/^-+|-+$/g, "");
-}
 
 export const dynamic = "force-static";
 

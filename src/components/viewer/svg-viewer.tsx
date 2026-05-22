@@ -31,6 +31,7 @@ import {
   formatSvg,
   isLikelySvg,
   minifySvg,
+  sanitizeSvgForRender,
 } from "@/lib/svg-utils";
 import { DeepLinkActions } from "@/components/viewer/deep-link-actions";
 import { QuickImport } from "@/components/viewer/quick-import";
@@ -51,11 +52,15 @@ export function SvgViewer() {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const gutterRef = useRef<HTMLDivElement>(null);
+  // One-shot guard so Clear (which empties `source`) doesn't cause the
+  // auto-load effect to re-fire and silently re-fill the editor.
+  const didAutoLoad = useRef(false);
 
   // Auto-load icon from ?from=slug query param (set when arriving from
   // /icon/[slug]'s "Inspect in SVG Viewer" link or the editor menu).
   useEffect(() => {
-    if (!fromSlug || source) return;
+    if (!fromSlug || didAutoLoad.current) return;
+    didAutoLoad.current = true;
     let cancelled = false;
     setAutoloading(fromSlug);
     (async () => {
@@ -69,7 +74,9 @@ export function SvgViewer() {
           }
           return;
         }
-        const text = await fetch(icon.variants.default).then((r) => r.text());
+        const res = await fetch(icon.variants.default);
+        if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
+        const text = await res.text();
         if (cancelled) return;
         setSource(text);
         setTitle(icon.title);
@@ -83,11 +90,19 @@ export function SvgViewer() {
     return () => {
       cancelled = true;
     };
-  }, [fromSlug, source]);
+  }, [fromSlug]);
 
   const metrics = useMemo(() => computeSvgMetrics(source), [source]);
   const hasContent = source.trim().length > 0;
   const isValid = hasContent && metrics !== null;
+  // The textarea content is fully user-controlled (paste, drop, import).
+  // Sanitize before innerHTML to prevent inline event-handler / <script>
+  // self-XSS, and to keep us safe if a future "share viewer URL" feature
+  // serializes the source for someone else to render.
+  const sanitizedSource = useMemo(
+    () => (isValid ? sanitizeSvgForRender(source) : ""),
+    [isValid, source],
+  );
 
   const lineCount = useMemo(
     () => Math.max(1, source.split("\n").length),
@@ -425,7 +440,7 @@ export function SvgViewer() {
               {isValid ? (
                 <div
                   className="flex items-center justify-center [&_svg]:max-h-64 [&_svg]:max-w-full"
-                  dangerouslySetInnerHTML={{ __html: source }}
+                  dangerouslySetInnerHTML={{ __html: sanitizedSource }}
                 />
               ) : (
                 <p className="text-center text-xs text-muted-foreground/60">
