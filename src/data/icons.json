@@ -60468,6 +60468,24 @@
     "collection": "brands"
   },
   {
+    "slug": "google-vids",
+    "title": "Google Vids",
+    "aliases": [],
+    "hex": "7372FE",
+    "categories": [
+      "Google",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/google-vids/default.svg",
+      "mono": "/icons/google-vids/mono.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://workspace.google.com/products/vids/",
+    "dateAdded": "2026-05-22",
+    "collection": "brands"
+  },
+  {
     "slug": "googlecloud",
     "title": "GoogleCloud",
     "aliases": [],
