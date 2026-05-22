@@ -60337,6 +60337,24 @@
     "collection": "brands"
   },
   {
+    "slug": "google-sites",
+    "title": "Google Sites",
+    "aliases": [],
+    "hex": "3186FF",
+    "categories": [
+      "Google",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/google-sites/default.svg",
+      "mono": "/icons/google-sites/mono.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://workspace.google.com/products/sites/",
+    "dateAdded": "2026-05-22",
+    "collection": "brands"
+  },
+  {
     "slug": "google-slides",
     "title": "Google Slides",
     "aliases": [],
