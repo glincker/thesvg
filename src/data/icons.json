@@ -60744,6 +60744,29 @@
     "collection": "brands"
   },
   {
+    "slug": "google-vids-2026",
+    "title": "Google Vids (2026)",
+    "aliases": [
+      "google vids 2026",
+      "google vids refresh",
+      "google vids new logo"
+    ],
+    "hex": "4285F4",
+    "categories": [
+      "Google 2026",
+      "Google",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/google-vids-2026/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://workspace.google.com/products/vids/",
+    "guidelines": "https://about.google/brand-resource-center/",
+    "dateAdded": "2026-05-22",
+    "collection": "brands"
+  },
+  {
     "slug": "google-voice-2026",
     "title": "Google Voice (2026)",
     "aliases": [
