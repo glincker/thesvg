@@ -105770,8 +105770,8 @@
 			"Platform"
     ],
     "variants": {
-      "default": "/icons/vietnam-airline/default.svg",
-      "mono": "/icons/vietnam-airline/mono.svg"
+      "default": "/icons/vietnam-airlines/default.svg",
+      "mono": "/icons/vietnam-airlines/mono.svg"
     },
 		"license": "CC0-1.0",
     "url": "https://www.vietnamairlines.com/",
