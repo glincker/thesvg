@@ -1,19 +1,5 @@
-<svg role="img" width="96" height="100" viewBox="0 0 311 320" xmlns="http://www.w3.org/2000/svg">
+<svg role="img" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 192 192">
   <title>Google Chat</title>
-  <g stroke-width="2" fill="none" stroke-linecap="butt">
-    <path stroke="#7e916f" vector-effect="non-scaling-stroke" d="M76.37.51l.01 76.47"/>
-    <path stroke="#1375eb" vector-effect="non-scaling-stroke" d="M76.38 76.98 0 76.96"/>
-    <path stroke="#f3801d" vector-effect="non-scaling-stroke" d="M235.08 1.09q-.16.06-.27.13-.17.09-.17.28l-.02 75.51"/>
-    <path stroke="#7eb426" vector-effect="non-scaling-stroke" d="M234.62 77.01h-.05"/>
-    <path stroke="#91a080" vector-effect="non-scaling-stroke" d="m76.41 77.01-.03-.03"/>
-    <path stroke="#75783e" vector-effect="non-scaling-stroke" d="m310.53 76.77-75.91.24"/>
-    <path stroke="#138495" vector-effect="non-scaling-stroke" d="M76.43 182.69 0 182.67"/>
-    <path stroke="#00983a" vector-effect="non-scaling-stroke" d="m76.44 259.13-.01-38.28"/>
-  </g>
-  <path fill="#0066da" d="m76.37.51.01 76.47L0 76.96V20.77q.85-5.96 3.53-10.01Q10.14.74 22.75.67 49.41.53 76.37.51Z"/>
-  <path fill="#fbbc04" d="m76.37.51 157.42.02a1.61 1.57-26.7 0 1 .92.29l.37.27q-.16.06-.27.13-.17.09-.17.28l-.02 75.51h-.05l-158.16.01-.03-.03Z"/>
-  <path fill="#ea4335" d="m235.08 1.09 75.45 75.68-75.91.24.02-75.51q0-.19.17-.28.11-.07.27-.13Z"/>
-  <path fill="#2684fc" d="m0 76.96 76.38.02.03.03.02 105.68L0 182.67Z"/>
-  <path fill="#00ac47" d="m310.53 76.77.47.34v161.9q-2.66 14.53-15.06 18.77-4.42 1.52-13.03 1.5-55.89-.09-112.92-.17-8.28-.01-16.8.12-.47.01-.8.34-27.9 27.77-56 56.02c-2.87 2.89-6.12 4.5-10.24 3.89q-5.76-.85-8.49-5.94-1.15-2.16-1.17-7.88-.07-23.19-.05-46.53l-.01-38.28 37.78-37.78a1.79 1.77 22.3 0 1 1.26-.52l118.3.04a.83.83 0 0 0 .83-.83l-.03-104.75h.05Z"/>
-  <path fill="#00832d" d="m76.43 182.69v38.16l.01 38.28q-23.97.14-47.53.09-9.82-.02-14.15-1.54Q2.62 253.44 0 238.88v-56.21Z"/>
+  <defs><linearGradient id="google-chat-2026-b" x1="96" x2="96" y1="28" y2="124" gradientUnits="userSpaceOnUse"><stop offset=".09" stop-color="#94D4FF"/><stop offset=".28" stop-color="#78C9FF"/><stop offset=".88" stop-color="#01AE58" stop-opacity="0"/></linearGradient></defs>
+  <rect width="160" height="96" x="16" y="28" fill="#00AF57" rx="48"/><path fill="#0EBC5F" d="M133 48c28.167 0 51 22.834 51 51 0 28.167-22.833 51-51 51H96.624l-34.857 23.064c-3.86 2.544-5.789 3.816-7.372 3.92a6 6 0 0 1-5.612-3.022C48 172.583 48 170.271 48 165.649V148.81C25.121 143.78 8 123.39 8 99c0-28.166 22.834-51 51-51h74z"/><mask id="google-chat-2026-a" width="176" height="129" x="8" y="48" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#0EBC5F" d="M133 48c28.167 0 51 22.834 51 51 0 28.167-22.833 51-51 51H96.722l-39.428 25.896c-3.99 2.62-9.294-.242-9.294-5.015V148.81C25.121 143.78 8 123.39 8 99c0-28.166 22.834-51 51-51h74z"/></mask><g mask="url(#google-chat-2026-a)"><rect width="160" height="96" x="16" y="28" fill="#0EBC5F" rx="48"/><rect width="160" height="96" x="16" y="28" fill="url(#google-chat-2026-b)" rx="48"/><path stroke="#fff" stroke-linecap="round" stroke-width="12" d="M62 94s8.84 18 34 18 34-17.182 34-17.182"/></g>
 </svg>

@@ -1,1 +1,4 @@
-<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Google Chat</title><path d="M1.637 0C.733 0 0 .733 0 1.637v16.5c0 .904.733 1.636 1.637 1.636h3.955v3.323c0 .804.97 1.207 1.539.638l3.963-3.96h11.27c.903 0 1.636-.733 1.636-1.637V5.592L18.408 0Zm3.955 5.592h12.816v8.59H8.455l-2.863 2.863Z"/></svg>
+<svg role="img" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 192 192">
+  <title>Google Chat</title>
+  <rect width="160" height="96" x="16" y="28" rx="48"/><path d="M133 48c28.167 0 51 22.834 51 51 0 28.167-22.833 51-51 51H96.624l-34.857 23.064c-3.86 2.544-5.789 3.816-7.372 3.92a6 6 0 0 1-5.612-3.022C48 172.583 48 170.271 48 165.649V148.81C25.121 143.78 8 123.39 8 99c0-28.166 22.834-51 51-51h74z"/><g><rect width="160" height="96" x="16" y="28" rx="48"/><rect width="160" height="96" x="16" y="28" rx="48"/><path stroke-linecap="round" stroke-width="12" d="M62 94s8.84 18 34 18 34-17.182 34-17.182"/></g>
+</svg>
