@@ -106,16 +106,21 @@ jobs:
         id: jsondiff
         run: |
           base="${{ github.event.pull_request.base.sha }}"
+          # For icon updates, scope icons.json validation to the changed icon
+          # directories. Otherwise a PR that only updates an existing SVG would
+          # validate unrelated pre-existing catalog ordering drift.
+          changed_slugs=$(echo "${{ steps.diff.outputs.changed }}" | sed -nE 's#^public/icons/([^/]+)/.*\.svg$#\1#p' | sort -u || true)
           # Lines newly added in icons.json that look like "slug": "x" entries
-          added=$(git diff "$base"...HEAD -- src/data/icons.json | grep -E '^\+\s+"slug":' | sed -E 's/.*"slug":\s*"([^"]+)".*/\1/' || true)
+          added=$(git diff "$base"...HEAD -- src/data/icons.json | grep -E '^\+[[:space:]]+"slug":' | sed -E 's/.*"slug":[[:space:]]*"([^"]+)".*/\1/' || true)
+          scoped=$(printf '%s\n%s\n' "$changed_slugs" "$added" | sed '/^$/d' | sort -u)
           echo "added<<EOF" >> $GITHUB_OUTPUT
-          echo "$added" >> $GITHUB_OUTPUT
+          echo "$scoped" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
-          if [ -z "$added" ]; then
-            echo "(no new slugs in icons.json)"
+          if [ -z "$scoped" ]; then
+            echo "(no scoped slugs from changed SVGs or icons.json)"
           else
-            echo "Newly added slugs:"
-            echo "$added" | sed 's/^/  /'
+            echo "Scoped slugs:"
+            echo "$scoped" | sed 's/^/  /'
           fi
 
       - name: Validate icons.json structure

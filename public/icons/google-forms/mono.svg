@@ -1,1 +1,4 @@
-<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Google Forms</title><path d="M14.727 6h6l-6-6v6zm0 .727H14V0H4.91c-.905 0-1.637.732-1.637 1.636v20.728c0 .904.732 1.636 1.636 1.636h14.182c.904 0 1.636-.732 1.636-1.636V6.727h-6zM7.91 17.318a.819.819 0 1 1 .001-1.638.819.819 0 0 1 0 1.638zm0-3.273a.819.819 0 1 1 .001-1.637.819.819 0 0 1 0 1.637zm0-3.272a.819.819 0 1 1 .001-1.638.819.819 0 0 1 0 1.638zm9 6.409h-6.818v-1.364h6.818v1.364zm0-3.273h-6.818v-1.364h6.818v1.364zm0-3.273h-6.818V9.273h6.818v1.363z"/></svg>
+<svg role="img" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 192 192">
+  <title>Google Forms</title>
+  <rect width="102" height="50" x="70" y="121" rx="25"/><rect width="50" height="50" x="20" y="121" rx="25"/><rect width="50" height="50" x="20" y="71" rx="25"/><rect width="102" height="50" x="70" y="71" rx="25"/><g><rect width="102" height="50" x="70" y="21" rx="25"/><g><circle cx="56" cy="46" r="36"/></g></g><rect width="50" height="50" x="20" y="21" rx="25"/><path stroke-linecap="round" stroke-width="12" d="M95 46h52"/><circle cx="45" cy="46" r="12"/>
+</svg>
