@@ -105761,6 +105761,24 @@
     "collection": "brands"
   },
   {
+    "slug": "vietnam-airline",
+    "title": "Vietnam Airlines",
+    "aliases": [],
+    "hex": "D99E09",
+    "categories": [
+      "Aviation",
+			"Platform"
+    ],
+    "variants": {
+      "default": "/icons/vietnam-airline/default.svg",
+      "mono": "/icons/vietnam-airline/mono.svg"
+    },
+		"license": "CC0-1.0",
+    "url": "https://www.vietnamairlines.com/",
+    "dateAdded": "2026-05-22",
+    "collection": "brands"
+  },
+  {
     "slug": "viewsonic",
     "title": "ViewSonic",
     "aliases": [],
