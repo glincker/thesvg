@@ -8,6 +8,7 @@ import posthog from "posthog-js";
 import type { IconEntry } from "@/lib/icons";
 import { useFavoritesStore } from "@/lib/stores/favorites-store";
 import { cn } from "@/lib/utils";
+import { NewBadge } from "@/components/icons/new-badge";
 
 interface IconCardProps {
   icon: IconEntry;
@@ -142,7 +143,7 @@ export const IconCard = memo(function IconCard({
           className="flex w-full flex-col items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-lg"
           aria-label={icon.title}
         >
-          <div className="icon-preview-bg flex h-10 w-10 items-center justify-center rounded-lg p-1.5">
+          <div className="icon-preview-bg relative flex h-10 w-10 items-center justify-center rounded-lg p-1.5">
             {needsThemeSwap ? (
               <>
                 <img src={lightSrc} alt="" className="h-full w-full object-contain dark:hidden" loading="lazy" decoding="async" />
@@ -151,6 +152,7 @@ export const IconCard = memo(function IconCard({
             ) : (
               <img src={icon.variants.default} alt="" className="h-full w-full object-contain" loading="lazy" decoding="async" />
             )}
+            <NewBadge slug={icon.slug} className="absolute -top-1 -right-1 scale-90" />
           </div>
           <span className="w-full truncate text-center text-[10px] font-medium text-foreground">{icon.title}</span>
         </Link>
@@ -206,7 +208,8 @@ export const IconCard = memo(function IconCard({
         className="flex w-full flex-1 flex-col items-center rounded-t-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
         aria-label={`View ${icon.title} icon details`}
       >
-        <div className="icon-preview-bg flex w-full flex-1 items-center justify-center rounded-t-xl px-4 py-5 sm:px-5 sm:py-6">
+        <div className="icon-preview-bg relative flex w-full flex-1 items-center justify-center rounded-t-xl px-4 py-5 sm:px-5 sm:py-6">
+          <NewBadge slug={icon.slug} className="absolute top-2 left-2.5" />
           {needsThemeSwap ? (
             <>
               <img

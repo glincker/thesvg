@@ -492,7 +492,7 @@ export function HomeHero({
 
       {/* Collection tabs */}
       {collections.length > 1 && (
-        <div className="flex flex-wrap items-center gap-1.5" role="tablist" aria-label="Icon collections">
+        <div className="flex flex-wrap items-center gap-1" role="tablist" aria-label="Icon collections">
           {collections.map((col) => {
             const info = COLLECTION_LABELS[col.name];
             const isActive = activeCollection === col.name;
@@ -503,16 +503,25 @@ export function HomeHero({
                 role="tab"
                 aria-selected={isActive}
                 onClick={() => setActiveCollection(col.name)}
-                className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 sm:gap-2 sm:px-4 sm:py-2 sm:text-sm ${
+                className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 sm:gap-2 sm:px-3 sm:py-1.5 sm:text-xs ${
                   isActive
                     ? "bg-foreground text-background shadow-sm"
                     : "text-muted-foreground hover:bg-accent hover:text-foreground dark:hover:bg-white/[0.06]"
                 }`}
               >
                 {col.name === "brands" && <Shapes className="h-3.5 w-3.5" />}
-                {col.name === "aws" && <AwsLogo className="h-4.5 w-4.5" />}
+                {col.name === "aws" && <AwsLogo className="h-3.5 w-3.5" />}
+                {col.name === "azure" && (
+                  <img src="/icons/microsoft-azure/default.svg" alt="" className="h-3.5 w-3.5 object-contain" />
+                )}
+                {col.name === "gcp" && (
+                  <img src="/icons/google-cloud/default.svg" alt="" className="h-3.5 w-3.5 object-contain" />
+                )}
+                {col.name === "k8s" && (
+                  <img src="/icons/kubernetes/default.svg" alt="" className="h-3.5 w-3.5 object-contain" />
+                )}
                 {info?.label || col.name}
-                <span className={`rounded-full px-1.5 font-mono text-[10px] ${
+                <span className={`rounded-full px-1.5 font-mono text-[9px] ${
                   isActive
                     ? "bg-background/20 text-background/70"
                     : "bg-muted/60 text-muted-foreground dark:bg-white/[0.06]"

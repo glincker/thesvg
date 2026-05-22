@@ -58,6 +58,7 @@ const LICENSE_URLS: Record<string, string> = {
   "Fair use": "https://thesvg.org/legal#fair-use",
   "Custom": "https://thesvg.org/legal",
   "Proprietary": "https://thesvg.org/legal#trademark",
+  "Trademark": "https://thesvg.org/legal#trademark",
   "Unknown": "https://thesvg.org/legal",
   "TODO": "https://thesvg.org/legal",
 };
@@ -150,6 +151,32 @@ export default async function IconPage({ params }: PageProps) {
         .filter((rel) => rel.slug !== icon.slug)
         .slice(0, 8)
     : [];
+
+  // Year-suffixed brand refresh series: link the original ↔ refresh pair.
+  // e.g. /icon/gmail ↔ /icon/gmail-2026 surface a small chip on each side.
+  const yearMatch = /^(.+)-(\d{4})$/.exec(icon.slug);
+  let versionCounterpartSlug: string | null = null;
+  let versionCounterpartYear: string | null = null;
+  let versionCounterpartIsNewer = false;
+  if (yearMatch) {
+    const originalSlug = yearMatch[1];
+    if (getIconBySlug(originalSlug)) {
+      versionCounterpartSlug = originalSlug;
+      versionCounterpartYear = yearMatch[2];
+      versionCounterpartIsNewer = false;
+    }
+  } else {
+    const currentYear = new Date().getFullYear();
+    for (let y = currentYear; y >= currentYear - 1; y--) {
+      const candidate = `${icon.slug}-${y}`;
+      if (getIconBySlug(candidate)) {
+        versionCounterpartSlug = candidate;
+        versionCounterpartYear = String(y);
+        versionCounterpartIsNewer = true;
+        break;
+      }
+    }
+  }
 
   const categoryCounts = getCategoryCounts();
 
@@ -253,7 +280,13 @@ export default async function IconPage({ params }: PageProps) {
       />
       <Suspense>
         <SidebarShell categoryCounts={categoryCounts}>
-          <IconDetailPage icon={icon} relatedIcons={relatedIcons} />
+          <IconDetailPage
+            icon={icon}
+            relatedIcons={relatedIcons}
+            versionCounterpartSlug={versionCounterpartSlug}
+            versionCounterpartYear={versionCounterpartYear}
+            versionCounterpartIsNewer={versionCounterpartIsNewer}
+          />
         </SidebarShell>
       </Suspense>
     </>

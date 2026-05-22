@@ -104,6 +104,116 @@ export async function svgToPng(svgSource: string, size: number): Promise<Blob> {
   }
 }
 
+export type RasterFormat = "png" | "jpeg" | "webp";
+
+const RASTER_MIME: Record<RasterFormat, string> = {
+  png: "image/png",
+  jpeg: "image/jpeg",
+  webp: "image/webp",
+};
+
+/**
+ * Generic raster export. Supports PNG, JPEG (white background, since JPEG has
+ * no alpha channel), and WebP. Mirrors the svgToPng pipeline so we get the
+ * same aspect-ratio handling for free.
+ */
+export async function svgToRaster(
+  svgSource: string,
+  size: number,
+  format: RasterFormat,
+  quality = 0.92,
+): Promise<Blob> {
+  const svgText = svgSource.trimStart().startsWith("<")
+    ? svgSource
+    : await fetch(svgSource).then((r) => {
+        if (!r.ok) throw new Error(`Failed to fetch SVG: ${r.statusText}`);
+        return r.text();
+      });
+
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(svgText, "image/svg+xml");
+  const svgEl = doc.documentElement;
+  const parseError = doc.querySelector("parsererror");
+  if (parseError) throw new Error("SVG parse error: " + parseError.textContent);
+
+  const viewBox = svgEl.getAttribute("viewBox");
+  let aspectRatio = 1;
+  if (viewBox) {
+    const parts = viewBox.trim().split(/[\s,]+/);
+    if (parts.length === 4) {
+      const vbW = parseFloat(parts[2]);
+      const vbH = parseFloat(parts[3]);
+      if (vbW > 0 && vbH > 0) aspectRatio = vbW / vbH;
+    }
+  } else {
+    const attrW = parseFloat(svgEl.getAttribute("width") ?? "0");
+    const attrH = parseFloat(svgEl.getAttribute("height") ?? "0");
+    if (attrW > 0 && attrH > 0) aspectRatio = attrW / attrH;
+  }
+
+  const canvasW = aspectRatio >= 1 ? size : Math.round(size * aspectRatio);
+  const canvasH = aspectRatio <= 1 ? size : Math.round(size / aspectRatio);
+
+  svgEl.setAttribute("width", String(canvasW));
+  svgEl.setAttribute("height", String(canvasH));
+
+  const serializer = new XMLSerializer();
+  const updatedSvgText = serializer.serializeToString(doc);
+  const svgBlob = new Blob([updatedSvgText], { type: "image/svg+xml" });
+  const blobUrl = URL.createObjectURL(svgBlob);
+
+  try {
+    const img = await new Promise<HTMLImageElement>((resolve, reject) => {
+      const image = new Image();
+      image.onload = () => resolve(image);
+      image.onerror = (err) =>
+        reject(new Error(`Image load failed: ${String(err)}`));
+      image.src = blobUrl;
+    });
+
+    const canvas = document.createElement("canvas");
+    canvas.width = canvasW;
+    canvas.height = canvasH;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) throw new Error("Canvas 2D context unavailable");
+
+    // JPEG has no alpha — flatten onto white so transparent icons stay legible.
+    if (format === "jpeg") {
+      ctx.fillStyle = "#ffffff";
+      ctx.fillRect(0, 0, canvasW, canvasH);
+    }
+    ctx.drawImage(img, 0, 0, canvasW, canvasH);
+
+    const mime = RASTER_MIME[format];
+    const blob = await new Promise<Blob>((resolve, reject) => {
+      canvas.toBlob(
+        (b) => {
+          if (b) resolve(b);
+          else reject(new Error("Canvas toBlob returned null"));
+        },
+        mime,
+        format === "png" ? undefined : quality,
+      );
+    });
+
+    return blob;
+  } finally {
+    URL.revokeObjectURL(blobUrl);
+  }
+}
+
+/** Trigger a browser download for an arbitrary Blob. */
+export function downloadBlob(blob: Blob, filename: string): void {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
 /**
  * Triggers a browser download of a PNG Blob with the given filename.
  */

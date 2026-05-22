@@ -111,6 +111,45 @@
   display: none;
 }
 
+/* Custom thin scrollbar — applied globally so dropdowns, sidebars, code
+   editors, and overflow areas all share one calm visual language instead
+   of the heavy native macOS / Chromium default. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(0 0 0 / 0.18) transparent;
+}
+.dark * {
+  scrollbar-color: rgb(255 255 255 / 0.14) transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(0 0 0 / 0.16);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  min-height: 24px;
+  transition: background-color 0.15s ease;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(0 0 0 / 0.32);
+  background-clip: content-box;
+}
+.dark *::-webkit-scrollbar-thumb {
+  background-color: rgb(255 255 255 / 0.12);
+}
+.dark *::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(255 255 255 / 0.22);
+}
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
 /* Grid card entrance animation */
 @keyframes fade-in-up {
   from {

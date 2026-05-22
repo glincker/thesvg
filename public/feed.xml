@@ -5,8 +5,30 @@
     <link>https://thesvg.org/blog</link>
     <description>Announcements, releases, and updates from theSVG - the open SVG brand library</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Apr 2026 05:07:55 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 22 May 2026 06:10:04 GMT</lastBuildDate>
     <atom:link href="https://thesvg.org/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Google 2026 Icons Are Live: 13 New Gradient Logos in SVG</title>
+      <link>https://thesvg.org/blog/google-2026-icons-svg</link>
+      <guid isPermaLink="true">https://thesvg.org/blog/google-2026-icons-svg</guid>
+      <description>Gmail, Drive, Calendar, Meet, Docs, Sheets, Slides and 6 more: the Google 2026 gradient refresh, packaged as free SVG downloads for developers.</description>
+      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
+      <author>team@thesvg.org (theSVG Team)</author>
+      <category>release</category>
+      <category>google</category>
+      <category>launch</category>
+    </item>
+    <item>
+      <title>The thesvg Figma Plugin is Live</title>
+      <link>https://thesvg.org/blog/figma-plugin-launch</link>
+      <guid isPermaLink="true">https://thesvg.org/blog/figma-plugin-launch</guid>
+      <description>Browse 6,030+ brand SVGs without leaving Figma. Variant picker, recents row, keyboard shortcuts, dark mode aware.</description>
+      <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
+      <author>team@thesvg.org (theSVG Team)</author>
+      <category>release</category>
+      <category>figma</category>
+      <category>integration</category>
+    </item>
     <item>
       <title>thesvg is Now on Raycast</title>
       <link>https://thesvg.org/blog/raycast-extension-launch</link>

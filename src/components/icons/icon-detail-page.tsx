@@ -6,14 +6,11 @@ import Link from "next/link";
 import { useSearchParams, usePathname } from "next/navigation";
 import {
   ArrowUpRight,
-  Check,
-  Download,
   Globe,
   Heart,
   Home,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import type { IconEntry } from "@/lib/icons";
 import { useFavoritesStore } from "@/lib/stores/favorites-store";
 import { cn } from "@/lib/utils";
@@ -23,15 +20,23 @@ import { QuickCommands } from "@/components/icons/detail/quick-commands";
 import { CodeBlock } from "@/components/icons/detail/code-block";
 import { PngExport } from "@/components/icons/detail/png-export";
 import { ContributionCta } from "@/components/icons/detail/contribution-cta";
+import { DownloadMenu } from "@/components/icons/detail/download-menu";
+import { OpenInEditorMenu } from "@/components/icons/detail/open-in-editor-menu";
 
 interface IconDetailPageProps {
   icon: IconEntry;
   relatedIcons?: IconEntry[];
+  versionCounterpartSlug?: string | null;
+  versionCounterpartYear?: string | null;
+  versionCounterpartIsNewer?: boolean;
 }
 
 export function IconDetailPage({
   icon,
   relatedIcons = [],
+  versionCounterpartSlug,
+  versionCounterpartYear,
+  versionCounterpartIsNewer,
 }: IconDetailPageProps) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -44,8 +49,6 @@ export function IconDetailPage({
       : "default";
   const [activeVariant, setActiveVariant] = useState(initialVariant);
   const [svgContent, setSvgContent] = useState("");
-
-  const [downloaded, setDownloaded] = useState(false);
 
   const toggleFavorite = useFavoritesStore((s) => s.toggleFavorite);
   const isFavorite = useFavoritesStore((s) => s.favorites.includes(icon.slug));
@@ -128,37 +131,6 @@ export function IconDetailPage({
       });
     return () => { cancelled = true; };
   }, [currentPath]);
-
-  const handleDownload = useCallback(async () => {
-    if (!currentPath || downloaded) return;
-    try {
-      const blob = svgContent
-        ? new Blob([svgContent], { type: "image/svg+xml" })
-        : await fetch(currentPath).then((r) => r.blob());
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      const variantSuffix =
-        activeVariant === "default"
-          ? ""
-          : `-${activeVariant.replaceAll(/([a-z])([A-Z])/g, "$1-$2").toLowerCase()}`;
-      a.download = `${icon.slug}${variantSuffix}.svg`;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
-      setDownloaded(true);
-      posthog.capture("icon_downloaded", {
-        slug: icon.slug,
-        title: icon.title,
-        variant: activeVariant,
-        source: "detail_page",
-      });
-      setTimeout(() => setDownloaded(false), 2000);
-    } catch {
-      window.open(currentPath, "_blank");
-    }
-  }, [currentPath, svgContent, icon.slug, activeVariant, downloaded, icon.title]);
 
   const primaryCategory = icon.categories[0] ?? null;
 
@@ -362,33 +334,44 @@ export function IconDetailPage({
               <p className="mt-0.5 font-mono text-xs text-muted-foreground">
                 {icon.slug}
               </p>
+              {versionCounterpartSlug && versionCounterpartYear && (
+                <Link
+                  href={`/icon/${versionCounterpartSlug}`}
+                  prefetch={false}
+                  className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-border/40 bg-card/60 px-2.5 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:border-border hover:bg-card hover:text-foreground"
+                >
+                  {versionCounterpartIsNewer ? (
+                    <>
+                      <span className="rounded-full bg-gradient-to-r from-fuchsia-500/90 via-orange-500/90 to-amber-400/90 px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase leading-none tracking-wider text-white">
+                        {versionCounterpartYear}
+                      </span>
+                      <span>See the {versionCounterpartYear} refresh</span>
+                      <ArrowUpRight className="h-3 w-3 opacity-50" />
+                    </>
+                  ) : (
+                    <>
+                      <ArrowUpRight className="h-3 w-3 rotate-180 opacity-50" />
+                      <span>Compare with original</span>
+                    </>
+                  )}
+                </Link>
+              )}
             </div>
-            <div className="flex shrink-0 items-center gap-2">
+            <div className="flex shrink-0 flex-wrap items-center justify-end gap-2">
               <JsDelivrButton slug={icon.slug} activeVariant={activeVariant} />
-              <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
-                {downloaded ? `${icon.title} downloaded` : ""}
-              </div>
-              <Button
-                size="sm"
-                onClick={handleDownload}
-                aria-label={downloaded ? `${icon.title} downloaded` : `Download ${icon.title} SVG`}
-                className={cn(
-                  "relative overflow-hidden transition-all duration-300",
-                  downloaded
-                    ? "bg-green-600 hover:bg-green-600 text-white shadow-green-500/25 shadow-lg"
-                    : "",
-                )}
-              >
-                {downloaded ? (
-                  <Check className="mr-1.5 h-4 w-4 motion-safe:animate-bounce" />
-                ) : (
-                  <Download className="mr-1.5 h-4 w-4" />
-                )}
-                {downloaded ? "Downloaded!" : "Download"}
-                {downloaded && (
-                  <span className="absolute inset-0 motion-safe:animate-ping rounded-lg bg-green-400/20" />
-                )}
-              </Button>
+              <OpenInEditorMenu
+                svg={svgContent}
+                title={icon.title}
+                slug={icon.slug}
+                srcUrl={`https://thesvg.org${currentPath}`}
+              />
+              <DownloadMenu
+                svgContent={svgContent}
+                currentPath={currentPath}
+                slug={icon.slug}
+                title={icon.title}
+                activeVariant={activeVariant}
+              />
             </div>
           </div>
 
@@ -508,7 +491,10 @@ export function IconDetailPage({
             </p>
           )}
           <p>
-            License: {icon.license}. Free for personal and commercial use.
+            License: {icon.license}.{" "}
+            {icon.license === "Trademark"
+              ? "Provided for identification, editorial, and reference use. Do not modify the mark or imply endorsement. See the brand owner's guidelines before use."
+              : "Free for personal and commercial use."}
             {icon.hex && icon.hex !== "000"
               ? ` Brand color: #${icon.hex}.`
               : ""}

@@ -1,9 +1,10 @@
 "use client";
 
 import { useMemo, useCallback, useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import posthog from "posthog-js";
-import { ArrowDownAZ, ArrowDownZA, ArrowUpDown, Grid3X3, LayoutGrid, X } from "lucide-react";
+import { ArrowDownAZ, ArrowDownZA, ArrowUpDown, Clock, Grid3X3, LayoutGrid, X } from "lucide-react";
 import type { Collection, IconEntry } from "@/lib/icons";
 import { loadIconsManifest, prefetchIconsManifest } from "@/lib/icons-manifest";
 import { Sidebar } from "@/components/layout/sidebar";
@@ -16,7 +17,7 @@ import { useFavoritesStore } from "@/lib/stores/favorites-store";
 import { useSidebarStore } from "@/lib/stores/sidebar-store";
 import { useSearchStore } from "@/lib/stores/search-store";
 
-const SORT_OPTIONS = ["default", "az", "za"] as const;
+const SORT_OPTIONS = ["default", "recent", "az", "za"] as const;
 
 interface HomeContentProps {
   categoryCounts: { name: string; count: number }[];
@@ -24,9 +25,11 @@ interface HomeContentProps {
   recentIcons: IconEntry[];
   collections: { name: Collection; count: number }[];
   defaultCollection?: Collection;
+  defaultCategory?: string;
+  defaultCategorySlug?: string;
 }
 
-export function HomeContent({ categoryCounts, count, recentIcons, collections, defaultCollection }: HomeContentProps) {
+export function HomeContent({ categoryCounts, count, recentIcons, collections, defaultCollection, defaultCategory, defaultCategorySlug }: HomeContentProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -38,7 +41,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
 
   // Read URL params
   const queryParam = searchParams.get("q") || "";
-  const categoryParam = searchParams.get("category");
+  const categoryParam = searchParams.get("category") || defaultCategory || null;
   const sortParam = searchParams.get("sort");
   const viewParam = (searchParams.get("view") || "comfortable") as "compact" | "comfortable";
   const favoritesParam = searchParams.get("favorites") === "true";
@@ -83,12 +86,17 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
           params.set(key, value);
         }
       }
-      // On /collection/[name] pages, keep the base path and append query params
-      const basePath = defaultCollection ? `/collection/${defaultCollection}` : "/";
+      // On /collection/[name] and /category/[slug] pages, keep the base path
+      // and append query params so updates don't navigate away from the landing.
+      const basePath = defaultCategorySlug
+        ? `/category/${defaultCategorySlug}`
+        : defaultCollection
+        ? `/collection/${defaultCollection}`
+        : "/";
       const qs = params.toString();
       router.replace(qs ? `${basePath}?${qs}` : basePath, { scroll: false });
     },
-    [router, searchParams, defaultCollection]
+    [router, searchParams, defaultCollection, defaultCategorySlug]
   );
 
   // Sync global search store changes to URL with debounce
@@ -203,6 +211,10 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
           searched = [...searched].sort((a, b) => a.title.localeCompare(b.title));
         } else if (sortParam === "za") {
           searched = [...searched].sort((a, b) => b.title.localeCompare(a.title));
+        } else if (sortParam === "recent") {
+          searched = [...searched].sort((a, b) =>
+            (b.dateAdded ?? "").localeCompare(a.dateAdded ?? ""),
+          );
         }
         setFiltered(searched);
       });
@@ -214,6 +226,10 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
       result = [...result].sort((a, b) => a.title.localeCompare(b.title));
     } else if (sortParam === "za") {
       result = [...result].sort((a, b) => b.title.localeCompare(a.title));
+    } else if (sortParam === "recent") {
+      result = [...result].sort((a, b) =>
+        (b.dateAdded ?? "").localeCompare(a.dateAdded ?? ""),
+      );
     }
 
     setFiltered(result);
@@ -329,11 +345,19 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                       <ArrowDownAZ className="h-4 w-4" />
                     ) : sortParam === "za" ? (
                       <ArrowDownZA className="h-4 w-4" />
+                    ) : sortParam === "recent" ? (
+                      <Clock className="h-4 w-4" />
                     ) : (
                       <ArrowUpDown className="h-4 w-4" />
                     )}
                     <span className="hidden sm:inline">
-                      {sortParam === "az" ? "A-Z" : sortParam === "za" ? "Z-A" : "Sort"}
+                      {sortParam === "az"
+                        ? "A-Z"
+                        : sortParam === "za"
+                          ? "Z-A"
+                          : sortParam === "recent"
+                            ? "Recent"
+                            : "Sort"}
                     </span>
                   </button>
                 </div>
@@ -393,6 +417,34 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                 >
                   Clear all
                 </button>
+              </div>
+            )}
+
+            {/* Featured callout — only on /category/google */}
+            {defaultCategorySlug === "google" && (
+              <div className="mx-auto mt-3 max-w-7xl px-3 sm:px-4">
+                <Link
+                  href="/category/google-2026"
+                  className="group flex items-center justify-between gap-3 rounded-2xl border border-fuchsia-300/30 bg-gradient-to-r from-fuchsia-500/[0.06] via-orange-500/[0.05] to-amber-400/[0.06] p-4 transition-all hover:border-fuchsia-300/50 hover:from-fuchsia-500/[0.1] hover:via-orange-500/[0.08] hover:to-amber-400/[0.1] dark:border-fuchsia-500/[0.15] dark:from-fuchsia-500/[0.05] dark:via-orange-500/[0.04] dark:to-amber-400/[0.05] dark:hover:border-fuchsia-500/[0.3]"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="rounded-full bg-gradient-to-r from-fuchsia-500/90 via-orange-500/90 to-amber-400/90 px-2 py-0.5 font-mono text-[10px] font-semibold uppercase leading-none tracking-wider text-white shadow-sm shadow-black/20">
+                      New
+                    </span>
+                    <div>
+                      <p className="text-sm font-semibold text-foreground">
+                        Google&rsquo;s 2026 refresh is here
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        13 redesigned product icons with the new gradient identity. First library to host them.
+                      </p>
+                    </div>
+                  </div>
+                  <span className="hidden shrink-0 items-center gap-1 rounded-full bg-foreground px-3 py-1.5 text-xs font-medium text-background transition-opacity group-hover:opacity-90 sm:inline-flex">
+                    View 2026 set
+                    <ArrowDownAZ className="h-3 w-3 rotate-90" />
+                  </span>
+                </Link>
               </div>
             )}
 

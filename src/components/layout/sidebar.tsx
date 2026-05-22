@@ -8,14 +8,15 @@ import {
   Cloud,
   Code,
   Code2,
+  Eye,
   FileText,
   Grid2X2,
   Heart,
-  Home,
   Package,
   Palette,
   Plus,
   Shapes,
+  Sparkles,
   Terminal,
 } from "lucide-react";
 import Link from "next/link";
@@ -71,16 +72,9 @@ export function Sidebar({
   const pathname = usePathname();
   const isExtensionsPage = pathname === "/extensions";
   const [extensionsExpanded, setExtensionsExpanded] = useState(isExtensionsPage);
-  const isHomeActive = !selectedCategory && !showFavorites && !selectedCollection && pathname === "/";
   const isFavoritesActive = showFavorites;
-
-  function handleHomeClick() {
-    onCategorySelect(null);
-    onCollectionSelect(null);
-    if (showFavorites) {
-      onToggleFavorites();
-    }
-  }
+  const isAllIconsActive =
+    !selectedCategory && !showFavorites && !selectedCollection && pathname === "/";
 
   const navItemClass =
     "group flex w-full items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-muted-foreground transition-all duration-200 hover:bg-accent/80 hover:text-accent-foreground";
@@ -100,16 +94,7 @@ export function Sidebar({
       <nav className="flex flex-col gap-0.5 p-3">
         <Link
           href="/"
-          onClick={handleHomeClick}
-          className={cn(navItemClass, isHomeActive && activeClass)}
-        >
-          <Home className="h-4 w-4 shrink-0 transition-transform duration-200 group-hover:scale-110" />
-          Home
-        </Link>
-
-        <Link
-          href="/?sort=az"
-          className={cn(navItemClass)}
+          className={cn(navItemClass, isAllIconsActive && activeClass)}
         >
           <Grid2X2 className="h-4 w-4 shrink-0 transition-transform duration-200 group-hover:scale-110" />
           All Icons
@@ -180,6 +165,17 @@ export function Sidebar({
         </div>
 
         <Link
+          href="/viewer"
+          className={cn(navItemClass, pathname === "/viewer" && activeClass)}
+        >
+          <Eye className="h-4 w-4 shrink-0 transition-transform duration-200 group-hover:scale-110" />
+          <span className="flex-1 text-left">Viewer</span>
+          <span className="rounded-full bg-muted/60 px-1.5 font-mono text-[9px] uppercase text-muted-foreground/70 dark:bg-white/[0.06]">
+            New
+          </span>
+        </Link>
+
+        <Link
           href="/blog"
           className={cn(navItemClass, pathname.startsWith("/blog") && activeClass)}
         >
@@ -239,6 +235,30 @@ export function Sidebar({
       )}
 
       <div className="mx-3 h-px bg-gradient-to-r from-transparent via-border/60 to-transparent dark:via-white/[0.06]" />
+
+      <p className="px-4 pt-3 pb-1.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/50">
+        Featured
+      </p>
+
+      <div className="flex flex-col gap-0.5 px-3 pb-1">
+        <Link
+          href="/category/google-2026"
+          className={cn(
+            "group flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05]",
+            pathname === "/category/google-2026" && activeClass,
+          )}
+        >
+          <span className="flex items-center gap-2 truncate">
+            <Sparkles className="h-3.5 w-3.5 shrink-0 text-amber-500" />
+            <span className="truncate">Google 2026</span>
+          </span>
+          <span className="ml-2 shrink-0 rounded-full bg-gradient-to-r from-fuchsia-500/90 via-orange-500/90 to-amber-400/90 px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase leading-none tracking-wider text-white shadow-sm shadow-black/20">
+            NEW
+          </span>
+        </Link>
+      </div>
+
+      <div className="mx-3 mt-2 h-px bg-gradient-to-r from-transparent via-border/60 to-transparent dark:via-white/[0.06]" />
 
       <p className="px-4 pt-3 pb-1.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/50">
         Categories

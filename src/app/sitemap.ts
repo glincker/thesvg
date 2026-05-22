@@ -1,6 +1,13 @@
 import type { MetadataRoute } from "next";
-import { getAllIcons } from "@/lib/icons";
+import { getAllCategories, getAllIcons } from "@/lib/icons";
 import postsData from "@/data/posts.json";
+
+function slugifyCategory(name: string): string {
+  return name
+    .toLowerCase()
+    .replaceAll(/[^a-z0-9]+/g, "-")
+    .replaceAll(/^-+|-+$/g, "");
+}
 
 export const dynamic = "force-static";
 
@@ -21,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     { url: BASE_URL, lastModified: now, changeFrequency: "daily", priority: 1.0 },
     { url: `${BASE_URL}/categories`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE_URL}/viewer`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/compare`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/extensions`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/submit`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
@@ -34,7 +42,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/collection/aws`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/collection/azure`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/collection/gcp`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/collection/k8s`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
   ];
+
+  const categorySlugs = new Set<string>();
+  for (const cat of getAllCategories()) {
+    const slug = slugifyCategory(cat);
+    if (slug) categorySlugs.add(slug);
+  }
+  const categoryPages: MetadataRoute.Sitemap = [...categorySlugs].map(
+    (slug) => ({
+      url: `${BASE_URL}/category/${slug}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: slug === "google-2026" ? 0.95 : 0.7,
+    }),
+  );
 
   const blogPages: MetadataRoute.Sitemap = (
     postsData as { slug: string; date: string }[]
@@ -53,5 +76,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     images: [`${CDN_BASE}/${icon.slug}/default.svg`],
   }));
 
-  return [...staticPages, ...collectionPages, ...blogPages, ...iconPages];
+  return [
+    ...staticPages,
+    ...collectionPages,
+    ...categoryPages,
+    ...blogPages,
+    ...iconPages,
+  ];
 }

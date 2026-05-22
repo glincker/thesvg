@@ -58913,6 +58913,29 @@
     "collection": "brands"
   },
   {
+    "slug": "gmail-2026",
+    "title": "Gmail (2026)",
+    "aliases": [
+      "gmail 2026",
+      "gmail refresh",
+      "gmail new logo"
+    ],
+    "hex": "FC413D",
+    "categories": [
+      "Google 2026",
+      "Google",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/gmail-2026/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.gmail.com",
+    "guidelines": "https://about.google/brand-resource-center/",
+    "dateAdded": "2026-05-22",
+    "collection": "brands"
+  },
+  {
     "slug": "gmx",
     "title": "GMX",
     "aliases": [],
@@ -59530,6 +59553,29 @@
     "collection": "brands"
   },
   {
+    "slug": "google-calendar-2026",
+    "title": "Google Calendar (2026)",
+    "aliases": [
+      "google calendar 2026",
+      "google calendar refresh",
+      "google calendar new logo"
+    ],
+    "hex": "1A73E8",
+    "categories": [
+      "Google 2026",
+      "Google",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/google-calendar-2026/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://calendar.google.com/",
+    "guidelines": "https://about.google/brand-resource-center/",
+    "dateAdded": "2026-05-22",
+    "collection": "brands"
+  },
+  {
     "slug": "google-campaign-manager-360",
     "title": "Google Campaign Manager 360",
     "aliases": [],
@@ -59602,6 +59648,29 @@
     "license": "CC0-1.0",
     "url": "https://chat.google.com/",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "google-chat-2026",
+    "title": "Google Chat (2026)",
+    "aliases": [
+      "google chat 2026",
+      "google chat refresh",
+      "google chat new logo"
+    ],
+    "hex": "34A853",
+    "categories": [
+      "Google 2026",
+      "Google",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/google-chat-2026/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://chat.google.com/",
+    "guidelines": "https://about.google/brand-resource-center/",
+    "dateAdded": "2026-05-22",
     "collection": "brands"
   },
   {
@@ -59846,6 +59915,29 @@
     "collection": "brands"
   },
   {
+    "slug": "google-docs-2026",
+    "title": "Google Docs (2026)",
+    "aliases": [
+      "google docs 2026",
+      "google docs refresh",
+      "google docs new logo"
+    ],
+    "hex": "4285F4",
+    "categories": [
+      "Google 2026",
+      "Google",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/google-docs-2026/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.google.com/docs/about",
+    "guidelines": "https://about.google/brand-resource-center/",
+    "dateAdded": "2026-05-22",
+    "collection": "brands"
+  },
+  {
     "slug": "google-drive",
     "title": "Google Drive",
     "aliases": [],
@@ -59861,6 +59953,29 @@
     "license": "CC0-1.0",
     "url": "https://www.google.com/drive/",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "google-drive-2026",
+    "title": "Google Drive (2026)",
+    "aliases": [
+      "google drive 2026",
+      "google drive refresh",
+      "google drive new logo"
+    ],
+    "hex": "FEC700",
+    "categories": [
+      "Google 2026",
+      "Google",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/google-drive-2026/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.google.com/drive/",
+    "guidelines": "https://about.google/brand-resource-center/",
+    "dateAdded": "2026-05-22",
     "collection": "brands"
   },
   {
@@ -59933,6 +60048,29 @@
     "license": "CC0-1.0",
     "url": "https://about.google/products/#all-products",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "google-forms-2026",
+    "title": "Google Forms (2026)",
+    "aliases": [
+      "google forms 2026",
+      "google forms refresh",
+      "google forms new logo"
+    ],
+    "hex": "7248B9",
+    "categories": [
+      "Google 2026",
+      "Google",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/google-forms-2026/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://docs.google.com/forms",
+    "guidelines": "https://about.google/brand-resource-center/",
+    "dateAdded": "2026-05-22",
     "collection": "brands"
   },
   {
@@ -60027,6 +60165,29 @@
     "collection": "brands"
   },
   {
+    "slug": "google-keep-2026",
+    "title": "Google Keep (2026)",
+    "aliases": [
+      "google keep 2026",
+      "google keep refresh",
+      "google keep new logo"
+    ],
+    "hex": "FFBB00",
+    "categories": [
+      "Google 2026",
+      "Google",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/google-keep-2026/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://keep.google.com/",
+    "guidelines": "https://about.google/brand-resource-center/",
+    "dateAdded": "2026-05-22",
+    "collection": "brands"
+  },
+  {
     "slug": "google-lens",
     "title": "Google Lens",
     "aliases": [],
@@ -60096,6 +60257,29 @@
     "license": "CC0-1.0",
     "url": "https://meet.google.com/",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "google-meet-2026",
+    "title": "Google Meet (2026)",
+    "aliases": [
+      "google meet 2026",
+      "google meet refresh",
+      "google meet new logo"
+    ],
+    "hex": "00897B",
+    "categories": [
+      "Google 2026",
+      "Google",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/google-meet-2026/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://meet.google.com/",
+    "guidelines": "https://about.google/brand-resource-center/",
+    "dateAdded": "2026-05-22",
     "collection": "brands"
   },
   {
@@ -60337,6 +60521,52 @@
     "collection": "brands"
   },
   {
+    "slug": "google-sheets-2026",
+    "title": "Google Sheets (2026)",
+    "aliases": [
+      "google sheets 2026",
+      "google sheets refresh",
+      "google sheets new logo"
+    ],
+    "hex": "34A853",
+    "categories": [
+      "Google 2026",
+      "Google",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/google-sheets-2026/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://sheets.google.com/",
+    "guidelines": "https://about.google/brand-resource-center/",
+    "dateAdded": "2026-05-22",
+    "collection": "brands"
+  },
+  {
+    "slug": "google-sites-2026",
+    "title": "Google Sites (2026)",
+    "aliases": [
+      "google sites 2026",
+      "google sites refresh",
+      "google sites new logo"
+    ],
+    "hex": "4285F4",
+    "categories": [
+      "Google 2026",
+      "Google",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/google-sites-2026/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://sites.google.com/",
+    "guidelines": "https://about.google/brand-resource-center/",
+    "dateAdded": "2026-05-22",
+    "collection": "brands"
+  },
+  {
     "slug": "google-slides",
     "title": "Google Slides",
     "aliases": [],
@@ -60352,6 +60582,29 @@
     "license": "CC0-1.0",
     "url": "https://slides.google.com/",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "google-slides-2026",
+    "title": "Google Slides (2026)",
+    "aliases": [
+      "google slides 2026",
+      "google slides refresh",
+      "google slides new logo"
+    ],
+    "hex": "FBBC04",
+    "categories": [
+      "Google 2026",
+      "Google",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/google-slides-2026/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://slides.google.com/",
+    "guidelines": "https://about.google/brand-resource-center/",
+    "dateAdded": "2026-05-22",
     "collection": "brands"
   },
   {
@@ -60431,6 +60684,29 @@
     "collection": "brands"
   },
   {
+    "slug": "google-tasks-2026",
+    "title": "Google Tasks (2026)",
+    "aliases": [
+      "google tasks 2026",
+      "google tasks refresh",
+      "google tasks new logo"
+    ],
+    "hex": "2684FC",
+    "categories": [
+      "Google 2026",
+      "Google",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/google-tasks-2026/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://tasks.google.com/",
+    "guidelines": "https://about.google/brand-resource-center/",
+    "dateAdded": "2026-05-22",
+    "collection": "brands"
+  },
+  {
     "slug": "google-translate",
     "title": "Google Translate",
     "aliases": [],
@@ -60465,6 +60741,29 @@
     "url": "https://partnermarketinghub.withgoogle.com/brands/google-tv/visual-identity/visual-identity/",
     "guidelines": "https://partnermarketinghub.withgoogle.com/brands/google-tv/visual-identity/visual-identity/",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "google-voice-2026",
+    "title": "Google Voice (2026)",
+    "aliases": [
+      "google voice 2026",
+      "google voice refresh",
+      "google voice new logo"
+    ],
+    "hex": "1A73E8",
+    "categories": [
+      "Google 2026",
+      "Google",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/google-voice-2026/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://voice.google.com/",
+    "guidelines": "https://about.google/brand-resource-center/",
+    "dateAdded": "2026-05-22",
     "collection": "brands"
   },
   {
@@ -105885,20 +106184,23 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	{
-  "slug": "vinfast",
-  "title": "VinFast",
-  "aliases": [],
-  "hex": "595d69",
-  "categories": ["Automotive"],
-  "variants": {
-    "default": "/icons/vinfast/default.svg",
-    "mono": "/icons/vinfast/mono.svg"
+  {
+    "slug": "vinfast",
+    "title": "VinFast",
+    "aliases": [],
+    "hex": "595d69",
+    "categories": [
+      "Automotive"
+    ],
+    "variants": {
+      "default": "/icons/vinfast/default.svg",
+      "mono": "/icons/vinfast/mono.svg"
+    },
+    "license": "MIT",
+    "url": "https://vinfast.vn/",
+    "dateAdded": "2026-05-21",
+    "collection": "brands"
   },
-  "license": "MIT",
-  "url": "https://vinfast.vn/",
-	"dateAdded": "2026-05-21"
-	},
   {
     "slug": "vinted",
     "title": "Vinted",

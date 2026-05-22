@@ -35,6 +35,7 @@ const COMMUNITY_LINKS: FooterLink[] = [
   { label: "Issues", href: "https://github.com/GLINCKER/thesvg/issues", external: true },
   { label: "Discussions", href: "https://github.com/GLINCKER/thesvg/discussions", external: true },
   { label: "Contributing", href: "https://github.com/GLINCKER/thesvg/blob/main/CONTRIBUTING.md", external: true },
+  { label: "Meet the founder", href: "https://thegdsks.com", external: true },
 ];
 
 const LEGAL_LINKS: FooterLink[] = [

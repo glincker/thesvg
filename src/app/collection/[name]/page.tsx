@@ -74,9 +74,25 @@ const COLLECTION_META: Record<
       "developer icons",
     ],
   },
+  k8s: {
+    title: "Kubernetes Icons - Free SVG Download",
+    description:
+      "Browse and download 38 official Kubernetes architecture SVG icons. Pods, Deployments, Services, Ingress, ConfigMaps, Secrets, and the full CNCF Kubernetes icon set. Apache 2.0.",
+    keywords: [
+      "Kubernetes icons",
+      "K8s icons",
+      "Kubernetes SVG",
+      "Pod icon",
+      "Deployment icon",
+      "Service icon",
+      "Ingress icon",
+      "CNCF icons",
+      "cloud native icons",
+    ],
+  },
 };
 
-const VALID_COLLECTIONS = ["aws", "azure", "gcp", "brands"] as const;
+const VALID_COLLECTIONS = ["aws", "azure", "gcp", "brands", "k8s"] as const;
 type ValidCollection = (typeof VALID_COLLECTIONS)[number];
 
 function isValidCollection(name: string): name is ValidCollection {
