@@ -35761,6 +35761,23 @@
     "collection": "brands"
   },
   {
+    "slug": "bamboo-airways",
+    "title": "Bamboo Airways",
+    "aliases": [],
+    "hex": "5CA736",
+    "categories": [
+      "Aviation"
+    ],
+    "variants": {
+      "default": "/icons/bamboo-airways/default.svg",
+      "horizontal": "/icons/bamboo-airways/horizontal.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.bambooairways.com/",
+    "dateAdded": "2026-05-22",
+    "collection": "brands"
+  },
+  {
     "slug": "bambu-lab",
     "title": "Bambu Lab",
     "aliases": [],
