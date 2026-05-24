@@ -29,7 +29,8 @@
     "variants": {
       "default": "/icons/sabeco/default.svg",
       "light": "/icons/sabeco/light.svg",
-      "dark": "/icons/sabeco/dark.svg"
+      "dark": "/icons/sabeco/dark.svg",
+			"mono": "/icons/sabeco/mono.svg"
     },
     "license": "CC0-1.0",
     "url": "https://www.sabeco.com.vn",
