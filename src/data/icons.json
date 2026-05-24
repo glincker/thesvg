@@ -106253,7 +106253,7 @@
     ],
     "variants": {
       "default": "/icons/vinpearl/default.svg",
-      "light": "/icons/vinpearl/dark.svg"
+      "dark": "/icons/vinpearl/dark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://www.vinpearl.com/",
