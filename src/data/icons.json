@@ -18,6 +18,24 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+    {
+      "slug": "sabeco",
+      "title": "Sabeco",
+      "aliases": [],
+      "hex": "ec1c24",
+      "categories": [
+        "Food & Beverage"
+      ],
+      "variants": {
+        "default": "/icons/sabeco/default.svg",
+        "light": "/icons/sabeco/light.svg",
+        "dark": "/icons/sabeco/dark.svg"
+      },
+      "license": "CC0-1.0",
+      "url": "https://www.sabeco.com.vn",
+      "dateAdded": "2026-05-24",
+      "collection": "brands"
+    },
   {
     "slug": "1001tracklists",
     "title": "1001Tracklists",
