@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Read CLI version from package.json
         id: pkg
@@ -21,7 +21,7 @@ jobs:
           echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
 
       - name: Update formula in tap repo
-        uses: dawidd6/action-homebrew-bump-formula@v3
+        uses: dawidd6/action-homebrew-bump-formula@v7
         with:
           token: ${{ secrets.HOMEBREW_TAP_TOKEN }}
           tap: glincker/thesvg
