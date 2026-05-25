@@ -53,7 +53,7 @@
     "svelte": ">=4"
   },
   "devDependencies": {
-    "tsx": "^4.22.1",
+    "tsx": "^4.22.3",
     "typescript": "^6.0.3"
   },
   "engines": {
