@@ -967,6 +967,23 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	{
+    "slug": "adnoc",
+    "title": "ADNOC Logistics & Services",
+    "aliases": [],
+    "hex": "0047ba",
+    "categories": [
+      "Logistics",
+      "Services"
+    ],
+    "variants": {
+      "default": "/icons/adnoc/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://adnocls.ae/",
+    "dateAdded": "2026-05-26",
+    "collection": "brands"
+  },
   {
     "slug": "adobe",
     "title": "Adobe",
