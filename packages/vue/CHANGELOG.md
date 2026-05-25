@@ -1,5 +1,11 @@
 # @thesvg/vue
 
+## 3.0.6
+
+### Patch Changes
+
+- feat: add Lume icon ([#413](https://github.com/glincker/thesvg/issues/413))
+
 ## 3.0.5
 
 ### Patch Changes
