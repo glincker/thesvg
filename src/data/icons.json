@@ -73537,7 +73537,10 @@
       "Framework"
     ],
     "variants": {
-      "default": "/icons/lume/default.svg"
+      "default": "/icons/lume/default.svg",
+      "dark": "/icons/lume/dark.svg",
+      "wordmarkLight": "/icons/lume/wordmark-light.svg",
+      "wordmarkDark": "/icons/lume/wordmark-dark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://lume.land",
