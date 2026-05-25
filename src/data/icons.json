@@ -106099,6 +106099,24 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	{
+		"slug": "vib",
+		"title": "Vietnam International Bank (VIB)",
+		"aliases": [],
+		"hex": "0066b3",
+		"categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/vib/default.svg",
+      "mono": "/icons/vib/mono.svg",
+			"logo": "/icons/vib/logo.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.vib.com.vn/vn/home",
+    "dateAdded": "2026-05-25",
+    "collection": "brands"
+	},
   {
     "slug": "viber",
     "title": "Viber",
