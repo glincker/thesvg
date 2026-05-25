@@ -73527,6 +73527,24 @@
     "collection": "brands"
   },
   {
+    "slug": "lume",
+    "title": "Lume",
+    "aliases": [],
+    "hex": "D06B57",
+    "categories": [
+      "Software",
+      "Web",
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/lume/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://lume.land",
+    "dateAdded": "2026-05-24",
+    "collection": "brands"
+  },
+  {
     "slug": "lumen",
     "title": "Lumen",
     "aliases": [],
