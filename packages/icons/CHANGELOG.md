@@ -1,5 +1,11 @@
 # @thesvg/icons
 
+## 3.0.7
+
+### Patch Changes
+
+- feat: add PNJ icon ([#416](https://github.com/glincker/thesvg/issues/416))
+
 ## 3.0.6
 
 ### Patch Changes
