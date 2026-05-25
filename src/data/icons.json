@@ -102747,6 +102747,23 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	{
+    "slug": "tpbank",
+    "title": "Tien Phong Commercial Joint Stock Bank",
+    "aliases": [],
+    "hex": "5e2e86",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/tpbank/default.svg",
+      "mono": "/icons/tpbank/mono.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://tpb.vn/ca-nhan",
+    "dateAdded": "2026-05-26",
+    "collection": "brands"
+  },
   {
     "slug": "tqdm",
     "title": "tqdm",
