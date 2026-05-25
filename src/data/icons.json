@@ -86664,6 +86664,25 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	{
+    "slug": "pnj",
+    "title": "Phu Nhuan Jewelry",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Jewelry"
+    ],
+    "variants": {
+      "default": "/icons/pnj/default.svg",
+      "mono": "/icons/pnj/mono.svg",
+			"light": "/icons/pnj/light.svg",
+			"dark": "/icons/pnj/dark.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.pnj.com.vn/",
+    "dateAdded": "2026-05-25",
+    "collection": "brands"
+  },
   {
     "slug": "pnpm",
     "title": "pnpm",
