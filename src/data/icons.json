@@ -80575,6 +80575,22 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	{
+    "slug": "novaland",
+    "title": "Novaland",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/novaland/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.novaland.com.vn/",
+    "collection": "brands",
+    "dateAdded": "2026-05-26"
+  },
   {
     "slug": "novartis",
     "title": "Novartis",
