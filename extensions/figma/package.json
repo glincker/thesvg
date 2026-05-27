@@ -9,6 +9,6 @@
   },
   "devDependencies": {
     "@figma/plugin-typings": "^1.103.0",
-    "esbuild": "^0.24.0"
+    "esbuild": "^0.25.0"
   }
 }
