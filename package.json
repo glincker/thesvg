@@ -42,5 +42,14 @@
     "tailwindcss": "^4",
     "tsx": "^4.22.3",
     "typescript": "^6"
+  },
+  "pnpm": {
+    "overrides": {
+      "svelte": ">=5.55.7",
+      "devalue": ">=5.8.1",
+      "flatted": ">=3.4.2",
+      "postcss": ">=8.5.10",
+      "qs": ">=6.15.2"
+    }
   }
 }
