@@ -3478,6 +3478,23 @@
     "collection": "brands"
   },
   {
+    "slug": "apache-arrow",
+    "title": "Apache Arrow",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Data",
+      "Devtool"
+    ],
+    "variants": {
+      "default": "/icons/apache-arrow/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://arrow.apache.org",
+    "collection": "brands",
+    "dateAdded": "2026-05-27"
+  },
+  {
     "slug": "apache-avro",
     "title": "Apache Avro",
     "aliases": [],
@@ -6160,6 +6177,22 @@
     "guidelines": "https://business.avm.de/de/data/allgemeine-nutzungsbedingungen-business-portal",
     "dateAdded": "2026-03-07",
     "collection": "brands"
+  },
+  {
+    "slug": "await",
+    "title": "Await",
+    "aliases": [],
+    "hex": "7858F5",
+    "categories": [
+      "Web"
+    ],
+    "variants": {
+      "default": "/icons/await/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://awaitwidget.com",
+    "collection": "brands",
+    "dateAdded": "2026-05-27"
   },
   {
     "slug": "awesome-lists",
@@ -82914,6 +82947,22 @@
     "collection": "brands"
   },
   {
+    "slug": "opentui",
+    "title": "OpenTUI",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Devtool"
+    ],
+    "variants": {
+      "default": "/icons/opentui/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://github.com/anomalyco/opentui",
+    "collection": "brands",
+    "dateAdded": "2026-05-27"
+  },
+  {
     "slug": "openverse",
     "title": "Openverse",
     "aliases": [],
@@ -83605,6 +83654,23 @@
     "license": "CC0-1.0",
     "url": "https://github.com/OWASP/www-event-2020-07-virtual/blob/eefbef6c1afdd1dee2af11e7f44ad005b25ad48c/assets/images/logo.svg",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "owasp-dependency-check",
+    "title": "OWASP Dependency-Check",
+    "aliases": [],
+    "hex": "F78D0A",
+    "categories": [
+      "DevOps",
+      "Security"
+    ],
+    "variants": {
+      "default": "/icons/owasp-dependency-check/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://owasp.org/www-project-dependency-check/",
+    "dateAdded": "2026-05-27",
     "collection": "brands"
   },
   {
