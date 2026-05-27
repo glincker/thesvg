@@ -35901,6 +35901,23 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	{
+    "slug": "baoviet-holdings",
+    "title": "Bao Viet Holdings",
+    "aliases": [],
+    "hex": "bf921e",
+    "categories": [
+      "Finance",
+      "Insurance"
+    ],
+    "variants": {
+      "default": "/icons/baoviet-holdings/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.baoviet.com.vn/en",
+    "dateAdded": "2026-05-27",
+    "collection": "brands"
+  },
   {
     "slug": "barclays",
     "title": "Barclays",
