@@ -967,7 +967,7 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	{
+  {
     "slug": "adnoc",
     "title": "ADNOC Logistics & Services",
     "aliases": [],
@@ -80595,7 +80595,7 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	{
+  {
     "slug": "novaland",
     "title": "Novaland",
     "aliases": [],
@@ -86700,7 +86700,7 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	{
+  {
     "slug": "pnj",
     "title": "Phu Nhuan Jewelry",
     "aliases": [],
@@ -86711,8 +86711,8 @@
     "variants": {
       "default": "/icons/pnj/default.svg",
       "mono": "/icons/pnj/mono.svg",
-			"light": "/icons/pnj/light.svg",
-			"dark": "/icons/pnj/dark.svg"
+      "light": "/icons/pnj/light.svg",
+      "dark": "/icons/pnj/dark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://www.pnj.com.vn/",
@@ -93348,24 +93348,24 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	{
-		"slug": "sabeco",
-		"title": "Sabeco",
-		"aliases": [],
-		"hex": "ec1c24",
-		"categories": [
-			"Food & Beverage"
-		],
-		"variants": {
-			"default": "/icons/sabeco/default.svg",
-			"light": "/icons/sabeco/light.svg",
-			"dark": "/icons/sabeco/dark.svg",
-			"mono": "/icons/sabeco/mono.svg"
-		},
-		"license": "CC0-1.0",
-		"url": "https://www.sabeco.com.vn",
-		"dateAdded": "2026-05-24",
-		"collection": "brands"
+  {
+    "slug": "sabeco",
+    "title": "Sabeco",
+    "aliases": [],
+    "hex": "ec1c24",
+    "categories": [
+      "Food & Beverage"
+    ],
+    "variants": {
+      "default": "/icons/sabeco/default.svg",
+      "light": "/icons/sabeco/light.svg",
+      "dark": "/icons/sabeco/dark.svg",
+      "mono": "/icons/sabeco/mono.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.sabeco.com.vn",
+    "dateAdded": "2026-05-24",
+    "collection": "brands"
   },
   {
     "slug": "safari",
@@ -102783,7 +102783,7 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	{
+  {
     "slug": "tpbank",
     "title": "Tien Phong Commercial Joint Stock Bank",
     "aliases": [],
@@ -106171,24 +106171,24 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	{
-		"slug": "vib",
-		"title": "Vietnam International Bank (VIB)",
-		"aliases": [],
-		"hex": "0066b3",
-		"categories": [
+  {
+    "slug": "vib",
+    "title": "Vietnam International Bank (VIB)",
+    "aliases": [],
+    "hex": "0066b3",
+    "categories": [
       "Finance"
     ],
     "variants": {
       "default": "/icons/vib/default.svg",
       "mono": "/icons/vib/mono.svg",
-			"logo": "/icons/vib/logo.svg"
+      "logo": "/icons/vib/logo.svg"
     },
     "license": "CC0-1.0",
     "url": "https://www.vib.com.vn/vn/home",
     "dateAdded": "2026-05-25",
     "collection": "brands"
-	},
+  },
   {
     "slug": "viber",
     "title": "Viber",
@@ -106293,13 +106293,13 @@
     "hex": "D99E09",
     "categories": [
       "Aviation",
-			"Platform"
+      "Platform"
     ],
     "variants": {
       "default": "/icons/vietnam-airlines/default.svg",
       "mono": "/icons/vietnam-airlines/mono.svg"
     },
-		"license": "CC0-1.0",
+    "license": "CC0-1.0",
     "url": "https://www.vietnamairlines.com/",
     "dateAdded": "2026-05-22",
     "collection": "brands"
