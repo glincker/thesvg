@@ -110,21 +110,82 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Create GitHub release for CLI
-        # The Homebrew tap auto-bump workflow listens for `release: published`,
-        # so we create a GH release specifically for the @thesvg/cli tag.
-        # Other packages get git tags only (above).
+      - name: Create GitHub releases per package
+        # Create one GitHub release per just-published package, with the
+        # release body sourced from that package's CHANGELOG.md section
+        # for the current version. This:
+        #   1. Fires `on: release: published` for downstream automations
+        #      (e.g. homebrew-tap-update, which gates on @thesvg/cli@*).
+        #   2. Gives each package a discoverable release page on GitHub
+        #      with the changeset entries that landed in that version.
         run: |
-          CLI_VERSION=$(node -p "require('./packages/cli/package.json').version")
-          CLI_TAG="@thesvg/cli@${CLI_VERSION}"
-          if ! gh release view "$CLI_TAG" >/dev/null 2>&1; then
-            echo "Creating GitHub release for $CLI_TAG"
-            gh release create "$CLI_TAG" \
-              --title "@thesvg/cli ${CLI_VERSION}" \
-              --notes "Automated release for @thesvg/cli@${CLI_VERSION}. Triggers the homebrew-tap-update workflow." \
+          set -e
+          # Extract the section between `## <version>` and the next `## ` (or EOF)
+          # from a changesets-generated CHANGELOG.md. Echoes nothing if the
+          # section is absent.
+          extract_section() {
+            local file="$1" version="$2"
+            awk -v ver="## ${version}" '
+              $0 == ver { capture = 1; next }
+              capture && /^## / { exit }
+              capture { print }
+            ' "$file"
+          }
+
+          for PKG_DIR in packages/*/; do
+            PKG_DIR="${PKG_DIR%/}"
+            [ -f "$PKG_DIR/package.json" ] || continue
+            PKG_NAME=$(node -p "require('./$PKG_DIR/package.json').name")
+            PKG_VERSION=$(node -p "require('./$PKG_DIR/package.json').version")
+            PKG_PRIVATE=$(node -p "require('./$PKG_DIR/package.json').private || false")
+            if [ "$PKG_PRIVATE" = "true" ]; then continue; fi
+
+            TAG="$PKG_NAME@$PKG_VERSION"
+
+            # Only create a release if the git tag exists (created above)
+            # and the release doesn't already exist.
+            if ! git rev-parse "$TAG" >/dev/null 2>&1; then
+              echo "Skipping $TAG (no git tag)"
+              continue
+            fi
+            if gh release view "$TAG" >/dev/null 2>&1; then
+              echo "Skipping $TAG (release exists)"
+              continue
+            fi
+
+            # Build release body from CHANGELOG.md section
+            CHANGELOG="$PKG_DIR/CHANGELOG.md"
+            BODY_FILE="$(mktemp)"
+            {
+              echo "## $PKG_NAME $PKG_VERSION"
+              echo
+              if [ -f "$CHANGELOG" ]; then
+                SECTION=$(extract_section "$CHANGELOG" "$PKG_VERSION")
+                if [ -n "$SECTION" ]; then
+                  echo "$SECTION"
+                else
+                  echo "_No changelog entry found for version $PKG_VERSION._"
+                fi
+              else
+                echo "_Package has no CHANGELOG.md._"
+              fi
+              echo
+              echo "---"
+              echo
+              if [ "$PKG_NAME" = "@thesvg/cli" ]; then
+                echo "Install: \`brew install glincker/thesvg/thesvg\` or \`npm i -g @thesvg/cli\`"
+              else
+                echo "Install: \`npm i $PKG_NAME@$PKG_VERSION\`"
+              fi
+              echo "Tarball: https://registry.npmjs.org/$PKG_NAME/-/$(basename $PKG_NAME)-$PKG_VERSION.tgz"
+            } > "$BODY_FILE"
+
+            echo "Creating GitHub release for $TAG"
+            gh release create "$TAG" \
+              --title "$PKG_NAME $PKG_VERSION" \
+              --notes-file "$BODY_FILE" \
               --verify-tag
-          else
-            echo "Release $CLI_TAG already exists; skipping."
-          fi
+            rm -f "$BODY_FILE"
+          done
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
