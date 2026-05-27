@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 3.0.10
+
+### Patch Changes
+
+- feat: add 4 brand icons (Apache Arrow, Await, OpenTUI, OWASP Dependency-Check) ([#438](https://github.com/glincker/thesvg/issues/438))
+
 ## 3.0.9
 
 ### Patch Changes
