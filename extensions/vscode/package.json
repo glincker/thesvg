@@ -67,8 +67,12 @@
   },
   "devDependencies": {
     "@types/vscode": "^1.85.0",
-    "esbuild": "^0.20.0",
+    "esbuild": "^0.25.0",
     "@vscode/vsce": "^2.22.0",
     "typescript": "^5.3.0"
+  },
+  "overrides": {
+    "qs": ">=6.15.2",
+    "uuid": ">=11.1.1"
   }
 }
