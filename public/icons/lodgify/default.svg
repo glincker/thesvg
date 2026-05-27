@@ -1,0 +1,12 @@
+<svg role="img" aria-label="Lodgify" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Lodgify</title>
+  <g clip-path="url(#lodgify-clip)">
+    <path d="M15.7484 0H4.25165C1.90353 0 0 1.87093 0 4.17884V15.8212C0 18.1291 1.90353 20 4.25165 20H15.7484C18.0965 20 20 18.1291 20 15.8212V4.17884C20 1.87093 18.0965 0 15.7484 0Z" fill="#FFF65B"/>
+    <path d="M7.81054 15.7669H14.2838V9.54326L7.96136 13.3805C7.72779 13.53 7.44483 13.2977 7.56095 13.0308L11.198 4.08838H5.69238V13.6488C5.69238 14.8834 6.57595 15.7683 7.81054 15.7683V15.7669Z" fill="#141313"/>
+  </g>
+  <defs>
+    <clipPath id="lodgify-clip">
+      <rect width="20" height="20" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>

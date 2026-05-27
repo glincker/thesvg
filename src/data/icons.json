@@ -72973,6 +72973,23 @@
     "collection": "brands"
   },
   {
+    "slug": "lodgify",
+    "title": "Lodgify",
+    "aliases": [],
+    "hex": "FFF65B",
+    "categories": [
+      "Booking"
+    ],
+    "variants": {
+      "default": "/icons/lodgify/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.lodgify.com",
+    "guidelines": "https://www.lodgify.com/blog/new-brand-reveal/",
+    "dateAdded": "2026-05-26",
+    "collection": "brands"
+  },
+  {
     "slug": "logitech-g",
     "title": "Logitech G",
     "aliases": [],
