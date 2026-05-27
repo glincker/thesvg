@@ -104,7 +104,10 @@ jobs:
             if ! git rev-parse "$TAG" >/dev/null 2>&1; then
               echo "Creating tag: $TAG"
               git tag "$TAG"
-              git push origin "$TAG" || true
+              # Tag push must succeed — the per-package GitHub release step
+              # below uses --verify-tag and will fail if the tag isn't on
+              # the remote.
+              git push origin "$TAG"
             fi
           done
         env:
@@ -119,7 +122,12 @@ jobs:
         #   2. Gives each package a discoverable release page on GitHub
         #      with the changeset entries that landed in that version.
         run: |
-          set -e
+          # Note: deliberately not using `set -e`. We want one failing
+          # release (e.g. flaky gh API) not to skip releases for every
+          # later package. We track failures and exit non-zero at the
+          # end so the workflow surfaces the problem.
+          failed=()
+
           # Extract the section between `## <version>` and the next `## ` (or EOF)
           # from a changesets-generated CHANGELOG.md. Echoes nothing if the
           # section is absent.
@@ -181,11 +189,21 @@ jobs:
             } > "$BODY_FILE"
 
             echo "Creating GitHub release for $TAG"
-            gh release create "$TAG" \
-              --title "$PKG_NAME $PKG_VERSION" \
-              --notes-file "$BODY_FILE" \
-              --verify-tag
+            if gh release create "$TAG" \
+                 --title "$PKG_NAME $PKG_VERSION" \
+                 --notes-file "$BODY_FILE" \
+                 --verify-tag; then
+              echo "Created release $TAG"
+            else
+              echo "::error::failed to create release for $TAG"
+              failed+=("$TAG")
+            fi
             rm -f "$BODY_FILE"
           done
+
+          if [ "${#failed[@]}" -gt 0 ]; then
+            echo "::error::${#failed[@]} release(s) failed: ${failed[*]}"
+            exit 1
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

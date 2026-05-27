@@ -54,6 +54,8 @@ jobs:
         uses: dawidd6/action-homebrew-bump-formula@v7
         with:
           token: ${{ secrets.HOMEBREW_TAP_TOKEN }}
+          # Homebrew tap naming: 'glincker/thesvg' resolves to the repo
+          # 'glincker/homebrew-thesvg' (the standard tap convention).
           tap: glincker/thesvg
           formula: thesvg
           tag: "@thesvg/cli@${{ steps.pkg.outputs.version }}"
