@@ -95,8 +95,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # Tag each package with its current version if not already tagged
-          for PKG_DIR in packages/icons packages/thesvg packages/cli packages/mcp packages/react packages/vue packages/svelte; do
-            if [ ! -d "$PKG_DIR" ]; then continue; fi
+          for PKG_DIR in packages/*/; do
+            PKG_DIR="${PKG_DIR%/}"
+            [ -f "$PKG_DIR/package.json" ] || continue
             PKG_NAME=$(node -p "require('./$PKG_DIR/package.json').name")
             PKG_VERSION=$(node -p "require('./$PKG_DIR/package.json').version")
             TAG="$PKG_NAME@$PKG_VERSION"
@@ -106,5 +107,24 @@ jobs:
               git push origin "$TAG" || true
             fi
           done
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create GitHub release for CLI
+        # The Homebrew tap auto-bump workflow listens for `release: published`,
+        # so we create a GH release specifically for the @thesvg/cli tag.
+        # Other packages get git tags only (above).
+        run: |
+          CLI_VERSION=$(node -p "require('./packages/cli/package.json').version")
+          CLI_TAG="@thesvg/cli@${CLI_VERSION}"
+          if ! gh release view "$CLI_TAG" >/dev/null 2>&1; then
+            echo "Creating GitHub release for $CLI_TAG"
+            gh release create "$CLI_TAG" \
+              --title "@thesvg/cli ${CLI_VERSION}" \
+              --notes "Automated release for @thesvg/cli@${CLI_VERSION}. Triggers the homebrew-tap-update workflow." \
+              --verify-tag
+          else
+            echo "Release $CLI_TAG already exists; skipping."
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

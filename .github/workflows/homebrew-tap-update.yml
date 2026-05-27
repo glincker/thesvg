@@ -3,28 +3,58 @@ name: Update Homebrew Tap
 on:
   release:
     types: [published]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "CLI version to bump to (defaults to packages/cli/package.json)"
+        required: false
+        type: string
 
 jobs:
   bump-formula:
     name: Bump thesvg formula
     runs-on: ubuntu-latest
-    if: ${{ secrets.HOMEBREW_TAP_TOKEN != '' }}
+    # Only fire for the @thesvg/cli release tag (skip per-package releases for
+    # other workspace packages). On manual dispatch the gate is bypassed.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      startsWith(github.event.release.tag_name, '@thesvg/cli@')
 
     steps:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Read CLI version from package.json
+      - name: Resolve CLI version
         id: pkg
+        env:
+          INPUT_VERSION: ${{ github.event.inputs.version }}
         run: |
-          VERSION=$(jq -r '.version' packages/cli/package.json)
+          if [ -n "$INPUT_VERSION" ]; then
+            VERSION="$INPUT_VERSION"
+          else
+            VERSION=$(jq -r '.version' packages/cli/package.json)
+          fi
           echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+          echo "Resolved CLI version: ${VERSION}"
+
+      - name: Check secret present
+        id: gate
+        env:
+          HAS_TOKEN: ${{ secrets.HOMEBREW_TAP_TOKEN != '' }}
+        run: |
+          if [ "$HAS_TOKEN" != "true" ]; then
+            echo "HOMEBREW_TAP_TOKEN is not configured; skipping formula bump."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Update formula in tap repo
+        if: steps.gate.outputs.skip == 'false'
         uses: dawidd6/action-homebrew-bump-formula@v7
         with:
           token: ${{ secrets.HOMEBREW_TAP_TOKEN }}
           tap: glincker/thesvg
           formula: thesvg
-          tag: v${{ steps.pkg.outputs.version }}
+          tag: "@thesvg/cli@${{ steps.pkg.outputs.version }}"
           force: false
