@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 3.0.8
+
+### Patch Changes
+
+- feat: add Lodgify icon ([#430](https://github.com/glincker/thesvg/issues/430))
+
 ## 3.0.7
 
 ### Patch Changes
