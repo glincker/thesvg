@@ -100545,6 +100545,25 @@
     "collection": "brands"
   },
   {
+    "slug": "tata-consultancy-services",
+    "title": "Tata Consultancy Services",
+    "aliases": [
+      "tcs"
+    ],
+    "hex": "EE3984",
+    "categories": [
+      "Services",
+      "Business"
+    ],
+    "variants": {
+      "default": "/icons/tata-consultancy-services/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.tcs.com",
+    "dateAdded": "2026-05-27",
+    "collection": "brands"
+  },
+  {
     "slug": "tauri",
     "title": "Tauri",
     "aliases": [],
@@ -105401,6 +105420,24 @@
     "license": "CC0-1.0",
     "url": "https://www.uservoice.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "usnews",
+    "title": "U.S. News & World Report",
+    "aliases": [
+      "us news"
+    ],
+    "hex": "005EA6",
+    "categories": [
+      "News"
+    ],
+    "variants": {
+      "default": "/icons/usnews/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.usnews.com",
+    "dateAdded": "2026-05-27",
     "collection": "brands"
   },
   {
