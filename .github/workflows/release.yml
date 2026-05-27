@@ -57,7 +57,28 @@ jobs:
           cd packages/svelte && npm run build && cd ../..
 
       - name: Publish to npm
-        run: pnpm changeset publish
+        # Use `npm publish` per-package instead of `pnpm changeset publish`.
+        # pnpm publish includes README.md in the tarball but does not populate
+        # the `readme` field on the per-version registry manifest, which is
+        # what npmjs.com renders. Publishing with npm directly fixes that.
+        run: |
+          for PKG_DIR in packages/icons packages/thesvg packages/cli packages/mcp packages/react packages/vue packages/svelte; do
+            if [ ! -d "$PKG_DIR" ]; then continue; fi
+            PKG_NAME=$(node -p "require('./$PKG_DIR/package.json').name")
+            PKG_VERSION=$(node -p "require('./$PKG_DIR/package.json').version")
+            PKG_PRIVATE=$(node -p "require('./$PKG_DIR/package.json').private || false")
+            if [ "$PKG_PRIVATE" = "true" ]; then
+              echo "Skipping $PKG_NAME (private)"
+              continue
+            fi
+            # Skip if this exact version is already on the registry
+            if npm view "$PKG_NAME@$PKG_VERSION" version >/dev/null 2>&1; then
+              echo "Skipping $PKG_NAME@$PKG_VERSION (already published)"
+              continue
+            fi
+            echo "Publishing $PKG_NAME@$PKG_VERSION"
+            (cd "$PKG_DIR" && npm publish --access public --provenance)
+          done
         env:
           NPM_CONFIG_PROVENANCE: "true"
 
