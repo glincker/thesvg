@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 3.0.9
+
+### Patch Changes
+
+- feat: add Bao Viet Holdings icon ([#436](https://github.com/glincker/thesvg/issues/436))
+
 ## 3.0.8
 
 ### Patch Changes
