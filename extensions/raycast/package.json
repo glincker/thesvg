@@ -66,5 +66,10 @@
     "lint": "ray lint",
     "prepublishOnly": "echo \"Error: no publish\" && exit 1",
     "publish": "npx @raycast/api@latest publish"
+  },
+  "overrides": {
+    "brace-expansion": ">=2.0.3",
+    "picomatch": ">=4.0.4",
+    "flatted": ">=3.4.2"
   }
 }
