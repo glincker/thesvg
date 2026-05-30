@@ -88378,6 +88378,23 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	{
+    "slug": "prosus",
+    "title": "Prosus",
+    "aliases": [],
+    "hex": "0332AF",
+    "categories": [
+      "Advertising"
+    ],
+    "variants": {
+      "default": "/icons/prosus/default.svg",
+      "wordmark": "/icons/prosus/wordmark.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.prosus.com",
+    "dateAdded": "2026-05-30",
+    "collection": "brands"
+  },
   {
     "slug": "proteus",
     "title": "Proteus",
