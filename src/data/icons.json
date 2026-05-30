@@ -116065,5 +116065,27 @@
     "url": "",
     "collection": "brands",
     "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "planhat",
+    "title": "Planhat",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Software",
+      "Platform"
+    ],
+    "variants": {
+      "primary light": "/icons/planhat/planhat-primary-logo-light-RGB.svg",
+      "primary dark": "/icons/planhat/planhat-primary-logo-dark-RGB.svg",
+      "symbol dark": "/icons/planhat/planhat-symbol-dark-RGB.svg",
+      "symbol light": "/icons/planhat/planhat-symbol-light-RGB.svg",
+      "wordmark light": "/icons/planhat/planhat-wordmark-light-RGB.svg",
+      "wordmark dark": "/icons/planhat/planhat-wordmark-light-RGB.svg",
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.planhat.com/",
+    "dateAdded": "2026-05-30",
+    "collection": "brands"
   }
 ]
