@@ -107165,6 +107165,24 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	{
+    "slug": "volaris",
+    "title": "Volaris",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Travel",
+      "Agency"
+    ],
+    "variants": {
+      "default": "/icons/volaris/default.svg",
+      "wordmark": "/icons/volaris/wordmark.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://volaris.com",
+    "dateAdded": "2026-05-31",
+    "collection": "brands"
+  },
   {
     "slug": "volcengine",
     "title": "Volcengine (火山引擎)",
