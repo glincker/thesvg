@@ -2464,6 +2464,29 @@
     "collection": "brands"
   },
   {
+    "slug": "alpaca",
+    "title": "Alpaca",
+    "aliases": [
+      "Alpaca Markets"
+    ],
+    "hex": "FCD72B",
+    "categories": [
+      "Finance",
+      "Payment",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/alpaca/default.svg",
+      "dark": "/icons/alpaca/dark.svg",
+      "mono": "/icons/alpaca/mono.svg"
+    },
+    "license": "Fair Use",
+    "url": "https://alpaca.markets",
+    "guidelines": "https://alpaca.markets/newsroom",
+    "dateAdded": "2026-05-31",
+    "collection": "brands"
+  },
+  {
     "slug": "alpine-linux",
     "title": "Alpine Linux",
     "aliases": [],
