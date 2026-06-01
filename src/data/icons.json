@@ -73683,6 +73683,24 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	{
+    "slug": "lunis",
+    "title": "Lunis",
+    "aliases": [],
+    "hex": "00C9EA",
+    "categories": [
+      "Health",
+      "AI"
+    ],
+    "variants": {
+      "default": "/icons/lunis/default.svg",
+      "mono": "/icons/lunis/mono.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://lunit.io",
+    "dateAdded": "2026-06-01",
+    "collection": "brands"
+  },
   {
     "slug": "luogu",
     "title": "Luogu",
