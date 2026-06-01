@@ -117443,5 +117443,22 @@
     "url": "",
     "collection": "brands",
     "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "vanio",
+    "title": "Vanio",
+    "aliases": [],
+    "hex": "65A0DC",
+    "categories": [
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/vanio/default.svg",
+      "color": "/icons/vanio/color.svg",
+      "mono": "/icons/vanio/mono.svg"
+    },
+    "url": "https://vanio.hu",
+    "dateAdded": "2026-06-01",
+    "collection": "brands"
   }
 ]
