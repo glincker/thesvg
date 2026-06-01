@@ -73684,8 +73684,8 @@
     "collection": "brands"
   },
 	{
-    "slug": "lunis",
-    "title": "Lunis",
+    "slug": "lunit",
+    "title": "Lunit",
     "aliases": [],
     "hex": "00C9EA",
     "categories": [
@@ -73693,8 +73693,8 @@
       "AI"
     ],
     "variants": {
-      "default": "/icons/lunis/default.svg",
-      "mono": "/icons/lunis/mono.svg"
+      "default": "/icons/lunit/default.svg",
+      "mono": "/icons/lunit/mono.svg"
     },
     "license": "CC0-1.0",
     "url": "https://lunit.io",
