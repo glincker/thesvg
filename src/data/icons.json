@@ -2390,6 +2390,23 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	{
+    "slug": "alivecor",
+    "title": "AliveCor",
+    "aliases": [],
+    "hex": "174E8C",
+    "categories": [
+      "Healthcare",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/alivecor/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://alivecor.com/",
+    "dateAdded": "2026-06-02",
+    "collection": "brands"
+  },
   {
     "slug": "allegro",
     "title": "Allegro",
