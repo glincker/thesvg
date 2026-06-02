@@ -1,4 +1,24 @@
 [
+   {
+    "slug": "socratic",
+    "title": "Socratic AI",
+    "aliases": [],
+    "hex": "fefefe",
+    "categories": [
+      "AI",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/socratic/default.svg",
+      "light": "/icons/socratic/light.svg",
+      "dark": "/icons/socratic/dark.svg"
+    },
+    "license": "MIT",
+    "url": "https://www.usesocratic.com/",
+    "dateAdded": "2026-06-03",
+    "collection": "brands"
+  },
+
   {
     "slug": "01dotai",
     "title": "01.AI (零一万物)",
