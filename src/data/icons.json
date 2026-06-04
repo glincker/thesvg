@@ -77203,6 +77203,28 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	{
+	  "slug": "mixue",
+	  "title": "Mixue",
+	  "aliases": [
+	    "Mixue Ice Cream & Tea",
+	    "Mixue Bingcheng",
+	    "蜜雪冰城"
+	  ],
+	  "hex": "",
+	  "categories": [
+	    "Food & Beverage"
+	  ],
+	  "variants": {
+	    "default": "/icons/mixue/default.svg",
+	    "wordmark": "/icons/mixue/wordmark.svg"
+	  },
+	  "license": "CC0-1.0",
+	  "url": "https://www.mxbc.com",
+	  "guidelines": "",
+	  "dateAdded": "2026-06-04",
+	  "collection": "brands"
+	},
   {
     "slug": "mjml",
     "title": "MJML",
