@@ -75076,6 +75076,24 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	{
+    "slug": "maybank",
+    "title": "Maybank",
+    "aliases": [],
+    "hex": "231F20",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/maybank/default.svg",
+      "mono": "/icons/maybank/mono.svg",
+			"wordmark": "/icons/maybank/wordmark.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.maybank2u.com.my/home/m2u/common/login.do",
+    "dateAdded": "2026-06-05",
+    "collection": "brands"
+  },
   {
     "slug": "mayo-clinic",
     "title": "Mayo Clinic",
