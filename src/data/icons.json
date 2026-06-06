@@ -80371,6 +80371,23 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	{
+    "slug": "nongfu-spring",
+    "title": "Nongfu Spring",
+    "aliases": [],
+    "hex": "F22B2C",
+    "categories": [
+			"Food & Beverage"
+    ],
+    "variants": {
+      "default": "/icons/nongfu-spring/default.svg",
+      "wordmark": "/icons/nongfu-spring/wordmark.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://en.nongfuspring.com/",
+    "dateAdded": "2026-06-06",
+    "collection": "brands"
+  },
   {
     "slug": "norco",
     "title": "Norco",
