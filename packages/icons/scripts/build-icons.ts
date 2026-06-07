@@ -21,6 +21,8 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { toSafeIdentifier } from "./lib/safe-identifier.ts";
+
 // ---------------------------------------------------------------------------
 // Paths
 // ---------------------------------------------------------------------------
@@ -272,20 +274,8 @@ function generateTypesDeclaration(): string {
 }
 
 // ---------------------------------------------------------------------------
-// Utilities
+// Utilities (toSafeIdentifier lives in ./lib/safe-identifier.ts)
 // ---------------------------------------------------------------------------
-
-/**
- * Turn a slug into a valid JS identifier.
- * Slugs can start with digits (e.g. "01dotai") or contain hyphens/dots.
- * Strategy: prefix with "i_" if it starts with a digit, replace non-word
- * chars with "_".
- */
-function toSafeIdentifier(slug: string): string {
-  let id = slug.replace(/[^a-zA-Z0-9_]/g, "_");
-  if (/^[0-9]/.test(id)) id = `i_${id}`;
-  return id;
-}
 
 // ---------------------------------------------------------------------------
 // Main
