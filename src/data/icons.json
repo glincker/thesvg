@@ -66559,6 +66559,23 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	{
+    "slug": "japan-post-bank",
+    "title": "Japan Post Bank",
+    "aliases": [],
+    "hex": "009900",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/japan-post-bank/default.svg",
+      "wordmark": "/icons/japan-post-bank/wordmark.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.jp-bank.japanpost.jp/en_index.html",
+    "dateAdded": "2026-06-03",
+    "collection": "brands"
+  },
   {
     "slug": "jasmine",
     "title": "Jasmine",
