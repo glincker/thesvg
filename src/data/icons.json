@@ -45544,6 +45544,26 @@
     "collection": "brands"
   },
   {
+    "slug": "decents",
+    "title": "Decents",
+    "aliases": [],
+    "hex": "4F47E6",
+    "categories": [
+      "SaaS",
+      "Platform",
+      "Split",
+      "Ledger"
+    ],
+    "variants": {
+      "default": "/icons/decents/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://decents.me/",
+    "guidelines": "https://decents.me/brand",
+    "dateAdded": "2026-06-07",
+    "collection": "brands"
+  },
+  {
     "slug": "deep-cogito",
     "title": "Deep Cogito",
     "aliases": [],
