@@ -6,13 +6,13 @@ import {
   Blocks,
   Code,
   Code2,
-  Github,
   Package,
   Palette,
   Sparkles,
   Terminal,
   Zap,
 } from "lucide-react";
+import { Github } from "@/components/icons/shared/brand-icons";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getCategoryCounts, getFormattedIconCount } from "@/lib/icons";

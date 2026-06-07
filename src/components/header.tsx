@@ -3,7 +3,8 @@
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { ArrowRight, Cloud, FileText, Github, Menu, Moon, Package, Plus, Search, Shapes, Sparkles, Sun, X } from "lucide-react";
+import { ArrowRight, Cloud, FileText, Menu, Moon, Package, Plus, Search, Shapes, Sparkles, Sun, X } from "lucide-react";
+import { Github } from "@/components/icons/shared/brand-icons";
 import { useTheme } from "next-themes";
 import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";

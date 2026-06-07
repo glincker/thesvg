@@ -7,13 +7,13 @@ import {
   CheckCircle,
   ClipboardCopy,
   ExternalLink,
-  Github,
   Loader2,
   Palette,
   Upload,
   X,
   XCircle,
 } from "lucide-react";
+import { Github } from "@/components/icons/shared/brand-icons";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";

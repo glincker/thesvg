@@ -1,4 +1,5 @@
-import { ArrowUpRight, Github, Download, Layers, Package } from "lucide-react";
+import { ArrowUpRight, Download, Layers, Package } from "lucide-react";
+import { Github } from "@/components/icons/shared/brand-icons";
 import Link from "next/link";
 import { TRADEMARK_POLICY_URL } from "@/lib/constants";
 import {

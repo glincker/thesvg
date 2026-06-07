@@ -5,10 +5,10 @@ import {
   FileCode,
   GitBranch,
   GitPullRequest,
-  Github,
   Upload,
   Zap,
 } from "lucide-react";
+import { Github } from "@/components/icons/shared/brand-icons";
 import type { Metadata } from "next";
 import { getAllCategories, getCategoryCounts, getIconCount } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";

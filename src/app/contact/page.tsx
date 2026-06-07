@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Github, Mail, MessageSquare, Shield } from "lucide-react";
+import { Mail, MessageSquare, Shield } from "lucide-react";
+import { Github } from "@/components/icons/shared/brand-icons";
 import { TRADEMARK_POLICY_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {

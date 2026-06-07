@@ -6,12 +6,12 @@ import {
   Check,
   ChevronDown,
   ClipboardCopy,
-  Codepen,
   Download as DownloadIcon,
   ExternalLink,
   Loader2,
   Pencil,
 } from "lucide-react";
+import { Codepen } from "@/components/icons/shared/brand-icons";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,

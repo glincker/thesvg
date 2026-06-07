@@ -5,10 +5,10 @@ import {
   ArrowUpRight,
   Check,
   ClipboardCopy,
-  Codepen,
   Download,
   ExternalLink,
 } from "lucide-react";
+import { Codepen } from "@/components/icons/shared/brand-icons";
 import { cn } from "@/lib/utils";
 import {
   DEEP_LINK_TARGETS,
