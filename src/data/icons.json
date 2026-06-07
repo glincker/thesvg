@@ -58246,6 +58246,26 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	{
+    "slug": "gevernova",
+    "title": "GE Vernova",
+    "aliases": [],
+    "hex": "005E60",
+    "categories": [
+      "Energy"
+    ],
+    "variants": {
+      "default": "/icons/gevernova/default.svg",
+      "mono": "/icons/gevernova/mono.svg",
+			"wordmark": "/icons/gevernova/wordmark.svg",
+			"light": "/icons/gevernova/light.svg",
+			"dark": "/icons/gevernova/dark.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.gevernova.com/",
+    "dateAdded": "2026-05-29",
+    "collection": "brands"
+  },
   {
     "slug": "ghost",
     "title": "Ghost",
