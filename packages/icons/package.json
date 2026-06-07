@@ -46,6 +46,7 @@
   ],
   "scripts": {
     "build": "tsx scripts/build-icons.ts",
+    "test": "tsx --test scripts/lib/*.test.ts",
     "audit": "node scripts/security-audit.mjs",
     "validate": "node scripts/validate-dist.mjs",
     "prepublishOnly": "npm run build && npm run audit && npm run validate"

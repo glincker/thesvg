@@ -21,6 +21,8 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { toSafeIdentifier } from "./lib/safe-identifier.ts";
+
 // ---------------------------------------------------------------------------
 // Paths
 // ---------------------------------------------------------------------------
@@ -272,74 +274,8 @@ function generateTypesDeclaration(): string {
 }
 
 // ---------------------------------------------------------------------------
-// Utilities
+// Utilities (toSafeIdentifier lives in ./lib/safe-identifier.ts)
 // ---------------------------------------------------------------------------
-
-/**
- * Reserved words (and a few globals) that are illegal as a binding name. A slug
- * like "await" would otherwise emit `const await = ...`, which is a syntax
- * error and breaks the whole package build (and any consumer's type-check).
- */
-const RESERVED_IDENTIFIERS = new Set([
-  "await",
-  "break",
-  "case",
-  "catch",
-  "class",
-  "const",
-  "continue",
-  "debugger",
-  "default",
-  "delete",
-  "do",
-  "else",
-  "enum",
-  "export",
-  "extends",
-  "false",
-  "finally",
-  "for",
-  "function",
-  "if",
-  "implements",
-  "import",
-  "in",
-  "instanceof",
-  "interface",
-  "let",
-  "new",
-  "null",
-  "package",
-  "private",
-  "protected",
-  "public",
-  "return",
-  "static",
-  "super",
-  "switch",
-  "this",
-  "throw",
-  "true",
-  "try",
-  "typeof",
-  "var",
-  "void",
-  "while",
-  "with",
-  "yield",
-]);
-
-/**
- * Turn a slug into a valid JS identifier.
- * Slugs can start with digits (e.g. "01dotai") or contain hyphens/dots.
- * Strategy: prefix with "i_" if it starts with a digit or is a reserved word,
- * replace non-word chars with "_".
- */
-function toSafeIdentifier(slug: string): string {
-  let id = slug.replace(/[^a-zA-Z0-9_]/g, "_");
-  if (/^[0-9]/.test(id) || RESERVED_IDENTIFIERS.has(id)) id = `i_${id}`;
-  return id;
-}
 
 // ---------------------------------------------------------------------------
 // Main
