@@ -1,0 +1,40 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1623 936" width="1623" height="936">
+	<title>MSB</title>
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="m3953.29 0v1163.44h-3953.29v-1163.44z"/>
+		</clipPath>
+		<radialGradient id="g1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(419.142,0,0,419.142,744.841,267.986)">
+			<stop offset="0" stop-color="#9e0b0f"/>
+			<stop offset=".16" stop-color="#b91319"/>
+			<stop offset=".323" stop-color="#ce181f"/>
+			<stop offset=".486" stop-color="#de1a22"/>
+			<stop offset=".646" stop-color="#e81c23"/>
+			<stop offset=".8" stop-color="#ed1c24"/>
+		</radialGradient>
+		<radialGradient id="g2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(420.444,5.799,-5.799,420.444,1120.055,513.177)">
+			<stop offset=".3" stop-color="#9e0b0f"/>
+			<stop offset=".44" stop-color="#b91319"/>
+			<stop offset=".583" stop-color="#ce181f"/>
+			<stop offset=".725" stop-color="#de1a22"/>
+			<stop offset=".865" stop-color="#e81c23"/>
+			<stop offset="1" stop-color="#ed1c24"/>
+		</radialGradient>
+		<radialGradient id="g3" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(897.142,0,0,897.142,832.335,49.98)">
+			<stop offset=".35" stop-color="#ed1c24"/>
+			<stop offset="1" stop-color="#f37021"/>
+		</radialGradient>
+		<radialGradient id="g4" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(314.791,0,0,314.791,134.296,800.511)">
+			<stop offset=".3" stop-color="#ed1c24"/>
+			<stop offset="1" stop-color="#9e0b0f"/>
+		</radialGradient>
+	</defs>
+	<g id="Clip-Path" clip-path="url(#cp1)">
+		<g>
+			<path fill="url(#g1)" d="m700.6 861l-440.9-519.3c-74.4-87.7-62.7-219.7 26-293.2 88.7-73.6 222.3-62 296.7 25.6l440.9 519.4c74.4 87.6 62.7 219.6-26 293.2-88.7 73.5-222.3 62-296.7-25.7z"/>
+			<path fill="url(#g2)" d="m1177.3 251.4l-109.3 517.4c-23.6 112.1-135.9 184.6-249.3 161.2-113.4-23.3-186.8-134.2-163.2-246.3l109.4-517.4c23.6-112.1 135.8-184.6 249.3-161.2 113.5 23.5 186.9 134.3 163.1 246.3z"/>
+			<path fill="url(#g3)" d="m1250.5 861l-440.9-519.3c-74.5-87.7-62.8-219.7 26-293.2 88.7-73.6 222.2-62 296.7 25.6l440.8 519.4c74.5 87.6 62.8 219.6-25.9 293.2-88.6 73.5-222.2 62-296.7-25.7z"/>
+			<path fill="url(#g4)" d="m420.5 710c10.2 128.3-97.2 234.5-227 224.4-102.1-8-184.7-89.6-192.8-190.6-10.2-128.2 97.3-234.4 227.1-224.4 102 8 184.8 89.8 192.7 190.6z"/>
+		</g>
+	</g>
+</svg>

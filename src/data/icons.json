@@ -115569,6 +115569,23 @@
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
+	{
+    "slug": "msb",
+    "title": "Vietnam Maritime Commercial Joint Stock Bank",
+    "aliases": [],
+    "hex": "9E0B0F",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/msb/default.svg",
+      "wordmark": "/icons/msb/wordmark.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.msb.com.vn/",
+    "collection": "brands",
+    "dateAdded": "2026-05-28"
+  },
   {
     "slug": "msdos",
     "title": "Msdos",
