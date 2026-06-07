@@ -101359,6 +101359,23 @@
     "collection": "brands"
   },
   {
+    "slug": "testifly",
+    "title": "Testifly",
+    "aliases": [],
+    "hex": "195ACF",
+    "categories": [
+      "Devtool",
+      "SaaS"
+    ],
+    "variants": {
+      "default": "/icons/testifly/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://testifly.dev",
+    "dateAdded": "2026-06-07",
+    "collection": "brands"
+  },
+  {
     "slug": "testin",
     "title": "Testin",
     "aliases": [],
