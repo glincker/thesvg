@@ -81910,6 +81910,25 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	{
+    "slug": "onex",
+    "title": "Onex",
+    "aliases": [],
+    "hex": "002f87",
+    "categories": [
+      "Investment",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/onex/default.svg",
+      "mono": "/icons/onex/mono.svg",
+      "wordmark": "/icons/onex/wordmark.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.onex.com/",
+    "dateAdded": "2026-06-07",
+    "collection": "brands"
+  },
   {
     "slug": "onlyfans",
     "title": "OnlyFans",
