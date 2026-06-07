@@ -93764,6 +93764,26 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	{
+    "slug": "sandisk",
+    "title": "SanDisk",
+    "aliases": [],
+    "hex": "E10600",
+    "categories": [
+      "Software",
+      "Platform",
+			"Hardware"
+    ],
+    "variants": {
+      "default": "/icons/sandisk/default.svg",
+      "mono": "/icons/sandisk/mono.svg",
+      "wordmark": "/icons/sandisk/wordmark.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.sandisk.com",
+    "dateAdded": "2026-05-29",
+    "collection": "brands"
+  },
   {
     "slug": "sanic",
     "title": "Sanic",
