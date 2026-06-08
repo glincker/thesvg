@@ -41115,6 +41115,22 @@
     "collection": "brands"
   },
   {
+    "slug": "cityflo",
+    "title": "Cityflo",
+    "aliases": [],
+    "hex": "E2AA2F",
+    "categories": [
+      "Transportation"
+    ],
+    "variants": {
+      "default": "/icons/cityflo/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.cityflo.com",
+    "dateAdded": "2026-06-07",
+    "collection": "brands"
+  },
+  {
     "slug": "civicrm",
     "title": "CiviCRM",
     "aliases": [],
