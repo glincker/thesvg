@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- License: MIT. Made by Denali Design: https://github.com/denali-design/denali-icons -->
+<svg width="800px" height="800px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <title>cisco-anyconnect</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="invisible_box" data-name="invisible box">
+      <rect width="48" height="48" fill="none"/>
+    </g>
+    <g id="Q3_icons" data-name="Q3 icons">
+      <path d="M2,24H2A22,22,0,1,1,24,46h0A22.1,22.1,0,0,1,2,24ZM26.1,41.8C27.9,39.3,30,35,30,32c-9.5-2.2-11.5-11-12-14A20.4,20.4,0,0,0,6.4,27.7,18,18,0,0,0,24,42Zm14-9.9H36a18,18,0,0,1,.5,4.9A16.4,16.4,0,0,0,40.1,31.9ZM32.3,8A29.4,29.4,0,0,0,28,12c3,1.4,7,5,8,14l5.9-.3c0-.6.1-1.1.1-1.7A18.2,18.2,0,0,0,32.3,8ZM24,16a13.3,13.3,0,0,1,8,10C23.8,24.1,24,16,24,16ZM22.4,6.1A17.7,17.7,0,0,0,9.7,13.2,19.3,19.3,0,0,1,20,10,8.9,8.9,0,0,1,22.4,6.1Z" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>

@@ -41007,6 +41007,23 @@
     "collection": "brands"
   },
   {
+    "slug": "cisco-anyconnect",
+    "title": "Cisco AnyConnect",
+    "aliases": [],
+    "hex": "1BA0D7",
+    "categories": [
+      "Software",
+      "Communication"
+    ],
+    "variants": {
+      "default": "/icons/cisco-anyconnect/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.cisco.com/c/en/us/products/security/anyconnect-secure-mobility-client/index.html",
+    "dateAdded": "2026-06-07",
+    "collection": "brands"
+  },
+  {
     "slug": "citibank",
     "title": "Citibank",
     "aliases": [
