@@ -14,7 +14,7 @@ const CDN_BASE =
 // output: "export" on GitHub Pages (the sharded files end up at
 // /sitemap/N.xml and the index is missing), so robots.txt-discovery breaks.
 // One sitemap fits comfortably under the 50,000-URL and 50MB Google limits
-// for our ~6,030 icons + the static pages.
+// for our ~6,100 icons + the static pages.
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const icons = getAllIcons();
