@@ -35576,6 +35576,23 @@
     "collection": "brands"
   },
   {
+    "slug": "babbel",
+    "title": "Babbel",
+    "aliases": [],
+    "hex": "FE4D03",
+    "categories": [
+      "Education",
+      "Language"
+    ],
+    "variants": {
+      "default": "/icons/babbel/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.babbel.com/",
+    "dateAdded": "2026-06-07",
+    "collection": "brands"
+  },
+  {
     "slug": "babel",
     "title": "Babel",
     "aliases": [],
