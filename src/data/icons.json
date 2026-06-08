@@ -46633,6 +46633,22 @@
     "collection": "brands"
   },
   {
+    "slug": "digikala-smile",
+    "title": "Digikala Smile",
+    "aliases": [],
+    "hex": "EF4056",
+    "categories": [
+      "Shopping"
+    ],
+    "variants": {
+      "default": "/icons/digikala-smile/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.digikala.com/",
+    "dateAdded": "2026-06-07",
+    "collection": "brands"
+  },
+  {
     "slug": "digital-ocean",
     "title": "Digital Ocean",
     "aliases": [],
