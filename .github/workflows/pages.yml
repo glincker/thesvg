@@ -59,6 +59,14 @@ jobs:
             nextjs-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-
 
       - name: Build (next export -> out/)
+        # NEXT_PUBLIC_* vars are inlined at build time, so they must be
+        # present here or the production bundle ships with `undefined`
+        # and PostHog never initializes (silently — instrumentation-client.ts
+        # skips init if the key is empty). The 3.0.x release shipped this
+        # broken because the workflow didn't expose the secret.
+        env:
+          NEXT_PUBLIC_POSTHOG_KEY: ${{ secrets.NEXT_PUBLIC_POSTHOG_KEY }}
+          NEXT_PUBLIC_POSTHOG_HOST: ${{ secrets.NEXT_PUBLIC_POSTHOG_HOST }}
         run: pnpm build
 
       - name: Disable Jekyll on Pages
