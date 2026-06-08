@@ -78,7 +78,7 @@ export default async function Image() {
           }}
         >
           <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#34a853", display: "flex" }} />
-          Brand Refresh · Q2 2026
+          {" "}Brand Refresh · Q2 2026
         </div>
 
         {/* title */}
