@@ -59493,6 +59493,23 @@
     "collection": "brands"
   },
   {
+    "slug": "gong",
+    "title": "Gong",
+    "aliases": [],
+    "hex": "8039E9",
+    "categories": [
+      "Software",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/gong/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://gong.io",
+    "dateAdded": "2026-06-07",
+    "collection": "brands"
+  },
+  {
     "slug": "goodreads",
     "title": "Goodreads",
     "aliases": [],
