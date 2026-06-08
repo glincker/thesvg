@@ -1,6 +1,6 @@
 {
   "name": "@thesvg/react",
-  "version": "3.0.12",
+  "version": "3.0.13",
   "description": "Typed React SVG components for all 3,800+ brand icons from thesvg.org",
   "type": "module",
   "sideEffects": false,

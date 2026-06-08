@@ -1,5 +1,11 @@
 # @thesvg/react
 
+## 3.0.13
+
+### Patch Changes
+
+- feat: add Masan Group icon ([#528](https://github.com/glincker/thesvg/issues/528))
+
 ## 3.0.12
 
 ### Patch Changes
