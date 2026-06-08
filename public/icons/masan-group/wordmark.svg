@@ -1,7 +1,7 @@
 <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1539 515" width="1539" height="515">
   <title>Masan</title>
   <defs>
-    <clipPath clipPathUnits="userSpaceOnUse">
+    <clipPath id="cp1" clipPathUnits="userSpaceOnUse">
       <path d="m1925-385.74v6160.32h-6164.53v-6160.32z"/>
     </clipPath>
   </defs>
