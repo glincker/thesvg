@@ -70,7 +70,7 @@ theSVG organizes icons into collections:
 
 | Collection | Icons | Description |
 |------------|-------|-------------|
-| **Brand Icons** | 4,019 | Brand logos from 55+ categories |
+| **Brand Icons** | 4,487 | Brand logos from 55+ categories |
 | **AWS Architecture** | 739 | Official AWS service, resource, category, and group icons (2026-Q1) |
 | **Azure Services** | 626 | Microsoft Azure service icons (2026-Q1) |
 | **Google Cloud** | 214 | Google Cloud Platform icons (2026-Q1) |
