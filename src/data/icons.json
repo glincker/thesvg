@@ -109974,6 +109974,22 @@
     "collection": "brands"
   },
   {
+    "slug": "wolt",
+    "title": "Wolt",
+    "aliases": [],
+    "hex": "00C2E8",
+    "categories": [
+      "Food"
+    ],
+    "variants": {
+      "default": "/icons/wolt/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://wolt.com/",
+    "dateAdded": "2026-06-07",
+    "collection": "brands"
+  },
+  {
     "slug": "wondershare",
     "title": "Wondershare",
     "aliases": [],
