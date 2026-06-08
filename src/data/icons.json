@@ -46137,6 +46137,24 @@
     "collection": "brands"
   },
   {
+    "slug": "deskera",
+    "title": "Deskera",
+    "aliases": [],
+    "hex": "181818",
+    "categories": [
+      "Finance",
+      "SaaS",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/deskera/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.deskera.com",
+    "dateAdded": "2026-06-07",
+    "collection": "brands"
+  },
+  {
     "slug": "deutsche-bahn",
     "title": "Deutsche Bahn",
     "aliases": [],
