@@ -109137,6 +109137,22 @@
     "collection": "brands"
   },
   {
+    "slug": "whoop",
+    "title": "Whoop",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Health"
+    ],
+    "variants": {
+      "default": "/icons/whoop/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.whoop.com/",
+    "dateAdded": "2026-06-07",
+    "collection": "brands"
+  },
+  {
     "slug": "whop",
     "title": "Whop",
     "aliases": [],
