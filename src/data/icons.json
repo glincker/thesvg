@@ -41058,6 +41058,22 @@
     "collection": "brands"
   },
   {
+    "slug": "cisco-jabber",
+    "title": "Cisco Jabber",
+    "aliases": [],
+    "hex": "049FD9",
+    "categories": [
+      "Communication"
+    ],
+    "variants": {
+      "default": "/icons/cisco-jabber/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.cisco.com/c/en/us/products/unified-communications/jabber/index.html",
+    "dateAdded": "2026-06-07",
+    "collection": "brands"
+  },
+  {
     "slug": "citibank",
     "title": "Citibank",
     "aliases": [
