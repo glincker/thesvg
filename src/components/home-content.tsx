@@ -16,6 +16,7 @@ import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { useFavoritesStore } from "@/lib/stores/favorites-store";
 import { useSidebarStore } from "@/lib/stores/sidebar-store";
 import { useSearchStore } from "@/lib/stores/search-store";
+import { hasCategoryLanding, slugifyCategory } from "@/lib/categories";
 
 const SORT_OPTIONS = ["default", "recent", "az", "za"] as const;
 
@@ -42,6 +43,18 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
   // Read URL params
   const queryParam = searchParams.get("q") || "";
   const categoryParam = searchParams.get("category") || defaultCategory || null;
+
+  // Bookmarks/external links may still point to `/?category=Google%202026`.
+  // Redirect to the dedicated landing so the personalized page is the
+  // canonical surface for any category with one. Skip when a dedicated route
+  // already rendered us with `defaultCategory` set — we'd loop otherwise.
+  useEffect(() => {
+    if (defaultCategory) return;
+    const cat = searchParams.get("category");
+    if (cat && hasCategoryLanding(cat)) {
+      router.replace(`/category/${slugifyCategory(cat)}`);
+    }
+  }, [searchParams, defaultCategory, router]);
   const sortParam = searchParams.get("sort");
   const viewParam = (searchParams.get("view") || "comfortable") as "compact" | "comfortable";
   const favoritesParam = searchParams.get("favorites") === "true";

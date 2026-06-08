@@ -58497,9 +58497,9 @@
     "variants": {
       "default": "/icons/gevernova/default.svg",
       "mono": "/icons/gevernova/mono.svg",
-  		"wordmark": "/icons/gevernova/wordmark.svg",
-  		"light": "/icons/gevernova/light.svg",
-  		"dark": "/icons/gevernova/dark.svg"
+      "wordmark": "/icons/gevernova/wordmark.svg",
+      "light": "/icons/gevernova/light.svg",
+      "dark": "/icons/gevernova/dark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://www.gevernova.com/",
@@ -61204,6 +61204,101 @@
     "url": "https://voice.google.com/",
     "guidelines": "https://about.google/brand-resource-center/",
     "dateAdded": "2026-05-22",
+    "collection": "brands"
+  },
+  {
+    "slug": "google-workspace",
+    "title": "Google Workspace",
+    "aliases": [
+      "google workspace logo",
+      "workspace 5-up",
+      "gsuite",
+      "g suite"
+    ],
+    "hex": "5F6368",
+    "categories": [
+      "Google 2026",
+      "Google",
+      "Productivity",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/google-workspace-2026/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://workspace.google.com",
+    "guidelines": "https://about.google/brand-resource-center/",
+    "dateAdded": "2026-06-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "google-workspace-admin",
+    "title": "Google Workspace Admin",
+    "aliases": [
+      "google admin",
+      "workspace admin",
+      "admin console"
+    ],
+    "hex": "1A73E8",
+    "categories": [
+      "Google",
+      "Productivity",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/google-workspace-admin/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://admin.google.com",
+    "guidelines": "https://about.google/brand-resource-center/",
+    "dateAdded": "2026-06-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "google-workspace-editors",
+    "title": "Google Workspace Editors",
+    "aliases": [
+      "google editors",
+      "workspace editors",
+      "docs editors"
+    ],
+    "hex": "4285F4",
+    "categories": [
+      "Google",
+      "Productivity",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/google-workspace-editors/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://workspace.google.com",
+    "guidelines": "https://about.google/brand-resource-center/",
+    "dateAdded": "2026-06-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "google-workspace-wordmark",
+    "title": "Google Workspace (wordmark)",
+    "aliases": [
+      "google workspace wordmark",
+      "workspace text logo"
+    ],
+    "hex": "5F6368",
+    "categories": [
+      "Google",
+      "Productivity",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/google-workspace-wordmark/default.svg",
+      "light": "/icons/google-workspace-wordmark/light.svg",
+      "dark": "/icons/google-workspace-wordmark/dark.svg"
+    },
+    "license": "Trademark",
+    "url": "https://workspace.google.com",
+    "guidelines": "https://about.google/brand-resource-center/",
+    "dateAdded": "2026-06-07",
     "collection": "brands"
   },
   {
@@ -75456,7 +75551,7 @@
     "variants": {
       "default": "/icons/maybank/default.svg",
       "mono": "/icons/maybank/mono.svg",
-  		"wordmark": "/icons/maybank/wordmark.svg"
+      "wordmark": "/icons/maybank/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://www.maybank2u.com.my/home/m2u/common/login.do",
@@ -80786,7 +80881,7 @@
     "aliases": [],
     "hex": "F22B2C",
     "categories": [
-  		"Food & Beverage"
+      "Food & Beverage"
     ],
     "variants": {
       "default": "/icons/nongfu-spring/default.svg",
@@ -94228,7 +94323,7 @@
     "categories": [
       "Software",
       "Platform",
-  		"Hardware"
+      "Hardware"
     ],
     "variants": {
       "default": "/icons/sandisk/default.svg",
@@ -115722,7 +115817,7 @@
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
-   {
+  {
     "slug": "maxis-berhad",
     "title": "Maxis Berhad",
     "aliases": [],

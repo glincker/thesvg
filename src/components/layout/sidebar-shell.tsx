@@ -6,6 +6,7 @@ import { useSidebarStore } from "@/lib/stores/sidebar-store";
 import { useFavoritesStore } from "@/lib/stores/favorites-store";
 import { useRouter } from "next/navigation";
 import type { Collection } from "@/lib/icons";
+import { categoryUrl } from "@/lib/categories";
 
 interface SidebarShellProps {
   children: React.ReactNode;
@@ -21,7 +22,7 @@ export function SidebarShell({ children, categoryCounts, collections = [] }: Sid
 
   function handleCategorySelect(category: string | null) {
     if (category) {
-      router.push(`/?category=${encodeURIComponent(category)}`);
+      router.push(categoryUrl(category));
     } else {
       router.push("/");
     }

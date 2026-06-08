@@ -66,7 +66,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${BASE_URL}/icon/${icon.slug}`,
     lastModified: icon.dateAdded ? new Date(icon.dateAdded) : now,
     changeFrequency: "monthly" as const,
-    priority: 0.8,
+    // Boost discovery for the Google 2026 refresh series — these are
+    // high-search-volume queries ("gmail new logo svg") where we want to
+    // outrank simpleicons/svgl.
+    priority: icon.categories.includes("Google 2026") ? 0.95 : 0.8,
     images: [`${CDN_BASE}/${icon.slug}/default.svg`],
   }));
 

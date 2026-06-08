@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getAllIcons, getIconBySlug, getIconsByCategory, getCategoryCounts } from "@/lib/icons";
 import { IconDetailPage } from "@/components/icons/icon-detail-page";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
+import { categoryUrl } from "@/lib/categories";
 import type { Metadata } from "next";
 
 interface PageProps {
@@ -257,7 +258,7 @@ export default async function IconPage({ params }: PageProps) {
               position: 2,
               name: icon.categories[0] ?? "Icons",
               item: icon.categories[0]
-                ? `https://thesvg.org/?category=${encodeURIComponent(icon.categories[0])}`
+                ? `https://thesvg.org${categoryUrl(icon.categories[0])}`
                 : "https://thesvg.org",
             },
             {

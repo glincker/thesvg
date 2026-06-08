@@ -13,7 +13,9 @@ import {
 import { Badge } from "@/components/ui/badge";
 import type { IconEntry } from "@/lib/icons";
 import { useFavoritesStore } from "@/lib/stores/favorites-store";
+import { useRecentsStore } from "@/lib/stores/recents-store";
 import { cn } from "@/lib/utils";
+import { categoryUrl } from "@/lib/categories";
 import { JsDelivrButton } from "@/components/icons/detail/jsdelivr-button";
 import { VariantPicker } from "@/components/icons/detail/variant-picker";
 import { QuickCommands } from "@/components/icons/detail/quick-commands";
@@ -52,6 +54,7 @@ export function IconDetailPage({
 
   const toggleFavorite = useFavoritesStore((s) => s.toggleFavorite);
   const isFavorite = useFavoritesStore((s) => s.favorites.includes(icon.slug));
+  const recordView = useRecentsStore((s) => s.recordView);
 
   // Update URL when variant changes (shareable link)
   const handleVariantSelect = useCallback(
@@ -106,12 +109,14 @@ export function IconDetailPage({
       categories: icon.categories,
       variant_count: variants.length,
     });
+    recordView(icon.slug);
   }, [
     icon.slug,
     icon.title,
     icon.collection,
     icon.categories,
     variants.length,
+    recordView,
   ]);
 
   const currentPath =
@@ -152,7 +157,7 @@ export function IconDetailPage({
           <>
             <span className="text-border">/</span>
             <Link
-              href={`/?category=${encodeURIComponent(primaryCategory)}`}
+              href={categoryUrl(primaryCategory)}
               className="font-medium transition-colors hover:text-foreground"
             >
               {primaryCategory}
@@ -248,7 +253,7 @@ export function IconDetailPage({
                 {icon.categories.map((cat) => (
                   <Link
                     key={cat}
-                    href={`/?category=${encodeURIComponent(cat)}`}
+                    href={categoryUrl(cat)}
                   >
                     <Badge
                       variant="secondary"
@@ -334,28 +339,44 @@ export function IconDetailPage({
               <p className="mt-0.5 font-mono text-xs text-muted-foreground">
                 {icon.slug}
               </p>
-              {versionCounterpartSlug && versionCounterpartYear && (
-                <Link
-                  href={`/icon/${versionCounterpartSlug}`}
-                  prefetch={false}
-                  className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-border/40 bg-card/60 px-2.5 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:border-border hover:bg-card hover:text-foreground"
-                >
-                  {versionCounterpartIsNewer ? (
-                    <>
-                      <span className="rounded-full bg-gradient-to-r from-fuchsia-500/90 via-orange-500/90 to-amber-400/90 px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase leading-none tracking-wider text-white">
-                        {versionCounterpartYear}
-                      </span>
-                      <span>See the {versionCounterpartYear} refresh</span>
-                      <ArrowUpRight className="h-3 w-3 opacity-50" />
-                    </>
-                  ) : (
-                    <>
-                      <ArrowUpRight className="h-3 w-3 rotate-180 opacity-50" />
-                      <span>Compare with original</span>
-                    </>
-                  )}
-                </Link>
-              )}
+              <div className="mt-2 flex flex-wrap items-center gap-1.5">
+                {versionCounterpartSlug && versionCounterpartYear && (
+                  <Link
+                    href={`/icon/${versionCounterpartSlug}`}
+                    prefetch={false}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-border/40 bg-card/60 px-2.5 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:border-border hover:bg-card hover:text-foreground"
+                  >
+                    {versionCounterpartIsNewer ? (
+                      <>
+                        <span className="rounded-full bg-gradient-to-r from-fuchsia-500/90 via-orange-500/90 to-amber-400/90 px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase leading-none tracking-wider text-white">
+                          {versionCounterpartYear}
+                        </span>
+                        <span>See the {versionCounterpartYear} refresh</span>
+                        <ArrowUpRight className="h-3 w-3 opacity-50" />
+                      </>
+                    ) : (
+                      <>
+                        <ArrowUpRight className="h-3 w-3 rotate-180 opacity-50" />
+                        <span>Compare with original</span>
+                      </>
+                    )}
+                  </Link>
+                )}
+                {icon.categories.includes("Google 2026") && (
+                  <Link
+                    href="/category/google-2026"
+                    prefetch={false}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-border/40 bg-card/60 px-2.5 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:border-border hover:bg-card hover:text-foreground"
+                  >
+                    <span
+                      className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-[#4285f4] via-[#34a853] to-[#ea4335]"
+                      aria-hidden
+                    />
+                    <span>Part of Google 2026</span>
+                    <ArrowUpRight className="h-3 w-3 opacity-50" />
+                  </Link>
+                )}
+              </div>
             </div>
             <div className="flex shrink-0 flex-wrap items-center justify-end gap-2">
               <JsDelivrButton slug={icon.slug} activeVariant={activeVariant} />
@@ -410,7 +431,7 @@ export function IconDetailPage({
                   Related in {primaryCategory}
                 </p>
                 <Link
-                  href={`/?category=${encodeURIComponent(primaryCategory)}`}
+                  href={categoryUrl(primaryCategory)}
                   className="flex items-center gap-1 text-[11px] font-medium text-muted-foreground transition-colors hover:text-foreground"
                 >
                   View all

@@ -1,13 +1,15 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Anchor, ArrowRight, Clock, Cloud, Package, Shapes, Sparkles, Zap } from "lucide-react";
+import { Anchor, ArrowRight, Clock, Cloud, History, Package, Shapes, Sparkles, X, Zap } from "lucide-react";
 import Link from "next/link";
+import posthog from "posthog-js";
 import type { Collection, IconEntry } from "@/lib/icons";
 import { loadIconsManifest } from "@/lib/icons-manifest";
 import { IconCard } from "@/components/icons/icon-card";
 import { IconGrid } from "@/components/icons/icon-grid";
 import { IconDetail } from "@/components/icons/icon-detail";
+import { useRecentsStore } from "@/lib/stores/recents-store";
 
 /** Inline AWS logo - text inherits currentColor, arrow stays orange */
 function AwsLogo({ className }: { className?: string }) {
@@ -292,6 +294,20 @@ export function HomeHero({
     setSelectedIcon(icon);
   }, []);
 
+  // Returning-visitor rail: resolve recently viewed slugs to icons. Only
+  // renders when the user actually has history, so first-time visitors see
+  // no change. Bounded to 8 to keep the rail compact above the fold.
+  const recentViewed = useRecentsStore((s) => s.viewed);
+  const clearViewed = useRecentsStore((s) => s.clearViewed);
+  const recentViewedIcons = useMemo(() => {
+    if (recentViewed.length === 0 || icons.length === 0) return [];
+    const bySlug = new Map(icons.map((i) => [i.slug, i]));
+    return recentViewed
+      .map((r) => bySlug.get(r.slug))
+      .filter((i): i is IconEntry => Boolean(i))
+      .slice(0, 8);
+  }, [recentViewed, icons]);
+
   // Filter icons by active collection
   const collectionIcons = useMemo(
     () => icons.filter((i) => i.collection === activeCollection),
@@ -489,6 +505,72 @@ export function HomeHero({
         </div>
       </div>
       </div>
+
+      {/* Pick up where you left off — only renders for returning visitors */}
+      {recentViewedIcons.length > 0 && (
+        <section
+          className="relative overflow-hidden rounded-2xl border border-border/40 bg-gradient-to-br from-background via-background to-accent/20 px-4 py-3 sm:px-5 dark:border-white/[0.06] dark:from-white/[0.02] dark:via-background dark:to-white/[0.03]"
+          aria-labelledby="recents-rail-heading"
+        >
+          <div className="mb-2.5 flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-foreground/5 dark:bg-white/[0.06]">
+                <History className="h-3 w-3 text-foreground/70" />
+              </span>
+              <h2 id="recents-rail-heading" className="text-sm font-semibold text-foreground">
+                Pick up where you left off
+              </h2>
+              <span className="rounded-full bg-muted/60 px-1.5 py-0.5 font-mono text-[10px] text-muted-foreground dark:bg-white/[0.04]">
+                {recentViewedIcons.length}
+              </span>
+            </div>
+            <div className="flex items-center gap-1">
+              <Link
+                href="/recents"
+                className="rounded-md px-2 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+              >
+                View all
+              </Link>
+              <button
+                type="button"
+                onClick={() => clearViewed()}
+                className="flex h-6 w-6 items-center justify-center rounded-md text-muted-foreground/50 transition-colors hover:bg-accent hover:text-foreground"
+                aria-label="Clear recently viewed"
+                title="Clear recents"
+              >
+                <X className="h-3 w-3" />
+              </button>
+            </div>
+          </div>
+          <div className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:thin]">
+            {recentViewedIcons.map((icon) => (
+              <Link
+                key={icon.slug}
+                href={`/icon/${icon.slug}`}
+                onClick={() => {
+                  posthog.capture("recents_clicked", {
+                    kind: "viewed",
+                    slug: icon.slug,
+                    source: "home_rail",
+                  });
+                }}
+                className="group/recent flex shrink-0 flex-col items-center gap-1.5 rounded-xl border border-border/40 bg-card/60 p-2.5 transition-all hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-md dark:border-white/[0.06] dark:bg-white/[0.02] dark:hover:border-white/[0.12]"
+                style={{ width: "84px" }}
+              >
+                <img
+                  src={icon.variants.default}
+                  alt=""
+                  className="h-8 w-8 object-contain transition-transform duration-200 group-hover/recent:scale-110"
+                  loading="lazy"
+                />
+                <span className="w-full truncate text-center text-[10px] font-medium text-foreground/80 group-hover/recent:text-foreground">
+                  {icon.title}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Collection tabs */}
       {collections.length > 1 && (

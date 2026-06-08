@@ -8,6 +8,7 @@ import {
   getIconsByCategory,
 } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
+import { categoryUrl } from "@/lib/categories";
 
 export const metadata: Metadata = {
   title: "Browse All Categories",
@@ -130,7 +131,7 @@ export default function CategoriesPage() {
                     key={`brands-${cat.name}`}
                     name={cat.name}
                     count={cat.count}
-                    href={`/?category=${encodeURIComponent(cat.name)}`}
+                    href={categoryUrl(cat.name)}
                     sampleIcons={samplesByCategory.get(cat.name) || []}
                   />
                 ))}

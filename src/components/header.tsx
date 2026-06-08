@@ -1,7 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { useCallback, useEffect, useId, useRef, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
+import posthog from "posthog-js";
 import { usePathname, useRouter } from "next/navigation";
 import { ArrowRight, Cloud, FileText, Menu, Moon, Package, Plus, Search, Shapes, Sparkles, Sun, X } from "lucide-react";
 import { Github } from "@/components/icons/shared/brand-icons";
@@ -10,6 +11,7 @@ import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { useSidebarStore } from "@/lib/stores/sidebar-store";
 import { useSearchStore } from "@/lib/stores/search-store";
+import { useRecentsStore } from "@/lib/stores/recents-store";
 import type { IconEntry } from "@/lib/icons";
 import { loadIconsManifest } from "@/lib/icons-manifest";
 import { cn } from "@/lib/utils";
@@ -68,6 +70,21 @@ function SubmitButton() {
   );
 }
 
+/**
+ * Fire-and-forget GA4 `search` event. Feeds GA4's built-in Search Terms
+ * report so non-PostHog stakeholders can see top queries without setup.
+ * Safe to call before gtag loads — silently no-ops when window.gtag is
+ * undefined (e.g. SSR, ad-blocker, dev without GA configured).
+ */
+function gaSearch(query: string) {
+  if (typeof window === "undefined") return;
+  const w = window as unknown as {
+    gtag?: (cmd: string, event: string, params: Record<string, unknown>) => void;
+  };
+  if (typeof w.gtag !== "function") return;
+  w.gtag("event", "search", { search_term: query });
+}
+
 const FIGMA_BADGE_EXPIRES_AT = Date.UTC(2026, 5, 3);
 
 export function Header() {
@@ -80,11 +97,21 @@ export function Header() {
   const toggleSidebar = useSidebarStore((s) => s.toggle);
   const query = useSearchStore((s) => s.query);
   const setQuery = useSearchStore((s) => s.setQuery);
+  const recentSearches = useRecentsStore((s) => s.searched);
+  const recentViewed = useRecentsStore((s) => s.viewed);
+  const recordSearch = useRecentsStore((s) => s.recordSearch);
+  const clearViewed = useRecentsStore((s) => s.clearViewed);
+  const clearSearched = useRecentsStore((s) => s.clearSearched);
   const pathname = usePathname();
   const router = useRouter();
   const searchParams = useSearchParams();
   const inputRef = useRef<HTMLInputElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  // React useId gives us SSR-safe, collision-free ARIA ids. Hardcoded
+  // strings break if the Header ever renders twice (e.g. a mobile sheet
+  // mirror) and confuse screen readers when ids overlap.
+  const listboxId = useId();
+  const activeOptionId = useId();
   const isMac = useSyncExternalStore(
     () => () => {},
     () => navigator.userAgent.includes("Mac"),
@@ -143,8 +170,54 @@ export function Header() {
   const isHome = pathname === "/";
 
   const [suggestions, setSuggestions] = useState<IconEntry[]>([]);
+  const [recentViewedIcons, setRecentViewedIcons] = useState<IconEntry[]>([]);
   const hasQuery = query.trim().length >= 2;
   const showDropdown = focused && (hasQuery ? suggestions.length > 0 : true);
+
+  // Persist real search intent to recents after the user pauses typing,
+  // and fire the same debounce point to PostHog + GA so analytics show
+  // what's actually searched (autocapture never records typed input).
+  // 700ms matches the landing page debounce — long enough to skip throwaway
+  // keystrokes, short enough to capture intent before navigation.
+  useEffect(() => {
+    const q = query.trim();
+    if (q.length < 2) return;
+    const id = window.setTimeout(() => {
+      recordSearch(q);
+      posthog.capture("icon_searched", {
+        query: q,
+        query_length: q.length,
+        source: "header",
+      });
+      gaSearch(q);
+    }, 700);
+    return () => window.clearTimeout(id);
+  }, [query, recordSearch]);
+
+  // Resolve recently viewed slugs to IconEntry on first focus so we can
+  // render thumbnails in the dropdown. Manifest is the same one loaded
+  // when typing, so a returning visitor often gets it from cache.
+  useEffect(() => {
+    if (!focused || recentViewed.length === 0) return;
+    let active = true;
+    loadIconsManifest()
+      .then((icons) => {
+        if (!active) return;
+        const bySlug = new Map(icons.map((i) => [i.slug, i]));
+        const resolved = recentViewed
+          .map((r) => bySlug.get(r.slug))
+          .filter((i): i is IconEntry => Boolean(i));
+        setRecentViewedIcons(resolved);
+      })
+      .catch(() => {
+        // Manifest failure is non-fatal — recents simply won't render
+      });
+    return () => {
+      active = false;
+    };
+  }, [focused, recentViewed]);
+
+  const hasRecents = recentViewedIcons.length > 0 || recentSearches.length > 0;
 
   // Lazy-load the manifest and Fuse.js when the user types a search query
   useEffect(() => {
@@ -337,8 +410,14 @@ export function Header() {
                 aria-label="Search icons"
                 role="combobox"
                 aria-expanded={showDropdown}
-                aria-controls="header-search-listbox"
+                aria-controls={listboxId}
                 aria-autocomplete="list"
+                aria-activedescendant={
+                  hasQuery && selectedIdx >= 0
+                    ? `${activeOptionId}-${selectedIdx}`
+                    : undefined
+                }
+                maxLength={100}
               />
               <div className="absolute top-1/2 right-2.5 flex -translate-y-1/2 items-center gap-1">
                 {query && (
@@ -361,7 +440,7 @@ export function Header() {
             {showDropdown && (
               <div
                 ref={dropdownRef}
-                id="header-search-listbox"
+                id={listboxId}
                 className="absolute top-full right-0 left-0 z-50 mx-auto mt-1.5 max-w-xl overflow-hidden rounded-xl border border-border/40 bg-background/95 shadow-[0_8px_30px_-4px_rgba(0,0,0,0.15)] backdrop-blur-2xl backdrop-saturate-150 dark:border-white/[0.1] dark:bg-[rgba(10,10,10,0.95)] dark:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.6)]"
                 role="listbox"
               >
@@ -374,6 +453,7 @@ export function Header() {
                     {suggestions.map((icon, i) => (
                       <button
                         key={icon.slug}
+                        id={`${activeOptionId}-${i}`}
                         type="button"
                         role="option"
                         aria-selected={i === selectedIdx}
@@ -405,6 +485,84 @@ export function Header() {
                 ) : (
                   /* Quick links when focused with no query */
                   <div className="px-2 py-2">
+                    {hasRecents && (
+                      <>
+                        <div className="flex items-center justify-between px-2 py-1">
+                          <p className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground/50">
+                            Recent
+                          </p>
+                          <button
+                            type="button"
+                            onMouseDown={(e) => {
+                              e.preventDefault();
+                              clearViewed();
+                              clearSearched();
+                              setRecentViewedIcons([]);
+                            }}
+                            className="text-[10px] text-muted-foreground/40 transition-colors hover:text-muted-foreground"
+                          >
+                            Clear
+                          </button>
+                        </div>
+                        {recentViewedIcons.length > 0 && (
+                          <div className="flex flex-wrap gap-1.5 px-2 pb-1.5">
+                            {recentViewedIcons.slice(0, 8).map((icon) => (
+                              <button
+                                key={icon.slug}
+                                type="button"
+                                onMouseDown={(e) => {
+                                  e.preventDefault();
+                                  posthog.capture("recents_clicked", {
+                                    kind: "viewed",
+                                    slug: icon.slug,
+                                    source: "header_dropdown",
+                                  });
+                                  navigateToIcon(icon.slug);
+                                }}
+                                className="group/recent flex items-center gap-1.5 rounded-md border border-border/40 bg-muted/30 px-1.5 py-1 transition-all hover:border-foreground/20 hover:bg-accent dark:border-white/[0.06] dark:bg-white/[0.03] dark:hover:border-white/[0.15]"
+                                title={icon.title}
+                                aria-label={`Open ${icon.title}`}
+                              >
+                                <img
+                                  src={icon.variants.default}
+                                  alt=""
+                                  className="h-4 w-4 shrink-0 object-contain"
+                                />
+                                <span className="max-w-[88px] truncate text-[11px] text-muted-foreground transition-colors group-hover/recent:text-foreground">
+                                  {icon.title}
+                                </span>
+                              </button>
+                            ))}
+                          </div>
+                        )}
+                        {recentSearches.length > 0 && (
+                          <div className="flex flex-wrap gap-1 px-2 pb-1.5">
+                            {recentSearches.slice(0, 5).map((r) => (
+                              <button
+                                key={r.query}
+                                type="button"
+                                onMouseDown={(e) => {
+                                  // mousedown so it fires before the input blur
+                                  e.preventDefault();
+                                  posthog.capture("recents_clicked", {
+                                    kind: "searched",
+                                    query: r.query,
+                                    source: "header_dropdown",
+                                  });
+                                  setQuery(r.query);
+                                  inputRef.current?.focus();
+                                }}
+                                className="inline-flex items-center gap-1 rounded-full border border-border/30 bg-muted/30 px-2 py-0.5 text-[11px] text-muted-foreground transition-colors hover:border-foreground/20 hover:bg-accent hover:text-foreground dark:border-white/[0.06] dark:bg-white/[0.03] dark:hover:border-white/[0.15]"
+                              >
+                                <Search className="h-2.5 w-2.5" />
+                                {r.query}
+                              </button>
+                            ))}
+                          </div>
+                        )}
+                        <div className="my-1.5 h-px bg-border/30 dark:bg-white/[0.04]" />
+                      </>
+                    )}
                     <p className="px-2 py-1 text-[10px] font-medium uppercase tracking-wider text-muted-foreground/50">
                       Quick access
                     </p>
