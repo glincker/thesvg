@@ -1,5 +1,11 @@
 # @thesvg/vue
 
+## 3.0.11
+
+### Patch Changes
+
+- chore: round-3 cleanup - icons.json indentation, wolt svg, icon counts ([#525](https://github.com/glincker/thesvg/issues/525))
+
 ## 3.0.10
 
 ### Patch Changes
