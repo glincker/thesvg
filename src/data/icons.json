@@ -75045,6 +75045,25 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	 {
+    "slug": "masan-group",
+    "title": "Masan Group",
+    "aliases": [],
+    "hex": "00447C",
+    "categories": [
+      "Finance",
+      "Food & Beverage"
+    ],
+    "variants": {
+      "default": "/icons/masan-group/default.svg",
+      "mono": "/icons/masan-group/mono.svg",
+      "wordmark": "/icons/masan-group/wordmark.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.masangroup.com/",
+    "dateAdded": "2026-06-08",
+    "collection": "brands"
+  },
   {
     "slug": "maserati",
     "title": "Maserati",
