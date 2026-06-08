@@ -46617,6 +46617,22 @@
     "collection": "brands"
   },
   {
+    "slug": "digikala-persian-text",
+    "title": "Digikala Persian Text",
+    "aliases": [],
+    "hex": "EF4056",
+    "categories": [
+      "Shopping"
+    ],
+    "variants": {
+      "default": "/icons/digikala-persian-text/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.digikala.com/",
+    "dateAdded": "2026-06-07",
+    "collection": "brands"
+  },
+  {
     "slug": "digital-ocean",
     "title": "Digital Ocean",
     "aliases": [],
