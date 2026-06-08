@@ -94,19 +94,31 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # Tag each package with its current version if not already tagged
+          # Tag each package with its current version if not already tagged.
+          #
+          # The runner's checkout doesn't always fetch every historical
+          # tag, so a local-only `git rev-parse` check would create a
+          # duplicate tag and the subsequent push would be rejected by
+          # the remote. Check both local and remote, and pull the tag
+          # down if it already lives upstream - the downstream
+          # "Create GitHub releases per package" step uses local
+          # `git rev-parse` and needs the tag to exist in this clone.
           for PKG_DIR in packages/*/; do
             PKG_DIR="${PKG_DIR%/}"
             [ -f "$PKG_DIR/package.json" ] || continue
             PKG_NAME=$(node -p "require('./$PKG_DIR/package.json').name")
             PKG_VERSION=$(node -p "require('./$PKG_DIR/package.json').version")
             TAG="$PKG_NAME@$PKG_VERSION"
-            if ! git rev-parse "$TAG" >/dev/null 2>&1; then
+            if git rev-parse "refs/tags/$TAG" >/dev/null 2>&1; then
+              echo "Tag already present locally: $TAG"
+            elif git ls-remote --tags --exit-code origin "refs/tags/$TAG" >/dev/null 2>&1; then
+              echo "Tag already present on remote: $TAG (fetching)"
+              # Use `tag` form rather than a refspec - scoped names contain
+              # `@` which trips the `<src>:<dst>` parser.
+              git fetch origin tag "$TAG"
+            else
               echo "Creating tag: $TAG"
               git tag "$TAG"
-              # Tag push must succeed — the per-package GitHub release step
-              # below uses --verify-tag and will fail if the tag isn't on
-              # the remote.
               git push origin "$TAG"
             fi
           done
