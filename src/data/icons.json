@@ -47158,6 +47158,23 @@
     "collection": "brands"
   },
   {
+    "slug": "docusign",
+    "title": "Docusign",
+    "aliases": [],
+    "hex": "4C00FF",
+    "categories": [
+      "Software",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/docusign/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.docusign.com",
+    "dateAdded": "2026-06-07",
+    "collection": "brands"
+  },
+  {
     "slug": "dodo-payments",
     "title": "Dodo Payments",
     "aliases": [],
