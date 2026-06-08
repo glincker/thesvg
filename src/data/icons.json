@@ -36284,6 +36284,23 @@
     "dateAdded": "2026-05-16"
   },
   {
+    "slug": "bayzat",
+    "title": "Bayzat",
+    "aliases": [],
+    "hex": "9647FF",
+    "categories": [
+      "AI",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/bayzat/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.bayzat.com/",
+    "dateAdded": "2026-06-07",
+    "collection": "brands"
+  },
+  {
     "slug": "bazel",
     "title": "Bazel",
     "aliases": [],
