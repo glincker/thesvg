@@ -18,6 +18,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { validateSvg, type ValidationResult } from "@/lib/svg-validation";
+import {
+  LICENSE_OPTIONS,
+  MAX_OTHER_LICENSE_LENGTH,
+  OTHER_LICENSE_ID,
+  validateLicenseSelection,
+} from "@/lib/license-options";
 
 const GITHUB_ISSUES_URL =
   "https://github.com/glincker/thesvg/issues/new";
@@ -82,7 +88,12 @@ interface FormState {
   hex: string;
   categories: string[];
   newCategory: string;
+  licenseId: string;
+  licenseOther: string;
 }
+
+const LICENSING_GUIDE_URL =
+  "https://github.com/GLINCKER/thesvg/blob/main/LICENSING.md";
 
 function toKebabCase(str: string): string {
   return str
@@ -188,6 +199,151 @@ function SvgPreview({ dataUrl, name }: { dataUrl: string; name: string }) {
   );
 }
 
+interface LicenseSelectorProps {
+  licenseId: string;
+  onLicenseChange: (id: string) => void;
+  otherText: string;
+  onOtherTextChange: (text: string) => void;
+  validation: ReturnType<typeof validateLicenseSelection>;
+  onSuggest: (id: string) => void;
+}
+
+function LicenseSelector({
+  licenseId,
+  onLicenseChange,
+  otherText,
+  onOtherTextChange,
+  validation,
+  onSuggest,
+}: LicenseSelectorProps) {
+  const [helperOpen, setHelperOpen] = useState(false);
+  const isOther = licenseId === OTHER_LICENSE_ID;
+  const showOtherEmptyError =
+    !validation.ok && validation.reason === "other_empty" && isOther;
+  const showOtherTooLongError =
+    !validation.ok && validation.reason === "other_too_long" && isOther;
+
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center justify-between">
+        <label htmlFor="license-select" className="text-sm font-medium">
+          License <span className="text-red-500">*</span>
+        </label>
+        <div className="flex items-center gap-3 text-xs">
+          <button
+            type="button"
+            onClick={() => setHelperOpen((v) => !v)}
+            className="text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
+          >
+            {helperOpen ? "Hide" : "Help me pick"}
+          </button>
+          <a
+            href={LICENSING_GUIDE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
+          >
+            Licensing guide
+            <ExternalLink className="h-3 w-3" />
+          </a>
+        </div>
+      </div>
+
+      {helperOpen && (
+        <div className="rounded-lg border border-border bg-muted/30 p-3 text-xs">
+          <p className="mb-2 font-medium text-foreground">Pick the option that fits:</p>
+          <div className="flex flex-col gap-1.5">
+            <button
+              type="button"
+              onClick={() => onSuggest("CC0-1.0")}
+              className="rounded px-2 py-1 text-left transition-colors hover:bg-accent"
+            >
+              <strong>I drew it myself</strong>
+              <span className="ml-1 text-muted-foreground">→ CC0 1.0</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => onSuggest("MIT")}
+              className="rounded px-2 py-1 text-left transition-colors hover:bg-accent"
+            >
+              <strong>Logo of an MIT / Apache / BSD open-source project</strong>
+              <span className="ml-1 text-muted-foreground">→ match the project&rsquo;s license</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => onSuggest("CC-BY-4.0")}
+              className="rounded px-2 py-1 text-left transition-colors hover:bg-accent"
+            >
+              <strong>Brand kit explicitly published as CC BY</strong>
+              <span className="ml-1 text-muted-foreground">→ CC BY 4.0 (or CC BY-SA / CC BY-ND)</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => onSuggest(OTHER_LICENSE_ID)}
+              className="rounded px-2 py-1 text-left transition-colors hover:bg-accent"
+            >
+              <strong>Company brand mark, custom license, or unsure</strong>
+              <span className="ml-1 text-muted-foreground">→ Other / custom (we&rsquo;ll verify)</span>
+            </button>
+          </div>
+        </div>
+      )}
+
+      <select
+        id="license-select"
+        value={licenseId}
+        onChange={(e) => onLicenseChange(e.target.value)}
+        required
+        className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm shadow-sm outline-none transition-colors focus:border-ring focus:ring-1 focus:ring-ring"
+      >
+        <option value="">Select a license…</option>
+        {LICENSE_OPTIONS.map((opt) => (
+          <option key={opt.id} value={opt.id}>
+            {opt.label}
+          </option>
+        ))}
+      </select>
+
+      {licenseId && (
+        <p className="text-xs text-muted-foreground">
+          {LICENSE_OPTIONS.find((o) => o.id === licenseId)?.description}
+        </p>
+      )}
+
+      {isOther && (
+        <div className="space-y-1.5">
+          <label htmlFor="license-other" className="text-xs font-medium">
+            Describe the license <span className="text-red-500">*</span>
+          </label>
+          <Input
+            id="license-other"
+            value={otherText}
+            onChange={(e) => onOtherTextChange(e.target.value)}
+            placeholder="e.g. Acme Brand Guidelines v2 — non-commercial use only"
+            maxLength={MAX_OTHER_LICENSE_LENGTH}
+            className="text-sm"
+            aria-invalid={showOtherEmptyError || showOtherTooLongError}
+            aria-describedby={showOtherEmptyError ? "license-other-error" : undefined}
+          />
+          {showOtherEmptyError && (
+            <p id="license-other-error" className="text-xs text-red-500">
+              A short description is required when picking Other.
+            </p>
+          )}
+          {showOtherTooLongError && (
+            <p className="text-xs text-red-500">
+              Keep the description under {MAX_OTHER_LICENSE_LENGTH} characters.
+            </p>
+          )}
+          <p className="text-xs text-muted-foreground">
+            Your issue will be auto-labeled <code>license-unsure</code> so a maintainer reviews it before merge.
+          </p>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function CategorySelector({
   categories,
   selected,
@@ -285,6 +441,8 @@ export function SubmitForm({
     hex: "",
     categories: [],
     newCategory: "",
+    licenseId: "",
+    licenseOther: "",
   });
 
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -414,6 +572,11 @@ export function SubmitForm({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const licenseValidation = validateLicenseSelection(
+    form.licenseId,
+    form.licenseOther,
+  );
+
   function buildSubmissionBody(): string {
     const validation = fileState?.validation;
     const checksText = validation
@@ -421,6 +584,13 @@ export function SubmitForm({
           .map((c) => `- [${c.passed ? "x" : " "}] ${c.name}: ${c.message}`)
           .join("\n")
       : "No file uploaded";
+
+    const resolvedLicense = licenseValidation.ok
+      ? licenseValidation.resolved
+      : "UNSPECIFIED";
+    const licenseLine = licenseValidation.ok && licenseValidation.needsTriage
+      ? `${resolvedLicense} (submitter picked Other — needs maintainer confirmation)`
+      : resolvedLicense;
 
     const timestamp = new Date().toISOString();
     const lines = [
@@ -433,6 +603,7 @@ export function SubmitForm({
       `- **Brand Guidelines**: ${form.guidelinesUrl || "-"}`,
       `- **Brand Hex Color**: ${form.hex ? `#${form.hex.replace(/^#/, "")}` : "-"}`,
       `- **Categories**: ${form.categories.length ? form.categories.join(", ") : "-"}`,
+      `- **License**: ${licenseLine}`,
       ``,
       `### SVG Validation`,
       checksText,
@@ -454,7 +625,7 @@ export function SubmitForm({
           variants: {
             default: `/icons/${form.slug || "your-brand"}/default.svg`,
           },
-          license: "TODO",
+          license: resolvedLicense,
           url: form.websiteUrl || "https://yourbrand.com",
           ...(form.guidelinesUrl ? { guidelines: form.guidelinesUrl } : {}),
         },
@@ -475,7 +646,13 @@ export function SubmitForm({
       `[Icon Request] ${form.iconName || "New Icon"} (via thesvg.org)`
     );
     const body = encodeURIComponent(buildSubmissionBody());
-    return `${GITHUB_ISSUES_URL}?title=${title}&body=${body}&labels=icon-request,submitted-via-thesvg`;
+    // Add license-unsure when the submitter explicitly picked "Other" so
+    // triage routes the issue to a maintainer for license confirmation
+    // before merge.
+    const extraLabels = licenseValidation.ok && licenseValidation.needsTriage
+      ? ",license-unsure"
+      : "";
+    return `${GITHUB_ISSUES_URL}?title=${title}&body=${body}&labels=icon-request,submitted-via-thesvg${extraLabels}`;
   }
 
   async function handleCopy() {
@@ -488,7 +665,10 @@ export function SubmitForm({
     }
   }
 
-  const canSubmit = fileState !== null && form.iconName.trim() !== "";
+  const canSubmit =
+    fileState !== null &&
+    form.iconName.trim() !== "" &&
+    licenseValidation.ok;
 
   return (
     <div className="space-y-6">
@@ -684,6 +864,16 @@ export function SubmitForm({
           </div>
         </div>
 
+        {/* License */}
+        <LicenseSelector
+          licenseId={form.licenseId}
+          onLicenseChange={(id) => updateField("licenseId", id)}
+          otherText={form.licenseOther}
+          onOtherTextChange={(val) => updateField("licenseOther", val)}
+          validation={licenseValidation}
+          onSuggest={(id) => updateField("licenseId", id)}
+        />
+
         {/* Categories */}
         <CategorySelector
           categories={allCategories}
@@ -713,6 +903,9 @@ export function SubmitForm({
                 has_guidelines_url: !!form.guidelinesUrl,
                 has_hex_color: form.hex.length === 6,
                 validation_passed: fileState?.validation?.valid ?? false,
+                license: licenseValidation.ok ? licenseValidation.resolved : null,
+                license_needs_triage:
+                  licenseValidation.ok && licenseValidation.needsTriage,
               });
             }
           }}
@@ -751,7 +944,7 @@ export function SubmitForm({
 
       {!canSubmit && (
         <p className="text-xs text-muted-foreground">
-          Upload an SVG file and enter an icon name to enable submission.
+          Upload an SVG file, enter an icon name, and pick a license to enable submission.
         </p>
       )}
     </div>
