@@ -37921,6 +37921,24 @@
     "collection": "brands"
   },
   {
+    "slug": "bonusly",
+    "title": "Bonusly",
+    "aliases": [],
+    "hex": "22B94F",
+    "categories": [
+      "SaaS",
+      "Recognition",
+      "HR"
+    ],
+    "variants": {
+      "default": "/icons/bonusly/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://bonusly.com",
+    "dateAdded": "2026-06-07",
+    "collection": "brands"
+  },
+  {
     "slug": "bookalope",
     "title": "Bookalope",
     "aliases": [],
