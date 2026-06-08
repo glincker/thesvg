@@ -60553,6 +60553,23 @@
     "collection": "brands"
   },
   {
+    "slug": "google-one",
+    "title": "Google One",
+    "aliases": [],
+    "hex": "4285F4",
+    "categories": [
+      "Cloud",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/google-one/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://one.google.com/about/",
+    "dateAdded": "2026-06-07",
+    "collection": "brands"
+  },
+  {
     "slug": "google-palm",
     "title": "Google PaLM",
     "aliases": [],
