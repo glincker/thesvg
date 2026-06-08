@@ -103806,6 +103806,22 @@
     "collection": "brands"
   },
   {
+    "slug": "tripletex",
+    "title": "Tripletex",
+    "aliases": [],
+    "hex": "010A59",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/tripletex/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://tripletex.no/",
+    "dateAdded": "2026-06-07",
+    "collection": "brands"
+  },
+  {
     "slug": "tripo",
     "title": "Tripo",
     "aliases": [],
