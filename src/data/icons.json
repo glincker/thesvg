@@ -46440,6 +46440,24 @@
     "collection": "brands"
   },
   {
+    "slug": "dialogika",
+    "title": "DIaLOGIKa",
+    "aliases": [],
+    "hex": "E41D2D",
+    "categories": [
+      "Software",
+      "Mobile App",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/dialogika/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.dialogika.de",
+    "dateAdded": "2026-06-07",
+    "collection": "brands"
+  },
+  {
     "slug": "diaspora",
     "title": "Diaspora",
     "aliases": [],
