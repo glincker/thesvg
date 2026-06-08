@@ -90823,6 +90823,23 @@
     "collection": "brands"
   },
   {
+    "slug": "react-aria",
+    "title": "React Aria",
+    "aliases": [],
+    "hex": "6733FF",
+    "categories": [
+      "Framework",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/react-aria/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://react-aria.adobe.com/",
+    "dateAdded": "2026-06-07",
+    "collection": "brands"
+  },
+  {
     "slug": "react-bootstrap",
     "title": "React Bootstrap",
     "aliases": [],
