@@ -1,5 +1,11 @@
 # @thesvg/icons
 
+## 3.0.12
+
+### Patch Changes
+
+- feat: Google 2026 landing, recents personalization, search analytics, and [#530](https://github.com/glincker/thesvg/issues/530) guard ([#531](https://github.com/glincker/thesvg/issues/531))
+
 ## 3.0.11
 
 ### Patch Changes
