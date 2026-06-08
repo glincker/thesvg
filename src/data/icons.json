@@ -100352,6 +100352,22 @@
     "collection": "brands"
   },
   {
+    "slug": "taboola",
+    "title": "Taboola",
+    "aliases": [],
+    "hex": "054164",
+    "categories": [
+      "Marketing"
+    ],
+    "variants": {
+      "default": "/icons/taboola/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.taboola.com/",
+    "dateAdded": "2026-06-07",
+    "collection": "brands"
+  },
+  {
     "slug": "taco-bell",
     "title": "Taco Bell",
     "aliases": [],
