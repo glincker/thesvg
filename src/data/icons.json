@@ -2390,7 +2390,7 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	{
+  {
     "slug": "alivecor",
     "title": "AliveCor",
     "aliases": [],
@@ -58486,7 +58486,7 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	{
+  {
     "slug": "gevernova",
     "title": "GE Vernova",
     "aliases": [],
@@ -58497,9 +58497,9 @@
     "variants": {
       "default": "/icons/gevernova/default.svg",
       "mono": "/icons/gevernova/mono.svg",
-			"wordmark": "/icons/gevernova/wordmark.svg",
-			"light": "/icons/gevernova/light.svg",
-			"dark": "/icons/gevernova/dark.svg"
+  		"wordmark": "/icons/gevernova/wordmark.svg",
+  		"light": "/icons/gevernova/light.svg",
+  		"dark": "/icons/gevernova/dark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://www.gevernova.com/",
@@ -66833,7 +66833,7 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	{
+  {
     "slug": "japan-post-bank",
     "title": "Japan Post Bank",
     "aliases": [],
@@ -74034,7 +74034,7 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	{
+  {
     "slug": "lunit",
     "title": "Lunit",
     "aliases": [],
@@ -75445,7 +75445,7 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	{
+  {
     "slug": "maybank",
     "title": "Maybank",
     "aliases": [],
@@ -75456,7 +75456,7 @@
     "variants": {
       "default": "/icons/maybank/default.svg",
       "mono": "/icons/maybank/mono.svg",
-			"wordmark": "/icons/maybank/wordmark.svg"
+  		"wordmark": "/icons/maybank/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://www.maybank2u.com.my/home/m2u/common/login.do",
@@ -77590,28 +77590,28 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	{
-	  "slug": "mixue",
-	  "title": "Mixue",
-	  "aliases": [
-	    "Mixue Ice Cream & Tea",
-	    "Mixue Bingcheng",
-	    "蜜雪冰城"
-	  ],
-	  "hex": "000000",
-	  "categories": [
-	    "Food & Beverage"
-	  ],
-	  "variants": {
-	    "default": "/icons/mixue/default.svg",
-	    "wordmark": "/icons/mixue/wordmark.svg"
-	  },
-	  "license": "CC0-1.0",
-	  "url": "https://www.mxbc.com",
-	  "guidelines": "",
-	  "dateAdded": "2026-06-04",
-	  "collection": "brands"
-	},
+  {
+    "slug": "mixue",
+    "title": "Mixue",
+    "aliases": [
+      "Mixue Ice Cream & Tea",
+      "Mixue Bingcheng",
+      "蜜雪冰城"
+    ],
+    "hex": "000000",
+    "categories": [
+      "Food & Beverage"
+    ],
+    "variants": {
+      "default": "/icons/mixue/default.svg",
+      "wordmark": "/icons/mixue/wordmark.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.mxbc.com",
+    "guidelines": "",
+    "dateAdded": "2026-06-04",
+    "collection": "brands"
+  },
   {
     "slug": "mjml",
     "title": "MJML",
@@ -80780,13 +80780,13 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	{
+  {
     "slug": "nongfu-spring",
     "title": "Nongfu Spring",
     "aliases": [],
     "hex": "F22B2C",
     "categories": [
-			"Food & Beverage"
+  		"Food & Beverage"
     ],
     "variants": {
       "default": "/icons/nongfu-spring/default.svg",
@@ -82336,7 +82336,7 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	{
+  {
     "slug": "onex",
     "title": "Onex",
     "aliases": [],
@@ -88823,7 +88823,7 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	{
+  {
     "slug": "prosus",
     "title": "Prosus",
     "aliases": [],
@@ -94220,7 +94220,7 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	{
+  {
     "slug": "sandisk",
     "title": "SanDisk",
     "aliases": [],
@@ -94228,7 +94228,7 @@
     "categories": [
       "Software",
       "Platform",
-			"Hardware"
+  		"Hardware"
     ],
     "variants": {
       "default": "/icons/sandisk/default.svg",
@@ -107713,7 +107713,7 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	{
+  {
     "slug": "volaris",
     "title": "Volaris",
     "aliases": [],
@@ -115722,7 +115722,7 @@
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
-	 {
+   {
     "slug": "maxis-berhad",
     "title": "Maxis Berhad",
     "aliases": [],
@@ -116161,7 +116161,7 @@
     "collection": "brands",
     "dateAdded": "2026-05-05"
   },
-	{
+  {
     "slug": "msb",
     "title": "Vietnam Maritime Commercial Joint Stock Bank",
     "aliases": [],
