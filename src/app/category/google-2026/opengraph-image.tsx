@@ -3,6 +3,11 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { getIconsByCategory } from "@/lib/icons";
 
+// Required for `output: "export"` builds — without force-static, Next refuses
+// to collect this route at build time (it has no static params and isn't a
+// page, so it falls back to dynamic). For static export we generate the
+// image once at build and serve the resulting PNG file.
+export const dynamic = "force-static";
 export const runtime = "nodejs";
 export const alt = "Google 2026 brand icons on thesvg.org";
 export const size = { width: 1200, height: 630 };
