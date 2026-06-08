@@ -54,7 +54,7 @@
 Most icon libraries focus on UI icons. Brand logos are scattered across press kits, Figma files, and random GitHub repos. **theSVG** is the single source for SVG icons - brand logos, cloud architecture diagrams, and more. Searchable, versioned, and available as npm packages, CDN, CLI, API, and MCP server.
 
 - **6,100+ icons** across multiple collections
-- **4,019 brand icons** across 55+ categories
+- **4,400+ brand icons** across 55+ categories
 - **739 AWS Architecture icons** (2026-Q1)
 - **626 Azure Service icons** (2026-Q1)
 - **214 Google Cloud icons** (2026-Q1)
