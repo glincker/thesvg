@@ -49926,6 +49926,23 @@
     "collection": "brands"
   },
   {
+    "slug": "evoto",
+    "title": "evoto",
+    "aliases": [],
+    "hex": "FFE050",
+    "categories": [
+      "AI",
+      "Design"
+    ],
+    "variants": {
+      "default": "/icons/evoto/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.evoto.ai/",
+    "dateAdded": "2026-06-07",
+    "collection": "brands"
+  },
+  {
     "slug": "exa",
     "title": "Exa",
     "aliases": [],
