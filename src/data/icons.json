@@ -105124,6 +105124,27 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	{
+    "slug": "ubs-etracs",
+    "title": "UBS Etracs",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Exchange",
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/ubs-etracs/default.svg",
+      "mono": "/icons/ubs-etracs/mono.svg",
+			"dark": "/icons/ubs-etracs/dark.svg",
+			"light": "/icons/ubs-etracs/light.svg",
+			"wordmark": "/icons/ubs-etracs/wordmark.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://etracs.ubs.com/",
+    "dateAdded": "2026-06-09",
+    "collection": "brands"
+  },
   {
     "slug": "ubuntu",
     "title": "Ubuntu",
