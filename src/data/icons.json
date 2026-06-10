@@ -110265,22 +110265,6 @@
     "collection": "brands"
   },
   {
-    "slug": "workbuddy",
-    "title": "workbuddy",
-    "aliases": [],
-    "hex": "000000",
-    "categories": [
-      "Software"
-    ],
-    "variants": {
-      "default": "/icons/workbuddy/default.svg"
-    },
-    "license": "MIT",
-    "url": "https://workbuddy.cn",
-    "dateAdded": "2026-06-10",
-    "collection": "brands"
-  },
-  {
     "slug": "workday",
     "title": "Workday",
     "aliases": [],
@@ -110295,6 +110279,22 @@
     "license": "MIT",
     "url": "https://www.workday.com",
     "dateAdded": "2026-03-22",
+    "collection": "brands"
+  },
+  {
+    "slug": "workbuddy",
+    "title": "workbuddy",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/workbuddy/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://workbuddy.cn",
+    "dateAdded": "2026-06-10",
     "collection": "brands"
   },
   {
