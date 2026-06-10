@@ -45238,6 +45238,28 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	{
+    "slug": "dassault-aviation",
+    "title": "Dassault Aviation",
+    "aliases": [],
+    "hex": "164B6F",
+    "categories": [
+      "Aviation"
+    ],
+    "variants": {
+      "default": "/icons/dassault-aviation/default.svg",
+      "mono": "/icons/dassault-aviation/mono.svg",
+      "light": "/icons/dassault-aviation/light.svg",
+      "dark": "/icons/dassault-aviation/dark.svg",
+      "wordmark": "/icons/dassault-aviation/wordmark.svg",
+      "wordmarkLight": "/icons/dassault-aviation/wordmark-light.svg",
+      "wordmarkDark": "/icons/dassault-aviation/wordmark-dark.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.dassault-aviation.com/en/",
+    "dateAdded": "2026-06-10",
+    "collection": "brands"
+  },
   {
     "slug": "dassault-systemes",
     "title": "Dassault Systemes",
