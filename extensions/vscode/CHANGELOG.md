@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.4
+
+- Updated marketplace icon to the new theSVG mark (orange overlap, dark background)
+
 ## 0.1.3
 
 - Remove the default keybinding. Invoke via the command palette (`theSVG: Search Icons`) or bind your own under `Preferences: Open Keyboard Shortcuts`. Avoids shadowing any built-in VS Code chord.

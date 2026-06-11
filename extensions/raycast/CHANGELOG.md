@@ -1,5 +1,10 @@
 # theSVG Raycast Extension Changelog
 
+## [1.1.1] - 2026-06-11
+
+### Updated
+- Refreshed extension icon to match the new theSVG mark (orange overlap on dark background, with `@dark` light-mode variant)
+
 ## [1.1.0] - 2026-04-10
 
 ### Fixed
