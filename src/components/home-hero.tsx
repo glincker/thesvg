@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Anchor, ArrowRight, Check, Clock, Cloud, Copy, History, Package, Shapes, Sparkles, X, Zap } from "lucide-react";
+import { Anchor, ArrowRight, Check, Cloud, Copy, Package, Shapes, Sparkles, X, Zap } from "lucide-react";
 import Link from "next/link";
 import posthog from "posthog-js";
 import type { Collection, IconEntry } from "@/lib/icons";
@@ -351,8 +351,14 @@ export function HomeHero({
       .slice(0, 8);
   }, [recentViewed, icons]);
 
+  const [now, setNow] = useState(() => Date.now());
+  useEffect(() => {
+    const id = window.setInterval(() => setNow(Date.now()), 60_000);
+    return () => window.clearInterval(id);
+  }, []);
+
   function shortAgo(ts: number): string {
-    const s = Math.max(0, Math.floor((Date.now() - ts) / 1000));
+    const s = Math.max(0, Math.floor((now - ts) / 1000));
     if (s < 60) return "now";
     const m = Math.floor(s / 60);
     if (m < 60) return `${m}m`;

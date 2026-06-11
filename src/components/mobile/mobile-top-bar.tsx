@@ -71,7 +71,7 @@ export function MobileTopBar() {
                Stronger 1px border so the input reads as an input, not
                a chip, against the glass top bar. Inner highlight on
                focus communicates active state without screaming. */
-            className="h-9 w-full rounded-full border border-foreground/15 bg-muted/50 pr-8 pl-8 text-sm text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.5)] outline-none transition-all placeholder:text-muted-foreground/70 focus:border-orange-500/60 focus:bg-background focus:ring-[3px] focus:ring-orange-500/20 dark:border-white/[0.14] dark:bg-white/[0.06] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] dark:placeholder:text-muted-foreground/60 dark:focus:border-orange-500/70 dark:focus:bg-white/[0.08]"
+            className="h-9 w-full rounded-full border border-foreground/15 bg-muted/50 pr-8 pl-8 text-base text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.5)] outline-none transition-all placeholder:text-sm placeholder:text-muted-foreground/70 focus:border-orange-500/60 focus:bg-background focus:ring-[3px] focus:ring-orange-500/20 md:text-sm md:placeholder:text-sm dark:border-white/[0.14] dark:bg-white/[0.06] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] dark:placeholder:text-muted-foreground/60 dark:focus:border-orange-500/70 dark:focus:bg-white/[0.08]"
           />
           {query && (
             <button

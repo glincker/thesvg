@@ -18,6 +18,11 @@ const bySlug = new Map(data.map((e) => [e.slug, e]));
 const issues = [];
 
 for (const e of data) {
+  if (e.supersedes && e.supersededBy) {
+    issues.push(
+      `${e.slug} has both supersedes and supersededBy; an entry cannot be newer and older in the same chain`,
+    );
+  }
   if (e.supersedes) {
     const target = bySlug.get(e.supersedes);
     if (!target) {

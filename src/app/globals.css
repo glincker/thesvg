@@ -112,7 +112,9 @@
   }
   body {
     @apply bg-background text-foreground;
-    overflow-x: hidden;
+    /* `clip` keeps body as the iOS Safari scroll container so fixed
+       descendants (dock, sheets) keep viewport-relative placement. */
+    overflow-x: clip;
     overscroll-behavior-y: contain;
   }
   html {
@@ -176,9 +178,6 @@ html {
   scrollbar-width: none;
 }
 
-.scrollbar-none::-webkit-scrollbar {
-  display: none;
-}
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
@@ -1280,15 +1279,15 @@ html {
   }
 }
 
+.mobile-shell-body {
+  padding-top: calc(3rem + var(--safe-top) + 24px);
+  padding-bottom: calc(var(--dock-height) + var(--safe-bottom) + 20px);
+}
+
 @media (display-mode: standalone) {
   .mobile-shell-body {
     padding-bottom: calc(var(--dock-height) + var(--safe-bottom));
   }
-}
-
-.mobile-shell-body {
-  padding-top: calc(3rem + var(--safe-top) + 24px);
-  padding-bottom: calc(var(--dock-height) + var(--safe-bottom) + 20px);
 }
 
 @media (min-width: 1024px) {
