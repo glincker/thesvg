@@ -278,6 +278,12 @@ pnpm dev     # http://localhost:3333
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for full guidelines.
 
+## Sponsor
+
+theSVG runs on hosting, bandwidth, and maintainer time. If the catalog saves you a couple of hours a year, [pick a tier](./SPONSORS.md) and lock that value in. Tiers start at $5/mo and stack from `<path>` up to `<svg>`.
+
+[Sponsor on GitHub](https://github.com/sponsors/glincker)
+
 ## Disclaimer
 
 All brand names, logos, and trademarks are the property of their respective owners. theSVG provides these icons for development and design purposes only under nominative fair use. Use of brand assets must comply with each brand's usage guidelines.
