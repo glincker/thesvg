@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- theSVG Logo - Transparent background -->
+  <rect x="184" y="84" width="220" height="220" rx="40" fill="#C2410C"/>
+  <rect x="148" y="120" width="220" height="220" rx="40" fill="#EA580C"/>
+  <rect x="112" y="156" width="220" height="220" rx="40" fill="#F97316"/>
+  <path d="M188 248 L168 266 L188 284" stroke="#FFF7ED" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M256 248 L276 266 L256 284" stroke="#FFF7ED" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <line x1="232" y1="242" x2="212" y2="290" stroke="#FFF7ED" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+</svg>

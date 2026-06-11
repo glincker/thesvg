@@ -10,15 +10,19 @@ interface VariantPickerProps {
   slug: string;
 }
 
-/** Background for preview thumbnails: light variants get dark bg, dark get light bg */
+/** Background for preview thumbnails. Match the surface the variant is
+ *  designed to live on: a "light" variant has dark ink intended for a
+ *  light background, so we preview it on a light surface where it's
+ *  actually readable. Same logic for "dark". The previous convention
+ *  inverted these and made both unreadable. */
 function getPreviewBg(variantKey: string): string {
   switch (variantKey) {
     case "light":
     case "wordmarkLight":
-      return "bg-zinc-800";
+      return "bg-zinc-100";
     case "dark":
     case "wordmarkDark":
-      return "bg-zinc-100";
+      return "bg-zinc-800";
     default:
       return "icon-preview-bg";
   }

@@ -11,7 +11,7 @@ import {
   Home,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import type { IconEntry } from "@/lib/icons";
+import { getIconBySlug, type IconEntry } from "@/lib/icons";
 import { useFavoritesStore } from "@/lib/stores/favorites-store";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import { cn } from "@/lib/utils";
@@ -278,6 +278,38 @@ export function IconDetailPage({
               </p>
             </div>
           )}
+
+          {/* Version lineage — links between current and predecessor marks */}
+          {(icon.supersedes || icon.supersededBy) && (() => {
+            const otherSlug = icon.supersededBy ?? icon.supersedes!;
+            const other = getIconBySlug(otherSlug);
+            if (!other) return null;
+            const isOlder = Boolean(icon.supersededBy);
+            return (
+              <Link
+                href={`/icon/${other.slug}`}
+                className="group/lineage flex items-center gap-3 rounded-xl border border-orange-500/30 bg-gradient-to-r from-orange-500/[0.06] to-amber-500/[0.04] p-3 shadow-sm transition-all hover:-translate-y-0.5 hover:border-orange-500/50 hover:shadow-md"
+              >
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-background ring-1 ring-inset ring-border/40">
+                  <img
+                    src={other.variants.default}
+                    alt=""
+                    className="h-6 w-6 object-contain"
+                    loading="lazy"
+                  />
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="block text-[10px] font-semibold uppercase tracking-wider text-orange-600 dark:text-orange-400">
+                    {isOlder ? "Current version" : "Previous version"}
+                  </span>
+                  <span className="block truncate text-sm font-medium text-foreground">
+                    {other.title}
+                  </span>
+                </span>
+                <ArrowUpRight className="h-4 w-4 shrink-0 text-orange-600 transition-transform group-hover/lineage:translate-x-0.5 group-hover/lineage:-translate-y-0.5 dark:text-orange-400" />
+              </Link>
+            );
+          })()}
 
           {/* Website + Guidelines links */}
           {(icon.url || icon.guidelines) && (

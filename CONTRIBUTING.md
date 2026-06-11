@@ -162,6 +162,39 @@ For architecture icons, additional fields:
 
 SVG files live in `public/icons/{slug}/{variant}.svg`.
 
+### Version lineage (rebrands and legacy marks)
+
+When a brand replaces its logo (Microsoft 2012 to 2026, Twitter to X, Slack 2019, etc.) we keep the previous mark in the catalog as a separate slug instead of overwriting history. Two optional fields document the relationship:
+
+- `supersedes` on the current entry, pointing to the older slug
+- `supersededBy` on the older entry, pointing to the current slug
+
+Both sides MUST agree. The validator script `tools/validate-lineage.mjs` (run automatically in CI) fails the build if a `supersedes` link is not mirrored by a `supersededBy` link on the other entry.
+
+```json
+{
+  "slug": "thesvg",
+  "title": "theSVG",
+  "...": "...",
+  "supersedes": "thesvg-legacy"
+},
+{
+  "slug": "thesvg-legacy",
+  "title": "theSVG (legacy)",
+  "...": "...",
+  "supersededBy": "thesvg"
+}
+```
+
+When you ship a rebrand:
+
+1. Move the existing entry to a new slug `{slug}-legacy` (or `{slug}-{year}-q{n}` for a more specific archive label) and copy its SVG files to `public/icons/{slug}-legacy/`.
+2. Add the new mark under the original `{slug}` slug.
+3. Set `supersedes` on the new entry and `supersededBy` on the legacy entry.
+4. Keep both entries' `dateAdded` accurate: the legacy entry keeps its original dateAdded so the lineage timestamps mean something.
+
+The icon detail page renders a cross-link card between the two automatically, so a user landing on the legacy version sees "Current version" and vice versa.
+
 ## Brand Icon Guidelines
 
 - We only include official brand assets - no fan-made or modified logos

@@ -102375,13 +102375,38 @@
     "variants": {
       "default": "/icons/thesvg/default.svg",
       "light": "/icons/thesvg/light.svg",
+      "dark": "/icons/thesvg/dark.svg",
+      "mono": "/icons/thesvg/mono.svg",
       "wordmark": "/icons/thesvg/wordmark.svg",
       "wordmarkDark": "/icons/thesvg/wordmark-dark.svg"
     },
     "license": "MIT",
     "url": "https://thesvg.org",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "supersedes": "thesvg-legacy"
+  },
+  {
+    "slug": "thesvg-legacy",
+    "title": "theSVG (legacy)",
+    "aliases": [
+      "thesvg original",
+      "thesvg 2026-Q1"
+    ],
+    "hex": "F97316",
+    "categories": [
+      "Design",
+      "Devtool"
+    ],
+    "variants": {
+      "default": "/icons/thesvg-legacy/default.svg",
+      "dark": "/icons/thesvg-legacy/dark.svg"
+    },
+    "license": "MIT",
+    "url": "https://thesvg.org",
+    "dateAdded": "2026-06-11",
+    "collection": "brands",
+    "supersededBy": "thesvg"
   },
   {
     "slug": "thingiverse",

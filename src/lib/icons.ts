@@ -31,6 +31,10 @@ export interface IconEntry {
     type?: string;
     parent?: string;
   };
+  /** Slug of the entry this one replaces (i.e. older logo/version). */
+  supersedes?: string;
+  /** Slug of the entry that replaced this one (current/canonical). */
+  supersededBy?: string;
 }
 
 const icons = iconsData as IconEntry[];
