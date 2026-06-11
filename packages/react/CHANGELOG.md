@@ -1,5 +1,11 @@
 # @thesvg/react
 
+## 3.0.15
+
+### Patch Changes
+
+- feat: mobile-native app shell (Catalog 2026) ([#556](https://github.com/glincker/thesvg/issues/556))
+
 ## 3.0.14
 
 ### Patch Changes
