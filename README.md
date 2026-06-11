@@ -280,7 +280,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for full guidelines.
 
 ## Sponsor
 
-theSVG runs on hosting, bandwidth, and maintainer time. If the catalog saves you a couple of hours a year, [pick a tier](./SPONSORS.md) and lock that value in. Tiers start at $5/mo and stack from `<path>` up to `<svg>`.
+theSVG runs on hosting, bandwidth, and maintainer time. If the catalog saves you a couple of hours a year, [pick a tier](./SPONSORS.md) and lock that value in. Tiers start at $5/mo and stack from Sketch up to Canvas.
 
 [Sponsor on GitHub](https://github.com/sponsors/glincker)
 

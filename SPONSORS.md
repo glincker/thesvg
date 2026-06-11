@@ -6,35 +6,35 @@ theSVG is free, open, and built in the open. If it saves you a few hours a year,
 
 ## Tiers
 
-Themed around the SVG primitives themselves. Each tier stacks on the one above it.
+Each tier stacks on the one above it.
 
-### `<path>` ,  $5/mo
+### ✏️ Sketch, $5/mo
 
-Every SVG starts with one. You get a permanent line in this file and our quiet thanks every time we ship a release.
+Where every brand starts.
 
-### `<rect>` ,  $10/mo
+### 🖌️ Stroke, $10/mo
 
-Solid foundation. Adds a "Sponsor" badge next to your handle in repo discussions and PR reviews, so the people you help know you helped pay for it.
+Bold lines, bolder support.
 
-### `<circle>` ,  $25/mo
+### 🎨 Palette, $25/mo
 
-Perfect support, from every direction. You get early access to new collections (GCP, Azure, and the design-system packs) before they hit `main`, plus a vote on the next collection we onboard.
+Pick the next collection with us.
 
-### `<g>` ,  $50/mo
+### 🖼️ Frame, $50/mo
 
-You bring others along. Your team's logo appears in the README sponsor row and on the contributors wall at thesvg.org/about.
+Your team, framed in the README.
 
-### `<defs>` ,  $100/mo
+### 📐 Artboard, $100/mo
 
-Define what comes next. Logo placement in the thesvg.org footer (sitewide, on every icon page, every search result), plus quarterly office hours with the maintainers if you want roadmap input.
+Footer placement plus quarterly office hours.
 
-### `<svg>` ,  $250/mo
+### 🖥️ Canvas, $250/mo
 
-The whole canvas is yours. Co-branded collection landing page (e.g. `thesvg.org/c/your-company`), priority on icon submissions from your team, and a direct Slack channel with the maintainers.
+Your own corner of thesvg.org.
 
 ## Current sponsors
 
-We list every sponsor here within 48 hours of their first payment. If you'd rather stay anonymous, tell us in your sponsorship note and we'll skip you.
+We list every sponsor here within 48 hours of their first payment. If you'd rather stay anonymous, mention it in your sponsorship note and we'll skip you.
 
 <!-- sponsors:start -->
 
