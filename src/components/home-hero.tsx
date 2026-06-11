@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Anchor, ArrowRight, Check, Cloud, Copy, Package, Shapes, Sparkles, X, Zap } from "lucide-react";
+import { Anchor, ArrowRight, Check, Clock, Cloud, Copy, Package, Shapes, Sparkles, X, Zap } from "lucide-react";
 import Link from "next/link";
 import posthog from "posthog-js";
 import type { Collection, IconEntry } from "@/lib/icons";
