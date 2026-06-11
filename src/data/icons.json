@@ -53225,24 +53225,6 @@
     "collection": "brands"
   },
   {
-    "slug": "friym",
-    "title": "Friym",
-    "aliases": [],
-    "hex": "217371",
-    "categories": [
-      "Social",
-      "Platform"
-    ],
-    "variants": {
-      "default": "/icons/friym/default.svg"
-    },
-    "license": "MIT",
-    "url": "https://friym.com",
-    "guidelines": "https://brand.friym.com",
-    "dateAdded": "2026-06-08",
-    "collection": "brands"
-  },
-  {
     "slug": "frigate",
     "title": "Frigate",
     "aliases": [],
@@ -53277,6 +53259,24 @@
     "url": "https://fritz.com",
     "guidelines": "https://business.avm.de/de/data/allgemeine-nutzungsbedingungen-business-portal",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "friym",
+    "title": "Friym",
+    "aliases": [],
+    "hex": "217371",
+    "categories": [
+      "Social",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/friym/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://friym.com",
+    "guidelines": "https://brand.friym.com",
+    "dateAdded": "2026-06-08",
     "collection": "brands"
   },
   {
