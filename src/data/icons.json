@@ -45238,6 +45238,28 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	{
+    "slug": "dassault-aviation",
+    "title": "Dassault Aviation",
+    "aliases": [],
+    "hex": "164B6F",
+    "categories": [
+      "Aviation"
+    ],
+    "variants": {
+      "default": "/icons/dassault-aviation/default.svg",
+      "mono": "/icons/dassault-aviation/mono.svg",
+      "light": "/icons/dassault-aviation/light.svg",
+      "dark": "/icons/dassault-aviation/dark.svg",
+      "wordmark": "/icons/dassault-aviation/wordmark.svg",
+      "wordmarkLight": "/icons/dassault-aviation/wordmark-light.svg",
+      "wordmarkDark": "/icons/dassault-aviation/wordmark-dark.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.dassault-aviation.com/en/",
+    "dateAdded": "2026-06-10",
+    "collection": "brands"
+  },
   {
     "slug": "dassault-systemes",
     "title": "Dassault Systemes",
@@ -53259,6 +53281,24 @@
     "url": "https://fritz.com",
     "guidelines": "https://business.avm.de/de/data/allgemeine-nutzungsbedingungen-business-portal",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "friym",
+    "title": "Friym",
+    "aliases": [],
+    "hex": "217371",
+    "categories": [
+      "Social",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/friym/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://friym.com",
+    "guidelines": "https://brand.friym.com",
+    "dateAdded": "2026-06-08",
     "collection": "brands"
   },
   {
@@ -105149,6 +105189,27 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	{
+    "slug": "ubs-etracs",
+    "title": "UBS Etracs",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Exchange",
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/ubs-etracs/default.svg",
+      "mono": "/icons/ubs-etracs/mono.svg",
+			"dark": "/icons/ubs-etracs/dark.svg",
+			"light": "/icons/ubs-etracs/light.svg",
+			"wordmark": "/icons/ubs-etracs/wordmark.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://etracs.ubs.com/",
+    "dateAdded": "2026-06-09",
+    "collection": "brands"
+  },
   {
     "slug": "ubuntu",
     "title": "Ubuntu",
@@ -110287,6 +110348,20 @@
     "url": "https://wordpress.org/",
     "guidelines": "https://wordpress.org/about/logos/",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "workbuddy",
+    "title": "Workbuddy",
+    "aliases": [],
+    "hex": "01C886",
+    "categories": [],
+    "variants": {
+      "default": "/icons/workbuddy/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://workbuddy.cn",
+    "dateAdded": "2026-06-10",
     "collection": "brands"
   },
   {
