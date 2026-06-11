@@ -313,7 +313,7 @@ export function Header() {
       className="sticky top-0 z-50 w-full px-2 pt-2 pb-0 sm:px-3 sm:pt-2.5"
       style={{ paddingTop: "max(0.5rem, env(safe-area-inset-top))" }}
     >
-      <div className="mx-auto max-w-[1800px] rounded-2xl border border-black/[0.06] bg-background/90 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08),0_0_0_1px_rgba(0,0,0,0.03)] backdrop-blur-2xl dark:border-white/[0.08] dark:bg-black/60 dark:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.05)]">
+      <div className="mx-auto max-w-[1800px] rounded-2xl border border-black/[0.06] bg-background/95 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08),0_0_0_1px_rgba(0,0,0,0.03)] backdrop-blur-2xl backdrop-saturate-150 supports-[backdrop-filter]:bg-background/75 sm:supports-[backdrop-filter]:bg-background/85 dark:border-white/[0.08] dark:bg-black/85 dark:supports-[backdrop-filter]:bg-black/55 sm:dark:supports-[backdrop-filter]:bg-black/60 dark:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.05)]">
         {/* On mobile (<sm) the row wraps and the search drops to a second
             row using `order-last`, so phones like Realme/iPhone SE get a
             true full-width input instead of being squeezed between Submit
@@ -458,7 +458,7 @@ export function Header() {
               <div
                 ref={dropdownRef}
                 id={listboxId}
-                className="absolute top-full right-0 left-0 z-50 mt-1.5 overflow-hidden rounded-xl border border-border/40 bg-background/95 shadow-[0_8px_30px_-4px_rgba(0,0,0,0.15)] backdrop-blur-2xl backdrop-saturate-150 sm:mx-auto sm:max-w-xl dark:border-white/[0.1] dark:bg-[rgba(10,10,10,0.95)] dark:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.6)]"
+                className="absolute top-full right-0 left-0 z-50 mt-1.5 overflow-hidden rounded-xl border border-border/40 bg-background shadow-[0_8px_30px_-4px_rgba(0,0,0,0.15)] backdrop-blur-2xl backdrop-saturate-150 sm:mx-auto sm:max-w-xl sm:bg-background/95 dark:border-white/[0.1] dark:bg-[#0a0a0a] dark:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.6)] sm:dark:bg-[rgba(10,10,10,0.95)]"
                 role="listbox"
               >
                 {hasQuery ? (

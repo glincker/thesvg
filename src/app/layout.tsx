@@ -91,7 +91,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     title: "theSVG",
-    statusBarStyle: "black-translucent",
+    statusBarStyle: "default",
   },
 };
 
@@ -141,7 +141,7 @@ export default function RootLayout({
           <Suspense>
             <Header />
           </Suspense>
-          <main className="min-h-[calc(100dvh-7.25rem)] sm:min-h-[calc(100dvh-3.75rem)]">{children}</main>
+          <main className="min-h-[calc(100dvh-var(--header-h))]">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

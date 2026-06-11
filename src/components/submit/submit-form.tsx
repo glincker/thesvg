@@ -407,14 +407,14 @@ function CategorySelector({
               onAddCategory();
             }
           }}
-          className="h-9 text-sm sm:h-7 sm:text-xs"
+          className="h-10 text-base sm:h-7 sm:text-xs"
         />
         <Button
           type="button"
           size="sm"
           variant="outline"
           onClick={onAddCategory}
-          className="h-9 shrink-0 text-sm sm:h-7 sm:text-xs"
+          className="h-10 shrink-0 text-base sm:h-7 sm:text-xs"
         >
           Add
         </Button>

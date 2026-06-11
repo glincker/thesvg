@@ -88,6 +88,17 @@
   --border: oklch(1 0 0 / 8%);
   --input: oklch(1 0 0 / 12%);
   --ring: oklch(0.5 0 0);
+  /* Header height token used by the sticky toolbar and main min-h.
+     On mobile the header is two rows (logo+actions + full-width search)
+     ~= 7.25rem; safe-area-inset-top extends it on notched devices
+     beyond the 0.5rem we already reserve, so subtract that. */
+  --header-h: calc(7.25rem + max(0px, env(safe-area-inset-top) - 0.5rem));
+}
+
+@media (min-width: 640px) {
+  :root {
+    --header-h: 3.75rem;
+  }
 }
 
 @layer base {
@@ -96,9 +107,10 @@
   }
   body {
     @apply bg-background text-foreground;
-    /* Guard against any descendant that incidentally overshoots the
-       viewport. Belt-and-suspenders for narrow phones (360-393px). */
-    overflow-x: hidden;
+    /* `clip` (not `hidden`) so the body remains the default scroll
+       container on iOS Safari and `position:fixed` descendants keep
+       viewport-relative placement on older iOS. */
+    overflow-x: clip;
   }
   html {
     @apply font-sans;
