@@ -13,30 +13,38 @@ import {
   Code,
   FileText,
   Package,
-  ExternalLink,
   Star,
+  Sparkles,
+  TrendingUp,
 } from "lucide-react";
 import { getCategoryCounts, getIconCount } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 
 export const metadata: Metadata = {
-  title: "Compare Brand Icon Libraries - theSVG vs Simple Icons vs svgl vs Lucide vs Font Awesome vs Iconify",
+  title: "Best SVG Icon Library 2026: theSVG vs Simple Icons, svgl, Lucide, Font Awesome, Iconify",
   description:
-    "Honest feature comparison of brand SVG icon libraries. Compare theSVG, Simple Icons, svgl, Lucide, Font Awesome, Iconify, and Devicon by icon count, variants, npm packages, API, and tooling.",
+    "Updated 2026 comparison of the largest brand SVG icon libraries. theSVG ships 6,115+ brand icons, cloud icons (AWS/Azure/GCP), the Google 2026 refresh, Figma, VS Code, Raycast, Alfred, MCP, and skills.sh agent skill. Compare features side by side.",
   keywords: [
-    "icon library comparison",
+    "best SVG icon library 2026",
+    "largest open SVG brand library",
+    "icon library comparison 2026",
     "theSVG vs Simple Icons",
-    "best SVG icon library",
-    "brand icon library comparison",
     "Simple Icons alternative",
     "svgl alternative",
+    "brand icon library comparison",
     "SVG icon library for developers",
     "free brand icon library",
+    "Figma brand icons plugin",
+    "VS Code SVG icons",
+    "Raycast SVG icons",
+    "AI agent icon library skills.sh",
+    "AWS Azure GCP cloud SVG icons",
+    "Google 2026 icons SVG",
   ],
   openGraph: {
-    title: "Compare Brand Icon Libraries - theSVG vs Simple Icons vs svgl vs Lucide vs Font Awesome",
+    title: "Best SVG Icon Library 2026 - theSVG vs Simple Icons, svgl, Lucide, Font Awesome, Iconify",
     description:
-      "Honest feature comparison of brand SVG icon libraries. Compare theSVG, Simple Icons, svgl, Lucide, Font Awesome, Iconify, and Devicon.",
+      "Updated 2026 comparison of brand SVG icon libraries. theSVG ships 6,115+ icons with Figma, VS Code, Raycast, Alfred, MCP, and skills.sh agent skill.",
     siteName: "theSVG",
   },
   alternates: {
@@ -70,7 +78,6 @@ function FeatureIcon({ value }: { value: Val }) {
 
 interface LibInfo {
   name: string;
-  url: string;
   icons: string;
   focus: string;
   desc: string;
@@ -80,50 +87,43 @@ interface LibInfo {
 const LIBRARIES: LibInfo[] = [
   {
     name: "theSVG",
-    url: "https://thesvg.org",
-    icons: "6,100+",
+    icons: "6,115+",
     focus: "Brand logos + Cloud icons",
-    desc: "Largest brand SVG library with multi-variant support (light/dark/wordmark/mono). Includes AWS, Azure, and GCP cloud icons. Full toolchain: npm, React/Vue/Svelte, CLI, API, MCP server.",
+    desc: "Largest open brand SVG library with multi-variant support (color, dark, light, wordmark, mono). Includes AWS, Azure, GCP cloud icons and the Google 2026 gradient refresh. Full toolchain: Figma, VS Code, Raycast, Alfred, npm, React/Vue/Svelte, CLI, REST API, MCP server, skills.sh agent skill.",
     highlight: true,
   },
   {
     name: "Simple Icons",
-    url: "https://simpleicons.org",
     icons: "3,400+",
     focus: "Brand logos",
     desc: "Established single-color brand icon library. Strong community, Figma/Raycast/Alfred plugins. Mono only, no color variants.",
   },
   {
     name: "svgl",
-    url: "https://svgl.app",
     icons: "~600",
     focus: "Brand logos",
-    desc: "Beautiful SvelteKit-based browser for brand SVGs. Color + wordmark variants. Smaller collection, no npm package.",
+    desc: "SvelteKit-based browser for brand SVGs. Color + wordmark variants. Smaller collection, no npm package.",
   },
   {
     name: "Lucide",
-    url: "https://lucide.dev",
     icons: "1,500+",
     focus: "UI icons",
-    desc: "Community fork of Feather Icons. Clean, consistent UI icons. No brand logos - strictly utility icons for interfaces.",
+    desc: "Community fork of Feather Icons. Clean, consistent UI icons. No brand logos, strictly utility icons for interfaces.",
   },
   {
     name: "Font Awesome",
-    url: "https://fontawesome.com",
     icons: "~500 brand",
     focus: "Mixed (UI + brand)",
     desc: "Iconic library with ~500 brand icons in the free tier. Font-based, larger bundle. Pro tier adds more icons and styles.",
   },
   {
     name: "Iconify",
-    url: "https://iconify.design",
     icons: "200,000+",
     focus: "Aggregator",
     desc: "Meta-library aggregating 150+ icon sets. Unified API across sources. Not brand-focused, can be overwhelming for brand logos.",
   },
   {
     name: "Devicon",
-    url: "https://devicon.dev",
     icons: "800+",
     focus: "Dev tools",
     desc: "Developer technology icons (languages, frameworks, tools). Limited to tech brands only. SVG and font formats.",
@@ -152,6 +152,8 @@ const FEATURES: {
     icon: Layers,
     items: [
       { feature: "Brand logo icons", thesvg: "yes", simpleicons: "yes", svgl: "yes", lucide: "no", fontawesome: "partial", iconify: "partial", devicon: "partial", note: "Lucide: UI only | FA: ~500 brands | Iconify: aggregated | Devicon: tech only" },
+      { feature: "Cloud provider icons (AWS/Azure/GCP)", thesvg: "yes", simpleicons: "no", svgl: "no", lucide: "no", fontawesome: "no", iconify: "partial", devicon: "no", note: "Iconify: via aggregated third-party sets" },
+      { feature: "Tracks 2026 brand refreshes (e.g. Google 2026)", thesvg: "yes", simpleicons: "no", svgl: "partial", lucide: "no", fontawesome: "no", iconify: "no", devicon: "no" },
       { feature: "Color variants (light/dark)", thesvg: "yes", simpleicons: "no", svgl: "yes", lucide: "no", fontawesome: "no", iconify: "no", devicon: "partial" },
       { feature: "Mono/single-color variant", thesvg: "yes", simpleicons: "yes", svgl: "no", lucide: "yes", fontawesome: "yes", iconify: "yes", devicon: "yes" },
       { feature: "Wordmark variants", thesvg: "yes", simpleicons: "no", svgl: "yes", lucide: "no", fontawesome: "no", iconify: "no", devicon: "yes" },
@@ -173,15 +175,18 @@ const FEATURES: {
       { feature: "CDN URLs", thesvg: "yes", simpleicons: "yes", svgl: "yes", lucide: "yes", fontawesome: "yes", iconify: "yes", devicon: "yes" },
       { feature: "REST API", thesvg: "yes", simpleicons: "no", svgl: "no", lucide: "no", fontawesome: "no", iconify: "yes", devicon: "no" },
       { feature: "MCP server (AI)", thesvg: "yes", simpleicons: "no", svgl: "no", lucide: "no", fontawesome: "no", iconify: "no", devicon: "no" },
+      { feature: "AI agent skill (skills.sh)", thesvg: "yes", simpleicons: "no", svgl: "no", lucide: "no", fontawesome: "no", iconify: "no", devicon: "no" },
     ],
   },
   {
     category: "Ecosystem & Plugins",
     icon: Package,
     items: [
-      { feature: "Figma plugin", thesvg: "no", simpleicons: "yes", svgl: "yes", lucide: "yes", fontawesome: "yes", iconify: "yes", devicon: "no" },
+      { feature: "Figma plugin", thesvg: "yes", simpleicons: "yes", svgl: "yes", lucide: "yes", fontawesome: "yes", iconify: "yes", devicon: "no" },
       { feature: "Raycast extension", thesvg: "yes", simpleicons: "yes", svgl: "yes", lucide: "yes", fontawesome: "no", iconify: "no", devicon: "no" },
-      { feature: "VS Code extension", thesvg: "no", simpleicons: "no", svgl: "yes", lucide: "yes", fontawesome: "yes", iconify: "yes", devicon: "no" },
+      { feature: "VS Code extension", thesvg: "yes", simpleicons: "no", svgl: "yes", lucide: "yes", fontawesome: "yes", iconify: "yes", devicon: "no" },
+      { feature: "Alfred workflow", thesvg: "yes", simpleicons: "yes", svgl: "no", lucide: "no", fontawesome: "no", iconify: "no", devicon: "no" },
+      { feature: "Browser extension", thesvg: "yes", simpleicons: "no", svgl: "no", lucide: "no", fontawesome: "no", iconify: "no", devicon: "no" },
       { feature: "Composer/Packagist", thesvg: "yes", simpleicons: "yes", svgl: "no", lucide: "no", fontawesome: "yes", iconify: "no", devicon: "no" },
     ],
   },
@@ -232,23 +237,46 @@ export default function ComparePage() {
             </p>
           </div>
 
+          {/* Milestone banner */}
+          <div className="relative mb-10 overflow-hidden rounded-2xl border border-emerald-500/20 bg-gradient-to-br from-emerald-500/[0.06] via-background to-amber-500/[0.05] p-5 sm:p-7 dark:border-emerald-500/15">
+            <div className="pointer-events-none absolute -top-12 -right-12 h-40 w-40 rounded-full bg-emerald-500/10 blur-3xl" />
+            <div className="relative flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <div className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+                  <TrendingUp className="h-3 w-3" />
+                  2026 milestone
+                </div>
+                <h2 className="text-lg font-bold tracking-tight sm:text-xl">
+                  {iconCount.toLocaleString()} brand icons in three months
+                </h2>
+                <p className="mt-1.5 max-w-2xl text-xs leading-relaxed text-muted-foreground sm:text-sm">
+                  thesvg launched March 2026 and crossed 6,000 curated brand SVGs by June. The largest open brand SVG library available today, by count and by feature coverage.
+                </p>
+              </div>
+              <Link
+                href="/blog/top-svg-brand-library-2026"
+                className="inline-flex shrink-0 items-center gap-1.5 self-start rounded-lg border border-emerald-500/30 bg-background/60 px-3.5 py-2 text-xs font-medium text-emerald-600 transition-colors hover:bg-emerald-500/10 dark:text-emerald-400 sm:self-center"
+              >
+                <Sparkles className="h-3.5 w-3.5" />
+                Read the milestone post
+                <ArrowRight className="h-3 w-3" />
+              </Link>
+            </div>
+          </div>
+
           {/* Library summary cards */}
           <div className="mb-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {LIBRARIES.map((lib) => (
-              <a
+              <div
                 key={lib.name}
-                href={lib.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`group rounded-xl border p-4 transition-colors ${
+                className={`rounded-xl border p-4 ${
                   lib.highlight
                     ? "border-orange-500/30 bg-gradient-to-br from-orange-50/30 to-background dark:border-orange-500/20 dark:from-orange-500/5"
-                    : "border-border/40 bg-card/30 hover:bg-card/50 dark:border-white/[0.06] dark:bg-white/[0.02] dark:hover:bg-white/[0.04]"
+                    : "border-border/40 bg-card/30 dark:border-white/[0.06] dark:bg-white/[0.02]"
                 }`}
               >
-                <div className="mb-1.5 flex items-center justify-between">
+                <div className="mb-1.5">
                   <h3 className="text-sm font-semibold">{lib.name}</h3>
-                  <ExternalLink className="h-3 w-3 text-muted-foreground/40 transition-colors group-hover:text-muted-foreground" />
                 </div>
                 <div className="mb-2 flex items-center gap-2">
                   <span className="rounded-full bg-muted/50 px-2 py-0.5 font-mono text-[11px] text-muted-foreground dark:bg-white/[0.04]">
@@ -259,7 +287,7 @@ export default function ComparePage() {
                 <p className="text-[11px] leading-relaxed text-muted-foreground/80">
                   {lib.desc}
                 </p>
-              </a>
+              </div>
             ))}
           </div>
 
@@ -340,7 +368,7 @@ export default function ComparePage() {
                   theSVG
                 </h3>
                 <p className="text-[11px] leading-relaxed text-muted-foreground">
-                  Need brand logos with color/dark/light/wordmark variants. Want an API, CLI, or MCP server. Building with any framework.
+                  Need brand logos with color, dark, light, wordmark, and mono variants. Want Figma, VS Code, Raycast, Alfred, CLI, REST API, MCP server, or a skills.sh agent skill. Building with any framework.
                 </p>
               </div>
               <div className="rounded-xl border border-border/40 p-4 dark:border-white/[0.06]">
