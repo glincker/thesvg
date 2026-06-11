@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 3.0.14
+
+### Patch Changes
+
+- feat: add Friym icon ([#551](https://github.com/glincker/thesvg/issues/551))
+
 ## 3.0.13
 
 ### Patch Changes

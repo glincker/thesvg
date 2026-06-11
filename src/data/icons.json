@@ -80969,6 +80969,28 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	{
+    "slug": "nordea",
+    "title": "Nordea",
+    "aliases": [],
+    "hex": "0000A0",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/nordea/default.svg",
+      "mono": "/icons/nordea/mono.svg",
+      "dark": "/icons/nordea/dark.svg",
+      "light": "/icons/nordea/light.svg",
+      "wordmark": "/icons/nordea/wordmark.svg",
+      "wordmarkDark": "/icons/nordea/wordmarkDark.svg",
+      "wordmarkLight": "/icons/nordea/wordmarkLight.svg"
+    },
+    "license": "Unknown",
+    "url": "https://www.nordea.com/en",
+    "dateAdded": "2026-06-11",
+    "collection": "brands"
+  },
   {
     "slug": "nordic-semiconductor",
     "title": "Nordic Semiconductor",
