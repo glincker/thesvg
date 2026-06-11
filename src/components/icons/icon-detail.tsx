@@ -147,10 +147,17 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
 
   return (
     <Dialog open={!!icon} onOpenChange={() => onClose()}>
-      <DialogContent className="max-h-[85vh] max-w-[calc(100%-2rem)] gap-0 overflow-hidden rounded-2xl border-border/30 bg-background/95 p-0 shadow-2xl backdrop-blur-2xl sm:max-w-lg">
+      {/* On mobile the modal uses a slim margin (max-w-[calc(100%-1rem)])
+          so the content reaches near both edges and never causes a
+          horizontal scroll, with safe-area-inset padding for notched
+          devices. sm+ caps the width at lg as before. */}
+      <DialogContent className="max-h-[90vh] max-w-[calc(100%-1rem)] gap-0 overflow-hidden rounded-2xl border-border/30 bg-background/95 p-0 shadow-2xl backdrop-blur-2xl sm:max-h-[85vh] sm:max-w-lg">
         <DialogTitle className="sr-only">{icon.title}</DialogTitle>
 
-        <div className="max-h-[85vh] overflow-y-auto">
+        <div
+          className="max-h-[90vh] overflow-y-auto sm:max-h-[85vh]"
+          style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+        >
           {/* Preview area */}
           <div className="icon-preview-bg relative flex items-center justify-center px-8 py-10">
             <img

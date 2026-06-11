@@ -294,7 +294,8 @@ function LicenseSelector({
         value={licenseId}
         onChange={(e) => onLicenseChange(e.target.value)}
         required
-        className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm shadow-sm outline-none transition-colors focus:border-ring focus:ring-1 focus:ring-ring"
+        /* text-base on mobile prevents iOS auto-zoom on focus. */
+        className="h-11 w-full rounded-lg border border-border bg-background px-3 text-base shadow-sm outline-none transition-colors focus:border-ring focus:ring-1 focus:ring-ring sm:h-9 sm:py-2 sm:text-sm"
       >
         <option value="">Select a license…</option>
         {LICENSE_OPTIONS.map((opt) => (
@@ -371,7 +372,7 @@ function CategorySelector({
               type="button"
               onClick={() => onToggle(cat)}
               className={cn(
-                "rounded-full border px-2.5 py-0.5 text-xs font-medium transition-colors",
+                "min-h-[32px] rounded-full border px-3 py-1 text-xs font-medium transition-colors",
                 active
                   ? "border-foreground bg-foreground text-background"
                   : "border-border bg-card text-muted-foreground hover:border-foreground/50 hover:text-foreground"
@@ -389,7 +390,7 @@ function CategorySelector({
               key={cat}
               type="button"
               onClick={() => onToggle(cat)}
-              className="rounded-full border border-orange-500/50 bg-orange-500/10 px-2.5 py-0.5 text-xs font-medium text-orange-600 transition-colors hover:bg-orange-500/20 dark:text-orange-400"
+              className="min-h-[32px] rounded-full border border-orange-500/50 bg-orange-500/10 px-3 py-1 text-xs font-medium text-orange-600 transition-colors hover:bg-orange-500/20 dark:text-orange-400"
             >
               {cat} &times;
             </button>
@@ -406,14 +407,14 @@ function CategorySelector({
               onAddCategory();
             }
           }}
-          className="h-7 text-xs"
+          className="h-9 text-sm sm:h-7 sm:text-xs"
         />
         <Button
           type="button"
           size="sm"
           variant="outline"
           onClick={onAddCategory}
-          className="h-7 shrink-0 text-xs"
+          className="h-9 shrink-0 text-sm sm:h-7 sm:text-xs"
         >
           Add
         </Button>
@@ -910,7 +911,7 @@ export function SubmitForm({
             }
           }}
           className={cn(
-            "inline-flex h-9 items-center justify-center gap-2 rounded-lg px-4 text-sm font-medium transition-colors",
+            "inline-flex h-11 items-center justify-center gap-2 rounded-lg px-4 text-sm font-medium transition-colors sm:h-9",
             canSubmit
               ? "bg-foreground text-background hover:bg-foreground/90"
               : "pointer-events-none cursor-not-allowed bg-muted text-muted-foreground"
@@ -926,7 +927,7 @@ export function SubmitForm({
           variant="outline"
           onClick={handleCopy}
           disabled={!canSubmit}
-          className="h-9 gap-2"
+          className="h-11 gap-2 sm:h-9"
         >
           {copied ? (
             <>

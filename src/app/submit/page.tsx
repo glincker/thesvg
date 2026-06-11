@@ -200,15 +200,15 @@ function Step({
   iconColor: string;
 }) {
   return (
-    <div className={`flex gap-3 rounded-xl bg-gradient-to-br ${accent} p-4 transition-all hover:shadow-md`}>
+    <div className={`flex min-w-0 gap-3 rounded-xl bg-gradient-to-br ${accent} p-4 transition-all hover:shadow-md`}>
       <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-background/80 ${iconColor} shadow-sm`}>
         {icon}
       </div>
-      <div className="min-w-0">
+      <div className="min-w-0 flex-1">
         <h3 className="text-sm font-medium">
           <span className="text-muted-foreground/60">#{number}</span> {title}
         </h3>
-        <p className="mt-0.5 text-xs text-muted-foreground">{description}</p>
+        <p className="mt-0.5 text-xs break-words text-muted-foreground">{description}</p>
       </div>
     </div>
   );

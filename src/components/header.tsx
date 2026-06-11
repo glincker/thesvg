@@ -59,11 +59,11 @@ function GcpLogo({ className }: { className?: string }) {
 
 function SubmitButton() {
   return (
-    <Link href="/submit" className="group/submit relative">
-      <span className="relative inline-flex h-8 items-center gap-1.5 overflow-hidden rounded-lg bg-gradient-to-b from-orange-400 to-orange-600 px-3.5 text-xs font-semibold text-white shadow-[0_1px_3px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all duration-200 hover:from-orange-400 hover:to-orange-500 hover:shadow-[0_3px_12px_rgba(249,115,22,0.4),inset_0_1px_0_rgba(255,255,255,0.25)] active:scale-[0.97] active:shadow-[0_0px_1px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(0,0,0,0.1)]">
+    <Link href="/submit" className="group/submit relative" aria-label="Submit an icon">
+      <span className="relative inline-flex h-9 items-center gap-1.5 overflow-hidden rounded-lg bg-gradient-to-b from-orange-400 to-orange-600 px-3 text-xs font-semibold text-white shadow-[0_1px_3px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all duration-200 hover:from-orange-400 hover:to-orange-500 hover:shadow-[0_3px_12px_rgba(249,115,22,0.4),inset_0_1px_0_rgba(255,255,255,0.25)] active:scale-[0.97] active:shadow-[0_0px_1px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(0,0,0,0.1)] sm:h-8 sm:px-3.5">
         {/* Shimmer */}
         <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-700 group-hover/submit:translate-x-full" />
-        <Plus className="relative h-3.5 w-3.5 transition-transform duration-200 group-hover/submit:rotate-90" />
+        <Plus className="relative h-4 w-4 transition-transform duration-200 group-hover/submit:rotate-90 sm:h-3.5 sm:w-3.5" />
         <span className="relative hidden sm:inline">Submit Icon</span>
       </span>
     </Link>
@@ -309,22 +309,30 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full px-2 pt-2 pb-0 sm:px-3 sm:pt-2.5">
+    <header
+      className="sticky top-0 z-50 w-full px-2 pt-2 pb-0 sm:px-3 sm:pt-2.5"
+      style={{ paddingTop: "max(0.5rem, env(safe-area-inset-top))" }}
+    >
       <div className="mx-auto max-w-[1800px] rounded-2xl border border-black/[0.06] bg-background/90 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08),0_0_0_1px_rgba(0,0,0,0.03)] backdrop-blur-2xl dark:border-white/[0.08] dark:bg-black/60 dark:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.05)]">
-        <div className="flex h-12 items-center gap-3 px-2.5 sm:px-4">
+        {/* On mobile (<sm) the row wraps and the search drops to a second
+            row using `order-last`, so phones like Realme/iPhone SE get a
+            true full-width input instead of being squeezed between Submit
+            and the icon cluster. On sm+ the layout returns to one row with
+            the search as `flex-1`. */}
+        <div className="flex flex-wrap items-center gap-2 px-2.5 py-2 sm:h-12 sm:flex-nowrap sm:gap-3 sm:py-0 sm:px-4">
           {/* Left: menu + logo */}
-          <div className="flex shrink-0 items-center gap-2">
+          <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
             <Button
               variant="ghost"
               size="icon"
-              className="h-8 w-8 md:hidden"
+              className="h-11 w-11 md:hidden"
               onClick={toggleSidebar}
               aria-label="Toggle menu"
             >
-              <Menu className="h-4 w-4" />
+              <Menu className="h-5 w-5" />
             </Button>
 
-            <Link href="/" className="group/logo flex items-center gap-1.5">
+            <Link href="/" className="group/logo flex items-center gap-1.5" aria-label="theSVG home">
               <img
                 src="/logo-transparent.svg"
                 alt="theSVG"
@@ -394,9 +402,15 @@ export function Header() {
             </Link>
           </nav>
 
-          {/* Center: search with dropdown */}
-          <form onSubmit={handleSearchSubmit} className="relative flex-1">
-            <div className="relative mx-auto max-w-xl">
+          {/* Center: search with dropdown. On mobile the form takes the
+              full row (`order-last w-full`) so the input is never narrower
+              than ~310px on a 360px device. On sm+ it reverts to `flex-1`
+              with the historical `max-w-xl` centering. */}
+          <form
+            onSubmit={handleSearchSubmit}
+            className="relative order-last w-full basis-full sm:order-none sm:w-auto sm:flex-1 sm:basis-auto"
+          >
+            <div className="relative w-full sm:mx-auto sm:max-w-xl">
               <Search className="absolute top-1/2 left-3 h-3.5 w-3.5 -translate-y-1/2 text-muted-foreground/60" />
               <input
                 ref={inputRef}
@@ -406,7 +420,9 @@ export function Header() {
                 onFocus={() => setFocused(true)}
                 onKeyDown={handleKeyNav}
                 placeholder={dynamicPlaceholder}
-                className="h-9 w-full rounded-xl border border-border bg-muted/40 pr-16 pl-9 text-sm shadow-sm outline-none transition-all placeholder:text-muted-foreground/50 focus:border-primary/40 focus:bg-background focus:shadow-[0_2px_12px_-2px_rgba(0,0,0,0.08)] focus:ring-1 focus:ring-ring/30 dark:border-white/[0.08] dark:bg-white/[0.04] dark:focus:border-white/[0.15] dark:focus:bg-white/[0.06] dark:focus:shadow-[0_2px_12px_-2px_rgba(0,0,0,0.3)]"
+                /* text-base (16px) on mobile prevents iOS auto-zoom on
+                   focus; sm+ keeps the historical 14px. */
+                className="h-11 w-full rounded-xl border border-border bg-muted/40 pr-12 pl-9 text-base shadow-sm outline-none transition-all placeholder:text-muted-foreground/50 focus:border-primary/40 focus:bg-background focus:shadow-[0_2px_12px_-2px_rgba(0,0,0,0.08)] focus:ring-1 focus:ring-ring/30 sm:h-9 sm:pr-16 sm:text-sm dark:border-white/[0.08] dark:bg-white/[0.04] dark:focus:border-white/[0.15] dark:focus:bg-white/[0.06] dark:focus:shadow-[0_2px_12px_-2px_rgba(0,0,0,0.3)]"
                 aria-label="Search icons"
                 role="combobox"
                 aria-expanded={showDropdown}
@@ -436,12 +452,13 @@ export function Header() {
               </div>
             </div>
 
-            {/* Search dropdown */}
+            {/* Search dropdown - spans the input on mobile, capped at the
+                input width (max-w-xl) on sm+. */}
             {showDropdown && (
               <div
                 ref={dropdownRef}
                 id={listboxId}
-                className="absolute top-full right-0 left-0 z-50 mx-auto mt-1.5 max-w-xl overflow-hidden rounded-xl border border-border/40 bg-background/95 shadow-[0_8px_30px_-4px_rgba(0,0,0,0.15)] backdrop-blur-2xl backdrop-saturate-150 dark:border-white/[0.1] dark:bg-[rgba(10,10,10,0.95)] dark:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.6)]"
+                className="absolute top-full right-0 left-0 z-50 mt-1.5 overflow-hidden rounded-xl border border-border/40 bg-background/95 shadow-[0_8px_30px_-4px_rgba(0,0,0,0.15)] backdrop-blur-2xl backdrop-saturate-150 sm:mx-auto sm:max-w-xl dark:border-white/[0.1] dark:bg-[rgba(10,10,10,0.95)] dark:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.6)]"
                 role="listbox"
               >
                 {hasQuery ? (
@@ -628,8 +645,10 @@ export function Header() {
             )}
           </form>
 
-          {/* Right: actions */}
-          <div className="flex shrink-0 items-center gap-1">
+          {/* Right: actions. On mobile we keep only Submit + GitHub +
+              theme toggle so the top row stays slim and the search row
+              below can claim the full width. */}
+          <div className="ml-auto flex shrink-0 items-center gap-0.5 sm:ml-0 sm:gap-1">
             <Link
               href="/extensions"
               className="hidden items-center rounded-lg px-2.5 py-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground lg:inline-flex"
@@ -639,7 +658,7 @@ export function Header() {
 
             <SubmitButton />
 
-            <div className="ml-1 flex items-center gap-1">
+            <div className="ml-1 flex items-center gap-0.5 sm:gap-1">
               <a
                 href="https://www.npmjs.com/package/thesvg"
                 target="_blank"
@@ -719,14 +738,14 @@ export function Header() {
                 rel="noopener noreferrer"
                 aria-label="View on GitHub"
                 title="GitHub repository"
-                className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-border/50 text-muted-foreground transition-all hover:border-foreground/20 hover:bg-accent hover:text-foreground dark:border-white/[0.08] dark:hover:border-white/20 dark:hover:bg-white/[0.06]"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border/50 text-muted-foreground transition-all hover:border-foreground/20 hover:bg-accent hover:text-foreground sm:h-8 sm:w-8 dark:border-white/[0.08] dark:hover:border-white/20 dark:hover:bg-white/[0.06]"
               >
                 <Github className="h-4 w-4" />
               </a>
               <Button
                 variant="ghost"
                 size="icon"
-                className="h-8 w-8"
+                className="h-9 w-9 sm:h-8 sm:w-8"
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 aria-label="Toggle theme"
               >

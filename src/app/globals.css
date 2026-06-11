@@ -96,9 +96,14 @@
   }
   body {
     @apply bg-background text-foreground;
+    /* Guard against any descendant that incidentally overshoots the
+       viewport. Belt-and-suspenders for narrow phones (360-393px). */
+    overflow-x: hidden;
   }
   html {
     @apply font-sans;
+    /* iOS double-tap zoom dampens text resize jumps. */
+    -webkit-text-size-adjust: 100%;
   }
 }
 

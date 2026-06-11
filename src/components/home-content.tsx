@@ -316,8 +316,10 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
         ) : (
           /* Filtered view */
           <>
-            {/* Sticky toolbar - count + controls */}
-            <div className="sticky top-[3.75rem] z-20 border-b border-border/30 bg-background/95 backdrop-blur-xl">
+            {/* Sticky toolbar - count + controls. Header is taller on
+                mobile because the search occupies its own row, so the
+                sticky offset bumps up at <sm. */}
+            <div className="sticky top-[7.25rem] z-20 border-b border-border/30 bg-background/95 backdrop-blur-xl sm:top-[3.75rem]">
               <div className="mx-auto flex max-w-7xl items-center gap-1.5 px-3 py-1.5 sm:gap-2 sm:px-4">
                 {/* Count label */}
                 <p className="flex-1 text-sm text-muted-foreground">
