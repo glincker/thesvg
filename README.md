@@ -1,9 +1,9 @@
 <p align="center">
   <a href="https://thesvg.org">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-wordmark.svg" />
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-wordmark-dark.svg" />
-      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-wordmark-dark.svg" alt="theSVG" height="48" />
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-wordmark-dark.svg" />
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-wordmark.svg" />
+      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-wordmark.svg" alt="theSVG" height="48" />
     </picture>
   </a>
 </p>
