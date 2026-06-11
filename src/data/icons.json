@@ -66856,6 +66856,31 @@
     "collection": "brands"
   },
   {
+    "slug": "jaco",
+    "title": "JACO",
+    "aliases": [],
+    "hex": "8710FF",
+    "categories": [
+      "App Services",
+      "Communication",
+      "Community",
+      "E-commerce",
+      "Entertainment",
+      "Media",
+      "Mobile App",
+      "Networking",
+      "Livestreaming"
+    ],
+    "variants": {
+      "default": "/icons/jaco/default.svg",
+      "dark": "/icons/jaco/dark.svg"
+    },
+    "license": "Unknown",
+    "url": "https://jaco.live",
+    "dateAdded": "2026-06-08",
+    "collection": "brands"
+  },
+  {
     "slug": "jaeger",
     "title": "Jaeger",
     "aliases": [],
