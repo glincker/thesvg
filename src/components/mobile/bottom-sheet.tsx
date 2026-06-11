@@ -24,29 +24,15 @@ interface BottomSheetProps {
   label: string;
   children: React.ReactNode;
   className?: string;
-  /** When true, the sheet body scroll uses `overscroll-behavior: auto`
-   *  so pull-to-refresh-style gestures land inside the sheet (used by
-   *  the search sheet so a top-overscroll closes/peeks). */
   allowOverscroll?: boolean;
 }
 
 const SNAP_VH: Record<BottomSheetSnap, number> = {
-  peek: 60,
-  half: 80,
-  full: 100,
+  peek: 45,
+  half: 70,
+  full: 95,
 };
 
-/**
- * Snap-point bottom sheet used across the mobile shell.
- *
- * Snaps: peek (60vh) / half (80vh) / full (100vh). Drag the handle to
- * change snap or swipe down past `peek` to dismiss. Backdrop tap also
- * dismisses. Built bespoke instead of base-ui Dialog because we need
- * snap-point semantics that the dialog primitive does not model.
- *
- * Renders into `document.body` via portal so it sits above the dock,
- * header, and all page chrome.
- */
 export function BottomSheet({
   open,
   onClose,

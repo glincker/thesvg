@@ -95,7 +95,7 @@ export function HelpFab() {
   return (
     <>
       {/* FAB button with pulse ring */}
-      <div className="fixed bottom-5 right-5 z-40">
+      <div className="fixed right-5 bottom-5 z-40 hidden lg:block">
         <button
           onClick={handleOpen}
           className="group relative flex h-10 w-10 items-center justify-center rounded-full border border-border/60 bg-card/90 text-muted-foreground shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-orange-500/40 hover:text-orange-500 hover:shadow-xl hover:shadow-orange-500/10 active:scale-95 dark:border-white/10 dark:bg-white/5"

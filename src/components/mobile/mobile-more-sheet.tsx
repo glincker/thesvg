@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import {
   BookOpen,
@@ -8,20 +9,27 @@ import {
   FileText,
   Heart,
   Layers,
-  Package,
 } from "lucide-react";
-import { BottomSheet } from "./bottom-sheet";
+import { BottomSheet, type BottomSheetSnap } from "./bottom-sheet";
 import { useMobileShellStore } from "@/lib/stores/mobile-shell-store";
 
-interface MoreItem {
+interface InternalItem {
   href: string;
   label: string;
   description: string;
-  Icon: typeof Package;
-  external?: boolean;
+  Icon: typeof Layers;
 }
 
-const APP_LINKS: ReadonlyArray<MoreItem> = [
+interface ExternalItem {
+  href: string;
+  label: string;
+  description: string;
+  /** Path to a brand SVG inside the catalog itself. Dog-fooded — we
+   *  serve the same files we ship to consumers. */
+  iconSrc: string;
+}
+
+const APP_LINKS: ReadonlyArray<InternalItem> = [
   {
     href: "/extensions",
     label: "Extensions",
@@ -48,56 +56,59 @@ const APP_LINKS: ReadonlyArray<MoreItem> = [
   },
 ];
 
-const EXTERNAL_LINKS: ReadonlyArray<MoreItem> = [
+const EXTERNAL_LINKS: ReadonlyArray<ExternalItem> = [
   {
     href: "https://github.com/GLINCKER/thesvg",
     label: "GitHub",
     description: "Source and issues",
-    Icon: Package,
-    external: true,
+    iconSrc: "/icons/github/default.svg",
   },
   {
     href: "https://www.npmjs.com/package/thesvg",
     label: "npm package",
     description: "thesvg on npm",
-    Icon: Package,
-    external: true,
+    iconSrc: "/icons/npm/default.svg",
   },
   {
     href: "https://www.raycast.com/thegdsks/thesvg",
     label: "Raycast extension",
     description: "Search icons from Raycast",
-    Icon: Package,
-    external: true,
+    iconSrc: "/icons/raycast/default.svg",
   },
   {
     href: "https://www.figma.com/community/plugin/1612997159050367763",
     label: "Figma plugin",
     description: "Drop icons into your Figma file",
-    Icon: Package,
-    external: true,
+    iconSrc: "/icons/figma/default.svg",
   },
   {
     href: "https://marketplace.visualstudio.com/items?itemName=glincker.thesvg",
     label: "VS Code extension",
     description: "Search and copy from VS Code",
-    Icon: Package,
-    external: true,
+    iconSrc: "/icons/visual-studio-code/default.svg",
   },
 ];
 
-/**
- * "More" sheet — overflow for everything that doesn't fit in the dock
- * or top bar on mobile. Replaces the desktop header's icon cluster
- * (GitHub, npm, Raycast, Figma, VS Code, Extensions link).
- */
 export function MobileMoreSheet() {
   const sheet = useMobileShellStore((s) => s.sheet);
   const closeSheet = useMobileShellStore((s) => s.closeSheet);
   const open = sheet === "more";
+  // Local snap state so the handle can drag the sheet between half and
+  // full and a downward flick dismisses cleanly — feels like a native
+  // iOS sheet instead of a fixed-height popover.
+  const [snap, setSnap] = useState<BottomSheetSnap>("half");
 
   return (
-    <BottomSheet open={open} onClose={closeSheet} fixedSnap="half" label="More">
+    <BottomSheet
+      open={open}
+      onClose={() => {
+        setSnap("half");
+        closeSheet();
+      }}
+      snap={snap}
+      onSnapChange={setSnap}
+      label="More"
+    >
       <div className="px-4 pb-4">
         <ul className="divide-y divide-border/40">
           {APP_LINKS.map((item) => (
@@ -137,8 +148,15 @@ export function MobileMoreSheet() {
                 onClick={() => closeSheet()}
                 className="flex items-center gap-3 py-3"
               >
-                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-muted/60 text-muted-foreground">
-                  <item.Icon className="h-4 w-4" />
+                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-muted/40 ring-1 ring-inset ring-border/40 dark:bg-white/[0.04] dark:ring-white/[0.06]">
+                  <img
+                    src={item.iconSrc}
+                    alt=""
+                    width={20}
+                    height={20}
+                    className="h-5 w-5 object-contain"
+                    loading="lazy"
+                  />
                 </span>
                 <span className="min-w-0 flex-1">
                   <span className="block text-sm font-medium text-foreground">

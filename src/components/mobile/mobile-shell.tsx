@@ -2,72 +2,56 @@
 
 import { useEffect, useRef } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
-import { MobileTopBar } from "./mobile-top-bar";
+import { MOBILE_FOCUS_SEARCH_EVENT, MobileTopBar } from "./mobile-top-bar";
 import { MobileBottomDock } from "./mobile-bottom-dock";
-import { MobileSearchSheet } from "./mobile-search-sheet";
 import { MobileIconSheet } from "./mobile-icon-sheet";
 import { MobileMoreSheet } from "./mobile-more-sheet";
 import { MobileActionSheet } from "./mobile-action-sheet";
 import { PwaInstallPrompt } from "./pwa-install-prompt";
 import { useIsMobileShell } from "@/lib/hooks/use-media-query";
 import { useMobileShellStore } from "@/lib/stores/mobile-shell-store";
+import { useMobilePrefsStore } from "@/lib/stores/mobile-prefs-store";
 
 const LONG_PRESS_MS = 500;
 const PULL_DOWN_PX = 80;
 
 /**
- * Glue layer for the Catalog 2026 mobile shell.
- *
- * Responsibilities:
- *   1. Render the mobile top bar + bottom dock (both `lg:hidden`).
- *   2. Wire the four sheets — search, icon, more, action.
- *   3. Intercept `<a href="/icon/...">` taps on mobile and open the
- *      icon sheet inline instead of full-page navigation. Direct deep
- *      links still hit the static `/icon/[slug]` route.
- *   4. Detect pull-down past 80px overscroll at the top of the page
- *      and open the search sheet at peek.
- *   5. Wire long-press (>500ms) on tiles to open the action sheet.
- *   6. Honor `?action=search` from the PWA shortcut by opening the
- *      search sheet on first mount.
+ * Mobile shell: top bar + dock + sheets. Renders below `lg`.
  */
 export function MobileShell({ children }: { children: React.ReactNode }) {
   const isMobile = useIsMobileShell();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const openSearch = useMobileShellStore((s) => s.openSearch);
   const openIcon = useMobileShellStore((s) => s.openIcon);
   const openAction = useMobileShellStore((s) => s.openAction);
   const closeSheet = useMobileShellStore((s) => s.closeSheet);
 
-  // Honor `?action=search` from the PWA shortcut.
   const hasHandledShortcutRef = useRef(false);
   useEffect(() => {
     if (hasHandledShortcutRef.current) return;
     if (searchParams.get("action") === "search") {
       hasHandledShortcutRef.current = true;
-      openSearch("peek");
+      window.dispatchEvent(new Event(MOBILE_FOCUS_SEARCH_EVENT));
     }
-  }, [searchParams, openSearch]);
+  }, [searchParams]);
 
-  // Close any open sheet on route change so navigation feels clean.
   useEffect(() => {
     closeSheet();
   }, [pathname, closeSheet]);
 
-  // Intercept icon tile taps for in-place sheet opening. Only on mobile.
   useEffect(() => {
     if (!isMobile) return;
     function onClick(e: MouseEvent) {
+      // Read at click time so toggling the pref takes effect without remount.
+      const mode = useMobilePrefsStore.getState().iconOpenMode;
+      if (mode === "page") return;
       const target = e.target as HTMLElement | null;
       if (!target) return;
-      // Modifier keys → respect default (open in new tab, etc.)
       if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-      // Walk up to the nearest anchor
       const anchor = target.closest("a") as HTMLAnchorElement | null;
       if (!anchor) return;
       const href = anchor.getAttribute("href");
       if (!href || !href.startsWith("/icon/")) return;
-      // Skip if the anchor is inside a sheet (already in sheet context)
       if (anchor.closest("[role='dialog']")) return;
       const slug = href.replace("/icon/", "").split(/[?#]/)[0];
       if (!slug) return;
@@ -78,7 +62,6 @@ export function MobileShell({ children }: { children: React.ReactNode }) {
     return () => document.removeEventListener("click", onClick, { capture: true } as EventListenerOptions);
   }, [isMobile, openIcon]);
 
-  // Long-press → action sheet on icon tiles. Uses pointerdown/up timing.
   useEffect(() => {
     if (!isMobile) return;
     let pressTimer: number | null = null;
@@ -94,7 +77,6 @@ export function MobileShell({ children }: { children: React.ReactNode }) {
     }
 
     function onPointerDown(e: PointerEvent) {
-      // Touch / pen only — mouse retains the click-to-open behavior.
       if (e.pointerType === "mouse") return;
       const slug = findSlug(e.target);
       if (!slug) return;
@@ -122,7 +104,6 @@ export function MobileShell({ children }: { children: React.ReactNode }) {
       clearPress();
     }
     function onPointerMove(e: PointerEvent) {
-      // Cancel long-press on movement >8px (scroll intent).
       if (!pressTimer) return;
       if (Math.abs(e.movementY) + Math.abs(e.movementX) > 8) clearPress();
     }
@@ -148,8 +129,6 @@ export function MobileShell({ children }: { children: React.ReactNode }) {
     };
   }, [isMobile, openAction]);
 
-  // Pull-down search — when the user overscrolls the top of the page
-  // past 80px, open the search sheet at peek.
   useEffect(() => {
     if (!isMobile) return;
     let startY: number | null = null;
@@ -166,7 +145,7 @@ export function MobileShell({ children }: { children: React.ReactNode }) {
       if (dy > PULL_DOWN_PX) {
         pulling = false;
         startY = null;
-        openSearch("peek");
+        window.dispatchEvent(new Event(MOBILE_FOCUS_SEARCH_EVENT));
       }
     }
     function onTouchEnd() {
@@ -182,11 +161,10 @@ export function MobileShell({ children }: { children: React.ReactNode }) {
       document.removeEventListener("touchmove", onTouchMove);
       document.removeEventListener("touchend", onTouchEnd);
     };
-  }, [isMobile, openSearch]);
+  }, [isMobile]);
 
   return (
     <>
-      {/* Mobile chrome — replaced for `lg:` users by the desktop Header below. */}
       <div className="contents lg:hidden">
         <MobileTopBar />
       </div>
@@ -195,7 +173,6 @@ export function MobileShell({ children }: { children: React.ReactNode }) {
 
       <div className="contents lg:hidden">
         <MobileBottomDock />
-        <MobileSearchSheet />
         <MobileIconSheet />
         <MobileMoreSheet />
         <MobileActionSheet />

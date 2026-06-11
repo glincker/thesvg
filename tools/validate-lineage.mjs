@@ -1,11 +1,6 @@
 #!/usr/bin/env node
-/**
- * Validates that every `supersedes` / `supersededBy` link in icons.json
- * is bidirectional and points at a real slug. Fails non-zero on any
- * issue so CI can gate the merge.
- *
- * Run locally with `node scripts/validate-lineage.mjs`.
- */
+// Fails non-zero if any supersedes/supersededBy link is one-way or points
+// at an unknown slug. Run with `node tools/validate-lineage.mjs`.
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";

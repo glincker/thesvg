@@ -67,14 +67,13 @@
   --input: oklch(0.91 0 0);
   --ring: oklch(0.708 0 0);
   --radius: 0.75rem;
-  /* Catalog 2026 — four-tier surface stack. Used by the mobile dock,
-     sheets, dropdowns, and any glass surface that needs a solid
-     fallback when backdrop-filter is unsupported or disabled. */
   --surface-0: oklch(0.99 0 0);
   --surface-1: oklch(0.97 0 0);
   --surface-2: oklch(0.94 0 0);
   --surface-3: oklch(0.91 0 0);
-  --surface-glass: rgb(255 255 255 / 0.72);
+  --surface-glass: rgb(255 255 255 / 0.95);
+  --surface-glass-blur: rgb(255 255 255 / 0.88);
+  --surface-glass-highlight: rgb(255 255 255 / 0.55);
   --accent-brand: #f97316;
   color-scheme: dark light;
 }
@@ -102,7 +101,9 @@
   --surface-1: oklch(0.13 0 0);
   --surface-2: oklch(0.17 0 0);
   --surface-3: oklch(0.22 0 0);
-  --surface-glass: rgb(12 12 12 / 0.62);
+  --surface-glass: rgb(12 12 12 / 0.95);
+  --surface-glass-blur: rgb(14 14 16 / 0.86);
+  --surface-glass-highlight: rgb(255 255 255 / 0.12);
 }
 
 @layer base {
@@ -111,11 +112,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    /* Guard against any descendant that incidentally overshoots the
-       viewport. Belt-and-suspenders for narrow phones (360-393px). */
     overflow-x: hidden;
-    /* Block native pull-to-refresh on the document; sheets that need
-       overscroll opt in via `.overscroll-auto`. */
     overscroll-behavior-y: contain;
   }
   html {
@@ -123,9 +120,6 @@
     /* iOS double-tap zoom dampens text resize jumps. */
     -webkit-text-size-adjust: 100%;
   }
-  /* Native-feel tap polish — kill the gray flash on link/button taps,
-     and suppress the long-press callout on icon tiles. Tiles also get
-     `user-select: none` so a drag for selection doesn't fire. */
   a,
   button {
     -webkit-tap-highlight-color: transparent;
@@ -136,10 +130,54 @@
   }
 }
 
-/* Scrollbar styling */
+:root {
+  --scrollbar-thumb: rgb(0 0 0 / 0.35);
+  --scrollbar-thumb-hover: rgb(0 0 0 / 0.65);
+}
+
+.dark {
+  --scrollbar-thumb: rgb(255 255 255 / 0.32);
+  --scrollbar-thumb-hover: rgb(255 255 255 / 0.6);
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: background-color 150ms ease-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
 .scrollbar-none {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
 }
 .scrollbar-none::-webkit-scrollbar {
   display: none;
@@ -1187,12 +1225,6 @@
   }
 }
 
-/* ============================================================
- * Catalog 2026 — mobile shell utilities
- * Surface tokens, glass primitives, tap-bounce, safe-area helpers,
- * and motion vars consumed by the bottom dock + sheets.
- * ============================================================ */
-
 :root {
   --motion-spring: 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
   --motion-fade: 150ms ease-out;
@@ -1202,31 +1234,36 @@
   --dock-height: 64px;
 }
 
-/* Glass surface used by the dock + sheet headers. Drops to a solid
-   surface-2 color when the OS reports reduced transparency or
-   Save-Data is on (we toggle the class via JS). */
+/* Do not add `contain: paint` or `isolation: isolate` here — either
+   creates a backdrop root and kills the backdrop-filter. */
 .surface-glass {
   background: var(--surface-glass);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
 }
 
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .surface-glass {
+    background: var(--surface-glass-blur);
+    backdrop-filter: blur(48px) saturate(220%) brightness(1.12) contrast(1.05);
+    -webkit-backdrop-filter: blur(48px) saturate(220%) brightness(1.12) contrast(1.05);
+    box-shadow: inset 0 1px 0 0 var(--surface-glass-highlight);
+  }
+}
+
+/* `var(--card)` ships as oklch; do not wrap in hsl(). */
 .surface-glass-solid {
-  background: hsl(var(--card));
+  background: var(--card);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
 }
 
 @media (prefers-reduced-transparency: reduce) {
   .surface-glass {
-    background: hsl(var(--card));
+    background: var(--card);
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
   }
 }
 
-/* Tap-bounce micro-animation. Triggered via JS adding `is-bounced`
-   onto a tab button for 120ms after pointerup. */
 @keyframes tap-bounce {
   0%   { transform: scale(1); }
   50%  { transform: scale(0.97); }
@@ -1237,41 +1274,54 @@
   animation: tap-bounce 120ms ease-out;
 }
 
-/* When the app is installed (display-mode: standalone), there's no
-   browser URL bar to compensate for. Drop any extra padding the dock
-   was carrying. */
+@media (prefers-reduced-motion: reduce) {
+  .tap-bounce.is-bounced {
+    animation: none;
+  }
+}
+
 @media (display-mode: standalone) {
   .mobile-shell-body {
     padding-bottom: calc(var(--dock-height) + var(--safe-bottom));
   }
 }
 
-/* Reserve room below the grid so the dock never covers the last row. */
 .mobile-shell-body {
-  padding-bottom: calc(var(--dock-height) + var(--safe-bottom) + 8px);
+  padding-top: calc(3rem + var(--safe-top) + 24px);
+  padding-bottom: calc(var(--dock-height) + var(--safe-bottom) + 20px);
 }
 
 @media (min-width: 1024px) {
   .mobile-shell-body {
+    padding-top: 0;
     padding-bottom: 0;
   }
 }
 
-/* Sheet handle — small grab indicator at the top of every bottom sheet. */
 .sheet-handle {
-  width: 36px;
-  height: 4px;
+  width: 44px;
+  height: 5px;
   border-radius: 999px;
-  background: hsl(var(--foreground) / 0.18);
-  margin: 6px auto 8px;
+  background: oklch(0.55 0 0 / 0.45);
+  margin: 8px auto 10px;
+  transition: background-color 150ms ease-out, width 150ms ease-out;
+}
+
+.sheet-handle:hover,
+.sheet-handle[data-dragging="true"] {
+  width: 56px;
+  background: oklch(0.45 0 0 / 0.7);
 }
 
 .dark .sheet-handle {
-  background: hsl(var(--foreground) / 0.22);
+  background: oklch(0.7 0 0 / 0.4);
 }
 
-/* Native-feel scroll containment for sheets — block parent scroll
-   chaining without disabling pull-to-refresh inside the sheet itself. */
+.dark .sheet-handle:hover,
+.dark .sheet-handle[data-dragging="true"] {
+  background: oklch(0.85 0 0 / 0.55);
+}
+
 .sheet-scroll {
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;

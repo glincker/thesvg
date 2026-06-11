@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Anchor, ArrowRight, Clock, Cloud, History, Package, Shapes, Sparkles, X, Zap } from "lucide-react";
+import { Anchor, ArrowRight, Check, Clock, Cloud, Copy, History, Package, Shapes, Sparkles, X, Zap } from "lucide-react";
 import Link from "next/link";
 import posthog from "posthog-js";
 import type { Collection, IconEntry } from "@/lib/icons";
@@ -10,6 +10,7 @@ import { IconCard } from "@/components/icons/icon-card";
 import { IconGrid } from "@/components/icons/icon-grid";
 import { IconDetail } from "@/components/icons/icon-detail";
 import { useRecentsStore } from "@/lib/stores/recents-store";
+import { cn } from "@/lib/utils";
 
 /** Inline AWS logo - text inherits currentColor, arrow stays orange */
 function AwsLogo({ className }: { className?: string }) {
@@ -245,6 +246,45 @@ interface HomeHeroProps {
   onCollectionSelect: (collection: string) => void;
 }
 
+function InstallBadge({
+  command,
+  accent,
+  Icon,
+}: {
+  command: string;
+  accent: string;
+  Icon: React.ComponentType<{ className?: string }>;
+}) {
+  const [copied, setCopied] = useState(false);
+  const onCopy = useCallback(async () => {
+    try {
+      await navigator.clipboard.writeText(command);
+      setCopied(true);
+      posthog.capture("hero_install_command_copied", { command });
+      window.setTimeout(() => setCopied(false), 1600);
+    } catch {
+      /* clipboard blocked; user can still triple-click the text */
+    }
+  }, [command]);
+  return (
+    <button
+      type="button"
+      onClick={onCopy}
+      aria-label={`Copy command: ${command}`}
+      className={`group mb-3 inline-flex items-center gap-2 rounded-full border px-3 py-1.5 font-mono text-xs shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 ${accent}`}
+    >
+      <Icon className="h-3 w-3 shrink-0" />
+      <span className="select-all opacity-50">$</span>
+      <span className="font-medium">{command}</span>
+      {copied ? (
+        <Check className="h-3 w-3 shrink-0 text-emerald-500" />
+      ) : (
+        <Copy className="h-3 w-3 shrink-0 opacity-50 transition-opacity group-hover:opacity-100" />
+      )}
+    </button>
+  );
+}
+
 export function HomeHero({
   categoryCounts: _categoryCounts,
   count,
@@ -303,10 +343,25 @@ export function HomeHero({
     if (recentViewed.length === 0 || icons.length === 0) return [];
     const bySlug = new Map(icons.map((i) => [i.slug, i]));
     return recentViewed
-      .map((r) => bySlug.get(r.slug))
-      .filter((i): i is IconEntry => Boolean(i))
+      .map((r) => {
+        const entry = bySlug.get(r.slug);
+        return entry ? { entry, ts: r.ts } : null;
+      })
+      .filter((v): v is { entry: IconEntry; ts: number } => Boolean(v))
       .slice(0, 8);
   }, [recentViewed, icons]);
+
+  function shortAgo(ts: number): string {
+    const s = Math.max(0, Math.floor((Date.now() - ts) / 1000));
+    if (s < 60) return "now";
+    const m = Math.floor(s / 60);
+    if (m < 60) return `${m}m`;
+    const h = Math.floor(m / 60);
+    if (h < 24) return `${h}h`;
+    const d = Math.floor(h / 24);
+    if (d < 30) return `${d}d`;
+    return `${Math.floor(d / 30)}mo`;
+  }
 
   // Filter icons by active collection
   const collectionIcons = useMemo(
@@ -388,7 +443,7 @@ export function HomeHero({
         <div className="absolute -bottom-1 left-8 right-8 h-4 rounded-2xl bg-black/[0.03] blur-md dark:bg-black/20" />
 
         <div
-          className={`relative overflow-hidden rounded-3xl border border-border/40 bg-gradient-to-br ${slide.gradient} px-6 py-12 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.08),0_2px_8px_-2px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.15)] transition-all duration-700 sm:px-10 sm:py-16 dark:border-white/[0.08] dark:shadow-[0_8px_30px_-6px_rgba(0,0,0,0.4),0_2px_8px_-2px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.05)]`}
+          className={`relative overflow-hidden rounded-3xl border border-border/40 bg-gradient-to-br ${slide.gradient} px-5 py-6 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.08),0_2px_8px_-2px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.15)] transition-all duration-700 sm:px-10 sm:py-16 dark:border-white/[0.08] dark:shadow-[0_8px_30px_-6px_rgba(0,0,0,0.4),0_2px_8px_-2px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.05)]`}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
@@ -398,28 +453,32 @@ export function HomeHero({
           {/* Min-height reserves space so rotating slide titles/descriptions
               of different lengths don't trigger Cumulative Layout Shift.
               Sized to the longest expected slide content. */}
-          <div className="relative z-10 max-w-2xl min-h-[220px] sm:min-h-[240px]">
+          <div className="relative z-10 max-w-2xl min-h-[160px] sm:min-h-[240px]">
             {/* Slide content with fade */}
             <div key={currentSlide} className="animate-fade-in">
-              <div className={`mb-3 inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium shadow-sm ${slide.accent}`}>
-                <BadgeIcon className="h-3 w-3" />
-                {slide.badge === "Open Source"
-                  ? `${count.toLocaleString()}+ icons`
-                  : slide.badge}
-              </div>
-              <h1 className="mb-2 text-2xl font-bold tracking-tight sm:text-3xl">
+              {slide.badge.startsWith("npm install") ? (
+                <InstallBadge command={slide.badge} accent={slide.accent} Icon={BadgeIcon} />
+              ) : (
+                <div className={`mb-2 inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-[11px] font-medium shadow-sm sm:mb-3 sm:px-3 sm:py-1 sm:text-xs ${slide.accent}`}>
+                  <BadgeIcon className="h-3 w-3" />
+                  {slide.badge === "Open Source"
+                    ? `${count.toLocaleString()}+ icons`
+                    : slide.badge}
+                </div>
+              )}
+              <h1 className="mb-1.5 text-lg font-bold tracking-tight sm:mb-2 sm:text-3xl">
                 {slide.title}
               </h1>
-              <p className="mb-6 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
+              <p className="mb-4 max-w-lg text-[13px] leading-snug text-muted-foreground sm:mb-6 sm:text-base sm:leading-relaxed">
                 {slide.description}
               </p>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 {slide.cta.href.startsWith("http") ? (
                   <a
                     href={slide.cta.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-xl bg-foreground px-5 py-2.5 text-sm font-medium text-background shadow-lg shadow-black/10 transition-all hover:opacity-90 hover:shadow-xl dark:shadow-black/30"
+                    className="inline-flex items-center gap-2 rounded-xl bg-foreground min-h-[40px] px-4 py-2 text-xs font-medium text-background shadow-lg shadow-black/10 transition-all hover:opacity-90 hover:shadow-xl sm:px-5 sm:py-2.5 sm:text-sm dark:shadow-black/30"
                   >
                     {slide.cta.label}
                     <ArrowRight className="h-3.5 w-3.5" />
@@ -427,7 +486,7 @@ export function HomeHero({
                 ) : (
                   <Link
                     href={slide.cta.href}
-                    className="inline-flex items-center gap-2 rounded-xl bg-foreground px-5 py-2.5 text-sm font-medium text-background shadow-lg shadow-black/10 transition-all hover:opacity-90 hover:shadow-xl dark:shadow-black/30"
+                    className="inline-flex items-center gap-2 rounded-xl bg-foreground min-h-[40px] px-4 py-2 text-xs font-medium text-background shadow-lg shadow-black/10 transition-all hover:opacity-90 hover:shadow-xl sm:px-5 sm:py-2.5 sm:text-sm dark:shadow-black/30"
                   >
                     {slide.cta.label}
                     <ArrowRight className="h-3.5 w-3.5" />
@@ -435,7 +494,7 @@ export function HomeHero({
                 )}
                 <Link
                   href={slide.ctaSecondary.href}
-                  className="inline-flex items-center gap-2 rounded-xl border border-border/60 bg-background/50 px-5 py-2.5 text-sm font-medium text-foreground shadow-sm backdrop-blur-sm transition-all hover:bg-background/80 hover:shadow-md dark:border-white/[0.1] dark:bg-white/[0.05]"
+                  className="inline-flex items-center gap-2 rounded-xl border border-border/60 bg-background/50 min-h-[40px] px-4 py-2 text-xs font-medium text-foreground shadow-sm backdrop-blur-sm transition-all hover:bg-background/80 hover:shadow-md sm:px-5 sm:py-2.5 sm:text-sm dark:border-white/[0.1] dark:bg-white/[0.05]"
                 >
                   {slide.ctaSecondary.label}
                 </Link>
@@ -506,65 +565,78 @@ export function HomeHero({
       </div>
       </div>
 
-      {/* Pick up where you left off — only renders for returning visitors */}
+      {/* Continue — only renders for returning visitors */}
       {recentViewedIcons.length > 0 && (
         <section
-          className="relative overflow-hidden rounded-2xl border border-border/40 bg-gradient-to-br from-background via-background to-accent/20 px-4 py-3 sm:px-5 dark:border-white/[0.06] dark:from-white/[0.02] dark:via-background dark:to-white/[0.03]"
+          className="relative rounded-2xl border border-border/50 bg-card/60 px-4 py-4 shadow-[0_1px_2px_rgba(0,0,0,0.03)] sm:px-5 dark:border-white/[0.07] dark:bg-white/[0.02]"
           aria-labelledby="recents-rail-heading"
         >
-          <div className="mb-2.5 flex items-center justify-between gap-2">
-            <div className="flex items-center gap-2">
-              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-foreground/5 dark:bg-white/[0.06]">
-                <History className="h-3 w-3 text-foreground/70" />
-              </span>
-              <h2 id="recents-rail-heading" className="text-sm font-semibold text-foreground">
-                Pick up where you left off
+          <div className="mb-3 flex items-center justify-between gap-2">
+            <div className="flex min-w-0 items-baseline gap-2.5">
+              <h2 id="recents-rail-heading" className="text-[15px] font-semibold tracking-tight text-foreground">
+                Continue
               </h2>
-              <span className="rounded-full bg-muted/60 px-1.5 py-0.5 font-mono text-[10px] text-muted-foreground dark:bg-white/[0.04]">
+              <span className="hidden truncate text-[11px] text-muted-foreground sm:inline">
+                Where you left off
+              </span>
+              <span className="rounded-full bg-foreground/[0.06] px-1.5 py-px font-mono text-[10px] tabular-nums text-muted-foreground dark:bg-white/[0.06]">
                 {recentViewedIcons.length}
               </span>
             </div>
             <div className="flex items-center gap-1">
               <Link
                 href="/recents"
-                className="rounded-md px-2 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
               >
                 View all
+                <ArrowRight className="h-3 w-3" />
               </Link>
               <button
                 type="button"
                 onClick={() => clearViewed()}
-                className="flex h-6 w-6 items-center justify-center rounded-md text-muted-foreground/50 transition-colors hover:bg-accent hover:text-foreground"
+                className="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground/50 transition-colors hover:bg-destructive/10 hover:text-destructive"
                 aria-label="Clear recently viewed"
                 title="Clear recents"
               >
-                <X className="h-3 w-3" />
+                <X className="h-3.5 w-3.5" />
               </button>
             </div>
           </div>
-          <div className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:thin]">
-            {recentViewedIcons.map((icon) => (
+          <div className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1 sm:grid sm:grid-cols-4 sm:gap-2.5 sm:overflow-visible md:grid-cols-6 lg:grid-cols-8">
+            {recentViewedIcons.map(({ entry, ts }, idx) => (
               <Link
-                key={icon.slug}
-                href={`/icon/${icon.slug}`}
+                key={entry.slug}
+                href={`/icon/${entry.slug}`}
                 onClick={() => {
                   posthog.capture("recents_clicked", {
                     kind: "viewed",
-                    slug: icon.slug,
+                    slug: entry.slug,
                     source: "home_rail",
                   });
                 }}
-                className="group/recent flex shrink-0 flex-col items-center gap-1.5 rounded-xl border border-border/40 bg-card/60 p-2.5 transition-all hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-md dark:border-white/[0.06] dark:bg-white/[0.02] dark:hover:border-white/[0.12]"
-                style={{ width: "84px" }}
+                className={cn(
+                  "group/recent flex shrink-0 items-center gap-2.5 rounded-xl border bg-background/60 p-2 transition-all hover:-translate-y-0.5 hover:shadow-md sm:w-auto sm:flex-col sm:items-center sm:gap-1.5 sm:p-2.5 dark:bg-white/[0.02]",
+                  idx === 0
+                    ? "border-orange-500/30 ring-1 ring-orange-500/15 hover:border-orange-500/50 dark:border-orange-500/30"
+                    : "border-border/50 hover:border-foreground/25 dark:border-white/[0.07] dark:hover:border-white/[0.18]",
+                )}
+                style={{ minWidth: "120px" }}
               >
-                <img
-                  src={icon.variants.default}
-                  alt=""
-                  className="h-8 w-8 object-contain transition-transform duration-200 group-hover/recent:scale-110"
-                  loading="lazy"
-                />
-                <span className="w-full truncate text-center text-[10px] font-medium text-foreground/80 group-hover/recent:text-foreground">
-                  {icon.title}
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-muted/60 dark:bg-white/[0.04]">
+                  <img
+                    src={entry.variants.default}
+                    alt=""
+                    className="h-6 w-6 object-contain transition-transform duration-200 group-hover/recent:scale-110"
+                    loading="lazy"
+                  />
+                </span>
+                <span className="flex min-w-0 flex-1 flex-col gap-0.5 sm:w-full sm:items-center sm:text-center">
+                  <span className="line-clamp-1 w-full text-[12px] font-medium text-foreground group-hover/recent:text-foreground sm:line-clamp-1 sm:text-[11px]">
+                    {entry.title}
+                  </span>
+                  <span className="text-[10px] text-muted-foreground/70 tabular-nums">
+                    {shortAgo(ts)} ago
+                  </span>
                 </span>
               </Link>
             ))}

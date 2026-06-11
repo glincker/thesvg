@@ -1,13 +1,5 @@
-/**
- * Canonical thesvg logomark. Inlined as JSX so `currentColor` actually
- * follows the parent text color — `<img src="/logo-transparent.svg">`
- * sandboxes the SVG and renders the stroke as static black, breaking
- * dark mode. Wherever the mark appears in chrome (Header, MobileTopBar,
- * Footer), use this component and set the text color on the wrapper.
- *
- * The orange overlap rect is intentionally hard-coded — it's the brand
- * signature and should not invert with theme.
- */
+// Inlined so the stroke can use currentColor. Orange fill is the brand
+// signature and stays orange in both themes.
 export function TheSVGMark({
   className,
   title = "theSVG",

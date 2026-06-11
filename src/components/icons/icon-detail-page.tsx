@@ -279,7 +279,6 @@ export function IconDetailPage({
             </div>
           )}
 
-          {/* Version lineage — links between current and predecessor marks */}
           {(icon.supersedes || icon.supersededBy) && (() => {
             const otherSlug = icon.supersededBy ?? icon.supersedes!;
             const other = getIconBySlug(otherSlug);

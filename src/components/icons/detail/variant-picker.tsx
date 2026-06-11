@@ -10,11 +10,7 @@ interface VariantPickerProps {
   slug: string;
 }
 
-/** Background for preview thumbnails. Match the surface the variant is
- *  designed to live on: a "light" variant has dark ink intended for a
- *  light background, so we preview it on a light surface where it's
- *  actually readable. Same logic for "dark". The previous convention
- *  inverted these and made both unreadable. */
+// Preview on the surface the variant is designed to live on.
 function getPreviewBg(variantKey: string): string {
   switch (variantKey) {
     case "light":

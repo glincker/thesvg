@@ -1,5 +1,6 @@
 import { ArrowUpRight, Download, Layers, Package } from "lucide-react";
 import { Github } from "@/components/icons/shared/brand-icons";
+import { TheSVGMark } from "@/components/icons/the-svg-mark";
 import Link from "next/link";
 import { TRADEMARK_POLICY_URL } from "@/lib/constants";
 import {
@@ -172,8 +173,14 @@ export function Footer() {
           <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5">
             {/* Brand column */}
             <div className="flex flex-col gap-4 sm:col-span-2 lg:col-span-1">
-              <Link href="/" className="text-lg font-bold text-foreground">
-                theSVG
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 text-lg font-bold text-foreground"
+              >
+                <TheSVGMark className="h-6 w-6" />
+                <span>
+                  the<span className="text-orange-500">SVG</span>
+                </span>
               </Link>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 The Open SVG Brand Library. No gatekeeping. Every brand deserves a place.
