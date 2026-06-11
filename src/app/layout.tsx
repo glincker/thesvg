@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -88,6 +88,24 @@ export const metadata: Metadata = {
       "application/rss+xml": "https://thesvg.org/feed.xml",
     },
   },
+  appleWebApp: {
+    capable: true,
+    title: "theSVG",
+    statusBarStyle: "black-translucent",
+  },
+};
+
+// Mobile-friendly viewport so the layout uses the full notched area,
+// scales correctly at common phone widths (360 - 430), and still allows
+// the user to zoom for accessibility (no maximum-scale lockdown).
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
+  ],
 };
 
 export default function RootLayout({
@@ -123,7 +141,7 @@ export default function RootLayout({
           <Suspense>
             <Header />
           </Suspense>
-          <main className="min-h-[calc(100vh-3.75rem)]">{children}</main>
+          <main className="min-h-[calc(100dvh-7.25rem)] sm:min-h-[calc(100dvh-3.75rem)]">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
