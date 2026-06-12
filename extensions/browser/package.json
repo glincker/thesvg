@@ -26,5 +26,10 @@
     "@wxt-dev/module-react": "^1.1.0",
     "typescript": "^5.0.0",
     "wxt": "^0.19.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@vitejs/plugin-react": "^4.4.1"
+    }
   }
 }
