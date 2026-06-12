@@ -1,31 +1,34 @@
 <p align="center">
   <a href="https://github.com/glincker/thesvg">
-    <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" alt="theSVG - 6,030+ brand SVG icons" width="700" />
+    <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" alt="thesvg - 6,030+ brand SVG icons" width="700" />
   </a>
 </p>
 
 # @thesvg/mcp-server
 
-MCP (Model Context Protocol) server for [thesvg.org](https://thesvg.org) - gives AI agents (Claude, etc.) direct access to 3,800+ brand SVG icons.
+MCP (Model Context Protocol) server for [thesvg.org](https://thesvg.org). Gives AI agents in Claude Desktop, Cursor, Claude Code, and any MCP-aware client direct access to 6,115+ brand SVG icons -- no API key required.
 
 ## What it does
 
-The server exposes four tools that AI agents can call:
+The server exposes five tools that AI agents can call:
 
 | Tool | Description |
 |------|-------------|
-| `search_icons` | Search icons by name, slug, or category |
+| `search_icons` | Fuzzy search icons by brand name or slug |
 | `get_icon` | Fetch raw SVG markup + metadata for a specific icon |
-| `get_icon_url` | Get a CDN or API URL for an icon (for embedding) |
-| `list_categories` | List all available icon categories with counts |
+| `list_variants` | List available variants for a specific icon |
+| `get_icon_url` | Get a jsDelivr CDN URL for embedding (no SVG fetch) |
+| `list_categories` | List all icon categories with counts |
+
+## Data source
+
+Icons are bundled at build time from the thesvg.org open registry (6,115+ entries). SVG content is fetched on demand from the jsDelivr CDN at `https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/{slug}/{variant}.svg`.
+
+**Tradeoff**: bundling the registry (~2.8 MB) means the server starts instantly with no network dependency and works offline for search/URL queries. Only `get_icon` requires a network request (to fetch the SVG from jsDelivr). To refresh to a newer registry, rebuild the package.
 
 ## Installation
 
-```bash
-npm install -g @thesvg/mcp-server
-```
-
-Or with npx (no install needed):
+No install needed with npx:
 
 ```json
 {
@@ -38,6 +41,12 @@ Or with npx (no install needed):
 }
 ```
 
+Or install globally:
+
+```bash
+npm install -g @thesvg/mcp-server
+```
+
 ## Configuration
 
 ### Claude Desktop
@@ -48,21 +57,14 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS)
 {
   "mcpServers": {
     "thesvg": {
-      "command": "thesvg-mcp"
+      "command": "npx",
+      "args": ["-y", "@thesvg/mcp-server"]
     }
   }
 }
 ```
 
-### Claude Code (CLI)
-
-Add to your Claude Code settings or run:
-
-```bash
-claude mcp add thesvg -- thesvg-mcp
-```
-
-Or via the settings JSON:
+If you installed globally:
 
 ```json
 {
@@ -74,34 +76,67 @@ Or via the settings JSON:
 }
 ```
 
+### Cursor
+
+Add to `.cursor/mcp.json` in your project, or `~/.cursor/mcp.json` globally:
+
+```json
+{
+  "mcpServers": {
+    "thesvg": {
+      "command": "npx",
+      "args": ["-y", "@thesvg/mcp-server"]
+    }
+  }
+}
+```
+
+### Claude Code (CLI)
+
+```bash
+claude mcp add thesvg -- npx -y @thesvg/mcp-server
+```
+
+Or add to `.claude/settings.json` in your project:
+
+```json
+{
+  "mcpServers": {
+    "thesvg": {
+      "command": "npx",
+      "args": ["-y", "@thesvg/mcp-server"]
+    }
+  }
+}
+```
+
 ## Tools
 
 ### `search_icons`
 
-Search for brand icons by name, slug, or category.
+Fuzzy search for brand icons by name or slug.
 
 **Input**:
 ```json
 {
   "query": "github",
-  "category": "social",
   "limit": 10
 }
 ```
 
 **Output** (example):
 ```
-Found 3 icons:
-- GitHub (slug: `github`) - categories: social, development
-- GitHub Actions (slug: `github-actions`) - categories: devops
-- GitHub Copilot (slug: `github-copilot`) - categories: ai, development
+Found 5 icons for "github":
+- GitHub (slug: `github`) | variants: default, mono | categories: Software, Development
+- GitHub Actions (slug: `github-actions`) | variants: default, mono | categories: DevOps
+...
 ```
 
 ---
 
 ### `get_icon`
 
-Fetch the raw SVG markup for a specific icon.
+Fetch the raw SVG markup for a specific icon variant.
 
 **Input**:
 ```json
@@ -116,10 +151,9 @@ Fetch the raw SVG markup for a specific icon.
 # Stripe
 
 **Slug**: `stripe`
-**Categories**: payments, fintech
-**Available variants**: default, dark, light
-
 **Variant**: default
+**CDN URL**: https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/stripe/default.svg
+**Available variants**: default, mono, dark
 
 ```svg
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">...</svg>
@@ -127,44 +161,67 @@ Fetch the raw SVG markup for a specific icon.
 
 ---
 
+### `list_variants`
+
+List available variants for a specific icon.
+
+**Input**:
+```json
+{ "slug": "openai" }
+```
+
+**Output** (example):
+```
+openai has 6 variants:
+- `default` -- https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/openai/default.svg
+- `light` -- https://...
+- `dark` -- https://...
+- `wordmark` -- https://...
+- `wordmarkLight` -- https://...
+- `wordmarkDark` -- https://...
+```
+
+---
+
 ### `get_icon_url`
 
-Get a URL for embedding an icon in HTML or Markdown.
+Get a CDN URL for embedding an icon in HTML or Markdown (no SVG fetch).
 
 **Input**:
 ```json
 {
   "slug": "openai",
-  "variant": "default",
-  "cdn": true
+  "variant": "default"
 }
 ```
 
 **Output** (example):
 ```
-Icon URL for `openai` (variant: default):
+CDN URL for `openai` (variant: default):
 
-https://cdn.thesvg.org/icons/openai.svg
+https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/openai/default.svg
 
 Example usage:
-<img src="https://cdn.thesvg.org/icons/openai.svg" alt="openai" width="32" height="32" />
+<img src="..." alt="OpenAI" width="32" height="32" />
+
+![OpenAI](...)
 ```
 
 ---
 
 ### `list_categories`
 
-Discover all available icon categories.
+Discover all icon categories with counts.
 
 **Input**: `{}` (no parameters)
 
 **Output** (example):
 ```
-42 categories available:
+128 categories across 6115 icons:
 
-- Technology (slug: `tech`) - 1,200 icons
-- Social (slug: `social`) - 380 icons
-- Payments (slug: `payments`) - 95 icons
+- Software - 4,200 icons
+- Platform - 2,100 icons
+- AI - 310 icons
 ...
 ```
 
@@ -172,16 +229,19 @@ Discover all available icon categories.
 
 ```bash
 # Install dependencies
-pnpm install
+npm install
 
-# Build
-pnpm build
+# Build (copies icons.json, compiles TypeScript)
+npm run build
 
 # Run locally
 node dist/index.js
+
+# Quick smoke test
+node test-smoke.mjs
 ```
 
 ## Requirements
 
 - Node.js >= 18
-- Internet access to reach thesvg.org API
+- Internet access only for `get_icon` (fetches SVGs from jsDelivr CDN)

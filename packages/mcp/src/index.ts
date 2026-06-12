@@ -2,169 +2,146 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
+import Fuse from "fuse.js";
+import { createRequire } from "module";
+import { fileURLToPath } from "url";
+import path from "path";
 
-const BASE_URL = "https://thesvg.org";
-const REGISTRY_URL = `${BASE_URL}/api/registry.json`;
-const CATEGORIES_URL = `${BASE_URL}/api/categories.json`;
-const CDN_BASE = "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public";
+// --- Constants ---
+
+const CDN_BASE =
+  "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons";
 
 // --- Types ---
 
-interface RegistryIcon {
+interface RawIcon {
   slug: string;
   title: string;
   aliases: string[];
+  hex: string;
+  categories: string[];
+  variants: Record<string, string>;
+  license: string;
+  url?: string;
+  dateAdded: string;
+  collection: string;
+  guidelines?: string;
+}
+
+interface IconEntry {
+  slug: string;
+  name: string;
+  variants: string[];
   categories: string[];
   hex: string;
-  url: string | null;
   license: string;
+  url?: string;
+  aliases: string[];
+}
+
+interface SearchResult {
+  slug: string;
+  name: string;
   variants: string[];
-}
-
-interface RegistryDocument {
-  total: number;
-  icons: RegistryIcon[];
-}
-
-interface VariantDetail {
-  url: string;
-  svg: string;
+  categories: string[];
 }
 
 interface IconDetail {
+  slug: string;
   name: string;
-  title: string;
+  variants: string[];
   categories: string[];
   hex: string;
-  url?: string;
   license: string;
-  variants: Record<string, VariantDetail>;
-  cdn: {
-    jsdelivr: string;
-    direct: string;
-  };
+  url?: string;
 }
 
-interface Category {
-  name: string;
-  count: number;
+// --- Data loading ---
+
+// icons.json is bundled at build time; no network dependency at startup.
+// Tradeoff: the binary grows by ~2-3 MB but works offline and starts instantly.
+// To refresh data, rebuild the package after pulling the latest icons.json.
+
+let indexCache: IconEntry[] | null = null;
+let fuseCache: Fuse<IconEntry> | null = null;
+
+function loadIndex(): IconEntry[] {
+  if (indexCache) return indexCache;
+
+  // icons.json is copied into the same directory as index.js at build time.
+  const __dirname = path.dirname(fileURLToPath(import.meta.url));
+  const require = createRequire(import.meta.url);
+  const iconsPath = path.join(__dirname, "icons.json");
+  const raw = require(iconsPath) as RawIcon[];
+
+  indexCache = raw.map((icon) => ({
+    slug: icon.slug,
+    name: icon.title,
+    variants: Object.keys(icon.variants),
+    categories: icon.categories ?? [],
+    hex: icon.hex,
+    license: icon.license,
+    url: icon.url,
+    aliases: icon.aliases ?? [],
+  }));
+
+  return indexCache;
 }
 
-interface CategoriesResponse {
-  categories: Category[];
+function getFuse(): Fuse<IconEntry> {
+  if (fuseCache) return fuseCache;
+
+  const icons = loadIndex();
+  fuseCache = new Fuse(icons, {
+    keys: [
+      { name: "slug", weight: 0.4 },
+      { name: "name", weight: 0.4 },
+      { name: "aliases", weight: 0.2 },
+    ],
+    threshold: 0.35,
+    includeScore: true,
+  });
+
+  return fuseCache;
 }
 
 // --- Helpers ---
 
-let cachedRegistry: RegistryDocument | null = null;
-
-async function loadRegistry(): Promise<RegistryDocument> {
-  if (cachedRegistry) return cachedRegistry;
-  const res = await fetch(REGISTRY_URL);
-  if (!res.ok) {
-    throw new Error(`Registry fetch failed: ${res.status} ${res.statusText}`);
-  }
-  cachedRegistry = (await res.json()) as RegistryDocument;
-  return cachedRegistry;
+function buildCdnUrl(slug: string, variant: string): string {
+  const variantName = variant === "default" ? "default" : variant;
+  return `${CDN_BASE}/${encodeURIComponent(slug)}/${variantName}.svg`;
 }
 
-function variantToFilename(variant: string): string {
-  return variant.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+function findIcon(slug: string): IconEntry | undefined {
+  return loadIndex().find((i) => i.slug === slug);
 }
 
-async function fetchSvgContent(slug: string, variant: string): Promise<string> {
-  const filename = variantToFilename(variant);
-  const url = `${BASE_URL}/icons/${encodeURIComponent(slug)}/${filename}.svg`;
-  const res = await fetch(url);
-  if (!res.ok) {
-    throw new Error(`SVG fetch failed: ${res.status} ${url}`);
-  }
-  return res.text();
-}
+// --- Search ---
 
-async function fetchRegistry(query?: string, limit = 50): Promise<RegistryIcon[]> {
-  const registry = await loadRegistry();
-  let icons = registry.icons;
-  if (query) {
-    const q = query.toLowerCase();
-    icons = icons.filter(
-      (i) =>
-        i.slug.toLowerCase().includes(q) ||
-        i.title.toLowerCase().includes(q) ||
-        i.aliases.some((a) => a.toLowerCase().includes(q))
-    );
-  }
-  return icons.slice(0, limit);
-}
-
-async function fetchIconDetail(slug: string): Promise<IconDetail> {
-  const registry = await loadRegistry();
-  const icon = registry.icons.find((i) => i.slug === slug);
-  if (!icon) {
-    throw new Error(`Icon not found: "${slug}"`);
-  }
-
-  const variants: Record<string, VariantDetail> = {};
-  for (const variant of icon.variants) {
-    const filename = variantToFilename(variant);
-    const directUrl = `${BASE_URL}/icons/${slug}/${filename}.svg`;
-    try {
-      const svg = await fetchSvgContent(slug, variant);
-      variants[variant] = { url: directUrl, svg };
-    } catch {
-      // skip variants whose SVG file is missing
-    }
-  }
-
-  const detail: IconDetail = {
-    name: icon.slug,
-    title: icon.title,
-    categories: icon.categories,
-    hex: icon.hex,
-    license: icon.license,
-    variants,
-    cdn: {
-      jsdelivr: `${CDN_BASE}/icons/${slug}/default.svg`,
-      direct: `${BASE_URL}/icons/${slug}/default.svg`,
-    },
-  };
-  if (icon.url) detail.url = icon.url;
-  return detail;
-}
-
-async function fetchCategories(): Promise<Category[]> {
-  const res = await fetch(CATEGORIES_URL);
-  if (!res.ok) {
-    throw new Error(`Categories fetch failed: ${res.status} ${res.statusText}`);
-  }
-  const data = (await res.json()) as CategoriesResponse;
-  return data.categories;
-}
-
-function buildIconUrl(slug: string, variant: string, useCdn: boolean): string {
-  const variantFile = variant === "default" ? "default" : variant;
-  if (useCdn) {
-    return `${CDN_BASE}/icons/${slug}/${variantFile}.svg`;
-  }
-  return `https://thesvg.org/icons/${slug}/${variantFile}.svg`;
+export function searchIcons(query: string, limit = 20): SearchResult[] {
+  const fuse = getFuse();
+  const results = fuse.search(query, { limit });
+  return results.map((r) => ({
+    slug: r.item.slug,
+    name: r.item.name,
+    variants: r.item.variants,
+    categories: r.item.categories,
+  }));
 }
 
 // --- MCP Server ---
 
 const server = new McpServer({
   name: "thesvg",
-  version: "0.1.0",
+  version: "0.6.0",
 });
 
+// Tool: search_icons
 server.tool(
   "search_icons",
-  "Search for brand SVG icons from thesvg.org by name, slug, or category. Returns a list of matching icons with their slugs, titles, and categories.",
+  "Search for brand SVG icons from thesvg.org by name or slug. Returns matching icons with slug, name, variants, and categories. Use get_icon or get_icon_url to retrieve the actual SVG.",
   {
-    query: z.string().describe("Search term to filter icons by name or slug"),
-    category: z
-      .string()
-      .optional()
-      .describe("Filter by category slug (e.g. 'social', 'tech')"),
+    query: z.string().describe("Brand name or partial slug to search for"),
     limit: z
       .number()
       .int()
@@ -172,39 +149,34 @@ server.tool(
       .max(100)
       .optional()
       .default(20)
-      .describe("Maximum number of results to return (1-100, default 20)"),
+      .describe("Maximum number of results (1-100, default 20)"),
   },
-  async ({ query, category, limit }) => {
+  async ({ query, limit }) => {
     try {
-      const icons = await fetchRegistry(query, limit ?? 20);
-
-      let results = icons;
-      if (category) {
-        const cat = category.toLowerCase().trim();
-        results = results.filter((icon) =>
-          icon.categories.some((c) => c.toLowerCase() === cat)
-        );
-      }
+      const results = searchIcons(query, limit ?? 20);
 
       if (results.length === 0) {
         return {
           content: [
             {
               type: "text",
-              text: `No icons found matching "${query}"${category ? ` in category "${category}"` : ""}.`,
+              text: `No icons found matching "${query}".`,
             },
           ],
         };
       }
 
       const lines = [
-        `Found ${results.length} icon${results.length === 1 ? "" : "s"}:`,
+        `Found ${results.length} icon${results.length === 1 ? "" : "s"} for "${query}":`,
         "",
         ...results.map(
           (icon) =>
-            `- **${icon.title}** (slug: \`${icon.slug}\`)` +
+            `- **${icon.name}** (slug: \`${icon.slug}\`)` +
+            (icon.variants.length > 0
+              ? ` | variants: ${icon.variants.join(", ")}`
+              : "") +
             (icon.categories.length > 0
-              ? ` — categories: ${icon.categories.join(", ")}`
+              ? ` | categories: ${icon.categories.join(", ")}`
               : "")
         ),
       ];
@@ -222,48 +194,74 @@ server.tool(
   }
 );
 
+// Tool: get_icon
 server.tool(
   "get_icon",
-  "Fetch a specific brand SVG icon from thesvg.org by slug. Returns the raw SVG markup inline along with metadata.",
+  "Fetch the raw SVG content for a specific brand icon from the jsDelivr CDN. Returns SVG markup, metadata, and the CDN URL.",
   {
     slug: z
       .string()
-      .describe("Icon slug identifier (e.g. 'github', 'stripe', 'openai')"),
+      .describe(
+        "Icon slug identifier (e.g. 'github', 'stripe', 'openai'). Use search_icons to find slugs."
+      ),
     variant: z
       .string()
       .optional()
       .default("default")
       .describe(
-        "Icon variant to fetch (e.g. 'default', 'dark', 'light'). Defaults to 'default'."
+        "Icon variant to fetch: 'default', 'mono', 'light', 'dark', 'wordmark', 'color'. Defaults to 'default'. Use list_variants to see what a specific icon supports."
       ),
   },
   async ({ slug, variant }) => {
     try {
-      const icon = await fetchIconDetail(slug);
+      const icon = findIcon(slug);
+      if (!icon) {
+        return {
+          content: [
+            {
+              type: "text",
+              text: `Icon not found: "${slug}". Use search_icons to find the correct slug.`,
+            },
+          ],
+          isError: true,
+        };
+      }
 
       const resolvedVariant = variant ?? "default";
-      const availableVariants = Object.keys(icon.variants);
-      const variantData = icon.variants[resolvedVariant] || icon.variants["default"];
-      const svgContent = variantData?.svg || "SVG content not available";
+      const cdnUrl = buildCdnUrl(slug, resolvedVariant);
+
+      const res = await fetch(cdnUrl);
+      if (!res.ok) {
+        return {
+          content: [
+            {
+              type: "text",
+              text: `Could not fetch SVG for "${slug}" variant "${resolvedVariant}" (${res.status}). Available variants: ${icon.variants.join(", ")}.`,
+            },
+          ],
+          isError: true,
+        };
+      }
+
+      const svg = await res.text();
 
       const lines = [
-        `# ${icon.title}`,
+        `# ${icon.name}`,
         "",
-        `**Slug**: \`${icon.name}\``,
-        `**Categories**: ${icon.categories.length > 0 ? icon.categories.join(", ") : "none"}`,
-        `**Brand color**: #${icon.hex}`,
-        availableVariants.length > 0
-          ? `**Available variants**: ${availableVariants.join(", ")}`
-          : "",
-        icon.url ? `**Website**: ${icon.url}` : "",
-        "",
+        `**Slug**: \`${icon.slug}\``,
         `**Variant**: ${resolvedVariant}`,
-        `**Direct URL**: ${variantData?.url || "N/A"}`,
+        `**CDN URL**: ${cdnUrl}`,
+        icon.categories.length > 0
+          ? `**Categories**: ${icon.categories.join(", ")}`
+          : null,
+        `**Brand color**: #${icon.hex}`,
+        `**Available variants**: ${icon.variants.join(", ")}`,
+        icon.url ? `**Website**: ${icon.url}` : null,
         "",
         "```svg",
-        svgContent,
+        svg,
         "```",
-      ].filter((line) => line !== undefined);
+      ].filter((line): line is string => line !== null);
 
       return {
         content: [{ type: "text", text: lines.join("\n") }],
@@ -278,46 +276,97 @@ server.tool(
   }
 );
 
+// Tool: list_variants
 server.tool(
-  "get_icon_url",
-  "Get a direct URL for a brand SVG icon from thesvg.org. Useful when you need a URL to embed in HTML or Markdown rather than the raw SVG content.",
+  "list_variants",
+  "List all available variants for a specific brand icon. Variants may include: default, mono, light, dark, wordmark, wordmarkLight, wordmarkDark, color.",
   {
     slug: z
       .string()
-      .describe("Icon slug identifier (e.g. 'github', 'stripe', 'openai')"),
+      .describe(
+        "Icon slug identifier (e.g. 'github', 'openai'). Use search_icons to find slugs."
+      ),
+  },
+  async ({ slug }) => {
+    try {
+      const icon = findIcon(slug);
+      if (!icon) {
+        return {
+          content: [
+            {
+              type: "text",
+              text: `Icon not found: "${slug}". Use search_icons to find the correct slug.`,
+            },
+          ],
+          isError: true,
+        };
+      }
+
+      const lines = [
+        `**${icon.name}** (\`${icon.slug}\`) has ${icon.variants.length} variant${icon.variants.length === 1 ? "" : "s"}:`,
+        "",
+        ...icon.variants.map(
+          (v) => `- \`${v}\` -- ${buildCdnUrl(slug, v)}`
+        ),
+      ];
+
+      return {
+        content: [{ type: "text", text: lines.join("\n") }],
+      };
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      return {
+        content: [
+          { type: "text", text: `Error listing variants: ${message}` },
+        ],
+        isError: true,
+      };
+    }
+  }
+);
+
+// Tool: get_icon_url
+server.tool(
+  "get_icon_url",
+  "Get a jsDelivr CDN URL for a brand icon without fetching the SVG content. Use this to embed icons in HTML, Markdown, Notion, Webflow, or any img tag. Cheaper than get_icon when you only need the URL.",
+  {
+    slug: z
+      .string()
+      .describe(
+        "Icon slug identifier (e.g. 'github', 'stripe', 'openai'). Use search_icons to find slugs."
+      ),
     variant: z
       .string()
       .optional()
       .default("default")
-      .describe("Icon variant (e.g. 'default', 'dark', 'light')"),
-    cdn: z
-      .boolean()
-      .optional()
-      .default(true)
       .describe(
-        "Use the CDN URL for better performance (default: true). Set to false for the direct API URL."
+        "Icon variant: 'default', 'mono', 'light', 'dark', 'wordmark', 'color'. Defaults to 'default'."
       ),
   },
-  async ({ slug, variant, cdn }) => {
+  async ({ slug, variant }) => {
     try {
       const resolvedVariant = variant ?? "default";
-      const useCdn = cdn !== false;
-      const url = buildIconUrl(slug, resolvedVariant, useCdn);
+      const url = buildCdnUrl(slug, resolvedVariant);
+
+      const icon = findIcon(slug);
+      const name = icon?.name ?? slug;
 
       return {
         content: [
           {
             type: "text",
             text: [
-              `**Icon URL** for \`${slug}\` (variant: ${resolvedVariant}):`,
+              `**CDN URL** for \`${slug}\` (variant: ${resolvedVariant}):`,
               "",
               url,
               "",
-              `Source: ${useCdn ? "CDN" : "API"}`,
-              "",
               "Example usage:",
-              `\`\`\`html`,
-              `<img src="${url}" alt="${slug}" width="32" height="32" />`,
+              "```html",
+              `<img src="${url}" alt="${name}" width="32" height="32" />`,
+              "```",
+              "",
+              "```markdown",
+              `![${name}](${url})`,
               "```",
             ].join("\n"),
           },
@@ -335,24 +384,33 @@ server.tool(
   }
 );
 
+// Tool: list_categories
 server.tool(
   "list_categories",
-  "List all available icon categories from thesvg.org with their icon counts. Use this to discover what categories exist before searching.",
+  "List all icon categories available in thesvg.org library with icon counts. Use this to discover what categories exist before filtering search results.",
   {},
   async () => {
     try {
-      const categories = await fetchCategories();
+      const icons = loadIndex();
+      const counts = new Map<string, number>();
+      for (const icon of icons) {
+        for (const cat of icon.categories) {
+          counts.set(cat, (counts.get(cat) ?? 0) + 1);
+        }
+      }
 
-      if (categories.length === 0) {
+      const sorted = Array.from(counts.entries())
+        .sort((a, b) => b[1] - a[1])
+        .map(([name, count]) => ({ name, count }));
+
+      if (sorted.length === 0) {
         return {
           content: [{ type: "text", text: "No categories found." }],
         };
       }
 
-      const sorted = [...categories].sort((a, b) => b.count - a.count);
-
       const lines = [
-        `${sorted.length} categories available:`,
+        `${sorted.length} categories across ${icons.length} icons:`,
         "",
         ...sorted.map(
           (cat) =>
@@ -367,7 +425,7 @@ server.tool(
       const message = err instanceof Error ? err.message : String(err);
       return {
         content: [
-          { type: "text", text: `Error fetching categories: ${message}` },
+          { type: "text", text: `Error listing categories: ${message}` },
         ],
         isError: true,
       };
