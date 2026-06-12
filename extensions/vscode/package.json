@@ -63,12 +63,14 @@
     "build": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --minify",
     "watch": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --watch",
     "package": "vsce package",
-    "publish": "vsce publish"
+    "publish": "vsce publish",
+    "publish:ovsx": "ovsx publish -p $OVSX_PAT"
   },
   "devDependencies": {
     "@types/vscode": "^1.85.0",
-    "esbuild": "^0.25.0",
     "@vscode/vsce": "^2.22.0",
+    "esbuild": "^0.25.0",
+    "ovsx": "^0.9.5",
     "typescript": "^5.3.0"
   },
   "overrides": {
