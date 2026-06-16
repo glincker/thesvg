@@ -1,5 +1,11 @@
 # @thesvg/mcp-server
 
+## 0.6.1
+
+### Patch Changes
+
+- feat: platform expansion — browser stores, open vsx, mcp server ([#566](https://github.com/glincker/thesvg/issues/566))
+
 ## 0.6.0
 
 ### Minor Changes
