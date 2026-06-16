@@ -78135,6 +78135,7 @@
       "default": "/icons/mondelez-international/default.svg",
       "light": "/icons/mondelez-international/light.svg",
       "mono": "/icons/mondelez-international/mono.svg",
+      "dark": "/icons/mondelez-international/dark.svg",
       "wordmark": "/icons/mondelez-international/wordmark.svg",
       "wordmarkDark":"/icons/mondelez-international/wordmarkDark.svg",
       "wordmarkLight": "/icons/mondelez-international/wordmarkLight.svg"
