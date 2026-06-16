@@ -143,14 +143,14 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ScrollToTop />
-          {/* Desktop header — `lg:` and above. Below that the MobileShell
-              renders its own top bar + bottom dock to deliver an app-like
-              feel without touching desktop chrome. */}
-          <div className="hidden lg:block">
-            <Suspense>
-              <Header />
-            </Suspense>
-          </div>
+          {/* Desktop header — `lg:` and above. Rendered as a body-level
+              sibling (not wrapped) so position: sticky keeps a containing
+              block tall enough for it to stick against the viewport.
+              Below `lg` the MobileShell renders its own top bar + bottom
+              dock to deliver an app-like feel. */}
+          <Suspense>
+            <Header />
+          </Suspense>
           <Suspense>
             <MobileShell>
               <main className="min-h-[calc(100dvh-3rem)] lg:min-h-[calc(100dvh-3.75rem)]">

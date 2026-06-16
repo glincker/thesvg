@@ -41300,8 +41300,9 @@
     "aliases": [],
     "hex": "D97757",
     "categories": [
+      "AI",
       "Software",
-      "Platform"
+      "Devtool"
     ],
     "variants": {
       "default": "/icons/claude-code/color.svg",
@@ -41431,8 +41432,9 @@
     "aliases": [],
     "hex": "18181B",
     "categories": [
+      "AI",
       "Software",
-      "Platform"
+      "Devtool"
     ],
     "variants": {
       "default": "/icons/cline/default.svg",
@@ -45238,7 +45240,7 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	{
+  {
     "slug": "dassault-aviation",
     "title": "Dassault Aviation",
     "aliases": [],
@@ -45863,8 +45865,8 @@
     ],
     "hex": "4285F4",
     "categories": [
-      "Software",
-      "Platform"
+      "AI",
+      "Software"
     ],
     "variants": {
       "default": "/icons/deepmind/default.svg",
@@ -49102,7 +49104,8 @@
     "hex": "fff",
     "categories": [
       "AI",
-      "Software"
+      "Software",
+      "Media"
     ],
     "variants": {
       "default": "/icons/elevenlabs/default.svg",
@@ -66940,6 +66943,49 @@
     "collection": "brands"
   },
   {
+    "slug": "jaguar",
+    "title": "Jaguar",
+    "aliases": [
+      "JLR",
+      "Jaguar Cars"
+    ],
+    "hex": "4C4A4D",
+    "categories": [
+      "Automotive",
+      "Transportation"
+    ],
+    "variants": {
+      "default": "/icons/jaguar/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.jaguar.com/",
+    "dateAdded": "2026-06-16",
+    "collection": "brands",
+    "supersedes": "jaguar-legacy"
+  },
+  {
+    "slug": "jaguar-legacy",
+    "title": "Jaguar (legacy)",
+    "aliases": [
+      "Jaguar Cars classic",
+      "JAGUAR wordmark"
+    ],
+    "hex": "141414",
+    "categories": [
+      "Automotive",
+      "Transportation"
+    ],
+    "variants": {
+      "default": "/icons/jaguar-legacy/default.svg",
+      "dark": "/icons/jaguar-legacy/dark.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.jaguar.com/",
+    "dateAdded": "2026-06-16",
+    "collection": "brands",
+    "supersededBy": "jaguar"
+  },
+  {
     "slug": "jameson",
     "title": "Jameson",
     "aliases": [],
@@ -69847,7 +69893,33 @@
     "slug": "kfc",
     "title": "KFC",
     "aliases": [
-      "Kentucky Fried Chicken"
+      "Kentucky Fried Chicken",
+      "Colonel Sanders"
+    ],
+    "hex": "F5002B",
+    "categories": [
+      "Food",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/kfc/default.svg",
+      "color": "/icons/kfc/color.svg",
+      "dark": "/icons/kfc/dark.svg",
+      "mono": "/icons/kfc/mono.svg",
+      "wordmark": "/icons/kfc/wordmark.svg"
+    },
+    "license": "Trademark",
+    "url": "https://global.kfc.com/media-assets",
+    "dateAdded": "2026-06-16",
+    "collection": "brands",
+    "supersedes": "kfc-legacy"
+  },
+  {
+    "slug": "kfc-legacy",
+    "title": "KFC (legacy)",
+    "aliases": [
+      "KFC original",
+      "Kentucky Fried Chicken legacy"
     ],
     "hex": "F40027",
     "categories": [
@@ -69855,13 +69927,14 @@
       "Platform"
     ],
     "variants": {
-      "default": "/icons/kfc/default.svg",
-      "mono": "/icons/kfc/mono.svg"
+      "default": "/icons/kfc-legacy/default.svg",
+      "mono": "/icons/kfc-legacy/mono.svg"
     },
     "license": "CC0-1.0",
     "url": "https://global.kfc.com/asset-library/",
-    "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "dateAdded": "2026-06-16",
+    "collection": "brands",
+    "supersededBy": "kfc"
   },
   {
     "slug": "khan-academy",
@@ -71290,8 +71363,8 @@
     "aliases": [],
     "hex": "030710",
     "categories": [
-      "Software",
-      "Platform"
+      "AI",
+      "Devtool"
     ],
     "variants": {
       "default": "/icons/langchain/default.svg",
@@ -73286,8 +73359,8 @@
     "aliases": [],
     "hex": "000",
     "categories": [
-      "Software",
-      "Platform"
+      "AI",
+      "Devtool"
     ],
     "variants": {
       "default": "/icons/llamaindex/color.svg",
@@ -74124,8 +74197,10 @@
     "aliases": [],
     "hex": "000",
     "categories": [
+      "AI",
       "Software",
-      "Platform"
+      "Design",
+      "Media"
     ],
     "variants": {
       "default": "/icons/luma/color.svg",
@@ -75205,7 +75280,7 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	 {
+  {
     "slug": "masan-group",
     "title": "Masan Group",
     "aliases": [],
@@ -77221,7 +77296,9 @@
     "hex": "fff",
     "categories": [
       "AI",
-      "Software"
+      "Software",
+      "Design",
+      "Media"
     ],
     "variants": {
       "default": "/icons/midjourney/default.svg",
@@ -78148,7 +78225,7 @@
     "dateAdded": "2026-03-09",
     "collection": "brands"
   },
-	{
+  {
     "slug": "mondelez-international",
     "title": "Mondelez International",
     "aliases": [],
@@ -78162,7 +78239,7 @@
       "mono": "/icons/mondelez-international/mono.svg",
       "dark": "/icons/mondelez-international/dark.svg",
       "wordmark": "/icons/mondelez-international/wordmark.svg",
-      "wordmarkDark":"/icons/mondelez-international/wordmarkDark.svg",
+      "wordmarkDark": "/icons/mondelez-international/wordmarkDark.svg",
       "wordmarkLight": "/icons/mondelez-international/wordmarkLight.svg"
     },
     "license": "Unknown",
@@ -81016,7 +81093,7 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	{
+  {
     "slug": "nordea",
     "title": "Nordea",
     "aliases": [],
@@ -86450,8 +86527,10 @@
     "aliases": [],
     "hex": "FDF7EF",
     "categories": [
+      "AI",
       "Software",
-      "Platform"
+      "Design",
+      "Media"
     ],
     "variants": {
       "default": "/icons/pika/mono.svg",
@@ -93954,7 +94033,9 @@
     "hex": "fff",
     "categories": [
       "AI",
-      "Software"
+      "Software",
+      "Design",
+      "Media"
     ],
     "variants": {
       "default": "/icons/runway/default.svg"
@@ -100076,7 +100157,9 @@
     "hex": "000",
     "categories": [
       "AI",
-      "Software"
+      "Software",
+      "Music",
+      "Media"
     ],
     "variants": {
       "default": "/icons/suno/default.svg",
@@ -105258,7 +105341,7 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	{
+  {
     "slug": "ubs-etracs",
     "title": "UBS Etracs",
     "aliases": [],
@@ -105270,9 +105353,9 @@
     "variants": {
       "default": "/icons/ubs-etracs/default.svg",
       "mono": "/icons/ubs-etracs/mono.svg",
-			"dark": "/icons/ubs-etracs/dark.svg",
-			"light": "/icons/ubs-etracs/light.svg",
-			"wordmark": "/icons/ubs-etracs/wordmark.svg"
+      "dark": "/icons/ubs-etracs/dark.svg",
+      "light": "/icons/ubs-etracs/light.svg",
+      "wordmark": "/icons/ubs-etracs/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://etracs.ubs.com/",
@@ -105378,8 +105461,10 @@
     "aliases": [],
     "hex": "e30a5d",
     "categories": [
+      "AI",
       "Software",
-      "Platform"
+      "Music",
+      "Media"
     ],
     "variants": {
       "default": "/icons/udio/color.svg",
