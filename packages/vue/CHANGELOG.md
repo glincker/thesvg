@@ -1,5 +1,11 @@
 # @thesvg/vue
 
+## 3.0.17
+
+### Patch Changes
+
+- feat: add 12 popular AI/dev brand icons ([#583](https://github.com/glincker/thesvg/issues/583))
+
 ## 3.0.16
 
 ### Patch Changes
