@@ -78123,6 +78123,27 @@
     "dateAdded": "2026-03-09",
     "collection": "brands"
   },
+	{
+    "slug": "mondelez-international",
+    "title": "Mondelez International",
+    "aliases": [],
+    "hex": "4F2170",
+    "categories": [
+      "Food"
+    ],
+    "variants": {
+      "default": "/icons/mondelez-international/default.svg",
+      "light": "/icons/mondelez-international/light.svg",
+      "mono": "/icons/mondelez-international/mono.svg",
+      "wordmark": "/icons/mondelez-international/wordmark.svg",
+      "wordmarkDark":"/icons/mondelez-international/wordmarkDark.svg",
+      "wordmarkLight": "/icons/mondelez-international/wordmarkLight.svg"
+    },
+    "license": "Unknown",
+    "url": "https://www.mondelezinternational.com/",
+    "dateAdded": "2026-06-16",
+    "collection": "brands"
+  },
   {
     "slug": "monero",
     "title": "Monero",
