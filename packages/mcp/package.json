@@ -32,9 +32,9 @@
     "README.md"
   ],
   "scripts": {
-    "prebuild": "cp ../../src/data/icons.json ./src/icons.json",
+    "prebuild": "node -e \"require('fs').copyFileSync('../../src/data/icons.json','./src/icons.json')\"",
     "build": "tsc",
-    "postbuild": "cp ./src/icons.json ./dist/icons.json",
+    "postbuild": "node -e \"require('fs').copyFileSync('./src/icons.json','./dist/icons.json')\"",
     "start": "node dist/index.js",
     "dev": "tsc --watch"
   },

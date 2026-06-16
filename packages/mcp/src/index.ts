@@ -9,8 +9,12 @@ import path from "path";
 
 // --- Constants ---
 
+// Pinned to the package version so CDN-served SVGs match the bundled icons.json.
+// Bump in lockstep with the version field below when refreshing the data set.
 const CDN_BASE =
-  "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons";
+  "https://cdn.jsdelivr.net/gh/glincker/thesvg@v0.6.0/public/icons";
+
+const FETCH_TIMEOUT_MS = 10_000;
 
 // --- Types ---
 
@@ -108,8 +112,7 @@ function getFuse(): Fuse<IconEntry> {
 // --- Helpers ---
 
 function buildCdnUrl(slug: string, variant: string): string {
-  const variantName = variant === "default" ? "default" : variant;
-  return `${CDN_BASE}/${encodeURIComponent(slug)}/${variantName}.svg`;
+  return `${CDN_BASE}/${encodeURIComponent(slug)}/${encodeURIComponent(variant)}.svg`;
 }
 
 function findIcon(slug: string): IconEntry | undefined {
@@ -153,7 +156,7 @@ server.tool(
   },
   async ({ query, limit }) => {
     try {
-      const results = searchIcons(query, limit ?? 20);
+      const results = searchIcons(query, limit);
 
       if (results.length === 0) {
         return {
@@ -230,7 +233,14 @@ server.tool(
       const resolvedVariant = variant ?? "default";
       const cdnUrl = buildCdnUrl(slug, resolvedVariant);
 
-      const res = await fetch(cdnUrl);
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+      let res: Response;
+      try {
+        res = await fetch(cdnUrl, { signal: controller.signal });
+      } finally {
+        clearTimeout(timer);
+      }
       if (!res.ok) {
         return {
           content: [
@@ -345,11 +355,34 @@ server.tool(
   },
   async ({ slug, variant }) => {
     try {
-      const resolvedVariant = variant ?? "default";
-      const url = buildCdnUrl(slug, resolvedVariant);
-
       const icon = findIcon(slug);
-      const name = icon?.name ?? slug;
+      if (!icon) {
+        return {
+          content: [
+            {
+              type: "text",
+              text: `Icon not found: "${slug}". Use search_icons to find the correct slug.`,
+            },
+          ],
+          isError: true,
+        };
+      }
+
+      const resolvedVariant = variant ?? "default";
+      if (!icon.variants.includes(resolvedVariant)) {
+        return {
+          content: [
+            {
+              type: "text",
+              text: `Variant "${resolvedVariant}" not available for "${slug}". Available variants: ${icon.variants.join(", ")}.`,
+            },
+          ],
+          isError: true,
+        };
+      }
+
+      const url = buildCdnUrl(slug, resolvedVariant);
+      const name = icon.name;
 
       return {
         content: [
@@ -387,7 +420,7 @@ server.tool(
 // Tool: list_categories
 server.tool(
   "list_categories",
-  "List all icon categories available in thesvg.org library with icon counts. Use this to discover what categories exist before filtering search results.",
+  "List all icon categories available in thesvg.org library with icon counts. Use this to discover what categories exist in the library and to inform follow-up search_icons queries.",
   {},
   async () => {
     try {

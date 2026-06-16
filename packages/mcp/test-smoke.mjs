@@ -65,10 +65,10 @@ console.log(
 assert(openai.variants.length >= 1, "Expected openai to have at least 1 variant");
 
 // Test: CDN URL construction
-const CDN_BASE = "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons";
+const CDN_BASE = "https://cdn.jsdelivr.net/gh/glincker/thesvg@v0.6.0/public/icons";
 const url = `${CDN_BASE}/github/default.svg`;
 assert(
-  url === "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/github/default.svg",
+  url === "https://cdn.jsdelivr.net/gh/glincker/thesvg@v0.6.0/public/icons/github/default.svg",
   `Unexpected CDN URL: ${url}`
 );
 console.log(`\nget_icon_url("github", "default") => ${url}`);

@@ -22,7 +22,7 @@ The server exposes five tools that AI agents can call:
 
 ## Data source
 
-Icons are bundled at build time from the thesvg.org open registry (6,115+ entries). SVG content is fetched on demand from the jsDelivr CDN at `https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/{slug}/{variant}.svg`.
+Icons are bundled at build time from the thesvg.org open registry (6,115+ entries). SVG content is fetched on demand from the jsDelivr CDN at `https://cdn.jsdelivr.net/gh/glincker/thesvg@v0.6.0/public/icons/{slug}/{variant}.svg`.
 
 **Tradeoff**: bundling the registry (~2.8 MB) means the server starts instantly with no network dependency and works offline for search/URL queries. Only `get_icon` requires a network request (to fetch the SVG from jsDelivr). To refresh to a newer registry, rebuild the package.
 
@@ -125,7 +125,7 @@ Fuzzy search for brand icons by name or slug.
 ```
 
 **Output** (example):
-```
+```text
 Found 5 icons for "github":
 - GitHub (slug: `github`) | variants: default, mono | categories: Software, Development
 - GitHub Actions (slug: `github-actions`) | variants: default, mono | categories: DevOps
@@ -147,12 +147,12 @@ Fetch the raw SVG markup for a specific icon variant.
 ```
 
 **Output** (example):
-```
+```text
 # Stripe
 
 **Slug**: `stripe`
 **Variant**: default
-**CDN URL**: https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/stripe/default.svg
+**CDN URL**: https://cdn.jsdelivr.net/gh/glincker/thesvg@v0.6.0/public/icons/stripe/default.svg
 **Available variants**: default, mono, dark
 
 ```svg
@@ -171,9 +171,9 @@ List available variants for a specific icon.
 ```
 
 **Output** (example):
-```
+```text
 openai has 6 variants:
-- `default` -- https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/openai/default.svg
+- `default` -- https://cdn.jsdelivr.net/gh/glincker/thesvg@v0.6.0/public/icons/openai/default.svg
 - `light` -- https://...
 - `dark` -- https://...
 - `wordmark` -- https://...
@@ -196,10 +196,10 @@ Get a CDN URL for embedding an icon in HTML or Markdown (no SVG fetch).
 ```
 
 **Output** (example):
-```
+```text
 CDN URL for `openai` (variant: default):
 
-https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/openai/default.svg
+https://cdn.jsdelivr.net/gh/glincker/thesvg@v0.6.0/public/icons/openai/default.svg
 
 Example usage:
 <img src="..." alt="OpenAI" width="32" height="32" />
@@ -216,7 +216,7 @@ Discover all icon categories with counts.
 **Input**: `{}` (no parameters)
 
 **Output** (example):
-```
+```text
 128 categories across 6115 icons:
 
 - Software - 4,200 icons
