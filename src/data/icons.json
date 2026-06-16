@@ -43212,6 +43212,23 @@
     "collection": "brands"
   },
   {
+    "slug": "conceptboard",
+    "title": "Conceptboard",
+    "aliases": [],
+    "hex": "0815CA",
+    "categories": [
+      "Software",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/conceptboard/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://conceptboard.com",
+    "dateAdded": "2026-06-16",
+    "collection": "brands"
+  },
+  {
     "slug": "concourse",
     "title": "Concourse",
     "aliases": [],
@@ -53193,6 +53210,22 @@
     "license": "CC0-1.0",
     "url": "https://github.com/FreeTubeApp/FreeTube/blob/45053d084104e8566b8f16263cafd9df0c013e7f/_icons/iconBlackSmall.svg",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "frequencia-invisivel",
+    "title": "Frequência Invisível",
+    "aliases": [],
+    "hex": "D49629",
+    "categories": [
+      "Agency"
+    ],
+    "variants": {
+      "default": "/icons/frequencia-invisivel/default.svg"
+    },
+    "license": "CC-BY-ND-4.0",
+    "url": "https://frequenciainvisivel.pt",
+    "dateAdded": "2026-06-16",
     "collection": "brands"
   },
   {
@@ -67706,6 +67739,24 @@
     "collection": "brands"
   },
   {
+    "slug": "jobicy",
+    "title": "Jobicy",
+    "aliases": [],
+    "hex": "029AEB",
+    "categories": [
+      "Services",
+      "Business",
+      "HR"
+    ],
+    "variants": {
+      "default": "/icons/jobicy/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://jobicy.com",
+    "dateAdded": "2026-06-16",
+    "collection": "brands"
+  },
+  {
     "slug": "john-deere",
     "title": "John Deere",
     "aliases": [],
@@ -69559,6 +69610,40 @@
     "url": "https://kde.org/stuff/clipart",
     "guidelines": "https://kde.org/stuff/clipart",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "kde-connect",
+    "title": "KDE Connect",
+    "aliases": [],
+    "hex": "1D99F3",
+    "categories": [
+      "Software",
+      "Linux"
+    ],
+    "variants": {
+      "default": "/icons/kde-connect/default.svg"
+    },
+    "license": "GPL-2.0-or-later",
+    "url": "https://apps.kde.org/kdeconnect/",
+    "dateAdded": "2026-06-16",
+    "collection": "brands"
+  },
+  {
+    "slug": "kde-discover",
+    "title": "KDE Discover",
+    "aliases": [],
+    "hex": "1D99F3",
+    "categories": [
+      "Software",
+      "Linux"
+    ],
+    "variants": {
+      "default": "/icons/kde-discover/default.svg"
+    },
+    "license": "GPL-2.0-or-later",
+    "url": "https://apps.kde.org/discover/",
+    "dateAdded": "2026-06-16",
     "collection": "brands"
   },
   {
@@ -104149,6 +104234,22 @@
     "collection": "brands"
   },
   {
+    "slug": "trek",
+    "title": "TREK",
+    "aliases": [],
+    "hex": "FFFFFF",
+    "categories": [
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/trek/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://github.com/mauriceboe/TREK",
+    "dateAdded": "2026-06-16",
+    "collection": "brands"
+  },
+  {
     "slug": "trello",
     "title": "Trello",
     "aliases": [],
@@ -107319,6 +107420,24 @@
     "url": "https://www.victronenergy.com/information/press",
     "guidelines": "https://www.victronenergy.com/information/press",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "vidiq",
+    "title": "VidIQ",
+    "aliases": [
+      "vidIQ"
+    ],
+    "hex": "139DFF",
+    "categories": [
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/vidiq/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://vidiq.com",
+    "dateAdded": "2026-06-16",
     "collection": "brands"
   },
   {
