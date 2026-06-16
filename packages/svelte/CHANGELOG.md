@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 3.0.16
+
+### Patch Changes
+
+- feat: onboard 7 community-submitted icons ([#582](https://github.com/glincker/thesvg/issues/582))
+
 ## 3.0.15
 
 ### Patch Changes
