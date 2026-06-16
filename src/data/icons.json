@@ -5547,6 +5547,26 @@
     "collection": "brands"
   },
   {
+    "slug": "attio",
+    "title": "Attio",
+    "aliases": [
+      "attio.com"
+    ],
+    "hex": "2E3238",
+    "categories": [
+      "Software",
+      "Productivity",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/attio/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://attio.com",
+    "dateAdded": "2026-06-16",
+    "collection": "brands"
+  },
+  {
     "slug": "auchan",
     "title": "Auchan",
     "aliases": [],
@@ -39613,6 +39633,26 @@
     "collection": "brands"
   },
   {
+    "slug": "cap",
+    "title": "Cap",
+    "aliases": [
+      "cap.so",
+      "capsoftware"
+    ],
+    "hex": "4785FF",
+    "categories": [
+      "Software",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/cap/default.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://cap.so",
+    "dateAdded": "2026-06-16",
+    "collection": "brands"
+  },
+  {
     "slug": "capacitor",
     "title": "Capacitor",
     "aliases": [],
@@ -40289,6 +40329,26 @@
     "collection": "brands"
   },
   {
+    "slug": "character-ai",
+    "title": "Character AI",
+    "aliases": [
+      "character.ai",
+      "character"
+    ],
+    "hex": "000000",
+    "categories": [
+      "AI",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/character-ai/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://character.ai",
+    "dateAdded": "2026-06-16",
+    "collection": "brands"
+  },
+  {
     "slug": "charles",
     "title": "Charles",
     "aliases": [],
@@ -40769,6 +40829,27 @@
     "license": "CC0-1.0",
     "url": "https://chocolatey.org/media-kit",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "chroma",
+    "title": "Chroma",
+    "aliases": [
+      "chromadb",
+      "trychroma"
+    ],
+    "hex": "327EFF",
+    "categories": [
+      "AI",
+      "Database",
+      "Infrastructure"
+    ],
+    "variants": {
+      "default": "/icons/chroma/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://www.trychroma.com",
+    "dateAdded": "2026-06-16",
     "collection": "brands"
   },
   {
@@ -43500,6 +43581,27 @@
     "license": "CC0-1.0",
     "url": "https://www.continente.pt",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "continue",
+    "title": "Continue",
+    "aliases": [
+      "continue.dev",
+      "Continue Dev"
+    ],
+    "hex": "33333B",
+    "categories": [
+      "AI",
+      "Devtool",
+      "Editor"
+    ],
+    "variants": {
+      "default": "/icons/continue/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://continue.dev",
+    "dateAdded": "2026-06-16",
     "collection": "brands"
   },
   {
@@ -76444,6 +76546,26 @@
     "collection": "brands"
   },
   {
+    "slug": "mercor",
+    "title": "Mercor",
+    "aliases": [
+      "mercor.com"
+    ],
+    "hex": "5348F6",
+    "categories": [
+      "AI",
+      "Platform",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/mercor/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://mercor.com",
+    "dateAdded": "2026-06-16",
+    "collection": "brands"
+  },
+  {
     "slug": "mercurial",
     "title": "Mercurial",
     "aliases": [],
@@ -87726,6 +87848,26 @@
     "collection": "brands"
   },
   {
+    "slug": "pocus",
+    "title": "Pocus",
+    "aliases": [
+      "pocus.com"
+    ],
+    "hex": "8C4CDE",
+    "categories": [
+      "AI",
+      "Software",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/pocus/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.pocus.com",
+    "dateAdded": "2026-06-16",
+    "collection": "brands"
+  },
+  {
     "slug": "podcast-addict",
     "title": "Podcast Addict",
     "aliases": [],
@@ -89849,6 +89991,27 @@
     "collection": "brands"
   },
   {
+    "slug": "pylon",
+    "title": "Pylon",
+    "aliases": [
+      "usepylon",
+      "usepylon.com"
+    ],
+    "hex": "5B0EFF",
+    "categories": [
+      "Software",
+      "Communication",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/pylon/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://usepylon.com",
+    "dateAdded": "2026-06-16",
+    "collection": "brands"
+  },
+  {
     "slug": "pypi",
     "title": "PyPI",
     "aliases": [],
@@ -90980,6 +91143,26 @@
     "license": "CC0-1.0",
     "url": "https://www.radix-ui.com/",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "ragas",
+    "title": "Ragas",
+    "aliases": [
+      "explodinggradients-ragas"
+    ],
+    "hex": "1E1F21",
+    "categories": [
+      "AI",
+      "Devtool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/ragas/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://docs.ragas.io",
+    "dateAdded": "2026-06-16",
     "collection": "brands"
   },
   {
@@ -94089,6 +94272,26 @@
     "license": "CC0-1.0",
     "url": "https://www.npmjs.com/package/@runkit/brand",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "runpod",
+    "title": "RunPod",
+    "aliases": [
+      "runpod.io"
+    ],
+    "hex": "8C4CDE",
+    "categories": [
+      "AI",
+      "Infrastructure",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/runpod/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.runpod.io",
+    "dateAdded": "2026-06-16",
     "collection": "brands"
   },
   {
@@ -106776,6 +106979,26 @@
     "collection": "brands"
   },
   {
+    "slug": "vapi",
+    "title": "Vapi",
+    "aliases": [
+      "vapi.ai"
+    ],
+    "hex": "0A0A0A",
+    "categories": [
+      "AI",
+      "Voice",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/vapi/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://vapi.ai",
+    "dateAdded": "2026-06-16",
+    "collection": "brands"
+  },
+  {
     "slug": "vapor",
     "title": "Vapor",
     "aliases": [],
@@ -109080,6 +109303,26 @@
     "license": "CC0-1.0",
     "url": "https://www.weasyl.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "weaviate",
+    "title": "Weaviate",
+    "aliases": [
+      "weaviate-db"
+    ],
+    "hex": "75FBAE",
+    "categories": [
+      "AI",
+      "Database",
+      "Infrastructure"
+    ],
+    "variants": {
+      "default": "/icons/weaviate/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://weaviate.io",
+    "dateAdded": "2026-06-16",
     "collection": "brands"
   },
   {
