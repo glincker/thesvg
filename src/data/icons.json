@@ -79078,6 +79078,29 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	{
+    "slug": "muangthai-capital",
+    "title": "MuangThai Capital",
+    "aliases": [],
+    "hex": "00A2E5",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/muangthai-capital/default.svg",
+      "mono": "/icons/muangthai-capital/mono.svg",
+      "dark": "/icons/muangthai-capital/dark.svg",
+      "light": "/icons/muangthai-capital/light.svg",
+      "wordmark": "/icons/muangthai-capital/wordmark.svg",
+      "wordmarkDark": "/icons/muangthai-capital/wordmarkDark.svg",
+      "wordmarkLight": "/icons/muangthai-capital/wordmarkLight.svg"
+
+    },
+    "license": "Unknown",
+    "url": "https://muangthaicap.com/en/",
+    "dateAdded": "2026-06-17",
+    "collection": "brands"
+  },
   {
     "slug": "mubi",
     "title": "MUBI",
