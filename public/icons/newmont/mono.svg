@@ -1,0 +1,25 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1515 1521" width="1515" height="1521">
+	<title>Newmont</title>
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="M-5092.51 -9467L33933.79 -9467L33933.79 12526.61L-5092.51 12526.61L-5092.51 -9467Z" />
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp2">
+			<path d="M10526.35 14.73L10526.35 1570.55L0.44 1570.55L0.44 14.73" />
+		</clipPath>
+	</defs>
+	<g id="Clip-Path: Clip-Path: Page 1" clip-path="url(#cp1)">
+		<g id="Clip-Path: Page 1">
+			<g id="Page 1">
+				<g id="Clip-Path: Clip-Path: Mask" clip-path="url(#cp2)">
+					<g id="Clip-Path: Mask">
+						<g id="Mask">
+							<path id="Path 11" fill="currentColor" d="M528.14 754.14L1057.84 1520.68L528.14 1520.68L0.44 1520.68L528.14 754.14Z" />
+							<path id="Path 12" fill="currentColor" fill-rule="evenodd" d="M1514.51 0.02L1514.51 1520.68L1183.04 1520.68L528.14 572.9L163.09 1101.93L163.09 0.02L578.14 0.02L1149.47 856.18L1149.47 0.02L1514.51 0.02Z" />
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>

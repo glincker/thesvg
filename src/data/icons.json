@@ -80562,6 +80562,27 @@
     "collection": "brands"
   },
   {
+    "slug": "newmont",
+    "title": "Newmont",
+    "aliases": [],
+    "hex": "0C2B82",
+    "categories": [
+      "Construction"
+    ],
+    "variants": {
+      "default": "/icons/newmont/default.svg",
+      "mono": "/icons/newmont/mono.svg",
+      "light": "/icons/newmont/light.svg",
+      "dark": "/icons/newmont/dark.svg",
+      "wordmark": "/icons/newmont/wordmark.svg",
+      "wordmarkDark": "/icons/newmont/wordmarkDark.svg"
+    },
+    "license": "Unknown",
+    "url": "https://www.newmont.com/home/default.aspx",
+    "dateAdded": "2026-06-18",
+    "collection": "brands"
+  },
+  {
     "slug": "newpipe",
     "title": "NewPipe",
     "aliases": [],
