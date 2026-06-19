@@ -100437,6 +100437,23 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	{
+    "slug": "sun-hung-kai",
+    "title": "Sun Hung Kai Properties",
+    "aliases": [],
+    "hex": "EC1D24",
+    "categories": [
+      "Real Estate"
+    ],
+    "variants": {
+      "default": "/icons/sun-hung-kai/default.svg",
+      "wordmark": "/icons/sun-hung-kai/wordmark.svg"
+    },
+    "license": "Unknown",
+    "url": "https://www.shkp.com/en-US",
+    "dateAdded": "2026-06-19",
+    "collection": "brands"
+  },
   {
     "slug": "suno",
     "title": "Suno",
