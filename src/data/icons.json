@@ -106996,6 +106996,23 @@
     "collection": "brands"
   },
   {
+    "slug": "vanio",
+    "title": "Vanio",
+    "aliases": [],
+    "hex": "65A0DC",
+    "categories": [
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/vanio/default.svg",
+      "mono": "/icons/vanio/mono.svg"
+    },
+    "license": "Trademark",
+    "url": "https://vanio.hu",
+    "dateAdded": "2026-06-01",
+    "collection": "brands"
+  },
+  {
     "slug": "vapi",
     "title": "Vapi",
     "aliases": [
@@ -117443,22 +117460,5 @@
     "url": "",
     "collection": "brands",
     "dateAdded": "2026-05-05"
-  },
-  {
-    "slug": "vanio",
-    "title": "Vanio",
-    "aliases": [],
-    "hex": "65A0DC",
-    "categories": [
-      "Software"
-    ],
-    "variants": {
-      "default": "/icons/vanio-informatika/default.svg",
-      "color": "/icons/vanio-informatika/default.svg",
-      "mono": "/icons/vanio-informatika/mono.svg"
-    },
-    "url": "https://vanio.hu",
-    "dateAdded": "2026-06-01",
-    "collection": "brands"
   }
 ]
