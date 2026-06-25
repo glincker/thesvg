@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 3.0.18
+
+### Patch Changes
+
+- feat: bundle 7 community-requested icons + Wolt mono variant ([#605](https://github.com/glincker/thesvg/issues/605))
+
 ## 3.0.17
 
 ### Patch Changes
