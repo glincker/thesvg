@@ -5063,6 +5063,22 @@
     "collection": "brands"
   },
   {
+    "slug": "asaas",
+    "title": "Asaas",
+    "aliases": [],
+    "hex": "0066FF",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/asaas/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.asaas.com",
+    "dateAdded": "2026-06-25",
+    "collection": "brands"
+  },
+  {
     "slug": "asahi-linux",
     "title": "Asahi Linux",
     "aliases": [],
@@ -62223,6 +62239,23 @@
     "collection": "brands"
   },
   {
+    "slug": "guidenai",
+    "title": "GuidenAI",
+    "aliases": [],
+    "hex": "FF751F",
+    "categories": [
+      "AI",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/guidenai/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://guidenai.com",
+    "dateAdded": "2026-06-25",
+    "collection": "brands"
+  },
+  {
     "slug": "guilded",
     "title": "Guilded",
     "aliases": [],
@@ -64722,6 +64755,24 @@
     "license": "CC0-1.0",
     "url": "https://www.husqvarna.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "hymer",
+    "title": "Hymer",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Automotive",
+      "Caravaning"
+    ],
+    "variants": {
+      "default": "/icons/hymer/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://hymer.com",
+    "guidelines": "https://www.hymer.com/de/en/brand-value",
+    "dateAdded": "2026-06-25",
     "collection": "brands"
   },
   {
@@ -88790,6 +88841,23 @@
     "collection": "brands"
   },
   {
+    "slug": "prequel",
+    "title": "Prequel",
+    "aliases": [],
+    "hex": "FFA000",
+    "categories": [
+      "Photography",
+      "Mobile App"
+    ],
+    "variants": {
+      "default": "/icons/prequel/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://prequel.app",
+    "dateAdded": "2026-06-25",
+    "collection": "brands"
+  },
+  {
     "slug": "prestashop",
     "title": "PrestaShop",
     "aliases": [],
@@ -89544,18 +89612,20 @@
     "slug": "proton-vpn",
     "title": "Proton VPN",
     "aliases": [],
-    "hex": "66DEB1",
+    "hex": "6D4AFF",
     "categories": [
       "Software",
-      "Privacy"
+      "Privacy",
+      "VPN"
     ],
     "variants": {
       "default": "/icons/proton-vpn/default.svg",
       "mono": "/icons/proton-vpn/mono.svg"
     },
-    "license": "CC0-1.0",
-    "url": "https://proton.me/media/kit",
-    "dateAdded": "2026-03-07",
+    "license": "brand-use",
+    "url": "https://protonvpn.com",
+    "guidelines": "https://proton.me/media/kit",
+    "dateAdded": "2026-06-25",
     "collection": "brands"
   },
   {
@@ -101223,6 +101293,24 @@
     "collection": "brands"
   },
   {
+    "slug": "tableau",
+    "title": "Tableau",
+    "aliases": [],
+    "hex": "1F457E",
+    "categories": [
+      "Analytics",
+      "Software",
+      "Data"
+    ],
+    "variants": {
+      "default": "/icons/tableau/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.tableau.com",
+    "dateAdded": "2026-06-25",
+    "collection": "brands"
+  },
+  {
     "slug": "tablecheck",
     "title": "TableCheck",
     "aliases": [],
@@ -106670,6 +106758,25 @@
     "collection": "brands"
   },
   {
+    "slug": "usdc",
+    "title": "USDC",
+    "aliases": [
+      "USD Coin"
+    ],
+    "hex": "2775CA",
+    "categories": [
+      "Crypto",
+      "Payment"
+    ],
+    "variants": {
+      "default": "/icons/usdc/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.circle.com/usdc",
+    "dateAdded": "2026-06-25",
+    "collection": "brands"
+  },
+  {
     "slug": "uservoice",
     "title": "UserVoice",
     "aliases": [],
@@ -110825,7 +110932,8 @@
       "Food"
     ],
     "variants": {
-      "default": "/icons/wolt/default.svg"
+      "default": "/icons/wolt/default.svg",
+      "mono": "/icons/wolt/mono.svg"
     },
     "license": "Trademark",
     "url": "https://wolt.com/",
