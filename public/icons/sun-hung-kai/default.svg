@@ -1,0 +1,39 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1549 1543" width="1549" height="1543">
+	<title>Sun Hung Kai Properties</title>
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="m7790.69 0v1542.58h-7790.69v-1542.58z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp2">
+			<path d="m7790.69 0v1542.58h-7790.69v-1542.58z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp3">
+			<path d="m7790.69 0v1542.58h-7790.69v-1542.58z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp4">
+			<path d="m7790.69 0v1542.58h-7790.69v-1542.58z"/>
+		</clipPath>
+	</defs>
+	<g>
+		<g id="Clip-Path: Clip-Path" clip-path="url(#cp1)">
+			<g id="Clip-Path">
+				<path fill-rule="evenodd" fill="#ec1d24" d="m1548.5 0v1542.5h-1548.5v-1542.5z"/>
+			</g>
+		</g>
+		<g id="Clip-Path: Clip-Path" clip-path="url(#cp2)">
+			<g id="Clip-Path">
+				<path fill-rule="evenodd" fill="#fefefe" d="m868.9 75.3h-265.7c0 0-426.9 96.5-426.9 486.2 0 323 311.9 427.5 311.9 427.5 0 0 283.3 122 283.3 262.2 0 140.1-109.5 216.4-109.5 216.4h316.4c0 0 393.8-114.5 393.8-478.6 0-242.1-209.5-366.7-309.4-419.9-99.5-53.8-155.7-89.4-155.7-89.4 0 0-120.1-70.9-120.1-195.9 0-137.6 81.9-208.5 81.9-208.5z"/>
+			</g>
+		</g>
+		<g id="Clip-Path: Clip-Path" clip-path="url(#cp3)">
+			<g id="Clip-Path">
+				<path fill-rule="evenodd" fill="#fefefe" d="m313.4 1276.8v123h-115v-336h115v122.1h92.9v-122.1h114.5v336h-114.5v-122.5z"/>
+			</g>
+		</g>
+		<g id="Clip-Path: Clip-Path" clip-path="url(#cp4)">
+			<g id="Clip-Path">
+				<path fill-rule="evenodd" fill="#fefefe" d="m1166.8 366.2h-26.7v117.5h-114v-336h114v100.9h19.1l86.9-100.9h113l-113.5 134.6 114 201.4h-126.5z"/>
+			</g>
+		</g>
+	</g>
+</svg>
