@@ -107017,6 +107017,23 @@
     "collection": "brands"
   },
   {
+    "slug": "vanio",
+    "title": "Vanio",
+    "aliases": [],
+    "hex": "65A0DC",
+    "categories": [
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/vanio/default.svg",
+      "mono": "/icons/vanio/mono.svg"
+    },
+    "license": "Trademark",
+    "url": "https://vanio.hu",
+    "dateAdded": "2026-06-01",
+    "collection": "brands"
+  },
+  {
     "slug": "vapi",
     "title": "Vapi",
     "aliases": [
