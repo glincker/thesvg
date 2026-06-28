@@ -89553,6 +89553,25 @@
     "collection": "brands"
   },
   {
+    "slug": "proton-authenticator",
+    "title": "Proton Authenticator",
+    "aliases": [],
+    "hex": "6D4AFF",
+    "categories": [
+      "Software",
+      "Privacy",
+      "Security"
+    ],
+    "variants": {
+      "default": "/icons/proton-authenticator/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://proton.me/authenticator",
+    "guidelines": "https://proton.me/media/kit",
+    "dateAdded": "2026-06-28",
+    "collection": "brands"
+  },
+  {
     "slug": "proton-calendar",
     "title": "Proton Calendar",
     "aliases": [],
@@ -89606,6 +89625,44 @@
     "url": "https://mail.proton.me",
     "guidelines": "https://proton.me/media/kit",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "proton-meet",
+    "title": "Proton Meet",
+    "aliases": [],
+    "hex": "6D4AFF",
+    "categories": [
+      "Software",
+      "Privacy",
+      "Communication"
+    ],
+    "variants": {
+      "default": "/icons/proton-meet/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://meet.proton.me",
+    "guidelines": "https://proton.me/media/kit",
+    "dateAdded": "2026-06-28",
+    "collection": "brands"
+  },
+  {
+    "slug": "proton-pass",
+    "title": "Proton Pass",
+    "aliases": [],
+    "hex": "6D4AFF",
+    "categories": [
+      "Software",
+      "Privacy",
+      "Security"
+    ],
+    "variants": {
+      "default": "/icons/proton-pass/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://pass.proton.me",
+    "guidelines": "https://proton.me/media/kit",
+    "dateAdded": "2026-06-28",
     "collection": "brands"
   },
   {
