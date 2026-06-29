@@ -1,5 +1,11 @@
 # @thesvg/react
 
+## 3.0.19
+
+### Patch Changes
+
+- feat: add variant prop support to React package ([#617](https://github.com/glincker/thesvg/issues/617))
+
 ## 3.0.18
 
 ### Patch Changes
