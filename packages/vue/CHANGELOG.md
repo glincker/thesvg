@@ -1,5 +1,15 @@
 # @thesvg/vue
 
+## 3.1.0
+
+### Minor Changes
+
+- [#647](https://github.com/glincker/thesvg/pull/647) [`af795b8`](https://github.com/glincker/thesvg/commit/af795b8ef2d5ef2e31d421e84e187ca7dbf94298) Thanks [@thegdsks](https://github.com/thegdsks)! - thesvg v3.1: 6,400+ icons, React package rendering fixes, and GLINR Studios
+
+  New icon milestone: 6,409 brand icons across cloud-native, AI/ML, DevOps, security,
+  and productivity tooling. React component rendering fixes for mono variants and
+  per-path style fills. GLINR Studios announced as the new home of thesvg.
+
 ## 3.0.18
 
 ### Patch Changes
