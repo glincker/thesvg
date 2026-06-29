@@ -1,8 +1,6 @@
-import { Suspense } from "react";
 import { notFound } from "next/navigation";
-import { getAllIcons, getIconBySlug, getIconsByCategory, getCategoryCounts } from "@/lib/icons";
-import { IconDetailPage } from "@/components/icons/icon-detail-page";
-import { SidebarShell } from "@/components/layout/sidebar-shell";
+import { getAllIcons, getIconBySlug } from "@/lib/icons";
+import { IconPageClient } from "@/components/icons/icon-page-client";
 import { categoryUrl } from "@/lib/categories";
 import type { Metadata } from "next";
 
@@ -146,41 +144,6 @@ export default async function IconPage({ params }: PageProps) {
   const icon = getIconBySlug(slug);
   if (!icon) notFound();
 
-  const primaryCategory = icon.categories[0] ?? null;
-  const relatedIcons = primaryCategory
-    ? getIconsByCategory(primaryCategory)
-        .filter((rel) => rel.slug !== icon.slug)
-        .slice(0, 8)
-    : [];
-
-  // Year-suffixed brand refresh series: link the original ↔ refresh pair.
-  // e.g. /icon/gmail ↔ /icon/gmail-2026 surface a small chip on each side.
-  const yearMatch = /^(.+)-(\d{4})$/.exec(icon.slug);
-  let versionCounterpartSlug: string | null = null;
-  let versionCounterpartYear: string | null = null;
-  let versionCounterpartIsNewer = false;
-  if (yearMatch) {
-    const originalSlug = yearMatch[1];
-    if (getIconBySlug(originalSlug)) {
-      versionCounterpartSlug = originalSlug;
-      versionCounterpartYear = yearMatch[2];
-      versionCounterpartIsNewer = false;
-    }
-  } else {
-    const currentYear = new Date().getFullYear();
-    for (let y = currentYear; y >= currentYear - 1; y--) {
-      const candidate = `${icon.slug}-${y}`;
-      if (getIconBySlug(candidate)) {
-        versionCounterpartSlug = candidate;
-        versionCounterpartYear = String(y);
-        versionCounterpartIsNewer = true;
-        break;
-      }
-    }
-  }
-
-  const categoryCounts = getCategoryCounts();
-
   const variantCount = Object.values(icon.variants).filter(Boolean).length;
   const categoryList = icon.categories.join(", ");
   const allKeywords = [
@@ -279,17 +242,7 @@ export default async function IconPage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Suspense>
-        <SidebarShell categoryCounts={categoryCounts}>
-          <IconDetailPage
-            icon={icon}
-            relatedIcons={relatedIcons}
-            versionCounterpartSlug={versionCounterpartSlug}
-            versionCounterpartYear={versionCounterpartYear}
-            versionCounterpartIsNewer={versionCounterpartIsNewer}
-          />
-        </SidebarShell>
-      </Suspense>
+      <IconPageClient slug={slug} />
     </>
   );
 }
