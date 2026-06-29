@@ -3030,7 +3030,8 @@
     ],
     "variants": {
       "default": "/icons/angular/default.svg",
-      "mono": "/icons/angular/mono.svg"
+      "mono": "/icons/angular/mono.svg",
+      "wordmark": "/icons/angular/wordmark.svg"
     },
     "license": "CC-BY-4.0",
     "url": "https://angular.dev/",
@@ -3193,7 +3194,8 @@
     ],
     "variants": {
       "default": "/icons/ansible/default.svg",
-      "mono": "/icons/ansible/mono.svg"
+      "mono": "/icons/ansible/mono.svg",
+      "wordmark": "/icons/ansible/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://www.ansible.com/logos",
@@ -41735,7 +41737,8 @@
     ],
     "variants": {
       "default": "/icons/cloudflare/default.svg",
-      "mono": "/icons/cloudflare/mono.svg"
+      "mono": "/icons/cloudflare/mono.svg",
+      "wordmark": "/icons/cloudflare/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://www.cloudflare.com/",
@@ -45464,7 +45467,8 @@
     ],
     "variants": {
       "default": "/icons/datadog/default.svg",
-      "mono": "/icons/datadog/mono.svg"
+      "mono": "/icons/datadog/mono.svg",
+      "wordmark": "/icons/datadog/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://www.datadoghq.com/",
@@ -46959,7 +46963,8 @@
     ],
     "variants": {
       "default": "/icons/discord/default.svg",
-      "mono": "/icons/discord/mono.svg"
+      "mono": "/icons/discord/mono.svg",
+      "wordmark": "/icons/discord/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://discord.com/",
@@ -47160,7 +47165,8 @@
     ],
     "variants": {
       "default": "/icons/django/default.svg",
-      "mono": "/icons/django/mono.svg"
+      "mono": "/icons/django/mono.svg",
+      "wordmark": "/icons/django/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://www.djangoproject.com/",
@@ -47309,7 +47315,8 @@
     ],
     "variants": {
       "default": "/icons/docker/default.svg",
-      "mono": "/icons/docker/mono.svg"
+      "mono": "/icons/docker/mono.svg",
+      "wordmark": "/icons/docker/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://www.docker.com/",
@@ -48065,7 +48072,8 @@
     ],
     "variants": {
       "default": "/icons/drizzle/default.svg",
-      "mono": "/icons/drizzle/mono.svg"
+      "mono": "/icons/drizzle/mono.svg",
+      "wordmark": "/icons/drizzle/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://orm.drizzle.team",
@@ -50957,7 +50965,8 @@
     ],
     "variants": {
       "default": "/icons/fastapi/default.svg",
-      "mono": "/icons/fastapi/mono.svg"
+      "mono": "/icons/fastapi/mono.svg",
+      "wordmark": "/icons/fastapi/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://fastapi.tiangolo.com/",
@@ -51399,7 +51408,8 @@
     ],
     "variants": {
       "default": "/icons/figma/default.svg",
-      "mono": "/icons/figma/mono.svg"
+      "mono": "/icons/figma/mono.svg",
+      "wordmark": "/icons/figma/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://www.figma.com/",
@@ -59159,7 +59169,8 @@
     ],
     "variants": {
       "default": "/icons/gitlab/default.svg",
-      "mono": "/icons/gitlab/mono.svg"
+      "mono": "/icons/gitlab/mono.svg",
+      "wordmark": "/icons/gitlab/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://gitlab.com/",
@@ -61672,7 +61683,8 @@
     ],
     "variants": {
       "default": "/icons/grafana/default.svg",
-      "mono": "/icons/grafana/mono.svg"
+      "mono": "/icons/grafana/mono.svg",
+      "wordmark": "/icons/grafana/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://grafana.com/",
@@ -61764,7 +61776,8 @@
     ],
     "variants": {
       "default": "/icons/graphql/default.svg",
-      "mono": "/icons/graphql/mono.svg"
+      "mono": "/icons/graphql/mono.svg",
+      "wordmark": "/icons/graphql/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://graphql.org/",
@@ -63581,7 +63594,8 @@
       "Platform"
     ],
     "variants": {
-      "default": "/icons/heroku/default.svg"
+      "default": "/icons/heroku/default.svg",
+      "wordmark": "/icons/heroku/wordmark.svg"
     },
     "license": "MIT",
     "url": "https://www.heroku.com/",
@@ -67288,7 +67302,8 @@
     ],
     "variants": {
       "default": "/icons/javascript/default.svg",
-      "mono": "/icons/javascript/mono.svg"
+      "mono": "/icons/javascript/mono.svg",
+      "wordmark": "/icons/javascript/wordmark.svg"
     },
     "license": "MIT",
     "url": "https://developer.mozilla.org/docs/Web/JavaScript",
@@ -69371,7 +69386,8 @@
       "Database"
     ],
     "variants": {
-      "default": "/icons/kafka/default.svg"
+      "default": "/icons/kafka/default.svg",
+      "wordmark": "/icons/kafka/wordmark.svg"
     },
     "license": "Apache-2.0",
     "url": "https://kafka.apache.org",
@@ -71089,7 +71105,8 @@
     ],
     "variants": {
       "default": "/icons/kotlin/default.svg",
-      "mono": "/icons/kotlin/mono.svg"
+      "mono": "/icons/kotlin/mono.svg",
+      "wordmark": "/icons/kotlin/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://kotlinlang.org/",
@@ -73037,7 +73054,8 @@
     ],
     "variants": {
       "default": "/icons/linear/default.svg",
-      "mono": "/icons/linear/mono.svg"
+      "mono": "/icons/linear/mono.svg",
+      "wordmark": "/icons/linear/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://linear.app/",
@@ -73074,7 +73092,8 @@
       "Platform"
     ],
     "variants": {
-      "default": "/icons/linkedin/default.svg"
+      "default": "/icons/linkedin/default.svg",
+      "wordmark": "/icons/linkedin/wordmark.svg"
     },
     "license": "MIT",
     "url": "https://www.linkedin.com/",
@@ -76685,7 +76704,8 @@
     ],
     "variants": {
       "default": "/icons/meta/default.svg",
-      "mono": "/icons/meta/mono.svg"
+      "mono": "/icons/meta/mono.svg",
+      "wordmark": "/icons/meta/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://about.meta.com/es/",
@@ -77065,7 +77085,8 @@
       "Microsoft"
     ],
     "variants": {
-      "default": "/icons/microsoft/default.svg"
+      "default": "/icons/microsoft/default.svg",
+      "wordmark": "/icons/microsoft/wordmark.svg"
     },
     "license": "MIT",
     "url": "https://www.microsoft.com/",
@@ -80423,7 +80444,8 @@
     ],
     "variants": {
       "default": "/icons/netlify/default.svg",
-      "mono": "/icons/netlify/mono.svg"
+      "mono": "/icons/netlify/mono.svg",
+      "wordmark": "/icons/netlify/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://www.netlify.com/",
@@ -80892,7 +80914,8 @@
     ],
     "variants": {
       "default": "/icons/nginx/default.svg",
-      "mono": "/icons/nginx/mono.svg"
+      "mono": "/icons/nginx/mono.svg",
+      "wordmark": "/icons/nginx/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://nginx.org/",
@@ -81350,7 +81373,8 @@
     ],
     "variants": {
       "default": "/icons/nomad/default.svg",
-      "mono": "/icons/nomad/mono.svg"
+      "mono": "/icons/nomad/mono.svg",
+      "wordmark": "/icons/nomad/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://www.hashicorp.com/brand",
@@ -81624,7 +81648,8 @@
     ],
     "variants": {
       "default": "/icons/notion/default.svg",
-      "mono": "/icons/notion/mono.svg"
+      "mono": "/icons/notion/mono.svg",
+      "wordmark": "/icons/notion/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://notion.so/",
@@ -84984,7 +85009,8 @@
     ],
     "variants": {
       "default": "/icons/pagerduty/default.svg",
-      "mono": "/icons/pagerduty/mono.svg"
+      "mono": "/icons/pagerduty/mono.svg",
+      "wordmark": "/icons/pagerduty/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://www.pagerduty.com/brand/",
@@ -88527,7 +88553,8 @@
     ],
     "variants": {
       "default": "/icons/postman/default.svg",
-      "mono": "/icons/postman/mono.svg"
+      "mono": "/icons/postman/mono.svg",
+      "wordmark": "/icons/postman/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://www.getpostman.com/",
@@ -91195,7 +91222,8 @@
     ],
     "variants": {
       "default": "/icons/rabbitmq/default.svg",
-      "mono": "/icons/rabbitmq/mono.svg"
+      "mono": "/icons/rabbitmq/mono.svg",
+      "wordmark": "/icons/rabbitmq/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://www.rabbitmq.com",
@@ -92243,7 +92271,8 @@
     ],
     "variants": {
       "default": "/icons/redis/default.svg",
-      "mono": "/icons/redis/mono.svg"
+      "mono": "/icons/redis/mono.svg",
+      "wordmark": "/icons/redis/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://redis.io/",
@@ -96065,7 +96094,8 @@
     ],
     "variants": {
       "default": "/icons/sentry/default.svg",
-      "mono": "/icons/sentry/mono.svg"
+      "mono": "/icons/sentry/mono.svg",
+      "wordmark": "/icons/sentry/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://sentry.io/",
@@ -100607,7 +100637,7 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	{
+  {
     "slug": "sun-hung-kai",
     "title": "Sun Hung Kai Properties",
     "aliases": [],
@@ -100864,7 +100894,8 @@
     ],
     "variants": {
       "default": "/icons/svelte/default.svg",
-      "mono": "/icons/svelte/mono.svg"
+      "mono": "/icons/svelte/mono.svg",
+      "wordmark": "/icons/svelte/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://svelte.dev/",
@@ -102394,7 +102425,8 @@
     ],
     "variants": {
       "default": "/icons/terraform/default.svg",
-      "mono": "/icons/terraform/mono.svg"
+      "mono": "/icons/terraform/mono.svg",
+      "wordmark": "/icons/terraform/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://terraform.io",
@@ -104668,7 +104700,8 @@
     ],
     "variants": {
       "default": "/icons/trello/default.svg",
-      "mono": "/icons/trello/mono.svg"
+      "mono": "/icons/trello/mono.svg",
+      "wordmark": "/icons/trello/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://atlassian.design/resources/logo-library",
@@ -105509,7 +105542,8 @@
       "Authentication"
     ],
     "variants": {
-      "default": "/icons/twilio/default.svg"
+      "default": "/icons/twilio/default.svg",
+      "wordmark": "/icons/twilio/wordmark.svg"
     },
     "license": "MIT",
     "url": "https://twilio.com",
@@ -105675,7 +105709,8 @@
     ],
     "variants": {
       "default": "/icons/typescript/default.svg",
-      "mono": "/icons/typescript/mono.svg"
+      "mono": "/icons/typescript/mono.svg",
+      "wordmark": "/icons/typescript/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://www.typescriptlang.org",
@@ -107083,7 +107118,8 @@
     ],
     "variants": {
       "default": "/icons/vagrant/default.svg",
-      "mono": "/icons/vagrant/mono.svg"
+      "mono": "/icons/vagrant/mono.svg",
+      "wordmark": "/icons/vagrant/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://www.hashicorp.com/brand",
@@ -107268,7 +107304,8 @@
     ],
     "variants": {
       "default": "/icons/vault/default.svg",
-      "mono": "/icons/vault/mono.svg"
+      "mono": "/icons/vault/mono.svg",
+      "wordmark": "/icons/vault/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://www.hashicorp.com/brand",
@@ -108313,7 +108350,8 @@
     ],
     "variants": {
       "default": "/icons/vite/default.svg",
-      "mono": "/icons/vite/mono.svg"
+      "mono": "/icons/vite/mono.svg",
+      "wordmark": "/icons/vite/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://vitejs.dev",
@@ -112907,7 +112945,8 @@
     ],
     "variants": {
       "default": "/icons/zendesk/default.svg",
-      "mono": "/icons/zendesk/mono.svg"
+      "mono": "/icons/zendesk/mono.svg",
+      "wordmark": "/icons/zendesk/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://brandland.zendesk.com",
@@ -117668,5 +117707,2431 @@
     "url": "",
     "collection": "brands",
     "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "100tb",
+    "title": "100TB",
+    "aliases": [],
+    "hex": "3390da",
+    "categories": [
+      "Platform",
+      "Hosting"
+    ],
+    "variants": {
+      "default": "/icons/100tb/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.100tb.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "azure",
+    "title": "Microsoft Azure",
+    "aliases": [],
+    "hex": "0089d6",
+    "categories": [
+      "Platform",
+      "Hosting"
+    ],
+    "variants": {
+      "default": "/icons/azure/default.svg",
+      "wordmark": "/icons/azure/wordmark.svg"
+    },
+    "license": "brand-use",
+    "url": "https://azure.microsoft.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "balena",
+    "title": "balena",
+    "aliases": [],
+    "hex": "ffc600",
+    "categories": [
+      "Platform",
+      "Hosting"
+    ],
+    "variants": {
+      "default": "/icons/balena/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.balena.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "bunny-net",
+    "title": "BunnyCDN",
+    "aliases": [],
+    "hex": "fdca0b",
+    "categories": [
+      "Platform",
+      "Hosting"
+    ],
+    "variants": {
+      "default": "/icons/bunny-net/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://bunny.net",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "cloudlinux",
+    "title": "CloudLinux",
+    "aliases": [],
+    "hex": "265597",
+    "categories": [
+      "Platform",
+      "Hosting"
+    ],
+    "variants": {
+      "default": "/icons/cloudlinux/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://cloudlinux.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "iron",
+    "title": "Iron.io",
+    "aliases": [],
+    "hex": "3177bc",
+    "categories": [
+      "Platform",
+      "Hosting"
+    ],
+    "variants": {
+      "default": "/icons/iron/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.iron.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "linode",
+    "title": "Linode (Akamai)",
+    "aliases": [],
+    "hex": "00b159",
+    "categories": [
+      "Platform",
+      "Hosting"
+    ],
+    "variants": {
+      "default": "/icons/linode/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.linode.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "mesos",
+    "title": "Apache Mesos",
+    "aliases": [],
+    "hex": "00aede",
+    "categories": [
+      "Platform",
+      "Hosting"
+    ],
+    "variants": {
+      "default": "/icons/mesos/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://mesos.apache.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "morpheus",
+    "title": "Morpheus Data",
+    "aliases": [],
+    "hex": "d8292f",
+    "categories": [
+      "Platform",
+      "Hosting"
+    ],
+    "variants": {
+      "default": "/icons/morpheus/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.morpheusdata.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "multipass",
+    "title": "Multipass",
+    "aliases": [],
+    "hex": "e95420",
+    "categories": [
+      "Platform",
+      "Hosting"
+    ],
+    "variants": {
+      "default": "/icons/multipass/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://multipass.run",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "openshift",
+    "title": "OpenShift",
+    "aliases": [],
+    "hex": "e82429",
+    "categories": [
+      "Platform",
+      "Hosting"
+    ],
+    "variants": {
+      "default": "/icons/openshift/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.redhat.com/en/technologies/cloud-computing/openshift",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "pocket-base",
+    "title": "PocketBase",
+    "aliases": [],
+    "hex": "16161a",
+    "categories": [
+      "Platform",
+      "Hosting"
+    ],
+    "variants": {
+      "default": "/icons/pocket-base/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://pocketbase.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "rackspace",
+    "title": "Rackspace",
+    "aliases": [],
+    "hex": "ea0000",
+    "categories": [
+      "Platform",
+      "Hosting"
+    ],
+    "variants": {
+      "default": "/icons/rackspace/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.rackspace.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "airflow",
+    "title": "Apache Airflow",
+    "aliases": [],
+    "hex": "0cb6ff",
+    "categories": [
+      "Database",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/airflow/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://airflow.apache.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "astronomer",
+    "title": "Astronomer",
+    "aliases": [],
+    "hex": "9377d1",
+    "categories": [
+      "Database",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/astronomer/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.astronomer.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "cassandra",
+    "title": "Apache Cassandra",
+    "aliases": [],
+    "hex": "1287b1",
+    "categories": [
+      "Database",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/cassandra/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://cassandra.apache.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "cloudant",
+    "title": "IBM Cloudant",
+    "aliases": [],
+    "hex": "002c77",
+    "categories": [
+      "Database",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/cloudant/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.ibm.com/cloud/cloudant",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "couchdb",
+    "title": "Apache CouchDB",
+    "aliases": [],
+    "hex": "e42528",
+    "categories": [
+      "Database",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/couchdb/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://couchdb.apache.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "cube",
+    "title": "Cube",
+    "aliases": [],
+    "hex": "ff6492",
+    "categories": [
+      "Database",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/cube/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://cube.dev",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "dbt",
+    "title": "dbt",
+    "aliases": [],
+    "hex": "ff694a",
+    "categories": [
+      "Database",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/dbt/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.getdbt.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "dolt",
+    "title": "Dolt",
+    "aliases": [],
+    "hex": "29e3c1",
+    "categories": [
+      "Database",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/dolt/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.dolthub.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "edgedb",
+    "title": "EdgeDB",
+    "aliases": [],
+    "hex": "4d4d4d",
+    "categories": [
+      "Database",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/edgedb/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.edgedb.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "foundationdb",
+    "title": "FoundationDB",
+    "aliases": [],
+    "hex": "0073e0",
+    "categories": [
+      "Database",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/foundationdb/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.foundationdb.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "gunjs",
+    "title": "Gun.js",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Database",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/gunjs/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://gun.eco",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "keydb",
+    "title": "KeyDB",
+    "aliases": [],
+    "hex": "ffff00",
+    "categories": [
+      "Database",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/keydb/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://keydb.dev",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "knex",
+    "title": "Knex.js",
+    "aliases": [],
+    "hex": "e16426",
+    "categories": [
+      "Database",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/knex/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://knexjs.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "lucene",
+    "title": "Apache Lucene",
+    "aliases": [],
+    "hex": "019b8f",
+    "categories": [
+      "Database",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/lucene/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://lucene.apache.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "nats",
+    "title": "NATS",
+    "aliases": [],
+    "hex": "27aae1",
+    "categories": [
+      "Database",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/nats/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://nats.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "nocodb",
+    "title": "NocoDB",
+    "aliases": [],
+    "hex": "0381fd",
+    "categories": [
+      "Database",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/nocodb/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://nocodb.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "percona",
+    "title": "Percona",
+    "aliases": [],
+    "hex": "fcb42f",
+    "categories": [
+      "Database",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/percona/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.percona.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "postgraphile",
+    "title": "PostGraphile",
+    "aliases": [],
+    "hex": "4ba8ff",
+    "categories": [
+      "Database",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/postgraphile/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.graphile.org/postgraphile",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "pouchdb",
+    "title": "PouchDB",
+    "aliases": [],
+    "hex": "64c48c",
+    "categories": [
+      "Database",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/pouchdb/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://pouchdb.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "rethinkdb",
+    "title": "RethinkDB",
+    "aliases": [],
+    "hex": "204956",
+    "categories": [
+      "Database",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/rethinkdb/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://rethinkdb.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "riak",
+    "title": "Riak",
+    "aliases": [],
+    "hex": "f6861a",
+    "categories": [
+      "Database",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/riak/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://riak.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "solr",
+    "title": "Apache Solr",
+    "aliases": [],
+    "hex": "c7402b",
+    "categories": [
+      "Database",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/solr/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://solr.apache.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "stitch",
+    "title": "Stitch",
+    "aliases": [],
+    "hex": "ffc600",
+    "categories": [
+      "Database",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/stitch/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.stitchdata.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "yugabyte",
+    "title": "YugabyteDB",
+    "aliases": [],
+    "hex": "ff5f3b",
+    "categories": [
+      "Database",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/yugabyte/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.yugabyte.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "appcircle",
+    "title": "Appcircle",
+    "aliases": [],
+    "hex": "FF8F34",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/appcircle/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://appcircle.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "appdynamics",
+    "title": "AppDynamics",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/appdynamics/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.appdynamics.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "browsersync",
+    "title": "BrowserSync",
+    "aliases": [],
+    "hex": "F14646",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/browsersync/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://browsersync.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "bugsnag",
+    "title": "Bugsnag",
+    "aliases": [],
+    "hex": "000D47",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/bugsnag/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.bugsnag.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "codebeat",
+    "title": "Codebeat",
+    "aliases": [],
+    "hex": "27A8E0",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/codebeat/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://codebeat.co",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "codeclimate",
+    "title": "Code Climate",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/codeclimate/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://codeclimate.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "commitizen",
+    "title": "Commitizen",
+    "aliases": [],
+    "hex": "3385FF",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/commitizen/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://commitizen-tools.github.io/commitizen",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "coverity",
+    "title": "Coverity",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/coverity/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://scan.coverity.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "dependencyci",
+    "title": "DependencyCI",
+    "aliases": [],
+    "hex": "1D6A80",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/dependencyci/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://dependencyci.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "eclipse",
+    "title": "Eclipse",
+    "aliases": [],
+    "hex": "F7941E",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/eclipse/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.eclipse.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "envoy",
+    "title": "Envoy Proxy",
+    "aliases": [],
+    "hex": "B31AAB",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/envoy/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.envoyproxy.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "epsagon",
+    "title": "Epsagon",
+    "aliases": [],
+    "hex": "0000F3",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/epsagon/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://epsagon.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "harness",
+    "title": "Harness",
+    "aliases": [],
+    "hex": "00ADE5",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/harness/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.harness.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "houndci",
+    "title": "HoundCI",
+    "aliases": [],
+    "hex": "A873D1",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/houndci/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://houndci.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "incident",
+    "title": "Incident.io",
+    "aliases": [],
+    "hex": "F25533",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/incident/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://incident.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "launchdarkly",
+    "title": "LaunchDarkly",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/launchdarkly/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://launchdarkly.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "lightstep",
+    "title": "Lightstep",
+    "aliases": [],
+    "hex": "039C49",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/lightstep/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://lightstep.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "logentries",
+    "title": "Logentries",
+    "aliases": [],
+    "hex": "F47721",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/logentries/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://logentries.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "loggly",
+    "title": "Loggly",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/loggly/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.loggly.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "logmatic",
+    "title": "Logmatic",
+    "aliases": [],
+    "hex": "319CD5",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/logmatic/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://logmatic.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "maestro",
+    "title": "Maestro",
+    "aliases": [],
+    "hex": "6C6BBD",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/maestro/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://maestro.mobile.dev",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "msw",
+    "title": "MSW (Mock Service Worker)",
+    "aliases": [],
+    "hex": "ED7344",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/msw/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://mswjs.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "nightwatch",
+    "title": "Nightwatch.js",
+    "aliases": [],
+    "hex": "452815",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/nightwatch/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://nightwatchjs.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "pipedream",
+    "title": "Pipedream",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/pipedream/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://pipedream.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "quay",
+    "title": "Quay.io",
+    "aliases": [],
+    "hex": "40B4E5",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/quay/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://quay.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "renovatebot",
+    "title": "Renovate",
+    "aliases": [],
+    "hex": "497C9B",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/renovatebot/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://docs.renovatebot.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "rollupjs",
+    "title": "Rollup",
+    "aliases": [],
+    "hex": "FF6533",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/rollupjs/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://rollupjs.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "runscope",
+    "title": "Runscope",
+    "aliases": [],
+    "hex": "3E64A0",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/runscope/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.runscope.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "semaphoreci",
+    "title": "Semaphore CI",
+    "aliases": [],
+    "hex": "F06332",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/semaphoreci/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://semaphoreci.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "shields",
+    "title": "Shields.io",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/shields/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://shields.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "slidev",
+    "title": "Slidev",
+    "aliases": [],
+    "hex": "3ACBD4",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/slidev/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://sli.dev",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "sonarcloud",
+    "title": "SonarCloud",
+    "aliases": [],
+    "hex": "F3702A",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/sonarcloud/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://sonarcloud.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "sonarlint",
+    "title": "SonarLint",
+    "aliases": [],
+    "hex": "CB2029",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/sonarlint/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.sonarlint.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "stepsize",
+    "title": "Stepsize",
+    "aliases": [],
+    "hex": "D11E8E",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/stepsize/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.stepsize.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "stoplight",
+    "title": "Stoplight",
+    "aliases": [],
+    "hex": "3880F0",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/stoplight/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://stoplight.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "styleci",
+    "title": "StyleCI",
+    "aliases": [],
+    "hex": "E44041",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/styleci/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://styleci.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "swimm",
+    "title": "Swimm",
+    "aliases": [],
+    "hex": "4154FF",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/swimm/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://swimm.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "sysdig",
+    "title": "Sysdig",
+    "aliases": [],
+    "hex": "00ABC7",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/sysdig/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://sysdig.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "victorops",
+    "title": "VictorOps",
+    "aliases": [],
+    "hex": "F9AF4A",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/victorops/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://victorops.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "vitejs",
+    "title": "Vite",
+    "aliases": [],
+    "hex": "41D1FF",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/vitejs/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://vitejs.dev",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "volar",
+    "title": "Volar",
+    "aliases": [],
+    "hex": "7A85EC",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/volar/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://volarjs.dev",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "waypoint",
+    "title": "HashiCorp Waypoint",
+    "aliases": [],
+    "hex": "14C6CB",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/waypoint/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.waypointproject.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "alpinejs",
+    "title": "Alpine.js",
+    "aliases": [],
+    "hex": "77C1D2",
+    "categories": [
+      "Framework",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/alpinejs/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://alpinejs.dev",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "braze",
+    "title": "Braze",
+    "aliases": [],
+    "hex": "212124",
+    "categories": [
+      "Analytics",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/braze/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.braze.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "c-plusplus",
+    "title": "C++",
+    "aliases": [],
+    "hex": "649AD2",
+    "categories": [
+      "Language",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/c-plusplus/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://isocpp.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "c-sharp",
+    "title": "C#",
+    "aliases": [],
+    "hex": "512BD4",
+    "categories": [
+      "Language",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/c-sharp/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://learn.microsoft.com/en-us/dotnet/csharp",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "capacitorjs",
+    "title": "Capacitor",
+    "aliases": [],
+    "hex": "53B9FF",
+    "categories": [
+      "Framework",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/capacitorjs/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://capacitorjs.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "chartjs",
+    "title": "Chart.js",
+    "aliases": [],
+    "hex": "36A2EB",
+    "categories": [
+      "Framework",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/chartjs/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.chartjs.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "cljs",
+    "title": "ClojureScript",
+    "aliases": [],
+    "hex": "96CA4B",
+    "categories": [
+      "Language",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/cljs/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://clojurescript.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "compose-multiplatform",
+    "title": "Compose Multiplatform",
+    "aliases": [],
+    "hex": "4285F4",
+    "categories": [
+      "Framework",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/compose-multiplatform/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.jetbrains.com/lp/compose-multiplatform",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "customerio",
+    "title": "Customer.io",
+    "aliases": [],
+    "hex": "FFCD00",
+    "categories": [
+      "Analytics",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/customerio/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://customer.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "drift",
+    "title": "Drift",
+    "aliases": [],
+    "hex": "111111",
+    "categories": [
+      "Analytics",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/drift/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.drift.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "gopher",
+    "title": "Go (gopher mascot)",
+    "aliases": [],
+    "hex": "F6D2A2",
+    "categories": [
+      "Language",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/gopher/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://go.dev",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "grommet",
+    "title": "Grommet",
+    "aliases": [],
+    "hex": "7D4CDB",
+    "categories": [
+      "Framework",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/grommet/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://v2.grommet.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "hack",
+    "title": "Hack",
+    "aliases": [],
+    "hex": "868686",
+    "categories": [
+      "Language",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/hack/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://hacklang.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "headlessui",
+    "title": "Headless UI",
+    "aliases": [],
+    "hex": "66E3FF",
+    "categories": [
+      "Framework",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/headlessui/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://headlessui.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "helpscout",
+    "title": "Help Scout",
+    "aliases": [],
+    "hex": "1292EE",
+    "categories": [
+      "Analytics",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/helpscout/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.helpscout.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "hhvm",
+    "title": "HHVM",
+    "aliases": [],
+    "hex": "878787",
+    "categories": [
+      "Language",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/hhvm/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://hhvm.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "highcharts",
+    "title": "Highcharts",
+    "aliases": [],
+    "hex": "78758C",
+    "categories": [
+      "Framework",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/highcharts/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.highcharts.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "imba",
+    "title": "Imba",
+    "aliases": [],
+    "hex": "16CEC6",
+    "categories": [
+      "Language",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/imba/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://imba.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "inferno",
+    "title": "Inferno",
+    "aliases": [],
+    "hex": "FB3239",
+    "categories": [
+      "Framework",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/inferno/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://infernojs.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "jotai",
+    "title": "Jotai",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Framework",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/jotai/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://jotai.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "jruby",
+    "title": "JRuby",
+    "aliases": [],
+    "hex": "CA1F27",
+    "categories": [
+      "Language",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/jruby/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.jruby.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "launchrock",
+    "title": "Launchrock",
+    "aliases": [],
+    "hex": "DC0000",
+    "categories": [
+      "Analytics",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/launchrock/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.launchrock.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "lexical",
+    "title": "Lexical",
+    "aliases": [],
+    "hex": "76B6FF",
+    "categories": [
+      "Framework",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/lexical/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://lexical.dev",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "micro-python",
+    "title": "MicroPython",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Language",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/micro-python/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://micropython.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "mint-lang",
+    "title": "Mint",
+    "aliases": [],
+    "hex": "3AC155",
+    "categories": [
+      "Language",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/mint-lang/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.mint-lang.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "momentjs",
+    "title": "Moment.js",
+    "aliases": [],
+    "hex": "376660",
+    "categories": [
+      "Framework",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/momentjs/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://momentjs.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "mono",
+    "title": "Mono",
+    "aliases": [],
+    "hex": "1A1918",
+    "categories": [
+      "Language",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/mono/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.mono-project.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "nasm",
+    "title": "NASM",
+    "aliases": [],
+    "hex": "113B6A",
+    "categories": [
+      "Language",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/nasm/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.nasm.us",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "net",
+    "title": ".NET (Mono)",
+    "aliases": [],
+    "hex": "0664A8",
+    "categories": [
+      "Language",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/net/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://dotnet.microsoft.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "nextjs",
+    "title": "Next.js",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Framework",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/nextjs/default.svg",
+      "wordmark": "/icons/nextjs/wordmark.svg"
+    },
+    "license": "brand-use",
+    "url": "https://nextjs.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "nim-lang",
+    "title": "Nim",
+    "aliases": [],
+    "hex": "F3D400",
+    "categories": [
+      "Language",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/nim-lang/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://nim-lang.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "nodejs",
+    "title": "Node.js",
+    "aliases": [],
+    "hex": "539E43",
+    "categories": [
+      "Language",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/nodejs/default.svg",
+      "wordmark": "/icons/nodejs/wordmark.svg"
+    },
+    "license": "brand-use",
+    "url": "https://nodejs.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "onesignal",
+    "title": "OneSignal",
+    "aliases": [],
+    "hex": "E44A49",
+    "categories": [
+      "Analytics",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/onesignal/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://onesignal.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "phoenix",
+    "title": "Phoenix Framework",
+    "aliases": [],
+    "hex": "FD4F00",
+    "categories": [
+      "Framework",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/phoenix/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.phoenixframework.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "pyscript",
+    "title": "PyScript",
+    "aliases": [],
+    "hex": "FDA703",
+    "categories": [
+      "Language",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/pyscript/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://pyscript.net",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "r-lang",
+    "title": "R",
+    "aliases": [],
+    "hex": "2165B6",
+    "categories": [
+      "Language",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/r-lang/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.r-project.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "react-spring",
+    "title": "React Spring",
+    "aliases": [],
+    "hex": "FF6D6D",
+    "categories": [
+      "Framework",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/react-spring/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://react-spring.dev",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "reasonml",
+    "title": "ReasonML",
+    "aliases": [],
+    "hex": "DD4B39",
+    "categories": [
+      "Language",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/reasonml/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://reasonml.github.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "riot",
+    "title": "Riot.js",
+    "aliases": [],
+    "hex": "ED1846",
+    "categories": [
+      "Framework",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/riot/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://riot.js.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "socket-io",
+    "title": "Socket.io",
+    "aliases": [],
+    "hex": "010101",
+    "categories": [
+      "Framework",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/socket-io/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://socket.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "stenciljs",
+    "title": "Stencil",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Framework",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/stenciljs/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://stenciljs.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "svelte-kit",
+    "title": "SvelteKit",
+    "aliases": [],
+    "hex": "FF3E00",
+    "categories": [
+      "Framework",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/svelte-kit/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://kit.svelte.dev",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "tailwindcss",
+    "title": "Tailwind CSS",
+    "aliases": [],
+    "hex": "2298BD",
+    "categories": [
+      "Framework",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/tailwindcss/default.svg",
+      "wordmark": "/icons/tailwindcss/wordmark.svg"
+    },
+    "license": "brand-use",
+    "url": "https://tailwindcss.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "threejs",
+    "title": "Three.js",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Framework",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/threejs/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://threejs.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "tsnode",
+    "title": "ts-node",
+    "aliases": [],
+    "hex": "2261A8",
+    "categories": [
+      "Language",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/tsnode/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://typestrong.org/ts-node",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "vlang",
+    "title": "V",
+    "aliases": [],
+    "hex": "536B8A",
+    "categories": [
+      "Language",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/vlang/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://vlang.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "vwo",
+    "title": "VWO",
+    "aliases": [],
+    "hex": "BF3078",
+    "categories": [
+      "Analytics",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/vwo/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://vwo.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "winglang",
+    "title": "Wing",
+    "aliases": [],
+    "hex": "68D2C2",
+    "categories": [
+      "Language",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/winglang/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.winglang.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "xtend",
+    "title": "Xtend",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Language",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/xtend/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://eclipse.dev/xtend",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "applitools",
+    "title": "Applitools",
+    "aliases": [],
+    "hex": "00a298",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/applitools/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://applitools.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "saucelabs",
+    "title": "Sauce Labs",
+    "aliases": [],
+    "hex": "e12826",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/saucelabs/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://saucelabs.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "yeoman",
+    "title": "Yeoman",
+    "aliases": [],
+    "hex": "dd002a",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/yeoman/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://yeoman.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "capistrano",
+    "title": "Capistrano",
+    "aliases": [],
+    "hex": "00aee8",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/capistrano/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://capistranorb.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "fabric",
+    "title": "Fabric",
+    "aliases": [
+      "fabfile"
+    ],
+    "hex": "fec32d",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/fabric/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://fabfile.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "modernizr",
+    "title": "Modernizr",
+    "aliases": [],
+    "hex": "d91b77",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/modernizr/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://modernizr.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "saltstack",
+    "title": "Salt",
+    "aliases": [
+      "saltstack"
+    ],
+    "hex": "231f1f",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/saltstack/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://saltproject.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "rushjs",
+    "title": "Rush.js",
+    "aliases": [
+      "rush"
+    ],
+    "hex": "555555",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/rushjs/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://rushjs.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "armory",
+    "title": "Armory",
+    "aliases": [],
+    "hex": "00bcdd",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/armory/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://armory.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "bigpanda",
+    "title": "BigPanda",
+    "aliases": [],
+    "hex": "454545",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/bigpanda/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://bigpanda.io",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "drools",
+    "title": "Drools",
+    "aliases": [],
+    "hex": "0095dd",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/drools/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://drools.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "katalon",
+    "title": "Katalon",
+    "aliases": [],
+    "hex": "19d89f",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/katalon/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://katalon.com",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "act",
+    "title": "act",
+    "aliases": [
+      "nektos-act"
+    ],
+    "hex": "ef3d42",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/act/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://github.com/nektos/act",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
+  },
+  {
+    "slug": "redux-observable",
+    "title": "redux-observable",
+    "aliases": [],
+    "hex": "EC178D",
+    "categories": [
+      "Framework",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/redux-observable/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://redux-observable.js.org",
+    "dateAdded": "2026-06-29",
+    "collection": "community"
   }
 ]
