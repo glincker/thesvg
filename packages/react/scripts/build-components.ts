@@ -294,7 +294,7 @@ function toSafeIdentifier(slug: string): string {
 // Code generators
 // ---------------------------------------------------------------------------
 
-/** Pre-parsed SVG data shared between ESM and CJS generators to avoid double work. */
+/** Pre-parsed SVG data for a single variant, shared between ESM and CJS generators. */
 interface ParsedSvg {
   viewBox: string;
   fill: string;
@@ -302,17 +302,48 @@ interface ParsedSvg {
   childNodes: (CjsNode | string)[];
 }
 
-/** Parse an icon's SVG once for reuse by both ESM and CJS generators. */
-function parseSvgForIcon(icon: RawIcon): ParsedSvg | null {
+/** An icon's full variant set: every selectable variant parsed once. */
+interface ParsedIcon {
+  /** Ordered variant keys, always starting with "default". */
+  keys: string[];
+  /** Variant key -> parsed SVG. Always contains a "default" entry. */
+  variants: Record<string, ParsedSvg>;
+}
+
+/** Parse one variant SVG file. Returns null when the file is missing/empty. */
+function parseVariant(slug: string, variant: string): ParsedSvg | null {
+  const svgContent = readSvg(slug, variant);
+  if (!svgContent) return null;
+  const { inner, viewBox, fill, stroke } = svgToJsxInner(svgContent);
+  return { viewBox, fill, stroke, childNodes: convertJsxToCjs(inner) };
+}
+
+/**
+ * Parse every variant declared for an icon, once, for reuse by both the ESM
+ * and CJS generators. The "default" key always maps to the icon's primary SVG
+ * (default -> color -> mono -> ... fallback) so `<Icon />` renders unchanged.
+ * Additional declared variants (mono, wordmark, light, dark, ...) are added
+ * when their SVG file exists and parses. Returns null when no SVG is found.
+ */
+function parseSvgForIcon(icon: RawIcon): ParsedIcon | null {
   const svgContent = primarySvg(icon.slug, icon.variants);
   if (!svgContent) return null;
 
   const { inner, viewBox, fill, stroke } = svgToJsxInner(svgContent);
-  const childNodes = convertJsxToCjs(inner);
-  return { viewBox, fill, stroke, childNodes };
+  const variants: Record<string, ParsedSvg> = {
+    default: { viewBox, fill, stroke, childNodes: convertJsxToCjs(inner) },
+  };
+
+  for (const key of Object.keys(icon.variants)) {
+    if (key === "default") continue;
+    const parsed = parseVariant(icon.slug, key);
+    if (parsed) variants[key] = parsed;
+  }
+
+  return { keys: Object.keys(variants), variants };
 }
 
-function generateEsmComponent(icon: RawIcon, parsed: ParsedSvg | null): string {
+function generateEsmComponent(icon: RawIcon, parsed: ParsedIcon | null): string {
   const componentName = toPascalCase(icon.slug);
 
   if (!parsed) {
@@ -324,7 +355,7 @@ function generateEsmComponent(icon: RawIcon, parsed: ParsedSvg | null): string {
       `import { forwardRef } from 'react';`,
       ``,
       `const ${componentName} = forwardRef(`,
-      `  function ${componentName}(props, ref) {`,
+      `  function ${componentName}({ variant, ...props }, ref) {`,
       `    return null;`,
       `  }`,
       `);`,
@@ -334,20 +365,22 @@ function generateEsmComponent(icon: RawIcon, parsed: ParsedSvg | null): string {
     ].join("\n");
   }
 
-  const { viewBox, fill, stroke, childNodes } = parsed;
-
   return [
     `// @thesvg/react — ${icon.title}`,
     `// Auto-generated. Do not edit.`,
+    `// Variants: ${parsed.keys.join(", ")}`,
     ``,
     `import { forwardRef, createElement } from 'react';`,
     ``,
+    `const _variants = ${JSON.stringify(parsed.variants)};`,
+    ``,
     `const ${componentName} = forwardRef(`,
-    `  function ${componentName}({ viewBox = '${viewBox}', ...props }, ref) {`,
+    `  function ${componentName}({ variant = 'default', viewBox, ...props }, ref) {`,
+    `    const _v = _variants[variant] || _variants.default;`,
     `    return createElement(`,
     `      'svg',`,
-    `      Object.assign({ ref, viewBox, fill: '${fill}',${stroke ? ` stroke: '${stroke}',` : ""} xmlns: 'http://www.w3.org/2000/svg' }, props),`,
-    `      ...${JSON.stringify(childNodes)}`,
+    `      Object.assign({ ref, viewBox: viewBox || _v.viewBox, fill: _v.fill, stroke: _v.stroke, xmlns: 'http://www.w3.org/2000/svg' }, props),`,
+    `      ..._v.childNodes`,
     `        .map(function _c(el) {`,
     `          if (typeof el === 'string') return el;`,
     `          return createElement(el.type, el.props, ...(el.children || []).map(_c));`,
@@ -361,7 +394,7 @@ function generateEsmComponent(icon: RawIcon, parsed: ParsedSvg | null): string {
   ].join("\n");
 }
 
-function generateCjsComponent(icon: RawIcon, parsed: ParsedSvg | null): string {
+function generateCjsComponent(icon: RawIcon, parsed: ParsedIcon | null): string {
   const componentName = toPascalCase(icon.slug);
 
   if (!parsed) {
@@ -375,7 +408,7 @@ function generateCjsComponent(icon: RawIcon, parsed: ParsedSvg | null): string {
       ``,
       `const react_1 = require("react");`,
       ``,
-      `const ${componentName} = react_1.forwardRef(function ${componentName}(_props, _ref) {`,
+      `const ${componentName} = react_1.forwardRef(function ${componentName}({ variant: _variant, ..._props }, _ref) {`,
       `  return null;`,
       `});`,
       `${componentName}.displayName = '${componentName}';`,
@@ -384,22 +417,24 @@ function generateCjsComponent(icon: RawIcon, parsed: ParsedSvg | null): string {
     ].join("\n");
   }
 
-  const { viewBox, fill, stroke, childNodes } = parsed;
-
   return [
     `"use strict";`,
     `// @thesvg/react — ${icon.title}`,
     `// Auto-generated. Do not edit.`,
+    `// Variants: ${parsed.keys.join(", ")}`,
     ``,
     `Object.defineProperty(exports, "__esModule", { value: true });`,
     ``,
     `const react_1 = require("react");`,
     ``,
-    `const ${componentName} = react_1.forwardRef(function ${componentName}({ viewBox = '${viewBox}', ...props }, ref) {`,
+    `const _variants = ${JSON.stringify(parsed.variants)};`,
+    ``,
+    `const ${componentName} = react_1.forwardRef(function ${componentName}({ variant = 'default', viewBox, ...props }, ref) {`,
+    `  const _v = _variants[variant] || _variants.default;`,
     `  return react_1.createElement(`,
     `    'svg',`,
-    `    Object.assign({ ref, viewBox, fill: '${fill}',${stroke ? ` stroke: '${stroke}',` : ""} xmlns: 'http://www.w3.org/2000/svg' }, props),`,
-    `    ...${JSON.stringify(childNodes)}`,
+    `    Object.assign({ ref, viewBox: viewBox || _v.viewBox, fill: _v.fill, stroke: _v.stroke, xmlns: 'http://www.w3.org/2000/svg' }, props),`,
+    `    ..._v.childNodes`,
     `      .map(function _c(el) {`,
     `        if (typeof el === 'string') return el;`,
     `        return react_1.createElement(el.type, el.props, ...(el.children || []).map(_c));`,
@@ -539,17 +574,26 @@ function findMatchingCloseTag(html: string, tagName: string): number {
   return -1;
 }
 
-function generateDtsComponent(icon: RawIcon): string {
+function generateDtsComponent(icon: RawIcon, parsed: ParsedIcon | null): string {
   const componentName = toPascalCase(icon.slug);
+  // Per-icon union of the variants that actually resolved. Falls back to
+  // "default" so the prop is always present and typed, even for null icons.
+  const variantKeys = parsed && parsed.keys.length > 0 ? parsed.keys : ["default"];
+  const variantUnion = variantKeys.map((k) => `'${k}'`).join(" | ");
   return [
     `// @thesvg/react — ${icon.title}`,
     `// Auto-generated. Do not edit.`,
     ``,
     `import type { SVGProps, ForwardRefExoticComponent, RefAttributes } from 'react';`,
     ``,
-    `export type SvgIconProps = SVGProps<SVGSVGElement>;`,
+    `export type ${componentName}Variant = ${variantUnion};`,
     ``,
-    `declare const ${componentName}: ForwardRefExoticComponent<SvgIconProps & RefAttributes<SVGSVGElement>>;`,
+    `export interface ${componentName}Props extends SVGProps<SVGSVGElement> {`,
+    `  /** Which icon variant to render. Defaults to "default". */`,
+    `  variant?: ${componentName}Variant;`,
+    `}`,
+    ``,
+    `declare const ${componentName}: ForwardRefExoticComponent<${componentName}Props & RefAttributes<SVGSVGElement>>;`,
     `export default ${componentName};`,
   ].join("\n");
 }
@@ -733,7 +777,7 @@ function main(): void {
     // Write CJS component (pre-compiled to createElement calls)
     writeFileSync(join(DIST, `${icon.slug}.cjs`), generateCjsComponent(icon, parsed) + "\n");
     // Write type declarations
-    writeFileSync(join(DIST, `${icon.slug}.d.ts`), generateDtsComponent(icon) + "\n");
+    writeFileSync(join(DIST, `${icon.slug}.d.ts`), generateDtsComponent(icon, parsed) + "\n");
 
     entries.push({ slug: icon.slug, componentName });
 

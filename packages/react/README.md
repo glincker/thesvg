@@ -64,6 +64,25 @@ import VisualStudioCode from '@thesvg/react/visual-studio-code';
 Each icon is a separate module so bundlers that do not support tree-shaking
 (e.g. CommonJS environments) will still include only the icons you import.
 
+### Selecting a variant
+
+Many brands ship more than one mark (a monochrome version, a wordmark, a
+light/dark optimized variant). Pass the `variant` prop to choose one. It
+defaults to `"default"`, so existing usage is unchanged:
+
+```tsx
+import { Github } from '@thesvg/react';
+
+<Github />                    {/* default mark */}
+<Github variant="mono" />     {/* monochrome */}
+<Github variant="wordmark" /> {/* text logo */}
+```
+
+The accepted variant names are typed per icon, so your editor autocompletes
+only the variants that icon actually has, and an unknown variant is a type
+error. At runtime an unrecognized variant safely falls back to `"default"`.
+Icons that ship a single mark only accept `variant="default"`.
+
 ### With Next.js App Router
 
 Icons work as Server Components by default. No `"use client"` directive needed:
@@ -112,6 +131,7 @@ Every component accepts all standard SVG props via `SVGProps<SVGSVGElement>`:
 | `style`     | `CSSProperties` | -            | Inline styles (prefer className)    |
 | `fill`      | `string` | `"none"`               | SVG fill color                      |
 | `viewBox`   | `string` | from original SVG      | Override the viewBox                |
+| `variant`   | `string` | `"default"`            | Which icon variant to render (per-icon typed union) |
 | `ref`       | `Ref<SVGSVGElement>` | -          | Forwarded ref                       |
 | `aria-label`| `string` | -                      | Accessible label                    |
 | ...         | ...      | -                      | Any other `SVGProps<SVGSVGElement>`  |
