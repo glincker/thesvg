@@ -1,13 +1,13 @@
 <p align="center">
   <a href="https://github.com/glincker/thesvg">
-    <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" alt="theSVG - 6,030+ brand SVG icons" width="700" />
+    <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" alt="theSVG - 6,400+ Brand SVG Icons" width="700" />
   </a>
 </p>
 
-<h3 align="center">thesvg</h3>
+<h3 align="center">theSVG</h3>
 
 <p align="center">
-  3,800+ brand SVG icons for developers. Tree-shakeable, typed, open source.
+  6,400+ brand SVG icons for developers. Tree-shakeable, typed, open source.
   <br />
   <a href="https://thesvg.org"><strong>Browse all icons &rarr;</strong></a>
 </p>
@@ -21,7 +21,7 @@
 
 ---
 
-This is the convenience package for [`@thesvg/icons`](https://www.npmjs.com/package/@thesvg/icons). Both packages contain the same 3,800+ icons.
+This is the convenience package for [`@thesvg/icons`](https://www.npmjs.com/package/@thesvg/icons). Both packages contain the same 6,400+ icons.
 
 ## Install
 
