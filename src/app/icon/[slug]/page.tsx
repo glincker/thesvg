@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { getAllIcons, getIconBySlug } from "@/lib/icons";
 import { IconPageClient } from "@/components/icons/icon-page-client";
@@ -242,7 +243,9 @@ export default async function IconPage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <IconPageClient slug={slug} />
+      <Suspense>
+        <IconPageClient slug={slug} />
+      </Suspense>
     </>
   );
 }
