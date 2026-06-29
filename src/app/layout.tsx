@@ -7,6 +7,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { MobileShell } from "@/components/mobile/mobile-shell";
+import { AnnouncementBanner } from "@/components/announcement-banner";
 import { getFormattedIconCount } from "@/lib/icons";
 import "./globals.css";
 
@@ -142,6 +143,7 @@ export default function RootLayout({
           storageKey="thesvg-theme"
           disableTransitionOnChange
         >
+          <AnnouncementBanner />
           <ScrollToTop />
           {/* Desktop header — `lg:` and above. Rendered as a body-level
               sibling (not wrapped) so position: sticky keeps a containing

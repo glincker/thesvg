@@ -21,6 +21,7 @@ const PRODUCT_LINKS: FooterLink[] = [
   { label: "Categories", href: "/categories" },
   { label: "Extensions", href: "/extensions" },
   { label: "Submit Icon", href: "/submit" },
+  { label: "Blog", href: "/blog" },
 ];
 
 const RESOURCE_LINKS: FooterLink[] = [
