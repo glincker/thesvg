@@ -84583,6 +84583,23 @@
     "collection": "brands"
   },
   {
+    "slug": "netbird",
+    "title": "NetBird",
+    "aliases": [],
+    "hex": "FF6B35",
+    "categories": [
+      "Software",
+      "Network"
+    ],
+    "variants": {
+      "default": "/icons/netbird/default.svg"
+    },
+    "license": "BSD-3-Clause",
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "url": "https://netbird.io"
+  },
+  {
     "slug": "netbox",
     "title": "Netbox",
     "aliases": [],
@@ -87055,6 +87072,23 @@
     "collection": "brands"
   },
   {
+    "slug": "oceanbase",
+    "title": "OceanBase",
+    "aliases": [],
+    "hex": "006EFF",
+    "categories": [
+      "Software",
+      "Database"
+    ],
+    "variants": {
+      "default": "/icons/oceanbase/default.svg"
+    },
+    "license": "Apache-2.0",
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "url": "https://oceanbase.com"
+  },
+  {
     "slug": "oclc",
     "title": "OCLC",
     "aliases": [],
@@ -87366,6 +87400,23 @@
     "guidelines": "https://www.okta.com/terms-of-use-for-okta-content/",
     "dateAdded": "2026-03-07",
     "collection": "brands"
+  },
+  {
+    "slug": "okteto",
+    "title": "Okteto",
+    "aliases": [],
+    "hex": "00D1CA",
+    "categories": [
+      "Software",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/okteto/default.svg"
+    },
+    "license": "Apache-2.0",
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "url": "https://okteto.com"
   },
   {
     "slug": "okx",
@@ -88139,6 +88190,23 @@
     "collection": "brands"
   },
   {
+    "slug": "openebs",
+    "title": "OpenEBS",
+    "aliases": [],
+    "hex": "F05537",
+    "categories": [
+      "Software",
+      "Cloud"
+    ],
+    "variants": {
+      "default": "/icons/openebs/default.svg"
+    },
+    "license": "Apache-2.0",
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "url": "https://openebs.io"
+  },
+  {
     "slug": "openfaas",
     "title": "OpenFaaS",
     "aliases": [],
@@ -88711,6 +88779,23 @@
     "collection": "brands"
   },
   {
+    "slug": "openvino",
+    "title": "OpenVINO",
+    "aliases": [],
+    "hex": "0071C5",
+    "categories": [
+      "Software",
+      "AI"
+    ],
+    "variants": {
+      "default": "/icons/openvino/default.svg"
+    },
+    "license": "Apache-2.0",
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "url": "https://openvino.ai"
+  },
+  {
     "slug": "openvpn",
     "title": "OpenVPN",
     "aliases": [],
@@ -88818,6 +88903,23 @@
     "url": "https://commons.wikimedia.org/wiki/File:OpenZFS_logo.svg",
     "dateAdded": "2026-03-07",
     "collection": "brands"
+  },
+  {
+    "slug": "openziti",
+    "title": "OpenZiti",
+    "aliases": [],
+    "hex": "00A0E3",
+    "categories": [
+      "Software",
+      "Network"
+    ],
+    "variants": {
+      "default": "/icons/openziti/default.svg"
+    },
+    "license": "Apache-2.0",
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "url": "https://openziti.io"
   },
   {
     "slug": "opera",
@@ -89404,6 +89506,40 @@
     "collection": "brands"
   },
   {
+    "slug": "ovhcloud",
+    "title": "OVHcloud",
+    "aliases": [],
+    "hex": "123F6D",
+    "categories": [
+      "Software",
+      "Cloud"
+    ],
+    "variants": {
+      "default": "/icons/ovhcloud/default.svg"
+    },
+    "license": "brand-use",
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "url": "https://ovhcloud.com"
+  },
+  {
+    "slug": "ovirt",
+    "title": "oVirt",
+    "aliases": [],
+    "hex": "CC0000",
+    "categories": [
+      "Software",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/ovirt/default.svg"
+    },
+    "license": "Apache-2.0",
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "url": "https://ovirt.org"
+  },
+  {
     "slug": "owasp",
     "title": "OWASP",
     "aliases": [],
@@ -89473,6 +89609,23 @@
     "url": "https://oxc.rs/",
     "dateAdded": "2026-03-07",
     "collection": "brands"
+  },
+  {
+    "slug": "oxen",
+    "title": "Oxen",
+    "aliases": [],
+    "hex": "F76D2B",
+    "categories": [
+      "Software",
+      "AI"
+    ],
+    "variants": {
+      "default": "/icons/oxen/default.svg"
+    },
+    "license": "MIT",
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "url": "https://oxen.ai"
   },
   {
     "slug": "oxygen",
@@ -91851,6 +92004,23 @@
     "collection": "brands"
   },
   {
+    "slug": "pinniped",
+    "title": "Pinniped",
+    "aliases": [],
+    "hex": "00A8E8",
+    "categories": [
+      "Software",
+      "Security"
+    ],
+    "variants": {
+      "default": "/icons/pinniped/default.svg"
+    },
+    "license": "Apache-2.0",
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "url": "https://pinniped.dev"
+  },
+  {
     "slug": "pino",
     "title": "pino",
     "aliases": [],
@@ -93056,6 +93226,23 @@
     "url": "https://polar.sh/",
     "dateAdded": "2026-03-07",
     "collection": "brands"
+  },
+  {
+    "slug": "polaris",
+    "title": "Polaris",
+    "aliases": [],
+    "hex": "4CAF50",
+    "categories": [
+      "Software",
+      "Cloud"
+    ],
+    "variants": {
+      "default": "/icons/polaris/default.svg"
+    },
+    "license": "Apache-2.0",
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "url": "https://polaris.docs.fairwinds.com"
   },
   {
     "slug": "polars",
@@ -94543,6 +94730,23 @@
     "url": "https://prometheus.io",
     "dateAdded": "2026-03-07",
     "collection": "brands"
+  },
+  {
+    "slug": "promptfoo",
+    "title": "Promptfoo",
+    "aliases": [],
+    "hex": "6366F1",
+    "categories": [
+      "Software",
+      "AI"
+    ],
+    "variants": {
+      "default": "/icons/promptfoo/default.svg"
+    },
+    "license": "MIT",
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "url": "https://promptfoo.dev"
   },
   {
     "slug": "pronounsdotpage",
@@ -96958,6 +97162,23 @@
     "url": "https://github.com/raysan5/raylib/blob/e7a486fa81adac1833253c849ca73c5b3f7ef361/logo/raylib_512x512.png",
     "dateAdded": "2026-03-07",
     "collection": "brands"
+  },
+  {
+    "slug": "razee",
+    "title": "Razee",
+    "aliases": [],
+    "hex": "1F70C1",
+    "categories": [
+      "Software",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/razee/default.svg"
+    },
+    "license": "Apache-2.0",
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "url": "https://razee.io"
   },
   {
     "slug": "razer",
@@ -100955,6 +101176,23 @@
     "collection": "brands"
   },
   {
+    "slug": "scale",
+    "title": "Scale AI",
+    "aliases": [],
+    "hex": "7B61FF",
+    "categories": [
+      "Software",
+      "AI"
+    ],
+    "variants": {
+      "default": "/icons/scale/default.svg"
+    },
+    "license": "brand-use",
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "url": "https://scale.com"
+  },
+  {
     "slug": "scaleway",
     "title": "Scaleway",
     "aliases": [],
@@ -104670,6 +104908,23 @@
     "collection": "brands"
   },
   {
+    "slug": "speedscale",
+    "title": "Speedscale",
+    "aliases": [],
+    "hex": "00C3FF",
+    "categories": [
+      "Software",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/speedscale/default.svg"
+    },
+    "license": "brand-use",
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "url": "https://speedscale.com"
+  },
+  {
     "slug": "speedtest",
     "title": "Speedtest",
     "aliases": [],
@@ -104812,6 +105067,23 @@
     "url": "https://spinnaker.io/",
     "dateAdded": "2026-03-07",
     "collection": "brands"
+  },
+  {
+    "slug": "spire",
+    "title": "SPIRE",
+    "aliases": [],
+    "hex": "0C4A6E",
+    "categories": [
+      "Software",
+      "Security"
+    ],
+    "variants": {
+      "default": "/icons/spire/default.svg"
+    },
+    "license": "Apache-2.0",
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "url": "https://spiffe.io/docs/latest/spire-about"
   },
   {
     "slug": "splunk",
@@ -105175,6 +105447,23 @@
     "guidelines": "https://www.squarespace.com/brand-guidelines",
     "dateAdded": "2026-03-07",
     "collection": "brands"
+  },
+  {
+    "slug": "squash",
+    "title": "Squash",
+    "aliases": [],
+    "hex": "7B2FBE",
+    "categories": [
+      "Software",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/squash/default.svg"
+    },
+    "license": "Apache-2.0",
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "url": "https://squash.solo.io"
   },
   {
     "slug": "srg-ssr",
@@ -106614,6 +106903,23 @@
     "url": "https://www.sublimetext.com/",
     "dateAdded": "2026-03-07",
     "collection": "brands"
+  },
+  {
+    "slug": "submariner",
+    "title": "Submariner",
+    "aliases": [],
+    "hex": "00B5E2",
+    "categories": [
+      "Software",
+      "Cloud"
+    ],
+    "variants": {
+      "default": "/icons/submariner/default.svg"
+    },
+    "license": "Apache-2.0",
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "url": "https://submariner.io"
   },
   {
     "slug": "submodel",
@@ -108661,6 +108967,23 @@
     "dateAdded": "2026-05-05"
   },
   {
+    "slug": "teller",
+    "title": "Teller",
+    "aliases": [],
+    "hex": "6366F1",
+    "categories": [
+      "Software",
+      "Security"
+    ],
+    "variants": {
+      "default": "/icons/teller/default.svg"
+    },
+    "license": "Apache-2.0",
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "url": "https://tlr.dev"
+  },
+  {
     "slug": "telstra",
     "title": "Telstra",
     "aliases": [],
@@ -109019,6 +109342,23 @@
     "url": "https://testing-library.com",
     "dateAdded": "2026-03-07",
     "collection": "brands"
+  },
+  {
+    "slug": "testkube",
+    "title": "Testkube",
+    "aliases": [],
+    "hex": "6B21A8",
+    "categories": [
+      "Software",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/testkube/default.svg"
+    },
+    "license": "MIT",
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "url": "https://testkube.io"
   },
   {
     "slug": "testrail",
@@ -110211,6 +110551,23 @@
     "url": "https://www.tindie.com/tindieu",
     "dateAdded": "2026-03-07",
     "collection": "brands"
+  },
+  {
+    "slug": "tinkerbell",
+    "title": "Tinkerbell",
+    "aliases": [],
+    "hex": "DC2626",
+    "categories": [
+      "Software",
+      "Cloud"
+    ],
+    "variants": {
+      "default": "/icons/tinkerbell/default.svg"
+    },
+    "license": "Apache-2.0",
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "url": "https://tinkerbell.org"
   },
   {
     "slug": "tinkercad",
@@ -114091,6 +114448,23 @@
     "collection": "brands"
   },
   {
+    "slug": "vcluster",
+    "title": "vCluster",
+    "aliases": [],
+    "hex": "326CE5",
+    "categories": [
+      "Software",
+      "Cloud"
+    ],
+    "variants": {
+      "default": "/icons/vcluster/default.svg"
+    },
+    "license": "Apache-2.0",
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "url": "https://vcluster.com"
+  },
+  {
     "slug": "vectary",
     "title": "Vectary",
     "aliases": [],
@@ -114269,6 +114643,23 @@
     "url": "https://www.vegascreativesoftware.com",
     "dateAdded": "2026-03-07",
     "collection": "brands"
+  },
+  {
+    "slug": "velero",
+    "title": "Velero",
+    "aliases": [],
+    "hex": "00ACD7",
+    "categories": [
+      "Software",
+      "Cloud"
+    ],
+    "variants": {
+      "default": "/icons/velero/default.svg"
+    },
+    "license": "Apache-2.0",
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "url": "https://velero.io"
   },
   {
     "slug": "velocity",
@@ -115567,6 +115958,23 @@
     "url": "https://volaris.com",
     "dateAdded": "2026-05-31",
     "collection": "brands"
+  },
+  {
+    "slug": "volcano",
+    "title": "Volcano",
+    "aliases": [],
+    "hex": "326CE5",
+    "categories": [
+      "Software",
+      "Cloud"
+    ],
+    "variants": {
+      "default": "/icons/volcano/default.svg"
+    },
+    "license": "Apache-2.0",
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "url": "https://volcano.sh"
   },
   {
     "slug": "volcengine",
@@ -118764,6 +119172,23 @@
     "collection": "brands"
   },
   {
+    "slug": "xgboost",
+    "title": "XGBoost",
+    "aliases": [],
+    "hex": "189AB4",
+    "categories": [
+      "Software",
+      "AI"
+    ],
+    "variants": {
+      "default": "/icons/xgboost/default.svg"
+    },
+    "license": "Apache-2.0",
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "url": "https://xgboost.readthedocs.io"
+  },
+  {
     "slug": "xiaohongshu",
     "title": "Xiaohongshu",
     "aliases": [
@@ -120168,6 +120593,23 @@
     "collection": "brands"
   },
   {
+    "slug": "zenml",
+    "title": "ZenML",
+    "aliases": [],
+    "hex": "9B59B6",
+    "categories": [
+      "Software",
+      "AI"
+    ],
+    "variants": {
+      "default": "/icons/zenml/default.svg"
+    },
+    "license": "Apache-2.0",
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "url": "https://zenml.io"
+  },
+  {
     "slug": "zenmux",
     "title": "ZenMux",
     "aliases": [],
@@ -120637,6 +121079,23 @@
     "url": "https://zorin.com/press",
     "dateAdded": "2026-03-07",
     "collection": "brands"
+  },
+  {
+    "slug": "zot",
+    "title": "Zot",
+    "aliases": [],
+    "hex": "007BFF",
+    "categories": [
+      "Software",
+      "Cloud"
+    ],
+    "variants": {
+      "default": "/icons/zot/default.svg"
+    },
+    "license": "Apache-2.0",
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "url": "https://zotregistry.dev"
   },
   {
     "slug": "zotero",
