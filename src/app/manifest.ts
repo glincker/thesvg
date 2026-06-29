@@ -7,7 +7,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "thesvg - Open SVG Brand Library",
     short_name: "thesvg",
-    description: "Search, copy, and ship 6,000+ brand SVG icons.",
+    description: "Search, copy, and ship 6,400+ brand SVG icons.",
     start_url: "/",
     scope: "/",
     display: "standalone",

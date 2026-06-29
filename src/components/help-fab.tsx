@@ -28,7 +28,7 @@ const TIPS = [
   {
     icon: Search,
     title: "Search everything",
-    description: "Press Cmd+K to search across 6,100+ icons",
+    description: "Press Cmd+K to search across 6,400+ icons",
     gradient: "from-orange-500 to-amber-500",
     glow: "shadow-orange-500/25",
   },

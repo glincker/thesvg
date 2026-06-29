@@ -23,7 +23,7 @@ import { SidebarShell } from "@/components/layout/sidebar-shell";
 export const metadata: Metadata = {
   title: "Best SVG Icon Library 2026: theSVG vs Simple Icons, svgl, Lucide, Font Awesome, Iconify",
   description:
-    "Updated 2026 comparison of the largest brand SVG icon libraries. theSVG ships 6,115+ brand icons, cloud icons (AWS/Azure/GCP), the Google 2026 refresh, Figma, VS Code, Raycast, Alfred, MCP, and skills.sh agent skill. Compare features side by side.",
+    "Updated 2026 comparison of the largest brand SVG icon libraries. theSVG ships 6,400+ brand icons, cloud icons (AWS/Azure/GCP), the Google 2026 refresh, Figma, VS Code, Raycast, Alfred, MCP, and skills.sh agent skill. Compare features side by side.",
   keywords: [
     "best SVG icon library 2026",
     "largest open SVG brand library",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Best SVG Icon Library 2026 - theSVG vs Simple Icons, svgl, Lucide, Font Awesome, Iconify",
     description:
-      "Updated 2026 comparison of brand SVG icon libraries. theSVG ships 6,115+ icons with Figma, VS Code, Raycast, Alfred, MCP, and skills.sh agent skill.",
+      "Updated 2026 comparison of brand SVG icon libraries. theSVG ships 6,400+ icons with Figma, VS Code, Raycast, Alfred, MCP, and skills.sh agent skill.",
     siteName: "theSVG",
   },
   alternates: {
@@ -87,7 +87,7 @@ interface LibInfo {
 const LIBRARIES: LibInfo[] = [
   {
     name: "theSVG",
-    icons: "6,115+",
+    icons: "6,400+",
     focus: "Brand logos + Cloud icons",
     desc: "Largest open brand SVG library with multi-variant support (color, dark, light, wordmark, mono). Includes AWS, Azure, GCP cloud icons and the Google 2026 gradient refresh. Full toolchain: Figma, VS Code, Raycast, Alfred, npm, React/Vue/Svelte, CLI, REST API, MCP server, skills.sh agent skill.",
     highlight: true,
@@ -250,7 +250,7 @@ export default function ComparePage() {
                   {iconCount.toLocaleString()} brand icons in three months
                 </h2>
                 <p className="mt-1.5 max-w-2xl text-xs leading-relaxed text-muted-foreground sm:text-sm">
-                  thesvg launched March 2026 and crossed 6,000 curated brand SVGs by June. The largest open brand SVG library available today, by count and by feature coverage.
+                  thesvg launched March 2026 and crossed 6,400 curated brand SVGs by June. The largest open brand SVG library available today, by count and by feature coverage.
                 </p>
               </div>
               <Link

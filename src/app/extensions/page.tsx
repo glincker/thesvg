@@ -21,7 +21,7 @@ import { SidebarShell } from "@/components/layout/sidebar-shell";
 export const metadata: Metadata = {
   title: "Extensions & Integrations - Figma, VS Code, React, CLI",
   description:
-    "Use 6,100+ free SVG icons in Figma, VS Code, Raycast, React, Vue, CLI, and more. Official Figma plugin, npm packages, MCP server, and CDN.",
+    "Use 6,400+ free SVG icons in Figma, VS Code, Raycast, React, Vue, CLI, and more. Official Figma plugin, npm packages, MCP server, and CDN.",
   keywords: [
     "Figma brand icons plugin",
     "SVG icon Figma plugin",
@@ -274,7 +274,7 @@ const CATEGORIES: Category[] = [
     items: [
       {
         name: "Browser Extension",
-        description: "Chrome, Firefox, Edge popup. Search 6,100+ brand SVGs, copy SVG, CDN URL, or markdown. MV3, no telemetry.",
+        description: "Chrome, Firefox, Edge popup. Search 6,400+ brand SVGs, copy SVG, CDN URL, or markdown. MV3, no telemetry.",
         status: "coming-soon",
         cta: "View source",
         href: "https://github.com/glincker/thesvg/tree/main/extensions/browser",

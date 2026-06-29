@@ -13,7 +13,7 @@ import { categoryUrl } from "@/lib/categories";
 export const metadata: Metadata = {
   title: "Browse All Categories",
   description:
-    "Explore all icon categories on theSVG. Browse 6,100+ brand, AWS, Azure, and GCP SVG icons organized by category.",
+    "Explore all icon categories on theSVG. Browse 6,400+ brand, AWS, Azure, and GCP SVG icons organized by category.",
   keywords: [
     "SVG icon categories",
     "brand icon categories",

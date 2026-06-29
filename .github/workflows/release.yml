@@ -125,24 +125,14 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Create GitHub releases per package
-        # Create one GitHub release per just-published package, with the
-        # release body sourced from that package's CHANGELOG.md section
-        # for the current version. This:
-        #   1. Fires `on: release: published` for downstream automations
-        #      (e.g. homebrew-tap-update, which gates on @thesvg/cli@*).
-        #   2. Gives each package a discoverable release page on GitHub
-        #      with the changeset entries that landed in that version.
+      - name: Create combined GitHub release
+        # One GitHub release per version cycle, tagged as thesvg@{version}.
+        # All packages are listed in a single release body rather than
+        # flooding the releases page with per-package noise.
+        # The @thesvg/cli release is ALSO created separately so the
+        # homebrew-tap-update workflow (which listens for @thesvg/cli@* releases)
+        # still fires correctly.
         run: |
-          # Note: deliberately not using `set -e`. We want one failing
-          # release (e.g. flaky gh API) not to skip releases for every
-          # later package. We track failures and exit non-zero at the
-          # end so the workflow surfaces the problem.
-          failed=()
-
-          # Extract the section between `## <version>` and the next `## ` (or EOF)
-          # from a changesets-generated CHANGELOG.md. Echoes nothing if the
-          # section is absent.
           extract_section() {
             local file="$1" version="$2"
             awk -v ver="## ${version}" '
@@ -152,70 +142,127 @@ jobs:
             ' "$file"
           }
 
-          for PKG_DIR in packages/*/; do
-            PKG_DIR="${PKG_DIR%/}"
-            [ -f "$PKG_DIR/package.json" ] || continue
-            PKG_NAME=$(node -p "require('./$PKG_DIR/package.json').name")
-            PKG_VERSION=$(node -p "require('./$PKG_DIR/package.json').version")
-            PKG_PRIVATE=$(node -p "require('./$PKG_DIR/package.json').private || false")
-            if [ "$PKG_PRIVATE" = "true" ]; then continue; fi
+          CANONICAL_VERSION=$(node -p "require('./packages/thesvg/package.json').version")
+          CANONICAL_TAG="thesvg@${CANONICAL_VERSION}"
 
-            TAG="$PKG_NAME@$PKG_VERSION"
-
-            # Only create a release if the git tag exists (created above)
-            # and the release doesn't already exist.
-            if ! git rev-parse "$TAG" >/dev/null 2>&1; then
-              echo "Skipping $TAG (no git tag)"
-              continue
-            fi
-            if gh release view "$TAG" >/dev/null 2>&1; then
-              echo "Skipping $TAG (release exists)"
-              continue
-            fi
-
-            # Build release body from CHANGELOG.md section
-            CHANGELOG="$PKG_DIR/CHANGELOG.md"
+          if gh release view "$CANONICAL_TAG" >/dev/null 2>&1; then
+            echo "Combined release $CANONICAL_TAG already exists, skipping"
+          else
             BODY_FILE="$(mktemp)"
             {
-              echo "## $PKG_NAME $PKG_VERSION"
-              echo
-              if [ -f "$CHANGELOG" ]; then
-                SECTION=$(extract_section "$CHANGELOG" "$PKG_VERSION")
-                if [ -n "$SECTION" ]; then
-                  echo "$SECTION"
-                else
-                  echo "_No changelog entry found for version $PKG_VERSION._"
-                fi
-              else
-                echo "_Package has no CHANGELOG.md._"
-              fi
-              echo
+              cat <<'HEADER'
+<p align="center">
+  <a href="https://thesvg.org">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-wordmark-dark.svg" />
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-wordmark.svg" />
+      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-wordmark.svg" alt="thesvg logo" height="60" />
+    </picture>
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://thesvg.org">Browse</a> &middot;
+  <a href="https://www.npmjs.com/package/thesvg">npm</a> &middot;
+  <a href="https://github.com/glincker/thesvg">GitHub</a> &middot;
+  <a href="https://thesvg.org/blog">Blog</a> &middot;
+  <a href="https://thesvg.org/submit">Submit an icon</a>
+</p>
+
+---
+HEADER
+
+              echo ""
+              echo "## Packages in this release"
+              echo ""
+              for PKG_DIR in packages/*/; do
+                PKG_DIR="${PKG_DIR%/}"
+                [ -f "$PKG_DIR/package.json" ] || continue
+                PKG_NAME=$(node -p "require('./$PKG_DIR/package.json').name")
+                PKG_VERSION=$(node -p "require('./$PKG_DIR/package.json').version")
+                PKG_PRIVATE=$(node -p "require('./$PKG_DIR/package.json').private || false")
+                [ "$PKG_PRIVATE" = "true" ] && continue
+                echo "- \`$PKG_NAME@$PKG_VERSION\`"
+              done
+
+              echo ""
+              echo "## What changed"
+              echo ""
+              for PKG_DIR in packages/*/; do
+                PKG_DIR="${PKG_DIR%/}"
+                [ -f "$PKG_DIR/package.json" ] || continue
+                PKG_NAME=$(node -p "require('./$PKG_DIR/package.json').name")
+                PKG_VERSION=$(node -p "require('./$PKG_DIR/package.json').version")
+                PKG_PRIVATE=$(node -p "require('./$PKG_DIR/package.json').private || false")
+                [ "$PKG_PRIVATE" = "true" ] && continue
+                CHANGELOG="$PKG_DIR/CHANGELOG.md"
+                SECTION=""
+                [ -f "$CHANGELOG" ] && SECTION=$(extract_section "$CHANGELOG" "$PKG_VERSION")
+                [ -z "$SECTION" ] && continue
+                echo "### $PKG_NAME"
+                echo ""
+                echo "$SECTION"
+                echo ""
+              done
+
               echo "---"
-              echo
-              if [ "$PKG_NAME" = "@thesvg/cli" ]; then
-                echo "Install: \`brew install glincker/thesvg/thesvg\` or \`npm i -g @thesvg/cli\`"
-              else
-                echo "Install: \`npm i $PKG_NAME@$PKG_VERSION\`"
-              fi
-              echo "Tarball: https://registry.npmjs.org/$PKG_NAME/-/$(basename $PKG_NAME)-$PKG_VERSION.tgz"
+              echo ""
+              echo "## Install"
+              echo ""
+              echo '```sh'
+              for PKG_DIR in packages/*/; do
+                PKG_DIR="${PKG_DIR%/}"
+                [ -f "$PKG_DIR/package.json" ] || continue
+                PKG_NAME=$(node -p "require('./$PKG_DIR/package.json').name")
+                PKG_VERSION=$(node -p "require('./$PKG_DIR/package.json').version")
+                PKG_PRIVATE=$(node -p "require('./$PKG_DIR/package.json').private || false")
+                [ "$PKG_PRIVATE" = "true" ] && continue
+                [ "$PKG_NAME" = "@thesvg/cli" ] && continue
+                echo "npm i $PKG_NAME@$PKG_VERSION"
+              done
+              echo '```'
             } > "$BODY_FILE"
 
-            echo "Creating GitHub release for $TAG"
-            if gh release create "$TAG" \
-                 --title "$PKG_NAME $PKG_VERSION" \
+            # Use the canonical thesvg tag if it exists, else fall back to any valid tag
+            RELEASE_TAG="$CANONICAL_TAG"
+            if ! git rev-parse "refs/tags/$RELEASE_TAG" >/dev/null 2>&1; then
+              # Tag not created yet in this run - use first available package tag
+              for PKG_DIR in packages/*/; do
+                PKG_DIR="${PKG_DIR%/}"
+                [ -f "$PKG_DIR/package.json" ] || continue
+                PKG_NAME=$(node -p "require('./$PKG_DIR/package.json').name")
+                PKG_VERSION=$(node -p "require('./$PKG_DIR/package.json').version")
+                CANDIDATE="$PKG_NAME@$PKG_VERSION"
+                if git rev-parse "refs/tags/$CANDIDATE" >/dev/null 2>&1; then
+                  RELEASE_TAG="$CANDIDATE"
+                  break
+                fi
+              done
+            fi
+
+            if gh release create "$CANONICAL_TAG" \
+                 --title "thesvg v${CANONICAL_VERSION}" \
                  --notes-file "$BODY_FILE" \
-                 --verify-tag; then
-              echo "Created release $TAG"
+                 --verify-tag 2>/dev/null || \
+               gh release create "$CANONICAL_TAG" \
+                 --title "thesvg v${CANONICAL_VERSION}" \
+                 --notes-file "$BODY_FILE"; then
+              echo "Created combined release $CANONICAL_TAG"
             else
-              echo "::error::failed to create release for $TAG"
-              failed+=("$TAG")
+              echo "::error::Failed to create combined release $CANONICAL_TAG"
             fi
             rm -f "$BODY_FILE"
-          done
+          fi
 
-          if [ "${#failed[@]}" -gt 0 ]; then
-            echo "::error::${#failed[@]} release(s) failed: ${failed[*]}"
-            exit 1
+          # Also create the @thesvg/cli release separately so homebrew-tap-update fires.
+          CLI_VERSION=$(node -p "require('./packages/cli/package.json').version")
+          CLI_TAG="@thesvg/cli@${CLI_VERSION}"
+          if git rev-parse "refs/tags/$CLI_TAG" >/dev/null 2>&1 && \
+             ! gh release view "$CLI_TAG" >/dev/null 2>&1; then
+            gh release create "$CLI_TAG" \
+              --title "@thesvg/cli $CLI_VERSION" \
+              --notes "See the combined release at https://github.com/glincker/thesvg/releases/tag/thesvg%40${CANONICAL_VERSION} for full changelog." \
+              --verify-tag || true
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
