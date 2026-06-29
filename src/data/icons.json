@@ -120133,5 +120133,617 @@
     "url": "https://redux-observable.js.org",
     "dateAdded": "2026-06-29",
     "collection": "community"
+  },
+  {
+    "slug": "archlinux",
+    "title": "Arch Linux",
+    "categories": [
+      "OS",
+      "Platform"
+    ],
+    "url": "https://archlinux.org",
+    "hex": "1793D1",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/archlinux/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "blocs",
+    "title": "Blocs",
+    "categories": [
+      "Design",
+      "Software"
+    ],
+    "url": "https://blocsapp.com",
+    "hex": "298AEC",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/blocs/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "brainjs",
+    "title": "Brain.js",
+    "categories": [
+      "AI",
+      "Software"
+    ],
+    "url": "https://brain.js.org",
+    "hex": "F3DF49",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/brainjs/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "builder-io",
+    "title": "Builder.io",
+    "categories": [
+      "Design",
+      "Software"
+    ],
+    "url": "https://www.builder.io",
+    "hex": "18B4F4",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/builder-io/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "caffe2",
+    "title": "Caffe2",
+    "categories": [
+      "AI",
+      "Software"
+    ],
+    "url": "https://caffe2.ai",
+    "hex": "303846",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/caffe2/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "certbot",
+    "title": "Certbot",
+    "categories": [
+      "Security",
+      "Software"
+    ],
+    "url": "https://certbot.eff.org",
+    "hex": "ED1C24",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/certbot/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "cloudcraft",
+    "title": "Cloudcraft",
+    "categories": [
+      "Design",
+      "Software"
+    ],
+    "url": "https://www.cloudcraft.co",
+    "hex": "C08A07",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/cloudcraft/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "danfo",
+    "title": "Danfo.js",
+    "categories": [
+      "AI",
+      "Software"
+    ],
+    "url": "https://danfo.jsdata.org",
+    "hex": "FFDF28",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/danfo/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "descript",
+    "title": "Descript",
+    "categories": [
+      "Entertainment",
+      "Software"
+    ],
+    "url": "https://www.descript.com",
+    "hex": "0062FF",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/descript/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "fuchsia",
+    "title": "Fuchsia OS",
+    "categories": [
+      "OS",
+      "Platform"
+    ],
+    "url": "https://fuchsia.dev",
+    "hex": "ED1D7F",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/fuchsia/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "geekbot",
+    "title": "Geekbot",
+    "categories": [
+      "Productivity",
+      "Software"
+    ],
+    "url": "https://geekbot.com",
+    "hex": "6FC0BF",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/geekbot/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "gnupg",
+    "title": "GnuPG",
+    "categories": [
+      "Security",
+      "Software"
+    ],
+    "url": "https://gnupg.org",
+    "hex": "0093DD",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/gnupg/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "hacker-one",
+    "title": "HackerOne",
+    "categories": [
+      "Security",
+      "Software"
+    ],
+    "url": "https://www.hackerone.com",
+    "hex": "000000",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/hacker-one/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "haiku",
+    "title": "Haiku OS",
+    "categories": [
+      "OS",
+      "Platform"
+    ],
+    "url": "https://www.haiku-os.org",
+    "hex": "F1CB2B",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/haiku/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "internetexplorer",
+    "title": "Internet Explorer",
+    "categories": [
+      "Browser",
+      "Platform"
+    ],
+    "url": "https://support.microsoft.com/en-us/windows/internet-explorer-downloads-d49e1f0d-571c-9a7b-d97e-be248806ca17",
+    "hex": "1EBBEE",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/internetexplorer/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "letsencrypt",
+    "title": "Let's Encrypt",
+    "categories": [
+      "Security",
+      "Software"
+    ],
+    "url": "https://letsencrypt.org",
+    "hex": "FFA400",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/letsencrypt/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "microsoft-edge",
+    "title": "Microsoft Edge",
+    "categories": [
+      "Browser",
+      "Platform"
+    ],
+    "url": "https://www.microsoft.com/en-us/edge",
+    "hex": "35C1F1",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/microsoft-edge/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "microsoft-windows",
+    "title": "Microsoft Windows",
+    "categories": [
+      "OS",
+      "Platform"
+    ],
+    "url": "https://www.microsoft.com/en-us/windows",
+    "hex": "0078D4",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/microsoft-windows/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "mindsdb",
+    "title": "MindsDB",
+    "categories": [
+      "AI",
+      "Software"
+    ],
+    "url": "https://mindsdb.com",
+    "hex": "00B06D",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/mindsdb/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "moonshot-ai",
+    "title": "Moonshot AI",
+    "categories": [
+      "AI",
+      "Software"
+    ],
+    "url": "https://www.moonshot.ai",
+    "hex": "000000",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/moonshot-ai/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "nanonets",
+    "title": "Nanonets",
+    "categories": [
+      "AI",
+      "Software"
+    ],
+    "url": "https://nanonets.com",
+    "hex": "546FFF",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/nanonets/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "osquery",
+    "title": "osquery",
+    "categories": [
+      "Security",
+      "Software"
+    ],
+    "url": "https://osquery.io",
+    "hex": "A596FF",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/osquery/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "plasmic",
+    "title": "Plasmic",
+    "categories": [
+      "Design",
+      "Software"
+    ],
+    "url": "https://www.plasmic.app",
+    "hex": "0091FF",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/plasmic/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "recaptcha",
+    "title": "reCAPTCHA",
+    "categories": [
+      "Security",
+      "Software"
+    ],
+    "url": "https://www.google.com/recaptcha",
+    "hex": "000000",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/recaptcha/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "scribd",
+    "title": "Scribd",
+    "categories": [
+      "Entertainment",
+      "Software"
+    ],
+    "url": "https://www.scribd.com",
+    "hex": "1E7B34",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/scribd/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "seaborn",
+    "title": "Seaborn",
+    "categories": [
+      "AI",
+      "Software"
+    ],
+    "url": "https://seaborn.pydata.org",
+    "hex": "444876",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/seaborn/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "sigstore",
+    "title": "Sigstore",
+    "categories": [
+      "Security",
+      "Software"
+    ],
+    "url": "https://www.sigstore.dev",
+    "hex": "4CBBA7",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/sigstore/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "stytch",
+    "title": "Stytch",
+    "categories": [
+      "Security",
+      "Software"
+    ],
+    "url": "https://stytch.com",
+    "hex": "19303D",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/stytch/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "supertokens",
+    "title": "SuperTokens",
+    "categories": [
+      "Security",
+      "Software"
+    ],
+    "url": "https://supertokens.com",
+    "hex": "FF9B33",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/supertokens/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "svgator",
+    "title": "SVGator",
+    "categories": [
+      "Design",
+      "Software"
+    ],
+    "url": "https://www.svgator.com",
+    "hex": "6236FF",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/svgator/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "tunein",
+    "title": "TuneIn",
+    "categories": [
+      "Entertainment",
+      "Software"
+    ],
+    "url": "https://tunein.com",
+    "hex": "13A0C2",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/tunein/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "void",
+    "title": "Void Linux",
+    "categories": [
+      "OS",
+      "Platform"
+    ],
+    "url": "https://voidlinux.org",
+    "hex": "478061",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/void/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "wearos",
+    "title": "Wear OS",
+    "categories": [
+      "OS",
+      "Platform"
+    ],
+    "url": "https://wearos.google.com",
+    "hex": "4285F4",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/wearos/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "x-ai",
+    "title": "xAI",
+    "categories": [
+      "AI",
+      "Software"
+    ],
+    "url": "https://x.ai",
+    "hex": "000000",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/x-ai/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "youtrack",
+    "title": "YouTrack",
+    "categories": [
+      "Productivity",
+      "Software"
+    ],
+    "url": "https://www.jetbrains.com/youtrack",
+    "hex": "000000",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/youtrack/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
+    "slug": "zeroheight",
+    "title": "Zeroheight",
+    "categories": [
+      "Design",
+      "Software"
+    ],
+    "url": "https://zeroheight.com",
+    "hex": "6C47FF",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/zeroheight/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
   }
 ]
