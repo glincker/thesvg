@@ -1,12 +1,12 @@
 <p align="center">
   <a href="https://github.com/glincker/thesvg">
-    <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" alt="thesvg - 6,030+ brand SVG icons" width="700" />
+    <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" alt="theSVG - 6,400+ Brand SVG Icons" width="700" />
   </a>
 </p>
 
 # @thesvg/mcp-server
 
-MCP (Model Context Protocol) server for [thesvg.org](https://thesvg.org). Gives AI agents in Claude Desktop, Cursor, Claude Code, and any MCP-aware client direct access to 6,115+ brand SVG icons -- no API key required.
+MCP (Model Context Protocol) server for [thesvg.org](https://thesvg.org). Gives AI agents in Claude Desktop, Cursor, Claude Code, and any MCP-aware client direct access to 6,400+ brand SVG icons -- no API key required.
 
 ## What it does
 
@@ -22,7 +22,7 @@ The server exposes five tools that AI agents can call:
 
 ## Data source
 
-Icons are bundled at build time from the thesvg.org open registry (6,115+ entries). SVG content is fetched on demand from the jsDelivr CDN at `https://cdn.jsdelivr.net/gh/glincker/thesvg@v0.6.0/public/icons/{slug}/{variant}.svg`.
+Icons are bundled at build time from the thesvg.org open registry (6,400+ entries). SVG content is fetched on demand from the jsDelivr CDN at `https://cdn.jsdelivr.net/gh/glincker/thesvg@v0.6.0/public/icons/{slug}/{variant}.svg`.
 
 **Tradeoff**: bundling the registry (~2.8 MB) means the server starts instantly with no network dependency and works offline for search/URL queries. Only `get_icon` requires a network request (to fetch the SVG from jsDelivr). To refresh to a newer registry, rebuild the package.
 

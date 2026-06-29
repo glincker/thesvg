@@ -1,12 +1,12 @@
 <p align="center">
   <a href="https://github.com/glincker/thesvg">
-    <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" alt="theSVG - 4,000+ Brand SVG Icons" width="700" />
+    <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" alt="theSVG - 6,400+ Brand SVG Icons" width="700" />
   </a>
 </p>
 
 # @thesvg/svelte
 
-Typed Svelte SVG components for all 4000+ brand icons from [thesvg.org](https://thesvg.org).
+Typed Svelte SVG components for all 6,400+ brand icons from [thesvg.org](https://thesvg.org).
 
 - Zero runtime dependencies (Svelte is a peer dep)
 - TypeScript support with full `SVGAttributes` types
@@ -125,7 +125,7 @@ For maximum control, use individual icon imports:
 
 ## Available icons
 
-Over 4000 brand icons are available. Browse the full list at
+Over 6,400 brand icons are available. Browse the full list at
 [thesvg.org](https://thesvg.org).
 
 ## License
