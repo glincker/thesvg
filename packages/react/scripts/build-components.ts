@@ -116,17 +116,22 @@ interface RootSvgPaint {
 
 /**
  * Extract root paint attributes from the outer <svg> element.
- * `fill="none"` is still a valid explicit fill, so we preserve it as-is.
+ * - Explicit fill (any value including "none") is preserved as-is.
+ * - No fill + has stroke: "none" (stroke-only icons; fill must not bleed).
+ * - No fill + no stroke: "currentColor" so paths inherit the surrounding
+ *   text color. This is the correct default for mono icons and multi-color
+ *   icons whose per-path fills are declared via fill=/ style= attributes on
+ *   child elements (they override the root fill regardless).
  */
 function extractRootSvgPaint(svgContent: string): RootSvgPaint {
   const svgTag = svgContent.match(/<svg[^>]*>/s);
-  if (!svgTag) return { fill: "none" };
+  if (!svgTag) return { fill: "currentColor" };
 
   const fillMatch = svgTag[0].match(/\bfill=["']([^"']+)["']/);
   const strokeMatch = svgTag[0].match(/\bstroke=["']([^"']+)["']/);
 
   return {
-    fill: fillMatch ? fillMatch[1] : "none",
+    fill: fillMatch ? fillMatch[1] : (strokeMatch ? "none" : "currentColor"),
     stroke: strokeMatch ? strokeMatch[1] : undefined,
   };
 }
@@ -184,9 +189,11 @@ function convertAttrToJsx(attr: string, value: string): string | null {
   if (attr === "class") return `className=${value}`;
   // xlink:href -> href
   if (attr === "xlink:href") return `href=${value}`;
-  // style="..." -> style={{ ... }} (React requires object, not string)
+  // Leave style="..." as a CSS string so convertJsxToCjs can parse and
+  // convert it to a React style object. Pre-converting to JSX object format
+  // here breaks convertJsxToCjs which uses a quoted-value regex.
   if (attr === "style") {
-    return `style=${convertStyleStringToJsx(value)}`;
+    return `style=${value}`;
   }
   // Convert kebab-case to camelCase
   const camel = kebabToCamel(attr);
@@ -337,7 +344,15 @@ function parseSvgForIcon(icon: RawIcon): ParsedIcon | null {
   for (const key of Object.keys(icon.variants)) {
     if (key === "default") continue;
     const parsed = parseVariant(icon.slug, key);
-    if (parsed) variants[key] = parsed;
+    if (parsed) {
+      // If a mono SVG explicitly declares fill="none" on its root (uncommon
+      // but valid), override to currentColor. The general case (no fill attr)
+      // is already handled by extractRootSvgPaint returning "currentColor".
+      if (key === "mono" && parsed.fill === "none") {
+        parsed.fill = "currentColor";
+      }
+      variants[key] = parsed;
+    }
   }
 
   return { keys: Object.keys(variants), variants };
