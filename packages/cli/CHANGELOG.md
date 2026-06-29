@@ -1,5 +1,11 @@
 # @thesvg/cli
 
+## 0.6.1
+
+### Patch Changes
+
+- docs: fix brand name to theSVG, update icon counts to 6400+, retire VS Code live badge ([#648](https://github.com/glincker/thesvg/issues/648))
+
 ## 0.6.0
 
 ### Minor Changes
