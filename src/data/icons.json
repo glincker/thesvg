@@ -50230,6 +50230,26 @@
     "collection": "brands"
   },
   {
+    "slug": "duolingo-2024",
+    "title": "Duolingo (2024)",
+    "aliases": [
+      "duolingo new"
+    ],
+    "hex": "50C800",
+    "categories": [
+      "Software",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/duolingo-2024/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://design.duolingo.com/identity/logos",
+    "guidelines": "https://design.duolingo.com",
+    "dateAdded": "2026-06-29",
+    "collection": "brands"
+  },
+  {
     "slug": "duplicati",
     "title": "Duplicati",
     "aliases": [],
