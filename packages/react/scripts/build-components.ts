@@ -184,9 +184,11 @@ function convertAttrToJsx(attr: string, value: string): string | null {
   if (attr === "class") return `className=${value}`;
   // xlink:href -> href
   if (attr === "xlink:href") return `href=${value}`;
-  // style="..." -> style={{ ... }} (React requires object, not string)
+  // Leave style="..." as a CSS string so convertJsxToCjs can parse and
+  // convert it to a React style object. Pre-converting to JSX object format
+  // here breaks convertJsxToCjs which uses a quoted-value regex.
   if (attr === "style") {
-    return `style=${convertStyleStringToJsx(value)}`;
+    return `style=${value}`;
   }
   // Convert kebab-case to camelCase
   const camel = kebabToCamel(attr);
@@ -337,7 +339,15 @@ function parseSvgForIcon(icon: RawIcon): ParsedIcon | null {
   for (const key of Object.keys(icon.variants)) {
     if (key === "default") continue;
     const parsed = parseVariant(icon.slug, key);
-    if (parsed) variants[key] = parsed;
+    if (parsed) {
+      // Mono variants with no explicit root fill should default to currentColor
+      // so they render with the surrounding text color without requiring the
+      // caller to pass fill="currentColor" manually.
+      if (key === "mono" && parsed.fill === "none") {
+        parsed.fill = "currentColor";
+      }
+      variants[key] = parsed;
+    }
   }
 
   return { keys: Object.keys(variants), variants };
