@@ -329,6 +329,25 @@
     "collection": "brands"
   },
   {
+    "slug": "5dive",
+    "title": "5dive",
+    "aliases": [],
+    "hex": "1A1A1F",
+    "categories": [
+      "AI",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/5dive/default.svg",
+      "mono": "/icons/5dive/mono.svg",
+      "wordmark": "/icons/5dive/wordmark.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://5dive.ai",
+    "dateAdded": "2026-07-01",
+    "collection": "brands"
+  },
+  {
     "slug": "7zip",
     "title": "7Zip",
     "aliases": [],
