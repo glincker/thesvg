@@ -83835,6 +83835,23 @@
     "aliases": []
   },
   {
+    "slug": "mooserage",
+    "title": "Mooserage",
+    "categories": [
+      "Website",
+      "Portfolio"
+    ],
+    "url": "https://jade-atyla-portfolio.vercel.app",
+    "hex": "FFB22C",
+    "license": "brand-use",
+    "variants": {
+      "default": "/icons/mooserage/default.svg"
+    },
+    "dateAdded": "2026-06-29",
+    "collection": "community",
+    "aliases": []
+  },
+  {
     "slug": "moq",
     "title": "Moq",
     "aliases": [],
