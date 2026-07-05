@@ -7,6 +7,7 @@ import {
   getCollections,
 } from "@/lib/icons";
 import { HomeContent } from "@/components/home-content";
+import { JsonLd } from "@/components/json-ld";
 
 const count = getFormattedIconCount();
 
@@ -56,10 +57,7 @@ export default function Home() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
       <Suspense>
         <HomeContent
           categoryCounts={categoryCounts}

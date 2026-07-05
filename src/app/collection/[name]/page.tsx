@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/json-ld";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import {
@@ -181,10 +182,7 @@ export default async function CollectionPage({ params }: PageProps) {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
       <Suspense>
         <HomeContent
           categoryCounts={categoryCounts}
