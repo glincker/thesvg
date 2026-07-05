@@ -1,5 +1,42 @@
 # thesvg
 
+## 3.2.0
+
+### Minor Changes
+
+- [#661](https://github.com/glincker/thesvg/pull/661) [`3609a5f`](https://github.com/glincker/thesvg/commit/3609a5f05f2592e0e4e3c15fe1429fa0e2e73de4) Thanks [@thegdsks](https://github.com/thegdsks)! - Onboard Affinity, Outlook Calendar, and Samsung Browser icons; fix Audible source URL
+
+  Adds three community-requested brand icons (Affinity, Outlook Calendar, Samsung Browser)
+  with normalized slugs, corrected brand hex values, and valid categories. Also corrects
+  the Audible entry URL to the official brand site.
+
+### Patch Changes
+
+- [#665](https://github.com/glincker/thesvg/pull/665) [`737165d`](https://github.com/glincker/thesvg/commit/737165dd7b3739cf684a1b53b09ef5ba83435509) Thanks [@thegdsks](https://github.com/thegdsks)! - Fix conditional hook call in IconPageClient
+
+  `useMemo` was called after an early `return null`, which violates the
+  rules of hooks and could throw when an icon slug has no match. Hooks now
+  run before the early return, with null-guarded memo bodies.
+
+- [#663](https://github.com/glincker/thesvg/pull/663) [`a396b82`](https://github.com/glincker/thesvg/commit/a396b8211722e75f61f87212fc9d8f9b2c7a0eb5) Thanks [@thegdsks](https://github.com/thegdsks)! - Make the sidebar category list scroll independently
+
+  The sidebar is a fixed-height flex column, but the categories ScrollArea
+  had `flex-1` without `min-h-0`, so it could not shrink below its content
+  height and the list overflowed the sidebar instead of scrolling. Adding
+  `min-h-0` lets the ScrollArea shrink within the column so the long
+  category list scrolls on its own while the top navigation stays in place.
+
+- [#664](https://github.com/glincker/thesvg/pull/664) [`9cac540`](https://github.com/glincker/thesvg/commit/9cac5409f60e26dd295001bd6c0f6bc3cd6f7634) Thanks [@thegdsks](https://github.com/thegdsks)! - Correct the Zoho logo to the current official "Logolinism" mark
+
+  The Zoho icon used an outdated single-color mark. Replaced it with the
+  current official four-color logo (red, green, blue, yellow): `default`
+  and `mono` now carry the interlocking-squares logomark, and new
+  `wordmark` / `wordmarkDark` variants provide the full lockup with the
+  Zoho wordmark for light and dark backgrounds.
+
+- Updated dependencies [[`3609a5f`](https://github.com/glincker/thesvg/commit/3609a5f05f2592e0e4e3c15fe1429fa0e2e73de4), [`9cac540`](https://github.com/glincker/thesvg/commit/9cac5409f60e26dd295001bd6c0f6bc3cd6f7634)]:
+  - @thesvg/icons@3.2.0
+
 ## 3.1.1
 
 ### Patch Changes

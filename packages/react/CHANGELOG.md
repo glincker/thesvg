@@ -1,5 +1,36 @@
 # @thesvg/react
 
+## 3.2.0
+
+### Minor Changes
+
+- [#661](https://github.com/glincker/thesvg/pull/661) [`3609a5f`](https://github.com/glincker/thesvg/commit/3609a5f05f2592e0e4e3c15fe1429fa0e2e73de4) Thanks [@thegdsks](https://github.com/thegdsks)! - Onboard Affinity, Outlook Calendar, and Samsung Browser icons; fix Audible source URL
+
+  Adds three community-requested brand icons (Affinity, Outlook Calendar, Samsung Browser)
+  with normalized slugs, corrected brand hex values, and valid categories. Also corrects
+  the Audible entry URL to the official brand site.
+
+### Patch Changes
+
+- [#662](https://github.com/glincker/thesvg/pull/662) [`6f39a31`](https://github.com/glincker/thesvg/commit/6f39a3110631da77a402cb9e751287240a3f152e) Thanks [@thegdsks](https://github.com/thegdsks)! - Preserve data-_ and aria-_ attributes in generated React components
+
+  The SVG-to-JSX codegen camelCased every hyphenated attribute, turning
+  `data-circle` into `dataCircle` (and `data-name` into `dataName`, etc.).
+  React does not recognize camelCased data/aria props and logs a runtime
+  warning ("React does not recognize the `dataCircle` prop on a DOM
+  element"). The codegen now leaves `data-*` and `aria-*` attributes
+  hyphenated so React accepts them as valid DOM attributes. Fixes the
+  warning on icons such as `nextdotjs` (and 200+ other icons carrying
+  `data-*` attributes).
+
+- [#664](https://github.com/glincker/thesvg/pull/664) [`9cac540`](https://github.com/glincker/thesvg/commit/9cac5409f60e26dd295001bd6c0f6bc3cd6f7634) Thanks [@thegdsks](https://github.com/thegdsks)! - Correct the Zoho logo to the current official "Logolinism" mark
+
+  The Zoho icon used an outdated single-color mark. Replaced it with the
+  current official four-color logo (red, green, blue, yellow): `default`
+  and `mono` now carry the interlocking-squares logomark, and new
+  `wordmark` / `wordmarkDark` variants provide the full lockup with the
+  Zoho wordmark for light and dark backgrounds.
+
 ## 3.1.1
 
 ### Patch Changes
