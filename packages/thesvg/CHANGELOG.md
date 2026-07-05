@@ -1,5 +1,24 @@
 # thesvg
 
+## 3.2.3
+
+### Patch Changes
+
+- [#674](https://github.com/glincker/thesvg/pull/674) [`2dcbad6`](https://github.com/glincker/thesvg/commit/2dcbad61c750ba79a7f2f5f2e054cf72b171a0b9) Thanks [@thegdsks](https://github.com/thegdsks)! - Consolidate and XSS-harden JSON-LD structured data
+
+  All seven pages that emit JSON-LD now use a single `JsonLd` server component
+  that escapes `<` to `<`, so a brand name or description can never break
+  out of the `<script>` tag. This dedups seven copies of the inline script and
+  closes a latent injection gap. (Note: this does not change where the JSON-LD is
+  delivered; see PR notes.)
+
+- [#672](https://github.com/glincker/thesvg/pull/672) [`bf3a13f`](https://github.com/glincker/thesvg/commit/bf3a13f012c8fcaf8e71890bc22707bfef337f87) Thanks [@thegdsks](https://github.com/thegdsks)! - Enrich per-icon structured data for richer search results
+
+  The icon detail page's ImageObject JSON-LD now marks the icon as free
+  (`isAccessibleForFree`, `representativeOfPage`) and exposes each additional
+  variant (mono, dark, color, wordmark, ...) as its own `associatedMedia`
+  ImageObject, so search engines can surface a brand's variants individually.
+
 ## 3.2.2
 
 ### Patch Changes
