@@ -170,7 +170,7 @@ export default async function Image({ params }: ImageProps) {
           }}
         >
           {svgContent ? (
-            // eslint-disable-next-line @next/next/no-img-element
+             
             <img
               src={`data:image/svg+xml;base64,${Buffer.from(svgContent).toString("base64")}`}
               width={160}

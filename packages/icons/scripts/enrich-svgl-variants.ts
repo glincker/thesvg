@@ -19,12 +19,10 @@
 import {
   existsSync,
   mkdirSync,
-  readdirSync,
   readFileSync,
   statSync,
   writeFileSync,
 } from "node:fs";
-import { copyFile } from "node:fs/promises";
 import { basename, dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -204,15 +202,6 @@ function normalizeForMatch(s: string): string {
 // ---------------------------------------------------------------------------
 // svgl data parser
 // ---------------------------------------------------------------------------
-
-/**
- * Extract the file-stem (without extension) from a svgl route string.
- * e.g. "/library/astro-icon-dark.svg" -> "astro-icon-dark"
- */
-function stemFromRoute(route: string): string {
-  const b = basename(route, ".svg");
-  return b;
-}
 
 /**
  * Given a svgl entry, derive candidates for each of our variant keys.

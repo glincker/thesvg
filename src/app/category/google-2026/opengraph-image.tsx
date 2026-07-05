@@ -124,7 +124,7 @@ export default async function Image() {
         >
           {heroSvgs.map(({ slug, svg }) =>
             svg ? (
-              // eslint-disable-next-line @next/next/no-img-element
+               
               <img
                 key={slug}
                 src={`data:image/svg+xml;base64,${Buffer.from(svg).toString("base64")}`}

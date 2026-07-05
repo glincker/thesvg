@@ -238,7 +238,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
+                { }
                 <img
                   src="https://api.producthunt.com/widgets/embed-image/v1/product_review.svg?product_id=1176978&theme=dark"
                   alt="theSVG on Product Hunt"
@@ -246,7 +246,7 @@ export function Footer() {
                   height={43}
                   className="hidden opacity-60 transition-opacity hover:opacity-100 dark:block"
                 />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
+                { }
                 <img
                   src="https://api.producthunt.com/widgets/embed-image/v1/product_review.svg?product_id=1176978&theme=light"
                   alt="theSVG on Product Hunt"
@@ -288,7 +288,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 opacity-60 transition-opacity hover:opacity-100"
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  { }
                   <img
                     src="/icons/glincker/light.svg"
                     alt="GLINCKER"
@@ -296,7 +296,7 @@ export function Footer() {
                     height={20}
                     className="hidden dark:block"
                   />
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  { }
                   <img
                     src="/icons/glincker/dark.svg"
                     alt="GLINCKER"
@@ -313,7 +313,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 opacity-60 transition-opacity hover:opacity-100"
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  { }
                   <img
                     src="/icons/askverdict-ai/light.svg"
                     alt="AskVerdict"
@@ -321,7 +321,7 @@ export function Footer() {
                     height={20}
                     className="hidden dark:block"
                   />
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  { }
                   <img
                     src="/icons/askverdict-ai/dark.svg"
                     alt="AskVerdict"

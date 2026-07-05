@@ -193,30 +193,40 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
   const [filtered, setFiltered] = useState<IconEntry[]>([]);
   const filterKey = `${query}|${categoryParam ?? ""}|${sortParam ?? ""}|${favoritesParam}|${collectionParam ?? ""}`;
 
+  // Apply favorites + category filters here so the array identity only changes
+  // when those filters change (not on every keystroke). This lets the Fuse
+  // search index reuse its cached instance instead of re-indexing per keystroke.
+  const searchBase = useMemo(() => {
+    let r = collectionIcons ?? [];
+    if (favoritesParam) {
+      r = r.filter((icon) => favorites.includes(icon.slug));
+    }
+    if (categoryParam) {
+      r = r.filter((icon) =>
+        icon.categories.some((c) => c.toLowerCase() === categoryParam.toLowerCase())
+      );
+    }
+    return r;
+  }, [collectionIcons, favoritesParam, favorites, categoryParam]);
+
+  // Clear a prior manifest load failure when filters change so the load effect
+  // above can re-attempt the fetch (recovers from a transient network error
+  // without a full page reload). setState to the same value is a no-op.
+  useEffect(() => {
+    setManifestError(false);
+  }, [filterKey]);
+
   useEffect(() => {
     if (!collectionIcons) return;
 
     let active = true;
-    let result = collectionIcons;
+    let result = searchBase;
 
-    // Favorites filter
-    if (favoritesParam) {
-      result = result.filter((icon) => favorites.includes(icon.slug));
-    }
-
-    // Category filter
-    if (categoryParam) {
-      result = result.filter((icon) =>
-        icon.categories.some(
-          (c) => c.toLowerCase() === categoryParam.toLowerCase()
-        )
-      );
-    }
-
-    // Lazy-load Fuse.js only when there is a search query.
-    // Clear stale results immediately so the previous query's matches don't
-    // linger while Fuse downloads / runs.
-    if (query.trim()) {
+    // Lazy-load Fuse.js only when there is a real (>= 2 char) search query,
+    // matching Fuse's minMatchCharLength so a single character does not blank
+    // the grid. Clear stale results immediately so the previous query's matches
+    // don't linger while Fuse downloads / runs.
+    if (query.trim().length >= 2) {
       setFiltered([]);
       import("@/lib/search").then(({ searchIcons }) => {
         if (!active) return;
@@ -248,9 +258,10 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
 
     setFiltered(result);
     return () => { active = false; };
-  // filterKey captures all search/filter/sort deps; collectionIcons and favorites are the data deps
+  // filterKey captures all search/sort deps; searchBase carries the favorites +
+  // category filtering; collectionIcons is retained for the early-return guard.
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [collectionIcons, filterKey, favorites]);
+  }, [searchBase, collectionIcons, filterKey]);
 
   const activeCount = collectionParam && collectionIcons
     ? collectionIcons.length

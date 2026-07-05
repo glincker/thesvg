@@ -15,6 +15,10 @@ const eslintConfig = defineConfig([
     "scripts/**",
     "docs-local/**",
     "extensions/**/dist/**",
+    // Generated extension build artifacts (WXT: .output/.wxt, Figma: build)
+    "extensions/**/.output/**",
+    "extensions/**/.wxt/**",
+    "extensions/**/build/**",
   ]),
   {
     rules: {
@@ -22,6 +26,11 @@ const eslintConfig = defineConfig([
       "@next/next/no-img-element": "off",
       // Common pattern for client-side detection (navigator, window) - downgrade to warn
       "react-hooks/set-state-in-effect": "warn",
+      // Underscore-prefixed identifiers signal intentional-unused (e.g. _categoryCounts)
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        { argsIgnorePattern: "^_", varsIgnorePattern: "^_", caughtErrorsIgnorePattern: "^_" },
+      ],
     },
   },
 ]);

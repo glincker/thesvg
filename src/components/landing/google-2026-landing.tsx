@@ -176,7 +176,7 @@ export function Google2026Landing({ icons }: Props) {
             className="g26-hero-mark"
             aria-label="Google Workspace mark · open detail page"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
+            { }
             <img
               src={hero.variants.default}
               alt=""

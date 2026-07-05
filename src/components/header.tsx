@@ -17,6 +17,8 @@ import type { IconEntry } from "@/lib/icons";
 import { loadIconsManifest } from "@/lib/icons-manifest";
 import { cn } from "@/lib/utils";
 
+const PLACEHOLDER_BRANDS = ["GitHub", "Stripe", "Figma", "Docker", "AWS Lambda", "Azure Functions", "BigQuery", "Vercel", "React", "Tailwind CSS"];
+
 /** Inline AWS logo - text inherits currentColor, arrow stays orange */
 function AwsLogo({ className }: { className?: string }) {
   return (
@@ -135,7 +137,6 @@ export function Header() {
     (pathname.startsWith("/collection/") ? pathname.split("/")[2] : null);
 
   // Typewriter placeholder effect
-  const PLACEHOLDER_BRANDS = ["GitHub", "Stripe", "Figma", "Docker", "AWS Lambda", "Azure Functions", "BigQuery", "Vercel", "React", "Tailwind CSS"];
   const [placeholderIdx, setPlaceholderIdx] = useState(0);
   const [charIdx, setCharIdx] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);

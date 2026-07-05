@@ -50,16 +50,6 @@ interface SearchResult {
   categories: string[];
 }
 
-interface IconDetail {
-  slug: string;
-  name: string;
-  variants: string[];
-  categories: string[];
-  hex: string;
-  license: string;
-  url?: string;
-}
-
 // --- Data loading ---
 
 // icons.json is bundled at build time; no network dependency at startup.

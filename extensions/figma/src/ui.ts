@@ -23,7 +23,6 @@ let currentQuery = "";
 let currentCategory = "all";
 let debounceTimer: ReturnType<typeof setTimeout> | null = null;
 let lastResults: IconEntry[] = [];
-let cachedRecents: RecentEntry[] = [];
 
 // ---- DOM refs ----
 const searchInput = document.getElementById("search") as HTMLInputElement;
@@ -166,7 +165,6 @@ function renderGrid(icons: IconEntry[]) {
 }
 
 function renderRecents(recents: RecentEntry[]) {
-  cachedRecents = recents;
   if (recents.length === 0) {
     recentsSection.style.display = "none";
     return;

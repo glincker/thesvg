@@ -120,7 +120,7 @@ export function Google2026Tile({ icon, delay, cleanTitle }: Props) {
       <span className="g26-tile-halo" aria-hidden />
 
       <span className="g26-tile-card">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
+        { }
         <img
           src={src}
           alt=""

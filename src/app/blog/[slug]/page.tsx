@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Calendar, Link2, Tag } from "lucide-react";
+import { ArrowLeft, Calendar, Tag } from "lucide-react";
 import { ShareButtons } from "@/components/blog/share-buttons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 import { getCategoryCounts } from "@/lib/icons";

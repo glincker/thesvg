@@ -19,7 +19,7 @@
  *     index.d.ts     Type barrel
  */
 
-import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -142,30 +142,6 @@ function extractRootSvgPaint(svgContent: string): RootSvgPaint {
  */
 function kebabToCamel(attr: string): string {
   return attr.replace(/-([a-z])/g, (_, char: string) => char.toUpperCase());
-}
-
-/**
- * Convert a CSS style string like "mask-type:alpha;display:inline"
- * into a JSX style object expression like `{{ maskType: "alpha", display: "inline" }}`.
- */
-function convertStyleStringToJsx(styleStr: string): string {
-  // Strip surrounding quotes if present
-  const raw = styleStr.replace(/^["']|["']$/g, "");
-  const declarations = raw
-    .split(";")
-    .map((d) => d.trim())
-    .filter((d) => d.length > 0);
-
-  const entries = declarations.map((decl) => {
-    const colonIdx = decl.indexOf(":");
-    if (colonIdx === -1) return null;
-    const prop = decl.slice(0, colonIdx).trim();
-    const val = decl.slice(colonIdx + 1).trim();
-    const camelProp = kebabToCamel(prop);
-    return `${camelProp}: "${val}"`;
-  }).filter(Boolean);
-
-  return `{{ ${entries.join(", ")} }}`;
 }
 
 /**
@@ -781,6 +757,9 @@ function main(): void {
   const rawIcons: RawIcon[] = JSON.parse(readFileSync(ICONS_JSON, "utf8")) as RawIcon[];
   console.log(`Found ${rawIcons.length} icons.`);
 
+  // Clean stale output first so components for removed/renamed slugs (orphans)
+  // don't linger in dist and get shipped or flagged by the validator.
+  rmSync(DIST, { recursive: true, force: true });
   mkdirSync(DIST, { recursive: true });
 
   const entries: Array<{ slug: string; componentName: string }> = [];

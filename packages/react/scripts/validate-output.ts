@@ -28,6 +28,9 @@ interface RootPaint {
   stroke?: string;
 }
 
+// Source-side paint. Mirror build-components.ts extractRootSvgPaint so a missing
+// root fill defaults the same way the build does (currentColor, or none for a
+// stroke-only icon) — otherwise the comparison below reports false mismatches.
 function extractRootPaint(content: string): RootPaint {
   const svgTag = content.match(/<svg[^>]*>/s);
   if (!svgTag) return {};
@@ -36,9 +39,19 @@ function extractRootPaint(content: string): RootPaint {
   const strokeMatch = svgTag[0].match(/\bstroke=["']([^"']+)["']/);
 
   return {
-    fill: fillMatch?.[1],
+    fill: fillMatch ? fillMatch[1] : (strokeMatch ? "none" : "currentColor"),
     stroke: strokeMatch?.[1],
   };
+}
+
+// Output-side paint. The generated component is a React.createElement tree, not
+// SVG markup, so the root paint lives in the serialized `_variants.default`
+// object (JSON.stringify order: viewBox, fill, [stroke], childNodes).
+function extractCompiledPaint(content: string): RootPaint {
+  const m = content.match(
+    /"default":\{"viewBox":"[^"]*","fill":"([^"]*)"(?:,"stroke":"([^"]*)")?/,
+  );
+  return m ? { fill: m[1], stroke: m[2] } : {};
 }
 
 function primarySvgPath(slug: string): string | null {
@@ -119,7 +132,7 @@ for (const file of files) {
 
     if (svgPath) {
       const sourcePaint = extractRootPaint(readFileSync(svgPath, "utf8"));
-      const outputPaint = extractRootPaint(content);
+      const outputPaint = extractCompiledPaint(content);
 
       if ((sourcePaint.fill ?? "none") !== (outputPaint.fill ?? "none")) {
         console.error(

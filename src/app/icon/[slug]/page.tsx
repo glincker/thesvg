@@ -78,7 +78,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     .filter((k) => icon.variants[k as keyof typeof icon.variants])
     .map((k) => k === "default" ? "color" : k);
   const categoryList = icon.categories.join(", ");
-  const cdnImage = `${CDN_BASE}/${slug}/default.svg`;
 
   const collectionText =
     icon.collection === "aws"

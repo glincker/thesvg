@@ -1,6 +1,6 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
-import { join, resolve, dirname } from "node:path";
+import { join, resolve } from "node:path";
 
 export type OutputFormat = "svg" | "jsx" | "vue";
 
