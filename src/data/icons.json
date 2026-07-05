@@ -1419,6 +1419,25 @@
     "collection": "brands"
   },
   {
+    "slug": "affinity",
+    "title": "Affinity",
+    "aliases": [
+      "Affinity Studio"
+    ],
+    "hex": "A7F175",
+    "categories": [
+      "Design",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/affinity/default.svg"
+    },
+    "license": "Trademark of Canva (Serif Europe). Used for identification under nominative fair use.",
+    "url": "https://affinity.studio",
+    "dateAdded": "2026-07-04",
+    "collection": "brands"
+  },
+  {
     "slug": "affinity-designer",
     "title": "Affinity Designer",
     "aliases": [],
@@ -6276,7 +6295,7 @@
       "mono": "/icons/audible/mono.svg"
     },
     "license": "CC0-1.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Audible_logo.svg",
+    "url": "https://www.audible.com",
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
@@ -90338,6 +90357,24 @@
     "collection": "brands"
   },
   {
+    "slug": "outlook-calendar",
+    "title": "Outlook Calendar",
+    "aliases": [
+      "Microsoft Outlook Calendar"
+    ],
+    "hex": "0078D4",
+    "categories": [
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/outlook-calendar/default.svg"
+    },
+    "license": "Trademark of Microsoft Corporation. Used for identification under nominative fair use.",
+    "url": "https://outlook.com/calendar",
+    "dateAdded": "2026-07-04",
+    "collection": "brands"
+  },
+  {
     "slug": "overcast",
     "title": "Overcast",
     "aliases": [],
@@ -101730,6 +101767,24 @@
     "url": "https://www.samsung.com/us/about-us/brand-identity/logo/",
     "guidelines": "https://www.samsung.com/us/about-us/brand-identity/logo/",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "samsung-browser",
+    "title": "Samsung Browser",
+    "aliases": [
+      "Samsung Internet"
+    ],
+    "hex": "7882FF",
+    "categories": [
+      "Browser"
+    ],
+    "variants": {
+      "default": "/icons/samsung-browser/default.svg"
+    },
+    "license": "Trademark of Samsung Electronics. Used for identification under nominative fair use.",
+    "url": "https://browser.samsung.com",
+    "dateAdded": "2026-07-04",
     "collection": "brands"
   },
   {
