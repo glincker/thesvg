@@ -195,6 +195,12 @@ function convertAttrToJsx(attr: string, value: string): string | null {
   if (attr === "style") {
     return `style=${value}`;
   }
+  // React recognizes data-* and aria-* attributes only when they stay
+  // hyphenated. camelCasing them (data-circle -> dataCircle) makes React
+  // reject them as unknown DOM props, so leave these untouched.
+  if (attr.startsWith("data-") || attr.startsWith("aria-")) {
+    return `${attr}=${value}`;
+  }
   // Convert kebab-case to camelCase
   const camel = kebabToCamel(attr);
   return `${camel}=${value}`;
