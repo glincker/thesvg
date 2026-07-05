@@ -264,7 +264,7 @@ export function Sidebar({
         Categories
       </p>
 
-      <ScrollArea className="flex-1 overflow-hidden px-3 pb-3">
+      <ScrollArea className="min-h-0 flex-1 overflow-hidden px-3 pb-3">
         <div className="flex flex-col gap-px">
           {categories.map((category) => (
             <button
