@@ -180,8 +180,29 @@ export default async function IconPage({ params }: PageProps) {
         creditText: icon.title,
         width: "512",
         height: "512",
+        isAccessibleForFree: true,
+        representativeOfPage: true,
         ...(icon.url ? { sameAs: [icon.url] } : {}),
         keywords: allKeywords.join(", "),
+        // Expose each additional variant (mono, dark, color, wordmark, ...) as
+        // its own ImageObject so search engines can surface them individually.
+        ...(() => {
+          const extraVariants = Object.keys(icon.variants).filter(
+            (v) => v !== "default",
+          );
+          return extraVariants.length > 0
+            ? {
+                associatedMedia: extraVariants.map((v) => ({
+                  "@type": "ImageObject",
+                  name: `${icon.title} ${v} SVG icon`,
+                  contentUrl: `${CDN_BASE}/${slug}/${v}.svg`,
+                  encodingFormat: "image/svg+xml",
+                  license: licenseUrl,
+                  isAccessibleForFree: true,
+                })),
+              }
+            : {};
+        })(),
         creator: {
           "@type": "Organization",
           name: "theSVG",
