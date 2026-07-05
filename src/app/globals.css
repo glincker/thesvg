@@ -48,6 +48,9 @@
 }
 
 :root {
+  /* Height of the top announcement bar; the sticky header and fixed sidebar
+     offset by this. The AnnouncementBanner updates it at runtime (0 when hidden). */
+  --banner-h: 0px;
   --background: oklch(0.985 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);

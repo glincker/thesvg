@@ -2,6 +2,20 @@ import iconsData from "@/data/icons.json";
 
 export type Collection = "brands" | "aws" | "gcp" | "azure" | "emojis" | "k8s" | "community";
 
+/**
+ * Cloud architecture collections. Their icons carry vendor taxonomy categories
+ * (Compute, Networking, Integration, Kubernetes, ...) that would otherwise swamp
+ * the brand categories in the sidebar. We exclude them from the default category
+ * list so brand categories stay front and center; their categories still surface
+ * when the user explicitly selects one of these collections.
+ */
+export const ARCHITECTURE_COLLECTIONS: ReadonlySet<Collection> = new Set([
+  "aws",
+  "azure",
+  "gcp",
+  "k8s",
+]);
+
 export interface IconEntry {
   slug: string;
   title: string;
@@ -67,7 +81,12 @@ export function getAllCategories(): string[] {
 
 export function getCategoryCounts(collection?: Collection): { name: string; count: number }[] {
   const counts = new Map<string, number>();
-  const source = collection ? icons.filter((i) => i.collection === collection) : icons;
+  // Default view: count brand-relevant collections only, so cloud architecture
+  // taxonomy (Compute, Integration, Kubernetes, ...) does not bury brand
+  // categories. When a specific collection is requested, count just that one.
+  const source = collection
+    ? icons.filter((i) => i.collection === collection)
+    : icons.filter((i) => !ARCHITECTURE_COLLECTIONS.has(i.collection));
   for (const icon of source) {
     for (const c of icon.categories) {
       counts.set(c, (counts.get(c) || 0) + 1);
