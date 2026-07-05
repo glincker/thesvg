@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
   <ShortName>theSVG</ShortName>
-  <Description>Search 5,500+ free SVG icons - brands, AWS, Azure, GCP</Description>
+  <Description>Search 6,400+ free SVG icons - brands, AWS, Azure, GCP</Description>
   <InputEncoding>UTF-8</InputEncoding>
   <Image width="16" height="16" type="image/x-icon">https://thesvg.org/favicon.ico</Image>
+  <Image width="32" height="32" type="image/png">https://thesvg.org/favicon-32.png</Image>
   <Url type="text/html" template="https://thesvg.org/?q={searchTerms}"/>
   <Url type="application/opensearchdescription+xml" rel="self" template="https://thesvg.org/opensearch.xml"/>
 </OpenSearchDescription>

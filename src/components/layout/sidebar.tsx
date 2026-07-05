@@ -72,6 +72,8 @@ export function Sidebar({
   const pathname = usePathname();
   const isExtensionsPage = pathname === "/extensions";
   const [extensionsExpanded, setExtensionsExpanded] = useState(isExtensionsPage);
+  const [collectionsExpanded, setCollectionsExpanded] = useState(true);
+  const [featuredExpanded, setFeaturedExpanded] = useState(true);
   const isFavoritesActive = showFavorites;
   const isAllIconsActive =
     !selectedCategory && !showFavorites && !selectedCollection && pathname === "/";
@@ -90,8 +92,8 @@ export function Sidebar({
           : "fixed top-[calc(4.25rem+var(--banner-h,0px))] left-2 z-30 hidden h-[calc(100vh-4.75rem-var(--banner-h,0px))] w-54 flex-col rounded-2xl border border-black/[0.06] bg-background/90 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08),0_0_0_1px_rgba(0,0,0,0.03)] backdrop-blur-2xl md:flex dark:border-white/[0.08] dark:bg-black/60 dark:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.05)]"
       )}
     >
-      {/* Navigation */}
-      <nav className="flex flex-col gap-0.5 p-3">
+      {/* Navigation - pinned, always visible */}
+      <nav className="flex shrink-0 flex-col gap-0.5 p-3">
         <Link
           href="/"
           className={cn(navItemClass, isAllIconsActive && activeClass)}
@@ -196,94 +198,127 @@ export function Sidebar({
         </Link>
       </nav>
 
-      {/* Collections */}
-      {collections.length > 1 && (
-        <>
-          <div className="mx-3 h-px bg-gradient-to-r from-transparent via-border/60 to-transparent dark:via-white/[0.06]" />
-
-          <p className="px-4 pt-3 pb-1.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/50">
-            Collections
-          </p>
-
-          <div className="flex flex-col gap-0.5 px-3">
-            {collections.map((col) => {
-              const meta = COLLECTION_META[col.name];
-              const Icon = meta?.icon || Shapes;
-              const isActive = selectedCollection === col.name;
-              return (
-                <button
-                  key={col.name}
-                  type="button"
-                  onClick={() => onCollectionSelect(isActive ? null : col.name)}
+      {/* Everything below the pinned nav scrolls together, so Collections,
+          Featured, and the long Categories list all stay reachable on short
+          viewports. Collections and Featured collapse to reclaim space. */}
+      <ScrollArea className="min-h-0 flex-1 overflow-hidden">
+        <div className="flex flex-col px-3 pb-3">
+          {/* Collections - collapsible */}
+          {collections.length > 1 && (
+            <div>
+              <div className="h-px bg-gradient-to-r from-transparent via-border/60 to-transparent dark:via-white/[0.06]" />
+              <button
+                type="button"
+                onClick={() => setCollectionsExpanded((prev) => !prev)}
+                className="flex w-full items-center justify-between rounded-lg px-1 pt-3 pb-1.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/50 transition-colors hover:text-muted-foreground/80"
+              >
+                Collections
+                <ChevronRight
                   className={cn(
-                    "group flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05]",
-                    isActive && activeClass
+                    "h-3 w-3 shrink-0 transition-transform duration-200",
+                    collectionsExpanded && "rotate-90"
                   )}
-                >
-                  <span className="flex items-center gap-2.5 truncate">
-                    <Icon className={cn("h-4 w-4 shrink-0 transition-transform duration-200 group-hover:scale-110", isActive ? meta?.color : "opacity-60")} />
-                    <span className="truncate text-[13px]">{meta?.label || col.name}</span>
-                  </span>
-                  <span className="ml-2 shrink-0 rounded-full bg-muted/60 px-1.5 font-mono text-[10px] text-muted-foreground/60 dark:bg-white/[0.04]">
-                    {col.count}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        </>
-      )}
-
-      <div className="mx-3 h-px bg-gradient-to-r from-transparent via-border/60 to-transparent dark:via-white/[0.06]" />
-
-      <p className="px-4 pt-3 pb-1.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/50">
-        Featured
-      </p>
-
-      <div className="flex flex-col gap-0.5 px-3 pb-1">
-        <Link
-          href="/category/google-2026"
-          className={cn(
-            "group flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05]",
-            pathname === "/category/google-2026" && activeClass,
+                />
+              </button>
+              <div
+                className={cn(
+                  "flex flex-col gap-0.5 overflow-hidden transition-all duration-300",
+                  collectionsExpanded ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0"
+                )}
+              >
+                {collections.map((col) => {
+                  const meta = COLLECTION_META[col.name];
+                  const Icon = meta?.icon || Shapes;
+                  const isActive = selectedCollection === col.name;
+                  return (
+                    <button
+                      key={col.name}
+                      type="button"
+                      onClick={() => onCollectionSelect(isActive ? null : col.name)}
+                      className={cn(
+                        "group flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05]",
+                        isActive && activeClass
+                      )}
+                    >
+                      <span className="flex items-center gap-2.5 truncate">
+                        <Icon className={cn("h-4 w-4 shrink-0 transition-transform duration-200 group-hover:scale-110", isActive ? meta?.color : "opacity-60")} />
+                        <span className="truncate text-[13px]">{meta?.label || col.name}</span>
+                      </span>
+                      <span className="ml-2 shrink-0 rounded-full bg-muted/60 px-1.5 font-mono text-[10px] text-muted-foreground/60 dark:bg-white/[0.04]">
+                        {col.count}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
           )}
-        >
-          <span className="flex items-center gap-2 truncate">
-            <Sparkles className="h-3.5 w-3.5 shrink-0 text-amber-500" />
-            <span className="truncate">Google 2026</span>
-          </span>
-          <span className="ml-2 shrink-0 rounded-full bg-gradient-to-r from-fuchsia-500/90 via-orange-500/90 to-amber-400/90 px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase leading-none tracking-wider text-white shadow-sm shadow-black/20">
-            NEW
-          </span>
-        </Link>
-      </div>
 
-      <div className="mx-3 mt-2 h-px bg-gradient-to-r from-transparent via-border/60 to-transparent dark:via-white/[0.06]" />
-
-      <p className="px-4 pt-3 pb-1.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/50">
-        Categories
-      </p>
-
-      <ScrollArea className="min-h-0 flex-1 overflow-hidden px-3 pb-3">
-        <div className="flex flex-col gap-px">
-          {categories.map((category) => (
+          {/* Featured - collapsible */}
+          <div>
+            <div className="mt-2 h-px bg-gradient-to-r from-transparent via-border/60 to-transparent dark:via-white/[0.06]" />
             <button
-              key={category.name}
               type="button"
-              onClick={() => onCategorySelect(category.name)}
+              onClick={() => setFeaturedExpanded((prev) => !prev)}
+              className="flex w-full items-center justify-between rounded-lg px-1 pt-3 pb-1.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/50 transition-colors hover:text-muted-foreground/80"
+            >
+              Featured
+              <ChevronRight
+                className={cn(
+                  "h-3 w-3 shrink-0 transition-transform duration-200",
+                  featuredExpanded && "rotate-90"
+                )}
+              />
+            </button>
+            <div
               className={cn(
-                "group flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05]",
-                selectedCategory === category.name &&
-                  !showFavorites &&
-                  activeClass
+                "flex flex-col gap-0.5 overflow-hidden transition-all duration-300",
+                featuredExpanded ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
               )}
             >
-              <span className="truncate">{category.name}</span>
-              <span className="ml-2 shrink-0 rounded-full bg-muted/50 px-1.5 font-mono text-[10px] text-muted-foreground/50 transition-colors group-hover:bg-muted/80 group-hover:text-muted-foreground/70 dark:bg-white/[0.03] dark:group-hover:bg-white/[0.06]">
-                {category.count}
-              </span>
-            </button>
-          ))}
+              <Link
+                href="/category/google-2026"
+                className={cn(
+                  "group flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05]",
+                  pathname === "/category/google-2026" && activeClass,
+                )}
+              >
+                <span className="flex items-center gap-2 truncate">
+                  <Sparkles className="h-3.5 w-3.5 shrink-0 text-amber-500" />
+                  <span className="truncate">Google 2026</span>
+                </span>
+                <span className="ml-2 shrink-0 rounded-full bg-gradient-to-r from-fuchsia-500/90 via-orange-500/90 to-amber-400/90 px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase leading-none tracking-wider text-white shadow-sm shadow-black/20">
+                  NEW
+                </span>
+              </Link>
+            </div>
+          </div>
+
+          {/* Categories */}
+          <div className="mt-2 h-px bg-gradient-to-r from-transparent via-border/60 to-transparent dark:via-white/[0.06]" />
+          <p className="px-1 pt-3 pb-1.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/50">
+            Categories
+          </p>
+          <div className="flex flex-col gap-px">
+            {categories.map((category) => (
+              <button
+                key={category.name}
+                type="button"
+                onClick={() => onCategorySelect(category.name)}
+                className={cn(
+                  "group flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05]",
+                  selectedCategory === category.name &&
+                    !showFavorites &&
+                    activeClass
+                )}
+              >
+                <span className="truncate">{category.name}</span>
+                <span className="ml-2 shrink-0 rounded-full bg-muted/50 px-1.5 font-mono text-[10px] text-muted-foreground/50 transition-colors group-hover:bg-muted/80 group-hover:text-muted-foreground/70 dark:bg-white/[0.03] dark:group-hover:bg-white/[0.06]">
+                  {category.count}
+                </span>
+              </button>
+            ))}
+          </div>
         </div>
       </ScrollArea>
     </aside>
