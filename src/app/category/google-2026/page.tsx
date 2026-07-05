@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/json-ld";
 import { Suspense } from "react";
 import { getCategoryCounts, getIconsByCategory } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
@@ -113,10 +114,7 @@ export default function Google2026CategoryPage() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
       <Suspense>
         <SidebarShell categoryCounts={categoryCounts}>
           <Google2026Landing icons={icons} />

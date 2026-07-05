@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/json-ld";
 import { Suspense } from "react";
 import { Zap } from "lucide-react";
 import { getCategoryCounts, getCollections } from "@/lib/icons";
@@ -73,10 +74,7 @@ export default function ViewerPage() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
       <Suspense>
         <SidebarShell categoryCounts={categoryCounts} collections={collections}>
           <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-10">
