@@ -1,5 +1,38 @@
 # thesvg
 
+## 3.2.2
+
+### Patch Changes
+
+- [#670](https://github.com/glincker/thesvg/pull/670) [`8c39e6c`](https://github.com/glincker/thesvg/commit/8c39e6cf7f3e3ef418fb3824edcb0ec6e185fc87) Thanks [@thegdsks](https://github.com/thegdsks)! - Quality pass: lint hygiene, search fixes, and a correct React validator
+
+  - **Lint**: ignore generated extension build dirs (`.output`, `.wxt`, `build`) so
+    ESLint stops scanning them. This drops the repo from 2361 problems (4 errors)
+    to 13 (0 errors, all intentional). Also removed genuinely dead imports/vars,
+    redundant eslint-disable directives, and hoisted a `PLACEHOLDER_BRANDS`
+    constant to module scope (fixes an exhaustive-deps warning).
+  - **Search UX**: a single character no longer blanks the icon grid (aligned with
+    Fuse's `minMatchCharLength`), and the Fuse index is no longer rebuilt on every
+    keystroke while a category/favorites filter is active (memoized search base).
+  - **Manifest recovery**: a transient icon-manifest load failure now clears when
+    filters change, so the grid recovers without a full page reload.
+  - **@thesvg/react validator**: `validate-output.ts` compared the source SVG root
+    fill against a `<svg>` tag that no longer exists in the compiled
+    `createElement` output, producing 3185 false "fill -> none" errors. It now
+    reads the root paint from the serialized `_variants` object and mirrors the
+    build's default-fill logic. The build also cleans `dist` first so orphaned
+    components from removed slugs no longer ship or trip the validator. Validator
+    now passes on all 6,415 components.
+
+- [#669](https://github.com/glincker/thesvg/pull/669) [`4dd70cc`](https://github.com/glincker/thesvg/commit/4dd70ccff3788a320870e01827d30da57cdc433b) Thanks [@thegdsks](https://github.com/thegdsks)! - Make the whole sidebar scrollable with collapsible Collections/Featured
+
+  Previously only the Categories list scrolled, so on short viewports the nav,
+  Collections, and Featured sections above it could become unreachable. The
+  primary nav stays pinned at the top; Collections, Featured, and Categories now
+  share one scroll region. Collections and Featured are collapsible to reclaim
+  space. Also refreshed the OpenSearch descriptor (icon count + a 32px image) so
+  browser address-bar search stays accurate.
+
 ## 3.2.1
 
 ### Patch Changes
