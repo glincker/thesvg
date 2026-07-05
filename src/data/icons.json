@@ -121885,10 +121885,12 @@
     ],
     "variants": {
       "default": "/icons/zoho/default.svg",
-      "mono": "/icons/zoho/mono.svg"
+      "mono": "/icons/zoho/mono.svg",
+      "wordmark": "/icons/zoho/wordmark.svg",
+      "wordmarkDark": "/icons/zoho/wordmarkDark.svg"
     },
-    "license": "CC0-1.0",
-    "url": "https://www.zoho.com/branding",
+    "license": "Trademark of Zoho Corporation. Used for identification under nominative fair use.",
+    "url": "https://www.zoho.com",
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
