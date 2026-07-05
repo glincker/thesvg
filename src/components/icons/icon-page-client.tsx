@@ -7,11 +7,11 @@ import { SidebarShell } from "@/components/layout/sidebar-shell";
 
 export function IconPageClient({ slug }: { slug: string }) {
   const icon = useMemo(() => getIconBySlug(slug), [slug]);
-  if (!icon) return null;
 
   const categoryCounts = useMemo(() => getCategoryCounts(), []);
 
   const relatedIcons = useMemo(() => {
+    if (!icon) return [];
     const primaryCategory = icon.categories[0] ?? null;
     return primaryCategory
       ? getIconsByCategory(primaryCategory)
@@ -22,6 +22,13 @@ export function IconPageClient({ slug }: { slug: string }) {
 
   const { versionCounterpartSlug, versionCounterpartYear, versionCounterpartIsNewer } =
     useMemo(() => {
+      if (!icon) {
+        return {
+          versionCounterpartSlug: null,
+          versionCounterpartYear: null,
+          versionCounterpartIsNewer: false,
+        };
+      }
       const yearMatch = /^(.+)-(\d{4})$/.exec(icon.slug);
       if (yearMatch) {
         const originalSlug = yearMatch[1];
@@ -59,7 +66,9 @@ export function IconPageClient({ slug }: { slug: string }) {
         versionCounterpartYear: null,
         versionCounterpartIsNewer: false,
       };
-    }, [icon.slug]);
+    }, [icon]);
+
+  if (!icon) return null;
 
   return (
     <SidebarShell categoryCounts={categoryCounts}>
