@@ -340,6 +340,53 @@ function parseSvgForIcon(icon: RawIcon): ParsedIcon | null {
   return { keys: Object.keys(variants), variants };
 }
 
+/**
+ * Detect whether any variant references internal SVG ids (gradients, masks,
+ * clipPaths, filters, patterns and their url(#id) / href="#id" references).
+ *
+ * Such icons MUST namespace their ids per render. SVG ids share the document
+ * scope, so when several icons that each declare e.g. id="a" render on the
+ * same page, every url(#a) resolves to whichever definition appears first in
+ * the DOM, corrupting the colors of the others. See issue #684 (Zoom and
+ * GoogleMeet2026 rendering with the wrong gradient).
+ */
+function needsIdNamespacing(parsed: ParsedIcon): boolean {
+  const json = JSON.stringify(parsed.variants);
+  return (
+    json.includes("url(#") ||
+    /"id":/.test(json) ||
+    /"(?:xlink:)?href":"#/.test(json)
+  );
+}
+
+/**
+ * Runtime helper (shared verbatim by ESM and CJS output, contains no
+ * module-format-specific references) that returns a shallow copy of an
+ * element's props with every internal id namespaced by prefix `p`:
+ *   - id="a"                 -> id="{p}a"
+ *   - fill="url(#a)"         -> fill="url(#{p}a)"   (any attribute)
+ *   - href="#a"              -> href="#{p}a"
+ *   - style={{ fill:'url(#a)' }} values are remapped too
+ * Non-reference values (e.g. fill="#FFF") are left untouched.
+ */
+const NS_RUNTIME = [
+  `function _ns(props, p) {`,
+  `  var out = {};`,
+  `  for (var k in props) {`,
+  `    var v = props[k];`,
+  `    if (k === 'id') out[k] = p + v;`,
+  `    else if (k === 'href' && typeof v === 'string' && v.charCodeAt(0) === 35) out[k] = '#' + p + v.slice(1);`,
+  `    else if (typeof v === 'string') out[k] = v.replace(/url\\(#([^)]+)\\)/g, function (_m, id) { return 'url(#' + p + id + ')'; });`,
+  `    else if (v && typeof v === 'object') {`,
+  `      var s = {};`,
+  `      for (var sk in v) { var sv = v[sk]; s[sk] = typeof sv === 'string' ? sv.replace(/url\\(#([^)]+)\\)/g, function (_m, id) { return 'url(#' + p + id + ')'; }) : sv; }`,
+  `      out[k] = s;`,
+  `    } else out[k] = v;`,
+  `  }`,
+  `  return out;`,
+  `}`,
+].join("\n");
+
 function generateEsmComponent(icon: RawIcon, parsed: ParsedIcon | null): string {
   const componentName = toPascalCase(icon.slug);
 
@@ -362,17 +409,26 @@ function generateEsmComponent(icon: RawIcon, parsed: ParsedIcon | null): string 
     ].join("\n");
   }
 
-  return [
+  const ns = needsIdNamespacing(parsed);
+  const lines: string[] = [
     `// @thesvg/react — ${icon.title}`,
     `// Auto-generated. Do not edit.`,
     `// Variants: ${parsed.keys.join(", ")}`,
     ``,
-    `import { forwardRef, createElement } from 'react';`,
+    ns
+      ? `import { forwardRef, createElement, useId } from 'react';`
+      : `import { forwardRef, createElement } from 'react';`,
     ``,
     `const _variants = ${JSON.stringify(parsed.variants)};`,
     ``,
+  ];
+  if (ns) lines.push(NS_RUNTIME, ``);
+  lines.push(
     `const ${componentName} = forwardRef(`,
     `  function ${componentName}({ variant = 'default', viewBox, ...props }, ref) {`,
+  );
+  if (ns) lines.push(`    const _p = 'tsvg' + useId().replace(/[^a-zA-Z0-9]/g, '') + '-';`);
+  lines.push(
     `    const _v = _variants[variant] || _variants.default;`,
     `    return createElement(`,
     `      'svg',`,
@@ -380,7 +436,9 @@ function generateEsmComponent(icon: RawIcon, parsed: ParsedIcon | null): string 
     `      ..._v.childNodes`,
     `        .map(function _c(el) {`,
     `          if (typeof el === 'string') return el;`,
-    `          return createElement(el.type, el.props, ...(el.children || []).map(_c));`,
+    ns
+      ? `          return createElement(el.type, _ns(el.props, _p), ...(el.children || []).map(_c));`
+      : `          return createElement(el.type, el.props, ...(el.children || []).map(_c));`,
     `        })`,
     `    );`,
     `  }`,
@@ -388,7 +446,8 @@ function generateEsmComponent(icon: RawIcon, parsed: ParsedIcon | null): string 
     `${componentName}.displayName = '${componentName}';`,
     ``,
     `export default ${componentName};`,
-  ].join("\n");
+  );
+  return lines.join("\n");
 }
 
 function generateCjsComponent(icon: RawIcon, parsed: ParsedIcon | null): string {
@@ -414,7 +473,8 @@ function generateCjsComponent(icon: RawIcon, parsed: ParsedIcon | null): string 
     ].join("\n");
   }
 
-  return [
+  const ns = needsIdNamespacing(parsed);
+  const lines: string[] = [
     `"use strict";`,
     `// @thesvg/react — ${icon.title}`,
     `// Auto-generated. Do not edit.`,
@@ -426,7 +486,13 @@ function generateCjsComponent(icon: RawIcon, parsed: ParsedIcon | null): string 
     ``,
     `const _variants = ${JSON.stringify(parsed.variants)};`,
     ``,
+  ];
+  if (ns) lines.push(NS_RUNTIME, ``);
+  lines.push(
     `const ${componentName} = react_1.forwardRef(function ${componentName}({ variant = 'default', viewBox, ...props }, ref) {`,
+  );
+  if (ns) lines.push(`  const _p = 'tsvg' + react_1.useId().replace(/[^a-zA-Z0-9]/g, '') + '-';`);
+  lines.push(
     `  const _v = _variants[variant] || _variants.default;`,
     `  return react_1.createElement(`,
     `    'svg',`,
@@ -434,14 +500,17 @@ function generateCjsComponent(icon: RawIcon, parsed: ParsedIcon | null): string 
     `    ..._v.childNodes`,
     `      .map(function _c(el) {`,
     `        if (typeof el === 'string') return el;`,
-    `        return react_1.createElement(el.type, el.props, ...(el.children || []).map(_c));`,
+    ns
+      ? `        return react_1.createElement(el.type, _ns(el.props, _p), ...(el.children || []).map(_c));`
+      : `        return react_1.createElement(el.type, el.props, ...(el.children || []).map(_c));`,
     `      })`,
     `  );`,
     `});`,
     `${componentName}.displayName = '${componentName}';`,
     ``,
     `exports.default = ${componentName};`,
-  ].join("\n");
+  );
+  return lines.join("\n");
 }
 
 /**
