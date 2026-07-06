@@ -56025,6 +56025,28 @@
     "collection": "brands"
   },
   {
+    "slug": "fred",
+    "title": "FRED",
+    "aliases": [
+      "Federal Reserve Economic Data",
+      "St. Louis Fed FRED"
+    ],
+    "hex": "0073E6",
+    "categories": [
+      "Finance",
+      "Analytics"
+    ],
+    "variants": {
+      "default": "/icons/fred/default.svg",
+      "mono": "/icons/fred/mono.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://fred.stlouisfed.org",
+    "guidelines": "https://fred.stlouisfed.org/legal",
+    "dateAdded": "2026-07-06",
+    "collection": "brands"
+  },
+  {
     "slug": "freebsd",
     "title": "FreeBSD",
     "aliases": [],
