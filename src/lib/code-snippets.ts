@@ -79,12 +79,15 @@ export function generateSnippet(
   const cssClass = `icon-${slugToClassName(slug)}`;
 
   switch (format) {
-    case "react":
+    case "react": {
+      const variantProp =
+        variant && variant !== "default" ? ` variant="${variant}"` : "";
       return `import { ${componentName} } from '@thesvg/react';
 
 export default function App() {
-  return <${componentName} className="h-6 w-6" />;
+  return <${componentName}${variantProp} className="h-6 w-6" />;
 }`;
+    }
 
     case "vue":
       return `<template>
