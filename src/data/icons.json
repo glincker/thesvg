@@ -2835,6 +2835,26 @@
     "collection": "brands"
   },
   {
+    "slug": "alpha-vantage",
+    "title": "Alpha Vantage",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Finance",
+      "Analytics",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/alpha-vantage/default.svg",
+      "mono": "/icons/alpha-vantage/mono.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.alphavantage.co",
+    "guidelines": "https://www.alphavantage.co/media_kit/",
+    "dateAdded": "2026-07-06",
+    "collection": "brands"
+  },
+  {
     "slug": "alpine-linux",
     "title": "Alpine Linux",
     "aliases": [],
