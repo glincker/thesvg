@@ -51,7 +51,7 @@ jobs:
 
       - name: Update formula in tap repo
         if: steps.gate.outputs.skip == 'false'
-        uses: dawidd6/action-homebrew-bump-formula@v7
+        uses: dawidd6/action-homebrew-bump-formula@v8
         with:
           token: ${{ secrets.HOMEBREW_TAP_TOKEN }}
           # Homebrew tap naming: 'glincker/thesvg' resolves to the repo
