@@ -104356,6 +104356,23 @@
     "collection": "brands"
   },
   {
+    "slug": "skool",
+    "title": "Skool",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Software",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/skool/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://www.skool.com",
+    "dateAdded": "2026-07-06",
+    "collection": "brands"
+  },
+  {
     "slug": "sky",
     "title": "Sky",
     "aliases": [],
