@@ -122090,6 +122090,30 @@
     "collection": "brands"
   },
   {
+    "slug": "zoom-2025",
+    "title": "Zoom (2025)",
+    "aliases": [
+      "zoom 2025",
+      "zoom new logo",
+      "zoom wordmark",
+      "zoom refresh"
+    ],
+    "hex": "0B5CFF",
+    "categories": [
+      "Software",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/zoom-2025/default.svg",
+      "mono": "/icons/zoom-2025/mono.svg"
+    },
+    "license": "Trademark",
+    "url": "https://zoom.us/",
+    "guidelines": "https://brand.zoom.com/",
+    "dateAdded": "2026-07-06",
+    "collection": "brands"
+  },
+  {
     "slug": "zorin",
     "title": "Zorin",
     "aliases": [],
