@@ -1,5 +1,11 @@
 # @thesvg/icons
 
+## 3.2.4
+
+### Patch Changes
+
+- feat: add zoom-2025 (new Zoom wordmark logo) ([#697](https://github.com/glincker/thesvg/issues/697))
+
 ## 3.2.0
 
 ### Minor Changes
