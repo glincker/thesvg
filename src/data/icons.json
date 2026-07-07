@@ -87944,6 +87944,24 @@
     "dateAdded": "2026-05-05"
   },
   {
+    "slug": "oblio",
+    "title": "Oblio",
+    "aliases": [],
+    "hex": "EF473E",
+    "categories": [
+      "Finance",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/oblio/default.svg",
+      "wordmark": "/icons/oblio/wordmark.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.oblio.eu/",
+    "dateAdded": "2026-07-07",
+    "collection": "brands"
+  },
+  {
     "slug": "obs",
     "title": "OBS",
     "aliases": [],
