@@ -104624,6 +104624,24 @@
     "collection": "brands"
   },
   {
+    "slug": "smartbill",
+    "title": "SmartBill",
+    "aliases": [],
+    "hex": "020044",
+    "categories": [
+      "Finance",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/smartbill/default.svg",
+      "wordmark": "/icons/smartbill/wordmark.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.smartbill.ro/",
+    "dateAdded": "2026-07-07",
+    "collection": "brands"
+  },
+  {
     "slug": "smartthings",
     "title": "SmartThings",
     "aliases": [],
