@@ -53952,6 +53952,27 @@
     "collection": "brands"
   },
   {
+    "slug": "fgo",
+    "title": "FGO",
+    "aliases": [
+      "Soft Facturare FGO",
+      "FGO.ro"
+    ],
+    "hex": "20A7B3",
+    "categories": [
+      "Finance",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/fgo/default.svg",
+      "light": "/icons/fgo/light.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.fgo.ro/",
+    "dateAdded": "2026-07-07",
+    "collection": "brands"
+  },
+  {
     "slug": "fi",
     "title": "Fi",
     "aliases": [
