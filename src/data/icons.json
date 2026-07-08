@@ -101557,6 +101557,23 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	{
+    "slug": "s-oil",
+    "title": "S-Oil",
+    "aliases": [],
+    "hex": "FECB03",
+    "categories": [
+      "Oil & Gas"
+    ],
+    "variants": {
+      "default": "/icons/s-oil/default.svg",
+      "wordmark": "/icons/s-oil/wordmark.svg"
+    },
+    "license": "Unknown",
+    "url": "https://www.s-oil.com/en/",
+    "dateAdded": "2026-07-08",
+    "collection": "brands"
+  },
   {
     "slug": "s7-airlines",
     "title": "S7 Airlines",
