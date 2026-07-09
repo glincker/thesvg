@@ -72446,6 +72446,23 @@
     "collection": "brands"
   },
   {
+    "slug": "justcall",
+    "title": "Justcall",
+    "aliases": [],
+    "hex": "03008F",
+    "categories": [
+      "Voice",
+      "Communication"
+    ],
+    "variants": {
+      "default": "/icons/justcall/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://justcall.io/",
+    "dateAdded": "2026-07-09",
+    "collection": "brands"
+  },
+  {
     "slug": "justgiving",
     "title": "JustGiving",
     "aliases": [],
