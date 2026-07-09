@@ -6824,6 +6824,28 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	{
+    "slug": "avanza",
+    "title": "Avanza Bank",
+    "aliases": [],
+    "hex": "17B582",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/avanza/default.svg",
+      "mono": "/icons/avanza/mono.svg",
+      "light": "/icons/avanza/light.svg",
+      "dark": "/icons/avanza/dark.svg",
+      "wordmark": "/icons/avanza/wordmark.svg",
+      "wordmarkLight": "/icons/avanza/wordmarkLight.svg",
+      "wordmarkDark": "/icons/avanza/wordmarkDark.svg"
+    },
+    "license": "Unknown",
+    "url": "https://www.avanza.se/start",
+    "dateAdded": "2026-07-06",
+    "collection": "brands"
+  },
   {
     "slug": "avast",
     "title": "Avast",
