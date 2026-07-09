@@ -38520,6 +38520,25 @@
     "aliases": []
   },
   {
+    "slug": "blogent",
+    "title": "Blogent",
+    "aliases": [
+      "smmix",
+      "smmix.tools"
+    ],
+    "hex": "FD5786",
+    "categories": [
+      "AI"
+    ],
+    "variants": {
+      "default": "/icons/blogent/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://blogent.tools",
+    "collection": "brands",
+    "dateAdded": "2026-05-16"
+  },
+  {
     "slug": "blogger",
     "title": "Blogger",
     "aliases": [],
@@ -104717,24 +104736,6 @@
     "url": "https://smithery.ai",
     "dateAdded": "2026-03-07",
     "collection": "brands"
-  },
-  {
-    "slug": "smmix",
-    "title": "SMMIX",
-    "aliases": [
-      "smmix.tools"
-    ],
-    "hex": "FD5786",
-    "categories": [
-      "AI"
-    ],
-    "variants": {
-      "default": "/icons/smmix/default.svg"
-    },
-    "license": "brand-use",
-    "url": "https://smmix.tools",
-    "collection": "brands",
-    "dateAdded": "2026-05-16"
   },
   {
     "slug": "smoothcomp",
