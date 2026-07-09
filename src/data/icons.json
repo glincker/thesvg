@@ -93190,6 +93190,24 @@
     "collection": "community"
   },
   {
+    "slug": "pipedrive",
+    "title": "Pipedrive",
+    "aliases": [],
+    "hex": "027737",
+    "categories": [
+      "Software",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/pipedrive/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.pipedrive.com/",
+    "guidelines": "https://www.pipedrive.com/en/newsroom/press-kit",
+    "dateAdded": "2026-07-09",
+    "collection": "brands"
+  },
+  {
     "slug": "pipx",
     "title": "pipx",
     "aliases": [],
