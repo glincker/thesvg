@@ -14,6 +14,7 @@ permissions:
 
 env:
   NODE_VERSION: "22"
+  NPM_VERSION: "11.18.0"
 
 jobs:
   publish:
@@ -41,7 +42,7 @@ jobs:
           cache: pnpm
 
       - name: Upgrade npm for OIDC
-        run: npm install -g npm@11.18.0
+        run: npm install -g npm@${{ env.NPM_VERSION }}
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
