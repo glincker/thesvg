@@ -122339,8 +122339,11 @@
     ],
     "variants": {
       "default": "/icons/zoom-2025/default.svg",
-      "mono": "/icons/zoom-2025/mono.svg",
-      "light": "/icons/zoom-2025/light.svg"
+      "light": "/icons/zoom-2025/light.svg",
+      "wordmark": "/icons/zoom-2025/wordmark.svg",
+      "wordmarkMono": "/icons/zoom-2025/wordmark-mono.svg",
+      "wordmarkLight": "/icons/zoom-2025/wordmark-light.svg",
+      "wordmarkDark": "/icons/zoom-2025/wordmark-dark.svg"
     },
     "license": "Trademark",
     "url": "https://zoom.us/",
