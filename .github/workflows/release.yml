@@ -40,9 +40,6 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           cache: pnpm
 
-      - name: Upgrade npm for OIDC
-        run: npm install -g npm@latest
-
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
