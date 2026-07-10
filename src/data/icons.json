@@ -86319,6 +86319,23 @@
     "collection": "brands"
   },
   {
+    "slug": "nfl",
+    "title": "NFL",
+    "aliases": [],
+    "hex": "013369",
+    "categories": [
+      "Sports"
+    ],
+    "variants": {
+      "default": "/icons/nfl/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.nfl.com/",
+    "guidelines": "https://www.nfl.com/",
+    "dateAdded": "2026-07-09",
+    "collection": "brands"
+  },
+  {
     "slug": "nginx",
     "title": "NGINX",
     "aliases": [],
