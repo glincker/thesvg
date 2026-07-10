@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 3.2.5
+
+### Patch Changes
+
+- feat: add Siket icon ([#720](https://github.com/glincker/thesvg/issues/720))
+
 ## 3.2.4
 
 ### Patch Changes
