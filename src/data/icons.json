@@ -104042,6 +104042,23 @@
     "aliases": []
   },
   {
+    "slug": "siket",
+    "title": "Siket",
+    "aliases": [],
+    "hex": "88c0d0",
+    "categories": [
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/siket/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://siket.app",
+    "guidelines": "https://siket.app/press-kit",
+    "dateAdded": "2026-07-08",
+    "collection": "brands"
+  },
+  {
     "slug": "siliconcloud-siliconflow",
     "title": "SiliconCloud (SiliconFlow)",
     "aliases": [],
