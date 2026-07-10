@@ -52280,6 +52280,23 @@
     "collection": "brands"
   },
   {
+    "slug": "eps",
+    "title": "EPS - Elektroprivreda Srbije",
+    "aliases": [],
+    "hex": "083F88",
+    "categories": [
+      "Energy"
+    ],
+    "variants": {
+      "default": "/icons/eps/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.eps.rs/",
+    "guidelines": "https://www.eps.rs/cir/Pages/Home.aspx",
+    "dateAdded": "2026-07-09",
+    "collection": "brands"
+  },
+  {
     "slug": "epsagon",
     "title": "Epsagon",
     "aliases": [],
