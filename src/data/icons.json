@@ -86941,6 +86941,23 @@
     "collection": "brands"
   },
   {
+    "slug": "noom",
+    "title": "Noom",
+    "aliases": [],
+    "hex": "FB513B",
+    "categories": [
+      "Health"
+    ],
+    "variants": {
+      "default": "/icons/noom/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.noom.com/",
+    "guidelines": "https://brand.noom.com/",
+    "dateAdded": "2026-07-09",
+    "collection": "brands"
+  },
+  {
     "slug": "norco",
     "title": "Norco",
     "aliases": [],
