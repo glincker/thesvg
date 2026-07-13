@@ -93421,6 +93421,23 @@
     "collection": "brands"
   },
   {
+    "slug": "pixelos",
+    "title": "PixelOS",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Software",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/pixelos/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://pixelos.net",
+    "dateAdded": "2026-07-13",
+    "collection": "brands"
+  },
+  {
     "slug": "pixijs",
     "title": "Pixijs",
     "aliases": [],
