@@ -1,0 +1,58 @@
+name: Moderator Application
+description: Apply to become a community moderator for thesvg
+labels: ["moderator-application"]
+title: "Moderator application: "
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your interest in helping run thesvg! Moderators get **triage access**
+        (labeling, closing/reopening issues, requesting changes on PRs) so they can help
+        keep icon requests and submissions moving. See the "Become a Moderator" section
+        of [CONTRIBUTING.md](../../CONTRIBUTING.md) for what the role involves.
+
+  - type: input
+    id: github_username
+    attributes:
+      label: GitHub Username
+      placeholder: e.g. octocat
+    validations:
+      required: true
+
+  - type: textarea
+    id: contributions
+    attributes:
+      label: Your contributions so far
+      description: Link to icon PRs, issue triage, or discussions you've participated in.
+      placeholder: |
+        - PR #123: added Acme Corp icon
+        - Helped triage issue #456
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Why do you want to moderate?
+      description: What part of triage/review are you most interested in helping with?
+    validations:
+      required: true
+
+  - type: textarea
+    id: availability
+    attributes:
+      label: Availability
+      description: Roughly how much time per week can you spend on triage/review?
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have read the Become a Moderator section of CONTRIBUTING.md
+          required: true
+        - label: I have at least one merged contribution or meaningful triage activity on this repo
+          required: true

@@ -228,6 +228,30 @@ Web Services and all related marks are trademarks of Amazon.com, Inc.
 For trademark concerns, see [TRADEMARK.md](./TRADEMARK.md) or contact
 [support@glincker.com](mailto:support@glincker.com).
 
+## Become a Moderator
+
+thesvg runs on triage: labeling issues, checking SVG submissions against the
+requirements above, and reviewing incoming PRs. If you've been doing that
+informally, we'd like to make it official.
+
+**What moderators get**: triage access to the repo, so you can label issues,
+close/reopen, and request changes on PRs. Moderators do not get merge or push
+access; merges still go through a maintainer review.
+
+**What we look for**:
+
+- At least one merged icon or code contribution, or a track record of helpful
+  triage on issues/discussions
+- Familiarity with the [icon submission requirements](#submit-a-new-icon) so
+  you can sanity-check incoming requests (SVG validity, size, domain age,
+  category)
+- Enough time to check in on new issues/PRs at least weekly
+
+**How to apply**: open a
+[Moderator Application](https://github.com/glincker/thesvg/issues/new?template=moderator_application.yml)
+issue with links to your prior contributions. We review applications as they
+come in and follow up in the issue.
+
 ## Questions?
 
 - [Open a discussion](https://github.com/glincker/thesvg/discussions)
