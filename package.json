@@ -40,7 +40,7 @@
     "html-to-image": "^1.11.13",
     "playwright": "^1.61.1",
     "tailwindcss": "^4",
-    "tsx": "^4.23.0",
+    "tsx": "^4.23.1",
     "typescript": "^6"
   },
   "pnpm": {
