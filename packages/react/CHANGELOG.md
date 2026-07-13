@@ -1,5 +1,11 @@
 # @thesvg/react
 
+## 3.2.6
+
+### Patch Changes
+
+- feat: update google search console icon to 2025 brand refresh ([#735](https://github.com/glincker/thesvg/issues/735))
+
 ## 3.2.5
 
 ### Patch Changes
