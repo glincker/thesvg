@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 3.2.6
+
+### Patch Changes
+
+- feat: add pixelos icon ([#734](https://github.com/glincker/thesvg/issues/734))
+
 ## 3.2.5
 
 ### Patch Changes
