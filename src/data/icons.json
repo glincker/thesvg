@@ -64360,19 +64360,40 @@
     "slug": "google-search-console",
     "title": "Google Search Console",
     "aliases": [],
-    "hex": "458CF5",
+    "hex": "4285F4",
     "categories": [
       "Google",
       "Software"
     ],
     "variants": {
       "default": "/icons/google-search-console/default.svg",
-      "mono": "/icons/google-search-console/mono.svg"
+      "mono": "/icons/google-search-console/mono.svg",
+      "wordmark": "/icons/google-search-console/wordmark.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://search.google.com/search-console",
+    "dateAdded": "2026-07-13",
+    "collection": "brands",
+    "supersedes": "google-search-console-legacy"
+  },
+  {
+    "slug": "google-search-console-legacy",
+    "title": "Google Search Console (legacy)",
+    "aliases": [],
+    "hex": "458CF5",
+    "categories": [
+      "Google",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/google-search-console-legacy/default.svg",
+      "mono": "/icons/google-search-console-legacy/mono.svg"
     },
     "license": "CC0-1.0",
     "url": "https://search.google.com/search-console",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "supersededBy": "google-search-console"
   },
   {
     "slug": "google-sheets",
