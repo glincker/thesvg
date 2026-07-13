@@ -119562,6 +119562,29 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	  {
+    "slug": "wisetech-global",
+    "title": "Wisetech Global",
+    "aliases": [],
+    "hex": "1D1765",
+    "categories": [
+      "Software",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/wisetech-global/default.svg",
+      "mono": "/icons/wisetech-global/mono.svg",
+      "dark": "/icons/wisetech-global/dark.svg",
+      "light": "/icons/wisetech-global/light.svg",
+      "wordmark": "/icons/wisetech-global/wordmark.svg",
+      "wordmarkDark": "/icons/wisetech-global/wordmarkDark.svg",
+      "wordmarkLight": "/icons/wisetech-global/wordmarkLight.svg"
+    },
+    "license": "Unknown",
+    "url": "https://www.wisetechglobal.com/",
+    "dateAdded": "2026-07-12",
+    "collection": "brands"
+  },
   {
     "slug": "wisgate",
     "title": "WisGate",
