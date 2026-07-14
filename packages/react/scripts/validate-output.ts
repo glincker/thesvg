@@ -20,6 +20,7 @@ const __dirname = dirname(__filename);
 const DIST = resolve(__dirname, "../dist");
 const REPO_ROOT = resolve(__dirname, "../../..");
 const ICONS_PUBLIC = resolve(REPO_ROOT, "public/icons");
+const ICONS_JSON = resolve(REPO_ROOT, "src/data/icons.json");
 
 const PRIMARY_VARIANTS = ["default", "color", "mono", "light", "dark", "wordmark"];
 
@@ -151,9 +152,47 @@ for (const file of files) {
   }
 }
 
+// Every variant declared in icons.json with a real SVG on disk must survive
+// into the compiled output. Regression test for issue #740: build-components.ts
+// used to reconstruct SVG filenames from the variant key (e.g. "wordmarkLight"
+// -> "wordmarkLight.svg"), silently dropping variants whose files are
+// kebab-case on disk ("wordmark-light.svg"), which icons.json's own path
+// already records correctly.
+interface RawIcon {
+  slug: string;
+  variants: Record<string, string>;
+}
+
+const icons: RawIcon[] = JSON.parse(readFileSync(ICONS_JSON, "utf8"));
+let iconsChecked = 0;
+
+for (const icon of icons) {
+  const dtsPath = join(DIST, `${icon.slug}.d.ts`);
+  if (!existsSync(dtsPath)) continue;
+
+  const dts = readFileSync(dtsPath, "utf8");
+  const unionMatch = dts.match(/Variant = ([^;]+);/);
+  const compiledVariants = new Set(
+    unionMatch ? unionMatch[1].split("|").map((v) => v.trim().replace(/'/g, "")) : [],
+  );
+
+  for (const [variantKey, variantPath] of Object.entries(icon.variants)) {
+    const svgFile = join(REPO_ROOT, "public", variantPath.replace(/^\//, ""));
+    if (!existsSync(svgFile)) continue;
+
+    if (!compiledVariants.has(variantKey)) {
+      console.error(
+        `FAIL: ${icon.slug} declares variant "${variantKey}" (${variantPath}) but it is missing from the compiled output`,
+      );
+      errors++;
+    }
+  }
+  iconsChecked++;
+}
+
 if (errors > 0) {
   console.error(`\n${errors} error(s) in ${checked} files. Fix build-components.ts and rebuild.`);
   process.exit(1);
 } else {
-  console.log(`PASS: ${checked} .js files validated, no issues found.`);
+  console.log(`PASS: ${checked} .js files validated, ${iconsChecked} icons' variant coverage checked, no issues found.`);
 }
