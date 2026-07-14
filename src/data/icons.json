@@ -398,6 +398,20 @@
     "collection": "brands"
   },
   {
+    "slug": "abarth",
+    "title": "Abarth",
+    "aliases": [],
+    "hex": "D7282F",
+    "categories": ["Automotive", "Platform"],
+    "variants": {
+      "default": "/icons/abarth/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.abarth.com",
+    "dateAdded": "2026-07-14",
+    "collection": "brands"
+  },
+  {
     "slug": "abb",
     "title": "ABB",
     "aliases": [],
@@ -103376,20 +103390,6 @@
     "license": "CC0-1.0",
     "url": "https://www.zyte.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
-  },
-  {
-    "slug": "abarth",
-    "title": "Abarth",
-    "aliases": [],
-    "hex": "D7282F",
-    "categories": ["Automotive", "Platform"],
-    "variants": {
-      "default": "/icons/abarth/default.svg"
-    },
-    "license": "CC0-1.0",
-    "url": "https://www.abarth.com",
-    "dateAdded": "2026-07-14",
     "collection": "brands"
   }
 ]
