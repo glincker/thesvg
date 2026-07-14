@@ -1,5 +1,20 @@
 # @thesvg/react
 
+## 3.2.7
+
+### Patch Changes
+
+- [#743](https://github.com/glincker/thesvg/pull/743) [`843dfae`](https://github.com/glincker/thesvg/commit/843dfae067971fa9e8d6ccf5e1220c8e5dbc38f1) Thanks [@thegdsks](https://github.com/thegdsks)! - Include wordmarkMono, wordmarkLight, and wordmarkDark variants in generated React components
+
+  The codegen reconstructed each variant's SVG filename from its camelCase
+  key (`wordmarkLight` -> `wordmarkLight.svg`), but those files are stored
+  kebab-case on disk (`wordmark-light.svg`), so the variant silently failed
+  to load and was dropped from the component's variant union entirely.
+  icons.json already records the correct path for every variant; the codegen
+  now reads that path directly instead of reconstructing it. Fixes 221
+  missing variants across 70+ icons, including Apple Music, Zoom, TikTok,
+  Vercel, and YouTube. Fixes [#740](https://github.com/glincker/thesvg/issues/740).
+
 ## 3.2.6
 
 ### Patch Changes
