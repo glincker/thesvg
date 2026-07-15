@@ -51298,6 +51298,28 @@
     "dateAdded": "2026-06-29",
     "collection": "community"
   },
+	{
+    "slug": "edison",
+    "title": "Edison",
+    "aliases": [],
+    "hex": "E74E0f",
+    "categories": [
+      "Energy"
+    ],
+    "variants": {
+      "default": "/icons/edison/default.svg",
+      "mono": "/icons/edison/mono.svg",
+      "dark": "/icons/edison/dark.svg",
+      "light": "/icons/edison/light.svg",
+      "wordmark": "/icons/edison/wordmark.svg",
+      "wordmarkDark": "/icons/edison/wordmarkDark.svg",
+      "wordmarkLight": "/icons/edison/wordmarkLight.svg"
+    },
+    "license": "Unknown",
+    "url": "https://www.edison.it/en?utm_source=chatgpt.com",
+    "dateAdded": "2026-07-15",
+    "collection": "community"
+  },
   {
     "slug": "editorconfig",
     "title": "EditorConfig",
