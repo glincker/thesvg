@@ -1,5 +1,11 @@
 # @thesvg/vue
 
+## 3.2.8
+
+### Patch Changes
+
+- feat: add Edison icon ([#746](https://github.com/glincker/thesvg/issues/746))
+
 ## 3.2.6
 
 ### Patch Changes
