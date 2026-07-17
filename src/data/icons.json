@@ -44971,6 +44971,20 @@
     "collection": "brands"
   },
   {
+    "slug": "composio",
+    "title": "Composio",
+    "aliases": [],
+    "hex": "FFFFFF",
+    "categories": [],
+    "variants": {
+      "default": "/icons/composio/default.svg"
+    },
+    "license": "Unlicense",
+    "url": "https://composio.dev",
+    "dateAdded": "2026-07-17",
+    "collection": "brands"
+  },
+  {
     "slug": "comptia",
     "title": "CompTIA",
     "aliases": [],
@@ -51315,7 +51329,7 @@
     "dateAdded": "2026-06-29",
     "collection": "community"
   },
-	{
+  {
     "slug": "edison",
     "title": "Edison",
     "aliases": [],
