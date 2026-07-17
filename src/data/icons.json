@@ -51315,7 +51315,7 @@
     "dateAdded": "2026-06-29",
     "collection": "community"
   },
-	{
+  {
     "slug": "edison",
     "title": "Edison",
     "aliases": [],
@@ -87651,6 +87651,20 @@
     "license": "CC0-1.0",
     "url": "https://nubank.com.br/en/press/",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "nubjs",
+    "title": "nubjs",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [],
+    "variants": {
+      "default": "/icons/nubjs/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://nubjs.com",
+    "dateAdded": "2026-07-17",
     "collection": "brands"
   },
   {
