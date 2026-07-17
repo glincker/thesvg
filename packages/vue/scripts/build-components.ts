@@ -110,6 +110,28 @@ function extractViewBox(svgContent: string): string {
 }
 
 /**
+ * Extract the root paint (fill/stroke) from the outer <svg> element.
+ * - Explicit fill (any value including "none") is preserved as-is.
+ * - No fill + has stroke: "none" (stroke-only icons; fill must not bleed).
+ * - No fill + no stroke: "currentColor" so paths without their own fill
+ *   inherit the surrounding text color instead of silently rendering
+ *   invisible (see #748 - hardcoding "none" here hid every path that
+ *   relied on the root svg's fill for color).
+ */
+function extractRootSvgPaint(svgContent: string): { fill: string; stroke?: string } {
+  const svgTag = svgContent.match(/<svg[^>]*>/s);
+  if (!svgTag) return { fill: "currentColor" };
+
+  const fillMatch = svgTag[0].match(/\bfill=["']([^"']+)["']/);
+  const strokeMatch = svgTag[0].match(/\bstroke=["']([^"']+)["']/);
+
+  return {
+    fill: fillMatch ? fillMatch[1] : strokeMatch ? "none" : "currentColor",
+    stroke: strokeMatch ? strokeMatch[1] : undefined,
+  };
+}
+
+/**
  * Extract the inner content of an SVG (everything between <svg> and </svg>).
  */
 function extractSvgInner(svgContent: string): string {
@@ -156,6 +178,18 @@ interface SvgElement {
   tag: string;
   attrs: Record<string, string>;
   children: SvgElement[];
+  /** Plain text content, set only when the element has no child elements. */
+  text?: string;
+}
+
+/** Decode the small set of XML entities that show up in brand-name titles. */
+function decodeXmlEntities(text: string): string {
+  return text
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'")
+    .replace(/&amp;/g, "&");
 }
 
 /**
@@ -221,7 +255,10 @@ function parseSvgElements(inner: string): SvgElement[] {
           if (depth === 0) {
             const innerContent = remaining.slice(innerStart, nextClose);
             const children = parseSvgElements(innerContent);
-            elements.push({ tag: tagName, attrs, children });
+            const text = children.length === 0 && innerContent.trim()
+              ? decodeXmlEntities(innerContent.trim())
+              : undefined;
+            elements.push({ tag: tagName, attrs, children, text });
             remaining = remaining.slice(nextClose + closeTag.length);
           } else {
             searchPos = nextClose + 1;
@@ -252,7 +289,9 @@ function elementsToH(elements: SvgElement[], indent: string = "        "): strin
       ? JSON.stringify(el.attrs)
       : "{}";
 
-    if (el.children.length === 0) {
+    if (el.children.length === 0 && el.text) {
+      lines.push(`${indent}h('${el.tag}', ${attrsStr}, ${JSON.stringify(el.text)})`);
+    } else if (el.children.length === 0) {
       lines.push(`${indent}h('${el.tag}', ${attrsStr})`);
     } else {
       const childrenStr = elementsToH(el.children, indent + "  ");
@@ -293,6 +332,7 @@ function generateEsmComponent(icon: RawIcon): string {
   }
 
   const viewBox = extractViewBox(svgContent);
+  const { fill, stroke } = extractRootSvgPaint(svgContent);
   const inner = extractSvgInner(svgContent);
   const elements = parseSvgElements(inner);
   const childrenH = elementsToH(elements);
@@ -312,7 +352,8 @@ function generateEsmComponent(icon: RawIcon): string {
     `  setup(_, { attrs }) {`,
     `    return () => h('svg', {`,
     `      viewBox: '${viewBox}',`,
-    `      fill: 'none',`,
+    `      fill: '${fill}',`,
+    stroke ? `      stroke: '${stroke}',` : undefined,
     `      xmlns: 'http://www.w3.org/2000/svg',`,
     `      ...attrs`,
     `    }${childrenBlock});`,
@@ -320,7 +361,7 @@ function generateEsmComponent(icon: RawIcon): string {
     `});`,
     ``,
     `export default ${componentName};`,
-  ].join("\n");
+  ].filter((line): line is string => line !== undefined).join("\n");
 }
 
 function generateCjsComponent(icon: RawIcon): string {
@@ -350,6 +391,7 @@ function generateCjsComponent(icon: RawIcon): string {
   }
 
   const viewBox = extractViewBox(svgContent);
+  const { fill, stroke } = extractRootSvgPaint(svgContent);
   const inner = extractSvgInner(svgContent);
   const elements = parseSvgElements(inner);
   const childrenH = elementsToH(elements);
@@ -372,7 +414,8 @@ function generateCjsComponent(icon: RawIcon): string {
     `  setup(_, { attrs }) {`,
     `    return () => vue_1.h('svg', {`,
     `      viewBox: '${viewBox}',`,
-    `      fill: 'none',`,
+    `      fill: '${fill}',`,
+    stroke ? `      stroke: '${stroke}',` : undefined,
     `      xmlns: 'http://www.w3.org/2000/svg',`,
     `      ...attrs`,
     `    }${childrenBlock.replace(/\bh\(/g, "vue_1.h(")});`,
@@ -380,7 +423,7 @@ function generateCjsComponent(icon: RawIcon): string {
     `});`,
     ``,
     `exports.default = ${componentName};`,
-  ].join("\n");
+  ].filter((line): line is string => line !== undefined).join("\n");
 }
 
 function generateDtsComponent(icon: RawIcon): string {
