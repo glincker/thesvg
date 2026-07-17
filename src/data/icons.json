@@ -51315,7 +51315,7 @@
     "dateAdded": "2026-06-29",
     "collection": "community"
   },
-	{
+  {
     "slug": "edison",
     "title": "Edison",
     "aliases": [],
@@ -109938,6 +109938,27 @@
     "license": "CC0-1.0",
     "url": "https://www.taxbuzz.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "te-logo-whiteorange",
+    "title": "TE Logo WhiteOrange",
+    "aliases": [
+      "ThousandEyes",
+      "Cisco ThousandEyes"
+    ],
+    "hex": "FF671D",
+    "categories": [
+      "Network",
+      "Software",
+      "Infrastructure"
+    ],
+    "variants": {
+      "default": "/icons/te-logo-whiteorange/default.svg"
+    },
+    "license": "Trademark of Cisco Systems, Inc. Used for identification under nominative fair use.",
+    "url": "https://www.thousandeyes.com/",
+    "dateAdded": "2026-07-17",
     "collection": "brands"
   },
   {
