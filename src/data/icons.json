@@ -51315,7 +51315,7 @@
     "dateAdded": "2026-06-29",
     "collection": "community"
   },
-	{
+  {
     "slug": "edison",
     "title": "Edison",
     "aliases": [],
@@ -122348,6 +122348,23 @@
     "license": "Trademark of Zoho Corporation. Used for identification under nominative fair use.",
     "url": "https://www.zoho.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "zohomail",
+    "title": "Zohomail",
+    "aliases": [],
+    "hex": "F9B21D",
+    "categories": [
+      "Communication",
+      "Zoho"
+    ],
+    "variants": {
+      "default": "/icons/zohomail/default.svg"
+    },
+    "license": "Trademark of Zoho Corporation. Used for identification under nominative fair use.",
+    "url": "https://www.zoho.com/mail/",
+    "dateAdded": "2026-07-17",
     "collection": "brands"
   },
   {
