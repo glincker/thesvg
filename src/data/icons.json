@@ -51315,7 +51315,7 @@
     "dateAdded": "2026-06-29",
     "collection": "community"
   },
-	{
+  {
     "slug": "edison",
     "title": "Edison",
     "aliases": [],
@@ -106294,6 +106294,23 @@
     "license": "CC0-1.0",
     "url": "https://speedypage.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "spei-logo",
+    "title": "Spei Logo",
+    "aliases": [],
+    "hex": "343084",
+    "categories": [
+      "Payment"
+    ],
+    "variants": {
+      "default": "/icons/spei-logo/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://www.banxico.org.mx",
+    "guidelines": "https://www.banxico.org.mx/servicios/spei_-informacion-banco-mex.html",
+    "dateAdded": "2026-07-17",
     "collection": "brands"
   },
   {
