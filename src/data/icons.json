@@ -641,6 +641,27 @@
     "collection": "brands"
   },
   {
+    "slug": "accountantos",
+    "title": "AccountantOS",
+    "aliases": [
+      "Accountant OS",
+      "Accounting Software",
+      "Practice Management"
+    ],
+    "hex": "09090B",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/accountantos/default.svg"
+    },
+    "license": "Used with permission of AccountantOS; unmodified redistribution authorized for brand identification and development use.",
+    "url": "https://accountantos.com.au",
+    "guidelines": "https://accountantos.com.au/brand",
+    "dateAdded": "2026-07-17",
+    "collection": "brands"
+  },
+  {
     "slug": "accusoft",
     "title": "Accusoft",
     "aliases": [],
@@ -51315,7 +51336,7 @@
     "dateAdded": "2026-06-29",
     "collection": "community"
   },
-	{
+  {
     "slug": "edison",
     "title": "Edison",
     "aliases": [],
