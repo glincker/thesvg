@@ -87654,6 +87654,20 @@
     "collection": "brands"
   },
   {
+    "slug": "nubjs",
+    "title": "nubjs",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [],
+    "variants": {
+      "default": "/icons/nubjs/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://nubjs.com",
+    "dateAdded": "2026-07-17",
+    "collection": "brands"
+  },
+  {
     "slug": "nucleo",
     "title": "Nucleo",
     "aliases": [],
