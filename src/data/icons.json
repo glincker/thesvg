@@ -82600,6 +82600,171 @@
     "collection": "brands"
   },
   {
+    "slug": "microsoft-viva",
+    "title": "Microsoft Viva",
+    "aliases": [
+      "Viva",
+      "MS Viva"
+    ],
+    "hex": "213781",
+    "categories": [
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-viva/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://www.microsoft.com/en-us/microsoft-viva",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-viva-amplify",
+    "title": "Microsoft Viva Amplify",
+    "aliases": [
+      "Viva Amplify",
+      "MS Viva Amplify"
+    ],
+    "hex": "4F2757",
+    "categories": [
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-viva-amplify/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://www.microsoft.com/en-us/microsoft-viva/amplify",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-viva-connections",
+    "title": "Microsoft Viva Connections",
+    "aliases": [
+      "Viva Connections",
+      "MS Viva Connections"
+    ],
+    "hex": "0669BC",
+    "categories": [
+      "Social",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-viva-connections/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://www.microsoft.com/en-us/microsoft-viva/connections",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-viva-engage",
+    "title": "Microsoft Viva Engage",
+    "aliases": [
+      "Viva Engage",
+      "MS Viva Engage"
+    ],
+    "hex": "053377",
+    "categories": [
+      "Social",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-viva-engage/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://www.microsoft.com/en-us/microsoft-viva/engage",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-viva-glint",
+    "title": "Microsoft Viva Glint",
+    "aliases": [
+      "Viva Glint",
+      "MS Viva Glint"
+    ],
+    "hex": "C97BFB",
+    "categories": [
+      "Analytics",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-viva-glint/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://www.microsoft.com/en-us/microsoft-viva/glint",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-viva-insights",
+    "title": "Microsoft Viva Insights",
+    "aliases": [
+      "Viva Insights",
+      "MS Viva Insights"
+    ],
+    "hex": "98BEF5",
+    "categories": [
+      "Analytics",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-viva-insights/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://www.microsoft.com/en-us/microsoft-viva/insights",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-viva-learning",
+    "title": "Microsoft Viva Learning",
+    "aliases": [
+      "Viva Learning",
+      "MS Viva Learning"
+    ],
+    "hex": "64D9E1",
+    "categories": [
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-viva-learning/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://www.microsoft.com/en-us/microsoft-viva/learning",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-viva-pulse",
+    "title": "Microsoft Viva Pulse",
+    "aliases": [
+      "Viva Pulse",
+      "MS Viva Pulse"
+    ],
+    "hex": "053F4B",
+    "categories": [
+      "Analytics",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-viva-pulse/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://www.microsoft.com/en-us/microsoft-viva/pulse",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
     "slug": "microsoft-windows",
     "title": "Microsoft Windows",
     "categories": [
