@@ -86442,6 +86442,23 @@
     "dateAdded": "2026-07-09",
     "collection": "brands"
   },
+	{
+    "slug": "ngern-tid-lor",
+    "title": "Ngern Tid Lor",
+    "aliases": [],
+    "hex": "0768b0",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/ngern-tid-lor/default.svg",
+      "wordmark": "/icons/ngern-tid-lor/wordmark.svg"
+    },
+    "license": "Unknown",
+    "url": "https://www.tidlor.com/en",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
   {
     "slug": "nginx",
     "title": "NGINX",

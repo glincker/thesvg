@@ -1,0 +1,63 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1532 1490" width="1532" height="1490">
+	<title>Ngern Tid Lor</title>
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="m116.02 456.4l347.2 349.36c0 0 115.88-236.38 329.73-423.79 134.71-118.05 308.19-216.6 516.03-224.46 2.93-0.15 6.08-0.34 9.07-0.39 0 0-160.78-124.11-411.19-124.11-213.25 0-491.52 90.01-790.84 423.39z"/>
+		</clipPath>
+		<linearGradient id="g1" x1="116" y1="419.4" x2="1318" y2="419.4" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#ed3f36"/>
+			<stop offset="1" stop-color="#b31f2a"/>
+		</linearGradient>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp2">
+			<path d="m732.15 1108.02c-134.62 118.01-308.11 216.58-515.95 224.45-3.1 0.11-6.03 0.33-9.11 0.37 0 0 551.32 425.58 1202.01-299.25l-347.08-351.79c0 0-116.06 238.78-329.87 426.22z"/>
+		</clipPath>
+		<linearGradient id="g2" x1="207.1" y1="1069.4" x2="1409.1" y2="1069.4" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#ed3f36"/>
+			<stop offset="1" stop-color="#b31f2a"/>
+		</linearGradient>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp3">
+			<path d="m847.07 396.01c85.26 37.25 244.17 142.22 406.71 389.03l238.68-459.88c-40.84-51.5-96.88-104.65-133.06-136.19-305.3 0.24-463.43 154.76-512.33 207.04z"/>
+		</clipPath>
+		<linearGradient id="g3" x1="847.1" y1="487" x2="1492.5" y2="487" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#2a3b8e"/>
+			<stop offset="1" stop-color="#1c75ba"/>
+		</linearGradient>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp4">
+			<path d="m39.27 1168.03c39.91 50.4 99.96 107.9 145.75 146.43 196.78-34.58 329.01-61.24 493.03-213.26-86.4-39.23-241.44-152.2-400.09-392.98 0 0-238.69 459.79-238.69 459.81z"/>
+		</clipPath>
+		<linearGradient id="g4" x1="39.3" y1="1011.3" x2="678" y2="1011.3" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#1c75ba"/>
+			<stop offset="1" stop-color="#2a3b8e"/>
+		</linearGradient>
+	</defs>
+	<style>
+		.s0 { fill: #ffffff } 
+		.s1 { fill: url(#g1) } 
+		.s2 { fill: url(#g2) } 
+		.s3 { fill: url(#g3) } 
+		.s4 { fill: url(#g4) } 
+	</style>
+	<g id="Layer">
+		<path id="Layer" fill-rule="evenodd" class="s0" d="m618.8 1490c-254.9 0.2-421-122.7-431.5-130.6l-100.7-89.2-1.6-2.5-1.7-1.7c-2.1-2.2-50.7-53-70.2-77.5l-13.1-16.7 267.7-515.8-197.3-198.4 20.8-23.2c140.4-156.3 287.6-272.1 437.6-344.3 124.3-59.7 251.2-90 377.4-90.1 259.3-0.2 425.3 125.7 432.2 131 37.3 27.6 94.1 73.4 104 89.2l1.3 2.1 1.8 1.7c28.8 28.8 53.3 55.9 73.1 80.8l13.1 16.7-268.3 517.2 191.2 193.9-20.6 23c-140.4 156.3-287.7 272.1-437.8 344.3-124.2 59.7-251.2 90-377.4 90.1z"/>
+		<g id="Layer">
+			<g id="Clip-Path" clip-path="url(#cp1)">
+				<path id="Layer" fill-rule="evenodd" class="s1" d="m116 456.4l347.2 349.4c0 0 115.9-236.4 329.8-423.8 134.7-118.1 308.1-216.6 516-224.5 2.9-0.1 6.1-0.3 9.1-0.4 0 0-160.8-124.1-411.2-124.1-213.3 0-491.6 90-790.9 423.4z"/>
+			</g>
+		</g>
+		<g id="Layer">
+			<g id="Clip-Path" clip-path="url(#cp2)">
+				<path id="Layer" fill-rule="evenodd" class="s2" d="m732.2 1108c-134.7 118-308.2 216.6-516 224.5-3.1 0.1-6 0.3-9.1 0.3 0 0 551.3 425.6 1202-299.2l-347.1-351.8c0 0-116 238.8-329.8 426.2z"/>
+			</g>
+		</g>
+		<g id="Layer">
+			<g id="Clip-Path" clip-path="url(#cp3)">
+				<path id="Layer" fill-rule="evenodd" class="s3" d="m847.1 396c85.2 37.3 244.1 142.2 406.7 389l238.7-459.8c-40.9-51.5-96.9-104.7-133.1-136.2-305.3 0.2-463.4 154.7-512.3 207z"/>
+			</g>
+		</g>
+		<g id="Layer">
+			<g id="Clip-Path" clip-path="url(#cp4)">
+				<path id="Layer" fill-rule="evenodd" class="s4" d="m39.3 1168c39.9 50.4 99.9 107.9 145.7 146.5 196.8-34.6 329-61.3 493.1-213.3-86.4-39.2-241.5-152.2-400.1-393 0 0-238.7 459.8-238.7 459.8z"/>
+			</g>
+		</g>
+	</g>
+</svg>
