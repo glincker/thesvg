@@ -82409,6 +82409,27 @@
     "collection": "brands"
   },
   {
+    "slug": "microsoft-fabric-data-warehouse",
+    "title": "Microsoft Fabric Data Warehouse",
+    "aliases": [
+      "Fabric Data Warehouse",
+      "Data Warehouse",
+      "Fabric DW"
+    ],
+    "hex": "0094E5",
+    "categories": [
+      "Database"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-fabric-data-warehouse/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://learn.microsoft.com/en-us/fabric/data-warehouse/data-warehousing",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
     "slug": "microsoft-loop",
     "title": "Microsoft Loop",
     "aliases": [],
@@ -82529,6 +82550,26 @@
     "license": "MIT",
     "url": "https://www.microsoft.com/microsoft-365/powerpoint",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-purview",
+    "title": "Microsoft Purview",
+    "aliases": [
+      "Purview",
+      "Microsoft Fabric Purview"
+    ],
+    "hex": "0078D4",
+    "categories": [
+      "Security"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-purview/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://www.microsoft.com/en-us/security/business/microsoft-purview",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
     "collection": "brands"
   },
   {
