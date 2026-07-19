@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 3.2.10
+
+### Patch Changes
+
+- feat: add Microsoft Viva icon family ([#792](https://github.com/glincker/thesvg/issues/792))
+
 ## 3.2.9
 
 ### Patch Changes
