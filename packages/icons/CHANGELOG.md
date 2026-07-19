@@ -1,5 +1,11 @@
 # @thesvg/icons
 
+## 3.2.10
+
+### Patch Changes
+
+- feat: add Microsoft Purview and Fabric Data Warehouse icons ([#794](https://github.com/glincker/thesvg/issues/794))
+
 ## 3.2.9
 
 ### Patch Changes
