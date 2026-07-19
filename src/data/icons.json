@@ -82358,6 +82358,336 @@
     "collection": "brands"
   },
   {
+    "slug": "microsoft-dynamics-365",
+    "title": "Microsoft Dynamics 365",
+    "aliases": [
+      "Dynamics 365",
+      "MS Dynamics 365"
+    ],
+    "hex": "2764E7",
+    "categories": [
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-dynamics-365/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://www.microsoft.com/en-us/dynamics-365",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-dynamics-365-business-central",
+    "title": "Microsoft Dynamics 365 Business Central",
+    "aliases": [
+      "Dynamics 365 Business Central",
+      "MS Dynamics 365 Business Central"
+    ],
+    "hex": "1384B1",
+    "categories": [
+      "Finance",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-dynamics-365-business-central/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://www.microsoft.com/en-us/dynamics-365/products/business-central",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-dynamics-365-commerce",
+    "title": "Microsoft Dynamics 365 Commerce",
+    "aliases": [
+      "Dynamics 365 Commerce",
+      "MS Dynamics 365 Commerce"
+    ],
+    "hex": "CA6407",
+    "categories": [
+      "Ecommerce",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-dynamics-365-commerce/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://www.microsoft.com/en-us/dynamics-365/products/commerce",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-dynamics-365-contact-center",
+    "title": "Microsoft Dynamics 365 Contact Center",
+    "aliases": [
+      "Dynamics 365 Contact Center",
+      "MS Dynamics 365 Contact Center"
+    ],
+    "hex": "1B44B1",
+    "categories": [
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-dynamics-365-contact-center/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://www.microsoft.com/en-us/dynamics-365/products/contact-center",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-dynamics-365-customer-insights",
+    "title": "Microsoft Dynamics 365 Customer Insights",
+    "aliases": [
+      "Dynamics 365 Customer Insights",
+      "MS Dynamics 365 Customer Insights"
+    ],
+    "hex": "0094F0",
+    "categories": [
+      "Analytics",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-dynamics-365-customer-insights/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://www.microsoft.com/en-us/dynamics-365/products/customer-insights",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-dynamics-365-customer-service",
+    "title": "Microsoft Dynamics 365 Customer Service",
+    "aliases": [
+      "Dynamics 365 Customer Service",
+      "Dynamics 365 Customer Services",
+      "MS Dynamics 365 Customer Services"
+    ],
+    "hex": "9C6CFE",
+    "categories": [
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-dynamics-365-customer-service/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://www.microsoft.com/en-us/dynamics-365/products/customer-service",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-dynamics-365-customer-voice",
+    "title": "Microsoft Dynamics 365 Customer Voice",
+    "aliases": [
+      "Dynamics 365 Customer Voice",
+      "MS Dynamics 365 Customer Voice"
+    ],
+    "hex": "20AC9D",
+    "categories": [
+      "Analytics",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-dynamics-365-customer-voice/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://learn.microsoft.com/en-us/dynamics365/customer-voice/about",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-dynamics-365-field-service",
+    "title": "Microsoft Dynamics 365 Field Service",
+    "aliases": [
+      "Dynamics 365 Field Service",
+      "MS Dynamics 365 Field Service"
+    ],
+    "hex": "E67505",
+    "categories": [
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-dynamics-365-field-service/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://www.microsoft.com/en-us/dynamics-365/products/field-service",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-dynamics-365-finance",
+    "title": "Microsoft Dynamics 365 Finance",
+    "aliases": [
+      "Dynamics 365 Finance",
+      "MS Dynamics 365 Finance"
+    ],
+    "hex": "42B870",
+    "categories": [
+      "Finance",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-dynamics-365-finance/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://www.microsoft.com/en-us/dynamics-365/products/finance",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-dynamics-365-finance-and-operations",
+    "title": "Microsoft Dynamics 365 Finance and Operations",
+    "aliases": [
+      "Dynamics 365 Finance Operations",
+      "Dynamics 365 Finance and Operations",
+      "MS Dynamics 365 Finance Operations"
+    ],
+    "hex": "3D35B1",
+    "categories": [
+      "Finance",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-dynamics-365-finance-and-operations/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/fin-ops/",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-dynamics-365-human-resources",
+    "title": "Microsoft Dynamics 365 Human Resources",
+    "aliases": [
+      "Dynamics 365 Human Resources",
+      "MS Dynamics 365 Human Resources"
+    ],
+    "hex": "261D82",
+    "categories": [
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-dynamics-365-human-resources/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://www.microsoft.com/en-us/dynamics-365/products/human-resources",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-dynamics-365-intelligent-order-management",
+    "title": "Microsoft Dynamics 365 Intelligent Order Management",
+    "aliases": [
+      "Dynamics 365 Intelligent Order Management",
+      "MS Dynamics 365 Intelligent Order Management"
+    ],
+    "hex": "CA2134",
+    "categories": [
+      "Ecommerce",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-dynamics-365-intelligent-order-management/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-dynamics-365-project-operations",
+    "title": "Microsoft Dynamics 365 Project Operations",
+    "aliases": [
+      "Dynamics 365 Project Operations",
+      "MS Dynamics 365 Project Operations"
+    ],
+    "hex": "9F1459",
+    "categories": [
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-dynamics-365-project-operations/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://www.microsoft.com/en-us/dynamics-365/products/project-operations",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-dynamics-365-sales",
+    "title": "Microsoft Dynamics 365 Sales",
+    "aliases": [
+      "Dynamics 365 Sales",
+      "MS Dynamics 365 Sales"
+    ],
+    "hex": "2052CB",
+    "categories": [
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-dynamics-365-sales/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://www.microsoft.com/en-us/dynamics-365/products/sales",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-dynamics-365-sales-insights",
+    "title": "Microsoft Dynamics 365 Sales Insights",
+    "aliases": [
+      "Dynamics 365 Sales Insights",
+      "MS Dynamics 365 Sales Insights"
+    ],
+    "hex": "62BE55",
+    "categories": [
+      "AI",
+      "Analytics"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-dynamics-365-sales-insights/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://learn.microsoft.com/en-us/dynamics365/sales/intro-admin-guide-sales-insights",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-dynamics-365-supply-chain-management",
+    "title": "Microsoft Dynamics 365 Supply Chain Management",
+    "aliases": [
+      "Dynamics 365 Supply Chain Management",
+      "MS Dynamics 365 Supply Chain Management"
+    ],
+    "hex": "0078D4",
+    "categories": [
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-dynamics-365-supply-chain-management/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://www.microsoft.com/en-us/dynamics-365/products/supply-chain-management",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
     "slug": "microsoft-edge",
     "title": "Microsoft Edge",
     "categories": [
