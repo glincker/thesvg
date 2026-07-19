@@ -1,5 +1,11 @@
 # @thesvg/icons
 
+## 3.2.11
+
+### Patch Changes
+
+- feat: add Microsoft Fabric, Power BI and OneLake icons ([#797](https://github.com/glincker/thesvg/issues/797))
+
 ## 3.2.10
 
 ### Patch Changes
