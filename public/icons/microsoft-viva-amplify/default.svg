@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generator: Adobe Illustrator 26.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:url(#SVGID_00000047027793118269358870000003110985906222993841_);}
+	.st2{fill:url(#SVGID_00000160163736363831590640000012242524849128886941_);}
+</style>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-53.5923" y1="774.3276" x2="181.4685" y2="706.3586" gradientTransform="matrix(1 0 0 1 0 -330)">
+	<stop offset="0.1415" style="stop-color:#9B52AA"></stop>
+	<stop offset="0.9988" style="stop-color:#4F2757"></stop>
+</linearGradient>
+<path class="st0" d="M234,395c0,64.6-52.4,117-117,117S0,459.6,0,395s52.4-117,117-117S234,330.4,234,395z"></path>
+<linearGradient id="SVGID_00000180333922622779328630000015121732873840493706_" gradientUnits="userSpaceOnUse" x1="256.2397" y1="787.8864" x2="88.1836" y2="531.4174" gradientTransform="matrix(1 0 0 1 0 -330)">
+	<stop offset="0" style="stop-color:#B75CC9"></stop>
+	<stop offset="1" style="stop-color:#E8AAF4"></stop>
+</linearGradient>
+<path style="fill:url(#SVGID_00000180333922622779328630000015121732873840493706_);" d="M108.2,148.6L11.3,344.8l-0.1,0.3  C23.9,321.8,48.6,306,77,306c30.1,0,56.1,17.8,68.1,43.4l0,0l60.4,119.9c12.6,25.1,38.5,42.5,68.5,42.7h168l-34.2-14.5L238.6,169.8  c-18.3-22.3-46.1-36.5-77.3-36.5C141.8,133.3,123.6,138.9,108.2,148.6z"></path>
+<linearGradient id="SVGID_00000182488973542488032830000014480885485273037235_" gradientUnits="userSpaceOnUse" x1="198.5916" y1="414.4406" x2="424.9786" y2="858.8253" gradientTransform="matrix(1 0 0 1 0 -330)">
+	<stop offset="0" style="stop-color:#CB6ADE"></stop>
+	<stop offset="0.436" style="stop-color:#8D479B"></stop>
+	<stop offset="1" style="stop-color:#4F2757"></stop>
+</linearGradient>
+<path style="fill:url(#SVGID_00000182488973542488032830000014480885485273037235_);" d="M346,63.9l150.5,299.9  c2.4,4.6,7,17.5,7,17.5l0,0c6.6,17.2,8.4,35.1,8.4,53.4c0,42.7-31.6,77.3-70.7,77.3c-27.2,0-50.8-16.8-62.6-41.4L240.4,196.7  C225.8,167,196.9,146,162,146c-29.5,0-55.5,14.9-71,37.5l58.7-118.7C166,26.7,203.9,0,248,0C291.8,0,329.4,26.3,346,63.9z"></path>
+</svg>
