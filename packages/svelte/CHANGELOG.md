@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 3.2.9
+
+### Patch Changes
+
+- feat: add Ngern Tid Lor icon ([#791](https://github.com/glincker/thesvg/issues/791))
+
 ## 3.2.8
 
 ### Patch Changes
