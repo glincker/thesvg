@@ -82739,6 +82739,85 @@
     "collection": "brands"
   },
   {
+    "slug": "microsoft-fabric",
+    "title": "Microsoft Fabric",
+    "aliases": [
+      "Fabric"
+    ],
+    "hex": "239C87",
+    "categories": [
+      "Analytics"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-fabric/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://learn.microsoft.com/en-us/fabric/fundamentals/microsoft-fabric-overview",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-fabric-data-engineering",
+    "title": "Microsoft Fabric Data Engineering",
+    "aliases": [
+      "Fabric Data Engineering",
+      "Data Engineering"
+    ],
+    "hex": "0094E5",
+    "categories": [
+      "Analytics"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-fabric-data-engineering/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://learn.microsoft.com/en-us/fabric/data-engineering/data-engineering-overview",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-fabric-data-factory",
+    "title": "Microsoft Fabric Data Factory",
+    "aliases": [
+      "Fabric Data Factory",
+      "Data Factory"
+    ],
+    "hex": "107C10",
+    "categories": [
+      "Analytics"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-fabric-data-factory/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://learn.microsoft.com/en-us/fabric/data-factory/data-factory-overview",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-fabric-data-science",
+    "title": "Microsoft Fabric Data Science",
+    "aliases": [
+      "Fabric Data Science",
+      "Data Science"
+    ],
+    "hex": "288CD9",
+    "categories": [
+      "AI"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-fabric-data-science/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://learn.microsoft.com/en-us/fabric/data-science/data-science-overview",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
     "slug": "microsoft-fabric-data-warehouse",
     "title": "Microsoft Fabric Data Warehouse",
     "aliases": [
@@ -82755,6 +82834,106 @@
     },
     "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
     "url": "https://learn.microsoft.com/en-us/fabric/data-warehouse/data-warehousing",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-fabric-databases",
+    "title": "Microsoft Fabric Databases",
+    "aliases": [
+      "Fabric Databases",
+      "Databases"
+    ],
+    "hex": "2F65DA",
+    "categories": [
+      "Database"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-fabric-databases/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://learn.microsoft.com/en-us/fabric/database/sql/overview",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-fabric-graph-intelligence",
+    "title": "Microsoft Fabric Graph Intelligence",
+    "aliases": [
+      "Fabric Graph Intelligence",
+      "Graph Intelligence",
+      "Fabric Graph"
+    ],
+    "hex": "FF6F47",
+    "categories": [
+      "Analytics"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-fabric-graph-intelligence/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://learn.microsoft.com/en-us/fabric/graph/overview",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-fabric-industry-solutions",
+    "title": "Microsoft Fabric Industry Solutions",
+    "aliases": [
+      "Fabric Industry Solutions",
+      "Industry Solutions"
+    ],
+    "hex": "0A4B95",
+    "categories": [
+      "Analytics"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-fabric-industry-solutions/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://learn.microsoft.com/en-us/industry/industry-data-solutions-fabric",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-fabric-iq",
+    "title": "Microsoft Fabric IQ",
+    "aliases": [
+      "Fabric IQ"
+    ],
+    "hex": "5CC098",
+    "categories": [
+      "AI"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-fabric-iq/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://learn.microsoft.com/en-us/fabric/iq/overview",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-fabric-real-time-intelligence",
+    "title": "Microsoft Fabric Real-Time Intelligence",
+    "aliases": [
+      "Real-Time Intelligence",
+      "Fabric Real-Time Intelligence"
+    ],
+    "hex": "F83F54",
+    "categories": [
+      "Analytics"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-fabric-real-time-intelligence/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://learn.microsoft.com/en-us/fabric/real-time-intelligence/overview",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
     "collection": "brands"
@@ -82813,6 +82992,26 @@
     "collection": "brands"
   },
   {
+    "slug": "microsoft-onelake",
+    "title": "Microsoft OneLake",
+    "aliases": [
+      "OneLake",
+      "Fabric OneLake"
+    ],
+    "hex": "0078D4",
+    "categories": [
+      "Storage"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-onelake/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
+    "collection": "brands"
+  },
+  {
     "slug": "microsoft-onenote",
     "title": "Microsoft OneNote",
     "aliases": [],
@@ -82863,6 +83062,26 @@
     "url": "https://adoption.microsoft.com/en-us/microsoft-planner/",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-05-22",
+    "collection": "brands"
+  },
+  {
+    "slug": "microsoft-power-bi",
+    "title": "Microsoft Power BI",
+    "aliases": [
+      "Power BI",
+      "Fabric Business Intelligence"
+    ],
+    "hex": "F6D751",
+    "categories": [
+      "Analytics"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-power-bi/default.svg"
+    },
+    "license": "Microsoft proprietary product icon; no express redistribution license supplied; maintainer review required",
+    "url": "https://learn.microsoft.com/en-us/power-bi/fundamentals/power-bi-overview",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-07-19",
     "collection": "brands"
   },
   {
