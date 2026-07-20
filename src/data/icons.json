@@ -644,16 +644,18 @@
     "slug": "accountantos",
     "title": "AccountantOS",
     "aliases": [
-      "Accountant OS",
       "Accounting Software",
       "Practice Management"
     ],
     "hex": "09090B",
     "categories": [
-      "Finance"
+      "Finance",
+      "Software",
+      "Platform"
     ],
     "variants": {
-      "default": "/icons/accountantos/default.svg"
+      "default": "/icons/accountantos/default.svg",
+      "dark": "/icons/accountantos/dark.svg"
     },
     "license": "Used with permission of AccountantOS; unmodified redistribution authorized for brand identification and development use.",
     "url": "https://accountantos.com.au",
