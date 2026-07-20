@@ -121899,6 +121899,28 @@
     "collection": "brands",
     "dateAdded": "2026-05-16"
   },
+	{
+    "slug": "yapi-kredi",
+    "title": "Yapi Kredi",
+    "aliases": [],
+    "hex": "A8A9Ac",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/yapi-kredi/mono.svg",
+      "mono": "/icons/yapi-kredi/mono.svg",
+      "dark": "/icons/yapi-kredi/dark.svg",
+      "light": "/icons/yapi-kredi/light.svg",
+      "wordmark": "/icons/yapi-kredi/wordmark.svg",
+      "wordmarkDark": "/icons/yapi-kredi/wordmarkDark.svg",
+      "wordmarkLight": "/icons/yapi-kredi/wordmarkLight.svg"
+    },
+    "license": "Unknown",
+    "url": "https://www.yapikredi.com.tr/en/",
+    "dateAdded": "2026-07-20",
+    "collection": "brands"
+  },
   {
     "slug": "yarn",
     "title": "Yarn",
