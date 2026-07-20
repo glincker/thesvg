@@ -121903,12 +121903,12 @@
     "slug": "yapi-kredi",
     "title": "Yapi Kredi",
     "aliases": [],
-    "hex": "A8A9Ac",
+    "hex": "A8A9AC",
     "categories": [
       "Finance"
     ],
     "variants": {
-      "default": "/icons/yapi-kredi/mono.svg",
+      "default": "/icons/yapi-kredi/default.svg",
       "mono": "/icons/yapi-kredi/mono.svg",
       "dark": "/icons/yapi-kredi/dark.svg",
       "light": "/icons/yapi-kredi/light.svg",
