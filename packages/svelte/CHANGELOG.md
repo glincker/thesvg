@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 3.2.12
+
+### Patch Changes
+
+- feat: add icon Yapi Kredi ([#800](https://github.com/glincker/thesvg/issues/800))
+
 ## 3.2.11
 
 ### Patch Changes
