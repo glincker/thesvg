@@ -110282,6 +110282,26 @@
     "collection": "brands"
   },
   {
+    "slug": "tahcia",
+    "title": "Tahcia",
+    "aliases": [],
+    "hex": "2B3B7D",
+    "categories": [
+      "AI", "Software" , "Platform"
+    ],
+    "variants": {
+      "default": "/icons/tahcia/default.svg",
+      "mono": "/icons/tahcia/mono.svg",
+      "dark": "/icons/tahcia/dark.svg",
+      "light": "/icons/tahcia/light.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://www.tahcia.com",
+    "guidelines": "https://www.tahcia.com/brand/guideline",
+    "dateAdded": "2026-07-22",
+    "collection": "brands"
+  },
+  {
     "slug": "taichi-graphics",
     "title": "Taichi Graphics",
     "aliases": [],
