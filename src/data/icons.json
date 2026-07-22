@@ -99027,6 +99027,29 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	 {
+    "slug": "ralph-lauren",
+    "title": "Ralph Lauren",
+    "aliases": [],
+    "hex": "003263",
+    "categories": [
+      "Fashion"
+    ],
+    "variants": {
+      "default": "/icons/ralph-lauren/default.svg",
+      "mono": "/icons/ralph-lauren/mono.svg",
+      "dark": "/icons/ralph-lauren/dark.svg",
+      "light": "/icons/ralph-lauren/light.svg",
+      "wordmark": "/icons/ralph-lauren/wordmark.svg",
+      "wordmarkDark": "/icons/ralph-lauren/wordmarkDark.svg",
+      "wordmarkLight": "/icons/ralph-lauren/wordmarkLight.svg"
+    },
+    "license": "Unknown",
+    "url": "https://www.ralphlauren.com/",
+		"guidelines": "https://corporate.ralphlauren.com/brands",
+    "dateAdded": "2026-07-22",
+    "collection": "brands"
+  },
   {
     "slug": "ram",
     "title": "Ram",
