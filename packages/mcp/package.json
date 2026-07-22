@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0",
-    "fuse.js": "^7.4.2",
+    "fuse.js": "^7.5.0",
     "zod": "^4.4.3"
   },
   "devDependencies": {
