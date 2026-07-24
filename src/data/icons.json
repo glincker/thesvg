@@ -87108,6 +87108,28 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+	  {
+    "slug": "nextera-energy",
+    "title": "Nextera Energy",
+    "aliases": [],
+    "hex": "2F97DA",
+    "categories": [
+      "Energy"
+    ],
+    "variants": {
+      "default": "/icons/nextera-energy/default.svg",
+      "mono": "/icons/nextera-energy/mono.svg",
+      "dark": "/icons/nextera-energy/dark.svg",
+      "light": "/icons/nextera-energy/light.svg",
+      "wordmark": "/icons/nextera-energy/wordmark.svg",
+      "wordmarkLight": "/icons/nextera-energy/wordmark-light.svg",
+      "wordmarkDark": "/icons/nextera-energy/wordmark-dark.svg"
+    },
+    "license": "Unknown",
+    "url": "https://www.nexteraenergy.com/",
+    "dateAdded": "2026-07-24",
+    "collection": "brands"
+  },
   {
     "slug": "nextflow",
     "title": "Nextflow",
