@@ -1,5 +1,11 @@
 # @thesvg/icons
 
+## 3.2.13
+
+### Patch Changes
+
+- feat: add Runna, fabbo, Contra and Screpy icons ([#819](https://github.com/glincker/thesvg/issues/819))
+
 ## 3.2.12
 
 ### Patch Changes
