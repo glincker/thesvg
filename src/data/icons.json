@@ -45410,6 +45410,23 @@
     "collection": "brands"
   },
   {
+    "slug": "contra",
+    "title": "Contra",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Community",
+      "Customer Experience"
+    ],
+    "variants": {
+      "default": "/icons/contra/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://contra.com/",
+    "dateAdded": "2026-07-25",
+    "collection": "brands"
+  },
+  {
     "slug": "contributor-covenant",
     "title": "Contributor Covenant",
     "aliases": [],
@@ -49145,7 +49162,7 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	{
+  {
     "slug": "dis-chem-pharmacies",
     "title": "Dis-chem Pharmacies",
     "aliases": [],
@@ -49163,7 +49180,6 @@
     "collection": "brands"
   },
   {
-
     "slug": "discloud",
     "title": "Discloud",
     "aliases": [],
@@ -53372,6 +53388,22 @@
     "license": "CC0-1.0",
     "url": "https://www.f5.com/company/news/press-kit",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "fabbo",
+    "title": "fabbo",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "AI"
+    ],
+    "variants": {
+      "default": "/icons/fabbo/default.svg"
+    },
+    "license": "MIT",
+    "url": "http://fabbo.ai/",
+    "dateAdded": "2026-07-25",
     "collection": "brands"
   },
   {
@@ -87128,7 +87160,7 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	  {
+  {
     "slug": "nextera-energy",
     "title": "Nextera Energy",
     "aliases": [],
@@ -99069,7 +99101,7 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	 {
+  {
     "slug": "ralph-lauren",
     "title": "Ralph Lauren",
     "aliases": [],
@@ -99088,7 +99120,7 @@
     },
     "license": "Unknown",
     "url": "https://www.ralphlauren.com/",
-		"guidelines": "https://corporate.ralphlauren.com/brands",
+    "guidelines": "https://corporate.ralphlauren.com/brands",
     "dateAdded": "2026-07-22",
     "collection": "brands"
   },
@@ -102444,6 +102476,24 @@
     "collection": "brands"
   },
   {
+    "slug": "runna",
+    "title": "Runna",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Sports",
+      "Fitness"
+    ],
+    "variants": {
+      "default": "/icons/runna/default.svg"
+    },
+    "license": "Unknown",
+    "url": "https://www.runna.com",
+    "guidelines": "https://www.runna.com",
+    "dateAdded": "2026-07-25",
+    "collection": "brands"
+  },
+  {
     "slug": "runpod",
     "title": "RunPod",
     "aliases": [
@@ -103650,6 +103700,25 @@
     "license": "CC0-1.0",
     "url": "https://www.screencastify.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "screpy",
+    "title": "Screpy",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "SaaS",
+      "Monitoring",
+      "Developer Tools",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/screpy/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://screpy.com",
+    "dateAdded": "2026-07-25",
     "collection": "brands"
   },
   {
@@ -121964,7 +122033,7 @@
     "collection": "brands",
     "dateAdded": "2026-05-16"
   },
-	{
+  {
     "slug": "yapi-kredi",
     "title": "Yapi Kredi",
     "aliases": [],
