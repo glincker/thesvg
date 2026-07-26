@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 3.2.14
+
+### Patch Changes
+
+- Adding Tahcia Icon ([#814](https://github.com/glincker/thesvg/issues/814))
+
 ## 3.2.13
 
 ### Patch Changes
