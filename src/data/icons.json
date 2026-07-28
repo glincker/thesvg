@@ -39740,6 +39740,25 @@
     "collection": "brands"
   },
   {
+    "slug": "btk",
+    "title": "BTK",
+    "aliases": [
+      "Bilgi Teknolojileri ve İletişim Kurumu",
+      "Information and Communication Technologies Authority"
+    ],
+    "hex": "000000",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/btk/default.svg"
+    },
+    "license": "Unknown",
+    "url": "https://btk.tr",
+    "dateAdded": "2026-07-27",
+    "collection": "brands"
+  },
+  {
     "slug": "buddy",
     "title": "Buddy",
     "aliases": [],
@@ -85812,6 +85831,24 @@
     "collection": "brands"
   },
   {
+    "slug": "nagios",
+    "title": "Nagios",
+    "aliases": [],
+    "hex": "4D89F9",
+    "categories": [
+      "Infrastructure",
+      "DevOps",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/nagios/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://www.nagios.org/",
+    "dateAdded": "2026-07-27",
+    "collection": "brands"
+  },
+  {
     "slug": "namebase",
     "title": "Namebase",
     "aliases": [],
@@ -110421,7 +110458,9 @@
     "aliases": [],
     "hex": "2B3B7D",
     "categories": [
-      "AI", "Software" , "Platform"
+      "AI",
+      "Software",
+      "Platform"
     ],
     "variants": {
       "default": "/icons/tahcia/default.svg",
@@ -117779,6 +117818,24 @@
     "license": "CC0-1.0",
     "url": "https://merchantsignageeu.visa.com/product.asp?dptID=696",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "visernic",
+    "title": "Visernic",
+    "aliases": [],
+    "hex": "008BFF",
+    "categories": [
+      "Business"
+    ],
+    "variants": {
+      "default": "/icons/visernic/default.svg",
+      "wordmark": "/icons/visernic/wordmark.svg"
+    },
+    "license": "CC-BY-4.0",
+    "url": "https://visernic.com",
+    "guidelines": "https://visernic.com",
+    "dateAdded": "2026-07-27",
     "collection": "brands"
   },
   {
