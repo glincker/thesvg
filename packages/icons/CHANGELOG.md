@@ -1,5 +1,11 @@
 # @thesvg/icons
 
+## 3.2.15
+
+### Patch Changes
+
+- feat: add Nagios, BTK and Visernic icons ([#831](https://github.com/glincker/thesvg/issues/831))
+
 ## 3.2.14
 
 ### Patch Changes
