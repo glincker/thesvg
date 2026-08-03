@@ -38,7 +38,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.12",
     "html-to-image": "^1.11.13",
-    "playwright": "^1.62.0",
+    "playwright": "^1.62.1",
     "tailwindcss": "^4",
     "tsx": "^4.23.1",
     "typescript": "^6"
