@@ -1,5 +1,11 @@
 # @thesvg/vue
 
+## 3.2.16
+
+### Patch Changes
+
+- feat: add Fastwork, Parseable, Glaxnimate, RCUI, aizome and Air Algerie icons ([#852](https://github.com/glincker/thesvg/issues/852))
+
 ## 3.2.15
 
 ### Patch Changes
