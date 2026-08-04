@@ -1908,6 +1908,23 @@
     "collection": "brands"
   },
   {
+    "slug": "air-algerie",
+    "title": "Air Algérie",
+    "aliases": [],
+    "hex": "E2001A",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/air-algerie/default.svg"
+    },
+    "license": "Unknown",
+    "url": "https://airalgerie.dz/",
+    "guidelines": "https://airalgerie.dz/",
+    "dateAdded": "2026-08-04",
+    "collection": "brands"
+  },
+  {
     "slug": "air-canada",
     "title": "Air Canada",
     "aliases": [],
@@ -2214,6 +2231,23 @@
     "license": "CC0-1.0",
     "url": "https://www.airtel.in/logo-tune",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "aizome",
+    "title": "aizome",
+    "aliases": [],
+    "hex": "04044A",
+    "categories": [
+      "AI",
+      "Security"
+    ],
+    "variants": {
+      "default": "/icons/aizome/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.aizome.ai/",
+    "dateAdded": "2026-08-04",
     "collection": "brands"
   },
   {
@@ -53884,6 +53918,22 @@
     "collection": "brands"
   },
   {
+    "slug": "fastwork",
+    "title": "Fastwork",
+    "aliases": [],
+    "hex": "0569FF",
+    "categories": [
+      "E-commerce"
+    ],
+    "variants": {
+      "default": "/icons/fastwork/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://fastwork.com/",
+    "dateAdded": "2026-08-04",
+    "collection": "brands"
+  },
+  {
     "slug": "fathom",
     "title": "Fathom",
     "aliases": [],
@@ -62576,6 +62626,22 @@
     "url": "https://www.glassdoor.com/about/newsroom",
     "guidelines": "https://www.glassdoor.com/about/newsroom",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "glaxnimate",
+    "title": "Glaxnimate",
+    "aliases": [],
+    "hex": "3250B0",
+    "categories": [
+      "Design"
+    ],
+    "variants": {
+      "default": "/icons/glaxnimate/default.svg"
+    },
+    "license": "GPL-3.0",
+    "url": "https://glaxnimate.org/",
+    "dateAdded": "2026-08-04",
     "collection": "brands"
   },
   {
@@ -92514,6 +92580,23 @@
     "collection": "brands"
   },
   {
+    "slug": "parseable",
+    "title": "Parseable",
+    "aliases": [],
+    "hex": "17181C",
+    "categories": [
+      "Analytics",
+      "AI"
+    ],
+    "variants": {
+      "default": "/icons/parseable/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://www.parseable.com",
+    "dateAdded": "2026-08-04",
+    "collection": "brands"
+  },
+  {
     "slug": "parsedotly",
     "title": "Parse.ly",
     "aliases": [],
@@ -99471,6 +99554,24 @@
     "license": "CC0-1.0",
     "url": "https://github.com/rclone/rclone/blob/8f1c309c8149a734ccc3a0d2ce185b936dbe783a/graphics/logo/svg/logo_symbol_color.svg",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "rcui",
+    "title": "RCUI",
+    "aliases": [],
+    "hex": "038FEC",
+    "categories": [
+      "Gaming",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/rcui/default.svg"
+    },
+    "license": "Unknown",
+    "url": "https://rustcuibuilder.com/",
+    "guidelines": "https://rustcuibuilder.com/legal/license",
+    "dateAdded": "2026-08-04",
     "collection": "brands"
   },
   {
