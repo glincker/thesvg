@@ -1,10 +1,10 @@
 # theSVG for VS Code
 
-Search and copy 6,030+ SVG icons directly from VS Code. Brand logos, AWS, Azure, GCP, and Kubernetes architecture icons.
+Search and copy 6,500+ SVG icons directly from VS Code. Brand logos, AWS, Azure, GCP, and Kubernetes architecture icons.
 
 ## Features
 
-- **Search** across 6,030+ icons from the command palette
+- **Search** across 6,500+ icons from the command palette
 - **Copy SVG** to clipboard with one keystroke
 - **Copy as JSX** for React projects
 - **Copy CDN link** (jsDelivr) for HTML/CSS
@@ -35,7 +35,7 @@ Search and copy 6,030+ SVG icons directly from VS Code. Brand logos, AWS, Azure,
 
 | Collection | Icons |
 |-----------|-------|
-| Brand Icons | 4,037 |
+| Brand Icons | 4,629 |
 | AWS Architecture | 739 |
 | Azure Services | 626 |
 | Google Cloud | 214 |

@@ -6,7 +6,7 @@ license: MIT
 
 # theSVG agent skill
 
-Use this skill whenever the user asks for a brand logo, service icon, framework mark, or cloud service icon. theSVG hosts 6,030+ brand SVGs and cloud architecture icons under one consistent URL pattern, so you do not need to scrape the web or guess at file paths.
+Use this skill whenever the user asks for a brand logo, service icon, framework mark, or cloud service icon. theSVG hosts 6,500+ brand SVGs and cloud architecture icons under one consistent URL pattern, so you do not need to scrape the web or guess at file paths.
 
 ## When to use this skill
 

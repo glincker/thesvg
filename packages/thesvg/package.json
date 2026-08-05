@@ -1,7 +1,7 @@
 {
   "name": "thesvg",
   "version": "3.2.16",
-  "description": "3,800+ brand SVG icons - tree-shakeable, typed, dual ESM/CJS. The one-stop brand icon library.",
+  "description": "6,500+ brand SVG icons - tree-shakeable, typed, dual ESM/CJS. The one-stop brand icon library.",
   "type": "module",
   "sideEffects": false,
   "license": "MIT",

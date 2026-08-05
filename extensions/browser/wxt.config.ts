@@ -6,7 +6,7 @@ export default defineConfig({
   browser: "chrome",
   manifest: {
     name: "theSVG",
-    description: "Search 6,030+ brand SVGs. Copy SVG, CDN URL, or markdown.",
+    description: "Search 6,500+ brand SVGs. Copy SVG, CDN URL, or markdown.",
     version: "0.1.0",
     permissions: ["storage", "clipboardWrite"],
     host_permissions: ["https://cdn.jsdelivr.net/*"],

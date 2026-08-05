@@ -4,13 +4,13 @@
 
 ### Chrome Web Store (132 chars max)
 ```
-Search and copy 6,030+ brand SVGs instantly. Get SVG code, CDN URL, or markdown — no account needed.
+Search and copy 6,500+ brand SVGs instantly. Get SVG code, CDN URL, or markdown — no account needed.
 ```
 (101 chars)
 
 ### Firefox AMO (250 chars max)
 ```
-thesvg puts 6,030+ open brand SVGs one click away. Search any brand, preview variants, and copy the SVG code, jsDelivr CDN URL, or ready-to-paste markdown — all offline-capable, no account required.
+thesvg puts 6,500+ open brand SVGs one click away. Search any brand, preview variants, and copy the SVG code, jsDelivr CDN URL, or ready-to-paste markdown — all offline-capable, no account required.
 ```
 (199 chars)
 
@@ -20,7 +20,7 @@ thesvg puts 6,030+ open brand SVGs one click away. Search any brand, preview var
 
 ### Version for Chrome Web Store and Edge Add-ons
 
-thesvg is the open SVG brand library. Over 6,030 brand icons, all MIT-licensed, all one click away from wherever you are on the web.
+thesvg is the open SVG brand library. Over 6,500 brand icons, all MIT-licensed, all one click away from wherever you are on the web.
 
 **Search as you type.** Open the popup, start typing a brand name, and results appear instantly using a local Fuse.js index. No server round trips, no rate limits, no sign-in.
 
@@ -39,7 +39,7 @@ Built on the same open dataset powering thesvg.org. The full library is MIT-lice
 
 ### Version for Firefox AMO
 
-thesvg is the open SVG brand library. Over 6,030 brand icons, all MIT-licensed, all one click away from wherever you are on the web.
+thesvg is the open SVG brand library. Over 6,500 brand icons, all MIT-licensed, all one click away from wherever you are on the web.
 
 **Search as you type.** Open the popup, start typing a brand name, and results appear instantly using a local Fuse.js index. No server round trips, no rate limits, no sign-in.
 
@@ -119,4 +119,4 @@ Chrome requires a single-sentence justification for each requested permission wh
 > The extension's core feature is letting users copy SVG code, CDN URLs, and markdown snippets to their clipboard with a single click. Without this permission the copy buttons cannot function.
 
 ### `host_permissions: https://cdn.jsdelivr.net/*`
-> SVG files are fetched on demand from the jsDelivr public CDN when a user previews or copies an icon. The full icon registry (6,030+ icons) is not bundled in the extension to keep the download size small. Only the specific icon the user selects is fetched, using the standard public jsDelivr URL format.
+> SVG files are fetched on demand from the jsDelivr public CDN when a user previews or copies an icon. The full icon registry (6,500+ icons) is not bundled in the extension to keep the download size small. Only the specific icon the user selects is fetched, using the standard public jsDelivr URL format.

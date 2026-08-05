@@ -1,6 +1,6 @@
 # theSVG browser extension
 
-Search 6,030+ brand SVGs from a popup in Chrome, Firefox, or Edge. Copy raw SVG, the jsDelivr CDN URL, or markdown image syntax.
+Search 6,500+ brand SVGs from a popup in Chrome, Firefox, or Edge. Copy raw SVG, the jsDelivr CDN URL, or markdown image syntax.
 
 Manifest V3. No telemetry. Only `cdn.jsdelivr.net` host permission.
 

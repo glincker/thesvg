@@ -225,7 +225,7 @@ def main() -> None:
                     "title": "No icons found",
                     "subtitle": (
                         f'No results for "{query}"' if query
-                        else "Type to search 6,030+ brand icons"
+                        else "Type to search 6,500+ brand icons"
                     ),
                     "arg": "",
                     "valid": False,

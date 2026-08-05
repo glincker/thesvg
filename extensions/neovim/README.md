@@ -2,7 +2,7 @@
 
 Neovim plugin for [theSVG](https://thesvg.org) -- The Open SVG Brand Library.
 
-Search 6,030+ brand SVGs from a Telescope picker (or `vim.ui.select` fallback) and either
+Search 6,500+ brand SVGs from a Telescope picker (or `vim.ui.select` fallback) and either
 insert the CDN URL or inline SVG content at the cursor.
 
 ## Requirements

@@ -33,7 +33,7 @@ Icons marked `Fair Use` or `Proprietary` should be used with extra care. Review 
 
 ### Brand guidelines
 
-Where available, we link to official brand guidelines on each icon's detail page. Currently 869 of 4,000+ icons have verified guideline links. We are actively expanding this coverage.
+Where available, we link to official brand guidelines on each icon's detail page. Currently 1,103 of 6,500+ icons have verified guideline links. We are actively expanding this coverage.
 
 ## Takedown and Removal
 

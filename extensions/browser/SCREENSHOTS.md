@@ -59,7 +59,7 @@
 **Filename:** `screenshot-04-browse.png`
 **Dimensions:** 1280x800
 **Capture:** Open the popup with no search query typed. Show the default browse/recent view or the full icon grid scrolled to show multiple brands.
-**Purpose:** Establishes scope (6,030+ icons visible as a grid) and initial UX.
+**Purpose:** Establishes scope (6,500+ icons visible as a grid) and initial UX.
 
 ---
 

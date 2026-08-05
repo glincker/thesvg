@@ -8,11 +8,11 @@ Keep this file in sync when the catalog grows or features change.
 ## Description
 
 ```
-Browse and insert 6,000+ brand SVG logos directly into your Figma designs.
+Browse and insert 6,500+ brand SVG logos directly into your Figma designs.
 One click and the mark drops in as an editable vector node.
 
 What's in the catalog:
-- 6,000+ brand icons across finance, gaming, entertainment, dev tools,
+- 6,500+ brand icons across finance, gaming, entertainment, dev tools,
   consumer goods, telecom, auto, pharma, and more
 - Multiple variants per brand where available: color, monochrome, light,
   dark, wordmark
@@ -40,7 +40,7 @@ Website: https://thesvg.org
 ## Tagline (one-liner)
 
 ```
-Search, preview, and insert from 6,000+ brand SVG logos.
+Search, preview, and insert from 6,500+ brand SVG logos.
 ```
 
 ---

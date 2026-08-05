@@ -44,7 +44,7 @@ _Be the first._
 
 ## What the money funds
 
-- Vercel hosting and bandwidth for thesvg.org (6,100+ icons served via CDN)
+- Vercel hosting and bandwidth for thesvg.org (6,500+ icons served via CDN)
 - Domain renewals and the occasional legal letter when a brand owner asks for a takedown
 - Quarterly architecture-icon refreshes (AWS, GCP, Azure import scripts and validation)
 - Maintainer time on triage, PR review, and the submit flow
