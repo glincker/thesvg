@@ -1,5 +1,11 @@
 # @thesvg/cli
 
+## 0.7.1
+
+### Patch Changes
+
+- docs: update icon counts to 6,500+ across README, packages, and site copy ([#854](https://github.com/glincker/thesvg/issues/854))
+
 ## 0.7.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @thesvg/react
 
+## 3.2.17
+
+### Patch Changes
+
+- docs: update icon counts to 6,500+ across README, packages, and site copy ([#854](https://github.com/glincker/thesvg/issues/854))
+
 ## 3.2.16
 
 ### Patch Changes
