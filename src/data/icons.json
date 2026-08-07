@@ -549,7 +549,7 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	{
+  {
     "slug": "abn-amro",
     "title": "ABN AMRO",
     "aliases": [],
@@ -5640,6 +5640,24 @@
     "license": "CC0-1.0",
     "url": "https://www.keil.arm.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "armonika",
+    "title": "Armonika",
+    "aliases": [],
+    "hex": "0055FF",
+    "categories": [
+      "Cloud",
+      "Hosting"
+    ],
+    "variants": {
+      "default": "/icons/armonika/default.svg"
+    },
+    "license": "CC-BY-4.0",
+    "url": "https://armonika.dz",
+    "guidelines": "https://armonika.dz/brand",
+    "dateAdded": "2026-08-06",
     "collection": "brands"
   },
   {
@@ -47171,7 +47189,7 @@
     "dateAdded": "2026-03-09",
     "collection": "brands"
   },
-	 {
+  {
     "slug": "dai-ichi-life-holdings",
     "title": "Dai-ichi Life Holdings",
     "aliases": [],
@@ -62822,7 +62840,7 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	{
+  {
     "slug": "global-power-synergy",
     "title": "Global Power Synergy",
     "aliases": [],
@@ -115877,7 +115895,7 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
-	{
+  {
     "slug": "unicharm",
     "title": "Unicharm",
     "aliases": [],
@@ -115892,7 +115910,7 @@
     },
     "license": "Unknown",
     "url": "https://www.unicharm.co.in/en/home.html",
-		"guidelines": "https://www.unicharm.co.in/en/company/charmring.html",
+    "guidelines": "https://www.unicharm.co.in/en/company/charmring.html",
     "dateAdded": "2026-08-04",
     "collection": "brands"
   },
