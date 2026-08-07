@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 3.2.18
+
+### Patch Changes
+
+- feat: add Armonika icon ([#860](https://github.com/glincker/thesvg/issues/860))
+
 ## 3.2.17
 
 ### Patch Changes
