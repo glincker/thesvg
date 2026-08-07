@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" fill="none">
-  <path d="M256 73 L96 170 L256 266 Z" fill="#E8A317" fill-opacity="0.7"/>
-  <path d="M256 73 L416 170 L256 266 Z" fill="#E8A317"/>
-  <path d="M256 140 L309 191 L279 191 L256 165 L231 191 L201 191 Z" fill="#0a0800" fill-opacity="0.52"/>
-  <path d="M96 296 L256 359 L416 296 L416 333 L256 396 L96 333 Z" fill="#E8A317" fill-opacity="0.82"/>
-  <path d="M113 359 L256 417 L399 359 L399 392 L256 443 L113 392 Z" fill="#E8A317" fill-opacity="0.62"/>
+  <path d="M256 73 L96 170 L256 266 Z" fill="currentColor" fill-opacity="0.7"/>
+  <path d="M256 73 L416 170 L256 266 Z" fill="currentColor"/>
+  <path d="M256 140 L309 191 L279 191 L256 165 L231 191 L201 191 Z" fill="currentColor" fill-opacity="0.52"/>
+  <path d="M96 296 L256 359 L416 296 L416 333 L256 396 L96 333 Z" fill="currentColor" fill-opacity="0.82"/>
+  <path d="M113 359 L256 417 L399 359 L399 392 L256 443 L113 392 Z" fill="currentColor" fill-opacity="0.62"/>
 </svg>

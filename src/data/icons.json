@@ -48714,23 +48714,6 @@
     "collection": "brands"
   },
   {
-    "slug": "developer-student-club",
-    "title": "Developer Student Club",
-    "aliases": [],
-    "hex": "000000",
-    "categories": [
-      "Community",
-      "Platform"
-    ],
-    "variants": {
-      "default": "/icons/developer-student-club/default.svg"
-    },
-    "license": "MIT",
-    "url": "https://gdsc.community.dev/",
-    "dateAdded": "2026-03-07",
-    "collection": "brands"
-  },
-  {
     "slug": "development-containers",
     "title": "Development Containers",
     "aliases": [

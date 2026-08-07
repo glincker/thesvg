@@ -1,7 +1,7 @@
 <svg role="img"
 	 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60">
 <title>Alpha Vantage</title>
-<style>.st0{fill:#010101;}</style>
+<style>.st0{fill:currentColor;}</style>
 <g>
 	<g>
 		<path class="st0" d="M43.1,25.1l3,7.9h-1.8l-0.6-1.8h-3L40.1,33h-1.7l3-7.9H43.1z M43.2,29.9l-1-2.9h0l-1,2.9H43.2z"/>
