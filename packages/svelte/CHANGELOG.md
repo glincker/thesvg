@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 3.2.19
+
+### Patch Changes
+
+- fix: resolve SVG quality issues flagged by Iconify submission review ([#862](https://github.com/glincker/thesvg/issues/862))
+
 ## 3.2.18
 
 ### Patch Changes
