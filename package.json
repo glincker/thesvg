@@ -36,11 +36,11 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.2.12",
+    "eslint-config-next": "16.3.0",
     "html-to-image": "^1.11.13",
     "playwright": "^1.62.1",
     "tailwindcss": "^4",
-    "tsx": "^4.23.1",
+    "tsx": "^4.23.10",
     "typescript": "^6"
   },
   "pnpm": {
