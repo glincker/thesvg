@@ -1,5 +1,11 @@
 # @thesvg/react
 
+## 3.2.20
+
+### Patch Changes
+
+- feat: add Pi, Waterfox, Basilisk, Brave Origin and optionOS icons ([#871](https://github.com/glincker/thesvg/issues/871))
+
 ## 3.2.19
 
 ### Patch Changes
