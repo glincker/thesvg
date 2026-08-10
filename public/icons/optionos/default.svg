@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <title>optionOS</title>
+  <rect width="1024" height="1024" fill="#1A1A2E"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="52" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M284 326H422L601 730H739"/>
+    <path d="M584 326H739"/>
+  </g>
+</svg>
+

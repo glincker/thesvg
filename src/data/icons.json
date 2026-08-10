@@ -37166,6 +37166,22 @@
     "collection": "brands"
   },
   {
+    "slug": "basilisk",
+    "title": "Basilisk",
+    "aliases": [],
+    "hex": "159677",
+    "categories": [
+      "Browser"
+    ],
+    "variants": {
+      "default": "/icons/basilisk/default.svg"
+    },
+    "license": "MPL-2.0",
+    "url": "https://repo.palemoon.org/Basilisk-Dev/Basilisk",
+    "dateAdded": "2026-08-10",
+    "collection": "brands"
+  },
+  {
     "slug": "bastyon",
     "title": "Bastyon",
     "aliases": [
@@ -39485,6 +39501,23 @@
     "url": "https://brave.com/",
     "guidelines": "https://brave.com/brave-branding-assets/",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "brave-origin",
+    "title": "Brave Origin",
+    "aliases": [],
+    "hex": "1C1C1D",
+    "categories": [
+      "Browser",
+      "Security"
+    ],
+    "variants": {
+      "default": "/icons/brave-origin/default.svg"
+    },
+    "license": "MPL-2.0",
+    "url": "https://brave.com/origin/",
+    "dateAdded": "2026-08-10",
     "collection": "brands"
   },
   {
@@ -91325,6 +91358,24 @@
     "collection": "brands"
   },
   {
+    "slug": "optionos",
+    "title": "optionOS",
+    "aliases": [],
+    "hex": "1A1A2E",
+    "categories": [
+      "AI",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/optionos/default.svg"
+    },
+    "license": "Used with permission of optionOS; unmodified redistribution authorized for brand identification and development use",
+    "url": "https://optionos.app",
+    "guidelines": "https://optionos.app/brand/",
+    "dateAdded": "2026-08-10",
+    "collection": "brands"
+  },
+  {
     "slug": "optuna",
     "title": "Optuna",
     "aliases": [],
@@ -93928,6 +93979,24 @@
     "url": "https://www.jetbrains.com/company/brand/logos/",
     "guidelines": "https://www.jetbrains.com/company/brand/",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "pi",
+    "title": "Pi",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "AI",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/pi/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://pi.dev/",
+    "guidelines": "https://pi.dev/",
+    "dateAdded": "2026-08-10",
     "collection": "brands"
   },
   {
@@ -119433,6 +119502,22 @@
     "license": "CC0-1.0",
     "url": "https://containrrr.dev/watchtower",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "waterfox",
+    "title": "Waterfox",
+    "aliases": [],
+    "hex": "00ABF8",
+    "categories": [
+      "Browser"
+    ],
+    "variants": {
+      "default": "/icons/waterfox/default.svg"
+    },
+    "license": "MPL-2.0",
+    "url": "https://www.waterfox.com/",
+    "dateAdded": "2026-08-10",
     "collection": "brands"
   },
   {
