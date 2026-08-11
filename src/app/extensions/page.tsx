@@ -209,6 +209,14 @@ const CATEGORIES: Category[] = [
         iconSlug: "jsdelivr",
       },
       {
+        name: "Iconify",
+        description: "Brand icons as thesvg (mono) and thesvg-color sets. Works in Mermaid diagrams, Iconify's Figma and VS Code plugins, and @iconify/react.",
+        status: "available",
+        cta: "Browse sets",
+        href: "https://icon-sets.iconify.design/thesvg-color/",
+        iconSlug: "iconify",
+      },
+      {
         name: "Homebrew",
         description: "Install the thesvg CLI via Homebrew. brew tap glincker/thesvg && brew install thesvg.",
         status: "available",

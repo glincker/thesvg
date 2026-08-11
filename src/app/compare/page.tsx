@@ -23,7 +23,7 @@ import { SidebarShell } from "@/components/layout/sidebar-shell";
 export const metadata: Metadata = {
   title: "Best SVG Icon Library 2026: theSVG vs Simple Icons, svgl, Lucide, Font Awesome, Iconify",
   description:
-    "Updated 2026 comparison of the largest brand SVG icon libraries. theSVG ships 6,500+ brand icons, cloud icons (AWS/Azure/GCP), the Google 2026 refresh, Figma, VS Code, Raycast, Alfred, MCP, and skills.sh agent skill. Compare features side by side.",
+    "Updated 2026 comparison of the largest brand SVG icon libraries. theSVG ships 6,500+ brand icons, cloud icons (AWS/Azure/GCP), the Google 2026 refresh, Figma, VS Code, Raycast, Alfred, MCP, Iconify, and skills.sh agent skill. Compare features side by side.",
   keywords: [
     "best SVG icon library 2026",
     "largest open SVG brand library",
@@ -89,7 +89,7 @@ const LIBRARIES: LibInfo[] = [
     name: "theSVG",
     icons: "6,500+",
     focus: "Brand logos + Cloud icons",
-    desc: "Largest open brand SVG library with multi-variant support (color, dark, light, wordmark, mono). Includes AWS, Azure, GCP cloud icons and the Google 2026 gradient refresh. Full toolchain: Figma, VS Code, Raycast, Alfred, npm, React/Vue/Svelte, CLI, REST API, MCP server, skills.sh agent skill.",
+    desc: "Largest open brand SVG library with multi-variant support (color, dark, light, wordmark, mono). Includes AWS, Azure, GCP cloud icons and the Google 2026 gradient refresh. Full toolchain: Figma, VS Code, Raycast, Alfred, npm, React/Vue/Svelte, CLI, REST API, MCP server, Iconify, skills.sh agent skill.",
     highlight: true,
   },
   {
@@ -368,7 +368,7 @@ export default function ComparePage() {
                   theSVG
                 </h3>
                 <p className="text-[11px] leading-relaxed text-muted-foreground">
-                  Need brand logos with color, dark, light, wordmark, and mono variants. Want Figma, VS Code, Raycast, Alfred, CLI, REST API, MCP server, or a skills.sh agent skill. Building with any framework.
+                  Need brand logos with color, dark, light, wordmark, and mono variants. Want Figma, VS Code, Raycast, Alfred, CLI, REST API, MCP server, Iconify, or a skills.sh agent skill. Building with any framework.
                 </p>
               </div>
               <div className="rounded-xl border border-border/40 p-4 dark:border-white/[0.06]">
