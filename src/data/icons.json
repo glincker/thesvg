@@ -111788,6 +111788,23 @@
     "collection": "brands"
   },
   {
+    "slug": "termux",
+    "title": "Termux",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "DevTool",
+      "Mobile App"
+    ],
+    "variants": {
+      "default": "/icons/termux/default.svg"
+    },
+    "license": "GPL-3.0",
+    "url": "https://github.com/termux/termux-app/tree/master",
+    "dateAdded": "2026-08-10",
+    "collection": "brands"
+  },
+  {
     "slug": "terraform",
     "title": "Terraform",
     "aliases": [],
@@ -113270,6 +113287,23 @@
     "license": "CC0-1.0",
     "url": "https://tistory.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "titanium",
+    "title": "Titanium",
+    "aliases": [],
+    "hex": "1C1C31",
+    "categories": [
+      "Browser",
+      "Mobile App"
+    ],
+    "variants": {
+      "default": "/icons/titanium/default.svg"
+    },
+    "license": "GPL-2.0",
+    "url": "https://github.com/jqssun/android-titanium-browser",
+    "dateAdded": "2026-08-10",
     "collection": "brands"
   },
   {

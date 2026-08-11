@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <clipPath id="disc"><circle cx="256" cy="256" r="208"/></clipPath>
+  </defs>
+  <g transform="translate(256 256) scale(1) translate(-256 -256)">
+    <g clip-path="url(#disc)">
+      <rect x="-500" y="-500" width="1512" height="1512" fill="#1c1c31"/>
+    </g>
+    <g id="motif">
+      <ellipse cx="256" cy="256" rx="156" ry="78" fill="none" stroke="#50507a" stroke-width="12" transform="rotate(-30 256 256)"/>
+      <circle cx="256" cy="256" r="94.5" fill="#23233b" stroke="#ffffff" stroke-width="19"/>
+      <circle cx="391" cy="178" r="36" fill="#9393bf"/>
+      <circle cx="121" cy="334" r="36" fill="#9393bf"/>
+    </g>
+  </g>
+</svg>
+
