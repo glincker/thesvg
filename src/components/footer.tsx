@@ -1,4 +1,4 @@
-import { ArrowUpRight, Download, Layers, Package } from "lucide-react";
+import { ArrowUpRight, Download, Hand, Layers, Package } from "lucide-react";
 import { Github } from "@/components/icons/shared/brand-icons";
 import { TheSVGMark } from "@/components/icons/the-svg-mark";
 import Link from "next/link";
@@ -38,7 +38,6 @@ const COMMUNITY_LINKS: FooterLink[] = [
   { label: "Issues", href: "https://github.com/GLINCKER/thesvg/issues", external: true },
   { label: "Discussions", href: "https://github.com/GLINCKER/thesvg/discussions", external: true },
   { label: "Contributing", href: "https://github.com/GLINCKER/thesvg/blob/main/CONTRIBUTING.md", external: true },
-  { label: "Meet the founder", href: "https://thegdsks.com", external: true },
 ];
 
 const LEGAL_LINKS: FooterLink[] = [
@@ -260,7 +259,21 @@ export function Footer() {
             {/* Link columns */}
             <FooterColumn title="Product" links={PRODUCT_LINKS} />
             <FooterColumn title="Resources" links={RESOURCE_LINKS} />
-            <FooterColumn title="Community" links={COMMUNITY_LINKS} />
+            <div className="flex flex-col gap-3">
+              <FooterColumn title="Community" links={COMMUNITY_LINKS} />
+              <a
+                href="https://thegdsks.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group mt-1 inline-flex w-fit items-center gap-1.5 rounded-full border border-orange-500/25 bg-orange-500/[0.06] py-1 pl-1 pr-3 text-xs font-medium text-foreground transition-colors hover:border-orange-500/40 hover:bg-orange-500/10"
+              >
+                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-orange-500/15">
+                  <Hand className="h-3 w-3 text-orange-500" />
+                </span>
+                Meet the founder
+                <ArrowUpRight className="h-3 w-3 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
+              </a>
+            </div>
             <FooterColumn title="Legal" links={LEGAL_LINKS} />
           </div>
 
