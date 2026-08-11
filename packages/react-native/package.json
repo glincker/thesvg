@@ -1,0 +1,81 @@
+{
+  "name": "@thesvg/react-native",
+  "version": "0.1.0",
+  "description": "Typed React Native SVG components for all 6,500+ brand icons from thesvg.org",
+  "type": "module",
+  "sideEffects": false,
+  "license": "MIT",
+  "author": "thesvg.org",
+  "homepage": "https://thesvg.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/glincker/thesvg.git",
+    "directory": "packages/react-native"
+  },
+  "bugs": {
+    "url": "https://github.com/glincker/thesvg/issues"
+  },
+  "keywords": [
+    "svg",
+    "icons",
+    "brand",
+    "logos",
+    "react-native",
+    "expo",
+    "components",
+    "tree-shakeable",
+    "esm",
+    "typescript"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./createIcon": {
+      "import": "./dist/createIcon.js",
+      "require": "./dist/createIcon.cjs",
+      "types": "./dist/createIcon.d.ts"
+    },
+    "./icons/*": {
+      "import": "./dist/icons/*.js",
+      "require": "./dist/icons/*.cjs",
+      "types": "./dist/icons/*.d.ts"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsx scripts/build-components.ts",
+    "validate": "tsx scripts/validate-output.ts",
+    "test": "tsx scripts/validate-output.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-native": ">=0.70",
+    "react-native-svg": ">=13"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.18",
+    "react-native": "^0.87.0",
+    "react-native-svg": "^15.15.5",
+    "tsx": "^4.23.10",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "provenance": true,
+    "access": "public"
+  }
+}
