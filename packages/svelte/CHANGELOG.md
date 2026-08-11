@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 3.2.21
+
+### Patch Changes
+
+- feat: add Termux and Titanium icons, fix 2 dangling clip-path refs ([#881](https://github.com/glincker/thesvg/issues/881))
+
 ## 3.2.20
 
 ### Patch Changes
