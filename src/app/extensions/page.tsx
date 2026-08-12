@@ -8,6 +8,7 @@ import {
   Code2,
   Package,
   Palette,
+  Smartphone,
   Sparkles,
   Terminal,
   Zap,
@@ -19,15 +20,18 @@ import { getCategoryCounts, getFormattedIconCount } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 
 export const metadata: Metadata = {
-  title: "Extensions & Integrations - Figma, VS Code, React, CLI",
+  title: "Extensions & Integrations - Figma, VS Code, React, React Native",
   description:
-    "Use 6,500+ free SVG icons in Figma, VS Code, Raycast, React, Vue, CLI, and more. Official Figma plugin, npm packages, MCP server, and CDN.",
+    "Use 6,500+ free SVG icons in Figma, VS Code, Raycast, React, React Native, Vue, CLI, and more. Official Figma plugin, npm packages, MCP server, Iconify, and CDN.",
   keywords: [
     "Figma brand icons plugin",
     "SVG icon Figma plugin",
     "SVG icon VS Code extension",
     "brand icon npm package",
     "SVG icon React component",
+    "React Native brand icons",
+    "Expo SVG icons",
+    "Swift SVG icons SwiftUI",
     "SVG icon CLI",
     "SVG icon CDN",
     "MCP server icons",
@@ -37,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Extensions & Integrations | theSVG",
     description:
-      "Official Figma plugin, VS Code extension, React/Vue/Svelte components, CLI, MCP server, and CDN.",
+      "Official Figma plugin, VS Code extension, React/React Native/Vue/Svelte components, CLI, MCP server, and CDN.",
     siteName: "theSVG",
   },
   alternates: { canonical: "https://thesvg.org/extensions" },
@@ -346,6 +350,38 @@ const CATEGORIES: Category[] = [
       },
     ],
   },
+  {
+    id: "mobile-native",
+    label: "Mobile & Native",
+    description: "Ship icons in iOS, Android, and cross-platform apps",
+    icon: <Smartphone className="h-5 w-5" />,
+    items: [
+      {
+        name: "@thesvg/react-native",
+        description: `${iconCount}+ icons for React Native and Expo, backed by react-native-svg. Works in Expo Go, no config plugin needed.`,
+        status: "available",
+        cta: "npm",
+        href: "https://www.npmjs.com/package/@thesvg/react-native",
+        iconSlug: "reactnative",
+      },
+      {
+        name: "Swift Package",
+        description: "Native SwiftUI icons for iOS, macOS, tvOS, watchOS, and visionOS. Install straight from the theSVG repo, no separate package needed.",
+        status: "coming-soon",
+        cta: "Track progress",
+        href: "https://github.com/GLINCKER/thesvg/issues",
+        iconSlug: "swift",
+      },
+      {
+        name: "Kotlin / Jetpack Compose",
+        description: "Typed Compose ImageVector or drawable resource support for Android.",
+        status: "community",
+        cta: "Build this",
+        href: "https://github.com/GLINCKER/thesvg/issues",
+        iconFallback: <Smartphone className="h-6 w-6 text-muted-foreground" />,
+      },
+    ],
+  },
 ];
 
 const STATUS_CONFIG: Record<Status, { dot: string; label: string }> = {
@@ -467,7 +503,7 @@ export default function ExtensionsPage() {
       <SidebarShell categoryCounts={categoryCounts}>
         <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12">
           {/* Header */}
-          <div className="mb-12">
+          <div className="mb-8">
             <h1 className="mb-2 text-2xl font-bold sm:text-3xl">
               Extensions & Integrations
             </h1>
@@ -475,6 +511,22 @@ export default function ExtensionsPage() {
               Use theSVG icons everywhere you build, design, and ship.
             </p>
           </div>
+
+          {/* Quick nav */}
+          <nav
+            aria-label="Jump to category"
+            className="mb-12 flex flex-wrap gap-2"
+          >
+            {CATEGORIES.map((category) => (
+              <a
+                key={category.id}
+                href={`#${category.id}`}
+                className="inline-flex items-center gap-1.5 rounded-full border border-border/40 bg-card/30 px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-border/70 hover:text-foreground dark:border-white/[0.06] dark:bg-white/[0.02] dark:hover:border-white/[0.1]"
+              >
+                {category.label}
+              </a>
+            ))}
+          </nav>
 
           {/* Categories */}
           <div className="space-y-14">
