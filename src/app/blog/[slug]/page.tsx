@@ -70,10 +70,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 function processInline(text: string): string {
   return text
     .replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold text-foreground">$1</strong>')
-    .replace(
-      /`(.+?)`/g,
-      '<code class="rounded bg-muted px-1.5 py-0.5 font-mono text-[11px] dark:bg-white/[0.06]">$1</code>'
-    )
+    .replace(/`(.+?)`/g, (_match, code: string) => {
+      const escaped = code.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      return `<code class="rounded bg-muted px-1.5 py-0.5 font-mono text-[11px] dark:bg-white/[0.06]">${escaped}</code>`;
+    })
     .replace(
       /\[(.+?)\]\((.+?)\)/g,
       '<a href="$2" class="text-orange-500 underline underline-offset-2 hover:text-orange-400">$1</a>'
@@ -81,16 +81,30 @@ function processInline(text: string): string {
 }
 
 function renderMarkdown(body: string): string {
-  return body
+  // Fenced code blocks can contain blank lines (e.g. between a variable
+  // declaration and a function), which would otherwise get cut in half by
+  // the paragraph split below, before the fence is ever recognized. Pull
+  // every fenced block out up front (matched across the whole body, not
+  // per-paragraph) and swap in a placeholder that can't itself contain a
+  // blank line, so splitting the remainder into paragraphs can't slice
+  // through a fence. The extracted code is escaped and rendered here, then
+  // spliced back in after the paragraph pass.
+  const codeBlocks: string[] = [];
+  const withPlaceholders = body.replace(/```[a-z]*\n([\s\S]*?)\n```/g, (_match, code: string) => {
+    const html = `<pre class="my-4 overflow-x-auto rounded-xl border border-border/40 bg-muted/30 p-4 font-mono text-xs text-foreground dark:border-white/[0.06] dark:bg-white/[0.03]"><code>${code.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code></pre>`;
+    codeBlocks.push(html);
+    return ` CODEBLOCK${codeBlocks.length - 1} `;
+  });
+
+  return withPlaceholders
     .split("\n\n")
     .map((block) => {
       if (block.startsWith("## ")) {
         return `<h2 class="mt-8 mb-3 text-xl font-bold tracking-tight text-foreground">${block.slice(3)}</h2>`;
       }
-      if (block.startsWith("```")) {
-        const lines = block.split("\n");
-        const code = lines.slice(1, -1).join("\n");
-        return `<pre class="my-4 overflow-x-auto rounded-xl border border-border/40 bg-muted/30 p-4 font-mono text-xs text-foreground dark:border-white/[0.06] dark:bg-white/[0.03]"><code>${code.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code></pre>`;
+      const codeBlockMatch = block.match(/^ CODEBLOCK(\d+) $/);
+      if (codeBlockMatch) {
+        return codeBlocks[Number(codeBlockMatch[1])];
       }
       if (block.includes("\n- ")) {
         const items = block.split("\n").filter((l) => l.startsWith("- "));
