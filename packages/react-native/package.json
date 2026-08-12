@@ -1,6 +1,6 @@
 {
   "name": "@thesvg/react-native",
-  "version": "0.1.0",
+  "version": "3.3.0",
   "description": "Typed React Native SVG components for all 6,500+ brand icons from thesvg.org",
   "type": "module",
   "sideEffects": false,
