@@ -75318,6 +75318,23 @@
     "collection": "brands"
   },
   {
+    "slug": "knowbe4",
+    "title": "KnowBe4",
+    "aliases": [],
+    "hex": "EF4623",
+    "categories": [
+      "Security"
+    ],
+    "variants": {
+      "default": "/icons/knowbe4/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.knowbe4.com",
+    "guidelines": "https://www.knowbe4.com/press-room",
+    "collection": "brands",
+    "dateAdded": "2026-08-13"
+  },
+  {
     "slug": "knowledgebase",
     "title": "KnowledgeBase",
     "aliases": [],
@@ -101503,6 +101520,24 @@
     "guidelines": "https://brand.ripple.com/document/44#/foundations/logo",
     "dateAdded": "2026-03-07",
     "collection": "brands"
+  },
+  {
+    "slug": "rippling",
+    "title": "Rippling",
+    "aliases": [],
+    "hex": "7A005D",
+    "categories": [
+      "Software",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/rippling/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.rippling.com",
+    "guidelines": "https://www.rippling.com/press",
+    "collection": "brands",
+    "dateAdded": "2026-08-13"
   },
   {
     "slug": "risc-v",
