@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 3.3.1
+
+### Patch Changes
+
+- feat: add knowbe4, rippling icons ([#894](https://github.com/glincker/thesvg/issues/894))
+
 ## 3.3.0
 
 ### Patch Changes
