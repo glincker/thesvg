@@ -112,7 +112,7 @@ jobs:
       # changesets/action creates a "Version Packages" PR when changesets exist.
       # It does NOT publish here - publishing happens in publish.yml after PR merge.
       - name: Create Version PR
-        uses: changesets/action@v1
+        uses: changesets/action@v2
         with:
           commit: "chore(release): version packages"
           title: "chore(release): version packages"
