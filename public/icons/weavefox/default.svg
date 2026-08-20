@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000">
+  <defs>
+    <linearGradient id="left-gradient" x1="0%" y1="50%" x2="100%" y2="50%" color-interpolation="sRGB">
+      <stop offset="0%" stop-color="#9189FC" stop-opacity="1"></stop>
+      <stop offset="27%" stop-color="#5C87FD" stop-opacity="1"></stop>
+      <stop offset="52%" stop-color="#268EFD" stop-opacity="1"></stop>
+      <stop offset="74%" stop-color="#099AFD" stop-opacity="1"></stop>
+      <stop offset="100%" stop-color="#159CFE" stop-opacity="1"></stop>
+    </linearGradient>
+    <radialGradient id="right-gradient" gradientUnits="userSpaceOnUse" cx="740" cy="180" r="310" fx="740" fy="180" gradientTransform="translate(740 180) scale(1.2 1) translate(-740 -180)" color-interpolation="sRGB">
+      <stop offset="0%" stop-color="#7EFEDC" stop-opacity="1"></stop>
+      <stop offset="18%" stop-color="#6EFADA" stop-opacity="1"></stop>
+      <stop offset="35%" stop-color="#6DF6E3" stop-opacity="1"></stop>
+      <stop offset="46%" stop-color="#3CFBC8" stop-opacity="1"></stop>
+      <stop offset="55%" stop-color="#77EFF4" stop-opacity="1"></stop>
+      <stop offset="72%" stop-color="#7EEDFA" stop-opacity="1"></stop>
+      <stop offset="100%" stop-color="#83EFF6" stop-opacity="1"></stop>
+    </radialGradient>
+    <linearGradient id="body-gradient" x1="0%" y1="46%" x2="100%" y2="54%" color-interpolation="sRGB">
+      <stop offset="0%" stop-color="#35F8BE" stop-opacity="1"></stop>
+      <stop offset="10%" stop-color="#28E2CF" stop-opacity="1"></stop>
+      <stop offset="23%" stop-color="#18C5E1" stop-opacity="1"></stop>
+      <stop offset="37%" stop-color="#0DB1ED" stop-opacity="1"></stop>
+      <stop offset="51%" stop-color="#06A3F7" stop-opacity="1"></stop>
+      <stop offset="66%" stop-color="#0199FE" stop-opacity="1"></stop>
+      <stop offset="100%" stop-color="#0097FF" stop-opacity="1"></stop>
+    </linearGradient>
+  </defs>
+  <path d="M 735.304 161.057 C 731.596 161.81 727.885 163.16 724.275 165.174 C 676.221 192.003 628.168 218.83 580.114 245.657 C 535.479 270.574 490.842 295.494 446.208 320.411 C 427.044 331.112 407.877 341.81 388.713 352.509 C 352.184 372.902 315.657 393.295 279.129 413.687 C 338.076 448.091 397.022 482.495 455.971 516.898 C 523.995 556.6 592.017 596.3 660.042 636.001 C 678.049 646.509 696.054 657.019 714.058 667.527 C 729.367 559.464 744.677 451.401 759.987 343.338 C 766.601 296.653 773.215 249.964 779.828 203.279 C 781.346 192.573 778.372 182.871 772.708 175.408 C 765.669 166.139 754.481 160.323 742.581 160.324 C 740.175 160.324 737.739 160.562 735.304 161.057 Z" fill="url(#right-gradient)"></path>
+  <path d="M 198.049 174.176 C 192.348 181.613 189.328 191.298 190.793 202.011 C 197.18 248.729 203.566 295.449 209.954 342.167 C 224.738 450.302 239.522 558.438 254.307 666.574 C 272.363 656.154 290.417 645.732 308.474 635.312 C 376.691 595.941 444.906 556.573 513.122 517.202 C 572.238 483.084 631.351 448.969 690.465 414.852 C 654.035 394.281 617.607 373.712 581.179 353.141 C 562.066 342.349 542.953 331.558 523.84 320.765 C 479.327 295.631 434.812 270.496 390.299 245.36 C 342.376 218.3 294.454 191.24 246.531 164.179 C 242.931 162.147 239.226 160.779 235.523 160.008 C 233.03 159.488 230.535 159.239 228.072 159.239 C 216.238 159.238 205.097 164.988 198.049 174.176 Z" fill="url(#left-gradient)"></path>
+  <path d="M 66.309 428.24 C 30.323 489.412 13.446 562.02 25.896 630.51 C 31.953 663.833 44.609 695.975 64.539 724.839 C 81.169 748.923 102.866 770.729 130.02 789.033 C 202.269 837.739 305.578 868.987 432.226 832.058 C 525.056 804.99 593.304 757.592 668.85 720.068 C 683.527 712.777 698.478 705.859 713.94 699.537 C 815.044 658.186 914.238 645.438 983.672 689.197 C 983.136 682.814 982.08 674.38 980.33 664.421 C 976.735 643.956 970.206 617.05 959.22 588.284 C 951.171 567.216 940.731 545.152 927.3 523.89 C 898.712 478.643 856.575 437.033 795.096 416.398 C 734.937 396.205 683.285 393.032 636.749 398.671 C 527.687 411.894 448.42 470.742 350.195 477.991 C 212.705 488.137 137.309 432.39 143.32 352.537 C 116.702 365.416 84.074 398.044 66.309 428.24 Z" fill="url(#body-gradient)"></path>
+</svg>

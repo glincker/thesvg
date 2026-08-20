@@ -39591,6 +39591,25 @@
     "collection": "brands"
   },
   {
+    "slug": "brevitas",
+    "title": "Brevitas",
+    "aliases": [],
+    "hex": "3169F6",
+    "categories": [
+      "AI",
+      "Cost Management",
+      "Infrastructure",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/brevitas/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://brevitassystems.com",
+    "dateAdded": "2026-08-19",
+    "collection": "brands"
+  },
+  {
     "slug": "brevo",
     "title": "Brevo",
     "aliases": [],
@@ -105728,6 +105747,28 @@
     "collection": "brands"
   },
   {
+    "slug": "sive",
+    "title": "Sive",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "AI",
+      "Data",
+      "Web",
+      "Analytics",
+      "AntV",
+      "Visualization"
+    ],
+    "variants": {
+      "default": "/icons/sive/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://sive.antv.antgroup.com/",
+    "guidelines": "https://sive.antv.antgroup.com/",
+    "dateAdded": "2026-08-19",
+    "collection": "brands"
+  },
+  {
     "slug": "siyuan",
     "title": "SiYuan",
     "aliases": [
@@ -119730,6 +119771,28 @@
     "license": "CC0-1.0",
     "url": "https://www.weasyl.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "weavefox",
+    "title": "Weavefox",
+    "aliases": [],
+    "hex": "268EFD",
+    "categories": [
+      "AI",
+      "Analytics",
+      "SaaS",
+      "Payment",
+      "WeaveFox",
+      "Developer Tools"
+    ],
+    "variants": {
+      "default": "/icons/weavefox/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://www.weavefox.cn/",
+    "guidelines": "https://www.weavefox.cn/",
+    "dateAdded": "2026-08-19",
     "collection": "brands"
   },
   {
