@@ -19,6 +19,14 @@ name: Stale icon issues
 #     too, which is intentional: if we're actively working a thread we
 #     don't want it to close out from under us.
 #   - Pull requests are out of scope for this workflow.
+#
+# triage:needs-info is the odd one out: it's not applied by the icon
+# triage script, it's applied by hand by a maintainer on *any* issue type
+# (variant requests, bug reports, anything outside the icon-request /
+# icon-update templates that the automated triage never sees). Since
+# there's no automated classification backing it, it gets a longer
+# 28-day grace window (21 stale + 7 close) instead of the 21-day one the
+# icon-specific lanes use.
 
 on:
   schedule:
@@ -41,8 +49,9 @@ jobs:
         with:
           script: |
             const labels = [
-              { name: "stale",       color: "ededed", description: "No submitter activity for 14 days; will close in 7" },
-              { name: "auto-closed", color: "cccccc", description: "Closed automatically by stale-icon-issues.yml" },
+              { name: "stale",            color: "ededed", description: "No submitter activity for 14 days; will close in 7" },
+              { name: "auto-closed",      color: "cccccc", description: "Closed automatically by stale-icon-issues.yml" },
+              { name: "triage:needs-info", color: "fbca04", description: "Waiting on the reporter for more information" },
             ];
             for (const lbl of labels) {
               try {
@@ -169,3 +178,27 @@ jobs:
             Closing isn't a rejection. You're welcome to reopen anytime with a smaller export.
           close-issue-message: |
             Closing as `not-planned` since we haven't heard back for 21 days. Happy to revisit if you reopen with an SVG under 50KB. Thanks for your interest in thesvg.
+
+      - name: Process triage:needs-info
+        uses: actions/stale@v11
+        with:
+          days-before-issue-stale: 21
+          days-before-issue-close: 7
+          days-before-pr-stale: -1
+          days-before-pr-close: -1
+          any-of-issue-labels: "triage:needs-info"
+          exempt-issue-labels: "pinned,security,help-wanted,blocked-on-maintainer"
+          stale-issue-label: stale
+          close-issue-label: auto-closed
+          close-issue-reason: not_planned
+          remove-stale-when-updated: true
+          operations-per-run: 30
+          ascending: true
+          stale-issue-message: |
+            This issue has been waiting on more information from the reporter for 21 days, so it's being marked **stale**. If we don't hear back in another **7 days** it will close automatically.
+
+            **To keep it open:** reply with the information requested above.
+
+            Closing isn't a rejection. You're welcome to reopen anytime once you have it.
+          close-issue-message: |
+            Closing as `not-planned` since we haven't heard back for 28 days. Happy to revisit if you reopen with the requested information. Thanks for your interest in thesvg.
