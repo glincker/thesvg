@@ -91559,6 +91559,25 @@
     "collection": "brands"
   },
   {
+  "slug": "orildo",
+  "title": "Orildo",
+  "aliases": [],
+  "hex": "000000",
+  "categories": [
+    "Software"
+  ],
+  "variants": {
+    "default": "/icons/orildo/default.svg",
+    "mono": "/icons/orildo/mono.svg",
+    "wordmark-dark": "/icons/orildo/wordmark-dark.svg",
+    "wordmark-light": "/icons/orildo/wordmark-light.svg"
+  },
+  "license": "MIT",
+  "url": "https://orildo.sbs/",
+  "dateAdded": "2026-03-07",
+  "collection": "brands"
+  },
+  {
     "slug": "orshot",
     "title": "Orshot",
     "aliases": [],
@@ -91779,6 +91798,7 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+
   {
     "slug": "outlook-calendar",
     "title": "Outlook Calendar",
@@ -124094,6 +124114,26 @@
     "collection": "brands"
   },
   {
+    "slug": "zero",
+    "title": "Zero",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Software",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/zero/default.svg",
+      "mono": "/icons/zero/mono.svg",
+      "wordmark-dark": "/icons/zero/wordmark-dark.svg",
+      "wordmark-light": "/icons/zero/wordmark-light.svg"
+    },
+    "license": "MIT",
+    "url": "https://zerolifestyle.co/",
+    "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
     "slug": "zyte",
     "title": "Zyte",
     "aliases": [],
@@ -124112,3 +124152,4 @@
     "collection": "brands"
   }
 ]
+
