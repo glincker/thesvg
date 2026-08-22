@@ -124110,5 +124110,47 @@
     "url": "https://www.zyte.com",
     "dateAdded": "2026-03-07",
     "collection": "brands"
-  }
+  },
+  {
+  "slug": "Zero",
+  "title": "Zero",
+  "aliases": [],
+  "hex": "000000",
+  "categories": [
+    "Lifestyle",
+    "Wearables",
+    "Tech"
+  ],
+  "variants": {
+    "default": "/icons/Zero/default.svg",
+    "mono": "/icons/Zero/mono.svg",
+    "wordmark-dark": "/icons/Zero/wordmark-dark.svg",
+    "wordmark-light": "/icons/Zero/wordmark-light.svg"
+  },
+  "license": "MIT",
+  "url": "https://zerolifestyle.co/",
+  "dateAdded": "2026-03-07",
+  "collection": "brands"
+},
+{
+  "slug": "Orildo",
+  "title": "Orildo",
+  "aliases": [],
+  "hex": "000000",
+  "categories": [
+    "Software"
+    "Tech"
+  ],
+  "variants": {
+    "default": "/icons/Orildo/default.svg",
+    "mono": "/icons/Orildo/mono.svg",
+    "wordmark-dark": "/icons/Orildo/wordmark-dark.svg",
+    "wordmark-light": "/icons/Orildo/wordmark-light.svg"
+  },
+  "license": "MIT",
+  "url": "https://orildo.sbs/",
+  "dateAdded": "2026-03-07",
+  "collection": "brands"
+}
 ]
+
