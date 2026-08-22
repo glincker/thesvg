@@ -124119,7 +124119,8 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Software"
+      "Software",
+      "Platform"
     ],
     "variants": {
       "default": "/icons/zero/default.svg",
