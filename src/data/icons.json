@@ -69999,6 +69999,28 @@
     "collection": "brands"
   },
   {
+    "slug": "indrive",
+    "title": "inDrive",
+    "aliases": [],
+    "hex": "A6E82E",
+    "categories": [
+      "Transportation",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/Indrive/default.svg",
+      "wordmark": "/icons/Indrive/default-wordmark.svg",
+      "mono-dark": "/icons/Indrive/mono-dark.svg",
+      "mono-light": "/icons/Indrive/mono-light.svg",
+      "wordmark-dark": "/icons/Indrive/wordmark-dark.svg",
+      "wordmark-light": "/icons/Indrive/wordmark-light.svg"
+    },
+    "license": "brand-use",
+    "url": "https://indrive.com",
+    "dateAdded": "2026-08-29",
+    "collection": "brands"
+  },
+  {
     "slug": "inductive-automation",
     "title": "Inductive Automation",
     "aliases": [],
@@ -70163,6 +70185,7 @@
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
+  
   {
     "slug": "infinityfree",
     "title": "InfinityFree",
@@ -89925,7 +89948,28 @@
     "url": "https://www.onex.com/",
     "dateAdded": "2026-06-07",
     "collection": "brands"
+  },  
+{
+  "slug": "onic",
+  "title": "Onic",
+  "aliases": [],
+  "hex": "A829F4",
+  "categories": [
+    "Platform"
+  ],
+  "variants": {
+    "default": "/icons/onic/default.svg",
+    "mono-dark": "/icons/onic/mono-dark.svg",
+    "mono-light": "/icons/onic/mono-light.svg",
+    "wordmark-default": "/icons/onic/wordmark-default.svg",
+    "wordmark-dark": "/icons/onic/wordmark-dark.svg",
+    "wordmark-light": "/icons/onic/wordmark-light.svg"
   },
+  "license": "brand-use",
+  "url": "",
+  "dateAdded": "2026-08-29",
+  "collection": "brands"
+},
   {
     "slug": "onlyfans",
     "title": "OnlyFans",
@@ -89961,6 +90005,25 @@
     "license": "CC0-1.0",
     "url": "https://www.onlyoffice.com/en/press-downloads.aspx",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "onic",
+    "title": "Onic",
+    "aliases": [],
+    "hex": "1A73E8",
+    "categories": [
+      "Software",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/onic/default.svg",
+      "color": "/icons/onic/color.svg",
+      "mono": "/icons/onic/mono.svg"
+    },
+    "license": "MIT",
+    "url": "",
+    "dateAdded": "2026-08-29",
     "collection": "brands"
   },
   {
