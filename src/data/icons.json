@@ -97557,6 +97557,27 @@
     "collection": "brands"
   },
   {
+    "slug": "prusa-research",
+    "title": "Prusa Research",
+    "aliases": [
+      "prusa",
+      "prusa3d"
+    ],
+    "hex": "000000",
+    "categories": [
+      "Hardware"
+    ],
+    "variants": {
+      "default": "/icons/prusa-research/default.svg",
+      "mono": "/icons/prusa-research/mono.svg",
+      "light": "/icons/prusa-research/light.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.prusa3d.com",
+    "dateAdded": "2026-08-31",
+    "collection": "brands"
+  },
+  {
     "slug": "pterodactyl",
     "title": "Pterodactyl",
     "aliases": [],
