@@ -81674,6 +81674,25 @@
     "collection": "brands"
   },
   {
+    "slug": "meetandy",
+    "title": "MeetAndy",
+    "aliases": [],
+    "hex": "4A57FF",
+    "categories": [
+      "AI",
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/meetandy/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://meetandy.ai/",
+    "guidelines": "https://brand.meetandy.ai/",
+    "dateAdded": "2026-09-01",
+    "collection": "brands"
+  },
+  {
     "slug": "meetup",
     "title": "Meetup",
     "aliases": [],
@@ -101504,6 +101523,23 @@
     "url": "https://www.jetbrains.com/company/brand/logos/",
     "guidelines": "https://www.jetbrains.com/company/brand/",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "rilian",
+    "title": "Rilian",
+    "aliases": [],
+    "hex": "264AD5",
+    "categories": [
+      "Security",
+      "AI"
+    ],
+    "variants": {
+      "default": "/icons/rilian/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.rilian.com",
+    "dateAdded": "2026-09-01",
     "collection": "brands"
   },
   {
@@ -123200,6 +123236,28 @@
     "license": "CC0-1.0",
     "url": "https://www.zaproxy.org",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "zapal",
+    "title": "Zapal",
+    "aliases": [],
+    "hex": "FF2800",
+    "categories": [
+      "Business",
+      "Web",
+      "Software",
+      "Platform",
+      "Mobile App",
+      "Design"
+    ],
+    "variants": {
+      "default": "/icons/zapal/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://zapal.tech",
+    "guidelines": "https://zapal.tech",
+    "dateAdded": "2026-09-01",
     "collection": "brands"
   },
   {
