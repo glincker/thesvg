@@ -53933,6 +53933,26 @@
     "collection": "brands"
   },
   {
+    "slug": "farmsent",
+    "title": "Farmsent",
+    "aliases": [],
+    "hex": "DB9536",
+    "categories": [
+      "Blockchain",
+      "Energy",
+      "Food",
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/farmsent/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://farmsent.io",
+    "guidelines": "https://www.farmsent.io/brand",
+    "dateAdded": "2026-09-01",
+    "collection": "brands"
+  },
+  {
     "slug": "fastapi",
     "title": "FastAPI",
     "aliases": [],
