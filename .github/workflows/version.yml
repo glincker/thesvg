@@ -114,7 +114,7 @@ jobs:
       - name: Create Version PR
         uses: changesets/action@v2
         with:
-          commit: "chore(release): version packages"
-          title: "chore(release): version packages"
+          commit-message: "chore(release): version packages"
+          pr-title: "chore(release): version packages"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
