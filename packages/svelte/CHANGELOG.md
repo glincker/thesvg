@@ -1,5 +1,24 @@
 # @thesvg/svelte
 
+## 3.3.2
+
+### Patch Changes
+
+- [#943](https://github.com/glincker/thesvg/pull/943) [`2ce5c79`](https://github.com/glincker/thesvg/commit/2ce5c79cadc5e67c556313b1f5fbc38a42642a38) Thanks [@thegdsks](https://github.com/thegdsks)! - Catch up the release pipeline after the Release - Version workflow was
+  silently failing on every push since 2026-08-20 (`@changesets/cli` 3.x
+  requires Node 22, the workflow was still pinned to Node 20 - fixed in
+  [#942](https://github.com/glincker/thesvg/issues/942)). Each failed run generated a changeset in its own ephemeral
+  checkout that was never committed, so nothing accumulated for the last
+  ~11 merges. This changeset consolidates them:
+  
+  - Added Weavefox, Sive, Brevitas, Zero, Orildo, Prusa Research,
+    lifesight-light, decathlon-logo, Rilian, Zapal, MeetAndy, and
+    Farmsent icons
+  - Fixed the outdated Zod logo
+  - Fixed a duplicate `zero` icons.json entry introduced by a
+    squash-merge race
+  - Fixed the iCloud icon's metadata URL
+
 ## 3.3.1
 
 ### Patch Changes
