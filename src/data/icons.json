@@ -121685,6 +121685,22 @@
     "collection": "brands"
   },
   {
+    "slug": "woy-marketplace",
+    "title": "WOY Marketplace",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "E-commerce"
+    ],
+    "variants": {
+      "default": "/icons/woy-marketplace/default.svg"
+    },
+    "license": "CC-BY-4.0",
+    "url": "https://woy-marketplace.com",
+    "collection": "brands",
+    "dateAdded": "2026-09-03"
+  },
+  {
     "slug": "wp-engine",
     "title": "WP Engine",
     "aliases": [],
