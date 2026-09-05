@@ -84217,6 +84217,23 @@
     "collection": "brands"
   },
   {
+  "slug": "mir",
+  "title": "Mir",
+  "aliases": ["мир", "mir card", "nspk mir"],
+  "hex": "006848",
+  "categories": ["Payment", "Finance"],
+  "variants": {
+    "default": "/icons/mir/default.svg",
+    "dark": "/icons/mir/dark.svg",
+    "mono": "/icons/mir/mono.svg"
+  },
+  "license": "brand-use",
+  "url": "pay.mironline.ru",
+  "guidelines": "https://nspk.ru/advertising",
+  "collection": "brands",
+  "dateAdded": "2026-09-05"
+  },
+  {
     "slug": "miraheze",
     "title": "Miraheze",
     "aliases": [],
