@@ -63329,8 +63329,9 @@
     "categories": ["Community", "Finance", "Crypto"],
     "variants": {
     "default": "/icons/godonateme/default.svg",
+    "dark": "/icons/godonateme/dark.svg",
     "mono": "/icons/godonateme/mono.svg"
-    },
+  },
     "license": "brand-use",
     "url": "https://godonate.me",
     "guidelines": "https://godonate.me/brand",
