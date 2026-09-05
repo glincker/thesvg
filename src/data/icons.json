@@ -63322,6 +63322,22 @@
     "collection": "brands"
   },
   {
+    "slug": "godonateme",
+    "title": "GoDonate.me",
+    "aliases": ["godonate", "godonate-me", "go donate me"],
+    "hex": "95ED5F",
+    "categories": ["Community", "Finance", "Crypto"],
+    "variants": {
+    "default": "/icons/godonateme/default.svg",
+    "mono": "/icons/godonateme/mono.svg"
+    },
+    "license": "brand-use",
+    "url": "https://godonate.me",
+    "guidelines": "https://godonate.me/brand",
+    "collection": "brands",
+    "dateAdded": "2026-09-05"
+  },
+  {
     "slug": "godot",
     "title": "Godot",
     "aliases": [],
