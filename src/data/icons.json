@@ -63322,6 +63322,23 @@
     "collection": "brands"
   },
   {
+    "slug": "godonateme",
+    "title": "GoDonate.me",
+    "aliases": ["godonate", "godonate-me", "go donate me"],
+    "hex": "95ED5F",
+    "categories": ["Community", "Finance", "Crypto"],
+    "variants": {
+    "default": "/icons/godonateme/default.svg",
+    "dark": "/icons/godonateme/dark.svg",
+    "mono": "/icons/godonateme/mono.svg"
+  },
+    "license": "brand-use",
+    "url": "https://godonate.me",
+    "guidelines": "https://godonate.me/brand",
+    "collection": "brands",
+    "dateAdded": "2026-09-05"
+  },
+  {
     "slug": "godot",
     "title": "Godot",
     "aliases": [],
@@ -84198,6 +84215,23 @@
     "url": "https://minutemailer.com",
     "dateAdded": "2026-03-07",
     "collection": "brands"
+  },
+  {
+  "slug": "mir",
+  "title": "Mir",
+  "aliases": ["мир", "mir card", "nspk mir"],
+  "hex": "006848",
+  "categories": ["Payment", "Finance"],
+  "variants": {
+    "default": "/icons/mir/default.svg",
+    "dark": "/icons/mir/dark.svg",
+    "mono": "/icons/mir/mono.svg"
+  },
+  "license": "brand-use",
+  "url": "pay.mironline.ru",
+  "guidelines": "https://nspk.ru/advertising",
+  "collection": "brands",
+  "dateAdded": "2026-09-05"
   },
   {
     "slug": "miraheze",
