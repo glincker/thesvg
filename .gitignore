@@ -56,6 +56,9 @@ CLAUDE.md
 # generated API files (built from icons.json at build time)
 public/api/
 
+# generated Excalidraw shape libraries (built from icons.json at build time)
+public/integrations/excalidraw/
+
 # marketing assets (exported PNGs - too large for OSS repo)
 public/banners/
 posthog-setup-report.md

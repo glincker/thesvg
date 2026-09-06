@@ -188,6 +188,14 @@ const CATEGORIES: Category[] = [
         href: "https://www.jsdelivr.com/package/gh/glincker/thesvg",
         iconSlug: "framer",
       },
+      {
+        name: "Excalidraw",
+        description: "Downloadable .excalidrawlib shape libraries of brand icons, grouped by category, for architecture and product diagrams.",
+        status: "available",
+        cta: "Browse libraries",
+        href: "/integrations/excalidraw",
+        iconSlug: "excalidraw",
+      },
     ],
   },
   {

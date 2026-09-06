@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "lsof -ti:3333 | xargs kill -9 2>/dev/null; next dev --port 3333",
-    "build": "tsx src/scripts/generate-api.ts && next build",
+    "build": "tsx src/scripts/generate-api.ts && tsx src/scripts/generate-excalidraw-libraries.ts && next build",
     "start": "next start",
     "lint": "eslint"
   },
