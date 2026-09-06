@@ -188,6 +188,15 @@ const CATEGORIES: Category[] = [
         href: "https://www.jsdelivr.com/package/gh/glincker/thesvg",
         iconSlug: "framer",
       },
+      {
+        name: "draw.io / diagrams.net",
+        description:
+          "Category-based shape libraries of brand and dev-tool icons for architecture diagrams. Complements draw.io's built-in AWS, Azure, GCP, and Kubernetes libraries.",
+        status: "available",
+        cta: "Browse libraries",
+        href: "/integrations/drawio",
+        iconSlug: "diagramsdotnet",
+      },
     ],
   },
   {

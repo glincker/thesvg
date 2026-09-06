@@ -56,6 +56,9 @@ CLAUDE.md
 # generated API files (built from icons.json at build time)
 public/api/
 
+# generated draw.io shape libraries (built from icons.json at build time)
+public/integrations/drawio/
+
 # marketing assets (exported PNGs - too large for OSS repo)
 public/banners/
 posthog-setup-report.md
