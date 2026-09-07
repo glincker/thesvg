@@ -21,14 +21,16 @@
  */
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from "fs";
-import { join } from "path";
+import { join, resolve, sep } from "path";
 import { DRAWIO_LIBRARIES, getIconsForDrawioLibrary } from "@/lib/drawio-libraries";
 import type { IconEntry } from "@/lib/icons";
 
 const ROOT = join(__dirname, "../..");
 const ICONS_JSON = join(ROOT, "src/data/icons.json");
 const PUBLIC_DIR = join(ROOT, "public");
+const ICONS_DIR = resolve(PUBLIC_DIR, "icons") + sep;
 const OUTPUT_DIR = join(ROOT, "public/integrations/drawio");
+const COUNTS_PATH = join(ROOT, "src/data/drawio-library-counts.json");
 
 interface DrawioShapeEntry {
   xml: string;
@@ -59,7 +61,10 @@ function buildShapeEntry(icon: IconEntry): DrawioShapeEntry | null {
   const svgPath = icon.variants.default;
   if (!svgPath) return null;
 
-  const absPath = join(PUBLIC_DIR, svgPath);
+  const absPath = resolve(PUBLIC_DIR, `.${svgPath}`);
+  if (!absPath.startsWith(ICONS_DIR)) {
+    throw new Error(`variant path "${svgPath}" resolves outside public/icons/, refusing to read`);
+  }
   const svg = readFileSync(absPath, "utf-8");
 
   const { w, h } = getAspectDims(svg);
@@ -80,6 +85,7 @@ function main() {
   mkdirSync(OUTPUT_DIR, { recursive: true });
 
   let totalSkipped = 0;
+  const counts: Record<string, number> = {};
 
   for (const lib of DRAWIO_LIBRARIES) {
     const matched = getIconsForDrawioLibrary(icons, lib);
@@ -111,8 +117,15 @@ function main() {
     const sizeKb = (Buffer.byteLength(contents, "utf-8") / 1024).toFixed(1);
     console.log(`  ${lib.label} (${lib.slug}.xml): ${entries.length} icons, ${sizeKb} KB${skipped ? `, ${skipped} skipped` : ""}`);
 
+    counts[lib.slug] = entries.length;
     totalSkipped += skipped;
   }
+
+  // Committed (not gitignored) so the page can show the actual generated
+  // count without re-running this script, and so the count can never
+  // silently diverge from what a downloaded library file really contains
+  // if a future icon fails conversion.
+  writeFileSync(COUNTS_PATH, JSON.stringify(counts, null, 2) + "\n", "utf-8");
 
   console.log(`draw.io library generation complete.${totalSkipped ? ` ${totalSkipped} icons skipped total.` : ""}`);
 }

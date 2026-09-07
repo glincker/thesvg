@@ -1,9 +1,10 @@
 import { Suspense } from "react";
 import { Download, FolderTree, ListChecks } from "lucide-react";
 import type { Metadata } from "next";
-import { getAllIcons, getCategoryCounts } from "@/lib/icons";
-import { DRAWIO_LIBRARIES, getIconsForDrawioLibrary, type DrawioLibraryDef } from "@/lib/drawio-libraries";
+import { getCategoryCounts } from "@/lib/icons";
+import { DRAWIO_LIBRARIES, type DrawioLibraryDef } from "@/lib/drawio-libraries";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
+import libraryCounts from "@/data/drawio-library-counts.json";
 
 export const metadata: Metadata = {
   title: "draw.io / diagrams.net Shape Libraries - Free Brand Icons",
@@ -65,7 +66,7 @@ function DrawioLibraryCard({ lib, count }: { lib: DrawioLibraryDef; count: numbe
 
 export default function DrawioIntegrationPage() {
   const categoryCounts = getCategoryCounts();
-  const allIcons = getAllIcons();
+  const counts = libraryCounts as Record<string, number>;
 
   return (
     <Suspense>
@@ -131,7 +132,7 @@ export default function DrawioIntegrationPage() {
                 <DrawioLibraryCard
                   key={lib.slug}
                   lib={lib}
-                  count={getIconsForDrawioLibrary(allIcons, lib).length}
+                  count={counts[lib.slug] ?? 0}
                 />
               ))}
             </div>
