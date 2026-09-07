@@ -4680,6 +4680,26 @@
     "collection": "brands"
   },
   {
+    "slug": "apache-zookeeper",
+    "title": "Apache ZooKeeper",
+    "aliases": [
+      "ZooKeeper"
+    ],
+    "hex": "9E5613",
+    "categories": [
+      "Software",
+      "Library"
+    ],
+    "variants": {
+      "default": "/icons/apache-zookeeper/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://apache.org/logos",
+    "guidelines": "https://www.apache.org/foundation/marks",
+    "dateAdded": "2026-09-07",
+    "collection": "brands"
+  },
+  {
     "slug": "aparat",
     "title": "Aparat",
     "aliases": [],
@@ -50016,6 +50036,23 @@
     "collection": "brands"
   },
   {
+    "slug": "dokploy",
+    "title": "Dokploy",
+    "aliases": [],
+    "hex": "5965F2",
+    "categories": [
+      "Devtool",
+      "Community"
+    ],
+    "variants": {
+      "default": "/icons/dokploy/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://dokploy.com",
+    "dateAdded": "2026-09-07",
+    "collection": "brands"
+  },
+  {
     "slug": "dolby",
     "title": "Dolby",
     "aliases": [],
@@ -51771,6 +51808,23 @@
     "collection": "brands"
   },
   {
+    "slug": "el-corte-ingles",
+    "title": "El Corte Inglés",
+    "aliases": [],
+    "hex": "008657",
+    "categories": [
+      "Shopping",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/el-corte-ingles/default.svg"
+    },
+    "license": "Trademark of El Corte Inglés, S.A. Used for identification under nominative fair use.",
+    "url": "https://www.elcorteingles.es",
+    "dateAdded": "2026-09-07",
+    "collection": "brands"
+  },
+  {
     "slug": "elastic",
     "title": "Elastic",
     "aliases": [],
@@ -53185,6 +53239,25 @@
     "url": "https://www.every.org/brand",
     "guidelines": "https://www.every.org/brand",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "evidence-dev",
+    "title": "Evidence",
+    "aliases": [
+      "Evidence.dev"
+    ],
+    "hex": "000000",
+    "categories": [
+      "Analytics",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/evidence-dev/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://evidence.dev",
+    "dateAdded": "2026-09-07",
     "collection": "brands"
   },
   {
@@ -62087,6 +62160,23 @@
     "collection": "brands"
   },
   {
+    "slug": "geogebra",
+    "title": "GeoGebra",
+    "aliases": [],
+    "hex": "9999FF",
+    "categories": [
+      "Education",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/geogebra/default.svg"
+    },
+    "license": "Trademark of International GeoGebra Institute. Used for identification under nominative fair use.",
+    "url": "https://www.geogebra.org",
+    "dateAdded": "2026-09-07",
+    "collection": "brands"
+  },
+  {
     "slug": "geopandas",
     "title": "GeoPandas",
     "aliases": [],
@@ -68439,6 +68529,26 @@
     "url": "https://www.houzz.com/logoGuidelines",
     "guidelines": "https://www.houzz.com/logoGuidelines",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "howlerjs",
+    "title": "howler.js",
+    "aliases": [
+      "Howler.js",
+      "Howler"
+    ],
+    "hex": "786956",
+    "categories": [
+      "Library",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/howlerjs/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://howlerjs.com",
+    "dateAdded": "2026-09-07",
     "collection": "brands"
   },
   {
@@ -81915,6 +82025,23 @@
     "license": "CC0-1.0",
     "url": "https://www.mercadopago.com/developers/",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "mercadona",
+    "title": "Mercadona",
+    "aliases": [],
+    "hex": "009660",
+    "categories": [
+      "Shopping",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/mercadona/default.svg"
+    },
+    "license": "Trademark of Mercadona, S.A. Used for identification under nominative fair use.",
+    "url": "https://www.mercadona.es",
+    "dateAdded": "2026-09-07",
     "collection": "brands"
   },
   {
