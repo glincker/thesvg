@@ -52,7 +52,7 @@
     "prepublishOnly": "npm run build && npm run audit && npm run validate"
   },
   "devDependencies": {
-    "tsx": "^4.23.12",
+    "tsx": "^4.23.13",
     "typescript": "^6.0.3"
   },
   "engines": {
