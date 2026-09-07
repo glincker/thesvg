@@ -6976,6 +6976,31 @@
     "collection": "brands"
   },
   {
+    "slug": "avenping",
+    "title": "Avenping",
+    "aliases": [],
+    "hex": "00BCD4",
+    "categories": [
+      "AI",
+      "Advertising",
+      "Business",
+      "CMS",
+      "DevTool",
+      "Ecommerce",
+      "Software",
+      "SaaS",
+      "Mobile App"
+    ],
+    "variants": {
+      "default": "/icons/avenping/default.svg"
+    },
+    "license": "Trademark of AvenPing. Used for identification under nominative fair use.",
+    "url": "https://avenping.com",
+    "guidelines": "https://avenping.com/brand-guidelines",
+    "dateAdded": "2026-09-07",
+    "collection": "brands"
+  },
+  {
     "slug": "avianca",
     "title": "avianca",
     "aliases": [],
@@ -38574,6 +38599,22 @@
     "collection": "brands"
   },
   {
+    "slug": "blips",
+    "title": "Blips",
+    "aliases": [],
+    "hex": "58A6E8",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/blips/default.svg"
+    },
+    "license": "Trademark of Blips. Used for identification under nominative fair use.",
+    "url": "https://blips.space/",
+    "dateAdded": "2026-09-07",
+    "collection": "brands"
+  },
+  {
     "slug": "blitz",
     "title": "Blitz",
     "aliases": [],
@@ -55469,6 +55510,22 @@
     "collection": "brands"
   },
   {
+    "slug": "flownib",
+    "title": "FlowNib",
+    "aliases": [],
+    "hex": "7645EE",
+    "categories": [
+      "AI"
+    ],
+    "variants": {
+      "default": "/icons/flownib/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://flownib.com",
+    "dateAdded": "2026-09-07",
+    "collection": "brands"
+  },
+  {
     "slug": "fluent-bit",
     "title": "Fluent Bit",
     "aliases": [],
@@ -62121,6 +62178,24 @@
     "license": "CC0-1.0",
     "url": "https://gerrit-review.googlesource.com/c/75842/",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "get-glass-distribution",
+    "title": "Get Glass Distribution",
+    "aliases": [
+      "GGD"
+    ],
+    "hex": "f4c73b",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/get-glass-distribution/default.svg"
+    },
+    "license": "Trademark of Get Glass Distribution. Used for identification under nominative fair use.",
+    "url": "https://getglass.us",
+    "dateAdded": "2026-09-07",
     "collection": "brands"
   },
   {
@@ -69136,6 +69211,22 @@
     "license": "MIT",
     "url": "https://huggingface.co/ibm-granite",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "ic-glass",
+    "title": "IC Glass",
+    "aliases": [],
+    "hex": "173d62",
+    "categories": [
+      "Other"
+    ],
+    "variants": {
+      "default": "/icons/ic-glass/default.svg"
+    },
+    "license": "Trademark of IC Glass. Used for identification under nominative fair use.",
+    "url": "https://geticglass.com",
+    "dateAdded": "2026-09-07",
     "collection": "brands"
   },
   {
@@ -88997,6 +89088,24 @@
     "collection": "brands"
   },
   {
+    "slug": "nusantara",
+    "title": "Nusantara",
+    "aliases": [],
+    "hex": "371c99",
+    "categories": [
+      "Blockchain"
+    ],
+    "variants": {
+      "default": "/icons/nusantara/default.svg",
+      "mono": "/icons/nusantara/mono.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://nusantara.finance",
+    "guidelines": "https://www.nusantara.finance/brand",
+    "dateAdded": "2026-09-07",
+    "collection": "brands"
+  },
+  {
     "slug": "nushell",
     "title": "Nushell",
     "aliases": [],
@@ -104840,6 +104949,24 @@
     "collection": "brands"
   },
   {
+    "slug": "seonib",
+    "title": "SEONIB",
+    "aliases": [],
+    "hex": "6C4CE4",
+    "categories": [
+      "AI",
+      "Ecommerce"
+    ],
+    "variants": {
+      "default": "/icons/seonib/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://seonib.com",
+    "guidelines": "https://seonib.com",
+    "dateAdded": "2026-09-07",
+    "collection": "brands"
+  },
+  {
     "slug": "sepa",
     "title": "SEPA",
     "aliases": [],
@@ -117621,6 +117748,26 @@
     "url": "https://venmo.com/about/brand",
     "guidelines": "https://venmo.com/about/brand",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "veonib",
+    "title": "Veonib",
+    "aliases": [],
+    "hex": "026AF7",
+    "categories": [
+      "AI",
+      "Ecommerce",
+      "Web",
+      "SaaS"
+    ],
+    "variants": {
+      "default": "/icons/veonib/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://veonib.com",
+    "guidelines": "https://veonib.com",
+    "dateAdded": "2026-09-07",
     "collection": "brands"
   },
   {
