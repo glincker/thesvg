@@ -20,7 +20,7 @@
  * values nested inside a JSON string) from colliding.
  */
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from "fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync, realpathSync } from "fs";
 import { join, resolve, sep } from "path";
 import { DRAWIO_LIBRARIES, getIconsForDrawioLibrary } from "@/lib/drawio-libraries";
 import type { IconEntry } from "@/lib/icons";
@@ -65,7 +65,15 @@ function buildShapeEntry(icon: IconEntry): DrawioShapeEntry | null {
   if (!absPath.startsWith(ICONS_DIR)) {
     throw new Error(`variant path "${svgPath}" resolves outside public/icons/, refusing to read`);
   }
-  const svg = readFileSync(absPath, "utf-8");
+  // realpathSync (not just resolve) so a symlink under public/icons/ pointing
+  // outside it can't be used to smuggle an arbitrary file into the generated
+  // public XML - resolve() only normalizes the path string, it doesn't
+  // follow symlinks.
+  const realPath = realpathSync(absPath);
+  if (!realPath.startsWith(ICONS_DIR)) {
+    throw new Error(`variant path "${svgPath}" resolves (via symlink) outside public/icons/, refusing to read`);
+  }
+  const svg = readFileSync(realPath, "utf-8");
 
   const { w, h } = getAspectDims(svg);
   const base64 = Buffer.from(svg, "utf-8").toString("base64");
