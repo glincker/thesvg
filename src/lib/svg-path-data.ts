@@ -60,10 +60,20 @@ export interface PathPoint {
   y: number;
 }
 
-/** Flattens an SVG path `d` attribute into one or more closed point loops
- * (in the path's own local coordinate space, before transforms). */
-export function flattenPathData(d: string): PathPoint[][] {
-  const subpaths: PathPoint[][] = [];
+export interface RawSubpath {
+  points: PathPoint[];
+  /** Whether this subpath was explicitly closed with Z/z. */
+  closed: boolean;
+}
+
+/** Parses an SVG path `d` attribute into its raw subpaths (in the path's
+ * own local coordinate space, before transforms), flattening curves to
+ * line segments but otherwise unprocessed: no closing/merging, so open
+ * subpaths stay open. Used for stroke expansion, where open-vs-closed and
+ * the exact original point sequence both matter. `flattenPathData` (fill)
+ * and `flattenPathForStroke` build on top of this. */
+export function parsePathSubpaths(d: string): RawSubpath[] {
+  const subpaths: RawSubpath[] = [];
   let current: PathPoint[] = [];
   let cur: PathPoint = { x: 0, y: 0 };
   let start: PathPoint = { x: 0, y: 0 };
@@ -186,7 +196,7 @@ export function flattenPathData(d: string): PathPoint[][] {
       case "M":
       case "L": {
         if (lastCmd === "M" && current.length) {
-          subpaths.push(current);
+          subpaths.push({ points: current, closed: false });
           current = [];
         }
         skipToNextToken();
@@ -202,7 +212,7 @@ export function flattenPathData(d: string): PathPoint[][] {
       case "m":
       case "l": {
         if (lastCmd === "m" && current.length) {
-          subpaths.push(current);
+          subpaths.push({ points: current, closed: false });
           current = [];
         }
         skipToNextToken();
@@ -407,7 +417,7 @@ export function flattenPathData(d: string): PathPoint[][] {
       case "z": {
         current.push({ ...start });
         if (current.length) {
-          subpaths.push(current);
+          subpaths.push({ points: current, closed: true });
           current = [];
         }
         cur = { ...start };
@@ -420,8 +430,17 @@ export function flattenPathData(d: string): PathPoint[][] {
         break parseLoop;
     }
   }
-  if (current.length) subpaths.push(current);
-  const loops = subpaths.filter((sp) => sp.length >= 3);
+  if (current.length) subpaths.push({ points: current, closed: false });
+  return subpaths;
+}
+
+/** Flattens an SVG path `d` attribute into one or more closed point loops,
+ * merging multiple subpaths (holes, disjoint peers) into one via the slit
+ * technique. Used for fill rendering. */
+export function flattenPathData(d: string): PathPoint[][] {
+  const loops = parsePathSubpaths(d)
+    .map((sp) => sp.points)
+    .filter((pts) => pts.length >= 3);
 
   // A single SVG <path> can carry multiple subpaths sharing one fill,
   // commonly an outer silhouette plus an even-odd "hole" (e.g. the ring in
@@ -471,3 +490,4 @@ function mergeLoopsWithSlits(loops: PathPoint[][]): PathPoint[] {
   }
   return merged;
 }
+

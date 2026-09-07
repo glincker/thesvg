@@ -46,12 +46,35 @@
  *   blend-mode compositing) would hide the actual brand color underneath
  *   instead of just losing the subtle highlight.
  * - `<mask>`/`<clipPath>` are not applied (the masked content just renders
- *   unclipped) since real alpha masking is out of scope; `<text>` and
- *   stroke-only shapes are skipped.
+ *   unclipped) since real alpha masking is out of scope; `<text>` is
+ *   skipped.
+ * - Stroke-only shapes (`fill="none"` with a `stroke`, a common
+ *   outline-logo pattern) are converted to filled geometry: each segment
+ *   becomes a rectangular ribbon and every vertex gets a circle, which
+ *   approximates joins and caps as round regardless of the real
+ *   `stroke-linejoin`/`stroke-linecap`. That's a deliberate simplification
+ *   (indistinguishable from miter/bevel/butt/square at icon scale) in
+ *   exchange for not silently dropping the only visible content of an
+ *   outline-style icon.
+ * - `<style>` blocks are parsed for flat class selectors only (`.foo`,
+ *   `.foo, .bar`), enough to resolve `class="..."`-based `fill`/`stroke`
+ *   and to honor `display: none` (which hides its whole subtree, same as
+ *   CSS). This matters for Illustrator/Lottie exports that hide unused
+ *   animation-frame duplicates via class rather than attribute, and color
+ *   the one real shape the same way. Compound/descendant/id selectors are
+ *   ignored, not mis-resolved.
  */
 
 import { IDENTITY, applyMat, multiplyMat, parseTransform, type Mat } from "./svg-matrix";
 import { NumScanner, flattenPathData, type PathPoint } from "./svg-path-data";
+import { flattenPathForStroke, strokeSubpathToRibbon } from "./svg-stroke";
+import {
+  parseStylesheet,
+  resolveClassStyle,
+  extractGradientColors,
+  type GradientStop,
+} from "./svg-style";
+import { parseXml, VOID_UNSUPPORTED, type Attrs, type XmlNode } from "./svg-xml";
 
 export interface FlattenedPolygon {
   points: [number, number][];
@@ -64,126 +87,8 @@ export interface SvgToPolygonsResult {
   viewBox: { minX: number; minY: number; width: number; height: number };
 }
 
-interface Attrs {
-  [key: string]: string;
-}
-
-function parseAttrs(tagBody: string): Attrs {
-  const attrs: Attrs = {};
-  const re = /([a-zA-Z_:][\w:.-]*)\s*=\s*(?:"([^"]*)"|'([^']*)')/g;
-  let m: RegExpExecArray | null;
-  while ((m = re.exec(tagBody))) {
-    attrs[m[1]] = m[2] !== undefined ? m[2] : m[3];
-  }
-  return attrs;
-}
-
-interface XmlNode {
-  tag: string;
-  attrs: Attrs;
-  children: XmlNode[];
-  selfClosing: boolean;
-}
-
-const VOID_UNSUPPORTED = new Set([
-  "defs",
-  "clippath",
-  "mask",
-  "style",
-  "title",
-  "desc",
-  "symbol",
-  "text",
-  "tspan",
-  "filter",
-  "lineargradient",
-  "radialgradient",
-  "metadata",
-]);
-
 /** Safety cap on <use> -> <use> chains, in case of a reference cycle. */
 const MAX_USE_DEPTH = 10;
-
-/** Extremely small XML tag walker, sufficient for well-formed icon SVGs. */
-function parseXml(src: string): XmlNode | null {
-  const cleaned = src
-    .replace(/<\?xml[^>]*\?>/g, "")
-    .replace(/<!--[\s\S]*?-->/g, "")
-    .replace(/<!DOCTYPE[^>]*>/gi, "");
-
-  const tagRe = /<(\/?)([a-zA-Z][\w:-]*)((?:[^>"']|"[^"]*"|'[^']*')*?)(\/?)>/g;
-  const stack: XmlNode[] = [];
-  let root: XmlNode | null = null;
-  let m: RegExpExecArray | null;
-
-  while ((m = tagRe.exec(cleaned))) {
-    const [, closing, tagNameRaw, body, selfClose] = m;
-    const tagName = tagNameRaw.toLowerCase();
-    if (closing) {
-      if (stack.length && stack[stack.length - 1].tag === tagName) {
-        stack.pop();
-      }
-      continue;
-    }
-    const node: XmlNode = {
-      tag: tagName,
-      attrs: parseAttrs(body),
-      children: [],
-      selfClosing: Boolean(selfClose),
-    };
-    if (!root) root = node;
-    if (stack.length) stack[stack.length - 1].children.push(node);
-    if (!selfClose) stack.push(node);
-  }
-  return root;
-}
-
-interface GradientStop {
-  color: string;
-  /** The first stop's own `stop-opacity` (defaults to 1). A gradient that
-   * fades in from transparent (e.g. a highlight sheen) has a near-zero
-   * opacity here, which matters just as much as its color: collapsing it
-   * to just the color and ignoring the opacity would render a highlight
-   * that's meant to start invisible as a solid, opaque wash instead. */
-  opacity: number;
-}
-
-/**
- * Extracts a representative solid color (and that stop's own opacity) per
- * gradient id, from its first `<stop>`. Many brand marks layer a
- * white-to-transparent gradient as a highlight over a solid-color base
- * shape (e.g. Next.js, or the "epsagon" icon's soft shading); resolving
- * those to the gradient's own first stop (usually white, sometimes fully
- * transparent) keeps the highlight's intended visibility instead of
- * collapsing it onto an opaque color that hides the shape underneath it.
- */
-function extractGradientColors(svgContent: string): Map<string, GradientStop> {
-  const map = new Map<string, GradientStop>();
-  const gradRe = /<(linearGradient|radialGradient)\b[^>]*\bid="([^"]+)"[^>]*>([\s\S]*?)<\/\1>/gi;
-  let m: RegExpExecArray | null;
-  while ((m = gradRe.exec(svgContent))) {
-    const id = m[2];
-    const body = m[3];
-    const firstStop = /<stop\b([^>]*)\/?>/i.exec(body);
-    if (!firstStop) continue;
-    const stopTag = firstStop[1];
-    const colorMatch =
-      /\bstop-color="([^"]+)"/i.exec(stopTag) ||
-      /\bstyle="[^"]*stop-color:\s*([^;"]+)/i.exec(stopTag);
-    if (!colorMatch) continue;
-    const opacityMatch =
-      /\bstop-opacity="([^"]+)"/i.exec(stopTag) ||
-      /\bstyle="[^"]*stop-opacity:\s*([^;"]+)/i.exec(stopTag);
-    let opacity = 1;
-    if (opacityMatch) {
-      const raw = opacityMatch[1].trim();
-      const parsed = raw.endsWith("%") ? parseFloat(raw) / 100 : parseFloat(raw);
-      if (!Number.isNaN(parsed)) opacity = Math.min(1, Math.max(0, parsed));
-    }
-    map.set(id, { color: colorMatch[1].trim(), opacity });
-  }
-  return map;
-}
 
 interface ResolvedFill {
   fill: string;
@@ -197,6 +102,7 @@ function resolveFill(
   inherited: string,
   fallback: string,
   gradients: Map<string, GradientStop>,
+  classStyle?: Record<string, string>,
 ): ResolvedFill {
   let fill = attrs.fill;
   if (!fill) {
@@ -206,6 +112,7 @@ function resolveFill(
       if (m) fill = m[1].trim();
     }
   }
+  if (!fill && classStyle?.fill) fill = classStyle.fill;
   if (!fill) return { fill: inherited, opacityMultiplier: 1 };
   const trimmed = fill.trim();
   if (trimmed === "currentColor") return { fill: fallback, opacityMultiplier: 1 };
@@ -246,6 +153,51 @@ function resolveOpacity(attrs: Attrs, inherited: number): number {
   return Math.min(1, Math.max(0, parsed)) * inherited;
 }
 
+function resolveStrokeOpacity(attrs: Attrs, inherited: number): number {
+  const raw = attrs["stroke-opacity"] ?? attrs.opacity;
+  if (raw === undefined) return inherited;
+  const parsed = raw.trim().endsWith("%")
+    ? parseFloat(raw) / 100
+    : parseFloat(raw);
+  if (Number.isNaN(parsed)) return inherited;
+  return Math.min(1, Math.max(0, parsed)) * inherited;
+}
+
+/** Mirrors `resolveFill` for the `stroke` presentation attribute (default
+ * inherited value "none", per the SVG initial value). Gradient/pattern
+ * strokes are rare enough on icon-scale outline logos that we just fall
+ * back to the icon's brand color rather than resolving them properly. */
+function resolveStroke(
+  attrs: Attrs,
+  inherited: string,
+  fallback: string,
+  classStyle?: Record<string, string>,
+): string {
+  let stroke = attrs.stroke;
+  if (!stroke) {
+    const style = attrs.style;
+    if (style) {
+      const m = /(?<!-)stroke\s*:\s*([^;]+)/.exec(style);
+      if (m) stroke = m[1].trim();
+    }
+  }
+  if (!stroke && classStyle?.stroke) stroke = classStyle.stroke;
+  if (!stroke) return inherited;
+  const trimmed = stroke.trim();
+  if (trimmed === "currentColor" || trimmed.startsWith("url(")) return fallback;
+  return trimmed;
+}
+
+/** `stroke-width`'s initial value is 1 (not inherited-from-nothing like
+ * fill's "none" for stroke); it inherits down like any other presentation
+ * attribute once set. */
+function resolveStrokeWidth(attrs: Attrs, inherited: number): number {
+  const raw = attrs["stroke-width"];
+  if (raw === undefined) return inherited;
+  const parsed = parseFloat(raw);
+  return Number.isNaN(parsed) ? inherited : parsed;
+}
+
 function pointsFromAttr(pointsAttr: string): PathPoint[] {
   const scanner = new NumScanner(pointsAttr);
   const pts: PathPoint[] = [];
@@ -279,28 +231,58 @@ function resolveUseHref(attrs: Attrs): string | undefined {
   return href.slice(1);
 }
 
-function walk(
-  node: XmlNode,
-  matrix: Mat,
-  fill: string,
-  opacity: number,
-  fallback: string,
-  gradients: Map<string, GradientStop>,
-  idIndex: Map<string, XmlNode>,
-  out: FlattenedPolygon[],
-  depth = 0,
-) {
+interface PaintContext {
+  fill: string;
+  opacity: number;
+  stroke: string;
+  strokeWidth: number;
+  strokeOpacity: number;
+  fallback: string;
+  gradients: Map<string, GradientStop>;
+  idIndex: Map<string, XmlNode>;
+  stylesheet: Map<string, Record<string, string>>;
+}
+
+function walk(node: XmlNode, matrix: Mat, ctx: PaintContext, out: FlattenedPolygon[], depth = 0) {
   if (VOID_UNSUPPORTED.has(node.tag)) return;
   if (hasUnsupportedBlendMode(node.attrs)) return;
 
+  const classStyle = resolveClassStyle(node.attrs, ctx.stylesheet);
+  // display:none hides the whole subtree, same as CSS. Real-world case:
+  // Illustrator/Lottie exports with several duplicate animation-frame
+  // groups, all but one hidden via a class rule rather than an attribute.
+  if (classStyle?.display === "none") return;
+
   const ownMatrix = parseTransform(node.attrs.transform);
   const combined = multiplyMat(matrix, ownMatrix);
-  const fillResolution = resolveFill(node.attrs, fill, fallback, gradients);
+  const fillResolution = resolveFill(node.attrs, ctx.fill, ctx.fallback, ctx.gradients, classStyle);
   const resolvedFill = fillResolution.fill;
-  const resolvedOpacity = resolveOpacity(node.attrs, opacity) * fillResolution.opacityMultiplier;
+  const resolvedOpacity = resolveOpacity(node.attrs, ctx.opacity) * fillResolution.opacityMultiplier;
+  const resolvedStroke = resolveStroke(node.attrs, ctx.stroke, ctx.fallback, classStyle);
+  const resolvedStrokeWidth = resolveStrokeWidth(node.attrs, ctx.strokeWidth);
+  const resolvedStrokeOpacity = resolveStrokeOpacity(node.attrs, ctx.strokeOpacity);
+
+  const isFillNone = !resolvedFill || resolvedFill.toLowerCase() === "none";
+  const hasStroke =
+    Boolean(resolvedStroke) &&
+    resolvedStroke.toLowerCase() !== "none" &&
+    resolvedStrokeWidth > 0;
+  // Only fall back to stroke-as-fill when there's genuinely no fill: an
+  // icon that fills AND strokes a shape already looks right from the fill
+  // alone (the thin outline on top is a minor, accepted omission).
+  const strokeOnly = isFillNone && hasStroke;
+
+  const childCtx: PaintContext = {
+    ...ctx,
+    fill: resolvedFill,
+    opacity: resolvedOpacity,
+    stroke: resolvedStroke,
+    strokeWidth: resolvedStrokeWidth,
+    strokeOpacity: resolvedStrokeOpacity,
+  };
 
   const emit = (localPts: PathPoint[][]) => {
-    if (!resolvedFill || resolvedFill.toLowerCase() === "none") return;
+    if (isFillNone) return;
     for (const loop of localPts) {
       const pts: [number, number][] = loop.map((p) => applyMat(combined, p.x, p.y));
       if (pts.length >= 3) {
@@ -309,11 +291,38 @@ function walk(
     }
   };
 
+  const emitStroke = (subpaths: { points: PathPoint[]; closed: boolean }[]) => {
+    if (!hasStroke) return;
+    for (const sp of subpaths) {
+      const ribbon = strokeSubpathToRibbon(sp.points, resolvedStrokeWidth, sp.closed);
+      // Each quad/circle is pushed as its own element, deliberately not
+      // merged into one polygon: they're all fully opaque and the same
+      // color, so overlapping/touching pieces already tile seamlessly
+      // with no visible join. Merging them via the slit technique was
+      // tried and reverted - a long stroked path can fold back close to
+      // itself (e.g. a wavy line's peaks and valleys), and nearest-point
+      // bridging has no notion of path order, so it can bridge to the
+      // "wrong" nearby edge and create self-intersections that cancel
+      // large areas under nonzero fill instead of just union-ing (this
+      // silently rendered a real icon, "midjourney", completely blank).
+      for (const loop of ribbon) {
+        const pts: [number, number][] = loop.map((p) => applyMat(combined, p.x, p.y));
+        if (pts.length >= 3) {
+          out.push({ points: pts, fill: resolvedStroke, opacity: resolvedStrokeOpacity });
+        }
+      }
+    }
+  };
+
   switch (node.tag) {
     case "path": {
       if (node.attrs.d) {
         try {
-          emit(flattenPathData(node.attrs.d));
+          if (strokeOnly) {
+            emitStroke(flattenPathForStroke(node.attrs.d));
+          } else {
+            emit(flattenPathData(node.attrs.d));
+          }
         } catch {
           // skip malformed path data rather than aborting the whole icon
         }
@@ -326,14 +335,14 @@ function walk(
       const w = parseFloat(node.attrs.width || "0");
       const h = parseFloat(node.attrs.height || "0");
       if (w > 0 && h > 0) {
-        emit([
-          [
-            { x, y },
-            { x: x + w, y },
-            { x: x + w, y: y + h },
-            { x, y: y + h },
-          ],
-        ]);
+        const loop: PathPoint[] = [
+          { x, y },
+          { x: x + w, y },
+          { x: x + w, y: y + h },
+          { x, y: y + h },
+        ];
+        if (strokeOnly) emitStroke([{ points: loop, closed: true }]);
+        else emit([loop]);
       }
       break;
     }
@@ -350,7 +359,8 @@ function walk(
           const t = (s / steps) * Math.PI * 2;
           loop.push({ x: cx + rx * Math.cos(t), y: cy + ry * Math.sin(t) });
         }
-        emit([loop]);
+        if (strokeOnly) emitStroke([{ points: loop, closed: true }]);
+        else emit([loop]);
       }
       break;
     }
@@ -358,7 +368,13 @@ function walk(
     case "polyline": {
       if (node.attrs.points) {
         const pts = pointsFromAttr(node.attrs.points);
-        if (pts.length >= 3) emit([pts]);
+        if (strokeOnly && pts.length >= 2) {
+          // A <polygon> is implicitly closed even for its stroke; a
+          // <polyline> is not.
+          emitStroke([{ points: pts, closed: node.tag === "polygon" }]);
+        } else if (!strokeOnly && pts.length >= 3) {
+          emit([pts]);
+        }
       }
       break;
     }
@@ -368,25 +384,37 @@ function walk(
         break;
       }
       const targetId = resolveUseHref(node.attrs);
-      const target = targetId ? idIndex.get(targetId) : undefined;
+      const target = targetId ? ctx.idIndex.get(targetId) : undefined;
       if (!target || target === node) break;
 
-      // <use x, y> is an additional translate applied to the referenced
-      // content, on top of the use element's own transform (already
-      // folded into `combined` above).
-      const ux = parseFloat(node.attrs.x || "0");
-      const uy = parseFloat(node.attrs.y || "0");
-      const targetMatrix = ux || uy ? multiplyMat(combined, [1, 0, 0, 1, ux, uy]) : combined;
+      // <use x, y> is a plain additional translate for an ordinary
+      // referenced element. For a <symbol> target, x/y/width/height
+      // instead establish a *viewport* that the symbol's own viewBox gets
+      // fit into (real SVG-in-SVG semantics we don't implement) - treating
+      // them as a plain translate double-counts an offset that a
+      // hand-authored `transform` on the same <use> may already fully
+      // compensate for (confirmed on a real icon: marqeta's use element
+      // carries both `x="-752.1" y="-107.3"` *and*
+      // `transform="matrix(0.37 0 0 0.37 278.3 39.7)"`, where the matrix
+      // alone already maps the symbol's declared viewBox exactly onto the
+      // root viewBox). So x/y are only applied when the target isn't a
+      // <symbol>.
+      let targetMatrix = combined;
+      if (target.tag !== "symbol") {
+        const ux = parseFloat(node.attrs.x || "0");
+        const uy = parseFloat(node.attrs.y || "0");
+        if (ux || uy) targetMatrix = multiplyMat(combined, [1, 0, 0, 1, ux, uy]);
+      }
 
       if (VOID_UNSUPPORTED.has(target.tag)) {
         // The target is a container that's never painted directly (e.g. a
         // <symbol>, or a shape parked inside <defs> alongside real defs);
         // walk its children in its place instead of bailing on it.
         for (const child of target.children) {
-          walk(child, targetMatrix, resolvedFill, resolvedOpacity, fallback, gradients, idIndex, out, depth + 1);
+          walk(child, targetMatrix, childCtx, out, depth + 1);
         }
       } else {
-        walk(target, targetMatrix, resolvedFill, resolvedOpacity, fallback, gradients, idIndex, out, depth + 1);
+        walk(target, targetMatrix, childCtx, out, depth + 1);
       }
       break;
     }
@@ -395,7 +423,7 @@ function walk(
   }
 
   for (const child of node.children) {
-    walk(child, combined, resolvedFill, resolvedOpacity, fallback, gradients, idIndex, out, depth);
+    walk(child, combined, childCtx, out, depth);
   }
 }
 
@@ -424,12 +452,24 @@ export function svgToPolygons(svgContent: string, fallbackFill: string): SvgToPo
   const viewBox = parseViewBox(root);
   const gradients = extractGradientColors(svgContent);
   const idIndex = buildIdIndex(root);
-  const rootFillResolution = resolveFill(root.attrs, "#000000", fallbackFill, gradients);
-  const rootFill = rootFillResolution.fill;
-  const rootOpacity = resolveOpacity(root.attrs, 1) * rootFillResolution.opacityMultiplier;
+  const stylesheet = parseStylesheet(svgContent);
+  const rootClassStyle = resolveClassStyle(root.attrs, stylesheet);
+  const rootFillResolution = resolveFill(root.attrs, "#000000", fallbackFill, gradients, rootClassStyle);
+  const rootCtx: PaintContext = {
+    fill: rootFillResolution.fill,
+    opacity: resolveOpacity(root.attrs, 1) * rootFillResolution.opacityMultiplier,
+    // SVG initial values: no stroke, width 1, fully opaque.
+    stroke: resolveStroke(root.attrs, "none", fallbackFill, rootClassStyle),
+    strokeWidth: resolveStrokeWidth(root.attrs, 1),
+    strokeOpacity: resolveStrokeOpacity(root.attrs, 1),
+    fallback: fallbackFill,
+    gradients,
+    idIndex,
+    stylesheet,
+  };
   const shapes: FlattenedPolygon[] = [];
   for (const child of root.children) {
-    walk(child, IDENTITY, rootFill, rootOpacity, fallbackFill, gradients, idIndex, shapes);
+    walk(child, IDENTITY, rootCtx, shapes);
   }
   return { shapes, viewBox };
 }

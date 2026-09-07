@@ -84,6 +84,25 @@ function round2(n: number): number {
  * scales from SVG viewBox units to the target pixel height, offsets by
  * (offsetX, offsetY) for grid layout, and stores points relative to each
  * element's own bounding-box origin (as Excalidraw expects).
+ *
+ * Each shape becomes its own element, deliberately not merged with
+ * touching/overlapping same-color siblings: fully opaque same-color
+ * shapes already tile seamlessly with no visible join, so no merge is
+ * needed for that. It's tempting to reach for one anyway (a stray
+ * sub-pixel gap between two shapes an author intended to align exactly
+ * can show as a faint seam at small preview sizes), but a purely
+ * geometric "close enough to bridge" merge was tried here and reverted:
+ * nearest-point slit-bridging has no notion of which edge is the
+ * "correct" neighbor, so for anything with many pieces or a shape that
+ * folds back close to itself (a long wavy stroke's peaks and valleys, or
+ * several unrelated same-color shapes scattered across one icon) it can
+ * bridge to the wrong nearby edge and self-intersect, cancelling large
+ * areas under nonzero fill instead of just union-ing them. That silently
+ * rendered a real icon ("midjourney") completely blank. The one merge
+ * that *is* safe and still happens is multiple subpaths within a single
+ * `<path>`'s own fill (svg-path-data.ts's even-odd hole merge), because
+ * there "belongs together" is structurally guaranteed by the source
+ * markup rather than inferred from distance.
  */
 export function polygonsToElements(
   shapes: FlattenedPolygon[],
