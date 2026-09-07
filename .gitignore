@@ -56,6 +56,9 @@ CLAUDE.md
 # generated API files (built from icons.json at build time)
 public/api/
 
+# generated draw.io shape libraries (built from icons.json at build time)
+public/integrations/drawio/
+
 # generated Excalidraw shape libraries (built from icons.json at build time)
 public/integrations/excalidraw/
 

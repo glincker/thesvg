@@ -5,8 +5,32 @@
     <link>https://thesvg.org/blog</link>
     <description>Announcements, releases, and updates from theSVG - the open SVG brand library</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 May 2026 06:15:14 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 03:27:02 GMT</lastBuildDate>
     <atom:link href="https://thesvg.org/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>12 draw.io / diagrams.net Shape Libraries Are Live</title>
+      <link>https://thesvg.org/blog/drawio-shape-libraries-launch</link>
+      <guid isPermaLink="true">https://thesvg.org/blog/drawio-shape-libraries-launch</guid>
+      <description>Download 12 category-based shape libraries for draw.io and diagrams.net, covering brand and dev-tool logos the built-in AWS, Azure, GCP, and Kubernetes libraries do not include.</description>
+      <pubDate>Sun, 06 Sep 2026 00:00:00 GMT</pubDate>
+      <author>team@thesvg.org (theSVG Team)</author>
+      <category>release</category>
+      <category>drawio</category>
+      <category>integration</category>
+    </item>
+    <item>
+      <title>AWS vs Azure vs GCP Icons: Which Cloud Icon Set Should You Use?</title>
+      <link>https://thesvg.org/blog/aws-vs-azure-vs-gcp-icons</link>
+      <guid isPermaLink="true">https://thesvg.org/blog/aws-vs-azure-vs-gcp-icons</guid>
+      <description>AWS, Azure, and GCP each ship their own icon set with a different visual language. Here is how they differ, and how to get all three in one consistent format for diagrams that mix providers.</description>
+      <pubDate>Sun, 06 Sep 2026 00:00:00 GMT</pubDate>
+      <author>team@thesvg.org (theSVG Team)</author>
+      <category>comparison</category>
+      <category>aws</category>
+      <category>azure</category>
+      <category>gcp</category>
+      <category>cloud</category>
+    </item>
     <item>
       <title>Google 2026 Icons Are Live: 13 New Gradient Logos in SVG</title>
       <link>https://thesvg.org/blog/google-2026-icons-svg</link>

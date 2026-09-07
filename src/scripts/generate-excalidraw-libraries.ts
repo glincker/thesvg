@@ -25,8 +25,8 @@
  *   recomputing the count itself)
  */
 
-import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "fs";
-import { join } from "path";
+import { existsSync, mkdirSync, readFileSync, realpathSync, rmSync, writeFileSync } from "fs";
+import { join, resolve, sep } from "path";
 
 import { getAllIcons, type IconEntry } from "../lib/icons";
 import {
@@ -44,6 +44,7 @@ import { svgToPolygons } from "../lib/svg-path-to-polygons";
 
 const ROOT = join(__dirname, "../..");
 const PUBLIC_DIR = join(ROOT, "public");
+const ICONS_DIR = resolve(PUBLIC_DIR, "icons") + sep;
 const OUT_DIR = join(PUBLIC_DIR, "integrations/excalidraw");
 const COUNTS_MANIFEST = join(ROOT, "src/data/excalidraw-library-counts.json");
 
@@ -58,10 +59,18 @@ function buildLibraryItem(icon: IconEntry, gridIndex: number): ExcalidrawLibrary
   const svgPath = icon.variants.default;
   if (!svgPath) return null;
 
-  const filePath = join(PUBLIC_DIR, svgPath.replace(/^\//, ""));
-  if (!existsSync(filePath)) return null;
+  const filePath = resolve(PUBLIC_DIR, `.${svgPath}`);
+  if (!filePath.startsWith(ICONS_DIR) || !existsSync(filePath)) return null;
 
-  const svgContent = readFileSync(filePath, "utf-8");
+  // realpathSync (not just resolve) so a symlink under public/icons/
+  // pointing outside it can't smuggle an arbitrary file into a generated,
+  // publicly downloadable library.
+  const realPath = realpathSync(filePath);
+  if (!realPath.startsWith(ICONS_DIR)) {
+    throw new Error(`variant path "${svgPath}" resolves (via symlink) outside public/icons/, refusing to read`);
+  }
+
+  const svgContent = readFileSync(realPath, "utf-8");
   const fallbackFill = icon.hex.startsWith("#") ? icon.hex : `#${icon.hex}`;
   const { shapes, viewBox } = svgToPolygons(svgContent, fallbackFill);
   if (!shapes.length) return null;
