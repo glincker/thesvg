@@ -113,6 +113,14 @@ export function polygonsToElements(
     const maxX = Math.max(...xs);
     const maxY = Math.max(...ys);
 
+    // Skip true point-degenerate shapes (near-zero bounding box after
+    // rounding): a handful of source icons have sliver decorative marks
+    // that flatten down to a single point at this scale. Note this is not
+    // a signed-area check: self-intersecting "bowtie" shapes (two lobes
+    // meeting at one vertex) are legitimate and render fine under the
+    // nonzero fill rule even though their shoelace area can cancel out.
+    if (maxX - minX < 0.05 && maxY - minY < 0.05) continue;
+
     const rel: [number, number][] = abs.map(([x, y]) => [
       round2(x - minX),
       round2(y - minY),

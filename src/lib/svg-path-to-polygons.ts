@@ -30,8 +30,14 @@
  *   for the common white-highlight-over-solid-shape pattern); true
  *   multi-stop gradients aren't reproduced. `currentColor` resolves to the
  *   supplied fallback (the icon's brand hex).
- * - `<use>`, `<mask>`, `<clipPath>`, `<text>`, and stroke-only shapes are
- *   skipped.
+ * - `<use>` is resolved by id against the whole parsed document (not just
+ *   `<defs>`, since some icons put the source shape as a plain sibling),
+ *   composing the use's own x/y/transform with the target's, and recursing
+ *   so a `<use>` of a `<g>` that itself contains further `<use>`s works.
+ *   Elements inside `<defs>` still never render on their own, only via a
+ *   `<use>` reference. `<mask>`/`<clipPath>` are not applied (the masked
+ *   content just renders unclipped) since real alpha masking is out of
+ *   scope; `<text>` and stroke-only shapes are skipped.
  */
 
 import { IDENTITY, applyMat, multiplyMat, parseTransform, type Mat } from "./svg-matrix";
@@ -77,7 +83,6 @@ const VOID_UNSUPPORTED = new Set([
   "title",
   "desc",
   "symbol",
-  "use",
   "text",
   "tspan",
   "filter",
@@ -85,6 +90,9 @@ const VOID_UNSUPPORTED = new Set([
   "radialgradient",
   "metadata",
 ]);
+
+/** Safety cap on <use> -> <use> chains, in case of a reference cycle. */
+const MAX_USE_DEPTH = 10;
 
 /** Extremely small XML tag walker, sufficient for well-formed icon SVGs. */
 function parseXml(src: string): XmlNode | null {
@@ -190,6 +198,27 @@ function pointsFromAttr(pointsAttr: string): PathPoint[] {
   return pts;
 }
 
+/** Indexes every node with an `id` attribute, anywhere in the document
+ * (including inside `<defs>`), so `<use>` can resolve its target
+ * regardless of where the source shape happens to live. */
+function buildIdIndex(root: XmlNode): Map<string, XmlNode> {
+  const index = new Map<string, XmlNode>();
+  const visit = (node: XmlNode) => {
+    if (node.attrs.id && !index.has(node.attrs.id)) {
+      index.set(node.attrs.id, node);
+    }
+    for (const child of node.children) visit(child);
+  };
+  visit(root);
+  return index;
+}
+
+function resolveUseHref(attrs: Attrs): string | undefined {
+  const href = attrs.href || attrs["xlink:href"];
+  if (!href || !href.startsWith("#")) return undefined;
+  return href.slice(1);
+}
+
 function walk(
   node: XmlNode,
   matrix: Mat,
@@ -197,7 +226,9 @@ function walk(
   opacity: number,
   fallback: string,
   gradients: Map<string, string>,
+  idIndex: Map<string, XmlNode>,
   out: FlattenedPolygon[],
+  depth = 0,
 ) {
   if (VOID_UNSUPPORTED.has(node.tag)) return;
 
@@ -269,12 +300,40 @@ function walk(
       }
       break;
     }
+    case "use": {
+      if (depth >= MAX_USE_DEPTH) {
+        console.warn(`  svg-to-excalidraw: <use> nesting exceeded ${MAX_USE_DEPTH}, likely a cycle; skipping`);
+        break;
+      }
+      const targetId = resolveUseHref(node.attrs);
+      const target = targetId ? idIndex.get(targetId) : undefined;
+      if (!target || target === node) break;
+
+      // <use x, y> is an additional translate applied to the referenced
+      // content, on top of the use element's own transform (already
+      // folded into `combined` above).
+      const ux = parseFloat(node.attrs.x || "0");
+      const uy = parseFloat(node.attrs.y || "0");
+      const targetMatrix = ux || uy ? multiplyMat(combined, [1, 0, 0, 1, ux, uy]) : combined;
+
+      if (VOID_UNSUPPORTED.has(target.tag)) {
+        // The target is a container that's never painted directly (e.g. a
+        // <symbol>, or a shape parked inside <defs> alongside real defs);
+        // walk its children in its place instead of bailing on it.
+        for (const child of target.children) {
+          walk(child, targetMatrix, resolvedFill, resolvedOpacity, fallback, gradients, idIndex, out, depth + 1);
+        }
+      } else {
+        walk(target, targetMatrix, resolvedFill, resolvedOpacity, fallback, gradients, idIndex, out, depth + 1);
+      }
+      break;
+    }
     default:
       break;
   }
 
   for (const child of node.children) {
-    walk(child, combined, resolvedFill, resolvedOpacity, fallback, gradients, out);
+    walk(child, combined, resolvedFill, resolvedOpacity, fallback, gradients, idIndex, out, depth);
   }
 }
 
@@ -302,11 +361,12 @@ export function svgToPolygons(svgContent: string, fallbackFill: string): SvgToPo
   }
   const viewBox = parseViewBox(root);
   const gradients = extractGradientColors(svgContent);
+  const idIndex = buildIdIndex(root);
   const rootFill = resolveFill(root.attrs, "#000000", fallbackFill, gradients);
   const rootOpacity = resolveOpacity(root.attrs, 1);
   const shapes: FlattenedPolygon[] = [];
   for (const child of root.children) {
-    walk(child, IDENTITY, rootFill, rootOpacity, fallbackFill, gradients, shapes);
+    walk(child, IDENTITY, rootFill, rootOpacity, fallbackFill, gradients, idIndex, shapes);
   }
   return { shapes, viewBox };
 }

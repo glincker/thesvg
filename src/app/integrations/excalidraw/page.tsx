@@ -2,9 +2,10 @@ import { Suspense } from "react";
 import { Download, MousePointerClick, Shapes } from "lucide-react";
 import type { Metadata } from "next";
 
-import { getAllIcons, getCategoryCounts } from "@/lib/icons";
-import { EXCALIDRAW_LIBRARIES, getIconsForExcalidrawLibrary } from "@/lib/excalidraw-libraries";
+import { getCategoryCounts } from "@/lib/icons";
+import { EXCALIDRAW_LIBRARIES } from "@/lib/excalidraw-libraries";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
+import libraryCounts from "@/data/excalidraw-library-counts.json";
 
 export const metadata: Metadata = {
   title: "Excalidraw Shape Libraries - Brand & Dev Tool Icons",
@@ -57,9 +58,10 @@ function LibraryCard({ label, slug, count }: { label: string; slug: string; coun
   );
 }
 
+const counts: Record<string, number> = libraryCounts;
+
 export default function ExcalidrawIntegrationPage() {
   const categoryCounts = getCategoryCounts();
-  const allIcons = getAllIcons();
 
   return (
     <Suspense>
@@ -111,7 +113,7 @@ export default function ExcalidrawIntegrationPage() {
                 key={lib.slug}
                 label={lib.label}
                 slug={lib.slug}
-                count={getIconsForExcalidrawLibrary(allIcons, lib).length}
+                count={counts[lib.slug] ?? 0}
               />
             ))}
           </div>

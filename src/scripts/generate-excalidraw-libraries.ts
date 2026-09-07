@@ -18,6 +18,11 @@
  * Outputs:
  *   public/integrations/excalidraw/{slug}.excalidrawlib - one file per
  *   category in EXCALIDRAW_LIBRARIES
+ *   src/data/excalidraw-library-counts.json - committed manifest of the
+ *   actual icon count that made it into each generated file (a raw
+ *   category filter count can diverge from this if an icon fails
+ *   conversion, so the site page reads this manifest rather than
+ *   recomputing the count itself)
  */
 
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "fs";
@@ -40,6 +45,7 @@ import { svgToPolygons } from "../lib/svg-path-to-polygons";
 const ROOT = join(__dirname, "../..");
 const PUBLIC_DIR = join(ROOT, "public");
 const OUT_DIR = join(PUBLIC_DIR, "integrations/excalidraw");
+const COUNTS_MANIFEST = join(ROOT, "src/data/excalidraw-library-counts.json");
 
 /** Target rendered height (px) for each icon; width scales to preserve
  * the source viewBox's aspect ratio. */
@@ -81,7 +87,7 @@ function buildLibraryItem(icon: IconEntry, gridIndex: number): ExcalidrawLibrary
   };
 }
 
-function generateCategory(lib: ExcalidrawLibraryCategory, allIcons: IconEntry[]): void {
+function generateCategory(lib: ExcalidrawLibraryCategory, allIcons: IconEntry[]): number {
   const icons = getIconsForExcalidrawLibrary(allIcons, lib);
   const libraryItems: ExcalidrawLibraryItem[] = [];
   let skipped = 0;
@@ -120,6 +126,8 @@ function generateCategory(lib: ExcalidrawLibraryCategory, allIcons: IconEntry[])
     `  ${lib.slug}.excalidrawlib: ${libraryItems.length} icons, ${elementCount} elements, ${sizeKb} KB` +
       (skipped ? ` (${skipped} skipped)` : ""),
   );
+
+  return libraryItems.length;
 }
 
 function main(): void {
@@ -130,9 +138,14 @@ function main(): void {
 
   const allIcons = getAllIcons();
   console.log(`Generating Excalidraw libraries from ${allIcons.length} icons...`);
+
+  const counts: Record<string, number> = {};
   for (const lib of EXCALIDRAW_LIBRARIES) {
-    generateCategory(lib, allIcons);
+    counts[lib.slug] = generateCategory(lib, allIcons);
   }
+
+  writeFileSync(COUNTS_MANIFEST, `${JSON.stringify(counts, null, 2)}\n`);
+  console.log(`  wrote ${COUNTS_MANIFEST.replace(ROOT, ".")}`);
   console.log("Excalidraw library generation complete.");
 }
 
