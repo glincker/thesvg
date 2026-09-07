@@ -8,6 +8,7 @@
  * and packages/common/src/constants.ts.
  */
 
+import { randomInt, randomUUID } from "crypto";
 import type { FlattenedPolygon } from "./svg-path-to-polygons";
 
 /** Minimal fields restoreElement()/restoreElementWithProperties() require
@@ -66,16 +67,9 @@ export interface ExcalidrawLibraryFile {
   libraryItems: ExcalidrawLibraryItem[];
 }
 
-let idCounter = 0;
-
 /** Short unique id, good enough for locally-generated library files. */
 export function generateExcalidrawId(): string {
-  idCounter += 1;
-  return (
-    Date.now().toString(36) +
-    idCounter.toString(36) +
-    Math.random().toString(36).slice(2, 8)
-  );
+  return randomUUID();
 }
 
 /** Rounds to 2 decimal places; more than enough precision at icon scale,
@@ -149,9 +143,9 @@ export function polygonsToElements(
       groupIds: [groupId],
       frameId: null,
       roundness: null,
-      seed: Math.floor(Math.random() * 2 ** 31),
+      seed: randomInt(2 ** 31),
       version: 1,
-      versionNonce: Math.floor(Math.random() * 2 ** 31),
+      versionNonce: randomInt(2 ** 31),
       isDeleted: false,
       boundElements: [],
       updated: Date.now(),
