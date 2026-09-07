@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="100%" height="100%">
+  <g fill="#FFFFFF">
+    <!-- Vertical Main Stem -->
+    <rect x="40" y="40" width="14" height="150" rx="2" />
+
+    <!-- Top Loop -->
+    <path d="M 40 40 
+             H 95 
+             C 125 40, 125 110, 95 110 
+             H 54 
+             V 96 
+             H 93 
+             C 109 96, 109 54, 93 54 
+             H 40 
+             Z" />
+
+    <!-- Diagonal Right Leg -->
+    <path d="M 75 100 
+             L 130 183 
+             H 112 
+             L 60 100 
+             Z" />
+
+    <!-- Top Horizontal Crossbar -->
+    <rect x="25" y="70" width="115" height="12" rx="2" />
+
+    <!-- Bottom Horizontal Crossbar -->
+    <rect x="25" y="94" width="115" height="12" rx="2" />
+  </g>
+</svg>
