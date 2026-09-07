@@ -71420,6 +71420,22 @@
     "collection": "brands"
   },
   {
+    "slug": "ivy-framework",
+    "title": "Ivy Framework",
+    "aliases": [],
+    "hex": "00D18E",
+    "categories": [
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/ivy-framework/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://ivy.app",
+    "collection": "brands",
+    "dateAdded": "2026-09-07"
+  },
+  {
     "slug": "jabber",
     "title": "Jabber",
     "aliases": [],
