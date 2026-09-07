@@ -34,10 +34,20 @@
  *   `<defs>`, since some icons put the source shape as a plain sibling),
  *   composing the use's own x/y/transform with the target's, and recursing
  *   so a `<use>` of a `<g>` that itself contains further `<use>`s works.
- *   Elements inside `<defs>` still never render on their own, only via a
- *   `<use>` reference. `<mask>`/`<clipPath>` are not applied (the masked
- *   content just renders unclipped) since real alpha masking is out of
- *   scope; `<text>` and stroke-only shapes are skipped.
+ *   The use element's own presentation attributes (fill, etc.) are what
+ *   the target inherits if it has none of its own, matching SVG's actual
+ *   inheritance context for a `<use>`'s shadow content. Elements inside
+ *   `<defs>` still never render on their own, only via a `<use>` reference.
+ * - Elements with a non-"normal" `mix-blend-mode` style are skipped
+ *   outright rather than painted as an opaque layer: several crypto/badge
+ *   icons (ethereum, bitcoin, bnb, dogecoin, algorand) layer a translucent
+ *   white "soft-light" sheen circle over their solid background circle,
+ *   and painting that sheen at full opacity (the only option without real
+ *   blend-mode compositing) would hide the actual brand color underneath
+ *   instead of just losing the subtle highlight.
+ * - `<mask>`/`<clipPath>` are not applied (the masked content just renders
+ *   unclipped) since real alpha masking is out of scope; `<text>` and
+ *   stroke-only shapes are skipped.
  */
 
 import { IDENTITY, applyMat, multiplyMat, parseTransform, type Mat } from "./svg-matrix";
@@ -128,35 +138,66 @@ function parseXml(src: string): XmlNode | null {
   return root;
 }
 
+interface GradientStop {
+  color: string;
+  /** The first stop's own `stop-opacity` (defaults to 1). A gradient that
+   * fades in from transparent (e.g. a highlight sheen) has a near-zero
+   * opacity here, which matters just as much as its color: collapsing it
+   * to just the color and ignoring the opacity would render a highlight
+   * that's meant to start invisible as a solid, opaque wash instead. */
+  opacity: number;
+}
+
 /**
- * Extracts a representative solid color per gradient id, from its first
- * `<stop>`. Many brand marks layer a white-to-transparent gradient as a
- * highlight over a solid-color base shape (e.g. Next.js); resolving those
- * to the gradient's own first stop (usually white) keeps the highlight
- * visible instead of collapsing it onto the same fallback color as the
- * shape underneath it.
+ * Extracts a representative solid color (and that stop's own opacity) per
+ * gradient id, from its first `<stop>`. Many brand marks layer a
+ * white-to-transparent gradient as a highlight over a solid-color base
+ * shape (e.g. Next.js, or the "epsagon" icon's soft shading); resolving
+ * those to the gradient's own first stop (usually white, sometimes fully
+ * transparent) keeps the highlight's intended visibility instead of
+ * collapsing it onto an opaque color that hides the shape underneath it.
  */
-function extractGradientColors(svgContent: string): Map<string, string> {
-  const map = new Map<string, string>();
+function extractGradientColors(svgContent: string): Map<string, GradientStop> {
+  const map = new Map<string, GradientStop>();
   const gradRe = /<(linearGradient|radialGradient)\b[^>]*\bid="([^"]+)"[^>]*>([\s\S]*?)<\/\1>/gi;
   let m: RegExpExecArray | null;
   while ((m = gradRe.exec(svgContent))) {
     const id = m[2];
     const body = m[3];
-    const stopColor =
-      /<stop\b[^>]*\bstop-color="([^"]+)"/i.exec(body) ||
-      /<stop\b[^>]*\bstyle="[^"]*stop-color:\s*([^;"]+)/i.exec(body);
-    if (stopColor) map.set(id, stopColor[1].trim());
+    const firstStop = /<stop\b([^>]*)\/?>/i.exec(body);
+    if (!firstStop) continue;
+    const stopTag = firstStop[1];
+    const colorMatch =
+      /\bstop-color="([^"]+)"/i.exec(stopTag) ||
+      /\bstyle="[^"]*stop-color:\s*([^;"]+)/i.exec(stopTag);
+    if (!colorMatch) continue;
+    const opacityMatch =
+      /\bstop-opacity="([^"]+)"/i.exec(stopTag) ||
+      /\bstyle="[^"]*stop-opacity:\s*([^;"]+)/i.exec(stopTag);
+    let opacity = 1;
+    if (opacityMatch) {
+      const raw = opacityMatch[1].trim();
+      const parsed = raw.endsWith("%") ? parseFloat(raw) / 100 : parseFloat(raw);
+      if (!Number.isNaN(parsed)) opacity = Math.min(1, Math.max(0, parsed));
+    }
+    map.set(id, { color: colorMatch[1].trim(), opacity });
   }
   return map;
+}
+
+interface ResolvedFill {
+  fill: string;
+  /** Multiplies into the element's own opacity; only ever <1 for a
+   * `url(#gradient)` fill whose first stop itself has stop-opacity <1. */
+  opacityMultiplier: number;
 }
 
 function resolveFill(
   attrs: Attrs,
   inherited: string,
   fallback: string,
-  gradients: Map<string, string>,
-): string {
+  gradients: Map<string, GradientStop>,
+): ResolvedFill {
   let fill = attrs.fill;
   if (!fill) {
     const style = attrs.style;
@@ -165,15 +206,34 @@ function resolveFill(
       if (m) fill = m[1].trim();
     }
   }
-  if (!fill) return inherited;
+  if (!fill) return { fill: inherited, opacityMultiplier: 1 };
   const trimmed = fill.trim();
-  if (trimmed === "currentColor") return fallback;
+  if (trimmed === "currentColor") return { fill: fallback, opacityMultiplier: 1 };
   if (trimmed.startsWith("url(")) {
     const idMatch = /url\(#([^)]+)\)/.exec(trimmed);
-    const resolved = idMatch && gradients.get(idMatch[1]);
-    return resolved || fallback;
+    const stop = idMatch ? gradients.get(idMatch[1]) : undefined;
+    if (stop) return { fill: stop.color, opacityMultiplier: stop.opacity };
+    return { fill: fallback, opacityMultiplier: 1 };
   }
-  return trimmed;
+  return { fill: trimmed, opacityMultiplier: 1 };
+}
+
+/**
+ * True if this element carries a non-"normal" `mix-blend-mode` (a common
+ * pattern for a translucent "sheen" circle layered over a solid badge
+ * background, e.g. the ethereum/bitcoin/bnb/dogecoin/algorand crypto
+ * icons). We have no way to composite blend modes correctly, and the
+ * naive alternative, painting the layer as a plain opaque/semi-opaque
+ * fill, is actively wrong: a white "soft-light" sheen at full opacity
+ * paints over and hides the real background color entirely rather than
+ * subtly brightening it. Skipping the shape loses a cosmetic highlight
+ * but keeps the actual brand color intact, which matters far more here.
+ */
+function hasUnsupportedBlendMode(attrs: Attrs): boolean {
+  const style = attrs.style;
+  if (!style) return false;
+  const m = /mix-blend-mode\s*:\s*([^;]+)/i.exec(style);
+  return Boolean(m && m[1].trim().toLowerCase() !== "normal");
 }
 
 function resolveOpacity(attrs: Attrs, inherited: number): number {
@@ -225,17 +285,19 @@ function walk(
   fill: string,
   opacity: number,
   fallback: string,
-  gradients: Map<string, string>,
+  gradients: Map<string, GradientStop>,
   idIndex: Map<string, XmlNode>,
   out: FlattenedPolygon[],
   depth = 0,
 ) {
   if (VOID_UNSUPPORTED.has(node.tag)) return;
+  if (hasUnsupportedBlendMode(node.attrs)) return;
 
   const ownMatrix = parseTransform(node.attrs.transform);
   const combined = multiplyMat(matrix, ownMatrix);
-  const resolvedFill = resolveFill(node.attrs, fill, fallback, gradients);
-  const resolvedOpacity = resolveOpacity(node.attrs, opacity);
+  const fillResolution = resolveFill(node.attrs, fill, fallback, gradients);
+  const resolvedFill = fillResolution.fill;
+  const resolvedOpacity = resolveOpacity(node.attrs, opacity) * fillResolution.opacityMultiplier;
 
   const emit = (localPts: PathPoint[][]) => {
     if (!resolvedFill || resolvedFill.toLowerCase() === "none") return;
@@ -362,8 +424,9 @@ export function svgToPolygons(svgContent: string, fallbackFill: string): SvgToPo
   const viewBox = parseViewBox(root);
   const gradients = extractGradientColors(svgContent);
   const idIndex = buildIdIndex(root);
-  const rootFill = resolveFill(root.attrs, "#000000", fallbackFill, gradients);
-  const rootOpacity = resolveOpacity(root.attrs, 1);
+  const rootFillResolution = resolveFill(root.attrs, "#000000", fallbackFill, gradients);
+  const rootFill = rootFillResolution.fill;
+  const rootOpacity = resolveOpacity(root.attrs, 1) * rootFillResolution.opacityMultiplier;
   const shapes: FlattenedPolygon[] = [];
   for (const child of root.children) {
     walk(child, IDENTITY, rootFill, rootOpacity, fallbackFill, gradients, idIndex, shapes);
