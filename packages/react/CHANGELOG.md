@@ -1,5 +1,11 @@
 # @thesvg/react
 
+## 3.3.3
+
+### Patch Changes
+
+- feat: add Chunk icon and CircleCI dark/light variants ([#980](https://github.com/glincker/thesvg/issues/980))
+
 ## 3.3.2
 
 ### Patch Changes
