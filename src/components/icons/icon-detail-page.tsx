@@ -1,27 +1,32 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import type { CSSProperties } from "react";
 import posthog from "posthog-js";
 import Link from "next/link";
 import { useSearchParams, usePathname } from "next/navigation";
 import {
   ArrowUpRight,
-  Globe,
   Heart,
   Home,
 } from "lucide-react";
+import { BookOpenText } from "@phosphor-icons/react/dist/ssr";
 import { Badge } from "@/components/ui/badge";
 import { getIconBySlug, type IconEntry } from "@/lib/icons";
 import { useFavoritesStore } from "@/lib/stores/favorites-store";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import { cn } from "@/lib/utils";
 import { categoryUrl } from "@/lib/categories";
+import { BrandGlow } from "@/components/icons/detail/brand-glow";
+import { brandGlowColor } from "@/lib/brand-glow-color";
+import { IconInspectorModal } from "@/components/icons/detail/icon-inspector-modal";
 import { JsDelivrButton } from "@/components/icons/detail/jsdelivr-button";
 import { VariantPicker } from "@/components/icons/detail/variant-picker";
 import { QuickCommands } from "@/components/icons/detail/quick-commands";
 import { CodeBlock } from "@/components/icons/detail/code-block";
 import { PngExport } from "@/components/icons/detail/png-export";
 import { ContributionCta } from "@/components/icons/detail/contribution-cta";
+import { QualityScoreCard } from "@/components/icons/detail/quality-score-card";
 import { DownloadMenu } from "@/components/icons/detail/download-menu";
 import { OpenInEditorMenu } from "@/components/icons/detail/open-in-editor-menu";
 
@@ -138,9 +143,11 @@ export function IconDetailPage({
   }, [currentPath]);
 
   const primaryCategory = icon.categories[0] ?? null;
+  const previewTint = useMemo(() => brandGlowColor(icon.hex), [icon.hex]);
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
+      <BrandGlow hex={icon.hex} />
       {/* Breadcrumb */}
       <nav
         aria-label="Breadcrumb"
@@ -174,8 +181,21 @@ export function IconDetailPage({
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-[280px_1fr]">
         {/* Left column: large preview - sticky on desktop */}
         <div className="flex flex-col gap-4 lg:sticky lg:top-20 lg:h-fit">
-          {/* Preview card */}
-          <div className="icon-preview-bg relative flex items-center justify-center rounded-2xl p-16 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg">
+          {/* Preview card. `--icon-tint` is a deliberate, narrow exception to
+              the Tailwind-only rule: it carries a per-icon color derived at
+              runtime from each icon's own hex, one of thousands of distinct
+              values, so it cannot be expressed as a static utility class. */}
+          <div
+            className={cn(
+              "icon-preview-bg relative flex items-center justify-center rounded-2xl p-16 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg",
+              previewTint && "icon-preview-bg--tinted"
+            )}
+            style={
+              previewTint
+                ? ({ "--icon-tint": previewTint } as CSSProperties)
+                : undefined
+            }
+          >
             <img
               src={currentPath}
               alt={icon.title}
@@ -207,10 +227,14 @@ export function IconDetailPage({
             >
               <Heart className={cn("h-4 w-4", isFavorite && "fill-current")} />
             </button>
+
+            <IconInspectorModal title={icon.title} src={currentPath} />
           </div>
 
+          <QualityScoreCard icon={icon} />
+
           {/* Quick metadata */}
-          <div className="rounded-xl border border-border bg-card p-3 shadow-sm space-y-2.5">
+          <div className="rounded-xl border border-border/60 bg-card p-3 shadow-sm space-y-2.5">
             {icon.license && (
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
@@ -245,7 +269,7 @@ export function IconDetailPage({
 
           {/* Categories */}
           {icon.categories.length > 0 && (
-            <div className="rounded-xl border border-border bg-card p-3 shadow-sm">
+            <div className="rounded-xl border border-border/60 bg-card p-3 shadow-sm">
               <p className="mb-2 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
                 Categories
               </p>
@@ -269,7 +293,7 @@ export function IconDetailPage({
 
           {/* Aliases */}
           {icon.aliases.length > 0 && (
-            <div className="rounded-xl border border-border bg-card p-3 shadow-sm">
+            <div className="rounded-xl border border-border/60 bg-card p-3 shadow-sm">
               <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
                 Also known as
               </p>
@@ -311,51 +335,52 @@ export function IconDetailPage({
           })()}
 
           {/* Website + Guidelines links */}
-          {(icon.url || icon.guidelines) && (
-            <div className="space-y-1.5">
-              {icon.url &&
-                (() => {
-                  const hostname = new URL(icon.url).hostname.replace(
-                    "www.",
-                    "",
-                  );
-                  return (
-                    <a
-                      href={icon.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-xs text-muted-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground"
-                    >
-                      <img
-                        src={`https://www.google.com/s2/favicons?domain=${hostname}&sz=32`}
-                        alt=""
-                        className="h-3.5 w-3.5 rounded-sm"
-                      />
-                      <span className="flex-1 truncate">{hostname}</span>
-                      <ArrowUpRight className="h-3 w-3 opacity-50" />
-                    </a>
-                  );
-                })()}
-              {icon.guidelines && (
-                <a
-                  href={icon.guidelines}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-xs text-muted-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground"
-                >
-                  <Globe className="h-3.5 w-3.5" />
-                  <span className="flex-1 truncate">Brand guidelines</span>
-                  <ArrowUpRight className="h-3 w-3 opacity-50" />
-                </a>
-              )}
-            </div>
-          )}
+          <div className="space-y-1.5">
+            {icon.url &&
+              (() => {
+                const hostname = new URL(icon.url).hostname.replace(
+                  "www.",
+                  "",
+                );
+                return (
+                  <a
+                    href={icon.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-xs text-muted-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground"
+                  >
+                    <img
+                      src={`https://www.google.com/s2/favicons?domain=${hostname}&sz=32`}
+                      alt=""
+                      className="h-3.5 w-3.5 rounded-sm"
+                    />
+                    <span className="flex-1 truncate">{hostname}</span>
+                    <ArrowUpRight className="h-3 w-3 opacity-50" />
+                  </a>
+                );
+              })()}
+            {icon.guidelines && (
+              <a
+                href={icon.guidelines}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 rounded-lg border border-violet-500/25 bg-violet-500/[0.06] px-3 py-2 text-xs text-violet-600 shadow-sm transition-colors hover:bg-violet-500/[0.12] dark:text-violet-400"
+              >
+                <BookOpenText weight="fill" className="h-3.5 w-3.5 opacity-80" />
+                <span className="flex-1 truncate">Brand guidelines</span>
+                <ArrowUpRight className="h-3 w-3 opacity-50" />
+              </a>
+            )}
+          </div>
 
-          {/* Contribution CTA in sidebar */}
+          {/* Contribution CTA in sidebar - combines the variant/asset ask
+              with the guidelines-link ask into one box when both are missing,
+              instead of two separate dashed boxes. */}
           <ContributionCta
             slug={icon.slug}
             title={icon.title}
             hasMultipleVariants={variants.length > 1}
+            guidelinesMissing={!icon.guidelines}
           />
         </div>
 

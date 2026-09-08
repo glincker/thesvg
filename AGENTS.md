@@ -55,9 +55,14 @@ public/icons/{slug}/
 - Server Components by default, `"use client"` only when needed
 
 ### Styling
-- Tailwind CSS only, no inline styles or CSS modules
+- Tailwind CSS only, no inline styles or CSS modules, except a narrow
+  exception for CSS custom properties carrying a genuinely per-instance
+  runtime value (e.g. a color derived from an icon's own hex) that cannot
+  be expressed as a static utility class
 - shadcn/ui components, extend don't reinvent
-- Lucide icons for UI chrome (not for brand icons)
+- Phosphor icons (`@phosphor-icons/react/dist/ssr`) for new or touched UI
+  chrome; existing untouched Lucide usage can stay during the gradual
+  migration, but do not add new Lucide icons
 
 ### Git
 - Never commit directly to `main`
@@ -72,3 +77,13 @@ public/icons/{slug}/
 4. **Missing fill overrides**: Child elements inheriting root fill when they need a different color
 5. **Inconsistent viewBox**: All icons in a PR should use the same coordinate space as the library standard
 6. **Google Fonts in SVG**: External `@import url()` for fonts will not render in most contexts
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

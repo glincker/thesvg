@@ -1,6 +1,6 @@
 "use client";
 
-import { memo, useCallback, useRef, useState } from "react";
+import { memo, useCallback, useRef, useState, type CSSProperties } from "react";
 import { Check, Copy, Download, Eye, Heart } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -14,12 +14,18 @@ interface IconCardProps {
   icon: IconEntry;
   onSelect: (icon: IconEntry) => void;
   compact?: boolean;
+  /** Index within the current batch, used for a capped stagger on first
+   * appearance. Only the first ~16 cards actually stagger visibly - beyond
+   * that every later-loaded batch (infinite scroll) fades in together at a
+   * flat delay rather than accumulating an ever-growing offset. */
+  entranceDelay?: number;
 }
 
 export const IconCard = memo(function IconCard({
   icon,
   onSelect,
   compact = false,
+  entranceDelay,
 }: IconCardProps) {
   const [copied, setCopied] = useState(false);
   const router = useRouter();
@@ -111,15 +117,23 @@ export const IconCard = memo(function IconCard({
   const darkSrc = icon.variants.dark || icon.variants.default;
   const needsThemeSwap = lightSrc !== darkSrc;
 
+  const entranceStyle: CSSProperties | undefined =
+    entranceDelay != null
+      ? { animationDelay: `${Math.min(entranceDelay, 16) * 20}ms`, animationFillMode: "backwards" }
+      : undefined;
+
   /* ── Compact: icon-only grid ── */
   if (compact) {
     return (
       <article
-        className="group relative flex w-full min-w-0 flex-col items-center gap-1.5 overflow-hidden rounded-xl border border-border/40 bg-card/80 p-3 transition-all duration-200 hover:border-border hover:bg-card hover:shadow-md"
+        className={cn(
+          "group relative flex w-full min-w-0 flex-col items-center gap-1.5 overflow-hidden rounded-xl border border-border/40 bg-card/80 p-3 shadow-sm shadow-black/[0.02] transition-all duration-200 hover:-translate-y-0.5 hover:border-border hover:bg-card hover:shadow-lg hover:shadow-black/[0.06] dark:shadow-black/10 dark:hover:shadow-black/25",
+          entranceDelay != null && "animate-in fade-in slide-in-from-bottom-1 duration-300"
+        )}
         onMouseEnter={handleHoverPrefetch}
         onTouchStart={handleHoverPrefetch}
         onFocus={handleHoverPrefetch}
-        style={{ contentVisibility: "auto", containIntrinsicSize: "0 120px" }}
+        style={{ contentVisibility: "auto", containIntrinsicSize: "0 120px", ...entranceStyle }}
       >
         <button
           type="button"
@@ -163,11 +177,14 @@ export const IconCard = memo(function IconCard({
   /* ── Default: modern spacious card ── */
   return (
     <article
-      className="group relative flex h-full min-w-0 flex-col items-center rounded-xl border border-border/40 bg-card/80 transition-all duration-200 hover:border-border hover:bg-card hover:shadow-lg hover:shadow-black/5 dark:hover:shadow-black/20"
+      className={cn(
+        "group relative flex h-full min-w-0 flex-col items-center rounded-xl border border-border/40 bg-card/80 shadow-sm shadow-black/[0.02] transition-all duration-200 hover:-translate-y-0.5 hover:border-border hover:bg-card hover:shadow-lg hover:shadow-black/5 dark:shadow-black/10 dark:hover:shadow-black/20",
+        entranceDelay != null && "animate-in fade-in slide-in-from-bottom-1 duration-300"
+      )}
       onMouseEnter={handleHoverPrefetch}
       onTouchStart={handleHoverPrefetch}
       onFocus={handleHoverPrefetch}
-      style={{ contentVisibility: "auto", containIntrinsicSize: "0 180px" }}
+      style={{ contentVisibility: "auto", containIntrinsicSize: "0 180px", ...entranceStyle }}
     >
       {/* Favorite toggle */}
       <button

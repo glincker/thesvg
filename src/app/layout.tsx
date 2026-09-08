@@ -7,9 +7,20 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { MobileShell } from "@/components/mobile/mobile-shell";
-import { AnnouncementBanner } from "@/components/announcement-banner";
+import { NotificationToasts } from "@/components/notification-toasts";
 import { getFormattedIconCount } from "@/lib/icons";
+import postsData from "@/data/posts.json";
 import "./globals.css";
+
+interface Post {
+  slug: string;
+  title: string;
+  date: string;
+}
+
+const latestPost = (postsData as Post[]).sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+)[0];
 
 const inter = Inter({
   variable: "--font-sans",
@@ -143,7 +154,6 @@ export default function RootLayout({
           storageKey="thesvg-theme"
           disableTransitionOnChange
         >
-          <AnnouncementBanner />
           <ScrollToTop />
           {/* Desktop header — `lg:` and above. Rendered as a body-level
               sibling (not wrapped) so position: sticky keeps a containing
@@ -161,6 +171,7 @@ export default function RootLayout({
               <Footer />
             </MobileShell>
           </Suspense>
+          <NotificationToasts post={latestPost} />
         </ThemeProvider>
       </body>
     </html>
