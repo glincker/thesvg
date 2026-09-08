@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import type { CSSProperties } from "react";
 import posthog from "posthog-js";
 import Link from "next/link";
 import { useSearchParams, usePathname } from "next/navigation";
@@ -17,6 +18,7 @@ import { useRecentsStore } from "@/lib/stores/recents-store";
 import { cn } from "@/lib/utils";
 import { categoryUrl } from "@/lib/categories";
 import { BrandGlow } from "@/components/icons/detail/brand-glow";
+import { brandGlowColor } from "@/lib/brand-glow-color";
 import { JsDelivrButton } from "@/components/icons/detail/jsdelivr-button";
 import { VariantPicker } from "@/components/icons/detail/variant-picker";
 import { QuickCommands } from "@/components/icons/detail/quick-commands";
@@ -140,6 +142,7 @@ export function IconDetailPage({
   }, [currentPath]);
 
   const primaryCategory = icon.categories[0] ?? null;
+  const previewTint = useMemo(() => brandGlowColor(icon.hex), [icon.hex]);
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
@@ -178,7 +181,17 @@ export function IconDetailPage({
         {/* Left column: large preview - sticky on desktop */}
         <div className="flex flex-col gap-4 lg:sticky lg:top-20 lg:h-fit">
           {/* Preview card */}
-          <div className="icon-preview-bg relative flex items-center justify-center rounded-2xl p-16 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg">
+          <div
+            className={cn(
+              "icon-preview-bg relative flex items-center justify-center rounded-2xl p-16 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg",
+              previewTint && "icon-preview-bg--tinted"
+            )}
+            style={
+              previewTint
+                ? ({ "--icon-tint": previewTint } as CSSProperties)
+                : undefined
+            }
+          >
             <img
               src={currentPath}
               alt={icon.title}
