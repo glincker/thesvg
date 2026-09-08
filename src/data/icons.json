@@ -1591,7 +1591,7 @@
     "slug": "after-effects",
     "title": "After Effects",
     "aliases": [],
-    "hex": "000000",
+    "hex": "9999FF",
     "categories": [
       "Design",
       "Software"
@@ -3152,7 +3152,7 @@
     "slug": "amazon-web-services",
     "title": "Amazon Web Services",
     "aliases": [],
-    "hex": "000000",
+    "hex": "FF9900",
     "categories": [
       "Software",
       "Platform"
@@ -4737,7 +4737,7 @@
     "slug": "apidog",
     "title": "Apidog",
     "aliases": [],
-    "hex": "000000",
+    "hex": "99C2FF",
     "categories": [
       "Software",
       "Platform"
@@ -37158,7 +37158,7 @@
     "slug": "basewell",
     "title": "Basewell",
     "aliases": [],
-    "hex": "000000",
+    "hex": "5DE8E8",
     "categories": [
       "AI",
       "Software"
@@ -38457,7 +38457,7 @@
     "slug": "bklit",
     "title": "Bklit",
     "aliases": [],
-    "hex": "000000",
+    "hex": "787878",
     "categories": [
       "Analytics",
       "Software"
@@ -40975,7 +40975,7 @@
     "slug": "canva",
     "title": "Canva",
     "aliases": [],
-    "hex": "000000",
+    "hex": "00C4CC",
     "categories": [
       "Design",
       "Software"
@@ -47236,7 +47236,7 @@
     "slug": "d3dotjs",
     "title": "D3.js",
     "aliases": [],
-    "hex": "000000",
+    "hex": "F9A03C",
     "categories": [
       "Library",
       "Software"
@@ -50733,7 +50733,7 @@
     "slug": "drizzle-orm",
     "title": "Drizzle ORM",
     "aliases": [],
-    "hex": "000000",
+    "hex": "C5F74F",
     "categories": [
       "Library",
       "Database"
@@ -54855,7 +54855,7 @@
     "slug": "firebase-studio",
     "title": "Firebase Studio",
     "aliases": [],
-    "hex": "000000",
+    "hex": "F8682F",
     "categories": [
       "AI",
       "Google"
@@ -56922,7 +56922,7 @@
     "slug": "front",
     "title": "Front",
     "aliases": [],
-    "hex": "000000",
+    "hex": "FF0057",
     "categories": [
       "Software",
       "Platform"
@@ -64187,7 +64187,7 @@
     "slug": "google-colaboratory",
     "title": "Google Colaboratory",
     "aliases": [],
-    "hex": "000000",
+    "hex": "E8710A",
     "categories": [
       "Google",
       "Software"
@@ -64492,7 +64492,7 @@
     "slug": "google-idx",
     "title": "Google Idx",
     "aliases": [],
-    "hex": "000000",
+    "hex": "8964E8",
     "categories": [
       "Software",
       "Google"
@@ -68448,7 +68448,7 @@
     "slug": "hostgator",
     "title": "Hostgator",
     "aliases": [],
-    "hex": "000000",
+    "hex": "2E93EE",
     "categories": [
       "Hosting",
       "Cloud"
@@ -69795,7 +69795,7 @@
     "slug": "illustrator",
     "title": "Illustrator",
     "aliases": [],
-    "hex": "000000",
+    "hex": "FF9A00",
     "categories": [
       "Design",
       "Software"
@@ -70134,7 +70134,7 @@
     "slug": "indesign",
     "title": "InDesign",
     "aliases": [],
-    "hex": "000000",
+    "hex": "FF3366",
     "categories": [
       "Design",
       "Software"
@@ -71835,7 +71835,7 @@
     "slug": "java",
     "title": "Java",
     "aliases": [],
-    "hex": "000000",
+    "hex": "5382A1",
     "categories": [
       "Language",
       "Software"
@@ -72159,7 +72159,7 @@
     "slug": "jetbrains-rider",
     "title": "JetBrains Rider",
     "aliases": [],
-    "hex": "000000",
+    "hex": "DD1265",
     "categories": [
       "Software",
       "Platform"
@@ -72210,7 +72210,7 @@
     "slug": "jetbrains-webstorm",
     "title": "JetBrains WebStorm",
     "aliases": [],
-    "hex": "000000",
+    "hex": "07C3F2",
     "categories": [
       "Software",
       "Platform"
@@ -78117,7 +78117,7 @@
     "slug": "lightroom",
     "title": "Lightroom",
     "aliases": [],
-    "hex": "000000",
+    "hex": "31A8FF",
     "categories": [
       "Design",
       "Software"
@@ -82101,7 +82101,7 @@
     "slug": "mercado-libre",
     "title": "Mercado Libre",
     "aliases": [],
-    "hex": "000000",
+    "hex": "2D3277",
     "categories": [
       "Shopping",
       "Platform"
@@ -83277,7 +83277,7 @@
     "slug": "microsoft-editor",
     "title": "Microsoft Editor",
     "aliases": [],
-    "hex": "000000",
+    "hex": "103F91",
     "categories": [
       "Software",
       "AI"
@@ -83711,7 +83711,7 @@
     "slug": "microsoft-sql-server",
     "title": "Microsoft SQL Server ",
     "aliases": [],
-    "hex": "000000",
+    "hex": "B71C1C",
     "categories": [
       "Database",
       "Microsoft"
@@ -84664,7 +84664,7 @@
       "Mixue Bingcheng",
       "蜜雪冰城"
     ],
-    "hex": "000000",
+    "hex": "E60012",
     "categories": [
       "Food & Beverage"
     ],
@@ -89312,7 +89312,7 @@
     "slug": "nuxt-content",
     "title": "Nuxt Content",
     "aliases": [],
-    "hex": "000000",
+    "hex": "00DC82",
     "categories": [
       "Library",
       "Nuxt"
@@ -89332,7 +89332,7 @@
     "slug": "nuxt-studio",
     "title": "Nuxt Studio",
     "aliases": [],
-    "hex": "000000",
+    "hex": "00DC82",
     "categories": [
       "Library",
       "Nuxt"
@@ -89352,7 +89352,7 @@
     "slug": "nuxt-ui",
     "title": "Nuxt UI",
     "aliases": [],
-    "hex": "000000",
+    "hex": "00DC82",
     "categories": [
       "Library",
       "Nuxt"
@@ -90494,7 +90494,7 @@
     "slug": "open-webui",
     "title": "Open WebUI",
     "aliases": [],
-    "hex": "000000",
+    "hex": "3ECC5F",
     "categories": [
       "AI",
       "Software"
@@ -93366,7 +93366,7 @@
     "slug": "pdf",
     "title": "PDF",
     "aliases": [],
-    "hex": "000000",
+    "hex": "FF2116",
     "categories": [
       "Library",
       "Design"
@@ -94187,7 +94187,7 @@
     "slug": "photoshop",
     "title": "Photoshop",
     "aliases": [],
-    "hex": "000000",
+    "hex": "31A8FF",
     "categories": [
       "Design",
       "Software"
@@ -96253,7 +96253,7 @@
     "slug": "poper",
     "title": "Poper",
     "aliases": [],
-    "hex": "000000",
+    "hex": "F14A16",
     "categories": [
       "AI",
       "Software"
@@ -96474,7 +96474,7 @@
     "slug": "posthog",
     "title": "PostHog",
     "aliases": [],
-    "hex": "000000",
+    "hex": "1D4AFF",
     "categories": [
       "Devtool",
       "Software"
@@ -96639,7 +96639,7 @@
     "slug": "powersync",
     "title": "PowerSync",
     "aliases": [],
-    "hex": "000000",
+    "hex": "0055FF",
     "categories": [
       "Software",
       "Database"
@@ -96821,7 +96821,7 @@
     "slug": "premiere",
     "title": "Premiere",
     "aliases": [],
-    "hex": "000000",
+    "hex": "9999FF",
     "categories": [
       "Design",
       "Software"
@@ -98197,7 +98197,7 @@
     "slug": "putio",
     "title": "putio",
     "aliases": [],
-    "hex": "000000",
+    "hex": "FDCE45",
     "categories": [
       "Software",
       "Platform"
@@ -99847,7 +99847,7 @@
     "slug": "rapid-api",
     "title": "Rapid API",
     "aliases": [],
-    "hex": "000000",
+    "hex": "1D4371",
     "categories": [
       "Software",
       "Platform"
@@ -101118,7 +101118,7 @@
     "slug": "remotion",
     "title": "Remotion",
     "aliases": [],
-    "hex": "000000",
+    "hex": "0B84F3",
     "categories": [
       "Framework",
       "Software"
@@ -105604,7 +105604,7 @@
     "slug": "shopline",
     "title": "SHOPLINE",
     "aliases": [],
-    "hex": "000000",
+    "hex": "333F48",
     "categories": [
       "Ecommerce",
       "Software"
@@ -115809,7 +115809,7 @@
     "slug": "typegpu",
     "title": "TypeGPU",
     "aliases": [],
-    "hex": "000000",
+    "hex": "D48DFF",
     "categories": [
       "Software",
       "Library"
@@ -117200,7 +117200,7 @@
     "slug": "uxcorprangel",
     "title": "UXCorpRangel",
     "aliases": [],
-    "hex": "000000",
+    "hex": "EE2525",
     "categories": [
       "Community",
       "Platform"
@@ -119472,7 +119472,7 @@
     "slug": "vue",
     "title": "Vue",
     "aliases": [],
-    "hex": "000000",
+    "hex": "41B883",
     "categories": [
       "Framework",
       "Software"
@@ -120258,7 +120258,7 @@
     "slug": "web-components",
     "title": "Web Components",
     "aliases": [],
-    "hex": "000000",
+    "hex": "166DA5",
     "categories": [
       "Library",
       "Software"
@@ -120368,7 +120368,7 @@
     "slug": "webdotdev",
     "title": "Web.dev",
     "aliases": [],
-    "hex": "000000",
+    "hex": "0066FF",
     "categories": [
       "Education",
       "Platform"
@@ -120610,7 +120610,7 @@
     "slug": "webstudio",
     "title": "Webstudio",
     "aliases": [],
-    "hex": "000000",
+    "hex": "E63CFE",
     "categories": [
       "Software",
       "Design"
