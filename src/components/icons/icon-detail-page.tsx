@@ -181,7 +181,10 @@ export function IconDetailPage({
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-[280px_1fr]">
         {/* Left column: large preview - sticky on desktop */}
         <div className="flex flex-col gap-4 lg:sticky lg:top-20 lg:h-fit">
-          {/* Preview card */}
+          {/* Preview card. `--icon-tint` is a deliberate, narrow exception to
+              the Tailwind-only rule: it carries a per-icon color derived at
+              runtime from each icon's own hex, one of thousands of distinct
+              values, so it cannot be expressed as a static utility class. */}
           <div
             className={cn(
               "icon-preview-bg relative flex items-center justify-center rounded-2xl p-16 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg",

@@ -7,8 +7,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { MobileShell } from "@/components/mobile/mobile-shell";
-import { NewPostToast } from "@/components/new-post-toast";
-import { ImprovementsToast } from "@/components/improvements-toast";
+import { NotificationToasts } from "@/components/notification-toasts";
 import { getFormattedIconCount } from "@/lib/icons";
 import postsData from "@/data/posts.json";
 import "./globals.css";
@@ -172,8 +171,7 @@ export default function RootLayout({
               <Footer />
             </MobileShell>
           </Suspense>
-          <NewPostToast post={latestPost} />
-          <ImprovementsToast />
+          <NotificationToasts post={latestPost} />
         </ThemeProvider>
       </body>
     </html>

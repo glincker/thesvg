@@ -10,10 +10,16 @@ import { Sparkle, ArrowRight, X } from "@phosphor-icons/react/dist/ssr";
 const IMPROVEMENTS_VERSION = "2026-09-ui-polish-1";
 const STORAGE_KEY = `thesvg-seen-improvements-${IMPROVEMENTS_VERSION}`;
 const POST_SLUG = "icon-page-redesign-brand-color-completeness";
-const SHOW_DELAY_MS = 2500;
+const DEFAULT_SHOW_DELAY_MS = 2500;
 const AUTO_DISMISS_MS = 12000;
 
-export function ImprovementsToast() {
+export function ImprovementsToast({
+  delayMs = DEFAULT_SHOW_DELAY_MS,
+}: {
+  /** Shows after this delay - bump it when the bottom-left corner is about
+   * to be claimed by NewPostToast, so the two never overlap. */
+  delayMs?: number;
+}) {
   const [visible, setVisible] = useState(false);
   const [dismissed, setDismissed] = useState(false);
 
@@ -23,9 +29,9 @@ export function ImprovementsToast() {
     } catch {
       return;
     }
-    const timer = setTimeout(() => setVisible(true), SHOW_DELAY_MS);
+    const timer = setTimeout(() => setVisible(true), delayMs);
     return () => clearTimeout(timer);
-  }, []);
+  }, [delayMs]);
 
   useEffect(() => {
     if (!visible) return;

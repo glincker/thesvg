@@ -293,19 +293,22 @@ html {
 }
 
 .dark .icon-preview-bg {
-  /* Deliberately mid-grey rather than near-black: a lot of icons only ship
-     a single `default` variant with a dark/near-black fill (no dedicated
-     dark-mode variant), and a near-black backdrop made those effectively
-     invisible in dark theme. Tinting this fill with the brand color was
-     tried and reverted: mixing hue into the backdrop behind the icon itself
-     softened the exact contrast this rule exists to fix, and looked muddy
-     for every icon that fell back to the default orange tint. Cohesion with
-     the brand glow instead comes from `--icon-tint-ring` below, an outer
-     ring/shadow that doesn't touch the fill behind the artwork. */
+  /* A brighter cool-toned hotspot sits behind the icon itself (contrast for
+     the many icons that only ship a dark/near-black `default` variant, with
+     no dedicated dark-mode one), fading to a near-black edge past the
+     icon's own footprint. A flat mid-grey fixed that contrast but read as
+     washed out; this keeps the "spotlight in a dark room" mood the near-
+     black version had while staying light enough where the artwork sits.
+     Tinting the fill with the icon's brand color was tried and reverted:
+     mixing hue into the backdrop softened the exact contrast this rule
+     exists to fix. Cohesion with the brand glow instead comes from
+     `.icon-preview-bg--tinted` below, an outer ring that doesn't touch the
+     fill behind the artwork. */
   background: radial-gradient(
     circle at center,
-    oklch(0.38 0.008 260) 0%,
-    oklch(0.32 0.005 260) 100%
+    oklch(0.46 0.03 258) 0%,
+    oklch(0.3 0.035 259) 50%,
+    oklch(0.14 0.04 260) 100%
   );
 }
 

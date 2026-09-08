@@ -21,7 +21,12 @@ export function NewPostToast({ post }: { post: LatestPost | undefined }) {
   useEffect(() => {
     if (!post) return;
 
-    const lastSeen = localStorage.getItem(STORAGE_KEY);
+    let lastSeen: string | null = null;
+    try {
+      lastSeen = localStorage.getItem(STORAGE_KEY);
+    } catch {
+      // storage blocked
+    }
     if (!lastSeen || new Date(post.date) > new Date(lastSeen)) {
       const timer = setTimeout(() => setVisible(true), SHOW_DELAY_MS);
       return () => clearTimeout(timer);
@@ -37,7 +42,12 @@ export function NewPostToast({ post }: { post: LatestPost | undefined }) {
 
   function dismiss() {
     setDismissed(true);
-    if (post) localStorage.setItem(STORAGE_KEY, post.date);
+    if (!post) return;
+    try {
+      localStorage.setItem(STORAGE_KEY, post.date);
+    } catch {
+      // storage blocked
+    }
   }
 
   if (!post || !visible || dismissed) return null;

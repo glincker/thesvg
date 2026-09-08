@@ -78,15 +78,13 @@ export function BrandGlow({ hex }: { hex?: string }) {
 
   function toggle() {
     dismissHint();
-    setEnabled((prev) => {
-      const next = !prev;
-      try {
-        localStorage.setItem(STORAGE_KEY, next ? "1" : "0");
-      } catch {
-        // storage blocked
-      }
-      return next;
-    });
+    const next = !enabled;
+    try {
+      localStorage.setItem(STORAGE_KEY, next ? "1" : "0");
+    } catch {
+      // storage blocked
+    }
+    setEnabled(next);
   }
 
   // Falls back to theSVG's own brand orange for the many icons whose hex is

@@ -138,18 +138,20 @@ export function IconInspectorModal({ title, src }: IconInspectorModalProps) {
           </DialogDescription>
         </DialogHeader>
 
-        {/* Viewer canvas */}
+        {/* Viewer canvas - scrolls/pans when the selected zoom is larger than
+            the visible area, rather than silently shrinking the artwork and
+            mislabeling its actual rendered size. */}
         <div
           className={cn(
-            "relative flex h-[360px] items-center justify-center overflow-hidden rounded-xl border border-border/60 sm:h-[420px]",
+            "relative flex h-[360px] items-center justify-center overflow-auto rounded-xl border border-border/60 sm:h-[420px]",
             background === "dark" && "bg-zinc-900",
             background === "light" && "bg-white"
           )}
           style={canvasStyle}
         >
           <div
-            className="relative"
-            style={{ width: zoom, height: zoom, maxWidth: "88%", maxHeight: "88%" }}
+            className="relative m-auto shrink-0"
+            style={{ width: zoom, height: zoom }}
           >
             <img
               src={src}

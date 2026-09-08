@@ -55,9 +55,14 @@ public/icons/{slug}/
 - Server Components by default, `"use client"` only when needed
 
 ### Styling
-- Tailwind CSS only, no inline styles or CSS modules
+- Tailwind CSS only, no inline styles or CSS modules, except a narrow
+  exception for CSS custom properties carrying a genuinely per-instance
+  runtime value (e.g. a color derived from an icon's own hex) that cannot
+  be expressed as a static utility class
 - shadcn/ui components, extend don't reinvent
-- Lucide icons for UI chrome (not for brand icons)
+- Phosphor icons (`@phosphor-icons/react/dist/ssr`) for new or touched UI
+  chrome; existing untouched Lucide usage can stay during the gradual
+  migration, but do not add new Lucide icons
 
 ### Git
 - Never commit directly to `main`

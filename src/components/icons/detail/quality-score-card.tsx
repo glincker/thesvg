@@ -53,15 +53,13 @@ export function QualityScoreCard({ icon }: { icon: IconEntry }) {
   }, []);
 
   function toggle() {
-    setOpen((prev) => {
-      const next = !prev;
-      try {
-        localStorage.setItem(STORAGE_KEY, next ? "1" : "0");
-      } catch {
-        // storage blocked
-      }
-      return next;
-    });
+    const next = !open;
+    try {
+      localStorage.setItem(STORAGE_KEY, next ? "1" : "0");
+    } catch {
+      // storage blocked
+    }
+    setOpen(next);
   }
 
   if (!ready) {
