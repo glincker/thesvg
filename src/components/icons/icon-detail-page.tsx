@@ -19,7 +19,7 @@ import { cn } from "@/lib/utils";
 import { categoryUrl } from "@/lib/categories";
 import { BrandGlow } from "@/components/icons/detail/brand-glow";
 import { brandGlowColor } from "@/lib/brand-glow-color";
-import { SizePlaygroundModal } from "@/components/icons/detail/size-playground-modal";
+import { IconInspectorModal } from "@/components/icons/detail/icon-inspector-modal";
 import { JsDelivrButton } from "@/components/icons/detail/jsdelivr-button";
 import { VariantPicker } from "@/components/icons/detail/variant-picker";
 import { QuickCommands } from "@/components/icons/detail/quick-commands";
@@ -225,7 +225,7 @@ export function IconDetailPage({
               <Heart className={cn("h-4 w-4", isFavorite && "fill-current")} />
             </button>
 
-            <SizePlaygroundModal title={icon.title} src={currentPath} />
+            <IconInspectorModal title={icon.title} src={currentPath} />
           </div>
 
           <QualityScoreCard icon={icon} />
