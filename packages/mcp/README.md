@@ -4,6 +4,11 @@
   </a>
 </p>
 
+<p align="center">
+  <a href="https://www.npmjs.com/package/@thesvg/mcp-server"><img src="https://img.shields.io/npm/v/@thesvg/mcp-server?color=F97316&label=npm" alt="npm version" /></a>
+  <a href="https://www.jsdelivr.com/package/npm/@thesvg/mcp-server"><img src="https://data.jsdelivr.com/v1/package/npm/@thesvg/mcp-server/badge" alt="jsDelivr" /></a>
+</p>
+
 # @thesvg/mcp-server
 
 MCP (Model Context Protocol) server for [thesvg.org](https://thesvg.org). Gives AI agents in Claude Desktop, Cursor, Claude Code, and any MCP-aware client direct access to 6,500+ brand SVG icons -- no API key required.

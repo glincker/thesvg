@@ -4,6 +4,11 @@
   </a>
 </p>
 
+<p align="center">
+  <a href="https://www.npmjs.com/package/@thesvg/react"><img src="https://img.shields.io/npm/v/@thesvg/react?color=F97316&label=npm" alt="npm version" /></a>
+  <a href="https://www.jsdelivr.com/package/npm/@thesvg/react"><img src="https://data.jsdelivr.com/v1/package/npm/@thesvg/react/badge" alt="jsDelivr" /></a>
+</p>
+
 # @thesvg/react
 
 Typed React SVG components for all 6,500+ brand icons from [thesvg.org](https://thesvg.org).

@@ -4,6 +4,11 @@
   </a>
 </p>
 
+<p align="center">
+  <a href="https://www.npmjs.com/package/@thesvg/cli"><img src="https://img.shields.io/npm/v/@thesvg/cli?color=F97316&label=npm" alt="npm version" /></a>
+  <a href="https://www.jsdelivr.com/package/npm/@thesvg/cli"><img src="https://data.jsdelivr.com/v1/package/npm/@thesvg/cli/badge" alt="jsDelivr" /></a>
+</p>
+
 # @thesvg/cli
 
 CLI tool to add SVG icons from [thesvg.org](https://thesvg.org) directly into your project - shadcn-style.

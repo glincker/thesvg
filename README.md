@@ -15,6 +15,7 @@
 <p align="center">
   <a href="https://www.npmjs.com/package/thesvg"><img src="https://img.shields.io/npm/v/thesvg?style=flat-square&color=F97316&label=npm" alt="npm" /></a>
   <a href="https://www.npmjs.com/package/thesvg"><img src="https://img.shields.io/npm/dm/thesvg?style=flat-square&color=F97316&label=downloads" alt="downloads" /></a>
+  <a href="https://www.jsdelivr.com/package/gh/glincker/thesvg"><img src="https://data.jsdelivr.com/v1/package/gh/glincker/thesvg/badge" alt="jsDelivr" /></a>
   <a href="https://github.com/glincker/thesvg/stargazers"><img src="https://img.shields.io/github/stars/glincker/thesvg?style=flat-square&label=stars" alt="stars" /></a>
   <a href="https://github.com/glincker/thesvg"><img src="https://img.shields.io/badge/icons-6%2C500%2B-F97316?style=flat-square" alt="6,500+ icons" /></a>
   <a href="https://github.com/glincker/thesvg/blob/main/LICENSE"><img src="https://img.shields.io/github/license/glincker/thesvg?style=flat-square" alt="license" /></a>

@@ -4,6 +4,11 @@
   </a>
 </p>
 
+<p align="center">
+  <a href="https://www.npmjs.com/package/@thesvg/vue"><img src="https://img.shields.io/npm/v/@thesvg/vue?color=F97316&label=npm" alt="npm version" /></a>
+  <a href="https://www.jsdelivr.com/package/npm/@thesvg/vue"><img src="https://data.jsdelivr.com/v1/package/npm/@thesvg/vue/badge" alt="jsDelivr" /></a>
+</p>
+
 # @thesvg/vue
 
 Typed Vue 3 SVG components for all 6,500+ brand icons from [thesvg.org](https://thesvg.org).
