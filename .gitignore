@@ -59,6 +59,9 @@ public/api/
 # generated draw.io shape libraries (built from icons.json at build time)
 public/integrations/drawio/
 
+# generated Excalidraw shape libraries (built from icons.json at build time)
+public/integrations/excalidraw/
+
 # marketing assets (exported PNGs - too large for OSS repo)
 public/banners/
 posthog-setup-report.md

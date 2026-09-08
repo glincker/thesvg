@@ -197,6 +197,14 @@ const CATEGORIES: Category[] = [
         href: "/integrations/drawio",
         iconSlug: "diagramsdotnet",
       },
+      {
+        name: "Excalidraw",
+        description: "Downloadable .excalidrawlib shape libraries of brand icons, grouped by category, for architecture and product diagrams.",
+        status: "available",
+        cta: "Browse libraries",
+        href: "/integrations/excalidraw",
+        iconSlug: "excalidraw",
+      },
     ],
   },
   {
