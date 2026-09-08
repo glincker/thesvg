@@ -89,7 +89,7 @@ export function CodeBlock({ svgContent, slug, title, activeVariant }: CodeBlockP
   return (
     <div className="overflow-hidden rounded-xl border border-border bg-card/30 shadow-sm">
       {/* Tab bar */}
-      <div className="flex items-center gap-3 border-b border-border/50 px-4 py-3">
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-2 border-b border-border/50 px-4 py-3">
         {/* Usage tabs */}
         <div className="flex flex-wrap gap-1.5">
           {useTabs.map((tab) => (
@@ -122,7 +122,7 @@ export function CodeBlock({ svgContent, slug, title, activeVariant }: CodeBlockP
         </div>
 
         {/* Divider */}
-        <div className="h-4 w-px bg-border" />
+        <div className="h-4 w-px shrink-0 bg-border" />
 
         {/* Copy format tabs */}
         <div className="flex flex-wrap gap-1.5">
@@ -153,7 +153,7 @@ export function CodeBlock({ svgContent, slug, title, activeVariant }: CodeBlockP
             "absolute top-2 right-3 z-10 flex items-center gap-1 rounded-md px-2 py-1 text-[10px] font-medium transition-colors",
             copied
               ? "bg-green-500/10 text-green-600 dark:text-green-400"
-              : "bg-zinc-800/80 text-zinc-400 backdrop-blur-sm hover:bg-zinc-700 hover:text-zinc-200"
+              : "bg-orange-500/15 text-orange-400 backdrop-blur-sm hover:bg-orange-500/25 hover:text-orange-300"
           )}
         >
           {copied ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}

@@ -148,6 +148,7 @@
 html {
   scrollbar-width: thin;
   scrollbar-color: var(--scrollbar-thumb) transparent;
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -260,6 +261,18 @@ html {
   animation: float 4s ease-in-out infinite;
 }
 
+/* Slow ambient drift for the brand-color glow on icon detail pages - keeps
+   it feeling alive rather than a static painted gradient. Transform + opacity
+   only, so it stays on the compositor thread. */
+@keyframes glow-drift {
+  0%, 100% { transform: translate(-4%, 0) scale(1); opacity: 0.85; }
+  50% { transform: translate(4%, 2%) scale(1.08); opacity: 1; }
+}
+
+.animate-glow-drift {
+  animation: glow-drift 10s ease-in-out infinite;
+}
+
 /* Fade in animation for carousel slides */
 @keyframes fade-in {
   from { opacity: 0; transform: translateY(4px); }
@@ -280,10 +293,15 @@ html {
 }
 
 .dark .icon-preview-bg {
+  /* Deliberately mid-grey rather than near-black: a lot of icons only ship
+     a single `default` variant with a dark/near-black fill (no dedicated
+     dark-mode variant), and a near-black backdrop made those effectively
+     invisible in dark theme. This keeps dark-theme aesthetics while giving
+     dark-colored single-variant logos usable contrast too. */
   background: radial-gradient(
     circle at center,
-    oklch(0.22 0.008 260) 0%,
-    oklch(0.16 0.005 260) 100%
+    oklch(0.38 0.008 260) 0%,
+    oklch(0.32 0.005 260) 100%
   );
 }
 

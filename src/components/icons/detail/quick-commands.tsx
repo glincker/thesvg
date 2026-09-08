@@ -41,7 +41,7 @@ export function QuickCommands({ slug, activeVariant }: QuickCommandsProps) {
           onClick={() =>
             copyToClipboard(`npx @thesvg/cli add ${slug}`, "cli")
           }
-          className="shrink-0 rounded p-1 text-muted-foreground/50 transition-colors hover:text-foreground"
+          className="shrink-0 rounded-md p-1.5 text-orange-500 transition-colors hover:bg-orange-500/10 hover:text-orange-600 dark:hover:text-orange-400"
         >
           {copiedCmd === "cli" ? (
             <Check className="h-3 w-3 text-green-500" />
@@ -62,7 +62,7 @@ export function QuickCommands({ slug, activeVariant }: QuickCommandsProps) {
         <button
           type="button"
           onClick={() => copyToClipboard(cdnUrl, "cdn")}
-          className="shrink-0 rounded p-1 text-muted-foreground/50 transition-colors hover:text-foreground"
+          className="shrink-0 rounded-md p-1.5 text-orange-500 transition-colors hover:bg-orange-500/10 hover:text-orange-600 dark:hover:text-orange-400"
         >
           {copiedCmd === "cdn" ? (
             <Check className="h-3 w-3 text-green-500" />

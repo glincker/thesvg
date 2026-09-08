@@ -94,8 +94,14 @@ export function IconGrid({ icons, view = "comfortable" }: IconGridProps) {
           ? "grid-cols-3 gap-1.5 sm:grid-cols-4 sm:gap-2 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8"
           : "grid-cols-3 gap-2 sm:grid-cols-4 sm:gap-3 lg:grid-cols-5 xl:grid-cols-6"
       )}>
-        {visibleIcons.map((icon) => (
-          <IconCard key={icon.slug} icon={icon} onSelect={handleSelect} compact={view === "compact"} />
+        {visibleIcons.map((icon, index) => (
+          <IconCard
+            key={icon.slug}
+            icon={icon}
+            onSelect={handleSelect}
+            compact={view === "compact"}
+            entranceDelay={index}
+          />
         ))}
       </div>
 
