@@ -42566,6 +42566,31 @@
     "collection": "brands"
   },
   {
+    "slug": "chunk",
+    "title": "Chunk",
+    "aliases": [
+      "Chunk by CircleCI"
+    ],
+    "hex": "FFF500",
+    "categories": [
+      "Devtool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/chunk/default.svg",
+      "mono": "/icons/chunk/mono.svg",
+      "light": "/icons/chunk/light.svg",
+      "dark": "/icons/chunk/dark.svg",
+      "wordmark": "/icons/chunk/wordmark.svg",
+      "wordmarkDark": "/icons/chunk/wordmark-dark.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://brand.circleci.com/613faff00/p/732047-logos/b/94db31",
+    "guidelines": "https://brand.circleci.com/613faff00/p/732047-logos/b/94db31",
+    "dateAdded": "2026-09-08",
+    "collection": "brands"
+  },
+  {
     "slug": "chupa-chups",
     "title": "Chupa Chups",
     "aliases": [],
@@ -42682,10 +42707,13 @@
     ],
     "variants": {
       "default": "/icons/circleci/default.svg",
-      "mono": "/icons/circleci/mono.svg"
+      "mono": "/icons/circleci/mono.svg",
+      "light": "/icons/circleci/light.svg",
+      "dark": "/icons/circleci/dark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://circleci.com/press",
+    "guidelines": "https://brand.circleci.com/613faff00/p/732047-logos/b/94db31",
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
