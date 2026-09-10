@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="100%" height="100%">
-  <g fill="#FFFFFF">
+  <g fill="currentColor">
     <!-- Vertical Main Stem -->
     <rect x="40" y="40" width="14" height="150" rx="2" />
 
