@@ -87855,6 +87855,27 @@
     "dateAdded": "2026-07-09",
     "collection": "brands"
   },
+   {
+    "slug": "nidr",
+    "title": "NIDR",
+    "aliases": [],
+    "hex": "371c99",
+    "categories": [
+      "Blockchain",
+      "Payment",
+      "Crypto"
+    ],
+    "variants": {
+      "default": "/icons/nidr/default.svg",
+      "mono": "/icons/nidr/mono.svg"
+      
+    },
+    "license": "Trademark",
+    "url": "https://www.nfl.com/",
+    "guidelines": "https://www.nfl.com/",
+    "dateAdded": "2026-07-09",
+    "collection": "brands"
+  },
   {
     "slug": "ngern-tid-lor",
     "title": "Ngern Tid Lor",
