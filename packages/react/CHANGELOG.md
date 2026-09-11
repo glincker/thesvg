@@ -1,5 +1,11 @@
 # @thesvg/react
 
+## 3.3.4
+
+### Patch Changes
+
+- feat: add Fennec browser icon ([#993](https://github.com/glincker/thesvg/issues/993))
+
 ## 3.3.3
 
 ### Patch Changes
