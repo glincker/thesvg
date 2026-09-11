@@ -1,0 +1,57 @@
+<svg viewBox="0 0 28.574999 28.575001" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="linearGradient1811">
+      <stop style="stop-color:#ffffff;stop-opacity:0.10196079" offset="0" />
+      <stop style="stop-color:#ffffff;stop-opacity:0" offset="1" />
+    </linearGradient>
+    <radialGradient xlink:href="#linearGradient1811" id="radialGradient1813" cx="-6.32094" cy="8.2753725" fx="-6.32094" fy="8.2753725" r="6.3497664" gradientTransform="matrix(0,1.8235594,-1.9965229,0,24.48854,20.372914)" gradientUnits="userSpaceOnUse" />
+    <filter id="filter1665" x="-0.037796634" y="-0.041548441" width="1.0755933" height="1.1090647" style="color-interpolation-filters:sRGB">
+      <feFlood flood-opacity="0.2" flood-color="rgb(0,0,0)" result="flood" />
+      <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
+      <feGaussianBlur in="composite1" stdDeviation="0.2" result="blur" />
+      <feOffset dx="0" dy="0.3" result="offset" />
+      <feComposite in="SourceGraphic" in2="offset" operator="over" result="composite2" />
+    </filter>
+    <filter id="filter1423" x="-0.055579044" y="-0.11605552" width="1.1227371" height="1.2562893" style="color-interpolation-filters:sRGB">
+      <feFlood flood-opacity="0.2" flood-color="rgb(0,0,0)" result="flood" />
+      <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
+      <feGaussianBlur in="composite1" stdDeviation="0.2" result="blur" />
+      <feOffset dx="0.1" dy="0.1" result="offset" />
+      <feComposite in="SourceGraphic" in2="offset" operator="over" result="composite2" />
+    </filter>
+    <filter id="filter1435" x="-0.055101475" y="-0.11819957" width="1.1216824" height="1.2610241" style="color-interpolation-filters:sRGB">
+      <feFlood flood-opacity="0.2" flood-color="rgb(0,0,0)" result="flood" />
+      <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
+      <feGaussianBlur in="composite1" stdDeviation="0.2" result="blur" />
+      <feOffset dx="0.1" dy="0.1" result="offset" />
+      <feComposite in="SourceGraphic" in2="offset" operator="over" result="composite2" />
+    </filter>
+    <filter id="filter1339" x="-0.15867179" y="-0.1586718" width="1.3044274" height="1.3044274" style="color-interpolation-filters:sRGB">
+      <feFlood flood-opacity="0.101961" flood-color="rgb(0,0,0)" result="flood" />
+      <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
+      <feGaussianBlur in="composite1" stdDeviation="0.2" result="blur" />
+      <feOffset dx="-0.1" dy="-0.1" result="offset" />
+      <feComposite in="SourceGraphic" in2="offset" operator="over" result="composite2" />
+    </filter>
+  </defs>
+  <g id="layer1">
+    <path fill="#ffffff" filter="url(#filter1665)" d="M 8.4728689,8.8222004 C 8.1794842,8.8177704 7.9393222,9.0570033 7.9390512,9.353951 v 6.971667 c 2.7e-5,0.02214 0.0058,0.04186 0.0083,0.06305 -0.02608,0.123809 0.03505,0.253175 0.188619,0.3483 l 0.0098,0.0057 c 0.0313,0.02435 0.06396,0.04519 0.09973,0.06201 l 5.5671038,3.447851 c 0.262619,0.162578 0.688745,0.162578 0.951364,0 l 5.565555,-3.446818 c 0.03799,-0.01765 0.07298,-0.03953 0.105936,-0.06563 l 0.0052,-0.0031 c 0.152929,-0.09473 0.214368,-0.223407 0.189136,-0.346749 0.0026,-0.02169 0.0088,-0.0419 0.0088,-0.0646 V 9.353951 c -4.4e-5,-0.3031347 -0.249579,-0.5449819 -0.548824,-0.5317506 -0.08971,0.00373 -0.177199,0.030508 -0.253731,0.078031 L 14.288537,12.34705 8.7395189,8.9002319 c -0.08045,-0.0498 -0.172351,-0.076665 -0.26665,-0.078031 z" />
+    <g id="g925" style="stroke:#ffe2af;stroke-width:1.2238" transform="matrix(0.85963426,0,0,0.8699776,1.7871228,12.058942)">
+      <path fill="#ffe2af" stroke="#ffe2af" stroke-width="1.2238" stroke-linecap="square" stroke-linejoin="round" style="paint-order:stroke fill markers" d="M 21.317017,-3.1088137 14.713015,0.94444148 21.317017,4.9034017 Z" />
+      <path fill="#ffe2af" stroke="#ffe2af" stroke-width="1.2238" stroke-linecap="square" stroke-linejoin="round" style="paint-order:stroke fill markers" d="M 7.7686424,-3.1088137 14.372644,0.94444148 7.7686423,4.9034017 Z" />
+      <g style="fill:#ffc149" transform="matrix(0.85298692,0.52193229,-0.85298692,0.52193229,-0.61557187,0)">
+        <path filter="url(#filter1423)" d="M 2.0991143,-8.57763 10.735463,-4.4416784 9.8413019,-8.57763 Z" />
+      </g>
+      <g style="fill:#ffc149;filter:url(#filter1435)" transform="matrix(-0.85298692,0.52193229,0.85298692,0.52193229,29.699535,0)">
+        <path d="M 2.0991143,-8.57763 10.810315,-4.5167015 9.8413019,-8.57763 Z" />
+      </g>
+      <path fill="#ffc149" stroke="#ffc149" stroke-width="1.29694" stroke-linecap="square" stroke-linejoin="round" style="paint-order:stroke fill markers" filter="url(#filter1339)" transform="matrix(0.85298692,0.52193229,-0.85298692,0.52193229,0,0)" d="M 9.4801311,-7.5676155 H 17.222339 V 0.17459202 H 9.4801311 Z" />
+      <g transform="translate(0.00353217)">
+        <ellipse fill="#333333" cx="12.383472" cy="5.4097691" rx="0.68628144" ry="0.6781221" />
+        <ellipse fill="#333333" cx="16.692476" cy="5.4097691" rx="0.68628144" ry="0.6781221" />
+      </g>
+      <ellipse fill="#333333" cx="14.541507" cy="8.7224464" rx="0.84374368" ry="0.83371228" />
+    </g>
+    <path fill="url(#radialGradient1813)" d="M 8.4728689,8.8222004 C 8.1794842,8.8177704 7.9393222,9.0570033 7.9390512,9.353951 v 6.971667 c 2.7e-5,0.02214 0.0058,0.04186 0.0083,0.06305 -0.02608,0.123809 0.03505,0.253175 0.188619,0.3483 l 0.0098,0.0057 c 0.0313,0.02435 0.06396,0.04519 0.09973,0.06201 l 5.5671038,3.447851 c 0.262619,0.162578 0.688745,0.162578 0.951364,0 l 5.565555,-3.446818 c 0.03799,-0.01765 0.07298,-0.03953 0.105936,-0.06563 l 0.0052,-0.0031 c 0.152929,-0.09473 0.214368,-0.223407 0.189136,-0.346749 0.0026,-0.02169 0.0088,-0.0419 0.0088,-0.0646 V 9.353951 c -4.4e-5,-0.3031347 -0.249579,-0.5449819 -0.548824,-0.5317506 -0.08971,0.00373 -0.177199,0.030508 -0.253731,0.078031 L 14.288537,12.34705 8.7395189,8.9002319 c -0.08045,-0.0498 -0.172351,-0.076665 -0.26665,-0.078031 z" />
+  </g>
+</svg>

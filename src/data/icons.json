@@ -54404,6 +54404,24 @@
     "collection": "brands"
   },
   {
+    "slug": "fennec",
+    "title": "Fennec",
+    "aliases": [
+      "fennec-fdroid"
+    ],
+    "hex": "FFC149",
+    "categories": [
+      "Browser"
+    ],
+    "variants": {
+      "default": "/icons/fennec/default.svg"
+    },
+    "license": "MPL-2.0",
+    "url": "https://f-droid.org/packages/org.mozilla.fennec_fdroid/",
+    "dateAdded": "2026-09-10",
+    "collection": "brands"
+  },
+  {
     "slug": "ferrari",
     "title": "Ferrari",
     "aliases": [],
