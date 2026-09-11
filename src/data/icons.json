@@ -95790,6 +95790,22 @@
     "dateAdded": "2026-05-16"
   },
   {
+    "slug": "plutotv",
+    "title": "PlutoTV",
+    "aliases": [],
+    "hex": "FEF401",
+    "categories": [
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/plutotv/default.svg"
+    },
+    "license": "Unlicense",
+    "url": "https://pluto.tv/",
+    "dateAdded": "2026-09-10",
+    "collection": "brands"
+  },
+  {
     "slug": "pm2",
     "title": "PM2",
     "aliases": [],
