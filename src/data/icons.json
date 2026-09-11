@@ -45437,6 +45437,23 @@
     "dateAdded": "2026-05-05"
   },
   {
+    "slug": "constant-contact",
+    "title": "Constant Contact",
+    "aliases": [],
+    "hex": "1856ED",
+    "categories": [
+      "Marketing",
+      "Email"
+    ],
+    "variants": {
+      "default": "/icons/constant-contact/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.constantcontact.com/",
+    "dateAdded": "2026-09-10",
+    "collection": "brands"
+  },
+  {
     "slug": "construct-3",
     "title": "Construct 3",
     "aliases": [],
