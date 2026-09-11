@@ -56947,6 +56947,22 @@
     "collection": "brands"
   },
   {
+    "slug": "frnkln-technologies",
+    "title": "Frnkln Technologies",
+    "aliases": [],
+    "hex": "D92D20",
+    "categories": [
+      "CMS"
+    ],
+    "variants": {
+      "default": "/icons/frnkln-technologies/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://frnkln.com.br/",
+    "dateAdded": "2026-09-10",
+    "collection": "brands"
+  },
+  {
     "slug": "front",
     "title": "Front",
     "aliases": [],
