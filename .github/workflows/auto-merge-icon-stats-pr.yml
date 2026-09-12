@@ -4,14 +4,20 @@ name: Auto-merge icon stats PR
 # public/data/icon-stats.json snapshot to a dedicated automated/icon-stats-refresh
 # branch and opens (or reuses) a single PR from it - this workflow enables
 # GitHub's native auto-merge on that PR once required CI checks pass, so the
-# whole pipeline stays hands-off after the POSTHOG_PERSONAL_API_KEY secret is
-# configured.
+# whole pipeline stays hands-off after the POSTHOG_PERSONAL_API_KEY and GH_PAT
+# secrets are configured.
 #
 # Gated purely on the head branch name rather than author/labels (unlike
 # auto-merge-icon-pr.yml): every PR from automated/icon-stats-refresh is
 # pushed by this same automation, there's no submitter to vet, and the
 # content is always just a data-file snapshot. CI (Lint & Build) is still
 # the real safety net before anything actually merges.
+#
+# Uses GH_PAT (not the default GITHUB_TOKEN) for the merge itself: a merge
+# performed with GITHUB_TOKEN can't trigger downstream push-triggered
+# workflows (GitHub's anti-recursion rule), which would silently prevent
+# the resulting main-branch push from ever kicking off the site's deploy
+# workflow. A PAT-authored merge doesn't have that restriction.
 
 on:
   pull_request:
@@ -32,4 +38,4 @@ jobs:
         run: gh pr merge --auto --squash "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}

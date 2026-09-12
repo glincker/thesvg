@@ -6,12 +6,19 @@ name: Icon stats snapshot
 # per-icon thumbs-up/down counts without a live authenticated query from the
 # browser.
 #
-# Requires POSTHOG_PERSONAL_API_KEY as a repo secret - a Personal API Key
-# with "Query Read" scope, generated at
-# https://us.posthog.com/settings/user-api-keys. Until that secret is added,
-# this workflow will fail with a clear, actionable error from the script
-# itself (see src/scripts/fetch-icon-stats.ts) and will NOT touch the existing
-# snapshot file or push anything - failure here is inert.
+# Requires two repo secrets:
+#   - POSTHOG_PERSONAL_API_KEY: a Personal API Key with "Query Read" scope,
+#     generated at https://us.posthog.com/settings/user-api-keys. Until it's
+#     added, this workflow fails with a clear, actionable error from the
+#     script itself (see src/scripts/fetch-icon-stats.ts) and does NOT touch
+#     the existing snapshot file or push anything - failure here is inert.
+#   - GH_PAT: a fine-grained Personal Access Token scoped to this repo only,
+#     with Contents (read/write) and Pull requests (read/write) permissions.
+#     Used instead of the default GITHUB_TOKEN for checkout/push/PR-create,
+#     because GITHUB_TOKEN-authored pushes and PRs can't trigger downstream
+#     workflows (GitHub's anti-recursion rule) - without a PAT here,
+#     auto-merge-icon-stats-pr.yml would sit at "action_required" needing a
+#     human to manually approve every single run.
 #
 # Runs every 2 hours (PostHog Cloud's HogQL rate limit is shared org-wide,
 # and this is a low-traffic feature - no need for anything tighter), plus
@@ -48,6 +55,14 @@ jobs:
         uses: actions/checkout@v7
         with:
           fetch-depth: 0
+          # Checking out (and later pushing) with the default GITHUB_TOKEN
+          # means the resulting push/PR can't trigger downstream workflows
+          # (GitHub's anti-recursion rule for GITHUB_TOKEN-authored events) -
+          # auto-merge-icon-stats-pr.yml would sit at "action_required"
+          # forever without a human manually approving it each run. A PAT
+          # doesn't have that restriction, so pushes/PRs made with it behave
+          # like a normal contributor's and cascade normally.
+          token: ${{ secrets.GH_PAT }}
 
       - name: Install pnpm
         uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
@@ -95,7 +110,7 @@ jobs:
       - name: Open PR if none exists
         if: steps.diff.outputs.changed == 'true'
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
           EXISTING=$(gh pr list --head automated/icon-stats-refresh --state open --json number --jq 'length')
           if [ "$EXISTING" = "0" ]; then
