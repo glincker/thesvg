@@ -2,7 +2,7 @@ import type { SnippetFormat } from "@/lib/code-snippets";
 
 /** Escape HTML so raw code is safe inside dangerouslySetInnerHTML */
 export function esc(str: string): string {
-  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 }
 
 /** Wrap text in a colored span using placeholder markers first, then expand */

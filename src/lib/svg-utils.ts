@@ -141,23 +141,75 @@ export function sanitizeSvgForRender(source: string): string {
   if (typeof window === "undefined") return source;
   if (!isLikelySvg(source)) return source;
 
-  const stripped = source
-    .replace(/<script[\s\S]*?<\/script\s*>/gi, "")
-    .replace(/<script\b[^>]*\/?>/gi, "")
-    .replace(/<foreignObject[\s\S]*?<\/foreignObject\s*>/gi, "")
-    .replace(/\son[a-z]+\s*=\s*"[^"]*"/gi, "")
-    .replace(/\son[a-z]+\s*=\s*'[^']*'/gi, "")
-    .replace(/\son[a-z]+\s*=\s*[^\s>]+/gi, "")
-    .replace(
-      /\s(?:href|xlink:href)\s*=\s*"\s*(?:javascript|vbscript|data:text\/html)[^"]*"/gi,
-      "",
-    )
-    .replace(
-      /\s(?:href|xlink:href)\s*=\s*'\s*(?:javascript|vbscript|data:text\/html)[^']*'/gi,
-      "",
-    );
+  try {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(source, "image/svg+xml");
 
-  return stripped;
+    // Ensure it parsed as an SVG
+    const root = doc.documentElement;
+    if (root.nodeName.toLowerCase() !== "svg") {
+      return "";
+    }
+
+    // Reject if parsererror exists (invalid XML)
+    if (doc.getElementsByTagName("parsererror").length > 0) {
+      return "";
+    }
+
+    const removeNodes: Element[] = [];
+
+    const walk = (node: Node) => {
+      if (node.nodeType === 1) { // Node.ELEMENT_NODE
+        const el = node as Element;
+        const tag = el.tagName.toLowerCase();
+        if (tag === "script" || tag === "foreignobject") {
+          removeNodes.push(el);
+          return;
+        }
+
+        const attributes = el.attributes;
+        if (attributes) {
+          const toRemove: string[] = [];
+          for (let i = 0; i < attributes.length; i++) {
+            const attr = attributes[i];
+            const name = attr.name.toLowerCase();
+            const value = attr.value.trim().toLowerCase();
+
+            if (name.startsWith("on")) {
+              toRemove.push(attr.name);
+            } else if (
+              (name === "href" || name === "xlink:href") &&
+              (value.startsWith("javascript:") ||
+                value.startsWith("vbscript:") ||
+                value.startsWith("data:text/html"))
+            ) {
+              toRemove.push(attr.name);
+            }
+          }
+          toRemove.forEach((attrName) => el.removeAttribute(attrName));
+        }
+      }
+
+      let child = node.firstChild;
+      while (child) {
+        walk(child);
+        child = child.nextSibling;
+      }
+    };
+
+    walk(root);
+
+    removeNodes.forEach((node) => {
+      if (node.parentNode) {
+        node.parentNode.removeChild(node);
+      }
+    });
+
+    const serializer = new XMLSerializer();
+    return serializer.serializeToString(doc);
+  } catch {
+    return "";
+  }
 }
 
 // ─── Deep links ─────────────────────────────────────────────────────────────
