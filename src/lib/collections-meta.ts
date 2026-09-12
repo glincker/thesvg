@@ -1,5 +1,5 @@
 import type { ComponentType } from "react";
-import { Cloud, Shapes, Users } from "lucide-react";
+import { Cloud, ShieldCheck, Shapes, Users } from "lucide-react";
 
 /**
  * Single source of truth for collection metadata. Every collection that
@@ -13,7 +13,7 @@ import { Cloud, Shapes, Users } from "lucide-react";
  * Add a new collection by adding one entry here; every consumer (sidebar,
  * collection pages, hero carousel, header) picks it up automatically.
  */
-export const COLLECTION_IDS = ["brands", "aws", "azure", "gcp", "k8s", "community"] as const;
+export const COLLECTION_IDS = ["brands", "aws", "azure", "gcp", "k8s", "community", "auth-badges"] as const;
 
 export type CollectionId = (typeof COLLECTION_IDS)[number];
 
@@ -171,6 +171,28 @@ export const COLLECTIONS_META: Record<CollectionId, CollectionMeta> = {
     ],
     heroLabel: "Community",
     heroDescription: "Dev tools, databases, and frameworks from the community",
+  },
+  "auth-badges": {
+    id: "auth-badges",
+    label: "Auth Badges",
+    shortLabel: "Auth",
+    icon: ShieldCheck,
+    color: "text-emerald-500",
+    pageTitle: "Auth Badge Icons - Free 2FA Service SVG Download",
+    pageDescription:
+      "Browse and download 858 circular auth badge SVG icons for two-factor authentication apps and account security UIs. Covers exchanges, VPNs, hosting providers, games, and more. CC0, free for developers.",
+    pageKeywords: [
+      "auth badges",
+      "2FA icons",
+      "two-factor authentication icons",
+      "authenticator app icons",
+      "security badge SVG",
+      "account icons",
+      "service badge icons",
+      "CC0 icons",
+    ],
+    heroLabel: "Auth Badges",
+    heroDescription: "Circular service badges for 2FA and account security UIs",
   },
 };
 

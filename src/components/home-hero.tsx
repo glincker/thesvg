@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Anchor, ArrowRight, Check, Clock, Cloud, Copy, Package, Sparkles, Users, X, Zap } from "lucide-react";
+import { Anchor, ArrowRight, Check, Clock, Cloud, Copy, Package, ShieldCheck, Sparkles, Users, X, Zap } from "lucide-react";
 import Link from "next/link";
 import posthog from "posthog-js";
 import type { Collection, IconEntry } from "@/lib/icons";
@@ -73,6 +73,13 @@ const POPULAR_K8S_SLUGS = [
 /** Hand-picked popular Community slugs */
 const POPULAR_COMMUNITY_SLUGS = [
   "airflow", "cockroachdb", "envoy", "alpinejs", "chartjs", "cassandra",
+];
+
+/** Hand-picked popular Auth Badges slugs */
+const POPULAR_AUTH_BADGES_SLUGS = [
+  "google-badge", "github-badge", "microsoft-badge", "apple-badge",
+  "amazon-badge", "paypal-badge", "discord-badge", "dropbox-badge",
+  "steam-badge", "bitwarden-badge", "proton-badge",
 ];
 
 const ALL_SLIDES = [
@@ -232,6 +239,19 @@ const ALL_SLIDES = [
     collection: "community" as const,
     floatSlugs: POPULAR_COMMUNITY_SLUGS,
   },
+  {
+    badge: "CC0, No Attribution",
+    badgeIcon: ShieldCheck,
+    title: "858 Auth Badge Icons",
+    description: "Circular service badges for 2FA setup screens and account security UIs. Exchanges, VPNs, hosting, games, and more.",
+    cta: { label: "Browse Badges", href: "#popular" },
+    ctaSecondary: { label: "All Categories", href: "#categories" },
+    gradient: "from-emerald-50/50 via-background to-emerald-50/30 dark:from-emerald-950/20 dark:via-background dark:to-emerald-950/10",
+    accent: "border-emerald-200/50 bg-emerald-50/80 text-emerald-600 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-400",
+    blob: "bg-emerald-400/10 dark:bg-emerald-500/5",
+    collection: "auth-badges" as const,
+    floatSlugs: POPULAR_AUTH_BADGES_SLUGS,
+  },
 ];
 
 const SLIDE_DURATION = 6000;
@@ -385,6 +405,7 @@ export function HomeHero({
       gcp: POPULAR_GCP_SLUGS,
       k8s: POPULAR_K8S_SLUGS,
       community: POPULAR_COMMUNITY_SLUGS,
+      "auth-badges": POPULAR_AUTH_BADGES_SLUGS,
     };
     const slugs = slugMap[activeCollection] ?? POPULAR_SLUGS;
     return slugs
