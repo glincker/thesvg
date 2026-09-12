@@ -71,7 +71,7 @@ function buildFeedbackIssueUrl(slug: string, title: string, reason: Reason): str
  * An upvote (once, site-wide, not per icon) offers a Product Hunt review
  * link, the positive-sentiment equivalent.
  */
-export function IconFeedback({ slug, title }: { slug: string; title: string }) {
+export function IconFeedback({ slug, title }: Readonly<{ slug: string; title: string }>) {
   const [voted, setVoted] = useState<Sentiment | null>(null);
   const [tally, setTally] = useState<Tally | null>(null);
   const [pickingReason, setPickingReason] = useState(false);
@@ -136,6 +136,8 @@ export function IconFeedback({ slug, title }: { slug: string; title: string }) {
     window.open(withUtm(buildFeedbackIssueUrl(slug, title, reason), "icon_feedback"), "_blank", "noopener,noreferrer");
   }
 
+  const statusLabel = reasonPicked ? "Thanks - opened an issue" : voted ? "Thanks!" : "Helpful?";
+
   return (
     <div
       className={cn(
@@ -176,7 +178,7 @@ export function IconFeedback({ slug, title }: { slug: string; title: string }) {
 
       <div className="surface-glass flex items-center gap-2 rounded-full border border-border/40 px-3 py-2 shadow-[0_12px_36px_-12px_rgba(0,0,0,0.45),0_2px_8px_-2px_rgba(0,0,0,0.25)] dark:border-white/[0.08]">
         <span className="hidden text-xs text-muted-foreground sm:inline">
-          {reasonPicked ? "Thanks - opened an issue" : voted ? "Thanks!" : "Helpful?"}
+          {statusLabel}
         </span>
         <div className="flex items-center gap-1.5">
           <button
