@@ -189,7 +189,7 @@
     "aliases": [],
     "hex": "5395FD",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -778,7 +778,7 @@
     "hex": "3499FE",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/acode/default.svg",
@@ -883,7 +883,7 @@
     "aliases": [],
     "hex": "FFB746",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -938,7 +938,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -956,7 +956,7 @@
     "aliases": [],
     "hex": "6B46C1",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -1030,7 +1030,7 @@
     "aliases": [],
     "hex": "B71C1C",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -1351,7 +1351,7 @@
     "aliases": [],
     "hex": "005E9D",
     "categories": [
-      "Authentication",
+      "Identity",
       "Software"
     ],
     "variants": {
@@ -1666,7 +1666,7 @@
     "aliases": [],
     "hex": "099DFD",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -1876,7 +1876,7 @@
     "aliases": [],
     "hex": "2C5BB4",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -1913,7 +1913,7 @@
     "aliases": [],
     "hex": "7A1FA2",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -1931,7 +1931,8 @@
     "aliases": [],
     "hex": "E2001A",
     "categories": [
-      "Other"
+      "Aviation",
+      "Platform"
     ],
     "variants": {
       "default": "/icons/air-algerie/default.svg"
@@ -2093,7 +2094,7 @@
     "aliases": [],
     "hex": "FFA500",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -2274,7 +2275,7 @@
     "aliases": [],
     "hex": "23C8D2",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -2292,7 +2293,7 @@
     "aliases": [],
     "hex": "0096D6",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -2419,7 +2420,7 @@
     "aliases": [],
     "hex": "FAA61A",
     "categories": [
-      "Other"
+      "Media"
     ],
     "variants": {
       "default": "/icons/al-jazeera/default.svg"
@@ -2436,7 +2437,7 @@
     "aliases": [],
     "hex": "F46D01",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -2509,7 +2510,7 @@
     "aliases": [],
     "hex": "FFDF6F",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -2819,7 +2820,7 @@
     "aliases": [],
     "hex": "174E8C",
     "categories": [
-      "Healthcare",
+      "Health",
       "Platform"
     ],
     "variants": {
@@ -3485,7 +3486,7 @@
     "hex": "3DDC84",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/android-studio/default.svg",
@@ -3629,7 +3630,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -3701,7 +3702,7 @@
     "aliases": [],
     "hex": "EE0000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -3810,7 +3811,7 @@
     "aliases": [],
     "hex": "364FF3",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -3963,7 +3964,7 @@
     "hex": "FF6A7B",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/anytype/default.svg",
@@ -4038,7 +4039,7 @@
     "hex": "000000",
     "categories": [
       "Data",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/apache-arrow/default.svg"
@@ -4756,7 +4757,7 @@
     "aliases": [],
     "hex": "F44A53",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -4793,7 +4794,7 @@
     "aliases": [],
     "hex": "FF6441",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -4847,7 +4848,7 @@
     "hex": "6236FF",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/apostrophe/default.svg",
@@ -5008,7 +5009,7 @@
     "aliases": [],
     "hex": "EE376D",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -5175,7 +5176,7 @@
     "aliases": [],
     "hex": "DCAF74",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -5267,7 +5268,7 @@
     "hex": "1904DA",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/aqua/default.svg",
@@ -5468,7 +5469,7 @@
     "aliases": [],
     "hex": "C61C3E",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -5560,7 +5561,7 @@
     "aliases": [],
     "hex": "007ACC",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -5721,7 +5722,7 @@
     "aliases": [],
     "hex": "417598",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -5845,7 +5846,7 @@
     "aliases": [],
     "hex": "F06A6A",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -5867,7 +5868,7 @@
     "aliases": [],
     "hex": "E40046",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -5885,7 +5886,7 @@
     "aliases": [],
     "hex": "D40000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -5939,7 +5940,8 @@
     "aliases": [],
     "hex": "DC1A1A",
     "categories": [
-      "Other"
+      "Aviation",
+      "Platform"
     ],
     "variants": {
       "default": "/icons/asiana-airlines/default.svg"
@@ -6109,7 +6111,7 @@
     "aliases": [],
     "hex": "830051",
     "categories": [
-      "Other"
+      "Health"
     ],
     "variants": {
       "default": "/icons/astrazeneca/default.svg"
@@ -6329,7 +6331,7 @@
     "hex": "000000",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/atom/default.svg"
@@ -6400,7 +6402,7 @@
     "aliases": [],
     "hex": "0000CC",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -6473,7 +6475,7 @@
     "aliases": [],
     "hex": "82612C",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -6601,7 +6603,7 @@
     "hex": "EB5424",
     "categories": [
       "Library",
-      "Authentication"
+      "Identity"
     ],
     "variants": {
       "default": "/icons/auth0/default.svg",
@@ -6618,7 +6620,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Authentication",
+      "Identity",
       "Software"
     ],
     "variants": {
@@ -6635,7 +6637,7 @@
     "aliases": [],
     "hex": "113155",
     "categories": [
-      "Authentication",
+      "Identity",
       "Software"
     ],
     "variants": {
@@ -6654,7 +6656,7 @@
     "aliases": [],
     "hex": "FD4B2D",
     "categories": [
-      "Authentication",
+      "Identity",
       "Software"
     ],
     "variants": {
@@ -6673,7 +6675,7 @@
     "hex": "000000",
     "categories": [
       "Software",
-      "Authentication"
+      "Identity"
     ],
     "variants": {
       "default": "/icons/authy/default.svg"
@@ -6707,7 +6709,7 @@
     "aliases": [],
     "hex": "3BA4B7",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -6870,7 +6872,7 @@
     "aliases": [],
     "hex": "DD3735",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -6906,7 +6908,7 @@
     "aliases": [],
     "hex": "4B4B77",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -7006,10 +7008,10 @@
       "Business",
       "CMS",
       "DevTool",
-      "Ecommerce",
+      "E-commerce",
       "Software",
       "SaaS",
-      "Mobile App"
+      "Mobile"
     ],
     "variants": {
       "default": "/icons/avenping/default.svg"
@@ -7135,7 +7137,7 @@
     "aliases": [],
     "hex": "FC60A8",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -7190,7 +7192,7 @@
     "aliases": [],
     "hex": "222F3E",
     "categories": [
-      "AI",
+      "Cloud",
       "Software"
     ],
     "variants": {
@@ -15446,7 +15448,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-amazon-cloudwatch-alarm/default.svg"
@@ -15468,7 +15470,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-amazon-cloudwatch-cross-account-observability/default.svg"
@@ -15490,7 +15492,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-amazon-cloudwatch-data-protection/default.svg"
@@ -15512,7 +15514,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-amazon-cloudwatch-event-event-based/default.svg"
@@ -15534,7 +15536,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-amazon-cloudwatch-event-time-based/default.svg"
@@ -15556,7 +15558,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-amazon-cloudwatch-evidently/default.svg"
@@ -15578,7 +15580,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-amazon-cloudwatch-logs/default.svg"
@@ -15600,7 +15602,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-amazon-cloudwatch-metrics-insights/default.svg"
@@ -15622,7 +15624,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-amazon-cloudwatch-rule/default.svg"
@@ -15644,7 +15646,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-amazon-cloudwatch-rum/default.svg"
@@ -15666,7 +15668,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-amazon-cloudwatch-synthetics/default.svg"
@@ -20019,7 +20021,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-cloudformation-change-set/default.svg"
@@ -20041,7 +20043,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-cloudformation-stack/default.svg"
@@ -20063,7 +20065,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-cloudformation-template/default.svg"
@@ -20085,7 +20087,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-cloudtrail-cloudtrail-lake/default.svg"
@@ -22265,7 +22267,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-license-manager-application-discovery/default.svg"
@@ -22287,7 +22289,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-license-manager-license-blending/default.svg"
@@ -22507,7 +22509,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-organizations-account/default.svg"
@@ -22529,7 +22531,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-organizations-management-account/default.svg"
@@ -22551,7 +22553,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-organizations-organizational-unit/default.svg"
@@ -22815,7 +22817,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-systems-manager-application-manager/default.svg"
@@ -22837,7 +22839,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-systems-manager-automation/default.svg"
@@ -22859,7 +22861,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-systems-manager-change-calendar/default.svg"
@@ -22881,7 +22883,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-systems-manager-change-manager/default.svg"
@@ -22903,7 +22905,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-systems-manager-compliance/default.svg"
@@ -22925,7 +22927,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-systems-manager-distributor/default.svg"
@@ -22947,7 +22949,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-systems-manager-documents/default.svg"
@@ -22969,7 +22971,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-systems-manager-incident-manager/default.svg"
@@ -22991,7 +22993,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-systems-manager-inventory/default.svg"
@@ -23013,7 +23015,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-systems-manager-maintenance-windows/default.svg"
@@ -23035,7 +23037,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-systems-manager-opscenter/default.svg"
@@ -23057,7 +23059,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-systems-manager-parameter-store/default.svg"
@@ -23079,7 +23081,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-systems-manager-patch-manager/default.svg"
@@ -23101,7 +23103,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-systems-manager-run-command/default.svg"
@@ -23123,7 +23125,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-systems-manager-session-manager/default.svg"
@@ -23145,7 +23147,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-systems-manager-state-manager/default.svg"
@@ -23277,7 +23279,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-trusted-advisor-checklist/default.svg"
@@ -23299,7 +23301,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-trusted-advisor-checklist-cost/default.svg"
@@ -23321,7 +23323,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-trusted-advisor-checklist-fault-tolerant/default.svg"
@@ -23343,7 +23345,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-trusted-advisor-checklist-performance/default.svg"
@@ -23365,7 +23367,7 @@
     ],
     "hex": "232F3E",
     "categories": [
-      "Management Governance"
+      "Management"
     ],
     "variants": {
       "default": "/icons/aws-res-aws-trusted-advisor-checklist-security/default.svg"
@@ -23753,7 +23755,7 @@
     "aliases": [],
     "hex": "5A29E4",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -36548,7 +36550,7 @@
     "aliases": [],
     "hex": "FBB91E",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Compiler"
     ],
     "variants": {
@@ -36566,7 +36568,7 @@
     "aliases": [],
     "hex": "BB464B",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -36770,7 +36772,8 @@
     "aliases": [],
     "hex": "0066A6",
     "categories": [
-      "Other"
+      "Automotive",
+      "Platform"
     ],
     "variants": {
       "default": "/icons/bajaj-auto/default.svg"
@@ -37234,7 +37237,7 @@
     ],
     "hex": "00A4FF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -37252,7 +37255,7 @@
     "aliases": [],
     "hex": "31369E",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -37306,7 +37309,7 @@
     "aliases": [],
     "hex": "10384F",
     "categories": [
-      "Other"
+      "Health"
     ],
     "variants": {
       "default": "/icons/bayer/default.svg"
@@ -37393,7 +37396,7 @@
     "aliases": [],
     "hex": "BB1919",
     "categories": [
-      "Other"
+      "Media"
     ],
     "variants": {
       "default": "/icons/bbc-news/default.svg"
@@ -37717,7 +37720,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -37770,7 +37773,7 @@
     "aliases": [],
     "hex": "002664",
     "categories": [
-      "Other"
+      "Hospitality"
     ],
     "variants": {
       "default": "/icons/best-western/default.svg"
@@ -37839,7 +37842,7 @@
     "aliases": [],
     "hex": "FFFFFF",
     "categories": [
-      "Authentication",
+      "Identity",
       "Library"
     ],
     "variants": {
@@ -37880,7 +37883,7 @@
     "aliases": [],
     "hex": "3E82E5",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -37898,7 +37901,7 @@
     "aliases": [],
     "hex": "232326",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -37952,7 +37955,7 @@
     "aliases": [],
     "hex": "283274",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -38148,7 +38151,7 @@
     "aliases": [],
     "hex": "1A81C2",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -38169,7 +38172,7 @@
     ],
     "hex": "60A5FA",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -38187,7 +38190,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -38240,7 +38243,7 @@
     "aliases": [],
     "hex": "0052CC",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -38423,7 +38426,7 @@
     "hex": "175DDC",
     "categories": [
       "Software",
-      "Authentication"
+      "Identity"
     ],
     "variants": {
       "default": "/icons/bitwarden/default.svg",
@@ -39041,7 +39044,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -39478,7 +39481,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -39892,7 +39895,7 @@
     "aliases": [],
     "hex": "2E2E2E",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -39931,7 +39934,7 @@
     ],
     "hex": "000000",
     "categories": [
-      "Other"
+      "Communication"
     ],
     "variants": {
       "default": "/icons/btk/default.svg"
@@ -39965,7 +39968,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -39983,7 +39986,7 @@
     "aliases": [],
     "hex": "7957D5",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -40125,7 +40128,7 @@
     "aliases": [],
     "hex": "14CC80",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -40687,7 +40690,7 @@
     "aliases": [],
     "hex": "F39914",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -40835,7 +40838,7 @@
     "aliases": [],
     "hex": "45B29D",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -41036,7 +41039,7 @@
     "aliases": [],
     "hex": "119EFF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -41125,7 +41128,7 @@
     "aliases": [],
     "hex": "ED5B26",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -41251,7 +41254,7 @@
     "aliases": [],
     "hex": "012169",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -41466,7 +41469,8 @@
     "aliases": [],
     "hex": "006564",
     "categories": [
-      "Other"
+      "Aviation",
+      "Platform"
     ],
     "variants": {
       "default": "/icons/cathay-pacific/default.svg"
@@ -41598,7 +41602,7 @@
     "aliases": [],
     "hex": "37814A",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -41688,7 +41692,7 @@
     "aliases": [],
     "hex": "EF5C55",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -41798,7 +41802,7 @@
     "aliases": [],
     "hex": "A30701",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -42205,7 +42209,7 @@
     "aliases": [],
     "hex": "E88C1F",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -42223,7 +42227,7 @@
     "aliases": [],
     "hex": "F09820",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -42315,7 +42319,7 @@
     "aliases": [],
     "hex": "353D47",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -42444,7 +42448,7 @@
     "aliases": [],
     "hex": "80B5E3",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -42573,7 +42577,7 @@
     ],
     "hex": "FFF500",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -42614,7 +42618,7 @@
     "aliases": [],
     "hex": "F8C517",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -42702,7 +42706,7 @@
     "aliases": [],
     "hex": "343434",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -43089,7 +43093,7 @@
     "categories": [
       "AI",
       "Software",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/claude-code/color.svg",
@@ -43125,7 +43129,7 @@
     "hex": "6C47FF",
     "categories": [
       "Software",
-      "Authentication"
+      "Identity"
     ],
     "variants": {
       "default": "/icons/clerk/default.svg",
@@ -43166,7 +43170,7 @@
     "aliases": [],
     "hex": "FFCC01",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -43201,7 +43205,7 @@
     "aliases": [],
     "hex": "7B68EE",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -43221,7 +43225,7 @@
     "categories": [
       "AI",
       "Software",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/cline/default.svg",
@@ -43239,7 +43243,7 @@
     "hex": "000000",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/clion/default.svg",
@@ -43505,7 +43509,7 @@
     "aliases": [],
     "hex": "F38020",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -43726,7 +43730,7 @@
     "aliases": [],
     "hex": "231F20",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -43799,7 +43803,7 @@
     "aliases": [],
     "hex": "CC0000",
     "categories": [
-      "Other"
+      "Media"
     ],
     "variants": {
       "default": "/icons/cnn-international/default.svg"
@@ -43887,7 +43891,7 @@
     "aliases": [],
     "hex": "F40009",
     "categories": [
-      "Other"
+      "Food"
     ],
     "variants": {
       "default": "/icons/coca-cola-zero/default.svg"
@@ -43904,7 +43908,7 @@
     "aliases": [],
     "hex": "0066CC",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -43957,7 +43961,7 @@
     "aliases": [],
     "hex": "EE3322",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -43994,7 +43998,7 @@
     "hex": "F46A54",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/coda/default.svg",
@@ -44011,7 +44015,7 @@
     "aliases": [],
     "hex": "222F29",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -44030,7 +44034,7 @@
     "hex": "41AD48",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/code-blocks/default.svg",
@@ -44047,7 +44051,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -44138,7 +44142,7 @@
     "aliases": [],
     "hex": "F6E05E",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -44191,7 +44195,7 @@
     "aliases": [],
     "hex": "F01F7A",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -44209,7 +44213,7 @@
     "aliases": [],
     "hex": "171920",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -44373,7 +44377,7 @@
     "aliases": [],
     "hex": "D30707",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -44503,7 +44507,7 @@
     "aliases": [],
     "hex": "3E8DCC",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -44522,7 +44526,7 @@
     "hex": "151515",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/codesandbox/default.svg",
@@ -45087,7 +45091,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -45141,7 +45145,7 @@
     "aliases": [],
     "hex": "B5314C",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -45176,7 +45180,7 @@
     "aliases": [],
     "hex": "67C52A",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -45333,7 +45337,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -45386,7 +45390,7 @@
     "aliases": [],
     "hex": "172B4D",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -45478,7 +45482,7 @@
     "aliases": [],
     "hex": "F24C53",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -45645,7 +45649,7 @@
     "hex": "33333B",
     "categories": [
       "AI",
-      "Devtool",
+      "DevTool",
       "Editor"
     ],
     "variants": {
@@ -45715,7 +45719,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Other"
+      "Fashion"
     ],
     "variants": {
       "default": "/icons/converse/default.svg"
@@ -45789,7 +45793,7 @@
     "aliases": [],
     "hex": "D4AA00",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -45826,7 +45830,7 @@
     "aliases": [],
     "hex": "6B16ED",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -46223,7 +46227,7 @@
     "aliases": [],
     "hex": "3F5767",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -46366,7 +46370,7 @@
     "aliases": [],
     "hex": "009DC7",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -46420,7 +46424,7 @@
     "aliases": [],
     "hex": "09D3AC",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -46727,7 +46731,7 @@
     "aliases": [],
     "hex": "49B04A",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -46853,7 +46857,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -47042,7 +47046,7 @@
     "hex": "000",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/cursor/default.svg",
@@ -47173,7 +47177,7 @@
     "aliases": [],
     "hex": "69D3A7",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -47191,7 +47195,7 @@
     "aliases": [],
     "hex": "F7DF1E",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -47209,7 +47213,7 @@
     "aliases": [],
     "hex": "B03931",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -47227,7 +47231,7 @@
     "aliases": [],
     "hex": "432975",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -47265,7 +47269,7 @@
     ],
     "hex": "F9A03C",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -47483,7 +47487,7 @@
     "aliases": [],
     "hex": "0D2192",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -47501,7 +47505,7 @@
     "aliases": [],
     "hex": "141E24",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -47628,7 +47632,7 @@
     "aliases": [],
     "hex": "FC6E6B",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -47724,7 +47728,7 @@
     "aliases": [],
     "hex": "632CA6",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -47763,7 +47767,7 @@
     "hex": "000000",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/datagrip/default.svg",
@@ -48168,7 +48172,7 @@
     "aliases": [],
     "hex": "FF2D55",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -48521,7 +48525,7 @@
     "aliases": [],
     "hex": "094491",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -48619,7 +48623,7 @@
     "aliases": [],
     "hex": "025E8C",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -48860,7 +48864,7 @@
     "aliases": [],
     "hex": "280459",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -48898,7 +48902,7 @@
     ],
     "hex": "2753E3",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -48972,7 +48976,7 @@
     "aliases": [],
     "hex": "003E54",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -49118,7 +49122,7 @@
     ],
     "hex": "F08705",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -49155,7 +49159,7 @@
     "hex": "E41D2D",
     "categories": [
       "Software",
-      "Mobile App",
+      "Mobile",
       "Self-Hosted"
     ],
     "variants": {
@@ -49436,7 +49440,7 @@
     "aliases": [],
     "hex": "00A049",
     "categories": [
-      "Healthcare"
+      "Health"
     ],
     "variants": {
       "default": "/icons/dis-chem-pharmacies/default.svg",
@@ -49656,7 +49660,7 @@
     "aliases": [],
     "hex": "4F433C",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -49752,7 +49756,7 @@
     "aliases": [],
     "hex": "008000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -49788,7 +49792,7 @@
     "aliases": [],
     "hex": "59C1D5",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -49864,7 +49868,7 @@
     "aliases": [],
     "hex": "2496ED",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -49921,7 +49925,7 @@
     "aliases": [],
     "hex": "2ECE53",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -50111,7 +50115,7 @@
     "hex": "1B6AC6",
     "categories": [
       "Cloud",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/dokku/default.svg"
@@ -50127,7 +50131,7 @@
     "aliases": [],
     "hex": "5965F2",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -50162,7 +50166,7 @@
     "aliases": [],
     "hex": "263C5C",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -50180,7 +50184,7 @@
     "aliases": [],
     "hex": "00AAFF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -50256,7 +50260,7 @@
     "aliases": [],
     "hex": "0078AE",
     "categories": [
-      "Other"
+      "Food"
     ],
     "variants": {
       "default": "/icons/dominos-pizza/default.svg"
@@ -50528,7 +50532,7 @@
     "aliases": [],
     "hex": "2C4AA8",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -50546,7 +50550,7 @@
     "aliases": [],
     "hex": "1A1A2E",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Self-Hosted"
     ],
     "variants": {
@@ -50799,7 +50803,7 @@
     "aliases": [],
     "hex": "212121",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -50946,7 +50950,7 @@
     "aliases": [],
     "hex": "F01A30",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -51446,7 +51450,7 @@
     "hex": "FF1464",
     "categories": [
       "Software",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/eclipse-adoptium/default.svg",
@@ -51465,7 +51469,7 @@
     "hex": "525C86",
     "categories": [
       "Software",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/eclipse-che/default.svg",
@@ -51483,7 +51487,7 @@
     "hex": "2C2255",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/eclipse-ide/default.svg",
@@ -51501,7 +51505,7 @@
     "hex": "FC390E",
     "categories": [
       "Software",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/eclipse-jetty/default.svg",
@@ -51519,7 +51523,7 @@
     "hex": "3C5280",
     "categories": [
       "Software",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/eclipse-mosquitto/default.svg",
@@ -51699,7 +51703,7 @@
     "aliases": [],
     "hex": "FEFEFE",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -51881,7 +51885,7 @@
     "aliases": [],
     "hex": "B4CA65",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -51916,7 +51920,7 @@
     "aliases": [],
     "hex": "005571",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -52042,7 +52046,7 @@
     "aliases": [],
     "hex": "E79537",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -52208,7 +52212,7 @@
     "aliases": [],
     "hex": "E1241C",
     "categories": [
-      "Other"
+      "Health"
     ],
     "variants": {
       "default": "/icons/eli-lilly/default.svg"
@@ -52243,7 +52247,7 @@
     "aliases": [],
     "hex": "EA9E44",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -52261,7 +52265,7 @@
     "aliases": [],
     "hex": "1293D8",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -52315,7 +52319,7 @@
     "hex": "000000",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/emacs/default.svg"
@@ -52492,7 +52496,7 @@
     "aliases": [],
     "hex": "7F7FFF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -52822,7 +52826,7 @@
     "aliases": [],
     "hex": "0089FF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -52895,7 +52899,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Ecommerce",
+      "E-commerce",
       "Platform"
     ],
     "variants": {
@@ -52931,7 +52935,7 @@
     "aliases": [],
     "hex": "4B32C3",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -53153,7 +53157,8 @@
     "aliases": [],
     "hex": "C49757",
     "categories": [
-      "Other"
+      "Aviation",
+      "Platform"
     ],
     "variants": {
       "default": "/icons/etihad/default.svg"
@@ -53223,7 +53228,7 @@
     "aliases": [],
     "hex": "003247",
     "categories": [
-      "Other"
+      "Aviation"
     ],
     "variants": {
       "default": "/icons/european-space-agency/default.svg"
@@ -53260,7 +53265,7 @@
     "aliases": [],
     "hex": "5AB552",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -53406,7 +53411,7 @@
     "aliases": [],
     "hex": "009CAB",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -54007,7 +54012,7 @@
     "aliases": [],
     "hex": "F36F21",
     "categories": [
-      "Other"
+      "Food"
     ],
     "variants": {
       "default": "/icons/fanta/default.svg"
@@ -54175,7 +54180,7 @@
     "aliases": [],
     "hex": "00F200",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -54193,7 +54198,7 @@
     "aliases": [],
     "hex": "FF282D",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -54480,7 +54485,7 @@
     "aliases": [],
     "hex": "042133",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -54775,7 +54780,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -55070,7 +55075,7 @@
     "aliases": [],
     "hex": "EB844E",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -55180,7 +55185,7 @@
     "aliases": [],
     "hex": "34C534",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -55382,7 +55387,7 @@
     "aliases": [],
     "hex": "3481FE",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -55418,7 +55423,7 @@
     "aliases": [],
     "hex": "4A90D9",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -55544,7 +55549,7 @@
     "aliases": [],
     "hex": "5309E8",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -55581,7 +55586,7 @@
     "hex": "000000",
     "categories": [
       "Software",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/flow-launcher/default.svg"
@@ -55667,7 +55672,7 @@
     "aliases": [],
     "hex": "49BDA5",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -55758,7 +55763,7 @@
     "aliases": [],
     "hex": "5468FF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -55868,7 +55873,7 @@
     "aliases": [],
     "hex": "CC0200",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -56162,7 +56167,7 @@
     ],
     "hex": "28AE60",
     "categories": [
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/format-json-online/default.svg"
@@ -56375,7 +56380,7 @@
     "aliases": [],
     "hex": "FE6A1F",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -56430,7 +56435,7 @@
     "aliases": [],
     "hex": "003366",
     "categories": [
-      "Other"
+      "Media"
     ],
     "variants": {
       "default": "/icons/fox-news/default.svg"
@@ -56591,7 +56596,7 @@
     "aliases": [],
     "hex": "EE350F",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -56627,7 +56632,7 @@
     "aliases": [],
     "hex": "0089FF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -56773,7 +56778,7 @@
     "aliases": [],
     "hex": "343434",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -56827,7 +56832,7 @@
     "aliases": [],
     "hex": "F04242",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -57296,7 +57301,7 @@
     "aliases": [],
     "hex": "F58320",
     "categories": [
-      "Authentication",
+      "Identity",
       "Software"
     ],
     "variants": {
@@ -62174,7 +62179,7 @@
     "aliases": [],
     "hex": "0073D1",
     "categories": [
-      "Other"
+      "Food"
     ],
     "variants": {
       "default": "/icons/general-mills/default.svg"
@@ -62283,7 +62288,7 @@
     "aliases": [],
     "hex": "8D7ACF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -62373,7 +62378,7 @@
     "aliases": [],
     "hex": "8A2BE2",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -62508,7 +62513,7 @@
     "aliases": [],
     "hex": "008ECF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -62545,7 +62550,7 @@
     "aliases": [],
     "hex": "F05032",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -62563,7 +62568,7 @@
     "aliases": [],
     "hex": "212121",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -62581,7 +62586,7 @@
     "aliases": [],
     "hex": "80B3FF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -62599,7 +62604,7 @@
     "aliases": [],
     "hex": "F64935",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -62671,7 +62676,7 @@
     "aliases": [],
     "hex": "609926",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -62725,7 +62730,7 @@
     "aliases": [],
     "hex": "181717",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -62749,7 +62754,7 @@
     "aliases": [],
     "hex": "2088FF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Platform"
     ],
     "variants": {
@@ -62787,7 +62792,7 @@
     "aliases": [],
     "hex": "222222",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Platform"
     ],
     "variants": {
@@ -62805,7 +62810,7 @@
     "aliases": [],
     "hex": "EA4AAA",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Platform"
     ],
     "variants": {
@@ -62861,7 +62866,7 @@
     "aliases": [],
     "hex": "179287",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -62879,7 +62884,7 @@
     "aliases": [],
     "hex": "FC6D26",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -62917,7 +62922,7 @@
     "hex": "FFAE33",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/gitpod/default.svg",
@@ -62970,7 +62975,7 @@
     "aliases": [],
     "hex": "D9C38C",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -63704,7 +63709,7 @@
     "hex": "000000",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/goland/default.svg",
@@ -65473,7 +65478,8 @@
     "aliases": [],
     "hex": "00ACEE",
     "categories": [
-      "Other"
+      "Software",
+      "Platform"
     ],
     "variants": {
       "default": "/icons/gozle/default.svg"
@@ -65560,7 +65566,7 @@
     "aliases": [],
     "hex": "02303A",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -65582,7 +65588,7 @@
     ],
     "hex": "82B816",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -65600,7 +65606,7 @@
     "aliases": [],
     "hex": "F46800",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -65710,7 +65716,7 @@
     "aliases": [],
     "hex": "0053A3",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -65748,7 +65754,7 @@
     "aliases": [],
     "hex": "E10098",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -65822,7 +65828,7 @@
     "aliases": [],
     "hex": "670000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -65914,7 +65920,7 @@
     "aliases": [],
     "hex": "8322FF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -65932,7 +65938,7 @@
     "aliases": [],
     "hex": "78FF96",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -65968,7 +65974,7 @@
     "aliases": [],
     "hex": "337AB7",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -66121,7 +66127,7 @@
     "aliases": [],
     "hex": "FAA918",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -66327,7 +66333,7 @@
     "aliases": [],
     "hex": "CF4647",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -66382,7 +66388,7 @@
     "aliases": [],
     "hex": "499848",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -66453,7 +66459,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -66489,7 +66495,7 @@
     "aliases": [],
     "hex": "1E54B7",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -66561,7 +66567,6 @@
     "aliases": [],
     "hex": "9FEF00",
     "categories": [
-      "Cybersecurity",
       "Security"
     ],
     "variants": {
@@ -66838,7 +66843,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -66911,7 +66916,7 @@
     "aliases": [],
     "hex": "60B932",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -67021,7 +67026,7 @@
     "aliases": [],
     "hex": "0E5DA0",
     "categories": [
-      "Other"
+      "Entertainment"
     ],
     "variants": {
       "default": "/icons/hasbro/default.svg"
@@ -67111,7 +67116,7 @@
     "aliases": [],
     "hex": "1EB4D4",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -67149,7 +67154,7 @@
     ],
     "hex": "030304",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -67204,7 +67209,7 @@
     "aliases": [],
     "hex": "0EAF9C",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -67474,7 +67479,7 @@
     "aliases": [],
     "hex": "B51F08",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -67511,7 +67516,7 @@
     "aliases": [],
     "hex": "008301",
     "categories": [
-      "Other"
+      "Food"
     ],
     "variants": {
       "default": "/icons/heineken/default.svg"
@@ -67528,7 +67533,7 @@
     "aliases": [],
     "hex": "EC1B22",
     "categories": [
-      "Other"
+      "Food"
     ],
     "variants": {
       "default": "/icons/heinz/default.svg"
@@ -67580,7 +67585,7 @@
     "hex": "281733",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/helix/default.svg",
@@ -67633,7 +67638,7 @@
     "aliases": [],
     "hex": "0F1689",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -67776,7 +67781,8 @@
     "aliases": [],
     "hex": "DD0000",
     "categories": [
-      "Other"
+      "Automotive",
+      "Platform"
     ],
     "variants": {
       "default": "/icons/hero-motocorp/default.svg"
@@ -67793,7 +67799,7 @@
     "aliases": [],
     "hex": "4B93FF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -67851,7 +67857,7 @@
     "aliases": [],
     "hex": "60453A",
     "categories": [
-      "Other"
+      "Food"
     ],
     "variants": {
       "default": "/icons/hershey/default.svg"
@@ -68175,7 +68181,7 @@
     "aliases": [],
     "hex": "FA5252",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -68286,7 +68292,7 @@
     "aliases": [],
     "hex": "FBB040",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -68304,7 +68310,7 @@
     "aliases": [],
     "hex": "491F59",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -68322,7 +68328,7 @@
     "aliases": [],
     "hex": "009BD5",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -68414,7 +68420,7 @@
     ],
     "hex": "F5A623",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Cloud"
     ],
     "variants": {
@@ -68527,7 +68533,7 @@
     "aliases": [],
     "hex": "09090B",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -68838,7 +68844,7 @@
     "aliases": [],
     "hex": "3366CC",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -68856,7 +68862,7 @@
     "aliases": [],
     "hex": "009020",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -68891,7 +68897,7 @@
     "aliases": [],
     "hex": "73DC8C",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -69062,7 +69068,7 @@
     "aliases": [],
     "hex": "1B8291",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -69153,7 +69159,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -69300,7 +69306,7 @@
     "aliases": [],
     "hex": "26A69A",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -69318,7 +69324,7 @@
     "aliases": [],
     "hex": "52C0FF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -69495,7 +69501,7 @@
     "aliases": [],
     "hex": "06062C",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -69945,7 +69951,7 @@
     "aliases": [],
     "hex": "60EA78",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -69981,7 +69987,7 @@
     "aliases": [],
     "hex": "00D8E0",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -70072,7 +70078,7 @@
     "aliases": [],
     "hex": "00E7C3",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -70108,7 +70114,7 @@
     "aliases": [],
     "hex": "4250AF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -70802,7 +70808,7 @@
     "aliases": [],
     "hex": "F0DB4F",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -70820,7 +70826,7 @@
     "aliases": [],
     "hex": "4000BF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -71099,7 +71105,7 @@
     "aliases": [],
     "hex": "2599ED",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -71155,7 +71161,7 @@
     "aliases": [],
     "hex": "002D5C",
     "categories": [
-      "Other"
+      "Hospitality"
     ],
     "variants": {
       "default": "/icons/intercontinental/default.svg"
@@ -71302,7 +71308,7 @@
     "hex": "000000",
     "categories": [
       "AI",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/intlayer/default.svg",
@@ -71339,7 +71345,7 @@
     "aliases": [],
     "hex": "00B6F0",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -71357,7 +71363,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -71375,7 +71381,7 @@
     "aliases": [],
     "hex": "3399CC",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -71466,7 +71472,7 @@
     "aliases": [],
     "hex": "65C2CB",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -71596,7 +71602,7 @@
     "aliases": [],
     "hex": "466BB0",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -71650,7 +71656,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -71763,7 +71769,7 @@
       "E-commerce",
       "Entertainment",
       "Media",
-      "Mobile App",
+      "Mobile",
       "Networking",
       "Livestreaming"
     ],
@@ -71782,7 +71788,7 @@
     "aliases": [],
     "hex": "66CFE3",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -71862,7 +71868,7 @@
     "aliases": [],
     "hex": "F0047F",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -71915,7 +71921,7 @@
     "aliases": [],
     "hex": "8A4182",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -72059,7 +72065,7 @@
     "aliases": [],
     "hex": "CC0000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -72114,7 +72120,7 @@
     "aliases": [],
     "hex": "D24939",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -72133,7 +72139,7 @@
     "aliases": [],
     "hex": "C21325",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -72188,7 +72194,7 @@
     "hex": "000000",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/jetbrains/default.svg",
@@ -72381,7 +72387,7 @@
     "aliases": [],
     "hex": "3E8ACC",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -72509,7 +72515,7 @@
     "aliases": [],
     "hex": "0052CC",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -72528,7 +72534,7 @@
     "aliases": [],
     "hex": "0052CC",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -72585,7 +72591,7 @@
     "aliases": [],
     "hex": "97979A",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -72640,7 +72646,7 @@
     "aliases": [],
     "hex": "EE1C25",
     "categories": [
-      "Other"
+      "Health"
     ],
     "variants": {
       "default": "/icons/johnson-and-johnson/default.svg"
@@ -72676,7 +72682,7 @@
     "aliases": [],
     "hex": "1071D3",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -72839,7 +72845,7 @@
     "aliases": [],
     "hex": "E84D3D",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -72928,7 +72934,7 @@
     "aliases": [],
     "hex": "F7DF1E",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -73113,7 +73119,7 @@
     "aliases": [],
     "hex": "25A162",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -73132,7 +73138,7 @@
     "hex": "F37626",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/jupyter/default.svg",
@@ -73235,7 +73241,7 @@
     "hex": "000000",
     "categories": [
       "Library",
-      "Authentication"
+      "Identity"
     ],
     "variants": {
       "default": "/icons/jwt/default.svg"
@@ -74388,7 +74394,7 @@
     ],
     "hex": "2B6CB0",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Cloud"
     ],
     "variants": {
@@ -74405,7 +74411,7 @@
     "aliases": [],
     "hex": "EACFCF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -74423,7 +74429,7 @@
     "aliases": [],
     "hex": "FFA600",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -74753,7 +74759,7 @@
     "aliases": [],
     "hex": "FFC900",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -74809,7 +74815,7 @@
     "aliases": [],
     "hex": "6CAC4D",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -74846,7 +74852,7 @@
     "aliases": [],
     "hex": "528BFF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -74864,7 +74870,7 @@
     "aliases": [],
     "hex": "C8102E",
     "categories": [
-      "Other"
+      "Food"
     ],
     "variants": {
       "default": "/icons/kelloggs/default.svg"
@@ -74970,7 +74976,7 @@
     "aliases": [],
     "hex": "33A0FF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -75006,7 +75012,7 @@
     "aliases": [],
     "hex": "4D4D4D",
     "categories": [
-      "Authentication",
+      "Identity",
       "Software"
     ],
     "variants": {
@@ -75178,7 +75184,7 @@
     "aliases": [],
     "hex": "005571",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -75290,7 +75296,7 @@
     "hex": "F8F676",
     "categories": [
       "AI",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/kilo-code/default.svg",
@@ -75439,7 +75445,7 @@
     "aliases": [],
     "hex": "DA291C",
     "categories": [
-      "Other"
+      "Food"
     ],
     "variants": {
       "default": "/icons/kit-kat/default.svg"
@@ -75604,7 +75610,7 @@
     "aliases": [],
     "hex": "0865AD",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -75640,7 +75646,7 @@
     "aliases": [],
     "hex": "D26B38",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -75730,7 +75736,7 @@
     "aliases": [],
     "hex": "333333",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -76006,7 +76012,7 @@
     "aliases": [],
     "hex": "0D83CD",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -76041,7 +76047,7 @@
     "aliases": [],
     "hex": "00A89C",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -76059,7 +76065,8 @@
     "aliases": [],
     "hex": "00256C",
     "categories": [
-      "Other"
+      "Aviation",
+      "Platform"
     ],
     "variants": {
       "default": "/icons/korean-air/default.svg"
@@ -76262,7 +76269,7 @@
     "aliases": [],
     "hex": "087CFA",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -76336,7 +76343,7 @@
     "aliases": [],
     "hex": "326CE5",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -76354,7 +76361,7 @@
     "aliases": [],
     "hex": "3D647F",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -76497,7 +76504,7 @@
     "aliases": [],
     "hex": "00C28D",
     "categories": [
-      "Cybersecurity"
+      "Security"
     ],
     "variants": {
       "default": "/icons/kvant-system/default.svg"
@@ -76737,7 +76744,7 @@
     "hex": "030710",
     "categories": [
       "AI",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/langchain/default.svg",
@@ -76777,7 +76784,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -76889,7 +76896,7 @@
     "hex": "3B82F6",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/lapce/default.svg",
@@ -76942,7 +76949,7 @@
     "aliases": [],
     "hex": "405263",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -77035,7 +77042,7 @@
     "aliases": [],
     "hex": "008080",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -77126,7 +77133,7 @@
     "hex": "000000",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/lazarus/default.svg",
@@ -77143,7 +77150,7 @@
     "aliases": [],
     "hex": "2E7DE9",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -77198,7 +77205,7 @@
     "aliases": [],
     "hex": "199900",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -77343,7 +77350,7 @@
     "aliases": [],
     "hex": "FF1E1E",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -77379,7 +77386,7 @@
     "aliases": [],
     "hex": "FFCF00",
     "categories": [
-      "Other"
+      "Entertainment"
     ],
     "variants": {
       "default": "/icons/lego/default.svg"
@@ -77469,7 +77476,7 @@
     "aliases": [],
     "hex": "3D90CE",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -77506,7 +77513,7 @@
     "aliases": [],
     "hex": "EF3939",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -77578,7 +77585,7 @@
     "aliases": [],
     "hex": "1D365D",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -77686,7 +77693,8 @@
     "aliases": [],
     "hex": "1A1A1A",
     "categories": [
-      "Other"
+      "Automotive",
+      "Platform"
     ],
     "variants": {
       "default": "/icons/lexus/default.svg"
@@ -77831,7 +77839,7 @@
     "aliases": [],
     "hex": "337AB7",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -78018,7 +78026,7 @@
     "aliases": [],
     "hex": "FF9699",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -78054,7 +78062,7 @@
     "aliases": [],
     "hex": "403C3D",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -78161,7 +78169,7 @@
     "aliases": [],
     "hex": "F44B21",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -78179,7 +78187,7 @@
     "aliases": [],
     "hex": "792EE5",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -78284,7 +78292,8 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Other"
+      "Automotive",
+      "Platform"
     ],
     "variants": {
       "default": "/icons/lincoln-motor-company/default.svg"
@@ -78359,7 +78368,7 @@
     "aliases": [],
     "hex": "5E6AD2",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -78705,7 +78714,7 @@
     "aliases": [],
     "hex": "FFC700",
     "categories": [
-      "Other"
+      "Food"
     ],
     "variants": {
       "default": "/icons/lipton/default.svg"
@@ -78960,7 +78969,7 @@
     "hex": "000",
     "categories": [
       "AI",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/llamaindex/color.svg",
@@ -79070,7 +79079,7 @@
     "aliases": [],
     "hex": "AC130D",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -79123,7 +79132,7 @@
     "aliases": [],
     "hex": "008080",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -79159,7 +79168,8 @@
     "aliases": [],
     "hex": "002F6C",
     "categories": [
-      "Other"
+      "Aviation",
+      "Platform"
     ],
     "variants": {
       "default": "/icons/lockheed-martin/default.svg"
@@ -79210,7 +79220,7 @@
     "aliases": [],
     "hex": "3492FF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -79333,7 +79343,7 @@
     "hex": "85C8C8",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/logseq/default.svg",
@@ -79404,7 +79414,7 @@
     "aliases": [],
     "hex": "5F224B",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -79740,7 +79750,7 @@
     "aliases": [],
     "hex": "00A2FF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -79830,7 +79840,8 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Other"
+      "Automotive",
+      "Platform"
     ],
     "variants": {
       "default": "/icons/lucid-motors/default.svg"
@@ -79865,7 +79876,7 @@
     "aliases": [],
     "hex": "FFFFFF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -80034,7 +80045,7 @@
     "aliases": [],
     "hex": "FF9900",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -80181,7 +80192,7 @@
     "aliases": [],
     "hex": "1E79E9",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -80306,7 +80317,7 @@
     "aliases": [],
     "hex": "00AF9C",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -80509,7 +80520,8 @@
     "aliases": [],
     "hex": "EE3B43",
     "categories": [
-      "Other"
+      "Travel",
+      "Booking"
     ],
     "variants": {
       "default": "/icons/makemytrip/default.svg"
@@ -80581,7 +80593,7 @@
     "aliases": [],
     "hex": "6D28D9",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -80823,7 +80835,7 @@
     "aliases": [],
     "hex": "396CB2",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -80918,7 +80930,7 @@
     "aliases": [],
     "hex": "2596BE",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -80975,7 +80987,8 @@
     "aliases": [],
     "hex": "EE2722",
     "categories": [
-      "Other"
+      "Automotive",
+      "Platform"
     ],
     "variants": {
       "default": "/icons/maruti-suzuki/default.svg"
@@ -81045,7 +81058,7 @@
     "hex": "00447C",
     "categories": [
       "Finance",
-      "Food & Beverage"
+      "Food"
     ],
     "variants": {
       "default": "/icons/masan-group/default.svg",
@@ -81100,7 +81113,7 @@
     "aliases": [],
     "hex": "009688",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -81359,7 +81372,7 @@
     "aliases": [],
     "hex": "DA251D",
     "categories": [
-      "Other"
+      "Entertainment"
     ],
     "variants": {
       "default": "/icons/mattel/default.svg"
@@ -81558,7 +81571,7 @@
     "aliases": [],
     "hex": "002F87",
     "categories": [
-      "Other"
+      "Health"
     ],
     "variants": {
       "default": "/icons/mayo-clinic/default.svg"
@@ -81757,7 +81770,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -81775,7 +81788,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -81793,7 +81806,7 @@
     "aliases": [],
     "hex": "1B1F24",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -81811,7 +81824,7 @@
     "aliases": [],
     "hex": "E58325",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -82566,7 +82579,7 @@
     "aliases": [],
     "hex": "2596CD",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -82762,7 +82775,7 @@
     "aliases": [],
     "hex": "2E3192",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -82977,7 +82990,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Cybersecurity",
+      "Security",
       "Software"
     ],
     "variants": {
@@ -83072,7 +83085,7 @@
     ],
     "hex": "CA6407",
     "categories": [
-      "Ecommerce",
+      "E-commerce",
       "Software"
     ],
     "variants": {
@@ -83259,7 +83272,7 @@
     ],
     "hex": "CA2134",
     "categories": [
-      "Ecommerce",
+      "E-commerce",
       "Software"
     ],
     "variants": {
@@ -84187,7 +84200,7 @@
     "aliases": [],
     "hex": "0058A0",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -84281,7 +84294,7 @@
     "aliases": [],
     "hex": "00A1EA",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -84702,7 +84715,8 @@
     "aliases": [],
     "hex": "E60012",
     "categories": [
-      "Other"
+      "Automotive",
+      "Platform"
     ],
     "variants": {
       "default": "/icons/mitsubishi-motors/default.svg"
@@ -84779,7 +84793,7 @@
     ],
     "hex": "E60012",
     "categories": [
-      "Food & Beverage"
+      "Food"
     ],
     "variants": {
       "default": "/icons/mixue/default.svg",
@@ -84852,7 +84866,7 @@
     "aliases": [],
     "hex": "8B3F00",
     "categories": [
-      "Other"
+      "Food"
     ],
     "variants": {
       "default": "/icons/mms/default.svg"
@@ -84886,7 +84900,7 @@
     "aliases": [],
     "hex": "FF9955",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -84904,7 +84918,7 @@
     "aliases": [],
     "hex": "FF7102",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -84922,7 +84936,7 @@
     "aliases": [],
     "hex": "8D6748",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -84945,7 +84959,7 @@
     "aliases": [],
     "hex": "FF6A33",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -85059,7 +85073,7 @@
     "aliases": [],
     "hex": "00AF5C",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -85559,7 +85573,7 @@
     "aliases": [],
     "hex": "F4BE00",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -85721,7 +85735,7 @@
     "aliases": [],
     "hex": "00DC00",
     "categories": [
-      "Other"
+      "Food"
     ],
     "variants": {
       "default": "/icons/mountain-dew/default.svg"
@@ -85776,7 +85790,7 @@
     "aliases": [],
     "hex": "691F69",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -85982,7 +85996,7 @@
     ],
     "hex": "007FFF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -86090,7 +86104,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -86203,7 +86217,7 @@
     "categories": [
       "Accessibility",
       "AI",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/myaccessi/default.svg"
@@ -86294,7 +86308,7 @@
     ],
     "hex": "2A6DB2",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -86594,7 +86608,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -86832,7 +86846,7 @@
     "aliases": [],
     "hex": "27AAE1",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -87125,7 +87139,7 @@
     "hex": "57A143",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/neovim/default.svg",
@@ -87215,7 +87229,7 @@
     "hex": "1B6AC6",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/netbeans/default.svg"
@@ -87232,7 +87246,7 @@
     "hex": "FF6B35",
     "categories": [
       "Software",
-      "Network"
+      "Networking"
     ],
     "variants": {
       "default": "/icons/netbird/default.svg"
@@ -87400,7 +87414,7 @@
     "aliases": [],
     "hex": "00C7B7",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -87492,7 +87506,7 @@
     "aliases": [],
     "hex": "F89901",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -87568,7 +87582,7 @@
     "aliases": [],
     "hex": "1CE783",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -87836,7 +87850,7 @@
     "aliases": [],
     "hex": "0DC09D",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -87891,7 +87905,7 @@
     "aliases": [],
     "hex": "24B064",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -87983,7 +87997,7 @@
     "aliases": [],
     "hex": "F15833",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -88001,7 +88015,7 @@
     "aliases": [],
     "hex": "1F1E37",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -88347,7 +88361,7 @@
     "aliases": [],
     "hex": "5277C3",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -88418,7 +88432,7 @@
     "aliases": [],
     "hex": "1E5EBC",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -88455,7 +88469,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -88548,7 +88562,7 @@
     "aliases": [],
     "hex": "00CA8E",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -88568,7 +88582,7 @@
     "aliases": [],
     "hex": "F22B2C",
     "categories": [
-      "Food & Beverage"
+      "Food"
     ],
     "variants": {
       "default": "/icons/nongfu-spring/default.svg",
@@ -88733,7 +88747,7 @@
     "aliases": [],
     "hex": "E3695F",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -88825,7 +88839,7 @@
     "hex": "90E59A",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/notepadplusplus/default.svg",
@@ -88860,7 +88874,7 @@
     "hex": "fff",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/notion/default.svg",
@@ -88951,7 +88965,7 @@
     "aliases": [],
     "hex": "80CC28",
     "categories": [
-      "Other"
+      "Real Estate"
     ],
     "variants": {
       "default": "/icons/novaland/default.svg"
@@ -88967,7 +88981,7 @@
     "aliases": [],
     "hex": "0460A9",
     "categories": [
-      "Other"
+      "Health"
     ],
     "variants": {
       "default": "/icons/novartis/default.svg"
@@ -89133,7 +89147,7 @@
     ],
     "hex": "01B0F0",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -89272,7 +89286,7 @@
     "aliases": [],
     "hex": "00A3E0",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -89309,7 +89323,7 @@
     "aliases": [],
     "hex": "1C4913",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -89367,7 +89381,7 @@
     "aliases": [],
     "hex": "4E9A06",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -89551,7 +89565,7 @@
     "aliases": [],
     "hex": "F4DD4B",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -89569,7 +89583,7 @@
     "aliases": [],
     "hex": "143055",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Monorepo"
     ],
     "variants": {
@@ -89665,7 +89679,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Auth",
+      "Identity",
       "Security"
     ],
     "variants": {
@@ -89788,7 +89802,7 @@
     "hex": "7C3AED",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/obsidian/default.svg",
@@ -89806,7 +89820,7 @@
     "aliases": [],
     "hex": "D2BCFD",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -89879,7 +89893,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -89953,7 +89967,7 @@
     "aliases": [],
     "hex": "13C100",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -90028,7 +90042,7 @@
     "aliases": [],
     "hex": "3882D2",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -90208,7 +90222,7 @@
     "aliases": [],
     "hex": "00C775",
     "categories": [
-      "Other"
+      "Transportation"
     ],
     "variants": {
       "default": "/icons/ola-cabs/default.svg"
@@ -90281,7 +90295,7 @@
     "aliases": [],
     "hex": "1C1F2A",
     "categories": [
-      "Auth"
+      "Identity"
     ],
     "variants": {
       "default": "/icons/onelogin/default.svg"
@@ -90408,7 +90422,7 @@
     "aliases": [],
     "hex": "005CED",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -90551,7 +90565,7 @@
     "aliases": [],
     "hex": "262261",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -90626,7 +90640,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -91106,7 +91120,7 @@
     "aliases": [],
     "hex": "0075C9",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -91125,7 +91139,7 @@
     "aliases": [],
     "hex": "1F6B75",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -91143,7 +91157,7 @@
     "aliases": [],
     "hex": "5DACDF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -91497,7 +91511,7 @@
     ],
     "hex": "FFDA18",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -91515,7 +91529,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/opentui/default.svg"
@@ -91531,7 +91545,7 @@
     "aliases": [],
     "hex": "FFE033",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -91677,7 +91691,7 @@
     "hex": "00A0E3",
     "categories": [
       "Software",
-      "Network"
+      "Networking"
     ],
     "variants": {
       "default": "/icons/openziti/default.svg"
@@ -91731,7 +91745,7 @@
     "aliases": [],
     "hex": "E44A20",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -91784,7 +91798,7 @@
     "aliases": [],
     "hex": "172B4D",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -91820,7 +91834,7 @@
     "aliases": [],
     "hex": "FF0420",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -91856,7 +91870,7 @@
     "aliases": [],
     "hex": "002C76",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -92080,7 +92094,7 @@
     ],
     "hex": "2CB9F1",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -92135,7 +92149,7 @@
     "aliases": [],
     "hex": "FF8800",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -92153,7 +92167,7 @@
     "aliases": [],
     "hex": "17394A",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -92280,7 +92294,7 @@
     "hex": "47A141",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/overleaf/default.svg",
@@ -92366,7 +92380,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -92419,7 +92433,7 @@
     "aliases": [],
     "hex": "00F7F1",
     "categories": [
-      "Devtool",
+      "DevTool",
       "VoidZero"
     ],
     "variants": {
@@ -92526,7 +92540,7 @@
     "aliases": [],
     "hex": "F28D1A",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -92544,7 +92558,7 @@
     "aliases": [],
     "hex": "02A8EF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -92729,7 +92743,7 @@
     "aliases": [],
     "hex": "101113",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -92877,7 +92891,7 @@
     "aliases": [],
     "hex": "4093DA",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -92913,7 +92927,7 @@
     "aliases": [],
     "hex": "F36118",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -92970,7 +92984,7 @@
     "aliases": [],
     "hex": "17541F",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -93259,7 +93273,7 @@
     "hex": "34E27A",
     "categories": [
       "Library",
-      "Authentication"
+      "Identity"
     ],
     "variants": {
       "default": "/icons/passport-js/default.svg"
@@ -93498,7 +93512,7 @@
     "aliases": [],
     "hex": "AC75D7",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -93594,7 +93608,7 @@
     "categories": [
       "Transportation",
       "Booking",
-      "Mobile App"
+      "Mobile"
     ],
     "variants": {
       "default": "/icons/pedi-app/default.svg",
@@ -93741,7 +93755,7 @@
     "aliases": [],
     "hex": "004B93",
     "categories": [
-      "Other"
+      "Food"
     ],
     "variants": {
       "default": "/icons/pepsi/default.svg"
@@ -93794,7 +93808,7 @@
     "aliases": [],
     "hex": "9E66BF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -94016,7 +94030,7 @@
     "aliases": [],
     "hex": "0093D0",
     "categories": [
-      "Other"
+      "Health"
     ],
     "variants": {
       "default": "/icons/pfizer/default.svg"
@@ -94051,7 +94065,7 @@
     "aliases": [],
     "hex": "4A5F88",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -94176,7 +94190,7 @@
     "aliases": [],
     "hex": "FD4F00",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -94427,7 +94441,7 @@
     "aliases": [],
     "hex": "6C78AF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -94445,7 +94459,7 @@
     "aliases": [],
     "hex": "6340BA",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Language"
     ],
     "variants": {
@@ -94463,7 +94477,7 @@
     "hex": "000000",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/phpstorm/default.svg",
@@ -94774,7 +94788,7 @@
     "aliases": [],
     "hex": "00B453",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -94811,7 +94825,7 @@
     "aliases": [],
     "hex": "C50000",
     "categories": [
-      "Auth"
+      "Identity"
     ],
     "variants": {
       "default": "/icons/ping-identity/default.svg"
@@ -94882,7 +94896,7 @@
     "aliases": [],
     "hex": "687634",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -95062,7 +95076,7 @@
     "aliases": [],
     "hex": "FF7700",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -95444,7 +95458,7 @@
     "aliases": [],
     "hex": "5850EC",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -95681,7 +95695,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -96050,7 +96064,7 @@
     "aliases": [],
     "hex": "892CA0",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -96294,7 +96308,7 @@
     "aliases": [],
     "hex": "FF4470",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -96366,7 +96380,7 @@
     "aliases": [],
     "hex": "48B9C7",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -96455,7 +96469,7 @@
     "aliases": [],
     "hex": "818F95",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -96605,7 +96619,7 @@
     "aliases": [],
     "hex": "1D4AFF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -96645,7 +96659,7 @@
     "aliases": [],
     "hex": "FF6C37",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -96667,7 +96681,7 @@
     "hex": "FFDE00",
     "categories": [
       "SaaS",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/postmark/default.svg"
@@ -96844,7 +96858,7 @@
     "aliases": [],
     "hex": "FAB040",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -96898,7 +96912,7 @@
     "aliases": [],
     "hex": "F54327",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -97043,7 +97057,7 @@
     "hex": "FFA000",
     "categories": [
       "Photography",
-      "Mobile App"
+      "Mobile"
     ],
     "variants": {
       "default": "/icons/prequel/default.svg"
@@ -97094,7 +97108,7 @@
     "aliases": [],
     "hex": "5890FF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -97112,7 +97126,7 @@
     "aliases": [],
     "hex": "F7B93E",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -97408,7 +97422,7 @@
     "aliases": [],
     "hex": "00B0D8",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -97651,7 +97665,7 @@
     "aliases": [],
     "hex": "E6522C",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -97980,7 +97994,7 @@
     "aliases": [],
     "hex": "ED163A",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -98038,7 +98052,7 @@
     "aliases": [],
     "hex": "10539F",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -98111,7 +98125,7 @@
     "aliases": [],
     "hex": "A86454",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -98202,7 +98216,7 @@
     "aliases": [],
     "hex": "FFAE1A",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -98256,7 +98270,7 @@
     "aliases": [],
     "hex": "14161A",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -98364,7 +98378,7 @@
     ],
     "hex": "5A0FC8",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -98384,7 +98398,7 @@
     "hex": "000000",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/pycharm/default.svg",
@@ -98402,7 +98416,7 @@
     "aliases": [],
     "hex": "201B44",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -98420,7 +98434,7 @@
     "aliases": [],
     "hex": "E92063",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -98459,7 +98473,7 @@
     ],
     "hex": "3C2179",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -98534,7 +98548,7 @@
     "aliases": [],
     "hex": "005CA0",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -98569,7 +98583,7 @@
     "aliases": [],
     "hex": "F1BF7A",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -98587,7 +98601,7 @@
     "aliases": [],
     "hex": "0A9EDC",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -98733,7 +98747,7 @@
     "aliases": [],
     "hex": "FAB916",
     "categories": [
-      "Other"
+      "Oil & Gas"
     ],
     "variants": {
       "default": "/icons/qatar-energy/default.svg"
@@ -98750,7 +98764,7 @@
     "aliases": [],
     "hex": "2F67BA",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -98978,7 +98992,7 @@
     "aliases": [],
     "hex": "333333",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -99110,7 +99124,7 @@
     ],
     "hex": "DC205E",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -99239,7 +99253,7 @@
     "aliases": [],
     "hex": "39729E",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -99258,7 +99272,7 @@
     "aliases": [],
     "hex": "050A14",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -99293,7 +99307,7 @@
     "aliases": [],
     "hex": "3874D8",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -99349,7 +99363,7 @@
     "aliases": [],
     "hex": "0078D3",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -99385,7 +99399,7 @@
     "aliases": [],
     "hex": "159588",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -99678,7 +99692,7 @@
     "aliases": [],
     "hex": "FFCB3D",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -99738,7 +99752,7 @@
     "hex": "1E1F21",
     "categories": [
       "AI",
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -99772,7 +99786,7 @@
     "aliases": [],
     "hex": "0B0D0E",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -99809,7 +99823,7 @@
     "aliases": [],
     "hex": "19519B",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -99924,7 +99938,7 @@
     "aliases": [],
     "hex": "0075A8",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -100050,7 +100064,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -100087,7 +100101,7 @@
     "aliases": [],
     "hex": "028CF0",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -100127,7 +100141,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -100199,7 +100213,7 @@
     "aliases": [],
     "hex": "3F79AD",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -100294,7 +100308,7 @@
     "aliases": [],
     "hex": "41E0FD",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -100312,7 +100326,7 @@
     "aliases": [],
     "hex": "EC5990",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -100383,7 +100397,7 @@
     "aliases": [],
     "hex": "FF4154",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -100420,7 +100434,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -100438,7 +100452,7 @@
     "aliases": [],
     "hex": "B7178C",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -100491,7 +100505,7 @@
     "aliases": [],
     "hex": "0088CC",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -100509,7 +100523,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -100582,7 +100596,7 @@
     "aliases": [],
     "hex": "DD4B39",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -100798,7 +100812,7 @@
     "aliases": [],
     "hex": "FF7964",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -100891,7 +100905,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -100980,7 +100994,7 @@
     "aliases": [],
     "hex": "999999",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -101056,7 +101070,7 @@
     "aliases": [],
     "hex": "9E95B7",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -101189,7 +101203,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -101320,7 +101334,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -101338,7 +101352,7 @@
     "aliases": [],
     "hex": "308BE3",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -101416,7 +101430,7 @@
     "hex": "F26207",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/replit/default.svg",
@@ -101458,7 +101472,7 @@
     "aliases": [],
     "hex": "1E88E5",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -101553,7 +101567,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -101625,7 +101639,7 @@
     "aliases": [],
     "hex": "1065DF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -101661,7 +101675,7 @@
     "aliases": [],
     "hex": "CC0000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -101679,7 +101693,7 @@
     "aliases": [],
     "hex": "FF8000",
     "categories": [
-      "Other"
+      "Media"
     ],
     "variants": {
       "default": "/icons/reuters/default.svg"
@@ -101895,7 +101909,7 @@
     "aliases": [],
     "hex": "FAE742",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -101914,7 +101928,7 @@
     "hex": "000000",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/rider/default.svg",
@@ -101968,7 +101982,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -102166,7 +102180,8 @@
     "aliases": [],
     "hex": "0066B2",
     "categories": [
-      "Other"
+      "Automotive",
+      "Platform"
     ],
     "variants": {
       "default": "/icons/rivian/default.svg"
@@ -102346,7 +102361,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -102402,7 +102417,7 @@
     "aliases": [],
     "hex": "2A2A2A",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -102565,7 +102580,7 @@
     "aliases": [],
     "hex": "EC4A3F",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Compiler"
     ],
     "variants": {
@@ -102618,7 +102633,7 @@
     "aliases": [],
     "hex": "2AC6EA",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -102855,7 +102870,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Compiler"
     ],
     "variants": {
@@ -102963,7 +102978,7 @@
     "aliases": [],
     "hex": "75AADB",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -103055,7 +103070,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -103091,7 +103106,7 @@
     "aliases": [],
     "hex": "D30001",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -103110,7 +103125,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -103147,7 +103162,7 @@
     "hex": "000000",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/rubymine/default.svg",
@@ -103236,7 +103251,7 @@
     "aliases": [],
     "hex": "F73F39",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -103461,7 +103476,7 @@
     "aliases": [],
     "hex": "024EFF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -103515,7 +103530,7 @@
     "aliases": [],
     "hex": "8D1F89",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -103568,7 +103583,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -103640,7 +103655,7 @@
     "aliases": [],
     "hex": "ec1c24",
     "categories": [
-      "Food & Beverage"
+      "Food"
     ],
     "variants": {
       "default": "/icons/sabeco/default.svg",
@@ -103695,7 +103710,7 @@
     "aliases": [],
     "hex": "3333FF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -103974,7 +103989,7 @@
     "aliases": [],
     "hex": "FF0D68",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -104392,7 +104407,7 @@
     "aliases": [],
     "hex": "CD1925",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -104410,7 +104425,7 @@
     "aliases": [],
     "hex": "8CAAE6",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -104482,7 +104497,7 @@
     "aliases": [],
     "hex": "60A839",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -104500,7 +104515,7 @@
     "aliases": [],
     "hex": "855CD6",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -104847,7 +104862,7 @@
     "aliases": [],
     "hex": "212E50",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -104899,7 +104914,7 @@
     "aliases": [],
     "hex": "43B02A",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -105097,7 +105112,7 @@
     "aliases": [],
     "hex": "3F4551",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -105171,7 +105186,7 @@
     "aliases": [],
     "hex": "89C967",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -105206,7 +105221,7 @@
     "aliases": [],
     "hex": "362D59",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -105227,7 +105242,7 @@
     "hex": "6C4CE4",
     "categories": [
       "AI",
-      "Ecommerce"
+      "E-commerce"
     ],
     "variants": {
       "default": "/icons/seonib/default.svg"
@@ -105407,7 +105422,7 @@
     "aliases": [],
     "hex": "336790",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -105535,7 +105550,7 @@
     "aliases": [],
     "hex": "99CC00",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -105642,7 +105657,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -105735,7 +105750,7 @@
     "aliases": [],
     "hex": "333F48",
     "categories": [
-      "Ecommerce",
+      "E-commerce",
       "Software"
     ],
     "variants": {
@@ -106174,7 +106189,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -106347,7 +106362,7 @@
     "aliases": [],
     "hex": "2AA2D6",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -106365,7 +106380,7 @@
     "aliases": [],
     "hex": "EE2C2A",
     "categories": [
-      "Other"
+      "Fashion"
     ],
     "variants": {
       "default": "/icons/skechers/default.svg"
@@ -106382,7 +106397,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -106708,7 +106723,7 @@
     "aliases": [],
     "hex": "2379F4",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -106892,7 +106907,7 @@
     "aliases": [],
     "hex": "E95420",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -106947,7 +106962,7 @@
     "aliases": [],
     "hex": "FFC72C",
     "categories": [
-      "Other"
+      "Food"
     ],
     "variants": {
       "default": "/icons/snapple/default.svg"
@@ -107038,7 +107053,7 @@
     "aliases": [],
     "hex": "4C4A73",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -107092,7 +107107,7 @@
     "aliases": [],
     "hex": "C93CD7",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -107422,7 +107437,7 @@
     "aliases": [],
     "hex": "4E9BCD",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -107461,7 +107476,7 @@
     ],
     "hex": "126ED3",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -107499,7 +107514,7 @@
     "aliases": [],
     "hex": "2596BE",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -107628,7 +107643,8 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Other"
+      "Hardware",
+      "Software"
     ],
     "variants": {
       "default": "/icons/sony-group/default.svg"
@@ -107814,7 +107830,7 @@
     "aliases": [],
     "hex": "0052CC",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -107922,7 +107938,7 @@
     "aliases": [],
     "hex": "09A3D5",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -108158,7 +108174,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -108283,7 +108299,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -108519,7 +108535,7 @@
     "aliases": [],
     "hex": "8C0000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -108838,7 +108854,7 @@
     "hex": "1269D3",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/stackblitz/default.svg",
@@ -108855,7 +108871,7 @@
     "aliases": [],
     "hex": "606060",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -108998,7 +109014,7 @@
     "aliases": [],
     "hex": "F3DF49",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -109107,7 +109123,7 @@
     "aliases": [],
     "hex": "DD0B78",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -109255,7 +109271,7 @@
     "aliases": [],
     "hex": "172B4D",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -109667,7 +109683,7 @@
     "aliases": [],
     "hex": "536DFE",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -109852,7 +109868,7 @@
     "aliases": [],
     "hex": "685CEE",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -109995,7 +110011,7 @@
     "aliases": [],
     "hex": "263238",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -110031,7 +110047,7 @@
     "aliases": [],
     "hex": "333333",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -110085,7 +110101,7 @@
     "hex": "FF9800",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/sublime-text/default.svg",
@@ -110228,7 +110244,7 @@
     "aliases": [],
     "hex": "CC2424",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -110709,7 +110725,7 @@
     "aliases": [],
     "hex": "FF0066",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -110744,7 +110760,7 @@
     "aliases": [],
     "hex": "3E7FC1",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -110780,7 +110796,7 @@
     "aliases": [],
     "hex": "85EA2D",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -110818,7 +110834,7 @@
     ],
     "hex": "68751C",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -111037,7 +111053,7 @@
     "aliases": [],
     "hex": "3B5526",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -111073,7 +111089,7 @@
     "aliases": [],
     "hex": "0891D1",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -111127,7 +111143,7 @@
     "aliases": [],
     "hex": "585048",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -111365,7 +111381,7 @@
     "aliases": [],
     "hex": "242424",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -111512,7 +111528,7 @@
     "aliases": [],
     "hex": "FF7300",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -111694,7 +111710,7 @@
     "aliases": [],
     "hex": "29BEB0",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -111712,7 +111728,7 @@
     "aliases": [],
     "hex": "1FA3EC",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -111827,7 +111843,7 @@
     ],
     "hex": "FF671D",
     "categories": [
-      "Network",
+      "Networking",
       "Software",
       "Infrastructure"
     ],
@@ -111863,7 +111879,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -112063,7 +112079,7 @@
     "aliases": [],
     "hex": "FD495C",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -112189,7 +112205,7 @@
     "hex": "512FC9",
     "categories": [
       "Security",
-      "Auth"
+      "Identity"
     ],
     "variants": {
       "default": "/icons/teleport/default.svg",
@@ -112264,7 +112280,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -112344,7 +112360,7 @@
     "aliases": [],
     "hex": "F37440",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -112400,7 +112416,7 @@
     "hex": "000000",
     "categories": [
       "DevTool",
-      "Mobile App"
+      "Mobile"
     ],
     "variants": {
       "default": "/icons/termux/default.svg"
@@ -112416,7 +112432,7 @@
     "aliases": [],
     "hex": "844FBA",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -112439,7 +112455,7 @@
     "hex": "5C4EE5",
     "categories": [
       "Cloud",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/terragrunt/default.svg"
@@ -112472,7 +112488,7 @@
     "aliases": [],
     "hex": "F1D300",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Compiler"
     ],
     "variants": {
@@ -112530,7 +112546,7 @@
     "aliases": [],
     "hex": "36B6E5",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -112548,7 +112564,7 @@
     "aliases": [],
     "hex": "195ACF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "SaaS"
     ],
     "variants": {
@@ -112692,7 +112708,7 @@
     "aliases": [],
     "hex": "FFFFFF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -112783,7 +112799,7 @@
     "aliases": [],
     "hex": "00BCB4",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -112837,7 +112853,7 @@
     "aliases": [],
     "hex": "E3120B",
     "categories": [
-      "Other"
+      "Media"
     ],
     "variants": {
       "default": "/icons/the-economist/default.svg"
@@ -113132,7 +113148,7 @@
     "hex": "F97316",
     "categories": [
       "Design",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/thesvg/default.svg",
@@ -113158,7 +113174,7 @@
     "hex": "F97316",
     "categories": [
       "Design",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/thesvg-legacy/default.svg",
@@ -113400,7 +113416,7 @@
     "aliases": [],
     "hex": "23FFB0",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -113437,7 +113453,7 @@
     "aliases": [],
     "hex": "005F0F",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -113621,7 +113637,7 @@
     "aliases": [],
     "hex": "1A162D",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -113845,7 +113861,7 @@
     "aliases": [],
     "hex": "FFFFFF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -113902,7 +113918,7 @@
     "hex": "1C1C31",
     "categories": [
       "Browser",
-      "Mobile App"
+      "Mobile"
     ],
     "variants": {
       "default": "/icons/titanium/default.svg"
@@ -113953,7 +113969,7 @@
     "aliases": [],
     "hex": "1BB91F",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -113971,7 +113987,7 @@
     "aliases": [],
     "hex": "E44332",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -114138,7 +114154,7 @@
     "aliases": [],
     "hex": "9C4121",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -114212,7 +114228,7 @@
     "aliases": [],
     "hex": "3E63DD",
     "categories": [
-      "Devtool",
+      "DevTool",
       "SaaS"
     ],
     "variants": {
@@ -114446,7 +114462,7 @@
     "aliases": [],
     "hex": "00CAF4",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -114539,7 +114555,7 @@
     "aliases": [],
     "hex": "FFC107",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -114633,7 +114649,7 @@
     "hex": "24A1C1",
     "categories": [
       "Cloud",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/traefik/default.svg"
@@ -114649,7 +114665,7 @@
     "aliases": [],
     "hex": "9D0FB0",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -114777,7 +114793,7 @@
     "aliases": [],
     "hex": "D70008",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -114906,7 +114922,7 @@
     "aliases": [],
     "hex": "0052CC",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -115016,7 +115032,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -115091,7 +115107,7 @@
     "aliases": [],
     "hex": "DD00A1",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -115617,7 +115633,7 @@
     "hex": "000000",
     "categories": [
       "Software",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/turbopack/default.svg",
@@ -115743,7 +115759,7 @@
     ],
     "hex": "850122",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -115836,7 +115852,7 @@
     "hex": "000000",
     "categories": [
       "Software",
-      "Authentication"
+      "Identity"
     ],
     "variants": {
       "default": "/icons/twilio/default.svg",
@@ -115925,7 +115941,7 @@
     "aliases": [],
     "hex": "46EBE1",
     "categories": [
-      "Other"
+      "Entertainment"
     ],
     "variants": {
       "default": "/icons/ty/default.svg"
@@ -116074,7 +116090,7 @@
     "hex": "000000",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/typora/default.svg"
@@ -116185,7 +116201,7 @@
     "aliases": [],
     "hex": "800000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -116338,7 +116354,7 @@
     "aliases": [],
     "hex": "00006B",
     "categories": [
-      "Other"
+      "Sports"
     ],
     "variants": {
       "default": "/icons/uefa-champions-league/default.svg"
@@ -116466,7 +116482,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -116576,7 +116592,7 @@
     "aliases": [],
     "hex": "0371B5",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -116612,7 +116628,7 @@
     "aliases": [],
     "hex": "3C459A",
     "categories": [
-      "Healthcare Goods"
+      "Health"
     ],
     "variants": {
       "default": "/icons/unicharm/default.svg",
@@ -116820,7 +116836,7 @@
     "aliases": [],
     "hex": "333333",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -116838,7 +116854,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -117294,7 +117310,7 @@
     "aliases": [],
     "hex": "DE5FE9",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -117500,7 +117516,7 @@
     "aliases": [],
     "hex": "1868F2",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -117613,7 +117629,7 @@
     "aliases": [],
     "hex": "F786AD",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -117686,7 +117702,7 @@
     "aliases": [],
     "hex": "FFEC6E",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -117706,7 +117722,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -117920,7 +117936,7 @@
     "aliases": [],
     "hex": "2450B2",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -117974,7 +117990,7 @@
     "aliases": [],
     "hex": "1BBAE0",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -117992,7 +118008,7 @@
     "aliases": [],
     "hex": "20C997",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -118010,7 +118026,7 @@
     "aliases": [],
     "hex": "EB7396",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -118048,7 +118064,7 @@
     "hex": "026AF7",
     "categories": [
       "AI",
-      "Ecommerce",
+      "E-commerce",
       "Web",
       "SaaS"
     ],
@@ -118067,7 +118083,7 @@
     "aliases": [],
     "hex": "000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -118349,7 +118365,7 @@
     ],
     "hex": "621773",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -118511,7 +118527,7 @@
     "aliases": [],
     "hex": "196AFF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -118530,7 +118546,7 @@
     "hex": "019733",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/vim/default.svg",
@@ -118858,7 +118874,7 @@
     "aliases": [],
     "hex": "9135FF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "VoidZero"
     ],
     "variants": {
@@ -118894,7 +118910,7 @@
     "aliases": [],
     "hex": "5C73E7",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Compiler"
     ],
     "variants": {
@@ -118912,7 +118928,7 @@
     "aliases": [],
     "hex": "F16728",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Compiler"
     ],
     "variants": {
@@ -118930,7 +118946,7 @@
     "aliases": [],
     "hex": "00FF74",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -119241,7 +119257,7 @@
     "hex": "000000",
     "categories": [
       "VoidZero",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/voidzero/default.svg"
@@ -119419,7 +119435,7 @@
     "aliases": [],
     "hex": "ED3023",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -119437,7 +119453,7 @@
     "aliases": [],
     "hex": "FF81F9",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -119639,7 +119655,7 @@
     "aliases": [],
     "hex": "4FC08D",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -119875,7 +119891,7 @@
     "aliases": [],
     "hex": "43B1B0",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -119911,7 +119927,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -119985,7 +120001,7 @@
     "aliases": [],
     "hex": "3F6184",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -120098,7 +120114,7 @@
     "aliases": [],
     "hex": "01A4FF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Software"
     ],
     "variants": {
@@ -120134,7 +120150,7 @@
     "aliases": [],
     "hex": "00BC8E",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -120153,7 +120169,7 @@
     "aliases": [],
     "hex": "4946DD",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -120425,7 +120441,7 @@
     "aliases": [],
     "hex": "F16822",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -120463,7 +120479,7 @@
     "aliases": [],
     "hex": "3423A6",
     "categories": [
-      "Authentication",
+      "Identity",
       "Software"
     ],
     "variants": {
@@ -120553,7 +120569,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -120650,7 +120666,7 @@
     "aliases": [],
     "hex": "2ECCAA",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -120668,7 +120684,7 @@
     "aliases": [],
     "hex": "7DA0D0",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -120704,7 +120720,7 @@
     "aliases": [],
     "hex": "8DD6F9",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Compiler"
     ],
     "variants": {
@@ -120742,7 +120758,7 @@
     "hex": "000000",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/webstorm/default.svg",
@@ -121071,7 +121087,7 @@
     "aliases": [],
     "hex": "4E49EE",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -121541,7 +121557,7 @@
     "hex": "0B100F",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/windsurf/default.svg",
@@ -121655,7 +121671,7 @@
     "aliases": [],
     "hex": "1679A7",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -122056,7 +122072,7 @@
     "hex": "000000",
     "categories": [
       "Software",
-      "Authentication"
+      "Identity"
     ],
     "variants": {
       "default": "/icons/workos/default.svg",
@@ -122093,7 +122109,7 @@
     "aliases": [],
     "hex": "002F6C",
     "categories": [
-      "Other"
+      "Finance"
     ],
     "variants": {
       "default": "/icons/world-bank/default.svg"
@@ -122255,7 +122271,7 @@
     "aliases": [],
     "hex": "67D55E",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -122475,7 +122491,7 @@
     "hex": "147EFB",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/xcode/default.svg",
@@ -122729,7 +122745,7 @@
     "aliases": [],
     "hex": "002B5C",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -122747,7 +122763,7 @@
     "aliases": [],
     "hex": "5ED9C7",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -122895,7 +122911,7 @@
     ],
     "hex": "1A192B",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -122949,7 +122965,7 @@
     "aliases": [],
     "hex": "00364B",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -123076,7 +123092,7 @@
     "aliases": [],
     "hex": "FFCC00",
     "categories": [
-      "Other"
+      "Transportation"
     ],
     "variants": {
       "default": "/icons/yandex-taxi/default.svg"
@@ -123188,7 +123204,7 @@
     "aliases": [],
     "hex": "009A5B",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -123574,7 +123590,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -123722,7 +123738,7 @@
       "Web",
       "Software",
       "Platform",
-      "Mobile App",
+      "Mobile",
       "Design"
     ],
     "variants": {
@@ -123930,7 +123946,7 @@
     "hex": "000000",
     "categories": [
       "Editor",
-      "Devtool"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/zed/default.svg",
@@ -123948,7 +123964,7 @@
     "aliases": [],
     "hex": "084CCF",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -124337,7 +124353,7 @@
     "aliases": [],
     "hex": "FFC135",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -124518,7 +124534,7 @@
     "aliases": [],
     "hex": "EAE7D6",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
@@ -124654,7 +124670,7 @@
     "aliases": [],
     "hex": "F15A24",
     "categories": [
-      "Devtool",
+      "DevTool",
       "Community"
     ],
     "variants": {
