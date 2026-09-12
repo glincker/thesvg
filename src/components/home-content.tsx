@@ -199,11 +199,13 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
   const searchBase = useMemo(() => {
     let r = collectionIcons ?? [];
     if (favoritesParam) {
-      r = r.filter((icon) => favorites.includes(icon.slug));
+      const favoritesSet = new Set(favorites);
+      r = r.filter((icon) => favoritesSet.has(icon.slug));
     }
     if (categoryParam) {
+      const lowerCatParam = categoryParam.toLowerCase();
       r = r.filter((icon) =>
-        icon.categories.some((c) => c.toLowerCase() === categoryParam.toLowerCase())
+        icon.categories.some((c) => c.toLowerCase() === lowerCatParam)
       );
     }
     return r;
