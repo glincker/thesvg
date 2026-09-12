@@ -24,8 +24,8 @@
     "aliases": [],
     "hex": "40AEF0",
     "categories": [
-      "Software",
-      "Platform"
+      "Music",
+      "Community"
     ],
     "variants": {
       "default": "/icons/1001tracklists/default.svg",
@@ -59,8 +59,8 @@
     "aliases": [],
     "hex": "fff",
     "categories": [
-      "Software",
-      "Platform"
+      "AI",
+      "Business"
     ],
     "variants": {
       "default": "/icons/11x/mono.svg",
@@ -77,8 +77,7 @@
     "aliases": [],
     "hex": "003D8F",
     "categories": [
-      "Software",
-      "Platform"
+      "Hosting"
     ],
     "variants": {
       "default": "/icons/1and1/default.svg",
@@ -95,8 +94,8 @@
     "aliases": [],
     "hex": "221E68",
     "categories": [
-      "Software",
-      "Platform"
+      "Networking",
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/1dot1dot1dot1/default.svg",
@@ -113,8 +112,8 @@
     "aliases": [],
     "hex": "0854C1",
     "categories": [
-      "Software",
-      "Platform"
+      "Hosting",
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/1panel/default.svg",
@@ -131,8 +130,8 @@
     "aliases": [],
     "hex": "3B66BC",
     "categories": [
-      "Software",
-      "Platform"
+      "Security",
+      "Identity"
     ],
     "variants": {
       "default": "/icons/1password/default.svg",
@@ -152,8 +151,8 @@
     "aliases": [],
     "hex": "EC1C24",
     "categories": [
-      "Software",
-      "Platform"
+      "Security",
+      "Identity"
     ],
     "variants": {
       "default": "/icons/2fas/default.svg",
@@ -171,8 +170,7 @@
     "aliases": [],
     "hex": "DD0700",
     "categories": [
-      "Software",
-      "Platform"
+      "Gaming"
     ],
     "variants": {
       "default": "/icons/2k/default.svg",
@@ -226,8 +224,7 @@
     "aliases": [],
     "hex": "000C1F",
     "categories": [
-      "Software",
-      "Platform"
+      "Education"
     ],
     "variants": {
       "default": "/icons/365-data-science/default.svg",
@@ -244,8 +241,7 @@
     "aliases": [],
     "hex": "FF0000",
     "categories": [
-      "Software",
-      "Platform"
+      "Other"
     ],
     "variants": {
       "default": "/icons/3m/default.svg",
@@ -262,8 +258,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Software",
-      "Platform"
+      "Education"
     ],
     "variants": {
       "default": "/icons/42/default.svg",
@@ -280,8 +275,8 @@
     "aliases": [],
     "hex": "006600",
     "categories": [
-      "Software",
-      "Platform"
+      "Community",
+      "Social"
     ],
     "variants": {
       "default": "/icons/4chan/default.svg",
@@ -298,8 +293,8 @@
     "aliases": [],
     "hex": "004088",
     "categories": [
-      "Software",
-      "Platform"
+      "Database",
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/4d/default.svg",
@@ -316,8 +311,8 @@
     "aliases": [],
     "hex": "222222",
     "categories": [
-      "Software",
-      "Platform"
+      "Photography",
+      "Media"
     ],
     "variants": {
       "default": "/icons/500px/default.svg",
@@ -353,8 +348,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Software",
-      "Platform"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/7zip/default.svg",
@@ -371,8 +365,8 @@
     "aliases": [],
     "hex": "FE5F50",
     "categories": [
-      "Software",
-      "Platform"
+      "Design",
+      "Business"
     ],
     "variants": {
       "default": "/icons/99designs/default.svg",
@@ -390,8 +384,8 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Software",
-      "Platform"
+      "Entertainment",
+      "Social"
     ],
     "variants": {
       "default": "/icons/9gag/default.svg",
@@ -408,8 +402,8 @@
     "aliases": [],
     "hex": "EF2D5E",
     "categories": [
-      "Software",
-      "Platform"
+      "Framework",
+      "Mixed Reality"
     ],
     "variants": {
       "default": "/icons/a-frame/default.svg",
@@ -448,8 +442,7 @@
     ],
     "hex": "897BFF",
     "categories": [
-      "Software",
-      "Platform"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/ab-download-manager/default.svg",
@@ -501,8 +494,7 @@
     "aliases": [],
     "hex": "FF000F",
     "categories": [
-      "Software",
-      "Platform"
+      "Other"
     ],
     "variants": {
       "default": "/icons/abb/default.svg",
@@ -519,8 +511,7 @@
     "aliases": [],
     "hex": "008FC7",
     "categories": [
-      "Software",
-      "Platform"
+      "Health"
     ],
     "variants": {
       "default": "/icons/abbott/default.svg",
@@ -537,8 +528,7 @@
     "aliases": [],
     "hex": "071D49",
     "categories": [
-      "Software",
-      "Platform"
+      "Health"
     ],
     "variants": {
       "default": "/icons/abbvie/default.svg",
@@ -573,8 +563,7 @@
     "aliases": [],
     "hex": "333333",
     "categories": [
-      "Software",
-      "Platform"
+      "Social"
     ],
     "variants": {
       "default": "/icons/aboutdotme/default.svg",
@@ -610,8 +599,7 @@
     "aliases": [],
     "hex": "00465B",
     "categories": [
-      "Software",
-      "Platform"
+      "Security"
     ],
     "variants": {
       "default": "/icons/abusedotch/default.svg",
@@ -628,8 +616,7 @@
     "aliases": [],
     "hex": "41454A",
     "categories": [
-      "Software",
-      "Platform"
+      "Education"
     ],
     "variants": {
       "default": "/icons/academia/default.svg",
@@ -646,8 +633,7 @@
     "aliases": [],
     "hex": "A100FF",
     "categories": [
-      "Software",
-      "Platform"
+      "Business"
     ],
     "variants": {
       "default": "/icons/accenture/default.svg",
@@ -687,8 +673,7 @@
     "aliases": [],
     "hex": "A9225C",
     "categories": [
-      "Software",
-      "Platform"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/accusoft/default.svg",
@@ -759,8 +744,8 @@
     "aliases": [],
     "hex": "0085CA",
     "categories": [
-      "Software",
-      "Platform"
+      "Community",
+      "Education"
     ],
     "variants": {
       "default": "/icons/acm/default.svg",
@@ -865,8 +850,7 @@
     "aliases": [],
     "hex": "3A4259",
     "categories": [
-      "Software",
-      "Platform"
+      "Health"
     ],
     "variants": {
       "default": "/icons/actigraph/default.svg",
@@ -902,8 +886,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Software",
-      "Platform"
+      "Gaming"
     ],
     "variants": {
       "default": "/icons/activision/default.svg",
@@ -920,8 +903,7 @@
     "aliases": [],
     "hex": "F1007E",
     "categories": [
-      "Software",
-      "Platform"
+      "Social"
     ],
     "variants": {
       "default": "/icons/activitypub/default.svg",
@@ -993,8 +975,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Software",
-      "Platform"
+      "Language"
     ],
     "variants": {
       "default": "/icons/ada/default.svg",
@@ -1012,8 +993,8 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Software",
-      "Platform"
+      "Hardware",
+      "IoT"
     ],
     "variants": {
       "default": "/icons/adafruit/default.svg",
@@ -1048,8 +1029,7 @@
     "aliases": [],
     "hex": "F40D12",
     "categories": [
-      "Software",
-      "Platform"
+      "Browser"
     ],
     "variants": {
       "default": "/icons/adblock/default.svg",
@@ -1066,8 +1046,7 @@
     "aliases": [],
     "hex": "C70D2C",
     "categories": [
-      "Software",
-      "Platform"
+      "Browser"
     ],
     "variants": {
       "default": "/icons/adblock-plus/default.svg",
@@ -1084,8 +1063,8 @@
     "aliases": [],
     "hex": "19216C",
     "categories": [
-      "Software",
-      "Platform"
+      "Privacy",
+      "Security"
     ],
     "variants": {
       "default": "/icons/addydotio/default.svg",
@@ -1103,8 +1082,8 @@
     "aliases": [],
     "hex": "68BC71",
     "categories": [
-      "Software",
-      "Platform"
+      "Privacy",
+      "Security"
     ],
     "variants": {
       "default": "/icons/adguard/default.svg",
@@ -1121,8 +1100,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Software",
-      "Platform"
+      "Fashion"
     ],
     "variants": {
       "default": "/icons/adidas/default.svg",
@@ -1139,8 +1117,8 @@
     "aliases": [],
     "hex": "34567C",
     "categories": [
-      "Software",
-      "Platform"
+      "Database",
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/adminer/default.svg",
@@ -1258,8 +1236,7 @@
     "aliases": [],
     "hex": "5A45FF",
     "categories": [
-      "Software",
-      "Platform"
+      "Framework"
     ],
     "variants": {
       "default": "/icons/adonisjs/default.svg",
@@ -1277,8 +1254,8 @@
     "aliases": [],
     "hex": "D0271D",
     "categories": [
-      "Software",
-      "Platform"
+      "HR",
+      "Business"
     ],
     "variants": {
       "default": "/icons/adp/default.svg",
@@ -1296,8 +1273,7 @@
     "aliases": [],
     "hex": "0DBDFF",
     "categories": [
-      "Software",
-      "Platform"
+      "Advertising"
     ],
     "variants": {
       "default": "/icons/adroll/default.svg",
@@ -1314,8 +1290,7 @@
     "aliases": [],
     "hex": "FFFF66",
     "categories": [
-      "Software",
-      "Platform"
+      "Education"
     ],
     "variants": {
       "default": "/icons/advent-of-code/default.svg",
@@ -1332,8 +1307,8 @@
     "aliases": [],
     "hex": "0ABF53",
     "categories": [
-      "Software",
-      "Platform"
+      "Payment",
+      "Finance"
     ],
     "variants": {
       "default": "/icons/adyen/default.svg",
@@ -1445,8 +1420,7 @@
     ],
     "hex": "946CE6",
     "categories": [
-      "Software",
-      "Platform"
+      "Community"
     ],
     "variants": {
       "default": "/icons/afdian/default.svg",
@@ -1464,8 +1438,7 @@
     "aliases": [],
     "hex": "1E96EB",
     "categories": [
-      "Software",
-      "Platform"
+      "Productivity"
     ],
     "variants": {
       "default": "/icons/affine/default.svg",
@@ -1630,8 +1603,7 @@
     "aliases": [],
     "hex": "FF6B2B",
     "categories": [
-      "Software",
-      "Platform"
+      "Logistics"
     ],
     "variants": {
       "default": "/icons/aftership/default.svg",
@@ -1648,8 +1620,8 @@
     "aliases": [],
     "hex": "fff",
     "categories": [
-      "Software",
-      "Platform"
+      "AI",
+      "Framework"
     ],
     "variants": {
       "default": "/icons/ag-ui/mono.svg",
@@ -1726,8 +1698,8 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Software",
-      "Platform"
+      "AI",
+      "Gaming"
     ],
     "variants": {
       "default": "/icons/ai-dungeon/default.svg",
@@ -1820,8 +1792,7 @@
     ],
     "hex": "7F2B7B",
     "categories": [
-      "Software",
-      "Platform"
+      "Finance"
     ],
     "variants": {
       "default": "/icons/aib/default.svg",
@@ -2075,8 +2046,7 @@
     "aliases": [],
     "hex": "FF5A5F",
     "categories": [
-      "Software",
-      "Platform"
+      "Travel"
     ],
     "variants": {
       "default": "/icons/airbnb/default.svg",
@@ -2131,8 +2101,8 @@
     "aliases": [],
     "hex": "615EFF",
     "categories": [
-      "Software",
-      "Platform"
+      "Integration",
+      "Data"
     ],
     "variants": {
       "default": "/icons/airbyte/default.svg",
@@ -2149,8 +2119,7 @@
     "aliases": [],
     "hex": "00B388",
     "categories": [
-      "Software",
-      "Platform"
+      "Communication"
     ],
     "variants": {
       "default": "/icons/aircall/default.svg",
@@ -2184,8 +2153,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Software",
-      "Platform"
+      "Media"
     ],
     "variants": {
       "default": "/icons/airplay-audio/default.svg",
@@ -2203,8 +2171,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Software",
-      "Platform"
+      "Media"
     ],
     "variants": {
       "default": "/icons/airplay-video/default.svg",
@@ -2222,8 +2189,8 @@
     "aliases": [],
     "hex": "18BFFF",
     "categories": [
-      "Software",
-      "Platform"
+      "Database",
+      "Productivity"
     ],
     "variants": {
       "default": "/icons/airtable/default.svg",
@@ -2348,8 +2315,7 @@
     "aliases": [],
     "hex": "6DA252",
     "categories": [
-      "Software",
-      "Platform"
+      "Finance"
     ],
     "variants": {
       "default": "/icons/akaunting/default.svg",
@@ -2366,8 +2332,7 @@
     "aliases": [],
     "hex": "AF38F9",
     "categories": [
-      "Software",
-      "Platform"
+      "Productivity"
     ],
     "variants": {
       "default": "/icons/akiflow/default.svg",
@@ -2455,8 +2420,8 @@
     "aliases": [],
     "hex": "00FF7B",
     "categories": [
-      "Software",
-      "Platform"
+      "Photography",
+      "Media"
     ],
     "variants": {
       "default": "/icons/alamy/default.svg",
@@ -2529,8 +2494,8 @@
     "aliases": [],
     "hex": "0C0C0E",
     "categories": [
-      "Software",
-      "Platform"
+      "Blockchain",
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/alchemy/default.svg",
@@ -2616,8 +2581,7 @@
     "aliases": [],
     "hex": "5C1F87",
     "categories": [
-      "Software",
-      "Platform"
+      "Productivity"
     ],
     "variants": {
       "default": "/icons/alfred/default.svg",
@@ -2728,8 +2692,7 @@
     "aliases": [],
     "hex": "FF6A00",
     "categories": [
-      "Software",
-      "Platform"
+      "E-commerce"
     ],
     "variants": {
       "default": "/icons/alibabadotcom/default.svg",
@@ -2764,8 +2727,8 @@
     "aliases": [],
     "hex": "FF4747",
     "categories": [
-      "Software",
-      "Platform"
+      "E-commerce",
+      "Shopping"
     ],
     "variants": {
       "default": "/icons/aliexpress/default.svg",
@@ -2802,8 +2765,8 @@
     "aliases": [],
     "hex": "70C6BE",
     "categories": [
-      "Software",
-      "Platform"
+      "File Sharing",
+      "Self-Hosted"
     ],
     "variants": {
       "default": "/icons/alist/default.svg",
@@ -2837,8 +2800,8 @@
     "aliases": [],
     "hex": "FF5A00",
     "categories": [
-      "Software",
-      "Platform"
+      "E-commerce",
+      "Shopping"
     ],
     "variants": {
       "default": "/icons/allegro/default.svg",
@@ -2855,8 +2818,8 @@
     "aliases": [],
     "hex": "1578D3",
     "categories": [
-      "Software",
-      "Platform"
+      "Community",
+      "Gaming"
     ],
     "variants": {
       "default": "/icons/alliedmodders/default.svg",
@@ -3006,8 +2969,8 @@
     "aliases": [],
     "hex": "0289D5",
     "categories": [
-      "Software",
-      "Platform"
+      "Community",
+      "Software"
     ],
     "variants": {
       "default": "/icons/alternativeto/default.svg",
@@ -3024,8 +2987,7 @@
     "aliases": [],
     "hex": "E9568E",
     "categories": [
-      "Software",
-      "Platform"
+      "Hosting"
     ],
     "variants": {
       "default": "/icons/alwaysdata/default.svg",
@@ -3155,8 +3117,8 @@
     "aliases": [],
     "hex": "FF9900",
     "categories": [
-      "Software",
-      "Platform"
+      "Cloud",
+      "Compute"
     ],
     "variants": {
       "default": "/icons/amazon-web-services/default.svg",
@@ -3196,8 +3158,8 @@
     ],
     "hex": "2D8C3C",
     "categories": [
-      "Software",
-      "Platform"
+      "Social",
+      "Community"
     ],
     "variants": {
       "default": "/icons/ameba/default.svg",
@@ -3232,8 +3194,8 @@
     "aliases": [],
     "hex": "2E77BC",
     "categories": [
-      "Software",
-      "Platform"
+      "Finance",
+      "Payment"
     ],
     "variants": {
       "default": "/icons/american-express/default.svg",
@@ -3375,8 +3337,8 @@
     "aliases": [],
     "hex": "44A833",
     "categories": [
-      "Software",
-      "Platform"
+      "Analytics",
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/anaconda/default.svg",
@@ -3393,8 +3355,8 @@
     "aliases": [],
     "hex": "1A1A1A",
     "categories": [
-      "Software",
-      "Platform"
+      "Gaming",
+      "Hardware"
     ],
     "variants": {
       "default": "/icons/analogue/default.svg",
@@ -3430,8 +3392,7 @@
     "aliases": [],
     "hex": "173B3F",
     "categories": [
-      "Software",
-      "Platform"
+      "Business"
     ],
     "variants": {
       "default": "/icons/andela/default.svg",
@@ -3448,8 +3409,8 @@
     "aliases": [],
     "hex": "3DDC84",
     "categories": [
-      "Software",
-      "Platform"
+      "OS",
+      "Mobile"
     ],
     "variants": {
       "default": "/icons/android/default.svg",
@@ -3558,8 +3519,8 @@
     "aliases": [],
     "hex": "41B1EA",
     "categories": [
-      "Software",
-      "Platform"
+      "Entertainment",
+      "Community"
     ],
     "variants": {
       "default": "/icons/anichart/default.svg",
@@ -3577,8 +3538,8 @@
     "aliases": [],
     "hex": "02A9FF",
     "categories": [
-      "Software",
-      "Platform"
+      "Entertainment",
+      "Community"
     ],
     "variants": {
       "default": "/icons/anilist/default.svg",
@@ -3595,8 +3556,8 @@
     "aliases": [],
     "hex": "0073FF",
     "categories": [
-      "Software",
-      "Platform"
+      "Media",
+      "Entertainment"
     ],
     "variants": {
       "default": "/icons/animal-planet/default.svg",
@@ -3683,8 +3644,7 @@
     "aliases": [],
     "hex": "80C2EE",
     "categories": [
-      "Software",
-      "Platform"
+      "Education"
     ],
     "variants": {
       "default": "/icons/anki/default.svg",
@@ -3721,8 +3681,8 @@
     "aliases": [],
     "hex": "0033FF",
     "categories": [
-      "Software",
-      "Platform"
+      "Community",
+      "Self-Hosted"
     ],
     "variants": {
       "default": "/icons/answer/default.svg",
@@ -3793,8 +3753,8 @@
     "aliases": [],
     "hex": "FF7328",
     "categories": [
-      "Software",
-      "Platform"
+      "Media",
+      "Entertainment"
     ],
     "variants": {
       "default": "/icons/antena-3/default.svg",
@@ -3871,8 +3831,9 @@
     "aliases": [],
     "hex": "fff",
     "categories": [
-      "Software",
-      "Platform"
+      "DevTool",
+      "AI",
+      "Google"
     ],
     "variants": {
       "default": "/icons/antigravity-google/color.svg",
@@ -3890,8 +3851,7 @@
     "aliases": [],
     "hex": "8B5DFF",
     "categories": [
-      "Software",
-      "Platform"
+      "Library"
     ],
     "variants": {
       "default": "/icons/antv/default.svg",
@@ -3908,8 +3868,7 @@
     "aliases": [],
     "hex": "476695",
     "categories": [
-      "Software",
-      "Platform"
+      "Hardware"
     ],
     "variants": {
       "default": "/icons/anycubic/default.svg",
@@ -3926,8 +3885,8 @@
     "aliases": [],
     "hex": "EF443B",
     "categories": [
-      "Software",
-      "Platform"
+      "DevTool",
+      "Networking"
     ],
     "variants": {
       "default": "/icons/anydesk/default.svg",
@@ -3981,8 +3940,8 @@
     "aliases": [],
     "hex": "D22128",
     "categories": [
-      "Software",
-      "Platform"
+      "Community",
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/apache/default.svg",
@@ -4706,8 +4665,8 @@
     "aliases": [],
     "hex": "ED145B",
     "categories": [
-      "Software",
-      "Platform"
+      "Media",
+      "Entertainment"
     ],
     "variants": {
       "default": "/icons/aparat/default.svg",
@@ -4740,8 +4699,7 @@
     "aliases": [],
     "hex": "99C2FF",
     "categories": [
-      "Software",
-      "Platform"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/apidog/default.svg"
@@ -4812,8 +4770,8 @@
     "aliases": [],
     "hex": "311C87",
     "categories": [
-      "Software",
-      "Platform"
+      "DevTool",
+      "Framework"
     ],
     "variants": {
       "default": "/icons/apollo-graphql/default.svg",
@@ -4830,8 +4788,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Software",
-      "Platform"
+      "Business"
     ],
     "variants": {
       "default": "/icons/apollodotio/default.svg"
@@ -4954,8 +4911,7 @@
     ],
     "hex": "FF0000",
     "categories": [
-      "Software",
-      "Platform"
+      "Mobile"
     ],
     "variants": {
       "default": "/icons/appgallery/default.svg",
@@ -4972,8 +4928,8 @@
     "aliases": [],
     "hex": "2322F0",
     "categories": [
-      "Software",
-      "Platform"
+      "Automation",
+      "Business"
     ],
     "variants": {
       "default": "/icons/appian/default.svg",
@@ -4991,8 +4947,7 @@
     "aliases": [],
     "hex": "739FB9",
     "categories": [
-      "Software",
-      "Platform"
+      "Linux"
     ],
     "variants": {
       "default": "/icons/appimage/default.svg",
@@ -5028,8 +4983,8 @@
     "aliases": [],
     "hex": "fff",
     "categories": [
-      "Software",
-      "Platform"
+      "Hardware",
+      "OS"
     ],
     "variants": {
       "default": "/icons/apple/default.svg",
@@ -5048,8 +5003,8 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Software",
-      "Platform"
+      "Gaming",
+      "Entertainment"
     ],
     "variants": {
       "default": "/icons/apple-arcade/default.svg",
@@ -5087,8 +5042,7 @@
     "aliases": [],
     "hex": "FD415E",
     "categories": [
-      "Software",
-      "Platform"
+      "Media"
     ],
     "variants": {
       "default": "/icons/apple-news/default.svg",
@@ -5105,8 +5059,8 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Software",
-      "Platform"
+      "Payment",
+      "Finance"
     ],
     "variants": {
       "default": "/icons/apple-pay/default.svg",
@@ -5123,8 +5077,8 @@
     "aliases": [],
     "hex": "9933CC",
     "categories": [
-      "Software",
-      "Platform"
+      "Media",
+      "Entertainment"
     ],
     "variants": {
       "default": "/icons/apple-podcasts/default.svg",
@@ -5141,8 +5095,8 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Software",
-      "Platform"
+      "Media",
+      "Entertainment"
     ],
     "variants": {
       "default": "/icons/apple-tv/default.svg",
@@ -5194,8 +5148,8 @@
     "aliases": [],
     "hex": "21375A",
     "categories": [
-      "Software",
-      "Platform"
+      "Monitoring",
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/appsignal/default.svg",
@@ -5212,8 +5166,7 @@
     "aliases": [],
     "hex": "2A2F3D",
     "categories": [
-      "Software",
-      "Platform"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/appsmith/default.svg",
@@ -5230,8 +5183,8 @@
     "aliases": [],
     "hex": "00B3E0",
     "categories": [
-      "Software",
-      "Platform"
+      "DevOps",
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/appveyor/default.svg",
@@ -5248,8 +5201,8 @@
     "aliases": [],
     "hex": "FD366E",
     "categories": [
-      "Software",
-      "Platform"
+      "DevTool",
+      "Database"
     ],
     "variants": {
       "default": "/icons/appwrite/default.svg",
@@ -5286,8 +5239,7 @@
     "aliases": [],
     "hex": "0063CB",
     "categories": [
-      "Software",
-      "Platform"
+      "Energy"
     ],
     "variants": {
       "default": "/icons/aral/default.svg",
@@ -5543,8 +5495,7 @@
     "aliases": [],
     "hex": "DA291C",
     "categories": [
-      "Software",
-      "Platform"
+      "Shopping"
     ],
     "variants": {
       "default": "/icons/argos/default.svg",
@@ -5579,8 +5530,8 @@
     "aliases": [],
     "hex": "C9292C",
     "categories": [
-      "Software",
-      "Platform"
+      "Blockchain",
+      "Crypto"
     ],
     "variants": {
       "default": "/icons/ark-ecosystem/default.svg",
@@ -5614,8 +5565,8 @@
     "aliases": [],
     "hex": "49B48A",
     "categories": [
-      "Software",
-      "Platform"
+      "IoT",
+      "Hardware"
     ],
     "variants": {
       "default": "/icons/arlo/default.svg",
@@ -5651,8 +5602,8 @@
     "aliases": [],
     "hex": "394049",
     "categories": [
-      "Software",
-      "Platform"
+      "DevTool",
+      "Hardware"
     ],
     "variants": {
       "default": "/icons/arm-keil/default.svg",
@@ -5704,8 +5655,8 @@
     "aliases": [],
     "hex": "FF4E00",
     "categories": [
-      "Software",
-      "Platform"
+      "Media",
+      "News"
     ],
     "variants": {
       "default": "/icons/ars-technica/default.svg",
@@ -5775,8 +5726,8 @@
     "aliases": [],
     "hex": "13AFF0",
     "categories": [
-      "Software",
-      "Platform"
+      "Design",
+      "Community"
     ],
     "variants": {
       "default": "/icons/artstation/default.svg",
@@ -5793,8 +5744,8 @@
     "aliases": [],
     "hex": "B31B1B",
     "categories": [
-      "Software",
-      "Platform"
+      "Education",
+      "Community"
     ],
     "variants": {
       "default": "/icons/arxiv/default.svg",
@@ -6038,8 +5989,7 @@
     "aliases": [],
     "hex": "F68F1E",
     "categories": [
-      "Software",
-      "Platform"
+      "Communication"
     ],
     "variants": {
       "default": "/icons/asterisk/default.svg",
@@ -6074,8 +6024,7 @@
     "aliases": [],
     "hex": "5C2EDE",
     "categories": [
-      "Software",
-      "Platform"
+      "CMS"
     ],
     "variants": {
       "default": "/icons/astra/default.svg",
@@ -6092,8 +6041,7 @@
     "aliases": [],
     "hex": "261230",
     "categories": [
-      "Software",
-      "Platform"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/astral/default.svg",
@@ -6205,8 +6153,7 @@
     "aliases": [],
     "hex": "E4202E",
     "categories": [
-      "Software",
-      "Platform"
+      "Gaming"
     ],
     "variants": {
       "default": "/icons/atari/default.svg",
@@ -6292,8 +6239,8 @@
     "aliases": [],
     "hex": "1A91FF",
     "categories": [
-      "Software",
-      "Platform"
+      "Gaming",
+      "OS"
     ],
     "variants": {
       "default": "/icons/atlasos/default.svg",
@@ -6311,8 +6258,8 @@
     "aliases": [],
     "hex": "0052CC",
     "categories": [
-      "Software",
-      "Platform"
+      "DevTool",
+      "Business"
     ],
     "variants": {
       "default": "/icons/atlassian/default.svg",
@@ -6439,8 +6386,8 @@
     "aliases": [],
     "hex": "F8991C",
     "categories": [
-      "Software",
-      "Platform"
+      "Media",
+      "Entertainment"
     ],
     "variants": {
       "default": "/icons/audible/default.svg",
@@ -6493,8 +6440,7 @@
     "aliases": [],
     "hex": "007CE2",
     "categories": [
-      "Software",
-      "Platform"
+      "Media"
     ],
     "variants": {
       "default": "/icons/audioboom/default.svg",
@@ -6511,8 +6457,7 @@
     "aliases": [],
     "hex": "FFA200",
     "categories": [
-      "Software",
-      "Platform"
+      "Music"
     ],
     "variants": {
       "default": "/icons/audiomack/default.svg",
@@ -6547,8 +6492,7 @@
     "aliases": [],
     "hex": "ED2B88",
     "categories": [
-      "Software",
-      "Platform"
+      "Framework"
     ],
     "variants": {
       "default": "/icons/aurelia/default.svg",
@@ -6584,8 +6528,7 @@
     "aliases": [],
     "hex": "3379F2",
     "categories": [
-      "Software",
-      "Platform"
+      "Business"
     ],
     "variants": {
       "default": "/icons/autentique/default.svg",
@@ -6799,8 +6742,8 @@
     "aliases": [],
     "hex": "334455",
     "categories": [
-      "Software",
-      "Platform"
+      "Automation",
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/autohotkey/default.svg",
@@ -6817,8 +6760,8 @@
     "aliases": [],
     "hex": "5D83AC",
     "categories": [
-      "Software",
-      "Platform"
+      "Automation",
+      "Language"
     ],
     "variants": {
       "default": "/icons/autoit/default.svg",
@@ -6835,8 +6778,7 @@
     "aliases": [],
     "hex": "E00054",
     "categories": [
-      "Software",
-      "Platform"
+      "AI"
     ],
     "variants": {
       "default": "/icons/automatic1111-sd-webui/color.svg",
@@ -6854,8 +6796,8 @@
     "aliases": [],
     "hex": "3499CD",
     "categories": [
-      "Software",
-      "Platform"
+      "CMS",
+      "Business"
     ],
     "variants": {
       "default": "/icons/automattic/default.svg",
@@ -6943,8 +6885,7 @@
     "aliases": [],
     "hex": "165BFF",
     "categories": [
-      "Software",
-      "Platform"
+      "Framework"
     ],
     "variants": {
       "default": "/icons/avaloniaui/default.svg",
@@ -6984,8 +6925,7 @@
     "aliases": [],
     "hex": "FF7800",
     "categories": [
-      "Software",
-      "Platform"
+      "Security"
     ],
     "variants": {
       "default": "/icons/avast/default.svg",
@@ -7066,8 +7006,7 @@
     "aliases": [],
     "hex": "E02027",
     "categories": [
-      "Software",
-      "Platform"
+      "Security"
     ],
     "variants": {
       "default": "/icons/avira/default.svg",
@@ -7102,8 +7041,8 @@
     "aliases": [],
     "hex": "E2001A",
     "categories": [
-      "Software",
-      "Platform"
+      "Networking",
+      "Hardware"
     ],
     "variants": {
       "default": "/icons/avm/default.svg",
@@ -7155,8 +7094,7 @@
     "aliases": [],
     "hex": "535D6C",
     "categories": [
-      "Software",
-      "Platform"
+      "Linux"
     ],
     "variants": {
       "default": "/icons/awesomewm/default.svg",
@@ -23698,8 +23636,8 @@
     "aliases": [],
     "hex": "222222",
     "categories": [
-      "Software",
-      "Platform"
+      "Design",
+      "Community"
     ],
     "variants": {
       "default": "/icons/awwwards/default.svg",
@@ -23733,8 +23671,8 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Software",
-      "Platform"
+      "Monitoring",
+      "Analytics"
     ],
     "variants": {
       "default": "/icons/axiom/default.svg",
@@ -36479,8 +36417,7 @@
     "aliases": [],
     "hex": "14AECB",
     "categories": [
-      "Software",
-      "Platform"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/b4x/default.svg",
@@ -36586,8 +36523,8 @@
     "aliases": [],
     "hex": "E21E29",
     "categories": [
-      "Software",
-      "Platform"
+      "Storage",
+      "Cloud"
     ],
     "variants": {
       "default": "/icons/backblaze/default.svg",
@@ -36605,8 +36542,8 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Software",
-      "Platform"
+      "Gaming",
+      "Hardware"
     ],
     "variants": {
       "default": "/icons/backbone/default.svg",
@@ -36642,8 +36579,8 @@
     "aliases": [],
     "hex": "1D77BD",
     "categories": [
-      "Software",
-      "Platform"
+      "DevTool",
+      "Database"
     ],
     "variants": {
       "default": "/icons/backendless/default.svg",
@@ -36660,8 +36597,8 @@
     "aliases": [],
     "hex": "9BF0E1",
     "categories": [
-      "Software",
-      "Platform"
+      "DevTool",
+      "DevOps"
     ],
     "variants": {
       "default": "/icons/backstage/default.svg",
@@ -36679,8 +36616,7 @@
     "aliases": [],
     "hex": "783BF9",
     "categories": [
-      "Software",
-      "Platform"
+      "Social"
     ],
     "variants": {
       "default": "/icons/badoo/default.svg",
@@ -36843,8 +36779,8 @@
     "aliases": [],
     "hex": "0052CC",
     "categories": [
-      "Software",
-      "Platform"
+      "DevOps",
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/bamboo/default.svg",
@@ -36878,8 +36814,7 @@
     "aliases": [],
     "hex": "00AE42",
     "categories": [
-      "Software",
-      "Platform"
+      "Hardware"
     ],
     "variants": {
       "default": "/icons/bambu-lab/default.svg",
@@ -36931,8 +36866,7 @@
     "aliases": [],
     "hex": "F12C18",
     "categories": [
-      "Software",
-      "Platform"
+      "Music"
     ],
     "variants": {
       "default": "/icons/bandlab/default.svg",
@@ -36965,8 +36899,8 @@
     "aliases": [],
     "hex": "00CEC8",
     "categories": [
-      "Software",
-      "Platform"
+      "Music",
+      "Entertainment"
     ],
     "variants": {
       "default": "/icons/bandsintown/default.svg",
@@ -37018,8 +36952,7 @@
     "aliases": [],
     "hex": "00AEEF",
     "categories": [
-      "Software",
-      "Platform"
+      "Finance"
     ],
     "variants": {
       "default": "/icons/barclays/default.svg",
@@ -37036,8 +36969,8 @@
     "aliases": [],
     "hex": "6078FF",
     "categories": [
-      "Software",
-      "Platform"
+      "Analytics",
+      "Business"
     ],
     "variants": {
       "default": "/icons/baremetrics/default.svg",
@@ -37054,8 +36987,7 @@
     "aliases": [],
     "hex": "009FE3",
     "categories": [
-      "Software",
-      "Platform"
+      "Insurance"
     ],
     "variants": {
       "default": "/icons/barmenia/default.svg",
@@ -37109,8 +37041,8 @@
     "aliases": [],
     "hex": "1D2D35",
     "categories": [
-      "Software",
-      "Platform"
+      "Productivity",
+      "Management"
     ],
     "variants": {
       "default": "/icons/basecamp/default.svg",
@@ -37127,8 +37059,8 @@
     "aliases": [],
     "hex": "5190EF",
     "categories": [
-      "Software",
-      "Platform"
+      "Database",
+      "Self-Hosted"
     ],
     "variants": {
       "default": "/icons/baserow/default.svg",
@@ -37201,8 +37133,8 @@
     ],
     "hex": "80247B",
     "categories": [
-      "Software",
-      "Platform"
+      "Crypto",
+      "Blockchain"
     ],
     "variants": {
       "default": "/icons/basic-attention-token/default.svg",
@@ -37273,8 +37205,7 @@
     "aliases": [],
     "hex": "DD282E",
     "categories": [
-      "Software",
-      "Platform"
+      "Fashion"
     ],
     "variants": {
       "default": "/icons/bata/default.svg",
@@ -37291,8 +37222,7 @@
     "aliases": [],
     "hex": "4381C3",
     "categories": [
-      "Software",
-      "Platform"
+      "Gaming"
     ],
     "variants": {
       "default": "/icons/battledotnet/default.svg",
@@ -37359,8 +37289,7 @@
     "aliases": [],
     "hex": "43A047",
     "categories": [
-      "Software",
-      "Platform"
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/bazel/default.svg",
@@ -37463,8 +37392,7 @@
     "aliases": [],
     "hex": "01FF95",
     "categories": [
-      "Software",
-      "Platform"
+      "Music"
     ],
     "variants": {
       "default": "/icons/beatport/default.svg",
@@ -37482,8 +37410,8 @@
     "aliases": [],
     "hex": "005571",
     "categories": [
-      "Software",
-      "Platform"
+      "DevTool",
+      "Analytics"
     ],
     "variants": {
       "default": "/icons/beats/default.svg",
@@ -37501,8 +37429,8 @@
     "aliases": [],
     "hex": "E01F3D",
     "categories": [
-      "Software",
-      "Platform"
+      "Hardware",
+      "Music"
     ],
     "variants": {
       "default": "/icons/beats-by-dre/default.svg",
@@ -37519,8 +37447,7 @@
     "aliases": [],
     "hex": "EB0000",
     "categories": [
-      "Software",
-      "Platform"
+      "Music"
     ],
     "variants": {
       "default": "/icons/beatstars/default.svg",
@@ -37557,8 +37484,8 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Software",
-      "Platform"
+      "Email",
+      "Marketing"
     ],
     "variants": {
       "default": "/icons/beehiiv/default.svg"
@@ -37574,8 +37501,8 @@
     "aliases": [],
     "hex": "FAD83B",
     "categories": [
-      "Software",
-      "Platform"
+      "Database",
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/beekeeper-studio/default.svg",
@@ -37593,8 +37520,8 @@
     "aliases": [],
     "hex": "1769FF",
     "categories": [
-      "Software",
-      "Platform"
+      "Design",
+      "Community"
     ],
     "variants": {
       "default": "/icons/behance/default.svg",
@@ -37611,8 +37538,7 @@
     "aliases": [],
     "hex": "004A9D",
     "categories": [
-      "Software",
-      "Platform"
+      "Transportation"
     ],
     "variants": {
       "default": "/icons/beijing-subway/default.svg",
@@ -37629,8 +37555,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Software",
-      "Platform"
+      "Frontend"
     ],
     "variants": {
       "default": "/icons/bem/default.svg",
@@ -37684,8 +37609,7 @@
     "aliases": [],
     "hex": "768CFF",
     "categories": [
-      "Software",
-      "Platform"
+      "Social"
     ],
     "variants": {
       "default": "/icons/bento/default.svg",
@@ -37702,8 +37626,8 @@
     "aliases": [],
     "hex": "F15541",
     "categories": [
-      "Software",
-      "Platform"
+      "Food",
+      "Business"
     ],
     "variants": {
       "default": "/icons/bentobox/default.svg",
@@ -37738,8 +37662,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Software",
-      "Platform"
+      "Social"
     ],
     "variants": {
       "default": "/icons/bereal/default.svg",
@@ -37807,8 +37730,7 @@
     "aliases": [],
     "hex": "FFB80B",
     "categories": [
-      "Software",
-      "Platform"
+      "Sports"
     ],
     "variants": {
       "default": "/icons/betfair/default.svg",
@@ -37865,8 +37787,8 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Software",
-      "Platform"
+      "Monitoring",
+      "DevOps"
     ],
     "variants": {
       "default": "/icons/better-stack/default.svg",
@@ -37919,8 +37841,7 @@
     "aliases": [],
     "hex": "222222",
     "categories": [
-      "Software",
-      "Platform"
+      "E-commerce"
     ],
     "variants": {
       "default": "/icons/big-cartel/default.svg",
@@ -37937,8 +37858,8 @@
     "aliases": [],
     "hex": "A5CD39",
     "categories": [
-      "Software",
-      "Platform"
+      "Food",
+      "E-commerce"
     ],
     "variants": {
       "default": "/icons/bigbasket/default.svg",
@@ -37974,8 +37895,7 @@
     "aliases": [],
     "hex": "121118",
     "categories": [
-      "Software",
-      "Platform"
+      "E-commerce"
     ],
     "variants": {
       "default": "/icons/bigcommerce/default.svg",
@@ -38062,8 +37982,8 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Software",
-      "Platform"
+      "Music",
+      "Media"
     ],
     "variants": {
       "default": "/icons/billboard/default.svg",
@@ -38080,8 +38000,7 @@
     "aliases": [],
     "hex": "EB1928",
     "categories": [
-      "Software",
-      "Platform"
+      "Shopping"
     ],
     "variants": {
       "default": "/icons/bim/default.svg",
@@ -38133,8 +38052,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Software",
-      "Platform"
+      "Social"
     ],
     "variants": {
       "default": "/icons/bio-link/default.svg",
@@ -38225,8 +38143,8 @@
     "aliases": [],
     "hex": "592EC1",
     "categories": [
-      "Software",
-      "Platform"
+      "DevTool",
+      "Framework"
     ],
     "variants": {
       "default": "/icons/bit/default.svg",
@@ -38280,8 +38198,8 @@
     "aliases": [],
     "hex": "0AC18E",
     "categories": [
-      "Software",
-      "Platform"
+      "Crypto",
+      "Blockchain"
     ],
     "variants": {
       "default": "/icons/bitcoin-cash/default.svg",
@@ -38298,8 +38216,8 @@
     "aliases": [],
     "hex": "EAB300",
     "categories": [
-      "Software",
-      "Platform"
+      "Crypto",
+      "Blockchain"
     ],
     "variants": {
       "default": "/icons/bitcoin-sv/default.svg",
@@ -38316,8 +38234,7 @@
     "aliases": [],
     "hex": "F49923",
     "categories": [
-      "Software",
-      "Platform"
+      "Networking"
     ],
     "variants": {
       "default": "/icons/bitcomet/default.svg",
@@ -38334,8 +38251,7 @@
     "aliases": [],
     "hex": "ED1C24",
     "categories": [
-      "Software",
-      "Platform"
+      "Security"
     ],
     "variants": {
       "default": "/icons/bitdefender/default.svg",
@@ -38352,8 +38268,7 @@
     "aliases": [],
     "hex": "EE6123",
     "categories": [
-      "Software",
-      "Platform"
+      "Marketing"
     ],
     "variants": {
       "default": "/icons/bitly/default.svg",
@@ -38370,8 +38285,8 @@
     "aliases": [],
     "hex": "683D87",
     "categories": [
-      "Software",
-      "Platform"
+      "DevOps",
+      "Mobile"
     ],
     "variants": {
       "default": "/icons/bitrise/default.svg",
@@ -38388,8 +38303,8 @@
     "aliases": [],
     "hex": "6767B2",
     "categories": [
-      "Software",
-      "Platform"
+      "Gaming",
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/bitsy/default.svg",
@@ -38406,8 +38321,8 @@
     "aliases": [],
     "hex": "050505",
     "categories": [
-      "Software",
-      "Platform"
+      "Networking",
+      "File Sharing"
     ],
     "variants": {
       "default": "/icons/bittorrent/default.svg",
@@ -38444,8 +38359,7 @@
     "aliases": [],
     "hex": "FF5A00",
     "categories": [
-      "Software",
-      "Platform"
+      "Music"
     ],
     "variants": {
       "default": "/icons/bitwig/default.svg",
@@ -38482,8 +38396,8 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Software",
-      "Platform"
+      "DevTool",
+      "Language"
     ],
     "variants": {
       "default": "/icons/black/default.svg",
@@ -38518,8 +38432,8 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Software",
-      "Platform"
+      "Mobile",
+      "Security"
     ],
     "variants": {
       "default": "/icons/blackberry/default.svg",
@@ -38536,8 +38450,8 @@
     "aliases": [],
     "hex": "FFA200",
     "categories": [
-      "Software",
-      "Platform"
+      "Media",
+      "Hardware"
     ],
     "variants": {
       "default": "/icons/blackmagic-design/default.svg",
@@ -38554,8 +38468,8 @@
     "aliases": [],
     "hex": "CA2133",
     "categories": [
-      "Software",
-      "Platform"
+      "Testing",
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/blazemeter/default.svg",
@@ -38572,8 +38486,8 @@
     "aliases": [],
     "hex": "512BD4",
     "categories": [
-      "Software",
-      "Platform"
+      "Framework",
+      "Microsoft"
     ],
     "variants": {
       "default": "/icons/blazor/default.svg",
@@ -38609,8 +38523,7 @@
     "aliases": [],
     "hex": "0072FF",
     "categories": [
-      "Software",
-      "Platform"
+      "E-commerce"
     ],
     "variants": {
       "default": "/icons/blibli/default.svg",
@@ -38660,8 +38573,8 @@
     "aliases": [],
     "hex": "1E93D9",
     "categories": [
-      "Software",
-      "Platform"
+      "Gaming",
+      "DevTool"
     ],
     "variants": {
       "default": "/icons/blockbench/default.svg",
@@ -38679,8 +38592,8 @@
     "aliases": [],
     "hex": "121D33",
     "categories": [
-      "Software",
-      "Platform"
+      "Crypto",
+      "Blockchain"
     ],
     "variants": {
       "default": "/icons/blockchaindotcom/default.svg",
@@ -38770,8 +38683,8 @@
     "aliases": [],
     "hex": "137CBD",
     "categories": [
-      "Software",
-      "Platform"
+      "Framework",
+      "Library"
     ],
     "variants": {
       "default": "/icons/blueprint/default.svg",
@@ -38809,8 +38722,8 @@
     "aliases": [],
     "hex": "0F131E",
     "categories": [
-      "Software",
-      "Platform"
+      "Hardware",
+      "Music"
     ],
     "variants": {
       "default": "/icons/bluesound/default.svg",
@@ -38827,8 +38740,7 @@
     "aliases": [],
     "hex": "0082FC",
     "categories": [
-      "Software",
-      "Platform"
+      "Networking"
     ],
     "variants": {
       "default": "/icons/bluetooth/default.svg",
@@ -38846,8 +38758,8 @@
     "aliases": [],
     "hex": "FE5000",
     "categories": [
-      "Software",
-      "Platform"
+      "Management",
+      "Business"
     ],
     "variants": {
       "default": "/icons/bmc-software/default.svg",
@@ -38918,8 +38830,8 @@
     "aliases": [],
     "hex": "F0B90B",
     "categories": [
-      "Software",
-      "Platform"
+      "Blockchain",
+      "Crypto"
     ],
     "variants": {
       "default": "/icons/bnb-chain/default.svg",
