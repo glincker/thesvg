@@ -20,7 +20,7 @@ export interface WriteResult {
  * Convert raw SVG markup to JSX-compatible markup (React).
  * Mirrors the logic in src/lib/copy-formats.ts on the web.
  */
-function svgToJsx(svg: string): string {
+export function svgToJsx(svg: string): string {
   return svg
     .replace(/class=/g, "className=")
     .replace(/clip-path=/g, "clipPath=")
