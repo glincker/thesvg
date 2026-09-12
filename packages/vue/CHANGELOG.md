@@ -1,5 +1,11 @@
 # @thesvg/vue
 
+## 3.3.5
+
+### Patch Changes
+
+- fix(icons): fix incorrect dark variant for mir icon ([#997](https://github.com/glincker/thesvg/issues/997))
+
 ## 3.3.4
 
 ### Patch Changes
