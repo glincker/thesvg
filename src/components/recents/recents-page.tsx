@@ -44,10 +44,10 @@ function timeAgo(ts: number): string {
   return `${months}mo`;
 }
 
-function withinWindow(ts: number, win: TimeWindow): boolean {
+function getWindowCutoff(win: TimeWindow): number | null {
   const def = WINDOWS.find((w) => w.id === win);
-  if (!def || def.ms == null) return true;
-  return Date.now() - ts <= def.ms;
+  if (!def || def.ms == null) return null;
+  return Date.now() - def.ms;
 }
 
 export function RecentsPage({ allIcons }: Props) {
@@ -78,13 +78,17 @@ export function RecentsPage({ allIcons }: Props) {
     [allIcons],
   );
 
+  // Computed once per render cycle and shared by the viewed/copied/searched
+  // memos below, so the cutoff timestamp itself is never recomputed per list.
+  const cutoff = useMemo(() => getWindowCutoff(win), [win]);
+
   const viewedIcons = useMemo(
     () =>
       viewed
         .map((v) => ({ entry: iconsBySlug.get(v.slug), ts: v.ts }))
         .filter((x): x is { entry: IconEntry; ts: number } => Boolean(x.entry))
-        .filter((x) => withinWindow(x.ts, win)),
-    [viewed, iconsBySlug, win],
+        .filter((x) => cutoff === null || x.ts >= cutoff),
+    [viewed, iconsBySlug, cutoff],
   );
 
   const copiedIcons = useMemo(
@@ -102,13 +106,13 @@ export function RecentsPage({ allIcons }: Props) {
           format: typeof copied[number]["format"];
           count: number;
         } => Boolean(x.entry))
-        .filter((x) => withinWindow(x.ts, win)),
-    [copied, iconsBySlug, win],
+        .filter((x) => cutoff === null || x.ts >= cutoff),
+    [copied, iconsBySlug, cutoff],
   );
 
   const filteredSearches = useMemo(
-    () => searched.filter((s) => withinWindow(s.ts, win)),
-    [searched, win],
+    () => searched.filter((s) => cutoff === null || s.ts >= cutoff),
+    [searched, cutoff],
   );
 
   const totalEntries =
