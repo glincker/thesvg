@@ -135,6 +135,6 @@ export const useRecentsStore = create<RecentsState>()(
       clearSearched: () => set({ searched: [] }),
       clearAll: () => set({ viewed: [], copied: [], searched: [] }),
     }),
-    { name: "thesvg-recents" },
+    { name: "thesvg-recents", skipHydration: true },
   ),
 );

@@ -17,6 +17,7 @@ export const useMobilePrefsStore = create<MobilePrefsState>()(
     {
       name: "thesvg-mobile-prefs",
       version: 1,
+      skipHydration: true,
     },
   ),
 );

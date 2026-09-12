@@ -8,6 +8,7 @@ import { Footer } from "@/components/footer";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { MobileShell } from "@/components/mobile/mobile-shell";
 import { NotificationToasts } from "@/components/notification-toasts";
+import { StoreHydration } from "@/components/store-hydration";
 import { getFormattedIconCount } from "@/lib/icons";
 import postsData from "@/data/posts.json";
 import "./globals.css";
@@ -154,6 +155,7 @@ export default function RootLayout({
           storageKey="thesvg-theme"
           disableTransitionOnChange
         >
+          <StoreHydration />
           <ScrollToTop />
           {/* Desktop header — `lg:` and above. Rendered as a body-level
               sibling (not wrapped) so position: sticky keeps a containing
