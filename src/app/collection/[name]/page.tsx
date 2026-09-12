@@ -10,98 +10,16 @@ import {
   getCollectionCount,
   type Collection,
 } from "@/lib/icons";
+import { COLLECTION_IDS, COLLECTIONS_META, isValidCollectionId } from "@/lib/collections-meta";
 import { HomeContent } from "@/components/home-content";
 
-const COLLECTION_META: Record<
-  string,
-  { title: string; description: string; keywords: string[] }
-> = {
-  aws: {
-    title: "AWS Architecture Icons - Free SVG Download",
-    description:
-      "Browse and download 739 official AWS Architecture SVG icons. Lambda, EC2, S3, RDS, DynamoDB, and all AWS services. Free for developers. Copy as SVG, JSX, React component, or CDN link.",
-    keywords: [
-      "AWS icons",
-      "AWS architecture icons",
-      "AWS SVG",
-      "AWS Lambda icon",
-      "Amazon EC2 icon",
-      "AWS service icons",
-      "cloud architecture icons",
-      "AWS diagram icons",
-    ],
-  },
-  azure: {
-    title: "Microsoft Azure Icons - Free SVG Download",
-    description:
-      "Browse and download 626 official Microsoft Azure service SVG icons. Virtual Machines, App Services, Azure SQL, Cosmos DB, and all Azure services. Free for developers.",
-    keywords: [
-      "Azure icons",
-      "Microsoft Azure icons",
-      "Azure SVG",
-      "Azure service icons",
-      "Azure architecture icons",
-      "cloud icons",
-      "Azure VM icon",
-      "Azure Functions icon",
-    ],
-  },
-  gcp: {
-    title: "Google Cloud Platform Icons - Free SVG Download",
-    description:
-      "Browse and download 214 Google Cloud Platform SVG icons. Compute Engine, BigQuery, Cloud Run, GKE, and all GCP services. Free for developers.",
-    keywords: [
-      "GCP icons",
-      "Google Cloud icons",
-      "GCP SVG",
-      "Google Cloud Platform icons",
-      "BigQuery icon",
-      "Cloud Run icon",
-      "GKE icon",
-      "cloud architecture icons",
-    ],
-  },
-  brands: {
-    title: "Brand SVG Icons - Free Logo Download",
-    description:
-      "Browse and download 4,019 brand SVG icons. GitHub, Stripe, Vercel, Docker, React, and thousands more. Multiple variants: color, mono, dark, light, wordmark.",
-    keywords: [
-      "brand icons",
-      "brand SVG",
-      "logo SVG",
-      "brand logos",
-      "free logo download",
-      "SVG icons",
-      "developer icons",
-    ],
-  },
-  k8s: {
-    title: "Kubernetes Icons - Free SVG Download",
-    description:
-      "Browse and download 38 official Kubernetes architecture SVG icons. Pods, Deployments, Services, Ingress, ConfigMaps, Secrets, and the full CNCF Kubernetes icon set. Apache 2.0.",
-    keywords: [
-      "Kubernetes icons",
-      "K8s icons",
-      "Kubernetes SVG",
-      "Pod icon",
-      "Deployment icon",
-      "Service icon",
-      "Ingress icon",
-      "CNCF icons",
-      "cloud native icons",
-    ],
-  },
-};
-
-const VALID_COLLECTIONS = ["aws", "azure", "gcp", "brands", "k8s"] as const;
-type ValidCollection = (typeof VALID_COLLECTIONS)[number];
-
-function isValidCollection(name: string): name is ValidCollection {
-  return (VALID_COLLECTIONS as readonly string[]).includes(name);
-}
-
+// The set of collections with a static page is derived from the shared
+// collections-meta config, so adding a collection there is enough to get
+// it a working `/collection/[name]` page - no allowlist to remember to
+// update separately (that drift is what caused /collection/community to
+// 404 in production).
 export function generateStaticParams() {
-  return VALID_COLLECTIONS.map((name) => ({ name }));
+  return COLLECTION_IDS.map((name) => ({ name }));
 }
 
 export const dynamicParams = false;
@@ -112,16 +30,16 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { name } = await params;
-  const meta = COLLECTION_META[name];
+  const meta = COLLECTIONS_META[name as Collection];
   if (!meta) return {};
 
   return {
-    title: meta.title,
-    description: meta.description,
-    keywords: meta.keywords,
+    title: meta.pageTitle,
+    description: meta.pageDescription,
+    keywords: meta.pageKeywords,
     openGraph: {
-      title: `${meta.title} | theSVG`,
-      description: meta.description,
+      title: `${meta.pageTitle} | theSVG`,
+      description: meta.pageDescription,
       url: `https://thesvg.org/collection/${name}`,
       type: "website",
       siteName: "theSVG",
@@ -130,14 +48,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
           url: "/og-image.png",
           width: 1200,
           height: 630,
-          alt: meta.title,
+          alt: meta.pageTitle,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: meta.title,
-      description: meta.description,
+      title: meta.pageTitle,
+      description: meta.pageDescription,
     },
     alternates: {
       canonical: `https://thesvg.org/collection/${name}`,
@@ -148,7 +66,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function CollectionPage({ params }: PageProps) {
   const { name } = await params;
 
-  if (!isValidCollection(name)) {
+  if (!isValidCollectionId(name)) {
     notFound();
   }
 
@@ -158,14 +76,14 @@ export default async function CollectionPage({ params }: PageProps) {
   const collections = getCollections();
 
   const collectionName = name as Collection;
-  const meta = COLLECTION_META[name];
+  const meta = COLLECTIONS_META[collectionName];
   const collectionItemCount = getCollectionCount(collectionName);
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: meta?.title,
-    description: meta?.description,
+    name: meta?.pageTitle,
+    description: meta?.pageDescription,
     url: `https://thesvg.org/collection/${name}`,
     isPartOf: {
       "@type": "WebSite",
