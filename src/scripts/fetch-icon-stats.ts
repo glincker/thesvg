@@ -38,8 +38,14 @@ const QUERY_URL = `${POSTHOG_HOST}/api/projects/${PROJECT_ID}/query`;
 
 const OUTPUT_PATH = join(__dirname, "../../public/data/icon-stats.json");
 
-/** 15s client-side timeout - PostHog's own HogQL execution cap is 10s. */
-const REQUEST_TIMEOUT_MS = 15_000;
+/**
+ * PostHog's own HogQL execution cap is 10s, but that only bounds query
+ * execution - it leaves little margin for request queueing/network
+ * overhead on top. A 15s client timeout raced that too closely in practice
+ * (two consecutive aborts in manual testing), so this leaves a wider
+ * buffer above the 10s cap instead of just barely clearing it.
+ */
+const REQUEST_TIMEOUT_MS = 30_000;
 
 const HOGQL_QUERY = `
   SELECT
