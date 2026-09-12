@@ -17,6 +17,7 @@ import { getCollections, type IconEntry } from "@/lib/icons";
 import { COLLECTIONS_LIST } from "@/lib/collections-meta";
 import { loadIconsManifest } from "@/lib/icons-manifest";
 import { cn } from "@/lib/utils";
+import { withUtm } from "@/lib/external-link";
 
 const PLACEHOLDER_BRANDS = ["GitHub", "Stripe", "Figma", "Docker", "AWS Lambda", "Azure Functions", "BigQuery", "Vercel", "React", "Tailwind CSS"];
 
@@ -588,7 +589,7 @@ export function Header() {
 
             <div className="ml-1 flex items-center gap-0.5 sm:gap-1">
               <a
-                href="https://www.npmjs.com/package/thesvg"
+                href={withUtm("https://www.npmjs.com/package/thesvg", "header")}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="View on npm"
@@ -604,7 +605,7 @@ export function Header() {
                 />
               </a>
               <a
-                href="https://www.raycast.com/thegdsks/thesvg"
+                href={withUtm("https://www.raycast.com/thegdsks/thesvg", "header")}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="View on Raycast"
@@ -620,7 +621,7 @@ export function Header() {
                 />
               </a>
               <a
-                href="https://www.figma.com/community/plugin/1612997159050367763"
+                href={withUtm("https://www.figma.com/community/plugin/1612997159050367763", "header")}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={showFigmaBadge ? "Open the Figma plugin (new)" : "Open the Figma plugin"}
@@ -645,7 +646,7 @@ export function Header() {
                 )}
               </a>
               <a
-                href="https://marketplace.visualstudio.com/items?itemName=glincker.thesvg"
+                href={withUtm("https://marketplace.visualstudio.com/items?itemName=glincker.thesvg", "header")}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Install the VS Code extension"
@@ -661,7 +662,7 @@ export function Header() {
                 />
               </a>
               <a
-                href="https://github.com/GLINCKER/thesvg"
+                href={withUtm("https://github.com/GLINCKER/thesvg", "header")}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="View on GitHub"

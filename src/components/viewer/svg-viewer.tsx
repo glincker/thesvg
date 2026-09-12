@@ -35,6 +35,7 @@ import {
 } from "@/lib/svg-utils";
 import { DeepLinkActions } from "@/components/viewer/deep-link-actions";
 import { QuickImport } from "@/components/viewer/quick-import";
+import { withUtm } from "@/lib/external-link";
 
 type PreviewBg = "checker" | "light" | "dark";
 
@@ -524,7 +525,7 @@ export function SvgViewer() {
 
           {/* Partner CTA */}
           <a
-            href="https://www.filagram.com/svg-viewer"
+            href={withUtm("https://www.filagram.com/svg-viewer", "svg_viewer")}
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-start gap-3 rounded-2xl border border-border/40 bg-card/30 p-4 transition-colors hover:border-border hover:bg-card/60"

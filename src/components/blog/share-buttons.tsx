@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Check, Link2 } from "lucide-react";
 import posthog from "posthog-js";
 import { cn } from "@/lib/utils";
+import { withUtm } from "@/lib/external-link";
 
 interface ShareButtonsProps {
   url: string;
@@ -85,7 +86,7 @@ export function ShareButtons({ url, title, tags, vertical = false }: ShareButton
         {PLATFORMS.map((platform) => (
           <a
             key={platform.name}
-            href={platform.buildUrl(url, title, tags)}
+            href={withUtm(platform.buildUrl(url, title, tags), "blog_share")}
             target="_blank"
             rel="noopener noreferrer"
             title={`Share on ${platform.name}`}
@@ -125,7 +126,7 @@ export function ShareButtons({ url, title, tags, vertical = false }: ShareButton
       {PLATFORMS.map((platform) => (
         <a
           key={platform.name}
-          href={platform.buildUrl(url, title, tags)}
+          href={withUtm(platform.buildUrl(url, title, tags), "blog_share")}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => handleShare(platform.name)}

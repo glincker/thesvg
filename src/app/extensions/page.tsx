@@ -18,6 +18,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getCategoryCounts, getFormattedIconCount } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
+import { withUtm } from "@/lib/external-link";
 
 export const metadata: Metadata = {
   title: "Extensions & Integrations - Figma, VS Code, React, React Native",
@@ -437,7 +438,7 @@ function ExtLink({
   if (isExternal) {
     return (
       <a
-        href={href}
+        href={withUtm(href, "extensions_page")}
         target="_blank"
         rel="noopener noreferrer"
         className={className}
@@ -586,7 +587,7 @@ export default function ExtensionsPage() {
               {/* Action buttons */}
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="https://github.com/GLINCKER/thesvg"
+                  href={withUtm("https://github.com/GLINCKER/thesvg", "extensions_page")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-lg bg-foreground px-4 py-2 text-sm font-medium text-background transition-opacity hover:opacity-90"
@@ -595,7 +596,7 @@ export default function ExtensionsPage() {
                   View on GitHub
                 </a>
                 <a
-                  href="https://www.jsdelivr.com/package/gh/glincker/thesvg"
+                  href={withUtm("https://www.jsdelivr.com/package/gh/glincker/thesvg", "extensions_page")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"

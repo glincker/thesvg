@@ -15,6 +15,7 @@ import { loadIconsManifest } from "@/lib/icons-manifest";
 import { formatSvg, type CopyFormat } from "@/lib/copy-formats";
 import type { IconEntry } from "@/lib/icons";
 import { cn } from "@/lib/utils";
+import { withUtm } from "@/lib/external-link";
 
 const COPY_FORMATS: ReadonlyArray<{ key: CopyFormat | "png"; label: string }> = [
   { key: "svg", label: "SVG" },
@@ -281,7 +282,7 @@ export function MobileIconSheet() {
 
           {icon.url && (
             <a
-              href={icon.url}
+              href={withUtm(icon.url, "mobile_icon_sheet")}
               target="_blank"
               rel="noopener noreferrer"
               className="mx-4 mt-2 flex items-center justify-between rounded-xl border border-border/40 px-3 py-2 text-[12px] text-muted-foreground transition-colors hover:bg-accent hover:text-foreground dark:border-white/[0.06]"

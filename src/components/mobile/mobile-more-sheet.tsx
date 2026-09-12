@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { BottomSheet, type BottomSheetSnap } from "./bottom-sheet";
 import { useMobileShellStore } from "@/lib/stores/mobile-shell-store";
+import { withUtm } from "@/lib/external-link";
 
 interface InternalItem {
   href: string;
@@ -142,7 +143,7 @@ export function MobileMoreSheet() {
           {EXTERNAL_LINKS.map((item) => (
             <li key={item.href}>
               <a
-                href={item.href}
+                href={withUtm(item.href, "mobile_more_sheet")}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => closeSheet()}

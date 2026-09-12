@@ -3,6 +3,7 @@ import { Github } from "@/components/icons/shared/brand-icons";
 import { TheSVGMark } from "@/components/icons/the-svg-mark";
 import Link from "next/link";
 import { TRADEMARK_POLICY_URL } from "@/lib/constants";
+import { withUtm } from "@/lib/external-link";
 import {
   getIconCount,
   getVariantCount,
@@ -50,7 +51,7 @@ function FooterLinkItem({ link }: { link: FooterLink }) {
   if (link.external) {
     return (
       <a
-        href={link.href}
+        href={withUtm(link.href, "footer")}
         target="_blank"
         rel="noopener noreferrer"
         className="group flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -156,7 +157,7 @@ export function Footer() {
               Submit an Icon
             </Link>
             <a
-              href="https://github.com/GLINCKER/thesvg"
+              href={withUtm("https://github.com/GLINCKER/thesvg", "footer")}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border border-border/60 px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground dark:border-white/[0.1]"
@@ -188,7 +189,7 @@ export function Footer() {
               <p className="text-xs text-muted-foreground/60">
                 A{" "}
                 <a
-                  href="https://glincker.com"
+                  href={withUtm("https://glincker.com", "footer")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-medium text-muted-foreground/80 transition-colors hover:text-foreground"
@@ -199,7 +200,7 @@ export function Footer() {
               </p>
               <div className="flex items-center gap-3">
                 <a
-                  href="https://github.com/GLINCKER/thesvg"
+                  href={withUtm("https://github.com/GLINCKER/thesvg", "footer")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground/60 transition-colors hover:text-foreground"
@@ -208,7 +209,7 @@ export function Footer() {
                   <Github className="h-4 w-4" />
                 </a>
                 <a
-                  href="https://www.figma.com/community/plugin/1612997159050367763"
+                  href={withUtm("https://www.figma.com/community/plugin/1612997159050367763", "footer")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="opacity-60 transition-opacity hover:opacity-100"
@@ -223,7 +224,7 @@ export function Footer() {
                   />
                 </a>
                 <a
-                  href="https://www.npmjs.com/package/thesvg"
+                  href={withUtm("https://www.npmjs.com/package/thesvg", "footer")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/60 transition-colors hover:text-foreground"
@@ -233,7 +234,10 @@ export function Footer() {
                 </a>
               </div>
               <a
-                href="https://www.producthunt.com/products/thesvg/reviews/new?utm_source=badge-product_review&utm_medium=badge&utm_source=badge-thesvg"
+                href={withUtm(
+                  "https://www.producthunt.com/products/thesvg/reviews/new?utm_source=badge-product_review&utm_medium=badge&utm_source=badge-thesvg",
+                  "footer"
+                )}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -262,7 +266,7 @@ export function Footer() {
             <div className="flex flex-col gap-3">
               <FooterColumn title="Community" links={COMMUNITY_LINKS} />
               <a
-                href="https://thegdsks.com"
+                href={withUtm("https://thegdsks.com", "footer")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group mt-1 inline-flex w-fit items-center gap-1.5 rounded-full border border-orange-500/25 bg-orange-500/[0.06] py-1 pl-1 pr-3 text-xs font-medium text-foreground transition-colors hover:border-orange-500/40 hover:bg-orange-500/10"
@@ -282,7 +286,7 @@ export function Footer() {
             <p className="text-sm text-muted-foreground">
               A project by{" "}
               <a
-                href="https://glinr.com"
+                href={withUtm("https://glinr.com", "footer")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-foreground transition-colors hover:text-muted-foreground"
@@ -296,7 +300,7 @@ export function Footer() {
               </span>
               <div className="flex items-center gap-6">
                 <a
-                  href="https://glincker.com"
+                  href={withUtm("https://glincker.com", "footer")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 opacity-60 transition-opacity hover:opacity-100"
@@ -321,7 +325,7 @@ export function Footer() {
                 </a>
                 <span className="text-border/40">|</span>
                 <a
-                  href="https://askverdict.ai"
+                  href={withUtm("https://askverdict.ai", "footer")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 opacity-60 transition-opacity hover:opacity-100"
@@ -357,7 +361,7 @@ export function Footer() {
               <span>
                 All brand logos and trademarks belong to their respective owners.{" "}
                 <a
-                  href={TRADEMARK_POLICY_URL}
+                  href={withUtm(TRADEMARK_POLICY_URL, "footer")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline underline-offset-2 transition-colors hover:text-muted-foreground"
@@ -369,7 +373,7 @@ export function Footer() {
               <span>
                 Built by{" "}
                 <a
-                  href="https://glinr.com"
+                  href={withUtm("https://glinr.com", "footer")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-medium transition-colors hover:text-muted-foreground"

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Mail, MessageSquare, Shield } from "lucide-react";
 import { Github } from "@/components/icons/shared/brand-icons";
 import { TRADEMARK_POLICY_URL } from "@/lib/constants";
+import { withUtm } from "@/lib/external-link";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -84,7 +85,7 @@ export default function ContactPage() {
           {CONTACT_CHANNELS.map((channel) => (
             <a
               key={channel.title}
-              href={channel.href}
+              href={withUtm(channel.href, "contact_page")}
               target={channel.href.startsWith("mailto") ? undefined : "_blank"}
               rel={
                 channel.href.startsWith("mailto")
@@ -137,7 +138,7 @@ export default function ContactPage() {
             </a>{" "}
             or read our full{" "}
             <a
-              href={TRADEMARK_POLICY_URL}
+              href={withUtm(TRADEMARK_POLICY_URL, "contact_page")}
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-foreground underline underline-offset-2"

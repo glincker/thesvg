@@ -13,6 +13,7 @@ import type { Metadata } from "next";
 import { getAllCategories, getCategoryCounts, getIconCount } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 import { SubmitForm } from "@/components/submit/submit-form";
+import { withUtm } from "@/lib/external-link";
 
 export const metadata: Metadata = {
   title: "Submit an Icon - Add Your Brand SVG",
@@ -118,7 +119,7 @@ export default function SubmitPage() {
               {/* GitHub links */}
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="https://github.com/GLINCKER/thesvg"
+                  href={withUtm("https://github.com/GLINCKER/thesvg", "submit_page")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-lg border border-border/40 bg-card/50 px-4 py-2.5 text-sm font-medium text-foreground transition-all hover:border-border hover:bg-card hover:shadow-md dark:border-white/[0.06] dark:hover:border-white/[0.1]"
@@ -128,7 +129,7 @@ export default function SubmitPage() {
                   <ArrowUpRight className="h-3 w-3 opacity-50" />
                 </a>
                 <a
-                  href="https://github.com/GLINCKER/thesvg/issues"
+                  href={withUtm("https://github.com/GLINCKER/thesvg/issues", "submit_page")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-lg border border-border/40 bg-card/50 px-4 py-2.5 text-sm font-medium text-foreground transition-all hover:border-border hover:bg-card hover:shadow-md dark:border-white/[0.06] dark:hover:border-white/[0.1]"

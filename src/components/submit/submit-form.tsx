@@ -18,6 +18,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { validateSvg, type ValidationResult } from "@/lib/svg-validation";
+import { withUtm } from "@/lib/external-link";
 import {
   LICENSE_OPTIONS,
   MAX_OTHER_LICENSE_LENGTH,
@@ -238,7 +239,7 @@ function LicenseSelector({
             {helperOpen ? "Hide" : "Help me pick"}
           </button>
           <a
-            href={LICENSING_GUIDE_URL}
+            href={withUtm(LICENSING_GUIDE_URL, "submit_form")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
@@ -889,7 +890,7 @@ export function SubmitForm({
       {/* Submit Actions */}
       <div className="flex flex-col gap-3 border-t border-border pt-4 sm:flex-row">
         <a
-          href={canSubmit ? buildGitHubUrl() : undefined}
+          href={canSubmit ? withUtm(buildGitHubUrl(), "submit_form") : undefined}
           target="_blank"
           rel="noopener noreferrer"
           aria-disabled={!canSubmit}
