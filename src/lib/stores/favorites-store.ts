@@ -6,6 +6,7 @@ interface FavoritesState {
   toggleFavorite: (slug: string) => void;
   isFavorite: (slug: string) => boolean;
   clearAll: () => void;
+  addFavorites: (slugs: string[]) => void;
 }
 
 export const useFavoritesStore = create<FavoritesState>()(
@@ -20,6 +21,17 @@ export const useFavoritesStore = create<FavoritesState>()(
         })),
       isFavorite: (slug) => get().favorites.includes(slug),
       clearAll: () => set({ favorites: [] }),
+      addFavorites: (slugs) => set((state) => {
+        const newFavs = [...state.favorites];
+        let changed = false;
+        for (const s of slugs) {
+          if (!newFavs.includes(s)) {
+            newFavs.push(s);
+            changed = true;
+          }
+        }
+        return changed ? { favorites: newFavs } : state;
+      }),
     }),
     { name: "thesvg-favorites", skipHydration: true }
   )
