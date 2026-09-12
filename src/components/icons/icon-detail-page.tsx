@@ -336,6 +336,40 @@ export function IconDetailPage({
             );
           })()}
 
+          {(() => {
+            const isBadge = icon.collection === "auth-badges";
+            const counterpartSlug = isBadge
+              ? icon.slug.replace(/-badge$/, "")
+              : `${icon.slug}-badge`;
+            if (counterpartSlug === icon.slug) return null;
+            const counterpart = getIconBySlug(counterpartSlug);
+            if (!counterpart) return null;
+            return (
+              <Link
+                href={`/icon/${counterpart.slug}`}
+                className="group/badge-link flex items-center gap-3 rounded-xl border border-emerald-500/30 bg-gradient-to-r from-emerald-500/[0.06] to-teal-500/[0.04] p-3 shadow-sm transition-all hover:-translate-y-0.5 hover:border-emerald-500/50 hover:shadow-md"
+              >
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-background ring-1 ring-inset ring-border/40">
+                  <img
+                    src={counterpart.variants.default}
+                    alt=""
+                    className="h-6 w-6 object-contain"
+                    loading="lazy"
+                  />
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="block text-[10px] font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+                    {isBadge ? "Brand logo" : "Also available as"}
+                  </span>
+                  <span className="block truncate text-sm font-medium text-foreground">
+                    {isBadge ? counterpart.title : "Auth Badge"}
+                  </span>
+                </span>
+                <ArrowUpRight className="h-4 w-4 shrink-0 text-emerald-600 transition-transform group-hover/badge-link:translate-x-0.5 group-hover/badge-link:-translate-y-0.5 dark:text-emerald-400" />
+              </Link>
+            );
+          })()}
+
           {/* Website + Guidelines links */}
           <div className="space-y-1.5">
             {icon.url &&
@@ -481,7 +515,7 @@ export function IconDetailPage({
             activeVariant={activeVariant}
           />
 
-          <IconFeedback slug={icon.slug} />
+          <IconFeedback slug={icon.slug} title={icon.title} />
 
           {/* Related icons - inline in right column */}
           {relatedIcons.length > 0 && primaryCategory && (

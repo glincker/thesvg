@@ -70,7 +70,12 @@ jobs:
       - name: Check for changes
         id: diff
         run: |
-          if git diff --quiet -- public/data/icon-stats.json; then
+          # `git diff` alone is blind to a brand-new untracked file (this
+          # snapshot didn't exist in the repo until the first successful
+          # run), so it would silently report "no change" forever. `git
+          # status --porcelain` catches both a new untracked file and a
+          # modified tracked one.
+          if [ -z "$(git status --porcelain -- public/data/icon-stats.json)" ]; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "No change in public/data/icon-stats.json - nothing to snapshot this run."
           else
