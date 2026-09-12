@@ -20,9 +20,14 @@ name: Icon stats snapshot
 #     auto-merge-icon-stats-pr.yml would sit at "action_required" needing a
 #     human to manually approve every single run.
 #
-# Runs every 2 hours (PostHog Cloud's HogQL rate limit is shared org-wide,
-# and this is a low-traffic feature - no need for anything tighter), plus
-# workflow_dispatch for manual runs/testing.
+# Runs every 6 hours, plus workflow_dispatch for manual runs/testing. The
+# binding constraint isn't PostHog's HogQL rate limit (120/hour org-wide -
+# even hourly would use a small fraction of that); it's that any run which
+# finds a changed vote count triggers a full site rebuild/redeploy (7,400+
+# pages) through the merge -> deploy chain. That's disproportionate for what
+# is currently a low-volume feature, so this favors a slower cadence and
+# less rebuild churn over near-real-time freshness. Tighten later if real
+# vote volume grows enough that fresher data is worth more frequent rebuilds.
 #
 # Never pushes to main directly (repo policy): changes land on the
 # automated/icon-stats-refresh branch (force-pushed each run, since only the
@@ -32,7 +37,7 @@ name: Icon stats snapshot
 
 on:
   schedule:
-    - cron: "0 */2 * * *"
+    - cron: "0 */6 * * *"
   workflow_dispatch:
 
 env:

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import posthog from "posthog-js";
-import { ArrowUpRight, ThumbsDown, ThumbsUp } from "lucide-react";
+import { ArrowUpRight, RotateCcw, ThumbsDown, ThumbsUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { withUtm } from "@/lib/external-link";
 
@@ -41,6 +41,15 @@ function gaFeedback(slug: string, sentiment: Sentiment, reason?: Reason) {
   };
   if (typeof w.gtag !== "function") return;
   w.gtag("event", "icon_feedback", { icon_slug: slug, sentiment, reason });
+}
+
+function gaFeedbackReset(slug: string, previousSentiment: Sentiment) {
+  if (typeof window === "undefined") return;
+  const w = window as unknown as {
+    gtag?: (cmd: string, event: string, params: Record<string, unknown>) => void;
+  };
+  if (typeof w.gtag !== "function") return;
+  w.gtag("event", "icon_feedback_reset", { icon_slug: slug, previous_sentiment: previousSentiment });
 }
 
 function buildFeedbackIssueUrl(slug: string, title: string, reason: Reason): string {
@@ -136,6 +145,22 @@ export function IconFeedback({ slug, title }: Readonly<{ slug: string; title: st
     window.open(withUtm(buildFeedbackIssueUrl(slug, title, reason), "icon_feedback"), "_blank", "noopener,noreferrer");
   }
 
+  // Reset doesn't (and can't, without a backend) retract the original
+  // capture event from PostHog - it just clears the local lock so the
+  // person can vote again, and logs the retraction as its own event so
+  // there's at least a record that the earlier vote was undone.
+  function resetVote() {
+    if (!voted) return;
+    posthog.capture("icon_feedback_reset", { slug, previous_sentiment: voted, source: "detail_page" });
+    gaFeedbackReset(slug, voted);
+    if (typeof window !== "undefined") {
+      window.localStorage.removeItem(storageKey(slug));
+    }
+    setVoted(null);
+    setReasonPicked(null);
+    setPickingReason(false);
+  }
+
   const statusLabel = reasonPicked ? "Thanks - opened an issue" : voted ? "Thanks!" : "Helpful?";
 
   return (
@@ -180,6 +205,17 @@ export function IconFeedback({ slug, title }: Readonly<{ slug: string; title: st
         <span className="hidden text-xs text-muted-foreground sm:inline">
           {statusLabel}
         </span>
+        {voted !== null && !pickingReason && (
+          <button
+            type="button"
+            onClick={resetVote}
+            aria-label="Reset your feedback"
+            title="Reset your feedback"
+            className="flex h-6 w-6 items-center justify-center rounded-full text-muted-foreground/70 transition-colors hover:bg-accent hover:text-foreground"
+          >
+            <RotateCcw className="h-3 w-3" />
+          </button>
+        )}
         <div className="flex items-center gap-1.5">
           <button
             type="button"
