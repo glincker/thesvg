@@ -6,9 +6,19 @@ import { ThumbsDown, ThumbsUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type Sentiment = "up" | "down";
+type Tally = { up: number; down: number };
 
 function storageKey(slug: string) {
   return `thesvg-feedback-${slug}`;
+}
+
+function isTally(value: unknown): value is Tally {
+  return (
+    typeof value === "object" &&
+    value !== null &&
+    typeof (value as { up?: unknown }).up === "number" &&
+    typeof (value as { down?: unknown }).down === "number"
+  );
 }
 
 /**
@@ -33,10 +43,36 @@ function gaFeedback(slug: string, sentiment: Sentiment) {
  */
 export function IconFeedback({ slug }: { slug: string }) {
   const [voted, setVoted] = useState<Sentiment | null>(null);
+  const [tally, setTally] = useState<Tally | null>(null);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
     setVoted(window.localStorage.getItem(storageKey(slug)) as Sentiment | null);
+  }, [slug]);
+
+  // Best-effort read of the last cron-generated stats snapshot. The file
+  // won't exist until the first successful icon-stats-snapshot workflow
+  // run, and most slugs won't have an entry yet either - both are
+  // expected, not errors, so we just leave the tally at null.
+  useEffect(() => {
+    let cancelled = false;
+
+    fetch("/data/icon-stats.json")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data: unknown) => {
+        if (cancelled || typeof data !== "object" || data === null) return;
+        const feedback = (data as { feedback?: unknown }).feedback;
+        if (typeof feedback !== "object" || feedback === null) return;
+        const entry = (feedback as Record<string, unknown>)[slug];
+        if (isTally(entry)) setTally(entry);
+      })
+      .catch(() => {
+        // Missing file (404) or network hiccup - no tally to show.
+      });
+
+    return () => {
+      cancelled = true;
+    };
   }, [slug]);
 
   function vote(sentiment: Sentiment) {
@@ -72,6 +108,9 @@ export function IconFeedback({ slug }: { slug: string }) {
         >
           <ThumbsUp className="h-3.5 w-3.5" />
         </button>
+        {tally !== null && tally.up > 0 && (
+          <span className="text-[10px] tabular-nums text-muted-foreground">{tally.up}</span>
+        )}
         <button
           type="button"
           onClick={() => vote("down")}
@@ -89,6 +128,9 @@ export function IconFeedback({ slug }: { slug: string }) {
         >
           <ThumbsDown className="h-3.5 w-3.5" />
         </button>
+        {tally !== null && tally.down > 0 && (
+          <span className="text-[10px] tabular-nums text-muted-foreground">{tally.down}</span>
+        )}
       </div>
     </div>
   );

@@ -1,0 +1,104 @@
+name: Icon stats snapshot
+
+# Scheduled job that pulls aggregate icon_feedback tallies out of PostHog
+# (HogQL Query API) via src/scripts/fetch-icon-stats.ts and snapshots the result
+# to public/data/icon-stats.json, so the statically-exported site can show
+# per-icon thumbs-up/down counts without a live authenticated query from the
+# browser.
+#
+# Requires POSTHOG_PERSONAL_API_KEY as a repo secret - a Personal API Key
+# with "Query Read" scope, generated at
+# https://us.posthog.com/settings/user-api-keys. Until that secret is added,
+# this workflow will fail with a clear, actionable error from the script
+# itself (see src/scripts/fetch-icon-stats.ts) and will NOT touch the existing
+# snapshot file or push anything - failure here is inert.
+#
+# Runs every 2 hours (PostHog Cloud's HogQL rate limit is shared org-wide,
+# and this is a low-traffic feature - no need for anything tighter), plus
+# workflow_dispatch for manual runs/testing.
+#
+# Never pushes to main directly (repo policy): changes land on the
+# automated/icon-stats-refresh branch (force-pushed each run, since only the
+# latest snapshot matters) and a PR is opened once, then just updated by the
+# force-push on subsequent runs. See auto-merge-icon-stats-pr.yml for the
+# companion workflow that merges those PRs once CI is green.
+
+on:
+  schedule:
+    - cron: "0 */2 * * *"
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: "20"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: icon-stats-snapshot
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    name: Fetch and snapshot icon stats
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Fetch icon stats from PostHog
+        run: pnpm exec tsx src/scripts/fetch-icon-stats.ts
+        env:
+          POSTHOG_PERSONAL_API_KEY: ${{ secrets.POSTHOG_PERSONAL_API_KEY }}
+
+      - name: Check for changes
+        id: diff
+        run: |
+          if git diff --quiet -- public/data/icon-stats.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No change in public/data/icon-stats.json - nothing to snapshot this run."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Push snapshot branch
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B automated/icon-stats-refresh
+          git add public/data/icon-stats.json
+          git commit -m "chore: refresh icon feedback stats snapshot"
+          git push --force origin automated/icon-stats-refresh
+
+      - name: Open PR if none exists
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          EXISTING=$(gh pr list --head automated/icon-stats-refresh --state open --json number --jq 'length')
+          if [ "$EXISTING" = "0" ]; then
+            gh pr create \
+              --title "chore: refresh icon feedback stats snapshot" \
+              --head automated/icon-stats-refresh \
+              --base main \
+              --body "Automated snapshot of \`icon_feedback\` tallies from PostHog, written by \`src/scripts/fetch-icon-stats.ts\` on a 2-hour schedule. Auto-merges once CI passes (see \`.github/workflows/auto-merge-icon-stats-pr.yml\`). Force-pushed on every run - only the latest snapshot matters here, so this PR is reused rather than re-created."
+          else
+            echo "Open PR already exists for automated/icon-stats-refresh - force-push updated it, nothing further to do."
+          fi
