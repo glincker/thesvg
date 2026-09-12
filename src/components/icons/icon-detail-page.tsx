@@ -30,6 +30,7 @@ import { QualityScoreCard } from "@/components/icons/detail/quality-score-card";
 import { DownloadMenu } from "@/components/icons/detail/download-menu";
 import { OpenInEditorMenu } from "@/components/icons/detail/open-in-editor-menu";
 import { withUtm } from "@/lib/external-link";
+import { IconFeedback } from "@/components/icons/detail/icon-feedback";
 
 interface IconDetailPageProps {
   icon: IconEntry;
@@ -479,6 +480,8 @@ export function IconDetailPage({
             slug={icon.slug}
             activeVariant={activeVariant}
           />
+
+          <IconFeedback slug={icon.slug} />
 
           {/* Related icons - inline in right column */}
           {relatedIcons.length > 0 && primaryCategory && (
