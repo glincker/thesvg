@@ -21,6 +21,6 @@ export const useFavoritesStore = create<FavoritesState>()(
       isFavorite: (slug) => get().favorites.includes(slug),
       clearAll: () => set({ favorites: [] }),
     }),
-    { name: "thesvg-favorites" }
+    { name: "thesvg-favorites", skipHydration: true }
   )
 );
