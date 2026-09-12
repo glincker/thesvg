@@ -1,0 +1,35 @@
+name: Auto-merge icon stats PR
+
+# Companion to icon-stats-snapshot.yml. That workflow pushes each refreshed
+# public/data/icon-stats.json snapshot to a dedicated automated/icon-stats-refresh
+# branch and opens (or reuses) a single PR from it - this workflow enables
+# GitHub's native auto-merge on that PR once required CI checks pass, so the
+# whole pipeline stays hands-off after the POSTHOG_PERSONAL_API_KEY secret is
+# configured.
+#
+# Gated purely on the head branch name rather than author/labels (unlike
+# auto-merge-icon-pr.yml): every PR from automated/icon-stats-refresh is
+# pushed by this same automation, there's no submitter to vet, and the
+# content is always just a data-file snapshot. CI (Lint & Build) is still
+# the real safety net before anything actually merges.
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, ready_for_review]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    if: >-
+      !github.event.pull_request.draft &&
+      github.event.pull_request.head.ref == 'automated/icon-stats-refresh'
+    steps:
+      - name: Enable auto-merge
+        run: gh pr merge --auto --squash "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
