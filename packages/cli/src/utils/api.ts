@@ -85,6 +85,10 @@ export class ApiError extends Error {
 
 let cachedRegistry: RegistryDocument | null = null;
 
+export function __resetCachedRegistryForTest() {
+  cachedRegistry = null;
+}
+
 async function fetchRegistry(): Promise<RegistryDocument> {
   if (cachedRegistry) return cachedRegistry;
 
