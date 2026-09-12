@@ -115195,6 +115195,25 @@
     "collection": "brands"
   },
   {
+    "slug": "trivalent",
+    "title": "Trivalent",
+    "aliases": [
+      "secureblue"
+    ],
+    "hex": "3DC7F5",
+    "categories": [
+      "OS",
+      "Security"
+    ],
+    "variants": {
+      "default": "/icons/trivalent/default.svg"
+    },
+    "license": "GPL-2.0",
+    "url": "https://github.com/secureblue/Trivalent",
+    "dateAdded": "2026-09-12",
+    "collection": "brands"
+  },
+  {
     "slug": "trivy",
     "title": "Trivy",
     "aliases": [],
