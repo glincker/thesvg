@@ -2,7 +2,6 @@
  * Background service worker.
  * Handles registry fetch and caching with a 24-hour TTL.
  *
- * TODO (v1.1): add context menu integration
  * TODO (v1.1): push registry refresh notification to popup via chrome.runtime.sendMessage
  */
 
@@ -62,10 +61,23 @@ export default defineBackground(() => {
   // Fetch registry on install and on startup
   chrome.runtime.onInstalled.addListener(() => {
     fetchAndCacheRegistry();
+    chrome.contextMenus.create({
+      id: "search-thesvg",
+      title: 'Search theSVG for "%s"',
+      contexts: ["selection"],
+    });
   });
 
   chrome.runtime.onStartup.addListener(() => {
     fetchAndCacheRegistry();
+  });
+
+  chrome.contextMenus.onClicked.addListener((info) => {
+    if (info.menuItemId === "search-thesvg" && info.selectionText) {
+      chrome.tabs.create({
+        url: "https://thesvg.org/?q=" + encodeURIComponent(info.selectionText),
+      });
+    }
   });
 
   // Handle messages from popup requesting registry data

@@ -8,7 +8,7 @@ export default defineConfig({
     name: "theSVG",
     description: "Search 6,500+ brand SVGs. Copy SVG, CDN URL, or markdown.",
     version: "0.1.0",
-    permissions: ["storage", "clipboardWrite"],
+    permissions: ["storage", "clipboardWrite", "contextMenus"],
     host_permissions: ["https://cdn.jsdelivr.net/*"],
     action: {
       default_popup: "popup/index.html",
