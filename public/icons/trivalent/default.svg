@@ -1,11 +1,11 @@
 <svg width="96" height="96" viewBox="0 0 96 96" fill="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
     <linearGradient id="linearGradient10" x1="119.00664" y1="9.9706745" x2="9.8707094" y2="118.384" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.1666666,0,0,1.1666666,-10.666666,-10.666666)" spreadMethod="pad">
-      <stop stop-color="#76C9F6" id="stop6-3" offset="0" style="stop-color:#3dc7f5;stop-opacity:1;" />
-      <stop stop-color="#76C9F6" id="stop7-6" offset="0.25" style="stop-color:#0da6f2;stop-opacity:1;" />
-      <stop stop-color="#76C9F6" id="stop8-7" offset="0.5" style="stop-color:#5f82c9;stop-opacity:1;" />
-      <stop stop-color="#76C9F6" id="stop9" offset="0.75" style="stop-color:#7259a6;stop-opacity:1;" />
-      <stop offset="1" stop-color="#715680" id="stop10" style="stop-color:#744e74;stop-opacity:1;" />
+      <stop stop-color="#3DC7F5" id="stop6-3" offset="0" />
+      <stop stop-color="#0DA6F2" id="stop7-6" offset="0.25" />
+      <stop stop-color="#5F82C9" id="stop8-7" offset="0.5" />
+      <stop stop-color="#7259A6" id="stop9" offset="0.75" />
+      <stop stop-color="#744E74" id="stop10" offset="1" />
     </linearGradient>
     <linearGradient xlink:href="#linearGradient10" id="linearGradient6" x1="367.99997" y1="62.010296" x2="143.99998" y2="449.98965" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.21428571,0,0,0.21428571,-6.8571427,-6.8571427)" />
     <linearGradient xlink:href="#linearGradient10" id="linearGradient1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.08705357,0,0,0.08705357,25.714286,25.714286)" x1="367.99997" y1="62.010296" x2="143.99998" y2="449.98965" />
