@@ -93,6 +93,31 @@ function toCount(value: unknown): number | null {
   return Math.trunc(n);
 }
 
+interface RawRow {
+  slugRaw: unknown;
+  upRaw: unknown;
+  downRaw: unknown;
+}
+
+/** Extracts the three raw column values from an array-shaped row, using the
+ * `columns` list to find the right index when present (column order isn't
+ * guaranteed to match the SELECT list verbatim), falling back to positional
+ * access otherwise. */
+function extractFromArrayRow(row: unknown[], columns: string[] | null): RawRow {
+  if (columns?.length === row.length) {
+    const slugIdx = columns.indexOf("slug");
+    const upIdx = columns.indexOf("up_count");
+    const downIdx = columns.indexOf("down_count");
+    return {
+      slugRaw: slugIdx >= 0 ? row[slugIdx] : row[0],
+      upRaw: upIdx >= 0 ? row[upIdx] : row[1],
+      downRaw: downIdx >= 0 ? row[downIdx] : row[2],
+    };
+  }
+  const [slugRaw, upRaw, downRaw] = row;
+  return { slugRaw, upRaw, downRaw };
+}
+
 /**
  * Normalizes one result row into { slug, up, down }. The HogQL Query API's
  * documented response shape is `results: any[][]` (rows as arrays, in the
@@ -104,42 +129,28 @@ function normalizeRow(
   row: unknown,
   columns: string[] | null
 ): { slug: string; up: number; down: number } | null {
-  let slugRaw: unknown;
-  let upRaw: unknown;
-  let downRaw: unknown;
-
+  let raw: RawRow;
   if (Array.isArray(row)) {
-    if (columns && columns.length === row.length) {
-      const slugIdx = columns.indexOf("slug");
-      const upIdx = columns.indexOf("up_count");
-      const downIdx = columns.indexOf("down_count");
-      slugRaw = slugIdx >= 0 ? row[slugIdx] : row[0];
-      upRaw = upIdx >= 0 ? row[upIdx] : row[1];
-      downRaw = downIdx >= 0 ? row[downIdx] : row[2];
-    } else {
-      [slugRaw, upRaw, downRaw] = row;
-    }
+    raw = extractFromArrayRow(row, columns);
   } else if (isRecord(row)) {
-    slugRaw = row.slug;
-    upRaw = row.up_count;
-    downRaw = row.down_count;
+    raw = { slugRaw: row.slug, upRaw: row.up_count, downRaw: row.down_count };
   } else {
     return null;
   }
 
-  if (typeof slugRaw !== "string" || slugRaw.length === 0) return null;
-  const up = toCount(upRaw);
-  const down = toCount(downRaw);
+  if (typeof raw.slugRaw !== "string" || raw.slugRaw.length === 0) return null;
+  const up = toCount(raw.upRaw);
+  const down = toCount(raw.downRaw);
   if (up === null || down === null) return null;
 
-  return { slug: slugRaw, up, down };
+  return { slug: raw.slugRaw, up, down };
 }
 
 // ---------------------------------------------------------------------------
-// Main
+// Query execution (split out of main() to keep each step's branching small)
 // ---------------------------------------------------------------------------
 
-async function main() {
+function requireApiKey(): string {
   const apiKey = process.env.POSTHOG_PERSONAL_API_KEY;
   if (!apiKey) {
     fail(
@@ -150,23 +161,21 @@ async function main() {
         "manually)."
     );
   }
+  return apiKey;
+}
 
+async function queryPostHog(apiKey: string): Promise<Response> {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
-
-  let response: Response;
   try {
-    response = await fetch(QUERY_URL, {
+    return await fetch(QUERY_URL, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${apiKey}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        query: {
-          kind: "HogQLQuery",
-          query: HOGQL_QUERY,
-        },
+        query: { kind: "HogQLQuery", query: HOGQL_QUERY },
         name: "icon_feedback_tallies",
       }),
       signal: controller.signal,
@@ -180,31 +189,37 @@ async function main() {
   } finally {
     clearTimeout(timeout);
   }
+}
 
-  if (!response.ok) {
-    let bodyText = "";
-    try {
-      bodyText = await response.text();
-    } catch {
-      // ignore - we still have the status code to report
-    }
+async function assertOk(response: Response): Promise<void> {
+  if (response.ok) return;
 
-    if (response.status === 401 || response.status === 403) {
-      fail(
-        `PostHog rejected the request (HTTP ${response.status}). ` +
-          "POSTHOG_PERSONAL_API_KEY is missing, invalid, or lacks 'Query Read' " +
-          "scope. Generate a new key at " +
-          "https://us.posthog.com/settings/user-api-keys and update the " +
-          `POSTHOG_PERSONAL_API_KEY secret. Response body: ${bodyText.slice(0, 500)}`
-      );
-    }
+  let bodyText = "";
+  try {
+    bodyText = await response.text();
+  } catch {
+    // ignore - we still have the status code to report
+  }
 
+  if (response.status === 401 || response.status === 403) {
     fail(
-      `PostHog query failed (HTTP ${response.status}). Response body: ` +
-        `${bodyText.slice(0, 500)}`
+      `PostHog rejected the request (HTTP ${response.status}). ` +
+        "POSTHOG_PERSONAL_API_KEY is missing, invalid, or lacks 'Query Read' " +
+        "scope. Generate a new key at " +
+        "https://us.posthog.com/settings/user-api-keys and update the " +
+        `POSTHOG_PERSONAL_API_KEY secret. Response body: ${bodyText.slice(0, 500)}`
     );
   }
 
+  fail(
+    `PostHog query failed (HTTP ${response.status}). Response body: ` +
+      `${bodyText.slice(0, 500)}`
+  );
+}
+
+async function parseQueryResponse(
+  response: Response
+): Promise<{ results: unknown[]; columns: string[] | null }> {
   let json: unknown;
   try {
     json = await response.json();
@@ -229,7 +244,6 @@ async function main() {
         JSON.stringify(json).slice(0, 500)
     );
   }
-
   if (!Array.isArray(results)) {
     fail(
       "PostHog response 'results' field was not an array; unexpected query " +
@@ -240,6 +254,19 @@ async function main() {
   const columns = Array.isArray(parsed.columns)
     ? parsed.columns.filter((c): c is string => typeof c === "string")
     : null;
+
+  return { results, columns };
+}
+
+// ---------------------------------------------------------------------------
+// Main
+// ---------------------------------------------------------------------------
+
+async function main() {
+  const apiKey = requireApiKey();
+  const response = await queryPostHog(apiKey);
+  await assertOk(response);
+  const { results, columns } = await parseQueryResponse(response);
 
   const feedback: IconStats["feedback"] = {};
   let skipped = 0;
