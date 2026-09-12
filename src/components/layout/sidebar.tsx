@@ -5,7 +5,6 @@ import {
   Blocks,
   Bot,
   ChevronRight,
-  Cloud,
   Code,
   Code2,
   Eye,
@@ -23,6 +22,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import type { Collection } from "@/lib/icons";
+import { COLLECTIONS_META } from "@/lib/collections-meta";
 
 import { cn } from "@/lib/utils";
 
@@ -35,14 +35,6 @@ const EXTENSION_CATEGORIES = [
   { id: "integrations", label: "Integrations", icon: Blocks },
   { id: "frameworks", label: "Framework Components", icon: Code2 },
 ];
-
-const COLLECTION_META: Record<string, { icon: typeof Cloud; label: string; color: string }> = {
-  brands: { icon: Shapes, label: "Brand Icons", color: "text-orange-500" },
-  aws: { icon: Cloud, label: "AWS Architecture", color: "text-[#ff9900]" },
-  azure: { icon: Cloud, label: "Azure Services", color: "text-[#0078d4]" },
-  gcp: { icon: Cloud, label: "Google Cloud", color: "text-[#4285f4]" },
-  k8s: { icon: Cloud, label: "Kubernetes", color: "text-[#326CE5]" },
-};
 
 interface SidebarProps {
   categories: { name: string; count: number }[];
@@ -227,7 +219,7 @@ export function Sidebar({
                 )}
               >
                 {collections.map((col) => {
-                  const meta = COLLECTION_META[col.name];
+                  const meta = COLLECTIONS_META[col.name];
                   const Icon = meta?.icon || Shapes;
                   const isActive = selectedCollection === col.name;
                   return (

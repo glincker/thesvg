@@ -1,6 +1,13 @@
 import iconsData from "@/data/icons.json";
+import type { CollectionId } from "@/lib/collections-meta";
 
-export type Collection = "brands" | "aws" | "gcp" | "azure" | "emojis" | "k8s" | "community";
+/**
+ * The canonical list of collection ids lives in `collections-meta.ts`
+ * (the single source of truth for collection metadata); this type just
+ * mirrors it so the rest of this data layer has no runtime dependency
+ * on that module.
+ */
+export type Collection = CollectionId;
 
 /**
  * Cloud architecture collections. Their icons carry vendor taxonomy categories
