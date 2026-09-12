@@ -1,14 +1,14 @@
 {
-  "developer-tools": 772,
-  "ai": 295,
-  "finance": 132,
-  "database": 86,
-  "networking": 6,
-  "security": 37,
-  "analytics": 44,
-  "iot": 9,
-  "framework": 121,
-  "storage": 2,
-  "design": 115,
-  "language": 96
+  "developer-tools": 883,
+  "ai": 303,
+  "finance": 217,
+  "database": 99,
+  "networking": 16,
+  "security": 82,
+  "analytics": 48,
+  "iot": 13,
+  "framework": 133,
+  "storage": 13,
+  "design": 122,
+  "language": 99
 }
