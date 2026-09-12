@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Shield, Database, Globe, Clipboard, BarChart3, Mail } from "lucide-react";
 import { getCategoryCounts } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
+import { withUtm } from "@/lib/external-link";
 
 export const metadata: Metadata = {
   title: "Privacy Policy - thesvg Browser Extension",
@@ -122,7 +123,7 @@ export default function PrivacyPage() {
                 jsDelivr&apos;s own privacy policy applies to requests made to their
                 CDN:{" "}
                 <a
-                  href="https://www.jsdelivr.com/privacy-policy-jsdelivr-net"
+                  href={withUtm("https://www.jsdelivr.com/privacy-policy-jsdelivr-net", "privacy_page")}
                   className="text-foreground underline underline-offset-2"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -156,7 +157,7 @@ export default function PrivacyPage() {
                 None. All extension logic is bundled locally and reviewed as part of
                 the open-source codebase at{" "}
                 <a
-                  href="https://github.com/GLINCKER/thesvg"
+                  href={withUtm("https://github.com/GLINCKER/thesvg", "privacy_page")}
                   className="text-foreground underline underline-offset-2"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -219,7 +220,7 @@ export default function PrivacyPage() {
             </Link>
             <span className="text-muted-foreground/30">|</span>
             <a
-              href="https://github.com/GLINCKER/thesvg"
+              href={withUtm("https://github.com/GLINCKER/thesvg", "privacy_page")}
               className="text-xs text-muted-foreground underline underline-offset-2 hover:text-foreground"
               target="_blank"
               rel="noopener noreferrer"

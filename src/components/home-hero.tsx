@@ -12,6 +12,7 @@ import { IconGrid } from "@/components/icons/icon-grid";
 import { IconDetail } from "@/components/icons/icon-detail";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import { cn } from "@/lib/utils";
+import { withUtm } from "@/lib/external-link";
 
 /** Hand-picked popular brand slugs */
 const POPULAR_SLUGS = [
@@ -504,7 +505,7 @@ export function HomeHero({
               <div className="flex flex-wrap gap-2 sm:gap-3">
                 {slide.cta.href.startsWith("http") ? (
                   <a
-                    href={slide.cta.href}
+                    href={withUtm(slide.cta.href, "home_hero")}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-xl bg-foreground min-h-[40px] px-4 py-2 text-xs font-medium text-background shadow-lg shadow-black/10 transition-all hover:opacity-90 hover:shadow-xl sm:px-5 sm:py-2.5 sm:text-sm dark:shadow-black/30"
@@ -521,12 +522,23 @@ export function HomeHero({
                     <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 )}
-                <Link
-                  href={slide.ctaSecondary.href}
-                  className="inline-flex items-center gap-2 rounded-xl border border-border/60 bg-background/50 min-h-[40px] px-4 py-2 text-xs font-medium text-foreground shadow-sm backdrop-blur-sm transition-all hover:bg-background/80 hover:shadow-md sm:px-5 sm:py-2.5 sm:text-sm dark:border-white/[0.1] dark:bg-white/[0.05]"
-                >
-                  {slide.ctaSecondary.label}
-                </Link>
+                {slide.ctaSecondary.href.startsWith("http") ? (
+                  <a
+                    href={withUtm(slide.ctaSecondary.href, "home_hero")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-xl border border-border/60 bg-background/50 min-h-[40px] px-4 py-2 text-xs font-medium text-foreground shadow-sm backdrop-blur-sm transition-all hover:bg-background/80 hover:shadow-md sm:px-5 sm:py-2.5 sm:text-sm dark:border-white/[0.1] dark:bg-white/[0.05]"
+                  >
+                    {slide.ctaSecondary.label}
+                  </a>
+                ) : (
+                  <Link
+                    href={slide.ctaSecondary.href}
+                    className="inline-flex items-center gap-2 rounded-xl border border-border/60 bg-background/50 min-h-[40px] px-4 py-2 text-xs font-medium text-foreground shadow-sm backdrop-blur-sm transition-all hover:bg-background/80 hover:shadow-md sm:px-5 sm:py-2.5 sm:text-sm dark:border-white/[0.1] dark:bg-white/[0.05]"
+                  >
+                    {slide.ctaSecondary.label}
+                  </Link>
+                )}
               </div>
             </div>
           </div>

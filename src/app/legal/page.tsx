@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Shield, Mail, FileText, Scale, ExternalLink } from "lucide-react";
 import { getCategoryCounts } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
+import { withUtm } from "@/lib/external-link";
 
 export const metadata: Metadata = {
   title: "Legal Notice - Trademark Policy, Licenses & DMCA",
@@ -66,7 +67,7 @@ export default function LegalPage() {
                 The theSVG codebase (website, build tools, npm packages, CLI, API, and MCP
                 server) is licensed under the{" "}
                 <a
-                  href="https://github.com/GLINCKER/thesvg/blob/main/LICENSE"
+                  href={withUtm("https://github.com/GLINCKER/thesvg/blob/main/LICENSE", "legal_page")}
                   className="text-foreground underline underline-offset-2"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -162,7 +163,7 @@ export default function LegalPage() {
               </ul>
               <div className="mt-4 flex flex-wrap gap-3">
                 <a
-                  href="https://github.com/GLINCKER/thesvg/issues/new?template=icon_removal.yml"
+                  href={withUtm("https://github.com/GLINCKER/thesvg/issues/new?template=icon_removal.yml", "legal_page")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-xs font-medium text-foreground transition-colors hover:bg-accent dark:border-white/[0.08]"
@@ -171,7 +172,7 @@ export default function LegalPage() {
                   Open removal request
                 </a>
                 <a
-                  href="mailto:support@glincker.com"
+                  href={withUtm("mailto:support@glincker.com", "legal_page")}
                   className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-xs font-medium text-foreground transition-colors hover:bg-accent dark:border-white/[0.08]"
                 >
                   <Mail className="h-3 w-3" />
@@ -214,7 +215,7 @@ export default function LegalPage() {
                 ].map((lib) => (
                   <li key={lib.name}>
                     <a
-                      href={lib.url}
+                      href={withUtm(lib.url, "legal_page")}
                       className="text-foreground underline underline-offset-2"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -239,7 +240,7 @@ export default function LegalPage() {
             </Link>
             <span className="text-muted-foreground/30">|</span>
             <a
-              href="https://github.com/GLINCKER/thesvg/blob/main/TRADEMARK.md"
+              href={withUtm("https://github.com/GLINCKER/thesvg/blob/main/TRADEMARK.md", "legal_page")}
               className="text-xs text-muted-foreground underline underline-offset-2 hover:text-foreground"
               target="_blank"
               rel="noopener noreferrer"
@@ -248,7 +249,7 @@ export default function LegalPage() {
             </a>
             <span className="text-muted-foreground/30">|</span>
             <a
-              href="https://github.com/GLINCKER/thesvg/blob/main/CONTRIBUTING.md"
+              href={withUtm("https://github.com/GLINCKER/thesvg/blob/main/CONTRIBUTING.md", "legal_page")}
               className="text-xs text-muted-foreground underline underline-offset-2 hover:text-foreground"
               target="_blank"
               rel="noopener noreferrer"
@@ -257,7 +258,7 @@ export default function LegalPage() {
             </a>
             <span className="text-muted-foreground/30">|</span>
             <a
-              href="https://github.com/GLINCKER/thesvg/blob/main/LICENSE"
+              href={withUtm("https://github.com/GLINCKER/thesvg/blob/main/LICENSE", "legal_page")}
               className="text-xs text-muted-foreground underline underline-offset-2 hover:text-foreground"
               target="_blank"
               rel="noopener noreferrer"

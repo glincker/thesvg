@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { getCategoryCounts, getIconCount } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
+import { withUtm } from "@/lib/external-link";
 
 export const metadata: Metadata = {
   title: "Best SVG Icon Library 2026: theSVG vs Simple Icons, svgl, Lucide, Font Awesome, Iconify",
@@ -411,7 +412,7 @@ export default function ComparePage() {
               standard. Iconify is an incredible aggregator. Each serves a different need.
               If something is inaccurate,{" "}
               <a
-                href="https://github.com/GLINCKER/thesvg/issues"
+                href={withUtm("https://github.com/GLINCKER/thesvg/issues", "compare_page")}
                 className="text-orange-600 underline underline-offset-2 dark:text-orange-400"
                 target="_blank"
                 rel="noopener noreferrer"

@@ -7,6 +7,7 @@ import { ShareButtons } from "@/components/blog/share-buttons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 import { getCategoryCounts } from "@/lib/icons";
 import postsData from "@/data/posts.json";
+import { withUtm } from "@/lib/external-link";
 
 interface Post {
   slug: string;
@@ -76,7 +77,17 @@ function processInline(text: string): string {
     })
     .replace(
       /\[(.+?)\]\((.+?)\)/g,
-      '<a href="$2" class="text-orange-500 underline underline-offset-2 hover:text-orange-400">$1</a>'
+      (_match, label: string, href: string) => {
+        // External links get UTM-tagged (via withUtm, which no-ops for
+        // mailto:/internal hrefs) and open in a new tab; internal links
+        // keep the plain same-tab behavior.
+        const isExternal = href.startsWith("http");
+        const taggedHref = withUtm(href, "blog_post").replace(/&/g, "&amp;");
+        const extraAttrs = isExternal
+          ? ' target="_blank" rel="noopener noreferrer"'
+          : "";
+        return `<a href="${taggedHref}" class="text-orange-500 underline underline-offset-2 hover:text-orange-400"${extraAttrs}>${label}</a>`;
+      }
     );
 }
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { GitPullRequest, SealWarning, Sparkle } from "@phosphor-icons/react/dist/ssr";
+import { withUtm } from "@/lib/external-link";
 
 const REPO = "glincker/thesvg";
 
@@ -122,7 +123,7 @@ export function ContributionCta({
       </div>
       <div className="relative flex flex-wrap gap-2">
         <a
-          href={buildIssueUrl(slug, title, hasMultipleVariants, guidelinesMissing)}
+          href={withUtm(buildIssueUrl(slug, title, hasMultipleVariants, guidelinesMissing), "contribution_cta")}
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-1.5 text-[11px] font-medium text-muted-foreground shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:border-foreground/30 hover:text-foreground hover:shadow-md active:translate-y-0 active:scale-95"
@@ -131,7 +132,7 @@ export function ContributionCta({
           Request via Issue
         </a>
         <a
-          href={buildPrUrl(slug, title, hasMultipleVariants, guidelinesMissing)}
+          href={withUtm(buildPrUrl(slug, title, hasMultipleVariants, guidelinesMissing), "contribution_cta")}
           target="_blank"
           rel="noopener noreferrer"
           className="group relative flex items-center gap-1.5 overflow-hidden rounded-lg border border-orange-500/40 bg-gradient-to-b from-orange-500 to-orange-600 px-3 py-1.5 text-[11px] font-medium text-white shadow-[0_1px_0_0_rgba(255,255,255,0.25)_inset,0_2px_8px_-2px_rgba(249,115,22,0.5)] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_1px_0_0_rgba(255,255,255,0.25)_inset,0_6px_16px_-2px_rgba(249,115,22,0.6)] active:translate-y-0 active:scale-95"

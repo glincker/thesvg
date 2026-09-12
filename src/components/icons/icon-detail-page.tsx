@@ -29,6 +29,7 @@ import { ContributionCta } from "@/components/icons/detail/contribution-cta";
 import { QualityScoreCard } from "@/components/icons/detail/quality-score-card";
 import { DownloadMenu } from "@/components/icons/detail/download-menu";
 import { OpenInEditorMenu } from "@/components/icons/detail/open-in-editor-menu";
+import { withUtm } from "@/lib/external-link";
 
 interface IconDetailPageProps {
   icon: IconEntry;
@@ -344,7 +345,7 @@ export function IconDetailPage({
                 );
                 return (
                   <a
-                    href={icon.url}
+                    href={withUtm(icon.url, "icon_detail")}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-xs text-muted-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground"
@@ -361,7 +362,7 @@ export function IconDetailPage({
               })()}
             {icon.guidelines && (
               <a
-                href={icon.guidelines}
+                href={withUtm(icon.guidelines, "icon_detail")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 rounded-lg border border-violet-500/25 bg-violet-500/[0.06] px-3 py-2 text-xs text-violet-600 shadow-sm transition-colors hover:bg-violet-500/[0.12] dark:text-violet-400"
@@ -615,7 +616,7 @@ export function IconDetailPage({
                 <>
                   For official brand assets, visit{" "}
                   <a
-                    href={urlObj.toString()}
+                    href={withUtm(urlObj.toString(), "icon_detail")}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline underline-offset-2 hover:text-muted-foreground"

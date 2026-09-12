@@ -4,6 +4,7 @@ import { ArrowRight, ArrowUpRight, Rss, Sparkles } from "lucide-react";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 import { getCategoryCounts } from "@/lib/icons";
 import postsData from "@/data/posts.json";
+import { withUtm } from "@/lib/external-link";
 
 export const metadata: Metadata = {
   title: "Blog - Announcements & Updates",
@@ -223,7 +224,7 @@ export default function BlogPage() {
               RSS Feed
             </a>
             <a
-              href="https://github.com/GLINCKER/thesvg"
+              href={withUtm("https://github.com/GLINCKER/thesvg", "blog_page")}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-xl bg-foreground px-4 py-2 text-xs font-medium text-background shadow-sm transition-all hover:opacity-90"
