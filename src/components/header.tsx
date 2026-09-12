@@ -8,6 +8,15 @@ import { ArrowRight, Cloud, FileText, Menu, Moon, Package, Plus, Search, Shapes,
 import { Github } from "@/components/icons/shared/brand-icons";
 import { TheSVGMark } from "@/components/icons/the-svg-mark";
 import { useTheme } from "next-themes";
+import { useSettingsStore } from "@/lib/stores/settings-store";
+import { FORMAT_BUTTONS } from "@/components/icons/shared/icon-constants";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Check } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { useSidebarStore } from "@/lib/stores/sidebar-store";
@@ -92,6 +101,8 @@ const FIGMA_BADGE_EXPIRES_AT = Date.UTC(2026, 5, 3);
 
 export function Header() {
   const { theme, setTheme } = useTheme();
+  const defaultCopyFormat = useSettingsStore((s) => s.defaultCopyFormat);
+  const setDefaultCopyFormat = useSettingsStore((s) => s.setDefaultCopyFormat);
   const showFigmaBadge = useSyncExternalStore(
     () => () => {},
     () => Date.now() < FIGMA_BADGE_EXPIRES_AT,
@@ -738,6 +749,31 @@ export function Header() {
               >
                 <Github className="h-4 w-4" />
               </a>
+              <DropdownMenu>
+                <DropdownMenuTrigger>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-9 w-9 sm:h-8 sm:w-8 text-muted-foreground hover:text-foreground"
+                    aria-label="Default copy format"
+                    title="Default Copy Format"
+                  >
+                    <span className="text-[10px] uppercase font-bold">{FORMAT_BUTTONS.find(f => f.value === defaultCopyFormat)?.label || defaultCopyFormat}</span>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  {FORMAT_BUTTONS.map((fmt) => (
+                    <DropdownMenuItem
+                      key={fmt.value}
+                      onClick={() => setDefaultCopyFormat(fmt.value)}
+                      className="flex items-center justify-between"
+                    >
+                      {fmt.label}
+                      {defaultCopyFormat === fmt.value && <Check className="h-4 w-4" />}
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
               <Button
                 variant="ghost"
                 size="icon"

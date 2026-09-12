@@ -18,6 +18,7 @@ import {
   Shapes,
   Sparkles,
   Terminal,
+  Share,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -118,9 +119,35 @@ export function Sidebar({
           <Heart className={cn("h-4 w-4 shrink-0 transition-all duration-200 group-hover:scale-110", isFavoritesActive && "fill-red-500 text-red-500")} />
           <span className="flex-1 text-left">Favorites</span>
           {favoriteCount > 0 && (
-            <span className="rounded-full bg-red-500/10 px-1.5 font-mono text-[10px] font-semibold text-red-500 dark:bg-red-500/15">
-              {favoriteCount}
-            </span>
+            <div className="flex items-center">
+              <span className="rounded-full bg-red-500/10 px-1.5 font-mono text-[10px] font-semibold text-red-500 dark:bg-red-500/15">
+                {favoriteCount}
+              </span>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  const favs = localStorage.getItem("thesvg-favorites");
+                  if (favs) {
+                    try {
+                      const parsed = JSON.parse(favs);
+                      if (parsed.state && parsed.state.favorites) {
+                        const url = new URL(window.location.href);
+                        url.searchParams.set("favorites_list", parsed.state.favorites.join(","));
+                        navigator.clipboard.writeText(url.toString());
+                        const btn = e.currentTarget;
+                        const originalHTML = btn.innerHTML;
+                        btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 text-green-500"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+                        setTimeout(() => { btn.innerHTML = originalHTML; }, 1500);
+                      }
+                    } catch(err) {}
+                  }
+                }}
+                title="Share Favorites"
+                className="ml-2 flex h-5 w-5 items-center justify-center rounded-md hover:bg-accent hover:text-foreground"
+              >
+                <Share className="h-3 w-3" />
+              </button>
+            </div>
           )}
         </button>
 

@@ -7,6 +7,9 @@ import { useRouter } from "next/navigation";
 import posthog from "posthog-js";
 import type { IconEntry } from "@/lib/icons";
 import { useFavoritesStore } from "@/lib/stores/favorites-store";
+import { useSettingsStore } from "@/lib/stores/settings-store";
+import { formatSvg } from "@/lib/copy-formats";
+import { FORMAT_BUTTONS } from "./shared/icon-constants";
 import { cn } from "@/lib/utils";
 import { NewBadge } from "@/components/icons/new-badge";
 
@@ -29,6 +32,7 @@ export const IconCard = memo(function IconCard({
   const prefetchedSlug = useRef<string | null>(null);
   const toggleFavorite = useFavoritesStore((s) => s.toggleFavorite);
   const isFavorite = useFavoritesStore((s) => s.favorites.includes(icon.slug));
+  const defaultCopyFormat = useSettingsStore((s) => s.defaultCopyFormat);
 
   const handleHoverPrefetch = useCallback(() => {
     if (prefetchedSlug.current === icon.slug) return;
@@ -41,7 +45,8 @@ export const IconCard = memo(function IconCard({
       try {
         const res = await fetch(icon.variants.default);
         const svg = await res.text();
-        await navigator.clipboard.writeText(svg);
+        const formatted = formatSvg(svg, defaultCopyFormat, icon.slug, "default");
+        await navigator.clipboard.writeText(formatted);
         setCopied(true);
         setTimeout(() => setCopied(false), 1500);
       } catch {
@@ -54,12 +59,12 @@ export const IconCard = memo(function IconCard({
       posthog.capture("icon_copied", {
         icon_slug: icon.slug,
         icon_title: icon.title,
-        format: "svg",
+        format: defaultCopyFormat,
         source: "card",
         categories: icon.categories,
       });
     },
-    [icon.variants.default, icon.slug, icon.title, icon.categories]
+    [icon.variants.default, icon.slug, icon.title, icon.categories, defaultCopyFormat]
   );
 
   const handleDownload = useCallback(
@@ -87,7 +92,7 @@ export const IconCard = memo(function IconCard({
         categories: icon.categories,
       });
     },
-    [icon.variants.default, icon.slug, icon.title, icon.categories]
+    [icon.variants.default, icon.slug, icon.title, icon.categories, defaultCopyFormat]
   );
 
   const handleFavorite = useCallback(
@@ -254,7 +259,7 @@ export const IconCard = memo(function IconCard({
         <button
           type="button"
           onClick={handleCopy}
-          aria-label={copied ? `${icon.title} SVG copied` : `Copy ${icon.title} SVG`}
+          aria-label={copied ? `${icon.title} ${FORMAT_BUTTONS.find((f) => f.value === defaultCopyFormat)?.label || defaultCopyFormat.toUpperCase()} copied` : `Copy ${icon.title} ${FORMAT_BUTTONS.find((f) => f.value === defaultCopyFormat)?.label || defaultCopyFormat.toUpperCase()}`}
           className="flex h-7 flex-1 items-center justify-center gap-1 rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
         >
           {copied ? (

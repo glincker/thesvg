@@ -38,6 +38,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
   const sidebarOpen = useSidebarStore((s) => s.open);
   const setSidebarOpen = useSidebarStore((s) => s.setOpen);
   const favorites = useFavoritesStore((s) => s.favorites);
+  const addFavorites = useFavoritesStore((s) => s.addFavorites);
   const globalQuery = useSearchStore((s) => s.query);
   const setGlobalQuery = useSearchStore((s) => s.setQuery);
 
