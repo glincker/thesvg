@@ -1,5 +1,11 @@
 # @thesvg/react
 
+## 3.3.6
+
+### Patch Changes
+
+- feat: add auth-badges collection (858 icons, CC0) ([#1004](https://github.com/glincker/thesvg/issues/1004))
+
 ## 3.3.5
 
 ### Patch Changes
