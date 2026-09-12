@@ -1,0 +1,9 @@
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024">
+   <defs>
+      <style>
+         .st1{display:none;fill:none;stroke:#1ded7e;stroke-dasharray:2;stroke-miterlimit:10;stroke-width:2px}
+      </style>
+   </defs>
+   <circle id="Background__x28_CHANGE_THE_COLOR_x29_" cx="512" cy="512" r="512" style="fill:#fff"/>
+   <path d="M512 0C229.23 0 0 229.23 0 512s229.23 512 512 512 512-229.23 512-512S794.77 0 512 0Zm-.3 218.45c191.15 0 255.79 129.07 258.73 202.41h-138.2c-2.94-41.05-38.27-102.66-123.56-102.66-91.14 0-149.93 79.23-149.93 176.04s58.79 176 149.93 176c82.35 0 117.67-64.51 132.39-129.07H508.67v-52.82h277.72V758.3H664.58V588.1c-8.83 61.61-47.02 181.93-196.99 181.93S229.34 649.71 229.34 500.12s97.11-281.69 282.37-281.69Z"/>
+</svg>

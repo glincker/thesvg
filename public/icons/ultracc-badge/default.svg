@@ -1,0 +1,20 @@
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 1024 1024">
+   <defs>
+      <linearGradient id="linear-gradient" x1="26076" y1="-22867.56" x2="30226.15" y2="-22867.56" gradientTransform="matrix(.04 0 0 -.04 -531.04 -381.73)" gradientUnits="userSpaceOnUse">
+         <stop offset="0" stop-color="#0d9481" stop-opacity="0"/>
+         <stop offset="1" stop-color="#0d9481" stop-opacity=".5"/>
+      </linearGradient>
+      <linearGradient id="linear-gradient1" x1="25617.69" y1="-22078.73" x2="27809.93" y2="-18281.56" xlink:href="#linear-gradient"/>
+      <style>
+         .st1,.st2{fill:#0d9481;isolation:isolate}.st1{opacity:.5}.st2{opacity:.75}
+      </style>
+   </defs>
+   <circle id="Background__x28_CHANGE_THE_COLOR_x29_" cx="512" cy="512" r="512" style="fill:#231f20"/>
+   <path class="st1" d="m256 364.31 256-147.69 89.99 51.79-256 147.69L256 364.31Z"/>
+   <path d="M256 659.69V364.31l89.99 51.79v191.61L512 703.61v103.78L256 659.7Z" style="fill:#0d9481"/>
+   <path class="st2" d="M512 807.38V703.6l256-147.69v103.78L512 807.38Z"/>
+   <path d="M678.01 416.1 512 512v137.85l166.01-95.51V416.1Z" style="fill:url(#linear-gradient);opacity:.75;isolation:isolate"/>
+   <path class="st2" d="M678.01 416.1v137.85L768 502.16V364.31l-89.99 51.79Z"/>
+   <path d="m558.28 346.98-166.01 96.1L512 512l166.01-95.9-119.73-69.12Z" style="fill:url(#linear-gradient1);opacity:.5;isolation:isolate"/>
+   <path class="st1" d="m648.07 295.38-89.99 51.79 119.93 68.92L768 364.3l-119.93-68.92Z"/>
+</svg>
