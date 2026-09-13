@@ -30,7 +30,6 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "tsx --test src/**/*.test.ts",
     "build": "tsc",
     "test": "find src tests -name '*.test.ts' -print0 2>/dev/null | xargs -0 -r tsx --test",
     "prepublishOnly": "npm run build"

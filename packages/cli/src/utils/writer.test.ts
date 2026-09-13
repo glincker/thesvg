@@ -19,6 +19,11 @@ const cases = [
   { name: "xmlns", in: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"></svg>`, out: `<svg viewBox="0 0 24 24"></svg>` },
   { name: "xmlns (no space)", in: `<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 24 24"></svg>`, out: `<svg viewBox="0 0 24 24"></svg>` },
   { name: "multiple replacements", in: `<svg class="icon" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" stroke-width="2"></path></svg>`, out: `<svg className="icon" ><path fillRule="evenodd" strokeWidth="2"></path></svg>` },
+  {
+    name: "repeated attribute across multiple elements",
+    in: `<svg class="icon"><path class="a" stroke-width="1"></path><path class="b" stroke-width="2"></path></svg>`,
+    out: `<svg className="icon"><path className="a" strokeWidth="1"></path><path className="b" strokeWidth="2"></path></svg>`,
+  },
 ];
 
 for (const { name, in: input, out: expected } of cases) {
