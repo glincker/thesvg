@@ -1,13 +1,15 @@
 import type { MetadataRoute } from "next";
+import { getFormattedIconCount } from "@/lib/icons";
 
 // `force-static` is required when next.config has `output: "export"`.
 export const dynamic = "force-static";
 
 export default function manifest(): MetadataRoute.Manifest {
+  const count = getFormattedIconCount();
   return {
     name: "thesvg - Open SVG Brand Library",
     short_name: "thesvg",
-    description: "Search, copy, and ship 6,500+ brand SVG icons.",
+    description: `Search, copy, and ship ${count}+ brand SVG icons.`,
     start_url: "/",
     scope: "/",
     display: "standalone",

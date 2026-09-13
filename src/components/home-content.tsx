@@ -506,7 +506,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
       <OnboardingHint />
 
       {/* Persistent help button */}
-      <HelpFab />
+      <HelpFab iconCount={`${count.toLocaleString()}+`} />
     </>
   );
 }

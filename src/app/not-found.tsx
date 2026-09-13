@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { Search, Home, ArrowLeft } from "lucide-react";
+import { getFormattedIconCount } from "@/lib/icons";
 
 export default function NotFound() {
+  const count = getFormattedIconCount();
   return (
     <div className="flex min-h-[80vh] flex-col items-center justify-center px-4 text-center">
       {/* Animated SVG illustration */}
@@ -51,7 +53,7 @@ export default function NotFound() {
         This icon might have been moved, renamed, or doesn&apos;t exist yet.
       </p>
       <p className="mb-8 max-w-md text-xs text-muted-foreground/60">
-        We have 6,500+ icons across brands, AWS, Azure, and GCP. Try searching for what you need.
+        We have {count}+ icons across brands, AWS, Azure, and GCP. Try searching for what you need.
       </p>
 
       {/* Actions */}

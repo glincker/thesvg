@@ -17,14 +17,16 @@ import {
   Sparkles,
   TrendingUp,
 } from "lucide-react";
-import { getCategoryCounts, getIconCount } from "@/lib/icons";
+import { getCategoryCounts, getFormattedIconCount, getIconCount } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 import { withUtm } from "@/lib/external-link";
+
+const count = getFormattedIconCount();
 
 export const metadata: Metadata = {
   title: "Best SVG Icon Library 2026: theSVG vs Simple Icons, svgl, Lucide, Font Awesome, Iconify",
   description:
-    "Updated 2026 comparison of the largest brand SVG icon libraries. theSVG ships 6,500+ brand icons, cloud icons (AWS/Azure/GCP), the Google 2026 refresh, Figma, VS Code, Raycast, Alfred, MCP, Iconify, and skills.sh agent skill. Compare features side by side.",
+    `Updated 2026 comparison of the largest brand SVG icon libraries. theSVG ships ${count}+ brand icons, cloud icons (AWS/Azure/GCP), the Google 2026 refresh, Figma, VS Code, Raycast, Alfred, MCP, Iconify, and skills.sh agent skill. Compare features side by side.`,
   keywords: [
     "best SVG icon library 2026",
     "largest open SVG brand library",
@@ -45,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Best SVG Icon Library 2026 - theSVG vs Simple Icons, svgl, Lucide, Font Awesome, Iconify",
     description:
-      "Updated 2026 comparison of brand SVG icon libraries. theSVG ships 6,500+ icons with Figma, VS Code, Raycast, Alfred, MCP, and skills.sh agent skill.",
+      `Updated 2026 comparison of brand SVG icon libraries. theSVG ships ${count}+ icons with Figma, VS Code, Raycast, Alfred, MCP, and skills.sh agent skill.`,
     siteName: "theSVG",
   },
   alternates: {
@@ -88,7 +90,7 @@ interface LibInfo {
 const LIBRARIES: LibInfo[] = [
   {
     name: "theSVG",
-    icons: "6,500+",
+    icons: `${count}+`,
     focus: "Brand logos + Cloud icons",
     desc: "Largest open brand SVG library with multi-variant support (color, dark, light, wordmark, mono). Includes AWS, Azure, GCP cloud icons and the Google 2026 gradient refresh. Full toolchain: Figma, VS Code, Raycast, Alfred, npm, React/Vue/Svelte, CLI, REST API, MCP server, Iconify, skills.sh agent skill.",
     highlight: true,

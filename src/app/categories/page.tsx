@@ -5,15 +5,18 @@ import { Shapes } from "lucide-react";
 import {
   getCategoryCounts,
   getCollections,
+  getFormattedIconCount,
   getIconsByCategory,
 } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 import { categoryUrl } from "@/lib/categories";
 
+const count = getFormattedIconCount();
+
 export const metadata: Metadata = {
   title: "Browse All Categories",
   description:
-    "Explore all icon categories on theSVG. Browse 6,500+ brand, AWS, Azure, and GCP SVG icons organized by category.",
+    `Explore all icon categories on theSVG. Browse ${count}+ brand, AWS, Azure, and GCP SVG icons organized by category.`,
   keywords: [
     "SVG icon categories",
     "brand icon categories",

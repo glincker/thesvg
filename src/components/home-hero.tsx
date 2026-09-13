@@ -87,7 +87,8 @@ const ALL_SLIDES = [
   {
     badge: "Open Source",
     badgeIcon: Sparkles,
-    title: "6,500+ SVG Icons. Search. Copy. Ship.",
+    title: "SVG Icons. Search. Copy. Ship.",
+    dynamicCount: true,
     description: "Search, copy, and ship brand icons in seconds. Free, open-source, and community-driven.",
     cta: { label: "Get Started", href: "/extensions" },
     ctaSecondary: { label: "Submit an Icon", href: "/submit" },
@@ -501,7 +502,7 @@ export function HomeHero({
                 </div>
               )}
               <h1 className="mb-1.5 text-lg font-bold tracking-tight sm:mb-2 sm:text-3xl">
-                {slide.title}
+                {slide.dynamicCount ? `${count.toLocaleString()}+ ${slide.title}` : slide.title}
               </h1>
               <p className="mb-4 max-w-lg text-[13px] leading-snug text-muted-foreground sm:mb-6 sm:text-base sm:leading-relaxed">
                 {slide.description}

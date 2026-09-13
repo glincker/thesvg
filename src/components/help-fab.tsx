@@ -3,52 +3,55 @@
 import { useState, useEffect, useRef } from "react";
 import { X, MousePointerClick, Copy, Download, Search, Heart, Keyboard, Sparkles } from "lucide-react";
 
-const TIPS = [
-  {
-    icon: MousePointerClick,
-    title: "Click any icon",
-    description: "Open the detail page with code snippets, variants, and export options",
-    gradient: "from-violet-500 to-purple-600",
-    glow: "shadow-violet-500/25",
-  },
-  {
-    icon: Copy,
-    title: "Quick copy",
-    description: "Hit the copy button on any card to grab the SVG instantly",
-    gradient: "from-blue-500 to-cyan-500",
-    glow: "shadow-blue-500/25",
-  },
-  {
-    icon: Download,
-    title: "Download & export",
-    description: "Download SVG or export as PNG at 32-512px from the detail page",
-    gradient: "from-emerald-500 to-teal-500",
-    glow: "shadow-emerald-500/25",
-  },
-  {
-    icon: Search,
-    title: "Search everything",
-    description: "Press Cmd+K to search across 6,500+ icons",
-    gradient: "from-orange-500 to-amber-500",
-    glow: "shadow-orange-500/25",
-  },
-  {
-    icon: Heart,
-    title: "Save favorites",
-    description: "Heart icons to save them. Access from the sidebar anytime",
-    gradient: "from-rose-500 to-pink-500",
-    glow: "shadow-rose-500/25",
-  },
-  {
-    icon: Keyboard,
-    title: "Use anywhere",
-    description: "npm, React, Vue, CLI, CDN, or MCP server for AI assistants",
-    gradient: "from-indigo-500 to-blue-600",
-    glow: "shadow-indigo-500/25",
-  },
-];
+function getTips(iconCount: string) {
+  return [
+    {
+      icon: MousePointerClick,
+      title: "Click any icon",
+      description: "Open the detail page with code snippets, variants, and export options",
+      gradient: "from-violet-500 to-purple-600",
+      glow: "shadow-violet-500/25",
+    },
+    {
+      icon: Copy,
+      title: "Quick copy",
+      description: "Hit the copy button on any card to grab the SVG instantly",
+      gradient: "from-blue-500 to-cyan-500",
+      glow: "shadow-blue-500/25",
+    },
+    {
+      icon: Download,
+      title: "Download & export",
+      description: "Download SVG or export as PNG at 32-512px from the detail page",
+      gradient: "from-emerald-500 to-teal-500",
+      glow: "shadow-emerald-500/25",
+    },
+    {
+      icon: Search,
+      title: "Search everything",
+      description: `Press Cmd+K to search across ${iconCount} icons`,
+      gradient: "from-orange-500 to-amber-500",
+      glow: "shadow-orange-500/25",
+    },
+    {
+      icon: Heart,
+      title: "Save favorites",
+      description: "Heart icons to save them. Access from the sidebar anytime",
+      gradient: "from-rose-500 to-pink-500",
+      glow: "shadow-rose-500/25",
+    },
+    {
+      icon: Keyboard,
+      title: "Use anywhere",
+      description: "npm, React, Vue, CLI, CDN, or MCP server for AI assistants",
+      gradient: "from-indigo-500 to-blue-600",
+      glow: "shadow-indigo-500/25",
+    },
+  ];
+}
 
-export function HelpFab() {
+export function HelpFab({ iconCount }: { iconCount: string }) {
+  const TIPS = getTips(iconCount);
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [closing, setClosing] = useState(false);

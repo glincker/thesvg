@@ -20,10 +20,12 @@ import { getCategoryCounts, getFormattedIconCount } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 import { withUtm } from "@/lib/external-link";
 
+const iconCount = getFormattedIconCount();
+
 export const metadata: Metadata = {
   title: "Extensions & Integrations - Figma, VS Code, React, React Native",
   description:
-    "Use 6,500+ free SVG icons in Figma, VS Code, Raycast, React, React Native, Vue, CLI, and more. Official Figma plugin, npm packages, MCP server, Iconify, and CDN.",
+    `Use ${iconCount}+ free SVG icons in Figma, VS Code, Raycast, React, React Native, Vue, CLI, and more. Official Figma plugin, npm packages, MCP server, Iconify, and CDN.`,
   keywords: [
     "Figma brand icons plugin",
     "SVG icon Figma plugin",
@@ -67,8 +69,6 @@ interface Category {
   icon: React.ReactNode;
   items: Integration[];
 }
-
-const iconCount = getFormattedIconCount();
 
 const CATEGORIES: Category[] = [
   {
@@ -304,7 +304,7 @@ const CATEGORIES: Category[] = [
     items: [
       {
         name: "Browser Extension",
-        description: "Chrome, Firefox, Edge popup. Search 6,500+ brand SVGs, copy SVG, CDN URL, or markdown. MV3, no telemetry.",
+        description: `Chrome, Firefox, Edge popup. Search ${iconCount}+ brand SVGs, copy SVG, CDN URL, or markdown. MV3, no telemetry.`,
         status: "coming-soon",
         cta: "View source",
         href: "https://github.com/glincker/thesvg/tree/main/extensions/browser",
