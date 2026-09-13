@@ -1,5 +1,11 @@
 # @thesvg/cli
 
+## 0.7.3
+
+### Patch Changes
+
+- 🧪 [testing] add tests for relativeToCwd in writer.ts ([#1046](https://github.com/glincker/thesvg/issues/1046))
+
 ## 0.7.2
 
 ### Patch Changes
