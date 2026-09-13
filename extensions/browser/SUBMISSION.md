@@ -79,7 +79,7 @@ Submit Firefox first -- AMO review is the slowest (1-7 days for new extensions).
 - [ ] Add store icon (128x128 PNG -- this is separate from the manifest icon; it is shown in the store listing thumbnail)
 - [ ] Privacy tab:
   - Single purpose: "Search and copy brand SVG icons"
-  - Permissions justification: fill in all three entries using STORE_LISTING.md text for `storage`, `clipboardWrite`, and `host_permissions`
+  - Permissions justification: fill in all four entries using STORE_LISTING.md text for `storage`, `clipboardWrite`, `contextMenus`, and `host_permissions`
   - Privacy policy URL: `https://thesvg.org/privacy`
   - Data usage: check "This extension does not collect or use user data"
 - [ ] Pricing: Free

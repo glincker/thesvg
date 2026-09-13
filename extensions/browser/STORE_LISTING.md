@@ -100,6 +100,8 @@ icon search, brand svg, thesvg
 
 **Clipboard:** The extension uses `clipboardWrite` to let users copy SVG code, CDN URLs, or markdown to their clipboard when they click a copy button. No clipboard contents are read.
 
+**Context menu:** The extension uses `contextMenus` to add a "Search theSVG" right-click item for selected text. The selected text is only used to open a search on thesvg.org when the user clicks that menu item; it is not read, stored, or transmitted otherwise.
+
 **Network:** The extension fetches SVG files from `https://cdn.jsdelivr.net/` on demand when a user previews or copies an icon. This is a public CDN request with no user-identifying information attached.
 
 **Analytics:** None. No tracking pixels, no analytics SDK, no error reporting services.
@@ -117,6 +119,9 @@ Chrome requires a single-sentence justification for each requested permission wh
 
 ### `clipboardWrite`
 > The extension's core feature is letting users copy SVG code, CDN URLs, and markdown snippets to their clipboard with a single click. Without this permission the copy buttons cannot function.
+
+### `contextMenus`
+> Adds a right-click "Search theSVG" item that appears when the user selects text on any page. Clicking it opens a new tab to thesvg.org with that text pre-filled as a search query. No page content is read or transmitted outside of the text the user explicitly selects and clicks to search.
 
 ### `host_permissions: https://cdn.jsdelivr.net/*`
 > SVG files are fetched on demand from the jsDelivr public CDN when a user previews or copies an icon. The full icon registry (6,500+ icons) is not bundled in the extension to keep the download size small. Only the specific icon the user selects is fetched, using the standard public jsDelivr URL format.

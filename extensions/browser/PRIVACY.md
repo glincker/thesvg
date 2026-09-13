@@ -44,6 +44,12 @@ The extension makes no other network requests.
 
 ---
 
+## Context menu
+
+The extension uses the browser `contextMenus` permission to add a "Search theSVG" item to the right-click menu when you select text on a page. Clicking it opens a new tab to `https://thesvg.org/?q=...` with the selected text as a search query. The selected text is only used for this navigation; it is not read, stored, or sent anywhere else by the extension.
+
+---
+
 ## Clipboard access
 
 The extension uses the browser `clipboardWrite` permission to copy content to your clipboard when you click a copy button. The extension never reads from your clipboard.
