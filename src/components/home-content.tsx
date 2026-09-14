@@ -235,15 +235,23 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
     }
     if (categoryParam) {
       const lowerCatParam = categoryParam.toLowerCase();
-      r = r.filter((icon) =>
-        icon.categories.some((c) => c.toLowerCase() === lowerCatParam)
-      );
+      r = r.filter((icon) => {
+        const cats = icon.categories;
+        for (let i = 0; i < cats.length; i++) {
+          if (cats[i].toLowerCase() === lowerCatParam) return true;
+        }
+        return false;
+      });
     }
     if (catSearchParam.trim()) {
       const lowerCatSearch = catSearchParam.trim().toLowerCase();
-      r = r.filter((icon) =>
-        icon.categories.some((c) => c.toLowerCase().includes(lowerCatSearch))
-      );
+      r = r.filter((icon) => {
+        const cats = icon.categories;
+        for (let i = 0; i < cats.length; i++) {
+          if (cats[i].toLowerCase().includes(lowerCatSearch)) return true;
+        }
+        return false;
+      });
     }
     return r;
   }, [collectionIcons, favoritesParam, favorites, categoryParam, catSearchParam]);
@@ -275,9 +283,11 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
         } else if (sortParam === "za") {
           searched = [...searched].sort((a, b) => b.title.localeCompare(a.title));
         } else if (sortParam === "recent") {
-          searched = [...searched].sort((a, b) =>
-            (b.dateAdded ?? "").localeCompare(a.dateAdded ?? ""),
-          );
+          searched = [...searched].sort((a, b) => {
+            const d1 = b.dateAdded ?? "";
+            const d2 = a.dateAdded ?? "";
+            return d1 < d2 ? -1 : d1 > d2 ? 1 : 0;
+          });
         }
         setFiltered(searched);
       });
@@ -290,9 +300,11 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
     } else if (sortParam === "za") {
       result = [...result].sort((a, b) => b.title.localeCompare(a.title));
     } else if (sortParam === "recent") {
-      result = [...result].sort((a, b) =>
-        (b.dateAdded ?? "").localeCompare(a.dateAdded ?? ""),
-      );
+      result = [...result].sort((a, b) => {
+        const d1 = b.dateAdded ?? "";
+        const d2 = a.dateAdded ?? "";
+        return d1 < d2 ? -1 : d1 > d2 ? 1 : 0;
+      });
     }
 
     setFiltered(result);
