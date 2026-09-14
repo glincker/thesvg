@@ -68,21 +68,36 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 function processInline(text: string): string {
-  return text
+  return escapeHtml(text)
     .replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold text-foreground">$1</strong>')
     .replace(/`(.+?)`/g, (_match, code: string) => {
-      const escaped = code.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-      return `<code class="rounded bg-muted px-1.5 py-0.5 font-mono text-[11px] dark:bg-white/[0.06]">${escaped}</code>`;
+      return `<code class="rounded bg-muted px-1.5 py-0.5 font-mono text-[11px] dark:bg-white/[0.06]">${code}</code>`;
     })
     .replace(
       /\[(.+?)\]\((.+?)\)/g,
       (_match, label: string, href: string) => {
+        const unescapedHref = href.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'");
+
+        // Prevent javascript: URIs (XSS vector)
+        if (unescapedHref.trim().toLowerCase().startsWith("javascript:")) {
+          return label;
+        }
+
         // External links get UTM-tagged (via withUtm, which no-ops for
         // mailto:/internal hrefs) and open in a new tab; internal links
         // keep the plain same-tab behavior.
-        const isExternal = href.startsWith("http");
-        const taggedHref = withUtm(href, "blog_post").replace(/&/g, "&amp;");
+        const isExternal = unescapedHref.startsWith("http");
+        const taggedHref = escapeHtml(withUtm(unescapedHref, "blog_post"));
         const extraAttrs = isExternal
           ? ' target="_blank" rel="noopener noreferrer"'
           : "";
@@ -102,7 +117,7 @@ function renderMarkdown(body: string): string {
   // spliced back in after the paragraph pass.
   const codeBlocks: string[] = [];
   const withPlaceholders = body.replace(/```[a-z]*\n([\s\S]*?)\n```/g, (_match, code: string) => {
-    const html = `<pre class="my-4 overflow-x-auto rounded-xl border border-border/40 bg-muted/30 p-4 font-mono text-xs text-foreground dark:border-white/[0.06] dark:bg-white/[0.03]"><code>${code.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code></pre>`;
+    const html = `<pre class="my-4 overflow-x-auto rounded-xl border border-border/40 bg-muted/30 p-4 font-mono text-xs text-foreground dark:border-white/[0.06] dark:bg-white/[0.03]"><code>${escapeHtml(code)}</code></pre>`;
     codeBlocks.push(html);
     return ` CODEBLOCK${codeBlocks.length - 1} `;
   });

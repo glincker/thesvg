@@ -6,3 +6,8 @@
 **Vulnerability:** XSS vulnerability in `escapeHtml` located in `extensions/figma/src/ui.ts` due to relying on DOM `.innerHTML` to escape characters, which fails to escape single and double quotes.
 **Learning:** Browsers do not escape single (`'`) or double (`"`) quotes when reading `.innerHTML` after assigning `.textContent`. If this "escaped" string is placed inside an HTML attribute (like `<button title="${escapeHtml(input)}">`), it can break out and cause XSS.
 **Prevention:** Always use regex replacements or a robust library to escape HTML entities (`&`, `<`, `>`, `"`, `'`) for user input, especially when the output will be embedded within HTML attributes.
+
+## 2025-02-14 - XSS in Markdown rendering logic
+**Vulnerability:** The Markdown rendering logic in `src/app/blog/[slug]/page.tsx` directly used user input for HTML string formatting without HTML-escaping characters, allowing both raw HTML execution and `javascript:` protocol link injections.
+**Learning:** Custom markdown parsers that rely on string `.replace` and pass the output directly into `dangerouslySetInnerHTML` are highly susceptible to XSS if not carefully escaped at the correct step, particularly against attributes like `href`.
+**Prevention:** Always use a robust HTML-escaping utility before converting markdown tokens to HTML elements, and strictly block or filter unsafe protocols like `javascript:` when formatting user-provided URLs in `href` attributes.
