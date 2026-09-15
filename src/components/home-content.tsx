@@ -275,9 +275,11 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
         } else if (sortParam === "za") {
           searched = [...searched].sort((a, b) => b.title.localeCompare(a.title));
         } else if (sortParam === "recent") {
-          searched = [...searched].sort((a, b) =>
-            (b.dateAdded ?? "").localeCompare(a.dateAdded ?? ""),
-          );
+          searched = [...searched].sort((a, b) => {
+            const dateA = a.dateAdded ?? "";
+            const dateB = b.dateAdded ?? "";
+            return dateB < dateA ? -1 : dateB > dateA ? 1 : 0;
+          });
         }
         setFiltered(searched);
       });
@@ -290,9 +292,11 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
     } else if (sortParam === "za") {
       result = [...result].sort((a, b) => b.title.localeCompare(a.title));
     } else if (sortParam === "recent") {
-      result = [...result].sort((a, b) =>
-        (b.dateAdded ?? "").localeCompare(a.dateAdded ?? ""),
-      );
+      result = [...result].sort((a, b) => {
+        const dateA = a.dateAdded ?? "";
+        const dateB = b.dateAdded ?? "";
+        return dateB < dateA ? -1 : dateB > dateA ? 1 : 0;
+      });
     }
 
     setFiltered(result);

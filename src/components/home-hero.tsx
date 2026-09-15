@@ -441,7 +441,11 @@ export function HomeHero({
     if (activeCollection === "brands") return recentIcons;
     return [...collectionIcons]
       .filter((i) => i.dateAdded)
-      .sort((a, b) => (b.dateAdded as string).localeCompare(a.dateAdded as string))
+      .sort((a, b) => {
+        const dateA = a.dateAdded as string;
+        const dateB = b.dateAdded as string;
+        return dateB < dateA ? -1 : dateB > dateA ? 1 : 0;
+      })
       .slice(0, 12);
   }, [activeCollection, collectionIcons, recentIcons]);
 

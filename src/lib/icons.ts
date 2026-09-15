@@ -119,7 +119,11 @@ export function getFormattedIconCount(): string {
 export function getRecentlyAddedIcons(limit = 12): IconEntry[] {
   return [...icons]
     .filter((i) => i.dateAdded)
-    .sort((a, b) => (b.dateAdded as string).localeCompare(a.dateAdded as string))
+    .sort((a, b) => {
+      const dateA = a.dateAdded as string;
+      const dateB = b.dateAdded as string;
+      return dateB < dateA ? -1 : dateB > dateA ? 1 : 0;
+    })
     .slice(0, limit);
 }
 
