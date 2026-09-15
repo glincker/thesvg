@@ -10,7 +10,7 @@
     "test": "vitest run --passWithNoTests && find src -name '*.test.mjs' -print0 | xargs -0 -r tsx --test && pnpm --filter @thesvg/cli test"
   },
   "dependencies": {
-    "@base-ui/react": "^1.7.0",
+    "@base-ui/react": "^1.8.0",
     "@phosphor-icons/react": "^2.1.10",
     "@tanstack/react-virtual": "^3.14.12",
     "@vercel/analytics": "^2.0.1",
