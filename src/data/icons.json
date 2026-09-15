@@ -114236,6 +114236,30 @@
     "collection": "brands"
   },
   {
+    "slug": "ryvax-js",
+    "title": "Ryvax.js",
+    "aliases": [
+      "Ryvax",
+      "Ryvax framework"
+    ],
+    "hex": "111827",
+    "categories": [
+      "DevTool",
+      "Software",
+      "Framework"
+    ],
+    "variants": {
+      "default": "/icons/ryvax-js/default.svg",
+      "light": "/icons/ryvax-js/light.svg",
+      "abstract-dark": "/icons/ryvax-js/abstract-dark.svg",
+      "abstract-light": "/icons/ryvax-js/abstract-light.svg"
+    },
+    "license": "brand-use",
+    "url": "https://github.com/kvantjs/ryvax.js",
+    "dateAdded": "2026-09-15",
+    "collection": "community"
+  },
+  {
     "slug": "s-oil",
     "title": "S-Oil",
     "aliases": [],
