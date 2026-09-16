@@ -40,3 +40,7 @@ Simulating with N=5000 icons, M=20 slugs:
 **What:** Replaced `Array.find` + `Array.filter` + spread operations with `Array.findIndex` + `Array.splice` + `Array.unshift` in state updates (`pushUnique` and `recordCopy` inside `recents-store.ts`).
 **Why:** The `Array.filter` method iterated over the entire array to check against a condition, whereas the `findIndex` allows us to instantly jump to the target item, avoiding multiple iterations over the same collection.
 **Impact:** ~40% faster execution time for state updates, reducing JS thread blocking in state modification events by effectively halving the operations (especially avoiding a full-array filter on upsert).
+
+## 2024-05-18 - Single-Pass Loop Optimization for React Filters
+**Learning:** Chaining array higher-order methods (`.filter().filter().filter()`) combined with nested iteration (`.some()`) in a React `useMemo` is a significant performance bottleneck for large datasets (O(N) * number of passes). React blocks rendering while executing these chains.
+**Action:** Replace chained `.filter()` and inner `.some()` loops with a single-pass `for` loop. Hoist repeated operations (like `.toLowerCase()`) and use early breakout mechanisms (`break`/`continue`) to minimize execution cycles and memory allocations.

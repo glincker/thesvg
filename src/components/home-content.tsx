@@ -228,24 +228,47 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
   // when those filters change (not on every keystroke). This lets the Fuse
   // search index reuse its cached instance instead of re-indexing per keystroke.
   const searchBase = useMemo(() => {
-    let r = collectionIcons ?? [];
-    if (favoritesParam) {
-      const favoritesSet = new Set(favorites);
-      r = r.filter((icon) => favoritesSet.has(icon.slug));
+    const r = collectionIcons ?? [];
+    const hasCatSearch = catSearchParam.trim() !== "";
+    if (!favoritesParam && !categoryParam && !hasCatSearch) {
+      return r;
     }
-    if (categoryParam) {
-      const lowerCatParam = categoryParam.toLowerCase();
-      r = r.filter((icon) =>
-        icon.categories.some((c) => c.toLowerCase() === lowerCatParam)
-      );
+
+    const favoritesSet = favoritesParam ? new Set(favorites) : null;
+    const lowerCatParam = categoryParam ? categoryParam.toLowerCase() : null;
+    const lowerCatSearch = hasCatSearch ? catSearchParam.trim().toLowerCase() : null;
+
+    const out = [];
+    const len = r.length;
+
+    for (let i = 0; i < len; i++) {
+      const icon = r[i];
+
+      if (favoritesSet && !favoritesSet.has(icon.slug)) {
+        continue;
+      }
+
+      let matchCat = !lowerCatParam;
+      let matchSearch = !lowerCatSearch;
+
+      if (!matchCat || !matchSearch) {
+        const cats = icon.categories;
+        const catsLen = cats.length;
+
+        for (let j = 0; j < catsLen; j++) {
+          const c = cats[j].toLowerCase();
+          if (!matchCat && c === lowerCatParam) matchCat = true;
+          if (!matchSearch && c.includes(lowerCatSearch!)) matchSearch = true;
+
+          if (matchCat && matchSearch) break;
+        }
+      }
+
+      if (matchCat && matchSearch) {
+        out.push(icon);
+      }
     }
-    if (catSearchParam.trim()) {
-      const lowerCatSearch = catSearchParam.trim().toLowerCase();
-      r = r.filter((icon) =>
-        icon.categories.some((c) => c.toLowerCase().includes(lowerCatSearch))
-      );
-    }
-    return r;
+    return out;
   }, [collectionIcons, favoritesParam, favorites, categoryParam, catSearchParam]);
 
   // Clear a prior manifest load failure when filters change so the load effect
