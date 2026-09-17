@@ -41292,6 +41292,24 @@
     "collection": "brands"
   },
   {
+    "slug": "bridex",
+    "title": "Bridex",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Automation",
+      "Self-Hosted",
+      "AI"
+    ],
+    "variants": {
+      "default": "/icons/bridex/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "http://bridex.app",
+    "dateAdded": "2026-09-17",
+    "collection": "brands"
+  },
+  {
     "slug": "bridge",
     "title": "Bridge",
     "aliases": [],
@@ -67662,6 +67680,27 @@
     "collection": "brands"
   },
   {
+    "slug": "globalcodio",
+    "title": "GlobalCodio",
+    "aliases": [],
+    "hex": "1950c6",
+    "categories": [
+      "Automation",
+      "CMS",
+      "Business",
+      "Legal Tech",
+      "Immigration Tech",
+      "Immigration"
+    ],
+    "variants": {
+      "default": "/icons/globalcodio/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.globalcodio.ai/",
+    "dateAdded": "2026-09-17",
+    "collection": "brands"
+  },
+  {
     "slug": "globo-tv",
     "title": "Globo",
     "aliases": [],
@@ -89632,6 +89671,25 @@
     "license": "CC0-1.0",
     "url": "https://mermaid.js.org/",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "merry-ai",
+    "title": "Merry AI",
+    "aliases": [],
+    "hex": "7B5FC7",
+    "categories": [
+      "AI",
+      "Health",
+      "SaaS",
+      "AI Medical Scribe"
+    ],
+    "variants": {
+      "default": "/icons/merry-ai/default.svg"
+    },
+    "license": "Unlicense",
+    "url": "https://www.merryscribe.com/",
+    "dateAdded": "2026-09-17",
     "collection": "brands"
   },
   {
@@ -134620,6 +134678,24 @@
     "guidelines": "https://commons.wikimedia.org/wiki/File%3AWero_logo.svg",
     "collection": "brands",
     "dateAdded": "2026-05-16"
+  },
+  {
+    "slug": "western-digital",
+    "title": "Western Digital",
+    "aliases": [],
+    "hex": "2266FF",
+    "categories": [
+      "Hardware",
+      "Storage",
+      "Electronics"
+    ],
+    "variants": {
+      "default": "/icons/western-digital/default.svg"
+    },
+    "license": "Unlicense",
+    "url": "https://www.westerndigital.com/",
+    "dateAdded": "2026-09-17",
+    "collection": "brands"
   },
   {
     "slug": "western-union",

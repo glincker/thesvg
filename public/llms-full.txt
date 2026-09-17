@@ -1,10 +1,10 @@
 # theSVG - Full LLM Context
 
-> The largest open-source brand SVG icon library. 7,412+ SVG icons with multi-variant support.
+> The largest open-source brand SVG icon library. 7,417+ SVG icons with multi-variant support.
 
 ## Overview
 
-theSVG (thesvg.org) is a free, open-source library of 7,412+ SVG icons across 7 collections: Brand Icons, AWS Architecture, Azure Services, Google Cloud, Kubernetes, Community, and Auth Badges. Every icon includes core metadata such as a name, hex color, categories, and license. Where present, icons also include a website URL, guideline links, and up to 7 SVG variants.
+theSVG (thesvg.org) is a free, open-source library of 7,417+ SVG icons across 7 collections: Brand Icons, AWS Architecture, Azure Services, Google Cloud, Kubernetes, Community, and Auth Badges. Every icon includes core metadata such as a name, hex color, categories, and license. Where present, icons also include a website URL, guideline links, and up to 7 SVG variants.
 
 ## Quick Start
 
@@ -52,14 +52,14 @@ curl "https://thesvg.org/icons/openai/default.svg"
 
 | Package | Description | Install |
 |---------|-------------|---------|
-| `thesvg` | 7,412+ icons - tree-shakeable, typed, dual ESM/CJS. The one-stop brand icon library. | `npm i thesvg` |
-| `@thesvg/icons` | Tree-shakeable SVG icon components and raw SVG strings from thesvg.org - 7,412+ icons | `npm i @thesvg/icons` |
-| `@thesvg/react` | Typed React SVG components for all 7,412+ icons from thesvg.org | `npm i @thesvg/react` |
+| `thesvg` | 7,417+ icons - tree-shakeable, typed, dual ESM/CJS. The one-stop brand icon library. | `npm i thesvg` |
+| `@thesvg/icons` | Tree-shakeable SVG icon components and raw SVG strings from thesvg.org - 7,417+ icons | `npm i @thesvg/icons` |
+| `@thesvg/react` | Typed React SVG components for all 7,417+ icons from thesvg.org | `npm i @thesvg/react` |
 | `@thesvg/cli` | CLI tool to add SVG icons from thesvg.org to your project | `npx @thesvg/cli add {slug}` |
-| `@thesvg/mcp-server` | MCP server for searching and fetching 7,412+ icons from thesvg.org | `npx @thesvg/mcp-server` |
-| `@thesvg/react-native` | Typed React Native SVG components for all 7,412+ icons from thesvg.org | `npm i @thesvg/react-native` |
-| `@thesvg/vue` | Typed Vue 3 SVG components for all 7,412+ icons from thesvg.org | `npm i @thesvg/vue` |
-| `@thesvg/svelte` | Typed Svelte SVG components for all 7,412+ icons from thesvg.org | `npm i @thesvg/svelte` |
+| `@thesvg/mcp-server` | MCP server for searching and fetching 7,417+ icons from thesvg.org | `npx @thesvg/mcp-server` |
+| `@thesvg/react-native` | Typed React Native SVG components for all 7,417+ icons from thesvg.org | `npm i @thesvg/react-native` |
+| `@thesvg/vue` | Typed Vue 3 SVG components for all 7,417+ icons from thesvg.org | `npm i @thesvg/vue` |
+| `@thesvg/svelte` | Typed Svelte SVG components for all 7,417+ icons from thesvg.org | `npm i @thesvg/svelte` |
 
 ## Icon Data Schema
 
@@ -181,15 +181,15 @@ import { Github } from "@thesvg/react";
 
 Not every icon has all variants. `default` is always present.
 
-## Categories (136 total)
+## Categories (141 total)
 
-Accessibility, Advertising, Agency, AI, Analytics, AntV, App Services, Architecture, Automation, Automotive, Autoscaling, Aviation, Azure Ecosystem, Azure Stack, Blockchain, Booking, Browser, Business, Canonical, Caravaning, Cloud, CMS, Communication, Community, Compiler, Compute, Config, Construction, Containers, Control Plane, Cost Management, Crypto, Customer Enablement, Customer Experience, Data, Database, Design, Developer Tools, DevOps, DevTool, DEX, E-commerce, Editor, Education, Email, End User Computing, Energy, Entertainment, Exchange, Extensibility, and more.
+Accessibility, Advertising, Agency, AI, AI Medical Scribe, Analytics, AntV, App Services, Architecture, Automation, Automotive, Autoscaling, Aviation, Azure Ecosystem, Azure Stack, Blockchain, Booking, Browser, Business, Canonical, Caravaning, Cloud, CMS, Communication, Community, Compiler, Compute, Config, Construction, Containers, Control Plane, Cost Management, Crypto, Customer Enablement, Customer Experience, Data, Database, Design, Developer Tools, DevOps, DevTool, DEX, E-commerce, Editor, Education, Electronics, Email, End User Computing, Energy, Entertainment, and more.
 
 ## Statistics
 
-- 7,412+ SVG icons across 7 collections
-- 136 categories
-- 13,294+ total SVG variants
+- 7,417+ SVG icons across 7 collections
+- 141 categories
+- 13,300+ total SVG variants
 - 1,125 icons with verified brand guidelines links
 - All icons have license metadata
 - 6 of 8 packages ship with zero runtime dependencies (framework peers like React, Vue, and Svelte are not counted); the rest declare a small, explicit dependency list, see the Packages table
