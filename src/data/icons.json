@@ -121598,6 +121598,24 @@
     "collection": "auth-badges"
   },
   {
+    "slug": "stripe-link",
+    "title": "Stripe Link",
+    "aliases": [],
+    "hex": "00D66F",
+    "categories": [
+      "Software",
+      "Payment"
+    ],
+    "variants": {
+      "default": "/icons/stripe-link/default.svg",
+      "wordmark": "/icons/stripe-link/wordmark.svg"
+    },
+    "license": "brand-use",
+    "url": "https://link.com",
+    "dateAdded": "2026-09-16",
+    "collection": "brands"
+  },
+  {
     "slug": "strongswan",
     "title": "strongSwan",
     "aliases": [],
