@@ -43,3 +43,7 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2024-05-18 - Replacing localeCompare with string inequalities for predictable non-localized data types
 **Learning:** Using String.prototype.localeCompare for large datasets of predictable non-localized data types (e.g., ISO 8601 dates, ASCII titles) introduces a significant performance overhead compared to basic string inequalities (`a < b ? -1 : a > b ? 1 : 0`). However, standard inequality operators compare raw UTF-16 code units (where `'Z' < 'a'`), which breaks alphabetical sorting in the UI if there is any mixed casing.
 **Action:** Always favor string inequalities when sorting non-localized strings in large datasets to avoid this bottleneck, but be careful to avoid applying this optimization to display text like `title` and `name` to prevent functional regressions in UI sorting.
+
+## 2024-05-18 - Single-Pass Loop Optimization for React Filters
+**Learning:** Chaining array higher-order methods (`.filter().filter().filter()`) combined with nested iteration (`.some()`) in a React `useMemo` is a significant performance bottleneck for large datasets (O(N) * number of passes). React blocks rendering while executing these chains.
+**Action:** Replace chained `.filter()` and inner `.some()` loops with a single-pass `for` loop. Hoist repeated operations (like `.toLowerCase()`) and use early breakout mechanisms (`break`/`continue`) to minimize execution cycles and memory allocations.

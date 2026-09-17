@@ -6,3 +6,8 @@
 **Vulnerability:** XSS vulnerability in `escapeHtml` located in `extensions/figma/src/ui.ts` due to relying on DOM `.innerHTML` to escape characters, which fails to escape single and double quotes.
 **Learning:** Browsers do not escape single (`'`) or double (`"`) quotes when reading `.innerHTML` after assigning `.textContent`. If this "escaped" string is placed inside an HTML attribute (like `<button title="${escapeHtml(input)}">`), it can break out and cause XSS.
 **Prevention:** Always use regex replacements or a robust library to escape HTML entities (`&`, `<`, `>`, `"`, `'`) for user input, especially when the output will be embedded within HTML attributes.
+
+## 2026-09-16 - Sentinel Character Injection in Regex-based Syntax Highlighter
+**Vulnerability:** The `esc()` function in `src/components/icons/shared/syntax-highlight.tsx` failed to strip internal sentinel characters (\`\` and \`\`) before they were used as placeholders in regex replacements for syntax highlighting.
+**Learning:** When using internal sentinel characters for multi-pass string replacements, they must be stripped from the original user input first. Otherwise, an attacker can submit an SVG containing these characters, bypassing the intended markup structure and injecting arbitrary HTML/JavaScript (XSS) when the highlighted code is rendered.
+**Prevention:** Always strip custom sentinel markers from the input before any regex substitution logic begins. Better yet, avoid replacing string tags into `dangerouslySetInnerHTML` if possible, favoring a safer AST-based rendering approach.
