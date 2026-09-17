@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import posthog from "posthog-js";
 import { ArrowDownAZ, ArrowDownZA, ArrowUpDown, Clock, Grid3X3, LayoutGrid, X } from "lucide-react";
-import type { Collection, IconEntry } from "@/lib/icons";
+import { compareDateDesc, type Collection, type IconEntry } from "@/lib/icons";
 import { loadIconsManifest, prefetchIconsManifest } from "@/lib/icons-manifest";
 import { Sidebar } from "@/components/layout/sidebar";
 import { IconGrid } from "@/components/icons/icon-grid";
@@ -20,6 +20,30 @@ import { hasCategoryLanding, slugifyCategory } from "@/lib/categories";
 import { MobileRecentsRow } from "@/components/mobile/mobile-recents-row";
 
 const SORT_OPTIONS = ["default", "recent", "az", "za"] as const;
+
+/**
+ * Whether an icon matches the active category-name filter and/or category
+ * search text. Pulled out of searchBase's useMemo so that hook stays a
+ * simple loop-and-collect, keeping its cognitive complexity low.
+ */
+function matchesCategoryFilters(
+  icon: IconEntry,
+  lowerCatParam: string | null,
+  lowerCatSearch: string | null,
+): boolean {
+  let matchCat = !lowerCatParam;
+  let matchSearch = !lowerCatSearch;
+  if (matchCat && matchSearch) return true;
+
+  const cats = icon.categories;
+  for (let j = 0; j < cats.length; j++) {
+    const c = cats[j].toLowerCase();
+    if (!matchCat && c === lowerCatParam) matchCat = true;
+    if (!matchSearch && c.includes(lowerCatSearch!)) matchSearch = true;
+    if (matchCat && matchSearch) break;
+  }
+  return matchCat && matchSearch;
+}
 
 interface HomeContentProps {
   categoryCounts: { name: string; count: number }[];
@@ -239,32 +263,10 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
     const lowerCatSearch = hasCatSearch ? catSearchParam.trim().toLowerCase() : null;
 
     const out = [];
-    const len = r.length;
-
-    for (let i = 0; i < len; i++) {
+    for (let i = 0; i < r.length; i++) {
       const icon = r[i];
-
-      if (favoritesSet && !favoritesSet.has(icon.slug)) {
-        continue;
-      }
-
-      let matchCat = !lowerCatParam;
-      let matchSearch = !lowerCatSearch;
-
-      if (!matchCat || !matchSearch) {
-        const cats = icon.categories;
-        const catsLen = cats.length;
-
-        for (let j = 0; j < catsLen; j++) {
-          const c = cats[j].toLowerCase();
-          if (!matchCat && c === lowerCatParam) matchCat = true;
-          if (!matchSearch && c.includes(lowerCatSearch!)) matchSearch = true;
-
-          if (matchCat && matchSearch) break;
-        }
-      }
-
-      if (matchCat && matchSearch) {
+      if (favoritesSet && !favoritesSet.has(icon.slug)) continue;
+      if (matchesCategoryFilters(icon, lowerCatParam, lowerCatSearch)) {
         out.push(icon);
       }
     }
@@ -298,11 +300,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
         } else if (sortParam === "za") {
           searched = [...searched].sort((a, b) => b.title.localeCompare(a.title));
         } else if (sortParam === "recent") {
-          searched = [...searched].sort((a, b) => {
-            const dateA = a.dateAdded ?? "";
-            const dateB = b.dateAdded ?? "";
-            return dateB < dateA ? -1 : dateB > dateA ? 1 : 0;
-          });
+          searched = [...searched].sort((a, b) => compareDateDesc(a.dateAdded, b.dateAdded));
         }
         setFiltered(searched);
       });
@@ -315,11 +313,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
     } else if (sortParam === "za") {
       result = [...result].sort((a, b) => b.title.localeCompare(a.title));
     } else if (sortParam === "recent") {
-      result = [...result].sort((a, b) => {
-        const dateA = a.dateAdded ?? "";
-        const dateB = b.dateAdded ?? "";
-        return dateB < dateA ? -1 : dateB > dateA ? 1 : 0;
-      });
+      result = [...result].sort((a, b) => compareDateDesc(a.dateAdded, b.dateAdded));
     }
 
     setFiltered(result);
