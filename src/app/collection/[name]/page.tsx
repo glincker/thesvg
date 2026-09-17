@@ -7,11 +7,16 @@ import {
   getIconCount,
   getRecentlyAddedIcons,
   getCollections,
-  getCollectionCount,
+  getIconsByCollection,
   type Collection,
 } from "@/lib/icons";
 import { COLLECTION_IDS, COLLECTIONS_META, isValidCollectionId } from "@/lib/collections-meta";
 import { HomeContent } from "@/components/home-content";
+import { getJsDelivrUrl } from "@/components/icons/shared/icon-constants";
+
+// Cap the JSON-LD ItemList so collections with hundreds of icons don't
+// bloat the structured data payload; the grid itself still renders every icon.
+const JSON_LD_ITEM_LIST_LIMIT = 50;
 
 // The set of collections with a static page is derived from the shared
 // collections-meta config, so adding a collection there is enough to get
@@ -77,7 +82,8 @@ export default async function CollectionPage({ params }: PageProps) {
 
   const collectionName = name as Collection;
   const meta = COLLECTIONS_META[collectionName];
-  const collectionItemCount = getCollectionCount(collectionName);
+  const collectionIcons = getIconsByCollection(collectionName);
+  const collectionItemCount = collectionIcons.length;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -95,6 +101,18 @@ export default async function CollectionPage({ params }: PageProps) {
       "@type": "Organization",
       name: "theSVG",
       url: "https://thesvg.org",
+    },
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: collectionIcons
+        .slice(0, JSON_LD_ITEM_LIST_LIMIT)
+        .map((icon, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: icon.title,
+          url: `https://thesvg.org/icon/${icon.slug}`,
+          image: getJsDelivrUrl(icon.slug, "default"),
+        })),
     },
   };
 

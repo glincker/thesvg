@@ -1,0 +1,47 @@
+{
+  "name": "@thesvg/mcp-worker",
+  "version": "0.1.0",
+  "description": "Remote HTTPS MCP server for thesvg.org, deployed as a Cloudflare Worker",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "author": "thesvg.org",
+  "homepage": "https://thesvg.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/glincker/thesvg.git",
+    "directory": "packages/mcp-worker"
+  },
+  "bugs": {
+    "url": "https://github.com/glincker/thesvg/issues"
+  },
+  "scripts": {
+    "predev": "node -e \"require('fs').copyFileSync('../../src/data/icons.json','./src/icons.json')\"",
+    "dev": "wrangler dev",
+    "prebuild": "node -e \"require('fs').copyFileSync('../../src/data/icons.json','./src/icons.json')\"",
+    "build": "tsc --noEmit",
+    "predeploy": "node -e \"require('fs').copyFileSync('../../src/data/icons.json','./src/icons.json')\"",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "pretest": "node -e \"require('fs').copyFileSync('../../src/data/icons.json','./src/icons.json')\"",
+    "test": "vitest run",
+    "cf-typegen": "wrangler types"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/client": "2.0.0",
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "@modelcontextprotocol/server": "2.0.0",
+    "agents": "^0.23.0",
+    "fuse.js": "^7.5.0",
+    "zod": "^4.5.4"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260915.1",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.11",
+    "wrangler": "^4.131.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

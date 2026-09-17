@@ -65,7 +65,7 @@
     "react-native-svg": ">=13"
   },
   "devDependencies": {
-    "@types/react": "^19.2.18",
+    "@types/react": "^19.3.0",
     "react-native": "^0.87.1",
     "react-native-svg": "^15.15.5",
     "tsx": "^4.23.13",

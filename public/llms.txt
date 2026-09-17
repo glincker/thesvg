@@ -4,7 +4,7 @@
 
 ## About
 
-theSVG provides 4,000+ brand SVG icons with multi-variant support (color, mono, light, dark, wordmark). Available as npm packages, React components, CLI, REST API, CDN, and MCP server.
+theSVG provides 7,412+ SVG icons across 7 collections: Brand Icons, AWS Architecture, Azure Services, Google Cloud, Kubernetes, Community, and Auth Badges. Each icon supports multi-variant rendering (color, mono, light, dark, wordmark). Available as npm packages, React components, CLI, REST API, CDN, and MCP server.
 
 ## Links
 
@@ -19,11 +19,14 @@ theSVG provides 4,000+ brand SVG icons with multi-variant support (color, mono, 
 
 ## Packages
 
-- `thesvg` - All icons in one package
-- `@thesvg/icons` - Core icon data, tree-shakeable ESM
-- `@thesvg/react` - Typed React components with forwardRef
-- `@thesvg/cli` - CLI tool (`npx @thesvg/cli add github`)
-- `@thesvg/mcp-server` - MCP server for AI assistants (Claude, Cursor, Windsurf)
+- `thesvg` - 7,412+ icons - tree-shakeable, typed, dual ESM/CJS. The one-stop brand icon library.
+- `@thesvg/icons` - Tree-shakeable SVG icon components and raw SVG strings from thesvg.org - 7,412+ icons
+- `@thesvg/react` - Typed React SVG components for all 7,412+ icons from thesvg.org
+- `@thesvg/cli` - CLI tool to add SVG icons from thesvg.org to your project
+- `@thesvg/mcp-server` - MCP server for searching and fetching 7,412+ icons from thesvg.org
+- `@thesvg/react-native` - Typed React Native SVG components for all 7,412+ icons from thesvg.org
+- `@thesvg/vue` - Typed Vue 3 SVG components for all 7,412+ icons from thesvg.org
+- `@thesvg/svelte` - Typed Svelte SVG components for all 7,412+ icons from thesvg.org
 
 ## API
 
@@ -57,7 +60,7 @@ https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/{slug}/{variant}.s
 
 ## Categories
 
-56 categories including: AI, Analytics, Authentication, Automotive, Aviation, Browser, Cloud, CMS, Community, Crypto, Database, Design, Devtool, Education, Entertainment, Finance, Food, Framework, Gaming, Hardware, Hosting, IoT, Language, Library, Linux, Media, Music, Payment, Platform, Privacy, Security, Self-Hosted, Shopping, Social, Software, and more.
+136 categories including: Accessibility, Advertising, Agency, AI, Analytics, AntV, App Services, Architecture, Automation, Automotive, Autoscaling, Aviation, Azure Ecosystem, Azure Stack, Blockchain, Booking, Browser, Business, Canonical, Caravaning, Cloud, CMS, Communication, Community, Compiler, Compute, Config, Construction, Containers, Control Plane, Cost Management, Crypto, Customer Enablement, Customer Experience, Data, and more.
 
 ## Legal
 

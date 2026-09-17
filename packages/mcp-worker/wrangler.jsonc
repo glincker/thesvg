@@ -1,0 +1,27 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "thesvg-mcp",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-01",
+  "compatibility_flags": [],
+  "observability": {
+    "enabled": true
+  },
+
+  // Optional: Cloudflare's native Rate Limiting binding, per-IP sliding
+  // window applied before any tool executes. Uncomment and provision a real
+  // namespace_id after `wrangler deploy` (each namespace_id must be a unique
+  // integer per account; Cloudflare does not let you invent one up front).
+  // The Worker code checks for this binding at runtime and no-ops (allows
+  // all requests) when it is absent, so leaving this commented out is safe.
+  //
+  // "ratelimits": [
+  //   {
+  //     "name": "RATE_LIMITER",
+  //     "namespace_id": "1001",
+  //     "simple": { "limit": 60, "period": 60 }
+  //   }
+  // ],
+
+  "vars": {}
+}

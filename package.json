@@ -4,13 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "lsof -ti:3333 | xargs kill -9 2>/dev/null; next dev --port 3333",
-    "build": "tsx src/scripts/generate-api.ts && tsx src/scripts/generate-drawio-libraries.ts && tsx src/scripts/generate-excalidraw-libraries.ts && next build",
+    "build": "tsx src/scripts/generate-api.ts && tsx src/scripts/generate-llms-txt.ts && tsx src/scripts/generate-drawio-libraries.ts && tsx src/scripts/generate-excalidraw-libraries.ts && next build",
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run --passWithNoTests && find src -name '*.test.mjs' -print0 | xargs -0 -r tsx --test && pnpm --filter @thesvg/cli test"
   },
   "dependencies": {
-    "@base-ui/react": "^1.7.0",
+    "@base-ui/react": "^1.8.0",
     "@phosphor-icons/react": "^2.1.10",
     "@tanstack/react-virtual": "^3.14.12",
     "@vercel/analytics": "^2.0.1",
@@ -20,11 +20,11 @@
     "cmdk": "^1.1.1",
     "dompurify": "^3.4.15",
     "fuse.js": "^7.5.0",
-    "lucide-react": "^1.41.0",
+    "lucide-react": "^1.45.0",
     "next": "16.3.4",
     "next-themes": "^0.4.6",
-    "posthog-js": "^1.427.2",
-    "react": "19.2.8",
+    "posthog-js": "^1.430.2",
+    "react": "19.3.0",
     "react-dom": "19.2.8",
     "shadcn": "^4.21.0",
     "shiki": "^4.4.3",
@@ -46,7 +46,7 @@
     "tailwindcss": "^4",
     "tsx": "^4.23.13",
     "typescript": "^6",
-    "vitest": "^4.1.11"
+    "vitest": "^5.0.0"
   },
   "pnpm": {
     "overrides": {
