@@ -88,8 +88,16 @@ function processInline(text: string): string {
       (_match, label: string, href: string) => {
         const unescapedHref = href.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'");
 
-        // Prevent javascript: URIs (XSS vector)
-        if (unescapedHref.trim().toLowerCase().startsWith("javascript:")) {
+        const normalizedHref = unescapedHref.trim().toLowerCase();
+
+        // Prevent javascript/data URIs (XSS vectors) by requiring an explicit allowlist
+        if (
+          !normalizedHref.startsWith("http://") &&
+          !normalizedHref.startsWith("https://") &&
+          !normalizedHref.startsWith("mailto:") &&
+          !normalizedHref.startsWith("/") &&
+          !normalizedHref.startsWith("#")
+        ) {
           return label;
         }
 
@@ -126,7 +134,7 @@ function renderMarkdown(body: string): string {
     .split("\n\n")
     .map((block) => {
       if (block.startsWith("## ")) {
-        return `<h2 class="mt-8 mb-3 text-xl font-bold tracking-tight text-foreground">${block.slice(3)}</h2>`;
+        return `<h2 class="mt-8 mb-3 text-xl font-bold tracking-tight text-foreground">${processInline(block.slice(3))}</h2>`;
       }
       const codeBlockMatch = block.match(/^ CODEBLOCK(\d+) $/);
       if (codeBlockMatch) {
