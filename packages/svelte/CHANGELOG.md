@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 3.3.8
+
+### Patch Changes
+
+- feat: add icon batch (Bridex, GlobalCodio, Merry AI, Western Digital) ([#1104](https://github.com/glincker/thesvg/issues/1104))
+
 ## 3.3.7
 
 ### Patch Changes
