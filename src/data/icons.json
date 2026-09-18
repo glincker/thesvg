@@ -41295,17 +41295,18 @@
     "slug": "bridex",
     "title": "Bridex",
     "aliases": [],
-    "hex": "000000",
+    "hex": "111111",
     "categories": [
       "Automation",
       "Self-Hosted",
       "AI"
     ],
     "variants": {
-      "default": "/icons/bridex/default.svg"
+      "default": "/icons/bridex/default.svg",
+      "light": "/icons/bridex/light.svg"
     },
     "license": "CC0-1.0",
-    "url": "http://bridex.app",
+    "url": "https://bridex.app",
     "dateAdded": "2026-09-17",
     "collection": "brands"
   },

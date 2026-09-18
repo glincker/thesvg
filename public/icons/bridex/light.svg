@@ -10,7 +10,7 @@
       <line x1="32" y1="60" x2="48" y2="60" stroke="#ffffff" stroke-width="8"/>
     </mask>
   </defs>
-  <g fill="none" stroke="#111111" stroke-width="8" mask="url(#weave)">
+  <g fill="none" stroke="#ffffff" stroke-width="8" mask="url(#weave)">
     <rect x="15" y="15" width="45" height="45" rx="12"/>
     <rect x="40" y="40" width="45" height="45" rx="12"/>
   </g>
