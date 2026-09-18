@@ -1,0 +1,40 @@
+name: AI PR Review
+
+# Uses PR-Agent (open-source, formerly CodiumAI / Qodo) to auto-generate a
+# PR summary and code walkthrough via Google's free-tier Gemini Flash API,
+# so this never touches a paid LLM credit or subscription. Purely additive
+# commentary -- it does not gate merge; Validate SVG / Lint & Build remain
+# the required checks feeding auto-merge-icon-pr.yml.
+
+on:
+  pull_request:
+    types: [opened, reopened, ready_for_review]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+  checks: write
+
+concurrency:
+  group: pr-agent-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  pr_agent:
+    name: Summarize and review PR
+    if: >-
+      !github.event.pull_request.draft &&
+      github.event.pull_request.user.login != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: PR Agent
+        uses: The-PR-Agent/pr-agent@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GOOGLE_AI_STUDIO.GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          config.model: "gemini/gemini-1.5-flash"
+          config.fallback_models: '["gemini/gemini-1.5-flash"]'
+          github_action_config.auto_describe: "true"
+          github_action_config.auto_review: "true"
+          github_action_config.auto_improve: "true"

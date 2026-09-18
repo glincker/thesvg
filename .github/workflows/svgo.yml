@@ -1,0 +1,101 @@
+name: Optimize SVGs
+
+# Runs SVGO on icon SVGs added/changed under public/icons/** and commits
+# the optimized output back automatically. Complements validate-svg.yml,
+# which only checks size/well-formedness -- this workflow does the actual
+# cleanup so contributors don't have to run SVGO locally.
+#
+# Fork PRs can't receive a pushed-back commit (GITHUB_TOKEN has no write
+# access to someone else's fork), so those fail the check with
+# instructions instead; optimization still happens automatically once the
+# PR is merged to main, via the push trigger below.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "public/icons/**/*.svg"
+  pull_request:
+    branches: [main]
+    paths:
+      - "public/icons/**/*.svg"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: svgo-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  svgo:
+    name: Optimize changed icon SVGs
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (push to main)
+        if: github.event_name == 'push'
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 2
+
+      - name: Checkout (same-repo PR branch)
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      - name: Checkout (fork PR, read-only)
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+
+      - name: Find changed SVGs
+        id: changed
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE="${{ github.event.pull_request.base.sha }}"
+          else
+            BASE="${{ github.event.before }}"
+          fi
+          if git cat-file -e "$BASE" 2>/dev/null; then
+            FILES=$(git diff --name-only --diff-filter=ACM "$BASE" HEAD -- 'public/icons/**/*.svg')
+          else
+            FILES=$(git diff --name-only --diff-filter=ACM --root HEAD -- 'public/icons/**/*.svg')
+          fi
+          {
+            echo "files<<SVGO_EOF"
+            echo "$FILES"
+            echo "SVGO_EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Run SVGO
+        if: steps.changed.outputs.files != ''
+        env:
+          CHANGED_FILES: ${{ steps.changed.outputs.files }}
+        run: |
+          printf '%s\n' "$CHANGED_FILES" | xargs -d '\n' -r npx --yes svgo@3 --multipass
+
+      - name: Commit optimized SVGs
+        if: |
+          steps.changed.outputs.files != '' &&
+          (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository)
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "chore: optimize svg assets"
+          commit_user_name: github-actions[bot]
+          commit_user_email: github-actions[bot]@users.noreply.github.com
+          file_pattern: "public/icons/**/*.svg"
+
+      - name: Fail with instructions (fork PR needs optimization)
+        if: |
+          steps.changed.outputs.files != '' &&
+          github.event_name == 'pull_request' &&
+          github.event.pull_request.head.repo.full_name != github.repository
+        run: |
+          echo "::error::One or more SVGs are not optimized. Run 'npx svgo -f public/icons --multipass' locally, commit, and push. (This also runs automatically right after the PR is merged.)"
+          git diff --stat
+          exit 1

@@ -1,0 +1,53 @@
+name: Hygiene
+
+# Two independent jobs:
+#  - welcome: thanks first-time PR authors and points them at the README.
+#    Issues already get a tailored comment from triage-icon-issue.yml, so
+#    this only listens for pull_request to avoid a duplicate greeting.
+#  - stale-prs: generic 30-day-stale / +7-day-close sweep for PRs. Issues
+#    are intentionally out of scope here -- stale-icon-issues.yml already
+#    runs a more specific, triage-label-aware sweep for those.
+
+on:
+  pull_request:
+    types: [opened]
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  welcome:
+    name: Welcome first-time contributors
+    if: github.event_name == 'pull_request' && github.event.pull_request.user.login != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/first-interaction@v3
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          pr_message: |
+            Thanks for opening your first pull request to thesvg! We appreciate you taking the time to contribute. Please make sure you've read the README for contribution guidelines. A maintainer will take a look soon.
+
+  stale-prs:
+    name: Mark and close stale PRs
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v11
+        with:
+          days-before-issue-stale: -1
+          days-before-issue-close: -1
+          days-before-pr-stale: 30
+          days-before-pr-close: 7
+          stale-pr-label: stale
+          exempt-pr-labels: "pinned,security,work-in-progress,blocked-on-maintainer"
+          remove-stale-when-updated: true
+          stale-pr-message: |
+            This pull request has had no activity for 30 days, so it's being marked **stale**. It will close automatically in **7 days** if nothing changes.
+
+            Push a commit or leave a comment to keep it open.
+          close-pr-message: |
+            Closing due to 37 days of inactivity. Feel free to reopen or open a fresh PR whenever you're ready to pick this back up.
