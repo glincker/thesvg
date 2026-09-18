@@ -15,15 +15,15 @@ on:
     - cron: "0 3 * * *"
   workflow_dispatch:
 
-permissions:
-  issues: write
-  pull-requests: write
+permissions: {}
 
 jobs:
   welcome:
     name: Welcome first-time contributors
     if: github.event_name == 'pull_request' && github.event.pull_request.user.login != 'dependabot[bot]'
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
       - uses: actions/first-interaction@v3
         with:
@@ -35,6 +35,8 @@ jobs:
     name: Mark and close stale PRs
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
       - uses: actions/stale@v11
         with:
