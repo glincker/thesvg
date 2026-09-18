@@ -104,33 +104,43 @@ export function RecentsPage() {
   // memos below, so the cutoff timestamp itself is never recomputed per list.
   const cutoff = useMemo(() => getWindowCutoff(win), [win]);
 
-  const viewedIcons = useMemo(
-    () =>
-      viewed
-        .map((v) => ({ entry: iconsBySlug.get(v.slug), ts: v.ts }))
-        .filter((x): x is { entry: IconEntry; ts: number } => Boolean(x.entry))
-        .filter((x) => cutoff === null || x.ts >= cutoff),
-    [viewed, iconsBySlug, cutoff],
-  );
+  const viewedIcons = useMemo(() => {
+    // Single-pass for loop to avoid multiple allocations from chained .map().filter().filter()
+    // and to perform the time cutoff check before the Map lookup for better performance.
+    const result: { entry: IconEntry; ts: number }[] = [];
+    for (let i = 0; i < viewed.length; i++) {
+      const v = viewed[i];
+      if (cutoff !== null && v.ts < cutoff) continue;
+      const entry = iconsBySlug.get(v.slug);
+      if (!entry) continue;
+      result.push({ entry, ts: v.ts });
+    }
+    return result;
+  }, [viewed, iconsBySlug, cutoff]);
 
-  const copiedIcons = useMemo(
-    () =>
-      copied
-        .map((c) => ({
-          entry: iconsBySlug.get(c.slug),
-          ts: c.ts,
-          format: c.format,
-          count: c.count,
-        }))
-        .filter((x): x is {
-          entry: IconEntry;
-          ts: number;
-          format: typeof copied[number]["format"];
-          count: number;
-        } => Boolean(x.entry))
-        .filter((x) => cutoff === null || x.ts >= cutoff),
-    [copied, iconsBySlug, cutoff],
-  );
+  const copiedIcons = useMemo(() => {
+    // Single-pass for loop to avoid multiple allocations from chained .map().filter().filter()
+    // and to perform the time cutoff check before the Map lookup for better performance.
+    const result: {
+      entry: IconEntry;
+      ts: number;
+      format: typeof copied[number]["format"];
+      count: number;
+    }[] = [];
+    for (let i = 0; i < copied.length; i++) {
+      const c = copied[i];
+      if (cutoff !== null && c.ts < cutoff) continue;
+      const entry = iconsBySlug.get(c.slug);
+      if (!entry) continue;
+      result.push({
+        entry,
+        ts: c.ts,
+        format: c.format,
+        count: c.count,
+      });
+    }
+    return result;
+  }, [copied, iconsBySlug, cutoff]);
 
   const filteredSearches = useMemo(
     () => searched.filter((s) => cutoff === null || s.ts >= cutoff),
