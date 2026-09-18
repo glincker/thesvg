@@ -104,38 +104,46 @@ export function RecentsPage() {
   // memos below, so the cutoff timestamp itself is never recomputed per list.
   const cutoff = useMemo(() => getWindowCutoff(win), [win]);
 
-  const viewedIcons = useMemo(
-    () =>
-      viewed
-        .map((v) => ({ entry: iconsBySlug.get(v.slug), ts: v.ts }))
-        .filter((x): x is { entry: IconEntry; ts: number } => Boolean(x.entry))
-        .filter((x) => cutoff === null || x.ts >= cutoff),
-    [viewed, iconsBySlug, cutoff],
-  );
+  const viewedIcons = useMemo(() => {
+    const out: { entry: IconEntry; ts: number }[] = [];
+    for (let i = 0; i < viewed.length; i++) {
+      const v = viewed[i];
+      if (cutoff !== null && v.ts < cutoff) continue;
+      const entry = iconsBySlug.get(v.slug);
+      if (entry) out.push({ entry, ts: v.ts });
+    }
+    return out;
+  }, [viewed, iconsBySlug, cutoff]);
 
-  const copiedIcons = useMemo(
-    () =>
-      copied
-        .map((c) => ({
-          entry: iconsBySlug.get(c.slug),
+  const copiedIcons = useMemo(() => {
+    const out: { entry: IconEntry; ts: number; format: typeof copied[number]["format"]; count: number }[] = [];
+    for (let i = 0; i < copied.length; i++) {
+      const c = copied[i];
+      if (cutoff !== null && c.ts < cutoff) continue;
+      const entry = iconsBySlug.get(c.slug);
+      if (entry) {
+        out.push({
+          entry,
           ts: c.ts,
           format: c.format,
           count: c.count,
-        }))
-        .filter((x): x is {
-          entry: IconEntry;
-          ts: number;
-          format: typeof copied[number]["format"];
-          count: number;
-        } => Boolean(x.entry))
-        .filter((x) => cutoff === null || x.ts >= cutoff),
-    [copied, iconsBySlug, cutoff],
-  );
+        });
+      }
+    }
+    return out;
+  }, [copied, iconsBySlug, cutoff]);
 
-  const filteredSearches = useMemo(
-    () => searched.filter((s) => cutoff === null || s.ts >= cutoff),
-    [searched, cutoff],
-  );
+  const filteredSearches = useMemo(() => {
+    if (cutoff === null) return searched;
+    const out = [];
+    for (let i = 0; i < searched.length; i++) {
+      const s = searched[i];
+      if (s.ts >= cutoff) {
+        out.push(s);
+      }
+    }
+    return out;
+  }, [searched, cutoff]);
 
   const totalEntries =
     viewedIcons.length + copiedIcons.length + filteredSearches.length;

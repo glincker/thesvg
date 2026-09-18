@@ -47,3 +47,7 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2024-05-18 - Single-Pass Loop Optimization for React Filters
 **Learning:** Chaining array higher-order methods (`.filter().filter().filter()`) combined with nested iteration (`.some()`) in a React `useMemo` is a significant performance bottleneck for large datasets (O(N) * number of passes). React blocks rendering while executing these chains.
 **Action:** Replace chained `.filter()` and inner `.some()` loops with a single-pass `for` loop. Hoist repeated operations (like `.toLowerCase()`) and use early breakout mechanisms (`break`/`continue`) to minimize execution cycles and memory allocations.
+
+## 2024-05-18 - Single-Pass Loop Optimization for chained maps/filters in useMemo
+**Learning:** Using chained array higher-order functions (`.map().filter().filter()`) in React `useMemo` blocks causes unnecessary temporary array allocations and multiple O(N) iterations, slowing down render times when filtering through state or history.
+**Action:** Replace these chains with a single `for` loop, applying early returns/continues for filtering logic before doing heavy mapping or object lookups.
