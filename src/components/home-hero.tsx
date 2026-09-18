@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { Anchor, ArrowRight, Check, Clock, Cloud, Copy, Package, ShieldCheck, Sparkles, Users, X, Zap } from "lucide-react";
 import Link from "next/link";
 import posthog from "posthog-js";
-import type { Collection, IconEntry } from "@/lib/icons";
+import { compareDateDesc, type Collection, type IconEntry } from "@/lib/icons";
 import { COLLECTIONS_META } from "@/lib/collections-meta";
 import { loadIconsManifest } from "@/lib/icons-manifest";
 import { IconCard } from "@/components/icons/icon-card";
@@ -441,7 +441,7 @@ export function HomeHero({
     if (activeCollection === "brands") return recentIcons;
     return [...collectionIcons]
       .filter((i) => i.dateAdded)
-      .sort((a, b) => (b.dateAdded as string).localeCompare(a.dateAdded as string))
+      .sort((a, b) => compareDateDesc(a.dateAdded, b.dateAdded))
       .slice(0, 12);
   }, [activeCollection, collectionIcons, recentIcons]);
 

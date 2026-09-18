@@ -116,10 +116,23 @@ export function getFormattedIconCount(): string {
   return icons.length.toLocaleString("en-US");
 }
 
+/**
+ * Descending comparator for ISO date strings (newest first). Plain
+ * inequalities instead of localeCompare since dates are predictable
+ * non-localized ASCII; missing dates sort last.
+ */
+export function compareDateDesc(a?: string, b?: string): number {
+  const dateA = a ?? "";
+  const dateB = b ?? "";
+  if (dateB < dateA) return -1;
+  if (dateB > dateA) return 1;
+  return 0;
+}
+
 export function getRecentlyAddedIcons(limit = 12): IconEntry[] {
   return [...icons]
     .filter((i) => i.dateAdded)
-    .sort((a, b) => (b.dateAdded as string).localeCompare(a.dateAdded as string))
+    .sort((a, b) => compareDateDesc(a.dateAdded, b.dateAdded))
     .slice(0, limit);
 }
 

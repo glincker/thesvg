@@ -189,7 +189,7 @@ Accessibility, Advertising, Agency, AI, AI Medical Scribe, Analytics, AntV, App 
 
 - 7,417+ SVG icons across 7 collections
 - 141 categories
-- 13,300+ total SVG variants
+- 13,301+ total SVG variants
 - 1,125 icons with verified brand guidelines links
 - All icons have license metadata
 - 6 of 8 packages ship with zero runtime dependencies (framework peers like React, Vue, and Svelte are not counted); the rest declare a small, explicit dependency list, see the Packages table
