@@ -281,7 +281,7 @@ export function Header({ collectionCounts }: HeaderProps) {
 
   return (
     <header
-      className="sticky top-[var(--banner-h,0px)] z-50 hidden w-full px-2 pt-2 pb-0 sm:px-3 sm:pt-2.5 lg:block"
+      className="sticky top-[var(--banner-h,0px)] z-50 hidden w-full px-2 pt-2 pb-0 sm:px-3 sm:pt-2.5 md:block"
       style={{ paddingTop: "max(0.5rem, env(safe-area-inset-top))" }}
     >
       <div className="mx-auto max-w-[1800px] rounded-2xl border border-black/[0.06] bg-background/90 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08),0_0_0_1px_rgba(0,0,0,0.03)] backdrop-blur-2xl dark:border-white/[0.08] dark:bg-black/60 dark:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.05)]">
@@ -312,7 +312,7 @@ export function Header({ collectionCounts }: HeaderProps) {
           </div>
 
           {/* Collection switcher */}
-          <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Icon collections">
+          <nav className="hidden items-center gap-0.5 md:flex" aria-label="Icon collections">
             {COLLECTIONS_LIST.map((meta) => {
               const href = meta.id === "brands" ? "/" : `/collection/${meta.id}`;
               const isActive = meta.id === "brands" ? !activeCollection : activeCollection === meta.id;
@@ -632,7 +632,7 @@ export function Header({ collectionCounts }: HeaderProps) {
             <Link
               href="/extensions"
               className={cn(
-                "hidden h-8 items-center gap-1.5 rounded-lg border border-border/50 px-2.5 text-xs font-medium text-muted-foreground transition-all duration-200 hover:border-foreground/20 hover:bg-accent hover:text-foreground lg:inline-flex dark:border-white/[0.08] dark:hover:border-white/20 dark:hover:bg-white/[0.06]",
+                "hidden h-8 items-center gap-1.5 rounded-lg border border-border/50 px-2.5 text-xs font-medium text-muted-foreground transition-all duration-200 hover:border-foreground/20 hover:bg-accent hover:text-foreground md:inline-flex dark:border-white/[0.08] dark:hover:border-white/20 dark:hover:bg-white/[0.06]",
                 pathname === "/extensions" && "border-foreground/20 bg-accent text-foreground dark:border-white/20 dark:bg-white/[0.06]"
               )}
             >

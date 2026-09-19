@@ -165,13 +165,13 @@ export function MobileShell({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      <div className="contents lg:hidden">
+      <div className="contents md:hidden">
         <MobileTopBar />
       </div>
 
-      <div className="mobile-shell-body lg:[&]:!pb-0">{children}</div>
+      <div className="mobile-shell-body md:[&]:!pb-0">{children}</div>
 
-      <div className="contents lg:hidden">
+      <div className="contents md:hidden">
         <MobileBottomDock />
         <MobileIconSheet />
         <MobileMoreSheet />
