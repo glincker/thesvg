@@ -631,14 +631,14 @@ export function Header({ collectionCounts }: HeaderProps) {
               below can claim the full width. */}
           <div className="ml-auto flex shrink-0 items-center gap-0.5 sm:ml-0 sm:gap-1">
             <Link
-              href="/extensions"
+              href="/docs"
               className={cn(
                 "hidden h-8 items-center gap-1.5 rounded-lg border border-border/50 px-2.5 text-xs font-medium text-muted-foreground transition-all duration-200 hover:border-foreground/20 hover:bg-accent hover:text-foreground lg:inline-flex dark:border-white/[0.08] dark:hover:border-white/20 dark:hover:bg-white/[0.06]",
-                pathname === "/extensions" && "border-foreground/20 bg-accent text-foreground dark:border-white/20 dark:bg-white/[0.06]"
+                pathname.startsWith("/docs") && "border-foreground/20 bg-accent text-foreground dark:border-white/20 dark:bg-white/[0.06]"
               )}
             >
-              <Package className="h-3.5 w-3.5" />
-              Extensions
+              <BookOpen className="h-3.5 w-3.5" />
+              Docs
             </Link>
 
             <SubmitButton />
