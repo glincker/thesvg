@@ -71,8 +71,28 @@ export function validateSvg(content: string, fileSize: number): ValidationResult
   // Check 4: No embedded scripts
   const scriptTags = doc.querySelectorAll("script");
   const hasScripts = scriptTags.length > 0;
-  const hasOnHandlers = /<[^>]+\bon\w+\s*=/i.test(content);
-  const hasJavascriptHref = /href\s*=\s*["']javascript:/i.test(content);
+
+  let hasOnHandlers = false;
+  let hasJavascriptHref = false;
+
+  const allElements = doc.querySelectorAll("*");
+  for (let i = 0; i < allElements.length; i++) {
+    const el = allElements[i];
+    for (let j = 0; j < el.attributes.length; j++) {
+      const attr = el.attributes[j];
+      const name = attr.name.toLowerCase();
+      if (name.startsWith("on")) {
+        hasOnHandlers = true;
+      }
+      if (name === "href" || name.endsWith(":href")) {
+        const val = attr.value.replace(/[\s\x00-\x1F\x7F]+/g, "").toLowerCase();
+        if (val.startsWith("javascript:")) {
+          hasJavascriptHref = true;
+        }
+      }
+    }
+  }
+
   const scriptFree = !hasScripts && !hasOnHandlers && !hasJavascriptHref;
   checks.push({
     name: "No embedded scripts",
