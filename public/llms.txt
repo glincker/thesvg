@@ -9,6 +9,7 @@ theSVG provides 7,417+ SVG icons across 7 collections: Brand Icons, AWS Architec
 ## Links
 
 - Website: https://thesvg.org
+- Docs & Guides: https://thesvg.org/docs
 - Compare Libraries: https://thesvg.org/compare
 - GitHub: https://github.com/glincker/thesvg
 - npm: https://www.npmjs.com/package/thesvg

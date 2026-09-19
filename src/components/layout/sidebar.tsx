@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   Blocks,
+  BookOpen,
   Bot,
   Check,
   ChevronRight,
@@ -264,6 +265,14 @@ export function Sidebar({
           <span className="rounded-full bg-muted/60 px-1.5 font-mono text-[9px] uppercase text-muted-foreground/70 dark:bg-white/[0.06]">
             New
           </span>
+        </Link>
+
+        <Link
+          href="/docs"
+          className={cn(navItemClass, pathname.startsWith("/docs") && activeClass)}
+        >
+          <BookOpen className="h-4 w-4 shrink-0 transition-transform duration-200 group-hover:scale-110" />
+          Docs
         </Link>
 
         <Link

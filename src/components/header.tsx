@@ -4,7 +4,7 @@ import { useCallback, useEffect, useId, useRef, useState, useSyncExternalStore, 
 import Link from "next/link";
 import posthog from "posthog-js";
 import { usePathname, useRouter } from "next/navigation";
-import { ArrowRight, Binary, Braces, ChevronDown, Component, FileCode, FileText, Link2, Menu, Moon, Package, Plus, Search, Sparkles, Sun, X } from "lucide-react";
+import { ArrowRight, Binary, BookOpen, Braces, ChevronDown, Component, FileCode, FileText, Link2, Menu, Moon, Package, Plus, Search, Sparkles, Sun, X } from "lucide-react";
 import { TheSVGMark } from "@/components/icons/the-svg-mark";
 import { useTheme } from "next-themes";
 import { useSettingsStore } from "@/lib/stores/settings-store";
@@ -588,6 +588,7 @@ export function Header({ collectionCounts }: HeaderProps) {
                       Pages
                     </p>
                     {[
+                      { href: "/docs", icon: BookOpen, label: "Docs & Guides" },
                       { href: "/extensions", icon: Package, label: "Extensions & Integrations" },
                       { href: "/blog", icon: FileText, label: "Blog & Updates" },
                       { href: "/submit", icon: Sparkles, label: "Submit an Icon" },

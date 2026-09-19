@@ -6,6 +6,8 @@
 
 theSVG (thesvg.org) is a free, open-source library of 7,417+ SVG icons across 7 collections: Brand Icons, AWS Architecture, Azure Services, Google Cloud, Kubernetes, Community, and Auth Badges. Every icon includes core metadata such as a name, hex color, categories, and license. Where present, icons also include a website URL, guideline links, and up to 7 SVG variants.
 
+Full human-readable framework guides, best practices, tricks, and FAQ: https://thesvg.org/docs
+
 ## Quick Start
 
 ### Install via npm
@@ -201,6 +203,7 @@ MIT for the codebase and tooling. Brand icons are property of their respective t
 ## Links
 
 - Website: https://thesvg.org
+- Docs & Guides: https://thesvg.org/docs
 - GitHub: https://github.com/glincker/thesvg
 - npm: https://www.npmjs.com/package/thesvg
 - Compare Libraries: https://thesvg.org/compare
