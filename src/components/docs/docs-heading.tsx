@@ -7,7 +7,7 @@ import { Link as LinkIcon, Check } from "lucide-react";
  * copyable URL (`/docs/react#usage`) instead of only being reachable by
  * scrolling - the "SEO can link to part of the page" ask, at the
  * subsection level within a page that's already its own route. */
-export function DocsHeading({ id, children }: { id: string; children: React.ReactNode }) {
+export function DocsHeading({ id, children }: Readonly<{ id: string; children: React.ReactNode }>) {
   const [copied, setCopied] = useState(false);
 
   async function handleCopy() {

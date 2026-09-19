@@ -7,7 +7,7 @@ import { slugifyHeading } from "@/lib/docs-nav";
 /** Each question gets a stable #id so a link can point straight at it. If
  * the page loads with that hash, auto-expand and scroll to the matching
  * <details> instead of leaving it collapsed and invisible. */
-export function FaqList({ items }: { items: FaqItem[] }) {
+export function FaqList({ items }: Readonly<{ items: FaqItem[] }>) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

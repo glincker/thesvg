@@ -17,7 +17,7 @@ import { cn } from "@/lib/utils";
  * silently reverted by React on the next re-render (the JSX still says
  * mono.svg), which looked like the icon randomly failing to load.
  */
-export function DocsBrandIcon({ slug, className }: { slug: string; className?: string }) {
+export function DocsBrandIcon({ slug, className }: Readonly<{ slug: string; className?: string }>) {
   const [variant, setVariant] = useState<"mono" | "default">("mono");
 
   return (

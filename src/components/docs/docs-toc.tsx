@@ -10,7 +10,7 @@ export interface DocsTocItem {
 
 /** "On this page" right-rail TOC. Plain <a href="#id"> anchors (works with
  * zero JS); the IntersectionObserver only adds an active-heading highlight. */
-export function DocsToc({ items }: { items: DocsTocItem[] }) {
+export function DocsToc({ items }: Readonly<{ items: DocsTocItem[] }>) {
   const [active, setActive] = useState<string>(items[0]?.id ?? "");
 
   useEffect(() => {

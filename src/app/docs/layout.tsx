@@ -2,7 +2,7 @@ import { getCategoryCounts } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 import { DocsSidebar } from "@/components/docs/docs-sidebar";
 
-export default function DocsLayout({ children }: { children: React.ReactNode }) {
+export default function DocsLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const categoryCounts = getCategoryCounts();
 
   return (

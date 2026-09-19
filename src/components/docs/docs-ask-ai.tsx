@@ -22,7 +22,7 @@ const AI_TARGETS: AiTarget[] = [
   { label: "Perplexity", iconSlug: "perplexity", buildUrl: (q) => `https://www.perplexity.ai/search?q=${encodeURIComponent(q)}` },
 ];
 
-export function DocsAskAi({ pageTitle }: { pageTitle: string }) {
+export function DocsAskAi({ pageTitle }: Readonly<{ pageTitle: string }>) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 

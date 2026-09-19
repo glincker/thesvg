@@ -12,7 +12,7 @@ interface DocsPageFooterProps {
   pageTitle: string;
 }
 
-export function DocsPageFooter({ sourceFile, pageTitle }: DocsPageFooterProps) {
+export function DocsPageFooter({ sourceFile, pageTitle }: Readonly<DocsPageFooterProps>) {
   const [feedback, setFeedback] = useState<"helpful" | "not-helpful" | null>(null);
 
   function handleFeedback(helpful: boolean) {
