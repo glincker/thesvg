@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Search, X } from "lucide-react";
@@ -9,6 +9,7 @@ import { useMobileShellStore } from "@/lib/stores/mobile-shell-store";
 import { useSearchStore } from "@/lib/stores/search-store";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import { useIconSearch } from "@/lib/hooks/use-icon-search";
+import { searchDocs } from "@/lib/docs-search-index";
 import { cn } from "@/lib/utils";
 
 interface ChipDef {
@@ -77,6 +78,7 @@ export function MobileSearchSheet() {
   }
 
   const hasQuery = localQuery.trim().length >= 2;
+  const docsMatches = useMemo(() => searchDocs(localQuery), [localQuery]);
 
   return (
     <BottomSheet
@@ -164,6 +166,29 @@ export function MobileSearchSheet() {
                 </li>
               )}
             </ul>
+            {docsMatches.length > 0 && (
+              <div className="mt-2 border-t border-border/30 px-2 pt-2 dark:border-white/[0.04]">
+                <p className="pb-1 text-[10px] font-medium uppercase tracking-wider text-muted-foreground/60">
+                  Docs
+                </p>
+                <ul className="space-y-0.5">
+                  {docsMatches.map((entry) => (
+                    <li key={entry.url}>
+                      <Link
+                        href={entry.url}
+                        onClick={() => closeSheet()}
+                        className="flex items-center gap-3 rounded-lg px-2 py-2 text-left transition-colors hover:bg-accent/50"
+                      >
+                        <Search className="h-4 w-4 shrink-0 text-muted-foreground/60" />
+                        <span className="min-w-0 flex-1 truncate text-sm font-medium text-foreground">
+                          {entry.title}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </>
         ) : (
           <>

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllCategories, getAllIcons } from "@/lib/icons";
 import { slugifyCategory } from "@/lib/categories";
+import { DOCS_NAV } from "@/lib/docs-nav";
 import postsData from "@/data/posts.json";
 
 export const dynamic = "force-static";
@@ -22,7 +23,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     { url: BASE_URL, lastModified: now, changeFrequency: "daily", priority: 1 },
     { url: `${BASE_URL}/categories`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${BASE_URL}/docs`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    ...DOCS_NAV.flatMap((group) => group.items).map((item) => ({
+      url: `${BASE_URL}${item.href}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: item.href === "/docs" ? 0.9 : 0.8,
+    })),
     { url: `${BASE_URL}/viewer`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/compare`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/extensions`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },

@@ -20,6 +20,7 @@ const ROOT = join(__dirname, "../..");
 const ICONS_JSON = join(ROOT, "src/data/icons.json");
 const PACKAGES_DIR = join(ROOT, "packages");
 const PUBLIC_DIR = join(ROOT, "public");
+const DATA_DIR = join(ROOT, "src/data");
 
 interface IconEntry {
   slug: string;
@@ -150,6 +151,16 @@ function main() {
   const collectionSummary = joinWithAnd(collectionLabels);
 
   const packages = getPackages();
+
+  // Written to src/data/ (not read via fs at app runtime) so docs-content.ts
+  // can pull the current release tag via a plain JSON import - bundler-safe
+  // in both server and client code, unlike readFileSync. Regenerated (and
+  // recommitted) on every build, same treatment as the other src/data/*.json
+  // outputs.
+  const thesvgPkgVersion: string = JSON.parse(
+    readFileSync(join(PACKAGES_DIR, "thesvg/package.json"), "utf-8"),
+  ).version;
+  writeFileSync(join(DATA_DIR, "thesvg-version.json"), JSON.stringify({ version: thesvgPkgVersion }, null, 2) + "\n");
 
   const llmsTxt = buildLlmsTxt({
     formattedIconCount,
