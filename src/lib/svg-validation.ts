@@ -11,6 +11,29 @@ export interface ValidationResult {
 
 const MAX_FILE_SIZE = 50 * 1024; // 50KB
 
+function hasMaliciousAttributes(doc: Document): { hasOnHandlers: boolean; hasJavascriptHref: boolean } {
+  let hasOnHandlers = false;
+  let hasJavascriptHref = false;
+
+  const allElements = doc.querySelectorAll("*");
+  for (const el of Array.from(allElements)) {
+    for (const attr of Array.from(el.attributes)) {
+      const name = attr.name.toLowerCase();
+      if (name.startsWith("on")) {
+        hasOnHandlers = true;
+      }
+      if (name === "href" || name.endsWith(":href")) {
+        const val = attr.value.replace(/[\s\x00-\x1F\x7F]/g, "").toLowerCase();
+        if (val.startsWith("javascript:")) {
+          hasJavascriptHref = true;
+        }
+      }
+    }
+  }
+
+  return { hasOnHandlers, hasJavascriptHref };
+}
+
 export function validateSvg(content: string, fileSize: number): ValidationResult {
   const checks: ValidationCheck[] = [];
 
@@ -71,8 +94,9 @@ export function validateSvg(content: string, fileSize: number): ValidationResult
   // Check 4: No embedded scripts
   const scriptTags = doc.querySelectorAll("script");
   const hasScripts = scriptTags.length > 0;
-  const hasOnHandlers = /<[^>]+\bon\w+\s*=/i.test(content);
-  const hasJavascriptHref = /href\s*=\s*["']javascript:/i.test(content);
+
+  const { hasOnHandlers, hasJavascriptHref } = hasMaliciousAttributes(doc);
+
   const scriptFree = !hasScripts && !hasOnHandlers && !hasJavascriptHref;
   checks.push({
     name: "No embedded scripts",
