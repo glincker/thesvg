@@ -19,6 +19,7 @@ interface FooterLink {
 
 const PRODUCT_LINKS: FooterLink[] = [
   { label: "Browse Icons", href: "/" },
+  { label: "Docs", href: "/docs" },
   { label: "Categories", href: "/categories" },
   { label: "Extensions", href: "/extensions" },
   { label: "Submit Icon", href: "/submit" },
@@ -39,10 +40,12 @@ const COMMUNITY_LINKS: FooterLink[] = [
   { label: "Issues", href: "https://github.com/GLINCKER/thesvg/issues", external: true },
   { label: "Discussions", href: "https://github.com/GLINCKER/thesvg/discussions", external: true },
   { label: "Contributing", href: "https://github.com/GLINCKER/thesvg/blob/main/CONTRIBUTING.md", external: true },
+  { label: "Sponsor", href: "https://github.com/sponsors/glincker", external: true },
 ];
 
 const LEGAL_LINKS: FooterLink[] = [
   { label: "Legal", href: "/legal" },
+  { label: "Privacy", href: "/privacy" },
   { label: "Trademark Policy", href: TRADEMARK_POLICY_URL, external: true },
   { label: "Contact", href: "/contact" },
 ];
@@ -100,7 +103,7 @@ function StatItem({
 }) {
   return (
     <div className="flex items-center gap-3">
-      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100/40 backdrop-blur-sm dark:bg-white/[0.05]">
+      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-orange-500/10 dark:bg-orange-500/10">
         {icon}
       </div>
       <div>
@@ -120,7 +123,7 @@ export function Footer() {
     <footer className="mt-16 pb-6 md:pl-58">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         {/* CTA Banner */}
-        <div className="mb-6 rounded-2xl border border-blue-200/30 bg-gradient-to-br from-blue-50/40 via-white/50 to-indigo-50/30 p-6 shadow-[inset_0_1px_2px_rgba(255,255,255,0.5),0_1px_3px_rgba(0,0,0,0.04)] backdrop-blur-xl dark:border-white/[0.06] dark:from-white/[0.03] dark:via-white/[0.02] dark:to-blue-500/[0.02] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)] sm:p-8">
+        <div className="mb-6 rounded-2xl border border-orange-500/20 bg-gradient-to-br from-orange-50/30 via-background to-background p-6 dark:border-orange-500/15 dark:from-orange-500/[0.04] dark:via-background dark:to-background sm:p-8">
           <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
             <div>
               <h2 className="text-lg font-semibold text-foreground">
@@ -133,17 +136,17 @@ export function Footer() {
             </div>
             <div className="flex flex-wrap gap-6 sm:gap-8">
               <StatItem
-                icon={<Layers className="h-4 w-4 text-muted-foreground" />}
+                icon={<Layers className="h-4 w-4 text-orange-500" />}
                 value={iconCount}
                 label="Brand Icons"
               />
               <StatItem
-                icon={<Package className="h-4 w-4 text-muted-foreground" />}
+                icon={<Package className="h-4 w-4 text-orange-500" />}
                 value={variantCount}
                 label="SVG Variants"
               />
               <StatItem
-                icon={<Download className="h-4 w-4 text-muted-foreground" />}
+                icon={<Download className="h-4 w-4 text-orange-500" />}
                 value={collectionCount}
                 label="Collections"
               />
@@ -169,7 +172,7 @@ export function Footer() {
         </div>
 
         {/* Main footer card */}
-        <div className="rounded-2xl border border-blue-200/30 bg-gradient-to-br from-blue-50/30 via-white/40 to-indigo-50/20 p-8 shadow-[inset_0_1px_2px_rgba(255,255,255,0.5),0_1px_3px_rgba(0,0,0,0.04)] backdrop-blur-xl dark:border-white/[0.06] dark:from-white/[0.03] dark:via-white/[0.02] dark:to-blue-500/[0.02] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)] sm:p-10 lg:p-12">
+        <div className="rounded-2xl border border-border/40 bg-card/30 p-8 dark:border-white/[0.06] dark:bg-white/[0.02] sm:p-10 lg:p-12">
           {/* Main grid: brand + 4 link columns */}
           <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5">
             {/* Brand column */}
@@ -355,7 +358,7 @@ export function Footer() {
           {/* Bottom bar */}
           <div className="mt-8 flex flex-col items-center gap-3 border-t border-border/40 pt-6 dark:border-white/[0.06] sm:flex-row sm:justify-between">
             <p className="text-[11px] text-muted-foreground/50">
-              &copy; 2026 GLINCKER. All rights reserved.
+              &copy; {new Date().getFullYear()} GLINCKER. All rights reserved.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[11px] text-muted-foreground/50">
               <span>
