@@ -5,7 +5,7 @@ import { DocsCodeBlock } from "@/components/docs/docs-code-block";
 
 export function FrameworkGuideSection({ guide }: { guide: FrameworkGuide }) {
   return (
-    <section id={guide.id} className="scroll-mt-24">
+    <section id={guide.id} className="scroll-mt-32">
       <div className="mb-3 flex flex-wrap items-center gap-2">
         <h3 className="text-base font-semibold">{guide.label}</h3>
         {guide.packageName && (

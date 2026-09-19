@@ -4,7 +4,7 @@ import { DocsCodeBlock } from "@/components/docs/docs-code-block";
 
 export function TricksSection({ items }: { items: Trick[] }) {
   return (
-    <section id="tricks" className="scroll-mt-24">
+    <section id="tricks" className="scroll-mt-32">
       <h2 className="mb-4 flex items-center gap-2 text-lg font-semibold">
         <Sparkles className="h-4 w-4 text-orange-500" />
         Tricks

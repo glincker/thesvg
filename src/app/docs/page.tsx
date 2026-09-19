@@ -5,17 +5,21 @@ import { getCategoryCounts, getFormattedIconCount } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 import { JsonLd } from "@/components/json-ld";
 import { FRAMEWORK_GUIDES, BEST_PRACTICES, TRICKS, FAQ_ITEMS } from "@/lib/docs-content";
+import { RECIPES } from "@/lib/docs-recipes";
+import { MIGRATION_GUIDES } from "@/lib/docs-migration";
 import { FrameworkGuideSection } from "@/components/docs/framework-guide-section";
 import { BestPracticesSection } from "@/components/docs/best-practices-section";
 import { TricksSection } from "@/components/docs/tricks-section";
+import { RecipesSection } from "@/components/docs/recipes-section";
+import { MigrationSection } from "@/components/docs/migration-section";
 import { FaqSection } from "@/components/docs/faq-section";
 import { DocsNav, type DocsNavItem } from "@/components/docs/docs-nav";
 
 const count = getFormattedIconCount();
 
 export const metadata: Metadata = {
-  title: "Docs & Guides - theSVG",
-  description: `How to use ${count}+ brand SVG icons in React, Vue, Svelte, React Native, plain HTML, the CLI, the REST API, and AI assistants via MCP. Best practices, tricks, and FAQ.`,
+  title: "Docs & Guides",
+  description: `How to use ${count}+ brand SVG icons in React, Vue, Svelte, React Native, plain HTML, the CLI, the REST API, and AI assistants via MCP. Recipes, best practices, tricks, migration guides, and FAQ.`,
   keywords: [
     "theSVG docs",
     "SVG icon library usage guide",
@@ -27,10 +31,15 @@ export const metadata: Metadata = {
     "brand icon CLI",
     "MCP server icons",
     "SVG icon FAQ",
+    "tech stack badge icons",
+    "brand icon picker React",
+    "migrate from Simple Icons",
+    "Next.js Image SVG icons",
+    "accessible icon button",
   ],
   openGraph: {
-    title: "Docs & Guides - theSVG",
-    description: `How to use ${count}+ brand SVG icons across every major framework, the CDN, the CLI, the REST API, and AI assistants.`,
+    title: "Docs & Guides",
+    description: `How to use ${count}+ brand SVG icons across every major framework, the CDN, the CLI, the REST API, and AI assistants. Recipes, best practices, and migration guides included.`,
     siteName: "theSVG",
   },
   alternates: {
@@ -41,8 +50,10 @@ export const metadata: Metadata = {
 const NAV_ITEMS: DocsNavItem[] = [
   { id: "getting-started", label: "Getting started" },
   ...FRAMEWORK_GUIDES.map((g) => ({ id: g.id, label: g.label })),
+  { id: "recipes", label: "Recipes" },
   { id: "best-practices", label: "Best practices" },
   { id: "tricks", label: "Tricks" },
+  { id: "migration", label: "Migrating" },
   { id: "faq", label: "FAQ" },
 ];
 
@@ -81,19 +92,21 @@ export default function DocsPage() {
             </div>
             <h1 className="mb-2 text-2xl font-bold sm:text-3xl">Docs &amp; Guides</h1>
             <p className="max-w-3xl text-muted-foreground">
-              Everything for using {count}+ brand icons: framework guides, best practices,
-              tricks, and FAQ, all on one page.
+              Everything for using {count}+ brand icons: framework guides, real-world recipes,
+              best practices, tricks, migration guides, and FAQ, all on one page.
             </p>
           </div>
 
-          {/* Sticky in-page nav */}
-          <div className="sticky top-0 z-10 -mx-4 mb-8 border-b border-border/40 bg-background/90 px-4 py-2 backdrop-blur-sm sm:-mx-6 sm:px-6 dark:border-white/[0.06]">
+          {/* Sticky in-page nav. Offset below the mobile floating top bar
+              and the desktop header (both fixed/sticky with a higher
+              z-index) so it doesn't scroll underneath them. */}
+          <div className="sticky top-16 z-20 -mx-4 mb-8 border-b border-border/40 bg-background/90 px-4 py-2 backdrop-blur-sm sm:-mx-6 sm:px-6 lg:top-[calc(4.25rem+var(--banner-h,0px))] dark:border-white/[0.06]">
             <DocsNav items={NAV_ITEMS} />
           </div>
 
           <div className="space-y-14">
             {/* Getting started */}
-            <section id="getting-started" className="scroll-mt-24">
+            <section id="getting-started" className="scroll-mt-32">
               <h2 className="mb-3 text-lg font-semibold">Getting started</h2>
               <p className="max-w-2xl text-sm text-muted-foreground">
                 Pick the guide that matches how you&apos;re building. A handful of known icons in
@@ -108,8 +121,10 @@ export default function DocsPage() {
               <FrameworkGuideSection key={guide.id} guide={guide} />
             ))}
 
+            <RecipesSection items={RECIPES} />
             <BestPracticesSection items={BEST_PRACTICES} />
             <TricksSection items={TRICKS} />
+            <MigrationSection items={MIGRATION_GUIDES} />
             <FaqSection items={FAQ_ITEMS} />
           </div>
         </div>

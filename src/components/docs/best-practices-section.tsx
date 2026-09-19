@@ -3,7 +3,7 @@ import type { BestPractice } from "@/lib/docs-content";
 
 export function BestPracticesSection({ items }: { items: BestPractice[] }) {
   return (
-    <section id="best-practices" className="scroll-mt-24">
+    <section id="best-practices" className="scroll-mt-32">
       <h2 className="mb-4 flex items-center gap-2 text-lg font-semibold">
         <Lightbulb className="h-4 w-4 text-orange-500" />
         Best practices

@@ -9,7 +9,21 @@
  * packages/cli) — verify against those before changing an API shape.
  */
 
+import { readFileSync } from "fs";
+import { join } from "path";
 import type { SnippetFormat } from "@/lib/code-snippets";
+
+/**
+ * The release workflow (.github/workflows/release.yml) tags releases as
+ * `thesvg@<version>`, taken from packages/thesvg/package.json's own
+ * version field at publish time. Reading that same field here means the
+ * jsDelivr pin example below tracks whatever was actually last released,
+ * instead of a hardcoded tag that goes stale the next time a version bumps.
+ */
+const THESVG_PKG_VERSION: string = JSON.parse(
+  readFileSync(join(process.cwd(), "packages/thesvg/package.json"), "utf-8"),
+).version;
+const JSDELIVR_PINNED_REF = `thesvg@${THESVG_PKG_VERSION}`;
 
 export interface DocsSnippet {
   label: string;
@@ -42,7 +56,7 @@ export const FRAMEWORK_GUIDES: FrameworkGuide[] = [
       {
         label: "Automatic dark mode (no JS)",
         format: "html",
-        code: `<picture>\n  <source media="(prefers-color-scheme: dark)" srcset="https://thesvg.org/icons/github/light.svg" />\n  <img src="https://thesvg.org/icons/github/dark.svg" width="24" alt="GitHub" />\n</picture>`,
+        code: `<picture>\n  <source media="(prefers-color-scheme: dark)" srcset="https://thesvg.org/icons/github/light.svg" />\n  <img src="https://thesvg.org/icons/github/dark.svg" width="24" height="24" alt="GitHub" />\n</picture>`,
       },
     ],
   },
@@ -85,6 +99,11 @@ export const FRAMEWORK_GUIDES: FrameworkGuide[] = [
         format: "vue",
         code: `<script setup>\nimport { Github, Figma } from "@thesvg/vue";\n</script>\n\n<template>\n  <Github width="24" height="24" />\n  <Figma width="32" height="32" aria-label="Figma" />\n</template>`,
       },
+      {
+        label: "Nuxt 3 (explicit import, no auto-import config needed)",
+        format: "vue",
+        code: `<script setup>\n// @thesvg/vue is a plain npm package, not a Nuxt module -\n// import it like any other component, no nuxt.config changes required.\nimport { Github } from "@thesvg/vue";\n</script>\n\n<template>\n  <Github width="24" height="24" />\n</template>`,
+      },
     ],
   },
   {
@@ -92,7 +111,8 @@ export const FRAMEWORK_GUIDES: FrameworkGuide[] = [
     label: "Svelte",
     packageName: "@thesvg/svelte",
     npmUrl: "https://www.npmjs.com/package/@thesvg/svelte",
-    summary: "Typed components for Svelte 4 and 5.",
+    summary:
+      "Typed components for Svelte 4 and 5. Plain markup with no browser-only APIs, so it renders identically during SvelteKit SSR and in the client - no onMount guard or client-only wrapper needed.",
     snippets: [
       { label: "Install", format: "cli", code: `npm install @thesvg/svelte` },
       {
@@ -119,6 +139,11 @@ export const FRAMEWORK_GUIDES: FrameworkGuide[] = [
         format: "react",
         code: `import { Github, Figma } from '@thesvg/react-native';\n\nexport function MyComponent() {\n  return (\n    <>\n      <Github size={24} />\n      <Figma size={32} color="#3b82f6" />\n    </>\n  );\n}`,
       },
+      {
+        label: "Expo Router screen",
+        format: "react",
+        code: `import { View } from 'react-native';\nimport { Github, Figma } from '@thesvg/react-native';\n\nexport default function Screen() {\n  return (\n    <View style={{ flexDirection: 'row', gap: 16 }}>\n      <Github size={28} />\n      <Figma size={28} />\n    </View>\n  );\n}`,
+      },
     ],
   },
   {
@@ -136,6 +161,11 @@ export const FRAMEWORK_GUIDES: FrameworkGuide[] = [
         code: `npx @thesvg/cli add github vercel nextjs --format jsx --dir ./components/icons`,
       },
       { label: "Search the catalog", format: "cli", code: `npx @thesvg/cli search "version control"` },
+      {
+        label: "In a Dockerfile / CI build step",
+        format: "cli",
+        code: `# Vendor icons at image build time instead of fetching them at runtime\nRUN npx --yes @thesvg/cli add github vercel nextjs --dir /app/public/icons`,
+      },
     ],
   },
   {
@@ -150,7 +180,7 @@ export const FRAMEWORK_GUIDES: FrameworkGuide[] = [
       {
         label: "jsDelivr mirror (recommended for high traffic)",
         format: "cli",
-        code: `curl "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/src/data/icons.json"`,
+        code: `curl "https://cdn.jsdelivr.net/gh/glincker/thesvg@${JSDELIVR_PINNED_REF}/src/data/icons.json"`,
       },
     ],
   },
@@ -160,12 +190,12 @@ export const FRAMEWORK_GUIDES: FrameworkGuide[] = [
     packageName: "@thesvg/mcp-server",
     npmUrl: "https://www.npmjs.com/package/@thesvg/mcp-server",
     summary:
-      "A local MCP server (stdio) that gives Claude Desktop, Claude Code, and Cursor tools to search and fetch icons directly.",
+      "A local MCP server (stdio) that gives AI assistants tools to search and fetch icons directly. The same mcpServers JSON block works in any MCP-compatible client's config file (Claude Desktop, Claude Code, Cursor, Windsurf) - check your client's docs for where that config file lives.",
     snippets: [
       {
         label: "MCP config (Claude Desktop, Cursor, etc.)",
         format: "mcp",
-        code: `{\n  "mcpServers": {\n    "thesvg": {\n      "command": "npx",\n      "args": ["@thesvg/mcp-server"]\n    }\n  }\n}`,
+        code: `{\n  "mcpServers": {\n    "thesvg": {\n      "command": "npx",\n      "args": ["-y", "@thesvg/mcp-server"]\n    }\n  }\n}`,
       },
     ],
   },
@@ -191,7 +221,7 @@ export const BEST_PRACTICES: BestPractice[] = [
   },
   {
     title: "Pin the jsDelivr mirror to a release, not @main",
-    body: "cdn.jsdelivr.net/gh/glincker/thesvg@main/... tracks the moving main branch. Pin to a released version (e.g. @3.3.8) in production so an upstream rename or removal can't silently change what your app renders.",
+    body: `cdn.jsdelivr.net/gh/glincker/thesvg@main/... tracks the moving main branch. Pin to a released git tag (e.g. @${JSDELIVR_PINNED_REF}, the current release) in production so an upstream rename or removal can't silently change what your app renders.`,
   },
   {
     title: "Use <picture> for dark mode, not JS",
@@ -225,7 +255,7 @@ export const TRICKS: Trick[] = [
     code: {
       label: "onError fallback",
       format: "react",
-      code: `<img\n  src={\`https://thesvg.org/icons/\${slug}/default.svg\`}\n  onError={(e) => { e.currentTarget.src = "/fallback-icon.svg"; }}\n  alt={slug}\n/>`,
+      code: `// "/fallback-icon.svg" is a placeholder you provide - swap in a real\n// asset from your own public/ folder.\n<img\n  src={\`https://thesvg.org/icons/\${slug}/default.svg\`}\n  onError={(e) => {\n    e.currentTarget.onerror = null; // stop if the fallback itself 404s\n    e.currentTarget.src = "/fallback-icon.svg";\n  }}\n  alt={slug}\n/>`,
     },
   },
   {
@@ -244,6 +274,24 @@ export const TRICKS: Trick[] = [
       label: "Bulk add",
       format: "cli",
       code: `npx @thesvg/cli add github vercel nextjs tailwindcss vscode --format jsx --dir ./src/icons`,
+    },
+  },
+  {
+    title: "Preload a hero logo to avoid a flash",
+    body: "A brand icon that's visible immediately on page load (a hero logo, an above-the-fold integration badge) benefits from a preload hint so the browser fetches it before it's needed, instead of waiting for the <img> tag to be discovered during layout.",
+    code: {
+      label: "Preload hint",
+      format: "html",
+      code: `<link rel="preload" as="image" href="https://thesvg.org/icons/github/default.svg" />`,
+    },
+  },
+  {
+    title: "Search the catalog client-side without a package",
+    body: "Building a custom icon picker? Fetch the manifest once, then filter it in memory - no search package, no per-keystroke network request.",
+    code: {
+      label: "Client-side filter",
+      format: "react",
+      code: `const res = await fetch('https://thesvg.org/api/registry.json');\nconst { icons } = await res.json();\n\nconst matches = icons.filter((icon) =>\n  icon.title.toLowerCase().includes(query.toLowerCase()) ||\n  icon.aliases.some((a) => a.toLowerCase().includes(query.toLowerCase()))\n);`,
     },
   },
 ];
@@ -288,5 +336,40 @@ export const FAQ_ITEMS: FaqItem[] = [
     question: "Which package should I actually install?",
     answer:
       "A handful of known icons in a React, Vue, or Svelte app: use the matching framework package — it's tree-shaken and typed. An open-ended or large set (a picker, a directory): use the CDN <img> pattern instead, no bundle cost regardless of count. Want icons checked into your own repo: use the CLI.",
+  },
+  {
+    question: "My icon is showing a broken image / 404. What's wrong?",
+    answer:
+      "Almost always a slug mismatch — the URL path uses the exact slug from /api/registry.json, which isn't always the brand's display name (spaces, dots, and casing are normalized). Search the site or check the registry for the exact slug rather than guessing one from the brand name.",
+  },
+  {
+    question: "Does theSVG work with Next.js's <Image> component?",
+    answer:
+      "Not out of the box. Next's built-in image optimizer doesn't rasterize SVGs by default, so <Image> either needs the unoptimized prop for that image, or dangerouslyAllowSVG set on the domain in next.config. For most icon use cases a plain <img> tag (or a framework package component) is simpler and avoids the optimizer entirely.",
+  },
+  {
+    question: "Is there a TypeScript type listing every icon slug?",
+    answer:
+      "No exported union type of all slugs — each icon is its own named export (Github, Figma, ...), so importing an icon that doesn't exist is a module-not-found error at build time, not a string-literal type error. If you need slugs as data (e.g. from an API response), registry.json's slug field is a plain string.",
+  },
+  {
+    question: "How is theSVG different from Simple Icons, svgl, or Iconify?",
+    answer:
+      "Short version: theSVG has more brand icons with more variants per icon (color, mono, light, dark, wordmark) and a wider toolchain (framework packages, CLI, REST API, MCP server). Simple Icons is mono-only but has years of community trust; svgl is Svelte-focused with no npm package; Iconify aggregates 150+ icon sets but isn't brand-focused. Full side-by-side comparison at /compare.",
+  },
+  {
+    question: "Do the framework packages support server-side rendering (SSR)?",
+    answer:
+      "Yes. Every framework package (@thesvg/react, @thesvg/vue, @thesvg/svelte) renders plain markup with no browser-only APIs, so they're SSR-safe by default - no client-only wrapper or hydration guard needed. @thesvg/react components specifically work as React Server Components with no \"use client\" directive.",
+  },
+  {
+    question: "Can I self-host the icons without crediting theSVG?",
+    answer:
+      "The codebase and tooling are MIT-licensed, so no attribution is legally required to self-host. The brand marks themselves stay the property of their trademark holders regardless of where you host the files — see /legal. A link back is appreciated but not required.",
+  },
+  {
+    question: "Why does the same icon look different in dark mode?",
+    answer:
+      "If you're rendering the default variant everywhere, that's expected - it's a fixed brand color, not theme-aware. For a variant that adapts to the page theme, use light/dark with a <picture> element (see Best practices above), or the mono variant with an inline component so it inherits currentColor.",
   },
 ];
