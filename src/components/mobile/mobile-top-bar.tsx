@@ -39,7 +39,7 @@ export function MobileTopBar() {
 
   return (
     <header
-      className="surface-glass fixed inset-x-3 z-30 mx-auto max-w-md rounded-[24px] border border-border/40 shadow-[0_12px_36px_-12px_rgba(0,0,0,0.55),0_2px_8px_-2px_rgba(0,0,0,0.35)] lg:hidden dark:border-white/[0.08]"
+      className="surface-glass fixed inset-x-3 z-30 mx-auto max-w-md rounded-[24px] border border-border/40 shadow-[0_12px_36px_-12px_rgba(0,0,0,0.55),0_2px_8px_-2px_rgba(0,0,0,0.35)] md:hidden dark:border-white/[0.08]"
       style={{
         top: "max(12px, calc(var(--safe-top) + 12px))",
       }}

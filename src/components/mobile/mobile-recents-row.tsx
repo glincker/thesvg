@@ -58,7 +58,7 @@ export function MobileRecentsRow({
   return (
     <section
       aria-label="Recently viewed icons"
-      className="lg:hidden"
+      className="md:hidden"
     >
       <div className="flex items-center justify-between px-3 pb-2">
         <h3 className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">

@@ -28,6 +28,10 @@ jobs:
       - uses: actions/first-interaction@v3
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
+          # issue_message is required by the action even though this workflow
+          # never triggers on `issues` events (only `pull_request`), so it's
+          # never actually posted -- omitting it makes the action crash.
+          issue_message: "Thanks for opening your first issue!"
           pr_message: |
             Thanks for opening your first pull request to thesvg! We appreciate you taking the time to contribute. Please make sure you've read the README for contribution guidelines. A maintainer will take a look soon.
 
