@@ -5,7 +5,7 @@ import type { FaqItem } from "@/lib/docs-content";
  * static export's HTML) whether or not it's expanded, no JS required. */
 export function FaqSection({ items }: { items: FaqItem[] }) {
   return (
-    <section id="faq" className="scroll-mt-24">
+    <section id="faq" className="scroll-mt-32">
       <h2 className="mb-4 flex items-center gap-2 text-lg font-semibold">
         <HelpCircle className="h-4 w-4 text-orange-500" />
         FAQ
@@ -16,7 +16,7 @@ export function FaqSection({ items }: { items: FaqItem[] }) {
             <summary className="cursor-pointer list-none text-sm font-medium marker:content-none">
               <span className="flex items-center justify-between gap-3">
                 {item.question}
-                <span className="text-muted-foreground transition-transform group-open:rotate-45">+</span>
+                <span aria-hidden="true" className="text-muted-foreground transition-transform group-open:rotate-45">+</span>
               </span>
             </summary>
             <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{item.answer}</p>
