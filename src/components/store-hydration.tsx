@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useFavoritesStore } from "@/lib/stores/favorites-store";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import { useMobilePrefsStore } from "@/lib/stores/mobile-prefs-store";
+import { useSidebarStore } from "@/lib/stores/sidebar-store";
 
 /**
  * Rehydrates the persisted zustand stores from localStorage after mount.
@@ -20,6 +21,7 @@ export function StoreHydration() {
     useFavoritesStore.persist.rehydrate();
     useRecentsStore.persist.rehydrate();
     useMobilePrefsStore.persist.rehydrate();
+    useSidebarStore.persist.rehydrate();
   }, []);
 
   return null;
