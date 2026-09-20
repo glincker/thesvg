@@ -49,7 +49,7 @@
   ],
   "dependencies": {
     "@raycast/api": "^1.92.0",
-    "@raycast/utils": "^1.19.0"
+    "@raycast/utils": "^2.3.1"
   },
   "devDependencies": {
     "@raycast/eslint-config": "^2.1.1",
@@ -68,7 +68,7 @@
     "publish": "npx @raycast/api@latest publish"
   },
   "overrides": {
-    "brace-expansion": "^5.0.6",
+    "brace-expansion": "^5.0.12",
     "picomatch": "^4.0.4",
     "flatted": "^3.4.2"
   }
