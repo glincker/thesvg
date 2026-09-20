@@ -134,6 +134,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
         ? `/collection/${defaultCollection}`
         : "/";
       const qs = params.toString();
+      if (qs === searchParams.toString()) return;
       router.replace(qs ? `${basePath}?${qs}` : basePath, { scroll: false });
     },
     [router, searchParams, defaultCollection, defaultCategorySlug]

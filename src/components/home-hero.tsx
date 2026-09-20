@@ -484,7 +484,7 @@ export function HomeHero({
   ];
 
   return (
-    <div className="space-y-8 pb-6">
+    <div className="flex flex-col gap-8 pb-6">
       {/* Hero carousel - lifted card with depth. Hidden at the md-to-lg
           gap (~768-1023px, tablet/foldable-class viewports) where the
           compact single-row banner below takes over instead - the full
