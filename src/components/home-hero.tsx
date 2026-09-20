@@ -11,6 +11,7 @@ import { IconCard } from "@/components/icons/icon-card";
 import { IconGrid } from "@/components/icons/icon-grid";
 import { IconDetail } from "@/components/icons/icon-detail";
 import { useRecentsStore } from "@/lib/stores/recents-store";
+import { useCompactHeroStore } from "@/lib/stores/compact-hero-store";
 import { cn } from "@/lib/utils";
 import { withUtm } from "@/lib/external-link";
 
@@ -370,6 +371,8 @@ export function HomeHero({
   // Reuses the `iconsBySlug` map declared above (already O(1) lookups).
   const recentViewed = useRecentsStore((s) => s.viewed);
   const clearViewed = useRecentsStore((s) => s.clearViewed);
+  const compactHeroDismissed = useCompactHeroStore((s) => s.dismissed);
+  const dismissCompactHero = useCompactHeroStore((s) => s.dismiss);
   const recentViewedIcons = useMemo(() => {
     if (recentViewed.length === 0 || icons.length === 0) return [];
     return recentViewed
@@ -451,6 +454,12 @@ export function HomeHero({
     : fallbackSlide;
   const BadgeIcon = slide.badgeIcon;
 
+  // Compact hero (md-to-lg gap, ~768-1023px) always shows the active
+  // collection's first slide and never rotates - there are no pagination
+  // dots in the single-row layout, so there's nothing to advance.
+  const compactSlide = collectionSlides.length > 0 ? collectionSlides[0] : fallbackSlide;
+  const CompactIcon = compactSlide.badgeIcon;
+
   // Pick 6 floating icons matching the current slide's collection
   const floatingIcons = useMemo(() => {
     const activeSlide = collectionSlides.length > 0
@@ -476,8 +485,11 @@ export function HomeHero({
 
   return (
     <div className="space-y-8 pb-6">
-      {/* Hero carousel - lifted card with depth */}
-      <div className="relative">
+      {/* Hero carousel - lifted card with depth. Hidden at the md-to-lg
+          gap (~768-1023px, tablet/foldable-class viewports) where the
+          compact single-row banner below takes over instead - the full
+          carousel already looks right below md and from lg upward. */}
+      <div className="relative md:hidden lg:block">
         {/* Bottom shadow layer for lifted effect */}
         <div className="absolute -bottom-2 left-4 right-4 h-8 rounded-3xl bg-black/5 blur-xl dark:bg-black/30" />
         <div className="absolute -bottom-1 left-8 right-8 h-4 rounded-2xl bg-black/[0.03] blur-md dark:bg-black/20" />
@@ -614,6 +626,54 @@ export function HomeHero({
         </div>
       </div>
       </div>
+
+      {/* Compact hero - single-row banner for the md-to-lg gap (~768-1023px,
+          tablet/foldable-class viewports) where the full carousel above
+          pushes the icon grid too far below the fold. No description, no
+          rotation, one primary CTA, and a dismiss control backed by
+          localStorage so it does not come back once closed. */}
+      {!compactHeroDismissed && (
+        <div
+          className={`relative hidden items-center gap-3 overflow-hidden rounded-2xl border border-border/40 bg-gradient-to-r ${compactSlide.gradient} px-4 py-3 shadow-sm md:flex lg:hidden dark:border-white/[0.06]`}
+        >
+          <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border ${compactSlide.accent}`}>
+            <CompactIcon className="h-4 w-4" />
+          </span>
+          <p className="min-w-0 flex-1 truncate text-sm font-semibold text-foreground">
+            {compactSlide.dynamicCount
+              ? `${count.toLocaleString()}+ ${compactSlide.title}`
+              : compactSlide.title}
+          </p>
+          {compactSlide.cta.href.startsWith("http") ? (
+            <a
+              href={withUtm(compactSlide.cta.href, "home_hero_compact")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-foreground px-3 py-1.5 text-xs font-medium text-background shadow-sm transition-opacity hover:opacity-90"
+            >
+              {compactSlide.cta.label}
+              <ArrowRight className="h-3 w-3" />
+            </a>
+          ) : (
+            <Link
+              href={compactSlide.cta.href}
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-foreground px-3 py-1.5 text-xs font-medium text-background shadow-sm transition-opacity hover:opacity-90"
+            >
+              {compactSlide.cta.label}
+              <ArrowRight className="h-3 w-3" />
+            </Link>
+          )}
+          <button
+            type="button"
+            onClick={dismissCompactHero}
+            aria-label="Dismiss banner"
+            title="Dismiss"
+            className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-muted-foreground/60 transition-colors hover:bg-foreground/10 hover:text-foreground"
+          >
+            <X className="h-4 w-4" />
+          </button>
+        </div>
+      )}
 
       {/* Continue — only renders for returning visitors */}
       {recentViewedIcons.length > 0 && (
