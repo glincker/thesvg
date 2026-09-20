@@ -104,7 +104,7 @@ export function SidebarShell({ children, categoryCounts, collections = [] }: Sid
       <div
         className={cn(
           "transition-[padding] duration-200 ease-in-out",
-          collapsed ? "md:pl-20" : "md:pl-58",
+          collapsed ? "md:pl-21" : "md:pl-59",
         )}
       >
         {children}

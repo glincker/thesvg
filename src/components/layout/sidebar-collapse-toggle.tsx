@@ -16,7 +16,7 @@ export function SidebarCollapseToggle({ collapsed, onToggle }: Readonly<SidebarC
       aria-expanded={!collapsed}
       aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
       title={collapsed ? "Expand sidebar" : "Collapse sidebar"}
-      className="group/rail absolute inset-y-0 -right-2 z-20 flex w-4 cursor-pointer items-start justify-center pt-4 after:absolute after:inset-y-0 after:left-1/2 after:w-px after:-translate-x-1/2 after:bg-transparent after:transition-colors after:duration-200 hover:after:bg-border dark:hover:after:bg-white/20"
+      className="group/rail absolute inset-y-0 -right-3 z-20 flex w-6 cursor-pointer items-start justify-center pt-4 after:absolute after:inset-y-0 after:left-1/2 after:w-px after:-translate-x-1/2 after:bg-transparent after:transition-colors after:duration-200 hover:after:bg-border dark:hover:after:bg-white/20"
     >
       <span
         className={cn(
