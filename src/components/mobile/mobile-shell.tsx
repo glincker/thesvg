@@ -169,7 +169,7 @@ export function MobileShell({ children }: { children: React.ReactNode }) {
         <MobileTopBar />
       </div>
 
-      <div className="mobile-shell-body md:[&]:!pb-0">{children}</div>
+      <div className="mobile-shell-body">{children}</div>
 
       <div className="contents md:hidden">
         <MobileBottomDock />
