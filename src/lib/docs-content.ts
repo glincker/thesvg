@@ -344,7 +344,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: "How is theSVG different from Simple Icons, svgl, or Iconify?",
     answer:
-      "Short version: theSVG has more brand icons with more variants per icon (color, mono, light, dark, wordmark) and a wider toolchain (framework packages, CLI, REST API, MCP server). Simple Icons is mono-only but has years of community trust; svgl is Svelte-focused with no npm package; Iconify aggregates 150+ icon sets but isn't brand-focused. Full side-by-side comparison at /compare.",
+      "theSVG has more brand icons, plus cloud provider icons (AWS, Azure, GCP) none of the alternatives cover, up to 7 variants per icon (color, mono, light, dark, wordmark), and a wider toolchain (framework packages, CLI, REST API, MCP server for AI agents). Simple Icons is mono-only; svgl is Svelte-focused with no npm package; Iconify aggregates 150+ icon sets but isn't brand-focused. Full side-by-side comparison at /compare.",
   },
   {
     question: "Do the framework packages support server-side rendering (SSR)?",

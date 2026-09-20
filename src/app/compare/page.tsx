@@ -20,6 +20,7 @@ import {
 import { getCategoryCounts, getFormattedIconCount, getIconCount } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 import { withUtm } from "@/lib/external-link";
+import { JsonLd } from "@/components/json-ld";
 
 const count = getFormattedIconCount();
 
@@ -217,12 +218,38 @@ const COLUMNS: { key: LibKey; label: string; highlight?: boolean }[] = [
   { key: "devicon", label: "Devicon" },
 ];
 
+const COMPARE_FAQ = [
+  {
+    question: "Is theSVG better than Simple Icons?",
+    answer: `For most projects, yes. theSVG has ${count}+ brand icons vs Simple Icons' 3,400+, plus cloud provider icons (AWS, Azure, GCP), up to 7 variants per icon vs Simple Icons' mono-only, and a wider toolchain (CLI, REST API, MCP server, React/Vue/Svelte packages). Simple Icons is still a solid, established choice if you only need single-color marks.`,
+  },
+  {
+    question: "What's the difference between theSVG and svgl?",
+    answer: `svgl is a SvelteKit-based browser for brand SVGs with color and wordmark variants, but no npm package - you copy the SVG source by hand. theSVG covers the same variants (plus mono, light, and dark) as an installable package with CLI, REST API, and framework components, so logos update automatically instead of needing to be re-copied.`,
+  },
+  {
+    question: "Should I use theSVG or Iconify?",
+    answer: "They solve different problems. Iconify aggregates 200,000+ icons across 150+ sets with one unified API, but it isn't brand-focused. theSVG is purpose-built for brand logos, with cloud provider icons and multi-variant support Iconify's aggregated sets don't guarantee. Many projects use both: theSVG for brand logos, Iconify for everything else.",
+  },
+] as const;
+
 export default function ComparePage() {
   const categoryCounts = getCategoryCounts();
   const iconCount = getIconCount();
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: COMPARE_FAQ.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  };
+
   return (
     <Suspense>
+      <JsonLd data={faqJsonLd} />
       <SidebarShell categoryCounts={categoryCounts}>
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12">
           {/* Header */}
@@ -401,6 +428,22 @@ export default function ComparePage() {
                   svgl for a beautiful browsing experience with color variants. Iconify to search across 150+ icon sets from one API.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* FAQ */}
+          <div className="mt-12 space-y-4">
+            <h2 className="text-lg font-semibold">Frequently asked</h2>
+            <div className="space-y-3">
+              {COMPARE_FAQ.map((item) => (
+                <div
+                  key={item.question}
+                  className="rounded-xl border border-border/40 p-4 dark:border-white/[0.06]"
+                >
+                  <h3 className="mb-1.5 text-sm font-semibold">{item.question}</h3>
+                  <p className="text-xs leading-relaxed text-muted-foreground">{item.answer}</p>
+                </div>
+              ))}
             </div>
           </div>
 
