@@ -313,11 +313,13 @@ export function Header({ collectionCounts }: HeaderProps) {
             </Link>
           </div>
 
-          {/* Collection switcher */}
+          {/* Collection switcher. "brands" is excluded - the logo already
+              links home to the all-brands view, so a "Brands" pill here
+              would just be a second, redundant way to do the same thing. */}
           <nav className="hidden items-center gap-0.5 md:flex" aria-label="Icon collections">
-            {COLLECTIONS_LIST.map((meta) => {
-              const href = meta.id === "brands" ? "/" : `/collection/${meta.id}`;
-              const isActive = meta.id === "brands" ? !activeCollection : activeCollection === meta.id;
+            {COLLECTIONS_LIST.filter((meta) => meta.id !== "brands").map((meta) => {
+              const href = `/collection/${meta.id}`;
+              const isActive = activeCollection === meta.id;
               const Icon = meta.icon;
               return (
                 <Link

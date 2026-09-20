@@ -3,8 +3,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   ChevronRight,
-  PanelLeftClose,
-  PanelLeftOpen,
   Search,
   Shapes,
   Sparkles,
@@ -19,6 +17,7 @@ import { COLLECTIONS_META } from "@/lib/collections-meta";
 import { categoryAccentClass, filterCategories, groupCategoriesByLetter } from "@/lib/category-index";
 import { AlphabetRail } from "@/components/layout/alphabet-rail";
 import { SidebarNav } from "@/components/layout/sidebar-nav";
+import { SidebarCollapseToggle } from "@/components/layout/sidebar-collapse-toggle";
 
 import { cn } from "@/lib/utils";
 
@@ -121,29 +120,12 @@ export function Sidebar({
           mobile
             ? "flex h-full w-full flex-col bg-background pt-6"
             : cn(
-                "fixed top-[calc(4.25rem+var(--banner-h,0px))] left-2 z-30 hidden h-[calc(100vh-4.75rem-var(--banner-h,0px))] flex-col rounded-2xl border border-black/[0.06] bg-background/90 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08),0_0_0_1px_rgba(0,0,0,0.03)] backdrop-blur-2xl transition-[width] duration-200 ease-in-out md:flex dark:border-white/[0.08] dark:bg-black/60 dark:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.05)]",
+                "group/sidebar fixed top-[calc(4.25rem+var(--banner-h,0px))] left-2 z-30 hidden h-[calc(100vh-4.75rem-var(--banner-h,0px))] flex-col rounded-2xl border border-black/[0.06] bg-background/90 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08),0_0_0_1px_rgba(0,0,0,0.03)] backdrop-blur-2xl transition-[width] duration-200 ease-in-out md:flex dark:border-white/[0.08] dark:bg-black/60 dark:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.05)]",
                 collapsed ? "w-16" : "w-54",
               ),
         )}
       >
-        {!mobile && (
-          <div className={cn("flex shrink-0 p-3 pb-0", collapsed ? "justify-center" : "justify-end")}>
-            <button
-              type="button"
-              onClick={onToggleCollapsed}
-              aria-expanded={!collapsed}
-              aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
-              title={collapsed ? "Expand sidebar" : "Collapse sidebar"}
-              className="flex h-7 w-7 items-center justify-center rounded-lg text-muted-foreground/60 transition-all duration-200 hover:bg-accent/80 hover:text-foreground"
-            >
-              {collapsed ? (
-                <PanelLeftOpen className="h-4 w-4" />
-              ) : (
-                <PanelLeftClose className="h-4 w-4" />
-              )}
-            </button>
-          </div>
-        )}
+        {!mobile && <SidebarCollapseToggle collapsed={collapsed} onToggle={onToggleCollapsed} />}
 
         {/* Navigation - pinned, always visible */}
         <SidebarNav
