@@ -18,6 +18,7 @@ import { useSidebarStore } from "@/lib/stores/sidebar-store";
 import { useSearchStore } from "@/lib/stores/search-store";
 import { hasCategoryLanding, slugifyCategory } from "@/lib/categories";
 import { MobileRecentsRow } from "@/components/mobile/mobile-recents-row";
+import { cn } from "@/lib/utils";
 
 const SORT_OPTIONS = ["default", "recent", "az", "za"] as const;
 
@@ -61,6 +62,8 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
 
   const sidebarOpen = useSidebarStore((s) => s.open);
   const setSidebarOpen = useSidebarStore((s) => s.setOpen);
+  const collapsed = useSidebarStore((s) => s.collapsed);
+  const toggleCollapsed = useSidebarStore((s) => s.toggleCollapsed);
   const favorites = useFavoritesStore((s) => s.favorites);
   // const addFavorites = useFavoritesStore((s) => s.addFavorites);
   const globalQuery = useSearchStore((s) => s.query);
@@ -345,6 +348,8 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
       onCollectionSelect={handleCollectionSelect}
       onCategorySearchChange={handleCategorySearchChange}
       initialCategorySearch={catSearchParam}
+      collapsed={collapsed}
+      onToggleCollapsed={toggleCollapsed}
     />
   );
 
@@ -375,7 +380,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
       </Sheet>
 
       {/* Main content area */}
-      <div className="md:pl-58">
+      <div className={cn("transition-[padding] duration-200 ease-in-out", collapsed ? "md:pl-21" : "md:pl-59")}>
         {isDefaultView ? (
           /* Hero landing */
           <div className="mx-auto max-w-7xl px-3 py-4 sm:px-4">
