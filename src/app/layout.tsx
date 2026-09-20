@@ -159,10 +159,10 @@ export default function RootLayout({
         >
           <StoreHydration />
           <ScrollToTop />
-          {/* Desktop header — `lg:` and above. Rendered as a body-level
+          {/* Desktop header, `md:` and above. Rendered as a body-level
               sibling (not wrapped) so position: sticky keeps a containing
               block tall enough for it to stick against the viewport.
-              Below `lg` the MobileShell renders its own top bar + bottom
+              Below `md` the MobileShell renders its own top bar and bottom
               dock to deliver an app-like feel. */}
           <Suspense fallback={<HeaderSkeleton />}>
             <Header collectionCounts={collectionCounts} />

@@ -29,11 +29,12 @@ export function useMediaQuery(query: string): boolean {
 }
 
 /**
- * Convenience wrapper: `true` below the Tailwind `lg` breakpoint (1024px).
- * Drives the mobile shell — bottom dock, sheets, intercepted icon view.
+ * Convenience wrapper: `true` below the Tailwind `md` breakpoint (768px),
+ * matching the CSS cutoff used by the header, mobile top bar, and dock.
+ * Drives the mobile shell: bottom dock, sheets, intercepted icon view.
  */
 export function useIsMobileShell(): boolean {
-  return useMediaQuery("(max-width: 1023.98px)");
+  return useMediaQuery("(max-width: 767.98px)");
 }
 
 /**

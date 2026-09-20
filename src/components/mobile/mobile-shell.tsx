@@ -16,7 +16,7 @@ const LONG_PRESS_MS = 500;
 const PULL_DOWN_PX = 80;
 
 /**
- * Mobile shell: top bar + dock + sheets. Renders below `lg`.
+ * Mobile shell: top bar + dock + sheets. Renders below `md`.
  */
 export function MobileShell({ children }: { children: React.ReactNode }) {
   const isMobile = useIsMobileShell();
