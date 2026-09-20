@@ -697,79 +697,86 @@ export function Header({ collectionCounts }: HeaderProps) {
             <SubmitButton />
 
             <div className="ml-1 flex items-center gap-0.5 sm:gap-1">
-              <a
-                href={withUtm("https://www.npmjs.com/package/thesvg", "header")}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="View on npm"
-                title="npm"
-                className="hidden h-8 w-8 items-center justify-center rounded-lg border border-border/50 text-muted-foreground transition-all hover:border-[#cb3837]/30 hover:bg-[#cb3837]/5 hover:text-[#cb3837] sm:inline-flex dark:border-white/[0.06] dark:hover:border-[#cb3837]/30"
-              >
-                <img
-                  src="/icons/npm/default.svg"
-                  alt=""
-                  width={18}
-                  height={18}
-                  className="h-[18px] w-[18px]"
-                />
-              </a>
-              <a
-                href={withUtm("https://www.raycast.com/thegdsks/thesvg", "header")}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="View on Raycast"
-                title="Raycast extension"
-                className="hidden h-8 w-8 items-center justify-center rounded-lg border border-border/50 text-muted-foreground transition-all hover:border-[#FF6363]/30 hover:bg-[#FF6363]/5 hover:text-[#FF6363] sm:inline-flex dark:border-white/[0.06] dark:hover:border-[#FF6363]/30"
-              >
-                <img
-                  src="/icons/raycast/default.svg"
-                  alt=""
-                  width={16}
-                  height={16}
-                  className="h-4 w-4"
-                />
-              </a>
-              <a
-                href={withUtm("https://www.figma.com/community/plugin/1612997159050367763", "header")}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={showFigmaBadge ? "Open the Figma plugin (new)" : "Open the Figma plugin"}
-                title={showFigmaBadge ? "Figma plugin - new" : "Figma plugin"}
-                className="relative hidden h-8 w-8 items-center justify-center rounded-lg border border-border/50 text-muted-foreground transition-all hover:border-[#F24E1E]/40 hover:bg-[#F24E1E]/5 hover:text-[#F24E1E] sm:inline-flex dark:border-white/[0.06] dark:hover:border-[#F24E1E]/40"
-              >
-                <img
-                  src="/icons/figma/default.svg"
-                  alt=""
-                  width={16}
-                  height={16}
-                  className="h-4 w-4"
-                />
-                {showFigmaBadge && (
-                  <span
-                    aria-hidden="true"
-                    className="absolute -top-0.5 -right-0.5 flex h-2 w-2"
-                  >
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange-500/60 opacity-75" />
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-orange-500" />
-                  </span>
-                )}
-              </a>
-              <a
-                href={withUtm("https://marketplace.visualstudio.com/items?itemName=glincker.thesvg", "header")}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Install the VS Code extension"
-                title="VS Code extension"
-                className="hidden h-8 w-8 items-center justify-center rounded-lg border border-border/50 text-muted-foreground transition-all hover:border-[#007ACC]/30 hover:bg-[#007ACC]/5 hover:text-[#007ACC] sm:inline-flex dark:border-white/[0.06] dark:hover:border-[#007ACC]/30"
-              >
-                <img
-                  src="/icons/visual-studio-code/default.svg"
-                  alt=""
-                  width={16}
-                  height={16}
-                  className="h-4 w-4"
-                />
-              </a>
+              <DropdownMenu>
+                <DropdownMenuTrigger
+                  render={
+                    <button
+                      type="button"
+                      aria-label={showFigmaBadge ? "More tools (new)" : "More tools"}
+                      title="More tools"
+                      className="relative hidden h-8 w-8 items-center justify-center rounded-lg border border-border/50 text-muted-foreground transition-all hover:border-foreground/20 hover:bg-accent hover:text-foreground sm:inline-flex dark:border-white/[0.08] dark:hover:border-white/20 dark:hover:bg-white/[0.06]"
+                    />
+                  }
+                >
+                  <Package className="h-4 w-4" />
+                  {showFigmaBadge && (
+                    <span
+                      aria-hidden="true"
+                      className="absolute -top-0.5 -right-0.5 flex h-2 w-2"
+                    >
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange-500/60 opacity-75" />
+                      <span className="relative inline-flex h-2 w-2 rounded-full bg-orange-500" />
+                    </span>
+                  )}
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuGroup>
+                    <DropdownMenuItem
+                      render={
+                        <a
+                          href={withUtm("https://www.npmjs.com/package/thesvg", "header")}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        />
+                      }
+                    >
+                      <img src="/icons/npm/default.svg" alt="" width={16} height={16} className="h-4 w-4" />
+                      npm package
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      render={
+                        <a
+                          href={withUtm("https://www.raycast.com/thegdsks/thesvg", "header")}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        />
+                      }
+                    >
+                      <img src="/icons/raycast/default.svg" alt="" width={16} height={16} className="h-4 w-4" />
+                      Raycast extension
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      render={
+                        <a
+                          href={withUtm("https://www.figma.com/community/plugin/1612997159050367763", "header")}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        />
+                      }
+                    >
+                      <img src="/icons/figma/default.svg" alt="" width={16} height={16} className="h-4 w-4" />
+                      Figma plugin
+                      {showFigmaBadge && (
+                        <span className="ml-auto rounded-full bg-orange-500/10 px-1.5 py-px text-[9px] font-semibold uppercase text-orange-500">
+                          New
+                        </span>
+                      )}
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      render={
+                        <a
+                          href={withUtm("https://marketplace.visualstudio.com/items?itemName=glincker.thesvg", "header")}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        />
+                      }
+                    >
+                      <img src="/icons/visual-studio-code/default.svg" alt="" width={16} height={16} className="h-4 w-4" />
+                      VS Code extension
+                    </DropdownMenuItem>
+                  </DropdownMenuGroup>
+                </DropdownMenuContent>
+              </DropdownMenu>
               <a
                 href={withUtm("https://github.com/GLINCKER/thesvg", "header")}
                 target="_blank"
