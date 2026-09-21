@@ -36,10 +36,10 @@
     "zod": "^4.5.4"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^5.20260915.1",
+    "@cloudflare/workers-types": "^5.20260918.1",
     "typescript": "^6.0.3",
     "vitest": "^4.1.11",
-    "wrangler": "^4.131.2"
+    "wrangler": "^4.134.0"
   },
   "engines": {
     "node": ">=18"
