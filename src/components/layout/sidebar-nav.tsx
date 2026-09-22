@@ -163,6 +163,7 @@ export function SidebarNav({
           <button
             type="button"
             onClick={() => setExtensionsExpanded((prev) => !prev)}
+            aria-expanded={extensionsExpanded}
             className={cn(
               "group flex w-full items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-muted-foreground transition-all duration-200 hover:bg-accent/80 hover:text-accent-foreground",
               isExtensionsPage &&
