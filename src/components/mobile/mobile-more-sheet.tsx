@@ -65,6 +65,12 @@ const EXTERNAL_LINKS: ReadonlyArray<ExternalItem> = [
     iconSrc: "/icons/github/default.svg",
   },
   {
+    href: "https://discord.gg/Ar5pcaZB99",
+    label: "Discord",
+    description: "Join the community",
+    iconSrc: "/icons/discord/default.svg",
+  },
+  {
     href: "https://www.npmjs.com/package/thesvg",
     label: "npm package",
     description: "thesvg on npm",

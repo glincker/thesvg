@@ -83,3 +83,7 @@ TTL is 6 hours. Delete the file to force a refresh.
 ## Contributing
 
 Open an issue or PR at [github.com/glincker/thesvg](https://github.com/glincker/thesvg).
+
+## Community
+
+Questions or ideas? Join the [GLINR Discord](https://discord.gg/Ar5pcaZB99).

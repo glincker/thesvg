@@ -9,3 +9,6 @@ contact_links:
   - name: Discussions
     url: https://github.com/glincker/thesvg/discussions
     about: Ask questions and share ideas
+  - name: "💬 Ask a question on Discord"
+    url: https://discord.gg/Ar5pcaZB99
+    about: "Questions, icon ideas, and help from the community in the #thesvg forum."

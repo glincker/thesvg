@@ -39,6 +39,7 @@ const COMMUNITY_LINKS: FooterLink[] = [
   { label: "GitHub", href: "https://github.com/GLINCKER/thesvg", external: true },
   { label: "Issues", href: "https://github.com/GLINCKER/thesvg/issues", external: true },
   { label: "Discussions", href: "https://github.com/GLINCKER/thesvg/discussions", external: true },
+  { label: "Discord", href: "https://discord.gg/Ar5pcaZB99", external: true },
   { label: "Contributing", href: "https://github.com/GLINCKER/thesvg/blob/main/CONTRIBUTING.md", external: true },
   { label: "Sponsor", href: "https://github.com/sponsors/glincker", external: true },
 ];
@@ -234,6 +235,21 @@ export function Footer() {
                   aria-label="npm"
                 >
                   npm
+                </a>
+                <a
+                  href={withUtm("https://discord.gg/Ar5pcaZB99", "footer")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="opacity-60 transition-opacity hover:opacity-100"
+                  aria-label="Discord"
+                >
+                  <img
+                    src="/icons/discord/default.svg"
+                    alt=""
+                    width={18}
+                    height={14}
+                    className="h-3.5 w-[18px]"
+                  />
                 </a>
               </div>
               <a
