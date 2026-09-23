@@ -46,23 +46,10 @@ export function Google2026Landing({ icons }: Props) {
     return () => window.clearTimeout(id);
   }, [query, recordSearch]);
 
-  // Pre-compute which buckets are actually represented in this set so we
-  // can grey out chips for buckets that would always produce zero results.
-  const bucketCounts = useMemo(() => {
-    const counts = new Map<ColorBucket, number>();
-    for (const i of heroIcons) {
-      const b = colorBucket(i.hex);
-      counts.set(b, (counts.get(b) ?? 0) + 1);
-    }
-    return counts;
-  }, [heroIcons]);
-
-  const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    const colors = activeColors;
-    return heroIcons.filter((i) => {
-      if (colors.size > 0 && !colors.has(colorBucket(i.hex))) return false;
-      if (!q) return true;
+  // Pre-calculate search strings and color buckets once per icon manifest update
+  // to avoid redundant string allocations and hash lookups on every keystroke
+  const processedHeroIcons = useMemo(() => {
+    return heroIcons.map((i) => {
       const hay = [
         i.title,
         i.slug,
@@ -71,9 +58,38 @@ export function Google2026Landing({ icons }: Props) {
       ]
         .join(" ")
         .toLowerCase();
-      return hay.includes(q);
+      return {
+        icon: i,
+        bucket: colorBucket(i.hex),
+        searchString: hay,
+      };
     });
-  }, [heroIcons, query, activeColors]);
+  }, [heroIcons]);
+
+  // Pre-compute which buckets are actually represented in this set so we
+  // can grey out chips for buckets that would always produce zero results.
+  const bucketCounts = useMemo(() => {
+    const counts = new Map<ColorBucket, number>();
+    for (let j = 0; j < processedHeroIcons.length; j++) {
+      const b = processedHeroIcons[j].bucket;
+      counts.set(b, (counts.get(b) ?? 0) + 1);
+    }
+    return counts;
+  }, [processedHeroIcons]);
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    const hasColors = activeColors.size > 0;
+    const out: IconEntry[] = [];
+
+    // Single-pass for loop avoiding redundant array allocations (.filter().map())
+    for (let j = 0; j < processedHeroIcons.length; j++) {
+      const pi = processedHeroIcons[j];
+      if (hasColors && !activeColors.has(pi.bucket)) continue;
+      if (!q || pi.searchString.includes(q)) out.push(pi.icon);
+    }
+    return out;
+  }, [processedHeroIcons, query, activeColors]);
 
   function toggleColor(id: ColorBucket) {
     setActiveColors((prev) => {

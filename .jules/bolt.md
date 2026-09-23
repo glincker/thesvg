@@ -51,3 +51,6 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2024-05-18 - Single-Pass Loop Optimization for React Arrays
 **Learning:** Chaining array higher-order methods (`.map().filter().filter()`) inside a React `useMemo` forces multiple O(N) passes and generates temporary intermediary arrays that get discarded, triggering unnecessary garbage collection overhead and blocking the JS thread.
 **Action:** Always collapse contiguous `.map()` and `.filter()` chains within a `useMemo` into a single-pass `for` loop, using early `continue` statements to simulate filters and minimize memory allocation.
+## 2024-05-18 - Pre-calculating Search Values and Single-Pass Loops
+**Learning:** In `Google2026Landing`, a React component filtering thousands of icons, performing `.toLowerCase()`, creating arrays (`[i.title, i.slug].join(" ")`), and doing math (`colorBucket`) inside a `useMemo` that runs on every keystroke (`query` dependency) creates significant allocation overhead. Furthermore, `.filter().map()` chains force multiple passes over the array.
+**Action:** Always pre-calculate search strings and derived values (like `colorBucket`) in a *separate* `useMemo` that only depends on the source data (`heroIcons`), saving all those allocations per keystroke. Then, use a single-pass `for` loop in the `query` dependent `useMemo` to filter and map without allocating intermediate arrays.
