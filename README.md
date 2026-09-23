@@ -17,6 +17,7 @@
   <a href="https://www.npmjs.com/package/thesvg"><img src="https://img.shields.io/npm/dm/thesvg?style=flat-square&color=F97316&label=downloads" alt="downloads" /></a>
   <a href="https://www.jsdelivr.com/package/gh/glincker/thesvg"><img src="https://data.jsdelivr.com/v1/package/gh/glincker/thesvg/badge" alt="jsDelivr" /></a>
   <a href="https://github.com/glincker/thesvg/stargazers"><img src="https://img.shields.io/github/stars/glincker/thesvg?style=flat-square&label=stars" alt="stars" /></a>
+  <a href="https://discord.gg/Ar5pcaZB99"><img src="https://img.shields.io/discord/829168897080557579?style=flat-square&logo=discord&logoColor=white&label=discord&color=5865F2" alt="Discord" /></a>
   <a href="https://github.com/glincker/thesvg"><img src="https://img.shields.io/badge/icons-7%2C400%2B-F97316?style=flat-square" alt="7,400+ icons" /></a>
   <a href="https://github.com/glincker/thesvg/blob/main/LICENSE"><img src="https://img.shields.io/github/license/glincker/thesvg?style=flat-square" alt="license" /></a>
   <a href="https://www.figma.com/community/plugin/1612997159050367763"><img src="https://img.shields.io/badge/Figma-Plugin-F24E1E?style=flat-square&logo=figma&logoColor=white" alt="Figma" /></a>
@@ -38,6 +39,7 @@
   <a href="#api">API</a> &nbsp;&bull;&nbsp;
   <a href="#packages">Packages</a> &nbsp;&bull;&nbsp;
   <a href="https://thesvg.org/compare">Compare</a> &nbsp;&bull;&nbsp;
+  <a href="#community">Community</a> &nbsp;&bull;&nbsp;
   <a href="#contributing">Contribute</a>
 </p>
 
@@ -272,6 +274,12 @@ You can also clone the repo (~30 MB) and self-host. The codebase is MIT-licensed
 Icons are organized into 115+ categories:
 
 `AI` `Analytics` `Identity` `Automotive` `Aviation` `Browser` `Cloud` `CMS` `Community` `Crypto` `Database` `Design` `DevTool` `Education` `Entertainment` `Finance` `Food` `Framework` `Gaming` `Hardware` `Hosting` `IoT` `Language` `Library` `Linux` `Media` `Music` `Payment` `Platform` `Privacy` `Security` `Self-Hosted` `Shopping` `Social` `Software` and more...
+
+## Community
+
+Questions, icon requests, or showing off what you built? Join the official GLINR Discord, home of theSVG and every other GLINCKER open source project. theSVG has its own forum there, and new releases post to it automatically.
+
+<a href="https://discord.gg/Ar5pcaZB99"><img src="https://discord.com/api/guilds/829168897080557579/widget.png?style=banner2" alt="Join the GLINR Discord" /></a>
 
 ## Contributing
 

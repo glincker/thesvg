@@ -133,6 +133,12 @@ For maximum control, use individual icon imports:
 Over 6,500 brand icons are available. Browse the full list at
 [thesvg.org](https://thesvg.org).
 
+## Community
+
+Questions, icon requests, or ideas? Join the [GLINR Discord](https://discord.gg/Ar5pcaZB99), where theSVG has its own forum.
+
+[![Discord](https://img.shields.io/discord/829168897080557579?style=flat-square&logo=discord&logoColor=white&label=discord&color=5865F2)](https://discord.gg/Ar5pcaZB99)
+
 ## License
 
 MIT - see [LICENSE](./LICENSE).

@@ -132,6 +132,12 @@ Use icons directly without a bundler:
 
 Found a missing icon or incorrect data? [Open an issue](https://github.com/glincker/thesvg/issues) or [submit an icon](https://thesvg.org/submit) on the website.
 
+## Community
+
+Questions, icon requests, or ideas? Join the [GLINR Discord](https://discord.gg/Ar5pcaZB99), where theSVG has its own forum.
+
+[![Discord](https://img.shields.io/discord/829168897080557579?style=flat-square&logo=discord&logoColor=white&label=discord&color=5865F2)](https://discord.gg/Ar5pcaZB99)
+
 ## License
 
 Icons are distributed under their respective upstream licenses (CC0-1.0, MIT, etc.). See each icon's `license` field.
