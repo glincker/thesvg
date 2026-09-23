@@ -58,6 +58,9 @@ export interface IconEntry {
 
 const icons = iconsData as IconEntry[];
 
+// Pre-compute a Map for O(1) lookups by slug, avoiding repeated O(N) array.find calls
+const iconsBySlug = new Map<string, IconEntry>(icons.map((i) => [i.slug, i]));
+
 export function getAllIcons(): IconEntry[] {
   return icons;
 }
@@ -67,7 +70,7 @@ export function getIconsByCollection(collection: Collection): IconEntry[] {
 }
 
 export function getIconBySlug(slug: string): IconEntry | undefined {
-  return icons.find((icon) => icon.slug === slug);
+  return iconsBySlug.get(slug);
 }
 
 export function getIconsByCategory(category: string): IconEntry[] {
