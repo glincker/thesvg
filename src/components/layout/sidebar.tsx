@@ -152,6 +152,8 @@ export function Sidebar({
                   <button
                     type="button"
                     onClick={() => setCollectionsExpanded((prev) => !prev)}
+                    aria-expanded={collectionsExpanded}
+                    aria-controls="collections-menu"
                     className="flex w-full items-center justify-between rounded-lg px-1 pt-3 pb-1.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/70 transition-colors hover:text-foreground"
                   >
                     Collections
@@ -163,6 +165,7 @@ export function Sidebar({
                     />
                   </button>
                   <div
+                    id="collections-menu"
                     className={cn(
                       "flex flex-col gap-0.5 overflow-hidden transition-all duration-300",
                       collectionsExpanded ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0"
@@ -202,6 +205,8 @@ export function Sidebar({
                 <button
                   type="button"
                   onClick={() => setFeaturedExpanded((prev) => !prev)}
+                  aria-expanded={featuredExpanded}
+                  aria-controls="featured-menu"
                   className="flex w-full items-center justify-between rounded-lg px-1 pt-3 pb-1.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/70 transition-colors hover:text-foreground"
                 >
                   Featured
@@ -213,6 +218,7 @@ export function Sidebar({
                   />
                 </button>
                 <div
+                  id="featured-menu"
                   className={cn(
                     "flex flex-col gap-0.5 overflow-hidden transition-all duration-300",
                     featuredExpanded ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
