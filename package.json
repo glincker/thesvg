@@ -12,7 +12,7 @@
   "dependencies": {
     "@base-ui/react": "^1.8.0",
     "@phosphor-icons/react": "^2.1.10",
-    "@tanstack/react-virtual": "^3.14.12",
+    "@tanstack/react-virtual": "^3.14.13",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "class-variance-authority": "^0.7.1",
@@ -21,7 +21,7 @@
     "dompurify": "^3.4.15",
     "fuse.js": "^7.5.0",
     "lucide-react": "^1.47.0",
-    "next": "16.3.4",
+    "next": "16.3.5",
     "next-themes": "^0.4.6",
     "posthog-js": "^1.434.2",
     "react": "19.3.0",
