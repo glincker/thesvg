@@ -1,0 +1,65 @@
+--- src/components/landing/google-2026-landing.tsx
++++ src/components/landing/google-2026-landing.tsx
+@@ -48,34 +48,43 @@
+     return () => window.clearTimeout(id);
+   }, [query, recordSearch]);
+
+-  // Pre-compute which buckets are actually represented in this set so we
+-  // can grey out chips for buckets that would always produce zero results.
+-  const bucketCounts = useMemo(() => {
+-    const counts = new Map<ColorBucket, number>();
+-    for (const i of heroIcons) {
+-      const b = colorBucket(i.hex);
+-      counts.set(b, (counts.get(b) ?? 0) + 1);
+-    }
+-    return counts;
+-  }, [heroIcons]);
+-
+-  const filtered = useMemo(() => {
+-    const q = query.trim().toLowerCase();
+-    const colors = activeColors;
+-    return heroIcons.filter((i) => {
+-      if (colors.size > 0 && !colors.has(colorBucket(i.hex))) return false;
+-      if (!q) return true;
++  // Pre-calculate search strings and color buckets once per icon manifest update
++  // to avoid redundant string allocations and hash lookups on every keystroke
++  const processedHeroIcons = useMemo(() => {
++    return heroIcons.map((i) => {
+       const hay = [
+         i.title,
+         i.slug,
+         ...(i.aliases ?? []),
+         ...(i.categories ?? []),
+       ]
+         .join(" ")
+         .toLowerCase();
+-      return hay.includes(q);
++      return {
++        icon: i,
++        bucket: colorBucket(i.hex),
++        searchString: hay,
++      };
+     });
+-  }, [heroIcons, query, activeColors]);
++  }, [heroIcons]);
++
++  // Pre-compute which buckets are actually represented in this set so we
++  // can grey out chips for buckets that would always produce zero results.
++  const bucketCounts = useMemo(() => {
++    const counts = new Map<ColorBucket, number>();
++    for (let j = 0; j < processedHeroIcons.length; j++) {
++      const b = processedHeroIcons[j].bucket;
++      counts.set(b, (counts.get(b) ?? 0) + 1);
++    }
++    return counts;
++  }, [processedHeroIcons]);
++
++  const filtered = useMemo(() => {
++    const q = query.trim().toLowerCase();
++    return processedHeroIcons
++      .filter((i) => (activeColors.size === 0 || activeColors.has(i.bucket)) && (!q || i.searchString.includes(q)))
++      .map((i) => i.icon);
++  }, [processedHeroIcons, query, activeColors]);
+
+   function toggleColor(id: ColorBucket) {
+     setActiveColors((prev) => {
