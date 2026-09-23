@@ -5639,7 +5639,7 @@
       "mono": "/icons/apple-tv/mono.svg"
     },
     "license": "CC0-1.0",
-    "url": "https://en.wikipedia.org/wiki/File:Apple_TV_(logo).svg",
+    "url": "https://tv.apple.com",
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
@@ -52251,6 +52251,26 @@
     "collection": "auth-badges"
   },
   {
+    "slug": "digitus",
+    "title": "Digitus",
+    "aliases": [
+      "DIGITUS"
+    ],
+    "hex": "0096B4",
+    "categories": [
+      "Hardware",
+      "Electronics",
+      "Networking"
+    ],
+    "variants": {
+      "default": "/icons/digitus/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://digitus.com/",
+    "dateAdded": "2026-09-22",
+    "collection": "brands"
+  },
+  {
     "slug": "diners-club",
     "title": "Diners Club",
     "aliases": [],
@@ -70367,6 +70387,26 @@
     "url": "https://grain.com"
   },
   {
+    "slug": "gram",
+    "title": "Gram",
+    "aliases": [],
+    "hex": "30A1F5",
+    "categories": [
+      "Crypto",
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/gram/default.svg",
+      "wordmark": "/icons/gram/wordmark.svg",
+      "wordmarkDark": "/icons/gram/wordmarkDark.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://ton.org/",
+    "guidelines": "https://ton.org/media",
+    "dateAdded": "2026-09-22",
+    "collection": "brands"
+  },
+  {
     "slug": "grammarly",
     "title": "Grammarly",
     "aliases": [],
@@ -72277,7 +72317,7 @@
       "mono": "/icons/hbo-max/mono.svg"
     },
     "license": "CC0-1.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Max_2025_logo.svg",
+    "url": "https://www.hbomax.com/",
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
@@ -96811,6 +96851,28 @@
     "collection": "brands"
   },
   {
+    "slug": "nodebo",
+    "title": "Nødebo",
+    "aliases": [
+      "Nodebo"
+    ],
+    "hex": "1C3144",
+    "categories": [
+      "AI",
+      "DevTool",
+      "Security"
+    ],
+    "variants": {
+      "default": "/icons/nodebo/default.svg",
+      "mono": "/icons/nodebo/mono.svg"
+    },
+    "license": "CC-BY-ND-4.0",
+    "url": "https://nodebo.com/",
+    "guidelines": "https://nodebo.com/brand",
+    "dateAdded": "2026-09-22",
+    "collection": "brands"
+  },
+  {
     "slug": "nodedotjs",
     "title": "Node.js",
     "aliases": [],
@@ -97546,6 +97608,25 @@
     "license": "CC0-1.0",
     "url": "https://www.nowtv.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "nowly",
+    "title": "Nowly",
+    "aliases": [],
+    "hex": "22D3EE",
+    "categories": [
+      "Communication",
+      "Entertainment",
+      "Gaming"
+    ],
+    "variants": {
+      "default": "/icons/nowly/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://nowly.me/",
+    "guidelines": "https://nowly.me/branding",
+    "dateAdded": "2026-09-22",
     "collection": "brands"
   },
   {
@@ -98782,20 +98863,24 @@
     "slug": "okta",
     "title": "Okta",
     "aliases": [],
-    "hex": "007DC1",
+    "hex": "000000",
     "categories": [
       "Software",
-      "Platform"
+      "Security",
+      "Identity"
     ],
     "variants": {
       "default": "/icons/okta/default.svg",
-      "mono": "/icons/okta/mono.svg"
+      "mono": "/icons/okta/mono.svg",
+      "wordmark": "/icons/okta/wordmark.svg",
+      "wordmarkDark": "/icons/okta/wordmarkDark.svg"
     },
     "license": "CC0-1.0",
-    "url": "https://www.okta.com/press-room/media-assets/",
+    "url": "https://www.okta.com/",
     "guidelines": "https://www.okta.com/terms-of-use-for-okta-content/",
-    "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "dateAdded": "2026-09-22",
+    "collection": "brands",
+    "supersedes": "okta-legacy"
   },
   {
     "slug": "okta-badge",
@@ -98813,6 +98898,26 @@
     "url": "https://www.okta.com/press-room/media-assets/",
     "dateAdded": "2026-09-12",
     "collection": "auth-badges"
+  },
+  {
+    "slug": "okta-legacy",
+    "title": "Okta (legacy)",
+    "aliases": [],
+    "hex": "007DC1",
+    "categories": [
+      "Software",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/okta-legacy/default.svg",
+      "mono": "/icons/okta-legacy/mono.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.okta.com/press-room/media-assets/",
+    "guidelines": "https://www.okta.com/terms-of-use-for-okta-content/",
+    "dateAdded": "2026-03-07",
+    "collection": "brands",
+    "supersededBy": "okta"
   },
   {
     "slug": "okteto",
