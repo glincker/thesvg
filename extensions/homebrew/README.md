@@ -25,3 +25,7 @@ Before the workflow can run, a repository maintainer must:
 1. Create the tap repo at `github.com/glincker/homebrew-thesvg`.
 2. Add a fine-grained PAT with `contents: write` on that repo as the
    `HOMEBREW_TAP_TOKEN` secret in the main repo settings.
+
+## Community
+
+Questions or ideas? Join the [GLINR Discord](https://discord.gg/Ar5pcaZB99).

@@ -100,6 +100,10 @@ vim.keymap.set("n", "<leader>sp", "<cmd>TheSVGPath<cr>",   { desc = "theSVG CDN 
 When the network is unavailable, a built-in list of 10 popular icons is shown so the
 picker remains usable offline.
 
+## Community
+
+Questions or ideas? Join the [GLINR Discord](https://discord.gg/Ar5pcaZB99).
+
 ## License
 
 MIT. See [LICENSE](LICENSE).
