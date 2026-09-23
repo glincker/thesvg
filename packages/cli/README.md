@@ -152,6 +152,12 @@ When using `--format vue`, icons are wrapped in a Vue template:
 
 - Node.js >= 18 (uses native `fetch`)
 
+## Community
+
+Questions, icon requests, or ideas? Join the [GLINR Discord](https://discord.gg/Ar5pcaZB99), where theSVG has its own forum.
+
+[![Discord](https://img.shields.io/discord/829168897080557579?style=flat-square&logo=discord&logoColor=white&label=discord&color=5865F2)](https://discord.gg/Ar5pcaZB99)
+
 ## License
 
 MIT

@@ -102,3 +102,9 @@ To serve it from a custom subdomain (e.g. `mcp.thesvg.org`):
 
 - Cloudflare account with Workers enabled (to deploy)
 - Node.js >= 18 (to build/test locally)
+
+## Community
+
+Questions, icon requests, or ideas? Join the [GLINR Discord](https://discord.gg/Ar5pcaZB99), where theSVG has its own forum.
+
+[![Discord](https://img.shields.io/discord/829168897080557579?style=flat-square&logo=discord&logoColor=white&label=discord&color=5865F2)](https://discord.gg/Ar5pcaZB99)
