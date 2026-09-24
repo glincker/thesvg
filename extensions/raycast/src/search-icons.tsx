@@ -46,7 +46,7 @@ export default function SearchIcons() {
       isLoading={isLoading}
       searchText={searchText}
       onSearchTextChange={setSearchText}
-      searchBarPlaceholder="Search 6,500+ brand icons..."
+      searchBarPlaceholder="Search 7,400+ brand icons..."
       filtering={false}
       searchBarAccessory={
         <List.Dropdown
