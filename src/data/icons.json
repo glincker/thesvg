@@ -73664,7 +73664,8 @@
     ],
     "variants": {
       "default": "/icons/honda/default.svg",
-      "mono": "/icons/honda/mono.svg"
+      "mono": "/icons/honda/mono.svg",
+      "wordmark": "/icons/honda/wordmark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://www.honda.ie",
