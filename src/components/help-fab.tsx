@@ -101,7 +101,7 @@ export function HelpFab({ iconCount }: { iconCount: string }) {
       <div className="fixed right-5 bottom-5 z-40 hidden lg:block">
         <button
           onClick={handleOpen}
-          className="group relative flex h-10 w-10 items-center justify-center rounded-full border border-border/60 bg-card/90 text-muted-foreground shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-orange-500/40 hover:text-orange-500 hover:shadow-xl hover:shadow-orange-500/10 active:scale-95 dark:border-white/10 dark:bg-white/5"
+          className="group relative flex h-10 w-10 items-center justify-center rounded-full border border-border/60 bg-card/90 text-muted-foreground shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-orange-500/40 hover:text-orange-500 hover:shadow-xl hover:shadow-orange-500/10 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/50 focus-visible:ring-offset-2 dark:border-white/10 dark:bg-white/5"
           aria-label="Help and tips"
         >
           <Sparkles className="h-4 w-4 transition-transform duration-300 group-hover:rotate-12" />
@@ -149,7 +149,7 @@ export function HelpFab({ iconCount }: { iconCount: string }) {
               {/* Close */}
               <button
                 onClick={handleClose}
-                className="absolute top-4 right-4 rounded-xl p-2 text-zinc-500 transition-all duration-200 hover:bg-white/10 hover:text-zinc-300 hover:rotate-90"
+                className="absolute top-4 right-4 rounded-xl p-2 text-zinc-500 transition-all duration-200 hover:bg-white/10 hover:text-zinc-300 hover:rotate-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
                 aria-label="Close"
               >
                 <X className="h-4 w-4" />
@@ -198,7 +198,7 @@ export function HelpFab({ iconCount }: { iconCount: string }) {
                 </p>
                 <button
                   onClick={handleClose}
-                  className="group relative overflow-hidden rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 px-5 py-2 text-xs font-semibold text-white shadow-lg shadow-orange-500/25 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/40 active:scale-95"
+                  className="group relative overflow-hidden rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 px-5 py-2 text-xs font-semibold text-white shadow-lg shadow-orange-500/25 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/40 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900"
                 >
                   {/* Shimmer effect */}
                   <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
