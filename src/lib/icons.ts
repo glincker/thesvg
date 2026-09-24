@@ -66,14 +66,32 @@ export function getIconsByCollection(collection: Collection): IconEntry[] {
   return icons.filter((icon) => icon.collection === collection);
 }
 
+let slugIndex: Map<string, IconEntry> | null = null;
+
 export function getIconBySlug(slug: string): IconEntry | undefined {
-  return icons.find((icon) => icon.slug === slug);
+  if (!slugIndex) {
+    slugIndex = new Map();
+    for (let i = 0; i < icons.length; i++) {
+      slugIndex.set(icons[i].slug, icons[i]);
+    }
+  }
+  return slugIndex.get(slug);
 }
 
 export function getIconsByCategory(category: string): IconEntry[] {
-  return icons.filter((icon) =>
-    icon.categories.some((c) => c.toLowerCase() === category.toLowerCase())
-  );
+  const target = category.toLowerCase();
+  const result: IconEntry[] = [];
+  for (let i = 0; i < icons.length; i++) {
+    const icon = icons[i];
+    const cats = icon.categories;
+    for (let j = 0; j < cats.length; j++) {
+      if (cats[j].toLowerCase() === target) {
+        result.push(icon);
+        break;
+      }
+    }
+  }
+  return result;
 }
 
 export function getAllCategories(): string[] {
