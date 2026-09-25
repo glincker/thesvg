@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 3.3.9
+
+### Patch Changes
+
+- feat: add nowly, nodebo, digitus, gram icons and refresh okta mark ([#1142](https://github.com/glincker/thesvg/issues/1142))
+
 ## 3.3.8
 
 ### Patch Changes
