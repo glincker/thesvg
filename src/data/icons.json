@@ -1962,6 +1962,26 @@
     "collection": "brands"
   },
   {
+    "slug": "ai-shoggoth",
+    "title": "AI Shoggoth",
+    "aliases": [
+      "shoggoth",
+      "shoggoth with smiley face",
+      "rlhf"
+    ],
+    "hex": "97B285",
+    "categories": [
+      "AI"
+    ],
+    "variants": {
+      "default": "/icons/ai-shoggoth/default.svg"
+    },
+    "license": "Unknown — original artwork attributed to @TetraspaceWest; redistribution permission requires maintainer review",
+    "url": "https://knowyourmeme.com/memes/shoggoth-with-smiley-face-artificial-intelligence",
+    "dateAdded": "2026-09-25",
+    "collection": "community"
+  },
+  {
     "slug": "ai-studio-google",
     "title": "AI Studio (Google)",
     "aliases": [],
