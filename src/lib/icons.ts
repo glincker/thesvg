@@ -74,9 +74,21 @@ export function getIconBySlug(slug: string): IconEntry | undefined {
 }
 
 export function getIconsByCategory(category: string): IconEntry[] {
-  return icons.filter((icon) =>
-    icon.categories.some((c) => c.toLowerCase() === category.toLowerCase())
-  );
+  // ⚡ Bolt: Single-pass for loop to avoid multiple allocations from chained .filter().some()
+  // Hoisted category.toLowerCase() to prevent repeated string allocations.
+  const targetCategory = category.toLowerCase();
+  const out: IconEntry[] = [];
+  for (let i = 0; i < icons.length; i++) {
+    const icon = icons[i];
+    const categories = icon.categories;
+    for (let j = 0; j < categories.length; j++) {
+      if (categories[j].toLowerCase() === targetCategory) {
+        out.push(icon);
+        break;
+      }
+    }
+  }
+  return out;
 }
 
 export function getAllCategories(): string[] {
@@ -94,12 +106,19 @@ export function getCategoryCounts(collection?: Collection): { name: string; coun
   // Default view: count brand-relevant collections only, so cloud architecture
   // taxonomy (Compute, Integration, Kubernetes, ...) does not bury brand
   // categories. When a specific collection is requested, count just that one.
-  const source = collection
-    ? icons.filter((i) => i.collection === collection)
-    : icons.filter((i) => !ARCHITECTURE_COLLECTIONS.has(i.collection));
-  for (const icon of source) {
-    for (const c of icon.categories) {
-      counts.set(c, (counts.get(c) || 0) + 1);
+  // ⚡ Bolt: Use a single-pass for loop to prevent allocating intermediate arrays.
+  for (let i = 0; i < icons.length; i++) {
+    const icon = icons[i];
+    const match = collection
+      ? icon.collection === collection
+      : !ARCHITECTURE_COLLECTIONS.has(icon.collection);
+
+    if (match) {
+      const categories = icon.categories;
+      for (let j = 0; j < categories.length; j++) {
+        const c = categories[j];
+        counts.set(c, (counts.get(c) || 0) + 1);
+      }
     }
   }
   return [...counts.entries()]
