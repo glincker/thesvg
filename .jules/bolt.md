@@ -54,3 +54,6 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2024-05-18 - Pre-calculating Search Values and Single-Pass Loops
 **Learning:** In `Google2026Landing`, a React component filtering thousands of icons, performing `.toLowerCase()`, creating arrays (`[i.title, i.slug].join(" ")`), and doing math (`colorBucket`) inside a `useMemo` that runs on every keystroke (`query` dependency) creates significant allocation overhead. Furthermore, `.filter().map()` chains force multiple passes over the array.
 **Action:** Always pre-calculate search strings and derived values (like `colorBucket`) in a *separate* `useMemo` that only depends on the source data (`heroIcons`), saving all those allocations per keystroke. Then, use a single-pass `for` loop in the `query` dependent `useMemo` to filter and map without allocating intermediate arrays.
+## 2025-05-18 - Avoid chained `.filter().some()` array methods in hot paths
+**Learning:** Chained array methods like `.filter().some()` and intermediate array allocations (like when calling `.filter()` before an iteration) create severe performance bottlenecks when operating on large arrays in hot paths.
+**Action:** Replace these operations with single-pass `for` loops. Unrolling nested higher-order methods and preventing intermediate `.filter()` allocations directly avoids memory pressure overhead.
