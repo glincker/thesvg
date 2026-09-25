@@ -202,6 +202,7 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
               aria-label={
                 isFavorite ? "Remove from favorites" : "Add to favorites"
               }
+              aria-pressed={isFavorite}
             >
               <Heart
                 className={cn("h-3.5 w-3.5", isFavorite && "fill-current")}
@@ -254,6 +255,7 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
                   <button
                     key={key}
                     type="button"
+                    aria-pressed={activeVariant === key}
                     onClick={() => {
                       setActiveVariant(key);
                       if (key !== activeVariant) {
@@ -365,6 +367,11 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
 
           {/* Footer: Full page CTA */}
           <div className="border-t border-border/30 p-3 sm:p-4">
+            <div className="sr-only" role="status" aria-live="polite">
+              {copiedFormat
+                ? `${copiedFormat === "cli" ? "CLI command" : FORMAT_BUTTONS.find((f) => f.value === copiedFormat)?.label} copied`
+                : ""}
+            </div>
             <Link
               href={`/icon/${icon.slug}`}
               prefetch={false}
