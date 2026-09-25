@@ -325,10 +325,16 @@ export function HomeHero({
   // popular grids, category rows). The hero carousel content renders immediately;
   // icons appear progressively as the manifest loads.
   const [icons, setIcons] = useState<IconEntry[]>([]);
-  const iconsBySlug = useMemo(
-    () => new Map(icons.map((i) => [i.slug, i])),
-    [icons]
-  );
+  const iconsBySlug = useMemo(() => {
+    // Single-pass map initialization to avoid creating an intermediate array of tuples
+    // which causes significant garbage collection overhead for large datasets.
+    const map = new Map<string, IconEntry>();
+    for (let i = 0; i < icons.length; i++) {
+      const icon = icons[i];
+      map.set(icon.slug, icon);
+    }
+    return map;
+  }, [icons]);
   useEffect(() => {
     loadIconsManifest()
       .then(setIcons)
@@ -375,13 +381,16 @@ export function HomeHero({
   const dismissCompactHero = useCompactHeroStore((s) => s.dismiss);
   const recentViewedIcons = useMemo(() => {
     if (recentViewed.length === 0 || icons.length === 0) return [];
-    return recentViewed
-      .map((r) => {
-        const entry = iconsBySlug.get(r.slug);
-        return entry ? { entry, ts: r.ts } : null;
-      })
-      .filter((v): v is { entry: IconEntry; ts: number } => Boolean(v))
-      .slice(0, 8);
+    const result: { entry: IconEntry; ts: number }[] = [];
+    for (let i = 0; i < recentViewed.length; i++) {
+      const r = recentViewed[i];
+      const entry = iconsBySlug.get(r.slug);
+      if (entry) {
+        result.push({ entry, ts: r.ts });
+        if (result.length >= 8) break;
+      }
+    }
+    return result;
   }, [recentViewed, icons, iconsBySlug]);
 
   const [now, setNow] = useState(() => Date.now());
@@ -420,9 +429,12 @@ export function HomeHero({
       "auth-badges": POPULAR_AUTH_BADGES_SLUGS,
     };
     const slugs = slugMap[activeCollection] ?? POPULAR_SLUGS;
-    return slugs
-      .map((slug) => iconsBySlug.get(slug))
-      .filter(Boolean) as IconEntry[];
+    const result: IconEntry[] = [];
+    for (let i = 0; i < slugs.length; i++) {
+      const entry = iconsBySlug.get(slugs[i]);
+      if (entry) result.push(entry);
+    }
+    return result;
   }, [activeCollection, iconsBySlug]);
 
   // Categories for active collection
@@ -465,10 +477,15 @@ export function HomeHero({
     const activeSlide = collectionSlides.length > 0
       ? collectionSlides[currentSlide % collectionSlides.length]
       : fallbackSlide;
-    const slugs = activeSlide.floatSlugs.slice(0, 6);
-    return slugs
-      .map((s) => iconsBySlug.get(s))
-      .filter(Boolean) as IconEntry[];
+    const result: IconEntry[] = [];
+    for (let i = 0; i < activeSlide.floatSlugs.length; i++) {
+      const entry = iconsBySlug.get(activeSlide.floatSlugs[i]);
+      if (entry) {
+        result.push(entry);
+        if (result.length >= 6) break;
+      }
+    }
+    return result;
   }, [currentSlide, collectionSlides, fallbackSlide, iconsBySlug]);
 
   // Predefined positions for floating icons (scattered, not grid). Timings
