@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/glincker/thesvg">
-    <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" alt="theSVG - 6,500+ Brand SVG Icons" width="700" />
+    <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" alt="theSVG - 7,400+ Brand SVG Icons" width="700" />
   </a>
 </p>
 
@@ -11,7 +11,7 @@
 
 # @thesvg/react
 
-Typed React SVG components for all 6,500+ brand icons from [thesvg.org](https://thesvg.org).
+Typed React SVG components for all 7,400+ brand icons from [thesvg.org](https://thesvg.org).
 
 - Zero runtime dependencies (React is a peer dep)
 - TypeScript strict mode with full `SVGProps<SVGSVGElement>` support
@@ -219,7 +219,7 @@ Breaking changes:
 
 ## Available icons
 
-Over 6,500 brand icons are available. Browse the full list at
+Over 7,400 brand icons are available. Browse the full list at
 [thesvg.org](https://thesvg.org).
 
 ## Community

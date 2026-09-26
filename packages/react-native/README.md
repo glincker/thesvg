@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/glincker/thesvg">
-    <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" alt="theSVG - 6,500+ Brand SVG Icons" width="700" />
+    <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" alt="theSVG - 7,400+ Brand SVG Icons" width="700" />
   </a>
 </p>
 
@@ -11,7 +11,7 @@
 
 # @thesvg/react-native
 
-Typed React Native SVG components for all 6,500+ brand icons from [thesvg.org](https://thesvg.org).
+Typed React Native SVG components for all 7,400+ brand icons from [thesvg.org](https://thesvg.org).
 
 - Renders via [`react-native-svg`](https://github.com/software-mansion/react-native-svg) (peer dependency)
 - Works in **Expo Go** with no config plugin and no native setup
@@ -163,7 +163,7 @@ the same pattern as [`lucide-react-native`](https://github.com/lucide-icons/luci
   `Circle`, `G`, `Defs`, `LinearGradient`, ...) and renders it.
 
 This keeps per-icon modules to just data, so bundle size scales with icon
-count instead of with duplicated render logic across 6,500+ files.
+count instead of with duplicated render logic across 7,400+ files.
 
 Supported SVG elements: `path`, `circle`, `rect`, `ellipse`, `line`,
 `polygon`, `polyline`, `g`, `defs`, `linearGradient`, `radialGradient`,
@@ -185,7 +185,7 @@ so visual content is never silently lost.
 
 ## Available icons
 
-Over 6,500 brand icons are available. Browse the full list at
+Over 7,400 brand icons are available. Browse the full list at
 [thesvg.org](https://thesvg.org).
 
 ## Community
