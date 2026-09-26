@@ -82,7 +82,11 @@ export function RecentsPage() {
     loadIconsManifest()
       .then((manifest) => {
         if (!active) return;
-        setIconsBySlug(new Map(manifest.map((i) => [i.slug, i])));
+        const bySlug = new Map<string, IconEntry>();
+        for (let i = 0; i < manifest.length; i++) {
+          bySlug.set(manifest[i].slug, manifest[i]);
+        }
+        setIconsBySlug(bySlug);
         setManifestLoaded(true);
       })
       .catch(() => {

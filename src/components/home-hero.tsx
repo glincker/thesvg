@@ -325,10 +325,13 @@ export function HomeHero({
   // popular grids, category rows). The hero carousel content renders immediately;
   // icons appear progressively as the manifest loads.
   const [icons, setIcons] = useState<IconEntry[]>([]);
-  const iconsBySlug = useMemo(
-    () => new Map(icons.map((i) => [i.slug, i])),
-    [icons]
-  );
+  const iconsBySlug = useMemo(() => {
+    const map = new Map<string, IconEntry>();
+    for (let i = 0; i < icons.length; i++) {
+      map.set(icons[i].slug, icons[i]);
+    }
+    return map;
+  }, [icons]);
   useEffect(() => {
     loadIconsManifest()
       .then(setIcons)
