@@ -60,7 +60,10 @@ export function QuickImport({ onImport, className }: QuickImportProps) {
 
   const starterIcons = useMemo(() => {
     if (!icons) return [];
-    const lookup = new Map(icons.map((i) => [i.slug, i]));
+    const lookup = new Map<string, IconEntry>();
+    for (let i = 0; i < icons.length; i++) {
+      lookup.set(icons[i].slug, icons[i]);
+    }
     return STARTER_SLUGS.map((s) => lookup.get(s)).filter(
       (x): x is IconEntry => Boolean(x),
     );

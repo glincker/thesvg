@@ -191,7 +191,10 @@ export function Header({ collectionCounts }: HeaderProps) {
     loadIconsManifest()
       .then((icons) => {
         if (!active) return;
-        const bySlug = new Map(icons.map((i) => [i.slug, i]));
+        const bySlug = new Map<string, IconEntry>();
+        for (let i = 0; i < icons.length; i++) {
+          bySlug.set(icons[i].slug, icons[i]);
+        }
         const resolved = recentViewed
           .map((r) => bySlug.get(r.slug))
           .filter((i): i is IconEntry => Boolean(i));

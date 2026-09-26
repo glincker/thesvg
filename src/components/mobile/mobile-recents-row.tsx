@@ -38,7 +38,10 @@ export function MobileRecentsRow({
     loadIconsManifest()
       .then((manifest) => {
         if (!active) return;
-        const bySlug = new Map(manifest.map((i) => [i.slug, i]));
+        const bySlug = new Map<string, IconEntry>();
+        for (let i = 0; i < manifest.length; i++) {
+          bySlug.set(manifest[i].slug, manifest[i]);
+        }
         const resolved = viewed
           .map((v) => bySlug.get(v.slug))
           .filter((i): i is IconEntry => Boolean(i))
