@@ -68,7 +68,7 @@
     "@types/react": "^19.3.0",
     "react-native": "^0.87.1",
     "react-native-svg": "^15.15.5",
-    "tsx": "^4.23.13",
+    "tsx": "^4.23.15",
     "typescript": "^6.0.3"
   },
   "engines": {

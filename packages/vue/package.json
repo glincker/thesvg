@@ -55,7 +55,7 @@
     "vue": ">=3.3"
   },
   "devDependencies": {
-    "tsx": "^4.23.13",
+    "tsx": "^4.23.15",
     "typescript": "^6.0.3"
   },
   "engines": {
