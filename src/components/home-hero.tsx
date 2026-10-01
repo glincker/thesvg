@@ -449,12 +449,45 @@ export function HomeHero({
     { position: "top-[15%] right-[30%]", entranceDelay: "[animation-delay:0.4s]", size: "h-6 w-6", opacity: "opacity-10", floatTiming: "[animation-delay:1.2s] [animation-duration:6.5s]" },
   ];
 
+  // Sliding switch between the two orders. "auto" picks popular-first for
+  // first-time visitors and recent-first for returning ones (see
+  // isReturningVisitor above); touching the switch overrides auto and
+  // sticks from then on. Rendered inside whichever section's header is
+  // currently first, instead of its own row, so it never pushes the grid
+  // down an extra line.
+  const orderSwitch = (
+    <button
+      type="button"
+      role="switch"
+      aria-checked={effectiveOrder === "recent"}
+      aria-label={`Showing ${effectiveOrder === "popular" ? "Popular" : "Recently Added"} first`}
+      onClick={() => setSectionOrder(effectiveOrder === "popular" ? "recent-first" : "popular-first")}
+      className="relative inline-flex h-7 w-[132px] shrink-0 items-center rounded-full bg-muted/60 p-0.5 dark:bg-white/[0.06]"
+    >
+      <span
+        className={cn(
+          "absolute top-0.5 bottom-0.5 left-0.5 w-[63px] rounded-full bg-foreground shadow-sm transition-transform duration-200 ease-out",
+          effectiveOrder === "recent" && "translate-x-[63px]"
+        )}
+      />
+      <span className={cn("relative z-10 flex w-[64px] items-center justify-center gap-1 text-[10px] font-medium transition-colors", effectiveOrder === "popular" ? "text-background" : "text-muted-foreground")}>
+        <Flame className="h-3 w-3" />
+        Popular
+      </span>
+      <span className={cn("relative z-10 flex w-[64px] items-center justify-center gap-1 text-[10px] font-medium transition-colors", effectiveOrder === "recent" ? "text-background" : "text-muted-foreground")}>
+        <Clock className="h-3 w-3" />
+        Recent
+      </span>
+    </button>
+  );
+
   const recentSection = collectionRecentIcons.length > 0 && (
     <section key="recent">
       <div className="mb-4 flex items-center gap-2">
         <Clock className="h-3.5 w-3.5 text-muted-foreground" />
         <h2 className="text-sm font-semibold text-foreground">Recently Added</h2>
         <div className="h-px flex-1 bg-border/40 dark:bg-white/[0.04]" />
+        {effectiveOrder === "recent" && orderSwitch}
         <Link
           href="/?sort=recent"
           className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
@@ -478,6 +511,7 @@ export function HomeHero({
           {activeCollection === "aws" ? "Popular AWS Services" : activeCollection === "azure" ? "Popular Azure Services" : activeCollection === "gcp" ? "Popular GCP Services" : "Popular"}
         </h2>
         <div className="h-px flex-1 bg-border/40 dark:bg-white/[0.04]" />
+        {effectiveOrder === "popular" && orderSwitch}
         <Link
           href="/?sort=popular"
           className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
@@ -492,42 +526,6 @@ export function HomeHero({
         ))}
       </div>
     </section>
-  );
-
-  // Order toggle: "auto" picks popular-first for first-time visitors and
-  // recent-first for returning ones (see isReturningVisitor above); once a
-  // visitor picks a side explicitly it overrides auto from then on.
-  const orderToggle = (
-    <div className="flex items-center gap-1.5">
-      <button
-        type="button"
-        onClick={() => setSectionOrder("popular-first")}
-        aria-pressed={effectiveOrder === "popular"}
-        className={cn(
-          "inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-medium transition-all",
-          effectiveOrder === "popular"
-            ? "bg-foreground text-background shadow-sm"
-            : "text-muted-foreground hover:bg-accent hover:text-foreground dark:hover:bg-white/[0.06]"
-        )}
-      >
-        <Flame className="h-3 w-3" />
-        Popular first
-      </button>
-      <button
-        type="button"
-        onClick={() => setSectionOrder("recent-first")}
-        aria-pressed={effectiveOrder === "recent"}
-        className={cn(
-          "inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-medium transition-all",
-          effectiveOrder === "recent"
-            ? "bg-foreground text-background shadow-sm"
-            : "text-muted-foreground hover:bg-accent hover:text-foreground dark:hover:bg-white/[0.06]"
-        )}
-      >
-        <Clock className="h-3 w-3" />
-        Recent first
-      </button>
-    </div>
   );
 
   return (
@@ -856,8 +854,8 @@ export function HomeHero({
 
       {/* Popular / Recently Added - order depends on isReturningVisitor
           (first-time sees universally-recognizable Popular first) unless
-          overridden by the explicit toggle below, which then sticks. */}
-      {orderToggle}
+          overridden by the switch embedded in whichever section is
+          currently first, which then sticks. */}
       {effectiveOrder === "recent" ? (
         <>
           {recentSection}
