@@ -64,7 +64,7 @@ export function SearchBar({
           <button
             type="button"
             onClick={() => onChange("")}
-            className="flex h-5 w-5 items-center justify-center rounded text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            className="flex h-5 w-5 items-center justify-center rounded text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             aria-label="Clear search"
           >
             <X className="h-3 w-3" />
