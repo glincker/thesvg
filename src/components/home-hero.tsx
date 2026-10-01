@@ -336,10 +336,9 @@ export function HomeHero({
   // that's the part most likely to have genuinely new content on a repeat
   // visit. An explicit toggle overrides this and sticks once set.
   const isReturningVisitor = recentViewed.length > 0;
-  const effectiveOrder: "popular" | "recent" =
-    sectionOrder === "auto"
-      ? isReturningVisitor ? "recent" : "popular"
-      : sectionOrder === "recent-first" ? "recent" : "popular";
+  let effectiveOrder: "popular" | "recent" = isReturningVisitor ? "recent" : "popular";
+  if (sectionOrder === "recent-first") effectiveOrder = "recent";
+  if (sectionOrder === "popular-first") effectiveOrder = "popular";
 
   const [now, setNow] = useState(() => Date.now());
   useEffect(() => {
@@ -488,7 +487,7 @@ export function HomeHero({
   // recent-first for returning ones (see isReturningVisitor above); once a
   // visitor picks a side explicitly it overrides auto from then on.
   const orderToggle = (
-    <div className="flex items-center gap-1.5" role="group" aria-label="Section order">
+    <div className="flex items-center gap-1.5">
       <button
         type="button"
         onClick={() => setSectionOrder("popular-first")}

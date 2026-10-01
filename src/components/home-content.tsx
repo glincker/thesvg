@@ -23,6 +23,14 @@ import { cn } from "@/lib/utils";
 
 const SORT_OPTIONS = ["default", "recent", "popular", "az", "za"] as const;
 
+const SORT_META: Record<typeof SORT_OPTIONS[number], { icon: typeof ArrowUpDown; label: string }> = {
+  default: { icon: ArrowUpDown, label: "Sort" },
+  az: { icon: ArrowDownAZ, label: "A-Z" },
+  za: { icon: ArrowDownZA, label: "Z-A" },
+  recent: { icon: Clock, label: "Recent" },
+  popular: { icon: Flame, label: "Popular" },
+};
+
 /**
  * Whether an icon matches the active category-name filter and/or category
  * search text. Pulled out of searchBase's useMemo so that hook stays a
@@ -97,6 +105,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
     }
   }, [searchParams, defaultCategory, router]);
   const sortParam = searchParams.get("sort");
+  const { icon: SortIcon, label: sortLabel } = SORT_META[(sortParam as typeof SORT_OPTIONS[number]) || "default"] ?? SORT_META.default;
   const viewParam = (searchParams.get("view") || "comfortable") as "compact" | "comfortable";
   const favoritesParam = searchParams.get("favorites") === "true";
   const collectionParam = (searchParams.get("collection") || defaultCollection || null) as Collection | null;
@@ -462,28 +471,8 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                     onClick={handleSortCycle}
                     className="flex h-8 items-center gap-1.5 rounded-lg px-2 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
                   >
-                    {sortParam === "az" ? (
-                      <ArrowDownAZ className="h-4 w-4" />
-                    ) : sortParam === "za" ? (
-                      <ArrowDownZA className="h-4 w-4" />
-                    ) : sortParam === "recent" ? (
-                      <Clock className="h-4 w-4" />
-                    ) : sortParam === "popular" ? (
-                      <Flame className="h-4 w-4" />
-                    ) : (
-                      <ArrowUpDown className="h-4 w-4" />
-                    )}
-                    <span className="hidden sm:inline">
-                      {sortParam === "az"
-                        ? "A-Z"
-                        : sortParam === "za"
-                          ? "Z-A"
-                          : sortParam === "recent"
-                            ? "Recent"
-                            : sortParam === "popular"
-                              ? "Popular"
-                              : "Sort"}
-                    </span>
+                    <SortIcon className="h-4 w-4" />
+                    <span className="hidden sm:inline">{sortLabel}</span>
                   </button>
                 </div>
               </div>
