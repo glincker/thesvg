@@ -307,6 +307,8 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
           searched = [...searched].sort((a, b) => compareDateDesc(a.dateAdded, b.dateAdded));
         }
         setFiltered(searched);
+      }).catch((err: unknown) => {
+        if (active) console.error("[HomeContent] Failed to load search module:", err);
       });
       return () => { active = false; };
     }

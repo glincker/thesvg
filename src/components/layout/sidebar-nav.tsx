@@ -129,9 +129,10 @@ export function SidebarNav({
                   if (parsed.state && parsed.state.favorites) {
                     const url = new URL(window.location.href);
                     url.searchParams.set("favorites_list", parsed.state.favorites.join(","));
-                    navigator.clipboard.writeText(url.toString());
-                    setFavoritesShareCopied(true);
-                    setTimeout(() => setFavoritesShareCopied(false), 1500);
+                    navigator.clipboard.writeText(url.toString()).then(() => {
+                      setFavoritesShareCopied(true);
+                      setTimeout(() => setFavoritesShareCopied(false), 1500);
+                    }).catch(() => { /* clipboard write denied/unavailable, no feedback to show */ });
                   }
                 } catch { /* malformed localStorage value, nothing to share */ }
               }}
