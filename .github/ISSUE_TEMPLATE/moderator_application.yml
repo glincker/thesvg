@@ -10,7 +10,7 @@ body:
         Thanks for your interest in helping run thesvg! Moderators get **triage access**
         (labeling, closing/reopening issues, requesting changes on PRs) so they can help
         keep icon requests and submissions moving. See the "Become a Moderator" section
-        of [CONTRIBUTING.md](../../CONTRIBUTING.md) for what the role involves.
+        of [CONTRIBUTING.md](https://github.com/glincker/thesvg/blob/main/CONTRIBUTING.md) for what the role involves.
 
   - type: input
     id: github_username
