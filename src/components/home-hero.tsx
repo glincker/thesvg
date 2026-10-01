@@ -807,22 +807,9 @@ export function HomeHero({
         </div>
       )}
 
-      {/* Popular icons */}
-      <section>
-        <div className="mb-4 flex items-center gap-2">
-          <h2 className="text-sm font-semibold text-foreground">
-            {activeCollection === "aws" ? "Popular AWS Services" : activeCollection === "azure" ? "Popular Azure Services" : activeCollection === "gcp" ? "Popular GCP Services" : "Popular"}
-          </h2>
-          <div className="h-px flex-1 bg-border/40 dark:bg-white/[0.04]" />
-        </div>
-        <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 sm:gap-3 lg:grid-cols-5 xl:grid-cols-6">
-          {popularIcons.map((icon) => (
-            <IconCard key={icon.slug} icon={icon} onSelect={handleSelectIcon} />
-          ))}
-        </div>
-      </section>
-
-      {/* Recently Added */}
+      {/* Recently Added - shown before Popular so new icons aren't buried
+          below a static curated list; this is the section most likely to
+          have genuinely new content on a repeat visit. */}
       {collectionRecentIcons.length > 0 && (
         <section>
           <div className="mb-4 flex items-center gap-2">
@@ -837,6 +824,21 @@ export function HomeHero({
           </div>
         </section>
       )}
+
+      {/* Popular icons */}
+      <section>
+        <div className="mb-4 flex items-center gap-2">
+          <h2 className="text-sm font-semibold text-foreground">
+            {activeCollection === "aws" ? "Popular AWS Services" : activeCollection === "azure" ? "Popular Azure Services" : activeCollection === "gcp" ? "Popular GCP Services" : "Popular"}
+          </h2>
+          <div className="h-px flex-1 bg-border/40 dark:bg-white/[0.04]" />
+        </div>
+        <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 sm:gap-3 lg:grid-cols-5 xl:grid-cols-6">
+          {popularIcons.map((icon) => (
+            <IconCard key={icon.slug} icon={icon} onSelect={handleSelectIcon} />
+          ))}
+        </div>
+      </section>
 
       {/* Browse by category */}
       <section>

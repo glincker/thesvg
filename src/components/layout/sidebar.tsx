@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   ChevronRight,
+  Clock,
   Search,
   Shapes,
   Sparkles,
@@ -237,6 +238,17 @@ export function Sidebar({
                     </span>
                     <span className="ml-2 shrink-0 rounded-full bg-gradient-to-r from-fuchsia-500/90 via-orange-500/90 to-amber-400/90 px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase leading-none tracking-wider text-white shadow-sm shadow-black/20">
                       NEW
+                    </span>
+                  </Link>
+                  <Link
+                    href="/?sort=recent"
+                    className={cn(
+                      "group flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                    )}
+                  >
+                    <span className="flex items-center gap-2 truncate">
+                      <Clock className="h-3.5 w-3.5 shrink-0 opacity-60" />
+                      <span className="truncate">Recently Added</span>
                     </span>
                   </Link>
                 </div>
