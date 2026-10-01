@@ -8,7 +8,7 @@
 # it's what lets moderators merge UI/icon PRs independently while CI/CD,
 # dependencies, and root config still always route through an owner.
 #
-# Mirrors the "File Boundaries" list in this repo's CLAUDE.md.
+# Mirrors the project's own file-boundaries policy for sensitive paths.
 
 /.github/                 @glincker/glinr-owners
 /package.json             @glincker/glinr-owners
