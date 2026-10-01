@@ -7,10 +7,13 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for your interest in helping run thesvg! Moderators get **triage access**
-        (labeling, closing/reopening issues, requesting changes on PRs) so they can help
-        keep icon requests and submissions moving. See the "Become a Moderator" section
-        of [CONTRIBUTING.md](https://github.com/glincker/thesvg/blob/main/CONTRIBUTING.md) for what the role involves.
+        Thanks for your interest in helping run thesvg! Moderators get **write access**
+        (labeling issues, pushing branches, reviewing and merging PRs) so they can keep
+        icon requests and submissions moving without waiting on a maintainer. Infra and
+        config paths (CI workflows, package.json, lockfiles, root config) always need an
+        owner's review regardless, per [CODEOWNERS](https://github.com/glincker/thesvg/blob/main/.github/CODEOWNERS).
+        See the "Become a Moderator" section of
+        [CONTRIBUTING.md](https://github.com/glincker/thesvg/blob/main/CONTRIBUTING.md) for the full picture.
 
   - type: input
     id: github_username
