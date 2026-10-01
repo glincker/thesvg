@@ -1,5 +1,11 @@
 # @thesvg/icons
 
+## 3.3.10
+
+### Patch Changes
+
+- feat: add tintas-vital icon ([#1190](https://github.com/glincker/thesvg/issues/1190))
+
 ## 3.3.9
 
 ### Patch Changes
