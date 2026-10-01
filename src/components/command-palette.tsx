@@ -110,13 +110,7 @@ export function CommandPalette() {
     limit: PALETTE_ICON_LIMIT,
   });
 
-  const bySlug = useMemo(() => {
-    const map = new Map<string, IconEntry>();
-    for (const i of manifest) {
-      map.set(i.slug, i);
-    }
-    return map;
-  }, [manifest]);
+  const bySlug = useMemo(() => new Map(manifest.map((i) => [i.slug, i])), [manifest]);
   const categories = useMemo(() => categoriesFromIcons(manifest), [manifest]);
   const lastCopied = copied.length > 0 ? bySlug.get(copied[0].slug) : undefined;
 
