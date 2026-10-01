@@ -11,9 +11,9 @@ export interface ValidationResult {
 
 const MAX_FILE_SIZE = 50 * 1024; // 50KB
 
-function hasMaliciousAttributes(doc: Document): { hasOnHandlers: boolean; hasJavascriptHref: boolean } {
+function hasMaliciousAttributes(doc: Document): { hasOnHandlers: boolean; hasUnsafeHref: boolean } {
   let hasOnHandlers = false;
-  let hasJavascriptHref = false;
+  let hasUnsafeHref = false;
 
   const allElements = doc.querySelectorAll("*");
   for (const el of Array.from(allElements)) {
@@ -23,15 +23,24 @@ function hasMaliciousAttributes(doc: Document): { hasOnHandlers: boolean; hasJav
         hasOnHandlers = true;
       }
       if (name === "href" || name.endsWith(":href")) {
+        // Strip whitespace/controls that can bypass filters, then check against allowlist
         const val = attr.value.replace(/[\s\x00-\x1F\x7F]/g, "").toLowerCase();
-        if (val.startsWith("javascript:")) {
-          hasJavascriptHref = true;
+        if (
+          val !== "" &&
+          !val.startsWith("#") &&
+          !val.startsWith("/") &&
+          !val.startsWith("http://") &&
+          !val.startsWith("https://") &&
+          !val.startsWith("mailto:") &&
+          !(val.startsWith("data:image/") && !val.startsWith("data:image/svg+xml"))
+        ) {
+          hasUnsafeHref = true;
         }
       }
     }
   }
 
-  return { hasOnHandlers, hasJavascriptHref };
+  return { hasOnHandlers, hasUnsafeHref };
 }
 
 export function validateSvg(content: string, fileSize: number): ValidationResult {
@@ -95,15 +104,15 @@ export function validateSvg(content: string, fileSize: number): ValidationResult
   const scriptTags = doc.querySelectorAll("script");
   const hasScripts = scriptTags.length > 0;
 
-  const { hasOnHandlers, hasJavascriptHref } = hasMaliciousAttributes(doc);
+  const { hasOnHandlers, hasUnsafeHref } = hasMaliciousAttributes(doc);
 
-  const scriptFree = !hasScripts && !hasOnHandlers && !hasJavascriptHref;
+  const scriptFree = !hasScripts && !hasOnHandlers && !hasUnsafeHref;
   checks.push({
     name: "No embedded scripts",
     passed: scriptFree,
     message: scriptFree
       ? "No script tags or event handlers found"
-      : "Contains script tags or JavaScript event handlers - not allowed",
+      : "Contains script tags, event handlers, or unsafe protocols - not allowed",
   });
 
   // Check 5: No embedded raster images (base64)
