@@ -84316,6 +84316,24 @@
     "collection": "brands"
   },
   {
+    "slug": "levelrail",
+    "title": "Levelrail",
+    "aliases": [],
+    "hex": "107292",
+    "categories": [
+      "DevTool",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/levelrail/default.svg",
+      "mono": "/icons/levelrail/mono.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://levelrail.com",
+    "dateAdded": "2026-10-01",
+    "collection": "brands"
+  },
+  {
     "slug": "levelsdotfyi",
     "title": "levels.fyi",
     "aliases": [],
