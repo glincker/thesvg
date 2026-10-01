@@ -9,3 +9,7 @@
 ## 2024-05-24 - Interactive Sidebar Collapsible Regions Need Native ARIA Wiring
 **Learning:** This Next.js UI relies on headless/custom collapsible regions in the sidebar for elements like "Extensions," "Collections," and "Featured." These components lack native `<details>` behavior or established headless UI library equivalents, meaning `aria-expanded` and `aria-controls` states are completely decoupled and often forgotten. Screen readers encounter these as generic buttons with no semantic hint that they reveal content.
 **Action:** When working on interactive sidebar navigational or hierarchical elements in this specific codebase, manually audit and enforce `aria-expanded` tied to the state variable and `aria-controls` referencing an explicitly `id`-tagged container. Do not assume the presence of generic `onClick` handlers implies accessible state management here.
+
+## 2024-05-14 - Keyboard focus invisible on structural wrapper elements
+**Learning:** Adding focus styles directly to wrapper elements (like the full-height `group/rail` in `sidebar-collapse-toggle.tsx`) without visible backgrounds means the keyboard focus indicator vanishes completely. This breaks accessibility for key interactive navigation patterns.
+**Action:** For invisible interaction wrappers that contain a visible inner element (like an icon span), apply `focus-visible:outline-none` to the invisible outer button, and use `group-focus-visible/[name]:ring-2 ...` on the visible interior element so the focus ring highlights the actual visual target.

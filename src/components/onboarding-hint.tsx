@@ -61,7 +61,7 @@ export function OnboardingHint() {
 
         <button
           onClick={dismiss}
-          className="ml-2 shrink-0 rounded-md p-1.5 text-orange-300/60 transition-colors hover:bg-orange-500/20 hover:text-orange-100"
+          className="ml-2 shrink-0 rounded-md p-1.5 text-orange-300/60 transition-colors hover:bg-orange-500/20 hover:text-orange-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/50"
           aria-label="Dismiss"
         >
           <X className="h-4 w-4" />

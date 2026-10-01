@@ -107,7 +107,7 @@ export function AlphabetRail({ availableLetters, onJump, className }: AlphabetRa
               if (available) onJump(letter);
             }}
             className={cn(
-              "relative flex h-[13px] w-3.5 shrink-0 items-center justify-center rounded-full text-[8px] font-medium leading-none transition-colors",
+              "relative flex h-[13px] w-3.5 shrink-0 items-center justify-center rounded-full text-[8px] font-medium leading-none transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1",
               available
                 ? "text-muted-foreground/70 hover:bg-accent hover:text-foreground"
                 : "text-muted-foreground/20",
