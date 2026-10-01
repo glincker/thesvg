@@ -110,7 +110,15 @@ export function CommandPalette() {
     limit: PALETTE_ICON_LIMIT,
   });
 
-  const bySlug = useMemo(() => new Map(manifest.map((i) => [i.slug, i])), [manifest]);
+  const bySlug = useMemo(() => {
+    // ⚡ Bolt: Use a single-pass for loop with map.set() to avoid creating intermediate tuple arrays.
+    const map = new Map<string, IconEntry>();
+    for (let i = 0; i < manifest.length; i++) {
+      const entry = manifest[i];
+      map.set(entry.slug, entry);
+    }
+    return map;
+  }, [manifest]);
   const categories = useMemo(() => categoriesFromIcons(manifest), [manifest]);
   const lastCopied = copied.length > 0 ? bySlug.get(copied[0].slug) : undefined;
 
