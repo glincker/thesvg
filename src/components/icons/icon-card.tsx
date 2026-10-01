@@ -10,7 +10,7 @@ import { useFavoritesStore } from "@/lib/stores/favorites-store";
 import { useSettingsStore } from "@/lib/stores/settings-store";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import { formatSvg } from "@/lib/copy-formats";
-import { FORMAT_BUTTONS, FORMAT_LABELS } from "./shared/icon-constants";
+import { FORMAT_LABELS } from "./shared/icon-constants";
 import { cn } from "@/lib/utils";
 import { NewBadge } from "@/components/icons/new-badge";
 
