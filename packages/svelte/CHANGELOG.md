@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 3.3.11
+
+### Patch Changes
+
+- fix: drop terms-of-sale link from tintas-vital guidelines ([#1200](https://github.com/glincker/thesvg/issues/1200))
+
 ## 3.3.10
 
 ### Patch Changes
