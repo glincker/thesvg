@@ -123,6 +123,9 @@ export function HelpFab({ iconCount }: { iconCount: string }) {
 
           {/* Modal */}
           <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="help-modal-title"
             className={`relative w-full max-w-lg overflow-hidden rounded-3xl border border-white/[0.08] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.7)] transition-all duration-300 ease-out ${
               mounted && !closing
                 ? "translate-y-0 scale-100 opacity-100"
@@ -161,7 +164,7 @@ export function HelpFab({ iconCount }: { iconCount: string }) {
                   <Sparkles className="h-3 w-3" />
                   Getting Started
                 </div>
-                <h2 className="text-xl font-bold tracking-tight text-white">Quick Tips</h2>
+                <h2 id="help-modal-title" className="text-xl font-bold tracking-tight text-white">Quick Tips</h2>
                 <p className="mt-1 text-sm text-zinc-400">Everything you can do with theSVG</p>
               </div>
 
