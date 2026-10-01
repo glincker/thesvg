@@ -234,9 +234,16 @@ thesvg runs on triage: labeling issues, checking SVG submissions against the
 requirements above, and reviewing incoming PRs. If you've been doing that
 informally, we'd like to make it official.
 
-**What moderators get**: triage access to the repo, so you can label issues,
-close/reopen, and request changes on PRs. Moderators do not get merge or push
-access; merges still go through a maintainer review.
+**What moderators get**: write access to the repo via the `@glincker/moderators`
+team - you can push branches, label/close/reopen issues, and review and merge
+PRs on your own. The one carve-out: infra and config paths (CI workflows,
+`package.json`, lockfiles, `tsconfig.json`, root config files - see
+[CODEOWNERS](./.github/CODEOWNERS)) always require a review from
+`@glincker/glinr-owners` before merging, regardless of who else approved.
+Everything else - icon submissions, UI, docs - is yours to review and merge
+without waiting on a maintainer. GitHub also never lets you approve your own
+PR, so your own non-infra changes still need a second moderator or an owner
+to sign off.
 
 **What we look for**:
 

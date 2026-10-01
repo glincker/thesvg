@@ -1,0 +1,21 @@
+# CODEOWNERS - infra/config paths that always need @glincker/glinr-owners
+# review, regardless of who else approves a PR. Paired with branch
+# protection's "Require review from Code Owners" on main.
+#
+# Everything NOT listed here has no required owner: any collaborator with
+# write access (including @glincker/moderators) can review and merge it
+# once it has the generic required-approval count. This is deliberate -
+# it's what lets moderators merge UI/icon PRs independently while CI/CD,
+# dependencies, and root config still always route through an owner.
+#
+# Mirrors the "File Boundaries" list in this repo's CLAUDE.md.
+
+/.github/                 @glincker/glinr-owners
+/package.json             @glincker/glinr-owners
+/pnpm-lock.yaml           @glincker/glinr-owners
+/pnpm-workspace.yaml      @glincker/glinr-owners
+/tsconfig.json            @glincker/glinr-owners
+/.env*                    @glincker/glinr-owners
+/next.config.ts           @glincker/glinr-owners
+/vitest.config.ts         @glincker/glinr-owners
+/packages/*/package.json  @glincker/glinr-owners
