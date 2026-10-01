@@ -112,7 +112,7 @@ export function IconInspectorModal({ title, src }: IconInspectorModalProps) {
         render={
           <button
             type="button"
-            className="absolute right-3 bottom-3 flex h-9 w-9 items-center justify-center rounded-full bg-orange-500/10 text-orange-500 shadow-sm ring-1 ring-orange-500/20 backdrop-blur-sm transition-all hover:scale-105 hover:bg-orange-500/20"
+            className="absolute right-3 bottom-3 flex h-9 w-9 items-center justify-center rounded-full bg-orange-500/10 text-orange-500 shadow-sm ring-1 ring-orange-500/20 backdrop-blur-sm transition-all hover:scale-105 hover:bg-orange-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             aria-label={`Inspect ${title} zoomed in`}
           />
         }
@@ -190,7 +190,7 @@ export function IconInspectorModal({ title, src }: IconInspectorModalProps) {
                 aria-pressed={background === value}
                 aria-label={`${label} background`}
                 className={cn(
-                  "flex h-7 w-7 items-center justify-center rounded-md transition-colors",
+                  "flex h-7 w-7 items-center justify-center rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                   background === value
                     ? "bg-orange-500/15 text-orange-500"
                     : "text-muted-foreground hover:text-foreground"
@@ -208,7 +208,7 @@ export function IconInspectorModal({ title, src }: IconInspectorModalProps) {
               onClick={() => setShowGrid((prev) => !prev)}
               aria-pressed={showGrid}
               className={cn(
-                "flex h-7 items-center gap-1.5 rounded-md border border-border/60 px-2 text-xs font-medium transition-colors",
+                "flex h-7 items-center gap-1.5 rounded-md border border-border/60 px-2 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                 showGrid
                   ? "border-orange-500/40 bg-orange-500/10 text-orange-500"
                   : "text-muted-foreground hover:text-foreground"
@@ -225,7 +225,7 @@ export function IconInspectorModal({ title, src }: IconInspectorModalProps) {
                 onClick={() => setZoomStep((prev) => Math.max(prev - 1, 0))}
                 disabled={zoomStep === 0}
                 aria-label="Zoom out"
-                className="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors hover:text-foreground disabled:opacity-30"
+                className="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors hover:text-foreground disabled:opacity-30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               >
                 <MagnifyingGlassMinus className="h-4 w-4" />
               </button>
@@ -239,7 +239,7 @@ export function IconInspectorModal({ title, src }: IconInspectorModalProps) {
                 }
                 disabled={zoomStep === ZOOM_LEVELS.length - 1}
                 aria-label="Zoom in"
-                className="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors hover:text-foreground disabled:opacity-30"
+                className="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors hover:text-foreground disabled:opacity-30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               >
                 <MagnifyingGlassPlus className="h-4 w-4" />
               </button>

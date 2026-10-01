@@ -112,9 +112,8 @@ export function CommandPalette() {
 
   const bySlug = useMemo(() => {
     const map = new Map<string, IconEntry>();
-    for (let i = 0; i < manifest.length; i++) {
-      const item = manifest[i];
-      map.set(item.slug, item);
+    for (const i of manifest) {
+      map.set(i.slug, i);
     }
     return map;
   }, [manifest]);
