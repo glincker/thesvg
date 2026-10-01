@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   ChevronRight,
   Clock,
+  Flame,
   Search,
   Shapes,
   Sparkles,
@@ -249,6 +250,17 @@ export function Sidebar({
                     <span className="flex items-center gap-2 truncate">
                       <Clock className="h-3.5 w-3.5 shrink-0 opacity-60" />
                       <span className="truncate">Recently Added</span>
+                    </span>
+                  </Link>
+                  <Link
+                    href="/?sort=popular"
+                    className={cn(
+                      "group flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                    )}
+                  >
+                    <span className="flex items-center gap-2 truncate">
+                      <Flame className="h-3.5 w-3.5 shrink-0 opacity-60" />
+                      <span className="truncate">Popular</span>
                     </span>
                   </Link>
                 </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Anchor, ArrowRight, Check, Clock, Cloud, Copy, Package, ShieldCheck, Sparkles, Users, X, Zap } from "lucide-react";
+import { Anchor, ArrowRight, Check, ChevronRight, Clock, Cloud, Copy, Flame, Package, ShieldCheck, Sparkles, Users, X, Zap } from "lucide-react";
 import Link from "next/link";
 import posthog from "posthog-js";
 import { compareDateDesc, type Collection, type IconEntry } from "@/lib/icons";
@@ -12,77 +12,11 @@ import { IconGrid } from "@/components/icons/icon-grid";
 import { IconDetail } from "@/components/icons/icon-detail";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import { useCompactHeroStore } from "@/lib/stores/compact-hero-store";
+import { useHomePrefsStore } from "@/lib/stores/home-prefs-store";
 import { cn } from "@/lib/utils";
 import { withUtm } from "@/lib/external-link";
 
-/** Hand-picked popular brand slugs */
-const POPULAR_SLUGS = [
-  "google", "apple", "github", "microsoft", "amazon", "meta",
-  "netflix", "spotify", "discord", "slack", "figma", "notion",
-  "stripe", "vercel", "docker", "react", "nextdotjs", "typescript",
-  "tailwindcss", "nodejs", "python", "rust", "openai", "claude",
-  "firebase", "supabase", "postgresql", "mongodb", "redis", "linux",
-  "aws", "cloudflare", "digitalocean", "github-copilot", "visual-studio-code",
-  "chrome", "firefox", "safari", "android", "swift",
-];
-
-/** Hand-picked popular AWS slugs */
-const POPULAR_AWS_SLUGS = [
-  "aws-aws-lambda", "aws-amazon-ec2", "aws-amazon-s3", "aws-amazon-rds",
-  "aws-amazon-dynamodb", "aws-amazon-cloudfront", "aws-amazon-api-gateway",
-  "aws-amazon-sqs", "aws-amazon-sns", "aws-amazon-bedrock",
-  "aws-amazon-ecs", "aws-amazon-eks", "aws-aws-fargate",
-  "aws-amazon-cognito", "aws-amazon-cloudwatch", "aws-aws-iam-identity-center",
-  "aws-amazon-route-53", "aws-amazon-elasticache", "aws-aws-step-functions",
-  "aws-amazon-kinesis", "aws-aws-cloudformation", "aws-amazon-sagemaker",
-  "aws-aws-app-runner", "aws-amazon-eventbridge",
-];
-
-/** Hand-picked popular Azure slugs */
-const POPULAR_AZURE_SLUGS = [
-  "azure-virtual-machines", "azure-app-services", "azure-sql-database",
-  "azure-cosmos-db", "azure-kubernetes-service-aks", "azure-functions",
-  "azure-storage-accounts", "azure-active-directory", "azure-devops",
-  "azure-api-management-services", "azure-key-vaults", "azure-cognitive-services",
-  "azure-load-balancers", "azure-virtual-networks", "azure-container-apps",
-  "azure-application-gateways", "azure-azure-sql", "azure-monitor",
-  "azure-azure-cache-for-redis", "azure-event-hubs",
-  "azure-service-bus", "azure-logic-apps", "azure-bot-services", "azure-cdn-profiles",
-];
-
-/** Hand-picked popular GCP slugs */
-const POPULAR_GCP_SLUGS = [
-  "gcp-compute-engine", "gcp-cloud-storage", "gcp-bigquery",
-  "gcp-cloud-functions", "gcp-cloud-run", "gcp-google-kubernetes-engine",
-  "gcp-cloud-sql", "gcp-app-engine", "gcp-cloud-cdn",
-  "gcp-cloud-build", "gcp-pubsub", "gcp-cloud-spanner",
-  "gcp-vertexai", "gcp-cloud-armor", "gcp-artifact-registry",
-  "gcp-cloud-dns", "gcp-firestore", "gcp-memorystore",
-  "gcp-cloud-monitoring", "gcp-cloud-logging", "gcp-secret-manager",
-  "gcp-identity-and-access-management", "gcp-cloud-load-balancing", "gcp-apigee-api-platform",
-];
-
-/** Hand-picked popular Kubernetes slugs */
-const POPULAR_K8S_SLUGS = [
-  "k8s-deployment", "k8s-pod", "k8s-service", "k8s-ingress",
-  "k8s-configmap", "k8s-secret", "k8s-daemonset", "k8s-statefulset",
-  "k8s-cronjob", "k8s-namespace", "k8s-node", "k8s-persistentvolume",
-  "k8s-api-server", "k8s-etcd-cluster", "k8s-horizontalpodautoscaler",
-  "k8s-replicaset", "k8s-serviceaccount", "k8s-storageclass",
-  "k8s-controller-manager", "k8s-clusterrole",
-];
-
-/** Hand-picked popular Community slugs */
-const POPULAR_COMMUNITY_SLUGS = [
-  "airflow", "cockroachdb", "envoy", "alpinejs", "chartjs", "cassandra",
-];
-
-/** Hand-picked popular Auth Badges slugs */
-const POPULAR_AUTH_BADGES_SLUGS = [
-  "google-badge", "github-badge", "microsoft-badge", "apple-badge",
-  "amazon-badge", "paypal-badge", "discord-badge", "dropbox-badge",
-  "steam-badge", "bitwarden-badge", "proton-badge",
-];
+import { getPopularSlugs } from "@/lib/popular-icons";
 
 const ALL_SLIDES = [
   {
@@ -97,7 +31,7 @@ const ALL_SLIDES = [
     accent: "border-orange-200/50 bg-orange-50/80 text-orange-600 dark:border-orange-500/20 dark:bg-orange-500/10 dark:text-orange-400",
     blob: "bg-orange-400/10 dark:bg-orange-500/5",
     collection: "brands" as const,
-    floatSlugs: POPULAR_SLUGS,
+    floatSlugs: getPopularSlugs("brands"),
   },
   {
     badge: "npm install thesvg",
@@ -110,7 +44,7 @@ const ALL_SLIDES = [
     accent: "border-blue-200/50 bg-blue-50/80 text-blue-600 dark:border-blue-500/20 dark:bg-blue-500/10 dark:text-blue-400",
     blob: "bg-blue-400/10 dark:bg-blue-500/5",
     collection: "brands" as const,
-    floatSlugs: POPULAR_SLUGS,
+    floatSlugs: getPopularSlugs("brands"),
   },
   {
     badge: "Copy & Ship",
@@ -123,7 +57,7 @@ const ALL_SLIDES = [
     accent: "border-emerald-200/50 bg-emerald-50/80 text-emerald-600 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-400",
     blob: "bg-emerald-400/10 dark:bg-emerald-500/5",
     collection: "brands" as const,
-    floatSlugs: POPULAR_SLUGS,
+    floatSlugs: getPopularSlugs("brands"),
   },
   {
     badge: "AWS Architecture",
@@ -136,7 +70,7 @@ const ALL_SLIDES = [
     accent: "border-[#ff9900]/30 bg-[#ff9900]/10 text-[#c47b12] dark:border-[#ff9900]/30 dark:bg-[#ff9900]/15 dark:text-[#ff9900]",
     blob: "bg-[#ff9900]/10 dark:bg-[#ff9900]/5",
     collection: "aws" as const,
-    floatSlugs: POPULAR_AWS_SLUGS,
+    floatSlugs: getPopularSlugs("aws"),
   },
   {
     badge: "2026-Q1 Release",
@@ -149,7 +83,7 @@ const ALL_SLIDES = [
     accent: "border-[#232f3e]/20 bg-[#232f3e]/10 text-[#232f3e] dark:border-[#ff9900]/20 dark:bg-[#ff9900]/10 dark:text-[#ff9900]",
     blob: "bg-[#232f3e]/10 dark:bg-[#232f3e]/5",
     collection: "aws" as const,
-    floatSlugs: POPULAR_AWS_SLUGS,
+    floatSlugs: getPopularSlugs("aws"),
   },
   {
     badge: "Microsoft Azure",
@@ -162,7 +96,7 @@ const ALL_SLIDES = [
     accent: "border-[#0078d4]/30 bg-[#0078d4]/10 text-[#0078d4] dark:border-[#0078d4]/30 dark:bg-[#0078d4]/15 dark:text-[#3ba0e6]",
     blob: "bg-[#0078d4]/10 dark:bg-[#0078d4]/5",
     collection: "azure" as const,
-    floatSlugs: POPULAR_AZURE_SLUGS,
+    floatSlugs: getPopularSlugs("azure"),
   },
   {
     badge: "2026-Q1 Release",
@@ -175,7 +109,7 @@ const ALL_SLIDES = [
     accent: "border-[#50e6ff]/30 bg-[#50e6ff]/10 text-[#0078d4] dark:border-[#50e6ff]/20 dark:bg-[#50e6ff]/10 dark:text-[#50e6ff]",
     blob: "bg-[#50e6ff]/10 dark:bg-[#50e6ff]/5",
     collection: "azure" as const,
-    floatSlugs: POPULAR_AZURE_SLUGS,
+    floatSlugs: getPopularSlugs("azure"),
   },
   {
     badge: "Google Cloud",
@@ -188,7 +122,7 @@ const ALL_SLIDES = [
     accent: "border-[#4285f4]/30 bg-[#4285f4]/10 text-[#4285f4] dark:border-[#4285f4]/30 dark:bg-[#4285f4]/15 dark:text-[#6aa5f8]",
     blob: "bg-[#4285f4]/10 dark:bg-[#4285f4]/5",
     collection: "gcp" as const,
-    floatSlugs: POPULAR_GCP_SLUGS,
+    floatSlugs: getPopularSlugs("gcp"),
   },
   {
     badge: "Apache 2.0 License",
@@ -201,7 +135,7 @@ const ALL_SLIDES = [
     accent: "border-[#34a853]/30 bg-[#34a853]/10 text-[#34a853] dark:border-[#34a853]/20 dark:bg-[#34a853]/10 dark:text-[#34a853]",
     blob: "bg-[#34a853]/10 dark:bg-[#34a853]/5",
     collection: "gcp" as const,
-    floatSlugs: POPULAR_GCP_SLUGS,
+    floatSlugs: getPopularSlugs("gcp"),
   },
   {
     badge: "Kubernetes",
@@ -214,7 +148,7 @@ const ALL_SLIDES = [
     accent: "border-[#326ce5]/30 bg-[#326ce5]/10 text-[#326ce5] dark:border-[#326ce5]/30 dark:bg-[#326ce5]/15 dark:text-[#5b8eef]",
     blob: "bg-[#326ce5]/10 dark:bg-[#326ce5]/5",
     collection: "k8s" as const,
-    floatSlugs: POPULAR_K8S_SLUGS,
+    floatSlugs: getPopularSlugs("k8s"),
   },
   {
     badge: "Apache 2.0 License",
@@ -227,7 +161,7 @@ const ALL_SLIDES = [
     accent: "border-[#326ce5]/20 bg-[#326ce5]/10 text-[#326ce5] dark:border-[#326ce5]/20 dark:bg-[#326ce5]/10 dark:text-[#5b8eef]",
     blob: "bg-[#326ce5]/10 dark:bg-[#326ce5]/5",
     collection: "k8s" as const,
-    floatSlugs: POPULAR_K8S_SLUGS,
+    floatSlugs: getPopularSlugs("k8s"),
   },
   {
     badge: "Community",
@@ -240,7 +174,7 @@ const ALL_SLIDES = [
     accent: "border-teal-200/50 bg-teal-50/80 text-teal-600 dark:border-teal-500/20 dark:bg-teal-500/10 dark:text-teal-400",
     blob: "bg-teal-400/10 dark:bg-teal-500/5",
     collection: "community" as const,
-    floatSlugs: POPULAR_COMMUNITY_SLUGS,
+    floatSlugs: getPopularSlugs("community"),
   },
   {
     badge: "CC0, No Attribution",
@@ -253,7 +187,7 @@ const ALL_SLIDES = [
     accent: "border-emerald-200/50 bg-emerald-50/80 text-emerald-600 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-400",
     blob: "bg-emerald-400/10 dark:bg-emerald-500/5",
     collection: "auth-badges" as const,
-    floatSlugs: POPULAR_AUTH_BADGES_SLUGS,
+    floatSlugs: getPopularSlugs("auth-badges"),
   },
 ];
 
@@ -379,6 +313,10 @@ export function HomeHero({
   const clearViewed = useRecentsStore((s) => s.clearViewed);
   const compactHeroDismissed = useCompactHeroStore((s) => s.dismissed);
   const dismissCompactHero = useCompactHeroStore((s) => s.dismiss);
+  const sectionOrder = useHomePrefsStore((s) => s.sectionOrder);
+  const setSectionOrder = useHomePrefsStore((s) => s.setSectionOrder);
+  const continueCollapsed = useHomePrefsStore((s) => s.continueCollapsed);
+  const toggleContinueCollapsed = useHomePrefsStore((s) => s.toggleContinueCollapsed);
   const recentViewedIcons = useMemo(() => {
     if (recentViewed.length === 0 || icons.length === 0) return [];
     const result: { entry: IconEntry; ts: number }[] = [];
@@ -392,6 +330,16 @@ export function HomeHero({
     }
     return result;
   }, [recentViewed, icons, iconsBySlug]);
+
+  // First-time visitors (nothing viewed yet) see universally-recognizable
+  // Popular icons first; returning visitors see Recently Added first, since
+  // that's the part most likely to have genuinely new content on a repeat
+  // visit. An explicit toggle overrides this and sticks once set.
+  const isReturningVisitor = recentViewed.length > 0;
+  const effectiveOrder: "popular" | "recent" =
+    sectionOrder === "auto"
+      ? isReturningVisitor ? "recent" : "popular"
+      : sectionOrder === "recent-first" ? "recent" : "popular";
 
   const [now, setNow] = useState(() => Date.now());
   useEffect(() => {
@@ -419,16 +367,7 @@ export function HomeHero({
 
   // Popular icons per collection
   const popularIcons = useMemo(() => {
-    const slugMap: Record<string, string[]> = {
-      brands: POPULAR_SLUGS,
-      aws: POPULAR_AWS_SLUGS,
-      azure: POPULAR_AZURE_SLUGS,
-      gcp: POPULAR_GCP_SLUGS,
-      k8s: POPULAR_K8S_SLUGS,
-      community: POPULAR_COMMUNITY_SLUGS,
-      "auth-badges": POPULAR_AUTH_BADGES_SLUGS,
-    };
-    const slugs = slugMap[activeCollection] ?? POPULAR_SLUGS;
+    const slugs = getPopularSlugs(activeCollection);
     const result: IconEntry[] = [];
     for (let i = 0; i < slugs.length; i++) {
       const entry = iconsBySlug.get(slugs[i]);
@@ -499,6 +438,87 @@ export function HomeHero({
     { position: "top-[70%] right-[15%]", entranceDelay: "[animation-delay:0.32s]", size: "h-11 w-11", opacity: "opacity-15", floatTiming: "[animation-delay:0.4s] [animation-duration:6s]" },
     { position: "top-[15%] right-[30%]", entranceDelay: "[animation-delay:0.4s]", size: "h-6 w-6", opacity: "opacity-10", floatTiming: "[animation-delay:1.2s] [animation-duration:6.5s]" },
   ];
+
+  const recentSection = collectionRecentIcons.length > 0 && (
+    <section key="recent">
+      <div className="mb-4 flex items-center gap-2">
+        <Clock className="h-3.5 w-3.5 text-muted-foreground" />
+        <h2 className="text-sm font-semibold text-foreground">Recently Added</h2>
+        <div className="h-px flex-1 bg-border/40 dark:bg-white/[0.04]" />
+        <Link
+          href="/?sort=recent"
+          className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+        >
+          View all
+          <ArrowRight className="h-3 w-3" />
+        </Link>
+      </div>
+      <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 sm:gap-3 lg:grid-cols-6">
+        {collectionRecentIcons.map((icon) => (
+          <IconCard key={icon.slug} icon={icon} onSelect={handleSelectIcon} />
+        ))}
+      </div>
+    </section>
+  );
+
+  const popularSection = (
+    <section key="popular">
+      <div className="mb-4 flex items-center gap-2">
+        <h2 className="text-sm font-semibold text-foreground">
+          {activeCollection === "aws" ? "Popular AWS Services" : activeCollection === "azure" ? "Popular Azure Services" : activeCollection === "gcp" ? "Popular GCP Services" : "Popular"}
+        </h2>
+        <div className="h-px flex-1 bg-border/40 dark:bg-white/[0.04]" />
+        <Link
+          href="/?sort=popular"
+          className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+        >
+          View all
+          <ArrowRight className="h-3 w-3" />
+        </Link>
+      </div>
+      <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 sm:gap-3 lg:grid-cols-5 xl:grid-cols-6">
+        {popularIcons.map((icon) => (
+          <IconCard key={icon.slug} icon={icon} onSelect={handleSelectIcon} />
+        ))}
+      </div>
+    </section>
+  );
+
+  // Order toggle: "auto" picks popular-first for first-time visitors and
+  // recent-first for returning ones (see isReturningVisitor above); once a
+  // visitor picks a side explicitly it overrides auto from then on.
+  const orderToggle = (
+    <div className="flex items-center gap-1.5" role="group" aria-label="Section order">
+      <button
+        type="button"
+        onClick={() => setSectionOrder("popular-first")}
+        aria-pressed={effectiveOrder === "popular"}
+        className={cn(
+          "inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-medium transition-all",
+          effectiveOrder === "popular"
+            ? "bg-foreground text-background shadow-sm"
+            : "text-muted-foreground hover:bg-accent hover:text-foreground dark:hover:bg-white/[0.06]"
+        )}
+      >
+        <Flame className="h-3 w-3" />
+        Popular first
+      </button>
+      <button
+        type="button"
+        onClick={() => setSectionOrder("recent-first")}
+        aria-pressed={effectiveOrder === "recent"}
+        className={cn(
+          "inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-medium transition-all",
+          effectiveOrder === "recent"
+            ? "bg-foreground text-background shadow-sm"
+            : "text-muted-foreground hover:bg-accent hover:text-foreground dark:hover:bg-white/[0.06]"
+        )}
+      >
+        <Clock className="h-3 w-3" />
+        Recent first
+      </button>
+    </div>
+  );
 
   return (
     <div className="flex flex-col gap-8 pb-6">
@@ -720,6 +740,17 @@ export function HomeHero({
               </Link>
               <button
                 type="button"
+                onClick={toggleContinueCollapsed}
+                aria-expanded={!continueCollapsed}
+                aria-controls="continue-rail"
+                className="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground/50 transition-colors hover:bg-accent hover:text-foreground"
+                aria-label={continueCollapsed ? "Expand continue section" : "Collapse continue section"}
+                title={continueCollapsed ? "Expand" : "Collapse"}
+              >
+                <ChevronRight className={cn("h-3.5 w-3.5 transition-transform duration-200", !continueCollapsed && "rotate-90")} />
+              </button>
+              <button
+                type="button"
                 onClick={() => clearViewed()}
                 className="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground/50 transition-colors hover:bg-destructive/10 hover:text-destructive"
                 aria-label="Clear recently viewed"
@@ -729,7 +760,13 @@ export function HomeHero({
               </button>
             </div>
           </div>
-          <div className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1 sm:grid sm:grid-cols-4 sm:gap-2.5 sm:overflow-visible md:grid-cols-6 lg:grid-cols-8">
+          <div
+            id="continue-rail"
+            className={cn(
+              "-mx-1 gap-2 overflow-x-auto px-1 pb-1 sm:grid sm:grid-cols-4 sm:gap-2.5 sm:overflow-visible md:grid-cols-6 lg:grid-cols-8",
+              continueCollapsed ? "hidden" : "flex"
+            )}
+          >
             {recentViewedIcons.map(({ entry, ts }, idx) => (
               <Link
                 key={entry.slug}
@@ -807,38 +844,21 @@ export function HomeHero({
         </div>
       )}
 
-      {/* Recently Added - shown before Popular so new icons aren't buried
-          below a static curated list; this is the section most likely to
-          have genuinely new content on a repeat visit. */}
-      {collectionRecentIcons.length > 0 && (
-        <section>
-          <div className="mb-4 flex items-center gap-2">
-            <Clock className="h-3.5 w-3.5 text-muted-foreground" />
-            <h2 className="text-sm font-semibold text-foreground">Recently Added</h2>
-            <div className="h-px flex-1 bg-border/40 dark:bg-white/[0.04]" />
-          </div>
-          <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 sm:gap-3 lg:grid-cols-6">
-            {collectionRecentIcons.map((icon) => (
-              <IconCard key={icon.slug} icon={icon} onSelect={handleSelectIcon} />
-            ))}
-          </div>
-        </section>
+      {/* Popular / Recently Added - order depends on isReturningVisitor
+          (first-time sees universally-recognizable Popular first) unless
+          overridden by the explicit toggle below, which then sticks. */}
+      {orderToggle}
+      {effectiveOrder === "recent" ? (
+        <>
+          {recentSection}
+          {popularSection}
+        </>
+      ) : (
+        <>
+          {popularSection}
+          {recentSection}
+        </>
       )}
-
-      {/* Popular icons */}
-      <section>
-        <div className="mb-4 flex items-center gap-2">
-          <h2 className="text-sm font-semibold text-foreground">
-            {activeCollection === "aws" ? "Popular AWS Services" : activeCollection === "azure" ? "Popular Azure Services" : activeCollection === "gcp" ? "Popular GCP Services" : "Popular"}
-          </h2>
-          <div className="h-px flex-1 bg-border/40 dark:bg-white/[0.04]" />
-        </div>
-        <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 sm:gap-3 lg:grid-cols-5 xl:grid-cols-6">
-          {popularIcons.map((icon) => (
-            <IconCard key={icon.slug} icon={icon} onSelect={handleSelectIcon} />
-          ))}
-        </div>
-      </section>
 
       {/* Browse by category */}
       <section>

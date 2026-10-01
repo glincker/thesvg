@@ -4,8 +4,9 @@ import { useMemo, useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import posthog from "posthog-js";
-import { ArrowDownAZ, ArrowDownZA, ArrowUpDown, Clock, Grid3X3, LayoutGrid, X } from "lucide-react";
+import { ArrowDownAZ, ArrowDownZA, ArrowUpDown, Clock, Flame, Grid3X3, LayoutGrid, X } from "lucide-react";
 import { compareDateDesc, type Collection, type IconEntry } from "@/lib/icons";
+import { getPopularSlugs, getAllPopularSlugs } from "@/lib/popular-icons";
 import { loadIconsManifest, prefetchIconsManifest } from "@/lib/icons-manifest";
 import { Sidebar } from "@/components/layout/sidebar";
 import { IconGrid } from "@/components/icons/icon-grid";
@@ -20,13 +21,24 @@ import { hasCategoryLanding, slugifyCategory } from "@/lib/categories";
 import { MobileRecentsRow } from "@/components/mobile/mobile-recents-row";
 import { cn } from "@/lib/utils";
 
-const SORT_OPTIONS = ["default", "recent", "az", "za"] as const;
+const SORT_OPTIONS = ["default", "recent", "popular", "az", "za"] as const;
 
 /**
  * Whether an icon matches the active category-name filter and/or category
  * search text. Pulled out of searchBase's useMemo so that hook stays a
  * simple loop-and-collect, keeping its cognitive complexity low.
  */
+/** Filters icons down to the curated popular list (scoped to a collection
+ * if one is active, otherwise every collection's list combined) and orders
+ * them by that curation, not alphabetically or by date. */
+function sortByPopular(icons: IconEntry[], collection: Collection | null): IconEntry[] {
+  const popularSlugs = collection ? getPopularSlugs(collection) : getAllPopularSlugs();
+  const order = new Map(popularSlugs.map((slug, i) => [slug, i]));
+  return icons
+    .filter((icon) => order.has(icon.slug))
+    .sort((a, b) => order.get(a.slug)! - order.get(b.slug)!);
+}
+
 function matchesCategoryFilters(
   icon: IconEntry,
   lowerCatParam: string | null,
@@ -305,6 +317,8 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
           searched = [...searched].sort((a, b) => b.title.localeCompare(a.title));
         } else if (sortParam === "recent") {
           searched = [...searched].sort((a, b) => compareDateDesc(a.dateAdded, b.dateAdded));
+        } else if (sortParam === "popular") {
+          searched = sortByPopular(searched, collectionParam);
         }
         setFiltered(searched);
       }).catch((err: unknown) => {
@@ -320,6 +334,8 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
       result = [...result].sort((a, b) => b.title.localeCompare(a.title));
     } else if (sortParam === "recent") {
       result = [...result].sort((a, b) => compareDateDesc(a.dateAdded, b.dateAdded));
+    } else if (sortParam === "popular") {
+      result = sortByPopular(result, collectionParam);
     }
 
     setFiltered(result);
@@ -452,6 +468,8 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                       <ArrowDownZA className="h-4 w-4" />
                     ) : sortParam === "recent" ? (
                       <Clock className="h-4 w-4" />
+                    ) : sortParam === "popular" ? (
+                      <Flame className="h-4 w-4" />
                     ) : (
                       <ArrowUpDown className="h-4 w-4" />
                     )}
@@ -462,7 +480,9 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                           ? "Z-A"
                           : sortParam === "recent"
                             ? "Recent"
-                            : "Sort"}
+                            : sortParam === "popular"
+                              ? "Popular"
+                              : "Sort"}
                     </span>
                   </button>
                 </div>
