@@ -13,3 +13,7 @@
 ## 2024-05-14 - Keyboard focus invisible on structural wrapper elements
 **Learning:** Adding focus styles directly to wrapper elements (like the full-height `group/rail` in `sidebar-collapse-toggle.tsx`) without visible backgrounds means the keyboard focus indicator vanishes completely. This breaks accessibility for key interactive navigation patterns.
 **Action:** For invisible interaction wrappers that contain a visible inner element (like an icon span), apply `focus-visible:outline-none` to the invisible outer button, and use `group-focus-visible/[name]:ring-2 ...` on the visible interior element so the focus ring highlights the actual visual target.
+
+## 2024-10-24 - Hand-rolled Modal Accessibility
+**Learning:** Custom hand-rolled modal overlays (like the Help FAB) may omit native dialog primitives and roles since they do not use standard UI libraries like `@radix-ui/react-dialog`. This renders them effectively invisible or confusing to screen readers because they lack `role="dialog"` and `aria-modal="true"`.
+**Action:** When inspecting or adding custom full-screen overlays or modals, verify that the container element includes `role="dialog"`, `aria-modal="true"`, and is properly labeled via `aria-labelledby` or `aria-label`.

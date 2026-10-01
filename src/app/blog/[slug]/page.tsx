@@ -88,7 +88,17 @@ function processInline(text: string): string {
       (_match, label: string, href: string) => {
         const unescapedHref = href.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'");
 
-        const normalizedHref = unescapedHref.trim().toLowerCase();
+        // The browser will decode numeric character references in href attribute.
+        // Decode them and strip control characters to prevent bypasses like &#106;avascript:
+        // Out-of-range code points (invalid per Unicode) are dropped rather than
+        // passed to String.fromCodePoint, which throws RangeError on them.
+        const decodeCodePoint = (code: number) => (code <= 0x10ffff ? String.fromCodePoint(code) : "");
+        const fullyDecoded = unescapedHref
+          .replace(/&#(\d{1,7});?/g, (_, dec) => decodeCodePoint(parseInt(dec, 10)))
+          .replace(/&#x([0-9a-fA-F]{1,6});?/g, (_, hex) => decodeCodePoint(parseInt(hex, 16)));
+        const stripped = fullyDecoded.replace(/[\x00-\x1F\x7F]/g, '').trim();
+
+        const normalizedHref = stripped.toLowerCase();
 
         // Prevent javascript/data URIs (XSS vectors) by requiring an explicit allowlist
         if (
@@ -101,11 +111,12 @@ function processInline(text: string): string {
           return label;
         }
 
-        // External links get UTM-tagged (via withUtm, which no-ops for
-        // mailto:/internal hrefs) and open in a new tab; internal links
-        // keep the plain same-tab behavior.
-        const isExternal = unescapedHref.startsWith("http");
-        const taggedHref = escapeHtml(withUtm(unescapedHref, "blog_post"));
+        // Render the same fully-decoded href that was just validated, not the
+        // still entity-encoded original -- otherwise the emitted href doesn't
+        // match what was checked and can resolve somewhere else once the
+        // browser performs its own entity decoding on the attribute value.
+        const isExternal = normalizedHref.startsWith("http");
+        const taggedHref = escapeHtml(withUtm(stripped, "blog_post"));
         const extraAttrs = isExternal
           ? ' target="_blank" rel="noopener noreferrer"'
           : "";

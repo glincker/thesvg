@@ -91743,6 +91743,29 @@
     "collection": "brands"
   },
   {
+    "slug": "mikemurphyai",
+    "title": "Mike Murphy AI",
+    "aliases": [
+      "Mike Murphy"
+    ],
+    "hex": "FF6434",
+    "categories": [
+      "AI",
+      "Education",
+      "Automation"
+    ],
+    "variants": {
+      "default": "/icons/mikemurphyai/default.svg",
+      "dark": "/icons/mikemurphyai/dark.svg",
+      "mono": "/icons/mikemurphyai/mono.svg"
+    },
+    "license": "MIT",
+    "url": "https://mikemurphy.ai/",
+    "guidelines": "https://mikemurphy.ai/media-kit/",
+    "dateAdded": "2026-10-01",
+    "collection": "brands"
+  },
+  {
     "slug": "mikrotik",
     "title": "MikroTik",
     "aliases": [],
@@ -126233,6 +126256,27 @@
     "license": "CC0-1.0",
     "url": "https://www.tinkercad.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "tintas-vital",
+    "title": "Tintas Vital",
+    "aliases": [
+      "VitalTintas",
+      "Vital Impermeabilizantes"
+    ],
+    "hex": "A1C517",
+    "categories": [
+      "Shopping",
+      "E-commerce"
+    ],
+    "variants": {
+      "default": "/icons/tintas-vital/default.svg"
+    },
+    "license": "CC-BY-ND-4.0",
+    "url": "https://www.tintas-vital.pt/",
+    "guidelines": "https://www.tintas-vital.pt/page/termos-e-condicoes",
+    "dateAdded": "2026-10-01",
     "collection": "brands"
   },
   {

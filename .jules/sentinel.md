@@ -28,6 +28,11 @@
 **Learning:** Interpolating user input into HTML comments is a vector for XSS if the input can contain the comment termination sequence `-->`.
 **Prevention:** Always HTML-escape user input, including `<`, `>`, and `&`, before placing it anywhere in HTML, including inside HTML comments, or explicitly remove or replace `--` sequences.
 
+## 2025-02-14 - HTML Entity Decode Bypass in Markdown Parsers
+**Vulnerability:** Markdown link parser (`processInline`) used a strict URL allowlist but validated the unescaped href *before* decoding HTML entities. Browsers automatically decode entities (e.g. `&#106;` to `j`) in HTML attributes. This allowed payloads like `[Link](&#106;avascript:alert(1))` to bypass the `http://` check but execute when clicked.
+**Learning:** Checking URL protocols for XSS must be done on the *fully decoded* URL, exactly as the browser will parse it, including removing non-printable control characters that browsers ignore in URLs.
+**Prevention:** Always fully decode HTML entities and strip control characters (`[\x00-\x1F\x7F]`) before validating scheme allowlists for URLs that will be rendered into HTML attributes.
+
 ## 2024-05-24 - SVG Href Scheme Validation Blocklist
 **Vulnerability:** The client-side SVG validation logic (`src/lib/svg-validation.ts`) was using a naive regex blocklist (checking strictly for `javascript:`) to validate URLs inside `<use>`, `<a>`, and `<image>` tags. This could be bypassed using alternative malicious schemes like `vbscript:` or `data:text/html` which can also execute scripts.
 **Learning:** URL validation should never rely on blocklisting known bad schemes. Inconsistencies across the codebase (e.g. blog vs svg validation) can easily leave holes.
