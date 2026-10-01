@@ -18,6 +18,17 @@ import { withUtm } from "@/lib/external-link";
 
 import { getPopularSlugs } from "@/lib/popular-icons";
 
+// Local aliases so ALL_SLIDES below (byte-identical to before this file
+// started sharing the curated lists with home-content.tsx) doesn't need
+// touching per-slide - keeps that unrelated diff out of this change.
+const POPULAR_SLUGS = getPopularSlugs("brands");
+const POPULAR_AWS_SLUGS = getPopularSlugs("aws");
+const POPULAR_AZURE_SLUGS = getPopularSlugs("azure");
+const POPULAR_GCP_SLUGS = getPopularSlugs("gcp");
+const POPULAR_K8S_SLUGS = getPopularSlugs("k8s");
+const POPULAR_COMMUNITY_SLUGS = getPopularSlugs("community");
+const POPULAR_AUTH_BADGES_SLUGS = getPopularSlugs("auth-badges");
+
 const ALL_SLIDES = [
   {
     badge: "Open Source",
@@ -31,7 +42,7 @@ const ALL_SLIDES = [
     accent: "border-orange-200/50 bg-orange-50/80 text-orange-600 dark:border-orange-500/20 dark:bg-orange-500/10 dark:text-orange-400",
     blob: "bg-orange-400/10 dark:bg-orange-500/5",
     collection: "brands" as const,
-    floatSlugs: getPopularSlugs("brands"),
+    floatSlugs: POPULAR_SLUGS,
   },
   {
     badge: "npm install thesvg",
@@ -44,7 +55,7 @@ const ALL_SLIDES = [
     accent: "border-blue-200/50 bg-blue-50/80 text-blue-600 dark:border-blue-500/20 dark:bg-blue-500/10 dark:text-blue-400",
     blob: "bg-blue-400/10 dark:bg-blue-500/5",
     collection: "brands" as const,
-    floatSlugs: getPopularSlugs("brands"),
+    floatSlugs: POPULAR_SLUGS,
   },
   {
     badge: "Copy & Ship",
@@ -57,7 +68,7 @@ const ALL_SLIDES = [
     accent: "border-emerald-200/50 bg-emerald-50/80 text-emerald-600 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-400",
     blob: "bg-emerald-400/10 dark:bg-emerald-500/5",
     collection: "brands" as const,
-    floatSlugs: getPopularSlugs("brands"),
+    floatSlugs: POPULAR_SLUGS,
   },
   {
     badge: "AWS Architecture",
@@ -70,7 +81,7 @@ const ALL_SLIDES = [
     accent: "border-[#ff9900]/30 bg-[#ff9900]/10 text-[#c47b12] dark:border-[#ff9900]/30 dark:bg-[#ff9900]/15 dark:text-[#ff9900]",
     blob: "bg-[#ff9900]/10 dark:bg-[#ff9900]/5",
     collection: "aws" as const,
-    floatSlugs: getPopularSlugs("aws"),
+    floatSlugs: POPULAR_AWS_SLUGS,
   },
   {
     badge: "2026-Q1 Release",
@@ -83,7 +94,7 @@ const ALL_SLIDES = [
     accent: "border-[#232f3e]/20 bg-[#232f3e]/10 text-[#232f3e] dark:border-[#ff9900]/20 dark:bg-[#ff9900]/10 dark:text-[#ff9900]",
     blob: "bg-[#232f3e]/10 dark:bg-[#232f3e]/5",
     collection: "aws" as const,
-    floatSlugs: getPopularSlugs("aws"),
+    floatSlugs: POPULAR_AWS_SLUGS,
   },
   {
     badge: "Microsoft Azure",
@@ -96,7 +107,7 @@ const ALL_SLIDES = [
     accent: "border-[#0078d4]/30 bg-[#0078d4]/10 text-[#0078d4] dark:border-[#0078d4]/30 dark:bg-[#0078d4]/15 dark:text-[#3ba0e6]",
     blob: "bg-[#0078d4]/10 dark:bg-[#0078d4]/5",
     collection: "azure" as const,
-    floatSlugs: getPopularSlugs("azure"),
+    floatSlugs: POPULAR_AZURE_SLUGS,
   },
   {
     badge: "2026-Q1 Release",
@@ -109,7 +120,7 @@ const ALL_SLIDES = [
     accent: "border-[#50e6ff]/30 bg-[#50e6ff]/10 text-[#0078d4] dark:border-[#50e6ff]/20 dark:bg-[#50e6ff]/10 dark:text-[#50e6ff]",
     blob: "bg-[#50e6ff]/10 dark:bg-[#50e6ff]/5",
     collection: "azure" as const,
-    floatSlugs: getPopularSlugs("azure"),
+    floatSlugs: POPULAR_AZURE_SLUGS,
   },
   {
     badge: "Google Cloud",
@@ -122,7 +133,7 @@ const ALL_SLIDES = [
     accent: "border-[#4285f4]/30 bg-[#4285f4]/10 text-[#4285f4] dark:border-[#4285f4]/30 dark:bg-[#4285f4]/15 dark:text-[#6aa5f8]",
     blob: "bg-[#4285f4]/10 dark:bg-[#4285f4]/5",
     collection: "gcp" as const,
-    floatSlugs: getPopularSlugs("gcp"),
+    floatSlugs: POPULAR_GCP_SLUGS,
   },
   {
     badge: "Apache 2.0 License",
@@ -135,7 +146,7 @@ const ALL_SLIDES = [
     accent: "border-[#34a853]/30 bg-[#34a853]/10 text-[#34a853] dark:border-[#34a853]/20 dark:bg-[#34a853]/10 dark:text-[#34a853]",
     blob: "bg-[#34a853]/10 dark:bg-[#34a853]/5",
     collection: "gcp" as const,
-    floatSlugs: getPopularSlugs("gcp"),
+    floatSlugs: POPULAR_GCP_SLUGS,
   },
   {
     badge: "Kubernetes",
@@ -148,7 +159,7 @@ const ALL_SLIDES = [
     accent: "border-[#326ce5]/30 bg-[#326ce5]/10 text-[#326ce5] dark:border-[#326ce5]/30 dark:bg-[#326ce5]/15 dark:text-[#5b8eef]",
     blob: "bg-[#326ce5]/10 dark:bg-[#326ce5]/5",
     collection: "k8s" as const,
-    floatSlugs: getPopularSlugs("k8s"),
+    floatSlugs: POPULAR_K8S_SLUGS,
   },
   {
     badge: "Apache 2.0 License",
@@ -161,7 +172,7 @@ const ALL_SLIDES = [
     accent: "border-[#326ce5]/20 bg-[#326ce5]/10 text-[#326ce5] dark:border-[#326ce5]/20 dark:bg-[#326ce5]/10 dark:text-[#5b8eef]",
     blob: "bg-[#326ce5]/10 dark:bg-[#326ce5]/5",
     collection: "k8s" as const,
-    floatSlugs: getPopularSlugs("k8s"),
+    floatSlugs: POPULAR_K8S_SLUGS,
   },
   {
     badge: "Community",
@@ -174,7 +185,7 @@ const ALL_SLIDES = [
     accent: "border-teal-200/50 bg-teal-50/80 text-teal-600 dark:border-teal-500/20 dark:bg-teal-500/10 dark:text-teal-400",
     blob: "bg-teal-400/10 dark:bg-teal-500/5",
     collection: "community" as const,
-    floatSlugs: getPopularSlugs("community"),
+    floatSlugs: POPULAR_COMMUNITY_SLUGS,
   },
   {
     badge: "CC0, No Attribution",
@@ -187,7 +198,7 @@ const ALL_SLIDES = [
     accent: "border-emerald-200/50 bg-emerald-50/80 text-emerald-600 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-400",
     blob: "bg-emerald-400/10 dark:bg-emerald-500/5",
     collection: "auth-badges" as const,
-    floatSlugs: getPopularSlugs("auth-badges"),
+    floatSlugs: POPULAR_AUTH_BADGES_SLUGS,
   },
 ];
 
