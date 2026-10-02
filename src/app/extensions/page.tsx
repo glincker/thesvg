@@ -580,7 +580,7 @@ export default function ExtensionsPage() {
                 </div>
                 <div className="flex gap-3">
                   <span className="w-8 shrink-0 text-orange-500/80">GET</span>
-                  <span className="text-muted-foreground">cdn.jsdelivr.net/gh/glincker/thesvg@main/data/icons.json</span>
+                  <span className="text-muted-foreground">cdn.jsdelivr.net/gh/glincker/thesvg@main/src/data/icons.json</span>
                 </div>
               </div>
 
