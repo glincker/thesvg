@@ -1,5 +1,30 @@
 # @thesvg/icons
 
+## 3.3.12
+
+### Patch Changes
+
+- [#1209](https://github.com/glincker/thesvg/pull/1209) [`bde5e7b`](https://github.com/glincker/thesvg/commit/bde5e7b32503c432092e14c341641b48397aeff1) Thanks [@OmShiv](https://github.com/OmShiv)! - Fix the root ESM import and the `svg` icon module
+  
+  `import { github } from "@thesvg/icons"` threw "SyntaxError: Unexpected
+  token 'export'" in node and failed to bundle in esbuild/Vite, because the
+  ESM barrel contained a TypeScript-only `export type` re-export. The types
+  are still exported from `index.d.ts`.
+  
+  `@thesvg/icons/svg` declared `svg` twice (the slug clashed with the
+  module's own `svg` export), which also broke the root import since the
+  barrel loads every icon. Per-icon default exports no longer use the slug
+  as a local name, so any slug matching an export name now works. Import
+  names are unchanged.
+
+- [#1210](https://github.com/glincker/thesvg/pull/1210) [`c17e015`](https://github.com/glincker/thesvg/commit/c17e0159617637ff6b843fbac238d5cf5b796a9d) Thanks [@OmShiv](https://github.com/OmShiv)! - Add the missing viewBox to 229 icon SVGs
+  
+  The React, React Native, Vue and Svelte components fall back to viewBox "0 0 24 24"
+  when an SVG has none, so 15 logos drawn on larger canvases (Amazon,
+  Amazon Music, BBC, Best Buy, Citibank, Disney and others) rendered
+  cropped or as a solid block. All 229 affected SVGs, including 214 GCP
+  icons, also failed to scale when the raw `svg` string was sized with CSS.
+
 ## 3.3.11
 
 ### Patch Changes

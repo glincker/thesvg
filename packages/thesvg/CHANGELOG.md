@@ -1,5 +1,12 @@
 # thesvg
 
+## 3.3.12
+
+### Patch Changes
+
+- Updated dependencies [[`bde5e7b`](https://github.com/glincker/thesvg/commit/bde5e7b32503c432092e14c341641b48397aeff1), [`c17e015`](https://github.com/glincker/thesvg/commit/c17e0159617637ff6b843fbac238d5cf5b796a9d)]:
+  - @thesvg/icons@3.3.12
+
 ## 3.3.11
 
 ### Patch Changes
