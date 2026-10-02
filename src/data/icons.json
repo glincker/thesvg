@@ -88408,8 +88408,28 @@
     },
     "license": "MIT",
     "url": "https://mastra.ai",
+    "dateAdded": "2026-10-02",
+    "collection": "brands",
+    "supersedes": "mastra-legacy"
+  },
+  {
+    "slug": "mastra-legacy",
+    "title": "Mastra (legacy)",
+    "aliases": [],
+    "hex": "000",
+    "categories": [
+      "Software",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/mastra-legacy/default.svg",
+      "mono": "/icons/mastra-legacy/mono.svg"
+    },
+    "license": "MIT",
+    "url": "https://mastra.ai",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "supersededBy": "mastra"
   },
   {
     "slug": "material-design",
