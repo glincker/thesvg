@@ -195,6 +195,8 @@ When you ship a rebrand:
 
 The icon detail page renders a cross-link card between the two automatically, so a user landing on the legacy version sees "Current version" and vice versa.
 
+This also applies to icon update PRs, not just maintainer-led rebrands. If your submission replaces an existing brand's mark with a newer one, please do not delete or overwrite the old SVG files in place. Split the change into a current entry (the new mark, what the site shows by default) and a `{slug}-legacy` entry (the old mark, old metadata, still searchable for anyone who needs it), linked with `supersedes` and `supersededBy` as described above. The Okta, Jaguar, KFC, and Google Search Console entries in `icons.json` are existing examples of this split if you want a reference to copy.
+
 ## Brand Icon Guidelines
 
 - We only include official brand assets - no fan-made or modified logos
