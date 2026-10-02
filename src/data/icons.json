@@ -88398,8 +88398,13 @@
       "Platform"
     ],
     "variants": {
-      "default": "/icons/mastra/mono.svg",
-      "mono": "/icons/mastra/mono.svg"
+      "default": "/icons/mastra/default.svg",
+      "mono": "/icons/mastra/mono.svg",
+      "light": "/icons/mastra/light.svg",
+      "dark": "/icons/mastra/dark.svg",
+      "wordmark": "/icons/mastra/wordmark.svg",
+      "wordmarkLight": "/icons/mastra/wordmark-light.svg",
+      "wordmarkDark": "/icons/mastra/wordmark-dark.svg"
     },
     "license": "MIT",
     "url": "https://mastra.ai",
