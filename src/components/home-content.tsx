@@ -41,7 +41,13 @@ const SORT_META: Record<typeof SORT_OPTIONS[number], { icon: typeof ArrowUpDown;
  * them by that curation, not alphabetically or by date. */
 function sortByPopular(icons: IconEntry[], collection: Collection | null): IconEntry[] {
   const popularSlugs = collection ? getPopularSlugs(collection) : getAllPopularSlugs();
-  const order = new Map(popularSlugs.map((slug, i) => [slug, i]));
+  // ⚡ Bolt: Use a single-pass loop instead of `new Map(array.map(...))` to
+  // avoid allocating an intermediate array of tuples, preventing unnecessary
+  // GC pauses when sorting thousands of icons.
+  const order = new Map<string, number>();
+  for (let i = 0; i < popularSlugs.length; i++) {
+    order.set(popularSlugs[i], i);
+  }
   return icons
     .filter((icon) => order.has(icon.slug))
     .sort((a, b) => order.get(a.slug)! - order.get(b.slug)!);
