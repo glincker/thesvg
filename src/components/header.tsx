@@ -109,6 +109,16 @@ export function Header({ collectionCounts }: HeaderProps) {
   const [focused, setFocused] = useState(false);
   const [selectedIdx, setSelectedIdx] = useState(-1);
 
+  // ⚡ Bolt: Pre-compute a Map for collection counts to replace O(N*M) array.find calls
+  // inside the render loop with O(1) map.get lookups.
+  const collectionCountMap = useMemo(() => {
+    const map = new Map<string, number>();
+    for (let i = 0; i < collectionCounts.length; i++) {
+      map.set(collectionCounts[i].name, collectionCounts[i].count);
+    }
+    return map;
+  }, [collectionCounts]);
+
   const activeCollection =
     searchParams.get("collection") ||
     (pathname.startsWith("/collection/") ? pathname.split("/")[2] : null);
@@ -618,7 +628,7 @@ export function Header({ collectionCounts }: HeaderProps) {
                       Quick access
                     </p>
                     {COLLECTIONS_LIST.map((meta) => {
-                      const count = collectionCounts.find((c) => c.name === meta.id)?.count ?? 0;
+                      const count = collectionCountMap.get(meta.id) ?? 0;
                       return (
                         <Link
                           key={meta.id}
