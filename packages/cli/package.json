@@ -1,6 +1,6 @@
 {
   "name": "@thesvg/cli",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "description": "CLI tool to add SVG icons from thesvg.org to your project",
   "type": "module",
   "license": "MIT",
