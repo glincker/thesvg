@@ -47,7 +47,7 @@ export function searchIcons(
   // intermediate array allocation for single-token searches.
   if (tokens.length <= 1) {
     const results = fuse.search(trimmed);
-    const out = new Array(results.length);
+    const out: IconEntry[] = new Array<IconEntry>(results.length);
     for (let i = 0; i < results.length; i++) {
       out[i] = results[i].item;
     }
@@ -81,7 +81,7 @@ export function searchIcons(
 
   // ⚡ Bolt: Optimize chained `.filter().sort().map()` into a single loop
   // that filters items and creates the sorted output without extra allocations.
-  const filtered = [];
+  const filtered: Array<{ item: IconEntry; count: number; score: number }> = [];
   for (let i = 0; i < matches.length; i++) {
     if (matches[i].count === maxCount) {
       filtered.push(matches[i]);
@@ -90,7 +90,7 @@ export function searchIcons(
 
   filtered.sort((a, b) => a.score - b.score);
 
-  const out = new Array(filtered.length);
+  const out: IconEntry[] = new Array<IconEntry>(filtered.length);
   for (let i = 0; i < filtered.length; i++) {
     out[i] = filtered[i].item;
   }
