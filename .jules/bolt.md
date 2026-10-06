@@ -65,3 +65,7 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2024-05-18 - Replacing Array.find with Pre-computed Maps
 **Learning:** Repeatedly executing O(N) `Array.find()` lookups inside high-frequency render cycles (like rendering hundreds of icon cards) for static constants forces the JS thread to do unnecessary work.
 **Action:** When working with static configuration arrays that are frequently queried by ID/value, export a pre-computed `Map` alongside the array to enable O(1) lookups via `map.get()`.
+
+## 2024-05-18 - Avoid chained `.filter().sort().map()` array methods in Fuse search results
+**Learning:** Chained array methods like `.filter().sort().map()` and intermediate array allocations in search functions using Fuse.js create performance bottlenecks when operating on large result sets from frequent keystrokes.
+**Action:** Replace these operations with single-pass `for` loops. Unrolling nested higher-order methods and preventing intermediate `.map()` or `.filter()` allocations directly avoids memory pressure overhead.

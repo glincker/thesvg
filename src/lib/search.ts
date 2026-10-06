@@ -43,27 +43,56 @@ export function searchIcons(
   const tokens = [
     ...new Set(trimmed.toLowerCase().split(/\s+/).filter((t) => t.length >= 2)),
   ];
-  if (tokens.length <= 1) return fuse.search(trimmed).map((r) => r.item);
+  // ⚡ Bolt: Use a single-pass loop instead of `.map()` to prevent
+  // intermediate array allocation for single-token searches.
+  if (tokens.length <= 1) {
+    const results = fuse.search(trimmed);
+    const out = new Array(results.length);
+    for (let i = 0; i < results.length; i++) {
+      out[i] = results[i].item;
+    }
+    return out;
+  }
 
   // Score each icon by how many tokens it matches, then by combined Fuse
   // score. Keep only the icons that match the most tokens: an icon matching
   // every token wins, but when nothing matches all of them the search still
   // returns the closest partial matches rather than an empty result.
   const agg = new Map<string, { item: IconEntry; count: number; score: number }>();
-  for (const token of tokens) {
-    for (const { item, score = 1 } of fuse.search(token)) {
-      const entry = agg.get(item.slug) ?? { item, count: 0, score: 0 };
-      entry.count += 1;
-      entry.score += score;
-      agg.set(item.slug, entry);
+  for (let i = 0; i < tokens.length; i++) {
+    const searchResults = fuse.search(tokens[i]);
+    for (let j = 0; j < searchResults.length; j++) {
+      const { item, score = 1 } = searchResults[j];
+      const entry = agg.get(item.slug);
+      if (entry !== undefined) {
+        entry.count += 1;
+        entry.score += score;
+      } else {
+        agg.set(item.slug, { item, count: 1, score });
+      }
     }
   }
 
   const matches = [...agg.values()];
   let maxCount = 0;
-  for (const m of matches) if (m.count > maxCount) maxCount = m.count;
-  return matches
-    .filter((m) => m.count === maxCount)
-    .sort((a, b) => a.score - b.score)
-    .map((m) => m.item);
+  for (let i = 0; i < matches.length; i++) {
+    if (matches[i].count > maxCount) maxCount = matches[i].count;
+  }
+
+  // ⚡ Bolt: Optimize chained `.filter().sort().map()` into a single loop
+  // that filters items and creates the sorted output without extra allocations.
+  const filtered = [];
+  for (let i = 0; i < matches.length; i++) {
+    if (matches[i].count === maxCount) {
+      filtered.push(matches[i]);
+    }
+  }
+
+  filtered.sort((a, b) => a.score - b.score);
+
+  const out = new Array(filtered.length);
+  for (let i = 0; i < filtered.length; i++) {
+    out[i] = filtered[i].item;
+  }
+  return out;
 }
