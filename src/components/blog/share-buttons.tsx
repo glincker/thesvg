@@ -90,9 +90,10 @@ export function ShareButtons({ url, title, tags, vertical = false }: ShareButton
             target="_blank"
             rel="noopener noreferrer"
             title={`Share on ${platform.name}`}
+            aria-label={`Share on ${platform.name}`}
             onClick={() => handleShare(platform.name)}
             className={cn(
-              "flex h-10 w-10 items-center justify-center rounded-xl border border-border/50 text-muted-foreground/60 shadow-sm transition-all duration-200 hover:scale-110 hover:shadow-md dark:border-white/[0.08]",
+              "flex h-10 w-10 items-center justify-center rounded-xl border border-border/50 text-muted-foreground/60 shadow-sm transition-all duration-200 hover:scale-110 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 dark:border-white/[0.08]",
               platform.hoverColor
             )}
           >
@@ -107,8 +108,9 @@ export function ShareButtons({ url, title, tags, vertical = false }: ShareButton
         <button
           onClick={handleCopyLink}
           title="Copy link"
+          aria-label="Copy link"
           className={cn(
-            "flex h-10 w-10 items-center justify-center rounded-xl border shadow-sm transition-all duration-200 hover:scale-110 hover:shadow-md",
+            "flex h-10 w-10 items-center justify-center rounded-xl border shadow-sm transition-all duration-200 hover:scale-110 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
             copied
               ? "border-green-500/40 bg-green-500/10 text-green-500"
               : "border-border/50 text-muted-foreground/60 hover:bg-accent hover:text-foreground dark:border-white/[0.08]"
@@ -131,7 +133,7 @@ export function ShareButtons({ url, title, tags, vertical = false }: ShareButton
           rel="noopener noreferrer"
           onClick={() => handleShare(platform.name)}
           className={cn(
-            "inline-flex items-center gap-1.5 rounded-lg border border-border/50 px-3 py-1.5 text-xs font-medium text-muted-foreground transition-all duration-200 dark:border-white/[0.08]",
+            "inline-flex items-center gap-1.5 rounded-lg border border-border/50 px-3 py-1.5 text-xs font-medium text-muted-foreground transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 dark:border-white/[0.08]",
             platform.hoverColor
           )}
         >
@@ -143,7 +145,7 @@ export function ShareButtons({ url, title, tags, vertical = false }: ShareButton
       <button
         onClick={handleCopyLink}
         className={cn(
-          "inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-medium transition-all duration-200",
+          "inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
           copied
             ? "border-green-500/30 bg-green-500/10 text-green-500"
             : "border-border/50 text-muted-foreground hover:bg-accent hover:text-foreground dark:border-white/[0.08]"

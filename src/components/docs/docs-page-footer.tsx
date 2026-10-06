@@ -46,7 +46,7 @@ export function DocsPageFooter({ sourceFile, pageTitle }: Readonly<DocsPageFoote
               type="button"
               onClick={() => handleFeedback(true)}
               aria-label="Yes, this page was helpful"
-              className="rounded-md p-1.5 hover:bg-accent hover:text-accent-foreground"
+              className="rounded-md p-1.5 hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
               <ThumbsUp className="h-3.5 w-3.5" />
             </button>
@@ -54,7 +54,7 @@ export function DocsPageFooter({ sourceFile, pageTitle }: Readonly<DocsPageFoote
               type="button"
               onClick={() => handleFeedback(false)}
               aria-label="No, this page was not helpful"
-              className="rounded-md p-1.5 hover:bg-accent hover:text-accent-foreground"
+              className="rounded-md p-1.5 hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
               <ThumbsDown className="h-3.5 w-3.5" />
             </button>
