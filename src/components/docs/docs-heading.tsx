@@ -24,7 +24,7 @@ export function DocsHeading({ id, children }: Readonly<{ id: string; children: R
         type="button"
         onClick={handleCopy}
         aria-label={`Copy link to ${typeof children === "string" ? children : "this section"}`}
-        className="opacity-0 transition-opacity group-hover/heading:opacity-100 focus-visible:opacity-100"
+        className="rounded opacity-0 transition-opacity group-hover/heading:opacity-100 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
       >
         {copied ? (
           <Check className="h-3.5 w-3.5 text-green-500" />

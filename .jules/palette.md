@@ -17,3 +17,6 @@
 ## 2024-10-24 - Hand-rolled Modal Accessibility
 **Learning:** Custom hand-rolled modal overlays (like the Help FAB) may omit native dialog primitives and roles since they do not use standard UI libraries like `@radix-ui/react-dialog`. This renders them effectively invisible or confusing to screen readers because they lack `role="dialog"` and `aria-modal="true"`.
 **Action:** When inspecting or adding custom full-screen overlays or modals, verify that the container element includes `role="dialog"`, `aria-modal="true"`, and is properly labeled via `aria-labelledby` or `aria-label`.
+## 2024-10-24 - Docs Interactive Element Keyboard Accessibility
+**Learning:** Found a pattern where several icon-only buttons or inline actions within the documentation section (`docs-page-footer.tsx`, `docs-heading.tsx`, `docs-ask-ai.tsx`) were missing explicit keyboard focus states, making them difficult for keyboard users to identify when navigating.
+**Action:** Always ensure that inline interactive elements and icon-only buttons include `focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2` to match standard design system focus rings.
