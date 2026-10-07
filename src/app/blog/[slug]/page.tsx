@@ -16,6 +16,7 @@ interface Post {
   date: string;
   author: string;
   tags: string[];
+  image?: string;
   body: string;
 }
 
@@ -56,11 +57,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       siteName: "theSVG",
       section: post.tags[0],
       tags: post.tags,
+      ...(post.image ? { images: [{ url: post.image, width: 1200, height: 630, alt: post.title }] } : {}),
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.excerpt,
+      ...(post.image ? { images: [post.image] } : {}),
     },
     alternates: {
       canonical: `https://thesvg.org/blog/${slug}`,
@@ -205,6 +208,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     datePublished: post.date,
     author: { "@type": "Organization", name: post.author },
     publisher: { "@type": "Organization", name: "theSVG", url: "https://thesvg.org" },
+    ...(post.image ? { image: `https://thesvg.org${post.image}` } : {}),
     url: `https://thesvg.org/blog/${slug}`,
     isPartOf: { "@type": "WebSite", name: "theSVG", url: "https://thesvg.org" },
   };
@@ -251,6 +255,16 @@ export default async function BlogPostPage({ params }: PageProps) {
               ))}
             </div>
           </header>
+
+          {post.image ? (
+            <img
+              src={post.image}
+              alt={post.title}
+              width={1200}
+              height={630}
+              className="mb-8 w-full rounded-xl border border-border/40 dark:border-white/[0.06]"
+            />
+          ) : null}
 
           {/* Body with sticky share sidebar */}
           <div className="relative">

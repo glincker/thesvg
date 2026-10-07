@@ -5,8 +5,18 @@
     <link>https://thesvg.org/blog</link>
     <description>Announcements, releases, and updates from theSVG - the open SVG brand library</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Sep 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://thesvg.org/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>theAuth joins GLINR Studios: open-source auth for AI agents, now with Go</title>
+      <link>https://thesvg.org/blog/theauth-joins-glinr-studios</link>
+      <guid isPermaLink="true">https://thesvg.org/blog/theauth-joins-glinr-studios</guid>
+      <description>theAuth, the open-source auth for AI agents and humans, has joined GLINR Studios, with a new site at theauth.dev, a Go library, and a hosted platform on the way.</description>
+      <pubDate>Wed, 07 Oct 2026 00:00:00 GMT</pubDate>
+      <author>team@thesvg.org (GLINR Studios)</author>
+      <category>launch</category>
+      <category>open-source</category>
+    </item>
     <item>
       <title>10 SVG Icon Performance Hacks Every Frontend Developer Should Know</title>
       <link>https://thesvg.org/blog/svg-icon-performance-hacks-2026</link>
