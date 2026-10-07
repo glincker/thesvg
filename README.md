@@ -299,7 +299,7 @@ Icons are organized into 115+ categories:
 
 ## Community
 
-Questions, icon requests, or showing off what you built? Join the official GLINR Discord, home of theSVG and every other GLINCKER open source project. theSVG has its own forum there, and new releases post to it automatically.
+Questions, icon requests, or showing off what you built? Join the official GLINR Discord, home of theSVG and every other GLINR Studios open source project. theSVG has its own forum there, and new releases post to it automatically.
 
 <a href="https://discord.gg/Ar5pcaZB99"><img src="https://discord.com/api/guilds/829168897080557579/widget.png?style=banner2" alt="Join the GLINR Discord" /></a>
 
