@@ -59,4 +59,4 @@ Sponsorship does not transfer any rights to brand icons in the catalog. All bran
 
 ## Questions
 
-[support@glincker.com](mailto:support@glincker.com)
+[support@glinr.com](mailto:support@glinr.com)

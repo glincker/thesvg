@@ -88,4 +88,4 @@ If this policy changes materially, the updated version will be published at http
 
 ## Contact
 
-Questions about privacy: support@glincker.com
+Questions about privacy: support@glinr.com

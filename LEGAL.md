@@ -39,7 +39,7 @@ Where available, we link to official brand guidelines on each icon's detail page
 
 We respect intellectual property rights. If you are a brand owner or authorized representative:
 
-- **Request removal**: [Open an issue](https://github.com/glincker/thesvg/issues/new?template=icon_removal.yml) or email [support@glincker.com](mailto:support@glincker.com)
+- **Request removal**: [Open an issue](https://github.com/glincker/thesvg/issues/new?template=icon_removal.yml) or email [support@glinr.com](mailto:support@glinr.com)
 - **Update your icon**: Submit the correct version via issue or pull request
 - **Add usage guidelines**: Let us know your guidelines URL and we will link to it
 
@@ -49,7 +49,7 @@ We respect intellectual property rights. If you are a brand owner or authorized 
 
 For copyright infringement claims under the Digital Millennium Copyright Act:
 
-1. Send a written notice to **support@glincker.com** identifying the copyrighted material, your contact information, and a statement that you are the rights holder or authorized agent
+1. Send a written notice to **support@glinr.com** identifying the copyrighted material, your contact information, and a statement that you are the rights holder or authorized agent
 2. We will acknowledge receipt within 48 hours
 3. Infringing material will be removed within 24 hours of verification
 

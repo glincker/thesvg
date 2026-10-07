@@ -195,10 +195,10 @@ export default function PrivacyPage() {
               <p>
                 Questions about privacy:{" "}
                 <a
-                  href="mailto:support@glincker.com"
+                  href="mailto:support@glinr.com"
                   className="text-foreground underline underline-offset-2"
                 >
-                  support@glincker.com
+                  support@glinr.com
                 </a>
               </p>
             </Section>

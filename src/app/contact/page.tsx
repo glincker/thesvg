@@ -38,8 +38,8 @@ const CONTACT_CHANNELS = [
     icon: Mail,
     title: "Email",
     description: "For trademark requests, DMCA notices, or general inquiries.",
-    action: "support@glincker.com",
-    href: "mailto:support@glincker.com",
+    action: "support@glinr.com",
+    href: "mailto:support@glinr.com",
     note: "We respond within 48 hours",
   },
   {
@@ -131,7 +131,7 @@ export default function ContactPage() {
             If you are a brand owner and would like your icon removed or updated,
             please{" "}
             <a
-              href="mailto:support@glincker.com"
+              href="mailto:support@glinr.com"
               className="font-medium text-foreground underline underline-offset-2"
             >
               email us
