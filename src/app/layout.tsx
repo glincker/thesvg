@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import { AnnouncementBanner } from "@/components/announcement-banner";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ScrollToTop } from "@/components/scroll-to-top";
@@ -161,6 +162,7 @@ export default function RootLayout({
         >
           <StoreHydration />
           <ScrollToTop />
+          <AnnouncementBanner />
           {/* Desktop header, `md:` and above. Rendered as a body-level
               sibling (not wrapped) so position: sticky keeps a containing
               block tall enough for it to stick against the viewport.
