@@ -8,6 +8,7 @@ interface Post {
   date: string;
   author: string;
   tags: string[];
+  image?: string;
   body: string;
 }
 
@@ -24,6 +25,11 @@ const postsPath = join(__dirname, "../src/data/posts.json");
 const posts = (JSON.parse(readFileSync(postsPath, "utf-8")) as Post[]).sort(
   (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
 );
+
+// Derive lastBuildDate from the newest post, not the clock, so regenerating the
+// feed on an unchanged posts.json is a no-op instead of a daily diff.
+const lastBuildDate =
+  posts.length > 0 ? new Date(posts[0].date).toUTCString() : new Date(0).toUTCString();
 
 const items = posts
   .map(
@@ -46,7 +52,7 @@ const rss = `<?xml version="1.0" encoding="UTF-8"?>
     <link>https://thesvg.org/blog</link>
     <description>Announcements, releases, and updates from theSVG - the open SVG brand library</description>
     <language>en-us</language>
-    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+    <lastBuildDate>${lastBuildDate}</lastBuildDate>
     <atom:link href="https://thesvg.org/feed.xml" rel="self" type="application/rss+xml"/>
 ${items}
   </channel>

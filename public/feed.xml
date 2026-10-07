@@ -18,15 +18,35 @@
       <category>open-source</category>
     </item>
     <item>
+      <title>Browse Icons by Recently Added or Popular</title>
+      <link>https://thesvg.org/blog/recently-added-and-popular-icons</link>
+      <guid isPermaLink="true">https://thesvg.org/blog/recently-added-and-popular-icons</guid>
+      <description>theSVG now has dedicated Recently Added and Popular pages across all 7,400+ icons, plus a homepage switch that remembers which view you prefer.</description>
+      <pubDate>Thu, 01 Oct 2026 00:00:00 GMT</pubDate>
+      <author>team@thesvg.org (theSVG Team)</author>
+      <category>release</category>
+      <category>design</category>
+    </item>
+    <item>
       <title>10 SVG Icon Performance Hacks Every Frontend Developer Should Know</title>
       <link>https://thesvg.org/blog/svg-icon-performance-hacks-2026</link>
       <guid isPermaLink="true">https://thesvg.org/blog/svg-icon-performance-hacks-2026</guid>
-      <description>Beyond 'use SVG instead of PNG': ten small, measurable tricks for icon-heavy pages, from content-visibility and mask-image recoloring to debounced search and real dark-mode variants.</description>
+      <description>Beyond &apos;use SVG instead of PNG&apos;: ten small, measurable tricks for icon-heavy pages, from content-visibility and mask-image recoloring to debounced search and real dark-mode variants.</description>
       <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
       <author>team@thesvg.org (theSVG Team)</author>
       <category>tutorial</category>
       <category>performance</category>
       <category>patterns</category>
+    </item>
+    <item>
+      <title>A More Alive Icon Page: Brand Colors, Completeness, and Smoother Motion</title>
+      <link>https://thesvg.org/blog/icon-page-redesign-brand-color-completeness</link>
+      <guid isPermaLink="true">https://thesvg.org/blog/icon-page-redesign-brand-color-completeness</guid>
+      <description>Every icon page now picks up an ambient wash of the brand&apos;s own color, shows a plain-language completeness checklist instead of a vague score, and reacts to your scroll and theme instead of sitting still.</description>
+      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
+      <author>team@thesvg.org (theSVG Team)</author>
+      <category>release</category>
+      <category>design</category>
     </item>
     <item>
       <title>12 draw.io / diagrams.net Shape Libraries Are Live</title>
@@ -53,6 +73,72 @@
       <category>cloud</category>
     </item>
     <item>
+      <title>theSVG for React Native and Expo</title>
+      <link>https://thesvg.org/blog/react-native-expo-icons</link>
+      <guid isPermaLink="true">https://thesvg.org/blog/react-native-expo-icons</guid>
+      <description>All 6,500+ icons now ship for React Native and Expo via @thesvg/react-native, backed by react-native-svg. Same typed, tree-shakeable story as the web package, no config plugin needed.</description>
+      <pubDate>Tue, 11 Aug 2026 00:00:00 GMT</pubDate>
+      <author>team@thesvg.org (theSVG Team)</author>
+      <category>release</category>
+      <category>react-native</category>
+      <category>expo</category>
+      <category>mobile</category>
+    </item>
+    <item>
+      <title>6,500+ Icons: What Shipped Since GLINR Studios</title>
+      <link>https://thesvg.org/blog/6500-icons-milestone</link>
+      <guid isPermaLink="true">https://thesvg.org/blog/6500-icons-milestone</guid>
+      <description>Two months after crossing 6,115 icons, theSVG passed 6,500. Kubernetes icons landed, a new community collection grew to 256 logos, and categories quietly passed 140.</description>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 GMT</pubDate>
+      <author>team@thesvg.org (theSVG Team)</author>
+      <category>milestone</category>
+      <category>roadmap</category>
+    </item>
+    <item>
+      <title>Building a Dark-Mode-Safe Logo Wall: Variants, Contrast, and the Details Most Integration Pages Skip</title>
+      <link>https://thesvg.org/blog/dark-mode-logo-wall-guide</link>
+      <guid isPermaLink="true">https://thesvg.org/blog/dark-mode-logo-wall-guide</guid>
+      <description>Invisible logos, blurry marks, and mismatched styles are the three ways a customer or integration logo row breaks. Here is how to fix all three with variant selection alone.</description>
+      <pubDate>Fri, 24 Jul 2026 00:00:00 GMT</pubDate>
+      <author>team@thesvg.org (theSVG Team)</author>
+      <category>tutorial</category>
+      <category>patterns</category>
+      <category>design</category>
+    </item>
+    <item>
+      <title>Give Your AI Coding Agent Brand Icons: A theSVG MCP Server Walkthrough</title>
+      <link>https://thesvg.org/blog/mcp-server-ai-agent-tutorial</link>
+      <guid isPermaLink="true">https://thesvg.org/blog/mcp-server-ai-agent-tutorial</guid>
+      <description>Stop letting your AI agent guess at CDN URLs for brand logos. Set up the @thesvg/mcp-server package in five minutes and get live, always-current icon lookups in Claude, Cursor, and any MCP-aware client.</description>
+      <pubDate>Tue, 14 Jul 2026 00:00:00 GMT</pubDate>
+      <author>team@thesvg.org (theSVG Team)</author>
+      <category>tutorial</category>
+      <category>mcp</category>
+      <category>ai</category>
+    </item>
+    <item>
+      <title>theSVG is Joining GLINR Studios</title>
+      <link>https://thesvg.org/blog/thesvg-joining-glinr-studios</link>
+      <guid isPermaLink="true">https://thesvg.org/blog/thesvg-joining-glinr-studios</guid>
+      <description>Big news: thesvg.org is becoming part of GLINR Studios, a new umbrella we are building for our products. The library stays open source. Here is what this means for you.</description>
+      <pubDate>Mon, 29 Jun 2026 00:00:00 GMT</pubDate>
+      <author>team@thesvg.org (GLINR Studios)</author>
+      <category>announcement</category>
+      <category>milestone</category>
+      <category>roadmap</category>
+    </item>
+    <item>
+      <title>The Largest Open SVG Brand Library of 2026: 6,115 Icons in Three Months</title>
+      <link>https://thesvg.org/blog/top-svg-brand-library-2026</link>
+      <guid isPermaLink="true">https://thesvg.org/blog/top-svg-brand-library-2026</guid>
+      <description>From a March 2026 launch to over 6,000 brand SVGs by June. How theSVG became the largest open brand SVG library of 2026, what we shipped, and what is next.</description>
+      <pubDate>Thu, 11 Jun 2026 00:00:00 GMT</pubDate>
+      <author>team@thesvg.org (theSVG Team)</author>
+      <category>milestone</category>
+      <category>launch</category>
+      <category>roadmap</category>
+    </item>
+    <item>
       <title>Google 2026 Icons Are Live: 13 New Gradient Logos in SVG</title>
       <link>https://thesvg.org/blog/google-2026-icons-svg</link>
       <guid isPermaLink="true">https://thesvg.org/blog/google-2026-icons-svg</guid>
@@ -64,7 +150,7 @@
       <category>launch</category>
     </item>
     <item>
-      <title>The thesvg Figma Plugin is Live</title>
+      <title>The theSVG Figma Plugin is Live</title>
       <link>https://thesvg.org/blog/figma-plugin-launch</link>
       <guid isPermaLink="true">https://thesvg.org/blog/figma-plugin-launch</guid>
       <description>Browse 6,030+ brand SVGs without leaving Figma. Variant picker, recents row, keyboard shortcuts, dark mode aware.</description>
@@ -75,7 +161,7 @@
       <category>integration</category>
     </item>
     <item>
-      <title>thesvg is Now on Raycast</title>
+      <title>theSVG is Now on Raycast</title>
       <link>https://thesvg.org/blog/raycast-extension-launch</link>
       <guid isPermaLink="true">https://thesvg.org/blog/raycast-extension-launch</guid>
       <description>Search and copy any of our 5,600 icons directly from Raycast. No browser needed.</description>
