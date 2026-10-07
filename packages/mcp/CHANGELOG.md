@@ -1,5 +1,11 @@
 # @thesvg/mcp-server
 
+## 0.8.4
+
+### Patch Changes
+
+- chore(deps-dev): bump the development-minor-patch group with 5 updates ([#1220](https://github.com/glincker/thesvg/issues/1220))
+
 ## 0.8.3
 
 ### Patch Changes
