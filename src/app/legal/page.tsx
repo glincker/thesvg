@@ -172,11 +172,11 @@ export default function LegalPage() {
                   Open removal request
                 </a>
                 <a
-                  href={withUtm("mailto:support@glincker.com", "legal_page")}
+                  href={withUtm("mailto:support@glinr.com", "legal_page")}
                   className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-xs font-medium text-foreground transition-colors hover:bg-accent dark:border-white/[0.08]"
                 >
                   <Mail className="h-3 w-3" />
-                  support@glincker.com
+                  support@glinr.com
                 </a>
               </div>
               <p className="mt-3 text-xs text-muted-foreground/70">
@@ -191,7 +191,7 @@ export default function LegalPage() {
               </p>
               <ol className="list-inside list-decimal space-y-1.5">
                 <li>
-                  Send a written notice to <strong>support@glincker.com</strong> identifying
+                  Send a written notice to <strong>support@glinr.com</strong> identifying
                   the copyrighted material, your contact information, and a statement that
                   you are the rights holder or authorized agent
                 </li>

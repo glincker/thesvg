@@ -332,7 +332,7 @@ All brand names, logos, and trademarks are the property of their respective owne
 
 AWS Architecture Icons are provided under [CC BY-ND 2.0](https://creativecommons.org/licenses/by-nd/2.0/) (No Derivatives). Amazon Web Services and all related marks are trademarks of Amazon.com, Inc.
 
-If you are a brand owner and would like an icon updated or removed, please [open an issue](https://github.com/glincker/thesvg/issues) or email **support@glincker.com**. See our [Legal Notice](https://thesvg.org/legal), [TRADEMARK.md](./TRADEMARK.md), and [LEGAL.md](./LEGAL.md) for full details.
+If you are a brand owner and would like an icon updated or removed, please [open an issue](https://github.com/glincker/thesvg/issues) or email **support@glinr.com**. See our [Legal Notice](https://thesvg.org/legal), [TRADEMARK.md](./TRADEMARK.md), and [LEGAL.md](./LEGAL.md) for full details.
 
 ## License
 

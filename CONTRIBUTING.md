@@ -228,7 +228,7 @@ AWS Architecture Icons are distributed unmodified under [CC BY-ND 2.0](https://c
 Web Services and all related marks are trademarks of Amazon.com, Inc.
 
 For trademark concerns, see [TRADEMARK.md](./TRADEMARK.md) or contact
-[support@glincker.com](mailto:support@glincker.com).
+[support@glinr.com](mailto:support@glinr.com).
 
 ## Become a Moderator
 

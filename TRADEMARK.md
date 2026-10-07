@@ -24,7 +24,7 @@ We respect your intellectual property. If you are a brand owner or authorized re
 
 Please contact us:
 
-- **Email**: [support@glincker.com](mailto:support@glincker.com)
+- **Email**: [support@glinr.com](mailto:support@glinr.com)
 - **GitHub Issue**: [Open a trademark issue](https://github.com/glincker/thesvg/issues/new?labels=trademark&title=Trademark+Request:+[Brand+Name])
 
 We take all trademark requests seriously and will respond within 48 hours. Removal requests are honored promptly, typically within 24 hours.
@@ -33,7 +33,7 @@ We take all trademark requests seriously and will respond within 48 hours. Remov
 
 If you believe any content on thesvg.org infringes your copyright under the Digital Millennium Copyright Act (DMCA):
 
-1. Send a written notice to **support@glincker.com** identifying:
+1. Send a written notice to **support@glinr.com** identifying:
    - The copyrighted material in question
    - Your contact information
    - A statement that you are the rights holder or authorized to act on their behalf
