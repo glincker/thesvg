@@ -42,6 +42,8 @@ export function DocsAskAi({ pageTitle }: Readonly<{ pageTitle: string }>) {
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
+        aria-haspopup="menu"
+        aria-expanded={open}
         className="inline-flex items-center gap-1.5 rounded-lg border border-border/50 px-2.5 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-orange-500/30 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 dark:border-white/[0.08]"
       >
         <Sparkles className="h-3.5 w-3.5" />
