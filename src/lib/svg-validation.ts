@@ -1,3 +1,5 @@
+import { isUnsafeHref, normalizeUrl } from "./href-safety";
+
 export interface ValidationCheck {
   name: string;
   passed: boolean;
@@ -11,36 +13,52 @@ export interface ValidationResult {
 
 const MAX_FILE_SIZE = 50 * 1024; // 50KB
 
-function hasMaliciousAttributes(doc: Document): { hasOnHandlers: boolean; hasUnsafeHref: boolean } {
+function hasMaliciousAttributes(doc: Document): {
+  hasOnHandlers: boolean;
+  hasUnsafeHref: boolean;
+  hasForbiddenElement: boolean;
+} {
   let hasOnHandlers = false;
   let hasUnsafeHref = false;
+  let hasForbiddenElement = false;
 
   const allElements = doc.querySelectorAll("*");
   for (const el of Array.from(allElements)) {
+    const tag = el.localName.toLowerCase();
+    if (tag === "foreignobject") {
+      hasForbiddenElement = true;
+    }
     for (const attr of Array.from(el.attributes)) {
       const name = attr.name.toLowerCase();
       if (name.startsWith("on")) {
         hasOnHandlers = true;
       }
       if (name === "href" || name.endsWith(":href")) {
-        // Strip whitespace/controls that can bypass filters, then check against allowlist
-        const val = attr.value.replace(/[\s\x00-\x1F\x7F]/g, "").toLowerCase();
-        if (
-          val !== "" &&
-          !val.startsWith("#") &&
-          !val.startsWith("/") &&
-          !val.startsWith("http://") &&
-          !val.startsWith("https://") &&
-          !val.startsWith("mailto:") &&
-          !(val.startsWith("data:image/") && !val.startsWith("data:image/svg+xml"))
-        ) {
+        // Allowlist first (the original behaviour: anything else is rejected,
+        // including blob:, file:, ftp: and bare relative paths), then the shared
+        // unsafe-href check, which also rejects protocol-relative //host values
+        // that a plain "/" prefix match would let through.
+        const href = normalizeUrl(attr.value);
+        const allowed =
+          href === "" ||
+          href.startsWith("#") ||
+          (href.startsWith("/") && !href.startsWith("//")) ||
+          href.startsWith("http://") ||
+          href.startsWith("https://") ||
+          href.startsWith("mailto:") ||
+          (href.startsWith("data:image/") && !href.startsWith("data:image/svg+xml"));
+        if (!allowed || isUnsafeHref(attr.value)) {
+          hasUnsafeHref = true;
+        }
+        // <use> may only reference fragments inside the document
+        if (tag === "use" && !normalizeUrl(attr.value).startsWith("#")) {
           hasUnsafeHref = true;
         }
       }
     }
   }
 
-  return { hasOnHandlers, hasUnsafeHref };
+  return { hasOnHandlers, hasUnsafeHref, hasForbiddenElement };
 }
 
 export function validateSvg(content: string, fileSize: number): ValidationResult {
@@ -104,15 +122,15 @@ export function validateSvg(content: string, fileSize: number): ValidationResult
   const scriptTags = doc.querySelectorAll("script");
   const hasScripts = scriptTags.length > 0;
 
-  const { hasOnHandlers, hasUnsafeHref } = hasMaliciousAttributes(doc);
+  const { hasOnHandlers, hasUnsafeHref, hasForbiddenElement } = hasMaliciousAttributes(doc);
 
-  const scriptFree = !hasScripts && !hasOnHandlers && !hasUnsafeHref;
+  const scriptFree = !hasScripts && !hasOnHandlers && !hasUnsafeHref && !hasForbiddenElement;
   checks.push({
     name: "No embedded scripts",
     passed: scriptFree,
     message: scriptFree
-      ? "No script tags or event handlers found"
-      : "Contains script tags, event handlers, or unsafe protocols - not allowed",
+      ? "No script tags, event handlers, or unsafe links found"
+      : "Contains script tags, event handlers, foreignObject, or unsafe links - not allowed",
   });
 
   // Check 5: No embedded raster images (base64)
