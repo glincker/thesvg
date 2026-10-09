@@ -37,3 +37,7 @@
 **Vulnerability:** The client-side SVG validation logic (`src/lib/svg-validation.ts`) was using a naive regex blocklist (checking strictly for `javascript:`) to validate URLs inside `<use>`, `<a>`, and `<image>` tags. This could be bypassed using alternative malicious schemes like `vbscript:` or `data:text/html` which can also execute scripts.
 **Learning:** URL validation should never rely on blocklisting known bad schemes. Inconsistencies across the codebase (e.g. blog vs svg validation) can easily leave holes.
 **Prevention:** Use a strict allowlist of safe protocols (e.g. `http://`, `https://`, `mailto:`, `/`, `#`, and sometimes `data:image/` if raster images are intentionally parsed separately) and ensure all whitespace and control characters are stripped before checking to prevent decoding bypasses.
+## 2025-02-14 - Fix HTML Comment Breakout Vulnerability
+**Vulnerability:** The function `buildPenHtml` inserted the `title` parameter directly into an HTML comment block (`<!-- ${title} -->`) without escaping the hyphen (`-`) characters, allowing a potential breakout if `--` (or `-->`) is passed.
+**Learning:** Interpolating user input into HTML comments is a vector for XSS and XML parser issues if the input can contain the sequence `--` or `-->`.
+**Prevention:** Always HTML-escape user input, including `<`, `>`, `&`, and importantly hyphens (`-` to `&#45;` or `- -`) before placing it anywhere in an HTML comment block to prevent comment breakouts.
