@@ -1,7 +1,7 @@
 "use client";
 
 import { memo, useCallback, useRef, useState, type CSSProperties } from "react";
-import { Check, Copy, Download, Eye, Heart } from "lucide-react";
+import { Check, Copy, Download, Eye, Heart, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import posthog from "posthog-js";
@@ -32,6 +32,8 @@ export const IconCard = memo(function IconCard({
   entranceDelay,
 }: IconCardProps) {
   const [copied, setCopied] = useState(false);
+  const [isCopying, setIsCopying] = useState(false);
+  const [isDownloading, setIsDownloading] = useState(false);
   const router = useRouter();
   // Track the slug we last prefetched, not a boolean, so virtualised/windowed
   // parents that reuse IconCard instances with different icons still prefetch
@@ -50,6 +52,8 @@ export const IconCard = memo(function IconCard({
 
   const handleCopy = useCallback(
     async () => {
+      if (isCopying) return;
+      setIsCopying(true);
       try {
         const res = await fetch(icon.variants.default);
         const svg = await res.text();
@@ -63,6 +67,8 @@ export const IconCard = memo(function IconCard({
         );
         setCopied(true);
         setTimeout(() => setCopied(false), 1500);
+      } finally {
+        setIsCopying(false);
       }
       recordCopy(icon.slug, defaultCopyFormat);
       posthog.capture("icon_copied", {
@@ -73,11 +79,13 @@ export const IconCard = memo(function IconCard({
         categories: icon.categories,
       });
     },
-    [icon.variants.default, icon.slug, icon.title, icon.categories, defaultCopyFormat, recordCopy]
+    [icon.variants.default, icon.slug, icon.title, icon.categories, defaultCopyFormat, recordCopy, isCopying]
   );
 
   const handleDownload = useCallback(
     async () => {
+      if (isDownloading) return;
+      setIsDownloading(true);
       try {
         const res = await fetch(icon.variants.default);
         const blob = await res.blob();
@@ -91,6 +99,8 @@ export const IconCard = memo(function IconCard({
         URL.revokeObjectURL(url);
       } catch {
         window.open(icon.variants.default, "_blank");
+      } finally {
+        setIsDownloading(false);
       }
       posthog.capture("icon_downloaded", {
         icon_slug: icon.slug,
@@ -101,7 +111,7 @@ export const IconCard = memo(function IconCard({
         categories: icon.categories,
       });
     },
-    [icon.variants.default, icon.slug, icon.title, icon.categories]
+    [icon.variants.default, icon.slug, icon.title, icon.categories, isDownloading]
   );
 
   const handleFavorite = useCallback(
@@ -279,10 +289,13 @@ export const IconCard = memo(function IconCard({
         <button
           type="button"
           onClick={handleCopy}
+          disabled={isCopying}
           aria-label={copied ? `${icon.title} ${FORMAT_LABELS.get(defaultCopyFormat) || defaultCopyFormat.toUpperCase()} copied` : `Copy ${icon.title} ${FORMAT_LABELS.get(defaultCopyFormat) || defaultCopyFormat.toUpperCase()}`}
-          className="flex h-7 flex-1 items-center justify-center gap-1 rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          className="flex h-7 flex-1 items-center justify-center gap-1 rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50"
         >
-          {copied ? (
+          {isCopying ? (
+            <Loader2 className="h-3.5 w-3.5 animate-spin" />
+          ) : copied ? (
             <Check className="h-3.5 w-3.5 text-green-500" />
           ) : (
             <Copy className="h-3.5 w-3.5" />
@@ -292,10 +305,15 @@ export const IconCard = memo(function IconCard({
         <button
           type="button"
           onClick={handleDownload}
+          disabled={isDownloading}
           aria-label={`Download ${icon.title} SVG`}
-          className="flex h-7 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          className="flex h-7 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50"
         >
-          <Download className="h-3.5 w-3.5" />
+          {isDownloading ? (
+            <Loader2 className="h-3.5 w-3.5 animate-spin" />
+          ) : (
+            <Download className="h-3.5 w-3.5" />
+          )}
         </button>
         <button
           type="button"
