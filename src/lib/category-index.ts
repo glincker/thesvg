@@ -62,5 +62,11 @@ export function filterCategories(
 ): { name: string; count: number }[] {
   const q = query.trim().toLowerCase();
   if (!q) return categories;
-  return categories.filter((category) => category.name.toLowerCase().includes(q));
+  const len = q.length;
+  // Performance optimization: Pre-check string length before allocating `.toLowerCase()`
+  // to avoid blocking the main thread when searching large category sets on every keystroke.
+  return categories.filter((category) => {
+    const name = category.name;
+    return name.length >= len && name.toLowerCase().includes(q);
+  });
 }

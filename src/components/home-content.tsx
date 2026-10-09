@@ -214,15 +214,29 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
     }
     if (categoryParam) {
       const lowerCatParam = categoryParam.toLowerCase();
-      r = r.filter((icon) =>
-        icon.categories.some((c) => c.toLowerCase() === lowerCatParam)
-      );
+      const len = lowerCatParam.length;
+      // Performance optimization: Unrolled `.some()` into a standard for-loop and added a direct length check.
+      // This bypasses `.toLowerCase()` string allocations for mismatches, yielding significant speedups
+      // when filtering thousands of icon items.
+      r = r.filter((icon) => {
+        const cats = icon.categories;
+        for (let i = 0; i < cats.length; i++) {
+          if (cats[i].length === len && cats[i].toLowerCase() === lowerCatParam) return true;
+        }
+        return false;
+      });
     }
     if (catSearchParam.trim()) {
       const lowerCatSearch = catSearchParam.trim().toLowerCase();
-      r = r.filter((icon) =>
-        icon.categories.some((c) => c.toLowerCase().includes(lowerCatSearch))
-      );
+      const len = lowerCatSearch.length;
+      // Performance optimization: Length-check fast path + direct loops avoids heavy string allocations.
+      r = r.filter((icon) => {
+        const cats = icon.categories;
+        for (let i = 0; i < cats.length; i++) {
+          if (cats[i].length >= len && cats[i].toLowerCase().includes(lowerCatSearch)) return true;
+        }
+        return false;
+      });
     }
     return r;
   }, [collectionIcons, favoritesParam, favorites, categoryParam, catSearchParam]);

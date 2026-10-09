@@ -40,3 +40,6 @@ Simulating with N=5000 icons, M=20 slugs:
 **What:** Replaced `Array.find` + `Array.filter` + spread operations with `Array.findIndex` + `Array.splice` + `Array.unshift` in state updates (`pushUnique` and `recordCopy` inside `recents-store.ts`).
 **Why:** The `Array.filter` method iterated over the entire array to check against a condition, whereas the `findIndex` allows us to instantly jump to the target item, avoiding multiple iterations over the same collection.
 **Impact:** ~40% faster execution time for state updates, reducing JS thread blocking in state modification events by effectively halving the operations (especially avoiding a full-array filter on upsert).
+## 2025-05-18 - String allocations inside hot loops
+**Learning:** Performing `.toLowerCase()` allocations inside tight array filtering loops over thousands of items creates massive garbage collection pressure and slows down search operations.
+**Action:** Pre-check `.length` requirements manually with `for` loops before generating strings to avoid pointless `.toLowerCase()` operations.
