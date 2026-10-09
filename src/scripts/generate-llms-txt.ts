@@ -79,7 +79,7 @@ function getPackages(): PackageInfo[] {
   return packages.sort((a, b) => {
     const ai = PACKAGE_ORDER.indexOf(a.name);
     const bi = PACKAGE_ORDER.indexOf(b.name);
-    if (ai === -1 && bi === -1) return a.name.localeCompare(b.name);
+    if (ai === -1 && bi === -1) return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
     if (ai === -1) return 1;
     if (bi === -1) return -1;
     return ai - bi;
@@ -136,7 +136,7 @@ function main() {
       categoryCounts.set(category, (categoryCounts.get(category) || 0) + 1);
     }
   }
-  const categories = [...categoryCounts.keys()].sort((a, b) => a.localeCompare(b));
+  const categories = [...categoryCounts.keys()].sort((a, b) => a < b ? -1 : a > b ? 1 : 0);
 
   let variantCount = 0;
   let guidelinesCount = 0;

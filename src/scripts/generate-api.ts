@@ -74,7 +74,7 @@ function main() {
   }
   const categories = [...counts.entries()]
     .map(([name, count]) => ({ name, count }))
-    .sort((a, b) => a.name.localeCompare(b.name));
+    .sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0);
 
   writeFileSync(
     join(PUBLIC_API, "categories.json"),

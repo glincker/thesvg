@@ -101,7 +101,7 @@ export function getCategoryCounts(collection?: Collection): { name: string; coun
   }
   return [...counts.entries()]
     .map(([name, count]) => ({ name, count }))
-    .sort((a, b) => a.name.localeCompare(b.name));
+    .sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0);
 }
 
 export function getIconCount(): number {
