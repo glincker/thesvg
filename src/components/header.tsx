@@ -4,8 +4,10 @@ import { useCallback, useEffect, useId, useMemo, useRef, useState, useSyncExtern
 import Link from "next/link";
 import posthog from "posthog-js";
 import { usePathname, useRouter } from "next/navigation";
-import { ArrowRight, Binary, BookOpen, Braces, ChevronDown, Component, FileCode, FileText, Link2, Menu, Moon, Package, Plus, Search, Sparkles, Sun, X } from "lucide-react";
+import { ArrowRight, Binary, BookOpen, Braces, ChevronDown, Component, FileCode, FileText, Link2, Menu, Moon, Package, Plus, Search, Sparkles, Star, Sun, X } from "lucide-react";
 import { TheSVGMark } from "@/components/icons/the-svg-mark";
+import { formatStarCount } from "@/lib/github-stars";
+import { useGithubStars } from "@/lib/hooks/use-github-stars";
 import { useTheme } from "next-themes";
 import { useSettingsStore } from "@/lib/stores/settings-store";
 import { FORMAT_BUTTONS, FORMAT_LABELS } from "@/components/icons/shared/icon-constants";
@@ -64,9 +66,12 @@ interface HeaderProps {
    * never needs a runtime import of the full icon dataset.
    */
   collectionCounts: { name: Collection; count: number }[];
+  /** Repo star count fetched at build time; refreshed in the browser. */
+  githubStars?: number | null;
 }
 
-export function Header({ collectionCounts }: HeaderProps) {
+export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
+  const stars = useGithubStars(githubStars);
   const { theme, setTheme } = useTheme();
   const defaultCopyFormat = useSettingsStore((s) => s.defaultCopyFormat);
   const setDefaultCopyFormat = useSettingsStore((s) => s.setDefaultCopyFormat);
@@ -783,17 +788,27 @@ export function Header({ collectionCounts }: HeaderProps) {
                 href={withUtm("https://github.com/GLINCKER/thesvg", "header")}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="View on GitHub"
-                title="GitHub repository"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border/50 text-muted-foreground transition-all hover:border-foreground/20 hover:bg-accent hover:text-foreground sm:h-8 sm:w-8 dark:border-white/[0.08] dark:hover:border-white/20 dark:hover:bg-white/[0.06]"
+                onClick={() => posthog.capture("github_star_clicked", { source: "header", stars })}
+                aria-label={stars !== null ? `Star thesvg on GitHub, ${stars} stars` : "Star thesvg on GitHub"}
+                title="Star thesvg on GitHub"
+                className="inline-flex h-9 items-center overflow-hidden rounded-lg border border-border/50 text-xs font-medium text-muted-foreground transition-all hover:border-foreground/20 hover:bg-accent hover:text-foreground sm:h-8 dark:border-white/[0.08] dark:hover:border-white/20 dark:hover:bg-white/[0.06]"
               >
-                <img
-                  src="/icons/github/default.svg"
-                  alt=""
-                  width={16}
-                  height={16}
-                  className="h-4 w-4 dark:invert"
-                />
+                <span className="inline-flex h-full items-center gap-1.5 px-2.5">
+                  <img
+                    src="/icons/github/default.svg"
+                    alt=""
+                    width={16}
+                    height={16}
+                    className="h-4 w-4 dark:invert"
+                  />
+                  <span className="hidden lg:inline">Star</span>
+                </span>
+                {stars !== null && (
+                  <span className="hidden h-full items-center gap-1 border-l border-border/50 bg-foreground/[0.04] px-2 tabular-nums text-foreground sm:inline-flex dark:border-white/[0.08] dark:bg-white/[0.05]">
+                    <Star className="h-3 w-3 fill-current text-amber-500" aria-hidden="true" />
+                    {formatStarCount(stars)}
+                  </span>
+                )}
               </a>
               <DropdownMenu>
                 <DropdownMenuTrigger
