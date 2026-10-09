@@ -13,6 +13,7 @@ import { formatSvg } from "@/lib/copy-formats";
 import { FORMAT_LABELS } from "./shared/icon-constants";
 import { cn } from "@/lib/utils";
 import { NewBadge } from "@/components/icons/new-badge";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 interface IconCardProps {
   icon: IconEntry;
@@ -275,37 +276,49 @@ export const IconCard = memo(function IconCard({
       </Link>
 
       {/* Action bar - real buttons, keyboard reachable */}
-      <div className="flex w-full items-center justify-center gap-0.5 border-t border-border/20 px-1.5 py-1 sm:gap-1 sm:px-2 sm:py-1.5 dark:border-white/[0.04]">
-        <button
-          type="button"
-          onClick={handleCopy}
-          aria-label={copied ? `${icon.title} ${FORMAT_LABELS.get(defaultCopyFormat) || defaultCopyFormat.toUpperCase()} copied` : `Copy ${icon.title} ${FORMAT_LABELS.get(defaultCopyFormat) || defaultCopyFormat.toUpperCase()}`}
-          className="flex h-7 flex-1 items-center justify-center gap-1 rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-        >
-          {copied ? (
-            <Check className="h-3.5 w-3.5 text-green-500" />
-          ) : (
-            <Copy className="h-3.5 w-3.5" />
-          )}
-          <span className="hidden text-[11px] font-medium sm:inline">Copy</span>
-        </button>
-        <button
-          type="button"
-          onClick={handleDownload}
-          aria-label={`Download ${icon.title} SVG`}
-          className="flex h-7 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-        >
-          <Download className="h-3.5 w-3.5" />
-        </button>
-        <button
-          type="button"
-          onClick={handlePreview}
-          aria-label={`Quick preview ${icon.title}`}
-          className="flex h-7 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-        >
-          <Eye className="h-3.5 w-3.5" />
-        </button>
-      </div>
+      <TooltipProvider delay={300}>
+        <div className="flex w-full items-center justify-center gap-0.5 border-t border-border/20 px-1.5 py-1 sm:gap-1 sm:px-2 sm:py-1.5 dark:border-white/[0.04]">
+          <button
+            type="button"
+            onClick={handleCopy}
+            aria-label={copied ? `${icon.title} ${FORMAT_LABELS.get(defaultCopyFormat) || defaultCopyFormat.toUpperCase()} copied` : `Copy ${icon.title} ${FORMAT_LABELS.get(defaultCopyFormat) || defaultCopyFormat.toUpperCase()}`}
+            className="flex h-7 flex-1 items-center justify-center gap-1 rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          >
+            {copied ? (
+              <Check className="h-3.5 w-3.5 text-green-500" />
+            ) : (
+              <Copy className="h-3.5 w-3.5" />
+            )}
+            <span className="hidden text-[11px] font-medium sm:inline">Copy</span>
+          </button>
+          <Tooltip>
+            <TooltipTrigger render={
+              <button
+                type="button"
+                onClick={handleDownload}
+                aria-label={`Download ${icon.title} SVG`}
+                className="flex h-7 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              >
+                <Download className="h-3.5 w-3.5" />
+              </button>
+            } />
+            <TooltipContent side="top">Download SVG</TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger render={
+              <button
+                type="button"
+                onClick={handlePreview}
+                aria-label={`Quick preview ${icon.title}`}
+                className="flex h-7 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              >
+                <Eye className="h-3.5 w-3.5" />
+              </button>
+            } />
+            <TooltipContent side="top">Quick preview</TooltipContent>
+          </Tooltip>
+        </div>
+      </TooltipProvider>
     </article>
   );
 });
