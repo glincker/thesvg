@@ -175,18 +175,46 @@ export async function fetchIconList(options?: {
 
   if (options?.category) {
     const wanted = options.category.toLowerCase();
-    icons = icons.filter((i) =>
-      i.categories.some((c) => c.toLowerCase() === wanted)
-    );
+    const filtered: RegistryIcon[] = [];
+    for (let i = 0; i < icons.length; i++) {
+      const icon = icons[i];
+      const cats = icon.categories;
+      let match = false;
+      for (let j = 0; j < cats.length; j++) {
+        if (cats[j].toLowerCase() === wanted) {
+          match = true;
+          break;
+        }
+      }
+      if (match) filtered.push(icon);
+    }
+    icons = filtered;
   }
 
   if (options?.query) {
     const q = options.query.toLowerCase();
-    icons = icons.filter((i) => {
-      if (i.slug.toLowerCase().includes(q)) return true;
-      if (i.title.toLowerCase().includes(q)) return true;
-      return i.aliases.some((a) => a.toLowerCase().includes(q));
-    });
+    const filtered: RegistryIcon[] = [];
+    for (let i = 0; i < icons.length; i++) {
+      const icon = icons[i];
+      if (icon.slug.toLowerCase().includes(q)) {
+        filtered.push(icon);
+        continue;
+      }
+      if (icon.title.toLowerCase().includes(q)) {
+        filtered.push(icon);
+        continue;
+      }
+      const aliases = icon.aliases;
+      let aliasMatch = false;
+      for (let j = 0; j < aliases.length; j++) {
+        if (aliases[j].toLowerCase().includes(q)) {
+          aliasMatch = true;
+          break;
+        }
+      }
+      if (aliasMatch) filtered.push(icon);
+    }
+    icons = filtered;
   }
 
   const total = icons.length;

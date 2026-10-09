@@ -69,3 +69,6 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2024-05-18 - Avoid chained `.filter().sort().map()` array methods in Fuse search results
 **Learning:** Chained array methods like `.filter().sort().map()` and intermediate array allocations in search functions using Fuse.js create performance bottlenecks when operating on large result sets from frequent keystrokes.
 **Action:** Replace these operations with single-pass `for` loops. Unrolling nested higher-order methods and preventing intermediate `.map()` or `.filter()` allocations directly avoids memory pressure overhead.
+## 2024-05-18 - Replacing chained array methods in Node utilities
+**Learning:** Utilities that execute chained array methods like `.filter().some()` and inner `.toLowerCase()` function calls when searching large datasets can cause memory spikes and performance bottlenecks in Node/CLI environments (e.g. `packages/cli/src/utils/api.ts`).
+**Action:** Replace these operations with single-pass `for` loops. Unrolling nested higher-order methods and preventing intermediate `.filter()` allocations directly avoids memory pressure overhead in utility functions.
