@@ -104,7 +104,7 @@ export function MobileIconSheet() {
         window.setTimeout(() => setCopiedKey(null), 1400);
       } catch {
         // Clipboard rejected — fall back to opening the icon URL
-        window.open(icon.variants.default, "_blank");
+        window.open(icon.variants.default, "_blank", "noopener");
       }
     },
     [icon, recordCopy, router, closeSheet],
@@ -131,7 +131,7 @@ export function MobileIconSheet() {
         source: "mobile_sheet",
       });
     } catch {
-      window.open(icon.variants.default, "_blank");
+      window.open(icon.variants.default, "_blank", "noopener");
     }
   }, [icon]);
 
