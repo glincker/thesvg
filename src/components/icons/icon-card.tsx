@@ -1,13 +1,14 @@
 "use client";
 
 import { memo, useCallback, useRef, useState, type CSSProperties } from "react";
-import { Check, Copy, Download, Eye, Heart } from "lucide-react";
+import { Check, Copy, Download, Eye, Heart, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import posthog from "posthog-js";
 import type { IconEntry } from "@/lib/icons";
 import { useFavoritesStore } from "@/lib/stores/favorites-store";
 import { useSettingsStore } from "@/lib/stores/settings-store";
+import { iconTone } from "@/lib/icon-tone";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import { formatSvg } from "@/lib/copy-formats";
 import { FORMAT_LABELS } from "./shared/icon-constants";
@@ -32,6 +33,8 @@ export const IconCard = memo(function IconCard({
   entranceDelay,
 }: IconCardProps) {
   const [copied, setCopied] = useState(false);
+  const [isCopying, setIsCopying] = useState(false);
+  const [isDownloading, setIsDownloading] = useState(false);
   const router = useRouter();
   // Track the slug we last prefetched, not a boolean, so virtualised/windowed
   // parents that reuse IconCard instances with different icons still prefetch
@@ -50,6 +53,8 @@ export const IconCard = memo(function IconCard({
 
   const handleCopy = useCallback(
     async () => {
+      if (isCopying) return;
+      setIsCopying(true);
       try {
         const res = await fetch(icon.variants.default);
         const svg = await res.text();
@@ -63,6 +68,8 @@ export const IconCard = memo(function IconCard({
         );
         setCopied(true);
         setTimeout(() => setCopied(false), 1500);
+      } finally {
+        setIsCopying(false);
       }
       recordCopy(icon.slug, defaultCopyFormat);
       posthog.capture("icon_copied", {
@@ -73,11 +80,13 @@ export const IconCard = memo(function IconCard({
         categories: icon.categories,
       });
     },
-    [icon.variants.default, icon.slug, icon.title, icon.categories, defaultCopyFormat, recordCopy]
+    [icon.variants.default, icon.slug, icon.title, icon.categories, defaultCopyFormat, recordCopy, isCopying]
   );
 
   const handleDownload = useCallback(
     async () => {
+      if (isDownloading) return;
+      setIsDownloading(true);
       try {
         const res = await fetch(icon.variants.default);
         const blob = await res.blob();
@@ -91,6 +100,8 @@ export const IconCard = memo(function IconCard({
         URL.revokeObjectURL(url);
       } catch {
         window.open(icon.variants.default, "_blank");
+      } finally {
+        setIsDownloading(false);
       }
       posthog.capture("icon_downloaded", {
         icon_slug: icon.slug,
@@ -101,7 +112,7 @@ export const IconCard = memo(function IconCard({
         categories: icon.categories,
       });
     },
-    [icon.variants.default, icon.slug, icon.title, icon.categories]
+    [icon.variants.default, icon.slug, icon.title, icon.categories, isDownloading]
   );
 
   const handleFavorite = useCallback(
@@ -124,6 +135,15 @@ export const IconCard = memo(function IconCard({
   const lightSrc = icon.variants.light || icon.variants.default;
   const darkSrc = icon.variants.dark || icon.variants.default;
   const needsThemeSwap = lightSrc !== darkSrc;
+  // Preview tile: user preference, or in "auto" a tone picked from the brand
+  // colour so near-black and near-white marks stay visible. Icons that ship
+  // their own light and dark variants already handle contrast.
+  const previewBackground = useSettingsStore((s) => s.previewBackground);
+  const tileTone = previewBackground === "auto" && !needsThemeSwap ? iconTone(icon.hex) : "neutral";
+  // A forced Light or Dark tile must show the variant made for that surface,
+  // not the one for the current site theme. Auto and Checkerboard follow the theme.
+  const forcedVariantSrc =
+    needsThemeSwap && previewBackground === "light" ? lightSrc : needsThemeSwap && previewBackground === "dark" ? darkSrc : null;
 
   const entranceStyle: CSSProperties | undefined =
     entranceDelay != null
@@ -165,14 +185,18 @@ export const IconCard = memo(function IconCard({
           className="flex w-full flex-col items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-lg"
           aria-label={icon.title}
         >
-          <div className="icon-preview-bg relative flex h-10 w-10 items-center justify-center rounded-lg p-1.5">
-            {needsThemeSwap ? (
+          <div
+            className="icon-preview-bg relative flex h-10 w-10 items-center justify-center rounded-lg p-1.5"
+            data-preview={previewBackground}
+            data-tone={tileTone}
+          >
+            {needsThemeSwap && !forcedVariantSrc ? (
               <>
                 <img src={lightSrc} alt="" className="h-full w-full object-contain dark:hidden" loading="lazy" decoding="async" />
                 <img src={darkSrc} alt="" className="hidden h-full w-full object-contain dark:block" loading="lazy" decoding="async" />
               </>
             ) : (
-              <img src={icon.variants.default} alt="" className="h-full w-full object-contain" loading="lazy" decoding="async" />
+              <img src={forcedVariantSrc ?? icon.variants.default} alt="" className="h-full w-full object-contain" loading="lazy" decoding="async" />
             )}
             <NewBadge slug={icon.slug} className="absolute -top-1 -right-1 scale-90" />
           </div>
@@ -233,9 +257,13 @@ export const IconCard = memo(function IconCard({
         className="flex w-full flex-1 flex-col items-center rounded-t-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
         aria-label={`View ${icon.title} icon details`}
       >
-        <div className="icon-preview-bg relative flex w-full flex-1 items-center justify-center rounded-t-xl px-4 py-5 sm:px-5 sm:py-6">
+        <div
+          className="icon-preview-bg relative flex w-full flex-1 items-center justify-center rounded-t-xl px-4 py-5 sm:px-5 sm:py-6"
+          data-preview={previewBackground}
+          data-tone={tileTone}
+        >
           <NewBadge slug={icon.slug} className="absolute top-2 left-2.5" />
-          {needsThemeSwap ? (
+          {needsThemeSwap && !forcedVariantSrc ? (
             <>
               <img
                 src={lightSrc}
@@ -254,7 +282,7 @@ export const IconCard = memo(function IconCard({
             </>
           ) : (
             <img
-              src={icon.variants.default}
+              src={forcedVariantSrc ?? icon.variants.default}
               alt=""
               className="h-9 w-9 object-contain transition-transform duration-200 group-hover:scale-110 sm:h-10 sm:w-10"
               loading="lazy"
@@ -279,10 +307,13 @@ export const IconCard = memo(function IconCard({
         <button
           type="button"
           onClick={handleCopy}
+          disabled={isCopying}
           aria-label={copied ? `${icon.title} ${FORMAT_LABELS.get(defaultCopyFormat) || defaultCopyFormat.toUpperCase()} copied` : `Copy ${icon.title} ${FORMAT_LABELS.get(defaultCopyFormat) || defaultCopyFormat.toUpperCase()}`}
-          className="flex h-7 flex-1 items-center justify-center gap-1 rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          className="flex h-7 flex-1 items-center justify-center gap-1 rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50"
         >
-          {copied ? (
+          {isCopying ? (
+            <Loader2 className="h-3.5 w-3.5 animate-spin" />
+          ) : copied ? (
             <Check className="h-3.5 w-3.5 text-green-500" />
           ) : (
             <Copy className="h-3.5 w-3.5" />
@@ -292,10 +323,15 @@ export const IconCard = memo(function IconCard({
         <button
           type="button"
           onClick={handleDownload}
+          disabled={isDownloading}
           aria-label={`Download ${icon.title} SVG`}
-          className="flex h-7 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          className="flex h-7 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50"
         >
-          <Download className="h-3.5 w-3.5" />
+          {isDownloading ? (
+            <Loader2 className="h-3.5 w-3.5 animate-spin" />
+          ) : (
+            <Download className="h-3.5 w-3.5" />
+          )}
         </button>
         <button
           type="button"
