@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ExternalLink, Package as PackageIcon } from "lucide-react";
-import { FRAMEWORK_GUIDES, FAQ_ITEMS } from "@/lib/docs-content";
+import {
+  FRAMEWORK_GUIDES,
+  FRAMEWORK_GUIDES_BY_ID,
+  FAQ_ITEMS,
+} from "@/lib/docs-content";
 import { slugifyHeading } from "@/lib/docs-nav";
 import { GUIDE_RELATED_FAQ } from "@/lib/docs-related-faq";
 import { DocsCodeBlock } from "@/components/docs/docs-code-block";
@@ -18,20 +22,34 @@ export function generateStaticParams() {
   return FRAMEWORK_GUIDES.map((guide) => ({ slug: guide.id }));
 }
 
-export async function generateMetadata({ params }: Readonly<PageProps>): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: Readonly<PageProps>): Promise<Metadata> {
   const { slug } = await params;
-  const guide = FRAMEWORK_GUIDES.find((g) => g.id === slug);
+  const guide = FRAMEWORK_GUIDES_BY_ID.get(slug);
   if (!guide) return {};
   return {
     title: guide.label,
     description: guide.summary,
-    keywords: [`${guide.label} brand icons`, `${guide.label} SVG icons`, "theSVG"],
-    openGraph: { title: guide.label, description: guide.summary, siteName: "theSVG" },
+    keywords: [
+      `${guide.label} brand icons`,
+      `${guide.label} SVG icons`,
+      "theSVG",
+    ],
+    openGraph: {
+      title: guide.label,
+      description: guide.summary,
+      siteName: "theSVG",
+    },
     alternates: { canonical: `https://thesvg.org/docs/${guide.id}` },
   };
 }
 
-function PackageBadge({ href, icon, label }: Readonly<{ href: string; icon: React.ReactNode; label: string }>) {
+function PackageBadge({
+  href,
+  icon,
+  label,
+}: Readonly<{ href: string; icon: React.ReactNode; label: string }>) {
   return (
     <Link
       href={href}
@@ -48,12 +66,17 @@ function PackageBadge({ href, icon, label }: Readonly<{ href: string; icon: Reac
 
 export default async function DocsGuidePage({ params }: Readonly<PageProps>) {
   const { slug } = await params;
-  const guide = FRAMEWORK_GUIDES.find((g) => g.id === slug);
+  const guide = FRAMEWORK_GUIDES_BY_ID.get(slug);
   if (!guide) notFound();
 
-  const tocItems = guide.snippets.map((s) => ({ id: slugifyHeading(s.label), label: s.label }));
+  const tocItems = guide.snippets.map((s) => ({
+    id: slugifyHeading(s.label),
+    label: s.label,
+  }));
   const relatedQuestions = GUIDE_RELATED_FAQ[guide.id] ?? [];
-  const relatedFaq = FAQ_ITEMS.filter((item) => relatedQuestions.includes(item.question));
+  const relatedFaq = FAQ_ITEMS.filter((item) =>
+    relatedQuestions.includes(item.question),
+  );
 
   return (
     <DocsListPage
@@ -78,12 +101,18 @@ export default async function DocsGuidePage({ params }: Readonly<PageProps>) {
           )}
         </>
       }
-      intro={<p className="mb-8 max-w-2xl text-sm text-muted-foreground">{guide.summary}</p>}
+      intro={
+        <p className="mb-8 max-w-2xl text-sm text-muted-foreground">
+          {guide.summary}
+        </p>
+      }
     >
       <div className="space-y-8">
         {guide.snippets.map((snippet) => (
           <section key={snippet.label} className="scroll-mt-24">
-            <DocsHeading id={slugifyHeading(snippet.label)}>{snippet.label}</DocsHeading>
+            <DocsHeading id={slugifyHeading(snippet.label)}>
+              {snippet.label}
+            </DocsHeading>
             <DocsCodeBlock snippet={snippet} />
           </section>
         ))}
@@ -91,14 +120,21 @@ export default async function DocsGuidePage({ params }: Readonly<PageProps>) {
 
       {relatedFaq.length > 0 && (
         <div className="mt-10 border-t border-border/40 pt-6 dark:border-white/[0.06]">
-          <h2 className="mb-3 text-sm font-semibold text-muted-foreground">Related questions</h2>
+          <h2 className="mb-3 text-sm font-semibold text-muted-foreground">
+            Related questions
+          </h2>
           <div className="space-y-3">
             {relatedFaq.map((item) => (
-              <details key={item.question} className="group rounded-lg border border-border/40 px-3 py-2 dark:border-white/[0.06]">
+              <details
+                key={item.question}
+                className="group rounded-lg border border-border/40 px-3 py-2 dark:border-white/[0.06]"
+              >
                 <summary className="cursor-pointer list-none text-sm font-medium marker:content-none">
                   {item.question}
                 </summary>
-                <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">{item.answer}</p>
+                <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+                  {item.answer}
+                </p>
               </details>
             ))}
           </div>

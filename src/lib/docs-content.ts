@@ -50,7 +50,7 @@ export const FRAMEWORK_GUIDES: FrameworkGuide[] = [
     npmUrl: "https://www.npmjs.com/package/@thesvg/react",
     githubUrl: "https://github.com/glincker/thesvg/tree/main/packages/react",
     summary:
-      "Typed, tree-shakeable components. Works as a Server Component by default, no \"use client\" needed.",
+      'Typed, tree-shakeable components. Works as a Server Component by default, no "use client" needed.',
     snippets: [
       { label: "Install", format: "cli", code: `npm install @thesvg/react` },
       {
@@ -76,7 +76,8 @@ export const FRAMEWORK_GUIDES: FrameworkGuide[] = [
     packageName: "@thesvg/vue",
     npmUrl: "https://www.npmjs.com/package/@thesvg/vue",
     githubUrl: "https://github.com/glincker/thesvg/tree/main/packages/vue",
-    summary: "Typed Vue 3 render-function components. No SFC compiler required.",
+    summary:
+      "Typed Vue 3 render-function components. No SFC compiler required.",
     snippets: [
       { label: "Install", format: "cli", code: `npm install @thesvg/vue` },
       {
@@ -112,7 +113,8 @@ export const FRAMEWORK_GUIDES: FrameworkGuide[] = [
     label: "React Native",
     packageName: "@thesvg/react-native",
     npmUrl: "https://www.npmjs.com/package/@thesvg/react-native",
-    githubUrl: "https://github.com/glincker/thesvg/tree/main/packages/react-native",
+    githubUrl:
+      "https://github.com/glincker/thesvg/tree/main/packages/react-native",
     summary:
       "Renders via react-native-svg. Works in Expo Go with no config plugin and no native setup.",
     snippets: [
@@ -142,13 +144,21 @@ export const FRAMEWORK_GUIDES: FrameworkGuide[] = [
     summary:
       "Copies icon files straight into your project, shadcn-style. No runtime dependency to install.",
     snippets: [
-      { label: "Add one icon", format: "cli", code: `npx @thesvg/cli add github` },
+      {
+        label: "Add one icon",
+        format: "cli",
+        code: `npx @thesvg/cli add github`,
+      },
       {
         label: "Add several, as typed JSX",
         format: "cli",
         code: `npx @thesvg/cli add github vercel nextjs --format jsx --dir ./components/icons`,
       },
-      { label: "Search the catalog", format: "cli", code: `npx @thesvg/cli search "version control"` },
+      {
+        label: "Search the catalog",
+        format: "cli",
+        code: `npx @thesvg/cli search "version control"`,
+      },
       {
         label: "In a Dockerfile / CI build step",
         format: "cli",
@@ -162,9 +172,21 @@ export const FRAMEWORK_GUIDES: FrameworkGuide[] = [
     summary:
       "Static, CDN-cached JSON. No auth, no dynamic search endpoint — fetch the manifest once and filter client-side.",
     snippets: [
-      { label: "Full icon manifest", format: "cli", code: `curl "https://thesvg.org/api/registry.json"` },
-      { label: "Categories with counts", format: "cli", code: `curl "https://thesvg.org/api/categories.json"` },
-      { label: "Direct SVG", format: "cli", code: `curl "https://thesvg.org/icons/openai/default.svg"` },
+      {
+        label: "Full icon manifest",
+        format: "cli",
+        code: `curl "https://thesvg.org/api/registry.json"`,
+      },
+      {
+        label: "Categories with counts",
+        format: "cli",
+        code: `curl "https://thesvg.org/api/categories.json"`,
+      },
+      {
+        label: "Direct SVG",
+        format: "cli",
+        code: `curl "https://thesvg.org/icons/openai/default.svg"`,
+      },
       {
         label: "jsDelivr mirror (recommended for high traffic)",
         format: "cli",
@@ -189,6 +211,12 @@ export const FRAMEWORK_GUIDES: FrameworkGuide[] = [
     ],
   },
 ];
+
+export const FRAMEWORK_GUIDES_BY_ID = new Map<string, FrameworkGuide>();
+for (let i = 0; i < FRAMEWORK_GUIDES.length; i++) {
+  const g = FRAMEWORK_GUIDES[i];
+  FRAMEWORK_GUIDES_BY_ID.set(g.id, g);
+}
 
 export interface BestPractice {
   title: string;
@@ -349,7 +377,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: "Do the framework packages support server-side rendering (SSR)?",
     answer:
-      "Yes. Every framework package (@thesvg/react, @thesvg/vue, @thesvg/svelte) renders plain markup with no browser-only APIs, so they're SSR-safe by default - no client-only wrapper or hydration guard needed. @thesvg/react components specifically work as React Server Components with no \"use client\" directive.",
+      'Yes. Every framework package (@thesvg/react, @thesvg/vue, @thesvg/svelte) renders plain markup with no browser-only APIs, so they\'re SSR-safe by default - no client-only wrapper or hydration guard needed. @thesvg/react components specifically work as React Server Components with no "use client" directive.',
   },
   {
     question: "Can I self-host the icons without crediting theSVG?",

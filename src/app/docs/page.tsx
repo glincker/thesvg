@@ -5,7 +5,7 @@ import { getFormattedIconCount } from "@/lib/icons";
 import { JsonLd } from "@/components/json-ld";
 import { DOCS_NAV } from "@/lib/docs-nav";
 import { DocsBrandIcon } from "@/components/docs/docs-nav-icon";
-import { FRAMEWORK_GUIDES } from "@/lib/docs-content";
+import { FRAMEWORK_GUIDES_BY_ID } from "@/lib/docs-content";
 import { DocsPageFooter } from "@/components/docs/docs-page-footer";
 import { DocsAskAi } from "@/components/docs/docs-ask-ai";
 
@@ -34,10 +34,14 @@ export const metadata: Metadata = {
 };
 
 const CARD_DESCRIPTIONS: Record<string, string> = {
-  recipes: "Concrete build patterns: tech-stack badges, icon pickers, accessible buttons, and more.",
-  "best-practices": "Sizing, variant choice, CDN pinning, and dark mode done right.",
-  tricks: "Small techniques: dynamic icons by slug, CSS-mask recoloring, preload hints.",
-  migration: "Moving from Simple Icons, svgl, or deciding between theSVG, Iconify, and Lucide.",
+  recipes:
+    "Concrete build patterns: tech-stack badges, icon pickers, accessible buttons, and more.",
+  "best-practices":
+    "Sizing, variant choice, CDN pinning, and dark mode done right.",
+  tricks:
+    "Small techniques: dynamic icons by slug, CSS-mask recoloring, preload hints.",
+  migration:
+    "Moving from Simple Icons, svgl, or deciding between theSVG, Iconify, and Lucide.",
   faq: "Licensing, missing variants, rate limits, and other common questions.",
 };
 
@@ -68,57 +72,73 @@ export default function DocsPage() {
           <DocsAskAi pageTitle="Docs & Guides overview" />
         </div>
         <p className="max-w-2xl text-muted-foreground">
-          Everything for using {count}+ brand icons: framework guides, real-world recipes, best
-          practices, tricks, migration guides, and FAQ.
+          Everything for using {count}+ brand icons: framework guides,
+          real-world recipes, best practices, tricks, migration guides, and FAQ.
         </p>
       </div>
 
       <section className="mb-10">
         <h2 className="mb-3 text-lg font-semibold">Getting started</h2>
         <p className="max-w-2xl text-sm text-muted-foreground">
-          Pick the guide that matches how you&apos;re building. A handful of known icons in
-          React, Vue, or Svelte: use the matching package. An open-ended or large set (a
-          picker, a directory page): use the CDN guide instead, it has zero bundle cost
-          regardless of how many icons you show. Checking icons into your own repo: use the
-          CLI. Wiring up an AI assistant: see the MCP guide.
+          Pick the guide that matches how you&apos;re building. A handful of
+          known icons in React, Vue, or Svelte: use the matching package. An
+          open-ended or large set (a picker, a directory page): use the CDN
+          guide instead, it has zero bundle cost regardless of how many icons
+          you show. Checking icons into your own repo: use the CLI. Wiring up an
+          AI assistant: see the MCP guide.
         </p>
       </section>
 
-      {DOCS_NAV.filter((group) => group.title !== "Getting Started").map((group) => (
-        <section key={group.title} className="mb-10">
-          <h2 className="mb-4 text-lg font-semibold">{group.title}</h2>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {group.items.map((item) => {
-              const guide = FRAMEWORK_GUIDES.find((g) => `/docs/${g.id}` === item.href);
-              const description = guide?.summary ?? CARD_DESCRIPTIONS[item.href.replace("/docs/", "")] ?? "";
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="group flex items-start gap-3 rounded-xl border border-border/40 bg-card/30 p-4 transition-colors hover:border-orange-500/30 hover:bg-orange-500/[0.03] dark:border-white/[0.06] dark:bg-white/[0.02]"
-                >
-                  {item.icon.kind === "brand" ? (
-                    <DocsBrandIcon slug={item.icon.slug} className="mt-0.5 h-5 w-5 shrink-0 opacity-80" />
-                  ) : (
-                    <item.icon.Icon className="mt-0.5 h-5 w-5 shrink-0 opacity-80" aria-hidden="true" />
-                  )}
-                  <div className="min-w-0 flex-1">
-                    <h3 className="mb-1 flex items-center gap-1.5 text-sm font-semibold">
-                      {item.label}
-                      <ArrowRight className="h-3 w-3 shrink-0 -translate-x-1 text-orange-500 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
-                    </h3>
-                    <p className="line-clamp-2 text-xs leading-relaxed text-muted-foreground">
-                      {description}
-                    </p>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </section>
-      ))}
+      {DOCS_NAV.filter((group) => group.title !== "Getting Started").map(
+        (group) => (
+          <section key={group.title} className="mb-10">
+            <h2 className="mb-4 text-lg font-semibold">{group.title}</h2>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {group.items.map((item) => {
+                const guideId = item.href.startsWith("/docs/")
+                  ? item.href.slice(6)
+                  : "";
+                const guide = FRAMEWORK_GUIDES_BY_ID.get(guideId);
+                const description =
+                  guide?.summary ?? CARD_DESCRIPTIONS[guideId] ?? "";
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="group flex items-start gap-3 rounded-xl border border-border/40 bg-card/30 p-4 transition-colors hover:border-orange-500/30 hover:bg-orange-500/[0.03] dark:border-white/[0.06] dark:bg-white/[0.02]"
+                  >
+                    {item.icon.kind === "brand" ? (
+                      <DocsBrandIcon
+                        slug={item.icon.slug}
+                        className="mt-0.5 h-5 w-5 shrink-0 opacity-80"
+                      />
+                    ) : (
+                      <item.icon.Icon
+                        className="mt-0.5 h-5 w-5 shrink-0 opacity-80"
+                        aria-hidden="true"
+                      />
+                    )}
+                    <div className="min-w-0 flex-1">
+                      <h3 className="mb-1 flex items-center gap-1.5 text-sm font-semibold">
+                        {item.label}
+                        <ArrowRight className="h-3 w-3 shrink-0 -translate-x-1 text-orange-500 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
+                      </h3>
+                      <p className="line-clamp-2 text-xs leading-relaxed text-muted-foreground">
+                        {description}
+                      </p>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </section>
+        ),
+      )}
 
-      <DocsPageFooter sourceFile="src/app/docs/page.tsx" pageTitle="Docs & Guides overview" />
+      <DocsPageFooter
+        sourceFile="src/app/docs/page.tsx"
+        pageTitle="Docs & Guides overview"
+      />
     </>
   );
 }

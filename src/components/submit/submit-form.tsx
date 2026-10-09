@@ -21,13 +21,13 @@ import { validateSvg, type ValidationResult } from "@/lib/svg-validation";
 import { withUtm } from "@/lib/external-link";
 import {
   LICENSE_OPTIONS,
+  OPTIONS_BY_ID,
   MAX_OTHER_LICENSE_LENGTH,
   OTHER_LICENSE_ID,
   validateLicenseSelection,
 } from "@/lib/license-options";
 
-const GITHUB_ISSUES_URL =
-  "https://github.com/glincker/thesvg/issues/new";
+const GITHUB_ISSUES_URL = "https://github.com/glincker/thesvg/issues/new";
 
 // All known categories from the dataset
 const KNOWN_CATEGORIES = [
@@ -170,7 +170,9 @@ function SvgPreview({ dataUrl, name }: { dataUrl: string; name: string }) {
                   style={{ width: size, height: size }}
                   className="object-contain"
                 />
-                <span className="text-[10px] text-muted-foreground">{size}px</span>
+                <span className="text-[10px] text-muted-foreground">
+                  {size}px
+                </span>
               </div>
             ))}
           </div>
@@ -252,7 +254,9 @@ function LicenseSelector({
 
       {helperOpen && (
         <div className="rounded-lg border border-border bg-muted/30 p-3 text-xs">
-          <p className="mb-2 font-medium text-foreground">Pick the option that fits:</p>
+          <p className="mb-2 font-medium text-foreground">
+            Pick the option that fits:
+          </p>
           <div className="flex flex-col gap-1.5">
             <button
               type="button"
@@ -268,7 +272,9 @@ function LicenseSelector({
               className="rounded px-2 py-1 text-left transition-colors hover:bg-accent"
             >
               <strong>Logo of an MIT / Apache / BSD open-source project</strong>
-              <span className="ml-1 text-muted-foreground">→ match the project&rsquo;s license</span>
+              <span className="ml-1 text-muted-foreground">
+                → match the project&rsquo;s license
+              </span>
             </button>
             <button
               type="button"
@@ -276,7 +282,9 @@ function LicenseSelector({
               className="rounded px-2 py-1 text-left transition-colors hover:bg-accent"
             >
               <strong>Brand kit explicitly published as CC BY</strong>
-              <span className="ml-1 text-muted-foreground">→ CC BY 4.0 (or CC BY-SA / CC BY-ND)</span>
+              <span className="ml-1 text-muted-foreground">
+                → CC BY 4.0 (or CC BY-SA / CC BY-ND)
+              </span>
             </button>
             <button
               type="button"
@@ -284,7 +292,9 @@ function LicenseSelector({
               className="rounded px-2 py-1 text-left transition-colors hover:bg-accent"
             >
               <strong>Company brand mark, custom license, or unsure</strong>
-              <span className="ml-1 text-muted-foreground">→ Other / custom (we&rsquo;ll verify)</span>
+              <span className="ml-1 text-muted-foreground">
+                → Other / custom (we&rsquo;ll verify)
+              </span>
             </button>
           </div>
         </div>
@@ -308,7 +318,7 @@ function LicenseSelector({
 
       {licenseId && (
         <p className="text-xs text-muted-foreground">
-          {LICENSE_OPTIONS.find((o) => o.id === licenseId)?.description}
+          {OPTIONS_BY_ID.get(licenseId)?.description}
         </p>
       )}
 
@@ -325,7 +335,9 @@ function LicenseSelector({
             maxLength={MAX_OTHER_LICENSE_LENGTH}
             className="text-sm"
             aria-invalid={showOtherEmptyError || showOtherTooLongError}
-            aria-describedby={showOtherEmptyError ? "license-other-error" : undefined}
+            aria-describedby={
+              showOtherEmptyError ? "license-other-error" : undefined
+            }
           />
           {showOtherEmptyError && (
             <p id="license-other-error" className="text-xs text-red-500">
@@ -338,7 +350,8 @@ function LicenseSelector({
             </p>
           )}
           <p className="text-xs text-muted-foreground">
-            Your issue will be auto-labeled <code>license-unsure</code> so a maintainer reviews it before merge.
+            Your issue will be auto-labeled <code>license-unsure</code> so a
+            maintainer reviews it before merge.
           </p>
         </div>
       )}
@@ -376,7 +389,7 @@ function CategorySelector({
                 "min-h-[32px] rounded-full border px-3 py-1 text-xs font-medium transition-colors",
                 active
                   ? "border-foreground bg-foreground text-background"
-                  : "border-border bg-card text-muted-foreground hover:border-foreground/50 hover:text-foreground"
+                  : "border-border bg-card text-muted-foreground hover:border-foreground/50 hover:text-foreground",
               )}
             >
               {cat}
@@ -515,7 +528,9 @@ export function SubmitForm({
       posthog.capture("submit_svg_uploaded", {
         file_size_bytes: file.size,
         validation_passed: result.valid,
-        failed_checks: result.checks.filter((c) => !c.passed).map((c) => c.name),
+        failed_checks: result.checks
+          .filter((c) => !c.passed)
+          .map((c) => c.name),
       });
 
       // Auto-fill name from filename
@@ -590,9 +605,10 @@ export function SubmitForm({
     const resolvedLicense = licenseValidation.ok
       ? licenseValidation.resolved
       : "UNSPECIFIED";
-    const licenseLine = licenseValidation.ok && licenseValidation.needsTriage
-      ? `${resolvedLicense} (submitter picked Other — needs maintainer confirmation)`
-      : resolvedLicense;
+    const licenseLine =
+      licenseValidation.ok && licenseValidation.needsTriage
+        ? `${resolvedLicense} (submitter picked Other — needs maintainer confirmation)`
+        : resolvedLicense;
 
     const timestamp = new Date().toISOString();
     const lines = [
@@ -632,7 +648,7 @@ export function SubmitForm({
           ...(form.guidelinesUrl ? { guidelines: form.guidelinesUrl } : {}),
         },
         null,
-        2
+        2,
       ),
       `\`\`\``,
       ``,
@@ -645,15 +661,16 @@ export function SubmitForm({
 
   function buildGitHubUrl(): string {
     const title = encodeURIComponent(
-      `[Icon Request] ${form.iconName || "New Icon"} (via thesvg.org)`
+      `[Icon Request] ${form.iconName || "New Icon"} (via thesvg.org)`,
     );
     const body = encodeURIComponent(buildSubmissionBody());
     // Add license-unsure when the submitter explicitly picked "Other" so
     // triage routes the issue to a maintainer for license confirmation
     // before merge.
-    const extraLabels = licenseValidation.ok && licenseValidation.needsTriage
-      ? ",license-unsure"
-      : "";
+    const extraLabels =
+      licenseValidation.ok && licenseValidation.needsTriage
+        ? ",license-unsure"
+        : "";
     return `${GITHUB_ISSUES_URL}?title=${title}&body=${body}&labels=icon-request,submitted-via-thesvg${extraLabels}`;
   }
 
@@ -668,9 +685,7 @@ export function SubmitForm({
   }
 
   const canSubmit =
-    fileState !== null &&
-    form.iconName.trim() !== "" &&
-    licenseValidation.ok;
+    fileState !== null && form.iconName.trim() !== "" && licenseValidation.ok;
 
   return (
     <div className="space-y-6">
@@ -696,13 +711,13 @@ export function SubmitForm({
               "relative flex cursor-pointer flex-col items-center justify-center gap-3 rounded-xl border-2 border-dashed px-6 py-12 text-center transition-colors",
               isDragging
                 ? "border-orange-500 bg-orange-500/5"
-                : "border-border hover:border-foreground/30 hover:bg-muted/30"
+                : "border-border hover:border-foreground/30 hover:bg-muted/30",
             )}
           >
             <div
               className={cn(
                 "flex h-12 w-12 items-center justify-center rounded-xl transition-colors",
-                isDragging ? "bg-orange-500/20" : "bg-muted"
+                isDragging ? "bg-orange-500/20" : "bg-muted",
               )}
             >
               {isValidating ? (
@@ -711,7 +726,7 @@ export function SubmitForm({
                 <Upload
                   className={cn(
                     "h-5 w-5 transition-colors",
-                    isDragging ? "text-orange-500" : "text-muted-foreground"
+                    isDragging ? "text-orange-500" : "text-muted-foreground",
                   )}
                 />
               )}
@@ -737,7 +752,9 @@ export function SubmitForm({
                   />
                 </div>
                 <div className="min-w-0">
-                  <p className="truncate text-sm font-medium">{fileState.name}</p>
+                  <p className="truncate text-sm font-medium">
+                    {fileState.name}
+                  </p>
                   <p className="text-xs text-muted-foreground">
                     {(fileState.size / 1024).toFixed(1)}KB
                   </p>
@@ -771,7 +788,9 @@ export function SubmitForm({
       )}
 
       {/* Preview */}
-      {fileState && <SvgPreview dataUrl={fileState.dataUrl} name={fileState.name} />}
+      {fileState && (
+        <SvgPreview dataUrl={fileState.dataUrl} name={fileState.name} />
+      )}
 
       {/* Form Fields */}
       <div className="space-y-4">
@@ -780,7 +799,10 @@ export function SubmitForm({
         <div className="grid gap-4 sm:grid-cols-2">
           {/* Icon Name */}
           <div className="space-y-1.5">
-            <label htmlFor="icon-name" className="text-xs font-medium text-muted-foreground">
+            <label
+              htmlFor="icon-name"
+              className="text-xs font-medium text-muted-foreground"
+            >
               Icon name <span className="text-red-500">*</span>
             </label>
             <Input
@@ -793,7 +815,10 @@ export function SubmitForm({
 
           {/* Slug */}
           <div className="space-y-1.5">
-            <label htmlFor="icon-slug" className="text-xs font-medium text-muted-foreground">
+            <label
+              htmlFor="icon-slug"
+              className="text-xs font-medium text-muted-foreground"
+            >
               Slug (kebab-case)
             </label>
             <Input
@@ -808,7 +833,10 @@ export function SubmitForm({
 
         {/* Website URL */}
         <div className="space-y-1.5">
-          <label htmlFor="website-url" className="text-xs font-medium text-muted-foreground">
+          <label
+            htmlFor="website-url"
+            className="text-xs font-medium text-muted-foreground"
+          >
             Website URL
           </label>
           <Input
@@ -822,7 +850,10 @@ export function SubmitForm({
 
         {/* Brand Guidelines URL */}
         <div className="space-y-1.5">
-          <label htmlFor="guidelines-url" className="text-xs font-medium text-muted-foreground">
+          <label
+            htmlFor="guidelines-url"
+            className="text-xs font-medium text-muted-foreground"
+          >
             Brand guidelines URL
           </label>
           <Input
@@ -836,7 +867,10 @@ export function SubmitForm({
 
         {/* Brand Color */}
         <div className="space-y-1.5">
-          <label htmlFor="brand-hex" className="text-xs font-medium text-muted-foreground">
+          <label
+            htmlFor="brand-hex"
+            className="text-xs font-medium text-muted-foreground"
+          >
             Brand hex color
           </label>
           <div className="flex items-center gap-2">
@@ -849,7 +883,9 @@ export function SubmitForm({
                 onChange={(e) =>
                   updateField(
                     "hex",
-                    e.target.value.replace(/[^0-9a-fA-F#]/g, "").replace(/^#+/, "")
+                    e.target.value
+                      .replace(/[^0-9a-fA-F#]/g, "")
+                      .replace(/^#+/, ""),
                   )
                 }
                 maxLength={6}
@@ -890,7 +926,9 @@ export function SubmitForm({
       {/* Submit Actions */}
       <div className="flex flex-col gap-3 border-t border-border pt-4 sm:flex-row">
         <a
-          href={canSubmit ? withUtm(buildGitHubUrl(), "submit_form") : undefined}
+          href={
+            canSubmit ? withUtm(buildGitHubUrl(), "submit_form") : undefined
+          }
           target="_blank"
           rel="noopener noreferrer"
           aria-disabled={!canSubmit}
@@ -905,7 +943,9 @@ export function SubmitForm({
                 has_guidelines_url: !!form.guidelinesUrl,
                 has_hex_color: form.hex.length === 6,
                 validation_passed: fileState?.validation?.valid ?? false,
-                license: licenseValidation.ok ? licenseValidation.resolved : null,
+                license: licenseValidation.ok
+                  ? licenseValidation.resolved
+                  : null,
                 license_needs_triage:
                   licenseValidation.ok && licenseValidation.needsTriage,
               });
@@ -915,7 +955,7 @@ export function SubmitForm({
             "inline-flex h-11 items-center justify-center gap-2 rounded-lg px-4 text-sm font-medium transition-colors sm:h-9",
             canSubmit
               ? "bg-foreground text-background hover:bg-foreground/90"
-              : "pointer-events-none cursor-not-allowed bg-muted text-muted-foreground"
+              : "pointer-events-none cursor-not-allowed bg-muted text-muted-foreground",
           )}
         >
           <Github className="h-4 w-4" />
@@ -946,7 +986,8 @@ export function SubmitForm({
 
       {!canSubmit && (
         <p className="text-xs text-muted-foreground">
-          Upload an SVG file, enter an icon name, and pick a license to enable submission.
+          Upload an SVG file, enter an icon name, and pick a license to enable
+          submission.
         </p>
       )}
     </div>

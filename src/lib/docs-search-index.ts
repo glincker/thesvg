@@ -1,5 +1,5 @@
 import { DOCS_NAV, slugifyHeading } from "@/lib/docs-nav";
-import { FRAMEWORK_GUIDES, FAQ_ITEMS } from "@/lib/docs-content";
+import { FRAMEWORK_GUIDES_BY_ID, FAQ_ITEMS } from "@/lib/docs-content";
 import { RECIPES } from "@/lib/docs-recipes";
 
 export interface DocsSearchEntry {
@@ -21,7 +21,8 @@ function buildDocsSearchIndex(): DocsSearchEntry[] {
 
   for (const group of DOCS_NAV) {
     for (const item of group.items) {
-      const guide = FRAMEWORK_GUIDES.find((g) => `/docs/${g.id}` === item.href);
+      const guideId = item.href.startsWith("/docs/") ? item.href.slice(6) : "";
+      const guide = FRAMEWORK_GUIDES_BY_ID.get(guideId);
       const title = item.label;
       const description = guide?.summary ?? "";
       entries.push({

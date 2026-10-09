@@ -37,7 +37,8 @@ export const LICENSE_OPTIONS: readonly LicenseOption[] = [
   {
     id: "CC0-1.0",
     label: "CC0 1.0 (public domain)",
-    description: "I made this myself and waive all rights, or it's already public domain.",
+    description:
+      "I made this myself and waive all rights, or it's already public domain.",
   },
   {
     id: "Unlicense",
@@ -48,12 +49,14 @@ export const LICENSE_OPTIONS: readonly LicenseOption[] = [
   {
     id: "MIT",
     label: "MIT",
-    description: "Permissive, attribution-only. Common for open-source project logos.",
+    description:
+      "Permissive, attribution-only. Common for open-source project logos.",
   },
   {
     id: "Apache-2.0",
     label: "Apache 2.0",
-    description: "Permissive with explicit patent grant. Common for cloud / infra brands.",
+    description:
+      "Permissive with explicit patent grant. Common for cloud / infra brands.",
   },
   {
     id: "BSD-3-Clause",
@@ -79,24 +82,27 @@ export const LICENSE_OPTIONS: readonly LicenseOption[] = [
   {
     id: "CC-BY-ND-4.0",
     label: "CC BY-ND 4.0",
-    description: "Attribution, no derivatives. Common for corporate brand kits where the logo can't be modified.",
+    description:
+      "Attribution, no derivatives. Common for corporate brand kits where the logo can't be modified.",
   },
   // Weak copyleft
   {
     id: "MPL-2.0",
     label: "Mozilla Public License 2.0",
-    description: "File-level copyleft. Used by Mozilla and some adjacent projects.",
+    description:
+      "File-level copyleft. Used by Mozilla and some adjacent projects.",
   },
   // Free-text escape hatch
   {
     id: "Other",
     label: "Other / custom — needs maintainer review",
-    description: "Pick this for company brand marks, custom licenses, or anything you can't confirm. We'll verify before merging.",
+    description:
+      "Pick this for company brand marks, custom licenses, or anything you can't confirm. We'll verify before merging.",
     needsTriage: true,
   },
 ] as const;
 
-const OPTIONS_BY_ID = new Map<string, LicenseOption>();
+export const OPTIONS_BY_ID = new Map<string, LicenseOption>();
 for (let i = 0; i < LICENSE_OPTIONS.length; i++) {
   const o = LICENSE_OPTIONS[i];
   OPTIONS_BY_ID.set(o.id, o);
@@ -110,7 +116,10 @@ export const MAX_OTHER_LICENSE_LENGTH = 120;
 
 export type LicenseValidation =
   | { ok: true; resolved: string; needsTriage: boolean }
-  | { ok: false; reason: "missing" | "unknown" | "other_empty" | "other_too_long" };
+  | {
+      ok: false;
+      reason: "missing" | "unknown" | "other_empty" | "other_too_long";
+    };
 
 /**
  * Validate a (licenseId, otherText) pair. Returns the string that should
