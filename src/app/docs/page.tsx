@@ -5,7 +5,7 @@ import { getFormattedIconCount } from "@/lib/icons";
 import { JsonLd } from "@/components/json-ld";
 import { DOCS_NAV } from "@/lib/docs-nav";
 import { DocsBrandIcon } from "@/components/docs/docs-nav-icon";
-import { FRAMEWORK_GUIDES } from "@/lib/docs-content";
+import { FRAMEWORK_GUIDES_BY_ID } from "@/lib/docs-content";
 import { DocsPageFooter } from "@/components/docs/docs-page-footer";
 import { DocsAskAi } from "@/components/docs/docs-ask-ai";
 
@@ -89,7 +89,7 @@ export default function DocsPage() {
           <h2 className="mb-4 text-lg font-semibold">{group.title}</h2>
           <div className="grid gap-3 sm:grid-cols-2">
             {group.items.map((item) => {
-              const guide = FRAMEWORK_GUIDES.find((g) => `/docs/${g.id}` === item.href);
+              const guide = FRAMEWORK_GUIDES_BY_ID.get(item.href.replace("/docs/", ""));
               const description = guide?.summary ?? CARD_DESCRIPTIONS[item.href.replace("/docs/", "")] ?? "";
               return (
                 <Link

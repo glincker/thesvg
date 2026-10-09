@@ -10,7 +10,7 @@ import {
   useState,
 } from "react";
 import { useSearchParams } from "next/navigation";
-import { loadIconsManifest } from "@/lib/icons-manifest";
+import { loadIconsManifest, getIconBySlugFromManifest } from "@/lib/icons-manifest";
 import {
   ArrowUpRight,
   Braces,
@@ -66,8 +66,8 @@ export function SvgViewer() {
     setAutoloading(fromSlug);
     (async () => {
       try {
-        const manifest = await loadIconsManifest();
-        const icon = manifest.find((m) => m.slug === fromSlug);
+        await loadIconsManifest();
+        const icon = getIconBySlugFromManifest(fromSlug);
         if (!icon) {
           if (!cancelled) {
             setAutoloading(null);

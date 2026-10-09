@@ -39,6 +39,7 @@ const RASTER_FORMATS: { id: RasterFormat; label: string; ext: string }[] = [
   { id: "jpeg", label: "JPG", ext: "jpg" },
   { id: "webp", label: "WebP", ext: "webp" },
 ];
+const RASTER_FORMATS_BY_ID = new Map(RASTER_FORMATS.map((f) => [f.id, f]));
 
 function safeName(slug: string, variant: string): string {
   const variantSuffix =
@@ -122,7 +123,7 @@ export function DownloadMenu({
       try {
         const source = svgContent || currentPath;
         const blob = await svgToRaster(source, size, format);
-        const fmt = RASTER_FORMATS.find((f) => f.id === format);
+        const fmt = RASTER_FORMATS_BY_ID.get(format);
         downloadBlob(
           blob,
           `${safeName(slug, activeVariant)}-${size}px.${fmt?.ext ?? format}`,

@@ -69,3 +69,7 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2024-05-18 - Avoid chained `.filter().sort().map()` array methods in Fuse search results
 **Learning:** Chained array methods like `.filter().sort().map()` and intermediate array allocations in search functions using Fuse.js create performance bottlenecks when operating on large result sets from frequent keystrokes.
 **Action:** Replace these operations with single-pass `for` loops. Unrolling nested higher-order methods and preventing intermediate `.map()` or `.filter()` allocations directly avoids memory pressure overhead.
+
+## 2024-05-18 - Convert chained/repeated Array.find() into O(1) Maps
+**Learning:** Frequent `.find()` lookups on static constants or full manifests via array scanning create silent bottlenecks throughout the component tree (e.g. `LICENSE_OPTIONS.find`, `WINDOWS.find`, `RASTER_FORMATS.find`, `FRAMEWORK_GUIDES.find`, etc.).
+**Action:** Always precalculate a map at module load (`export const X_BY_ID = new Map(...)`) for any static config array that components need to randomly access by ID.

@@ -25,11 +25,17 @@ function cleanTitle(t: string): string {
 }
 
 export function Google2026Landing({ icons }: Props) {
-  const hero = icons.find((i) => i.slug === HERO_SLUG);
-  const heroIcons = useMemo(
-    () => icons.filter((i) => i.slug !== HERO_SLUG),
-    [icons],
-  );
+  const { hero, heroIcons } = useMemo(() => {
+    // ⚡ Bolt: Single pass to separate hero from grid icons instead of
+    // doing a full .find() followed by a full .filter() on an array
+    let h: IconEntry | undefined;
+    const grid: IconEntry[] = [];
+    for (let i = 0; i < icons.length; i++) {
+      if (icons[i].slug === HERO_SLUG) h = icons[i];
+      else grid.push(icons[i]);
+    }
+    return { hero: h, heroIcons: grid };
+  }, [icons]);
   const [query, setQuery] = useState("");
   const [activeColors, setActiveColors] = useState<Set<ColorBucket>>(new Set());
   const gridRef = useRef<HTMLDivElement>(null);

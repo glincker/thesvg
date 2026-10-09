@@ -25,6 +25,7 @@ interface PageProps {
 }
 
 const posts = postsData as Post[];
+const postsBySlug = new Map(posts.map((p) => [p.slug, p]));
 
 export function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
@@ -34,7 +35,7 @@ export const dynamicParams = false;
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = posts.find((p) => p.slug === slug);
+  const post = postsBySlug.get(slug);
   if (!post) return {};
 
   return {
@@ -197,7 +198,7 @@ function renderMarkdown(body: string): string {
 
 export default async function BlogPostPage({ params }: PageProps) {
   const { slug } = await params;
-  const post = posts.find((p) => p.slug === slug);
+  const post = postsBySlug.get(slug);
   if (!post) notFound();
 
   const jsonLd = {
