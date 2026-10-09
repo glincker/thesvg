@@ -48,9 +48,21 @@ export function getIconsForExcalidrawLibrary(
   icons: IconEntry[],
   lib: ExcalidrawLibraryCategory,
 ): IconEntry[] {
-  return icons.filter(
-    (icon) =>
-      !ARCHITECTURE_COLLECTIONS.has(icon.collection) &&
-      icon.categories.some((c) => c.toLowerCase() === lib.matchKey),
-  );
+  // ⚡ Bolt: Single-pass for loop to avoid multiple allocations from chained .filter().some()
+  const matchKey = lib.matchKey.toLowerCase();
+  const result: IconEntry[] = [];
+
+  for (let i = 0; i < icons.length; i++) {
+    const icon = icons[i];
+    if (ARCHITECTURE_COLLECTIONS.has(icon.collection)) continue;
+
+    const categories = icon.categories;
+    for (let j = 0; j < categories.length; j++) {
+      if (categories[j].toLowerCase() === matchKey) {
+        result.push(icon);
+        break;
+      }
+    }
+  }
+  return result;
 }

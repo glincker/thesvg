@@ -34,9 +34,21 @@ export const DRAWIO_LIBRARIES: DrawioLibraryDef[] = [
 ];
 
 export function getIconsForDrawioLibrary(icons: IconEntry[], lib: DrawioLibraryDef): IconEntry[] {
+  // ⚡ Bolt: Single-pass for loop to avoid multiple allocations from chained .filter().some()
   const wanted = new Set(lib.categories.map((c) => c.toLowerCase()));
-  return icons.filter((icon) => {
-    if (ARCHITECTURE_COLLECTIONS.has(icon.collection)) return false;
-    return icon.categories.some((c) => wanted.has(c.toLowerCase()));
-  });
+  const result: IconEntry[] = [];
+
+  for (let i = 0; i < icons.length; i++) {
+    const icon = icons[i];
+    if (ARCHITECTURE_COLLECTIONS.has(icon.collection)) continue;
+
+    const categories = icon.categories;
+    for (let j = 0; j < categories.length; j++) {
+      if (wanted.has(categories[j].toLowerCase())) {
+        result.push(icon);
+        break;
+      }
+    }
+  }
+  return result;
 }
