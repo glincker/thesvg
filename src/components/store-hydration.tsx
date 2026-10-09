@@ -6,6 +6,7 @@ import { useRecentsStore } from "@/lib/stores/recents-store";
 import { useMobilePrefsStore } from "@/lib/stores/mobile-prefs-store";
 import { useSidebarStore } from "@/lib/stores/sidebar-store";
 import { useCompactHeroStore } from "@/lib/stores/compact-hero-store";
+import { useSettingsStore } from "@/lib/stores/settings-store";
 
 /**
  * Rehydrates the persisted zustand stores from localStorage after mount.
@@ -25,6 +26,7 @@ export function StoreHydration() {
     useMobilePrefsStore.persist.rehydrate();
     useSidebarStore.persist.rehydrate();
     useCompactHeroStore.persist.rehydrate();
+    useSettingsStore.persist.rehydrate();
   }, []);
 
   return null;
