@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 3.3.13
+
+### Patch Changes
+
+- feat: add easypanel, fivetran and other requested icons ([#1279](https://github.com/glincker/thesvg/issues/1279))
+
 ## 3.3.12
 
 ### Patch Changes
