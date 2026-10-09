@@ -72,8 +72,7 @@ function main() {
       counts.set(c, (counts.get(c) || 0) + 1);
     }
   }
-  const categories = [...counts.entries()]
-    .map(([name, count]) => ({ name, count }))
+  const categories = Array.from(counts, ([name, count]) => ({ name, count }))
     .sort((a, b) => a.name.localeCompare(b.name));
 
   writeFileSync(

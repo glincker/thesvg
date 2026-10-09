@@ -41,10 +41,19 @@ const SORT_META: Record<typeof SORT_OPTIONS[number], { icon: typeof ArrowUpDown;
  * them by that curation, not alphabetically or by date. */
 function sortByPopular(icons: IconEntry[], collection: Collection | null): IconEntry[] {
   const popularSlugs = collection ? getPopularSlugs(collection) : getAllPopularSlugs();
-  const order = new Map(popularSlugs.map((slug, i) => [slug, i]));
-  return icons
-    .filter((icon) => order.has(icon.slug))
-    .sort((a, b) => order.get(a.slug)! - order.get(b.slug)!);
+  const order = new Map<string, number>();
+  for (let i = 0; i < popularSlugs.length; i++) {
+    order.set(popularSlugs[i], i);
+  }
+
+  const filtered: IconEntry[] = [];
+  for (let i = 0; i < icons.length; i++) {
+    if (order.has(icons[i].slug)) {
+      filtered.push(icons[i]);
+    }
+  }
+
+  return filtered.sort((a, b) => order.get(a.slug)! - order.get(b.slug)!);
 }
 
 function matchesCategoryFilters(
@@ -265,8 +274,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
         counts.set(c, (counts.get(c) || 0) + 1);
       }
     }
-    return [...counts.entries()]
-      .map(([name, count]) => ({ name, count }))
+    return Array.from(counts, ([name, count]) => ({ name, count }))
       .sort((a, b) => a.name.localeCompare(b.name));
   }, [collectionParam, collectionIcons, categoryCounts]);
 

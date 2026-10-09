@@ -126,8 +126,7 @@ export function getCategoryCounts(collection?: Collection): { name: string; coun
       }
     }
   }
-  return [...counts.entries()]
-    .map(([name, count]) => ({ name, count }))
+  return Array.from(counts, ([name, count]) => ({ name, count }))
     .sort((a, b) => a.name.localeCompare(b.name));
 }
 
@@ -157,8 +156,13 @@ export function compareDateDesc(a?: string, b?: string): number {
 }
 
 export function getRecentlyAddedIcons(limit = 12): IconEntry[] {
-  return [...icons]
-    .filter((i) => i.dateAdded)
+  const filtered: IconEntry[] = [];
+  for (let i = 0; i < icons.length; i++) {
+    if (icons[i].dateAdded) {
+      filtered.push(icons[i]);
+    }
+  }
+  return filtered
     .sort((a, b) => compareDateDesc(a.dateAdded, b.dateAdded))
     .slice(0, limit);
 }
@@ -176,7 +180,6 @@ export function getCollections(): { name: Collection; count: number }[] {
   for (const icon of icons) {
     counts.set(icon.collection, (counts.get(icon.collection) || 0) + 1);
   }
-  return [...counts.entries()]
-    .map(([name, count]) => ({ name, count }))
+  return Array.from(counts, ([name, count]) => ({ name, count }))
     .sort((a, b) => b.count - a.count);
 }

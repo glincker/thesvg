@@ -394,8 +394,7 @@ export function HomeHero({
         counts.set(c, (counts.get(c) || 0) + 1);
       }
     }
-    return [...counts.entries()]
-      .map(([name, count]) => ({ name, count }))
+    return Array.from(counts, ([name, count]) => ({ name, count }))
       .sort((a, b) => b.count - a.count)
       .slice(0, 8);
   }, [collectionIcons]);
@@ -403,8 +402,13 @@ export function HomeHero({
   // Recently added for active collection
   const collectionRecentIcons = useMemo(() => {
     if (activeCollection === "brands") return recentIcons;
-    return [...collectionIcons]
-      .filter((i) => i.dateAdded)
+    const filtered: IconEntry[] = [];
+    for (let i = 0; i < collectionIcons.length; i++) {
+      if (collectionIcons[i].dateAdded) {
+        filtered.push(collectionIcons[i]);
+      }
+    }
+    return filtered
       .sort((a, b) => compareDateDesc(a.dateAdded, b.dateAdded))
       .slice(0, 12);
   }, [activeCollection, collectionIcons, recentIcons]);
