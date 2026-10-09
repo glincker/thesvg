@@ -1,21 +1,32 @@
 import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useSyncExternalStore } from "react";
 
 interface SidebarCollapseToggleProps {
   collapsed: boolean;
   onToggle?: () => void;
 }
 
+// Hoist functions outside the component to prevent re-subscriptions on every render
+const subscribe = () => () => {};
+const getSnapshot = () => navigator.userAgent.includes("Mac");
+const getServerSnapshot = () => false;
+
 /** Full-height edge strip (shadcn SidebarRail pattern) - the icon is a
  * decorative hint, the whole strip is the actual click target. */
 export function SidebarCollapseToggle({ collapsed, onToggle }: Readonly<SidebarCollapseToggleProps>) {
+  const isMac = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+
+  const shortcut = isMac ? "⌘B" : "Ctrl+B";
+  const label = collapsed ? `Expand sidebar (${shortcut})` : `Collapse sidebar (${shortcut})`;
+
   return (
     <button
       type="button"
       onClick={onToggle}
       aria-expanded={!collapsed}
-      aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
-      title={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+      aria-label={label}
+      title={label}
       className="group/rail absolute inset-y-0 -right-3 z-20 flex w-6 cursor-pointer items-start justify-center pt-4 after:absolute after:inset-y-0 after:left-1/2 after:w-px after:-translate-x-1/2 after:bg-transparent after:transition-colors after:duration-200 hover:after:bg-border dark:hover:after:bg-white/20 focus-visible:outline-none"
     >
       <span

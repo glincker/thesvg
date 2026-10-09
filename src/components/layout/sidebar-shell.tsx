@@ -29,6 +29,28 @@ export function SidebarShell({ children, categoryCounts, collections = [] }: Sid
   const favorites = useFavoritesStore((s) => s.favorites);
   const didCheckDefault = useRef(false);
 
+  // Keyboard shortcut to toggle sidebar
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "b") {
+        // Prevent triggering if user is in an input or textarea
+        const activeElement = document.activeElement;
+        if (
+          activeElement &&
+          (activeElement.tagName === "INPUT" ||
+            activeElement.tagName === "TEXTAREA" ||
+            (activeElement as HTMLElement).isContentEditable)
+        ) {
+          return;
+        }
+        e.preventDefault();
+        toggleCollapsed();
+      }
+    }
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [toggleCollapsed]);
+
   // First-visit default for the tablet/foldable band (768-1023px): a full
   // labeled sidebar eats a large share of the already-limited width there,
   // so default to the icon-only rail the first time. Only applies when
