@@ -5,31 +5,6 @@ export interface CategoryGroup {
   categories: { name: string; count: number }[];
 }
 
-function letterFor(name: string): string {
-  const first = name.trim().charAt(0).toUpperCase();
-  return first >= "A" && first <= "Z" ? first : "#";
-}
-
-/** Groups already-sorted categories by first letter, "#" for non-alpha. */
-export function groupCategoriesByLetter(
-  categories: { name: string; count: number }[],
-): CategoryGroup[] {
-  const groups = new Map<string, { name: string; count: number }[]>();
-  for (const category of categories) {
-    const letter = letterFor(category.name);
-    const bucket = groups.get(letter);
-    if (bucket) {
-      bucket.push(category);
-    } else {
-      groups.set(letter, [category]);
-    }
-  }
-  return ALPHABET.filter((letter) => groups.has(letter)).map((letter) => ({
-    letter,
-    categories: groups.get(letter)!,
-  }));
-}
-
 /** Fixed palette of Tailwind background classes (not inline styles) for the
  * small per-category accent dot. A category name always hashes to the same
  * entry, so the color is stable without maintaining a lookup table. */
@@ -54,13 +29,4 @@ export function categoryAccentClass(name: string): string {
     hash = (hash * 31 + name.charCodeAt(i)) | 0;
   }
   return CATEGORY_ACCENT_CLASSES[Math.abs(hash) % CATEGORY_ACCENT_CLASSES.length];
-}
-
-export function filterCategories(
-  categories: { name: string; count: number }[],
-  query: string,
-): { name: string; count: number }[] {
-  const q = query.trim().toLowerCase();
-  if (!q) return categories;
-  return categories.filter((category) => category.name.toLowerCase().includes(q));
 }

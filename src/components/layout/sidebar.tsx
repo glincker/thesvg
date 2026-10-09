@@ -14,7 +14,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import type { Collection } from "@/lib/icons";
 import { COLLECTIONS_META } from "@/lib/collections-meta";
-import { categoryAccentClass, filterCategories, groupCategoriesByLetter } from "@/lib/category-index";
+import { ALPHABET, categoryAccentClass } from "@/lib/category-index";
 import { AlphabetRail } from "@/components/layout/alphabet-rail";
 import { SidebarNav } from "@/components/layout/sidebar-nav";
 import { SidebarCollapseToggle } from "@/components/layout/sidebar-collapse-toggle";
@@ -96,18 +96,48 @@ export function Sidebar({
     };
   }, [categorySearch, onCategorySearchChange]);
 
-  const filteredCategories = useMemo(
-    () => filterCategories(categories, categorySearch),
-    [categories, categorySearch],
-  );
-  const categoryGroups = useMemo(
-    () => groupCategoriesByLetter(filteredCategories),
-    [filteredCategories],
-  );
-  const availableLetters = useMemo(
-    () => new Set(categoryGroups.map((g) => g.letter)),
-    [categoryGroups],
-  );
+  const { filteredCategories, categoryGroups, availableLetters } = useMemo(() => {
+    const q = categorySearch.trim().toLowerCase();
+    const filtered = [];
+    const groups = new Map<string, { name: string; count: number }[]>();
+
+    // Single-pass for loop to avoid multiple chained array allocations
+    // (.filter() then .map() internally for grouping, then .map() for letters).
+    for (let i = 0; i < categories.length; i++) {
+      const cat = categories[i];
+      if (q && !cat.name.toLowerCase().includes(q)) continue;
+
+      filtered.push(cat);
+
+      const first = cat.name.trim().charAt(0).toUpperCase();
+      const letter = first >= "A" && first <= "Z" ? first : "#";
+
+      const bucket = groups.get(letter);
+      if (bucket) {
+        bucket.push(cat);
+      } else {
+        groups.set(letter, [cat]);
+      }
+    }
+
+    const builtGroups = [];
+    const availLetters = new Set<string>();
+
+    for (let i = 0; i < ALPHABET.length; i++) {
+      const letter = ALPHABET[i];
+      const bucket = groups.get(letter);
+      if (bucket) {
+        builtGroups.push({ letter, categories: bucket });
+        availLetters.add(letter);
+      }
+    }
+
+    return {
+      filteredCategories: filtered,
+      categoryGroups: builtGroups,
+      availableLetters: availLetters,
+    };
+  }, [categories, categorySearch]);
 
   const jumpToLetter = useCallback((letter: string) => {
     letterHeaderRefs.current.get(letter)?.scrollIntoView({ behavior: "smooth", block: "start" });
