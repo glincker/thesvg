@@ -113,6 +113,9 @@ export function HelpFab({ iconCount }: { iconCount: string }) {
         <div
           className="fixed inset-0 z-50 flex items-end justify-center p-4 sm:items-center"
           onClick={handleClose}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="help-fab-title"
         >
           {/* Backdrop */}
           <div
@@ -161,7 +164,7 @@ export function HelpFab({ iconCount }: { iconCount: string }) {
                   <Sparkles className="h-3 w-3" />
                   Getting Started
                 </div>
-                <h2 className="text-xl font-bold tracking-tight text-white">Quick Tips</h2>
+                <h2 id="help-fab-title" className="text-xl font-bold tracking-tight text-white">Quick Tips</h2>
                 <p className="mt-1 text-sm text-zinc-400">Everything you can do with theSVG</p>
               </div>
 
