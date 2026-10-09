@@ -25,6 +25,7 @@ import {
 } from "node:fs";
 import { basename, dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { sanitizeSvg } from "./lib/sanitize-svg";
 
 // ---------------------------------------------------------------------------
 // Path resolution
@@ -162,23 +163,6 @@ function checkSvgQuality(svgPath: string): QualityResult {
   }
 
   return { ok: true };
-}
-
-/**
- * Sanitize SVG content: strip <script> tags and inline event handlers.
- * Returns the sanitized string.
- */
-function sanitizeSvg(content: string): string {
-  // Remove <script ...>...</script> blocks (case-insensitive, multiline)
-  let result = content.replace(/<script[\s\S]*?<\/script>/gi, "");
-
-  // Remove event handler attributes like onload="..." onclick="..." etc.
-  result = result.replace(/\s+on[a-z]+\s*=\s*(?:"[^"]*"|'[^']*')/gi, "");
-
-  // Remove javascript: hrefs
-  result = result.replace(/href\s*=\s*["']javascript:[^"']*["']/gi, 'href="#"');
-
-  return result;
 }
 
 // ---------------------------------------------------------------------------

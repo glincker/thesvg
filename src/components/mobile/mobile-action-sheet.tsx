@@ -7,7 +7,7 @@ import { Copy, Download, ExternalLink } from "lucide-react";
 import { BottomSheet } from "./bottom-sheet";
 import { useMobileShellStore } from "@/lib/stores/mobile-shell-store";
 import { useRecentsStore } from "@/lib/stores/recents-store";
-import { loadIconsManifest } from "@/lib/icons-manifest";
+import { getIconBySlugFromManifest, loadIconsManifest } from "@/lib/icons-manifest";
 import type { IconEntry } from "@/lib/icons";
 
 /**
@@ -33,9 +33,9 @@ export function MobileActionSheet() {
       return;
     }
     let active = true;
-    loadIconsManifest().then((icons) => {
+    loadIconsManifest().then(() => {
       if (!active) return;
-      setIcon(icons.find((i) => i.slug === slug) ?? null);
+      setIcon(getIconBySlugFromManifest(slug));
     });
     return () => {
       active = false;
