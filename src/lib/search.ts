@@ -40,18 +40,33 @@ export function searchIcons(
   // minMatchCharLength never match, so drop them.
   // Deduplicate tokens so a repeated word (e.g. "looker looker studio")
   // can't count twice for one icon and outrank an equally-relevant match.
-  const tokens = [
-    ...new Set(trimmed.toLowerCase().split(/\s+/).filter((t) => t.length >= 2)),
-  ];
-  if (tokens.length <= 1) return fuse.search(trimmed).map((r) => r.item);
+  // ⚡ Bolt: Pre-calculate word tokens manually to avoid allocating arrays
+  // inside .filter() chains in the hot path.
+  const words = trimmed.toLowerCase().split(/\s+/);
+  const tokenSet = new Set<string>();
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].length >= 2) tokenSet.add(words[i]);
+  }
+  const tokens = [...tokenSet];
+
+  if (tokens.length <= 1) {
+    const results = fuse.search(trimmed);
+    const out: IconEntry[] = [];
+    for (let i = 0; i < results.length; i++) {
+      out.push(results[i].item);
+    }
+    return out;
+  }
 
   // Score each icon by how many tokens it matches, then by combined Fuse
   // score. Keep only the icons that match the most tokens: an icon matching
   // every token wins, but when nothing matches all of them the search still
   // returns the closest partial matches rather than an empty result.
   const agg = new Map<string, { item: IconEntry; count: number; score: number }>();
-  for (const token of tokens) {
-    for (const { item, score = 1 } of fuse.search(token)) {
+  for (let t = 0; t < tokens.length; t++) {
+    const searchResults = fuse.search(tokens[t]);
+    for (let i = 0; i < searchResults.length; i++) {
+      const { item, score = 1 } = searchResults[i];
       const entry = agg.get(item.slug) ?? { item, count: 0, score: 0 };
       entry.count += 1;
       entry.score += score;
@@ -61,9 +76,25 @@ export function searchIcons(
 
   const matches = [...agg.values()];
   let maxCount = 0;
-  for (const m of matches) if (m.count > maxCount) maxCount = m.count;
-  return matches
-    .filter((m) => m.count === maxCount)
-    .sort((a, b) => a.score - b.score)
-    .map((m) => m.item);
+  for (let i = 0; i < matches.length; i++) {
+    if (matches[i].count > maxCount) maxCount = matches[i].count;
+  }
+
+  // ⚡ Bolt: Single-pass filtering mapping loop instead of chained
+  // .filter().sort().map() to avoid intermediary arrays.
+  const filteredMatches: { item: IconEntry; count: number; score: number }[] = [];
+  for (let i = 0; i < matches.length; i++) {
+    if (matches[i].count === maxCount) {
+      filteredMatches.push(matches[i]);
+    }
+  }
+
+  filteredMatches.sort((a, b) => a.score - b.score);
+
+  const out: IconEntry[] = [];
+  for (let i = 0; i < filteredMatches.length; i++) {
+    out.push(filteredMatches[i].item);
+  }
+
+  return out;
 }

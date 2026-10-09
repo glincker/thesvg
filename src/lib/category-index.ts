@@ -15,7 +15,8 @@ export function groupCategoriesByLetter(
   categories: { name: string; count: number }[],
 ): CategoryGroup[] {
   const groups = new Map<string, { name: string; count: number }[]>();
-  for (const category of categories) {
+  for (let i = 0; i < categories.length; i++) {
+    const category = categories[i];
     const letter = letterFor(category.name);
     const bucket = groups.get(letter);
     if (bucket) {
@@ -24,10 +25,17 @@ export function groupCategoriesByLetter(
       groups.set(letter, [category]);
     }
   }
-  return ALPHABET.filter((letter) => groups.has(letter)).map((letter) => ({
-    letter,
-    categories: groups.get(letter)!,
-  }));
+  // ⚡ Bolt: Use a single-pass loop instead of chained .filter().map()
+  // to avoid intermediate array allocations.
+  const result: CategoryGroup[] = [];
+  for (let i = 0; i < ALPHABET.length; i++) {
+    const letter = ALPHABET[i];
+    const bucket = groups.get(letter);
+    if (bucket) {
+      result.push({ letter, categories: bucket });
+    }
+  }
+  return result;
 }
 
 /** Fixed palette of Tailwind background classes (not inline styles) for the
@@ -62,5 +70,14 @@ export function filterCategories(
 ): { name: string; count: number }[] {
   const q = query.trim().toLowerCase();
   if (!q) return categories;
-  return categories.filter((category) => category.name.toLowerCase().includes(q));
+  // ⚡ Bolt: Use a single-pass for loop instead of .filter() to avoid
+  // function allocation overhead inside the filter callback.
+  const result: { name: string; count: number }[] = [];
+  for (let i = 0; i < categories.length; i++) {
+    const category = categories[i];
+    if (category.name.toLowerCase().includes(q)) {
+      result.push(category);
+    }
+  }
+  return result;
 }

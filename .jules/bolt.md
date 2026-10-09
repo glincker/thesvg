@@ -65,3 +65,7 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2024-05-18 - Replacing Array.find with Pre-computed Maps
 **Learning:** Repeatedly executing O(N) `Array.find()` lookups inside high-frequency render cycles (like rendering hundreds of icon cards) for static constants forces the JS thread to do unnecessary work.
 **Action:** When working with static configuration arrays that are frequently queried by ID/value, export a pre-computed `Map` alongside the array to enable O(1) lookups via `map.get()`.
+
+## 2025-05-18 - Single-Pass Loop Optimization for chained `.filter().map()` array allocations
+**Learning:** Chained array higher-order methods like `.filter().map()` and `.filter().sort().map()` create unnecessary intermediate arrays. This memory allocation overhead becomes a measurable bottleneck in hot-paths like live search algorithms where it is continuously executed. V8's optimization of the `.filter()` callback also creates function closure allocation overhead when iterating over thousands of items.
+**Action:** Replace contiguous `.filter().map()` chains with single-pass imperative `for` loops in performance-critical sections (e.g. data layer lookups and search filtering). Use `array.push()` to collect matches, eliminating the need to allocate intermediate arrays that are immediately discarded.
