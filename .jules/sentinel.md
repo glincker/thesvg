@@ -37,3 +37,7 @@
 **Vulnerability:** The client-side SVG validation logic (`src/lib/svg-validation.ts`) was using a naive regex blocklist (checking strictly for `javascript:`) to validate URLs inside `<use>`, `<a>`, and `<image>` tags. This could be bypassed using alternative malicious schemes like `vbscript:` or `data:text/html` which can also execute scripts.
 **Learning:** URL validation should never rely on blocklisting known bad schemes. Inconsistencies across the codebase (e.g. blog vs svg validation) can easily leave holes.
 **Prevention:** Use a strict allowlist of safe protocols (e.g. `http://`, `https://`, `mailto:`, `/`, `#`, and sometimes `data:image/` if raster images are intentionally parsed separately) and ensure all whitespace and control characters are stripped before checking to prevent decoding bypasses.
+## 2025-02-14 - XSS in HTML Comments via Hyphen Injection
+**Vulnerability:** In `src/lib/svg-utils.ts`, user input (`title`) was escaped for standard HTML entities but not for hyphens before being placed inside an HTML comment (`<!-- ${safeTitleHtml} -->`).
+**Learning:** Even if `<`, `>`, and `&` are escaped, leaving hyphens unescaped inside HTML comments can allow an attacker to inject `--` sequences. Depending on the parser and context (e.g., legacy or non-compliant parsers, or strict XML parsers), this might terminate the comment or cause parsing errors that lead to XSS.
+**Prevention:** Always escape hyphens (`-` to `&#45;`) when interpolating user-controlled data directly into HTML comments to ensure the `--` sequence cannot be formed.

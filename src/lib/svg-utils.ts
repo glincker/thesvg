@@ -227,7 +227,7 @@ function submitForm(action: string, fields: Record<string, string>): void {
 }
 
 function buildPenHtml(svg: string, title: string): string {
-  const safeTitleHtml = title.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const safeTitleHtml = title.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/-/g, "&#45;");
   return `<!-- ${safeTitleHtml} (via thesvg.org) -->\n<div class="wrap">\n  ${svg}\n</div>\n<style>\n  body { display: grid; place-items: center; min-height: 100vh; margin: 0; background: #0b0d10; }\n  .wrap { padding: 2rem; }\n  .wrap svg { width: 256px; height: 256px; }\n</style>`;
 }
 
