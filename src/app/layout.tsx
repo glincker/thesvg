@@ -3,8 +3,8 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
-import { AnnouncementBanner } from "@/components/announcement-banner";
 import { Header } from "@/components/header";
+import { fetchRepoStars } from "@/lib/github-stars";
 import { Footer } from "@/components/footer";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { MobileShell } from "@/components/mobile/mobile-shell";
@@ -131,11 +131,12 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const githubStars = await fetchRepoStars();
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -162,14 +163,13 @@ export default function RootLayout({
         >
           <StoreHydration />
           <ScrollToTop />
-          <AnnouncementBanner />
           {/* Desktop header, `md:` and above. Rendered as a body-level
               sibling (not wrapped) so position: sticky keeps a containing
               block tall enough for it to stick against the viewport.
               Below `md` the MobileShell renders its own top bar and bottom
               dock to deliver an app-like feel. */}
           <Suspense fallback={<HeaderSkeleton />}>
-            <Header collectionCounts={collectionCounts} />
+            <Header collectionCounts={collectionCounts} githubStars={githubStars} />
           </Suspense>
           <Suspense
             fallback={

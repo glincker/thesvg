@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 import { Star, X } from "lucide-react";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import { withUtm } from "@/lib/external-link";
+import { formatStarCount } from "@/lib/github-stars";
+import { useGithubStars } from "@/lib/hooks/use-github-stars";
+import { trackStarCta } from "@/lib/track-star-cta";
 import {
   STAR_PROMPT_REPO_URL,
   STAR_PROMPT_STORAGE_KEY,
@@ -34,12 +37,19 @@ export function StarPrompt() {
   const [visible, setVisible] = useState(false);
   // Survives a failed storage write so closing never re-triggers the prompt.
   const [dismissed, setDismissed] = useState(false);
+  const stars = useGithubStars(null);
 
   useEffect(() => {
     if (visible || dismissed || !shouldShowStarPrompt(copied, readHandled())) return;
     const timer = setTimeout(() => setVisible(true), SHOW_DELAY_MS);
     return () => clearTimeout(timer);
   }, [copied, visible, dismissed]);
+
+  useEffect(() => {
+    if (visible) trackStarCta("star_prompt", "viewed", stars);
+    // Fire when the prompt appears, not again when the count refreshes.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [visible]);
 
   if (!visible) return null;
 
@@ -61,13 +71,18 @@ export function StarPrompt() {
         <div className="min-w-0 flex-1">
           <p className="text-sm font-semibold text-foreground">Finding thesvg useful?</p>
           <p className="mt-0.5 text-xs text-muted-foreground">
-            A GitHub star helps other developers discover it. It is free and open source.
+            {stars !== null
+              ? `${formatStarCount(stars)} developers have starred it. A star helps others discover it.`
+              : "A GitHub star helps other developers discover it. It is free and open source."}
           </p>
           <a
             href={withUtm(STAR_PROMPT_REPO_URL, "star_prompt")}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={close}
+            onClick={() => {
+              trackStarCta("star_prompt", "clicked", stars);
+              close();
+            }}
             className="mt-3 inline-flex h-8 items-center gap-1.5 rounded-lg bg-foreground px-3 text-xs font-medium text-background transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             <Star className="h-3.5 w-3.5" aria-hidden="true" />
