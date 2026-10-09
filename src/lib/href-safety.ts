@@ -36,7 +36,6 @@ export function normalizeUrl(raw: string): string {
     if (next === value) break;
     value = next;
   }
-  // eslint-disable-next-line no-control-regex
   return value.replace(/[\s\u0000-\u001f\u007f]/g, "").toLowerCase();
 }
 

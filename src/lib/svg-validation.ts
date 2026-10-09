@@ -34,7 +34,20 @@ function hasMaliciousAttributes(doc: Document): {
         hasOnHandlers = true;
       }
       if (name === "href" || name.endsWith(":href")) {
-        if (isUnsafeHref(attr.value)) {
+        // Allowlist first (the original behaviour: anything else is rejected,
+        // including blob:, file:, ftp: and bare relative paths), then the shared
+        // unsafe-href check, which also rejects protocol-relative //host values
+        // that a plain "/" prefix match would let through.
+        const href = normalizeUrl(attr.value);
+        const allowed =
+          href === "" ||
+          href.startsWith("#") ||
+          (href.startsWith("/") && !href.startsWith("//")) ||
+          href.startsWith("http://") ||
+          href.startsWith("https://") ||
+          href.startsWith("mailto:") ||
+          (href.startsWith("data:image/") && !href.startsWith("data:image/svg+xml"));
+        if (!allowed || isUnsafeHref(attr.value)) {
           hasUnsafeHref = true;
         }
         // <use> may only reference fragments inside the document

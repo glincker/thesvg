@@ -73,6 +73,24 @@ describe("validateSvg href handling", () => {
     expect(scriptCheckPasses(wrap('<defs><path id="a" d="M0 0"/></defs><use xlink:href="#a"/>'))).toBe(true);
   });
 
+  it.each([
+    ["absolute http", '<a href="http://example.com/x"><path d="M0 0"/></a>'],
+    ["absolute https", '<a href="https://example.com/x"><path d="M0 0"/></a>'],
+    ["mailto", '<a href="mailto:a@example.com"><path d="M0 0"/></a>'],
+    ["root-relative path", '<a href="/docs"><path d="M0 0"/></a>'],
+  ])("keeps accepting %s links", (_label, inner) => {
+    expect(scriptCheckPasses(wrap(inner))).toBe(true);
+  });
+
+  it.each([
+    ["blob:", '<a href="blob:https://example.com/id"><path d="M0 0"/></a>'],
+    ["file:", '<a href="file:///etc/passwd"><path d="M0 0"/></a>'],
+    ["ftp:", '<a href="ftp://example.com/x"><path d="M0 0"/></a>'],
+    ["bare relative path", '<a href="images/x.png"><path d="M0 0"/></a>'],
+  ])("keeps rejecting %s (stricter than a blocklist)", (_label, inner) => {
+    expect(scriptCheckPasses(wrap(inner))).toBe(false);
+  });
+
   it("accepts raster data URIs", () => {
     expect(scriptCheckPasses(wrap('<image href="data:image/png;base64,AAAA"/>'))).toBe(true);
   });
