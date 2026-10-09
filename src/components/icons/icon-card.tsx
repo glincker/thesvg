@@ -130,6 +130,10 @@ export const IconCard = memo(function IconCard({
   // their own light and dark variants already handle contrast.
   const previewBackground = useSettingsStore((s) => s.previewBackground);
   const tileTone = previewBackground === "auto" && !needsThemeSwap ? iconTone(icon.hex) : "neutral";
+  // A forced Light or Dark tile must show the variant made for that surface,
+  // not the one for the current site theme. Auto and Checkerboard follow the theme.
+  const forcedVariantSrc =
+    needsThemeSwap && previewBackground === "light" ? lightSrc : needsThemeSwap && previewBackground === "dark" ? darkSrc : null;
 
   const entranceStyle: CSSProperties | undefined =
     entranceDelay != null
@@ -176,13 +180,13 @@ export const IconCard = memo(function IconCard({
             data-preview={previewBackground}
             data-tone={tileTone}
           >
-            {needsThemeSwap ? (
+            {needsThemeSwap && !forcedVariantSrc ? (
               <>
                 <img src={lightSrc} alt="" className="h-full w-full object-contain dark:hidden" loading="lazy" decoding="async" />
                 <img src={darkSrc} alt="" className="hidden h-full w-full object-contain dark:block" loading="lazy" decoding="async" />
               </>
             ) : (
-              <img src={icon.variants.default} alt="" className="h-full w-full object-contain" loading="lazy" decoding="async" />
+              <img src={forcedVariantSrc ?? icon.variants.default} alt="" className="h-full w-full object-contain" loading="lazy" decoding="async" />
             )}
             <NewBadge slug={icon.slug} className="absolute -top-1 -right-1 scale-90" />
           </div>
@@ -249,7 +253,7 @@ export const IconCard = memo(function IconCard({
           data-tone={tileTone}
         >
           <NewBadge slug={icon.slug} className="absolute top-2 left-2.5" />
-          {needsThemeSwap ? (
+          {needsThemeSwap && !forcedVariantSrc ? (
             <>
               <img
                 src={lightSrc}
@@ -268,7 +272,7 @@ export const IconCard = memo(function IconCard({
             </>
           ) : (
             <img
-              src={icon.variants.default}
+              src={forcedVariantSrc ?? icon.variants.default}
               alt=""
               className="h-9 w-9 object-contain transition-transform duration-200 group-hover:scale-110 sm:h-10 sm:w-10"
               loading="lazy"

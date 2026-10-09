@@ -1,14 +1,15 @@
 "use client";
 
 import type { ComponentType } from "react";
-import { Binary, Braces, Check, Component, FileCode, Link2, SlidersHorizontal } from "lucide-react";
+import { Binary, Braces, Component, FileCode, Link2, SlidersHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
-  DropdownMenuItem,
   DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
@@ -78,16 +79,17 @@ export function DisplayMenu() {
           </DropdownMenuLabel>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuGroup>
+        <DropdownMenuRadioGroup
+          value={defaultCopyFormat}
+          onValueChange={(value) => {
+            const next = FORMAT_BUTTONS.find((fmt) => fmt.value === value);
+            if (next) setDefaultCopyFormat(next.value);
+          }}
+        >
           {FORMAT_BUTTONS.map((fmt) => {
             const FormatIcon = COPY_FORMAT_ICONS[fmt.value];
-            const isActive = defaultCopyFormat === fmt.value;
             return (
-              <DropdownMenuItem
-                key={fmt.value}
-                onClick={() => setDefaultCopyFormat(fmt.value)}
-                className="items-start gap-2.5 py-2"
-              >
+              <DropdownMenuRadioItem key={fmt.value} value={fmt.value} className="items-start gap-2.5 py-2">
                 <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center text-muted-foreground">
                   <FormatIcon className="h-3.5 w-3.5" />
                 </span>
@@ -95,11 +97,10 @@ export function DisplayMenu() {
                   <span className="text-xs font-medium text-foreground">{fmt.label}</span>
                   <span className="text-[10px] leading-relaxed text-muted-foreground/70">{fmt.description}</span>
                 </span>
-                {isActive && <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-foreground" />}
-              </DropdownMenuItem>
+              </DropdownMenuRadioItem>
             );
           })}
-        </DropdownMenuGroup>
+        </DropdownMenuRadioGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuLabel className="font-normal">
@@ -109,28 +110,26 @@ export function DisplayMenu() {
             </p>
           </DropdownMenuLabel>
         </DropdownMenuGroup>
-        <DropdownMenuGroup>
-          {PREVIEW_OPTIONS.map((opt) => {
-            const isActive = previewBackground === opt.value;
-            return (
-              <DropdownMenuItem
-                key={opt.value}
-                onClick={() => setPreviewBackground(opt.value)}
-                className="items-start gap-2.5 py-2"
-              >
-                <span
-                  aria-hidden="true"
-                  className={cn("mt-0.5 h-5 w-5 shrink-0 rounded-md border border-border/60", opt.swatch)}
-                />
-                <span className="flex flex-1 flex-col gap-0.5">
-                  <span className="text-xs font-medium text-foreground">{opt.label}</span>
-                  <span className="text-[10px] leading-relaxed text-muted-foreground/70">{opt.description}</span>
-                </span>
-                {isActive && <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-foreground" />}
-              </DropdownMenuItem>
-            );
-          })}
-        </DropdownMenuGroup>
+        <DropdownMenuRadioGroup
+          value={previewBackground}
+          onValueChange={(value) => {
+            const next = PREVIEW_OPTIONS.find((opt) => opt.value === value);
+            if (next) setPreviewBackground(next.value);
+          }}
+        >
+          {PREVIEW_OPTIONS.map((opt) => (
+            <DropdownMenuRadioItem key={opt.value} value={opt.value} className="items-start gap-2.5 py-2">
+              <span
+                aria-hidden="true"
+                className={cn("mt-0.5 h-5 w-5 shrink-0 rounded-md border border-border/60", opt.swatch)}
+              />
+              <span className="flex flex-1 flex-col gap-0.5">
+                <span className="text-xs font-medium text-foreground">{opt.label}</span>
+                <span className="text-[10px] leading-relaxed text-muted-foreground/70">{opt.description}</span>
+              </span>
+            </DropdownMenuRadioItem>
+          ))}
+        </DropdownMenuRadioGroup>
       </DropdownMenuContent>
     </DropdownMenu>
   );
