@@ -165,18 +165,45 @@ function checkSvgQuality(svgPath: string): QualityResult {
 }
 
 /**
- * Sanitize SVG content: strip <script> tags and inline event handlers.
+ * Sanitize SVG content: strip <script> tags, <foreignObject> tags, inline event handlers,
+ * and enforce a strict allowlist for href attributes.
  * Returns the sanitized string.
  */
 function sanitizeSvg(content: string): string {
-  // Remove <script ...>...</script> blocks (case-insensitive, multiline)
-  let result = content.replace(/<script[\s\S]*?<\/script>/gi, "");
+  let result = content;
 
-  // Remove event handler attributes like onload="..." onclick="..." etc.
-  result = result.replace(/\s+on[a-z]+\s*=\s*(?:"[^"]*"|'[^']*')/gi, "");
+  // Remove <script> tags (including self-closing) and all their contents
+  result = result.replace(/<script\b[^>]*>([\s\S]*?<\/script>)?|<script\b[^>]*\/>/gi, "");
 
-  // Remove javascript: hrefs
-  result = result.replace(/href\s*=\s*["']javascript:[^"']*["']/gi, 'href="#"');
+  // Remove <foreignObject> tags and all their contents
+  result = result.replace(/<foreignObject\b[^>]*>([\s\S]*?<\/foreignObject>)?|<foreignObject\b[^>]*\/>/gi, "");
+
+  // Remove event handler attributes (on*="...", on*='...', on*=...)
+  result = result.replace(/\b(on[a-z]+)\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, "");
+
+  // Safe href allowlist logic (stripping control chars & decoding numeric entities first)
+  result = result.replace(/\b(?:xlink:)?href\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/gi, (match, p1, p2, p3) => {
+    const rawVal = p1 ?? p2 ?? p3 ?? "";
+    const val = rawVal
+      .replace(/&#x([0-9a-f]+);?/gi, (_, hex) => String.fromCharCode(parseInt(hex, 16)))
+      .replace(/&#([0-9]+);?/g, (_, dec) => String.fromCharCode(parseInt(dec, 10)))
+      .replace(/[\s\x00-\x1F\x7F]/g, "")
+      .toLowerCase();
+
+    if (
+      val.startsWith("http://") ||
+      val.startsWith("https://") ||
+      val.startsWith("mailto:") ||
+      val.startsWith("/") ||
+      val.startsWith("#") ||
+      val.startsWith("data:image/")
+    ) {
+      return match;
+    }
+
+    const attrName = match.split("=")[0].trim();
+    return `${attrName}="#"`;
+  });
 
   return result;
 }

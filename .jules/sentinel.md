@@ -37,3 +37,8 @@
 **Vulnerability:** The client-side SVG validation logic (`src/lib/svg-validation.ts`) was using a naive regex blocklist (checking strictly for `javascript:`) to validate URLs inside `<use>`, `<a>`, and `<image>` tags. This could be bypassed using alternative malicious schemes like `vbscript:` or `data:text/html` which can also execute scripts.
 **Learning:** URL validation should never rely on blocklisting known bad schemes. Inconsistencies across the codebase (e.g. blog vs svg validation) can easily leave holes.
 **Prevention:** Use a strict allowlist of safe protocols (e.g. `http://`, `https://`, `mailto:`, `/`, `#`, and sometimes `data:image/` if raster images are intentionally parsed separately) and ensure all whitespace and control characters are stripped before checking to prevent decoding bypasses.
+
+## 2024-05-27 - Regex-based SVG sanitization evasion in build scripts
+**Vulnerability:** The script `packages/icons/scripts/enrich-svgl-variants.ts` used naive regex to sanitize SVGs (e.g. stripping `<script ...></script>`). It missed self-closing script tags, unquoted event handlers, and entity-encoded XSS payloads in `href` attributes, making it highly vulnerable to evasion.
+**Learning:** Node.js scripts handling SVGs often lack `DOMParser`, leading developers to fallback on regex. Standard regex sanitizers are usually bypassable.
+**Prevention:** If `DOMParser` or `DOMPurify` is unavailable, regex sanitizers must strictly remove `<\s*script\b[^>]*\/?>` (including self-closing), remove all `on*` attributes even without quotes (`\b(on[a-z]+)\s*=`), and enforce a strict explicit allowlist for URI protocols only after stripping control characters and decoding numeric HTML entities.
