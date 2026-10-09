@@ -235,15 +235,25 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
     }
     if (categoryParam) {
       const lowerCatParam = categoryParam.toLowerCase();
-      r = r.filter((icon) =>
-        icon.categories.some((c) => c.toLowerCase() === lowerCatParam)
-      );
+      r = r.filter((icon) => {
+        const cats = icon.categories;
+        const len = cats.length;
+        for (let i = 0; i < len; i++) {
+          if (cats[i].toLowerCase() === lowerCatParam) return true;
+        }
+        return false;
+      });
     }
     if (catSearchParam.trim()) {
       const lowerCatSearch = catSearchParam.trim().toLowerCase();
-      r = r.filter((icon) =>
-        icon.categories.some((c) => c.toLowerCase().includes(lowerCatSearch))
-      );
+      r = r.filter((icon) => {
+        const cats = icon.categories;
+        const len = cats.length;
+        for (let i = 0; i < len; i++) {
+          if (cats[i].toLowerCase().includes(lowerCatSearch)) return true;
+        }
+        return false;
+      });
     }
     return r;
   }, [collectionIcons, favoritesParam, favorites, categoryParam, catSearchParam]);

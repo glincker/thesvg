@@ -40,3 +40,7 @@ Simulating with N=5000 icons, M=20 slugs:
 **What:** Replaced `Array.find` + `Array.filter` + spread operations with `Array.findIndex` + `Array.splice` + `Array.unshift` in state updates (`pushUnique` and `recordCopy` inside `recents-store.ts`).
 **Why:** The `Array.filter` method iterated over the entire array to check against a condition, whereas the `findIndex` allows us to instantly jump to the target item, avoiding multiple iterations over the same collection.
 **Impact:** ~40% faster execution time for state updates, reducing JS thread blocking in state modification events by effectively halving the operations (especially avoiding a full-array filter on upsert).
+
+## 2025-03-09 - Avoid closures in hot loop array filters
+**Learning:** In performance-critical hot paths (like large `.filter` loops processing tens of thousands of items on every keystroke), avoid using higher-order array functions that create closures (e.g., `.some()`). Using a closure inside an outer `.filter` loop forces the continuous initialization of functions and scoping overhead per item. In `home-content.tsx`, replacing `.some` with a standard `for` loop inside the `.filter` iterations decreased filtering time significantly.
+**Action:** Favor standard `for` loops inside large `.filter` loops to prevent the continuous closure initialization overhead.
