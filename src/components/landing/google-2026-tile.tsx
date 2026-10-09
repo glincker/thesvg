@@ -92,7 +92,7 @@ export function Google2026Tile({ icon, delay, cleanTitle }: Props) {
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
       } catch {
-        window.open(src, "_blank");
+        window.open(src, "_blank", "noopener");
       }
       posthog.capture("icon_downloaded", {
         icon_slug: icon.slug,
