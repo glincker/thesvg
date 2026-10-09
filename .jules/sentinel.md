@@ -37,3 +37,8 @@
 **Vulnerability:** The client-side SVG validation logic (`src/lib/svg-validation.ts`) was using a naive regex blocklist (checking strictly for `javascript:`) to validate URLs inside `<use>`, `<a>`, and `<image>` tags. This could be bypassed using alternative malicious schemes like `vbscript:` or `data:text/html` which can also execute scripts.
 **Learning:** URL validation should never rely on blocklisting known bad schemes. Inconsistencies across the codebase (e.g. blog vs svg validation) can easily leave holes.
 **Prevention:** Use a strict allowlist of safe protocols (e.g. `http://`, `https://`, `mailto:`, `/`, `#`, and sometimes `data:image/` if raster images are intentionally parsed separately) and ensure all whitespace and control characters are stripped before checking to prevent decoding bypasses.
+
+## 2025-02-14 - Replace Regex SVG Sanitization with JSDOM AST Parsing in Build Scripts
+**Vulnerability:** The build script `enrich-svgl-variants.ts` used regular expressions to sanitize SVG content pulled from an external source (`svgl`). Regex cannot reliably parse XML/HTML and is easily bypassed (e.g., using HTML entity encoding), creating a supply chain risk where malicious SVGs could be committed to the repository and served to users.
+**Learning:** Build tools and scripts that ingest and process external files (like SVGs or HTML) must use robust AST parsing (like `jsdom`) rather than string matching to detect and strip malicious elements (`<script>`, `<foreignObject>`) or attributes (`on*`, `javascript:`).
+**Prevention:** Always use a proper DOM parser (e.g., `DOMParser` in the browser, or `jsdom` in Node.js) to walk and sanitize elements rather than naive regex replacements, especially when ingesting external data.

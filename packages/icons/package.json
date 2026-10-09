@@ -61,5 +61,8 @@
   "publishConfig": {
     "provenance": true,
     "access": "public"
+  },
+  "dependencies": {
+    "jsdom": "^30.1.2"
   }
 }

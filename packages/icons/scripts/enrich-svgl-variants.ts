@@ -25,6 +25,7 @@ import {
 } from "node:fs";
 import { basename, dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { JSDOM } from "jsdom";
 
 // ---------------------------------------------------------------------------
 // Path resolution
@@ -169,16 +170,57 @@ function checkSvgQuality(svgPath: string): QualityResult {
  * Returns the sanitized string.
  */
 function sanitizeSvg(content: string): string {
-  // Remove <script ...>...</script> blocks (case-insensitive, multiline)
-  let result = content.replace(/<script[\s\S]*?<\/script>/gi, "");
+  const dom = new JSDOM("<!DOCTYPE html>");
+  const parser = new dom.window.DOMParser();
+  const doc = parser.parseFromString(content, "image/svg+xml");
 
-  // Remove event handler attributes like onload="..." onclick="..." etc.
-  result = result.replace(/\s+on[a-z]+\s*=\s*(?:"[^"]*"|'[^']*')/gi, "");
+  const errorNode = doc.querySelector("parsererror");
+  if (errorNode) {
+    // If it can't parse as XML, fallback to original to let build system fail it naturally,
+    // or just return empty. We return original string, minus regex attempts just to be safe.
+    let result = content.replace(/<script[\s\S]*?<\/script>/gi, "");
+    result = result.replace(/\s+on[a-z]+\s*=\s*(?:"[^"]*"|'[^']*')/gi, "");
+    result = result.replace(/href\s*=\s*["']javascript:[^"']*["']/gi, 'href="#"');
+    return result;
+  }
 
-  // Remove javascript: hrefs
-  result = result.replace(/href\s*=\s*["']javascript:[^"']*["']/gi, 'href="#"');
+  // Remove <script> and <foreignObject>
+  const elementsToRemove = doc.querySelectorAll("script, foreignObject");
+  for (const el of Array.from(elementsToRemove)) {
+    el.remove();
+  }
 
-  return result;
+  // Remove event handlers and unsafe hrefs
+  const allElements = doc.querySelectorAll("*");
+  for (const el of Array.from(allElements)) {
+    const attributesToRemove = [];
+    for (const attr of Array.from(el.attributes)) {
+      const name = attr.name.toLowerCase();
+      if (name.startsWith("on")) {
+        attributesToRemove.push(attr.name);
+      } else if (name === "href" || name.endsWith(":href")) {
+        const val = attr.value.replace(/[\s\x00-\x1F\x7F]/g, "").toLowerCase();
+        if (
+          val !== "" &&
+          !val.startsWith("#") &&
+          !val.startsWith("/") &&
+          !val.startsWith("http://") &&
+          !val.startsWith("https://") &&
+          !val.startsWith("mailto:") &&
+          !(val.startsWith("data:image/") && !val.startsWith("data:image/svg+xml"))
+        ) {
+          el.setAttribute(attr.name, "#");
+        }
+      }
+    }
+    for (const attrName of attributesToRemove) {
+      el.removeAttribute(attrName);
+    }
+  }
+
+  // Serialize back to string
+  const serializer = new dom.window.XMLSerializer();
+  return serializer.serializeToString(doc.documentElement);
 }
 
 // ---------------------------------------------------------------------------
