@@ -95,6 +95,7 @@ export function SidebarNav({
           <button
             type="button"
             onClick={onToggleFavorites}
+            aria-label={favoritesLabel}
             className={cn(
               "group flex w-full items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-muted-foreground transition-all duration-200 hover:bg-accent/80 hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
               favoriteCount > 0 && "pr-9",
@@ -103,6 +104,7 @@ export function SidebarNav({
             )}
           >
             <Heart
+              aria-hidden="true"
               className={cn(
                 "h-4 w-4 shrink-0 transition-all duration-200 group-hover:scale-110",
                 isFavoritesActive && "fill-red-500 text-red-500",

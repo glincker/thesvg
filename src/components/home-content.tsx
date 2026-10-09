@@ -469,9 +469,10 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                   <button
                     type="button"
                     onClick={handleSortCycle}
+                    aria-label={`Sort by ${sortLabel.toLowerCase()}`}
                     className="flex h-8 items-center gap-1.5 rounded-lg px-2 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
                   >
-                    <SortIcon className="h-4 w-4" />
+                    <SortIcon className="h-4 w-4" aria-hidden="true" />
                     <span className="hidden sm:inline">{sortLabel}</span>
                   </button>
                 </div>
