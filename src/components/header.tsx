@@ -8,6 +8,7 @@ import { ArrowRight, Binary, BookOpen, Braces, ChevronDown, Component, FileCode,
 import { TheSVGMark } from "@/components/icons/the-svg-mark";
 import { formatStarCount } from "@/lib/github-stars";
 import { useGithubStars } from "@/lib/hooks/use-github-stars";
+import { trackStarCta } from "@/lib/track-star-cta";
 import { useTheme } from "next-themes";
 import { useSettingsStore } from "@/lib/stores/settings-store";
 import { FORMAT_BUTTONS, FORMAT_LABELS } from "@/components/icons/shared/icon-constants";
@@ -72,6 +73,11 @@ interface HeaderProps {
 
 export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
   const stars = useGithubStars(githubStars);
+  useEffect(() => {
+    trackStarCta("header", "viewed", stars);
+    // Once per session; the first render already has the build-time count.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const { theme, setTheme } = useTheme();
   const defaultCopyFormat = useSettingsStore((s) => s.defaultCopyFormat);
   const setDefaultCopyFormat = useSettingsStore((s) => s.setDefaultCopyFormat);
@@ -788,10 +794,10 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                 href={withUtm("https://github.com/GLINCKER/thesvg", "header")}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => posthog.capture("github_star_clicked", { source: "header", stars })}
+                onClick={() => trackStarCta("header", "clicked", stars)}
                 aria-label={stars !== null ? `Star thesvg on GitHub, ${stars} stars` : "Star thesvg on GitHub"}
                 title="Star thesvg on GitHub"
-                className="inline-flex h-9 items-center overflow-hidden rounded-lg border border-border/50 text-xs font-medium text-muted-foreground transition-all hover:border-foreground/20 hover:bg-accent hover:text-foreground sm:h-8 dark:border-white/[0.08] dark:hover:border-white/20 dark:hover:bg-white/[0.06]"
+                className="inline-flex h-9 items-center overflow-hidden rounded-lg border border-amber-500/40 bg-amber-500/[0.07] text-xs font-semibold text-foreground shadow-sm shadow-amber-500/10 transition-all hover:border-amber-500/70 hover:bg-amber-500/[0.14] sm:h-8 dark:border-amber-400/35 dark:bg-amber-400/[0.08] dark:hover:border-amber-400/60 dark:hover:bg-amber-400/[0.14]"
               >
                 <span className="inline-flex h-full items-center gap-1.5 px-2.5">
                   <img
@@ -804,7 +810,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                   <span className="hidden lg:inline">Star</span>
                 </span>
                 {stars !== null && (
-                  <span className="hidden h-full items-center gap-1 border-l border-border/50 bg-foreground/[0.04] px-2 tabular-nums text-foreground sm:inline-flex dark:border-white/[0.08] dark:bg-white/[0.05]">
+                  <span className="hidden h-full items-center gap-1 border-l border-amber-500/30 bg-amber-500/[0.14] px-2 tabular-nums text-amber-700 sm:inline-flex dark:border-amber-400/25 dark:bg-amber-400/[0.12] dark:text-amber-300">
                     <Star className="h-3 w-3 fill-current text-amber-500" aria-hidden="true" />
                     {formatStarCount(stars)}
                   </span>
