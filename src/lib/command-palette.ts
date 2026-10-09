@@ -28,9 +28,12 @@ export function categoriesFromIcons(icons: readonly IconEntry[]): PaletteCategor
       counts.set(name, (counts.get(name) ?? 0) + 1);
     }
   }
-  return [...counts.entries()]
-    .map(([name, count]) => ({ name, count }))
-    .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+  // ⚡ Bolt: Single-pass for loop avoiding redundant array allocations from [...].map()
+  const out: PaletteCategory[] = [];
+  for (const [name, count] of counts) {
+    out.push({ name, count });
+  }
+  return out.sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
 }
 
 /** 0 = prefix, 1 = word start, 2 = substring, -1 = no match. */
