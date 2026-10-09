@@ -12,11 +12,6 @@ import {
 } from "@/lib/icons";
 import { slugifyCategory } from "@/lib/categories";
 import { HomeContent } from "@/components/home-content";
-import { getJsDelivrUrl } from "@/components/icons/shared/icon-constants";
-
-// Cap the JSON-LD ItemList so categories with hundreds of icons don't bloat
-// the structured data payload; the grid itself still renders every icon.
-const JSON_LD_ITEM_LIST_LIMIT = 50;
 
 function buildSlugMap(): Map<string, string> {
   const map = new Map<string, string>();
@@ -94,8 +89,7 @@ export default async function CategoryPage({ params }: PageProps) {
   const iconCount = getIconCount();
   const recentIcons = getRecentlyAddedIcons(12);
   const collections = getCollections();
-  const categoryIcons = getIconsByCategory(category);
-  const categoryItemCount = categoryIcons.length;
+  const categoryItemCount = getIconsByCategory(category).length;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -113,18 +107,6 @@ export default async function CategoryPage({ params }: PageProps) {
       "@type": "Organization",
       name: "theSVG",
       url: "https://thesvg.org",
-    },
-    mainEntity: {
-      "@type": "ItemList",
-      itemListElement: categoryIcons
-        .slice(0, JSON_LD_ITEM_LIST_LIMIT)
-        .map((icon, index) => ({
-          "@type": "ListItem",
-          position: index + 1,
-          name: icon.title,
-          url: `https://thesvg.org/icon/${icon.slug}`,
-          image: getJsDelivrUrl(icon.slug, "default"),
-        })),
     },
   };
 
