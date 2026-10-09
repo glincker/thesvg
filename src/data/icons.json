@@ -3384,6 +3384,24 @@
     "collection": "brands"
   },
   {
+    "slug": "alteryx",
+    "title": "Alteryx",
+    "aliases": [],
+    "hex": "128EC7",
+    "categories": [
+      "Data",
+      "Analytics",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/alteryx/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.alteryx.com/",
+    "dateAdded": "2026-10-09",
+    "collection": "brands"
+  },
+  {
     "slug": "alwaysdata",
     "title": "Alwaysdata",
     "aliases": [],
@@ -54727,6 +54745,24 @@
     "collection": "brands"
   },
   {
+    "slug": "easypanel",
+    "title": "Easypanel",
+    "aliases": [],
+    "hex": "12CD87",
+    "categories": [
+      "DevTool",
+      "DevOps"
+    ],
+    "variants": {
+      "default": "/icons/easypanel/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://easypanel.io",
+    "guidelines": "https://easypanel.io/brand",
+    "dateAdded": "2026-10-09",
+    "collection": "brands"
+  },
+  {
     "slug": "ebay",
     "title": "eBay",
     "aliases": [],
@@ -55190,6 +55226,22 @@
     "url": "https://effect.website/",
     "guidelines": "https://sparkling-lancer-5bd.notion.site/Effect-logo-guidelines-14280adbc6354eaa8bd173e1bc0128a4",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "eggerco",
+    "title": "Egger & Co",
+    "aliases": [],
+    "hex": "0455FF",
+    "categories": [
+      "Business"
+    ],
+    "variants": {
+      "default": "/icons/eggerco/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.eggerco.com",
+    "dateAdded": "2026-10-09",
     "collection": "brands"
   },
   {
@@ -59372,6 +59424,24 @@
     "license": "CC0-1.0",
     "url": "https://www.fiverr.com/press-kit",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "fivetran",
+    "title": "Fivetran",
+    "aliases": [],
+    "hex": "306BEA",
+    "categories": [
+      "Data",
+      "Integration",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/fivetran/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.fivetran.com/",
+    "dateAdded": "2026-10-09",
     "collection": "brands"
   },
   {
