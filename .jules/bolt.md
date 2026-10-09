@@ -51,3 +51,6 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2024-05-18 - Single-Pass Loop Optimization for React Arrays
 **Learning:** Chaining array higher-order methods (`.map().filter().filter()`) inside a React `useMemo` forces multiple O(N) passes and generates temporary intermediary arrays that get discarded, triggering unnecessary garbage collection overhead and blocking the JS thread.
 **Action:** Always collapse contiguous `.map()` and `.filter()` chains within a `useMemo` into a single-pass `for` loop, using early `continue` statements to simulate filters and minimize memory allocation.
+## 2024-05-18 - Avoid array chain allocations in useMemo loops
+**Learning:** Chaining array higher-order methods (`.map().filter().slice()`) inside a React `useMemo` forces multiple O(N) passes and generates temporary arrays that are immediately discarded, triggering aggressive garbage collection overhead and blocking the JS thread.
+**Action:** Replace these chains with a single-pass `for` loop, pushing results into a single array and utilizing early returns or inline conditions (like `break`) to simulate `.slice()`.

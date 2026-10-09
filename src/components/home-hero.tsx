@@ -372,13 +372,17 @@ export function HomeHero({
   const clearViewed = useRecentsStore((s) => s.clearViewed);
   const recentViewedIcons = useMemo(() => {
     if (recentViewed.length === 0 || icons.length === 0) return [];
-    return recentViewed
-      .map((r) => {
-        const entry = iconsBySlug.get(r.slug);
-        return entry ? { entry, ts: r.ts } : null;
-      })
-      .filter((v): v is { entry: IconEntry; ts: number } => Boolean(v))
-      .slice(0, 8);
+    // Single-pass for loop to avoid multiple allocations from chained .map().filter().slice()
+    const result: { entry: IconEntry; ts: number }[] = [];
+    for (let i = 0; i < recentViewed.length; i++) {
+      if (result.length >= 8) break;
+      const r = recentViewed[i];
+      const entry = iconsBySlug.get(r.slug);
+      if (entry) {
+        result.push({ entry, ts: r.ts });
+      }
+    }
+    return result;
   }, [recentViewed, icons, iconsBySlug]);
 
   const [now, setNow] = useState(() => Date.now());
@@ -417,9 +421,15 @@ export function HomeHero({
       "auth-badges": POPULAR_AUTH_BADGES_SLUGS,
     };
     const slugs = slugMap[activeCollection] ?? POPULAR_SLUGS;
-    return slugs
-      .map((slug) => iconsBySlug.get(slug))
-      .filter(Boolean) as IconEntry[];
+    // Single-pass for loop to avoid allocations from chained .map().filter()
+    const result: IconEntry[] = [];
+    for (let i = 0; i < slugs.length; i++) {
+      const entry = iconsBySlug.get(slugs[i]);
+      if (entry) {
+        result.push(entry);
+      }
+    }
+    return result;
   }, [activeCollection, iconsBySlug]);
 
   // Categories for active collection
@@ -456,10 +466,17 @@ export function HomeHero({
     const activeSlide = collectionSlides.length > 0
       ? collectionSlides[currentSlide % collectionSlides.length]
       : fallbackSlide;
-    const slugs = activeSlide.floatSlugs.slice(0, 6);
-    return slugs
-      .map((s) => iconsBySlug.get(s))
-      .filter(Boolean) as IconEntry[];
+    const slugs = activeSlide.floatSlugs;
+    // Single-pass for loop to avoid allocations from chained .slice().map().filter()
+    const result: IconEntry[] = [];
+    const limit = Math.min(slugs.length, 6);
+    for (let i = 0; i < limit; i++) {
+      const entry = iconsBySlug.get(slugs[i]);
+      if (entry) {
+        result.push(entry);
+      }
+    }
+    return result;
   }, [currentSlide, collectionSlides, fallbackSlide, iconsBySlug]);
 
   // Predefined positions for floating icons (scattered, not grid). Timings
