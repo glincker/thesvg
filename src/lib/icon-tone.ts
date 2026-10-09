@@ -33,11 +33,8 @@ export function iconTone(hex: string | undefined): IconTone {
   return "neutral";
 }
 
-const NAMED_COLORS: Record<string, string> = {
-  black: "000000",
-  white: "ffffff",
-  currentcolor: "000000",
-};
+/** Luminance used for a named or unparsed colour: neither near-black nor near-white. */
+const MID_LUMINANCE = 0.3;
 
 function expandHex(raw: string): string | null {
   const h = raw.replace("#", "").toLowerCase();
@@ -56,57 +53,104 @@ function rgbToHex(raw: string): string | null {
   return ch(m[1], m[2]) + ch(m[3], m[4]) + ch(m[5], m[6]);
 }
 
-/** Resolves one paint value to a 6 digit hex, or null for none, url() and unknowns. */
-function paintToHex(value: string): string | null {
+type Paint =
+  | { kind: "none" }
+  | { kind: "url" }
+  | { kind: "color"; luminance: number };
+
+/**
+ * Resolves one paint value. `none`, `transparent` and `inherit` paint nothing,
+ * url() is a gradient or pattern, black, white and currentColor are exact, and
+ * any other colour word (red, gray, ...) counts as a mid tone so a colourful
+ * logo is never mistaken for a near-black or near-white one.
+ */
+function resolvePaint(value: string): Paint {
   const v = value.trim().toLowerCase();
-  if (v === "" || v === "none" || v === "transparent" || v.startsWith("url(")) return null;
-  if (v.startsWith("#")) return expandHex(v);
-  if (v.startsWith("rgb")) return rgbToHex(v);
-  return NAMED_COLORS[v] ?? null;
+  if (v === "" || v === "none" || v === "transparent" || v === "inherit") return { kind: "none" };
+  if (v.startsWith("url(")) return { kind: "url" };
+  if (v === "black" || v === "currentcolor") return { kind: "color", luminance: 0 };
+  if (v === "white") return { kind: "color", luminance: 1 };
+  const hex = v.startsWith("#") ? expandHex(v) : v.startsWith("rgb") ? rgbToHex(v) : null;
+  const lum = hex === null ? null : relativeLuminance(hex);
+  return { kind: "color", luminance: lum ?? MID_LUMINANCE };
 }
 
-const PAINT_RE = /\b(?:fill|stroke|stop-color)\s*[:=]\s*["']?\s*(#[0-9a-f]{3,6}\b|rgba?\([^)]*\)|[a-z]+)/gi;
-const SHAPE_TAG_RE = /<(?:path|circle|rect|ellipse|polygon|polyline|line)\b[^>]*>/gi;
 const NON_RENDERED_RE = /<(clipPath|mask|defs|symbol|pattern|metadata|title|desc)\b[\s\S]*?<\/\1>/gi;
+const TAG_RE = /<(\/?)([a-zA-Z][\w:-]*)\b([^>]*?)(\/?)>/g;
+const SHAPES = new Set(["path", "circle", "rect", "ellipse", "polygon", "polyline", "line"]);
+const STOP_RE = /\bstop-color\s*[:=]\s*["']?\s*(#[0-9a-f]{3,6}\b|rgba?\([^)]*\)|[a-z]+)/gi;
+const STYLE_BLOCK_RE = /<style\b[^>]*>([\s\S]*?)<\/style>/gi;
+const STYLE_PAINT_RE = /\b(?:fill|stroke)\s*:\s*(#[0-9a-f]{3,6}\b|rgba?\([^)]*\)|[a-z]+)/gi;
 
-/** True when this shape tag brings its own paint (attribute, inline style or a class). */
-function shapeHasPaint(tag: string, hasStyleBlock: boolean): boolean {
-  if (/\sfill\s*=/i.test(tag)) return true;
-  if (/\sstyle\s*=\s*["'][^"']*fill\s*:/i.test(tag)) return true;
-  return hasStyleBlock && /\sclass\s*=/i.test(tag);
+function attr(attrs: string, name: string): string | undefined {
+  const m = new RegExp(`(?:^|\\s)${name}\\s*=\\s*(?:"([^"]*)"|'([^']*)')`, "i").exec(attrs);
+  if (m) return (m[1] ?? m[2]).trim();
+  const style = /(?:^|\s)style\s*=\s*(?:"([^"]*)"|'([^']*)')/i.exec(attrs);
+  if (style) {
+    const decl = new RegExp(`(?:^|;)\\s*${name}\\s*:\\s*([^;]+)`, "i").exec(style[1] ?? style[2]);
+    if (decl) return decl[1].trim();
+  }
+  return undefined;
 }
 
 /**
  * Tone of an icon from the colours its artwork is actually painted with.
  * "dark" when every painted colour is near-black, "light" when every one is
- * near-white, otherwise "neutral". A visible shape with no paint of its own,
- * and no fill on an enclosing svg or group, renders black (the SVG default)
- * and counts as black. Colourful or mixed artwork, and anything that brings
- * its own background (a white square behind a black mark), stays neutral. The
- * registry `hex` is deliberately not used: several full-colour logos carry
- * 000000 there.
+ * near-white, otherwise "neutral". Each visible shape resolves its own fill
+ * (its attribute or style, else the nearest enclosing svg or group, else the
+ * SVG default of black). Clip paths, masks and defs paint nothing visible and
+ * are ignored, except that gradient stops are read when a shape uses a
+ * gradient. Colourful or mixed artwork, and anything that brings its own
+ * background (a white square behind a black mark), stays neutral. The registry
+ * `hex` is deliberately not used: several full-colour logos carry 000000 there.
  */
 export function toneFromSvg(svg: string): IconTone {
-  const lums: number[] = [];
-  for (const m of svg.matchAll(PAINT_RE)) {
-    const hex = paintToHex(m[1]);
-    if (hex === null) continue;
-    const lum = relativeLuminance(hex);
-    if (lum !== null) lums.push(lum);
-  }
-
   const rendered = svg.replace(NON_RENDERED_RE, "");
-  const hasInheritedFill = /<(?:svg|g)\b[^>]*\sfill\s*=\s*["'](?!none)/i.test(rendered);
   const hasStyleBlock = /<style\b/i.test(svg);
+  const lums: number[] = [];
   let sawShape = false;
-  let sawUnpainted = false;
-  for (const m of rendered.matchAll(SHAPE_TAG_RE)) {
-    sawShape = true;
-    if (!shapeHasPaint(m[0], hasStyleBlock)) sawUnpainted = true;
-  }
-  if (sawUnpainted && !hasInheritedFill) lums.push(0);
+  let usesGradient = false;
+  const add = (p: Paint): void => {
+    if (p.kind === "color") lums.push(p.luminance);
+    else if (p.kind === "url") usesGradient = true;
+  };
 
-  if (lums.length === 0) return sawShape ? "dark" : "neutral";
+  // Stack of the fill/stroke each open element passes down to its children.
+  const stack: Array<{ fill?: string; stroke?: string }> = [{}];
+  for (const m of rendered.matchAll(TAG_RE)) {
+    const closing = m[1] === "/";
+    const name = m[2].toLowerCase();
+    const attrs = m[3];
+    const selfClosing = m[4] === "/";
+    if (closing) {
+      if (stack.length > 1) stack.pop();
+      continue;
+    }
+    const top = stack[stack.length - 1];
+    const ownFill = attr(attrs, "fill");
+    const ownStroke = attr(attrs, "stroke");
+    const fill = ownFill ?? top.fill;
+    const stroke = ownStroke ?? top.stroke;
+    if (SHAPES.has(name)) {
+      sawShape = true;
+      const classPainted = hasStyleBlock && /(?:^|\s)class\s*=/i.test(attrs);
+      if (fill !== undefined) add(resolvePaint(fill));
+      else if (!classPainted) lums.push(0); // unpainted shape renders black
+      if (stroke !== undefined) add(resolvePaint(stroke));
+    }
+    if (!selfClosing) stack.push({ fill, stroke });
+  }
+
+  // Colours set through a <style> block apply to classes we cannot map back.
+  for (const block of svg.matchAll(STYLE_BLOCK_RE)) {
+    for (const m of block[1].matchAll(STYLE_PAINT_RE)) add(resolvePaint(m[1]));
+  }
+  if (usesGradient) {
+    for (const m of svg.matchAll(STOP_RE)) add(resolvePaint(m[1]));
+  }
+
+  if (!sawShape) return "neutral";
+  if (lums.length === 0) return "dark";
   if (lums.every((l) => l < DARK_BELOW)) return "dark";
   if (lums.every((l) => l > LIGHT_ABOVE)) return "light";
   return "neutral";

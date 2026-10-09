@@ -57,12 +57,35 @@ describe("toneFromSvg", () => {
     expect(toneFromSvg(svg('<rect fill="#fff" width="24" height="24"/><path d="M4 4h16v16H4z"/>'))).toBe("neutral");
   });
 
-  it("ignores clip paths and does not let a registry-style black override real colours", () => {
-    expect(toneFromSvg(svg('<defs><clipPath id="a"><rect width="24" height="24"/></clipPath></defs><g clip-path="url(#a)"><path fill="#fff" d="M0 0"/></g>'))).toBe("light");
+  it("ignores paint that only exists inside a clip path or mask", () => {
+    const clipped = svg(
+      '<defs><clipPath id="a"><rect fill="#000" width="24" height="24"/></clipPath></defs>' +
+        '<g clip-path="url(#a)"><path fill="#fff" d="M0 0"/></g>',
+    );
+    expect(toneFromSvg(clipped)).toBe("light");
   });
 
   it("respects fill inherited from the svg or a group", () => {
     expect(toneFromSvg('<svg fill="#fff" viewBox="0 0 24 24"><path d="M0 0"/></svg>')).toBe("light");
+  });
+
+  it("resolves inherited fill per shape, not once for the whole file", () => {
+    // the second path sits outside the group and is the default black
+    expect(toneFromSvg(svg('<g fill="#fff"><path d="M0 0"/></g><path d="M1 1"/>'))).toBe("neutral");
+    expect(toneFromSvg(svg('<g fill="#fff"><path d="M0 0"/></g>'))).toBe("light");
+  });
+
+  it("does not drop named colours", () => {
+    // a white mark plus a red one is colourful, not white-only
+    expect(toneFromSvg(svg('<path fill="#FFF" d="M0 0"/><path fill="red" d="M1 1"/>'))).toBe("neutral");
+    expect(toneFromSvg(svg('<path fill="black" d="M0 0"/><path fill="gray" d="M1 1"/>'))).toBe("neutral");
+  });
+
+  it("reads gradient stops when a shape uses a gradient", () => {
+    const grad =
+      '<defs><linearGradient id="g"><stop stop-color="#12CD87"/><stop stop-color="#0E9FD8"/></linearGradient></defs>' +
+      '<path fill="url(#g)" d="M0 0"/>';
+    expect(toneFromSvg(svg(grad))).toBe("neutral");
   });
 
   it("returns neutral when there is no shape at all", () => {
