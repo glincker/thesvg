@@ -403,7 +403,7 @@ export function HomeHero({
   // Recently added for active collection
   const collectionRecentIcons = useMemo(() => {
     if (activeCollection === "brands") return recentIcons;
-    return [...collectionIcons]
+    return collectionIcons
       .filter((i) => i.dateAdded)
       .sort((a, b) => compareDateDesc(a.dateAdded, b.dateAdded))
       .slice(0, 12);

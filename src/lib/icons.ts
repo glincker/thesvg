@@ -157,7 +157,7 @@ export function compareDateDesc(a?: string, b?: string): number {
 }
 
 export function getRecentlyAddedIcons(limit = 12): IconEntry[] {
-  return [...icons]
+  return icons
     .filter((i) => i.dateAdded)
     .sort((a, b) => compareDateDesc(a.dateAdded, b.dateAdded))
     .slice(0, limit);

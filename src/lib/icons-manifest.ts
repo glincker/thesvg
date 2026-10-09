@@ -10,6 +10,7 @@
 import type { IconEntry } from "@/lib/icons";
 
 let cachedIcons: IconEntry[] | null = null;
+let iconsBySlugCache: Map<string, IconEntry> | null = null;
 let fetchPromise: Promise<IconEntry[]> | null = null;
 
 // A browser never rejects a stalled fetch on its own, so without a deadline the
@@ -58,6 +59,7 @@ export async function loadIconsManifest(): Promise<IconEntry[]> {
     fetchPromise = fetchManifest()
       .then((data) => {
         cachedIcons = data;
+        iconsBySlugCache = null;
         return data;
       })
       .catch((err) => {
@@ -79,4 +81,18 @@ export function prefetchIconsManifest(): void {
   loadIconsManifest().catch(() => {
     // Silently ignore prefetch failures
   });
+}
+
+/**
+ * O(1) slug lookup against the loaded manifest. The Map is built lazily on
+ * first use. Returns null until loadIconsManifest() has resolved.
+ */
+export function getIconBySlugFromManifest(slug: string): IconEntry | null {
+  if (!cachedIcons) return null;
+  if (!iconsBySlugCache) {
+    const map = new Map<string, IconEntry>();
+    for (const icon of cachedIcons) map.set(icon.slug, icon);
+    iconsBySlugCache = map;
+  }
+  return iconsBySlugCache.get(slug) ?? null;
 }

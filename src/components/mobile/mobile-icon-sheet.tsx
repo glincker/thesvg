@@ -11,7 +11,7 @@ import { useMobileShellStore } from "@/lib/stores/mobile-shell-store";
 import { useMobilePrefsStore } from "@/lib/stores/mobile-prefs-store";
 import { useFavoritesStore } from "@/lib/stores/favorites-store";
 import { useRecentsStore } from "@/lib/stores/recents-store";
-import { loadIconsManifest } from "@/lib/icons-manifest";
+import { getIconBySlugFromManifest, loadIconsManifest } from "@/lib/icons-manifest";
 import { formatSvg, type CopyFormat } from "@/lib/copy-formats";
 import type { IconEntry } from "@/lib/icons";
 import { cn } from "@/lib/utils";
@@ -52,9 +52,9 @@ export function MobileIconSheet() {
     }
     let active = true;
     loadIconsManifest()
-      .then((icons) => {
+      .then(() => {
         if (!active) return;
-        const match = icons.find((i) => i.slug === slug) ?? null;
+        const match = getIconBySlugFromManifest(slug);
         setIcon(match);
       })
       .catch(() => {
