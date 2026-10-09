@@ -334,7 +334,7 @@ html {
      icons that only ship a dark/near-black `default` variant), fading to a
      near-black edge past the icon's footprint. The hue is held at a barely
      cool neutral: the earlier saturated blue clashed with blue brand marks.
-     Icons that are still too dark for it get a light chip via data-tone
+     Icons that are still too dark for it get a light disc via data-tone
      below. Tinting the fill with the brand color was tried and reverted
      because mixing hue into the backdrop softened the contrast this rule
      exists to fix; brand cohesion comes from `.icon-preview-bg--tinted`. */
@@ -346,15 +346,35 @@ html {
   );
 }
 
-/* Adaptive tiles ("auto" preview): near-black brands get a light chip in dark
-   mode, near-white brands a dark chip in light mode. */
+/* Adaptive tiles ("auto" preview): every tile keeps its normal surface and a
+   soft disc behind the artwork supplies the contrast, so a grid with many
+   near-black logos does not turn into a patchwork of dark and bright
+   rectangles. Near-black brands get a light disc in dark mode, near-white
+   brands a dark disc in light mode. */
 .dark .icon-preview-bg[data-tone="dark"] {
-  /* Soft grey rather than white: it only has to lift near-black marks, and
-     roughly one icon in five gets this chip. */
-  background: radial-gradient(circle at center, oklch(0.92 0.004 260) 0%, oklch(0.84 0.006 260) 100%);
+  background:
+    radial-gradient(
+      circle at center,
+      oklch(0.74 0.004 260) 0,
+      oklch(0.7 0.004 260) 24px,
+      oklch(0.7 0.004 260 / 0) 52px
+    ),
+    radial-gradient(
+      circle at center,
+      oklch(0.44 0.012 260) 0%,
+      oklch(0.3 0.012 260) 50%,
+      oklch(0.15 0.012 260) 100%
+    );
 }
 .icon-preview-bg[data-tone="light"] {
-  background: radial-gradient(circle at center, oklch(0.42 0.01 260) 0%, oklch(0.24 0.01 260) 100%);
+  background:
+    radial-gradient(
+      circle at center,
+      oklch(0.4 0.01 260) 0,
+      oklch(0.44 0.01 260) 24px,
+      oklch(0.44 0.01 260 / 0) 50px
+    ),
+    radial-gradient(circle at center, oklch(0.98 0 0) 0%, oklch(0.94 0.003 260) 100%);
 }
 .dark .icon-preview-bg[data-tone="light"] {
   background: radial-gradient(

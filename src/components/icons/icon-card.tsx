@@ -8,7 +8,8 @@ import posthog from "posthog-js";
 import type { IconEntry } from "@/lib/icons";
 import { useFavoritesStore } from "@/lib/stores/favorites-store";
 import { useSettingsStore } from "@/lib/stores/settings-store";
-import { iconTone } from "@/lib/icon-tone";
+import type { IconTone } from "@/lib/icon-tone";
+import iconTones from "@/data/icon-tones.json";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import { formatSvg } from "@/lib/copy-formats";
 import { FORMAT_LABELS } from "./shared/icon-constants";
@@ -140,7 +141,10 @@ export const IconCard = memo(function IconCard({
   // colour so near-black and near-white marks stay visible. Icons that ship
   // their own light and dark variants already handle contrast.
   const previewBackground = useSettingsStore((s) => s.previewBackground);
-  const tileTone = previewBackground === "auto" && !needsThemeSwap ? iconTone(icon.hex) : "neutral";
+  const tileTone: IconTone =
+    previewBackground === "auto" && !needsThemeSwap
+      ? ((iconTones as Record<string, IconTone>)[icon.slug] ?? "neutral")
+      : "neutral";
   // A forced Light or Dark tile must show the variant made for that surface,
   // not the one for the current site theme. Auto and Checkerboard follow the theme.
   const forcedVariantSrc =
