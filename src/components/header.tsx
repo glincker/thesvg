@@ -1,27 +1,23 @@
 "use client";
 
-import { useCallback, useEffect, useId, useMemo, useRef, useState, useSyncExternalStore, type ComponentType } from "react";
+import { useCallback, useEffect, useId, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import posthog from "posthog-js";
 import { usePathname, useRouter } from "next/navigation";
-import { ArrowRight, Binary, BookOpen, Braces, ChevronDown, Component, FileCode, FileText, Link2, Menu, Moon, Package, Plus, Search, Sparkles, Star, Sun, X } from "lucide-react";
+import { ArrowRight, BookOpen, ChevronDown, FileText, Menu, Moon, Package, Plus, Search, Sparkles, Star, Sun, X } from "lucide-react";
 import { TheSVGMark } from "@/components/icons/the-svg-mark";
 import { formatStarCount } from "@/lib/github-stars";
 import { useGithubStars } from "@/lib/hooks/use-github-stars";
 import { trackStarCta } from "@/lib/track-star-cta";
 import { useTheme } from "next-themes";
-import { useSettingsStore } from "@/lib/stores/settings-store";
-import { FORMAT_BUTTONS, FORMAT_LABELS } from "@/components/icons/shared/icon-constants";
+import { DisplayMenu } from "@/components/display-menu";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Check } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { useSidebarStore } from "@/lib/stores/sidebar-store";
@@ -36,14 +32,6 @@ import { cn } from "@/lib/utils";
 import { withUtm } from "@/lib/external-link";
 
 const PLACEHOLDER_BRANDS = ["GitHub", "Stripe", "Figma", "Docker", "AWS Lambda", "Azure Functions", "BigQuery", "Vercel", "React", "Tailwind CSS"];
-
-const COPY_FORMAT_ICONS: Record<string, ComponentType<{ className?: string }>> = {
-  svg: FileCode,
-  jsx: Braces,
-  vue: Component,
-  cdn: Link2,
-  "data-uri": Binary,
-};
 
 function SubmitButton() {
   return (
@@ -79,8 +67,6 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const { theme, setTheme } = useTheme();
-  const defaultCopyFormat = useSettingsStore((s) => s.defaultCopyFormat);
-  const setDefaultCopyFormat = useSettingsStore((s) => s.setDefaultCopyFormat);
   const showFigmaBadge = useSyncExternalStore(
     () => () => {},
     () => Date.now() < FIGMA_BADGE_EXPIRES_AT,
@@ -816,57 +802,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                   </span>
                 )}
               </a>
-              <DropdownMenu>
-                <DropdownMenuTrigger
-                  render={
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="h-9 w-auto gap-1 px-2 sm:h-8 text-muted-foreground hover:text-foreground"
-                      aria-label="Default copy format"
-                      title="Default Copy Format"
-                    />
-                  }
-                >
-                  <span className="text-[10px] uppercase font-bold">{FORMAT_LABELS.get(defaultCopyFormat) || defaultCopyFormat}</span>
-                  <ChevronDown className="h-3 w-3 opacity-60" />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-64">
-                  <DropdownMenuGroup>
-                    <DropdownMenuLabel className="font-normal">
-                      <p className="text-xs font-semibold text-foreground">Default copy format</p>
-                      <p className="mt-0.5 text-[11px] font-normal text-muted-foreground">
-                        Used when you click the copy button on any icon card
-                      </p>
-                    </DropdownMenuLabel>
-                  </DropdownMenuGroup>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuGroup>
-                    {FORMAT_BUTTONS.map((fmt) => {
-                      const FormatIcon = COPY_FORMAT_ICONS[fmt.value];
-                      const isActive = defaultCopyFormat === fmt.value;
-                      return (
-                        <DropdownMenuItem
-                          key={fmt.value}
-                          onClick={() => setDefaultCopyFormat(fmt.value)}
-                          className="items-start gap-2.5 py-2"
-                        >
-                          <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center text-muted-foreground">
-                            <FormatIcon className="h-3.5 w-3.5" />
-                          </span>
-                          <span className="flex flex-1 flex-col gap-0.5">
-                            <span className="text-xs font-medium text-foreground">{fmt.label}</span>
-                            <span className="text-[10px] leading-relaxed text-muted-foreground/70">
-                              {fmt.description}
-                            </span>
-                          </span>
-                          {isActive && <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-foreground" />}
-                        </DropdownMenuItem>
-                      );
-                    })}
-                  </DropdownMenuGroup>
-                </DropdownMenuContent>
-              </DropdownMenu>
+              <DisplayMenu />
               <Button
                 variant="ghost"
                 size="icon"
