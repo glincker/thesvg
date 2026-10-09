@@ -501,13 +501,14 @@ export function SubmitForm({
       const result = validateSvg(content, file.size);
 
       // Generate data URL for preview
-      const blob = new Blob([content], { type: "image/svg+xml" });
+      const safeContent = result.sanitized;
+      const blob = new Blob([safeContent], { type: "image/svg+xml" });
       const dataUrl = URL.createObjectURL(blob);
 
       setFileState({
         name: file.name,
         size: file.size,
-        content,
+        content: safeContent,
         dataUrl,
         validation: result,
       });

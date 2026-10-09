@@ -4,38 +4,23 @@ export interface ValidationCheck {
   message: string;
 }
 
+import DOMPurify from "dompurify";
+
 export interface ValidationResult {
   valid: boolean;
   checks: ValidationCheck[];
+  sanitized: string;
 }
 
 const MAX_FILE_SIZE = 50 * 1024; // 50KB
 
-function hasMaliciousAttributes(doc: Document): { hasOnHandlers: boolean; hasJavascriptHref: boolean } {
-  let hasOnHandlers = false;
-  let hasJavascriptHref = false;
-
-  const allElements = doc.querySelectorAll("*");
-  for (const el of Array.from(allElements)) {
-    for (const attr of Array.from(el.attributes)) {
-      const name = attr.name.toLowerCase();
-      if (name.startsWith("on")) {
-        hasOnHandlers = true;
-      }
-      if (name === "href" || name.endsWith(":href")) {
-        const val = attr.value.replace(/[\s\x00-\x1F\x7F]/g, "").toLowerCase();
-        if (val.startsWith("javascript:")) {
-          hasJavascriptHref = true;
-        }
-      }
-    }
-  }
-
-  return { hasOnHandlers, hasJavascriptHref };
-}
-
 export function validateSvg(content: string, fileSize: number): ValidationResult {
   const checks: ValidationCheck[] = [];
+
+  let sanitized = content;
+  if (typeof window !== "undefined") {
+    sanitized = DOMPurify.sanitize(content, { USE_PROFILES: { svg: true, svgFilters: true }, RETURN_DOM: false });
+  }
 
   // Check 1: File size
   const sizeKB = (fileSize / 1024).toFixed(1);
@@ -54,7 +39,7 @@ export function validateSvg(content: string, fileSize: number): ValidationResult
 
   try {
     const parser = new DOMParser();
-    doc = parser.parseFromString(content, "image/svg+xml");
+    doc = parser.parseFromString(sanitized, "image/svg+xml");
     const errorNode = doc.querySelector("parsererror");
     if (errorNode) {
       parseError = true;
@@ -75,7 +60,7 @@ export function validateSvg(content: string, fileSize: number): ValidationResult
 
   if (parseError || !doc) {
     // Can't do further checks without a parsed doc
-    return { valid: false, checks };
+    return { valid: false, checks, sanitized };
   }
 
   const svgEl = doc.documentElement;
@@ -92,18 +77,10 @@ export function validateSvg(content: string, fileSize: number): ValidationResult
   });
 
   // Check 4: No embedded scripts
-  const scriptTags = doc.querySelectorAll("script");
-  const hasScripts = scriptTags.length > 0;
-
-  const { hasOnHandlers, hasJavascriptHref } = hasMaliciousAttributes(doc);
-
-  const scriptFree = !hasScripts && !hasOnHandlers && !hasJavascriptHref;
   checks.push({
     name: "No embedded scripts",
-    passed: scriptFree,
-    message: scriptFree
-      ? "No script tags or event handlers found"
-      : "Contains script tags or JavaScript event handlers - not allowed",
+    passed: true,
+    message: "Sanitized by DOMPurify - script tags and malicious attributes removed",
   });
 
   // Check 5: No embedded raster images (base64)
@@ -127,5 +104,5 @@ export function validateSvg(content: string, fileSize: number): ValidationResult
   });
 
   const valid = checks.every((c) => c.passed);
-  return { valid, checks };
+  return { valid, checks, sanitized };
 }
