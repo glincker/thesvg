@@ -11,6 +11,7 @@ import { MobileShell } from "@/components/mobile/mobile-shell";
 import { NotificationToasts } from "@/components/notification-toasts";
 import { CommandPalette } from "@/components/command-palette";
 import { StarPrompt } from "@/components/star-prompt";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { StoreHydration } from "@/components/store-hydration";
 import { HeaderSkeleton, MobileHeaderSkeleton, ContentSkeleton } from "@/components/skeletons";
 import { getFormattedIconCount, getCollections } from "@/lib/icons";
@@ -161,6 +162,7 @@ export default async function RootLayout({
           storageKey="thesvg-theme"
           disableTransitionOnChange
         >
+          <TooltipProvider delay={300}>
           <StoreHydration />
           <ScrollToTop />
           {/* Desktop header, `md:` and above. Rendered as a body-level
@@ -189,6 +191,7 @@ export default async function RootLayout({
           <NotificationToasts post={latestPost} />
           <CommandPalette />
           <StarPrompt />
+          </TooltipProvider>
         </ThemeProvider>
       </body>
     </html>

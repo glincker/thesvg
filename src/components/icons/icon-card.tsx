@@ -13,6 +13,7 @@ import { useRecentsStore } from "@/lib/stores/recents-store";
 import { formatSvg } from "@/lib/copy-formats";
 import { FORMAT_LABELS } from "./shared/icon-constants";
 import { cn } from "@/lib/utils";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { NewBadge } from "@/components/icons/new-badge";
 
 interface IconCardProps {
@@ -320,27 +321,41 @@ export const IconCard = memo(function IconCard({
           )}
           <span className="hidden text-[11px] font-medium sm:inline">Copy</span>
         </button>
-        <button
-          type="button"
-          onClick={handleDownload}
-          disabled={isDownloading}
-          aria-label={`Download ${icon.title} SVG`}
-          className="flex h-7 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50"
-        >
-          {isDownloading ? (
-            <Loader2 className="h-3.5 w-3.5 animate-spin" />
-          ) : (
-            <Download className="h-3.5 w-3.5" />
-          )}
-        </button>
-        <button
-          type="button"
-          onClick={handlePreview}
-          aria-label={`Quick preview ${icon.title}`}
-          className="flex h-7 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-        >
-          <Eye className="h-3.5 w-3.5" />
-        </button>
+        <Tooltip>
+          <TooltipTrigger
+            render={
+              <button
+                type="button"
+                onClick={handleDownload}
+                disabled={isDownloading}
+                aria-label={`Download ${icon.title} SVG`}
+                className="flex h-7 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50"
+              />
+            }
+          >
+            {isDownloading ? (
+              <Loader2 className="h-3.5 w-3.5 animate-spin" />
+            ) : (
+              <Download className="h-3.5 w-3.5" />
+            )}
+          </TooltipTrigger>
+          <TooltipContent>Download SVG</TooltipContent>
+        </Tooltip>
+        <Tooltip>
+          <TooltipTrigger
+            render={
+              <button
+                type="button"
+                onClick={handlePreview}
+                aria-label={`Quick preview ${icon.title}`}
+                className="flex h-7 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              />
+            }
+          >
+            <Eye className="h-3.5 w-3.5" />
+          </TooltipTrigger>
+          <TooltipContent>Quick preview</TooltipContent>
+        </Tooltip>
       </div>
     </article>
   );

@@ -7,6 +7,7 @@ import { useSidebarStore } from "@/lib/stores/sidebar-store";
 import { useFavoritesStore } from "@/lib/stores/favorites-store";
 import { useRouter } from "next/navigation";
 import type { Collection } from "@/lib/icons";
+import { isSidebarToggleShortcut, isTypingTarget } from "@/lib/sidebar-shortcut";
 import { categoryUrl } from "@/lib/categories";
 import { cn } from "@/lib/utils";
 
@@ -43,6 +44,18 @@ export function SidebarShell({ children, categoryCounts, collections = [] }: Sid
       setCollapsed(true);
     }
   }, [setCollapsed]);
+
+  // Cmd/Ctrl+\ toggles the desktop sidebar rail (Notion convention).
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      if (!isSidebarToggleShortcut(e)) return;
+      if (isTypingTarget(document.activeElement)) return;
+      e.preventDefault();
+      toggleCollapsed();
+    }
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [toggleCollapsed]);
 
   function handleCategorySelect(category: string | null) {
     if (category) {
