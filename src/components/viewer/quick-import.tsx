@@ -60,13 +60,24 @@ export function QuickImport({ onImport, className }: QuickImportProps) {
 
   const starterIcons = useMemo(() => {
     if (!icons) return [];
-    const lookup = new Map<string, IconEntry>();
+
+    // ⚡ Bolt: Single-pass early-break loop to resolve the small set
+    // of starter slugs without allocating a massive 7,400+ entry Map.
+    const wanted = new Set<string>(STARTER_SLUGS);
+    const found = new Map<string, IconEntry>();
     for (let i = 0; i < icons.length; i++) {
-      lookup.set(icons[i].slug, icons[i]);
+      if (wanted.has(icons[i].slug)) {
+        found.set(icons[i].slug, icons[i]);
+        if (found.size === wanted.size) break;
+      }
     }
-    return STARTER_SLUGS.map((s) => lookup.get(s)).filter(
-      (x): x is IconEntry => Boolean(x),
-    );
+
+    const result: IconEntry[] = [];
+    for (let i = 0; i < STARTER_SLUGS.length; i++) {
+      const item = found.get(STARTER_SLUGS[i]);
+      if (item) result.push(item);
+    }
+    return result;
   }, [icons]);
 
   const searchableIcons = useMemo(() => {

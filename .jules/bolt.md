@@ -65,3 +65,7 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2024-05-18 - Replacing Array.find with Pre-computed Maps
 **Learning:** Repeatedly executing O(N) `Array.find()` lookups inside high-frequency render cycles (like rendering hundreds of icon cards) for static constants forces the JS thread to do unnecessary work.
 **Action:** When working with static configuration arrays that are frequently queried by ID/value, export a pre-computed `Map` alongside the array to enable O(1) lookups via `map.get()`.
+
+## 2024-05-18 - Avoid full dataset Map allocations for small subset lookups
+**Learning:** When looking up a small number of items (e.g. 8 `STARTER_SLUGS`) from a massive dataset (e.g. 7,400+ icons) inside a React `useMemo` or `useEffect`, eagerly allocating a `new Map()` over the entire dataset just for these few lookups causes immense unnecessary garbage collection pressure and CPU overhead on every execution.
+**Action:** Use a single-pass `for` loop with an early `break` over the dataset. Convert the small list of wanted slugs into a `Set`, iterate the large dataset, add matches to a temporary Map, and `break` once `found.size === wanted.size`. Then map the original subset array against this temporary Map to preserve ordering without ever allocating the 7,400+ entry Map.
