@@ -13202,7 +13202,7 @@
     "aliases": [],
     "hex": "232F3E",
     "categories": [
-      "General"
+      "Marketplace"
     ],
     "variants": {
       "16": "/icons/aws-aws-marketplace-dark/16.svg",
@@ -13225,7 +13225,7 @@
     "aliases": [],
     "hex": "232F3E",
     "categories": [
-      "General"
+      "Marketplace"
     ],
     "variants": {
       "16": "/icons/aws-aws-marketplace-light/16.svg",
@@ -24736,7 +24736,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "AI"
     ],
     "variants": {
       "default": "/icons/azure-ai-at-edge/default.svg"
@@ -24796,7 +24796,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Containers"
     ],
     "variants": {
       "default": "/icons/azure-aks-istio/default.svg"
@@ -24816,7 +24816,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Containers"
     ],
     "variants": {
       "default": "/icons/azure-aks-network-policy/default.svg"
@@ -24856,7 +24856,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Management"
     ],
     "variants": {
       "default": "/icons/azure-all-resources/default.svg"
@@ -25000,7 +25000,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-app-compliance-automation/default.svg"
@@ -25040,8 +25040,7 @@
     "aliases": [],
     "hex": "FFB900",
     "categories": [
-      "Identity",
-      "General"
+      "Identity"
     ],
     "variants": {
       "default": "/icons/azure-app-registrations/default.svg"
@@ -25351,7 +25350,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Database",
+      "Hybrid Cloud"
     ],
     "variants": {
       "default": "/icons/azure-arc-data-services/default.svg"
@@ -25371,7 +25371,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Containers",
+      "Hybrid Cloud"
     ],
     "variants": {
       "default": "/icons/azure-arc-kubernetes/default.svg"
@@ -25411,7 +25412,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Database",
+      "Hybrid Cloud"
     ],
     "variants": {
       "default": "/icons/azure-arc-postgresql/default.svg"
@@ -25431,7 +25433,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Database",
+      "Hybrid Cloud"
     ],
     "variants": {
       "default": "/icons/azure-arc-sql-managed-instance/default.svg"
@@ -25451,7 +25454,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Database",
+      "Hybrid Cloud"
     ],
     "variants": {
       "default": "/icons/azure-arc-sql-server/default.svg"
@@ -25571,7 +25575,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Compute"
     ],
     "variants": {
       "default": "/icons/azure-avs-vm/default.svg"
@@ -25651,7 +25655,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "DevOps"
     ],
     "variants": {
       "default": "/icons/azure-azure-app-testing/default.svg"
@@ -25771,7 +25775,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "DevOps"
     ],
     "variants": {
       "default": "/icons/azure-azure-chaos-studio/default.svg"
@@ -25811,7 +25815,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Communication"
     ],
     "variants": {
       "default": "/icons/azure-azure-communication-services/default.svg"
@@ -25851,8 +25855,7 @@
     "aliases": [],
     "hex": "F25022",
     "categories": [
-      "Compute",
-      "General"
+      "Compute"
     ],
     "variants": {
       "default": "/icons/azure-azure-compute-galleries/default.svg"
@@ -25872,7 +25875,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Cost Management"
     ],
     "variants": {
       "default": "/icons/azure-azure-consumption-commitment/default.svg"
@@ -26118,7 +26121,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "DevOps"
     ],
     "variants": {
       "default": "/icons/azure-azure-deployment-environments/default.svg"
@@ -26419,7 +26422,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "DevOps"
     ],
     "variants": {
       "default": "/icons/azure-azure-load-testing/default.svg"
@@ -26439,7 +26442,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Hybrid Cloud"
     ],
     "variants": {
       "default": "/icons/azure-azure-local/default.svg"
@@ -26459,7 +26462,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Monitoring"
     ],
     "variants": {
       "default": "/icons/azure-azure-managed-grafana/default.svg"
@@ -26479,7 +26482,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Database"
     ],
     "variants": {
       "default": "/icons/azure-azure-managed-redis/default.svg"
@@ -26559,7 +26562,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Monitoring"
     ],
     "variants": {
       "default": "/icons/azure-azure-monitor-dashboard/default.svg"
@@ -26639,7 +26642,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Networking"
     ],
     "variants": {
       "default": "/icons/azure-azure-network-function-manager/default.svg"
@@ -26659,7 +26662,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Networking"
     ],
     "variants": {
       "default": "/icons/azure-azure-network-function-manager-functions/default.svg"
@@ -26799,7 +26802,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Satellite"
     ],
     "variants": {
       "default": "/icons/azure-azure-orbital/default.svg"
@@ -26839,7 +26842,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Management"
     ],
     "variants": {
       "default": "/icons/azure-azure-quotas/default.svg"
@@ -26919,7 +26922,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "IoT"
     ],
     "variants": {
       "default": "/icons/azure-azure-sphere/default.svg"
@@ -27103,7 +27106,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Storage"
     ],
     "variants": {
       "default": "/icons/azure-azure-storage-mover/default.svg"
@@ -27204,7 +27207,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "AI"
     ],
     "variants": {
       "default": "/icons/azure-azure-video-indexer/default.svg"
@@ -27244,7 +27247,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Compute"
     ],
     "variants": {
       "default": "/icons/azure-azure-vmware-solution/default.svg"
@@ -27285,7 +27288,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-azureattestation/default.svg"
@@ -27325,7 +27328,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "DevOps"
     ],
     "variants": {
       "default": "/icons/azure-backlog/default.svg"
@@ -27381,7 +27384,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Compute"
     ],
     "variants": {
       "default": "/icons/azure-bare-metal-infrastructure/default.svg"
@@ -27462,7 +27465,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Integration"
     ],
     "variants": {
       "default": "/icons/azure-biz-talk/default.svg"
@@ -27499,7 +27502,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Storage"
     ],
     "variants": {
       "default": "/icons/azure-blob-block/default.svg"
@@ -27519,7 +27522,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Storage"
     ],
     "variants": {
       "default": "/icons/azure-blob-page/default.svg"
@@ -27619,7 +27622,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "DevOps"
     ],
     "variants": {
       "default": "/icons/azure-branch/default.svg"
@@ -27679,7 +27682,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "DevOps"
     ],
     "variants": {
       "default": "/icons/azure-bug/default.svg"
@@ -27699,7 +27702,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "DevOps"
     ],
     "variants": {
       "default": "/icons/azure-builds/default.svg"
@@ -27799,7 +27802,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Compute"
     ],
     "variants": {
       "default": "/icons/azure-capacity-reservation-groups/default.svg"
@@ -27941,7 +27944,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Compute"
     ],
     "variants": {
       "default": "/icons/azure-cloud-services-extended-support/default.svg"
@@ -28104,7 +28107,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "DevOps"
     ],
     "variants": {
       "default": "/icons/azure-commit/default.svg"
@@ -28164,7 +28167,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-compliance-center/default.svg"
@@ -28244,7 +28247,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-confidential-ledgers/default.svg"
@@ -28284,7 +28287,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "IoT",
+      "Automotive"
     ],
     "variants": {
       "default": "/icons/azure-connected-vehicle-platform/default.svg"
@@ -28344,7 +28348,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Containers"
     ],
     "variants": {
       "default": "/icons/azure-container-apps-environments/default.svg"
@@ -28505,7 +28509,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Cost Management"
     ],
     "variants": {
       "default": "/icons/azure-cost-alerts/default.svg"
@@ -28525,7 +28529,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Cost Management"
     ],
     "variants": {
       "default": "/icons/azure-cost-analysis/default.svg"
@@ -28545,7 +28549,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Cost Management"
     ],
     "variants": {
       "default": "/icons/azure-cost-budgets/default.svg"
@@ -28565,7 +28569,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Cost Management"
     ],
     "variants": {
       "default": "/icons/azure-cost-export/default.svg"
@@ -28585,7 +28589,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Cost Management"
     ],
     "variants": {
       "default": "/icons/azure-cost-management/default.svg"
@@ -28605,9 +28609,9 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General",
       "Management",
-      "Migration"
+      "Migration",
+      "Cost Management"
     ],
     "variants": {
       "default": "/icons/azure-cost-management-and-billing/default.svg"
@@ -28667,7 +28671,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Networking"
     ],
     "variants": {
       "default": "/icons/azure-custom-ip-prefix/default.svg"
@@ -28788,7 +28792,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Monitoring"
     ],
     "variants": {
       "default": "/icons/azure-data-collection-rules/default.svg"
@@ -28950,7 +28954,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Database"
     ],
     "variants": {
       "default": "/icons/azure-database-instance-for-sap/default.svg"
@@ -28990,7 +28994,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-dedicated-hsm/default.svg"
@@ -29010,7 +29014,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "IoT",
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-defender-cm-local-manager/default.svg"
@@ -29030,7 +29035,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "IoT",
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-defender-dcs-controller/default.svg"
@@ -29050,7 +29056,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "IoT",
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-defender-distributer-control-system/default.svg"
@@ -29070,7 +29077,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "IoT",
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-defender-engineering-station/default.svg"
@@ -29090,7 +29098,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "IoT",
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-defender-external-management/default.svg"
@@ -29110,7 +29119,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "IoT",
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-defender-freezer-monitor/default.svg"
@@ -29130,7 +29140,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "IoT",
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-defender-historian/default.svg"
@@ -29150,7 +29161,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "IoT",
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-defender-hmi/default.svg"
@@ -29170,7 +29182,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "IoT",
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-defender-industrial-packaging-system/default.svg"
@@ -29190,7 +29203,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "IoT",
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-defender-industrial-printer/default.svg"
@@ -29210,7 +29224,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "IoT",
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-defender-industrial-robot/default.svg"
@@ -29230,7 +29245,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "IoT",
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-defender-industrial-scale-system/default.svg"
@@ -29250,7 +29266,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "IoT",
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-defender-marquee/default.svg"
@@ -29270,7 +29287,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "IoT",
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-defender-meter/default.svg"
@@ -29290,7 +29308,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "IoT",
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-defender-plc/default.svg"
@@ -29310,7 +29329,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "IoT",
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-defender-pneumatic-device/default.svg"
@@ -29330,7 +29350,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "IoT",
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-defender-programable-board/default.svg"
@@ -29350,7 +29371,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "IoT",
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-defender-relay/default.svg"
@@ -29370,7 +29392,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "IoT",
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-defender-robot-controller/default.svg"
@@ -29390,7 +29413,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "IoT",
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-defender-rtu/default.svg"
@@ -29410,7 +29434,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "IoT",
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-defender-sensor/default.svg"
@@ -29430,7 +29455,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "IoT",
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-defender-slot/default.svg"
@@ -29450,7 +29476,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "IoT",
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-defender-web-guiding-system/default.svg"
@@ -29650,7 +29677,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "IoT"
     ],
     "variants": {
       "default": "/icons/azure-device-update-iot-hub/default.svg"
@@ -29791,7 +29818,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Storage"
     ],
     "variants": {
       "default": "/icons/azure-disk-pool/default.svg"
@@ -30031,7 +30058,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Storage"
     ],
     "variants": {
       "default": "/icons/azure-edge-storage-accelerator/default.svg"
@@ -30091,7 +30118,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Storage"
     ],
     "variants": {
       "default": "/icons/azure-elastic-san/default.svg"
@@ -30311,8 +30338,7 @@
     "aliases": [],
     "hex": "FFB900",
     "categories": [
-      "Identity",
-      "General"
+      "Identity"
     ],
     "variants": {
       "default": "/icons/azure-entra-identity-licenses/default.svg"
@@ -30656,7 +30682,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Networking"
     ],
     "variants": {
       "default": "/icons/azure-express-route-traffic-collector/default.svg"
@@ -30696,7 +30722,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Networking"
     ],
     "variants": {
       "default": "/icons/azure-expressroute-direct/default.svg"
@@ -30756,7 +30782,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Identity"
     ],
     "variants": {
       "default": "/icons/azure-external-id/default.svg"
@@ -30776,7 +30802,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Identity"
     ],
     "variants": {
       "default": "/icons/azure-external-id-modified/default.svg"
@@ -30856,7 +30882,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Health"
     ],
     "variants": {
       "default": "/icons/azure-fhir-service/default.svg"
@@ -30916,7 +30942,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Storage"
     ],
     "variants": {
       "default": "/icons/azure-files/default.svg"
@@ -31718,8 +31744,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "Database",
-      "General"
+      "Database"
     ],
     "variants": {
       "default": "/icons/azure-instance-pools/default.svg"
@@ -32059,7 +32084,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Containers"
     ],
     "variants": {
       "default": "/icons/azure-kubernetes-fleet-manager/default.svg"
@@ -32079,7 +32104,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Containers"
     ],
     "variants": {
       "default": "/icons/azure-kubernetes-hub/default.svg"
@@ -32260,8 +32285,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "Networking",
-      "General"
+      "Networking"
     ],
     "variants": {
       "default": "/icons/azure-load-balancer-hub/default.svg"
@@ -32301,7 +32325,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "DevOps"
     ],
     "variants": {
       "default": "/icons/azure-load-test/default.svg"
@@ -32341,8 +32365,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "Networking",
-      "General"
+      "Networking"
     ],
     "variants": {
       "default": "/icons/azure-local-network-gateways/default.svg"
@@ -32382,7 +32405,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Monitoring"
     ],
     "variants": {
       "default": "/icons/azure-log-analytics-query-pack/default.svg"
@@ -32485,7 +32508,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Integration"
     ],
     "variants": {
       "default": "/icons/azure-logic-apps-template/default.svg"
@@ -32748,7 +32771,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Database"
     ],
     "variants": {
       "default": "/icons/azure-managed-instance-apache-cassandra/default.svg"
@@ -32788,7 +32811,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Management"
     ],
     "variants": {
       "default": "/icons/azure-management-groups/default.svg"
@@ -32808,7 +32831,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Management"
     ],
     "variants": {
       "default": "/icons/azure-management-portal/default.svg"
@@ -32828,7 +32851,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Marketplace"
     ],
     "variants": {
       "default": "/icons/azure-marketplace/default.svg"
@@ -32848,7 +32871,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Marketplace"
     ],
     "variants": {
       "default": "/icons/azure-marketplace-management/default.svg"
@@ -32908,7 +32931,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Health"
     ],
     "variants": {
       "default": "/icons/azure-medtech-service/default.svg"
@@ -33150,7 +33173,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Mobile"
     ],
     "variants": {
       "default": "/icons/azure-mobile-engagement/default.svg"
@@ -33251,7 +33274,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Monitoring"
     ],
     "variants": {
       "default": "/icons/azure-monitor-health-models/default.svg"
@@ -33271,7 +33294,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Monitoring"
     ],
     "variants": {
       "default": "/icons/azure-monitor-issues/default.svg"
@@ -33391,7 +33414,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Networking"
     ],
     "variants": {
       "default": "/icons/azure-network-foundation-hub/default.svg"
@@ -33431,7 +33454,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Networking"
     ],
     "variants": {
       "default": "/icons/azure-network-managers/default.svg"
@@ -33471,7 +33494,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Networking",
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-network-security-hub/default.svg"
@@ -33491,7 +33515,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Networking",
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-network-security-perimeters/default.svg"
@@ -33715,7 +33740,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Management"
     ],
     "variants": {
       "default": "/icons/azure-osconfig/default.svg"
@@ -33815,7 +33840,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Networking"
     ],
     "variants": {
       "default": "/icons/azure-peering-service/default.svg"
@@ -33835,7 +33860,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Networking"
     ],
     "variants": {
       "default": "/icons/azure-peerings/default.svg"
@@ -34058,7 +34083,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Networking"
     ],
     "variants": {
       "default": "/icons/azure-private-endpoints/default.svg"
@@ -34159,7 +34184,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Database"
     ],
     "variants": {
       "default": "/icons/azure-production-ready-database/default.svg"
@@ -34179,7 +34204,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Monitoring"
     ],
     "variants": {
       "default": "/icons/azure-promethus/default.svg"
@@ -34279,7 +34304,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Integration"
     ],
     "variants": {
       "default": "/icons/azure-pubsub/default.svg"
@@ -34441,7 +34466,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Cost Management"
     ],
     "variants": {
       "default": "/icons/azure-reservations/default.svg"
@@ -34461,7 +34486,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Cost Management"
     ],
     "variants": {
       "default": "/icons/azure-reserved-capacity/default.svg"
@@ -34501,7 +34526,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Management"
     ],
     "variants": {
       "default": "/icons/azure-resource-explorer/default.svg"
@@ -34541,7 +34566,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Management"
     ],
     "variants": {
       "default": "/icons/azure-resource-group-list/default.svg"
@@ -34561,7 +34586,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Management"
     ],
     "variants": {
       "default": "/icons/azure-resource-groups/default.svg"
@@ -34581,7 +34606,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-resource-guard/default.svg"
@@ -34761,7 +34786,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "IoT"
     ],
     "variants": {
       "default": "/icons/azure-rtos/default.svg"
@@ -34781,7 +34806,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Cost Management"
     ],
     "variants": {
       "default": "/icons/azure-savings-plans/default.svg"
@@ -35102,7 +35127,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Management"
     ],
     "variants": {
       "default": "/icons/azure-service-groups/default.svg"
@@ -35122,7 +35147,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Monitoring"
     ],
     "variants": {
       "default": "/icons/azure-service-health/default.svg"
@@ -35403,7 +35428,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Database"
     ],
     "variants": {
       "default": "/icons/azure-sql-database-fleet-manager/default.svg"
@@ -35503,7 +35528,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Storage"
     ],
     "variants": {
       "default": "/icons/azure-ssd/default.svg"
@@ -35683,7 +35708,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Storage"
     ],
     "variants": {
       "default": "/icons/azure-storage-azure-files/default.svg"
@@ -35703,7 +35728,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Storage"
     ],
     "variants": {
       "default": "/icons/azure-storage-container/default.svg"
@@ -35743,7 +35768,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Storage"
     ],
     "variants": {
       "default": "/icons/azure-storage-functions/default.svg"
@@ -35763,7 +35788,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Storage"
     ],
     "variants": {
       "default": "/icons/azure-storage-hubs/default.svg"
@@ -35783,7 +35808,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Storage"
     ],
     "variants": {
       "default": "/icons/azure-storage-queue/default.svg"
@@ -35905,7 +35930,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Management"
     ],
     "variants": {
       "default": "/icons/azure-subscriptions/default.svg"
@@ -36105,7 +36130,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "DevOps"
     ],
     "variants": {
       "default": "/icons/azure-test-base/default.svg"
@@ -36125,7 +36150,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "DevOps"
     ],
     "variants": {
       "default": "/icons/azure-tfs-vc-repository/default.svg"
@@ -36345,7 +36370,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Management"
     ],
     "variants": {
       "default": "/icons/azure-update-management-center/default.svg"
@@ -36566,7 +36591,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Security"
     ],
     "variants": {
       "default": "/icons/azure-virtual-enclaves/default.svg"
@@ -36786,7 +36811,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Compute"
     ],
     "variants": {
       "default": "/icons/azure-vm-app-definitions/default.svg"
@@ -36806,7 +36831,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Compute"
     ],
     "variants": {
       "default": "/icons/azure-vm-app-versions/default.svg"
@@ -36826,7 +36851,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Compute"
     ],
     "variants": {
       "default": "/icons/azure-vm-image-version/default.svg"
@@ -36886,7 +36911,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Networking"
     ],
     "variants": {
       "default": "/icons/azure-vnet-appliance/default.svg"
@@ -36906,7 +36931,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Networking"
     ],
     "variants": {
       "default": "/icons/azure-vpnclientwindows/default.svg"
@@ -37006,7 +37031,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "App Services",
+      "Web"
     ],
     "variants": {
       "default": "/icons/azure-web-jobs/default.svg"
@@ -37026,7 +37052,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "App Services",
+      "Web"
     ],
     "variants": {
       "default": "/icons/azure-web-slots/default.svg"
@@ -37046,7 +37073,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "DevOps"
     ],
     "variants": {
       "default": "/icons/azure-web-test/default.svg"
@@ -37086,7 +37113,8 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "App Services",
+      "Web"
     ],
     "variants": {
       "default": "/icons/azure-website-staging/default.svg"
@@ -37146,7 +37174,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Monitoring"
     ],
     "variants": {
       "default": "/icons/azure-workbooks/default.svg"
@@ -37166,7 +37194,7 @@
     "aliases": [],
     "hex": "0078D4",
     "categories": [
-      "General"
+      "Containers"
     ],
     "variants": {
       "default": "/icons/azure-worker-container-app/default.svg"
@@ -62129,7 +62157,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Security"
     ],
     "variants": {
       "default": "/icons/gcp-access-context-manager/default.svg"
@@ -62149,7 +62177,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Management"
     ],
     "variants": {
       "default": "/icons/gcp-administration/default.svg"
@@ -62169,7 +62197,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "AI"
     ],
     "variants": {
       "default": "/icons/gcp-advanced-agent-modeling/default.svg"
@@ -62209,7 +62237,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "AI"
     ],
     "variants": {
       "default": "/icons/gcp-agent-assist/default.svg"
@@ -62513,7 +62541,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Management"
     ],
     "variants": {
       "default": "/icons/gcp-asset-inventory/default.svg"
@@ -62775,7 +62803,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Cost Management"
     ],
     "variants": {
       "default": "/icons/gcp-billing/default.svg"
@@ -62935,7 +62963,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Management"
     ],
     "variants": {
       "default": "/icons/gcp-cloud-asset-inventory/default.svg"
@@ -62955,7 +62983,8 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Security",
+      "Monitoring"
     ],
     "variants": {
       "default": "/icons/gcp-cloud-audit-logs/default.svg"
@@ -63139,7 +63168,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Networking"
     ],
     "variants": {
       "default": "/icons/gcp-cloud-domains/default.svg"
@@ -63239,7 +63268,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Marketing"
     ],
     "variants": {
       "default": "/icons/gcp-cloud-for-marketing/default.svg"
@@ -63341,7 +63370,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Marketplace"
     ],
     "variants": {
       "default": "/icons/gcp-cloud-healthcare-marketplace/default.svg"
@@ -63501,7 +63530,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Media"
     ],
     "variants": {
       "default": "/icons/gcp-cloud-media-edge/default.svg"
@@ -63621,7 +63650,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "AI"
     ],
     "variants": {
       "default": "/icons/gcp-cloud-optimization-ai/default.svg"
@@ -63763,7 +63792,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Security"
     ],
     "variants": {
       "default": "/icons/gcp-cloud-security-scanner/default.svg"
@@ -64011,7 +64040,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Management"
     ],
     "variants": {
       "default": "/icons/gcp-configuration-management/default.svg"
@@ -64031,7 +64060,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Networking"
     ],
     "variants": {
       "default": "/icons/gcp-connectivity-test/default.svg"
@@ -64091,7 +64120,8 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Containers",
+      "Compute"
     ],
     "variants": {
       "default": "/icons/gcp-container-optimized-os/default.svg"
@@ -64151,7 +64181,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "AI"
     ],
     "variants": {
       "default": "/icons/gcp-data-labeling/default.svg"
@@ -64671,7 +64701,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Marketplace"
     ],
     "variants": {
       "default": "/icons/gcp-financial-services-marketplace/default.svg"
@@ -64751,7 +64781,8 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Gaming",
+      "Compute"
     ],
     "variants": {
       "default": "/icons/gcp-game-servers/default.svg"
@@ -64771,7 +64802,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Management"
     ],
     "variants": {
       "default": "/icons/gcp-gce-systems-management/default.svg"
@@ -64791,7 +64822,8 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Health",
+      "Analytics"
     ],
     "variants": {
       "default": "/icons/gcp-genomics/default.svg"
@@ -64831,7 +64863,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Marketplace"
     ],
     "variants": {
       "default": "/icons/gcp-google-cloud-marketplace/default.svg"
@@ -65073,7 +65105,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Containers"
     ],
     "variants": {
       "default": "/icons/gcp-kuberun/default.svg"
@@ -65133,7 +65165,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Identity"
     ],
     "variants": {
       "default": "/icons/gcp-managed-service-for-microsoft-active-directory/default.svg"
@@ -65373,7 +65405,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Management"
     ],
     "variants": {
       "default": "/icons/gcp-os-configuration-management/default.svg"
@@ -65393,7 +65425,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Management"
     ],
     "variants": {
       "default": "/icons/gcp-os-inventory-management/default.svg"
@@ -65413,7 +65445,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Management"
     ],
     "variants": {
       "default": "/icons/gcp-os-patch-management/default.svg"
@@ -65593,7 +65625,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Networking"
     ],
     "variants": {
       "default": "/icons/gcp-private-connectivity/default.svg"
@@ -65613,7 +65645,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Networking"
     ],
     "variants": {
       "default": "/icons/gcp-private-service-connect/default.svg"
@@ -65673,7 +65705,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Management"
     ],
     "variants": {
       "default": "/icons/gcp-project/default.svg"
@@ -65713,7 +65745,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Quantum"
     ],
     "variants": {
       "default": "/icons/gcp-quantum-engine/default.svg"
@@ -65733,7 +65765,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Management"
     ],
     "variants": {
       "default": "/icons/gcp-quotas/default.svg"
@@ -65895,7 +65927,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Security"
     ],
     "variants": {
       "default": "/icons/gcp-security/default.svg"
@@ -66297,7 +66329,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "Networking"
     ],
     "variants": {
       "default": "/icons/gcp-virtual-private-cloud/default.svg"
@@ -66317,7 +66349,7 @@
     "aliases": [],
     "hex": "4285F4",
     "categories": [
-      "General"
+      "AI"
     ],
     "variants": {
       "default": "/icons/gcp-visual-inspection/default.svg"
