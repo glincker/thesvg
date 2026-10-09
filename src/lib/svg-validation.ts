@@ -24,7 +24,7 @@ function hasMaliciousAttributes(doc: Document): { hasOnHandlers: boolean; hasJav
       }
       if (name === "href" || name.endsWith(":href")) {
         const val = attr.value.replace(/[\s\x00-\x1F\x7F]/g, "").toLowerCase();
-        if (val.startsWith("javascript:")) {
+        if (val.startsWith("javascript:") || val.startsWith("vbscript:") || val.startsWith("data:text/html")) {
           hasJavascriptHref = true;
         }
       }
