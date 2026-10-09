@@ -19,6 +19,7 @@ import { BookOpenText } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import type { IconEntry } from "@/lib/icons";
 import type { CopyFormat } from "@/lib/copy-formats";
 import { formatSvg } from "@/lib/copy-formats";
@@ -222,14 +223,21 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
                   <h2 className="truncate text-lg font-semibold">{icon.title}</h2>
                   <p className="font-mono text-xs text-muted-foreground">{icon.slug}</p>
                 </div>
-                <button
-                  type="button"
-                  onClick={handleDownload}
-                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-                  aria-label="Download SVG"
-                >
-                  <Download className="h-3.5 w-3.5" />
-                </button>
+                <Tooltip>
+                  <TooltipTrigger
+                    render={
+                      <button
+                        type="button"
+                        onClick={handleDownload}
+                        className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+                        aria-label="Download SVG"
+                      />
+                    }
+                  >
+                    <Download className="h-3.5 w-3.5" />
+                  </TooltipTrigger>
+                  <TooltipContent>Download SVG</TooltipContent>
+                </Tooltip>
               </div>
               {icon.categories.length > 0 && (
                 <div className="flex flex-wrap gap-1">
