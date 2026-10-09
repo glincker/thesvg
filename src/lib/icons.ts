@@ -126,9 +126,13 @@ export function getCategoryCounts(collection?: Collection): { name: string; coun
       }
     }
   }
-  return [...counts.entries()]
-    .map(([name, count]) => ({ name, count }))
-    .sort((a, b) => a.name.localeCompare(b.name));
+
+  // ⚡ Bolt: Single-pass for loop avoiding intermediate tuple allocations
+  const results: { name: string; count: number }[] = [];
+  for (const [name, count] of counts) {
+    results.push({ name, count });
+  }
+  return results.sort((a, b) => a.name.localeCompare(b.name));
 }
 
 export function getIconCount(): number {
@@ -157,10 +161,15 @@ export function compareDateDesc(a?: string, b?: string): number {
 }
 
 export function getRecentlyAddedIcons(limit = 12): IconEntry[] {
-  return [...icons]
-    .filter((i) => i.dateAdded)
-    .sort((a, b) => compareDateDesc(a.dateAdded, b.dateAdded))
-    .slice(0, limit);
+  // ⚡ Bolt: Single-pass for loop avoiding intermediate array from [...icons].filter()
+  const results: IconEntry[] = [];
+  for (let i = 0; i < icons.length; i++) {
+    const icon = icons[i];
+    if (icon.dateAdded) {
+      results.push(icon);
+    }
+  }
+  return results.sort((a, b) => compareDateDesc(a.dateAdded, b.dateAdded)).slice(0, limit);
 }
 
 export function getVariantCount(): number {
@@ -176,7 +185,11 @@ export function getCollections(): { name: Collection; count: number }[] {
   for (const icon of icons) {
     counts.set(icon.collection, (counts.get(icon.collection) || 0) + 1);
   }
-  return [...counts.entries()]
-    .map(([name, count]) => ({ name, count }))
-    .sort((a, b) => b.count - a.count);
+
+  // ⚡ Bolt: Single-pass for loop avoiding intermediate tuple allocations
+  const results: { name: Collection; count: number }[] = [];
+  for (const [name, count] of counts) {
+    results.push({ name, count });
+  }
+  return results.sort((a, b) => b.count - a.count);
 }

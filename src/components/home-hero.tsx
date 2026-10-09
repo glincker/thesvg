@@ -394,17 +394,28 @@ export function HomeHero({
         counts.set(c, (counts.get(c) || 0) + 1);
       }
     }
-    return [...counts.entries()]
-      .map(([name, count]) => ({ name, count }))
-      .sort((a, b) => b.count - a.count)
-      .slice(0, 8);
+    // ⚡ Bolt: Single-pass for loop avoiding intermediate tuple allocations
+    const results: { name: string; count: number }[] = [];
+    for (const [name, count] of counts) {
+      results.push({ name, count });
+    }
+    return results.sort((a, b) => b.count - a.count).slice(0, 8);
   }, [collectionIcons]);
 
   // Recently added for active collection
   const collectionRecentIcons = useMemo(() => {
     if (activeCollection === "brands") return recentIcons;
-    return [...collectionIcons]
-      .filter((i) => i.dateAdded)
+
+    // ⚡ Bolt: Single-pass for loop avoiding intermediate array from [...collectionIcons].filter()
+    const results: IconEntry[] = [];
+    for (let i = 0; i < collectionIcons.length; i++) {
+      const icon = collectionIcons[i];
+      if (icon.dateAdded) {
+        results.push(icon);
+      }
+    }
+
+    return results
       .sort((a, b) => compareDateDesc(a.dateAdded, b.dateAdded))
       .slice(0, 12);
   }, [activeCollection, collectionIcons, recentIcons]);

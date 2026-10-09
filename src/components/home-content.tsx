@@ -271,9 +271,12 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
         counts.set(c, (counts.get(c) || 0) + 1);
       }
     }
-    return [...counts.entries()]
-      .map(([name, count]) => ({ name, count }))
-      .sort((a, b) => a.name.localeCompare(b.name));
+    // ⚡ Bolt: Single-pass for loop avoiding intermediate tuple allocations
+    const results: { name: string; count: number }[] = [];
+    for (const [name, count] of counts) {
+      results.push({ name, count });
+    }
+    return results.sort((a, b) => a.name.localeCompare(b.name));
   }, [collectionParam, collectionIcons, categoryCounts]);
 
   const [filtered, setFiltered] = useState<IconEntry[]>([]);

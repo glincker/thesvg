@@ -28,9 +28,13 @@ export function categoriesFromIcons(icons: readonly IconEntry[]): PaletteCategor
       counts.set(name, (counts.get(name) ?? 0) + 1);
     }
   }
-  return [...counts.entries()]
-    .map(([name, count]) => ({ name, count }))
-    .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+
+  // ⚡ Bolt: Single-pass for loop avoiding intermediate tuple allocations
+  const results: PaletteCategory[] = [];
+  for (const [name, count] of counts) {
+    results.push({ name, count });
+  }
+  return results.sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
 }
 
 /** 0 = prefix, 1 = word start, 2 = substring, -1 = no match. */
@@ -56,7 +60,14 @@ export function filterCategories(
   }
   // Array.sort is stable, so equal ranks keep the count-descending order.
   ranked.sort((a, b) => a.rank - b.rank);
-  return ranked.slice(0, limit).map((r) => r.category);
+
+  // ⚡ Bolt: Single-pass for loop avoiding intermediate array from .slice().map()
+  const out: PaletteCategory[] = [];
+  const end = Math.min(ranked.length, limit);
+  for (let i = 0; i < end; i++) {
+    out.push(ranked[i].category);
+  }
+  return out;
 }
 
 export function buildActions(lastCopied: IconEntry | undefined): PaletteAction[] {
@@ -109,5 +120,11 @@ export function recentSearchQueries(
   searched: readonly RecentSearched[],
   limit = PALETTE_RECENT_SEARCH_LIMIT,
 ): string[] {
-  return searched.slice(0, limit).map((s) => s.query);
+  // ⚡ Bolt: Single-pass for loop avoiding intermediate array from .slice().map()
+  const out: string[] = [];
+  const end = Math.min(searched.length, limit);
+  for (let i = 0; i < end; i++) {
+    out.push(searched[i].query);
+  }
+  return out;
 }
