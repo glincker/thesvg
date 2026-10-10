@@ -14,11 +14,15 @@ export const useFavoritesStore = create<FavoritesState>()(
     (set, get) => ({
       favorites: [],
       toggleFavorite: (slug) =>
-        set((state) => ({
-          favorites: state.favorites.includes(slug)
-            ? state.favorites.filter((s) => s !== slug)
-            : [...state.favorites, slug],
-        })),
+        set((state) => {
+          const index = state.favorites.indexOf(slug);
+          if (index !== -1) {
+            const newFavorites = [...state.favorites];
+            newFavorites.splice(index, 1);
+            return { favorites: newFavorites };
+          }
+          return { favorites: [...state.favorites, slug] };
+        }),
       isFavorite: (slug) => get().favorites.includes(slug),
       clearAll: () => set({ favorites: [] }),
       addFavorites: (slugs) => set((state) => {

@@ -48,6 +48,10 @@ export const COLOR_BUCKETS: readonly ColorBucketEntry[] = [
 
 // Derived once from COLOR_BUCKETS at module load, so the lookup can never
 // drift out of sync with the array: there is only one source of truth.
-export const COLOR_BUCKETS_BY_ID: ReadonlyMap<ColorBucket, ColorBucketEntry> = new Map(
-  COLOR_BUCKETS.map((b) => [b.id, b] as const)
-);
+export const COLOR_BUCKETS_BY_ID: ReadonlyMap<ColorBucket, ColorBucketEntry> = (() => {
+  const map = new Map<ColorBucket, ColorBucketEntry>();
+  for (let i = 0; i < COLOR_BUCKETS.length; i++) {
+    map.set(COLOR_BUCKETS[i].id, COLOR_BUCKETS[i]);
+  }
+  return map;
+})();
