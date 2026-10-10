@@ -28,8 +28,7 @@ export function categoriesFromIcons(icons: readonly IconEntry[]): PaletteCategor
       counts.set(name, (counts.get(name) ?? 0) + 1);
     }
   }
-  return [...counts.entries()]
-    .map(([name, count]) => ({ name, count }))
+  return Array.from(counts, ([name, count]) => ({ name, count }))
     .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
 }
 

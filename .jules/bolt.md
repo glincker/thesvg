@@ -72,3 +72,6 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2024-05-18 - Replacing chained array methods in Node utilities
 **Learning:** Utilities that execute chained array methods like `.filter().some()` and inner `.toLowerCase()` function calls when searching large datasets can cause memory spikes and performance bottlenecks in Node/CLI environments (e.g. `packages/cli/src/utils/api.ts`).
 **Action:** Replace these operations with single-pass `for` loops. Unrolling nested higher-order methods and preventing intermediate `.filter()` allocations directly avoids memory pressure overhead in utility functions.
+## 2026-10-10 - Array.from for Map iteration
+**Learning:** Using `[...map.entries()].map(...)` forces V8 to allocate an intermediate tuple array, creating memory pressure and garbage collection overhead during hot paths.
+**Action:** Always replace chained `[...map.entries()].map` operations with `Array.from(map, mappingFunction)` for single-pass memory efficient mapping.
