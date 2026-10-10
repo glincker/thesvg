@@ -125556,6 +125556,32 @@
     "collection": "brands"
   },
   {
+    "slug": "theauth",
+    "title": "theAuth",
+    "aliases": [
+      "the auth",
+      "theauth.dev"
+    ],
+    "hex": "EEF35F",
+    "categories": [
+      "Identity",
+      "Security"
+    ],
+    "variants": {
+      "default": "/icons/theauth/default.svg",
+      "mono": "/icons/theauth/mono.svg",
+      "light": "/icons/theauth/light.svg",
+      "dark": "/icons/theauth/dark.svg",
+      "wordmark": "/icons/theauth/wordmark.svg",
+      "wordmarkLight": "/icons/theauth/wordmark-light.svg",
+      "wordmarkDark": "/icons/theauth/wordmark-dark.svg"
+    },
+    "license": "Fair Use",
+    "url": "https://theauth.dev",
+    "dateAdded": "2026-10-10",
+    "collection": "brands"
+  },
+  {
     "slug": "thehive-badge",
     "title": "TheHive",
     "aliases": [],
