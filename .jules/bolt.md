@@ -72,3 +72,7 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2024-05-18 - Replacing chained array methods in Node utilities
 **Learning:** Utilities that execute chained array methods like `.filter().some()` and inner `.toLowerCase()` function calls when searching large datasets can cause memory spikes and performance bottlenecks in Node/CLI environments (e.g. `packages/cli/src/utils/api.ts`).
 **Action:** Replace these operations with single-pass `for` loops. Unrolling nested higher-order methods and preventing intermediate `.filter()` allocations directly avoids memory pressure overhead in utility functions.
+
+## 2024-10-10 - Avoid `new Map(array.map(...))` initialization pattern
+**Learning:** Initializing Maps using `new Map(array.map(...))` creates an intermediate array of tuples, which increases memory allocation and triggers garbage collection. This is an explicit anti-pattern in this project.
+**Action:** Always use an inline initialization function with a single-pass `for` loop to populate Maps and Sets, avoiding intermediate object allocations.

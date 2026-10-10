@@ -22,10 +22,13 @@ export const FORMAT_BUTTONS: {
   { value: "data-uri", label: "URI", description: "Base64 data URI" },
 ];
 
-export const FORMAT_LABELS = new Map<string, string>();
-for (let i = 0; i < FORMAT_BUTTONS.length; i++) {
-  FORMAT_LABELS.set(FORMAT_BUTTONS[i].value, FORMAT_BUTTONS[i].label);
-}
+export const FORMAT_LABELS = (() => {
+  const map = new Map<string, string>();
+  for (let i = 0; i < FORMAT_BUTTONS.length; i++) {
+    map.set(FORMAT_BUTTONS[i].value, FORMAT_BUTTONS[i].label);
+  }
+  return map;
+})();
 
 export const CDN_BASE =
   "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons";
