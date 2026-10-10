@@ -271,8 +271,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
         counts.set(c, (counts.get(c) || 0) + 1);
       }
     }
-    return [...counts.entries()]
-      .map(([name, count]) => ({ name, count }))
+    return Array.from(counts, ([name, count]) => ({ name, count }))
       .sort((a, b) => a.name.localeCompare(b.name));
   }, [collectionParam, collectionIcons, categoryCounts]);
 
