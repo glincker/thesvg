@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 3.3.14
+
+### Patch Changes
+
+- feat: add theauth icon ([#1286](https://github.com/glincker/thesvg/issues/1286))
+
 ## 3.3.13
 
 ### Patch Changes
