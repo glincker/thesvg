@@ -394,8 +394,9 @@ export function HomeHero({
         counts.set(c, (counts.get(c) || 0) + 1);
       }
     }
-    return [...counts.entries()]
-      .map(([name, count]) => ({ name, count }))
+    // ⚡ Bolt: Use `Array.from(map, mappingFunction)` instead of `[...map.entries()].map(...)`
+    // to avoid allocating a massive intermediate array of tuples and reduce GC pressure.
+    return Array.from(counts, ([name, count]) => ({ name, count }))
       .sort((a, b) => b.count - a.count)
       .slice(0, 8);
   }, [collectionIcons]);

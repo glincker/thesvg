@@ -76,3 +76,7 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2024-10-10 - Avoid `new Map(array.map(...))` initialization pattern
 **Learning:** Initializing Maps using `new Map(array.map(...))` creates an intermediate array of tuples, which increases memory allocation and triggers garbage collection. This is an explicit anti-pattern in this project.
 **Action:** Always use an inline initialization function with a single-pass `for` loop to populate Maps and Sets, avoiding intermediate object allocations.
+
+## 2024-10-12 - Prevent intermediate array allocations on Map entries
+**Learning:** Using `[...map.entries()].map(([k, v]) => ({ k, v }))` allocates a full intermediate array of tuples before mapping them to objects. For large maps (like categories or icons), this creates a massive spike in memory usage and triggers aggressive garbage collection pauses on the main thread, leading to jitter in the UI during calculations.
+**Action:** Always use `Array.from(map, ([k, v]) => ({ k, v }))` instead, which iterates over the Map entries and applies the mapping function in a single pass without allocating the intermediate tuple array.

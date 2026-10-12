@@ -72,8 +72,9 @@ function main() {
       counts.set(c, (counts.get(c) || 0) + 1);
     }
   }
-  const categories = [...counts.entries()]
-    .map(([name, count]) => ({ name, count }))
+  // ⚡ Bolt: Use `Array.from(map, mappingFunction)` instead of `[...map.entries()].map(...)`
+  // to avoid allocating a massive intermediate array of tuples and reduce GC pressure.
+  const categories = Array.from(counts, ([name, count]) => ({ name, count }))
     .sort((a, b) => a.name.localeCompare(b.name));
 
   writeFileSync(
