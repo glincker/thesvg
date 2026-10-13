@@ -271,8 +271,9 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
         counts.set(c, (counts.get(c) || 0) + 1);
       }
     }
-    return [...counts.entries()]
-      .map(([name, count]) => ({ name, count }))
+    // ⚡ Bolt: Use Array.from with mapping function instead of [...counts.entries()].map()
+    // to prevent intermediate tuple array allocations.
+    return Array.from(counts, ([name, count]) => ({ name, count }))
       .sort((a, b) => a.name.localeCompare(b.name));
   }, [collectionParam, collectionIcons, categoryCounts]);
 
@@ -463,7 +464,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                   <button
                     type="button"
                     onClick={handleViewToggle}
-                    className="flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+                    className="flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                     aria-label={viewParam === "compact" ? "Comfortable view" : "Compact view"}
                   >
                     {viewParam === "compact" ? (
@@ -476,7 +477,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                     type="button"
                     onClick={handleSortCycle}
                     aria-label={`Sort by ${sortLabel.toLowerCase()}`}
-                    className="flex h-8 items-center gap-1.5 rounded-lg px-2 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+                    className="flex h-8 items-center gap-1.5 rounded-lg px-2 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                   >
                     <SortIcon className="h-4 w-4" aria-hidden="true" />
                     <span className="hidden sm:inline">{sortLabel}</span>
@@ -492,40 +493,44 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                   <button
                     type="button"
                     onClick={() => handleCollectionSelect(null)}
-                    className="inline-flex items-center gap-1 rounded-full border border-orange-200/50 bg-orange-50/50 px-2.5 py-0.5 text-xs font-medium text-orange-600 transition-colors hover:bg-orange-50 dark:border-orange-500/20 dark:bg-orange-500/10 dark:text-orange-400"
+                    className="inline-flex items-center gap-1 rounded-full border border-orange-200/50 bg-orange-50/50 px-2.5 py-0.5 text-xs font-medium text-orange-600 transition-colors hover:bg-orange-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 dark:border-orange-500/20 dark:bg-orange-500/10 dark:text-orange-400"
+                    aria-label="Remove collection filter"
                   >
                     {collectionParam === "aws" ? "AWS" : collectionParam}
-                    <X className="h-3 w-3" />
+                    <X className="h-3 w-3" aria-hidden="true" />
                   </button>
                 )}
                 {categoryParam && (
                   <button
                     type="button"
                     onClick={handleClearCategory}
-                    className="inline-flex items-center gap-1 rounded-full border border-border/40 bg-accent/50 px-2.5 py-0.5 text-xs font-medium text-foreground transition-colors hover:bg-accent dark:border-white/[0.06] dark:bg-white/[0.06]"
+                    className="inline-flex items-center gap-1 rounded-full border border-border/40 bg-accent/50 px-2.5 py-0.5 text-xs font-medium text-foreground transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 dark:border-white/[0.06] dark:bg-white/[0.06]"
+                    aria-label="Remove category filter"
                   >
                     {categoryParam}
-                    <X className="h-3 w-3 text-muted-foreground" />
+                    <X className="h-3 w-3 text-muted-foreground" aria-hidden="true" />
                   </button>
                 )}
                 {favoritesParam && (
                   <button
                     type="button"
                     onClick={handleToggleFavorites}
-                    className="inline-flex items-center gap-1 rounded-full border border-red-200/50 bg-red-50/50 px-2.5 py-0.5 text-xs font-medium text-red-600 transition-colors hover:bg-red-50 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-400"
+                    className="inline-flex items-center gap-1 rounded-full border border-red-200/50 bg-red-50/50 px-2.5 py-0.5 text-xs font-medium text-red-600 transition-colors hover:bg-red-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-400"
+                    aria-label="Remove favorites filter"
                   >
                     Favorites
-                    <X className="h-3 w-3" />
+                    <X className="h-3 w-3" aria-hidden="true" />
                   </button>
                 )}
                 {query.trim() && (
                   <button
                     type="button"
                     onClick={() => setGlobalQuery("")}
-                    className="inline-flex items-center gap-1 rounded-full border border-border/40 bg-accent/50 px-2.5 py-0.5 text-xs font-medium text-foreground transition-colors hover:bg-accent dark:border-white/[0.06] dark:bg-white/[0.06]"
+                    className="inline-flex items-center gap-1 rounded-full border border-border/40 bg-accent/50 px-2.5 py-0.5 text-xs font-medium text-foreground transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 dark:border-white/[0.06] dark:bg-white/[0.06]"
+                    aria-label="Remove search filter"
                   >
                     &ldquo;{query.trim()}&rdquo;
-                    <X className="h-3 w-3 text-muted-foreground" />
+                    <X className="h-3 w-3 text-muted-foreground" aria-hidden="true" />
                   </button>
                 )}
                 <button
@@ -538,7 +543,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                     const view = searchParams.get("view");
                     router.push(view ? `/?view=${view}` : "/");
                   }}
-                  className="text-[10px] text-muted-foreground/60 transition-colors hover:text-muted-foreground"
+                  className="rounded-sm text-[10px] text-muted-foreground/60 transition-colors hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >
                   Clear all
                 </button>

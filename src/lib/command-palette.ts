@@ -28,8 +28,9 @@ export function categoriesFromIcons(icons: readonly IconEntry[]): PaletteCategor
       counts.set(name, (counts.get(name) ?? 0) + 1);
     }
   }
-  return [...counts.entries()]
-    .map(([name, count]) => ({ name, count }))
+  // ⚡ Bolt: Use Array.from with mapping function instead of [...counts.entries()].map()
+  // to prevent intermediate tuple array allocations.
+  return Array.from(counts, ([name, count]) => ({ name, count }))
     .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
 }
 

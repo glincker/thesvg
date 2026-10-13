@@ -117385,6 +117385,28 @@
     "collection": "brands"
   },
   {
+    "slug": "sigma-computing",
+    "title": "Sigma Computing",
+    "aliases": [
+      "sigma",
+      "sigmacomputing"
+    ],
+    "hex": "070707",
+    "categories": [
+      "AI",
+      "Data",
+      "Visualization"
+    ],
+    "variants": {
+      "default": "/icons/sigma-computing/default.svg",
+      "mono": "/icons/sigma-computing/mono.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.sigmacomputing.com",
+    "dateAdded": "2026-10-13",
+    "collection": "brands"
+  },
+  {
     "slug": "signal",
     "title": "Signal",
     "aliases": [],
