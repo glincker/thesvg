@@ -54707,6 +54707,29 @@
     "collection": "brands"
   },
   {
+    "slug": "earmark",
+    "title": "Earmark",
+    "aliases": [
+      "tryearmark"
+    ],
+    "hex": "FFFFFF",
+    "categories": [
+      "AI",
+      "Productivity",
+      "Software",
+      "SaaS"
+    ],
+    "variants": {
+      "default": "/icons/earmark/default.svg",
+      "light": "/icons/earmark/light.svg",
+      "dark": "/icons/earmark/dark.svg"
+    },
+    "license": "brand-use",
+    "url": "https://tryearmark.com",
+    "dateAdded": "2026-10-13",
+    "collection": "brands"
+  },
+  {
     "slug": "easyeda",
     "title": "EasyEDA",
     "aliases": [
@@ -117382,6 +117405,28 @@
     "url": "https://www.sifive.com",
     "guidelines": "https://www.sifive.com/terms",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "sigma-computing",
+    "title": "Sigma Computing",
+    "aliases": [
+      "sigma",
+      "sigmacomputing"
+    ],
+    "hex": "070707",
+    "categories": [
+      "AI",
+      "Data",
+      "Visualization"
+    ],
+    "variants": {
+      "default": "/icons/sigma-computing/default.svg",
+      "mono": "/icons/sigma-computing/mono.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.sigmacomputing.com",
+    "dateAdded": "2026-10-13",
     "collection": "brands"
   },
   {
