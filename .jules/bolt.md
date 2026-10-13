@@ -76,3 +76,6 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2024-10-10 - Avoid `new Map(array.map(...))` initialization pattern
 **Learning:** Initializing Maps using `new Map(array.map(...))` creates an intermediate array of tuples, which increases memory allocation and triggers garbage collection. This is an explicit anti-pattern in this project.
 **Action:** Always use an inline initialization function with a single-pass `for` loop to populate Maps and Sets, avoiding intermediate object allocations.
+## 2025-02-12 - Optimize Map.entries() iteration
+**Learning:** In the thesvg.org codebase, chaining `.entries().map(...)` over large `Map` objects (like icon category counts) forces V8 to allocate thousands of short-lived tuple arrays `[key, value]`, significantly increasing garbage collection pressure.
+**Action:** Replace `[...map.entries()].map(...)` with `Array.from(map, ([key, value]) => ...)` which uses the map's default iterator to populate the final array directly without allocating an intermediate array of tuples.

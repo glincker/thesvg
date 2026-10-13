@@ -181,7 +181,7 @@ export function MobileIconSheet() {
               }
               aria-pressed={isFavorite}
               className={cn(
-                "absolute top-2 right-2 flex h-9 w-9 items-center justify-center rounded-full border border-border/40 bg-background/80 backdrop-blur-md transition-colors",
+                "absolute top-2 right-2 flex h-9 w-9 items-center justify-center rounded-full border border-border/40 bg-background/80 backdrop-blur-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                 isFavorite
                   ? "text-red-500"
                   : "text-muted-foreground hover:text-foreground",
@@ -240,14 +240,14 @@ export function MobileIconSheet() {
             <button
               type="button"
               onClick={() => handleCopy("svg")}
-              className="flex h-11 flex-1 items-center justify-center gap-2 rounded-xl bg-foreground text-sm font-semibold text-background transition-opacity hover:opacity-90"
+              className="flex h-11 flex-1 items-center justify-center gap-2 rounded-xl bg-foreground text-sm font-semibold text-background transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
               <Copy className="h-4 w-4" /> Copy SVG
             </button>
             <button
               type="button"
               onClick={handleDownload}
-              className="flex h-11 w-11 items-center justify-center rounded-xl border border-border/50 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+              className="flex h-11 w-11 items-center justify-center rounded-xl border border-border/50 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               aria-label="Download SVG"
             >
               <Download className="h-4 w-4" />

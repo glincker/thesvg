@@ -126,8 +126,9 @@ export function getCategoryCounts(collection?: Collection): { name: string; coun
       }
     }
   }
-  return [...counts.entries()]
-    .map(([name, count]) => ({ name, count }))
+  // ⚡ Bolt: Use Array.from with mapping function instead of [...counts.entries()].map()
+  // to prevent intermediate tuple array allocations.
+  return Array.from(counts, ([name, count]) => ({ name, count }))
     .sort((a, b) => a.name.localeCompare(b.name));
 }
 
@@ -176,7 +177,8 @@ export function getCollections(): { name: Collection; count: number }[] {
   for (const icon of icons) {
     counts.set(icon.collection, (counts.get(icon.collection) || 0) + 1);
   }
-  return [...counts.entries()]
-    .map(([name, count]) => ({ name, count }))
+  // ⚡ Bolt: Use Array.from with mapping function instead of [...counts.entries()].map()
+  // to prevent intermediate tuple array allocations.
+  return Array.from(counts, ([name, count]) => ({ name, count }))
     .sort((a, b) => b.count - a.count);
 }
