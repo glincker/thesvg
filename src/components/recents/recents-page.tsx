@@ -16,6 +16,8 @@ import {
 import type { IconEntry } from "@/lib/icons";
 import { loadIconsManifest } from "@/lib/icons-manifest";
 import { useRecentsStore } from "@/lib/stores/recents-store";
+import { cn } from "@/lib/utils";
+import { logoImgClass, logoPlateClass } from "@/lib/logo-surface";
 import { StatCard } from "./stat-card";
 import { Section } from "./section";
 
@@ -337,11 +339,19 @@ export function RecentsPage() {
                         }
                         className="flex flex-col items-center gap-3 p-4"
                       >
-                        <div className="flex h-16 w-16 items-center justify-center">
+                        <div
+                          className={cn(
+                            "flex h-16 w-16 items-center justify-center rounded-xl",
+                            logoPlateClass(entry.slug),
+                          )}
+                        >
                           <img
                             src={entry.variants.default}
                             alt=""
-                            className="h-14 w-14 object-contain transition-transform duration-200 group-hover:scale-110"
+                            className={cn(
+                              "h-14 w-14 object-contain transition-transform duration-200 group-hover:scale-110",
+                              logoImgClass(entry.slug),
+                            )}
                             loading="lazy"
                           />
                         </div>
@@ -413,7 +423,11 @@ export function RecentsPage() {
                           <img
                             src={entry.variants.default}
                             alt=""
-                            className="h-8 w-8 shrink-0 object-contain"
+                            className={cn(
+                              "h-8 w-8 shrink-0 rounded-md object-contain",
+                              logoImgClass(entry.slug),
+                              logoPlateClass(entry.slug),
+                            )}
                             loading="lazy"
                           />
                           <div className="min-w-0 flex-1">

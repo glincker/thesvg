@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import {
   ChevronRight,
   Clock,
@@ -16,6 +16,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import type { Collection } from "@/lib/icons";
 import { COLLECTIONS_META } from "@/lib/collections-meta";
+import familiesData from "@/data/families.json";
 import { categoryAccentClass, filterCategories, groupCategoriesByLetter } from "@/lib/category-index";
 import { AlphabetRail } from "@/components/layout/alphabet-rail";
 import { SidebarNav } from "@/components/layout/sidebar-nav";
@@ -24,6 +25,48 @@ import { SidebarCollapseToggle } from "@/components/layout/sidebar-collapse-togg
 import { cn } from "@/lib/utils";
 
 const CATEGORY_SEARCH_DEBOUNCE_MS = 400;
+
+/** The "NEW" badge on the Families section shows for a month after launch. */
+const FAMILIES_NEW_UNTIL = Date.UTC(2026, 10, 15);
+
+interface SidebarFamily {
+  slug: string;
+  title: string;
+  count: number;
+  logo: string;
+  logoDark: string | null;
+  tone: "dark" | "light" | "neutral";
+}
+
+/** Parent logo that stays visible in both themes. */
+function FamilyLogo({ family }: { family: SidebarFamily }) {
+  const base = "h-4 w-4 shrink-0 object-contain";
+  if (family.logoDark) {
+    return (
+      <>
+        <img src={family.logo} alt="" width={16} height={16} className={cn(base, "dark:hidden")} />
+        <img src={family.logoDark} alt="" width={16} height={16} className={cn(base, "hidden dark:block")} />
+      </>
+    );
+  }
+  return (
+    <img
+      src={family.logo}
+      alt=""
+      width={16}
+      height={16}
+      className={cn(
+        base,
+        family.tone === "dark" && "dark:brightness-0 dark:invert",
+        family.tone === "light" && "brightness-0 dark:brightness-100 dark:invert-0",
+      )}
+    />
+  );
+}
+
+function subscribeNever(): () => void {
+  return () => {};
+}
 
 interface SidebarProps {
   categories: { name: string; count: number }[];
@@ -70,8 +113,23 @@ export function Sidebar({
 }: SidebarProps) {
   const pathname = usePathname();
   const isRail = !mobile && collapsed;
-  const [collectionsExpanded, setCollectionsExpanded] = useState(false);
-  const [featuredExpanded, setFeaturedExpanded] = useState(false);
+  // Shortcut sections (Collections, Families, Featured) behave as an
+  // accordion: one open at a time, so the Categories list below always keeps
+  // most of the height. Families starts open while it is new.
+  type ShortcutSection = "collections" | "families" | "featured";
+  const [openSection, setOpenSection] = useState<ShortcutSection | null>("families");
+  const toggleSection = (id: ShortcutSection) =>
+    setOpenSection((prev) => (prev === id ? null : id));
+  const collectionsExpanded = openSection === "collections";
+  const familiesExpanded = openSection === "families";
+  const featuredExpanded = openSection === "featured";
+  // Hydration-safe: false on the server and the first client render, then
+  // the real date check.
+  const familiesNew = useSyncExternalStore(
+    subscribeNever,
+    () => Date.now() < FAMILIES_NEW_UNTIL,
+    () => false,
+  );
 
   const [categorySearch, setCategorySearch] = useState(initialCategorySearch ?? "");
   const debounceRef = useRef<ReturnType<typeof setTimeout>>(null);
@@ -145,15 +203,16 @@ export function Sidebar({
             the Vercel/Linear/Notion rail pattern of showing only top-level
             destinations until the sidebar is expanded again. */}
         {!isRail && (
-          <ScrollArea className="min-h-0 flex-1 overflow-hidden">
-            <div className="flex flex-col px-3 pb-3">
+          <div className="flex min-h-0 flex-1 flex-col">
+            {/* Shortcuts: capped so Categories keeps at least 55% of the height. */}
+            <div className="max-h-[45%] shrink-0 overflow-y-auto overscroll-contain px-3">
               {/* Collections - collapsible */}
               {collections.length > 1 && (
                 <div>
                   <div className="h-px bg-gradient-to-r from-transparent via-border/60 to-transparent dark:via-white/[0.06]" />
                   <button
                     type="button"
-                    onClick={() => setCollectionsExpanded((prev) => !prev)}
+                    onClick={() => toggleSection("collections")}
                     aria-expanded={collectionsExpanded}
                     aria-controls="collections-menu"
                     className="flex w-full items-center justify-between rounded-lg px-1 pt-3 pb-1.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/70 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
@@ -201,12 +260,83 @@ export function Sidebar({
                 </div>
               )}
 
+              {/* Families - collapsible. Brand owners (Amazon, Google, ...) with
+                  their parent logo, linking to the family page. */}
+              {familiesData.length > 0 && (
+                <div>
+                  <div className="mt-2 h-px bg-gradient-to-r from-transparent via-border/60 to-transparent dark:via-white/[0.06]" />
+                  <button
+                    type="button"
+                    onClick={() => toggleSection("families")}
+                    aria-expanded={familiesExpanded}
+                    aria-controls="families-menu"
+                    className="flex w-full items-center justify-between rounded-lg px-1 pt-3 pb-1.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/70 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  >
+                    <span className="flex items-center gap-2">
+                      Families
+                      {familiesNew && (
+                        <span className="rounded-full bg-gradient-to-r from-fuchsia-500/90 via-orange-500/90 to-amber-400/90 px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase leading-none tracking-wider text-white shadow-sm shadow-black/20">
+                          NEW
+                        </span>
+                      )}
+                    </span>
+                    <ChevronRight
+                      className={cn(
+                        "h-3 w-3 shrink-0 transition-transform duration-200",
+                        familiesExpanded && "rotate-90"
+                      )}
+                    />
+                  </button>
+                  <div
+                    id="families-menu"
+                    className={cn(
+                      "flex flex-col gap-0.5 overflow-hidden transition-all duration-300",
+                      familiesExpanded ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0"
+                    )}
+                  >
+                    <div className="max-h-52 overflow-y-auto overscroll-contain pb-1">
+                      <Link
+                        href="/families"
+                        className={cn(
+                          "flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] text-muted-foreground transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                          pathname === "/families" && "bg-accent/60 text-accent-foreground font-medium",
+                        )}
+                      >
+                        <span>All families</span>
+                        <ChevronRight className="h-3 w-3" aria-hidden />
+                      </Link>
+                      {(familiesData as SidebarFamily[]).map((family) => {
+                        const href = `/family/${family.slug}`;
+                        return (
+                          <Link
+                            key={family.slug}
+                            href={href}
+                            className={cn(
+                              "group flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                              pathname === href && "bg-gradient-to-r from-accent/80 to-accent/40 text-accent-foreground font-medium shadow-sm shadow-black/[0.03] dark:from-white/[0.08] dark:to-white/[0.04] dark:shadow-black/20",
+                            )}
+                          >
+                            <span className="flex items-center gap-2 truncate">
+                              <FamilyLogo family={family} />
+                              <span className="truncate">{family.title}</span>
+                            </span>
+                            <span className="ml-2 shrink-0 font-mono text-[10px] text-muted-foreground/70">
+                              {family.count}
+                            </span>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {/* Featured - collapsible */}
               <div>
                 <div className="mt-2 h-px bg-gradient-to-r from-transparent via-border/60 to-transparent dark:via-white/[0.06]" />
                 <button
                   type="button"
-                  onClick={() => setFeaturedExpanded((prev) => !prev)}
+                  onClick={() => toggleSection("featured")}
                   aria-expanded={featuredExpanded}
                   aria-controls="featured-menu"
                   className="flex w-full items-center justify-between rounded-lg px-1 pt-3 pb-1.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/70 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
@@ -266,7 +396,11 @@ export function Sidebar({
                 </div>
               </div>
 
-              {/* Categories */}
+            </div>
+
+            {/* Categories: takes the remaining height and scrolls on its own. */}
+            <ScrollArea className="min-h-0 flex-1 overflow-hidden">
+              <div className="flex flex-col px-3 pb-3">
               <div className="mt-2 h-px bg-gradient-to-r from-transparent via-border/60 to-transparent dark:via-white/[0.06]" />
               <div className="flex items-baseline justify-between px-1 pt-3 pb-1.5">
                 <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/70">
@@ -284,6 +418,7 @@ export function Sidebar({
                   type="text"
                   value={categorySearch}
                   onChange={(e) => setCategorySearch(e.target.value)}
+                  onFocus={() => setOpenSection(null)}
                   placeholder="Search categories"
                   aria-label="Search categories"
                   className="w-full rounded-lg border border-border/50 bg-muted/30 py-1.5 pr-7 pl-8 text-xs text-foreground placeholder:text-muted-foreground/50 outline-none transition-shadow duration-200 focus:border-foreground/30 focus:bg-background focus:shadow-[0_0_0_3px_rgba(0,0,0,0.05)] dark:border-white/[0.06] dark:bg-white/[0.02] dark:focus:border-white/20 dark:focus:shadow-[0_0_0_3px_rgba(255,255,255,0.06)]"
@@ -373,7 +508,8 @@ export function Sidebar({
                 )}
               </div>
             </div>
-          </ScrollArea>
+            </ScrollArea>
+          </div>
         )}
       </aside>
     </TooltipProvider>

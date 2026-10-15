@@ -15,6 +15,7 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync } from "fs";
 import { join } from "path";
 import { COLLECTIONS_LIST } from "../lib/collections-meta";
+import { currentOnly } from "../lib/family-current";
 
 const ROOT = join(__dirname, "../..");
 const ICONS_JSON = join(ROOT, "src/data/icons.json");
@@ -24,10 +25,14 @@ const DATA_DIR = join(ROOT, "src/data");
 
 interface IconEntry {
   slug: string;
+  title: string;
   categories: string[];
   variants: Record<string, string | undefined>;
   guidelines?: string;
   collection: string;
+  family?: string;
+  supersedes?: string;
+  supersededBy?: string;
 }
 
 interface PackageInfo {
@@ -125,6 +130,58 @@ function summarizeRuntimeDeps(packages: PackageInfo[]): string {
   return `${zeroDepCount} of ${packages.length} packages ship with zero runtime dependencies (framework peers like React, Vue, and Svelte are not counted); the rest declare a small, explicit dependency list, see the Packages table`;
 }
 
+interface FamilyLine {
+  slug: string;
+  title: string;
+  count: number;
+  highlights: string[];
+}
+
+/** Brand families (parent icon plus current members), largest first. */
+function buildFamilies(icons: IconEntry[]): FamilyLine[] {
+  const bySlug = new Map(icons.map((i) => [i.slug, i]));
+  const groups = new Map<string, IconEntry[]>();
+  for (const icon of icons) {
+    if (!icon.family) continue;
+    const list = groups.get(icon.family) ?? [];
+    list.push(icon);
+    groups.set(icon.family, list);
+  }
+  const out: FamilyLine[] = [];
+  for (const [slug, all] of groups) {
+    const parent = bySlug.get(slug);
+    const members = currentOnly(all);
+    if (!parent || members.length + 1 < 4) continue;
+    out.push({
+      slug,
+      title: parent.title,
+      count: members.length + 1,
+      highlights: members
+        .map((m) => m.title)
+        .sort((a, b) => a.localeCompare(b))
+        .slice(0, 8),
+    });
+  }
+  return out.sort((a, b) => b.count - a.count || a.title.localeCompare(b.title));
+}
+
+function familiesSection(families: FamilyLine[], withHighlights: boolean): string {
+  if (families.length === 0) return "";
+  const lines = families.map((f) => {
+    const base = `- [${f.title}](https://thesvg.org/family/${f.slug}): ${f.count} official logos`;
+    return withHighlights && f.highlights.length > 0
+      ? `${base} (${f.highlights.join(", ")}, and more)`
+      : base;
+  });
+  return `
+## Brand families
+
+Icons grouped by the company that owns them. Each family page lists every official logo of that brand, such as the whole Amazon, Google or Microsoft product line, with all variants. Index: https://thesvg.org/families. Machine-readable: https://thesvg.org/api/families.json
+
+${lines.join("\n")}
+`;
+}
+
 function main() {
   const icons: IconEntry[] = JSON.parse(readFileSync(ICONS_JSON, "utf-8"));
   const iconCount = icons.length;
@@ -171,7 +228,8 @@ function main() {
     packages,
     categories,
   });
-  writeFileSync(join(PUBLIC_DIR, "llms.txt"), llmsTxt);
+  const families = buildFamilies(icons);
+  writeFileSync(join(PUBLIC_DIR, "llms.txt"), llmsTxt + familiesSection(families, false));
   console.log(`  llms.txt: ${formattedIconCount} icons, ${categories.length} categories, ${packages.length} packages`);
 
   const llmsFullTxt = buildLlmsFullTxt({
@@ -183,7 +241,7 @@ function main() {
     formattedVariantCount,
     guidelinesCount,
   });
-  writeFileSync(join(PUBLIC_DIR, "llms-full.txt"), llmsFullTxt);
+  writeFileSync(join(PUBLIC_DIR, "llms-full.txt"), llmsFullTxt + familiesSection(families, true));
   console.log(
     `  llms-full.txt: ${formattedIconCount} icons, ${categories.length} categories, ${packages.length} packages`,
   );

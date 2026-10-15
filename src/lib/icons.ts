@@ -47,6 +47,8 @@ export interface IconEntry {
   url?: string;
   guidelines?: string;
   links?: IconLinks;
+  /** Slug of the parent brand icon this icon belongs to (e.g. "amazon"). */
+  family?: string;
   dateAdded?: string;
   collection: Collection;
   collectionVersion?: string;
