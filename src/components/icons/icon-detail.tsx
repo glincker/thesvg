@@ -28,6 +28,7 @@ import { useRecentsStore } from "@/lib/stores/recents-store";
 import { cn } from "@/lib/utils";
 import { VARIANT_LABELS, FORMAT_BUTTONS, FORMAT_LABELS } from "@/components/icons/shared/icon-constants";
 import { withUtm } from "@/lib/external-link";
+import { IconLinksRow } from "@/components/icons/detail/icon-links-row";
 
 interface IconDetailProps {
   icon: IconEntry | null;
@@ -338,7 +339,7 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
             </button>
 
             {/* Links row */}
-            {(icon.url || icon.guidelines) && (
+            {(icon.url || icon.guidelines || icon.links) && (
               <div className="flex flex-wrap gap-1.5">
                 {icon.url && (
                   <a
@@ -372,6 +373,7 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
                     <ArrowUpRight className="h-2.5 w-2.5 opacity-40" />
                   </a>
                 )}
+                <IconLinksRow links={icon.links} source="icon_quick_view" />
               </div>
             )}
           </div>

@@ -31,6 +31,7 @@ interface IconEntry {
   license: string;
   url?: string;
   guidelines?: string;
+  links?: Record<string, string | undefined>;
   dateAdded?: string;
   collection: string;
   collectionVersion?: string;
@@ -58,6 +59,8 @@ function main() {
       categories: icon.categories,
       hex: icon.hex,
       url: icon.url || null,
+      guidelines: icon.guidelines || null,
+      links: icon.links || null,
       license: icon.license,
       variants: Object.keys(icon.variants).filter((k) => icon.variants[k]),
     })),

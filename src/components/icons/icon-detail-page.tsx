@@ -29,6 +29,7 @@ import { QualityScoreCard } from "@/components/icons/detail/quality-score-card";
 import { DownloadMenu } from "@/components/icons/detail/download-menu";
 import { OpenInEditorMenu } from "@/components/icons/detail/open-in-editor-menu";
 import { withUtm } from "@/lib/external-link";
+import { IconLinksRow } from "@/components/icons/detail/icon-links-row";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import { IconFeedback } from "@/components/icons/detail/icon-feedback";
 
@@ -485,6 +486,7 @@ export function IconDetailPage({
                 <ArrowUpRight className="h-3 w-3 opacity-50" />
               </a>
             )}
+            <IconLinksRow links={icon.links} source="icon_detail" />
           </div>
 
           {/* Contribution CTA in sidebar - combines the variant/asset ask

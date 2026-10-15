@@ -1,3 +1,4 @@
+import type { IconLinks } from "@/lib/icon-links";
 import iconsData from "@/data/icons.json";
 import type { CollectionId } from "@/lib/collections-meta";
 
@@ -45,6 +46,7 @@ export interface IconEntry {
   license: string;
   url?: string;
   guidelines?: string;
+  links?: IconLinks;
   dateAdded?: string;
   collection: Collection;
   collectionVersion?: string;
