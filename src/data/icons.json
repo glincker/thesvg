@@ -263,6 +263,28 @@
     "collection": "brands"
   },
   {
+    "slug": "2fauth",
+    "title": "2FAuth",
+    "aliases": [
+      "twofauth"
+    ],
+    "hex": "111111",
+    "categories": [
+      "Security",
+      "Software",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/2fauth/default.svg",
+      "dark": "/icons/2fauth/dark.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://docs.2fauth.app",
+    "guidelines": "https://github.com/Bubka/2FAuth/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "2k",
     "title": "2K",
     "aliases": [],
@@ -1026,6 +1048,30 @@
     "url": "https://www.activeloop.ai",
     "guidelines": "https://www.figma.com/design/BkHRpmCiMOqY1iJMniKC6F/Activeloop-Brandbook--final-?node-id=3-91",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "activepieces",
+    "title": "Activepieces",
+    "aliases": [
+      "active pieces",
+      "active-pieces"
+    ],
+    "hex": "8142E3",
+    "categories": [
+      "Automation",
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/activepieces/default.svg",
+      "wordmark": "/icons/activepieces/wordmark.svg",
+      "wordmarkDark": "/icons/activepieces/wordmarkDark.svg"
+    },
+    "license": "MIT",
+    "url": "https://www.activepieces.com",
+    "guidelines": "https://github.com/activepieces/activepieces/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -2874,6 +2920,24 @@
     "license": "MIT",
     "url": "https://aleph-alpha.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "alertmanager",
+    "title": "Alertmanager",
+    "aliases": [],
+    "hex": "E6522C",
+    "categories": [
+      "Monitoring",
+      "DevOps"
+    ],
+    "variants": {
+      "default": "/icons/alertmanager/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://prometheus.io",
+    "guidelines": "https://github.com/prometheus/alertmanager/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -5447,6 +5511,30 @@
     "collection": "community"
   },
   {
+    "slug": "appflowy",
+    "title": "AppFlowy",
+    "aliases": [
+      "app flowy"
+    ],
+    "hex": "8427E0",
+    "categories": [
+      "Productivity",
+      "Software",
+      "Management"
+    ],
+    "variants": {
+      "default": "/icons/appflowy/default.svg",
+      "wordmark": "/icons/appflowy/wordmark.svg",
+      "wordmarkLight": "/icons/appflowy/wordmarkLight.svg",
+      "wordmarkDark": "/icons/appflowy/wordmarkDark.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://appflowy.com",
+    "guidelines": "https://github.com/AppFlowy-IO/AppFlowy/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "appfolio-badge",
     "title": "AppFolio",
     "aliases": [],
@@ -5717,6 +5805,30 @@
     "license": "GPL-3.0-or-later",
     "url": "https://github.com/muntashirakon/AppManager/blob/1a46b0296dae1bc2cf62beedba44ed3bb5e89243/arts/icon_v2/icon.svg",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "apprise-api",
+    "title": "Apprise API",
+    "aliases": [
+      "apprise",
+      "apprise api",
+      "caronc"
+    ],
+    "hex": "148C80",
+    "categories": [
+      "Communication",
+      "Automation",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/apprise-api/default.svg",
+      "wordmark": "/icons/apprise-api/wordmark.svg"
+    },
+    "license": "Trademark of Chris Caron. Used for identification under nominative fair use.",
+    "url": "https://github.com/caronc/apprise-api",
+    "guidelines": "https://github.com/caronc/apprise-api",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -7470,6 +7582,27 @@
     "url": "",
     "dateAdded": "2026-09-12",
     "collection": "auth-badges"
+  },
+  {
+    "slug": "autobrr",
+    "title": "autobrr",
+    "aliases": [
+      "auto-brr"
+    ],
+    "hex": "4788C7",
+    "categories": [
+      "Automation",
+      "Media",
+      "DevOps"
+    ],
+    "variants": {
+      "default": "/icons/autobrr/default.svg"
+    },
+    "license": "GPL-2.0",
+    "url": "https://autobrr.com",
+    "guidelines": "https://github.com/autobrr/autobrr/blob/develop/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
   },
   {
     "slug": "autocad",
@@ -37437,6 +37570,28 @@
     "collection": "brands"
   },
   {
+    "slug": "baby-buddy",
+    "title": "Baby Buddy",
+    "aliases": [
+      "baby buddy",
+      "babybuddy"
+    ],
+    "hex": "37ABE9",
+    "categories": [
+      "Productivity",
+      "Software",
+      "Management"
+    ],
+    "variants": {
+      "default": "/icons/baby-buddy/default.svg"
+    },
+    "license": "BSD-2-Clause",
+    "url": "http://docs.baby-buddy.net/",
+    "guidelines": "https://github.com/babybuddy/babybuddy/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "babylondotjs",
     "title": "Babylon.js",
     "aliases": [],
@@ -38709,6 +38864,24 @@
     "collection": "brands"
   },
   {
+    "slug": "bentopdf",
+    "title": "BentoPDF",
+    "aliases": [],
+    "hex": "6366F1",
+    "categories": [
+      "Productivity",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/bentopdf/default.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://bentopdf.com/",
+    "guidelines": "https://github.com/alam00000/bentopdf/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "bereal",
     "title": "BeReal",
     "aliases": [],
@@ -38775,6 +38948,25 @@
     "guidelines": "https://commons.wikimedia.org/wiki/File%3ABest_Western_Hotels_%26_Resorts_icon.svg",
     "collection": "brands",
     "dateAdded": "2026-05-16"
+  },
+  {
+    "slug": "beszel",
+    "title": "Beszel",
+    "aliases": [],
+    "hex": "747BFF",
+    "categories": [
+      "Monitoring",
+      "Dashboard",
+      "DevOps"
+    ],
+    "variants": {
+      "default": "/icons/beszel/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://beszel.dev",
+    "guidelines": "https://github.com/henrygd/beszel/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
   },
   {
     "slug": "bet365",
@@ -42315,9 +42507,9 @@
       "wordmarkLight": "/icons/bytebase/wordmarkLight.svg",
       "wordmarkDark": "/icons/bytebase/wordmarkDark.svg"
     },
-    "license": "MIT",
-    "url": "https://github.com/bytebase/bytebase",
-    "guidelines": "https://github.com/bytebase/bytebase/blob/main/LICENSE",
+    "license": "Trademark of Bytebase. Used for identification under nominative fair use.",
+    "url": "https://www.bytebase.com",
+    "guidelines": "https://www.bytebase.com/brand/",
     "dateAdded": "2026-10-15",
     "collection": "brands"
   },
@@ -43405,6 +43597,26 @@
     "collection": "brands"
   },
   {
+    "slug": "castopod",
+    "title": "Castopod",
+    "aliases": [],
+    "hex": "009486",
+    "categories": [
+      "Media",
+      "Community",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/castopod/default.svg",
+      "wordmark": "/icons/castopod/wordmark.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://castopod.org",
+    "guidelines": "https://code.castopod.org/adaures/castopod/-/blob/develop/LICENSE.md",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "castorama",
     "title": "Castorama",
     "aliases": [],
@@ -44197,6 +44409,25 @@
     "collection": "brands"
   },
   {
+    "slug": "checkmate",
+    "title": "Checkmate",
+    "aliases": [],
+    "hex": "13715B",
+    "categories": [
+      "Monitoring",
+      "DevOps",
+      "Dashboard"
+    ],
+    "variants": {
+      "default": "/icons/checkmate/default.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://checkmate.so/",
+    "guidelines": "https://github.com/bluewave-labs/Checkmate/blob/develop/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "checkmk",
     "title": "Checkmk",
     "aliases": [],
@@ -44376,6 +44607,28 @@
     "url": "https://www.chia.net/branding/",
     "guidelines": "https://www.chia.net/wp-content/uploads/2022/08/Guidelines-for-Using-Chia-Network.pdf",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "chibisafe",
+    "title": "Chibisafe",
+    "aliases": [
+      "chibi safe",
+      "lolisafe"
+    ],
+    "hex": "3B82F6",
+    "categories": [
+      "Storage",
+      "Software",
+      "Media"
+    ],
+    "variants": {
+      "default": "/icons/chibisafe/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://chibisafe.app",
+    "guidelines": "https://github.com/chibisafe/chibisafe/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -45743,6 +45996,27 @@
     "collection": "community"
   },
   {
+    "slug": "cloudreve",
+    "title": "Cloudreve",
+    "aliases": [],
+    "hex": "056FEE",
+    "categories": [
+      "Storage",
+      "Software",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/cloudreve/default.svg",
+      "wordmark": "/icons/cloudreve/wordmark.svg",
+      "wordmarkDark": "/icons/cloudreve/wordmarkDark.svg"
+    },
+    "license": "GPL-3.0",
+    "url": "https://cloudreve.org",
+    "guidelines": "https://github.com/cloudreve/cloudreve/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "cloudron",
     "title": "Cloudron",
     "aliases": [],
@@ -46114,6 +46388,30 @@
     "license": "CC0-1.0",
     "url": "https://github.com/cockpit-project/cockpit-project.github.io/blob/b851b3477d90017961ac9b252401c9a6cb6239f1/images/site/cockpit-logo.svg",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "cockpit-cms",
+    "title": "Cockpit CMS",
+    "aliases": [
+      "agentejo",
+      "cockpit",
+      "cockpit cms"
+    ],
+    "hex": "111111",
+    "categories": [
+      "Software",
+      "Management",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/cockpit-cms/default.svg",
+      "dark": "/icons/cockpit-cms/dark.svg"
+    },
+    "license": "MIT",
+    "url": "https://getcockpit.com",
+    "guidelines": "https://github.com/Cockpit-HQ/Cockpit/blob/develop/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -48316,6 +48614,27 @@
     "collection": "brands"
   },
   {
+    "slug": "copyparty",
+    "title": "copyparty",
+    "aliases": [
+      "copy party"
+    ],
+    "hex": "F59E0B",
+    "categories": [
+      "Storage",
+      "Software",
+      "Networking"
+    ],
+    "variants": {
+      "default": "/icons/copyparty/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/9001/copyparty",
+    "guidelines": "https://github.com/9001/copyparty/blob/hovudstraum/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "coqui",
     "title": "Coqui",
     "aliases": [],
@@ -49356,6 +49675,25 @@
     "collection": "brands"
   },
   {
+    "slug": "cryptgeon",
+    "title": "Cryptgeon",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Security",
+      "Software",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/cryptgeon/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://cryptgeon.org/",
+    "guidelines": "https://github.com/cupcakearmy/cryptgeon/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "cryptomator",
     "title": "Cryptomator",
     "aliases": [],
@@ -49877,7 +50215,7 @@
       "default": "/icons/cyberchef/default.svg"
     },
     "license": "Apache-2.0",
-    "url": "https://github.com/gchq/CyberChef",
+    "url": "https://gchq.github.io/CyberChef",
     "guidelines": "https://github.com/gchq/CyberChef/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
     "collection": "brands"
@@ -50501,7 +50839,7 @@
       "wordmark": "/icons/databasus/wordmark.svg"
     },
     "license": "Apache-2.0",
-    "url": "https://github.com/databasus/databasus",
+    "url": "https://databasus.com",
     "guidelines": "https://github.com/databasus/databasus/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
     "collection": "brands"
@@ -53204,6 +53542,25 @@
     "collection": "auth-badges"
   },
   {
+    "slug": "docmost",
+    "title": "Docmost",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Productivity",
+      "Software",
+      "Management"
+    ],
+    "variants": {
+      "default": "/icons/docmost/default.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://docmost.com",
+    "guidelines": "https://github.com/docmost/docmost/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "docsdotrs",
     "title": "Docs.rs",
     "aliases": [],
@@ -53334,6 +53691,28 @@
     "license": "CC0-1.0",
     "url": "https://docusaurus.io/",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "docuseal",
+    "title": "DocuSeal",
+    "aliases": [
+      "docu seal"
+    ],
+    "hex": "E97A42",
+    "categories": [
+      "Productivity",
+      "Software",
+      "Management"
+    ],
+    "variants": {
+      "default": "/icons/docuseal/default.svg",
+      "mono": "/icons/docuseal/mono.svg"
+    },
+    "license": "Trademark of DocuSeal. Used for identification under nominative fair use.",
+    "url": "https://www.docuseal.com",
+    "guidelines": "https://github.com/docusealco/docuseal/blob/master/LICENSE_ADDITIONAL_TERMS",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -53495,6 +53874,27 @@
     "url": "",
     "dateAdded": "2026-09-12",
     "collection": "auth-badges"
+  },
+  {
+    "slug": "dokuwiki",
+    "title": "DokuWiki",
+    "aliases": [
+      "doku wiki"
+    ],
+    "hex": "D32F2F",
+    "categories": [
+      "Productivity",
+      "Software",
+      "Management"
+    ],
+    "variants": {
+      "default": "/icons/dokuwiki/default.svg"
+    },
+    "license": "GPL-2.0",
+    "url": "https://www.dokuwiki.org",
+    "guidelines": "https://github.com/dokuwiki/dokuwiki/blob/master/COPYING",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
   },
   {
     "slug": "dolby",
@@ -56786,6 +57186,31 @@
     "collection": "brands"
   },
   {
+    "slug": "espocrm",
+    "title": "EspoCRM",
+    "aliases": [
+      "espo",
+      "espo crm",
+      "espo-crm"
+    ],
+    "hex": "8AA0C2",
+    "categories": [
+      "Software",
+      "Management",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/espocrm/default.svg",
+      "wordmark": "/icons/espocrm/wordmark.svg",
+      "wordmarkDark": "/icons/espocrm/wordmarkDark.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://www.espocrm.com",
+    "guidelines": "https://github.com/espocrm/espocrm/blob/master/LICENSE.txt",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "espressif",
     "title": "Espressif",
     "aliases": [],
@@ -56891,6 +57316,29 @@
     "license": "CC0-1.0",
     "url": "https://ethereum.org/",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "etherpad",
+    "title": "Etherpad",
+    "aliases": [
+      "etherpad lite",
+      "etherpad-lite"
+    ],
+    "hex": "FF9800",
+    "categories": [
+      "Productivity",
+      "Software",
+      "Communication"
+    ],
+    "variants": {
+      "default": "/icons/etherpad/default.svg",
+      "mono": "/icons/etherpad/mono.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://etherpad.org",
+    "guidelines": "https://github.com/ether/etherpad/blob/develop/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -58787,6 +59235,25 @@
     "collection": "brands"
   },
   {
+    "slug": "fider",
+    "title": "Fider",
+    "aliases": [],
+    "hex": "FBB139",
+    "categories": [
+      "Productivity",
+      "Software",
+      "Community"
+    ],
+    "variants": {
+      "default": "/icons/fider/default.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://fider.io",
+    "guidelines": "https://github.com/getfider/fider/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "fido-alliance",
     "title": "Fido Alliance",
     "aliases": [],
@@ -58966,6 +59433,29 @@
     "url": "",
     "collection": "brands",
     "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "file-browser",
+    "title": "File Browser",
+    "aliases": [
+      "file browser",
+      "filebrowser"
+    ],
+    "hex": "2979FF",
+    "categories": [
+      "Storage",
+      "Software",
+      "Management"
+    ],
+    "variants": {
+      "default": "/icons/file-browser/default.svg",
+      "wordmark": "/icons/file-browser/wordmark.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://filebrowser.org",
+    "guidelines": "https://github.com/filebrowser/filebrowser/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
   },
   {
     "slug": "filedotio",
@@ -59768,6 +60258,27 @@
     "collection": "brands"
   },
   {
+    "slug": "flatnotes",
+    "title": "flatnotes",
+    "aliases": [
+      "flat notes"
+    ],
+    "hex": "F8A66B",
+    "categories": [
+      "Productivity",
+      "Software",
+      "Management"
+    ],
+    "variants": {
+      "default": "/icons/flatnotes/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/dullage/flatnotes",
+    "guidelines": "https://github.com/dullage/flatnotes/blob/develop/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "flatpak",
     "title": "Flatpak",
     "aliases": [],
@@ -60394,6 +60905,24 @@
     "license": "CC0-1.0",
     "url": "https://www.fnac.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "focalboard",
+    "title": "Focalboard",
+    "aliases": [],
+    "hex": "0058CC",
+    "categories": [
+      "Productivity",
+      "Management"
+    ],
+    "variants": {
+      "default": "/icons/focalboard/default.svg"
+    },
+    "license": "Trademark of Mattermost, Inc. Used for identification under nominative fair use.",
+    "url": "https://www.focalboard.com",
+    "guidelines": "https://github.com/mattermost-community/focalboard/blob/main/LICENSE.txt",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -61382,7 +61911,7 @@
       "dark": "/icons/freescout/dark.svg"
     },
     "license": "AGPL-3.0",
-    "url": "https://github.com/freescout-help-desk/freescout",
+    "url": "https://freescout.net",
     "guidelines": "https://github.com/freescout-help-desk/freescout/blob/dist/LICENSE",
     "dateAdded": "2026-10-15",
     "collection": "brands"
@@ -67818,6 +68347,30 @@
     "collection": "brands"
   },
   {
+    "slug": "glances",
+    "title": "Glances",
+    "aliases": [],
+    "hex": "57CB6A",
+    "categories": [
+      "Monitoring",
+      "DevTool",
+      "DevOps"
+    ],
+    "variants": {
+      "default": "/icons/glances/default.svg",
+      "light": "/icons/glances/light.svg",
+      "dark": "/icons/glances/dark.svg",
+      "wordmark": "/icons/glances/wordmark.svg",
+      "wordmarkLight": "/icons/glances/wordmarkLight.svg",
+      "wordmarkDark": "/icons/glances/wordmarkDark.svg"
+    },
+    "license": "LGPL-3.0",
+    "url": "http://nicolargo.github.io/glances/",
+    "guidelines": "https://github.com/nicolargo/glances/blob/develop/COPYING",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "glassdoor",
     "title": "Glassdoor",
     "aliases": [],
@@ -68009,6 +68562,25 @@
     "collection": "brands"
   },
   {
+    "slug": "glitchtip",
+    "title": "GlitchTip",
+    "aliases": [],
+    "hex": "5B2D8E",
+    "categories": [
+      "Monitoring",
+      "DevTool",
+      "DevOps"
+    ],
+    "variants": {
+      "default": "/icons/glitchtip/default.svg",
+      "wordmark": "/icons/glitchtip/wordmark.svg"
+    },
+    "license": "Trademark of GlitchTip. Used for identification under nominative fair use.",
+    "url": "https://glitchtip.com",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "glm-v",
     "title": "GLM-V",
     "aliases": [],
@@ -68149,6 +68721,29 @@
     "license": "CC0-1.0",
     "url": "https://about.glovoapp.com/press",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "glpi",
+    "title": "GLPI",
+    "aliases": [
+      "gestionnaire libre de parc informatique",
+      "glpi-project"
+    ],
+    "hex": "00A5F3",
+    "categories": [
+      "Management",
+      "Software",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/glpi/default.svg",
+      "wordmarkDark": "/icons/glpi/wordmarkDark.svg"
+    },
+    "license": "GPL-3.0",
+    "url": "https://glpi-project.org",
+    "guidelines": "https://github.com/glpi-project/glpi/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -68652,6 +69247,26 @@
     "license": "CC0-1.0",
     "url": "https://www.cdprojekt.com/en/media/logotypes/",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "gogs",
+    "title": "Gogs",
+    "aliases": [],
+    "hex": "E0543A",
+    "categories": [
+      "DevTool",
+      "DevOps"
+    ],
+    "variants": {
+      "default": "/icons/gogs/default.svg",
+      "wordmarkLight": "/icons/gogs/wordmarkLight.svg",
+      "wordmarkDark": "/icons/gogs/wordmarkDark.svg"
+    },
+    "license": "MIT",
+    "url": "https://gogs.io",
+    "guidelines": "https://github.com/gogs/gogs/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -70510,7 +71125,7 @@
       "default": "/icons/gotify/default.svg"
     },
     "license": "MIT",
-    "url": "https://github.com/gotify/server",
+    "url": "https://gotify.net",
     "guidelines": "https://github.com/gotify/server/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
     "collection": "brands"
@@ -70729,6 +71344,29 @@
     "collection": "brands"
   },
   {
+    "slug": "grafana-loki",
+    "title": "Grafana Loki",
+    "aliases": [
+      "grafana loki",
+      "grafanaloki",
+      "loki"
+    ],
+    "hex": "F15B2B",
+    "categories": [
+      "Monitoring",
+      "DevOps",
+      "Analytics"
+    ],
+    "variants": {
+      "default": "/icons/grafana-loki/default.svg"
+    },
+    "license": "Trademark of Grafana Labs. Used for identification under nominative fair use.",
+    "url": "https://grafana.com/oss/loki/",
+    "guidelines": "https://grafana.com/legal/trademark-policy/",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "grails",
     "title": "Grails",
     "aliases": [
@@ -70819,6 +71457,29 @@
     "url": "https://www.grammarly.com/media-assets",
     "dateAdded": "2026-09-12",
     "collection": "auth-badges"
+  },
+  {
+    "slug": "gramps-web",
+    "title": "Gramps Web",
+    "aliases": [
+      "gramps",
+      "gramps web",
+      "grampsweb"
+    ],
+    "hex": "795649",
+    "categories": [
+      "Productivity",
+      "Software",
+      "Community"
+    ],
+    "variants": {
+      "default": "/icons/gramps-web/default.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://www.grampsweb.org",
+    "guidelines": "https://github.com/gramps-project/gramps-web/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
   },
   {
     "slug": "grand-frais",
@@ -71178,6 +71839,29 @@
     "license": "CC0-1.0",
     "url": "https://gridsome.org/logo/",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "grimmory",
+    "title": "Grimmory",
+    "aliases": [
+      "booklore"
+    ],
+    "hex": "F97316",
+    "categories": [
+      "Media",
+      "Software",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/grimmory/default.svg",
+      "wordmark": "/icons/grimmory/wordmark.svg",
+      "wordmarkLight": "/icons/grimmory/wordmarkLight.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://grimmory.org",
+    "guidelines": "https://github.com/grimmory-tools/grimmory/blob/develop/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -73556,6 +74240,24 @@
     "url": "https://hey.com",
     "dateAdded": "2026-09-12",
     "collection": "auth-badges"
+  },
+  {
+    "slug": "heyform",
+    "title": "HeyForm",
+    "aliases": [],
+    "hex": "1570EF",
+    "categories": [
+      "Productivity",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/heyform/default.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://heyform.net",
+    "guidelines": "https://github.com/heyform/heyform/blob/next/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
   },
   {
     "slug": "hhvm",
@@ -76693,6 +77395,32 @@
     "collection": "brands"
   },
   {
+    "slug": "infisical",
+    "title": "Infisical",
+    "aliases": [
+      "infisical-pki",
+      "infisical-secrets"
+    ],
+    "hex": "E0ED34",
+    "categories": [
+      "Security",
+      "DevOps",
+      "Management"
+    ],
+    "variants": {
+      "default": "/icons/infisical/default.svg",
+      "dark": "/icons/infisical/dark.svg",
+      "wordmark": "/icons/infisical/wordmark.svg",
+      "wordmarkLight": "/icons/infisical/wordmarkLight.svg",
+      "wordmarkDark": "/icons/infisical/wordmarkDark.svg"
+    },
+    "license": "MIT",
+    "url": "https://infisical.com",
+    "guidelines": "https://github.com/Infisical/infisical/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "inflection",
     "title": "Inflection",
     "aliases": [],
@@ -78017,6 +78745,27 @@
     "collection": "brands"
   },
   {
+    "slug": "it-tools",
+    "title": "IT Tools",
+    "aliases": [
+      "it tools",
+      "ittools"
+    ],
+    "hex": "18A058",
+    "categories": [
+      "DevTool",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/it-tools/default.svg"
+    },
+    "license": "GPL-3.0",
+    "url": "https://it-tools.tech",
+    "guidelines": "https://github.com/CorentinTh/it-tools/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "itau",
     "title": "Itaú",
     "aliases": [],
@@ -78190,6 +78939,25 @@
     "url": "https://commons.wikimedia.org/wiki/File:Jabber-bulb.svg",
     "guidelines": "https://www.jabber.org/faq.html#logo",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "jackett",
+    "title": "Jackett",
+    "aliases": [],
+    "hex": "111111",
+    "categories": [
+      "Media",
+      "DevTool",
+      "Automation"
+    ],
+    "variants": {
+      "default": "/icons/jackett/default.svg"
+    },
+    "license": "Trademark of Jackett contributors. Used for identification under nominative fair use.",
+    "url": "https://github.com/Jackett/Jackett",
+    "guidelines": "https://github.com/Jackett/Jackett/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -80991,6 +81759,27 @@
     "collection": "brands"
   },
   {
+    "slug": "kanboard",
+    "title": "Kanboard",
+    "aliases": [
+      "kan board"
+    ],
+    "hex": "D40000",
+    "categories": [
+      "Productivity",
+      "Management",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/kanboard/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://kanboard.org",
+    "guidelines": "https://github.com/kanboard/kanboard/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "kando",
     "title": "Kando",
     "aliases": [],
@@ -82063,6 +82852,25 @@
     "collection": "brands"
   },
   {
+    "slug": "kimai",
+    "title": "Kimai",
+    "aliases": [],
+    "hex": "0B8DD4",
+    "categories": [
+      "Productivity",
+      "Management",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/kimai/default.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://www.kimai.org",
+    "guidelines": "https://github.com/kimai/kimai/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "kimi",
     "title": "Kimi",
     "aliases": [],
@@ -82785,6 +83593,25 @@
     "collection": "brands"
   },
   {
+    "slug": "komga",
+    "title": "Komga",
+    "aliases": [],
+    "hex": "FFDF47",
+    "categories": [
+      "Media",
+      "Software",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/komga/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://komga.org",
+    "guidelines": "https://github.com/gotson/komga/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "komoot",
     "title": "Komoot",
     "aliases": [],
@@ -82892,6 +83719,27 @@
     "url": "",
     "dateAdded": "2026-09-12",
     "collection": "auth-badges"
+  },
+  {
+    "slug": "kopia",
+    "title": "Kopia",
+    "aliases": [],
+    "hex": "2D7BF0",
+    "categories": [
+      "Storage",
+      "DevOps",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/kopia/default.svg",
+      "mono": "/icons/kopia/mono.svg",
+      "dark": "/icons/kopia/dark.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://kopia.io",
+    "guidelines": "https://github.com/kopia/kopia/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
   },
   {
     "slug": "kops",
@@ -83587,6 +84435,32 @@
     "url": "",
     "dateAdded": "2026-09-12",
     "collection": "auth-badges"
+  },
+  {
+    "slug": "label-studio",
+    "title": "Label Studio",
+    "aliases": [
+      "heartex",
+      "humansignal",
+      "label studio",
+      "labelstudio"
+    ],
+    "hex": "FF7557",
+    "categories": [
+      "AI",
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/label-studio/default.svg",
+      "wordmark": "/icons/label-studio/wordmark.svg",
+      "wordmarkDark": "/icons/label-studio/wordmarkDark.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://labelstud.io",
+    "guidelines": "https://github.com/HumanSignal/label-studio/blob/develop/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
   },
   {
     "slug": "labex",
@@ -84987,6 +85861,28 @@
     "collection": "brands"
   },
   {
+    "slug": "librechat",
+    "title": "LibreChat",
+    "aliases": [
+      "libre chat",
+      "libre-chat"
+    ],
+    "hex": "0970EF",
+    "categories": [
+      "AI",
+      "Software",
+      "Communication"
+    ],
+    "variants": {
+      "default": "/icons/librechat/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://librechat.ai/",
+    "guidelines": "https://github.com/danny-avila/LibreChat/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "librenms-badge",
     "title": "LibreNMS",
     "aliases": [],
@@ -85137,6 +86033,28 @@
     "collection": "brands"
   },
   {
+    "slug": "librespeed",
+    "title": "LibreSpeed",
+    "aliases": [
+      "libre speed"
+    ],
+    "hex": "D63BC6",
+    "categories": [
+      "Monitoring",
+      "Networking",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/librespeed/default.svg",
+      "wordmarkDark": "/icons/librespeed/wordmarkDark.svg"
+    },
+    "license": "LGPL-3.0",
+    "url": "https://librespeed.org",
+    "guidelines": "https://github.com/librespeed/speedtest/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "libretranslate",
     "title": "LibreTranslate",
     "aliases": [],
@@ -85242,6 +86160,25 @@
     "url": "https://lichess.org/about",
     "dateAdded": "2026-09-12",
     "collection": "auth-badges"
+  },
+  {
+    "slug": "lidarr",
+    "title": "Lidarr",
+    "aliases": [],
+    "hex": "009252",
+    "categories": [
+      "Media",
+      "Automation",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/lidarr/default.svg"
+    },
+    "license": "GPL-3.0",
+    "url": "http://lidarr.audio/",
+    "guidelines": "https://github.com/Lidarr/Lidarr/blob/develop/LICENSE.md",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
   },
   {
     "slug": "lidl",
@@ -85600,6 +86537,28 @@
     "url": "",
     "dateAdded": "2026-09-12",
     "collection": "auth-badges"
+  },
+  {
+    "slug": "linkding",
+    "title": "Linkding",
+    "aliases": [
+      "link-ding",
+      "linkding-plus"
+    ],
+    "hex": "5856E0",
+    "categories": [
+      "Productivity",
+      "Software",
+      "Management"
+    ],
+    "variants": {
+      "default": "/icons/linkding/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://linkding.link/",
+    "guidelines": "https://github.com/sissbruecker/linkding/blob/master/LICENSE.txt",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
   },
   {
     "slug": "linkedin",
@@ -86069,6 +87028,29 @@
     "collection": "brands"
   },
   {
+    "slug": "litellm-proxy",
+    "title": "LiteLLM Proxy",
+    "aliases": [
+      "lite-llm",
+      "litellm",
+      "litellm proxy"
+    ],
+    "hex": "306599",
+    "categories": [
+      "AI",
+      "DevTool",
+      "DevOps"
+    ],
+    "variants": {
+      "default": "/icons/litellm-proxy/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://www.litellm.ai",
+    "guidelines": "https://github.com/BerriAI/litellm/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "literal",
     "title": "Literal",
     "aliases": [],
@@ -86196,6 +87178,32 @@
     "collection": "brands"
   },
   {
+    "slug": "llama-cpp-server",
+    "title": "llama.cpp Server",
+    "aliases": [
+      "ggml",
+      "llama cpp",
+      "llama-cpp",
+      "llama.cpp",
+      "llamacpp"
+    ],
+    "hex": "FF8236",
+    "categories": [
+      "AI",
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/llama-cpp-server/default.svg",
+      "wordmark": "/icons/llama-cpp-server/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/ggml-org/llama.cpp",
+    "guidelines": "https://github.com/ggml-org/llama.cpp/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "llamaindex",
     "title": "LlamaIndex",
     "aliases": [],
@@ -86302,6 +87310,29 @@
     "url": "",
     "dateAdded": "2026-09-12",
     "collection": "auth-badges"
+  },
+  {
+    "slug": "lobe-chat",
+    "title": "Lobe Chat",
+    "aliases": [
+      "lobe chat",
+      "lobechat",
+      "lobehub"
+    ],
+    "hex": "FFB02E",
+    "categories": [
+      "AI",
+      "Software",
+      "Communication"
+    ],
+    "variants": {
+      "default": "/icons/lobe-chat/default.svg"
+    },
+    "license": "Trademark of LobeHub LLC. Used for identification under nominative fair use.",
+    "url": "https://lobehub.com",
+    "guidelines": "https://github.com/lobehub/lobehub/blob/canary/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
   },
   {
     "slug": "lobehub",
@@ -86982,6 +88013,28 @@
     "dateAdded": "2026-05-05"
   },
   {
+    "slug": "lowcoder",
+    "title": "Lowcoder",
+    "aliases": [
+      "low-coder",
+      "lowcoder-org"
+    ],
+    "hex": "B480DE",
+    "categories": [
+      "DevTool",
+      "Software",
+      "Automation"
+    ],
+    "variants": {
+      "default": "/icons/lowcoder/default.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://www.lowcoder.cloud/",
+    "guidelines": "https://github.com/lowcoder-org/lowcoder/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "lowes",
     "title": "Lowe's",
     "aliases": [
@@ -87639,6 +88692,31 @@
     "collection": "brands"
   },
   {
+    "slug": "mage-ai",
+    "title": "Mage",
+    "aliases": [
+      "mage",
+      "mageai"
+    ],
+    "hex": "7D55EF",
+    "categories": [
+      "DevTool",
+      "Automation",
+      "Analytics"
+    ],
+    "variants": {
+      "default": "/icons/mage-ai/default.svg",
+      "mono": "/icons/mage-ai/mono.svg",
+      "wordmarkLight": "/icons/mage-ai/wordmarkLight.svg",
+      "wordmarkDark": "/icons/mage-ai/wordmarkDark.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://www.mage.ai",
+    "guidelines": "https://github.com/mage-ai/mage-ai/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "magento",
     "title": "Magento",
     "aliases": [],
@@ -87966,6 +89044,24 @@
     "url": "",
     "dateAdded": "2026-09-12",
     "collection": "auth-badges"
+  },
+  {
+    "slug": "mailpit",
+    "title": "Mailpit",
+    "aliases": [],
+    "hex": "00B786",
+    "categories": [
+      "DevTool",
+      "Communication"
+    ],
+    "variants": {
+      "default": "/icons/mailpit/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://mailpit.axllent.org",
+    "guidelines": "https://github.com/axllent/mailpit/blob/develop/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
   },
   {
     "slug": "mailtrap",
@@ -88515,6 +89611,25 @@
     "license": "CC0-1.0",
     "url": "https://mariadb.org",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "marimo",
+    "title": "marimo",
+    "aliases": [],
+    "hex": "1C7361",
+    "categories": [
+      "DevTool",
+      "AI",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/marimo/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://marimo.io",
+    "guidelines": "https://github.com/marimo-team/marimo/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -89958,6 +91073,28 @@
     "dateAdded": "2026-05-05"
   },
   {
+    "slug": "memos",
+    "title": "Memos",
+    "aliases": [
+      "usememos"
+    ],
+    "hex": "18181B",
+    "categories": [
+      "Productivity",
+      "Software",
+      "Management"
+    ],
+    "variants": {
+      "default": "/icons/memos/default.svg",
+      "dark": "/icons/memos/dark.svg"
+    },
+    "license": "Trademark of Memos. Used for identification under nominative fair use.",
+    "url": "https://usememos.com",
+    "guidelines": "https://usememos.com/brand",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "mendeley",
     "title": "Mendeley",
     "aliases": [],
@@ -90552,6 +91689,26 @@
     "url": "https://www.ratp.fr/se-deplacer/metro",
     "collection": "brands",
     "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "metube",
+    "title": "MeTube",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Media",
+      "Software",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/metube/default.svg",
+      "mono": "/icons/metube/mono.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://github.com/alexta69/metube",
+    "guidelines": "https://github.com/alexta69/metube/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
   },
   {
     "slug": "mewe",
@@ -92426,6 +93583,25 @@
     "license": "CC0-1.0",
     "url": "https://mini.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "miniflux",
+    "title": "Miniflux",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Productivity",
+      "Software",
+      "Media"
+    ],
+    "variants": {
+      "default": "/icons/miniflux/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://miniflux.app",
+    "guidelines": "https://github.com/miniflux/v2/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -97307,6 +98483,30 @@
     "collection": "brands"
   },
   {
+    "slug": "nocobase",
+    "title": "NocoBase",
+    "aliases": [
+      "noco base"
+    ],
+    "hex": "000000",
+    "categories": [
+      "DevTool",
+      "Software",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/nocobase/default.svg",
+      "dark": "/icons/nocobase/dark.svg",
+      "wordmark": "/icons/nocobase/wordmark.svg",
+      "wordmarkDark": "/icons/nocobase/wordmarkDark.svg"
+    },
+    "license": "Trademark of NocoBase Pte. Ltd.. Used for identification under nominative fair use.",
+    "url": "https://www.nocobase.com",
+    "guidelines": "https://github.com/nocobase/nocobase/blob/main/LICENSE.txt",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "nocodb",
     "title": "NocoDB",
     "aliases": [],
@@ -99622,6 +100822,24 @@
     "collection": "auth-badges"
   },
   {
+    "slug": "onedev",
+    "title": "OneDev",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "DevTool",
+      "DevOps"
+    ],
+    "variants": {
+      "default": "/icons/onedev/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://onedev.io",
+    "guidelines": "https://github.com/theonedev/onedev/blob/main/license.txt",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "onelogin",
     "title": "OneLogin",
     "aliases": [],
@@ -99723,6 +100941,28 @@
     "url": "https://brand.onestream.com/logo",
     "guidelines": "https://brand.onestream.com/logo",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "onetimesecret",
+    "title": "Onetime Secret",
+    "aliases": [
+      "onetime secret",
+      "onetime-secret",
+      "ots"
+    ],
+    "hex": "3B82F6",
+    "categories": [
+      "Security",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/onetimesecret/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://onetimesecret.com",
+    "guidelines": "https://github.com/onetimesecret/onetimesecret/blob/main/LICENSE.txt",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -101520,6 +102760,27 @@
     "collection": "brands"
   },
   {
+    "slug": "orangehrm",
+    "title": "OrangeHRM",
+    "aliases": [
+      "orange hrm",
+      "orange-hrm"
+    ],
+    "hex": "F58321",
+    "categories": [
+      "Management",
+      "Software",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/orangehrm/default.svg"
+    },
+    "license": "Trademark of OrangeHRM Inc. Used for identification under nominative fair use.",
+    "url": "https://www.orangehrm.com",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "oray-badge",
     "title": "Oray",
     "aliases": [],
@@ -101866,6 +103127,27 @@
     "aliases": []
   },
   {
+    "slug": "osticket",
+    "title": "osTicket",
+    "aliases": [
+      "os-ticket"
+    ],
+    "hex": "EE9136",
+    "categories": [
+      "Productivity",
+      "Software",
+      "Management"
+    ],
+    "variants": {
+      "default": "/icons/osticket/default.svg"
+    },
+    "license": "Trademark of Enhancesoft. Used for identification under nominative fair use.",
+    "url": "https://osticket.com",
+    "guidelines": "https://osticket.com",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "osu",
     "title": "osu!",
     "aliases": [],
@@ -102093,6 +103375,27 @@
     "license": "Apache-2.0",
     "url": "https://owasp.org/www-project-dependency-check/",
     "dateAdded": "2026-05-27",
+    "collection": "brands"
+  },
+  {
+    "slug": "owncast",
+    "title": "Owncast",
+    "aliases": [],
+    "hex": "7A5CF3",
+    "categories": [
+      "Media",
+      "Communication",
+      "Community"
+    ],
+    "variants": {
+      "default": "/icons/owncast/default.svg",
+      "light": "/icons/owncast/light.svg",
+      "dark": "/icons/owncast/dark.svg"
+    },
+    "license": "MIT",
+    "url": "https://owncast.online",
+    "guidelines": "https://github.com/owncast/owncast/blob/develop/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -102472,6 +103775,25 @@
     "license": "CC0-1.0",
     "url": "https://pagseguro.uol.com.br",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "pairdrop",
+    "title": "PairDrop",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Software",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/pairdrop/default.svg",
+      "mono": "/icons/pairdrop/mono.svg"
+    },
+    "license": "GPL-3.0",
+    "url": "https://pairdrop.net",
+    "guidelines": "https://github.com/schlagmichdoch/PairDrop/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -103266,6 +104588,25 @@
     "collection": "brands"
   },
   {
+    "slug": "paymenter",
+    "title": "Paymenter",
+    "aliases": [],
+    "hex": "4060FF",
+    "categories": [
+      "Finance",
+      "Hosting",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/paymenter/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://paymenter.org",
+    "guidelines": "https://github.com/Paymenter/Paymenter/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "payoneer",
     "title": "Payoneer",
     "aliases": [],
@@ -104052,7 +105393,7 @@
       "default": "/icons/pgadmin/default.svg"
     },
     "license": "PostgreSQL",
-    "url": "https://github.com/pgadmin-org/pgadmin4",
+    "url": "https://www.pgadmin.org",
     "guidelines": "https://github.com/pgadmin-org/pgadmin4/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
     "collection": "brands"
@@ -104322,6 +105663,30 @@
     "license": "CC0-1.0",
     "url": "https://github.com/photopea/photopea/blob/d5c532e8ad8ece246e2ea8646aac7df768407c64/logo.svg",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "photoprism",
+    "title": "PhotoPrism",
+    "aliases": [],
+    "hex": "D4B8FF",
+    "categories": [
+      "Media",
+      "Software",
+      "Storage"
+    ],
+    "variants": {
+      "default": "/icons/photoprism/default.svg",
+      "light": "/icons/photoprism/light.svg",
+      "dark": "/icons/photoprism/dark.svg",
+      "wordmark": "/icons/photoprism/wordmark.svg",
+      "wordmarkLight": "/icons/photoprism/wordmarkLight.svg",
+      "wordmarkDark": "/icons/photoprism/wordmarkDark.svg"
+    },
+    "license": "Trademark of PhotoPrism UG. Used for identification under nominative fair use.",
+    "url": "https://www.photoprism.app",
+    "guidelines": "https://www.photoprism.app/trademark",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -104900,6 +106265,28 @@
     "url": "https://www.pingdom.com/resources/brand-assets/",
     "guidelines": "https://www.pingdom.com/resources/brand-assets/",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "pingvin-share",
+    "title": "Pingvin Share",
+    "aliases": [
+      "pingvin share",
+      "pingvinshare"
+    ],
+    "hex": "46509E",
+    "categories": [
+      "Storage",
+      "Software",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/pingvin-share/default.svg"
+    },
+    "license": "BSD-2-Clause",
+    "url": "https://pingvin.dev",
+    "guidelines": "https://github.com/stonith404/pingvin-share/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -106251,6 +107638,30 @@
     "license": "CC0-1.0",
     "url": "https://blog.pocketcasts.com/press/",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "pocket-id",
+    "title": "Pocket ID",
+    "aliases": [
+      "pocket id",
+      "pocketid"
+    ],
+    "hex": "1A1A1A",
+    "categories": [
+      "Security",
+      "Software",
+      "Management"
+    ],
+    "variants": {
+      "default": "/icons/pocket-id/default.svg",
+      "light": "/icons/pocket-id/light.svg",
+      "dark": "/icons/pocket-id/dark.svg"
+    },
+    "license": "BSD-2-Clause",
+    "url": "https://pocket-id.org",
+    "guidelines": "https://github.com/pocket-id/pocket-id/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -107866,6 +109277,28 @@
     "collection": "auth-badges"
   },
   {
+    "slug": "privatebin",
+    "title": "PrivateBin",
+    "aliases": [
+      "private bin"
+    ],
+    "hex": "FFAB00",
+    "categories": [
+      "Security",
+      "Software",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/privatebin/default.svg",
+      "wordmark": "/icons/privatebin/wordmark.svg"
+    },
+    "license": "CC-BY-4.0",
+    "url": "https://privatebin.info",
+    "guidelines": "https://github.com/PrivateBin/PrivateBin/blob/master/LICENSE.md",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "pro-tools",
     "title": "Pro Tools",
     "aliases": [],
@@ -108488,6 +109921,25 @@
     "license": "CC0-1.0",
     "url": "https://github.com/angular/protractor/blob/4bc80d1a459542d883ea9200e4e1f48d265d0fda/logo.svg",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "prowlarr",
+    "title": "Prowlarr",
+    "aliases": [],
+    "hex": "852E1B",
+    "categories": [
+      "Media",
+      "Automation",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/prowlarr/default.svg"
+    },
+    "license": "GPL-3.0",
+    "url": "https://prowlarr.com",
+    "guidelines": "https://github.com/Prowlarr/Prowlarr/blob/develop/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -110773,6 +112225,29 @@
     "collection": "brands"
   },
   {
+    "slug": "rallly",
+    "title": "Rallly",
+    "aliases": [],
+    "hex": "4F46E5",
+    "categories": [
+      "Productivity",
+      "Software",
+      "Management"
+    ],
+    "variants": {
+      "default": "/icons/rallly/default.svg",
+      "mono": "/icons/rallly/mono.svg",
+      "wordmark": "/icons/rallly/wordmark.svg",
+      "wordmarkLight": "/icons/rallly/wordmarkLight.svg",
+      "wordmarkDark": "/icons/rallly/wordmarkDark.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://rallly.co",
+    "guidelines": "https://github.com/lukevella/rallly/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "ralph-lauren",
     "title": "Ralph Lauren",
     "aliases": [],
@@ -111453,6 +112928,25 @@
     "collection": "brands"
   },
   {
+    "slug": "readeck",
+    "title": "Readeck",
+    "aliases": [],
+    "hex": "187995",
+    "categories": [
+      "Productivity",
+      "Software",
+      "Media"
+    ],
+    "variants": {
+      "default": "/icons/readeck/default.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://readeck.org",
+    "guidelines": "https://codeberg.org/readeck/readeck/src/branch/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "readme",
     "title": "ReadMe",
     "aliases": [],
@@ -111861,6 +113355,28 @@
     "url": "https://redis.io/",
     "guidelines": "https://redis.io/brand-guidelines",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "redlib",
+    "title": "Redlib",
+    "aliases": [
+      "libreddit",
+      "redlib-org"
+    ],
+    "hex": "D54455",
+    "categories": [
+      "Software",
+      "Community",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/redlib/default.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://github.com/redlib-org/redlib",
+    "guidelines": "https://github.com/redlib-org/redlib/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -116421,6 +117937,28 @@
     "collection": "auth-badges"
   },
   {
+    "slug": "seaweedfs",
+    "title": "SeaweedFS",
+    "aliases": [
+      "seaweed fs",
+      "seaweed-fs"
+    ],
+    "hex": "0F6BD8",
+    "categories": [
+      "Storage",
+      "Database",
+      "DevOps"
+    ],
+    "variants": {
+      "default": "/icons/seaweedfs/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://seaweedfs.com",
+    "guidelines": "https://github.com/seaweedfs/seaweedfs/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "second-life-badge",
     "title": "Second Life",
     "aliases": [],
@@ -117491,6 +119029,42 @@
     "collection": "brands"
   },
   {
+    "slug": "shiori",
+    "title": "Shiori",
+    "aliases": [],
+    "hex": "F44336",
+    "categories": [
+      "Productivity",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/shiori/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/go-shiori/shiori",
+    "guidelines": "https://github.com/go-shiori/shiori/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
+    "slug": "shlink",
+    "title": "Shlink",
+    "aliases": [],
+    "hex": "4696E5",
+    "categories": [
+      "DevTool",
+      "Analytics"
+    ],
+    "variants": {
+      "default": "/icons/shlink/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://shlink.io",
+    "guidelines": "https://github.com/shlinkio/shlink-art/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "shopee",
     "title": "Shopee",
     "aliases": [],
@@ -117944,6 +119518,27 @@
     "license": "CC0-1.0",
     "url": "https://www.silverairways.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "silverbullet",
+    "title": "SilverBullet",
+    "aliases": [
+      "silver-bullet"
+    ],
+    "hex": "000000",
+    "categories": [
+      "Productivity",
+      "Software",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/silverbullet/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://silverbullet.md",
+    "guidelines": "https://github.com/silverbulletmd/silverbullet/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -120217,6 +121812,28 @@
     "collection": "brands"
   },
   {
+    "slug": "speaches",
+    "title": "Speaches",
+    "aliases": [
+      "faster-whisper-server",
+      "speaches-ai"
+    ],
+    "hex": "FC8D41",
+    "categories": [
+      "AI",
+      "Media",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/speaches/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://speaches.ai/",
+    "guidelines": "https://github.com/speaches-ai/speaches/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "speaker-deck",
     "title": "Speaker Deck",
     "aliases": [],
@@ -120285,6 +121902,28 @@
     "license": "CC0-1.0",
     "url": "https://www.speedtest.net",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "speedtest-tracker",
+    "title": "Speedtest Tracker",
+    "aliases": [
+      "speedtest tracker",
+      "speedtesttracker"
+    ],
+    "hex": "EE9889",
+    "categories": [
+      "Monitoring",
+      "Networking",
+      "Dashboard"
+    ],
+    "variants": {
+      "default": "/icons/speedtest-tracker/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://speedtest-tracker.dev/",
+    "guidelines": "https://github.com/alexjustesen/speedtest-tracker/blob/1.x/LICENSE.md",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -121672,6 +123311,27 @@
     "license": "CC0-1.0",
     "url": "https://www.statista.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "statusnook",
+    "title": "Statusnook",
+    "aliases": [
+      "status nook"
+    ],
+    "hex": "66CC5D",
+    "categories": [
+      "Monitoring",
+      "Software",
+      "DevOps"
+    ],
+    "variants": {
+      "default": "/icons/statusnook/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://statusnook.com",
+    "guidelines": "https://github.com/goksan/statusnook/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -123149,6 +124809,27 @@
     "aliases": []
   },
   {
+    "slug": "sure",
+    "title": "Sure",
+    "aliases": [
+      "sure finance",
+      "we-promise sure"
+    ],
+    "hex": "0F172A",
+    "categories": [
+      "Finance",
+      "Management"
+    ],
+    "variants": {
+      "default": "/icons/sure/default.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://sure.am",
+    "guidelines": "https://github.com/we-promise/sure/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "surfshark",
     "title": "Surfshark",
     "aliases": [],
@@ -124271,6 +125952,31 @@
     "collection": "brands"
   },
   {
+    "slug": "tandoor-recipes",
+    "title": "Tandoor Recipes",
+    "aliases": [
+      "tandoor",
+      "tandoor-recipe"
+    ],
+    "hex": "FF6F00",
+    "categories": [
+      "Productivity",
+      "Software",
+      "Management"
+    ],
+    "variants": {
+      "default": "/icons/tandoor-recipes/default.svg",
+      "mono": "/icons/tandoor-recipes/mono.svg",
+      "wordmark": "/icons/tandoor-recipes/wordmark.svg",
+      "wordmarkDark": "/icons/tandoor-recipes/wordmarkDark.svg"
+    },
+    "license": "Trademark of Tandoor Recipes. Used for identification under nominative fair use.",
+    "url": "https://docs.tandoor.dev",
+    "guidelines": "https://github.com/TandoorRecipes/recipes/blob/develop/LICENSE.md",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "tanstack",
     "title": "TanStack",
     "aliases": [],
@@ -124492,6 +126198,26 @@
     "collection": "brands"
   },
   {
+    "slug": "tautulli",
+    "title": "Tautulli",
+    "aliases": [],
+    "hex": "E5A00D",
+    "categories": [
+      "Monitoring",
+      "Media",
+      "Analytics"
+    ],
+    "variants": {
+      "default": "/icons/tautulli/default.svg",
+      "wordmarkDark": "/icons/tautulli/wordmarkDark.svg"
+    },
+    "license": "GPL-3.0",
+    "url": "https://tautulli.com",
+    "guidelines": "https://github.com/Tautulli/Tautulli/blob/nightly/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "tavily",
     "title": "Tavily",
     "aliases": [],
@@ -124561,6 +126287,25 @@
     "collection": "auth-badges"
   },
   {
+    "slug": "tdarr",
+    "title": "Tdarr",
+    "aliases": [],
+    "hex": "143F82",
+    "categories": [
+      "Media",
+      "Automation",
+      "DevOps"
+    ],
+    "variants": {
+      "default": "/icons/tdarr/default.svg"
+    },
+    "license": "Trademark of Tdarr. Used for identification under nominative fair use.",
+    "url": "https://github.com/HaveAGitGat/Tdarr",
+    "guidelines": "https://github.com/HaveAGitGat/Tdarr/blob/master/LICENSE.md",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "te-logo-whiteorange",
     "title": "TE Logo WhiteOrange",
     "aliases": [
@@ -124579,6 +126324,27 @@
     "license": "Trademark of Cisco Systems, Inc. Used for identification under nominative fair use.",
     "url": "https://www.thousandeyes.com/",
     "dateAdded": "2026-07-17",
+    "collection": "brands"
+  },
+  {
+    "slug": "teable",
+    "title": "Teable",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Productivity",
+      "Database",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/teable/default.svg",
+      "light": "/icons/teable/light.svg",
+      "dark": "/icons/teable/dark.svg"
+    },
+    "license": "Trademark of Teable, Inc.. Used for identification under nominative fair use.",
+    "url": "https://teable.ai",
+    "guidelines": "https://github.com/teableio/teable/blob/develop/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -125218,6 +126984,24 @@
     "url": "https://termius.com/brand-resources",
     "dateAdded": "2026-09-12",
     "collection": "auth-badges"
+  },
+  {
+    "slug": "termix",
+    "title": "Termix",
+    "aliases": [],
+    "hex": "141513",
+    "categories": [
+      "DevTool",
+      "Networking"
+    ],
+    "variants": {
+      "default": "/icons/termix/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://termix.site/",
+    "guidelines": "https://github.com/Termix-SSH/Termix/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
   },
   {
     "slug": "termux",
@@ -128047,6 +129831,26 @@
     "collection": "brands"
   },
   {
+    "slug": "trailbase",
+    "title": "TrailBase",
+    "aliases": [
+      "trail base"
+    ],
+    "hex": "F4B400",
+    "categories": [
+      "DevTool",
+      "Database"
+    ],
+    "variants": {
+      "default": "/icons/trailbase/default.svg"
+    },
+    "license": "OSL-3.0",
+    "url": "https://trailbase.io",
+    "guidelines": "https://github.com/trailbaseio/trailbase/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "trailforks",
     "title": "Trailforks",
     "aliases": [],
@@ -130616,6 +132420,28 @@
     "collection": "brands"
   },
   {
+    "slug": "unleash",
+    "title": "Unleash (Postgres)",
+    "aliases": [
+      "unleash postgres",
+      "unleash-postgres"
+    ],
+    "hex": "1A4049",
+    "categories": [
+      "DevTool",
+      "DevOps"
+    ],
+    "variants": {
+      "default": "/icons/unleash/default.svg",
+      "wordmark": "/icons/unleash/wordmark.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://www.getunleash.io",
+    "guidelines": "https://github.com/Unleash/unleash/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "unlicense",
     "title": "Unlicense",
     "aliases": [],
@@ -132258,6 +134084,27 @@
     "url": "",
     "dateAdded": "2026-09-12",
     "collection": "auth-badges"
+  },
+  {
+    "slug": "vert",
+    "title": "VERT",
+    "aliases": [
+      "vert-sh"
+    ],
+    "hex": "000000",
+    "categories": [
+      "Productivity",
+      "Software",
+      "Media"
+    ],
+    "variants": {
+      "default": "/icons/vert/default.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://vert.sh",
+    "guidelines": "https://github.com/VERT-sh/VERT/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
   },
   {
     "slug": "vertexai-google",
@@ -134225,6 +136072,25 @@
     "collection": "brands"
   },
   {
+    "slug": "wakapi",
+    "title": "Wakapi",
+    "aliases": [],
+    "hex": "2F855A",
+    "categories": [
+      "DevTool",
+      "Analytics",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/wakapi/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://wakapi.dev",
+    "guidelines": "https://github.com/muety/wakapi/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "wakatime",
     "title": "WakaTime",
     "aliases": [],
@@ -134350,6 +136216,25 @@
     "url": "https://walletconnect.com/brand",
     "guidelines": "https://walletconnect.com/brand",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "wallos",
+    "title": "Wallos",
+    "aliases": [],
+    "hex": "2858C5",
+    "categories": [
+      "Finance",
+      "Management",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/wallos/default.svg"
+    },
+    "license": "Trademark of Wallos (ellite). Used for identification under nominative fair use.",
+    "url": "https://wallosapp.com",
+    "guidelines": "https://github.com/ellite/Wallos/blob/main/LICENSE.md",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -134801,6 +136686,29 @@
     "license": "CC0-1.0",
     "url": "https://fontawesome.com/icons/web-awesome",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "web-check",
+    "title": "Web Check",
+    "aliases": [
+      "web check",
+      "webcheck"
+    ],
+    "hex": "D6FB41",
+    "categories": [
+      "Security",
+      "DevTool",
+      "Analytics"
+    ],
+    "variants": {
+      "default": "/icons/web-check/default.svg",
+      "dark": "/icons/web-check/dark.svg"
+    },
+    "license": "MIT",
+    "url": "https://web-check.xyz",
+    "guidelines": "https://github.com/Lissy93/web-check/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -135334,6 +137242,24 @@
     "collection": "brands"
   },
   {
+    "slug": "wekan",
+    "title": "Wekan",
+    "aliases": [],
+    "hex": "007C8F",
+    "categories": [
+      "Productivity",
+      "Management"
+    ],
+    "variants": {
+      "default": "/icons/wekan/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://wekan.fi",
+    "guidelines": "https://github.com/wekan/wekan/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "welcome-to-the-jungle",
     "title": "Welcome to the Jungle",
     "aliases": [
@@ -135782,6 +137708,29 @@
     "collection": "brands"
   },
   {
+    "slug": "whoogle-search",
+    "title": "Whoogle Search",
+    "aliases": [
+      "whoogle",
+      "whoogle search"
+    ],
+    "hex": "000000",
+    "categories": [
+      "Security",
+      "Software",
+      "Networking"
+    ],
+    "variants": {
+      "default": "/icons/whoogle-search/default.svg",
+      "wordmark": "/icons/whoogle-search/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/benbusby/whoogle-search",
+    "guidelines": "https://github.com/benbusby/whoogle-search/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "whoop",
     "title": "Whoop",
     "aliases": [],
@@ -136115,6 +138064,28 @@
     "license": "MIT",
     "url": "https://windicss.org/",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "windmill",
+    "title": "Windmill",
+    "aliases": [
+      "windmill-dev",
+      "windmill.dev"
+    ],
+    "hex": "3B82F6",
+    "categories": [
+      "Automation",
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/windmill/default.svg"
+    },
+    "license": "Trademark of Windmill Labs, Inc. Used for identification under nominative fair use.",
+    "url": "https://windmill.dev",
+    "guidelines": "https://github.com/windmill-labs/windmill/blob/main/frontend/brand-guidelines.md",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -139609,6 +141580,27 @@
     "license": "CC0-1.0",
     "url": "https://www.zingat.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "zipline",
+    "title": "Zipline",
+    "aliases": [
+      "zipline-cdn"
+    ],
+    "hex": "A78BFA",
+    "categories": [
+      "Storage",
+      "Software",
+      "Media"
+    ],
+    "variants": {
+      "default": "/icons/zipline/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://zipline.diced.sh",
+    "guidelines": "https://github.com/diced/zipline/blob/trunk/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
