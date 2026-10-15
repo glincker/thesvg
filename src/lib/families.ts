@@ -1,5 +1,6 @@
 import { getAllIcons, getIconBySlug } from "@/lib/icons";
 import type { IconEntry } from "@/lib/icons";
+import { currentOnly, preferCurrentSlug } from "@/lib/family-current";
 
 /**
  * Brand families group icons by owner (Amazon, Google, ...). A family is a
@@ -39,7 +40,7 @@ function getIndex(): Map<string, IconEntry[]> {
 
 /** Child icons of a family (the parent itself is not included). */
 export function getFamilyChildren(parentSlug: string): IconEntry[] {
-  return getIndex().get(parentSlug) ?? [];
+  return currentOnly(getIndex().get(parentSlug) ?? []);
 }
 
 /** Parent icon first, then members alphabetically. */
@@ -55,9 +56,10 @@ export function getFamilySlugs(): string[] {
 
 export function getFamilySummaries(): FamilySummary[] {
   const out: FamilySummary[] = [];
-  for (const [slug, children] of getIndex()) {
+  for (const [slug, all] of getIndex()) {
     const parent = getIconBySlug(slug);
     if (!parent) continue;
+    const children = currentOnly(all);
     if (children.length + 1 < FAMILY_MIN_MEMBERS) continue;
     out.push({
       slug,
@@ -112,6 +114,13 @@ export interface FamilySectionRule {
  * lands in a final catch-all, so a new icon never disappears.
  */
 export const FAMILY_SECTION_RULES: Record<string, FamilySectionRule[]> = {
+  microsoft: [
+    { title: "Dynamics 365", match: /dynamics/ },
+    { title: "Fabric and data", match: /fabric|power-bi|sql|synapse|purview/ },
+    { title: "Azure and cloud", match: /azure|entra|defender|intune|cloud/ },
+    { title: "Microsoft 365", match: /365|office|excel|word|powerpoint|outlook|teams|onedrive|sharepoint|onenote|access|clipchamp|designer|editor|loop|planner|forms|visio|project/ },
+    { title: "Developers", match: /github|visual-studio|vscode|dotnet|typescript|powershell|nuget|playwright|copilot/ },
+  ],
   google: [
     {
       title: "Workspace",
@@ -142,3 +151,89 @@ export const FAMILY_SECTION_RULES: Record<string, FamilySectionRule[]> = {
 
 /** Families at least this large use curated groups when rules exist. */
 export const FAMILY_GROUPING_MIN = 30;
+
+/**
+ * Flagship products shown as large tiles at the top of a family page.
+ * Slugs that do not exist are skipped, so the list can name products
+ * before their icons land.
+ */
+export const FAMILY_FEATURED: Record<string, string[]> = {
+  microsoft: ["github", "microsoft-azure", "linkedin", "microsoft-copilot"],
+  meta: ["instagram", "whatsapp", "facebook", "threads"],
+  apple: ["ios", "macos", "apple-music", "icloud"],
+  adobe: ["photoshop", "illustrator", "adobe-creative-cloud", "acrobat-reader"],
+  salesforce: ["slack", "tableau", "mulesoft", "heroku"],
+  amazon: ["amazon-prime", "amazon-music", "amazon-kindle", "aws"],
+  google: ["gmail", "google-drive", "youtube", "google-maps", "gemini", "chrome"],
+};
+
+export interface FamilyTheme {
+  /** Short editorial line under the family name. */
+  tagline: string;
+  /** Two brand colors that tint the page. */
+  accents: [string, string];
+}
+
+/**
+ * Per-family identity. The page tints itself from `accents`, and the
+ * tagline is the headline. Families without an entry fall back to the
+ * parent icon's own hex and a generic line.
+ */
+export const FAMILY_THEME: Record<string, FamilyTheme> = {
+  amazon: { tagline: "From the cart to the cloud", accents: ["#FF9900", "#146EB4"] },
+  google: { tagline: "Every Google product, one set", accents: ["#4285F4", "#EA4335"] },
+  microsoft: { tagline: "Windows to Azure to GitHub", accents: ["#0078D4", "#F25022"] },
+  meta: { tagline: "Feeds, chats and headsets", accents: ["#0866FF", "#E1306C"] },
+  apple: { tagline: "Hardware, software and services", accents: ["#0A84FF", "#A2AAAD"] },
+  adobe: { tagline: "The creative suite, end to end", accents: ["#FA0F00", "#FF61F6"] },
+  salesforce: { tagline: "Customer 360 and its acquisitions", accents: ["#00A1E0", "#032D60"] },
+};
+
+/** Icon shown in the "architecture icons" button for a family. */
+export const FAMILY_COLLECTION_ICON: Record<string, string> = {
+  amazon: "aws-amazon-ec2",
+  google: "google-cloud",
+  microsoft: "microsoft-azure",
+};
+
+export interface OtherFamily {
+  slug: string;
+  title: string;
+  count: number;
+  logos: string[];
+  accents: [string, string];
+}
+
+/** Other families for the "More families" row, largest first. */
+export function getOtherFamilies(currentSlug: string, limit = 6): OtherFamily[] {
+  return getFamilySummaries()
+    .filter((f) => f.slug !== currentSlug)
+    .slice(0, limit)
+    .map((f) => {
+      const members = getFamilyMembers(f.slug);
+      const featured = getFamilyFeatured(f.slug);
+      const logos = [...featured, ...members.filter((m) => !featured.includes(m))]
+        .slice(0, 4)
+        .map((m) => m.variants.default);
+      return {
+        slug: f.slug,
+        title: f.title,
+        count: f.count,
+        logos,
+        accents: FAMILY_THEME[f.slug]?.accents ?? ["#f97316", "#a1a1aa"],
+      };
+    });
+}
+
+/** Flagship icons for a family, upgraded to refreshed marks where they exist. */
+export function getFamilyFeatured(parentSlug: string): IconEntry[] {
+  const members = getFamilyMembers(parentSlug);
+  const has = (s: string) => members.some((m) => m.slug === s);
+  const out: IconEntry[] = [];
+  for (const slug of FAMILY_FEATURED[parentSlug] ?? []) {
+    const current = preferCurrentSlug(slug, has);
+    const icon = members.find((m) => m.slug === current);
+    if (icon && !out.includes(icon)) out.push(icon);
+  }
+  return out;
+}

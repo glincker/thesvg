@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import {
   ChevronRight,
   Clock,
@@ -25,6 +25,13 @@ import { SidebarCollapseToggle } from "@/components/layout/sidebar-collapse-togg
 import { cn } from "@/lib/utils";
 
 const CATEGORY_SEARCH_DEBOUNCE_MS = 400;
+
+/** The "NEW" badge on the Families section shows for a month after launch. */
+const FAMILIES_NEW_UNTIL = Date.UTC(2026, 10, 15);
+
+function subscribeNever(): () => void {
+  return () => {};
+}
 
 interface SidebarProps {
   categories: { name: string; count: number }[];
@@ -71,9 +78,23 @@ export function Sidebar({
 }: SidebarProps) {
   const pathname = usePathname();
   const isRail = !mobile && collapsed;
-  const [collectionsExpanded, setCollectionsExpanded] = useState(false);
-  const [featuredExpanded, setFeaturedExpanded] = useState(false);
-  const [familiesExpanded, setFamiliesExpanded] = useState(false);
+  // Shortcut sections (Collections, Families, Featured) behave as an
+  // accordion: one open at a time, so the Categories list below always keeps
+  // most of the height. Families starts open while it is new.
+  type ShortcutSection = "collections" | "families" | "featured";
+  const [openSection, setOpenSection] = useState<ShortcutSection | null>("families");
+  const toggleSection = (id: ShortcutSection) =>
+    setOpenSection((prev) => (prev === id ? null : id));
+  const collectionsExpanded = openSection === "collections";
+  const familiesExpanded = openSection === "families";
+  const featuredExpanded = openSection === "featured";
+  // Hydration-safe: false on the server and the first client render, then
+  // the real date check.
+  const familiesNew = useSyncExternalStore(
+    subscribeNever,
+    () => Date.now() < FAMILIES_NEW_UNTIL,
+    () => false,
+  );
 
   const [categorySearch, setCategorySearch] = useState(initialCategorySearch ?? "");
   const debounceRef = useRef<ReturnType<typeof setTimeout>>(null);
@@ -147,15 +168,16 @@ export function Sidebar({
             the Vercel/Linear/Notion rail pattern of showing only top-level
             destinations until the sidebar is expanded again. */}
         {!isRail && (
-          <ScrollArea className="min-h-0 flex-1 overflow-hidden">
-            <div className="flex flex-col px-3 pb-3">
+          <div className="flex min-h-0 flex-1 flex-col">
+            {/* Shortcuts: capped so Categories keeps at least 55% of the height. */}
+            <div className="max-h-[45%] shrink-0 overflow-y-auto overscroll-contain px-3">
               {/* Collections - collapsible */}
               {collections.length > 1 && (
                 <div>
                   <div className="h-px bg-gradient-to-r from-transparent via-border/60 to-transparent dark:via-white/[0.06]" />
                   <button
                     type="button"
-                    onClick={() => setCollectionsExpanded((prev) => !prev)}
+                    onClick={() => toggleSection("collections")}
                     aria-expanded={collectionsExpanded}
                     aria-controls="collections-menu"
                     className="flex w-full items-center justify-between rounded-lg px-1 pt-3 pb-1.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/70 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
@@ -210,12 +232,19 @@ export function Sidebar({
                   <div className="mt-2 h-px bg-gradient-to-r from-transparent via-border/60 to-transparent dark:via-white/[0.06]" />
                   <button
                     type="button"
-                    onClick={() => setFamiliesExpanded((prev) => !prev)}
+                    onClick={() => toggleSection("families")}
                     aria-expanded={familiesExpanded}
                     aria-controls="families-menu"
                     className="flex w-full items-center justify-between rounded-lg px-1 pt-3 pb-1.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/70 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                   >
-                    Families
+                    <span className="flex items-center gap-2">
+                      Families
+                      {familiesNew && (
+                        <span className="rounded-full bg-gradient-to-r from-fuchsia-500/90 via-orange-500/90 to-amber-400/90 px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase leading-none tracking-wider text-white shadow-sm shadow-black/20">
+                          NEW
+                        </span>
+                      )}
+                    </span>
                     <ChevronRight
                       className={cn(
                         "h-3 w-3 shrink-0 transition-transform duration-200",
@@ -230,33 +259,31 @@ export function Sidebar({
                       familiesExpanded ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0"
                     )}
                   >
-                    {familiesData.map((family) => {
-                      const href = `/family/${family.slug}`;
-                      return (
-                        <Link
-                          key={family.slug}
-                          href={href}
-                          className={cn(
-                            "group flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-                            pathname === href && "bg-gradient-to-r from-accent/80 to-accent/40 text-accent-foreground font-medium shadow-sm shadow-black/[0.03] dark:from-white/[0.08] dark:to-white/[0.04] dark:shadow-black/20",
-                          )}
-                        >
-                          <span className="flex items-center gap-2 truncate">
+                    <div className="grid grid-cols-4 gap-1.5 px-1 pb-2">
+                      {familiesData.map((family) => {
+                        const href = `/family/${family.slug}`;
+                        return (
+                          <Link
+                            key={family.slug}
+                            href={href}
+                            title={`${family.title} (${family.count})`}
+                            aria-label={`${family.title}, ${family.count} logos`}
+                            className={cn(
+                              "flex aspect-square items-center justify-center rounded-xl border border-border/50 bg-card/60 p-2 transition-all hover:border-border hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                              pathname === href && "border-foreground/30 bg-accent shadow-sm",
+                            )}
+                          >
                             <img
                               src={family.logo}
                               alt=""
-                              width={16}
-                              height={16}
-                              className="h-4 w-4 shrink-0 object-contain"
+                              width={20}
+                              height={20}
+                              className="h-5 w-5 object-contain"
                             />
-                            <span className="truncate">{family.title}</span>
-                          </span>
-                          <span className="ml-2 shrink-0 font-mono text-[10px] text-muted-foreground/70">
-                            {family.count}
-                          </span>
-                        </Link>
-                      );
-                    })}
+                          </Link>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
               )}
@@ -266,7 +293,7 @@ export function Sidebar({
                 <div className="mt-2 h-px bg-gradient-to-r from-transparent via-border/60 to-transparent dark:via-white/[0.06]" />
                 <button
                   type="button"
-                  onClick={() => setFeaturedExpanded((prev) => !prev)}
+                  onClick={() => toggleSection("featured")}
                   aria-expanded={featuredExpanded}
                   aria-controls="featured-menu"
                   className="flex w-full items-center justify-between rounded-lg px-1 pt-3 pb-1.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/70 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
@@ -326,7 +353,11 @@ export function Sidebar({
                 </div>
               </div>
 
-              {/* Categories */}
+            </div>
+
+            {/* Categories: takes the remaining height and scrolls on its own. */}
+            <ScrollArea className="min-h-0 flex-1 overflow-hidden">
+              <div className="flex flex-col px-3 pb-3">
               <div className="mt-2 h-px bg-gradient-to-r from-transparent via-border/60 to-transparent dark:via-white/[0.06]" />
               <div className="flex items-baseline justify-between px-1 pt-3 pb-1.5">
                 <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/70">
@@ -344,6 +375,7 @@ export function Sidebar({
                   type="text"
                   value={categorySearch}
                   onChange={(e) => setCategorySearch(e.target.value)}
+                  onFocus={() => setOpenSection(null)}
                   placeholder="Search categories"
                   aria-label="Search categories"
                   className="w-full rounded-lg border border-border/50 bg-muted/30 py-1.5 pr-7 pl-8 text-xs text-foreground placeholder:text-muted-foreground/50 outline-none transition-shadow duration-200 focus:border-foreground/30 focus:bg-background focus:shadow-[0_0_0_3px_rgba(0,0,0,0.05)] dark:border-white/[0.06] dark:bg-white/[0.02] dark:focus:border-white/20 dark:focus:shadow-[0_0_0_3px_rgba(255,255,255,0.06)]"
@@ -433,7 +465,8 @@ export function Sidebar({
                 )}
               </div>
             </div>
-          </ScrollArea>
+            </ScrollArea>
+          </div>
         )}
       </aside>
     </TooltipProvider>

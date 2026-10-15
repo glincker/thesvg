@@ -8,11 +8,14 @@
  */
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { currentOnly } from "../lib/family-current";
 
 interface Entry {
   slug: string;
   title: string;
   family?: string;
+  supersedes?: string;
+  supersededBy?: string;
   variants: Record<string, string | undefined>;
 }
 
@@ -22,10 +25,17 @@ const icons: Entry[] = JSON.parse(
   readFileSync(resolve(root, "src/data/icons.json"), "utf-8"),
 );
 const bySlug = new Map(icons.map((i) => [i.slug, i]));
-const counts = new Map<string, number>();
+const byFamily = new Map<string, Entry[]>();
 for (const icon of icons) {
-  if (icon.family) counts.set(icon.family, (counts.get(icon.family) ?? 0) + 1);
+  if (!icon.family) continue;
+  const list = byFamily.get(icon.family) ?? [];
+  list.push(icon);
+  byFamily.set(icon.family, list);
 }
+// Same rule as the app: a refreshed mark replaces the older one.
+const counts = new Map<string, number>(
+  [...byFamily].map(([slug, list]) => [slug, currentOnly(list).length]),
+);
 
 const families = [...counts]
   .map(([slug, n]) => ({ slug, count: n + 1, parent: bySlug.get(slug) }))

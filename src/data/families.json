@@ -2,13 +2,43 @@
   {
     "slug": "google",
     "title": "Google",
-    "count": 114,
+    "count": 102,
     "logo": "/icons/google/default.svg"
+  },
+  {
+    "slug": "microsoft",
+    "title": "Microsoft",
+    "count": 75,
+    "logo": "/icons/microsoft/default.svg"
+  },
+  {
+    "slug": "adobe",
+    "title": "Adobe",
+    "count": 32,
+    "logo": "/icons/adobe/default.svg"
   },
   {
     "slug": "amazon",
     "title": "Amazon",
     "count": 18,
     "logo": "/icons/amazon/default.svg"
+  },
+  {
+    "slug": "apple",
+    "title": "Apple",
+    "count": 16,
+    "logo": "/icons/apple/default.svg"
+  },
+  {
+    "slug": "meta",
+    "title": "Meta",
+    "count": 8,
+    "logo": "/icons/meta/default.svg"
+  },
+  {
+    "slug": "salesforce",
+    "title": "Salesforce",
+    "count": 5,
+    "logo": "/icons/salesforce/default.svg"
   }
 ]
