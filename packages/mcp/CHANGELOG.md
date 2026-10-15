@@ -1,5 +1,11 @@
 # @thesvg/mcp-server
 
+## 0.8.5
+
+### Patch Changes
+
+- docs: dark and light hero image in package READMEs ([#1324](https://github.com/glincker/thesvg/issues/1324))
+
 ## 0.8.4
 
 ### Patch Changes

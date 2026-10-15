@@ -1,5 +1,11 @@
 # @thesvg/react
 
+## 3.3.15
+
+### Patch Changes
+
+- docs: dark and light hero image in package READMEs ([#1324](https://github.com/glincker/thesvg/issues/1324))
+
 ## 3.3.14
 
 ### Patch Changes

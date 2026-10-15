@@ -1,5 +1,11 @@
 # @thesvg/cli
 
+## 0.7.6
+
+### Patch Changes
+
+- docs: dark and light hero image in package READMEs ([#1324](https://github.com/glincker/thesvg/issues/1324))
+
 ## 0.7.5
 
 ### Patch Changes
