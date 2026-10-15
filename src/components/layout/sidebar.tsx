@@ -29,6 +29,41 @@ const CATEGORY_SEARCH_DEBOUNCE_MS = 400;
 /** The "NEW" badge on the Families section shows for a month after launch. */
 const FAMILIES_NEW_UNTIL = Date.UTC(2026, 10, 15);
 
+interface SidebarFamily {
+  slug: string;
+  title: string;
+  count: number;
+  logo: string;
+  logoDark: string | null;
+  tone: "dark" | "light" | "neutral";
+}
+
+/** Parent logo that stays visible in both themes. */
+function FamilyLogo({ family }: { family: SidebarFamily }) {
+  const base = "h-4 w-4 shrink-0 object-contain";
+  if (family.logoDark) {
+    return (
+      <>
+        <img src={family.logo} alt="" width={16} height={16} className={cn(base, "dark:hidden")} />
+        <img src={family.logoDark} alt="" width={16} height={16} className={cn(base, "hidden dark:block")} />
+      </>
+    );
+  }
+  return (
+    <img
+      src={family.logo}
+      alt=""
+      width={16}
+      height={16}
+      className={cn(
+        base,
+        family.tone === "dark" && "dark:brightness-0 dark:invert",
+        family.tone === "light" && "brightness-0 dark:brightness-100 dark:invert-0",
+      )}
+    />
+  );
+}
+
 function subscribeNever(): () => void {
   return () => {};
 }
@@ -259,27 +294,25 @@ export function Sidebar({
                       familiesExpanded ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0"
                     )}
                   >
-                    <div className="grid grid-cols-4 gap-1.5 px-1 pb-2">
-                      {familiesData.map((family) => {
+                    <div className="max-h-52 overflow-y-auto overscroll-contain pb-1">
+                      {(familiesData as SidebarFamily[]).map((family) => {
                         const href = `/family/${family.slug}`;
                         return (
                           <Link
                             key={family.slug}
                             href={href}
-                            title={`${family.title} (${family.count})`}
-                            aria-label={`${family.title}, ${family.count} logos`}
                             className={cn(
-                              "flex aspect-square items-center justify-center rounded-xl border border-border/50 bg-card/60 p-2 transition-all hover:border-border hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-                              pathname === href && "border-foreground/30 bg-accent shadow-sm",
+                              "group flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                              pathname === href && "bg-gradient-to-r from-accent/80 to-accent/40 text-accent-foreground font-medium shadow-sm shadow-black/[0.03] dark:from-white/[0.08] dark:to-white/[0.04] dark:shadow-black/20",
                             )}
                           >
-                            <img
-                              src={family.logo}
-                              alt=""
-                              width={20}
-                              height={20}
-                              className="h-5 w-5 object-contain"
-                            />
+                            <span className="flex items-center gap-2 truncate">
+                              <FamilyLogo family={family} />
+                              <span className="truncate">{family.title}</span>
+                            </span>
+                            <span className="ml-2 shrink-0 font-mono text-[10px] text-muted-foreground/70">
+                              {family.count}
+                            </span>
                           </Link>
                         );
                       })}

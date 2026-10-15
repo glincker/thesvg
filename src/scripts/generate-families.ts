@@ -9,10 +9,12 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { currentOnly } from "../lib/family-current";
+import { iconTone } from "../lib/icon-tone";
 
 interface Entry {
   slug: string;
   title: string;
+  hex?: string;
   family?: string;
   supersedes?: string;
   supersededBy?: string;
@@ -21,6 +23,9 @@ interface Entry {
 
 const MIN_MEMBERS = 4;
 const root = resolve(process.cwd());
+const toneMap = JSON.parse(
+  readFileSync(resolve(root, "src/data/icon-tones.json"), "utf-8"),
+) as Record<string, "dark" | "light">;
 const icons: Entry[] = JSON.parse(
   readFileSync(resolve(root, "src/data/icons.json"), "utf-8"),
 );
@@ -44,7 +49,17 @@ const families = [...counts]
     slug: f.slug,
     title: f.parent!.title,
     count: f.count,
-    logo: f.parent!.variants.default ?? "",
+    // Light-theme source; the dark source is only set when it differs, the
+    // same light/dark rule the icon grid uses.
+    logo: f.parent!.variants.light ?? f.parent!.variants.default ?? "",
+    // Used by the sidebar to keep near-black or near-white logos visible
+    // in the other theme without importing the full registry.
+    logoDark:
+      f.parent!.variants.dark &&
+      f.parent!.variants.dark !== (f.parent!.variants.light ?? f.parent!.variants.default)
+        ? f.parent!.variants.dark
+        : null,
+    tone: toneMap[f.slug] ?? iconTone(f.parent!.hex),
   }))
   .sort((a, b) => b.count - a.count || a.title.localeCompare(b.title));
 

@@ -3,42 +3,56 @@
     "slug": "google",
     "title": "Google",
     "count": 102,
-    "logo": "/icons/google/default.svg"
+    "logo": "/icons/google/default.svg",
+    "logoDark": null,
+    "tone": "neutral"
   },
   {
     "slug": "microsoft",
     "title": "Microsoft",
     "count": 75,
-    "logo": "/icons/microsoft/default.svg"
+    "logo": "/icons/microsoft/default.svg",
+    "logoDark": null,
+    "tone": "neutral"
   },
   {
     "slug": "adobe",
     "title": "Adobe",
     "count": 32,
-    "logo": "/icons/adobe/default.svg"
+    "logo": "/icons/adobe/default.svg",
+    "logoDark": null,
+    "tone": "neutral"
   },
   {
     "slug": "amazon",
     "title": "Amazon",
     "count": 18,
-    "logo": "/icons/amazon/default.svg"
+    "logo": "/icons/amazon/default.svg",
+    "logoDark": null,
+    "tone": "neutral"
   },
   {
     "slug": "apple",
     "title": "Apple",
     "count": 16,
-    "logo": "/icons/apple/default.svg"
+    "logo": "/icons/apple/light.svg",
+    "logoDark": "/icons/apple/dark.svg",
+    "tone": "light"
   },
   {
     "slug": "meta",
     "title": "Meta",
     "count": 8,
-    "logo": "/icons/meta/default.svg"
+    "logo": "/icons/meta/default.svg",
+    "logoDark": null,
+    "tone": "neutral"
   },
   {
     "slug": "salesforce",
     "title": "Salesforce",
     "count": 5,
-    "logo": "/icons/salesforce/default.svg"
+    "logo": "/icons/salesforce/default.svg",
+    "logoDark": null,
+    "tone": "dark"
   }
 ]
