@@ -120,7 +120,7 @@ function Hero({ parent, tagline, accents, showcase, total, categoryCount, varian
     >
       <div
         aria-hidden
-        className="animate-glow-drift pointer-events-none absolute inset-0 bg-[radial-gradient(60%_90%_at_0%_0%,color-mix(in_oklch,var(--fam-a)_22%,transparent),transparent_70%),radial-gradient(55%_85%_at_100%_100%,color-mix(in_oklch,var(--fam-b)_20%,transparent),transparent_70%)]"
+        className="animate-glow-drift pointer-events-none absolute -inset-[20%] bg-[radial-gradient(50%_70%_at_14%_14%,color-mix(in_oklch,var(--fam-a)_22%,transparent),transparent_70%),radial-gradient(45%_65%_at_86%_86%,color-mix(in_oklch,var(--fam-b)_20%,transparent),transparent_70%)]"
       />
       <div className="relative grid gap-8 p-6 sm:p-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
         <div className="min-w-0">
