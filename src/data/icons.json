@@ -282,7 +282,12 @@
     "url": "https://docs.2fauth.app",
     "guidelines": "https://github.com/Bubka/2FAuth/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/Bubka/2FAuth",
+      "docs": "https://docs.2fauth.app",
+      "x": "https://x.com/TwoFAuth"
+    }
   },
   {
     "slug": "2k",
@@ -1072,7 +1077,14 @@
     "url": "https://www.activepieces.com",
     "guidelines": "https://github.com/activepieces/activepieces/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/activepieces/activepieces",
+      "x": "https://x.com/activepieces",
+      "discord": "https://discord.gg/2jUXBKDdP8",
+      "youtube": "https://www.youtube.com/@activepiecesco",
+      "linkedin": "https://www.linkedin.com/company/activepieces"
+    }
   },
   {
     "slug": "activision",
@@ -2939,7 +2951,10 @@
     "url": "https://prometheus.io",
     "guidelines": "https://github.com/prometheus/alertmanager/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/prometheus/alertmanager"
+    }
   },
   {
     "slug": "alfred",
@@ -3176,7 +3191,11 @@
     "license": "CC0-1.0",
     "url": "https://alistgo.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/AlistGo/alist",
+      "discord": "https://discord.gg/F4ymsH4xv2"
+    }
   },
   {
     "slug": "alist-badge",
@@ -4212,7 +4231,12 @@
     "license": "CC0-1.0",
     "url": "https://answer.dev",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/apache/answer",
+      "x": "https://x.com/ApacheAnswer",
+      "discord": "https://discord.gg/Jm7Y4cbUej"
+    }
   },
   {
     "slug": "ansys",
@@ -4491,9 +4515,15 @@
     },
     "license": "MIT",
     "url": "https://anythingllm.com",
-    "guidelines": "https://github.com/Mintplex-Labs/anything-llm/blob/master/LICENSE",
+    "guidelines": "https://anythingllm.com/brand",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/Mintplex-Labs/anything-llm",
+      "docs": "https://docs.anythingllm.com/",
+      "x": "https://x.com/anythingllm",
+      "discord": "https://discord.gg/4yJVruMQWY"
+    }
   },
   {
     "slug": "anytype",
@@ -5544,7 +5574,14 @@
     "url": "https://appflowy.com",
     "guidelines": "https://github.com/AppFlowy-IO/AppFlowy/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/AppFlowy-IO/AppFlowy",
+      "x": "https://x.com/appflowy",
+      "discord": "https://discord.gg/9Q2xaN37tV",
+      "youtube": "https://www.youtube.com/@AppFlowyHQ",
+      "linkedin": "https://www.linkedin.com/company/appflowy"
+    }
   },
   {
     "slug": "appfolio-badge",
@@ -5841,7 +5878,10 @@
     "url": "https://github.com/caronc/apprise-api",
     "guidelines": "https://github.com/caronc/apprise-api",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/caronc/apprise-api"
+    }
   },
   {
     "slug": "appsignal",
@@ -6006,7 +6046,11 @@
     "url": "https://arbitrum.io/",
     "guidelines": "https://docs.arbitrum.io",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/OffchainLabs/nitro",
+      "docs": "https://docs.arbitrum.io"
+    }
   },
   {
     "slug": "arc",
@@ -7636,7 +7680,10 @@
     "url": "https://autobrr.com",
     "guidelines": "https://github.com/autobrr/autobrr/blob/develop/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/autobrr/autobrr"
+    }
   },
   {
     "slug": "autocad",
@@ -37623,7 +37670,10 @@
     "url": "http://docs.baby-buddy.net/",
     "guidelines": "https://github.com/babybuddy/babybuddy/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/babybuddy/babybuddy"
+    }
   },
   {
     "slug": "babylondotjs",
@@ -38279,7 +38329,13 @@
     "license": "CC0-1.0",
     "url": "https://baserow.io",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/baserow/baserow",
+      "x": "https://x.com/baserow",
+      "youtube": "https://www.youtube.com/channel/UCPfzyP0FnZNXnqUJKiXZbiA",
+      "linkedin": "https://www.linkedin.com/company/baserow"
+    }
   },
   {
     "slug": "baseten",
@@ -38915,7 +38971,13 @@
     "url": "https://bentopdf.com/",
     "guidelines": "https://github.com/alam00000/bentopdf/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/alam00000/bentopdf",
+      "x": "https://x.com/BentoPDF",
+      "discord": "https://discord.gg/Bgq3Ay3f2w",
+      "linkedin": "https://www.linkedin.com/company/bentopdf"
+    }
   },
   {
     "slug": "bereal",
@@ -39003,7 +39065,10 @@
     "url": "https://beszel.dev",
     "guidelines": "https://github.com/henrygd/beszel/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/henrygd/beszel"
+    }
   },
   {
     "slug": "bet365",
@@ -41732,7 +41797,12 @@
     "url": "https://www.browserless.io",
     "guidelines": "https://github.com/browserless/browserless/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/browserless/browserless",
+      "x": "https://x.com/browserless",
+      "youtube": "https://www.youtube.com/@browserless"
+    }
   },
   {
     "slug": "browserstack",
@@ -42149,9 +42219,13 @@
     },
     "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
     "url": "https://buildpacks.io",
-    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "guidelines": "https://github.com/buildpacks/spec/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/buildpacks",
+      "x": "https://x.com/buildpacks_io"
+    }
   },
   {
     "slug": "buildship",
@@ -42573,7 +42647,14 @@
     "url": "https://www.bytebase.com",
     "guidelines": "https://www.bytebase.com/brand/",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/bytebase/bytebase",
+      "docs": "https://docs.bytebase.com/",
+      "x": "https://x.com/Bytebase",
+      "youtube": "https://www.youtube.com/channel/UCIlxsMmakGxeaAwpu1Z6jJg",
+      "linkedin": "https://www.linkedin.com/company/bytebase"
+    }
   },
   {
     "slug": "bytedance",
@@ -42610,7 +42691,10 @@
     "url": "https://github.com/jordan-dalby/ByteStash",
     "guidelines": "https://github.com/jordan-dalby/ByteStash/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/jordan-dalby/ByteStash"
+    }
   },
   {
     "slug": "c",
@@ -43678,7 +43762,13 @@
     "url": "https://castopod.org",
     "guidelines": "https://code.castopod.org/adaures/castopod/-/blob/develop/LICENSE.md",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "docs": "https://docs.castopod.org/",
+      "mastodon": "https://podlibre.social/@Castopod",
+      "bluesky": "https://bsky.app/profile/castopod.org",
+      "linkedin": "https://www.linkedin.com/company/ad-aures"
+    }
   },
   {
     "slug": "castorama",
@@ -44031,9 +44121,13 @@
     },
     "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
     "url": "https://cert-manager.io",
-    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "guidelines": "https://github.com/cert-manager/cert-manager/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/cert-manager/cert-manager",
+      "x": "https://x.com/CertManager"
+    }
   },
   {
     "slug": "certbot",
@@ -44223,9 +44317,12 @@
     },
     "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
     "url": "https://chaos-mesh.org",
-    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "guidelines": "https://github.com/chaos-mesh/chaos-mesh/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/chaos-mesh/chaos-mesh"
+    }
   },
   {
     "slug": "character-ai",
@@ -44541,7 +44638,11 @@
     "url": "https://checkmate.so/",
     "guidelines": "https://github.com/bluewave-labs/Checkmate/blob/develop/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/bluewave-labs/Checkmate",
+      "discord": "https://discord.gg/NAb6H3UTjK"
+    }
   },
   {
     "slug": "checkmk",
@@ -44746,7 +44847,11 @@
     "url": "https://chibisafe.app",
     "guidelines": "https://github.com/chibisafe/chibisafe/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/chibisafe/chibisafe",
+      "discord": "https://discord.gg/5g6vgwn"
+    }
   },
   {
     "slug": "chick-fil-a",
@@ -45991,9 +46096,12 @@
     },
     "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
     "url": "https://cloudevents.io",
-    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "guidelines": "https://github.com/cloudevents/spec/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/cloudevents/spec"
+    }
   },
   {
     "slug": "cloudfanatic-badge",
@@ -46158,7 +46266,11 @@
     "url": "https://cloudreve.org",
     "guidelines": "https://github.com/cloudreve/cloudreve/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/cloudreve/cloudreve",
+      "discord": "https://discord.com/invite/WTpMFpZT76"
+    }
   },
   {
     "slug": "cloudron",
@@ -46556,7 +46668,11 @@
     "url": "https://getcockpit.com",
     "guidelines": "https://github.com/Cockpit-HQ/Cockpit/blob/develop/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/Cockpit-HQ/Cockpit",
+      "x": "https://x.com/getcockpit"
+    }
   },
   {
     "slug": "cockroach-labs",
@@ -48503,9 +48619,12 @@
     },
     "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
     "url": "https://projectcontour.io",
-    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "guidelines": "https://github.com/projectcontour/contour/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/projectcontour/contour"
+    }
   },
   {
     "slug": "contra",
@@ -48631,7 +48750,10 @@
     "url": "https://github.com/C4illin/ConvertX",
     "guidelines": "https://github.com/C4illin/ConvertX/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/C4illin/ConvertX"
+    }
   },
   {
     "slug": "convex",
@@ -48802,7 +48924,11 @@
     "url": "https://github.com/9001/copyparty",
     "guidelines": "https://github.com/9001/copyparty/blob/hovudstraum/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/9001/copyparty",
+      "discord": "https://discord.gg/25J8CdTT6G"
+    }
   },
   {
     "slug": "coqui",
@@ -48881,9 +49007,13 @@
     },
     "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
     "url": "https://coredns.io",
-    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "guidelines": "https://github.com/coredns/coredns/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/coredns/coredns",
+      "x": "https://x.com/corednsio"
+    }
   },
   {
     "slug": "corejs",
@@ -49617,9 +49747,12 @@
     },
     "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
     "url": "https://cri-o.io",
-    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "guidelines": "https://github.com/cri-o/cri-o/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/cri-o/cri-o"
+    }
   },
   {
     "slug": "critical-role",
@@ -49915,7 +50048,11 @@
     "url": "https://cryptgeon.org/",
     "guidelines": "https://github.com/cupcakearmy/cryptgeon/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/cupcakearmy/cryptgeon",
+      "discord": "https://discord.gg/nuby6RnxZt"
+    }
   },
   {
     "slug": "cryptomator",
@@ -50443,7 +50580,10 @@
     "url": "https://gchq.github.io/CyberChef",
     "guidelines": "https://github.com/gchq/CyberChef/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/gchq/CyberChef"
+    }
   },
   {
     "slug": "cybercut",
@@ -51086,7 +51226,10 @@
     "url": "https://databasus.com",
     "guidelines": "https://github.com/databasus/databasus/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/databasus/databasus"
+    }
   },
   {
     "slug": "databricks",
@@ -51394,9 +51537,14 @@
       "default": "/icons/dawarich/default.svg"
     },
     "license": "AGPL-3.0",
-    "url": "https://github.com/Freika/dawarich",
+    "url": "https://dawarich.app",
     "dateAdded": "2026-09-26",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/Freika/dawarich",
+      "mastodon": "https://mastodon.social/@dawarich",
+      "discord": "https://discord.gg/pHsBjpt5J8"
+    }
   },
   {
     "slug": "dazhong-dianping",
@@ -52784,7 +52932,10 @@
     "license": "Trademark",
     "url": "https://www.dialogika.de",
     "dateAdded": "2026-06-07",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "linkedin": "https://www.linkedin.com/company/dialogika-gmbh"
+    }
   },
   {
     "slug": "diaspora",
@@ -53803,7 +53954,12 @@
     "url": "https://docmost.com",
     "guidelines": "https://github.com/docmost/docmost/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/docmost/docmost",
+      "x": "https://x.com/docmostHQ",
+      "linkedin": "https://www.linkedin.com/company/104338375"
+    }
   },
   {
     "slug": "docsdotrs",
@@ -53958,7 +54114,13 @@
     "url": "https://www.docuseal.com",
     "guidelines": "https://github.com/docusealco/docuseal/blob/master/LICENSE_ADDITIONAL_TERMS",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/docusealco/docuseal",
+      "x": "https://x.com/docusealco",
+      "bluesky": "https://bsky.app/profile/docuseal.com",
+      "discord": "https://discord.gg/qygYCDGck9"
+    }
   },
   {
     "slug": "docusign",
@@ -54139,7 +54301,10 @@
     "url": "https://www.dokuwiki.org",
     "guidelines": "https://github.com/dokuwiki/dokuwiki/blob/master/COPYING",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/dokuwiki/dokuwiki"
+    }
   },
   {
     "slug": "dolby",
@@ -54593,7 +54758,10 @@
     "license": "MIT",
     "url": "https://dozzle.dev",
     "dateAdded": "2026-03-09",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/amir20/dozzle"
+    }
   },
   {
     "slug": "dpd",
@@ -56787,9 +56955,12 @@
     },
     "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
     "url": "https://emissary-ingress.dev",
-    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "guidelines": "https://github.com/emissary-ingress/emissary/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/emissary-ingress/emissary"
+    }
   },
   {
     "slug": "emlakjet",
@@ -57498,9 +57669,14 @@
     },
     "license": "AGPL-3.0",
     "url": "https://www.espocrm.com",
-    "guidelines": "https://github.com/espocrm/espocrm/blob/master/LICENSE.txt",
+    "guidelines": "https://www.espocrm.com/trademark/",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/espocrm/espocrm",
+      "x": "https://x.com/espocrm",
+      "linkedin": "https://www.linkedin.com/company/espocrm"
+    }
   },
   {
     "slug": "espressif",
@@ -57632,7 +57808,12 @@
     "url": "https://etherpad.org",
     "guidelines": "https://github.com/ether/etherpad/blob/develop/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/ether/etherpad",
+      "x": "https://x.com/etherpadorg",
+      "discord": "https://discord.com/invite/daEjfhw"
+    }
   },
   {
     "slug": "ethers",
@@ -59544,7 +59725,12 @@
     "url": "https://fider.io",
     "guidelines": "https://github.com/getfider/fider/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/getfider/fider",
+      "docs": "https://docs.fider.io/",
+      "bluesky": "https://bsky.app/profile/fider.io"
+    }
   },
   {
     "slug": "fido-alliance",
@@ -59749,7 +59935,10 @@
     "url": "https://filebrowser.org",
     "guidelines": "https://github.com/filebrowser/filebrowser/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/filebrowser/filebrowser"
+    }
   },
   {
     "slug": "filedotio",
@@ -60492,7 +60681,10 @@
     "url": "https://github.com/FlareSolverr/FlareSolverr",
     "guidelines": "https://github.com/FlareSolverr/FlareSolverr/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/FlareSolverr/FlareSolverr"
+    }
   },
   {
     "slug": "flarum",
@@ -60515,7 +60707,12 @@
     "url": "https://flarum.org",
     "guidelines": "https://github.com/flarum/framework",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/flarum/framework",
+      "docs": "https://docs.flarum.org",
+      "x": "https://x.com/flarum"
+    }
   },
   {
     "slug": "flashforge",
@@ -60613,7 +60810,10 @@
     "url": "https://github.com/dullage/flatnotes",
     "guidelines": "https://github.com/dullage/flatnotes/blob/develop/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/dullage/flatnotes"
+    }
   },
   {
     "slug": "flatpak",
@@ -60903,7 +61103,14 @@
     "url": "https://flowiseai.com",
     "guidelines": "https://github.com/FlowiseAI/Flowise/blob/main/LICENSE.md",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/FlowiseAI/Flowise",
+      "docs": "https://docs.flowiseai.com/",
+      "x": "https://x.com/FlowiseAI",
+      "discord": "https://discord.gg/jbaHfsRVBW",
+      "linkedin": "https://www.linkedin.com/company/flowiseai"
+    }
   },
   {
     "slug": "flowith",
@@ -61262,7 +61469,10 @@
     "url": "https://www.focalboard.com",
     "guidelines": "https://github.com/mattermost-community/focalboard/blob/main/LICENSE.txt",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/mattermost-community/focalboard"
+    }
   },
   {
     "slug": "focusrite-badge",
@@ -62254,7 +62464,11 @@
     "url": "https://freescout.net",
     "guidelines": "https://github.com/freescout-help-desk/freescout/blob/dist/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/freescout-help-desk/freescout",
+      "x": "https://x.com/wpexpertca"
+    }
   },
   {
     "slug": "freetaxusa-badge",
@@ -63257,7 +63471,10 @@
     "license": "Apache-2.0",
     "url": "https://gatus.io",
     "dateAdded": "2026-03-09",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/TwiN/gatus"
+    }
   },
   {
     "slug": "gazebo",
@@ -68709,7 +68926,10 @@
     "url": "http://nicolargo.github.io/glances/",
     "guidelines": "https://github.com/nicolargo/glances/blob/develop/COPYING",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/nicolargo/glances"
+    }
   },
   {
     "slug": "glassdoor",
@@ -68919,7 +69139,11 @@
     "license": "Trademark of GlitchTip. Used for identification under nominative fair use.",
     "url": "https://glitchtip.com",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "gitlab": "https://gitlab.com/glitchtip",
+      "mastodon": "https://mastodon.online/@glitchtip"
+    }
   },
   {
     "slug": "glm-v",
@@ -69085,7 +69309,11 @@
     "url": "https://glpi-project.org",
     "guidelines": "https://github.com/glpi-project/glpi/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/glpi-project/glpi",
+      "x": "https://x.com/GLPI_PROJECT"
+    }
   },
   {
     "slug": "gltf",
@@ -69421,7 +69649,11 @@
     "url": "https://goaccess.io",
     "guidelines": "https://github.com/allinurl/goaccess/blob/master/COPYING",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/allinurl/goaccess",
+      "x": "https://x.com/goaccess"
+    }
   },
   {
     "slug": "goatcounter-badge",
@@ -69631,7 +69863,11 @@
     "url": "https://gogs.io",
     "guidelines": "https://github.com/gogs/gogs/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/gogs/gogs",
+      "x": "https://x.com/GogsHQ"
+    }
   },
   {
     "slug": "goil",
@@ -71492,7 +71728,10 @@
     "url": "https://gotify.net",
     "guidelines": "https://github.com/gotify/server/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/gotify/server"
+    }
   },
   {
     "slug": "goto-badge",
@@ -71729,7 +71968,13 @@
     "url": "https://grafana.com/oss/loki/",
     "guidelines": "https://grafana.com/legal/trademark-policy/",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/grafana/loki",
+      "x": "https://x.com/grafana",
+      "youtube": "https://www.youtube.com/channel/UCYCwgQAMm9sTJv0rgwQLCxw",
+      "linkedin": "https://www.linkedin.com/company/grafana-labs"
+    }
   },
   {
     "slug": "grails",
@@ -71844,7 +72089,10 @@
     "url": "https://www.grampsweb.org",
     "guidelines": "https://github.com/gramps-project/gramps-web/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/gramps-project/gramps-web"
+    }
   },
   {
     "slug": "grand-frais",
@@ -72228,7 +72476,11 @@
     "url": "https://grimmory.org",
     "guidelines": "https://github.com/grimmory-tools/grimmory/blob/develop/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/grimmory-tools/grimmory",
+      "discord": "https://discord.gg/9YJ7HB4n8T"
+    }
   },
   {
     "slug": "grist-badge",
@@ -72923,7 +73175,10 @@
     "url": "https://habitica.com",
     "guidelines": "https://habitica.com/static/terms",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/HabitRPG/habitica"
+    }
   },
   {
     "slug": "habr",
@@ -73307,7 +73562,11 @@
     "url": "https://halo.run",
     "guidelines": "https://github.com/halo-dev/halo/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/halo-dev/halo",
+      "docs": "https://docs.halo.run"
+    }
   },
   {
     "slug": "hancom",
@@ -74086,7 +74345,11 @@
     "url": "https://github.com/linuxserver/Heimdall",
     "guidelines": "https://github.com/linuxserver/Heimdall/blob/2.x/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/linuxserver/Heimdall",
+      "discord": "https://discord.gg/CCjHKn4"
+    }
   },
   {
     "slug": "heineken",
@@ -74671,7 +74934,11 @@
     "url": "https://heyform.net",
     "guidelines": "https://github.com/heyform/heyform/blob/next/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/heyform/heyform",
+      "discord": "https://discord.gg/sgT4v4GSTe"
+    }
   },
   {
     "slug": "hhvm",
@@ -75154,7 +75421,10 @@
     "url": "https://github.com/bastienwirtz/homer",
     "guidelines": "https://github.com/bastienwirtz/homer/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/bastienwirtz/homer"
+    }
   },
   {
     "slug": "homey-badge",
@@ -76204,7 +76474,13 @@
     "license": "Trademark of Hygraph. Used for identification under nominative fair use.",
     "url": "https://hygraph.com/",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/hygraph",
+      "x": "https://x.com/hygraph",
+      "youtube": "https://www.youtube.com/c/hygraph",
+      "linkedin": "https://www.linkedin.com/company/hygraph"
+    }
   },
   {
     "slug": "hymer",
@@ -77438,9 +77714,12 @@
     },
     "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
     "url": "https://in-toto.io",
-    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "guidelines": "https://github.com/in-toto/in-toto/blob/develop/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/in-toto/in-toto"
+    }
   },
   {
     "slug": "inception-labs",
@@ -77877,7 +78156,12 @@
     "url": "https://infisical.com",
     "guidelines": "https://github.com/Infisical/infisical/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/Infisical/infisical",
+      "x": "https://x.com/infisical",
+      "linkedin": "https://www.linkedin.com/company/infisical"
+    }
   },
   {
     "slug": "inflection",
@@ -79240,7 +79524,10 @@
     "url": "https://it-tools.tech",
     "guidelines": "https://github.com/CorentinTh/it-tools/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/CorentinTh/it-tools"
+    }
   },
   {
     "slug": "itau",
@@ -79436,7 +79723,10 @@
     "url": "https://github.com/Jackett/Jackett",
     "guidelines": "https://github.com/Jackett/Jackett/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/Jackett/Jackett"
+    }
   },
   {
     "slug": "jaco",
@@ -79811,7 +80101,12 @@
     "license": "MIT",
     "url": "https://github.com/Fallenbagel/jellyseerr",
     "dateAdded": "2026-03-09",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/seerr-team/seerr",
+      "docs": "https://docs.seerr.dev",
+      "discord": "https://discord.gg/seerr"
+    }
   },
   {
     "slug": "jenkins",
@@ -82257,7 +82552,11 @@
     "url": "https://kanboard.org",
     "guidelines": "https://github.com/kanboard/kanboard/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/kanboard/kanboard",
+      "docs": "https://docs.kanboard.org/"
+    }
   },
   {
     "slug": "kando",
@@ -82392,9 +82691,12 @@
     },
     "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
     "url": "https://karmada.io",
-    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "guidelines": "https://github.com/karmada-io/karmada/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/karmada-io/karmada"
+    }
   },
   {
     "slug": "kasa-smart",
@@ -82553,7 +82855,11 @@
     "license": "GPL-3.0",
     "url": "https://kavitareader.com",
     "dateAdded": "2026-03-09",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/Kareadita/Kavita",
+      "discord": "https://discord.gg/eczRp9eeem"
+    }
   },
   {
     "slug": "kde",
@@ -82705,9 +83011,12 @@
     },
     "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
     "url": "https://keda.sh",
-    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "guidelines": "https://github.com/kedacore/keda/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/kedacore/keda"
+    }
   },
   {
     "slug": "kedro",
@@ -83016,7 +83325,15 @@
     "url": "https://kestra.io",
     "guidelines": "https://github.com/kestra-io/kestra/blob/develop/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/kestra-io/kestra",
+      "x": "https://x.com/kestra_io",
+      "bluesky": "https://bsky.app/profile/kestra.io",
+      "youtube": "https://www.youtube.com/@kestra-io",
+      "linkedin": "https://www.linkedin.com/company/kestra",
+      "reddit": "https://www.reddit.com/r/kestra_io/"
+    }
   },
   {
     "slug": "keybase",
@@ -83424,7 +83741,13 @@
     "url": "https://www.kimai.org",
     "guidelines": "https://github.com/kimai/kimai/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/kimai/kimai",
+      "mastodon": "https://phpc.social/@kimai",
+      "youtube": "https://www.youtube.com/@kimai_org",
+      "linkedin": "https://www.linkedin.com/company/kimai-org"
+    }
   },
   {
     "slug": "kimi",
@@ -84055,7 +84378,11 @@
     "license": "CC0-1.0",
     "url": "https://kodi.tv",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/xbmc/xbmc",
+      "x": "https://x.com/koditv"
+    }
   },
   {
     "slug": "kodular",
@@ -84167,7 +84494,11 @@
     "url": "https://komga.org",
     "guidelines": "https://github.com/gotson/komga/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/gotson/komga",
+      "discord": "https://discord.gg/TdRpkDu"
+    }
   },
   {
     "slug": "komoot",
@@ -84298,7 +84629,10 @@
     "url": "https://kopia.io",
     "guidelines": "https://github.com/kopia/kopia/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/kopia/kopia"
+    }
   },
   {
     "slug": "kops",
@@ -84554,9 +84888,12 @@
     },
     "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
     "url": "https://kserve.github.io/website/",
-    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "guidelines": "https://github.com/kserve/kserve/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/kserve/kserve"
+    }
   },
   {
     "slug": "ktm",
@@ -84670,9 +85007,13 @@
     },
     "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
     "url": "https://kubeedge.io",
-    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "guidelines": "https://github.com/kubeedge/kubeedge/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/kubeedge/kubeedge",
+      "x": "https://x.com/KubeEdge"
+    }
   },
   {
     "slug": "kubeflow",
@@ -84731,9 +85072,13 @@
     },
     "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
     "url": "https://kubescape.io",
-    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "guidelines": "https://github.com/kubescape/kubescape/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/kubescape/kubescape",
+      "x": "https://x.com/kubescape"
+    }
   },
   {
     "slug": "kubespray",
@@ -84773,9 +85118,12 @@
     },
     "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
     "url": "https://kubevela.io",
-    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "guidelines": "https://github.com/kubevela/kubevela/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/kubevela/kubevela"
+    }
   },
   {
     "slug": "kubevirt",
@@ -85115,7 +85463,12 @@
     "url": "https://labelstud.io",
     "guidelines": "https://github.com/HumanSignal/label-studio/blob/develop/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/HumanSignal/label-studio",
+      "youtube": "https://www.youtube.com/channel/UCbloiVAlCYzBatZXk-b5rFQ",
+      "linkedin": "https://www.linkedin.com/company/heartex"
+    }
   },
   {
     "slug": "labex",
@@ -85815,7 +86168,13 @@
     "license": "AGPL-3.0",
     "url": "https://leantime.io",
     "dateAdded": "2026-03-09",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/Leantime/leantime",
+      "x": "https://x.com/intheleantime",
+      "discord": "https://discord.gg/4zMzJtAq9z",
+      "linkedin": "https://www.linkedin.com/company/leantime"
+    }
   },
   {
     "slug": "leantime-badge",
@@ -85833,7 +86192,14 @@
     "license": "CC0-1.0",
     "url": "https://leantime.io",
     "dateAdded": "2026-09-12",
-    "collection": "auth-badges"
+    "collection": "auth-badges",
+    "links": {
+      "github": "https://github.com/Leantime/leantime",
+      "docs": "https://docs.leantime.io/",
+      "x": "https://x.com/intheleantime",
+      "discord": "https://discord.gg/YJeNS7VkQh",
+      "linkedin": "https://www.linkedin.com/company/leantime"
+    }
   },
   {
     "slug": "leap-wallet",
@@ -85888,9 +86254,17 @@
     },
     "license": "Trademark of Ledger SAS. Used for identification under nominative fair use.",
     "url": "https://www.ledger.com/",
-    "guidelines": "https://www.ledger.com/terms",
+    "guidelines": "https://www.ledger.com/press",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/LedgerHQ",
+      "x": "https://x.com/Ledger",
+      "discord": "https://discord.com/invite/ledger",
+      "youtube": "https://www.youtube.com/Ledger",
+      "linkedin": "https://www.linkedin.com/company/ledgerhq",
+      "reddit": "https://www.reddit.com/r/ledgerwallet/"
+    }
   },
   {
     "slug": "leedlime",
@@ -86558,7 +86932,12 @@
     "url": "https://librechat.ai/",
     "guidelines": "https://github.com/danny-avila/LibreChat/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/LibreChat-AI/LibreChat",
+      "x": "https://x.com/LibreChatAI",
+      "youtube": "https://www.youtube.com/@LibreChat"
+    }
   },
   {
     "slug": "librenms-badge",
@@ -86731,7 +87110,10 @@
     "url": "https://librespeed.org",
     "guidelines": "https://github.com/librespeed/speedtest/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/librespeed/speedtest"
+    }
   },
   {
     "slug": "libretranslate",
@@ -86858,7 +87240,10 @@
     "url": "http://lidarr.audio/",
     "guidelines": "https://github.com/Lidarr/Lidarr/blob/develop/LICENSE.md",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/Lidarr/Lidarr"
+    }
   },
   {
     "slug": "lidl",
@@ -87238,7 +87623,10 @@
     "url": "https://linkding.link/",
     "guidelines": "https://github.com/sissbruecker/linkding/blob/master/LICENSE.txt",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/sissbruecker/linkding"
+    }
   },
   {
     "slug": "linkedin",
@@ -87382,7 +87770,14 @@
     "license": "AGPL-3.0",
     "url": "https://linkwarden.app",
     "dateAdded": "2026-03-09",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/linkwarden/linkwarden",
+      "x": "https://x.com/LinkwardenHQ",
+      "bluesky": "https://bsky.app/profile/linkwarden.bsky.social",
+      "discord": "https://discord.com/invite/CtuYV47nuJ",
+      "linkedin": "https://www.linkedin.com/company/linkwarden"
+    }
   },
   {
     "slug": "linode",
@@ -87728,9 +88123,17 @@
     },
     "license": "MIT",
     "url": "https://www.litellm.ai",
-    "guidelines": "https://github.com/BerriAI/litellm/blob/main/LICENSE",
+    "guidelines": "https://www.litellm.ai/brand-assets",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/BerriAI/litellm",
+      "docs": "https://docs.litellm.ai/",
+      "x": "https://x.com/litellm",
+      "discord": "https://discord.gg/wuPM9dRgDw",
+      "youtube": "https://www.youtube.com/@LiteLLMAIGateway",
+      "linkedin": "https://www.linkedin.com/company/90867735"
+    }
   },
   {
     "slug": "literal",
@@ -87881,10 +88284,13 @@
       "wordmark": "/icons/llama-cpp-server/wordmark.svg"
     },
     "license": "MIT",
-    "url": "https://github.com/ggml-org/llama.cpp",
+    "url": "https://llama.app",
     "guidelines": "https://github.com/ggml-org/llama.cpp/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/ggml-org/llama.cpp"
+    }
   },
   {
     "slug": "llamaindex",
@@ -88016,7 +88422,14 @@
     "url": "https://lobehub.com",
     "guidelines": "https://github.com/lobehub/lobehub/blob/canary/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/lobehub/lobehub",
+      "x": "https://x.com/lobehub",
+      "discord": "https://discord.gg/AYFPHvv2jT",
+      "youtube": "https://www.youtube.com/@lobehub",
+      "linkedin": "https://www.linkedin.com/company/lobehub"
+    }
   },
   {
     "slug": "lobehub",
@@ -88089,7 +88502,12 @@
     "license": "MIT",
     "url": "https://localai.io",
     "dateAdded": "2026-03-09",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/mudler/LocalAI",
+      "x": "https://x.com/LocalAI_API",
+      "discord": "https://discord.gg/uJAeKSAGDy"
+    }
   },
   {
     "slug": "localsend",
@@ -88717,7 +89135,13 @@
     "url": "https://www.lowcoder.cloud/",
     "guidelines": "https://github.com/lowcoder-org/lowcoder/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/lowcoder-org/lowcoder",
+      "docs": "https://docs.lowcoder.cloud/",
+      "discord": "https://discord.gg/An6PgWpegg",
+      "linkedin": "https://www.linkedin.com/company/lowcoder"
+    }
   },
   {
     "slug": "lowes",
@@ -89400,7 +89824,12 @@
     "url": "https://www.mage.ai",
     "guidelines": "https://github.com/mage-ai/mage-ai/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/mage-ai/mage-ai",
+      "x": "https://x.com/mage_ai",
+      "linkedin": "https://www.linkedin.com/company/magetech"
+    }
   },
   {
     "slug": "magento",
@@ -89768,7 +90197,10 @@
     "url": "https://mailpit.axllent.org",
     "guidelines": "https://github.com/axllent/mailpit/blob/develop/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/axllent/mailpit"
+    }
   },
   {
     "slug": "mailtrap",
@@ -90338,7 +90770,14 @@
     "url": "https://marimo.io",
     "guidelines": "https://github.com/marimo-team/marimo/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/marimo-team/marimo",
+      "x": "https://x.com/marimo_io",
+      "bluesky": "https://bsky.app/profile/marimo.io",
+      "youtube": "https://www.youtube.com/@marimo-team",
+      "linkedin": "https://www.linkedin.com/company/marimo-io"
+    }
   },
   {
     "slug": "markdown",
@@ -91800,7 +92239,12 @@
     "url": "https://usememos.com",
     "guidelines": "https://usememos.com/brand",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/usememos/memos",
+      "x": "https://x.com/usememos",
+      "discord": "https://discord.gg/tfPJa4UmAv"
+    }
   },
   {
     "slug": "mendeley",
@@ -92417,7 +92861,10 @@
     "url": "https://github.com/alexta69/metube",
     "guidelines": "https://github.com/alexta69/metube/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/alexta69/metube"
+    }
   },
   {
     "slug": "mewe",
@@ -94250,7 +94697,11 @@
     "url": "https://www.minecraft.net",
     "guidelines": "https://www.minecraft.net/en-us/usage-guidelines",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "x": "https://x.com/Minecraft",
+      "discord": "https://discord.gg/MinecraftFeedback"
+    }
   },
   {
     "slug": "minehub-de-badge",
@@ -94339,7 +94790,10 @@
     "url": "https://miniflux.app",
     "guidelines": "https://github.com/miniflux/v2/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/miniflux/v2"
+    }
   },
   {
     "slug": "minimax",
@@ -95149,9 +95603,13 @@
     },
     "license": "Trademark of Modular Inc.. Used for identification under nominative fair use.",
     "url": "https://www.modular.com/mojo",
-    "guidelines": "https://www.modular.com/legal/terms",
+    "guidelines": "https://www.modular.com/legal/trademark",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/modular/modular",
+      "docs": "https://docs.modular.com"
+    }
   },
   {
     "slug": "moleculer",
@@ -95337,7 +95795,10 @@
     "url": "https://github.com/mongo-express/mongo-express",
     "guidelines": "https://github.com/mongo-express/mongo-express/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/mongo-express/mongo-express"
+    }
   },
   {
     "slug": "mongodb",
@@ -97316,7 +97777,12 @@
     "license": "GPL-3.0",
     "url": "https://navidrome.org",
     "dateAdded": "2026-03-09",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/navidrome/navidrome",
+      "x": "https://x.com/navidrome",
+      "discord": "https://discord.gg/xh7j7yF"
+    }
   },
   {
     "slug": "nba",
@@ -99288,7 +99754,13 @@
     "url": "https://www.nocobase.com",
     "guidelines": "https://github.com/nocobase/nocobase/blob/main/LICENSE.txt",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/nocobase/nocobase",
+      "x": "https://x.com/nocobase",
+      "youtube": "https://www.youtube.com/@nocobase",
+      "linkedin": "https://www.linkedin.com/company/nocobase"
+    }
   },
   {
     "slug": "nocodb",
@@ -99804,9 +100276,12 @@
     },
     "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
     "url": "https://notaryproject.dev",
-    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "guidelines": "https://github.com/notaryproject/notation/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/notaryproject/notation"
+    }
   },
   {
     "slug": "note",
@@ -101647,7 +102122,11 @@
     "url": "https://onedev.io",
     "guidelines": "https://github.com/theonedev/onedev/blob/main/license.txt",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/theonedev/onedev",
+      "docs": "https://docs.onedev.io/"
+    }
   },
   {
     "slug": "onelogin",
@@ -101775,7 +102254,11 @@
     "url": "https://onetimesecret.com",
     "guidelines": "https://github.com/onetimesecret/onetimesecret/blob/main/LICENSE.txt",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/onetimesecret/onetimesecret",
+      "bluesky": "https://bsky.app/profile/onetimesecret.com"
+    }
   },
   {
     "slug": "onex",
@@ -102101,9 +102584,12 @@
     },
     "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
     "url": "https://www.openpolicyagent.org",
-    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "guidelines": "https://github.com/open-policy-agent/opa/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/open-policy-agent/opa"
+    }
   },
   {
     "slug": "open-source-hardware",
@@ -102497,9 +102983,12 @@
     },
     "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
     "url": "https://opencost.io",
-    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "guidelines": "https://opencost.io/press",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/opencost/opencost"
+    }
   },
   {
     "slug": "opencritic",
@@ -102593,9 +103082,16 @@
     },
     "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
     "url": "https://openfeature.dev",
-    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "guidelines": "https://github.com/open-feature/spec/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/open-feature",
+      "x": "https://x.com/openfeature",
+      "bluesky": "https://bsky.app/profile/openfeature.dev",
+      "youtube": "https://www.youtube.com/@openfeature",
+      "linkedin": "https://www.linkedin.com/company/openfeature/"
+    }
   },
   {
     "slug": "openfga",
@@ -102617,9 +103113,14 @@
     },
     "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
     "url": "https://openfga.dev",
-    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "guidelines": "https://github.com/openfga/openfga/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/openfga/openfga",
+      "x": "https://x.com/OpenFGA",
+      "mastodon": "https://mastodon.social/@openfga"
+    }
   },
   {
     "slug": "opengl",
@@ -102985,7 +103486,12 @@
     "license": "MIT",
     "url": "https://openspeedtest.com",
     "dateAdded": "2026-03-09",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/openspeedtest/Speed-Test",
+      "x": "https://x.com/openspeedtest",
+      "youtube": "https://www.youtube.com/c/Openspeedtest"
+    }
   },
   {
     "slug": "opensrs-badge",
@@ -103690,7 +104196,13 @@
     "license": "Trademark of OrangeHRM Inc. Used for identification under nominative fair use.",
     "url": "https://www.orangehrm.com",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/orangehrm/orangehrm",
+      "x": "https://x.com/orangehrm",
+      "youtube": "https://www.youtube.com/user/orangehrm",
+      "linkedin": "https://www.linkedin.com/company/orangehrm/"
+    }
   },
   {
     "slug": "oray-badge",
@@ -103817,7 +104329,10 @@
     "url": "https://github.com/causefx/Organizr",
     "guidelines": "https://github.com/causefx/Organizr/blob/v2-master/LICENSE.md",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/causefx/Organizr"
+    }
   },
   {
     "slug": "origin",
@@ -104057,7 +104572,10 @@
     "url": "https://osticket.com",
     "guidelines": "https://osticket.com",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/osTicket/osTicket"
+    }
   },
   {
     "slug": "osu",
@@ -104309,7 +104827,10 @@
     "url": "https://owncast.online",
     "guidelines": "https://github.com/owncast/owncast/blob/develop/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/owncast/owncast"
+    }
   },
   {
     "slug": "owncloud",
@@ -104708,7 +105229,10 @@
     "url": "https://pairdrop.net",
     "guidelines": "https://github.com/schlagmichdoch/PairDrop/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/schlagmichdoch/PairDrop"
+    }
   },
   {
     "slug": "palantir",
@@ -105517,9 +106041,14 @@
     },
     "license": "MIT",
     "url": "https://paymenter.org",
-    "guidelines": "https://github.com/Paymenter/Paymenter/blob/master/LICENSE",
+    "guidelines": "https://paymenter.org/brand/",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/Paymenter/Paymenter",
+      "discord": "https://discord.gg/paymenter-882318291014651924",
+      "linkedin": "https://www.linkedin.com/company/paymenter"
+    }
   },
   {
     "slug": "payoneer",
@@ -106290,7 +106819,10 @@
     "url": "https://github.com/eduardolat/pgbackweb",
     "guidelines": "https://github.com/eduardolat/pgbackweb/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/eduardolat/pgbackweb"
+    }
   },
   {
     "slug": "pgadmin",
@@ -106312,7 +106844,10 @@
     "url": "https://www.pgadmin.org",
     "guidelines": "https://github.com/pgadmin-org/pgadmin4/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/pgadmin-org/pgadmin4"
+    }
   },
   {
     "slug": "phabricator",
@@ -106370,7 +106905,13 @@
     "url": "https://phantom.com/",
     "guidelines": "https://phantom.com/terms",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "x": "https://x.com/phantom",
+      "youtube": "https://www.youtube.com/@phantom-app",
+      "linkedin": "https://www.linkedin.com/company/phantom-app",
+      "reddit": "https://www.reddit.com/r/phantom/"
+    }
   },
   {
     "slug": "phaser",
@@ -106624,9 +107165,14 @@
     },
     "license": "Trademark of PhotoPrism UG. Used for identification under nominative fair use.",
     "url": "https://www.photoprism.app",
-    "guidelines": "https://www.photoprism.app/trademark",
+    "guidelines": "https://www.photoprism.app/trademark/",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/photoprism/photoprism",
+      "x": "https://x.com/photoprism_app",
+      "bluesky": "https://bsky.app/profile/photoprism.app"
+    }
   },
   {
     "slug": "photoshop",
@@ -107264,7 +107810,11 @@
     "url": "https://pingvin.dev",
     "guidelines": "https://github.com/stonith404/pingvin-share/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/stonith404/pingvin-share",
+      "discord": "https://discord.gg/wHRQ9nFRcK"
+    }
   },
   {
     "slug": "pinia",
@@ -107892,7 +108442,12 @@
     "url": "https://planka.app",
     "guidelines": "https://github.com/plankanban/planka/blob/master/LICENSE.md",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/plankanban/planka",
+      "x": "https://x.com/planka_",
+      "discord": "https://discord.gg/WqqYNd7Jvt"
+    }
   },
   {
     "slug": "planning-center-badge",
@@ -108432,7 +108987,12 @@
     "url": "https://useplunk.com",
     "guidelines": "https://github.com/useplunk/plunk/blob/next/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/useplunk/plunk",
+      "docs": "https://docs.useplunk.com/",
+      "x": "https://x.com/useplunk"
+    }
   },
   {
     "slug": "pluralsight",
@@ -108657,7 +109217,10 @@
     "url": "https://pocket-id.org",
     "guidelines": "https://github.com/pocket-id/pocket-id/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/pocket-id/pocket-id"
+    }
   },
   {
     "slug": "pocketbase",
@@ -110292,7 +110855,10 @@
     "url": "https://privatebin.info",
     "guidelines": "https://github.com/PrivateBin/PrivateBin/blob/master/LICENSE.md",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/PrivateBin/PrivateBin"
+    }
   },
   {
     "slug": "pro-tools",
@@ -110497,7 +111063,12 @@
     "license": "MIT",
     "url": "https://profclaw.ai",
     "dateAdded": "2026-03-13",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/profclaw/profclaw",
+      "x": "https://x.com/profclaw",
+      "discord": "https://discord.gg/Ar5pcaZB99"
+    }
   },
   {
     "slug": "progate",
@@ -110938,7 +111509,10 @@
     "url": "https://prowlarr.com",
     "guidelines": "https://github.com/Prowlarr/Prowlarr/blob/develop/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/Prowlarr/Prowlarr"
+    }
   },
   {
     "slug": "proxmox",
@@ -113241,9 +113815,15 @@
     },
     "license": "AGPL-3.0",
     "url": "https://rallly.co",
-    "guidelines": "https://github.com/lukevella/rallly/blob/main/LICENSE",
+    "guidelines": "https://rallly.co/press-kit",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/lukevella/rallly",
+      "x": "https://x.com/ralllyco",
+      "discord": "https://discord.gg/uzg4ZcHbuM",
+      "linkedin": "https://www.linkedin.com/company/rallly"
+    }
   },
   {
     "slug": "ralph-lauren",
@@ -113943,7 +114523,10 @@
     "url": "https://readeck.org",
     "guidelines": "https://codeberg.org/readeck/readeck/src/branch/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "codeberg": "https://codeberg.org/readeck/readeck"
+    }
   },
   {
     "slug": "readme",
@@ -114376,7 +114959,10 @@
     "url": "https://github.com/redlib-org/redlib",
     "guidelines": "https://github.com/redlib-org/redlib/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/redlib-org/redlib"
+    }
   },
   {
     "slug": "redmine",
@@ -117528,7 +118114,12 @@
     "url": "https://ryot.io",
     "guidelines": "https://github.com/IgnisDa/ryot",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/IgnisDa/ryot",
+      "docs": "https://docs.ryot.io/",
+      "discord": "https://discord.gg/D9XTg2a7R8"
+    }
   },
   {
     "slug": "s-oil",
@@ -117642,7 +118233,12 @@
     "url": "https://waf.chaitin.com",
     "guidelines": "https://github.com/chaitin/SafeLine",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/chaitin/SafeLine",
+      "docs": "https://docs.waf.chaitin.com",
+      "x": "https://x.com/safeline_waf"
+    }
   },
   {
     "slug": "sage",
@@ -117755,7 +118351,13 @@
     "url": "https://saleor.io",
     "guidelines": "https://github.com/saleor/saleor/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/saleor/saleor",
+      "docs": "https://docs.saleor.io",
+      "x": "https://x.com/getsaleor",
+      "linkedin": "https://www.linkedin.com/company/saleor/"
+    }
   },
   {
     "slug": "salesforce",
@@ -119022,7 +119624,11 @@
     "url": "https://seaweedfs.com",
     "guidelines": "https://github.com/seaweedfs/seaweedfs/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/seaweedfs/seaweedfs",
+      "x": "https://x.com/SeaweedFS"
+    }
   },
   {
     "slug": "second-life-badge",
@@ -119311,7 +119917,15 @@
     "url": "https://semaphoreui.com",
     "guidelines": "https://github.com/semaphoreui/semaphore/blob/develop/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/semaphoreui/semaphore",
+      "docs": "https://docs.semaphoreui.com/",
+      "x": "https://x.com/semaphoreui",
+      "discord": "https://discord.gg/5R6k7hNGcH",
+      "youtube": "https://www.youtube.com/@semaphoreui",
+      "linkedin": "https://www.linkedin.com/company/semaphoreui"
+    }
   },
   {
     "slug": "semaphoreci",
@@ -119848,7 +120462,11 @@
     "url": "https://sftpgo.com",
     "guidelines": "https://sftpgo.com",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/drakkan/sftpgo",
+      "linkedin": "https://www.linkedin.com/company/107964786"
+    }
   },
   {
     "slug": "shadcn-ui",
@@ -120134,7 +120752,10 @@
     "url": "https://github.com/go-shiori/shiori",
     "guidelines": "https://github.com/go-shiori/shiori/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/go-shiori/shiori"
+    }
   },
   {
     "slug": "shlink",
@@ -120154,7 +120775,11 @@
     "url": "https://shlink.io",
     "guidelines": "https://github.com/shlinkio/shlink-art/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/shlinkio/shlink",
+      "bluesky": "https://bsky.app/profile/shlink.io"
+    }
   },
   {
     "slug": "shopee",
@@ -120631,7 +121256,11 @@
     "license": "Trademark of the SilverBullet project. Used for identification under nominative fair use.",
     "url": "https://silverbullet.md",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/silverbulletmd/silverbullet",
+      "docs": "https://docs.silverbullet.md/"
+    }
   },
   {
     "slug": "similarweb",
@@ -120820,7 +121449,14 @@
     "url": "https://simplex.chat",
     "guidelines": "https://github.com/simplex-chat/simplex-chat/blob/stable/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/simplex-chat/simplex-chat",
+      "x": "https://x.com/simplexchat",
+      "mastodon": "https://mastodon.social/@simplex",
+      "linkedin": "https://www.linkedin.com/company/simplex-chat/",
+      "reddit": "https://www.reddit.com/r/SimpleXChat/"
+    }
   },
   {
     "slug": "sina-weibo",
@@ -123024,7 +123660,10 @@
     "url": "https://speaches.ai/",
     "guidelines": "https://github.com/speaches-ai/speaches/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/speaches-ai/speaches"
+    }
   },
   {
     "slug": "speaker-deck",
@@ -123118,7 +123757,11 @@
     "url": "https://speedtest-tracker.dev/",
     "guidelines": "https://github.com/alexjustesen/speedtest-tracker/blob/1.x/LICENSE.md",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/alexjustesen/speedtest-tracker",
+      "docs": "https://docs.speedtest-tracker.dev/"
+    }
   },
   {
     "slug": "speedypage",
@@ -123263,9 +123906,14 @@
     },
     "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
     "url": "https://spiffe.io",
-    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "guidelines": "https://github.com/spiffe/spiffe/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/spiffe/spiffe",
+      "x": "https://x.com/SPIFFEio",
+      "youtube": "https://www.youtube.com/channel/UCVzeW7j02FDNggkI5JKPvJg"
+    }
   },
   {
     "slug": "spigotmc",
@@ -124192,7 +124840,13 @@
     "url": "https://stalw.art",
     "guidelines": "https://github.com/stalwartlabs/stalwart/tree/main/LICENSES",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/stalwartlabs/stalwart",
+      "x": "https://x.com/stalwartlabs",
+      "mastodon": "https://mastodon.social/@stalwartlabs",
+      "discord": "https://discord.gg/vhqRgdhguq"
+    }
   },
   {
     "slug": "standard-chartered",
@@ -124551,7 +125205,13 @@
     "url": "https://www.statsig.com/",
     "guidelines": "https://www.statsig.com/terms",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/statsig-io",
+      "docs": "https://docs.statsig.com",
+      "x": "https://x.com/statsig",
+      "linkedin": "https://www.linkedin.com/company/statsig"
+    }
   },
   {
     "slug": "statusnook",
@@ -124572,7 +125232,11 @@
     "url": "https://statusnook.com",
     "guidelines": "https://github.com/goksan/statusnook/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/goksan/statusnook",
+      "discord": "https://discord.gg/cKUZeBKyVn"
+    }
   },
   {
     "slug": "statuspage",
@@ -124932,7 +125596,13 @@
     "license": "MIT",
     "url": "https://stirlingpdf.com",
     "dateAdded": "2026-03-09",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/Stirling-Tools/Stirling-PDF",
+      "x": "https://x.com/StirlingPDF",
+      "discord": "https://discord.gg/HYmhKj45pU",
+      "linkedin": "https://www.linkedin.com/company/stirling-pdf/"
+    }
   },
   {
     "slug": "stitch",
@@ -125293,9 +125963,15 @@
     },
     "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
     "url": "https://strimzi.io",
-    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "guidelines": "https://github.com/strimzi/strimzi-kafka-operator/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/strimzi/strimzi-kafka-operator",
+      "x": "https://x.com/strimziio",
+      "youtube": "https://www.youtube.com/@strimzi",
+      "linkedin": "https://www.linkedin.com/company/strimzi"
+    }
   },
   {
     "slug": "stripchat-badge",
@@ -125964,7 +126640,10 @@
     "url": "https://docs.lizardbyte.dev/projects/sunshine",
     "guidelines": "https://github.com/LizardByte/Sunshine/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/LizardByte/Sunshine"
+    }
   },
   {
     "slug": "supabase",
@@ -126008,9 +126687,17 @@
     },
     "license": "Trademark of Johannes Millan. Used for identification under nominative fair use.",
     "url": "https://super-productivity.com",
-    "guidelines": "https://super-productivity.com/press-kit",
+    "guidelines": "https://super-productivity.com/press-kit/",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/super-productivity/super-productivity",
+      "mastodon": "https://mastodon.social/@superproductivity",
+      "bluesky": "https://bsky.app/profile/superproductivity.bsky.social",
+      "discord": "https://discord.com/invite/KzX9Q3s66b",
+      "youtube": "https://www.youtube.com/@superproductivityapp",
+      "reddit": "https://www.reddit.com/r/superProductivity/"
+    }
   },
   {
     "slug": "super-user",
@@ -126140,7 +126827,12 @@
     "url": "https://sure.am",
     "guidelines": "https://github.com/we-promise/sure/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/we-promise/sure",
+      "docs": "https://docs.sure.am/",
+      "discord": "https://discord.gg/36ZGBsxYEK"
+    }
   },
   {
     "slug": "surfshark",
@@ -127286,7 +127978,12 @@
     "url": "https://docs.tandoor.dev",
     "guidelines": "https://github.com/TandoorRecipes/recipes/blob/develop/LICENSE.md",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/TandoorRecipes/recipes",
+      "docs": "https://docs.tandoor.dev",
+      "discord": "https://discord.gg/RhzBrfWgtp"
+    }
   },
   {
     "slug": "tanstack",
@@ -127528,7 +128225,10 @@
     "url": "https://tautulli.com",
     "guidelines": "https://github.com/Tautulli/Tautulli/blob/nightly/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/Tautulli/Tautulli"
+    }
   },
   {
     "slug": "tavily",
@@ -127616,7 +128316,11 @@
     "url": "https://github.com/HaveAGitGat/Tdarr",
     "guidelines": "https://github.com/HaveAGitGat/Tdarr/blob/master/LICENSE.md",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/HaveAGitGat/Tdarr",
+      "discord": "https://discord.gg/GF8X8cq"
+    }
   },
   {
     "slug": "te-logo-whiteorange",
@@ -127659,7 +128363,13 @@
     "url": "https://teable.ai",
     "guidelines": "https://github.com/teableio/teable/blob/develop/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/teableio/teable",
+      "x": "https://x.com/teableio",
+      "youtube": "https://www.youtube.com/@teable",
+      "linkedin": "https://www.linkedin.com/company/teable"
+    }
   },
   {
     "slug": "teal",
@@ -128338,7 +129048,12 @@
     "url": "https://termix.site/",
     "guidelines": "https://github.com/Termix-SSH/Termix/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/Termix-SSH/Termix",
+      "discord": "https://discord.gg/jVQGdvHDrf",
+      "youtube": "https://www.youtube.com/@TermixSSH"
+    }
   },
   {
     "slug": "termux",
@@ -129313,9 +130028,15 @@
     },
     "license": "Trademark of ThingsBoard, Inc.. Used for identification under nominative fair use.",
     "url": "https://thingsboard.io",
-    "guidelines": "https://github.com/thingsboard/thingsboard",
+    "guidelines": "https://thingsboard.io/mediakit/",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/thingsboard/thingsboard",
+      "x": "https://x.com/thingsboard",
+      "youtube": "https://www.youtube.com/thingsboard",
+      "linkedin": "https://www.linkedin.com/company/thingsboard/"
+    }
   },
   {
     "slug": "thinkpad",
@@ -129629,7 +130350,11 @@
     "url": "https://tianji.msgbyte.com",
     "guidelines": "https://github.com/msgbyte/tianji/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/msgbyte/tianji",
+      "discord": "https://discord.gg/8Vv47wAEej"
+    }
   },
   {
     "slug": "ticket-tailor",
@@ -129872,9 +130597,12 @@
     },
     "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
     "url": "https://tikv.org",
-    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "guidelines": "https://github.com/tikv/tikv/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/tikv/tikv"
+    }
   },
   {
     "slug": "tilda-publishing",
@@ -131232,7 +131960,10 @@
     "url": "https://trailbase.io",
     "guidelines": "https://github.com/trailbaseio/trailbase/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/trailbaseio/trailbase"
+    }
   },
   {
     "slug": "trailforks",
@@ -132239,7 +132970,11 @@
     "license": "GPL-3.0",
     "url": "https://tubearchivist.com",
     "dateAdded": "2026-03-09",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/tubearchivist/tubearchivist",
+      "docs": "https://docs.tubearchivist.com/"
+    }
   },
   {
     "slug": "tubi",
@@ -133846,7 +134581,13 @@
     "url": "https://www.getunleash.io",
     "guidelines": "https://github.com/Unleash/unleash/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/Unleash/unleash",
+      "x": "https://x.com/getunleash",
+      "youtube": "https://www.youtube.com/channel/UCJjGVOc5QBbEje-r7nZEa4A",
+      "linkedin": "https://www.linkedin.com/company/getunleash"
+    }
   },
   {
     "slug": "unlicense",
@@ -135512,7 +136253,11 @@
     "url": "https://vert.sh",
     "guidelines": "https://github.com/VERT-sh/VERT/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/VERT-sh/VERT",
+      "discord": "https://discord.gg/kqevGxYPak"
+    }
   },
   {
     "slug": "vertexai-google",
@@ -137517,7 +138262,10 @@
     "url": "https://wakapi.dev",
     "guidelines": "https://github.com/muety/wakapi/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/muety/wakapi"
+    }
   },
   {
     "slug": "wakatime",
@@ -137664,7 +138412,11 @@
     "url": "https://wallosapp.com",
     "guidelines": "https://github.com/ellite/Wallos/blob/main/LICENSE.md",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/ellite/Wallos",
+      "discord": "https://discord.gg/2TmgzaQSDA"
+    }
   },
   {
     "slug": "walmart",
@@ -138139,7 +138891,10 @@
     "url": "https://web-check.xyz",
     "guidelines": "https://github.com/Lissy93/web-check/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/Lissy93/web-check"
+    }
   },
   {
     "slug": "web-components",
@@ -138688,7 +139443,10 @@
     "url": "https://wekan.fi",
     "guidelines": "https://github.com/wekan/wekan/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/wekan/wekan"
+    }
   },
   {
     "slug": "welcome-to-the-jungle",
@@ -139160,7 +139918,10 @@
     "url": "https://github.com/benbusby/whoogle-search",
     "guidelines": "https://github.com/benbusby/whoogle-search/blob/main/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/benbusby/whoogle-search"
+    }
   },
   {
     "slug": "whoop",
@@ -139516,9 +140277,16 @@
     },
     "license": "Trademark of Windmill Labs, Inc. Used for identification under nominative fair use.",
     "url": "https://windmill.dev",
-    "guidelines": "https://github.com/windmill-labs/windmill/blob/main/frontend/brand-guidelines.md",
+    "guidelines": "https://www.windmill.dev/brand",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/windmill-labs/windmill",
+      "x": "https://x.com/WindmillDev",
+      "discord": "https://discord.gg/V7PM2YHsPB",
+      "youtube": "https://www.youtube.com/@WindmillDev",
+      "linkedin": "https://www.linkedin.com/company/windmill-dev"
+    }
   },
   {
     "slug": "windows",
@@ -140085,7 +140853,11 @@
     "license": "Apache-2.0",
     "url": "https://woodpecker-ci.org",
     "dateAdded": "2026-03-09",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/woodpecker-ci/woodpecker",
+      "bluesky": "https://bsky.app/profile/woodpecker-ci.org"
+    }
   },
   {
     "slug": "wordfence-badge",
@@ -141445,7 +142217,10 @@
     "url": "https://github.com/FuzzyGrim/Yamtrack",
     "guidelines": "https://github.com/FuzzyGrim/Yamtrack",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/FuzzyGrim/Yamtrack"
+    }
   },
   {
     "slug": "yandex",
@@ -143056,7 +143831,11 @@
     "url": "https://zipline.diced.sh",
     "guidelines": "https://github.com/diced/zipline/blob/trunk/LICENSE",
     "dateAdded": "2026-10-15",
-    "collection": "brands"
+    "collection": "brands",
+    "links": {
+      "github": "https://github.com/diced/zipline",
+      "discord": "https://discord.gg/EAhCRfGxCF"
+    }
   },
   {
     "slug": "zipmex-badge",
