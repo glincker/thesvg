@@ -144,7 +144,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
  * Resolve everything IconPageClient/IconDetailPage need up front, server-side,
  * so the client only ever receives plain props instead of re-importing the
  * full icons dataset to recompute this per navigation (that recomputation
- * used to run client-side across 7,500+ statically generated icon pages).
+ * used to run client-side across 7,600+ statically generated icon pages).
  */
 function resolveIconPageData(icon: NonNullable<ReturnType<typeof getIconBySlug>>) {
   const categoryCounts = getCategoryCounts();

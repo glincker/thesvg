@@ -1,13 +1,13 @@
 <p align="center">
   <a href="https://github.com/glincker/thesvg">
-    <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" alt="theSVG - 7,500+ Brand SVG Icons" width="700" />
+    <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" alt="theSVG - 7,600+ Brand SVG Icons" width="700" />
   </a>
 </p>
 
 <h3 align="center">@thesvg/icons</h3>
 
 <p align="center">
-  7,500+ brand SVG icons for developers. Tree-shakeable, typed, open source.
+  7,600+ brand SVG icons for developers. Tree-shakeable, typed, open source.
   <br />
   <a href="https://thesvg.org"><strong>Browse all icons &rarr;</strong></a>
 </p>
@@ -107,7 +107,7 @@ interface IconModule {
 The package is marked `"sideEffects": false`. Bundlers (webpack, Vite, Rollup, esbuild) will only include icons you import.
 
 ```ts
-// Your bundle only includes the GitHub icon (~3KB), not all 7,500+
+// Your bundle only includes the GitHub icon (~3KB), not all 7,600+
 import github from "@thesvg/icons/github";
 ```
 
