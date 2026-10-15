@@ -17,6 +17,7 @@ interface Post {
   author: string;
   tags: string[];
   image?: string;
+  imageLight?: string;
   body: string;
 }
 
@@ -257,13 +258,24 @@ export default async function BlogPostPage({ params }: PageProps) {
           </header>
 
           {post.image ? (
-            <img
-              src={post.image}
-              alt={post.title}
-              width={1200}
-              height={630}
-              className="mb-8 w-full rounded-xl border border-border/40 dark:border-white/[0.06]"
-            />
+            <>
+              <img
+                src={post.image}
+                alt={post.title}
+                width={1200}
+                height={630}
+                className={`mb-8 w-full rounded-xl border border-border/40 dark:border-white/[0.06]${post.imageLight ? " hidden dark:block" : ""}`}
+              />
+              {post.imageLight ? (
+                <img
+                  src={post.imageLight}
+                  alt={post.title}
+                  width={1200}
+                  height={630}
+                  className="mb-8 w-full rounded-xl border border-border/40 dark:hidden"
+                />
+              ) : null}
+            </>
           ) : null}
 
           {/* Body with sticky share sidebar */}
