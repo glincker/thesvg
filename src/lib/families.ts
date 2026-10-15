@@ -98,3 +98,47 @@ export function pickFamilySiblings(
   const rest = others.filter((m) => m.categories[0] !== primary);
   return [...same, ...rest].slice(0, SIBLINGS_SHOWN);
 }
+
+export interface FamilySectionRule {
+  title: string;
+  /** Matched against the icon slug. First matching rule wins. */
+  match: RegExp;
+}
+
+/**
+ * Product-area groups for large families, where category names are too
+ * generic to group by (most Google icons are simply "Google"). Families
+ * without an entry fall back to category sections. Anything unmatched
+ * lands in a final catch-all, so a new icon never disappears.
+ */
+export const FAMILY_SECTION_RULES: Record<string, FamilySectionRule[]> = {
+  google: [
+    {
+      title: "Workspace",
+      match: /gmail|drive|docs|sheets|slides|forms|calendar|meet|chat|keep|sites|tasks|contacts|jamboard|classroom|workspace|vids/,
+    },
+    {
+      title: "AI",
+      match: /gemini|bard|notebooklm|veo|imagen|nano|antigravity|gemma|ai-studio|deepmind|genkit|jules|duet|labs/,
+    },
+    {
+      title: "Cloud and developers",
+      match: /cloud|gcp|firebase|firestore|bigquery|looker|vertex|colab|kaggle|flutter|dart|^go$|angular|tensorflow|apps-script|dialogflow|apigee|chrome-web-store|android-studio|pagespeed|lighthouse|material|polymer|bazel/,
+    },
+    {
+      title: "Ads and analytics",
+      match: /ads|adsense|admob|analytics|tag-manager|search-console|optimize|data-studio|merchant|my-business|campaign/,
+    },
+    {
+      title: "Android and devices",
+      match: /android|pixel|nest|fitbit|wear|chromecast|chrome-os|assistant|home|stadia|auto|tv/,
+    },
+    {
+      title: "Apps and services",
+      match: /maps|earth|photos|youtube|play|translate|lens|podcasts|music|news|arts|books|pay|wallet|chrome|search|voice|duo|trends|scholar|blogger|waze|fi$|google$/,
+    },
+  ],
+};
+
+/** Families at least this large use curated groups when rules exist. */
+export const FAMILY_GROUPING_MIN = 30;

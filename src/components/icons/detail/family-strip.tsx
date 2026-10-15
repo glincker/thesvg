@@ -59,9 +59,9 @@ export function FamilyStrip({
             <Link
               href={`/icon/${icon.slug}`}
               prefetch={false}
-              className="group flex flex-col items-center gap-1.5 rounded-lg p-1.5 transition-colors hover:bg-accent"
+              className="group flex flex-col items-center gap-2 rounded-xl p-2 transition-colors hover:bg-accent"
             >
-              <span className="icon-preview-bg flex h-11 w-11 items-center justify-center rounded-lg p-1.5">
+              <span className="icon-preview-bg flex h-14 w-14 items-center justify-center rounded-xl p-2">
                 <img
                   src={icon.variants.default}
                   alt=""
@@ -69,7 +69,7 @@ export function FamilyStrip({
                   className="h-full w-full object-contain"
                 />
               </span>
-              <span className="line-clamp-1 w-full text-center text-[10px] font-medium text-muted-foreground transition-colors group-hover:text-foreground">
+              <span className="line-clamp-1 w-full text-center text-[11px] font-medium text-muted-foreground transition-colors group-hover:text-foreground">
                 {icon.title}
               </span>
             </Link>
