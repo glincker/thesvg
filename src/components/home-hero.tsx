@@ -11,6 +11,7 @@ import { IconCard } from "@/components/icons/icon-card";
 import { IconGrid } from "@/components/icons/icon-grid";
 import { IconDetail } from "@/components/icons/icon-detail";
 import { useRecentsStore } from "@/lib/stores/recents-store";
+import { logoImgClass, logoPlateClass } from "@/lib/logo-surface";
 import { useCompactHeroStore } from "@/lib/stores/compact-hero-store";
 import { useHomePrefsStore } from "@/lib/stores/home-prefs-store";
 import { cn } from "@/lib/utils";
@@ -794,11 +795,19 @@ export function HomeHero({
                     : "border-border/50 hover:border-foreground/25 dark:border-white/[0.07] dark:hover:border-white/[0.18]",
                 )}
               >
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-muted/60 dark:bg-white/[0.04]">
+                <span
+                  className={cn(
+                    "flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-muted/60 dark:bg-white/[0.04]",
+                    logoPlateClass(entry.slug),
+                  )}
+                >
                   <img
                     src={entry.variants.default}
                     alt=""
-                    className="h-6 w-6 object-contain transition-transform duration-200 group-hover/recent:scale-110"
+                    className={cn(
+                      "h-6 w-6 object-contain transition-transform duration-200 group-hover/recent:scale-110",
+                      logoImgClass(entry.slug),
+                    )}
                     loading="lazy"
                   />
                 </span>

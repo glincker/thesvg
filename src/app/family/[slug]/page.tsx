@@ -54,7 +54,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       url: `https://thesvg.org/family/${slug}`,
       type: "website",
       siteName: "theSVG",
-      images: [{ url: "/og-image.png", width: 1200, height: 630, alt: title }],
     },
     twitter: { card: "summary_large_image", title, description },
   };

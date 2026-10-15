@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { IconEntry } from "@/lib/icons";
 import { cn } from "@/lib/utils";
+import { logoImgClass, logoPlateClass } from "@/lib/logo-surface";
 
 interface FamilyStripProps {
   familySlug: string;
@@ -61,12 +62,12 @@ export function FamilyStrip({
               prefetch={false}
               className="group flex flex-col items-center gap-2 rounded-xl p-2 transition-colors hover:bg-accent"
             >
-              <span className="icon-preview-bg flex h-14 w-14 items-center justify-center rounded-xl p-2">
+              <span className={cn("icon-preview-bg flex h-14 w-14 items-center justify-center rounded-xl p-2", logoPlateClass(icon.slug))}>
                 <img
                   src={icon.variants.default}
                   alt=""
                   loading="lazy"
-                  className="h-full w-full object-contain"
+                  className={cn("h-full w-full object-contain", logoImgClass(icon.slug))}
                 />
               </span>
               <span className="line-clamp-1 w-full text-center text-[11px] font-medium text-muted-foreground transition-colors group-hover:text-foreground">

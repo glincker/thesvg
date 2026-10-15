@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, BookOpen, LayoutGrid, Plus } from "lucide-react";
+import { withUtm } from "@/lib/external-link";
 import type { IconEntry } from "@/lib/icons";
 import type { OtherFamily } from "@/lib/families";
 import { categoryUrl } from "@/lib/categories";
@@ -111,12 +112,34 @@ function enter(index: number, base = 0, step = 40, max = 14): CSSProperties {
   return { animationDelay: `${base + Math.min(index, max) * step}ms` };
 }
 
+function hostOf(url: string | undefined): string | null {
+  if (!url) return null;
+  try {
+    const u = new URL(url);
+    return u.protocol === "https:" || u.protocol === "http:"
+      ? u.hostname.replace(/^www\./, "")
+      : null;
+  } catch {
+    return null;
+  }
+}
+
+const PILL =
+  "inline-flex min-h-9 items-center gap-2 rounded-xl border border-border bg-background/80 px-3 py-2 text-xs font-semibold shadow-sm backdrop-blur transition-colors hover:bg-accent";
+const PILL_QUIET =
+  "inline-flex min-h-9 items-center gap-2 rounded-xl px-2.5 py-2 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground";
+
 function variantTotal(icon: IconEntry): number {
   return Object.values(icon.variants).filter(Boolean).length;
 }
 
 function Hero({ parent, tagline, accents, showcase, total, categoryCount, variantCount, extra }: Pick<FamilyViewProps,
   "parent" | "tagline" | "accents" | "showcase" | "total" | "categoryCount" | "variantCount" | "extra">) {
+  const siteHost = hostOf(parent.url);
+  const githubHref =
+    parent.links?.github && hostOf(parent.links.github)?.endsWith("github.com")
+      ? parent.links.github
+      : null;
   const stats = [
     { value: total, label: "logos" },
     { value: categoryCount, label: "categories" },
@@ -131,16 +154,16 @@ function Hero({ parent, tagline, accents, showcase, total, categoryCount, varian
         aria-hidden
         className="animate-glow-drift pointer-events-none absolute -inset-[20%] bg-[radial-gradient(50%_70%_at_14%_14%,color-mix(in_oklch,var(--fam-a)_22%,transparent),transparent_70%),radial-gradient(45%_65%_at_86%_86%,color-mix(in_oklch,var(--fam-b)_20%,transparent),transparent_70%)]"
       />
-      <div className="relative grid gap-8 p-6 sm:p-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+      <div className="relative grid gap-6 p-5 sm:gap-8 sm:p-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
         <div className="min-w-0">
           <span style={enter(0)} className="animate-fade-in-up inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/70 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-muted-foreground backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-[var(--fam-a)]" aria-hidden />
             {parent.title} · Brand family
           </span>
-          <h1 style={enter(2)} className="animate-fade-in-up mt-4 bg-gradient-to-br from-foreground via-foreground/85 to-[color-mix(in_oklch,var(--fam-a)_70%,var(--foreground))] bg-clip-text text-4xl font-semibold leading-[1.08] tracking-tight text-transparent sm:text-5xl">
+          <h1 style={enter(2)} className="animate-fade-in-up mt-4 bg-gradient-to-br from-foreground via-foreground/85 to-[color-mix(in_oklch,var(--fam-a)_70%,var(--foreground))] bg-clip-text text-3xl font-semibold leading-[1.1] tracking-tight text-transparent sm:text-4xl lg:text-5xl">
             {tagline}
           </h1>
-          <dl style={enter(4)} className="animate-fade-in-up mt-6 flex flex-wrap gap-x-8 gap-y-2">
+          <dl style={enter(4)} className="animate-fade-in-up mt-5 flex flex-wrap gap-x-6 gap-y-1 sm:mt-6 sm:gap-x-8">
             {stats.map((s) => (
               <div key={s.label} className="flex items-baseline gap-2">
                 <dd className="text-2xl font-semibold tabular-nums text-foreground/90">{s.value}</dd>
@@ -148,37 +171,85 @@ function Hero({ parent, tagline, accents, showcase, total, categoryCount, varian
               </div>
             ))}
           </dl>
-          <div style={enter(6)} className="animate-fade-in-up mt-6 flex flex-wrap gap-2">
-            <Link
-              href={`/icon/${parent.slug}`}
-              className="inline-flex items-center gap-2 rounded-xl border border-border bg-background/80 px-3 py-2 text-xs font-semibold shadow-sm backdrop-blur transition-colors hover:bg-accent"
-            >
-              <Logo icon={parent} chip={false} className="h-4 w-4" />
-              {parent.title} main logo
-              <ArrowUpRight className="h-3 w-3 opacity-50" />
-            </Link>
-            {extra && (
-              <Link
-                href={extra.href}
-                className="inline-flex items-center gap-2 rounded-xl border border-border bg-background/80 px-3 py-2 text-xs font-semibold text-muted-foreground shadow-sm backdrop-blur transition-colors hover:bg-accent hover:text-foreground"
-              >
-                {extra.icon && <img src={extra.icon} alt="" className="h-4 w-4 object-contain" />}
-                {extra.label}
+          <div style={enter(6)} className="animate-fade-in-up mt-6 space-y-3">
+            <div className="flex flex-wrap gap-2">
+              <Link href={`/icon/${parent.slug}`} className={PILL}>
+                <Logo icon={parent} chip={false} className="h-4 w-4" />
+                {parent.title} main logo
                 <ArrowUpRight className="h-3 w-3 opacity-50" />
               </Link>
-            )}
+              {extra && (
+                <Link href={extra.href} className={`${PILL} text-muted-foreground hover:text-foreground`}>
+                  {extra.icon && <img src={extra.icon} alt="" className="h-4 w-4 object-contain" />}
+                  {extra.label}
+                  <ArrowUpRight className="h-3 w-3 opacity-50" />
+                </Link>
+              )}
+            </div>
+            <div className="flex flex-wrap items-center gap-1.5">
+              {siteHost && parent.url && (
+                <a
+                  href={withUtm(parent.url, "family_hero")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={PILL_QUIET}
+                >
+                  <img
+                    src={`https://www.google.com/s2/favicons?domain=${siteHost}&sz=32`}
+                    alt=""
+                    width={16}
+                    height={16}
+                    className="h-4 w-4 rounded-sm"
+                  />
+                  {siteHost}
+                  <ArrowUpRight className="h-3 w-3 opacity-50" />
+                </a>
+              )}
+              {githubHref && (
+                <a
+                  href={withUtm(githubHref, "family_hero")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={PILL_QUIET}
+                >
+                  <img src="/icons/github/mono.svg" alt="" width={16} height={16} className="h-4 w-4 dark:invert" />
+                  GitHub
+                  <ArrowUpRight className="h-3 w-3 opacity-50" />
+                </a>
+              )}
+              {parent.guidelines && (
+                <a
+                  href={withUtm(parent.guidelines, "family_hero")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={PILL_QUIET}
+                >
+                  <BookOpen className="h-4 w-4" aria-hidden />
+                  Brand guidelines
+                  <ArrowUpRight className="h-3 w-3 opacity-50" />
+                </a>
+              )}
+              <Link href="/families" className={PILL_QUIET}>
+                <LayoutGrid className="h-4 w-4" aria-hidden />
+                All families
+              </Link>
+              <Link href="/submit" className={PILL_QUIET}>
+                <Plus className="h-4 w-4" aria-hidden />
+                Submit a missing {parent.title} logo
+              </Link>
+            </div>
           </div>
         </div>
 
         {showcase.length > 0 && (
-          <div style={enter(3)} className="animate-fade-in-up rounded-3xl border border-border/60 bg-background/70 p-5 shadow-xl backdrop-blur">
+          <div style={enter(3)} className="animate-fade-in-up rounded-3xl border border-border/60 bg-background/70 p-4 shadow-xl backdrop-blur sm:p-5">
             <div className="mb-4 flex items-center justify-between text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
               <span>Flagships</span>
               <Link href={`/icon/${parent.slug}`} className="inline-flex items-center gap-1 hover:text-foreground">
                 Open <ArrowUpRight className="h-3 w-3" />
               </Link>
             </div>
-            <ul className="grid grid-cols-4 gap-3">
+            <ul className="grid grid-cols-4 gap-2 sm:gap-3">
               {showcase.slice(0, 4).map((icon, i) => (
                 <li key={icon.slug} style={enter(i, 300, 70, 4)} className="animate-float-in">
                   <Link
@@ -293,10 +364,10 @@ export function FamilyView(props: FamilyViewProps) {
   const all = lead ? [lead, ...grouped] : grouped;
 
   return (
-    <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6">
+    <div className="mx-auto w-full max-w-7xl px-3 py-5 sm:px-6 sm:py-8">
       <Hero {...props} />
 
-      <div className="mt-10 flex flex-wrap items-end justify-between gap-3">
+      <div className="mt-8 flex flex-wrap items-end justify-between gap-3 sm:mt-10">
         <h2 className="text-xl font-semibold tracking-tight text-foreground/80">
           The full set
           <span className="ml-3 text-sm font-normal text-muted-foreground">{props.total} icons</span>
