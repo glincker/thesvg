@@ -1,5 +1,12 @@
 # thesvg
 
+## 3.3.15
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @thesvg/icons@3.3.15
+
 ## 3.3.14
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @thesvg/vue
 
+## 3.3.15
+
+### Patch Changes
+
+- feat: brand families, OG screenshots and asset refresh (replay of [#1322](https://github.com/glincker/thesvg/issues/1322)) ([#1323](https://github.com/glincker/thesvg/issues/1323))
+
 ## 3.3.14
 
 ### Patch Changes
