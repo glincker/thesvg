@@ -271,7 +271,8 @@
     "hex": "111111",
     "categories": [
       "Security",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/2fauth/default.svg",
@@ -1059,7 +1060,8 @@
     "hex": "8142E3",
     "categories": [
       "Automation",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/activepieces/default.svg",
@@ -2927,7 +2929,8 @@
     "hex": "E6522C",
     "categories": [
       "Monitoring",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/alertmanager/default.svg"
@@ -3163,7 +3166,8 @@
     "hex": "70C6BE",
     "categories": [
       "File Sharing",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/alist/default.svg",
@@ -4198,7 +4202,8 @@
     "hex": "0033FF",
     "categories": [
       "Community",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/answer/default.svg",
@@ -4475,7 +4480,8 @@
     "categories": [
       "LLM Tools",
       "AI",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/anythingllm/default.svg",
@@ -5518,7 +5524,8 @@
     "hex": "8427E0",
     "categories": [
       "Notes & Docs",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/appflowy/default.svg",
@@ -5816,7 +5823,8 @@
     "hex": "148C80",
     "categories": [
       "Communication",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/apprise-api/default.svg",
@@ -7590,7 +7598,8 @@
     "categories": [
       "Automation",
       "Media",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/autobrr/default.svg"
@@ -37576,7 +37585,8 @@
     "hex": "37ABE9",
     "categories": [
       "Health",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/baby-buddy/default.svg"
@@ -38231,7 +38241,8 @@
     "hex": "5190EF",
     "categories": [
       "Database",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/baserow/default.svg",
@@ -38866,7 +38877,8 @@
     "hex": "6366F1",
     "categories": [
       "Developer Utilities",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/bentopdf/default.svg"
@@ -38953,7 +38965,8 @@
     "categories": [
       "Monitoring",
       "Dashboard",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/beszel/default.svg"
@@ -42493,7 +42506,8 @@
     "hex": "111827",
     "categories": [
       "Database",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/bytebase/default.svg",
@@ -42532,7 +42546,8 @@
     "hex": "2563EB",
     "categories": [
       "Developer Utilities",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/bytestash/default.svg"
@@ -43598,7 +43613,8 @@
     "categories": [
       "Media Server",
       "Media",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/castopod/default.svg",
@@ -44410,7 +44426,8 @@
     "categories": [
       "Monitoring",
       "Dashboard",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/checkmate/default.svg"
@@ -44615,7 +44632,8 @@
       "File Sharing",
       "Storage",
       "Media",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/chibisafe/default.svg"
@@ -45998,7 +46016,8 @@
     "categories": [
       "File Sharing",
       "Storage",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/cloudreve/default.svg",
@@ -46396,7 +46415,8 @@
     "hex": "111111",
     "categories": [
       "Low-Code",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/cockpit-cms/default.svg",
@@ -48447,7 +48467,8 @@
     "categories": [
       "Developer Utilities",
       "Media",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/convertx/default.svg"
@@ -48618,7 +48639,8 @@
       "File Sharing",
       "Storage",
       "Networking",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/copyparty/default.svg"
@@ -49677,7 +49699,8 @@
     "categories": [
       "File Sharing",
       "Security",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/cryptgeon/default.svg"
@@ -50204,7 +50227,8 @@
     "categories": [
       "Developer Utilities",
       "Security",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/cyberchef/default.svg"
@@ -50828,7 +50852,8 @@
       "Backup",
       "Database",
       "Storage",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/databasus/default.svg",
@@ -51139,7 +51164,8 @@
     "hex": "4076BE",
     "categories": [
       "Self-Hosted",
-      "Software"
+      "Software",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/dawarich/default.svg"
@@ -53544,7 +53570,8 @@
     "hex": "000000",
     "categories": [
       "Notes & Docs",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/docmost/default.svg"
@@ -53697,7 +53724,8 @@
     "hex": "E97A42",
     "categories": [
       "Productivity",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/docuseal/default.svg",
@@ -53878,7 +53906,8 @@
     "hex": "D32F2F",
     "categories": [
       "Notes & Docs",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/dokuwiki/default.svg"
@@ -54332,7 +54361,8 @@
     "hex": "1A1A2E",
     "categories": [
       "DevTool",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/dozzle/default.svg"
@@ -57189,7 +57219,8 @@
     "hex": "8AA0C2",
     "categories": [
       "Helpdesk & CRM",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/espocrm/default.svg",
@@ -57321,7 +57352,8 @@
     "categories": [
       "Notes & Docs",
       "Communication",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/etherpad/default.svg",
@@ -59233,7 +59265,8 @@
     "hex": "FBB139",
     "categories": [
       "Community",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/fider/default.svg"
@@ -59436,7 +59469,8 @@
     "categories": [
       "File Sharing",
       "Storage",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/file-browser/default.svg",
@@ -60160,7 +60194,8 @@
     "categories": [
       "Developer Utilities",
       "Networking",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/flaresolverr/default.svg"
@@ -60257,7 +60292,8 @@
     "hex": "F8A66B",
     "categories": [
       "Notes & Docs",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/flatnotes/default.svg"
@@ -60544,7 +60580,8 @@
     "categories": [
       "LLM Tools",
       "AI",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/flowise/default.svg",
@@ -60904,7 +60941,8 @@
     "hex": "0058CC",
     "categories": [
       "Project Management",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/focalboard/default.svg"
@@ -61894,7 +61932,8 @@
     "categories": [
       "Helpdesk & CRM",
       "Communication",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/freescout/default.svg",
@@ -62898,7 +62937,8 @@
     "hex": "41B883",
     "categories": [
       "Software",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/gatus/default.svg"
@@ -68343,7 +68383,8 @@
     "hex": "57CB6A",
     "categories": [
       "Monitoring",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/glances/default.svg",
@@ -68557,7 +68598,8 @@
     "hex": "5B2D8E",
     "categories": [
       "Monitoring",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/glitchtip/default.svg",
@@ -68721,7 +68763,8 @@
     "hex": "00A5F3",
     "categories": [
       "Helpdesk & CRM",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/glpi/default.svg",
@@ -69243,7 +69286,8 @@
     "hex": "E0543A",
     "categories": [
       "Git & CI",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/gogs/default.svg",
@@ -71105,7 +71149,8 @@
     "hex": "71CAEE",
     "categories": [
       "Communication",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/gotify/default.svg"
@@ -71341,7 +71386,8 @@
     "categories": [
       "Monitoring",
       "Analytics",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/grafana-loki/default.svg"
@@ -71455,7 +71501,8 @@
     "hex": "795649",
     "categories": [
       "Productivity",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/gramps-web/default.svg"
@@ -71836,7 +71883,8 @@
     "categories": [
       "Media Server",
       "Media",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/grimmory/default.svg",
@@ -73648,7 +73696,8 @@
     "hex": "000000",
     "categories": [
       "Dashboard",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/heimdall/default.svg"
@@ -74232,7 +74281,8 @@
     "hex": "1570EF",
     "categories": [
       "Productivity",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/heyform/default.svg"
@@ -74714,7 +74764,8 @@
     "hex": "206EFF",
     "categories": [
       "Dashboard",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/homer/default.svg"
@@ -77387,7 +77438,8 @@
     "hex": "E0ED34",
     "categories": [
       "Security",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/infisical/default.svg",
@@ -78736,7 +78788,8 @@
     "hex": "18A058",
     "categories": [
       "Developer Utilities",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/it-tools/default.svg"
@@ -78931,7 +78984,8 @@
     "categories": [
       "Media Server",
       "Media",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/jackett/default.svg"
@@ -79286,7 +79340,8 @@
     "hex": "00A4DC",
     "categories": [
       "Media",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/jellyfin/default.svg",
@@ -79305,7 +79360,8 @@
     "hex": "9333EA",
     "categories": [
       "Software",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/jellyseerr/default.svg"
@@ -81749,7 +81805,8 @@
     "hex": "D40000",
     "categories": [
       "Project Management",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/kanboard/default.svg"
@@ -82021,7 +82078,8 @@
     "hex": "4B53B3",
     "categories": [
       "Software",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/kavita/default.svg"
@@ -82839,7 +82897,8 @@
     "hex": "0B8DD4",
     "categories": [
       "Project Management",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/kimai/default.svg"
@@ -83469,7 +83528,8 @@
     "hex": "17B2E7",
     "categories": [
       "Media",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/kodi/default.svg",
@@ -83580,7 +83640,8 @@
     "categories": [
       "Media Server",
       "Media",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/komga/default.svg"
@@ -83708,7 +83769,8 @@
     "categories": [
       "Backup",
       "Storage",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/kopia/default.svg",
@@ -84429,7 +84491,8 @@
     "categories": [
       "LLM Tools",
       "AI",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/label-studio/default.svg",
@@ -85131,7 +85194,8 @@
     "hex": "1B75BB",
     "categories": [
       "Software",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/leantime/default.svg"
@@ -85148,7 +85212,8 @@
     "hex": "0E76BC",
     "categories": [
       "Software",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/leantime-badge/default.svg"
@@ -85852,7 +85917,8 @@
       "LLM Tools",
       "AI",
       "Communication",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/librechat/default.svg"
@@ -86023,7 +86089,8 @@
     "categories": [
       "Monitoring",
       "Networking",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/librespeed/default.svg",
@@ -86150,7 +86217,8 @@
     "categories": [
       "Media Server",
       "Media",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/lidarr/default.svg"
@@ -86529,7 +86597,8 @@
     "hex": "5856E0",
     "categories": [
       "Bookmarks & RSS",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/linkding/default.svg"
@@ -86673,7 +86742,8 @@
     "hex": "6B52FF",
     "categories": [
       "Software",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/linkwarden/default.svg"
@@ -87019,7 +87089,8 @@
     "categories": [
       "LLM Tools",
       "AI",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/litellm-proxy/default.svg"
@@ -87171,7 +87242,8 @@
     "categories": [
       "LLM Tools",
       "AI",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/llama-cpp-server/default.svg",
@@ -87377,7 +87449,8 @@
     "hex": "1E88E5",
     "categories": [
       "AI",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/localai/default.svg"
@@ -88003,7 +88076,8 @@
     "hex": "B480DE",
     "categories": [
       "Low-Code",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/lowcoder/default.svg"
@@ -88682,7 +88756,8 @@
     "categories": [
       "Developer Utilities",
       "Analytics",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/mage-ai/default.svg",
@@ -89033,7 +89108,8 @@
     "categories": [
       "Developer Utilities",
       "Communication",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/mailpit/default.svg"
@@ -89602,7 +89678,8 @@
     "categories": [
       "Developer Utilities",
       "AI",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/marimo/default.svg"
@@ -91062,7 +91139,8 @@
     "hex": "18181B",
     "categories": [
       "Notes & Docs",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/memos/default.svg",
@@ -91678,7 +91756,8 @@
     "categories": [
       "Media Server",
       "Media",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/metube/default.svg",
@@ -93596,7 +93675,8 @@
     "categories": [
       "Bookmarks & RSS",
       "Media",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/miniflux/default.svg"
@@ -94135,7 +94215,8 @@
     "hex": "3F51B5",
     "categories": [
       "Social",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/mobilizon/default.svg"
@@ -94547,7 +94628,8 @@
     "categories": [
       "Database",
       "Dashboard",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/mongo-express/default.svg"
@@ -96526,7 +96608,8 @@
     "hex": "0084FF",
     "categories": [
       "Music",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/navidrome/default.svg"
@@ -100830,7 +100913,8 @@
     "hex": "000000",
     "categories": [
       "Git & CI",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/onedev/default.svg"
@@ -100957,7 +101041,8 @@
     "categories": [
       "File Sharing",
       "Security",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/onetimesecret/default.svg"
@@ -102068,7 +102153,8 @@
     "hex": "141526",
     "categories": [
       "Software",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/openspeedtest/default.svg"
@@ -102772,7 +102858,8 @@
     "hex": "F58321",
     "categories": [
       "Helpdesk & CRM",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/orangehrm/default.svg"
@@ -102897,7 +102984,8 @@
     "hex": "000000",
     "categories": [
       "Dashboard",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/organizr/default.svg"
@@ -103136,7 +103224,8 @@
     "hex": "EE9136",
     "categories": [
       "Helpdesk & CRM",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/osticket/default.svg"
@@ -103386,7 +103475,8 @@
       "Media Server",
       "Media",
       "Communication",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/owncast/default.svg",
@@ -103785,7 +103875,8 @@
     "hex": "000000",
     "categories": [
       "File Sharing",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/pairdrop/default.svg",
@@ -104596,7 +104687,8 @@
     "categories": [
       "Finance",
       "Hosting",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/paymenter/default.svg"
@@ -105365,7 +105457,8 @@
       "Backup",
       "Database",
       "Storage",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/pg-back-web/default.svg",
@@ -105388,7 +105481,8 @@
     "hex": "336791",
     "categories": [
       "Database",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/pgadmin/default.svg"
@@ -105675,7 +105769,8 @@
       "Media Server",
       "Media",
       "Storage",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/photoprism/default.svg",
@@ -106280,7 +106375,8 @@
     "categories": [
       "File Sharing",
       "Storage",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/pingvin-share/default.svg"
@@ -107447,7 +107543,8 @@
     "hex": "000000",
     "categories": [
       "Communication",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/plunk/default.svg"
@@ -107669,7 +107766,8 @@
     "hex": "1A1A1A",
     "categories": [
       "Security",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/pocket-id/default.svg",
@@ -109304,7 +109402,8 @@
     "categories": [
       "File Sharing",
       "Security",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/privatebin/default.svg",
@@ -109506,7 +109605,8 @@
     "categories": [
       "AI",
       "Software",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/profclaw/default.svg",
@@ -109949,7 +110049,8 @@
     "categories": [
       "Media Server",
       "Media",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/prowlarr/default.svg"
@@ -112249,7 +112350,8 @@
     "hex": "4F46E5",
     "categories": [
       "Productivity",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/rallly/default.svg",
@@ -112952,7 +113054,8 @@
     "categories": [
       "Bookmarks & RSS",
       "Media",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/readeck/default.svg"
@@ -113384,7 +113487,8 @@
     "hex": "D54455",
     "categories": [
       "Bookmarks & RSS",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/redlib/default.svg"
@@ -116534,7 +116638,8 @@
     "categories": [
       "Media Server",
       "Media",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/ryot/default.svg",
@@ -117984,7 +118089,8 @@
       "File Sharing",
       "Storage",
       "Database",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/seaweedfs/default.svg"
@@ -118272,7 +118378,8 @@
     "hex": "1697F6",
     "categories": [
       "Git & CI",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/semaphore-ui/default.svg"
@@ -118809,7 +118916,8 @@
       "File Sharing",
       "Storage",
       "Networking",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/sftpgo/default.svg"
@@ -119094,7 +119202,8 @@
     "hex": "F44336",
     "categories": [
       "Bookmarks & RSS",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/shiori/default.svg"
@@ -119113,7 +119222,8 @@
     "categories": [
       "Developer Utilities",
       "Analytics",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/shlink/default.svg"
@@ -119590,7 +119700,8 @@
     "categories": [
       "Productivity",
       "Software",
-      "DevTool"
+      "DevTool",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/silverbullet/default.svg"
@@ -121882,7 +121993,8 @@
       "LLM Tools",
       "AI",
       "Media",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/speaches/default.svg"
@@ -121976,7 +122088,8 @@
       "Monitoring",
       "Networking",
       "Dashboard",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/speedtest-tracker/default.svg"
@@ -123022,7 +123135,8 @@
     "categories": [
       "Communication",
       "Security",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/stalwart-mail-server/default.svg",
@@ -123383,7 +123497,8 @@
     "hex": "66CC5D",
     "categories": [
       "Monitoring",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/statusnook/default.svg"
@@ -123743,7 +123858,8 @@
     "hex": "1B6AC6",
     "categories": [
       "Software",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/stirling-pdf/default.svg"
@@ -124878,7 +124994,8 @@
     "hex": "0F172A",
     "categories": [
       "Finance",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/sure/default.svg"
@@ -126265,7 +126382,8 @@
       "Media Server",
       "Monitoring",
       "Media",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/tautulli/default.svg",
@@ -126394,7 +126512,8 @@
     "categories": [
       "Low-Code",
       "Database",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/teable/default.svg",
@@ -127053,7 +127172,8 @@
     "categories": [
       "Developer Utilities",
       "Networking",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/termix/default.svg"
@@ -128320,7 +128440,8 @@
       "Analytics",
       "Monitoring",
       "Dashboard",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/tianji/default.svg",
@@ -129901,7 +130022,8 @@
     "hex": "F4B400",
     "categories": [
       "Database",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/trailbase/default.svg"
@@ -130908,7 +131030,8 @@
     "hex": "FF0000",
     "categories": [
       "Software",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/tube-archivist/default.svg"
@@ -132491,7 +132614,8 @@
     "hex": "1A4049",
     "categories": [
       "DevOps",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/unleash/default.svg",
@@ -134157,7 +134281,8 @@
     "categories": [
       "Developer Utilities",
       "Media",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/vert/default.svg"
@@ -136140,7 +136265,8 @@
     "hex": "2F855A",
     "categories": [
       "Analytics",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/wakapi/default.svg"
@@ -136286,7 +136412,8 @@
     "hex": "2858C5",
     "categories": [
       "Finance",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/wallos/default.svg"
@@ -136760,7 +136887,8 @@
       "Developer Utilities",
       "Security",
       "Analytics",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/web-check/default.svg",
@@ -137309,7 +137437,8 @@
     "hex": "007C8F",
     "categories": [
       "Project Management",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/wekan/default.svg"
@@ -137780,7 +137909,8 @@
       "Privacy",
       "Security",
       "Networking",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/whoogle-search/default.svg",
@@ -138138,7 +138268,8 @@
     "hex": "3B82F6",
     "categories": [
       "Automation",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/windmill/default.svg"
@@ -138705,7 +138836,8 @@
     "hex": "00C851",
     "categories": [
       "DevOps",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/woodpecker/default.svg"
@@ -140062,7 +140194,8 @@
     "categories": [
       "Media Server",
       "Media",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/yamtrack/default.svg",
@@ -141674,7 +141807,8 @@
       "File Sharing",
       "Storage",
       "Media",
-      "Self-Hosted"
+      "Self-Hosted",
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/zipline/default.svg"
