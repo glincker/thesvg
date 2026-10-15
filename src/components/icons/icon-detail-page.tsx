@@ -30,6 +30,7 @@ import { DownloadMenu } from "@/components/icons/detail/download-menu";
 import { OpenInEditorMenu } from "@/components/icons/detail/open-in-editor-menu";
 import { withUtm } from "@/lib/external-link";
 import { IconLinksRow } from "@/components/icons/detail/icon-links-row";
+import { FamilyStrip } from "@/components/icons/detail/family-strip";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import { IconFeedback } from "@/components/icons/detail/icon-feedback";
 
@@ -108,9 +109,20 @@ function PreviewCopyButton({
   );
 }
 
+export interface IconFamilyInfo {
+  slug: string;
+  title: string;
+  /** Other family members, excluding the icon being viewed. */
+  members: IconEntry[];
+  /** Family size including the parent icon. */
+  total: number;
+}
+
 interface IconDetailPageProps {
   icon: IconEntry;
   relatedIcons?: IconEntry[];
+  /** Brand family (parent plus siblings), resolved server-side. */
+  family?: IconFamilyInfo | null;
   versionCounterpartSlug?: string | null;
   versionCounterpartYear?: string | null;
   versionCounterpartIsNewer?: boolean;
@@ -123,6 +135,7 @@ interface IconDetailPageProps {
 export function IconDetailPage({
   icon,
   relatedIcons = [],
+  family = null,
   versionCounterpartSlug,
   versionCounterpartYear,
   versionCounterpartIsNewer,
@@ -534,6 +547,25 @@ export function IconDetailPage({
                     )}
                   </Link>
                 )}
+                {family && (
+                  <Link
+                    href={`/family/${family.slug}`}
+                    prefetch={false}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-border/40 bg-card/60 px-2.5 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:border-border hover:bg-card hover:text-foreground"
+                  >
+                    <img
+                      src={`/icons/${family.slug}/default.svg`}
+                      alt=""
+                      className="h-3.5 w-3.5 object-contain"
+                    />
+                    <span>
+                      {icon.slug === family.slug
+                        ? `${family.title} family`
+                        : `Part of ${family.title}`}
+                    </span>
+                    <ArrowUpRight className="h-3 w-3 opacity-50" />
+                  </Link>
+                )}
                 {icon.categories.includes("Google 2026") && (
                   <Link
                     href="/category/google-2026"
@@ -568,6 +600,18 @@ export function IconDetailPage({
             </div>
           </div>
 
+          {/* Single-variant icons have no picker, so the family strip takes
+              that slot instead of leaving a gap above the code block. */}
+          {family && variants.length <= 1 && (
+            <FamilyStrip
+              familySlug={family.slug}
+              familyTitle={family.title}
+              members={family.members}
+              total={family.total}
+              prominent
+            />
+          )}
+
           {/* Variant switcher with thumbnails */}
           <VariantPicker
             variants={variants as [string, string | undefined][]}
@@ -594,6 +638,15 @@ export function IconDetailPage({
             slug={icon.slug}
             activeVariant={activeVariant}
           />
+
+          {family && variants.length > 1 && (
+            <FamilyStrip
+              familySlug={family.slug}
+              familyTitle={family.title}
+              members={family.members}
+              total={family.total}
+            />
+          )}
 
           <IconFeedback slug={icon.slug} title={icon.title} />
 

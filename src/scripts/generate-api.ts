@@ -14,6 +14,7 @@
  * SVG content directly from /icons/{slug}/{variant}.svg.
  */
 
+import { currentOnly } from "../lib/family-current";
 import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from "fs";
 import { join } from "path";
 
@@ -32,6 +33,7 @@ interface IconEntry {
   url?: string;
   guidelines?: string;
   links?: Record<string, string | undefined>;
+  family?: string;
   dateAdded?: string;
   collection: string;
   collectionVersion?: string;
@@ -85,6 +87,37 @@ function main() {
     JSON.stringify({ categories }),
   );
   console.log(`  categories.json: ${categories.length} categories`);
+
+  // --- families.json (brand families: parent icon plus current members) ---
+  const bySlug = new Map(icons.map((i) => [i.slug, i]));
+  const byFamily = new Map<string, IconEntry[]>();
+  for (const icon of icons) {
+    if (!icon.family) continue;
+    const list = byFamily.get(icon.family) ?? [];
+    list.push(icon);
+    byFamily.set(icon.family, list);
+  }
+  const families = [...byFamily]
+    .map(([slug, all]) => {
+      const parent = bySlug.get(slug);
+      const members = currentOnly(all);
+      return { slug, parent, members };
+    })
+    .filter((f) => f.parent && f.members.length + 1 >= 4)
+    .map((f) => ({
+      slug: f.slug,
+      title: f.parent!.title,
+      url: `https://thesvg.org/family/${f.slug}`,
+      count: f.members.length + 1,
+      logo: f.parent!.variants.default,
+      members: f.members.map((m) => m.slug).sort(),
+    }))
+    .sort((a, b) => b.count - a.count || a.title.localeCompare(b.title));
+  writeFileSync(
+    join(PUBLIC_API, "families.json"),
+    JSON.stringify({ total: families.length, families }),
+  );
+  console.log(`  families.json: ${families.length} families`);
 
   // --- icons-full.json (slim browse index for client-side lazy loading) ---
   // The browse surface (grid, search, quick-preview) reads every field except

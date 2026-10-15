@@ -947,7 +947,8 @@
     "license": "brand-use",
     "url": "https://www.adobe.com/acrobat/pdf-reader.html",
     "collection": "brands",
-    "dateAdded": "2026-05-05"
+    "dateAdded": "2026-05-05",
+    "family": "adobe"
   },
   {
     "slug": "acrobat-reader-grayscale-app-icon",
@@ -964,7 +965,8 @@
     "license": "brand-use",
     "url": "https://www.adobe.com/acrobat/pdf-reader.html",
     "collection": "brands",
-    "dateAdded": "2026-05-05"
+    "dateAdded": "2026-05-05",
+    "family": "adobe"
   },
   {
     "slug": "acrobat-scan",
@@ -981,7 +983,8 @@
     "license": "brand-use",
     "url": "https://www.adobe.com/acrobat/mobile/acrobat-scan.html",
     "collection": "brands",
-    "dateAdded": "2026-05-05"
+    "dateAdded": "2026-05-05",
+    "family": "adobe"
   },
   {
     "slug": "act",
@@ -1451,7 +1454,8 @@
     "license": "brand-use",
     "url": "https://www.adobe.com/products/aero",
     "collection": "brands",
-    "dateAdded": "2026-05-05"
+    "dateAdded": "2026-05-05",
+    "family": "adobe"
   },
   {
     "slug": "adobe-creative-cloud",
@@ -1470,7 +1474,8 @@
     "license": "brand-use",
     "url": "https://www.adobe.com/creativecloud.html",
     "dateAdded": "2026-09-13",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "adobe"
   },
   {
     "slug": "adobe-fonts",
@@ -1487,7 +1492,8 @@
     "license": "brand-use",
     "url": "https://fonts.adobe.com",
     "collection": "brands",
-    "dateAdded": "2026-05-05"
+    "dateAdded": "2026-05-05",
+    "family": "adobe"
   },
   {
     "slug": "adobe-sign",
@@ -1504,7 +1510,8 @@
     "license": "brand-use",
     "url": "https://www.adobe.com/sign",
     "collection": "brands",
-    "dateAdded": "2026-05-05"
+    "dateAdded": "2026-05-05",
+    "family": "adobe"
   },
   {
     "slug": "adobe-stock",
@@ -1520,7 +1527,8 @@
     "license": "brand-use",
     "url": "https://stock.adobe.com",
     "collection": "brands",
-    "dateAdded": "2026-05-05"
+    "dateAdded": "2026-05-05",
+    "family": "adobe"
   },
   {
     "slug": "adonisjs",
@@ -1884,7 +1892,8 @@
     "license": "MIT",
     "url": "https://www.adobe.com/products/aftereffects",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "adobe"
   },
   {
     "slug": "afterpay",
@@ -3063,7 +3072,8 @@
     "license": "CC0-1.0",
     "url": "https://www.alibabagroup.com/en/ir/reports",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "alibaba"
   },
   {
     "slug": "alibaba-cloud-badge",
@@ -3153,7 +3163,8 @@
     "license": "CC0-1.0",
     "url": "https://aliexpress.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "alibaba"
   },
   {
     "slug": "alipay",
@@ -3558,7 +3569,8 @@
     "license": "Fair use",
     "url": "https://amazon.com/firetv",
     "dateAdded": "2026-03-18",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "amazon"
   },
   {
     "slug": "amazon-kindle",
@@ -3578,7 +3590,8 @@
     "license": "Fair use",
     "url": "https://amazon.com/kindle",
     "dateAdded": "2026-03-18",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "amazon"
   },
   {
     "slug": "amazon-music",
@@ -3595,7 +3608,8 @@
     "license": "Fair use",
     "url": "https://music.amazon.com",
     "dateAdded": "2026-03-18",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "amazon"
   },
   {
     "slug": "amazon-prime",
@@ -3614,7 +3628,8 @@
     "license": "Fair use",
     "url": "https://amazon.com/prime",
     "dateAdded": "2026-03-18",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "amazon"
   },
   {
     "slug": "amazon-q",
@@ -3631,7 +3646,8 @@
     "license": "MIT",
     "url": "https://aws.amazon.com/q",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "amazon"
   },
   {
     "slug": "amazon-web-services",
@@ -3650,7 +3666,8 @@
     "license": "MIT",
     "url": "https://aws.amazon.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "amazon"
   },
   {
     "slug": "amazon-web-services-badge",
@@ -3959,7 +3976,8 @@
     "url": "https://www.android.com/",
     "guidelines": "https://developer.android.com/distribute/marketing-tools/brand-guidelines#brand-android",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "android-auto",
@@ -3977,7 +3995,8 @@
     "license": "CC0-1.0",
     "url": "https://thepartnermarketinghub.withgoogle.com/brands/android-auto",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "android-studio",
@@ -4015,7 +4034,8 @@
     "url": "https://angular.dev/",
     "guidelines": "https://angular.dev/press-kit",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "angularjs",
@@ -4122,7 +4142,8 @@
     "license": "MIT",
     "url": "https://www.adobe.com/products/animate",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "adobe"
   },
   {
     "slug": "animedotjs",
@@ -4212,7 +4233,8 @@
     "license": "CC0-1.0",
     "url": "https://www.ansible.com/logos",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "ibm"
   },
   {
     "slug": "answer",
@@ -4388,7 +4410,8 @@
     "license": "MIT",
     "url": "https://antigravity.google",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "antv",
@@ -5481,7 +5504,8 @@
     "license": "CC0-1.0",
     "url": "https://www.apple.com/app-store/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "apple"
   },
   {
     "slug": "appcelerator",
@@ -5710,7 +5734,8 @@
     "license": "CC0-1.0",
     "url": "https://www.apple.com/apple-arcade",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "apple"
   },
   {
     "slug": "apple-badge",
@@ -5748,7 +5773,8 @@
     "license": "CC0-1.0",
     "url": "https://music.apple.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "apple"
   },
   {
     "slug": "apple-news",
@@ -5765,7 +5791,8 @@
     "license": "CC0-1.0",
     "url": "https://www.apple.com/apple-news",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "apple"
   },
   {
     "slug": "apple-pay",
@@ -5783,7 +5810,8 @@
     "license": "CC0-1.0",
     "url": "https://developer.apple.com/apple-pay/marketing",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "apple"
   },
   {
     "slug": "apple-podcasts",
@@ -5801,7 +5829,8 @@
     "license": "CC0-1.0",
     "url": "https://www.apple.com/itunes/marketing-on-podcasts/identity-guidelines.html#apple-podcasts-icon",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "apple"
   },
   {
     "slug": "apple-tv",
@@ -5819,7 +5848,8 @@
     "license": "CC0-1.0",
     "url": "https://tv.apple.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "apple"
   },
   {
     "slug": "applitools",
@@ -5989,7 +6019,8 @@
     "url": "https://www.aquasec.com/brand",
     "guidelines": "https://www.aquasec.com/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "aral",
@@ -7328,7 +7359,8 @@
     "license": "CC0-1.0",
     "url": "https://www.audible.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "amazon"
   },
   {
     "slug": "audio-technica",
@@ -7416,7 +7448,8 @@
     "license": "brand-use",
     "url": "https://www.adobe.com/products/audition",
     "collection": "brands",
-    "dateAdded": "2026-05-05"
+    "dateAdded": "2026-05-05",
+    "family": "adobe"
   },
   {
     "slug": "aurelia",
@@ -8249,7 +8282,8 @@
     "license": "MIT",
     "url": "https://aws.amazon.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "amazon"
   },
   {
     "slug": "aws-amazon-api-gateway",
@@ -38014,7 +38048,8 @@
     "license": "CC0-1.0",
     "url": "https://www.atlassian.design/guidelines/marketing/resources/logo-files",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "atlassian"
   },
   {
     "slug": "bamboo-airways",
@@ -38719,7 +38754,8 @@
     "url": "https://www.elastic.co/beats",
     "guidelines": "https://www.elastic.co/legal/trademarks",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "elastic"
   },
   {
     "slug": "beats-by-dre",
@@ -38774,7 +38810,8 @@
     "license": "MIT",
     "url": "https://aws.amazon.com/bedrock",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "amazon"
   },
   {
     "slug": "beehiiv",
@@ -38828,7 +38865,8 @@
     "license": "CC0-1.0",
     "url": "https://www.behance.net",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "adobe"
   },
   {
     "slug": "beijing-subway",
@@ -39506,7 +39544,8 @@
     "license": "MIT",
     "url": "https://www.bing.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "bingx-badge",
@@ -39683,7 +39722,8 @@
     "url": "https://atlassian.design/resources/logo-library",
     "guidelines": "https://atlassian.design/foundations/logos",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "atlassian"
   },
   {
     "slug": "bitbucket-badge",
@@ -40472,7 +40512,8 @@
     "license": "CC0-1.0",
     "url": "https://www.blogger.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "bloglovin",
@@ -43335,7 +43376,8 @@
     "license": "MIT",
     "url": "https://capcut.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "bytedance"
   },
   {
     "slug": "capistrano",
@@ -44045,7 +44087,8 @@
     "license": "CC0-1.0",
     "url": "https://wiki.centos.org/ArtWork/Brand/Logo",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "ibm"
   },
   {
     "slug": "ceph",
@@ -45018,7 +45061,8 @@
     "license": "MIT",
     "url": "https://chrome.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "chrome-web-store",
@@ -45036,7 +45080,8 @@
     "license": "CC0-1.0",
     "url": "https://chromewebstore.google.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "chromium",
@@ -45313,7 +45358,8 @@
     "license": "Trademark",
     "url": "https://www.cisco.com/c/en/us/products/security/anyconnect-secure-mobility-client/index.html",
     "dateAdded": "2026-06-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "cisco"
   },
   {
     "slug": "cisco-badge",
@@ -45346,7 +45392,8 @@
     "license": "Trademark",
     "url": "https://www.cisco.com/c/en/us/products/unified-communications/jabber/index.html",
     "dateAdded": "2026-06-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "cisco"
   },
   {
     "slug": "citibank",
@@ -45584,7 +45631,8 @@
     "license": "CC0-1.0",
     "url": "https://claude.ai",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "anthropic"
   },
   {
     "slug": "claude-ai",
@@ -45604,7 +45652,8 @@
     "license": "MIT",
     "url": "https://claude.ai/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "anthropic"
   },
   {
     "slug": "claude-code",
@@ -45624,7 +45673,8 @@
     "license": "MIT",
     "url": "https://code.claude.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "anthropic"
   },
   {
     "slug": "clearml",
@@ -45807,7 +45857,8 @@
     "url": "https://www.jetbrains.com/company/brand/logos/",
     "guidelines": "https://www.jetbrains.com/company/brand/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "clipdrop",
@@ -48305,7 +48356,8 @@
     "license": "CC0-1.0",
     "url": "https://www.atlassian.com/company/news/press-kit",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "atlassian"
   },
   {
     "slug": "confluent",
@@ -48415,7 +48467,8 @@
     "url": "https://www.hashicorp.com/brand",
     "guidelines": "https://www.hashicorp.com/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "ibm"
   },
   {
     "slug": "contabo",
@@ -49368,7 +49421,8 @@
     "license": "CC0-1.0",
     "url": "https://www.coze.com/home",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "bytedance"
   },
   {
     "slug": "cozy-cloud-badge",
@@ -49920,7 +49974,8 @@
     "license": "CC0-1.0",
     "url": "https://crowdsource.google.com/about/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "crowdstrike",
@@ -49991,7 +50046,8 @@
     "license": "CC0-1.0",
     "url": "https://www.crunchyroll.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "sony"
   },
   {
     "slug": "crusoe",
@@ -51018,7 +51074,8 @@
     "license": "CC0-1.0",
     "url": "https://dart.dev/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "darty",
@@ -51323,7 +51380,8 @@
     "url": "https://www.jetbrains.com/company/brand/logos/",
     "guidelines": "https://www.jetbrains.com/company/brand/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "dataiku",
@@ -51360,7 +51418,8 @@
     "license": "MIT",
     "url": "",
     "collection": "brands",
-    "dateAdded": "2026-05-05"
+    "dateAdded": "2026-05-05",
+    "family": "jetbrains"
   },
   {
     "slug": "datastax",
@@ -52914,7 +52973,8 @@
     "license": "CC0-1.0",
     "url": "https://dialogflow.cloud.google.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "dialogika",
@@ -53555,7 +53615,8 @@
     "url": "https://www.disneyplus.com",
     "guidelines": "https://commons.wikimedia.org/wiki/File%3ADisney%2B_logo.svg",
     "collection": "brands",
-    "dateAdded": "2026-05-16"
+    "dateAdded": "2026-05-16",
+    "family": "disney"
   },
   {
     "slug": "disneyplus",
@@ -53572,7 +53633,8 @@
     "license": "MIT",
     "url": "https://www.disneyplus.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "disney"
   },
   {
     "slug": "disqus",
@@ -54593,7 +54655,8 @@
     "url": "https://github.com/dotnet/brand/blob/c7d0f51b8ec59531332d05fb27a5b758a7a3d689/logo/dotnet-logo.svg",
     "guidelines": "https://github.com/dotnet/brand/blob/c7d0f51b8ec59531332d05fb27a5b758a7a3d689/dotnet-styleGuide-2024.pdf",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "dotnetcore",
@@ -54667,7 +54730,8 @@
     "license": "MIT",
     "url": "https://team.doubao.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "bytedance"
   },
   {
     "slug": "dovecot",
@@ -54938,7 +55002,8 @@
     "license": "MIT",
     "url": "https://www.adobe.com/products/dreamweaver.html",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "adobe"
   },
   {
     "slug": "dreamworks",
@@ -56066,7 +56131,8 @@
     "license": "MIT",
     "url": "https://www.microsoft.com/en-us/edge",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "edge-impulse",
@@ -56410,7 +56476,8 @@
     "license": "CC0-1.0",
     "url": "https://www.elastic.co/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "elastic"
   },
   {
     "slug": "elastic-stack",
@@ -56446,7 +56513,8 @@
     "license": "CC0-1.0",
     "url": "https://www.elastic.co/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "elastic"
   },
   {
     "slug": "elavon",
@@ -57646,7 +57714,8 @@
     "license": "Fair Use",
     "url": "https://www.espn.com",
     "dateAdded": "2026-03-09",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "disney"
   },
   {
     "slug": "espocrm",
@@ -58636,7 +58705,8 @@
     "url": "https://www.facebook.com",
     "guidelines": "https://about.meta.com/brand/resources/facebook/logo",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "meta"
   },
   {
     "slug": "facebook-badge",
@@ -60025,7 +60095,8 @@
     "license": "CC0-1.0",
     "url": "https://files.google.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "files-com-badge",
@@ -60184,7 +60255,8 @@
     "url": "https://firebase.google.com/",
     "guidelines": "https://firebase.google.com/brand-guidelines",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "firebase-studio",
@@ -60201,7 +60273,8 @@
     "license": "MIT",
     "url": "https://firebase.studio/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "firebird",
@@ -60279,7 +60352,8 @@
     "license": "MIT",
     "url": "https://firefly.adobe.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "adobe"
   },
   {
     "slug": "firefly-iii",
@@ -60386,7 +60460,8 @@
     "license": "Custom",
     "url": "https://firebase.google.com/docs/firestore",
     "dateAdded": "2026-03-09",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "firewalla",
@@ -60515,7 +60590,8 @@
     "license": "CC0-1.0",
     "url": "https://www.fitbit.com/uk/home",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "five-guys",
@@ -61218,7 +61294,8 @@
     "url": "https://flutter.dev/",
     "guidelines": "https://flutter.dev/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "fluvio",
@@ -62535,7 +62612,8 @@
     "license": "brand-use",
     "url": "https://www.adobe.com/products/fresco",
     "collection": "brands",
-    "dateAdded": "2026-05-05"
+    "dateAdded": "2026-05-05",
+    "family": "adobe"
   },
   {
     "slug": "fresh",
@@ -62929,7 +63007,8 @@
     "license": "Fair Use",
     "url": "https://www.funimation.com",
     "dateAdded": "2026-03-09",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "sony"
   },
   {
     "slug": "fur-affinity",
@@ -67930,7 +68009,8 @@
     "license": "MIT",
     "url": "https://gemini.google.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "gemini-badge",
@@ -67965,7 +68045,8 @@
     "license": "Unknown",
     "url": "https://github.com/google-gemini/gemini-cli",
     "dateAdded": "2026-03-24",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "gemini-google",
@@ -68629,7 +68710,8 @@
     "url": "https://github.com/",
     "guidelines": "https://brand.github.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "github-actions",
@@ -69350,7 +69432,8 @@
     "license": "CC0-1.0",
     "url": "https://www.gmail.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "gmail-2026",
@@ -69373,7 +69456,8 @@
     "url": "https://www.gmail.com",
     "guidelines": "https://about.google/brand-resource-center/",
     "dateAdded": "2026-05-22",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "gmx",
@@ -69627,7 +69711,8 @@
     "url": "https://go.dev/",
     "guidelines": "https://blog.golang.org/go-brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "goaccess",
@@ -69927,7 +70012,8 @@
     "url": "https://www.jetbrains.com/company/brand/#logos-and-icons-jetbrains-logos",
     "guidelines": "https://www.jetbrains.com/company/brand/#brand-guidelines",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "goldilocks",
@@ -69998,7 +70084,8 @@
     "license": "CC0-1.0",
     "url": "https://www.goodreads.com/about/press",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "amazon"
   },
   {
     "slug": "goodsync-badge",
@@ -70054,7 +70141,8 @@
     "license": "CC0-1.0",
     "url": "https://commons.wikimedia.org/wiki/File:Google_AdMob_logo.svg",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-ads",
@@ -70072,7 +70160,8 @@
     "license": "CC0-1.0",
     "url": "https://ads.google.com/home/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-adsense",
@@ -70090,7 +70179,8 @@
     "license": "CC0-1.0",
     "url": "https://www.google.com/adsense/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-analytics",
@@ -70108,7 +70198,8 @@
     "license": "CC0-1.0",
     "url": "https://analytics.google.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-antigravity",
@@ -70126,7 +70217,8 @@
     "license": "MIT",
     "url": "https://www.google.com/antigravity",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-apps-script",
@@ -70144,7 +70236,8 @@
     "license": "CC0-1.0",
     "url": "https://developers.google.com/apps-script",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-assistant",
@@ -70162,7 +70255,8 @@
     "license": "CC0-1.0",
     "url": "https://assistant.google.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-authenticator",
@@ -70180,7 +70274,8 @@
     "license": "CC0-1.0",
     "url": "https://commons.wikimedia.org/wiki/File:Google_Authenticator_(April_2023).svg",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-badge",
@@ -70216,7 +70311,8 @@
     "url": "https://cloud.google.com/icons",
     "guidelines": "https://about.google/brand-resource-center",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-bigtable",
@@ -70235,7 +70331,8 @@
     "url": "https://cloud.google.com/icons",
     "guidelines": "https://about.google/brand-resource-center",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-calendar",
@@ -70253,7 +70350,8 @@
     "license": "CC0-1.0",
     "url": "https://calendar.google.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-calendar-2026",
@@ -70276,7 +70374,8 @@
     "url": "https://calendar.google.com/",
     "guidelines": "https://about.google/brand-resource-center/",
     "dateAdded": "2026-05-22",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-campaign-manager-360",
@@ -70294,7 +70393,8 @@
     "license": "CC0-1.0",
     "url": "https://developers.google.com/doubleclick-advertisers",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-cardboard",
@@ -70312,7 +70412,8 @@
     "license": "CC0-1.0",
     "url": "https://arvr.google.com/cardboard/images/header/vr-home.svg",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-cast",
@@ -70333,7 +70434,8 @@
     "url": "https://partnermarketinghub.withgoogle.com/brands/google-cast/visual-identity/visual-identity",
     "guidelines": "https://partnermarketinghub.withgoogle.com/brands/google-cast",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-chat",
@@ -70351,7 +70453,8 @@
     "license": "CC0-1.0",
     "url": "https://chat.google.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-chat-2026",
@@ -70374,7 +70477,8 @@
     "url": "https://chat.google.com/",
     "guidelines": "https://about.google/brand-resource-center/",
     "dateAdded": "2026-05-22",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-chrome",
@@ -70393,7 +70497,8 @@
     "url": "https://www.google.com/chrome",
     "guidelines": "https://partnermarketinghub.withgoogle.com/brands/chrome",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-chronicle",
@@ -70411,7 +70516,8 @@
     "license": "CC0-1.0",
     "url": "https://chronicle.security",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-classroom",
@@ -70430,7 +70536,8 @@
     "url": "https://edu.google.com/workspace-for-education/products/classroom/",
     "guidelines": "https://developers.google.com/workspace/classroom/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-cloud",
@@ -70448,7 +70555,8 @@
     "license": "CC0-1.0",
     "url": "https://cloud.google.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-cloud-composer",
@@ -70467,7 +70575,8 @@
     "url": "https://cloud.google.com/icons",
     "guidelines": "https://about.google/brand-resource-center",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-cloud-spanner",
@@ -70486,7 +70595,8 @@
     "url": "https://cloud.google.com/icons",
     "guidelines": "https://about.google/brand-resource-center",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-cloud-storage",
@@ -70505,7 +70615,8 @@
     "url": "https://cloud.google.com/icons",
     "guidelines": "https://about.google/brand-resource-center",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-colab",
@@ -70523,7 +70634,8 @@
     "license": "CC0-1.0",
     "url": "https://colab.research.google.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-colaboratory",
@@ -70540,7 +70652,8 @@
     "license": "MIT",
     "url": "https://colab.research.google.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-container-optimized-os",
@@ -70559,7 +70672,8 @@
     "url": "https://cloud.google.com/icons",
     "guidelines": "https://cloud.google.com/terms/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-dataflow",
@@ -70578,7 +70692,8 @@
     "url": "https://cloud.google.com/icons",
     "guidelines": "https://about.google/brand-resource-center",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-dataproc",
@@ -70597,7 +70712,8 @@
     "url": "https://cloud.google.com/icons",
     "guidelines": "https://about.google/brand-resource-center",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-display-video-360",
@@ -70631,7 +70747,8 @@
     "license": "CC0-1.0",
     "url": "https://www.google.com/docs/about",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-docs-2026",
@@ -70654,7 +70771,8 @@
     "url": "https://www.google.com/docs/about",
     "guidelines": "https://about.google/brand-resource-center/",
     "dateAdded": "2026-05-22",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-drive",
@@ -70672,7 +70790,8 @@
     "license": "CC0-1.0",
     "url": "https://www.google.com/drive/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-drive-2026",
@@ -70695,7 +70814,8 @@
     "url": "https://www.google.com/drive/",
     "guidelines": "https://about.google/brand-resource-center/",
     "dateAdded": "2026-05-22",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-earth",
@@ -70713,7 +70833,8 @@
     "license": "CC0-1.0",
     "url": "https://earth.google.com/web/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-earth-engine",
@@ -70731,7 +70852,8 @@
     "license": "CC0-1.0",
     "url": "https://earthengine.google.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-fonts",
@@ -70749,7 +70871,8 @@
     "license": "CC0-1.0",
     "url": "https://fonts.google.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-forms",
@@ -70767,7 +70890,8 @@
     "license": "CC0-1.0",
     "url": "https://about.google/products/#all-products",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-forms-2026",
@@ -70790,7 +70914,8 @@
     "url": "https://docs.google.com/forms",
     "guidelines": "https://about.google/brand-resource-center/",
     "dateAdded": "2026-05-22",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-gemini",
@@ -70810,7 +70935,8 @@
     "license": "CC0-1.0",
     "url": "https://gemini.google.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-home",
@@ -70828,7 +70954,8 @@
     "license": "CC0-1.0",
     "url": "https://home.google.com/welcome/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-idx",
@@ -70845,7 +70972,8 @@
     "license": "MIT",
     "url": "https://idx.dev/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-jules",
@@ -70863,7 +70991,8 @@
     "license": "CC0-1.0",
     "url": "https://jules.google",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-keep",
@@ -70881,7 +71010,8 @@
     "license": "CC0-1.0",
     "url": "https://about.google/brand-resource-center/logos-list/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-keep-2026",
@@ -70904,7 +71034,8 @@
     "url": "https://keep.google.com/",
     "guidelines": "https://about.google/brand-resource-center/",
     "dateAdded": "2026-05-22",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-lens",
@@ -70922,7 +71053,8 @@
     "license": "CC0-1.0",
     "url": "https://www.google.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-maps",
@@ -70940,7 +71072,8 @@
     "license": "CC0-1.0",
     "url": "https://www.google.com/maps/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-marketing-platform",
@@ -70958,7 +71091,8 @@
     "license": "CC0-1.0",
     "url": "https://about.google/brand-resource-center/logos-list/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-meet",
@@ -70976,7 +71110,8 @@
     "license": "CC0-1.0",
     "url": "https://meet.google.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-meet-2026",
@@ -70999,7 +71134,8 @@
     "url": "https://meet.google.com/",
     "guidelines": "https://about.google/brand-resource-center/",
     "dateAdded": "2026-05-22",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-messages",
@@ -71017,7 +71153,8 @@
     "license": "CC0-1.0",
     "url": "https://messages.google.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-nearby",
@@ -71035,7 +71172,8 @@
     "license": "CC0-1.0",
     "url": "https://developers.google.com/nearby/developer-guidelines",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-news",
@@ -71054,7 +71192,8 @@
     "url": "https://partnermarketinghub.withgoogle.com/brands/google-news/",
     "guidelines": "https://partnermarketinghub.withgoogle.com/brands/google-news/legal-and-trademarks/legal-requirements/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-one",
@@ -71071,7 +71210,8 @@
     "license": "Trademark",
     "url": "https://one.google.com/about/",
     "dateAdded": "2026-06-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-palm",
@@ -71088,7 +71228,8 @@
     "license": "MIT",
     "url": "https://ai.google/discover/palm2/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-password-manager",
@@ -71105,7 +71246,8 @@
     "license": "Proprietary",
     "url": "https://passwords.google.com",
     "dateAdded": "2026-03-09",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-pay",
@@ -71123,7 +71265,8 @@
     "license": "CC0-1.0",
     "url": "https://pay.google.com/intl/en_us/about/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-photos",
@@ -71142,7 +71285,8 @@
     "url": "https://partnermarketinghub.withgoogle.com/brands/google-photos/visual-identity/visual-identity/icon/",
     "guidelines": "https://partnermarketinghub.withgoogle.com/brands/google-photos/visual-identity/visual-identity/icon/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-play",
@@ -71181,7 +71325,8 @@
     "license": "Proprietary",
     "url": "https://play.google.com/games",
     "dateAdded": "2026-03-09",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-pub-sub",
@@ -71200,7 +71345,8 @@
     "url": "https://cloud.google.com/icons",
     "guidelines": "https://about.google/brand-resource-center",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-scholar",
@@ -71218,7 +71364,8 @@
     "license": "CC0-1.0",
     "url": "https://commons.wikimedia.org/wiki/File:Google_Scholar_logo.svg",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-search-console",
@@ -71238,7 +71385,8 @@
     "url": "https://search.google.com/search-console",
     "dateAdded": "2026-07-13",
     "collection": "brands",
-    "supersedes": "google-search-console-legacy"
+    "supersedes": "google-search-console-legacy",
+    "family": "google"
   },
   {
     "slug": "google-search-console-legacy",
@@ -71257,7 +71405,8 @@
     "url": "https://search.google.com/search-console",
     "dateAdded": "2026-03-07",
     "collection": "brands",
-    "supersededBy": "google-search-console"
+    "supersededBy": "google-search-console",
+    "family": "google"
   },
   {
     "slug": "google-sheets",
@@ -71275,7 +71424,8 @@
     "license": "CC0-1.0",
     "url": "https://sheets.google.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-sheets-2026",
@@ -71298,7 +71448,8 @@
     "url": "https://sheets.google.com/",
     "guidelines": "https://about.google/brand-resource-center/",
     "dateAdded": "2026-05-22",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-sites-2026",
@@ -71321,7 +71472,8 @@
     "url": "https://sites.google.com/",
     "guidelines": "https://about.google/brand-resource-center/",
     "dateAdded": "2026-05-22",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-slides",
@@ -71339,7 +71491,8 @@
     "license": "CC0-1.0",
     "url": "https://slides.google.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-slides-2026",
@@ -71362,7 +71515,8 @@
     "url": "https://slides.google.com/",
     "guidelines": "https://about.google/brand-resource-center/",
     "dateAdded": "2026-05-22",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-street-view",
@@ -71381,7 +71535,8 @@
     "url": "https://developers.google.com/streetview/ready/branding",
     "guidelines": "https://developers.google.com/streetview/ready/branding",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-summer-of-code",
@@ -71401,7 +71556,8 @@
     "license": "CC0-1.0",
     "url": "https://summerofcode.withgoogle.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-tag-manager",
@@ -71419,7 +71575,8 @@
     "license": "CC0-1.0",
     "url": "https://tagmanager.google.com/#/home",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-tasks",
@@ -71438,7 +71595,8 @@
     "url": "https://assistant.google.com/tasks",
     "guidelines": "https://about.google/brand-resource-center",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-tasks-2026",
@@ -71461,7 +71619,8 @@
     "url": "https://tasks.google.com/",
     "guidelines": "https://about.google/brand-resource-center/",
     "dateAdded": "2026-05-22",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-translate",
@@ -71479,7 +71638,8 @@
     "license": "CC0-1.0",
     "url": "https://commons.wikimedia.org/wiki/File:Google_Translate_logo.svg",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-tv",
@@ -71498,7 +71658,8 @@
     "url": "https://partnermarketinghub.withgoogle.com/brands/google-tv/visual-identity/visual-identity/",
     "guidelines": "https://partnermarketinghub.withgoogle.com/brands/google-tv/visual-identity/visual-identity/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-vids-2026",
@@ -71521,7 +71682,8 @@
     "url": "https://workspace.google.com/products/vids/",
     "guidelines": "https://about.google/brand-resource-center/",
     "dateAdded": "2026-05-22",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-voice-2026",
@@ -71544,7 +71706,8 @@
     "url": "https://voice.google.com/",
     "guidelines": "https://about.google/brand-resource-center/",
     "dateAdded": "2026-05-22",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-workspace",
@@ -71569,7 +71732,8 @@
     "url": "https://workspace.google.com",
     "guidelines": "https://about.google/brand-resource-center/",
     "dateAdded": "2026-06-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-workspace-admin",
@@ -71592,7 +71756,8 @@
     "url": "https://admin.google.com",
     "guidelines": "https://about.google/brand-resource-center/",
     "dateAdded": "2026-06-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-workspace-editors",
@@ -71615,7 +71780,8 @@
     "url": "https://workspace.google.com",
     "guidelines": "https://about.google/brand-resource-center/",
     "dateAdded": "2026-06-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "google-workspace-wordmark",
@@ -71639,7 +71805,8 @@
     "url": "https://workspace.google.com",
     "guidelines": "https://about.google/brand-resource-center/",
     "dateAdded": "2026-06-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "googlecloud",
@@ -72537,7 +72704,8 @@
     "license": "MIT",
     "url": "https://grok.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "xai"
   },
   {
     "slug": "grok-xai",
@@ -73838,7 +74006,8 @@
     "url": "https://www.hashicorp.com",
     "guidelines": "https://www.hashicorp.com/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "ibm"
   },
   {
     "slug": "hashicorp-badge",
@@ -74684,7 +74853,8 @@
     "license": "MIT",
     "url": "https://www.heroku.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "salesforce"
   },
   {
     "slug": "heroku-badge",
@@ -76264,7 +76434,8 @@
     "license": "MIT",
     "url": "https://www.hulu.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "disney"
   },
   {
     "slug": "humble-bundle",
@@ -76371,7 +76542,8 @@
     "license": "MIT",
     "url": "https://hunyuan.tencent.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "tencent"
   },
   {
     "slug": "huobi-badge",
@@ -76820,7 +76992,8 @@
     "license": "MIT",
     "url": "https://huggingface.co/ibm-granite",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "ibm"
   },
   {
     "slug": "ic-glass",
@@ -76943,7 +77116,8 @@
     "license": "CC0-1.0",
     "url": "https://www.icloud.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "apple"
   },
   {
     "slug": "icomoon",
@@ -77405,7 +77579,8 @@
     "license": "MIT",
     "url": "https://www.adobe.com/products/illustrator",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "adobe"
   },
   {
     "slug": "illustrator-grayscale-app-icon",
@@ -77422,7 +77597,8 @@
     "license": "brand-use",
     "url": "https://www.adobe.com/products/illustrator",
     "collection": "brands",
-    "dateAdded": "2026-05-05"
+    "dateAdded": "2026-05-05",
+    "family": "adobe"
   },
   {
     "slug": "ilovepdf",
@@ -77530,7 +77706,8 @@
     "url": "https://brand.imdb.com/imdb",
     "guidelines": "https://brand.imdb.com/imdb",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "amazon"
   },
   {
     "slug": "imessage",
@@ -77548,7 +77725,8 @@
     "license": "CC0-1.0",
     "url": "https://commons.wikimedia.org/wiki/File:IMessage_logo.svg",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "apple"
   },
   {
     "slug": "imgur",
@@ -77839,7 +78017,8 @@
     "license": "MIT",
     "url": "https://www.adobe.com/products/indesign",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "adobe"
   },
   {
     "slug": "indesign-server",
@@ -77857,7 +78036,8 @@
     "license": "brand-use",
     "url": "https://www.adobe.com/products/indesign",
     "collection": "brands",
-    "dateAdded": "2026-05-05"
+    "dateAdded": "2026-05-05",
+    "family": "adobe"
   },
   {
     "slug": "indian-super-league",
@@ -78618,7 +78798,8 @@
     "url": "https://www.instagram.com/",
     "guidelines": "https://about.instagram.com/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "meta"
   },
   {
     "slug": "instagram-badge",
@@ -78781,7 +78962,8 @@
     "url": "https://www.jetbrains.com/idea/",
     "guidelines": "https://www.jetbrains.com/company/brand/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "intello",
@@ -79286,7 +79468,8 @@
     "license": "CC0-1.0",
     "url": "https://en.wikipedia.org/wiki/IOS",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "apple"
   },
   {
     "slug": "iota",
@@ -79615,7 +79798,8 @@
     "license": "CC0-1.0",
     "url": "https://commons.wikimedia.org/wiki/File:ITunes_logo.svg",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "apple"
   },
   {
     "slug": "itvx",
@@ -79935,7 +80119,8 @@
     "license": "MIT",
     "url": "https://www.java.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "oracle"
   },
   {
     "slug": "javascript",
@@ -80554,7 +80739,8 @@
     "url": "https://atlassian.design/resources/logo-library",
     "guidelines": "https://atlassian.design/foundations/logos/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "atlassian"
   },
   {
     "slug": "jira-software",
@@ -81167,7 +81353,8 @@
     "license": "MIT",
     "url": "https://jetbrains.com/junie",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "juniper-networks",
@@ -82344,7 +82531,8 @@
     "url": "https://www.kaggle.com/brand-guidelines",
     "guidelines": "https://www.kaggle.com/brand-guidelines",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "kagi",
@@ -83593,7 +83781,8 @@
     "license": "CC0-1.0",
     "url": "https://www.elastic.co/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "elastic"
   },
   {
     "slug": "kibo-ui",
@@ -83892,7 +84081,8 @@
     "license": "Unknown",
     "url": "https://kiro.dev",
     "dateAdded": "2026-03-24",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "amazon"
   },
   {
     "slug": "kit",
@@ -84930,7 +85120,8 @@
     "url": "https://www.jetbrains.com/company/brand/#logos-and-icons-product-icons",
     "guidelines": "https://www.jetbrains.com/company/brand/#brand-guidelines",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "kuaishou",
@@ -87385,7 +87576,8 @@
     "license": "MIT",
     "url": "https://www.adobe.com/products/photoshop-lightroom",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "adobe"
   },
   {
     "slug": "lightroom-classic",
@@ -87402,7 +87594,8 @@
     "license": "brand-use",
     "url": "https://www.adobe.com/products/photoshop-lightroom-classic",
     "collection": "brands",
-    "dateAdded": "2026-05-05"
+    "dateAdded": "2026-05-05",
+    "family": "adobe"
   },
   {
     "slug": "lightstep",
@@ -87645,7 +87838,8 @@
     "url": "https://www.linkedin.com/",
     "guidelines": "https://brand.linkedin.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "linkedin-badge",
@@ -88786,7 +88980,8 @@
     "url": "https://www.elastic.co/brand",
     "guidelines": "https://www.elastic.co/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "elastic"
   },
   {
     "slug": "logto-badge",
@@ -88891,7 +89086,8 @@
     "license": "CC0-1.0",
     "url": "https://looker.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "loom",
@@ -88909,7 +89105,8 @@
     "license": "CC0-1.0",
     "url": "https://www.loom.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "atlassian"
   },
   {
     "slug": "loop",
@@ -89709,7 +89906,8 @@
     "license": "CC0-1.0",
     "url": "https://commons.wikimedia.org/wiki/File:MacOS_wordmark_(2017).svg",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "apple"
   },
   {
     "slug": "macpaw",
@@ -90907,7 +91105,8 @@
     "url": "https://www.marvel.com",
     "guidelines": "https://commons.wikimedia.org/wiki/File%3AMarvel_Comics_2024_logo.svg",
     "collection": "brands",
-    "dateAdded": "2026-05-16"
+    "dateAdded": "2026-05-16",
+    "family": "disney"
   },
   {
     "slug": "marvel-studios",
@@ -90924,7 +91123,8 @@
     "url": "https://www.marvel.com/movies",
     "guidelines": "https://commons.wikimedia.org/wiki/File%3AMarvel_Studios_2016_logo.svg",
     "collection": "brands",
-    "dateAdded": "2026-05-16"
+    "dateAdded": "2026-05-16",
+    "family": "disney"
   },
   {
     "slug": "marvelapp",
@@ -92538,7 +92738,8 @@
     "url": "https://www.messenger.com/",
     "guidelines": "https://about.meta.com/brand/resources/facebook/messenger-icon",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "meta"
   },
   {
     "slug": "meta",
@@ -93101,7 +93302,8 @@
     "url": "https://adoption.microsoft.com/en-us/copilot/app/",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-05-22",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-access",
@@ -93118,7 +93320,8 @@
     "license": "MIT",
     "url": "https://www.microsoft.com/microsoft-365/access",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-azure",
@@ -93135,7 +93338,8 @@
     "license": "MIT",
     "url": "https://azure.microsoft.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-badge",
@@ -93171,7 +93375,8 @@
     "license": "MIT",
     "url": "https://bing.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-clipchamp",
@@ -93188,7 +93393,8 @@
     "license": "MIT",
     "url": "https://clipchamp.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-copilot",
@@ -93209,7 +93415,8 @@
     "url": "https://copilot.microsoft.com/",
     "dateAdded": "2026-03-07",
     "collection": "brands",
-    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks"
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-defender",
@@ -93226,7 +93433,8 @@
     "license": "MIT",
     "url": "https://www.microsoft.com/microsoft-365/microsoft-defender-for-individuals",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-designer",
@@ -93243,7 +93451,8 @@
     "license": "MIT",
     "url": "https://designer.microsoft.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-dotnet",
@@ -93260,7 +93469,8 @@
     "license": "MIT",
     "url": "https://dotnet.microsoft.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-dynamics-365",
@@ -93280,7 +93490,8 @@
     "url": "https://www.microsoft.com/en-us/dynamics-365",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-dynamics-365-business-central",
@@ -93301,7 +93512,8 @@
     "url": "https://www.microsoft.com/en-us/dynamics-365/products/business-central",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-dynamics-365-commerce",
@@ -93322,7 +93534,8 @@
     "url": "https://www.microsoft.com/en-us/dynamics-365/products/commerce",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-dynamics-365-contact-center",
@@ -93342,7 +93555,8 @@
     "url": "https://www.microsoft.com/en-us/dynamics-365/products/contact-center",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-dynamics-365-customer-insights",
@@ -93363,7 +93577,8 @@
     "url": "https://www.microsoft.com/en-us/dynamics-365/products/customer-insights",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-dynamics-365-customer-service",
@@ -93384,7 +93599,8 @@
     "url": "https://www.microsoft.com/en-us/dynamics-365/products/customer-service",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-dynamics-365-customer-voice",
@@ -93405,7 +93621,8 @@
     "url": "https://learn.microsoft.com/en-us/dynamics365/customer-voice/about",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-dynamics-365-field-service",
@@ -93425,7 +93642,8 @@
     "url": "https://www.microsoft.com/en-us/dynamics-365/products/field-service",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-dynamics-365-finance",
@@ -93446,7 +93664,8 @@
     "url": "https://www.microsoft.com/en-us/dynamics-365/products/finance",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-dynamics-365-finance-and-operations",
@@ -93468,7 +93687,8 @@
     "url": "https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/fin-ops/",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-dynamics-365-human-resources",
@@ -93488,7 +93708,8 @@
     "url": "https://www.microsoft.com/en-us/dynamics-365/products/human-resources",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-dynamics-365-intelligent-order-management",
@@ -93509,7 +93730,8 @@
     "url": "https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-dynamics-365-project-operations",
@@ -93529,7 +93751,8 @@
     "url": "https://www.microsoft.com/en-us/dynamics-365/products/project-operations",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-dynamics-365-sales",
@@ -93549,7 +93772,8 @@
     "url": "https://www.microsoft.com/en-us/dynamics-365/products/sales",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-dynamics-365-sales-insights",
@@ -93570,7 +93794,8 @@
     "url": "https://learn.microsoft.com/en-us/dynamics365/sales/intro-admin-guide-sales-insights",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-dynamics-365-supply-chain-management",
@@ -93590,7 +93815,8 @@
     "url": "https://www.microsoft.com/en-us/dynamics-365/products/supply-chain-management",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-edge",
@@ -93624,7 +93850,8 @@
     "license": "MIT",
     "url": "https://www.microsoft.com/microsoft-365/microsoft-editor",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-excel",
@@ -93641,7 +93868,8 @@
     "license": "MIT",
     "url": "https://www.microsoft.com/microsoft-365/excel",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-fabric",
@@ -93660,7 +93888,8 @@
     "url": "https://learn.microsoft.com/en-us/fabric/fundamentals/microsoft-fabric-overview",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-fabric-data-engineering",
@@ -93680,7 +93909,8 @@
     "url": "https://learn.microsoft.com/en-us/fabric/data-engineering/data-engineering-overview",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-fabric-data-factory",
@@ -93700,7 +93930,8 @@
     "url": "https://learn.microsoft.com/en-us/fabric/data-factory/data-factory-overview",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-fabric-data-science",
@@ -93720,7 +93951,8 @@
     "url": "https://learn.microsoft.com/en-us/fabric/data-science/data-science-overview",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-fabric-data-warehouse",
@@ -93741,7 +93973,8 @@
     "url": "https://learn.microsoft.com/en-us/fabric/data-warehouse/data-warehousing",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-fabric-databases",
@@ -93761,7 +93994,8 @@
     "url": "https://learn.microsoft.com/en-us/fabric/database/sql/overview",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-fabric-graph-intelligence",
@@ -93782,7 +94016,8 @@
     "url": "https://learn.microsoft.com/en-us/fabric/graph/overview",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-fabric-industry-solutions",
@@ -93802,7 +94037,8 @@
     "url": "https://learn.microsoft.com/en-us/industry/industry-data-solutions-fabric",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-fabric-iq",
@@ -93821,7 +94057,8 @@
     "url": "https://learn.microsoft.com/en-us/fabric/iq/overview",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-fabric-real-time-intelligence",
@@ -93841,7 +94078,8 @@
     "url": "https://learn.microsoft.com/en-us/fabric/real-time-intelligence/overview",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-loop",
@@ -93860,7 +94098,8 @@
     "url": "https://adoption.microsoft.com/en-us/microsoft-loop/",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-05-22",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-office",
@@ -93877,7 +94116,8 @@
     "license": "MIT",
     "url": "https://www.office.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-onedrive",
@@ -93894,7 +94134,8 @@
     "license": "MIT",
     "url": "https://www.microsoft.com/microsoft-365/onedrive/online-cloud-storage",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-onelake",
@@ -93914,7 +94155,8 @@
     "url": "https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-onenote",
@@ -93931,7 +94173,8 @@
     "license": "MIT",
     "url": "https://www.microsoft.com/microsoft-365/onenote/digital-note-taking-app",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-outlook",
@@ -93948,7 +94191,8 @@
     "license": "MIT",
     "url": "https://www.microsoft.com/microsoft-365/outlook/email-and-calendar-software-application",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-planner",
@@ -93967,7 +94211,8 @@
     "url": "https://adoption.microsoft.com/en-us/microsoft-planner/",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-05-22",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-power-bi",
@@ -93987,7 +94232,8 @@
     "url": "https://learn.microsoft.com/en-us/power-bi/fundamentals/power-bi-overview",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-powerpoint",
@@ -94004,7 +94250,8 @@
     "license": "MIT",
     "url": "https://www.microsoft.com/microsoft-365/powerpoint",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-purview",
@@ -94024,7 +94271,8 @@
     "url": "https://www.microsoft.com/en-us/security/business/microsoft-purview",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-sharepoint",
@@ -94041,7 +94289,8 @@
     "license": "MIT",
     "url": "https://www.microsoft.com/microsoft-365/sharepoint/collaboration-software",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-sql-server",
@@ -94058,7 +94307,8 @@
     "license": "MIT",
     "url": "https://www.microsoft.com/en-us/sql-server/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-teams",
@@ -94075,7 +94325,8 @@
     "license": "MIT",
     "url": "https://www.microsoft.com/microsoft-teams/group-chat-software",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-todo",
@@ -94092,7 +94343,8 @@
     "license": "MIT",
     "url": "https://to-do.office.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-viva",
@@ -94112,7 +94364,8 @@
     "url": "https://www.microsoft.com/en-us/microsoft-viva",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-viva-amplify",
@@ -94132,7 +94385,8 @@
     "url": "https://www.microsoft.com/en-us/microsoft-viva/amplify",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-viva-connections",
@@ -94153,7 +94407,8 @@
     "url": "https://www.microsoft.com/en-us/microsoft-viva/connections",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-viva-engage",
@@ -94174,7 +94429,8 @@
     "url": "https://www.microsoft.com/en-us/microsoft-viva/engage",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-viva-glint",
@@ -94195,7 +94451,8 @@
     "url": "https://www.microsoft.com/en-us/microsoft-viva/glint",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-viva-insights",
@@ -94216,7 +94473,8 @@
     "url": "https://www.microsoft.com/en-us/microsoft-viva/insights",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-viva-learning",
@@ -94236,7 +94494,8 @@
     "url": "https://www.microsoft.com/en-us/microsoft-viva/learning",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-viva-pulse",
@@ -94257,7 +94516,8 @@
     "url": "https://www.microsoft.com/en-us/microsoft-viva/pulse",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "dateAdded": "2026-07-19",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microsoft-windows",
@@ -94291,7 +94551,8 @@
     "license": "MIT",
     "url": "https://www.microsoft.com/microsoft-365/word",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "microstation",
@@ -96636,7 +96897,8 @@
     "license": "MIT",
     "url": "https://www.mulesoft.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "salesforce"
   },
   {
     "slug": "muller",
@@ -97141,7 +97403,8 @@
     "url": "https://www.mysql.com",
     "guidelines": "https://www.mysql.com/about/legal/logos.html",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "oracle"
   },
   {
     "slug": "n26",
@@ -98960,7 +99223,8 @@
     "url": "https://nextjs.org/",
     "guidelines": "https://vercel.com/design/brands#next-js",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "vercel"
   },
   {
     "slug": "nextera-energy",
@@ -99967,7 +100231,8 @@
     "url": "https://www.hashicorp.com/brand",
     "guidelines": "https://www.hashicorp.com/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "ibm"
   },
   {
     "slug": "nongfu-spring",
@@ -100495,7 +100760,8 @@
     "license": "MIT",
     "url": "https://nova.amazon.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "amazon"
   },
   {
     "slug": "novaland",
@@ -100836,7 +101102,8 @@
     "license": "CC0-1.0",
     "url": "https://www.nuget.org/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "nuke",
@@ -101042,7 +101309,8 @@
     "url": "https://nuxt.com/",
     "guidelines": "https://nuxt.com/design-kit",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "vercel"
   },
   {
     "slug": "nuxt-content",
@@ -101674,7 +101942,8 @@
     "url": "https://en.facebookbrand.com/oculus/assets/oculus?audience=oculus-landing",
     "guidelines": "https://en.facebookbrand.com/oculus/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "meta"
   },
   {
     "slug": "odido",
@@ -104033,7 +104302,8 @@
     "license": "CC0-1.0",
     "url": "https://www.atlassian.com/company/news/press-kit",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "atlassian"
   },
   {
     "slug": "opslevel",
@@ -105026,7 +105296,8 @@
     "url": "https://www.hashicorp.com/brand",
     "guidelines": "https://www.hashicorp.com/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "ibm"
   },
   {
     "slug": "packt",
@@ -105191,7 +105462,8 @@
     "license": "CC0-1.0",
     "url": "https://developers.google.com/web/fundamentals/performance/speed-tools/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "pagseguro",
@@ -107189,7 +107461,8 @@
     "license": "MIT",
     "url": "https://www.adobe.com/products/photoshop",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "adobe"
   },
   {
     "slug": "photoshop-camera",
@@ -107207,7 +107480,8 @@
     "license": "brand-use",
     "url": "https://www.adobe.com/products/photoshop-camera",
     "collection": "brands",
-    "dateAdded": "2026-05-05"
+    "dateAdded": "2026-05-05",
+    "family": "adobe"
   },
   {
     "slug": "photoshop-elements",
@@ -107224,7 +107498,8 @@
     "license": "brand-use",
     "url": "https://www.adobe.com/products/photoshop-elements",
     "collection": "brands",
-    "dateAdded": "2026-05-05"
+    "dateAdded": "2026-05-05",
+    "family": "adobe"
   },
   {
     "slug": "photoshop-express",
@@ -107242,7 +107517,8 @@
     "license": "brand-use",
     "url": "https://www.adobe.com/express/photoshop",
     "collection": "brands",
-    "dateAdded": "2026-05-05"
+    "dateAdded": "2026-05-05",
+    "family": "adobe"
   },
   {
     "slug": "photoshop-grayscale-app-icon",
@@ -107259,7 +107535,8 @@
     "license": "brand-use",
     "url": "https://www.adobe.com/products/photoshop",
     "collection": "brands",
-    "dateAdded": "2026-05-05"
+    "dateAdded": "2026-05-05",
+    "family": "adobe"
   },
   {
     "slug": "photoview",
@@ -107387,7 +107664,8 @@
     "url": "https://www.jetbrains.com/company/brand/logos/",
     "guidelines": "https://www.jetbrains.com/company/brand/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "pi",
@@ -108679,7 +108957,8 @@
     "license": "CC0-1.0",
     "url": "https://www.playstation.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "sony"
   },
   {
     "slug": "playstation-2",
@@ -108823,7 +109102,8 @@
     "license": "MIT",
     "url": "https://playwright.dev/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "pleroma",
@@ -109312,7 +109592,8 @@
     "license": "CC0-1.0",
     "url": "https://podman.io",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "ibm"
   },
   {
     "slug": "poe",
@@ -110131,7 +110412,8 @@
     "license": "MIT",
     "url": "https://learn.microsoft.com/en-us/powershell/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "powersync",
@@ -110596,7 +110878,8 @@
     "license": "MIT",
     "url": "https://primevideo.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "amazon"
   },
   {
     "slug": "primefaces",
@@ -112031,7 +112314,8 @@
     "url": "https://www.jetbrains.com/pycharm/",
     "guidelines": "https://www.jetbrains.com/company/brand/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "pycqa",
@@ -112802,7 +113086,8 @@
     "url": "https://en.wikipedia.org/wiki/File:Tencent_QQ.svg",
     "guidelines": "https://qq.design/brand/BrandDesign/Logo",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "tencent"
   },
   {
     "slug": "qt",
@@ -113257,7 +113542,8 @@
     "license": "MIT",
     "url": "https://chat.qwenlm.ai/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "alibaba"
   },
   {
     "slug": "qwik",
@@ -114794,7 +115080,8 @@
     "license": "CC0-1.0",
     "url": "https://www.redhat.com/en/about/brand/new-brand/details",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "ibm"
   },
   {
     "slug": "red-hat-badge",
@@ -114829,7 +115116,8 @@
     "license": "CC0-1.0",
     "url": "https://www.openshift.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "ibm"
   },
   {
     "slug": "redash",
@@ -115813,7 +116101,8 @@
     "url": "https://www.jetbrains.com/company/brand/logos/",
     "guidelines": "https://www.jetbrains.com/company/brand/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "restream-badge",
@@ -116206,7 +116495,8 @@
     "url": "https://www.jetbrains.com/company/brand/logos/",
     "guidelines": "https://www.jetbrains.com/company/brand/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "rilian",
@@ -116278,7 +116568,8 @@
     "license": "CC0-1.0",
     "url": "https://store.ring.com/press",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "amazon"
   },
   {
     "slug": "ring-badge",
@@ -116330,7 +116621,8 @@
     "license": "CC0-1.0",
     "url": "https://www.riotgames.com/en/press",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "tencent"
   },
   {
     "slug": "ripe-ncc-badge",
@@ -117640,7 +117932,8 @@
     "url": "https://www.jetbrains.com/company/brand/logos",
     "guidelines": "https://www.jetbrains.com/company/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "ruff",
@@ -118210,7 +118503,8 @@
     "license": "CC0-1.0",
     "url": "https://www.apple.com/safari",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "apple"
   },
   {
     "slug": "safeline",
@@ -121876,7 +122170,8 @@
     "license": "MIT",
     "url": "https://www.skype.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "skywork",
@@ -121913,7 +122208,8 @@
     "license": "MIT",
     "url": "https://www.slack.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "salesforce"
   },
   {
     "slug": "slack-badge",
@@ -123367,7 +123663,8 @@
     "url": "https://atlassian.design/resources/logo-library",
     "guidelines": "https://atlassian.design/foundations/logos/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "atlassian"
   },
   {
     "slug": "southwest-airlines",
@@ -124020,7 +124317,8 @@
     "license": "CC0-1.0",
     "url": "https://www.splunk.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "cisco"
   },
   {
     "slug": "spond",
@@ -125254,7 +125552,8 @@
     "license": "CC0-1.0",
     "url": "https://www.atlassian.com/company/news/press-kit",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "atlassian"
   },
   {
     "slug": "statuspal",
@@ -126344,7 +126643,8 @@
     "license": "brand-use",
     "url": "https://www.adobe.com/products/substance3d/apps/designer.html",
     "collection": "brands",
-    "dateAdded": "2026-05-05"
+    "dateAdded": "2026-05-05",
+    "family": "adobe"
   },
   {
     "slug": "substance-3d-painter",
@@ -126362,7 +126662,8 @@
     "license": "brand-use",
     "url": "https://www.adobe.com/products/substance3d/apps/painter.html",
     "collection": "brands",
-    "dateAdded": "2026-05-05"
+    "dateAdded": "2026-05-05",
+    "family": "adobe"
   },
   {
     "slug": "substance-3d-sampler",
@@ -126380,7 +126681,8 @@
     "license": "brand-use",
     "url": "https://www.adobe.com/products/substance3d/apps/sampler.html",
     "collection": "brands",
-    "dateAdded": "2026-05-05"
+    "dateAdded": "2026-05-05",
+    "family": "adobe"
   },
   {
     "slug": "substance-3d-stager",
@@ -126398,7 +126700,8 @@
     "license": "brand-use",
     "url": "https://www.adobe.com/products/substance3d/apps/stager.html",
     "collection": "brands",
-    "dateAdded": "2026-05-05"
+    "dateAdded": "2026-05-05",
+    "family": "adobe"
   },
   {
     "slug": "subtitle-edit",
@@ -126735,7 +127038,8 @@
     "url": "https://brand.supercell.com/media",
     "guidelines": "https://brand.supercell.com/media",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "tencent"
   },
   {
     "slug": "supercrease",
@@ -127178,7 +127482,8 @@
     "url": "https://swift.org/",
     "guidelines": "https://developer.apple.com/swift/resources/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "apple"
   },
   {
     "slug": "swiggy",
@@ -127607,7 +127912,8 @@
     "license": "Trademark",
     "url": "https://www.tableau.com",
     "dateAdded": "2026-06-25",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "salesforce"
   },
   {
     "slug": "tablecheck",
@@ -128020,7 +128326,8 @@
     "license": "CC0-1.0",
     "url": "https://www.alibabagroup.com/en/ir/reports",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "alibaba"
   },
   {
     "slug": "tapas",
@@ -128406,7 +128713,8 @@
     "url": "https://www.jetbrains.com/company/brand/logos",
     "guidelines": "https://www.jetbrains.com/company/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "teamspeak",
@@ -128956,7 +129264,8 @@
     "url": "https://www.tensorflow.org/",
     "guidelines": "https://www.tensorflow.org/extras/tensorflow_brand_guidelines.pdf",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "teradata",
@@ -129090,7 +129399,8 @@
     "url": "https://terraform.io",
     "guidelines": "https://brand.hashicorp.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "ibm"
   },
   {
     "slug": "terraform-badge",
@@ -130110,7 +130420,8 @@
     "url": "https://threads.net/",
     "guidelines": "https://about.meta.com/brand/resources/instagram/threads",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "meta"
   },
   {
     "slug": "threatquotient-badge",
@@ -130559,7 +130870,8 @@
     "license": "CC0-1.0",
     "url": "https://www.tiktok.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "bytedance"
   },
   {
     "slug": "tiktok-badge",
@@ -131882,7 +132194,8 @@
     "license": "MIT",
     "url": "https://trae.ai",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "bytedance"
   },
   {
     "slug": "traefik",
@@ -132236,7 +132549,8 @@
     "url": "https://atlassian.design/resources/logo-library",
     "guidelines": "https://atlassian.design/foundations/logos",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "atlassian"
   },
   {
     "slug": "trello-badge",
@@ -133081,7 +133395,8 @@
     "license": "CC0-1.0",
     "url": "https://turbo.hotwired.dev",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "vercel"
   },
   {
     "slug": "turbopack",
@@ -133104,7 +133419,8 @@
     "url": "https://nextjs.org/docs/app/api-reference/turbopack",
     "guidelines": "https://vercel.com/geist/brands",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "vercel"
   },
   {
     "slug": "turborepo",
@@ -133128,7 +133444,8 @@
     "url": "https://turborepo.com",
     "guidelines": "https://vercel.com/geist/brands",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "vercel"
   },
   {
     "slug": "turbosquid",
@@ -133440,7 +133757,8 @@
     "url": "https://twitch.tv",
     "guidelines": "https://brand.twitch.tv",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "amazon"
   },
   {
     "slug": "twitch-badge",
@@ -133474,7 +133792,8 @@
     "license": "MIT",
     "url": "https://twitter.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "xai"
   },
   {
     "slug": "twitter-badge",
@@ -133603,7 +133922,8 @@
     "url": "https://www.typescriptlang.org",
     "guidelines": "https://www.typescriptlang.org/branding",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "typesense",
@@ -135394,7 +135714,8 @@
     "license": "CC0-1.0",
     "url": "https://v0.dev/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "vercel"
   },
   {
     "slug": "v0-vercel",
@@ -135504,7 +135825,8 @@
     "url": "https://www.hashicorp.com/brand",
     "guidelines": "https://www.hashicorp.com/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "ibm"
   },
   {
     "slug": "vala",
@@ -135707,7 +136029,8 @@
     "url": "https://www.hashicorp.com/brand",
     "guidelines": "https://www.hashicorp.com/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "ibm"
   },
   {
     "slug": "vaultwarden",
@@ -136143,7 +136466,8 @@
     "license": "Custom",
     "url": "https://vercel.com/docs/storage/vercel-blob",
     "dateAdded": "2026-03-09",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "vercel"
   },
   {
     "slug": "verdaccio",
@@ -136888,7 +137212,8 @@
     "license": "CC0-1.0",
     "url": "https://www.virtualbox.org/svn/vbox/trunk/src/VBox/Artwork/OSE",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "oracle"
   },
   {
     "slug": "virustotal",
@@ -136994,7 +137319,8 @@
     "license": "MIT",
     "url": "https://visualstudio.microsoft.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "visual-studio-code",
@@ -137012,7 +137338,8 @@
     "url": "https://code.visualstudio.com/",
     "guidelines": "https://code.visualstudio.com/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "visualbasic",
@@ -137606,7 +137933,8 @@
     "license": "MIT",
     "url": "https://volcengine.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "bytedance"
   },
   {
     "slug": "volkswagen",
@@ -138719,7 +139047,8 @@
     "license": "CC0-1.0",
     "url": "https://www.waze.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "wazirx",
@@ -139073,7 +139402,8 @@
     "url": "https://github.com/momentum-design/momentum-ui/blob/970c5bec962a3f72e17e0b7ed69f2c38d298c405/icons-rebrand/svg/webex-helix-filled.svg",
     "guidelines": "https://resources.webex.com/webex/brand-exchange-collection",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "cisco"
   },
   {
     "slug": "webflow",
@@ -139295,7 +139625,8 @@
     "url": "https://www.jetbrains.com/company/brand/logos",
     "guidelines": "https://www.jetbrains.com/company/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "webstudio",
@@ -139368,7 +139699,8 @@
     "url": "https://wechat.design/tool/brand",
     "guidelines": "https://wechat.design/brand/main-brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "tencent"
   },
   {
     "slug": "wedos-badge",
@@ -139806,7 +140138,8 @@
     "url": "https://web.whatsapp.com",
     "guidelines": "https://www.meta.com/brand/resources/whatsapp/whatsapp-brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "meta"
   },
   {
     "slug": "when-i-work",
@@ -139893,7 +140226,8 @@
     "license": "Fair use",
     "url": "https://wholefoodsmarket.com",
     "dateAdded": "2026-03-18",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "amazon"
   },
   {
     "slug": "whoogle-search",
@@ -140302,7 +140636,8 @@
     "license": "MIT",
     "url": "https://www.microsoft.com/windows",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "windows11",
@@ -140996,7 +141331,8 @@
     "url": "https://about.meta.com/brand/resources/workplace/workplace-brand",
     "guidelines": "https://about.meta.com/brand/resources/workplace/workplace-brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "meta"
   },
   {
     "slug": "world-bank",
@@ -141316,7 +141652,8 @@
     "url": "https://x.com",
     "guidelines": "https://about.x.com/en/who-we-are/brand-toolkit",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "xai"
   },
   {
     "slug": "x-ai",
@@ -141460,7 +141797,8 @@
     "license": "MIT",
     "url": "https://www.xbox.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "microsoft"
   },
   {
     "slug": "xcode",
@@ -141478,7 +141816,8 @@
     "license": "CC0-1.0",
     "url": "https://developer.apple.com/develop",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "apple"
   },
   {
     "slug": "xd",
@@ -141495,7 +141834,8 @@
     "license": "MIT",
     "url": "https://www.adobe.com/products/xd",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "adobe"
   },
   {
     "slug": "xda-developers",
@@ -142602,7 +142942,8 @@
     "url": "https://www.youtube.com",
     "guidelines": "https://brand.youtube",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "youtube-gaming",
@@ -142620,7 +142961,8 @@
     "license": "CC0-1.0",
     "url": "https://gaming.youtube.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "youtube-kids",
@@ -142638,7 +142980,8 @@
     "license": "CC0-1.0",
     "url": "https://www.youtube.com/intl/ALL_us/kids",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "youtube-music",
@@ -142659,7 +143002,8 @@
     "license": "CC0-1.0",
     "url": "https://music.youtube.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "youtube-shorts",
@@ -142677,7 +143021,8 @@
     "license": "CC0-1.0",
     "url": "https://www.youtube.com/shorts",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "youtube-studio",
@@ -142695,7 +143040,8 @@
     "license": "CC0-1.0",
     "url": "https://www.youtube.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "youtube-tv",
@@ -142713,7 +143059,8 @@
     "license": "CC0-1.0",
     "url": "https://partnermarketinghub.withgoogle.com/#/brands",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "google"
   },
   {
     "slug": "yoyo-games-badge",
