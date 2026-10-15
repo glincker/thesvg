@@ -1,5 +1,11 @@
 # @thesvg/vue
 
+## 3.4.0
+
+### Minor Changes
+
+- [#1326](https://github.com/glincker/thesvg/pull/1326) [`cd0d0eb`](https://github.com/glincker/thesvg/commit/cd0d0ebab86b0e5bb53e8ee945a8b9cec4b5667b) Thanks [@thegdsks](https://github.com/thegdsks)! - Brand families and 150+ new icons. theSVG now groups products by owner (Amazon, Google, Microsoft, Apple, Meta, Adobe and more) with a page per family, and the packages gain a large batch of self-hosted apps, cloud native projects and integration brands, refreshed marks, and corrected default colours for icons that were white-only.
+
 ## 3.3.15
 
 ### Patch Changes
