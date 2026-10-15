@@ -51,7 +51,7 @@
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" />
       <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image-light.png" />
-      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" alt="theSVG - the open SVG brand library" width="720" />
+      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image-light.png" alt="theSVG - the open SVG brand library" width="720" />
     </picture>
   </a>
 </p>
@@ -59,16 +59,98 @@
 
 <h3 align="center">Use it anywhere</h3>
 
+<p align="center">
+  <sub>Icons below are served from theSVG itself.</sub>
+</p>
+
 <table align="center">
   <tr>
-    <td align="center"><a href="https://thesvg.org"><strong>Web</strong></a><br />Search and copy in the browser</td>
-    <td align="center"><a href="https://www.npmjs.com/package/@thesvg/react"><strong>React</strong></a>, <a href="https://www.npmjs.com/package/@thesvg/vue"><strong>Vue</strong></a>, <a href="https://www.npmjs.com/package/@thesvg/svelte"><strong>Svelte</strong></a><br />Tree-shakeable npm packages</td>
-    <td align="center"><a href="https://www.npmjs.com/package/@thesvg/cli"><strong>CLI</strong></a><br />Add icons from your terminal</td>
+    <td align="center" width="25%">
+      <a href="https://thesvg.org"><picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/thesvg/dark.svg" /><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/thesvg/light.svg" width="44" height="44" alt="Web" /></picture></a><br />
+      <a href="https://thesvg.org"><strong>Web</strong></a><br />
+      <sub>Search and copy in the browser</sub>
+    </td>
+    <td align="center" width="25%">
+      <a href="https://www.npmjs.com/package/@thesvg/react"><picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/react/dark.svg" /><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/react/light.svg" width="44" height="44" alt="React" /></picture></a><br />
+      <a href="https://www.npmjs.com/package/@thesvg/react"><strong>React</strong></a><br />
+      <sub>Typed, tree-shakeable components</sub>
+    </td>
+    <td align="center" width="25%">
+      <a href="https://www.npmjs.com/package/@thesvg/vue"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/vue/default.svg" width="44" height="44" alt="Vue" /></a><br />
+      <a href="https://www.npmjs.com/package/@thesvg/vue"><strong>Vue</strong></a><br />
+      <sub>Vue 3 components</sub>
+    </td>
+    <td align="center" width="25%">
+      <a href="https://www.npmjs.com/package/@thesvg/svelte"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/svelte/default.svg" width="44" height="44" alt="Svelte" /></a><br />
+      <a href="https://www.npmjs.com/package/@thesvg/svelte"><strong>Svelte</strong></a><br />
+      <sub>Svelte components</sub>
+    </td>
   </tr>
   <tr>
-    <td align="center"><a href="https://www.npmjs.com/package/@thesvg/mcp-server"><strong>MCP server</strong></a><br />Give AI editors your logos</td>
-    <td align="center"><a href="https://www.raycast.com/thegdsks/thesvg"><strong>Raycast</strong></a><br />macOS and Windows</td>
-    <td align="center"><a href="https://marketplace.visualstudio.com/items?itemName=glincker.thesvg"><strong>VS Code</strong></a><br />Insert icons in your editor</td>
+    <td align="center" width="25%">
+      <a href="https://www.npmjs.com/package/@thesvg/cli"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/npm/default.svg" width="44" height="44" alt="CLI" /></a><br />
+      <a href="https://www.npmjs.com/package/@thesvg/cli"><strong>CLI</strong></a><br />
+      <sub>Add icons from your terminal</sub>
+    </td>
+    <td align="center" width="25%">
+      <a href="https://www.npmjs.com/package/@thesvg/mcp-server"><picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/model-context-protocol/dark.svg" /><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/model-context-protocol/light.svg" width="44" height="44" alt="MCP server" /></picture></a><br />
+      <a href="https://www.npmjs.com/package/@thesvg/mcp-server"><strong>MCP server</strong></a><br />
+      <sub>Give AI editors your logos</sub>
+    </td>
+    <td align="center" width="25%">
+      <a href="https://www.raycast.com/thegdsks/thesvg"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/raycast/default.svg" width="44" height="44" alt="Raycast" /></a><br />
+      <a href="https://www.raycast.com/thegdsks/thesvg"><strong>Raycast</strong></a><br />
+      <sub>Search and copy on macOS</sub>
+    </td>
+    <td align="center" width="25%">
+      <a href="https://marketplace.visualstudio.com/items?itemName=glincker.thesvg"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/visual-studio-code/default.svg" width="44" height="44" alt="VS Code" /></a><br />
+      <a href="https://marketplace.visualstudio.com/items?itemName=glincker.thesvg"><strong>VS Code</strong></a><br />
+      <sub>Insert icons in your editor</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="25%">
+      <a href="https://www.figma.com/community/plugin/1612997159050367763"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/figma/default.svg" width="44" height="44" alt="Figma" /></a><br />
+      <a href="https://www.figma.com/community/plugin/1612997159050367763"><strong>Figma</strong></a><br />
+      <sub>Drop logos onto the canvas</sub>
+    </td>
+    <td align="center" width="25%">
+      <a href="https://github.com/glincker/thesvg/tree/main/extensions/alfred"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/alfred/default.svg" width="44" height="44" alt="Alfred" /></a><br />
+      <a href="https://github.com/glincker/thesvg/tree/main/extensions/alfred"><strong>Alfred</strong></a><br />
+      <sub>Workflow for Alfred</sub>
+    </td>
+    <td align="center" width="25%">
+      <a href="https://github.com/glincker/thesvg/tree/main/extensions/browser"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/google-chrome/default.svg" width="44" height="44" alt="Browser" /></a><br />
+      <a href="https://github.com/glincker/thesvg/tree/main/extensions/browser"><strong>Browser</strong></a><br />
+      <sub>Chrome, Firefox and Edge popup</sub>
+    </td>
+    <td align="center" width="25%">
+      <a href="https://github.com/glincker/thesvg/tree/main/extensions/neovim"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/neovim/default.svg" width="44" height="44" alt="Neovim" /></a><br />
+      <a href="https://github.com/glincker/thesvg/tree/main/extensions/neovim"><strong>Neovim</strong></a><br />
+      <sub>Insert from the editor</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="25%">
+      <a href="https://thesvg.org/integrations/excalidraw"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/excalidraw/default.svg" width="44" height="44" alt="Excalidraw" /></a><br />
+      <a href="https://thesvg.org/integrations/excalidraw"><strong>Excalidraw</strong></a><br />
+      <sub>Brand libraries for diagrams</sub>
+    </td>
+    <td align="center" width="25%">
+      <a href="https://thesvg.org/integrations/mermaid"><picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/mermaid/dark.svg" /><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/mermaid/light.svg" width="44" height="44" alt="Mermaid" /></picture></a><br />
+      <a href="https://thesvg.org/integrations/mermaid"><strong>Mermaid</strong></a><br />
+      <sub>Logos in architecture diagrams</sub>
+    </td>
+    <td align="center" width="25%">
+      <a href="https://thesvg.org/docs"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/jsdelivr/default.svg" width="44" height="44" alt="CDN" /></a><br />
+      <a href="https://thesvg.org/docs"><strong>CDN</strong></a><br />
+      <sub>Any icon by URL, no install</sub>
+    </td>
+    <td align="center" width="25%">
+      <a href="https://thesvg.org/api/registry.json"><picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/json/default.svg" /><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/json/mono.svg" width="44" height="44" alt="JSON API" /></picture></a><br />
+      <a href="https://thesvg.org/api/registry.json"><strong>JSON API</strong></a><br />
+      <sub>Registry for scripts and agents</sub>
+    </td>
   </tr>
 </table>
 
