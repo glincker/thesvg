@@ -5391,18 +5391,25 @@
   {
     "slug": "apollodotio",
     "title": "Apollo.io",
-    "aliases": [],
-    "hex": "000000",
+    "aliases": [
+      "apollo",
+      "apollo io"
+    ],
+    "hex": "F8FF2C",
     "categories": [
-      "Business"
+      "Business",
+      "Marketing"
     ],
     "variants": {
-      "default": "/icons/apollodotio/default.svg"
+      "default": "/icons/apollodotio/default.svg",
+      "mono": "/icons/apollodotio/mono.svg",
+      "wordmark": "/icons/apollodotio/wordmark.svg"
     },
-    "license": "MIT",
+    "license": "Trademark of Apollo.io, Inc.. Used for identification under nominative fair use.",
     "url": "https://www.apollo.io/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "guidelines": "https://www.apollo.io/terms"
   },
   {
     "slug": "apostrophe",
@@ -77443,6 +77450,23 @@
     "collection": "brands"
   },
   {
+    "slug": "influence",
+    "title": "Influence",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Software",
+      "Social"
+    ],
+    "variants": {
+      "default": "/icons/influence/default.svg"
+    },
+    "license": "Custom owner permission (issue #1305): host/display/redistribute the unchanged official logo solely to identify Influence; no modification, no endorsement implication, no relicensing. Retain https://influence.so/ link.",
+    "url": "https://influence.so/",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "influxdb",
     "title": "InfluxDB",
     "aliases": [],
@@ -92017,19 +92041,23 @@
   {
     "slug": "microsoft-copilot",
     "title": "Microsoft Copilot",
-    "aliases": [],
-    "hex": "fff",
+    "aliases": [
+      "copilot",
+      "copilot 2026"
+    ],
+    "hex": "0736C4",
     "categories": [
       "AI",
-      "Software"
+      "Microsoft"
     ],
     "variants": {
       "default": "/icons/microsoft-copilot/default.svg"
     },
-    "license": "MIT",
+    "license": "Trademark of Microsoft Corporation. Used for identification under nominative fair use.",
     "url": "https://copilot.microsoft.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks"
   },
   {
     "slug": "microsoft-defender",
@@ -94352,6 +94380,28 @@
     "license": "CC0-1.0",
     "url": "https://docs.modx.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "mojang",
+    "title": "Mojang",
+    "aliases": [
+      "mojang ab",
+      "mojang studios"
+    ],
+    "hex": "F0313B",
+    "categories": [
+      "Gaming",
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/mojang/default.svg",
+      "wordmark": "/icons/mojang/wordmark.svg"
+    },
+    "license": "Trademark of Mojang AB / Microsoft. Used for identification under nominative fair use.",
+    "url": "https://www.minecraft.net/en-us",
+    "guidelines": "https://www.minecraft.net/en-us/usage-guidelines",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -132334,6 +132384,27 @@
     "license": "CC0-1.0",
     "url": "https://www.uniqlo.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "unisoc",
+    "title": "Unisoc",
+    "aliases": [
+      "spreadtrum",
+      "tsinghua unigroup spreadtrum"
+    ],
+    "hex": "920783",
+    "categories": [
+      "Hardware",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/unisoc/default.svg",
+      "wordmark": "/icons/unisoc/wordmark.svg"
+    },
+    "license": "Trademark of Unisoc (Shanghai) Technologies Co., Ltd.. Used for identification under nominative fair use.",
+    "url": "https://www.unisoc.com/",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
