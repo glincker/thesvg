@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from "fs";
+import { existsSync, readFileSync, statSync, writeFileSync } from "fs";
 import { join } from "path";
 
 interface Post {
@@ -31,6 +31,18 @@ const posts = (JSON.parse(readFileSync(postsPath, "utf-8")) as Post[]).sort(
 const lastBuildDate =
   posts.length > 0 ? new Date(posts[0].date).toUTCString() : new Date(0).toUTCString();
 
+function imageTags(post: Post): string {
+  if (!post.image) return "";
+  const file = join(__dirname, "../public", post.image);
+  if (!existsSync(file)) return "";
+  const url = `https://thesvg.org${post.image}`;
+  const type = post.image.endsWith(".png") ? "image/png" : "image/jpeg";
+  return `<enclosure url="${escapeXml(url)}" length="${statSync(file).size}" type="${type}"/>
+      <media:content url="${escapeXml(url)}" medium="image" type="${type}" width="1200" height="630"/>
+      <media:thumbnail url="${escapeXml(url)}" width="1200" height="630"/>
+      `;
+}
+
 const items = posts
   .map(
     (post) => `    <item>
@@ -39,14 +51,14 @@ const items = posts
       <guid isPermaLink="true">https://thesvg.org/blog/${post.slug}</guid>
       <description>${escapeXml(post.excerpt)}</description>
       <pubDate>${new Date(post.date).toUTCString()}</pubDate>
-      <author>team@thesvg.org (${post.author})</author>
+      ${imageTags(post)}      <author>team@thesvg.org (${post.author})</author>
       ${post.tags.map((t) => `<category>${escapeXml(t)}</category>`).join("\n      ")}
     </item>`
   )
   .join("\n");
 
 const rss = `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>theSVG Blog</title>
     <link>https://thesvg.org/blog</link>

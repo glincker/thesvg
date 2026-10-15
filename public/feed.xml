@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>theSVG Blog</title>
     <link>https://thesvg.org/blog</link>
@@ -11,9 +11,12 @@
       <title>Brand families: every product from a brand, in one place</title>
       <link>https://thesvg.org/blog/brand-families</link>
       <guid isPermaLink="true">https://thesvg.org/blog/brand-families</guid>
-      <description>theSVG now groups icons by owner. Amazon, Google, Microsoft and 18 more families each get their own page, with a families index, sidebar entry and structured data.</description>
+      <description>Amazon, Google, Microsoft and 18 more families each get a page with every logo and variant in one place, plus a families index, a sidebar entry and structured data.</description>
       <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
-      <author>team@thesvg.org (theSVG Team)</author>
+      <enclosure url="https://thesvg.org/blog/brand-families-dark.png" length="234166" type="image/png"/>
+      <media:content url="https://thesvg.org/blog/brand-families-dark.png" medium="image" type="image/png" width="1200" height="630"/>
+      <media:thumbnail url="https://thesvg.org/blog/brand-families-dark.png" width="1200" height="630"/>
+            <author>team@thesvg.org (theSVG Team)</author>
       <category>release</category>
       <category>families</category>
       <category>launch</category>
@@ -24,7 +27,10 @@
       <guid isPermaLink="true">https://thesvg.org/blog/theauth-joins-glinr-studios</guid>
       <description>theAuth, the open-source auth for AI agents and humans, has joined GLINR Studios, with a new site at theauth.dev, a Go library, and a hosted platform on the way.</description>
       <pubDate>Wed, 07 Oct 2026 00:00:00 GMT</pubDate>
-      <author>team@thesvg.org (GLINR Studios)</author>
+      <enclosure url="https://thesvg.org/blog/theauth-announcement-og.jpg" length="282249" type="image/jpeg"/>
+      <media:content url="https://thesvg.org/blog/theauth-announcement-og.jpg" medium="image" type="image/jpeg" width="1200" height="630"/>
+      <media:thumbnail url="https://thesvg.org/blog/theauth-announcement-og.jpg" width="1200" height="630"/>
+            <author>team@thesvg.org (GLINR Studios)</author>
       <category>launch</category>
       <category>open-source</category>
     </item>
@@ -34,7 +40,7 @@
       <guid isPermaLink="true">https://thesvg.org/blog/recently-added-and-popular-icons</guid>
       <description>theSVG now has dedicated Recently Added and Popular pages across all 7,400+ icons, plus a homepage switch that remembers which view you prefer.</description>
       <pubDate>Thu, 01 Oct 2026 00:00:00 GMT</pubDate>
-      <author>team@thesvg.org (theSVG Team)</author>
+            <author>team@thesvg.org (theSVG Team)</author>
       <category>release</category>
       <category>design</category>
     </item>
@@ -44,7 +50,7 @@
       <guid isPermaLink="true">https://thesvg.org/blog/svg-icon-performance-hacks-2026</guid>
       <description>Beyond &apos;use SVG instead of PNG&apos;: ten small, measurable tricks for icon-heavy pages, from content-visibility and mask-image recoloring to debounced search and real dark-mode variants.</description>
       <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
-      <author>team@thesvg.org (theSVG Team)</author>
+            <author>team@thesvg.org (theSVG Team)</author>
       <category>tutorial</category>
       <category>performance</category>
       <category>patterns</category>
@@ -55,7 +61,7 @@
       <guid isPermaLink="true">https://thesvg.org/blog/icon-page-redesign-brand-color-completeness</guid>
       <description>Every icon page now picks up an ambient wash of the brand&apos;s own color, shows a plain-language completeness checklist instead of a vague score, and reacts to your scroll and theme instead of sitting still.</description>
       <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
-      <author>team@thesvg.org (theSVG Team)</author>
+            <author>team@thesvg.org (theSVG Team)</author>
       <category>release</category>
       <category>design</category>
     </item>
@@ -65,7 +71,7 @@
       <guid isPermaLink="true">https://thesvg.org/blog/drawio-shape-libraries-launch</guid>
       <description>Download 12 category-based shape libraries for draw.io and diagrams.net, covering brand and dev-tool logos the built-in AWS, Azure, GCP, and Kubernetes libraries do not include.</description>
       <pubDate>Sun, 06 Sep 2026 00:00:00 GMT</pubDate>
-      <author>team@thesvg.org (theSVG Team)</author>
+            <author>team@thesvg.org (theSVG Team)</author>
       <category>release</category>
       <category>drawio</category>
       <category>integration</category>
@@ -76,7 +82,7 @@
       <guid isPermaLink="true">https://thesvg.org/blog/aws-vs-azure-vs-gcp-icons</guid>
       <description>AWS, Azure, and GCP each ship their own icon set with a different visual language. Here is how they differ, and how to get all three in one consistent format for diagrams that mix providers.</description>
       <pubDate>Sun, 06 Sep 2026 00:00:00 GMT</pubDate>
-      <author>team@thesvg.org (theSVG Team)</author>
+            <author>team@thesvg.org (theSVG Team)</author>
       <category>comparison</category>
       <category>aws</category>
       <category>azure</category>
@@ -89,7 +95,7 @@
       <guid isPermaLink="true">https://thesvg.org/blog/react-native-expo-icons</guid>
       <description>All 6,500+ icons now ship for React Native and Expo via @thesvg/react-native, backed by react-native-svg. Same typed, tree-shakeable story as the web package, no config plugin needed.</description>
       <pubDate>Tue, 11 Aug 2026 00:00:00 GMT</pubDate>
-      <author>team@thesvg.org (theSVG Team)</author>
+            <author>team@thesvg.org (theSVG Team)</author>
       <category>release</category>
       <category>react-native</category>
       <category>expo</category>
@@ -101,7 +107,7 @@
       <guid isPermaLink="true">https://thesvg.org/blog/6500-icons-milestone</guid>
       <description>Two months after crossing 6,115 icons, theSVG passed 6,500. Kubernetes icons landed, a new community collection grew to 256 logos, and categories quietly passed 140.</description>
       <pubDate>Tue, 04 Aug 2026 00:00:00 GMT</pubDate>
-      <author>team@thesvg.org (theSVG Team)</author>
+            <author>team@thesvg.org (theSVG Team)</author>
       <category>milestone</category>
       <category>roadmap</category>
     </item>
@@ -111,7 +117,7 @@
       <guid isPermaLink="true">https://thesvg.org/blog/dark-mode-logo-wall-guide</guid>
       <description>Invisible logos, blurry marks, and mismatched styles are the three ways a customer or integration logo row breaks. Here is how to fix all three with variant selection alone.</description>
       <pubDate>Fri, 24 Jul 2026 00:00:00 GMT</pubDate>
-      <author>team@thesvg.org (theSVG Team)</author>
+            <author>team@thesvg.org (theSVG Team)</author>
       <category>tutorial</category>
       <category>patterns</category>
       <category>design</category>
@@ -122,7 +128,7 @@
       <guid isPermaLink="true">https://thesvg.org/blog/mcp-server-ai-agent-tutorial</guid>
       <description>Stop letting your AI agent guess at CDN URLs for brand logos. Set up the @thesvg/mcp-server package in five minutes and get live, always-current icon lookups in Claude, Cursor, and any MCP-aware client.</description>
       <pubDate>Tue, 14 Jul 2026 00:00:00 GMT</pubDate>
-      <author>team@thesvg.org (theSVG Team)</author>
+            <author>team@thesvg.org (theSVG Team)</author>
       <category>tutorial</category>
       <category>mcp</category>
       <category>ai</category>
@@ -133,7 +139,7 @@
       <guid isPermaLink="true">https://thesvg.org/blog/thesvg-joining-glinr-studios</guid>
       <description>Big news: thesvg.org is becoming part of GLINR Studios, a new umbrella we are building for our products. The library stays open source. Here is what this means for you.</description>
       <pubDate>Mon, 29 Jun 2026 00:00:00 GMT</pubDate>
-      <author>team@thesvg.org (GLINR Studios)</author>
+            <author>team@thesvg.org (GLINR Studios)</author>
       <category>announcement</category>
       <category>milestone</category>
       <category>roadmap</category>
@@ -144,7 +150,7 @@
       <guid isPermaLink="true">https://thesvg.org/blog/top-svg-brand-library-2026</guid>
       <description>From a March 2026 launch to over 6,000 brand SVGs by June. How theSVG became the largest open brand SVG library of 2026, what we shipped, and what is next.</description>
       <pubDate>Thu, 11 Jun 2026 00:00:00 GMT</pubDate>
-      <author>team@thesvg.org (theSVG Team)</author>
+            <author>team@thesvg.org (theSVG Team)</author>
       <category>milestone</category>
       <category>launch</category>
       <category>roadmap</category>
@@ -155,7 +161,7 @@
       <guid isPermaLink="true">https://thesvg.org/blog/google-2026-icons-svg</guid>
       <description>Gmail, Drive, Calendar, Meet, Docs, Sheets, Slides and 6 more: the Google 2026 gradient refresh, packaged as free SVG downloads for developers.</description>
       <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
-      <author>team@thesvg.org (theSVG Team)</author>
+            <author>team@thesvg.org (theSVG Team)</author>
       <category>release</category>
       <category>google</category>
       <category>launch</category>
@@ -166,7 +172,7 @@
       <guid isPermaLink="true">https://thesvg.org/blog/figma-plugin-launch</guid>
       <description>Browse 6,030+ brand SVGs without leaving Figma. Variant picker, recents row, keyboard shortcuts, dark mode aware.</description>
       <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
-      <author>team@thesvg.org (theSVG Team)</author>
+            <author>team@thesvg.org (theSVG Team)</author>
       <category>release</category>
       <category>figma</category>
       <category>integration</category>
@@ -177,7 +183,7 @@
       <guid isPermaLink="true">https://thesvg.org/blog/raycast-extension-launch</guid>
       <description>Search and copy any of our 5,600 icons directly from Raycast. No browser needed.</description>
       <pubDate>Thu, 26 Mar 2026 00:00:00 GMT</pubDate>
-      <author>team@thesvg.org (theSVG Team)</author>
+            <author>team@thesvg.org (theSVG Team)</author>
       <category>release</category>
       <category>raycast</category>
       <category>integration</category>
@@ -188,7 +194,7 @@
       <guid isPermaLink="true">https://thesvg.org/blog/azure-gcp-icons-launch</guid>
       <description>626 Microsoft Azure service icons and 214 Google Cloud Platform icons are now available. theSVG is now the largest free cloud icon library.</description>
       <pubDate>Sun, 22 Mar 2026 00:00:00 GMT</pubDate>
-      <author>team@thesvg.org (theSVG Team)</author>
+            <author>team@thesvg.org (theSVG Team)</author>
       <category>release</category>
       <category>azure</category>
       <category>gcp</category>
@@ -200,7 +206,7 @@
       <guid isPermaLink="true">https://thesvg.org/blog/5500-icons-milestone</guid>
       <description>From brand logos to cloud architecture diagrams, theSVG now covers every icon a developer needs. Here is our vision for what comes next.</description>
       <pubDate>Sun, 22 Mar 2026 00:00:00 GMT</pubDate>
-      <author>team@thesvg.org (theSVG Team)</author>
+            <author>team@thesvg.org (theSVG Team)</author>
       <category>milestone</category>
       <category>roadmap</category>
     </item>
@@ -210,7 +216,7 @@
       <guid isPermaLink="true">https://thesvg.org/blog/aws-architecture-icons</guid>
       <description>Every AWS service, resource, and category icon from the official 2026-Q1 icon set. Lambda, EC2, S3, and 736 more.</description>
       <pubDate>Sun, 15 Mar 2026 00:00:00 GMT</pubDate>
-      <author>team@thesvg.org (theSVG Team)</author>
+            <author>team@thesvg.org (theSVG Team)</author>
       <category>release</category>
       <category>aws</category>
       <category>cloud</category>
@@ -221,7 +227,7 @@
       <guid isPermaLink="true">https://thesvg.org/blog/introducing-thesvg</guid>
       <description>We launched theSVG with 4,000+ brand SVG icons. Free, open-source, and community-driven. Here is why we built it and what is next.</description>
       <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
-      <author>team@thesvg.org (theSVG Team)</author>
+            <author>team@thesvg.org (theSVG Team)</author>
       <category>launch</category>
       <category>open-source</category>
     </item>
