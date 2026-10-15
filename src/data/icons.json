@@ -50764,6 +50764,24 @@
     "collection": "auth-badges"
   },
   {
+    "slug": "dashy",
+    "title": "Dashy",
+    "aliases": [],
+    "hex": "00D9F5",
+    "categories": [
+      "Dashboard",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/dashy/default.svg"
+    },
+    "license": "Trademark of the Dashy project. Used for identification under nominative fair use.",
+    "url": "https://dashy.to",
+    "guidelines": "https://github.com/Lissy93/dashy/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "dask",
     "title": "Dask",
     "aliases": [],
@@ -55278,6 +55296,26 @@
     "license": "brand-use",
     "url": "https://tryearmark.com",
     "dateAdded": "2026-10-13",
+    "collection": "brands"
+  },
+  {
+    "slug": "easy-appointments",
+    "title": "Easy!Appointments",
+    "aliases": [
+      "easyappointments"
+    ],
+    "hex": "0A8F6B",
+    "categories": [
+      "Productivity",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/easy-appointments/default.svg"
+    },
+    "license": "Trademark of Easy!Appointments. Used for identification under nominative fair use.",
+    "url": "https://easyappointments.org",
+    "guidelines": "https://easyappointments.org",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -60141,6 +60179,25 @@
     "dateAdded": "2026-06-29",
     "collection": "community",
     "url": "https://flagger.app"
+  },
+  {
+    "slug": "flame",
+    "title": "Flame",
+    "aliases": [],
+    "hex": "EE4639",
+    "categories": [
+      "Dashboard",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/flame/default.svg",
+      "mono": "/icons/flame/mono.svg"
+    },
+    "license": "Trademark of Pawel Malak. Used for identification under nominative fair use.",
+    "url": "https://github.com/pawelmalak/flame",
+    "guidelines": "https://github.com/pawelmalak/flame/blob/master/LICENSE.md",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
   },
   {
     "slug": "flare",
@@ -89029,6 +89086,25 @@
     "collection": "auth-badges"
   },
   {
+    "slug": "mailhog",
+    "title": "MailHog",
+    "aliases": [],
+    "hex": "972325",
+    "categories": [
+      "Developer Utilities",
+      "Email",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/mailhog/default.svg"
+    },
+    "license": "Trademark of the MailHog project. Used for identification under nominative fair use.",
+    "url": "https://github.com/mailhog/MailHog",
+    "guidelines": "https://github.com/mailhog/MailHog/blob/master/LICENSE.md",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "mailo-badge",
     "title": "Mailo",
     "aliases": [],
@@ -105796,6 +105872,25 @@
     "dateAdded": "2026-05-05"
   },
   {
+    "slug": "photoview",
+    "title": "Photoview",
+    "aliases": [],
+    "hex": "FF0066",
+    "categories": [
+      "Media Server",
+      "Photos",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/photoview/default.svg"
+    },
+    "license": "Trademark of Photoview. Used for identification under nominative fair use.",
+    "url": "https://photoview.github.io",
+    "guidelines": "https://github.com/photoview/photoview/blob/master/LICENSE.txt",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "php",
     "title": "PHP",
     "aliases": [],
@@ -106211,6 +106306,24 @@
     "license": "CC0-1.0",
     "url": "https://commons.wikimedia.org/wiki/File:Feedbin-Icon-share-pinboard.svg",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "pinchflat",
+    "title": "Pinchflat",
+    "aliases": [],
+    "hex": "03CCCD",
+    "categories": [
+      "Media Server",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/pinchflat/default.svg"
+    },
+    "license": "Trademark of Pinchflat. Used for identification under nominative fair use.",
+    "url": "https://github.com/kieraneglin/pinchflat",
+    "guidelines": "https://github.com/kieraneglin/pinchflat/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -120254,6 +120367,24 @@
     "collection": "brands"
   },
   {
+    "slug": "slash",
+    "title": "Slash",
+    "aliases": [],
+    "hex": "111111",
+    "categories": [
+      "Bookmarks & RSS",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/slash/default.svg"
+    },
+    "license": "Trademark of the Slash project. Used for identification under nominative fair use.",
+    "url": "https://github.com/yourselfhosted/slash",
+    "guidelines": "https://github.com/yourselfhosted/slash/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "slashdot",
     "title": "Slashdot",
     "aliases": [],
@@ -120667,6 +120798,26 @@
     "collection": "brands"
   },
   {
+    "slug": "snipe-it",
+    "title": "Snipe-IT",
+    "aliases": [
+      "snipeit"
+    ],
+    "hex": "000000",
+    "categories": [
+      "Helpdesk & CRM",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/snipe-it/default.svg"
+    },
+    "license": "Trademark of Snipe-IT / Grokability. Used for identification under nominative fair use.",
+    "url": "https://snipeitapp.com",
+    "guidelines": "https://snipeitapp.com/",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "snort",
     "title": "Snort",
     "aliases": [],
@@ -120915,6 +121066,24 @@
     "license": "CC0-1.0",
     "url": "https://www.sogou.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "soketi",
+    "title": "Soketi",
+    "aliases": [],
+    "hex": "5E17EB",
+    "categories": [
+      "Developer Utilities",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/soketi/default.svg"
+    },
+    "license": "Trademark of Soketi. Used for identification under nominative fair use.",
+    "url": "https://soketi.app",
+    "guidelines": "https://github.com/soketi/soketi/blob/1.x/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -121848,6 +122017,24 @@
     "url": "https://www.sparkpost.com/press-kit/",
     "guidelines": "https://www.sparkpost.com/press-kit/",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "sparkyfitness",
+    "title": "SparkyFitness",
+    "aliases": [],
+    "hex": "E83136",
+    "categories": [
+      "Health",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/sparkyfitness/default.svg"
+    },
+    "license": "Trademark of the SparkyFitness project. Used for identification under nominative fair use.",
+    "url": "https://codewithcj.github.io/SparkyFitness/",
+    "guidelines": "https://github.com/CodeWithCJ/SparkyFitness/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -126561,6 +126748,27 @@
     "url": "https://www.adobe.com/products/technicalcommunicationsuite",
     "collection": "brands",
     "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "technitium-dns-server",
+    "title": "Technitium DNS Server",
+    "aliases": [
+      "technitium",
+      "technitium-dns"
+    ],
+    "hex": "6698FE",
+    "categories": [
+      "Networking",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/technitium-dns-server/default.svg"
+    },
+    "license": "Trademark of Technitium. Used for identification under nominative fair use.",
+    "url": "https://technitium.com/dns/",
+    "guidelines": "https://technitium.com/dns/",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
   },
   {
     "slug": "technology-innovation-institute-falcon",
@@ -135965,6 +136173,27 @@
     "url": "https://www.vultr.com/company/brand-assets",
     "dateAdded": "2026-09-12",
     "collection": "auth-badges"
+  },
+  {
+    "slug": "vvveb-cms",
+    "title": "Vvveb CMS",
+    "aliases": [
+      "vvveb"
+    ],
+    "hex": "50B450",
+    "categories": [
+      "CMS",
+      "Low-Code",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/vvveb-cms/default.svg"
+    },
+    "license": "Trademark of Vvveb. Used for identification under nominative fair use.",
+    "url": "https://www.vvveb.com",
+    "guidelines": "https://github.com/givanz/Vvveb/blob/master/public/media/vvveb.svg",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
   },
   {
     "slug": "vwo",
