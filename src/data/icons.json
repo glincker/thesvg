@@ -139526,5 +139526,455 @@
     "url": "https://www.zyte.com",
     "dateAdded": "2026-03-07",
     "collection": "brands"
+  },
+  {
+    "slug": "anythingllm",
+    "title": "AnythingLLM",
+    "aliases": [
+      "anything-llm"
+    ],
+    "hex": "1B1B1E",
+    "categories": [
+      "AI",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/anythingllm/default.svg",
+      "dark": "/icons/anythingllm/dark.svg",
+      "wordmarkLight": "/icons/anythingllm/wordmarkLight.svg",
+      "wordmarkDark": "/icons/anythingllm/wordmarkDark.svg"
+    },
+    "license": "MIT",
+    "url": "https://anythingllm.com",
+    "guidelines": "https://github.com/Mintplex-Labs/anything-llm/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
+    "slug": "flowise",
+    "title": "Flowise",
+    "aliases": [
+      "flowise-postgres",
+      "flowiseai"
+    ],
+    "hex": "4F46E5",
+    "categories": [
+      "AI",
+      "Automation",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/flowise/default.svg",
+      "wordmarkLight": "/icons/flowise/wordmarkLight.svg",
+      "wordmarkDark": "/icons/flowise/wordmarkDark.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://flowiseai.com",
+    "guidelines": "https://github.com/FlowiseAI/Flowise/blob/main/LICENSE.md",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
+    "slug": "tianji",
+    "title": "Tianji",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Analytics",
+      "Monitoring",
+      "Dashboard"
+    ],
+    "variants": {
+      "default": "/icons/tianji/default.svg",
+      "dark": "/icons/tianji/dark.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://tianji.msgbyte.com",
+    "guidelines": "https://github.com/msgbyte/tianji/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
+    "slug": "freescout",
+    "title": "FreeScout",
+    "aliases": [
+      "free-scout"
+    ],
+    "hex": "3276D5",
+    "categories": [
+      "Communication",
+      "Software",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/freescout/default.svg",
+      "dark": "/icons/freescout/dark.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://github.com/freescout-help-desk/freescout",
+    "guidelines": "https://github.com/freescout-help-desk/freescout/blob/dist/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
+    "slug": "gotify",
+    "title": "Gotify",
+    "aliases": [],
+    "hex": "71CAEE",
+    "categories": [
+      "Communication",
+      "Software",
+      "DevOps"
+    ],
+    "variants": {
+      "default": "/icons/gotify/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/gotify/server",
+    "guidelines": "https://github.com/gotify/server/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
+    "slug": "plunk",
+    "title": "Plunk",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Communication",
+      "Software",
+      "Automation"
+    ],
+    "variants": {
+      "default": "/icons/plunk/default.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://useplunk.com",
+    "guidelines": "https://github.com/useplunk/plunk/blob/next/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
+    "slug": "stalwart-mail-server",
+    "title": "Stalwart Mail Server",
+    "aliases": [
+      "stalwart",
+      "stalwart-mail",
+      "stalwartlabs"
+    ],
+    "hex": "DB2D54",
+    "categories": [
+      "Communication",
+      "Software",
+      "Security"
+    ],
+    "variants": {
+      "default": "/icons/stalwart-mail-server/default.svg",
+      "wordmark": "/icons/stalwart-mail-server/wordmark.svg"
+    },
+    "license": "Trademark of Stalwart Labs. Used for identification under nominative fair use.",
+    "url": "https://stalw.art",
+    "guidelines": "https://github.com/stalwartlabs/stalwart/tree/main/LICENSES",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
+    "slug": "heimdall",
+    "title": "Heimdall",
+    "aliases": [
+      "heimdall-dashboard"
+    ],
+    "hex": "000000",
+    "categories": [
+      "Dashboard",
+      "Software",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/heimdall/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/linuxserver/Heimdall",
+    "guidelines": "https://github.com/linuxserver/Heimdall/blob/2.x/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
+    "slug": "homer",
+    "title": "Homer",
+    "aliases": [
+      "homer-dashboard"
+    ],
+    "hex": "206EFF",
+    "categories": [
+      "Dashboard",
+      "Software",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/homer/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://github.com/bastienwirtz/homer",
+    "guidelines": "https://github.com/bastienwirtz/homer/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
+    "slug": "organizr",
+    "title": "Organizr",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Dashboard",
+      "Software",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/organizr/default.svg"
+    },
+    "license": "GPL-3.0",
+    "url": "https://github.com/causefx/Organizr",
+    "guidelines": "https://github.com/causefx/Organizr/blob/v2-master/LICENSE.md",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
+    "slug": "bytebase",
+    "title": "Bytebase",
+    "aliases": [],
+    "hex": "111827",
+    "categories": [
+      "Database",
+      "DevOps",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/bytebase/default.svg",
+      "wordmark": "/icons/bytebase/wordmark.svg",
+      "wordmarkLight": "/icons/bytebase/wordmarkLight.svg",
+      "wordmarkDark": "/icons/bytebase/wordmarkDark.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/bytebase/bytebase",
+    "guidelines": "https://github.com/bytebase/bytebase/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
+    "slug": "databasus",
+    "title": "Databasus",
+    "aliases": [
+      "postgresus"
+    ],
+    "hex": "155DFC",
+    "categories": [
+      "Database",
+      "DevOps",
+      "Storage"
+    ],
+    "variants": {
+      "default": "/icons/databasus/default.svg",
+      "wordmark": "/icons/databasus/wordmark.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://github.com/databasus/databasus",
+    "guidelines": "https://github.com/databasus/databasus/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
+    "slug": "mongo-express",
+    "title": "Mongo Express",
+    "aliases": [
+      "mongoexpress"
+    ],
+    "hex": "41A948",
+    "categories": [
+      "Database",
+      "DevTool",
+      "Dashboard"
+    ],
+    "variants": {
+      "default": "/icons/mongo-express/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/mongo-express/mongo-express",
+    "guidelines": "https://github.com/mongo-express/mongo-express/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
+    "slug": "pg-back-web",
+    "title": "PG Back Web",
+    "aliases": [
+      "pgbackweb",
+      "pgbackweb-app"
+    ],
+    "hex": "000000",
+    "categories": [
+      "Database",
+      "DevOps",
+      "Storage"
+    ],
+    "variants": {
+      "default": "/icons/pg-back-web/default.svg",
+      "light": "/icons/pg-back-web/light.svg",
+      "dark": "/icons/pg-back-web/dark.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://github.com/eduardolat/pgbackweb",
+    "guidelines": "https://github.com/eduardolat/pgbackweb/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
+    "slug": "pgadmin",
+    "title": "pgAdmin",
+    "aliases": [
+      "pgadmin-4",
+      "pgadmin4"
+    ],
+    "hex": "336791",
+    "categories": [
+      "Database",
+      "DevTool",
+      "Management"
+    ],
+    "variants": {
+      "default": "/icons/pgadmin/default.svg"
+    },
+    "license": "PostgreSQL",
+    "url": "https://github.com/pgadmin-org/pgadmin4",
+    "guidelines": "https://github.com/pgadmin-org/pgadmin4/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
+    "slug": "semaphore-ui",
+    "title": "Semaphore UI",
+    "aliases": [
+      "ansible semaphore",
+      "semaphore",
+      "semaphoreui"
+    ],
+    "hex": "1697F6",
+    "categories": [
+      "DevOps",
+      "Automation"
+    ],
+    "variants": {
+      "default": "/icons/semaphore-ui/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://semaphoreui.com",
+    "guidelines": "https://github.com/semaphoreui/semaphore/blob/develop/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
+    "slug": "browserless",
+    "title": "Browserless",
+    "aliases": [
+      "browserless-io"
+    ],
+    "hex": "000000",
+    "categories": [
+      "DevTool",
+      "Automation",
+      "DevOps"
+    ],
+    "variants": {
+      "default": "/icons/browserless/default.svg",
+      "light": "/icons/browserless/light.svg",
+      "dark": "/icons/browserless/dark.svg"
+    },
+    "license": "Trademark of Browserless. Used for identification under nominative fair use.",
+    "url": "https://www.browserless.io",
+    "guidelines": "https://github.com/browserless/browserless/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
+    "slug": "bytestash",
+    "title": "ByteStash",
+    "aliases": [],
+    "hex": "2563EB",
+    "categories": [
+      "DevTool",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/bytestash/default.svg"
+    },
+    "license": "GPL-3.0",
+    "url": "https://github.com/jordan-dalby/ByteStash",
+    "guidelines": "https://github.com/jordan-dalby/ByteStash/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
+    "slug": "convertx",
+    "title": "ConvertX",
+    "aliases": [
+      "convertx-app"
+    ],
+    "hex": "84CC16",
+    "categories": [
+      "DevTool",
+      "Media",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/convertx/default.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://github.com/C4illin/ConvertX",
+    "guidelines": "https://github.com/C4illin/ConvertX/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
+    "slug": "cyberchef",
+    "title": "CyberChef",
+    "aliases": [
+      "cyber-chef",
+      "gchq-cyberchef"
+    ],
+    "hex": "000000",
+    "categories": [
+      "DevTool",
+      "Security",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/cyberchef/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://github.com/gchq/CyberChef",
+    "guidelines": "https://github.com/gchq/CyberChef/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
+    "slug": "flaresolverr",
+    "title": "FlareSolverr",
+    "aliases": [
+      "flare-solverr"
+    ],
+    "hex": "4D4D4D",
+    "categories": [
+      "DevTool",
+      "Networking",
+      "Automation"
+    ],
+    "variants": {
+      "default": "/icons/flaresolverr/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/FlareSolverr/FlareSolverr",
+    "guidelines": "https://github.com/FlareSolverr/FlareSolverr/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
   }
 ]
