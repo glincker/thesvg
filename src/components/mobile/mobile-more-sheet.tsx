@@ -5,10 +5,15 @@ import Link from "next/link";
 import {
   BookOpen,
   ChevronRight,
+  Cloud,
   ExternalLink,
+  Eye,
   FileText,
+  GitCompare,
   Heart,
   Layers,
+  LayoutGrid,
+  Shapes,
 } from "lucide-react";
 import { BottomSheet, type BottomSheetSnap } from "./bottom-sheet";
 import { useMobileShellStore } from "@/lib/stores/mobile-shell-store";
@@ -30,30 +35,111 @@ interface ExternalItem {
   iconSrc: string;
 }
 
-const APP_LINKS: ReadonlyArray<InternalItem> = [
+interface LinkSection {
+  title: string | null;
+  items: ReadonlyArray<InternalItem>;
+}
+
+// Everything the desktop header and sidebar expose, grouped so the sheet
+// stays scannable on a phone: browse, tools, learn, then personal lists.
+const APP_SECTIONS: ReadonlyArray<LinkSection> = [
   {
-    href: "/extensions",
-    label: "Extensions",
-    description: "VS Code, Raycast, Figma, npm package",
-    Icon: Layers,
+    title: "Browse",
+    items: [
+      {
+        href: "/families",
+        label: "Brand families",
+        description: "Amazon, Google, Microsoft and more",
+        Icon: LayoutGrid,
+      },
+      {
+        href: "/categories",
+        label: "Categories",
+        description: "Browse by what a product does",
+        Icon: Shapes,
+      },
+      {
+        href: "/collection/aws",
+        label: "AWS Architecture",
+        description: "Service and resource icons",
+        Icon: Cloud,
+      },
+      {
+        href: "/collection/azure",
+        label: "Azure Services",
+        description: "Microsoft Azure icons",
+        Icon: Cloud,
+      },
+      {
+        href: "/collection/gcp",
+        label: "Google Cloud",
+        description: "GCP architecture icons",
+        Icon: Cloud,
+      },
+      {
+        href: "/collection/k8s",
+        label: "Kubernetes",
+        description: "Kubernetes components",
+        Icon: Cloud,
+      },
+    ],
   },
   {
-    href: "/blog",
-    label: "Blog",
-    description: "Updates and changelog",
-    Icon: FileText,
+    title: "Tools",
+    items: [
+      {
+        href: "/viewer",
+        label: "SVG viewer",
+        description: "Preview, inspect and copy any SVG",
+        Icon: Eye,
+      },
+      {
+        href: "/extensions",
+        label: "Extensions",
+        description: "VS Code, Raycast, Figma, npm package",
+        Icon: Layers,
+      },
+    ],
   },
   {
-    href: "/recents",
-    label: "Recents",
-    description: "Recently viewed and copied",
-    Icon: BookOpen,
+    title: "Learn",
+    items: [
+      {
+        href: "/docs",
+        label: "Docs and guides",
+        description: "CDN, React, CLI, MCP and more",
+        Icon: BookOpen,
+      },
+      {
+        href: "/blog",
+        label: "Blog",
+        description: "Updates and changelog",
+        Icon: FileText,
+      },
+      {
+        href: "/compare",
+        label: "Compare libraries",
+        description: "theSVG vs Simple Icons, svgl, Iconify",
+        Icon: GitCompare,
+      },
+    ],
   },
   {
-    href: "/?favorites=true",
-    label: "Favorites",
-    description: "Icons you have starred",
-    Icon: Heart,
+    title: "Your icons",
+    items: [
+      {
+        href: "/recents",
+        label: "Recents",
+        description: "Recently viewed and copied",
+        Icon: BookOpen,
+      },
+      {
+        href: "/?favorites=true",
+        label: "Favorites",
+        description: "Icons you have starred",
+        Icon: Heart,
+      },
+    ],
   },
 ];
 
@@ -117,30 +203,39 @@ export function MobileMoreSheet() {
       label="More"
     >
       <div className="px-4 pb-4">
-        <ul className="divide-y divide-border/40">
-          {APP_LINKS.map((item) => (
-            <li key={item.href}>
-              <Link
-                href={item.href}
-                onClick={() => closeSheet()}
-                className="flex items-center gap-3 py-3"
-              >
-                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-muted/60 text-muted-foreground">
-                  <item.Icon className="h-4 w-4" />
-                </span>
-                <span className="min-w-0 flex-1">
-                  <span className="block text-sm font-medium text-foreground">
-                    {item.label}
-                  </span>
-                  <span className="block truncate text-[11px] text-muted-foreground">
-                    {item.description}
-                  </span>
-                </span>
-                <ChevronRight className="h-4 w-4 text-muted-foreground/60" />
-              </Link>
-            </li>
-          ))}
-        </ul>
+        {APP_SECTIONS.map((section, i) => (
+          <div key={section.title ?? i} className={i > 0 ? "mt-4" : undefined}>
+            {section.title && (
+              <p className="pb-1 text-[10px] font-medium uppercase tracking-wider text-muted-foreground/60">
+                {section.title}
+              </p>
+            )}
+            <ul className="divide-y divide-border/40">
+              {section.items.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    onClick={() => closeSheet()}
+                    className="flex items-center gap-3 py-3"
+                  >
+                    <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-muted/60 text-muted-foreground">
+                      <item.Icon className="h-4 w-4" />
+                    </span>
+                    <span className="min-w-0 flex-1">
+                      <span className="block text-sm font-medium text-foreground">
+                        {item.label}
+                      </span>
+                      <span className="block truncate text-[11px] text-muted-foreground">
+                        {item.description}
+                      </span>
+                    </span>
+                    <ChevronRight className="h-4 w-4 text-muted-foreground/60" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
 
         <p className="mt-4 pb-1 text-[10px] font-medium uppercase tracking-wider text-muted-foreground/60">
           Integrations
