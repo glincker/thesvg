@@ -59448,7 +59448,8 @@
       "Management"
     ],
     "variants": {
-      "default": "/icons/file-browser/default.svg"
+      "default": "/icons/file-browser/default.svg",
+      "wordmark": "/icons/file-browser/wordmark.svg"
     },
     "license": "Apache-2.0",
     "url": "https://filebrowser.org",
@@ -105677,7 +105678,10 @@
     "variants": {
       "default": "/icons/photoprism/default.svg",
       "light": "/icons/photoprism/light.svg",
-      "dark": "/icons/photoprism/dark.svg"
+      "dark": "/icons/photoprism/dark.svg",
+      "wordmark": "/icons/photoprism/wordmark.svg",
+      "wordmarkLight": "/icons/photoprism/wordmarkLight.svg",
+      "wordmarkDark": "/icons/photoprism/wordmarkDark.svg"
     },
     "license": "Trademark of PhotoPrism UG. Used for identification under nominative fair use.",
     "url": "https://www.photoprism.app",
@@ -109285,7 +109289,8 @@
       "Productivity"
     ],
     "variants": {
-      "default": "/icons/privatebin/default.svg"
+      "default": "/icons/privatebin/default.svg",
+      "wordmark": "/icons/privatebin/wordmark.svg"
     },
     "license": "CC-BY-4.0",
     "url": "https://privatebin.info",
@@ -119516,6 +119521,26 @@
     "collection": "brands"
   },
   {
+    "slug": "silverbullet",
+    "title": "SilverBullet",
+    "aliases": [
+      "silver-bullet"
+    ],
+    "hex": "1B5A8C",
+    "categories": [
+      "Productivity",
+      "Software",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/silverbullet/default.svg"
+    },
+    "license": "Trademark of the SilverBullet project. Used for identification under nominative fair use.",
+    "url": "https://silverbullet.md",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "similarweb",
     "title": "Similarweb",
     "aliases": [],
@@ -125941,7 +125966,8 @@
     "variants": {
       "default": "/icons/tandoor-recipes/default.svg",
       "mono": "/icons/tandoor-recipes/mono.svg",
-      "wordmark": "/icons/tandoor-recipes/wordmark.svg"
+      "wordmark": "/icons/tandoor-recipes/wordmark.svg",
+      "wordmarkDark": "/icons/tandoor-recipes/wordmarkDark.svg"
     },
     "license": "Trademark of Tandoor Recipes. Used for identification under nominative fair use.",
     "url": "https://docs.tandoor.dev",
