@@ -12,7 +12,7 @@
  *     name against react-native-svg's exports and renders it.
  *
  * This keeps per-icon modules tiny (data only, no repeated render logic),
- * which matters at 6,500+ icons — the React DOM package's one-component-per-
+ * which matters at 7,500+ icons — the React DOM package's one-component-per-
  * file approach doesn't scale to React Native's bundle/startup constraints.
  *
  * Run with:

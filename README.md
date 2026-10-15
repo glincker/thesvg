@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <strong>The open SVG brand library. 7,400+ logos and cloud icons, free to search, copy, and ship.</strong>
+  <strong>The open SVG brand library. 7,500+ logos and cloud icons, free to search, copy, and ship.</strong>
 </p>
 
 <p align="center">
@@ -19,7 +19,7 @@
   <a href="https://www.jsdelivr.com/package/gh/glincker/thesvg"><img src="https://data.jsdelivr.com/v1/package/gh/glincker/thesvg/badge" alt="jsDelivr" /></a>
   <a href="https://github.com/glincker/thesvg/stargazers"><img src="https://img.shields.io/github/stars/glincker/thesvg?style=flat-square&label=stars" alt="stars" /></a>
   <a href="https://discord.gg/Ar5pcaZB99"><img src="https://img.shields.io/discord/829168897080557579?style=flat-square&logo=discord&logoColor=white&label=discord&color=5865F2" alt="Discord" /></a>
-  <a href="https://github.com/glincker/thesvg"><img src="https://img.shields.io/badge/icons-7%2C400%2B-F97316?style=flat-square" alt="7,400+ icons" /></a>
+  <a href="https://github.com/glincker/thesvg"><img src="https://img.shields.io/badge/icons-7%2C500%2B-F97316?style=flat-square" alt="7,500+ icons" /></a>
   <a href="https://github.com/glincker/thesvg/blob/main/LICENSE"><img src="https://img.shields.io/github/license/glincker/thesvg?style=flat-square" alt="license" /></a>
   <a href="https://www.figma.com/community/plugin/1612997159050367763"><img src="https://img.shields.io/badge/Figma-Plugin-F24E1E?style=flat-square&logo=figma&logoColor=white" alt="Figma" /></a>
   <a href="https://marketplace.visualstudio.com/items?itemName=glincker.thesvg"><img src="https://img.shields.io/badge/VS%20Code-Extension-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white" alt="VS Code" /></a>
@@ -48,7 +48,7 @@
 
 <p align="center">
   <a href="https://thesvg.org">
-    <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" alt="theSVG - 7,400+ SVG icons for developers" width="720" />
+    <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" alt="theSVG - 7,500+ SVG icons for developers" width="720" />
   </a>
 </p>
 
@@ -79,8 +79,8 @@
 
 Most icon libraries focus on UI icons. Brand logos are scattered across press kits, Figma files, and random GitHub repos. **theSVG** is the single source for SVG icons - brand logos, cloud architecture diagrams, and more. Searchable, versioned, and available as npm packages, CDN, CLI, API, and MCP server.
 
-- **7,400+ icons** across multiple collections
-- **4,600+ brand icons** across 115+ categories
+- **7,500+ icons** across multiple collections
+- **4,800+ brand icons** across 150+ categories
 - **858 Auth Badge icons** - circular icon badges for 2FA/authenticator apps
 - **739 AWS Architecture icons** (2026-Q1)
 - **626 Azure Service icons** (2026-Q1)
@@ -98,7 +98,7 @@ theSVG organizes icons into collections:
 
 | Collection | Icons | Description |
 |------------|-------|-------------|
-| **Brand Icons** | 4,675 | Brand logos from 115+ categories |
+| **Brand Icons** | 4,800+ | Brand logos from 150+ categories |
 | **Auth Badges** | 858 | Circular icon badges styled for 2FA/authenticator apps |
 | **AWS Architecture** | 739 | Official AWS service, resource, category, and group icons (2026-Q1) |
 | **Azure Services** | 626 | Microsoft Azure service icons (2026-Q1) |
@@ -162,8 +162,8 @@ Use theSVG icons everywhere you build, design, and ship. Browse the full ecosyst
 
 | Extension | Status | Description |
 |-----------|--------|-------------|
-| [Figma Plugin](https://www.figma.com/community/plugin/1612997159050367763) | Published | Browse 7,400+ brand SVGs, variant picker, recents row, keyboard shortcuts. Insert as editable vectors. |
-| [VS Code](https://marketplace.visualstudio.com/items?itemName=glincker.thesvg) | Published | Search 7,400+ icons from the command palette. Copy SVG, JSX, CDN link, or insert at cursor. |
+| [Figma Plugin](https://www.figma.com/community/plugin/1612997159050367763) | Published | Browse 7,500+ brand SVGs, variant picker, recents row, keyboard shortcuts. Insert as editable vectors. |
+| [VS Code](https://marketplace.visualstudio.com/items?itemName=glincker.thesvg) | Published | Search 7,500+ icons from the command palette. Copy SVG, JSX, CDN link, or insert at cursor. |
 | [Raycast](https://www.raycast.com/thegdsks/thesvg) | Published | Search, preview, and copy any brand SVG in one keystroke. Filter by category, preview variants. |
 | [MCP Server](https://www.npmjs.com/package/@thesvg/mcp-server) | Published | AI tool calls for Claude, Cursor, Windsurf. Fetch icons by name or category. |
 | [Agent Skill](https://skills.sh/glincker/thesvg) | Published | Drop-in skill for AI agents. Install via `npx skills add glincker/thesvg`. Teaches the icon CDN and registry. |
@@ -171,7 +171,7 @@ Use theSVG icons everywhere you build, design, and ship. Browse the full ecosyst
 | [Homebrew](https://github.com/glincker/homebrew-thesvg) | Published | `brew tap glincker/thesvg && brew install thesvg` |
 | [CDN via jsDelivr](https://www.jsdelivr.com/package/gh/glincker/thesvg) | Published | Serve any icon via global CDN. Drop into HTML, CSS, Markdown, Notion, Webflow, Framer. |
 | [Iconify](https://icon-sets.iconify.design/thesvg-color/) | Published | Brand icons available as [`thesvg`](https://icon-sets.iconify.design/thesvg/) (mono) and [`thesvg-color`](https://icon-sets.iconify.design/thesvg-color/) sets. Works with any Iconify-consuming tool: Mermaid architecture diagrams, Iconify's VS Code and Figma plugins, `@iconify/react`, and more. |
-| [Browser Extension](https://github.com/glincker/thesvg/tree/main/extensions/browser) | Beta | Chrome, Firefox, Edge popup with 7,400+ brand SVGs. MV3, no telemetry. |
+| [Browser Extension](https://github.com/glincker/thesvg/tree/main/extensions/browser) | Beta | Chrome, Firefox, Edge popup with 7,500+ brand SVGs. MV3, no telemetry. |
 | [JetBrains](https://github.com/glincker/thesvg/issues?q=label%3Aextension) | Open | IntelliJ, WebStorm, PyCharm, Rider tool window. Help wanted. |
 | [Neovim](https://github.com/glincker/thesvg/tree/main/extensions/neovim) | Published | Lua plugin with Telescope picker. Insert SVG URL or inline content at cursor. |
 | [Alfred Workflow](https://github.com/glincker/thesvg/tree/main/extensions/alfred) | Published | macOS quick access. Search anywhere, copy SVG, CDN URL, or markdown. |
@@ -293,7 +293,7 @@ You can also clone the repo (~30 MB) and self-host. The codebase is MIT-licensed
 
 ## Categories
 
-Icons are organized into 115+ categories:
+Icons are organized into 150+ categories:
 
 `AI` `Analytics` `Identity` `Automotive` `Aviation` `Browser` `Cloud` `CMS` `Community` `Crypto` `Database` `Design` `DevTool` `Education` `Entertainment` `Finance` `Food` `Framework` `Gaming` `Hardware` `Hosting` `IoT` `Language` `Library` `Linux` `Media` `Music` `Payment` `Platform` `Privacy` `Security` `Self-Hosted` `Shopping` `Social` `Software` and more...
 

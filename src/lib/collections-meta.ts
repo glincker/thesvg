@@ -66,7 +66,7 @@ export const COLLECTIONS_META: Record<CollectionId, CollectionMeta> = {
     color: "text-orange-500",
     pageTitle: "Brand SVG Icons - Free Logo Download",
     pageDescription:
-      "Browse and download 4,675 brand SVG icons. GitHub, Stripe, Vercel, Docker, React, and thousands more. Multiple variants: color, mono, dark, light, wordmark.",
+      "Browse and download 4,800+ brand SVG icons. GitHub, Stripe, Vercel, Docker, React, and thousands more. Multiple variants: color, mono, dark, light, wordmark.",
     pageKeywords: [
       "brand icons",
       "brand SVG",

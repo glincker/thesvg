@@ -22,7 +22,7 @@ const eslintConfig = defineConfig([
   ]),
   {
     rules: {
-      // We intentionally use <img> for 3,847+ SVG icons - Next Image is overkill for SVGs
+      // We intentionally use <img> for thousands of SVG icons - Next Image is overkill for SVGs
       "@next/next/no-img-element": "off",
       // Common pattern for client-side detection (navigator, window) - downgrade to warn
       "react-hooks/set-state-in-effect": "warn",
