@@ -128,9 +128,7 @@ function summarizeRuntimeDeps(packages: PackageInfo[]): string {
 function main() {
   const icons: IconEntry[] = JSON.parse(readFileSync(ICONS_JSON, "utf-8"));
   const iconCount = icons.length;
-  // Round down to the hundred so the "N+" copy never overstates and does
-  // not churn on every batch (same rule as getFormattedIconCount).
-  const formattedIconCount = (Math.floor(iconCount / 100) * 100).toLocaleString("en-US");
+  const formattedIconCount = iconCount.toLocaleString("en-US");
 
   const categoryCounts = new Map<string, number>();
   for (const icon of icons) {

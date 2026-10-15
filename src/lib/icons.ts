@@ -141,16 +141,12 @@ export function getCollectionCount(collection: Collection): number {
 }
 
 /**
- * Rounds a total down to the nearest hundred so copy like "7,600+ icons"
- * stays true as the library grows and never needs a hand edit per batch.
- * Callers append the "+".
+ * The exact icon count, formatted. Every dynamic surface (page titles,
+ * manifest, hero, llms.txt) uses this so it never needs a hand edit; the
+ * hardcoded "7,600+" in READMEs and manifests is only the static fallback.
  */
-export function roundDownToHundred(n: number): number {
-  return Math.floor(n / 100) * 100;
-}
-
 export function getFormattedIconCount(): string {
-  return roundDownToHundred(icons.length).toLocaleString("en-US");
+  return icons.length.toLocaleString("en-US");
 }
 
 /**

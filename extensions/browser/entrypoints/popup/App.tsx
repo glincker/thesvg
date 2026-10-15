@@ -196,7 +196,11 @@ export default function App() {
           autoFocus
           type="text"
           className="search-input"
-          placeholder="Search 7,600+ brand SVGs"
+          placeholder={
+            icons.length > 0
+              ? `Search ${icons.length.toLocaleString("en-US")} brand SVGs`
+              : "Search 7,600+ brand SVGs"
+          }
           value={query}
           onChange={(e) => {
             setQuery(e.target.value);
