@@ -5,8 +5,19 @@
     <link>https://thesvg.org/blog</link>
     <description>Announcements, releases, and updates from theSVG - the open SVG brand library</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Oct 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://thesvg.org/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Brand families: every product from a brand, in one place</title>
+      <link>https://thesvg.org/blog/brand-families</link>
+      <guid isPermaLink="true">https://thesvg.org/blog/brand-families</guid>
+      <description>theSVG now groups icons by owner. Amazon, Google, Microsoft and 18 more families each get their own page, with a families index, sidebar entry and structured data.</description>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
+      <author>team@thesvg.org (theSVG Team)</author>
+      <category>release</category>
+      <category>families</category>
+      <category>launch</category>
+    </item>
     <item>
       <title>theAuth joins GLINR Studios: open-source auth for AI agents, now with Go</title>
       <link>https://thesvg.org/blog/theauth-joins-glinr-studios</link>

@@ -85,6 +85,7 @@ Most icon libraries focus on UI icons. Brand logos are scattered across press ki
 
 - **7,600+ icons** across multiple collections
 - **4,800+ brand icons** across 150+ categories
+- **21 brand families** - every product from Amazon, Google, Microsoft and more, grouped by owner
 - **858 Auth Badge icons** - circular icon badges for 2FA/authenticator apps
 - **739 AWS Architecture icons** (2026-Q1)
 - **626 Azure Service icons** (2026-Q1)
@@ -95,6 +96,22 @@ Most icon libraries focus on UI icons. Brand logos are scattered across press ki
 - **TypeScript-first** - fully typed, dual ESM/CJS
 - **Framework-agnostic** - React, Vue, Svelte, plain HTML, or CDN
 - **AI-ready** - MCP server for Claude, Cursor, and Windsurf
+
+## Brand families
+
+Products grouped by the company that owns them, each with its own page: the whole Amazon, Google or Microsoft line in one place, with every variant.
+
+| Family | Logos | Includes |
+| --- | --- | --- |
+| [Google](https://thesvg.org/family/google) | 100+ | Workspace, Gemini, Cloud, Android, Chrome |
+| [Microsoft](https://thesvg.org/family/microsoft) | 70+ | GitHub, Azure, Dynamics 365, Fabric, Copilot |
+| [Adobe](https://thesvg.org/family/adobe) | 30+ | Photoshop, Illustrator, Creative Cloud |
+| [Amazon](https://thesvg.org/family/amazon) | 18 | Prime, Kindle, Music, AWS, Twitch, Ring |
+| [Apple](https://thesvg.org/family/apple) | 16 | iOS, macOS, Music, iCloud |
+| [JetBrains](https://thesvg.org/family/jetbrains) | 16 | IntelliJ IDEA, PyCharm, WebStorm, Rider |
+| [IBM](https://thesvg.org/family/ibm) | 14 | Red Hat, HashiCorp, Terraform, Ansible |
+
+Browse all 21 families at [thesvg.org/families](https://thesvg.org/families). The same data is available as JSON at [`/api/families.json`](https://thesvg.org/api/families.json) and in [`llms.txt`](https://thesvg.org/llms.txt).
 
 ## Collections
 
