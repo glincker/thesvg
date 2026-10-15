@@ -93517,6 +93517,29 @@
     "collection": "brands"
   },
   {
+    "slug": "minecraft-server",
+    "title": "Minecraft Server",
+    "aliases": [
+      "minecraft",
+      "minecraft server",
+      "mojang"
+    ],
+    "hex": "88B858",
+    "categories": [
+      "Software",
+      "Community",
+      "Hosting"
+    ],
+    "variants": {
+      "default": "/icons/minecraft-server/default.svg"
+    },
+    "license": "Trademark of Mojang AB / Microsoft. Used for identification under nominative fair use.",
+    "url": "https://www.minecraft.net",
+    "guidelines": "https://www.minecraft.net/en-us/usage-guidelines",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "minehub-de-badge",
     "title": "Minehub.de",
     "aliases": [],
@@ -106900,6 +106923,25 @@
     "collection": "brands"
   },
   {
+    "slug": "planka",
+    "title": "Planka",
+    "aliases": [],
+    "hex": "3F444B",
+    "categories": [
+      "Productivity",
+      "Software",
+      "Management"
+    ],
+    "variants": {
+      "default": "/icons/planka/default.svg"
+    },
+    "license": "Trademark of PLANKA Software GmbH. Used for identification under nominative fair use.",
+    "url": "https://planka.app",
+    "guidelines": "https://github.com/plankanban/planka/blob/master/LICENSE.md",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "planning-center-badge",
     "title": "Planning Center",
     "aliases": [],
@@ -116511,6 +116553,26 @@
     "collection": "brands"
   },
   {
+    "slug": "ryot",
+    "title": "Ryot",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Productivity",
+      "Software",
+      "Media"
+    ],
+    "variants": {
+      "default": "/icons/ryot/default.svg",
+      "dark": "/icons/ryot/dark.svg"
+    },
+    "license": "Trademark of Ryot. Used for identification under nominative fair use.",
+    "url": "https://ryot.io",
+    "guidelines": "https://github.com/IgnisDa/ryot",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "s-oil",
     "title": "S-Oil",
     "aliases": [],
@@ -118759,6 +118821,27 @@
     "license": "CC0-1.0",
     "url": "https://www.sfml-dev.org/download/goodies/",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "sftpgo",
+    "title": "SFTPGo",
+    "aliases": [
+      "sftp go"
+    ],
+    "hex": "FEC866",
+    "categories": [
+      "Storage",
+      "Networking",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/sftpgo/default.svg"
+    },
+    "license": "Trademark of Nicola Murino. Used for identification under nominative fair use.",
+    "url": "https://sftpgo.com",
+    "guidelines": "https://sftpgo.com",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -139991,6 +140074,26 @@
     "license": "CC0-1.0",
     "url": "https://commons.wikimedia.org/wiki/File:Official_YAML_Logo.svg",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "yamtrack",
+    "title": "Yamtrack",
+    "aliases": [],
+    "hex": "262A2D",
+    "categories": [
+      "Media",
+      "Productivity",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/yamtrack/default.svg",
+      "dark": "/icons/yamtrack/dark.svg"
+    },
+    "license": "Trademark of Yamtrack. Used for identification under nominative fair use.",
+    "url": "https://github.com/FuzzyGrim/Yamtrack",
+    "guidelines": "https://github.com/FuzzyGrim/Yamtrack",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
