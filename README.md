@@ -49,9 +49,9 @@
 <p align="center">
   <a href="https://thesvg.org">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" />
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image-light.png" />
-      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image-light.png" alt="theSVG - the open SVG brand library" width="720" />
+      <source media="(prefers-color-scheme: dark)" srcset="public/og-image.png" />
+      <source media="(prefers-color-scheme: light)" srcset="public/og-image-light.png" />
+      <img src="public/og-image-light.png" alt="theSVG - the open SVG brand library" width="720" />
     </picture>
   </a>
 </p>
