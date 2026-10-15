@@ -64,6 +64,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }),
   );
 
+  const familyIndexPage: MetadataRoute.Sitemap = [
+    { url: `${BASE_URL}/families`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
+  ];
+
   const familyPages: MetadataRoute.Sitemap = getFamilySlugs().map((slug) => ({
     url: `${BASE_URL}/family/${slug}`,
     lastModified: now,
@@ -95,6 +99,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticPages,
     ...collectionPages,
     ...categoryPages,
+    ...familyIndexPage,
     ...familyPages,
     ...blogPages,
     ...iconPages,

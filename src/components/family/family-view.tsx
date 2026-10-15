@@ -55,9 +55,12 @@ function toneFor(icon: IconEntry): IconTone {
 }
 
 /**
- * A logo that stays visible in both themes, using the same rules as the
- * main grid: icons that ship light and dark variants swap between them,
- * and near-black or near-white marks sit on a contrast chip.
+ * A logo that stays visible in both themes. Icons that ship light and dark
+ * variants swap between them (same rule as the main grid). Single-variant
+ * near-white marks sit on a soft tile with a shadow on the artwork, as on
+ * the icon page; near-black marks get a light plate in dark mode only, so
+ * light mode stays airy. No radial "contrast disc": it reads as a smudge
+ * at this size.
  */
 function Logo({
   icon,
@@ -72,22 +75,28 @@ function Logo({
   const darkSrc = icon.variants.dark || icon.variants.default;
   const swap = lightSrc !== darkSrc;
   const tone = swap ? "neutral" : toneFor(icon);
+  const imgBase = "h-full w-full object-contain";
   return (
     <span
-      data-tone={tone}
       className={cn(
         "flex items-center justify-center",
-        chip && tone !== "neutral" && "icon-preview-bg",
+        chip && tone === "light" && "icon-preview-bg",
+        chip && tone === "dark" && "dark:bg-neutral-200",
         className,
       )}
     >
       {swap ? (
         <>
-          <img src={lightSrc} alt="" loading="lazy" className="h-full w-full object-contain dark:hidden" />
-          <img src={darkSrc} alt="" loading="lazy" className="hidden h-full w-full object-contain dark:block" />
+          <img src={lightSrc} alt="" loading="lazy" className={cn(imgBase, "dark:hidden")} />
+          <img src={darkSrc} alt="" loading="lazy" className={cn(imgBase, "hidden dark:block")} />
         </>
       ) : (
-        <img src={icon.variants.default} alt="" loading="lazy" className="h-full w-full object-contain" />
+        <img
+          src={icon.variants.default}
+          alt=""
+          loading="lazy"
+          className={cn(imgBase, chip && tone === "light" && "drop-shadow-[0_1px_5px_rgba(0,0,0,0.5)]")}
+        />
       )}
     </span>
   );

@@ -254,6 +254,9 @@ export default async function IconPage({ params }: PageProps) {
   ];
   const licenseUrl = licenseToUrl(icon.license);
   const year = new Date().getFullYear();
+  const familySlug = getFamilySlugFor(icon);
+  const familyTitle = familySlug ? getIconBySlug(familySlug)?.title : undefined;
+  const familyUrl = familySlug ? `https://thesvg.org/family/${familySlug}` : null;
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -304,6 +307,16 @@ export default async function IconPage({ params }: PageProps) {
           "@type": "Organization",
           name: icon.title,
           ...(icon.url ? { url: icon.url } : {}),
+          // The owning brand, so crawlers can tie sibling products together.
+          ...(familyUrl && familyTitle && familySlug !== slug
+            ? {
+                parentOrganization: {
+                  "@type": "Organization",
+                  name: familyTitle,
+                  url: familyUrl,
+                },
+              }
+            : {}),
         },
       },
       {
@@ -315,11 +328,22 @@ export default async function IconPage({ params }: PageProps) {
         primaryImageOfPage: {
           "@id": `https://thesvg.org/icon/${slug}#image`,
         },
-        isPartOf: {
-          "@type": "WebSite",
-          name: "theSVG",
-          url: "https://thesvg.org",
-        },
+        isPartOf: [
+          {
+            "@type": "WebSite",
+            name: "theSVG",
+            url: "https://thesvg.org",
+          },
+          ...(familyUrl && familyTitle
+            ? [
+                {
+                  "@type": "CollectionPage",
+                  name: `${familyTitle} family SVG logos`,
+                  url: familyUrl,
+                },
+              ]
+            : []),
+        ],
         breadcrumb: {
           "@type": "BreadcrumbList",
           itemListElement: [

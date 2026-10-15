@@ -295,6 +295,16 @@ export function Sidebar({
                     )}
                   >
                     <div className="max-h-52 overflow-y-auto overscroll-contain pb-1">
+                      <Link
+                        href="/families"
+                        className={cn(
+                          "flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] text-muted-foreground transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                          pathname === "/families" && "bg-accent/60 text-accent-foreground font-medium",
+                        )}
+                      >
+                        <span>All families</span>
+                        <ChevronRight className="h-3 w-3" aria-hidden />
+                      </Link>
                       {(familiesData as SidebarFamily[]).map((family) => {
                         const href = `/family/${family.slug}`;
                         return (

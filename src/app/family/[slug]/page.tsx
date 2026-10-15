@@ -137,6 +137,14 @@ export default async function FamilyPage({ params }: PageProps) {
     url: `https://thesvg.org/family/${slug}`,
     isPartOf: { "@type": "WebSite", name: "theSVG", url: "https://thesvg.org" },
     about: { "@type": "Organization", name: parent.title, url: parent.url },
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://thesvg.org" },
+        { "@type": "ListItem", position: 2, name: "Brand families", item: "https://thesvg.org/families" },
+        { "@type": "ListItem", position: 3, name: parent.title, item: `https://thesvg.org/family/${slug}` },
+      ],
+    },
     numberOfItems: members.length,
     mainEntity: {
       "@type": "ItemList",
