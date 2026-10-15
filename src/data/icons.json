@@ -3072,7 +3072,8 @@
     "license": "CC0-1.0",
     "url": "https://www.alibabagroup.com/en/ir/reports",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "alibaba"
   },
   {
     "slug": "alibaba-cloud-badge",
@@ -3162,7 +3163,8 @@
     "license": "CC0-1.0",
     "url": "https://aliexpress.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "alibaba"
   },
   {
     "slug": "alipay",
@@ -4231,7 +4233,8 @@
     "license": "CC0-1.0",
     "url": "https://www.ansible.com/logos",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "ibm"
   },
   {
     "slug": "answer",
@@ -6016,7 +6019,8 @@
     "url": "https://www.aquasec.com/brand",
     "guidelines": "https://www.aquasec.com/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "aral",
@@ -38044,7 +38048,8 @@
     "license": "CC0-1.0",
     "url": "https://www.atlassian.design/guidelines/marketing/resources/logo-files",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "atlassian"
   },
   {
     "slug": "bamboo-airways",
@@ -38749,7 +38754,8 @@
     "url": "https://www.elastic.co/beats",
     "guidelines": "https://www.elastic.co/legal/trademarks",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "elastic"
   },
   {
     "slug": "beats-by-dre",
@@ -39716,7 +39722,8 @@
     "url": "https://atlassian.design/resources/logo-library",
     "guidelines": "https://atlassian.design/foundations/logos",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "atlassian"
   },
   {
     "slug": "bitbucket-badge",
@@ -43369,7 +43376,8 @@
     "license": "MIT",
     "url": "https://capcut.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "bytedance"
   },
   {
     "slug": "capistrano",
@@ -44079,7 +44087,8 @@
     "license": "CC0-1.0",
     "url": "https://wiki.centos.org/ArtWork/Brand/Logo",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "ibm"
   },
   {
     "slug": "ceph",
@@ -45349,7 +45358,8 @@
     "license": "Trademark",
     "url": "https://www.cisco.com/c/en/us/products/security/anyconnect-secure-mobility-client/index.html",
     "dateAdded": "2026-06-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "cisco"
   },
   {
     "slug": "cisco-badge",
@@ -45382,7 +45392,8 @@
     "license": "Trademark",
     "url": "https://www.cisco.com/c/en/us/products/unified-communications/jabber/index.html",
     "dateAdded": "2026-06-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "cisco"
   },
   {
     "slug": "citibank",
@@ -45620,7 +45631,8 @@
     "license": "CC0-1.0",
     "url": "https://claude.ai",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "anthropic"
   },
   {
     "slug": "claude-ai",
@@ -45640,7 +45652,8 @@
     "license": "MIT",
     "url": "https://claude.ai/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "anthropic"
   },
   {
     "slug": "claude-code",
@@ -45660,7 +45673,8 @@
     "license": "MIT",
     "url": "https://code.claude.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "anthropic"
   },
   {
     "slug": "clearml",
@@ -45843,7 +45857,8 @@
     "url": "https://www.jetbrains.com/company/brand/logos/",
     "guidelines": "https://www.jetbrains.com/company/brand/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "clipdrop",
@@ -48341,7 +48356,8 @@
     "license": "CC0-1.0",
     "url": "https://www.atlassian.com/company/news/press-kit",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "atlassian"
   },
   {
     "slug": "confluent",
@@ -48451,7 +48467,8 @@
     "url": "https://www.hashicorp.com/brand",
     "guidelines": "https://www.hashicorp.com/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "ibm"
   },
   {
     "slug": "contabo",
@@ -49404,7 +49421,8 @@
     "license": "CC0-1.0",
     "url": "https://www.coze.com/home",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "bytedance"
   },
   {
     "slug": "cozy-cloud-badge",
@@ -50028,7 +50046,8 @@
     "license": "CC0-1.0",
     "url": "https://www.crunchyroll.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "sony"
   },
   {
     "slug": "crusoe",
@@ -51361,7 +51380,8 @@
     "url": "https://www.jetbrains.com/company/brand/logos/",
     "guidelines": "https://www.jetbrains.com/company/brand/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "dataiku",
@@ -51398,7 +51418,8 @@
     "license": "MIT",
     "url": "",
     "collection": "brands",
-    "dateAdded": "2026-05-05"
+    "dateAdded": "2026-05-05",
+    "family": "jetbrains"
   },
   {
     "slug": "datastax",
@@ -53594,7 +53615,8 @@
     "url": "https://www.disneyplus.com",
     "guidelines": "https://commons.wikimedia.org/wiki/File%3ADisney%2B_logo.svg",
     "collection": "brands",
-    "dateAdded": "2026-05-16"
+    "dateAdded": "2026-05-16",
+    "family": "disney"
   },
   {
     "slug": "disneyplus",
@@ -53611,7 +53633,8 @@
     "license": "MIT",
     "url": "https://www.disneyplus.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "disney"
   },
   {
     "slug": "disqus",
@@ -54707,7 +54730,8 @@
     "license": "MIT",
     "url": "https://team.doubao.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "bytedance"
   },
   {
     "slug": "dovecot",
@@ -56452,7 +56476,8 @@
     "license": "CC0-1.0",
     "url": "https://www.elastic.co/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "elastic"
   },
   {
     "slug": "elastic-stack",
@@ -56488,7 +56513,8 @@
     "license": "CC0-1.0",
     "url": "https://www.elastic.co/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "elastic"
   },
   {
     "slug": "elavon",
@@ -57688,7 +57714,8 @@
     "license": "Fair Use",
     "url": "https://www.espn.com",
     "dateAdded": "2026-03-09",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "disney"
   },
   {
     "slug": "espocrm",
@@ -62980,7 +63007,8 @@
     "license": "Fair Use",
     "url": "https://www.funimation.com",
     "dateAdded": "2026-03-09",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "sony"
   },
   {
     "slug": "fur-affinity",
@@ -69984,7 +70012,8 @@
     "url": "https://www.jetbrains.com/company/brand/#logos-and-icons-jetbrains-logos",
     "guidelines": "https://www.jetbrains.com/company/brand/#brand-guidelines",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "goldilocks",
@@ -72675,7 +72704,8 @@
     "license": "MIT",
     "url": "https://grok.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "xai"
   },
   {
     "slug": "grok-xai",
@@ -73976,7 +74006,8 @@
     "url": "https://www.hashicorp.com",
     "guidelines": "https://www.hashicorp.com/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "ibm"
   },
   {
     "slug": "hashicorp-badge",
@@ -76403,7 +76434,8 @@
     "license": "MIT",
     "url": "https://www.hulu.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "disney"
   },
   {
     "slug": "humble-bundle",
@@ -76510,7 +76542,8 @@
     "license": "MIT",
     "url": "https://hunyuan.tencent.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "tencent"
   },
   {
     "slug": "huobi-badge",
@@ -76959,7 +76992,8 @@
     "license": "MIT",
     "url": "https://huggingface.co/ibm-granite",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "ibm"
   },
   {
     "slug": "ic-glass",
@@ -78928,7 +78962,8 @@
     "url": "https://www.jetbrains.com/idea/",
     "guidelines": "https://www.jetbrains.com/company/brand/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "intello",
@@ -80084,7 +80119,8 @@
     "license": "MIT",
     "url": "https://www.java.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "oracle"
   },
   {
     "slug": "javascript",
@@ -80703,7 +80739,8 @@
     "url": "https://atlassian.design/resources/logo-library",
     "guidelines": "https://atlassian.design/foundations/logos/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "atlassian"
   },
   {
     "slug": "jira-software",
@@ -81316,7 +81353,8 @@
     "license": "MIT",
     "url": "https://jetbrains.com/junie",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "juniper-networks",
@@ -83743,7 +83781,8 @@
     "license": "CC0-1.0",
     "url": "https://www.elastic.co/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "elastic"
   },
   {
     "slug": "kibo-ui",
@@ -85081,7 +85120,8 @@
     "url": "https://www.jetbrains.com/company/brand/#logos-and-icons-product-icons",
     "guidelines": "https://www.jetbrains.com/company/brand/#brand-guidelines",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "kuaishou",
@@ -88940,7 +88980,8 @@
     "url": "https://www.elastic.co/brand",
     "guidelines": "https://www.elastic.co/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "elastic"
   },
   {
     "slug": "logto-badge",
@@ -89064,7 +89105,8 @@
     "license": "CC0-1.0",
     "url": "https://www.loom.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "atlassian"
   },
   {
     "slug": "loop",
@@ -91063,7 +91105,8 @@
     "url": "https://www.marvel.com",
     "guidelines": "https://commons.wikimedia.org/wiki/File%3AMarvel_Comics_2024_logo.svg",
     "collection": "brands",
-    "dateAdded": "2026-05-16"
+    "dateAdded": "2026-05-16",
+    "family": "disney"
   },
   {
     "slug": "marvel-studios",
@@ -91080,7 +91123,8 @@
     "url": "https://www.marvel.com/movies",
     "guidelines": "https://commons.wikimedia.org/wiki/File%3AMarvel_Studios_2016_logo.svg",
     "collection": "brands",
-    "dateAdded": "2026-05-16"
+    "dateAdded": "2026-05-16",
+    "family": "disney"
   },
   {
     "slug": "marvelapp",
@@ -97359,7 +97403,8 @@
     "url": "https://www.mysql.com",
     "guidelines": "https://www.mysql.com/about/legal/logos.html",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "oracle"
   },
   {
     "slug": "n26",
@@ -99178,7 +99223,8 @@
     "url": "https://nextjs.org/",
     "guidelines": "https://vercel.com/design/brands#next-js",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "vercel"
   },
   {
     "slug": "nextera-energy",
@@ -100185,7 +100231,8 @@
     "url": "https://www.hashicorp.com/brand",
     "guidelines": "https://www.hashicorp.com/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "ibm"
   },
   {
     "slug": "nongfu-spring",
@@ -101262,7 +101309,8 @@
     "url": "https://nuxt.com/",
     "guidelines": "https://nuxt.com/design-kit",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "vercel"
   },
   {
     "slug": "nuxt-content",
@@ -104254,7 +104302,8 @@
     "license": "CC0-1.0",
     "url": "https://www.atlassian.com/company/news/press-kit",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "atlassian"
   },
   {
     "slug": "opslevel",
@@ -105247,7 +105296,8 @@
     "url": "https://www.hashicorp.com/brand",
     "guidelines": "https://www.hashicorp.com/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "ibm"
   },
   {
     "slug": "packt",
@@ -107614,7 +107664,8 @@
     "url": "https://www.jetbrains.com/company/brand/logos/",
     "guidelines": "https://www.jetbrains.com/company/brand/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "pi",
@@ -108906,7 +108957,8 @@
     "license": "CC0-1.0",
     "url": "https://www.playstation.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "sony"
   },
   {
     "slug": "playstation-2",
@@ -109540,7 +109592,8 @@
     "license": "CC0-1.0",
     "url": "https://podman.io",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "ibm"
   },
   {
     "slug": "poe",
@@ -112261,7 +112314,8 @@
     "url": "https://www.jetbrains.com/pycharm/",
     "guidelines": "https://www.jetbrains.com/company/brand/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "pycqa",
@@ -113032,7 +113086,8 @@
     "url": "https://en.wikipedia.org/wiki/File:Tencent_QQ.svg",
     "guidelines": "https://qq.design/brand/BrandDesign/Logo",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "tencent"
   },
   {
     "slug": "qt",
@@ -113487,7 +113542,8 @@
     "license": "MIT",
     "url": "https://chat.qwenlm.ai/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "alibaba"
   },
   {
     "slug": "qwik",
@@ -115024,7 +115080,8 @@
     "license": "CC0-1.0",
     "url": "https://www.redhat.com/en/about/brand/new-brand/details",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "ibm"
   },
   {
     "slug": "red-hat-badge",
@@ -115059,7 +115116,8 @@
     "license": "CC0-1.0",
     "url": "https://www.openshift.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "ibm"
   },
   {
     "slug": "redash",
@@ -116043,7 +116101,8 @@
     "url": "https://www.jetbrains.com/company/brand/logos/",
     "guidelines": "https://www.jetbrains.com/company/brand/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "restream-badge",
@@ -116436,7 +116495,8 @@
     "url": "https://www.jetbrains.com/company/brand/logos/",
     "guidelines": "https://www.jetbrains.com/company/brand/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "rilian",
@@ -116561,7 +116621,8 @@
     "license": "CC0-1.0",
     "url": "https://www.riotgames.com/en/press",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "tencent"
   },
   {
     "slug": "ripe-ncc-badge",
@@ -117871,7 +117932,8 @@
     "url": "https://www.jetbrains.com/company/brand/logos",
     "guidelines": "https://www.jetbrains.com/company/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "ruff",
@@ -123601,7 +123663,8 @@
     "url": "https://atlassian.design/resources/logo-library",
     "guidelines": "https://atlassian.design/foundations/logos/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "atlassian"
   },
   {
     "slug": "southwest-airlines",
@@ -124254,7 +124317,8 @@
     "license": "CC0-1.0",
     "url": "https://www.splunk.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "cisco"
   },
   {
     "slug": "spond",
@@ -125488,7 +125552,8 @@
     "license": "CC0-1.0",
     "url": "https://www.atlassian.com/company/news/press-kit",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "atlassian"
   },
   {
     "slug": "statuspal",
@@ -126973,7 +127038,8 @@
     "url": "https://brand.supercell.com/media",
     "guidelines": "https://brand.supercell.com/media",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "tencent"
   },
   {
     "slug": "supercrease",
@@ -128260,7 +128326,8 @@
     "license": "CC0-1.0",
     "url": "https://www.alibabagroup.com/en/ir/reports",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "alibaba"
   },
   {
     "slug": "tapas",
@@ -128646,7 +128713,8 @@
     "url": "https://www.jetbrains.com/company/brand/logos",
     "guidelines": "https://www.jetbrains.com/company/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "teamspeak",
@@ -129331,7 +129399,8 @@
     "url": "https://terraform.io",
     "guidelines": "https://brand.hashicorp.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "ibm"
   },
   {
     "slug": "terraform-badge",
@@ -130801,7 +130870,8 @@
     "license": "CC0-1.0",
     "url": "https://www.tiktok.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "bytedance"
   },
   {
     "slug": "tiktok-badge",
@@ -132124,7 +132194,8 @@
     "license": "MIT",
     "url": "https://trae.ai",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "bytedance"
   },
   {
     "slug": "traefik",
@@ -132478,7 +132549,8 @@
     "url": "https://atlassian.design/resources/logo-library",
     "guidelines": "https://atlassian.design/foundations/logos",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "atlassian"
   },
   {
     "slug": "trello-badge",
@@ -133323,7 +133395,8 @@
     "license": "CC0-1.0",
     "url": "https://turbo.hotwired.dev",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "vercel"
   },
   {
     "slug": "turbopack",
@@ -133346,7 +133419,8 @@
     "url": "https://nextjs.org/docs/app/api-reference/turbopack",
     "guidelines": "https://vercel.com/geist/brands",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "vercel"
   },
   {
     "slug": "turborepo",
@@ -133370,7 +133444,8 @@
     "url": "https://turborepo.com",
     "guidelines": "https://vercel.com/geist/brands",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "vercel"
   },
   {
     "slug": "turbosquid",
@@ -133717,7 +133792,8 @@
     "license": "MIT",
     "url": "https://twitter.com/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "xai"
   },
   {
     "slug": "twitter-badge",
@@ -135638,7 +135714,8 @@
     "license": "CC0-1.0",
     "url": "https://v0.dev/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "vercel"
   },
   {
     "slug": "v0-vercel",
@@ -135748,7 +135825,8 @@
     "url": "https://www.hashicorp.com/brand",
     "guidelines": "https://www.hashicorp.com/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "ibm"
   },
   {
     "slug": "vala",
@@ -135951,7 +136029,8 @@
     "url": "https://www.hashicorp.com/brand",
     "guidelines": "https://www.hashicorp.com/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "ibm"
   },
   {
     "slug": "vaultwarden",
@@ -136387,7 +136466,8 @@
     "license": "Custom",
     "url": "https://vercel.com/docs/storage/vercel-blob",
     "dateAdded": "2026-03-09",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "vercel"
   },
   {
     "slug": "verdaccio",
@@ -137132,7 +137212,8 @@
     "license": "CC0-1.0",
     "url": "https://www.virtualbox.org/svn/vbox/trunk/src/VBox/Artwork/OSE",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "oracle"
   },
   {
     "slug": "virustotal",
@@ -137852,7 +137933,8 @@
     "license": "MIT",
     "url": "https://volcengine.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "bytedance"
   },
   {
     "slug": "volkswagen",
@@ -139320,7 +139402,8 @@
     "url": "https://github.com/momentum-design/momentum-ui/blob/970c5bec962a3f72e17e0b7ed69f2c38d298c405/icons-rebrand/svg/webex-helix-filled.svg",
     "guidelines": "https://resources.webex.com/webex/brand-exchange-collection",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "cisco"
   },
   {
     "slug": "webflow",
@@ -139542,7 +139625,8 @@
     "url": "https://www.jetbrains.com/company/brand/logos",
     "guidelines": "https://www.jetbrains.com/company/brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "jetbrains"
   },
   {
     "slug": "webstudio",
@@ -139615,7 +139699,8 @@
     "url": "https://wechat.design/tool/brand",
     "guidelines": "https://wechat.design/brand/main-brand",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "tencent"
   },
   {
     "slug": "wedos-badge",
@@ -141567,7 +141652,8 @@
     "url": "https://x.com",
     "guidelines": "https://about.x.com/en/who-we-are/brand-toolkit",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "family": "xai"
   },
   {
     "slug": "x-ai",

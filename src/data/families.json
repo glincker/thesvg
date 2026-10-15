@@ -40,6 +40,30 @@
     "tone": "light"
   },
   {
+    "slug": "jetbrains",
+    "title": "JetBrains",
+    "count": 16,
+    "logo": "/icons/jetbrains/default.svg",
+    "logoDark": null,
+    "tone": "dark"
+  },
+  {
+    "slug": "ibm",
+    "title": "IBM",
+    "count": 14,
+    "logo": "/icons/ibm/default.svg",
+    "logoDark": null,
+    "tone": "dark"
+  },
+  {
+    "slug": "atlassian",
+    "title": "Atlassian",
+    "count": 10,
+    "logo": "/icons/atlassian/default.svg",
+    "logoDark": null,
+    "tone": "neutral"
+  },
+  {
     "slug": "meta",
     "title": "Meta",
     "count": 8,
@@ -48,10 +72,98 @@
     "tone": "neutral"
   },
   {
+    "slug": "vercel",
+    "title": "Vercel",
+    "count": 8,
+    "logo": "/icons/vercel/light.svg",
+    "logoDark": "/icons/vercel/dark.svg",
+    "tone": "light"
+  },
+  {
+    "slug": "bytedance",
+    "title": "ByteDance",
+    "count": 7,
+    "logo": "/icons/bytedance/default.svg",
+    "logoDark": null,
+    "tone": "neutral"
+  },
+  {
+    "slug": "disney",
+    "title": "Disney",
+    "count": 7,
+    "logo": "/icons/disney/default.svg",
+    "logoDark": null,
+    "tone": "dark"
+  },
+  {
+    "slug": "elastic",
+    "title": "Elastic",
+    "count": 6,
+    "logo": "/icons/elastic/default.svg",
+    "logoDark": null,
+    "tone": "neutral"
+  },
+  {
+    "slug": "tencent",
+    "title": "Tencent",
+    "count": 6,
+    "logo": "/icons/tencent/color.svg",
+    "logoDark": null,
+    "tone": "neutral"
+  },
+  {
+    "slug": "alibaba",
+    "title": "Alibaba",
+    "count": 5,
+    "logo": "/icons/alibaba/color.svg",
+    "logoDark": null,
+    "tone": "neutral"
+  },
+  {
+    "slug": "cisco",
+    "title": "Cisco",
+    "count": 5,
+    "logo": "/icons/cisco/light.svg",
+    "logoDark": "/icons/cisco/dark.svg",
+    "tone": "light"
+  },
+  {
     "slug": "salesforce",
     "title": "Salesforce",
     "count": 5,
     "logo": "/icons/salesforce/default.svg",
+    "logoDark": null,
+    "tone": "dark"
+  },
+  {
+    "slug": "anthropic",
+    "title": "Anthropic",
+    "count": 4,
+    "logo": "/icons/anthropic/light.svg",
+    "logoDark": "/icons/anthropic/dark.svg",
+    "tone": "dark"
+  },
+  {
+    "slug": "oracle",
+    "title": "Oracle",
+    "count": 4,
+    "logo": "/icons/oracle/default.svg",
+    "logoDark": null,
+    "tone": "neutral"
+  },
+  {
+    "slug": "sony",
+    "title": "Sony",
+    "count": 4,
+    "logo": "/icons/sony/default.svg",
+    "logoDark": null,
+    "tone": "light"
+  },
+  {
+    "slug": "xai",
+    "title": "xAI",
+    "count": 4,
+    "logo": "/icons/xai/mono.svg",
     "logoDark": null,
     "tone": "dark"
   }

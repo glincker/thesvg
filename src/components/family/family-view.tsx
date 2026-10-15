@@ -170,8 +170,8 @@ function Hero({ parent, tagline, accents, showcase, total, categoryCount, varian
               </Link>
             </div>
             <ul className="grid grid-cols-4 gap-3">
-              {showcase.slice(0, 8).map((icon, i) => (
-                <li key={icon.slug} style={enter(i, 300, 70, 8)} className="animate-float-in">
+              {showcase.slice(0, 4).map((icon, i) => (
+                <li key={icon.slug} style={enter(i, 300, 70, 4)} className="animate-float-in">
                   <Link
                     href={`/icon/${icon.slug}`}
                     prefetch={false}
