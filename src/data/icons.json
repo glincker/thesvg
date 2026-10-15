@@ -5988,6 +5988,27 @@
     "collection": "brands"
   },
   {
+    "slug": "arbitrum",
+    "title": "Arbitrum",
+    "aliases": [
+      "arb",
+      "arbitrum one"
+    ],
+    "hex": "213147",
+    "categories": [
+      "Crypto",
+      "Blockchain"
+    ],
+    "variants": {
+      "default": "/icons/arbitrum/default.svg"
+    },
+    "license": "Trademark of Offchain Labs. Used for identification under nominative fair use.",
+    "url": "https://arbitrum.io/",
+    "guidelines": "https://docs.arbitrum.io",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "arc",
     "title": "Arc",
     "aliases": [],
@@ -42107,6 +42128,32 @@
     "collection": "brands"
   },
   {
+    "slug": "buildpacks",
+    "title": "Buildpacks",
+    "aliases": [
+      "cloud-native-buildpacks"
+    ],
+    "hex": "F12FA4",
+    "categories": [
+      "Containers",
+      "DevOps",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/buildpacks/default.svg",
+      "mono": "/icons/buildpacks/mono.svg",
+      "dark": "/icons/buildpacks/dark.svg",
+      "wordmark": "/icons/buildpacks/wordmark.svg",
+      "wordmarkLight": "/icons/buildpacks/wordmarkLight.svg",
+      "wordmarkDark": "/icons/buildpacks/wordmarkDark.svg"
+    },
+    "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
+    "url": "https://buildpacks.io",
+    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "buildship",
     "title": "BuildShip",
     "aliases": [],
@@ -43965,6 +44012,30 @@
     "collection": "brands"
   },
   {
+    "slug": "cert-manager",
+    "title": "cert-manager",
+    "aliases": [
+      "cert manager",
+      "certmanager"
+    ],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "Security",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/cert-manager/default.svg",
+      "mono": "/icons/cert-manager/mono.svg",
+      "dark": "/icons/cert-manager/dark.svg"
+    },
+    "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
+    "url": "https://cert-manager.io",
+    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "certbot",
     "title": "Certbot",
     "categories": [
@@ -44127,6 +44198,33 @@
     "url": "https://mediaassets.channel4.com/guidelines/guide/34286b7b-ea25-404d-a43b-e912fc85b0e0/page/8a2dd59a-51df-4f47-aa37-c235a761455e",
     "guidelines": "https://mediaassets.channel4.com/guidelines/guide/34286b7b-ea25-404d-a43b-e912fc85b0e0",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "chaos-mesh",
+    "title": "Chaos Mesh",
+    "aliases": [
+      "chaos mesh",
+      "chaosmesh"
+    ],
+    "hex": "172D73",
+    "categories": [
+      "Kubernetes",
+      "DevOps",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/chaos-mesh/default.svg",
+      "mono": "/icons/chaos-mesh/mono.svg",
+      "dark": "/icons/chaos-mesh/dark.svg",
+      "wordmark": "/icons/chaos-mesh/wordmark.svg",
+      "wordmarkLight": "/icons/chaos-mesh/wordmarkLight.svg",
+      "wordmarkDark": "/icons/chaos-mesh/wordmarkDark.svg"
+    },
+    "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
+    "url": "https://chaos-mesh.org",
+    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -44638,9 +44736,8 @@
     "categories": [
       "File Sharing",
       "Storage",
-      "Media",
-      "Self-Hosted",
-      "Open Source"
+      "Open Source",
+      "Self-Hosted"
     ],
     "variants": {
       "default": "/icons/chibisafe/default.svg"
@@ -45870,6 +45967,32 @@
     "license": "CC0-1.0",
     "url": "https://www.cloudera.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "cloudevents",
+    "title": "CloudEvents",
+    "aliases": [
+      "cloud-events"
+    ],
+    "hex": "4DCEF3",
+    "categories": [
+      "Integration",
+      "Cloud",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/cloudevents/default.svg",
+      "mono": "/icons/cloudevents/mono.svg",
+      "dark": "/icons/cloudevents/dark.svg",
+      "wordmark": "/icons/cloudevents/wordmark.svg",
+      "wordmarkLight": "/icons/cloudevents/wordmarkLight.svg",
+      "wordmarkDark": "/icons/cloudevents/wordmarkDark.svg"
+    },
+    "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
+    "url": "https://cloudevents.io",
+    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -48361,6 +48484,30 @@
     "collection": "brands"
   },
   {
+    "slug": "contour",
+    "title": "Contour",
+    "aliases": [],
+    "hex": "009CDC",
+    "categories": [
+      "Kubernetes",
+      "Networking",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/contour/default.svg",
+      "mono": "/icons/contour/mono.svg",
+      "dark": "/icons/contour/dark.svg",
+      "wordmark": "/icons/contour/wordmark.svg",
+      "wordmarkLight": "/icons/contour/wordmarkLight.svg",
+      "wordmarkDark": "/icons/contour/wordmarkDark.svg"
+    },
+    "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
+    "url": "https://projectcontour.io",
+    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "contra",
     "title": "Contra",
     "aliases": [],
@@ -48645,9 +48792,8 @@
     "categories": [
       "File Sharing",
       "Storage",
-      "Networking",
-      "Self-Hosted",
-      "Open Source"
+      "Open Source",
+      "Self-Hosted"
     ],
     "variants": {
       "default": "/icons/copyparty/default.svg"
@@ -48711,6 +48857,32 @@
     "license": "Custom",
     "url": "https://coreboot.org/assets/images/banner.svg",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "coredns",
+    "title": "CoreDNS",
+    "aliases": [
+      "core dns"
+    ],
+    "hex": "2C256C",
+    "categories": [
+      "Networking",
+      "Kubernetes",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/coredns/default.svg",
+      "mono": "/icons/coredns/mono.svg",
+      "dark": "/icons/coredns/dark.svg",
+      "wordmark": "/icons/coredns/wordmark.svg",
+      "wordmarkLight": "/icons/coredns/wordmarkLight.svg",
+      "wordmarkDark": "/icons/coredns/wordmarkDark.svg"
+    },
+    "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
+    "url": "https://coredns.io",
+    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -49420,6 +49592,33 @@
     "license": "CC0-1.0",
     "url": "https://github.com/crewAIInc/crewAI/blob/a7696d5aed7a85333735dde370fd9f0547aaabf5/docs/favicon.svg",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "cri-o",
+    "title": "CRI-O",
+    "aliases": [
+      "cri o",
+      "crio"
+    ],
+    "hex": "3C6EB4",
+    "categories": [
+      "Containers",
+      "Kubernetes",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/cri-o/default.svg",
+      "mono": "/icons/cri-o/mono.svg",
+      "dark": "/icons/cri-o/dark.svg",
+      "wordmark": "/icons/cri-o/wordmark.svg",
+      "wordmarkLight": "/icons/cri-o/wordmarkLight.svg",
+      "wordmarkDark": "/icons/cri-o/wordmarkDark.svg"
+    },
+    "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
+    "url": "https://cri-o.io",
+    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -50876,9 +51075,8 @@
     "categories": [
       "Backup",
       "Database",
-      "Storage",
-      "Self-Hosted",
-      "Open Source"
+      "Open Source",
+      "Self-Hosted"
     ],
     "variants": {
       "default": "/icons/databasus/default.svg",
@@ -56568,6 +56766,32 @@
     "collection": "brands"
   },
   {
+    "slug": "emissary-ingress",
+    "title": "Emissary-Ingress",
+    "aliases": [
+      "emissary"
+    ],
+    "hex": "272733",
+    "categories": [
+      "Kubernetes",
+      "Networking",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/emissary-ingress/default.svg",
+      "mono": "/icons/emissary-ingress/mono.svg",
+      "dark": "/icons/emissary-ingress/dark.svg",
+      "wordmark": "/icons/emissary-ingress/wordmark.svg",
+      "wordmarkLight": "/icons/emissary-ingress/wordmarkLight.svg",
+      "wordmarkDark": "/icons/emissary-ingress/wordmarkDark.svg"
+    },
+    "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
+    "url": "https://emissary-ingress.dev",
+    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "emlakjet",
     "title": "Emlakjet",
     "aliases": [],
@@ -60267,6 +60491,29 @@
     "license": "MIT",
     "url": "https://github.com/FlareSolverr/FlareSolverr",
     "guidelines": "https://github.com/FlareSolverr/FlareSolverr/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
+    "slug": "flarum",
+    "title": "Flarum",
+    "aliases": [
+      "flarum forum"
+    ],
+    "hex": "E7562E",
+    "categories": [
+      "Communication",
+      "Community",
+      "Open Source",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/flarum/default.svg",
+      "wordmarkDark": "/icons/flarum/wordmarkDark.svg"
+    },
+    "license": "Trademark of Flarum Foundation. Used for identification under nominative fair use.",
+    "url": "https://flarum.org",
+    "guidelines": "https://github.com/flarum/framework",
     "dateAdded": "2026-10-15",
     "collection": "brands"
   },
@@ -69155,6 +69402,28 @@
     "collection": "brands"
   },
   {
+    "slug": "goaccess",
+    "title": "GoAccess",
+    "aliases": [
+      "go access"
+    ],
+    "hex": "1B1B1B",
+    "categories": [
+      "Analytics",
+      "Monitoring",
+      "Open Source",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/goaccess/default.svg"
+    },
+    "license": "Trademark of Gerardo Orellana. Used for identification under nominative fair use.",
+    "url": "https://goaccess.io",
+    "guidelines": "https://github.com/allinurl/goaccess/blob/master/COPYING",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "goatcounter-badge",
     "title": "GoatCounter",
     "aliases": [],
@@ -72633,6 +72902,30 @@
     "collection": "brands"
   },
   {
+    "slug": "habitica",
+    "title": "Habitica",
+    "aliases": [
+      "habitrpg"
+    ],
+    "hex": "4F2A93",
+    "categories": [
+      "Productivity",
+      "Gaming",
+      "Open Source",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/habitica/default.svg",
+      "dark": "/icons/habitica/dark.svg",
+      "wordmark": "/icons/habitica/wordmark.svg"
+    },
+    "license": "Trademark of HabitRPG, Inc.. Used for identification under nominative fair use.",
+    "url": "https://habitica.com",
+    "guidelines": "https://habitica.com/static/terms",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "habr",
     "title": "Habr",
     "aliases": [],
@@ -72991,6 +73284,29 @@
     "license": "Fair Use",
     "url": "https://www.haldirams.com",
     "dateAdded": "2026-03-09",
+    "collection": "brands"
+  },
+  {
+    "slug": "halo",
+    "title": "Halo",
+    "aliases": [
+      "halo cms",
+      "halo-dev"
+    ],
+    "hex": "0B89FF",
+    "categories": [
+      "CMS",
+      "Productivity",
+      "Open Source",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/halo/default.svg"
+    },
+    "license": "Trademark of Halo contributors (FIT2CLOUD). Used for identification under nominative fair use.",
+    "url": "https://halo.run",
+    "guidelines": "https://github.com/halo-dev/halo/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -75872,6 +76188,25 @@
     "collection": "auth-badges"
   },
   {
+    "slug": "hygraph",
+    "title": "Hygraph",
+    "aliases": [
+      "graphcms"
+    ],
+    "hex": "081026",
+    "categories": [
+      "CMS",
+      "Developer Tools"
+    ],
+    "variants": {
+      "default": "/icons/hygraph/default.svg"
+    },
+    "license": "Trademark of Hygraph. Used for identification under nominative fair use.",
+    "url": "https://hygraph.com/",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "hymer",
     "title": "Hymer",
     "aliases": [],
@@ -77082,6 +77417,32 @@
     "collection": "auth-badges"
   },
   {
+    "slug": "in-toto",
+    "title": "in-toto",
+    "aliases": [
+      "intoto"
+    ],
+    "hex": "000000",
+    "categories": [
+      "Security",
+      "DevOps",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/in-toto/default.svg",
+      "mono": "/icons/in-toto/mono.svg",
+      "dark": "/icons/in-toto/dark.svg",
+      "wordmark": "/icons/in-toto/wordmark.svg",
+      "wordmarkLight": "/icons/in-toto/wordmarkLight.svg",
+      "wordmarkDark": "/icons/in-toto/wordmarkDark.svg"
+    },
+    "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
+    "url": "https://in-toto.io",
+    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "inception-labs",
     "title": "Inception Labs",
     "aliases": [],
@@ -77564,7 +77925,7 @@
     "aliases": [],
     "hex": "000000",
     "categories": [
-      "Software",
+      "Marketing",
       "Social"
     ],
     "variants": {
@@ -82012,6 +82373,30 @@
     "dateAdded": "2026-05-05"
   },
   {
+    "slug": "karmada",
+    "title": "Karmada",
+    "aliases": [],
+    "hex": "1791FF",
+    "categories": [
+      "Kubernetes",
+      "Cloud",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/karmada/default.svg",
+      "mono": "/icons/karmada/mono.svg",
+      "dark": "/icons/karmada/dark.svg",
+      "wordmark": "/icons/karmada/wordmark.svg",
+      "wordmarkLight": "/icons/karmada/wordmarkLight.svg",
+      "wordmarkDark": "/icons/karmada/wordmarkDark.svg"
+    },
+    "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
+    "url": "https://karmada.io",
+    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "kasa-smart",
     "title": "Kasa Smart",
     "aliases": [],
@@ -82299,6 +82684,32 @@
     "collection": "brands"
   },
   {
+    "slug": "keda",
+    "title": "KEDA",
+    "aliases": [
+      "kubernetes event-driven autoscaling"
+    ],
+    "hex": "326DE6",
+    "categories": [
+      "Kubernetes",
+      "DevOps",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/keda/default.svg",
+      "mono": "/icons/keda/mono.svg",
+      "dark": "/icons/keda/dark.svg",
+      "wordmark": "/icons/keda/wordmark.svg",
+      "wordmarkLight": "/icons/keda/wordmarkLight.svg",
+      "wordmarkDark": "/icons/keda/wordmarkDark.svg"
+    },
+    "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
+    "url": "https://keda.sh",
+    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "kedro",
     "title": "Kedro",
     "aliases": [],
@@ -82581,6 +82992,31 @@
     "url": "",
     "dateAdded": "2026-09-12",
     "collection": "auth-badges"
+  },
+  {
+    "slug": "kestra",
+    "title": "Kestra",
+    "aliases": [
+      "kestra workflow",
+      "kestra.io"
+    ],
+    "hex": "2C0059",
+    "categories": [
+      "Automation",
+      "Data",
+      "Open Source",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/kestra/default.svg",
+      "wordmarkLight": "/icons/kestra/wordmarkLight.svg",
+      "wordmarkDark": "/icons/kestra/wordmarkDark.svg"
+    },
+    "license": "Trademark of Kestra Technologies. Used for identification under nominative fair use.",
+    "url": "https://kestra.io",
+    "guidelines": "https://github.com/kestra-io/kestra/blob/develop/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
   },
   {
     "slug": "keybase",
@@ -84102,6 +84538,27 @@
     "collection": "brands"
   },
   {
+    "slug": "kserve",
+    "title": "KServe",
+    "aliases": [],
+    "hex": "326CE5",
+    "categories": [
+      "Kubernetes",
+      "AI",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/kserve/default.svg",
+      "mono": "/icons/kserve/mono.svg",
+      "dark": "/icons/kserve/dark.svg"
+    },
+    "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
+    "url": "https://kserve.github.io/website/",
+    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "ktm",
     "title": "KTM",
     "aliases": [],
@@ -84192,6 +84649,32 @@
     "url": "https://kubecost.com"
   },
   {
+    "slug": "kubeedge",
+    "title": "KubeEdge",
+    "aliases": [
+      "kube edge"
+    ],
+    "hex": "1C77C8",
+    "categories": [
+      "Kubernetes",
+      "IoT",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/kubeedge/default.svg",
+      "mono": "/icons/kubeedge/mono.svg",
+      "dark": "/icons/kubeedge/dark.svg",
+      "wordmark": "/icons/kubeedge/wordmark.svg",
+      "wordmarkLight": "/icons/kubeedge/wordmarkLight.svg",
+      "wordmarkDark": "/icons/kubeedge/wordmarkDark.svg"
+    },
+    "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
+    "url": "https://kubeedge.io",
+    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "kubeflow",
     "title": "Kubeflow",
     "aliases": [],
@@ -84229,6 +84712,30 @@
     "collection": "brands"
   },
   {
+    "slug": "kubescape",
+    "title": "Kubescape",
+    "aliases": [],
+    "hex": "FF7879",
+    "categories": [
+      "Security",
+      "Kubernetes",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/kubescape/default.svg",
+      "mono": "/icons/kubescape/mono.svg",
+      "dark": "/icons/kubescape/dark.svg",
+      "wordmark": "/icons/kubescape/wordmark.svg",
+      "wordmarkLight": "/icons/kubescape/wordmarkLight.svg",
+      "wordmarkDark": "/icons/kubescape/wordmarkDark.svg"
+    },
+    "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
+    "url": "https://kubescape.io",
+    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "kubespray",
     "title": "Kubespray",
     "aliases": [],
@@ -84244,6 +84751,30 @@
     "license": "CC0-1.0",
     "url": "https://github.com/kubernetes-sigs/kubespray/blob/1b2e66cd305d1349daed85c8e356a5a8de5cc1f3/logo/logo-dark.svg",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "kubevela",
+    "title": "KubeVela",
+    "aliases": [],
+    "hex": "006FFF",
+    "categories": [
+      "Kubernetes",
+      "DevOps",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/kubevela/default.svg",
+      "mono": "/icons/kubevela/mono.svg",
+      "dark": "/icons/kubevela/dark.svg",
+      "wordmark": "/icons/kubevela/wordmark.svg",
+      "wordmarkLight": "/icons/kubevela/wordmarkLight.svg",
+      "wordmarkDark": "/icons/kubevela/wordmarkDark.svg"
+    },
+    "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
+    "url": "https://kubevela.io",
+    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -85342,6 +85873,26 @@
     "collection": "brands"
   },
   {
+    "slug": "ledger",
+    "title": "Ledger",
+    "aliases": [
+      "ledger hardware wallet"
+    ],
+    "hex": "000000",
+    "categories": [
+      "Crypto",
+      "Hardware"
+    ],
+    "variants": {
+      "default": "/icons/ledger/default.svg"
+    },
+    "license": "Trademark of Ledger SAS. Used for identification under nominative fair use.",
+    "url": "https://www.ledger.com/",
+    "guidelines": "https://www.ledger.com/terms",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "leedlime",
     "title": "Leedlime",
     "aliases": [],
@@ -85997,9 +86548,8 @@
     "categories": [
       "LLM Tools",
       "AI",
-      "Communication",
-      "Self-Hosted",
-      "Open Source"
+      "Open Source",
+      "Self-Hosted"
     ],
     "variants": {
       "default": "/icons/librechat/default.svg"
@@ -94581,6 +95131,29 @@
     "collection": "brands"
   },
   {
+    "slug": "mojo",
+    "title": "Mojo",
+    "aliases": [
+      "mojo lang",
+      "mojo programming language"
+    ],
+    "hex": "FF4C1F",
+    "categories": [
+      "Language",
+      "AI"
+    ],
+    "variants": {
+      "default": "/icons/mojo/default.svg",
+      "wordmark": "/icons/mojo/wordmark.svg",
+      "wordmarkDark": "/icons/mojo/wordmarkDark.svg"
+    },
+    "license": "Trademark of Modular Inc.. Used for identification under nominative fair use.",
+    "url": "https://www.modular.com/mojo",
+    "guidelines": "https://www.modular.com/legal/terms",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "moleculer",
     "title": "Moleculer",
     "aliases": [],
@@ -99211,6 +99784,31 @@
     "collection": "auth-badges"
   },
   {
+    "slug": "notary-project",
+    "title": "Notary Project",
+    "aliases": [
+      "notary",
+      "notary project"
+    ],
+    "hex": "000000",
+    "categories": [
+      "Security",
+      "Containers",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/notary-project/default.svg",
+      "dark": "/icons/notary-project/dark.svg",
+      "wordmark": "/icons/notary-project/wordmark.svg",
+      "wordmarkDark": "/icons/notary-project/wordmarkDark.svg"
+    },
+    "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
+    "url": "https://notaryproject.dev",
+    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "note",
     "title": "Note",
     "aliases": [],
@@ -101481,6 +102079,33 @@
     "collection": "brands"
   },
   {
+    "slug": "open-policy-agent",
+    "title": "Open Policy Agent",
+    "aliases": [
+      "opa",
+      "open policy agent"
+    ],
+    "hex": "7D9199",
+    "categories": [
+      "Security",
+      "DevOps",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/open-policy-agent/default.svg",
+      "mono": "/icons/open-policy-agent/mono.svg",
+      "dark": "/icons/open-policy-agent/dark.svg",
+      "wordmark": "/icons/open-policy-agent/wordmark.svg",
+      "wordmarkLight": "/icons/open-policy-agent/wordmarkLight.svg",
+      "wordmarkDark": "/icons/open-policy-agent/wordmarkDark.svg"
+    },
+    "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
+    "url": "https://www.openpolicyagent.org",
+    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "open-source-hardware",
     "title": "Open Source Hardware",
     "aliases": [
@@ -101853,6 +102478,30 @@
     "collection": "brands"
   },
   {
+    "slug": "opencost",
+    "title": "OpenCost",
+    "aliases": [],
+    "hex": "023927",
+    "categories": [
+      "Kubernetes",
+      "Cost Management",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/opencost/default.svg",
+      "mono": "/icons/opencost/mono.svg",
+      "dark": "/icons/opencost/dark.svg",
+      "wordmark": "/icons/opencost/wordmark.svg",
+      "wordmarkLight": "/icons/opencost/wordmarkLight.svg",
+      "wordmarkDark": "/icons/opencost/wordmarkDark.svg"
+    },
+    "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
+    "url": "https://opencost.io",
+    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "opencritic",
     "title": "OpenCritic",
     "aliases": [],
@@ -101922,6 +102571,54 @@
     "license": "CC0-1.0",
     "url": "https://docs.openfaas.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "openfeature",
+    "title": "OpenFeature",
+    "aliases": [
+      "open feature"
+    ],
+    "hex": "231F20",
+    "categories": [
+      "DevOps",
+      "Developer Tools",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/openfeature/default.svg",
+      "dark": "/icons/openfeature/dark.svg",
+      "wordmark": "/icons/openfeature/wordmark.svg",
+      "wordmarkDark": "/icons/openfeature/wordmarkDark.svg"
+    },
+    "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
+    "url": "https://openfeature.dev",
+    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
+    "slug": "openfga",
+    "title": "OpenFGA",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Security",
+      "Identity",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/openfga/default.svg",
+      "mono": "/icons/openfga/mono.svg",
+      "dark": "/icons/openfga/dark.svg",
+      "wordmark": "/icons/openfga/wordmark.svg",
+      "wordmarkLight": "/icons/openfga/wordmarkLight.svg",
+      "wordmarkDark": "/icons/openfga/wordmarkDark.svg"
+    },
+    "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
+    "url": "https://openfga.dev",
+    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -103600,9 +104297,8 @@
     "categories": [
       "Media Server",
       "Media",
-      "Communication",
-      "Self-Hosted",
-      "Open Source"
+      "Open Source",
+      "Self-Hosted"
     ],
     "variants": {
       "default": "/icons/owncast/default.svg",
@@ -105582,9 +106278,8 @@
     "categories": [
       "Backup",
       "Database",
-      "Storage",
-      "Self-Hosted",
-      "Open Source"
+      "Open Source",
+      "Self-Hosted"
     ],
     "variants": {
       "default": "/icons/pg-back-web/default.svg",
@@ -105654,6 +106349,28 @@
     "url": "",
     "collection": "brands",
     "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "phantom",
+    "title": "Phantom",
+    "aliases": [
+      "phantom wallet"
+    ],
+    "hex": "AB9FF2",
+    "categories": [
+      "Crypto",
+      "Blockchain"
+    ],
+    "variants": {
+      "default": "/icons/phantom/default.svg",
+      "wordmark": "/icons/phantom/wordmark.svg",
+      "wordmarkDark": "/icons/phantom/wordmarkDark.svg"
+    },
+    "license": "Trademark of Phantom Technologies, Inc.. Used for identification under nominative fair use.",
+    "url": "https://phantom.com/",
+    "guidelines": "https://phantom.com/terms",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
   },
   {
     "slug": "phaser",
@@ -105894,9 +106611,8 @@
     "categories": [
       "Media Server",
       "Media",
-      "Storage",
-      "Self-Hosted",
-      "Open Source"
+      "Open Source",
+      "Self-Hosted"
     ],
     "variants": {
       "default": "/icons/photoprism/default.svg",
@@ -116906,6 +117622,29 @@
     "collection": "brands"
   },
   {
+    "slug": "safeline",
+    "title": "SafeLine",
+    "aliases": [
+      "chaitin safeline",
+      "safeline waf"
+    ],
+    "hex": "27B876",
+    "categories": [
+      "Security",
+      "Networking",
+      "Open Source",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/safeline/default.svg"
+    },
+    "license": "Trademark of Chaitin Tech. Used for identification under nominative fair use.",
+    "url": "https://waf.chaitin.com",
+    "guidelines": "https://github.com/chaitin/SafeLine",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "sage",
     "title": "Sage",
     "aliases": [],
@@ -116994,6 +117733,28 @@
     "url": "https://sailsjs.com/logos",
     "guidelines": "https://sailsjs.com/logos",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "saleor",
+    "title": "Saleor",
+    "aliases": [
+      "saleor commerce"
+    ],
+    "hex": "1F1D4D",
+    "categories": [
+      "E-commerce",
+      "Developer Tools",
+      "Open Source",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/saleor/default.svg"
+    },
+    "license": "Trademark of Saleor Commerce. Used for identification under nominative fair use.",
+    "url": "https://saleor.io",
+    "guidelines": "https://github.com/saleor/saleor/blob/main/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -118251,9 +119012,8 @@
     "categories": [
       "File Sharing",
       "Storage",
-      "Database",
-      "Self-Hosted",
-      "Open Source"
+      "Open Source",
+      "Self-Hosted"
     ],
     "variants": {
       "default": "/icons/seaweedfs/default.svg"
@@ -119078,9 +119838,8 @@
     "categories": [
       "File Sharing",
       "Storage",
-      "Networking",
-      "Self-Hosted",
-      "Open Source"
+      "Open Source",
+      "Self-Hosted"
     ],
     "variants": {
       "default": "/icons/sftpgo/default.svg"
@@ -120035,6 +120794,32 @@
     "license": "CC0-1.0",
     "url": "https://github.com/simplex-chat/simplex-chat/blob/2f730d54e9858452e87e641b7fd618c669da68aa/website/src/img/new/logo-symbol-light.svg",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "simplex-chat",
+    "title": "SimpleX Chat",
+    "aliases": [
+      "simplex",
+      "simplex chat",
+      "simplexchat"
+    ],
+    "hex": "0053D0",
+    "categories": [
+      "Communication",
+      "Privacy",
+      "Open Source",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/simplex-chat/default.svg",
+      "dark": "/icons/simplex-chat/dark.svg",
+      "wordmark": "/icons/simplex-chat/wordmark.svg"
+    },
+    "license": "Trademark of SimpleX Chat Ltd. Used for identification under nominative fair use.",
+    "url": "https://simplex.chat",
+    "guidelines": "https://github.com/simplex-chat/simplex-chat/blob/stable/LICENSE",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -122229,9 +123014,8 @@
     "categories": [
       "LLM Tools",
       "AI",
-      "Media",
-      "Self-Hosted",
-      "Open Source"
+      "Open Source",
+      "Self-Hosted"
     ],
     "variants": {
       "default": "/icons/speaches/default.svg"
@@ -122324,9 +123108,8 @@
     "categories": [
       "Monitoring",
       "Networking",
-      "Dashboard",
-      "Self-Hosted",
-      "Open Source"
+      "Open Source",
+      "Self-Hosted"
     ],
     "variants": {
       "default": "/icons/speedtest-tracker/default.svg"
@@ -122456,6 +123239,32 @@
     "license": "MPL-2.0",
     "url": "https://spidermonkey.dev",
     "dateAdded": "2026-03-09",
+    "collection": "brands"
+  },
+  {
+    "slug": "spiffe",
+    "title": "SPIFFE",
+    "aliases": [
+      "spire"
+    ],
+    "hex": "BCD918",
+    "categories": [
+      "Security",
+      "Identity",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/spiffe/default.svg",
+      "mono": "/icons/spiffe/mono.svg",
+      "dark": "/icons/spiffe/dark.svg",
+      "wordmark": "/icons/spiffe/wordmark.svg",
+      "wordmarkLight": "/icons/spiffe/wordmarkLight.svg",
+      "wordmarkDark": "/icons/spiffe/wordmarkDark.svg"
+    },
+    "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
+    "url": "https://spiffe.io",
+    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -123726,6 +124535,25 @@
     "collection": "brands"
   },
   {
+    "slug": "statsig",
+    "title": "Statsig",
+    "aliases": [],
+    "hex": "1B2528",
+    "categories": [
+      "Analytics",
+      "DevOps"
+    ],
+    "variants": {
+      "default": "/icons/statsig/default.svg",
+      "wordmark": "/icons/statsig/wordmark.svg"
+    },
+    "license": "Trademark of Statsig, Inc.. Used for identification under nominative fair use.",
+    "url": "https://www.statsig.com/",
+    "guidelines": "https://www.statsig.com/terms",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "statusnook",
     "title": "Statusnook",
     "aliases": [
@@ -124446,6 +125274,30 @@
     "collection": "brands"
   },
   {
+    "slug": "strimzi",
+    "title": "Strimzi",
+    "aliases": [],
+    "hex": "54BAD8",
+    "categories": [
+      "Kubernetes",
+      "Data",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/strimzi/default.svg",
+      "mono": "/icons/strimzi/mono.svg",
+      "dark": "/icons/strimzi/dark.svg",
+      "wordmark": "/icons/strimzi/wordmark.svg",
+      "wordmarkLight": "/icons/strimzi/wordmarkLight.svg",
+      "wordmarkDark": "/icons/strimzi/wordmarkDark.svg"
+    },
+    "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
+    "url": "https://strimzi.io",
+    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "stripchat-badge",
     "title": "Stripchat",
     "aliases": [],
@@ -125092,6 +125944,29 @@
     "collection": "brands"
   },
   {
+    "slug": "sunshine",
+    "title": "Sunshine",
+    "aliases": [
+      "lizardbyte sunshine",
+      "sunshine game stream"
+    ],
+    "hex": "FDD107",
+    "categories": [
+      "Gaming",
+      "Media",
+      "Open Source",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/sunshine/default.svg"
+    },
+    "license": "Trademark of LizardByte. Used for identification under nominative fair use.",
+    "url": "https://docs.lizardbyte.dev/projects/sunshine",
+    "guidelines": "https://github.com/LizardByte/Sunshine/blob/master/LICENSE",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "supabase",
     "title": "Supabase",
     "aliases": [],
@@ -125111,6 +125986,30 @@
     "url": "https://supabase.com/",
     "guidelines": "https://supabase.com/brand-assets",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "super-productivity",
+    "title": "Super Productivity",
+    "aliases": [
+      "sp",
+      "super productivity",
+      "superproductivity"
+    ],
+    "hex": "0B77D2",
+    "categories": [
+      "Productivity",
+      "Management",
+      "Open Source",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/super-productivity/default.svg"
+    },
+    "license": "Trademark of Johannes Millan. Used for identification under nominative fair use.",
+    "url": "https://super-productivity.com",
+    "guidelines": "https://super-productivity.com/press-kit",
+    "dateAdded": "2026-10-15",
     "collection": "brands"
   },
   {
@@ -126618,9 +127517,8 @@
     "categories": [
       "Media Server",
       "Monitoring",
-      "Media",
-      "Self-Hosted",
-      "Open Source"
+      "Open Source",
+      "Self-Hosted"
     ],
     "variants": {
       "default": "/icons/tautulli/default.svg",
@@ -128397,6 +129295,29 @@
     "collection": "brands"
   },
   {
+    "slug": "thingsboard",
+    "title": "ThingsBoard",
+    "aliases": [
+      "thingsboard iot"
+    ],
+    "hex": "212529",
+    "categories": [
+      "IoT",
+      "Analytics",
+      "Open Source",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/thingsboard/default.svg",
+      "dark": "/icons/thingsboard/dark.svg"
+    },
+    "license": "Trademark of ThingsBoard, Inc.. Used for identification under nominative fair use.",
+    "url": "https://thingsboard.io",
+    "guidelines": "https://github.com/thingsboard/thingsboard",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
+  },
+  {
     "slug": "thinkpad",
     "title": "ThinkPad",
     "aliases": [],
@@ -128697,9 +129618,8 @@
     "categories": [
       "Analytics",
       "Monitoring",
-      "Dashboard",
-      "Self-Hosted",
-      "Open Source"
+      "Open Source",
+      "Self-Hosted"
     ],
     "variants": {
       "default": "/icons/tianji/default.svg",
@@ -128933,6 +129853,28 @@
     "url": "https://www.tiktok.com",
     "dateAdded": "2026-09-12",
     "collection": "auth-badges"
+  },
+  {
+    "slug": "tikv",
+    "title": "TiKV",
+    "aliases": [],
+    "hex": "E30C34",
+    "categories": [
+      "Database",
+      "Storage",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/tikv/default.svg",
+      "wordmark": "/icons/tikv/wordmark.svg",
+      "wordmarkLight": "/icons/tikv/wordmarkLight.svg",
+      "wordmarkDark": "/icons/tikv/wordmarkDark.svg"
+    },
+    "license": "Trademark of The Linux Foundation. Used for identification under nominative fair use.",
+    "url": "https://tikv.org",
+    "guidelines": "https://github.com/cncf/artwork/blob/main/LICENSE.md",
+    "dateAdded": "2026-10-15",
+    "collection": "brands"
   },
   {
     "slug": "tilda-publishing",
@@ -137186,9 +138128,8 @@
     "categories": [
       "Developer Utilities",
       "Security",
-      "Analytics",
-      "Self-Hosted",
-      "Open Source"
+      "Open Source",
+      "Self-Hosted"
     ],
     "variants": {
       "default": "/icons/web-check/default.svg",
@@ -138208,9 +139149,8 @@
     "categories": [
       "Privacy",
       "Security",
-      "Networking",
-      "Self-Hosted",
-      "Open Source"
+      "Open Source",
+      "Self-Hosted"
     ],
     "variants": {
       "default": "/icons/whoogle-search/default.svg",
@@ -142106,9 +143046,8 @@
     "categories": [
       "File Sharing",
       "Storage",
-      "Media",
-      "Self-Hosted",
-      "Open Source"
+      "Open Source",
+      "Self-Hosted"
     ],
     "variants": {
       "default": "/icons/zipline/default.svg"
