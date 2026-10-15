@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllCategories, getAllIcons } from "@/lib/icons";
 import { slugifyCategory } from "@/lib/categories";
+import { getFamilySlugs } from "@/lib/families";
 import { DOCS_NAV } from "@/lib/docs-nav";
 import postsData from "@/data/posts.json";
 
@@ -63,6 +64,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }),
   );
 
+  const familyPages: MetadataRoute.Sitemap = getFamilySlugs().map((slug) => ({
+    url: `${BASE_URL}/family/${slug}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
   const blogPages: MetadataRoute.Sitemap = (
     postsData as { slug: string; date: string }[]
   ).map((post) => ({
@@ -87,6 +95,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticPages,
     ...collectionPages,
     ...categoryPages,
+    ...familyPages,
     ...blogPages,
     ...iconPages,
   ];

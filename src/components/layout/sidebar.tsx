@@ -16,6 +16,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import type { Collection } from "@/lib/icons";
 import { COLLECTIONS_META } from "@/lib/collections-meta";
+import familiesData from "@/data/families.json";
 import { categoryAccentClass, filterCategories, groupCategoriesByLetter } from "@/lib/category-index";
 import { AlphabetRail } from "@/components/layout/alphabet-rail";
 import { SidebarNav } from "@/components/layout/sidebar-nav";
@@ -72,6 +73,7 @@ export function Sidebar({
   const isRail = !mobile && collapsed;
   const [collectionsExpanded, setCollectionsExpanded] = useState(false);
   const [featuredExpanded, setFeaturedExpanded] = useState(false);
+  const [familiesExpanded, setFamiliesExpanded] = useState(false);
 
   const [categorySearch, setCategorySearch] = useState(initialCategorySearch ?? "");
   const debounceRef = useRef<ReturnType<typeof setTimeout>>(null);
@@ -195,6 +197,64 @@ export function Sidebar({
                             {col.count}
                           </span>
                         </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* Families - collapsible. Brand owners (Amazon, Google, ...) with
+                  their parent logo, linking to the family page. */}
+              {familiesData.length > 0 && (
+                <div>
+                  <div className="mt-2 h-px bg-gradient-to-r from-transparent via-border/60 to-transparent dark:via-white/[0.06]" />
+                  <button
+                    type="button"
+                    onClick={() => setFamiliesExpanded((prev) => !prev)}
+                    aria-expanded={familiesExpanded}
+                    aria-controls="families-menu"
+                    className="flex w-full items-center justify-between rounded-lg px-1 pt-3 pb-1.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/70 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  >
+                    Families
+                    <ChevronRight
+                      className={cn(
+                        "h-3 w-3 shrink-0 transition-transform duration-200",
+                        familiesExpanded && "rotate-90"
+                      )}
+                    />
+                  </button>
+                  <div
+                    id="families-menu"
+                    className={cn(
+                      "flex flex-col gap-0.5 overflow-hidden transition-all duration-300",
+                      familiesExpanded ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0"
+                    )}
+                  >
+                    {familiesData.map((family) => {
+                      const href = `/family/${family.slug}`;
+                      return (
+                        <Link
+                          key={family.slug}
+                          href={href}
+                          className={cn(
+                            "group flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                            pathname === href && "bg-gradient-to-r from-accent/80 to-accent/40 text-accent-foreground font-medium shadow-sm shadow-black/[0.03] dark:from-white/[0.08] dark:to-white/[0.04] dark:shadow-black/20",
+                          )}
+                        >
+                          <span className="flex items-center gap-2 truncate">
+                            <img
+                              src={family.logo}
+                              alt=""
+                              width={16}
+                              height={16}
+                              className="h-4 w-4 shrink-0 object-contain"
+                            />
+                            <span className="truncate">{family.title}</span>
+                          </span>
+                          <span className="ml-2 shrink-0 font-mono text-[10px] text-muted-foreground/70">
+                            {family.count}
+                          </span>
+                        </Link>
                       );
                     })}
                   </div>

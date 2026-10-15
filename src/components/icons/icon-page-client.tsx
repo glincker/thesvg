@@ -1,6 +1,7 @@
 "use client";
 
 import type { IconEntry } from "@/lib/icons";
+import type { IconFamilyInfo } from "@/components/icons/icon-detail-page";
 import { IconDetailPage } from "@/components/icons/icon-detail-page";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 
@@ -8,6 +9,7 @@ interface IconPageClientProps {
   icon: IconEntry;
   categoryCounts: { name: string; count: number }[];
   relatedIcons: IconEntry[];
+  family: IconFamilyInfo | null;
   versionCounterpartSlug: string | null;
   versionCounterpartYear: string | null;
   versionCounterpartIsNewer: boolean;
@@ -25,6 +27,7 @@ export function IconPageClient({
   icon,
   categoryCounts,
   relatedIcons,
+  family,
   versionCounterpartSlug,
   versionCounterpartYear,
   versionCounterpartIsNewer,
@@ -36,6 +39,7 @@ export function IconPageClient({
       <IconDetailPage
         icon={icon}
         relatedIcons={relatedIcons}
+        family={family}
         versionCounterpartSlug={versionCounterpartSlug}
         versionCounterpartYear={versionCounterpartYear}
         versionCounterpartIsNewer={versionCounterpartIsNewer}

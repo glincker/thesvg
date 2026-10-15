@@ -1,0 +1,14 @@
+[
+  {
+    "slug": "google",
+    "title": "Google",
+    "count": 114,
+    "logo": "/icons/google/default.svg"
+  },
+  {
+    "slug": "amazon",
+    "title": "Amazon",
+    "count": 18,
+    "logo": "/icons/amazon/default.svg"
+  }
+]

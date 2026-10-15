@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getAllIcons, getIconBySlug, getIconsByCategory, getCategoryCounts } from "@/lib/icons";
 import { IconPageClient } from "@/components/icons/icon-page-client";
 import { categoryUrl } from "@/lib/categories";
+import { getFamilyMembers, getFamilySlugFor, pickFamilySiblings } from "@/lib/families";
 import type { Metadata } from "next";
 
 interface PageProps {
@@ -149,6 +150,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 function resolveIconPageData(icon: NonNullable<ReturnType<typeof getIconBySlug>>) {
   const categoryCounts = getCategoryCounts();
 
+  const familySlug = getFamilySlugFor(icon);
+  const familyParent = familySlug ? getIconBySlug(familySlug) : undefined;
+  const family =
+    familySlug && familyParent
+      ? {
+          slug: familySlug,
+          title: familyParent.title,
+          members: pickFamilySiblings(getFamilyMembers(familySlug), icon),
+          total: getFamilyMembers(familySlug).length,
+        }
+      : null;
+
   const primaryCategory = icon.categories[0] ?? null;
   const relatedIcons = primaryCategory
     ? getIconsByCategory(primaryCategory)
@@ -207,6 +220,7 @@ function resolveIconPageData(icon: NonNullable<ReturnType<typeof getIconBySlug>>
       : null;
 
   return {
+    family,
     categoryCounts,
     relatedIcons,
     versionCounterpartSlug,
@@ -336,6 +350,7 @@ export default async function IconPage({ params }: PageProps) {
   };
 
   const {
+    family,
     categoryCounts,
     relatedIcons,
     versionCounterpartSlug,
@@ -353,6 +368,7 @@ export default async function IconPage({ params }: PageProps) {
           icon={icon}
           categoryCounts={categoryCounts}
           relatedIcons={relatedIcons}
+          family={family}
           versionCounterpartSlug={versionCounterpartSlug}
           versionCounterpartYear={versionCounterpartYear}
           versionCounterpartIsNewer={versionCounterpartIsNewer}
