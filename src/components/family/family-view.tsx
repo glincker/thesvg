@@ -355,7 +355,10 @@ export function FamilyView(props: FamilyViewProps) {
   const { parent, sections, others, featured } = props;
   // Featured products lead the full set so the page opens on what people
   // look for first; the rest follow in their groups.
-  const featuredSlugs = new Set(featured.map((f) => f.slug));
+  const featuredSlugs = new Set<string>();
+  for (let i = 0; i < featured.length; i++) {
+    featuredSlugs.add(featured[i].slug);
+  }
   const grouped = sections
     .map((s) => ({ ...s, icons: s.icons.filter((i) => !featuredSlugs.has(i.slug)) }))
     .filter((s) => s.icons.length > 0);

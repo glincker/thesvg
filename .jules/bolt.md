@@ -79,3 +79,6 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2025-02-12 - Optimize Map.entries() iteration
 **Learning:** In the thesvg.org codebase, chaining `.entries().map(...)` over large `Map` objects (like icon category counts) forces V8 to allocate thousands of short-lived tuple arrays `[key, value]`, significantly increasing garbage collection pressure.
 **Action:** Replace `[...map.entries()].map(...)` with `Array.from(map, ([key, value]) => ...)` which uses the map's default iterator to populate the final array directly without allocating an intermediate array of tuples.
+## 2024-05-23 - Map/Set Tuple Allocation Opt-out for Small Lists
+**Learning:** Replacing intermediate `.map()` allocations with `for` loops inside React components iterating over tiny arrays (like the 26 alphabet letters in `sidebar.tsx` or a few `featured` items) provides zero measurable performance gain while significantly worsening code verbosity/readability.
+**Action:** The "single-pass loop instead of tuple array allocation for Maps and Sets" rule should ONLY be applied to large datasets (e.g. iterating over the 3,000+ icons in `generate-api.ts`), and should be strictly avoided for small visual UI lists to preserve code conciseness.
