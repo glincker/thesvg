@@ -164,10 +164,13 @@ export function Sidebar({
     () => groupCategoriesByLetter(filteredCategories),
     [filteredCategories],
   );
-  const availableLetters = useMemo(
-    () => new Set(categoryGroups.map((g) => g.letter)),
-    [categoryGroups],
-  );
+  const availableLetters = useMemo(() => {
+    const set = new Set<string>();
+    for (let i = 0; i < categoryGroups.length; i++) {
+      set.add(categoryGroups[i].letter);
+    }
+    return set;
+  }, [categoryGroups]);
 
   const jumpToLetter = useCallback((letter: string) => {
     letterHeaderRefs.current.get(letter)?.scrollIntoView({ behavior: "smooth", block: "start" });

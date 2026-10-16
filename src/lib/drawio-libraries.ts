@@ -34,7 +34,10 @@ export const DRAWIO_LIBRARIES: DrawioLibraryDef[] = [
 ];
 
 export function getIconsForDrawioLibrary(icons: IconEntry[], lib: DrawioLibraryDef): IconEntry[] {
-  const wanted = new Set(lib.categories.map((c) => c.toLowerCase()));
+  const wanted = new Set<string>();
+  for (let i = 0; i < lib.categories.length; i++) {
+    wanted.add(lib.categories[i].toLowerCase());
+  }
   return icons.filter((icon) => {
     if (ARCHITECTURE_COLLECTIONS.has(icon.collection)) return false;
     return icon.categories.some((c) => wanted.has(c.toLowerCase()));
