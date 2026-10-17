@@ -126,7 +126,9 @@ export default async function FamilyPage({ params }: PageProps) {
   const members = getFamilyMembers(slug);
   const children = members.filter((m) => m.slug !== slug);
   const sections = buildSections(children, parent.title, slug);
-  const categoryCount = new Set(children.map((c) => c.categories[0])).size;
+  const categories = new Set<string>();
+  for (const c of children) categories.add(c.categories[0]);
+  const categoryCount = categories.size;
   const extra = FAMILY_COLLECTIONS[slug];
 
   const jsonLd = {

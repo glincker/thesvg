@@ -89,7 +89,8 @@ function main() {
   console.log(`  categories.json: ${categories.length} categories`);
 
   // --- families.json (brand families: parent icon plus current members) ---
-  const bySlug = new Map(icons.map((i) => [i.slug, i]));
+  const bySlug = new Map<string, IconEntry>();
+  for (const i of icons) bySlug.set(i.slug, i);
   const byFamily = new Map<string, IconEntry[]>();
   for (const icon of icons) {
     if (!icon.family) continue;
