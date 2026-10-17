@@ -14,7 +14,8 @@ const YEAR_SUFFIX = /^(.+)-(\d{4})$/;
 
 /** Slugs in `icons` that have a newer version also in `icons`. */
 export function supersededSlugs<T extends Versioned>(icons: T[]): Set<string> {
-  const present = new Set(icons.map((i) => i.slug));
+  const present = new Set<string>();
+  for (const i of icons) present.add(i.slug);
   const old = new Set<string>();
   for (const icon of icons) {
     if (icon.supersedes && present.has(icon.supersedes)) old.add(icon.supersedes);
