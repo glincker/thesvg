@@ -119362,6 +119362,23 @@
     "collection": "brands"
   },
   {
+    "slug": "scanfile",
+    "title": "Scanfile",
+    "aliases": [],
+    "hex": "264BBA",
+    "categories": [
+      "AI",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/scanfile/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://scanfile.online/",
+    "dateAdded": "2026-10-17",
+    "collection": "brands"
+  },
+  {
     "slug": "scania",
     "title": "Scania",
     "aliases": [],
