@@ -1,26 +1,7 @@
-<svg version="1.1" id="Layer_1" xmlns:x="ns_extend;" xmlns:i="ns_ai;" xmlns:graph="ns_graphs;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 367.5 45" style="enable-background:new 0 0 367.5 45;" xml:space="preserve">
- <style type="text/css">
-  .st0{fill:#FF2638;}
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 367.5 45" style="enable-background:new 0 0 367.5 45;" xml:space="preserve"><style type="text/css">.st0{fill:#FF2638;}
 	.st1{fill:#FFC600;}
 	.st2{fill:#0079F2;}
-	.st3{fill:#FFFFFF;}
- </style>
- <metadata>
-  <sfw xmlns="ns_sfw;">
-   <slices>
-   </slices>
-   <sliceSourceBounds bottomLeftOrigin="true" height="45" width="367.5" x="-253.2" y="0">
-   </sliceSourceBounds>
-  </sfw>
- </metadata>
- <g>
-  <polygon class="st0" points="20,23.4 40,43.1 0,43.1 	">
-  </polygon>
-  <polygon class="st1" points="0,3.8 20,23.4 40,3.8 	">
-  </polygon>
-  <polygon class="st2" points="20,23.4 40,43.1 60,23.4 40,3.8 	">
-  </polygon>
-  <path class="st3" d="M361.9,13.1c0,0.3-0.4,0.4-0.6,0.2c-1.5-1.7-3.9-3-7.2-3c-7.2,0-11.2,5.8-11.2,12.8c0,7,4.1,12.7,11.2,12.7
+	.st3{fill:#FFFFFF;}</style><g><polygon class="st0" points="20,23.4 40,43.1 0,43.1 	"/><polygon class="st1" points="0,3.8 20,23.4 40,3.8 	"/><polygon class="st2" points="20,23.4 40,43.1 60,23.4 40,3.8 	"/><path class="st3" d="M361.9,13.1c0,0.3-0.4,0.4-0.6,0.2c-1.5-1.7-3.9-3-7.2-3c-7.2,0-11.2,5.8-11.2,12.8c0,7,4.1,12.7,11.2,12.7
 		c3.4,0,6-1.2,7.6-3.2c0.2-0.2,0.6-0.1,0.6,0.2v2.2c0,0.2,0.1,0.3,0.3,0.3h4.6c0.2,0,0.3-0.1,0.3-0.3V0.3c0-0.2-0.1-0.3-0.3-0.3h-5
 		c-0.2,0-0.3,0.1-0.3,0.3C361.9,0.3,361.9,13.1,361.9,13.1z M362.2,23.1c0,4.4-2.6,7.8-6.8,7.8c-4.2,0-6.8-3.4-6.8-7.8
 		c0-4.5,2.6-7.8,6.8-7.8C359.6,15.2,362.2,18.6,362.2,23.1z M341.6,10.9c0-0.1-0.1-0.3-0.3-0.3c-0.2,0-0.4,0-0.5,0
@@ -57,7 +38,4 @@
 		C121.8,15.5,121.8,10.9,121.8,10.9z M86.2,33c0-0.3,0.4-0.4,0.6-0.2c1.5,1.7,3.9,3,7.2,3c7.2,0,11.3-5.8,11.3-12.7
 		c0-7-4.1-12.8-11.3-12.8c-3.3,0-5.9,1.2-7.6,3.2c-0.2,0.2-0.6,0.1-0.6-0.2v-2.2c0-0.2-0.1-0.3-0.3-0.3l0,0h-4.6
 		c-0.2,0-0.3,0.1-0.3,0.3l0,0v33.6c0,0.2,0.1,0.3,0.3,0.3h5c0.2,0,0.3-0.1,0.3-0.3L86.2,33L86.2,33z M86,23.1c0-4.5,2.6-7.9,6.8-7.9
-		c4.2,0,6.8,3.4,6.8,7.9c0,4.4-2.6,7.8-6.8,7.8C88.6,30.9,86,27.4,86,23.1z">
-  </path>
- </g>
-</svg>
+		c4.2,0,6.8,3.4,6.8,7.9c0,4.4-2.6,7.8-6.8,7.8C88.6,30.9,86,27.4,86,23.1z"/></g></svg>
