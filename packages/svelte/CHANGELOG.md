@@ -1,5 +1,11 @@
 # @thesvg/svelte
 
+## 3.4.1
+
+### Patch Changes
+
+- feat: add scanfile icon ([#1336](https://github.com/glincker/thesvg/issues/1336))
+
 ## 3.4.0
 
 ### Minor Changes
