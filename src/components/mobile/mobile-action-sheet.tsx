@@ -75,7 +75,7 @@ export function MobileActionSheet() {
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
     } catch {
-      window.open(icon.variants.default, "_blank", "noopener");
+      window.open(icon.variants.default, "_blank", "noopener,noreferrer");
     }
     closeSheet();
   }, [icon, closeSheet]);

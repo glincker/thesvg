@@ -101,7 +101,7 @@ export const IconCard = memo(function IconCard({
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
       } catch {
-        window.open(icon.variants.default, "_blank", "noopener");
+        window.open(icon.variants.default, "_blank", "noopener,noreferrer");
       } finally {
         setIsDownloading(false);
       }
