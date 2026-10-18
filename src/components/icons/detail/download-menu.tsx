@@ -108,7 +108,7 @@ export function DownloadMenu({
       });
       flashDone();
     } catch {
-      window.open(currentPath, "_blank", "noopener");
+      window.open(currentPath, "_blank", "noopener,noreferrer");
     } finally {
       endBusy("svg");
     }
