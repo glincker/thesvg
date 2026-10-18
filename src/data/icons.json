@@ -92923,6 +92923,26 @@
     "collection": "brands"
   },
   {
+    "slug": "metamcp",
+    "title": "MetaMCP",
+    "aliases": [],
+    "hex": "16A34A",
+    "categories": [
+      "AI",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/metamcp/default.svg",
+      "wordmark": "/icons/metamcp/wordmark.svg",
+      "wordmarkDark": "/icons/metamcp/wordmark-dark.svg"
+    },
+    "license": "MIT",
+    "url": "https://docs.metamcp.com",
+    "guidelines": "https://github.com/metatool-ai/metamcp/tree/main/docs/logo",
+    "dateAdded": "2026-10-18",
+    "collection": "brands"
+  },
+  {
     "slug": "metasploit",
     "title": "Metasploit",
     "aliases": [],
