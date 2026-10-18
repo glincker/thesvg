@@ -275,7 +275,7 @@ export async function openDeepLink(
         const url = srcUrl
           ? `https://www.filagram.com/svg-viewer?src=${encodeURIComponent(srcUrl)}&title=${encodeURIComponent(safeTitle)}`
           : "https://www.filagram.com/svg-viewer";
-        window.open(url, "_blank", "noopener");
+        window.open(url, "_blank", "noopener,noreferrer");
         return {
           ok: true,
           message: srcUrl
