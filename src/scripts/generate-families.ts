@@ -29,7 +29,11 @@ const toneMap = JSON.parse(
 const icons: Entry[] = JSON.parse(
   readFileSync(resolve(root, "src/data/icons.json"), "utf-8"),
 );
-const bySlug = new Map(icons.map((i) => [i.slug, i]));
+// ⚡ Bolt: Single-pass initialization to avoid intermediate tuple array allocation
+const bySlug = new Map<string, Entry>();
+for (const icon of icons) {
+  bySlug.set(icon.slug, icon);
+}
 const byFamily = new Map<string, Entry[]>();
 for (const icon of icons) {
   if (!icon.family) continue;
