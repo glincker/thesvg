@@ -39882,6 +39882,24 @@
     "collection": "auth-badges"
   },
   {
+    "slug": "bitkit",
+    "title": "Bitkit",
+    "aliases": [],
+    "hex": "FF4400",
+    "categories": [
+      "Crypto",
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/bitkit/default.svg",
+      "mono": "/icons/bitkit/mono.svg"
+    },
+    "license": "Trademark",
+    "url": "https://bitkit.to/",
+    "dateAdded": "2026-10-20",
+    "collection": "brands"
+  },
+  {
     "slug": "bitkub-badge",
     "title": "Bitkub",
     "aliases": [],
@@ -111988,6 +112006,24 @@
     "collection": "brands"
   },
   {
+    "slug": "pubky",
+    "title": "Pubky",
+    "aliases": [],
+    "hex": "C8FF00",
+    "categories": [
+      "Identity",
+      "Social"
+    ],
+    "variants": {
+      "default": "/icons/pubky/default.svg",
+      "mono": "/icons/pubky/mono.svg"
+    },
+    "license": "Trademark",
+    "url": "https://pubky.org/",
+    "dateAdded": "2026-10-20",
+    "collection": "brands"
+  },
+  {
     "slug": "public-transport-victoria-badge",
     "title": "Public Transport Victoria",
     "aliases": [],
@@ -127836,6 +127872,24 @@
     "url": "https://www.synology.com/en-global/company/branding",
     "dateAdded": "2026-09-12",
     "collection": "auth-badges"
+  },
+  {
+    "slug": "synonym",
+    "title": "Synonym",
+    "aliases": [],
+    "hex": "FF6600",
+    "categories": [
+      "Crypto",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/synonym/default.svg",
+      "mono": "/icons/synonym/mono.svg"
+    },
+    "license": "Trademark",
+    "url": "https://synonym.to/",
+    "dateAdded": "2026-10-20",
+    "collection": "brands"
   },
   {
     "slug": "sysdig",
