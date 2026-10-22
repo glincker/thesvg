@@ -3504,12 +3504,8 @@
     "hex": "000000",
     "categories": [
       "Crypto",
-      "Cloud",
-      "Community",
-      "Open Source",
       "Finance",
-      "General",
-      "Helpdesk & CRM"
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/altumptic/default.svg"
@@ -41420,12 +41416,8 @@
     "aliases": [],
     "hex": "2B2D5C",
     "categories": [
-      "Agency",
-      "Software",
-      "E-commerce",
       "Marketing",
       "Analytics",
-      "Privacy",
       "Developer Tools"
     ],
     "variants": {
@@ -43599,21 +43591,6 @@
     "url": "",
     "collection": "brands",
     "dateAdded": "2026-05-05"
-  },
-  {
-    "slug": "carbonello",
-    "title": "Carbonello",
-    "aliases": [],
-    "hex": "000000",
-    "categories": [
-      "Software"
-    ],
-    "variants": {
-      "default": "/icons/carbonello/default.svg"
-    },
-    "license": "MPL-2.0",
-    "dateAdded": "2026-10-21",
-    "collection": "brands"
   },
   {
     "slug": "cardano",
