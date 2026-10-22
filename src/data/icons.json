@@ -37720,7 +37720,7 @@
       "default": "/icons/baby-buddy/default.svg"
     },
     "license": "BSD-2-Clause",
-    "url": "http://docs.baby-buddy.net/",
+    "url": "https://docs.baby-buddy.net/",
     "guidelines": "https://github.com/babybuddy/babybuddy/blob/master/LICENSE",
     "dateAdded": "2026-10-15",
     "collection": "brands",
@@ -58735,7 +58735,7 @@
       "default": "/icons/fabbo/default.svg"
     },
     "license": "MIT",
-    "url": "http://fabbo.ai/",
+    "url": "https://fabbo.ai/",
     "dateAdded": "2026-07-25",
     "collection": "brands"
   },
@@ -69076,7 +69076,7 @@
       "wordmarkDark": "/icons/glances/wordmarkDark.svg"
     },
     "license": "LGPL-3.0",
-    "url": "http://nicolargo.github.io/glances/",
+    "url": "https://nicolargo.github.io/glances/",
     "guidelines": "https://github.com/nicolargo/glances/blob/develop/COPYING",
     "dateAdded": "2026-10-15",
     "collection": "brands",
@@ -87521,7 +87521,7 @@
       "default": "/icons/lidarr/default.svg"
     },
     "license": "GPL-3.0",
-    "url": "http://lidarr.audio/",
+    "url": "https://lidarr.audio/",
     "guidelines": "https://github.com/Lidarr/Lidarr/blob/develop/LICENSE.md",
     "dateAdded": "2026-10-15",
     "collection": "brands",
@@ -91714,7 +91714,7 @@
       "dark": "/icons/mattermost/dark.svg"
     },
     "license": "CC0-1.0",
-    "url": "http://mattermost.com/",
+    "url": "https://mattermost.com/",
     "guidelines": "https://www.mattermost.org/brand-guidelines/",
     "dateAdded": "2026-03-07",
     "collection": "brands"
@@ -91732,7 +91732,7 @@
       "default": "/icons/mattermost-badge/default.svg"
     },
     "license": "CC0-1.0",
-    "url": "http://mattermost.com/",
+    "url": "https://mattermost.com/",
     "dateAdded": "2026-09-12",
     "collection": "auth-badges"
   },
@@ -99415,8 +99415,8 @@
       "dark": "/icons/nextera-energy/dark.svg",
       "light": "/icons/nextera-energy/light.svg",
       "wordmark": "/icons/nextera-energy/wordmark.svg",
-      "wordmarkLight": "/icons/nextera-energy/wordmark-light.svg",
-      "wordmarkDark": "/icons/nextera-energy/wordmark-dark.svg"
+      "wordmarkLight": "/icons/nextera-energy/wordmarkLight.svg",
+      "wordmarkDark": "/icons/nextera-energy/wordmarkDark.svg"
     },
     "license": "Unknown",
     "url": "https://www.nexteraenergy.com/",

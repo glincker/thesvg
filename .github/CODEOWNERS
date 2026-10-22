@@ -8,14 +8,17 @@
 # it's what lets moderators merge UI/icon PRs independently while CI/CD,
 # dependencies, and root config still always route through an owner.
 #
+# @glincker/moderators can also approve dependency and package manifest paths.
+# .github and env files stay owner-only.
+#
 # Mirrors the project's own file-boundaries policy for sensitive paths.
 
 /.github/                 @glincker/glinr-owners
-/package.json             @glincker/glinr-owners
-/pnpm-lock.yaml           @glincker/glinr-owners
-/pnpm-workspace.yaml      @glincker/glinr-owners
+/package.json             @glincker/glinr-owners @glincker/moderators
+/pnpm-lock.yaml           @glincker/glinr-owners @glincker/moderators
+/pnpm-workspace.yaml      @glincker/glinr-owners @glincker/moderators
 /tsconfig.json            @glincker/glinr-owners
 /.env*                    @glincker/glinr-owners
 /next.config.ts           @glincker/glinr-owners
 /vitest.config.ts         @glincker/glinr-owners
-/packages/*/package.json  @glincker/glinr-owners
+/packages/*/package.json  @glincker/glinr-owners @glincker/moderators
