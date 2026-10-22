@@ -3498,6 +3498,29 @@
     "collection": "brands"
   },
   {
+    "slug": "altumptic",
+    "title": "altumptic",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Crypto",
+      "Cloud",
+      "Community",
+      "Open Source",
+      "Finance",
+      "General",
+      "Helpdesk & CRM"
+    ],
+    "variants": {
+      "default": "/icons/altumptic/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://altumptic.com/",
+    "guidelines": "https://altumptic.com/",
+    "dateAdded": "2026-10-21",
+    "collection": "brands"
+  },
+  {
     "slug": "alwaysdata",
     "title": "Alwaysdata",
     "aliases": [],
@@ -37835,6 +37858,22 @@
     "collection": "brands"
   },
   {
+    "slug": "backloggd",
+    "title": "Backloggd",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Gaming"
+    ],
+    "variants": {
+      "default": "/icons/backloggd/default.svg"
+    },
+    "license": "Unlicense",
+    "url": "https://backloggd.com/",
+    "dateAdded": "2026-10-21",
+    "collection": "brands"
+  },
+  {
     "slug": "backstage",
     "title": "Backstage",
     "aliases": [],
@@ -41376,6 +41415,28 @@
     "aliases": []
   },
   {
+    "slug": "brainrune-mark-deep",
+    "title": "Brainrune Mark Deep",
+    "aliases": [],
+    "hex": "2B2D5C",
+    "categories": [
+      "Agency",
+      "Software",
+      "E-commerce",
+      "Marketing",
+      "Analytics",
+      "Privacy",
+      "Developer Tools"
+    ],
+    "variants": {
+      "default": "/icons/brainrune-mark-deep/default.svg"
+    },
+    "license": "CC-BY-ND-4.0",
+    "url": "https://brainrune.com",
+    "dateAdded": "2026-10-21",
+    "collection": "brands"
+  },
+  {
     "slug": "braintree",
     "title": "Braintree",
     "aliases": [],
@@ -43538,6 +43599,21 @@
     "url": "",
     "collection": "brands",
     "dateAdded": "2026-05-05"
+  },
+  {
+    "slug": "carbonello",
+    "title": "Carbonello",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/carbonello/default.svg"
+    },
+    "license": "MPL-2.0",
+    "dateAdded": "2026-10-21",
+    "collection": "brands"
   },
   {
     "slug": "cardano",
@@ -91204,6 +91280,25 @@
     "collection": "brands"
   },
   {
+    "slug": "masheev",
+    "title": "Masheev",
+    "aliases": [],
+    "hex": "012422",
+    "categories": [
+      "Communication",
+      "AI",
+      "Customer Experience"
+    ],
+    "variants": {
+      "default": "/icons/masheev/default.svg"
+    },
+    "license": "Masheev brand guidelines, https://masheev.com/brand. Owner-submitted",
+    "url": "https://masheev.com",
+    "guidelines": "https://masheev.com/brand",
+    "dateAdded": "2026-10-21",
+    "collection": "brands"
+  },
+  {
     "slug": "mastercard",
     "title": "MasterCard",
     "aliases": [],
@@ -102008,6 +102103,22 @@
     "dateAdded": "2026-03-07",
     "collection": "brands",
     "family": "meta"
+  },
+  {
+    "slug": "oddinpay",
+    "title": "Oddinpay",
+    "aliases": [],
+    "hex": "6366F1",
+    "categories": [
+      "Payment"
+    ],
+    "variants": {
+      "default": "/icons/oddinpay/default.svg"
+    },
+    "license": "CC-BY-ND-4.0",
+    "url": "https://www.oddinpay.com",
+    "dateAdded": "2026-10-21",
+    "collection": "brands"
   },
   {
     "slug": "odido",
@@ -128015,6 +128126,23 @@
     "collection": "brands"
   },
   {
+    "slug": "tableport",
+    "title": "TablePort",
+    "aliases": [],
+    "hex": "0A5638",
+    "categories": [
+      "Booking",
+      "Business"
+    ],
+    "variants": {
+      "default": "/icons/tableport/default.svg"
+    },
+    "license": "TablePort trademark. Use the unaltered logo only to refer to TablePort; do not modify it or imply endorsement.",
+    "url": "https://tableport.io",
+    "dateAdded": "2026-10-21",
+    "collection": "brands"
+  },
+  {
     "slug": "taboola",
     "title": "Taboola",
     "aliases": [],
@@ -133748,6 +133876,24 @@
     "license": "CC0-1.0",
     "url": "https://twenty.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "twig",
+    "title": "Twig",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Design",
+      "AI",
+      "Developer Tools"
+    ],
+    "variants": {
+      "default": "/icons/twig/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://twig.ink",
+    "dateAdded": "2026-10-21",
     "collection": "brands"
   },
   {
@@ -144628,153 +144774,6 @@
     "license": "CC0-1.0",
     "url": "https://www.zyte.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
-  },
-  {
-    "slug": "carbonello",
-    "title": "Carbonello",
-    "aliases": [],
-    "hex": "000000",
-    "categories": [
-      "Software"
-    ],
-    "variants": {
-      "default": "/icons/carbonello/default.svg"
-    },
-    "license": "MPL-2.0",
-    "url": "https://yourbrand.com",
-    "dateAdded": "2026-10-21",
-    "collection": "brands"
-  },
-  {
-    "slug": "backloggd",
-    "title": "Backloggd",
-    "aliases": [],
-    "hex": "000000",
-    "categories": [
-      "Gaming"
-    ],
-    "variants": {
-      "default": "/icons/backloggd/default.svg"
-    },
-    "license": "Unlicense",
-    "url": "https://backloggd.com/",
-    "dateAdded": "2026-10-21",
-    "collection": "brands"
-  },
-  {
-    "slug": "oddinpay",
-    "title": "Oddinpay",
-    "aliases": [],
-    "hex": "6366F1",
-    "categories": [
-      "Payment"
-    ],
-    "variants": {
-      "default": "/icons/oddinpay/default.svg"
-    },
-    "license": "CC-BY-ND-4.0",
-    "url": "https://www.oddinpay.com",
-    "dateAdded": "2026-10-21",
-    "collection": "brands"
-  },
-  {
-    "slug": "brainrune-mark-deep",
-    "title": "Brainrune Mark Deep",
-    "aliases": [],
-    "hex": "2B2D5C",
-    "categories": [
-      "Agency",
-      "Software",
-      "E-commerce",
-      "Marketing",
-      "Analytics",
-      "Privacy",
-      "Developer Tools"
-    ],
-    "variants": {
-      "default": "/icons/brainrune-mark-deep/default.svg"
-    },
-    "license": "CC-BY-ND-4.0",
-    "url": "https://brainrune.com",
-    "dateAdded": "2026-10-21",
-    "collection": "brands"
-  },
-  {
-    "slug": "twig",
-    "title": "Twig",
-    "aliases": [],
-    "hex": "000000",
-    "categories": [
-      "Design",
-      "AI",
-      "Developer Tools"
-    ],
-    "variants": {
-      "default": "/icons/twig/default.svg"
-    },
-    "license": "MIT",
-    "url": "twig.ink",
-    "dateAdded": "2026-10-21",
-    "collection": "brands"
-  },
-  {
-    "slug": "altumptic",
-    "title": "altumptic",
-    "aliases": [],
-    "hex": "000000",
-    "categories": [
-      "Crypto",
-      "Cloud",
-      "Community",
-      "Open Source",
-      "Finance",
-      "General",
-      "Helpdesk & CRM"
-    ],
-    "variants": {
-      "default": "/icons/altumptic/default.svg"
-    },
-    "license": "MIT",
-    "url": "https://altumptic.com/",
-    "guidelines": "https://altumptic.com/",
-    "dateAdded": "2026-10-21",
-    "collection": "brands"
-  },
-  {
-    "slug": "tableport",
-    "title": "TablePort",
-    "aliases": [],
-    "hex": "0A5638",
-    "categories": [
-      "Booking",
-      "Business"
-    ],
-    "variants": {
-      "default": "/icons/tableport/default.svg"
-    },
-    "license": "TablePort trademark. Use the unaltered logo only to refer to TablePort; do not modify it or imply endorsement.",
-    "url": "https://tableport.io",
-    "dateAdded": "2026-10-21",
-    "collection": "brands"
-  },
-  {
-    "slug": "masheev",
-    "title": "Masheev",
-    "aliases": [],
-    "hex": "012422",
-    "categories": [
-      "Communication",
-      "AI",
-      "Customer Experience"
-    ],
-    "variants": {
-      "default": "/icons/masheev/default.svg"
-    },
-    "license": "Masheev brand guidelines, https://masheev.com/brand. Owner-submitted",
-    "url": "https://masheev.com",
-    "guidelines": "https://masheev.com/brand",
-    "dateAdded": "2026-10-21",
     "collection": "brands"
   }
 ]
