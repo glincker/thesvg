@@ -96,10 +96,6 @@ jobs:
           github.event_name == 'pull_request' &&
           github.event.pull_request.head.repo.full_name != github.repository
         run: |
-          if git diff --quiet -- 'public/icons/**/*.svg'; then
-            echo "SVGO made no changes; all changed SVGs are already optimized."
-            exit 0
-          fi
           echo "::error::One or more SVGs are not optimized. Run 'npx svgo -f public/icons --multipass' locally, commit, and push. (This also runs automatically right after the PR is merged.)"
           git diff --stat
           exit 1

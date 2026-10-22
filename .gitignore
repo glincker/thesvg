@@ -65,3 +65,6 @@ public/integrations/excalidraw/
 # marketing assets (exported PNGs - too large for OSS repo)
 public/banners/
 posthog-setup-report.md
+
+# import scripts (internal tooling - not for public repo)
+/scripts/

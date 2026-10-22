@@ -1,6 +1,6 @@
 import { test, describe } from "node:test";
 import { strict as assert } from "node:assert";
-import { colors, colorize, success, error, warn, info, header, dim } from "./colors.ts";
+import { colorize, success, error, warn, info, header, dim } from "./colors.ts";
 
 const ESC = "\x1b";
 

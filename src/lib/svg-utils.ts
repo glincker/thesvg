@@ -226,7 +226,7 @@ function submitForm(action: string, fields: Record<string, string>): void {
   form.remove();
 }
 
-export function buildPenHtml(svg: string, title: string): string {
+function buildPenHtml(svg: string, title: string): string {
   const safeTitleHtml = title
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
@@ -279,7 +279,7 @@ export async function openDeepLink(
         const url = srcUrl
           ? `https://www.filagram.com/svg-viewer?src=${encodeURIComponent(srcUrl)}&title=${encodeURIComponent(safeTitle)}`
           : "https://www.filagram.com/svg-viewer";
-        window.open(url, "_blank", "noopener,noreferrer");
+        window.open(url, "_blank", "noopener");
         return {
           ok: true,
           message: srcUrl

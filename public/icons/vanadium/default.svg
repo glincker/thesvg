@@ -1,1 +1,56 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="532" height="532" viewBox="-10 -10 532 532"><g transform="translate(-.102 -.005)scale(2.00002)"><circle cx="128" cy="128" r="64" style="fill:#fff;fill-opacity:1"/><path d="M96 183.4A63.7 63.7 0 0 1 72.6 160L17.2 64A128 128 0 0 0 128 256l55.4-96A64 64 0 0 1 96 183.4" style="fill:#595959;fill-opacity:1"/><path d="M192 128a63.7 63.7 0 0 1-8.6 32L128 256A128 128 0 0 0 238.9 64h-111a64 64 0 0 1 64 64z" style="fill:#9c9c9c;fill-opacity:1;fill-rule:nonzero;stroke:none"/><circle cx="128" cy="128" r="52" style="fill:#282828;fill-opacity:1"/><path d="M96 72.6a63.7 63.7 0 0 1 32-8.6h110.8a128 128 0 0 0-221.7 0l55.5 96A64 64 0 0 1 96 72.6" style="fill:#212121;fill-opacity:1"/></g></svg>
+<svg
+   viewBox="-10 -10 532 532"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="vanadium.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   width="532"
+   height="532"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="true"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="281.07495"
+     inkscape:cy="253.49778"
+     inkscape:current-layer="svg8" />
+  <g
+     id="g38"
+     transform="matrix(2.0000195,0,0,2.0000195,-0.10249641,-0.00467324)">
+    <circle
+       cx="128"
+       cy="128"
+       r="64"
+       id="circle6"
+       style="fill:#ffffff;fill-opacity:1" />
+    <path
+       d="M 96,183.4 A 63.7,63.7 0 0 1 72.6,160 L 17.2,64 A 128,128 0 0 0 128,256 l 55.4,-96 A 64,64 0 0 1 96,183.4 Z"
+       id="path6"
+       style="fill:#595959;fill-opacity:1" />
+    <path
+       d="m 192,128 a 63.7,63.7 0 0 1 -8.6,32 L 128,256 A 128,128 0 0 0 238.9,64 h -111 a 64,64 0 0 1 64,64 z"
+       id="path7"
+       style="fill:#9c9c9c;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+    <circle
+       cx="128"
+       cy="128"
+       r="52"
+       id="circle7"
+       style="fill:#282828;fill-opacity:1" />
+    <path
+       d="M 96,72.6 A 63.7,63.7 0 0 1 128,64 H 238.8 A 128,128 0 0 0 17.1,64 l 55.5,96 A 64,64 0 0 1 96,72.6 Z"
+       id="path8"
+       style="fill:#212121;fill-opacity:1" />
+  </g>
+</svg>

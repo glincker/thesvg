@@ -93,7 +93,7 @@ export function HelpFab({ iconCount }: { iconCount: string }) {
       ),
     ];
     return () => timers.forEach(clearTimeout);
-  }, [mounted]);
+  }, [mounted, TIPS]);
 
   return (
     <>

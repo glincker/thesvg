@@ -29,10 +29,7 @@ const toneMap = JSON.parse(
 const icons: Entry[] = JSON.parse(
   readFileSync(resolve(root, "src/data/icons.json"), "utf-8"),
 );
-const bySlug = new Map<string, Entry>();
-for (let i = 0; i < icons.length; i++) {
-  bySlug.set(icons[i].slug, icons[i]);
-}
+const bySlug = new Map(icons.map((i) => [i.slug, i]));
 const byFamily = new Map<string, Entry[]>();
 for (const icon of icons) {
   if (!icon.family) continue;

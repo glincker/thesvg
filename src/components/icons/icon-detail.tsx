@@ -127,7 +127,7 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
     } catch {
-      window.open(variantPath, "_blank", "noopener,noreferrer");
+      window.open(variantPath, "_blank", "noopener");
     }
     posthog.capture("icon_svg_downloaded", {
       icon_slug: icon.slug,

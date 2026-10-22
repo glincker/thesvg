@@ -1,1 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="69" height="69" viewBox="0 0 69 69"><title>light-logo</title><g fill="none"><path fill="#000" d="M0 0h3v69H0z"/><path fill="#FFE000" d="M21 60h9v9h-9z"/><path fill="#000" d="M33 60h3v9h-3zm20-17h9v26h-9z"/><path fill="#FC5200" d="M66 26h3v43h-3zM40 52h10v17H40z"/><path fill="#00DBB6" d="M7 0h10v69H7z"/></g></svg>
+<svg width="69px" height="69px" viewBox="0 0 69 69" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>light-logo</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="light-icon" transform="translate(-29.000000, -30.000000)" fill-rule="nonzero">
+            <g id="light-logo" transform="translate(29.000000, 30.000000)">
+                <rect id="Rectangle" fill="#000000" x="0" y="0" width="3" height="69"></rect>
+                <rect id="Rectangle" fill="#FFE000" x="21" y="60" width="9" height="9"></rect>
+                <rect id="Rectangle" fill="#000000" x="33" y="60" width="3" height="9"></rect>
+                <rect id="Rectangle" fill="#000000" x="53" y="43" width="9" height="26"></rect>
+                <rect id="Rectangle" fill="#FC5200" x="66" y="26" width="3" height="43"></rect>
+                <rect id="Rectangle" fill="#FC5200" x="40" y="52" width="10" height="17"></rect>
+                <rect id="Rectangle" fill="#00DBB6" x="7" y="0" width="10" height="69"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

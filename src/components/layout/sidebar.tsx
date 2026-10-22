@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-  useSyncExternalStore,
-} from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import {
   ChevronRight,
   Clock,
@@ -24,11 +17,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import type { Collection } from "@/lib/icons";
 import { COLLECTIONS_META } from "@/lib/collections-meta";
 import familiesData from "@/data/families.json";
-import {
-  categoryAccentClass,
-  filterCategories,
-  groupCategoriesByLetter,
-} from "@/lib/category-index";
+import { categoryAccentClass, filterCategories, groupCategoriesByLetter } from "@/lib/category-index";
 import { AlphabetRail } from "@/components/layout/alphabet-rail";
 import { SidebarNav } from "@/components/layout/sidebar-nav";
 import { SidebarCollapseToggle } from "@/components/layout/sidebar-collapse-toggle";
@@ -55,20 +44,8 @@ function FamilyLogo({ family }: { family: SidebarFamily }) {
   if (family.logoDark) {
     return (
       <>
-        <img
-          src={family.logo}
-          alt=""
-          width={16}
-          height={16}
-          className={cn(base, "dark:hidden")}
-        />
-        <img
-          src={family.logoDark}
-          alt=""
-          width={16}
-          height={16}
-          className={cn(base, "hidden dark:block")}
-        />
+        <img src={family.logo} alt="" width={16} height={16} className={cn(base, "dark:hidden")} />
+        <img src={family.logoDark} alt="" width={16} height={16} className={cn(base, "hidden dark:block")} />
       </>
     );
   }
@@ -81,8 +58,7 @@ function FamilyLogo({ family }: { family: SidebarFamily }) {
       className={cn(
         base,
         family.tone === "dark" && "dark:brightness-0 dark:invert",
-        family.tone === "light" &&
-          "brightness-0 dark:brightness-100 dark:invert-0",
+        family.tone === "light" && "brightness-0 dark:brightness-100 dark:invert-0",
       )}
     />
   );
@@ -141,9 +117,7 @@ export function Sidebar({
   // accordion: one open at a time, so the Categories list below always keeps
   // most of the height. Families starts open while it is new.
   type ShortcutSection = "collections" | "families" | "featured";
-  const [openSection, setOpenSection] = useState<ShortcutSection | null>(
-    "families",
-  );
+  const [openSection, setOpenSection] = useState<ShortcutSection | null>("families");
   const toggleSection = (id: ShortcutSection) =>
     setOpenSection((prev) => (prev === id ? null : id));
   const collectionsExpanded = openSection === "collections";
@@ -157,9 +131,7 @@ export function Sidebar({
     () => false,
   );
 
-  const [categorySearch, setCategorySearch] = useState(
-    initialCategorySearch ?? "",
-  );
+  const [categorySearch, setCategorySearch] = useState(initialCategorySearch ?? "");
   const debounceRef = useRef<ReturnType<typeof setTimeout>>(null);
   const letterHeaderRefs = useRef(new Map<string, HTMLDivElement>());
 
@@ -167,13 +139,8 @@ export function Sidebar({
   // navigation) without fighting the debounced write-back below. Adjusted
   // directly during render (React's documented pattern for this, avoids an
   // extra effect-triggered render) rather than in a useEffect.
-  const [prevInitialCategorySearch, setPrevInitialCategorySearch] = useState(
-    initialCategorySearch,
-  );
-  if (
-    initialCategorySearch !== undefined &&
-    initialCategorySearch !== prevInitialCategorySearch
-  ) {
+  const [prevInitialCategorySearch, setPrevInitialCategorySearch] = useState(initialCategorySearch);
+  if (initialCategorySearch !== undefined && initialCategorySearch !== prevInitialCategorySearch) {
     setPrevInitialCategorySearch(initialCategorySearch);
     setCategorySearch(initialCategorySearch);
   }
@@ -197,20 +164,13 @@ export function Sidebar({
     () => groupCategoriesByLetter(filteredCategories),
     [filteredCategories],
   );
-  const availableLetters = useMemo(() => {
-    // ⚡ Bolt: Use a single-pass loop instead of `new Set(array.map(...))` to
-    // avoid allocating intermediate arrays and reduce garbage collection pressure.
-    const letters = new Set<string>();
-    for (const g of categoryGroups) {
-      letters.add(g.letter);
-    }
-    return letters;
-  }, [categoryGroups]);
+  const availableLetters = useMemo(
+    () => new Set(categoryGroups.map((g) => g.letter)),
+    [categoryGroups],
+  );
 
   const jumpToLetter = useCallback((letter: string) => {
-    letterHeaderRefs.current
-      .get(letter)
-      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    letterHeaderRefs.current.get(letter)?.scrollIntoView({ behavior: "smooth", block: "start" });
   }, []);
 
   return (
@@ -225,12 +185,7 @@ export function Sidebar({
               ),
         )}
       >
-        {!mobile && (
-          <SidebarCollapseToggle
-            collapsed={collapsed}
-            onToggle={onToggleCollapsed}
-          />
-        )}
+        {!mobile && <SidebarCollapseToggle collapsed={collapsed} onToggle={onToggleCollapsed} />}
 
         {/* Navigation - pinned, always visible */}
         <SidebarNav
@@ -266,7 +221,7 @@ export function Sidebar({
                     <ChevronRight
                       className={cn(
                         "h-3 w-3 shrink-0 transition-transform duration-200",
-                        collectionsExpanded && "rotate-90",
+                        collectionsExpanded && "rotate-90"
                       )}
                     />
                   </button>
@@ -274,9 +229,7 @@ export function Sidebar({
                     id="collections-menu"
                     className={cn(
                       "flex flex-col gap-0.5 overflow-hidden transition-all duration-300",
-                      collectionsExpanded
-                        ? "max-h-[32rem] opacity-100"
-                        : "max-h-0 opacity-0",
+                      collectionsExpanded ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0"
                     )}
                   >
                     {collections.map((col) => {
@@ -287,25 +240,15 @@ export function Sidebar({
                         <button
                           key={col.name}
                           type="button"
-                          onClick={() =>
-                            onCollectionSelect(isActive ? null : col.name)
-                          }
+                          onClick={() => onCollectionSelect(isActive ? null : col.name)}
                           className={cn(
                             "group flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-                            isActive &&
-                              "bg-gradient-to-r from-accent/80 to-accent/40 text-accent-foreground font-medium shadow-sm shadow-black/[0.03] dark:from-white/[0.08] dark:to-white/[0.04] dark:shadow-black/20",
+                            isActive && "bg-gradient-to-r from-accent/80 to-accent/40 text-accent-foreground font-medium shadow-sm shadow-black/[0.03] dark:from-white/[0.08] dark:to-white/[0.04] dark:shadow-black/20"
                           )}
                         >
                           <span className="flex items-center gap-2.5 truncate">
-                            <Icon
-                              className={cn(
-                                "h-4 w-4 shrink-0 transition-transform duration-200 group-hover:scale-110",
-                                isActive ? meta?.color : "opacity-60",
-                              )}
-                            />
-                            <span className="truncate text-[13px]">
-                              {meta?.label || col.name}
-                            </span>
+                            <Icon className={cn("h-4 w-4 shrink-0 transition-transform duration-200 group-hover:scale-110", isActive ? meta?.color : "opacity-60")} />
+                            <span className="truncate text-[13px]">{meta?.label || col.name}</span>
                           </span>
                           <span className="ml-2 shrink-0 rounded-full bg-muted/60 px-1.5 font-mono text-[10px] text-muted-foreground/60 dark:bg-white/[0.04]">
                             {col.count}
@@ -340,7 +283,7 @@ export function Sidebar({
                     <ChevronRight
                       className={cn(
                         "h-3 w-3 shrink-0 transition-transform duration-200",
-                        familiesExpanded && "rotate-90",
+                        familiesExpanded && "rotate-90"
                       )}
                     />
                   </button>
@@ -348,9 +291,7 @@ export function Sidebar({
                     id="families-menu"
                     className={cn(
                       "flex flex-col gap-0.5 overflow-hidden transition-all duration-300",
-                      familiesExpanded
-                        ? "max-h-[32rem] opacity-100"
-                        : "max-h-0 opacity-0",
+                      familiesExpanded ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0"
                     )}
                   >
                     <div className="max-h-52 overflow-y-auto overscroll-contain pb-1">
@@ -358,8 +299,7 @@ export function Sidebar({
                         href="/families"
                         className={cn(
                           "flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] text-muted-foreground transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-                          pathname === "/families" &&
-                            "bg-accent/60 text-accent-foreground font-medium",
+                          pathname === "/families" && "bg-accent/60 text-accent-foreground font-medium",
                         )}
                       >
                         <span>All families</span>
@@ -373,8 +313,7 @@ export function Sidebar({
                             href={href}
                             className={cn(
                               "group flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-                              pathname === href &&
-                                "bg-gradient-to-r from-accent/80 to-accent/40 text-accent-foreground font-medium shadow-sm shadow-black/[0.03] dark:from-white/[0.08] dark:to-white/[0.04] dark:shadow-black/20",
+                              pathname === href && "bg-gradient-to-r from-accent/80 to-accent/40 text-accent-foreground font-medium shadow-sm shadow-black/[0.03] dark:from-white/[0.08] dark:to-white/[0.04] dark:shadow-black/20",
                             )}
                           >
                             <span className="flex items-center gap-2 truncate">
@@ -406,7 +345,7 @@ export function Sidebar({
                   <ChevronRight
                     className={cn(
                       "h-3 w-3 shrink-0 transition-transform duration-200",
-                      featuredExpanded && "rotate-90",
+                      featuredExpanded && "rotate-90"
                     )}
                   />
                 </button>
@@ -414,17 +353,14 @@ export function Sidebar({
                   id="featured-menu"
                   className={cn(
                     "flex flex-col gap-0.5 overflow-hidden transition-all duration-300",
-                    featuredExpanded
-                      ? "max-h-40 opacity-100"
-                      : "max-h-0 opacity-0",
+                    featuredExpanded ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
                   )}
                 >
                   <Link
                     href="/category/google-2026"
                     className={cn(
                       "group flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-                      pathname === "/category/google-2026" &&
-                        "bg-gradient-to-r from-accent/80 to-accent/40 text-accent-foreground font-medium shadow-sm shadow-black/[0.03] dark:from-white/[0.08] dark:to-white/[0.04] dark:shadow-black/20",
+                      pathname === "/category/google-2026" && "bg-gradient-to-r from-accent/80 to-accent/40 text-accent-foreground font-medium shadow-sm shadow-black/[0.03] dark:from-white/[0.08] dark:to-white/[0.04] dark:shadow-black/20",
                     )}
                   >
                     <span className="flex items-center gap-2 truncate">
@@ -459,119 +395,119 @@ export function Sidebar({
                   </Link>
                 </div>
               </div>
+
             </div>
 
             {/* Categories: takes the remaining height and scrolls on its own. */}
             <ScrollArea className="min-h-0 flex-1 overflow-hidden">
               <div className="flex flex-col px-3 pb-3">
-                <div className="mt-2 h-px bg-gradient-to-r from-transparent via-border/60 to-transparent dark:via-white/[0.06]" />
-                <div className="flex items-baseline justify-between px-1 pt-3 pb-1.5">
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/70">
-                    Categories
-                  </p>
-                  {categorySearch && (
-                    <span className="font-mono text-[10px] text-muted-foreground/40">
-                      {filteredCategories.length}
-                    </span>
-                  )}
-                </div>
-                <div className="relative mb-2 flex items-center">
-                  <Search className="pointer-events-none absolute left-2.5 h-3.5 w-3.5 text-muted-foreground/40" />
-                  <input
-                    type="text"
-                    value={categorySearch}
-                    onChange={(e) => setCategorySearch(e.target.value)}
-                    onFocus={() => setOpenSection(null)}
-                    placeholder="Search categories"
-                    aria-label="Search categories"
-                    className="w-full rounded-lg border border-border/50 bg-muted/30 py-1.5 pr-7 pl-8 text-xs text-foreground placeholder:text-muted-foreground/50 outline-none transition-shadow duration-200 focus:border-foreground/30 focus:bg-background focus:shadow-[0_0_0_3px_rgba(0,0,0,0.05)] dark:border-white/[0.06] dark:bg-white/[0.02] dark:focus:border-white/20 dark:focus:shadow-[0_0_0_3px_rgba(255,255,255,0.06)]"
-                  />
-                  {categorySearch && (
-                    <button
-                      type="button"
-                      onClick={() => setCategorySearch("")}
-                      aria-label="Clear category search"
-                      className="absolute right-2 flex h-4 w-4 items-center justify-center rounded-full text-muted-foreground/50 transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                    >
-                      <X className="h-3 w-3" />
-                    </button>
-                  )}
-                </div>
+              <div className="mt-2 h-px bg-gradient-to-r from-transparent via-border/60 to-transparent dark:via-white/[0.06]" />
+              <div className="flex items-baseline justify-between px-1 pt-3 pb-1.5">
+                <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/70">
+                  Categories
+                </p>
                 {categorySearch && (
-                  <p role="status" aria-live="polite" className="sr-only">
-                    {filteredCategories.length === 0
-                      ? `No categories match ${categorySearch}`
-                      : `${filteredCategories.length} ${filteredCategories.length === 1 ? "category" : "categories"} found`}
-                  </p>
+                  <span className="font-mono text-[10px] text-muted-foreground/40">
+                    {filteredCategories.length}
+                  </span>
                 )}
-                <div className="flex items-start">
-                  <div className="flex min-w-0 flex-1 flex-col gap-px">
-                    {categoryGroups.length === 0 && (
-                      <div className="flex flex-col items-center gap-2 px-2 py-6 text-center">
-                        <Search className="h-4 w-4 text-muted-foreground/30" />
-                        <p className="text-[12px] text-muted-foreground/50">
-                          No categories match &ldquo;{categorySearch}&rdquo;
-                        </p>
-                        <button
-                          type="button"
-                          onClick={() => setCategorySearch("")}
-                          className="text-[11px] font-medium text-orange-600 hover:underline dark:text-orange-400"
-                        >
-                          Clear search
-                        </button>
-                      </div>
-                    )}
-                    {categoryGroups.map((group) => (
-                      <div key={group.letter}>
-                        <div
-                          ref={(el) => {
-                            if (el)
-                              letterHeaderRefs.current.set(group.letter, el);
-                            else letterHeaderRefs.current.delete(group.letter);
-                          }}
-                          className="sticky top-0 z-10 -mx-1 border-b border-border/30 bg-background/95 px-2 py-1 text-[10px] font-bold tracking-wide text-muted-foreground/60 backdrop-blur-sm dark:border-white/[0.05] dark:bg-black/70"
-                        >
-                          {group.letter}
-                        </div>
-                        {group.categories.map((category) => (
-                          <button
-                            key={category.name}
-                            type="button"
-                            onClick={() => onCategorySelect(category.name)}
-                            className={cn(
-                              "group flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] transition-all duration-200 hover:translate-x-0.5 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-                              selectedCategory === category.name &&
-                                !showFavorites &&
-                                "bg-gradient-to-r from-accent/80 to-accent/40 text-accent-foreground font-medium shadow-sm shadow-black/[0.03] dark:from-white/[0.08] dark:to-white/[0.04] dark:shadow-black/20",
-                            )}
-                          >
-                            <span className="flex min-w-0 items-center gap-2">
-                              <span
-                                aria-hidden="true"
-                                className={cn(
-                                  "h-1.5 w-1.5 shrink-0 rounded-full opacity-60 transition-opacity group-hover:opacity-100",
-                                  categoryAccentClass(category.name),
-                                )}
-                              />
-                              <span className="truncate">{category.name}</span>
-                            </span>
-                            <span className="ml-2 shrink-0 rounded-full bg-muted/50 px-1.5 font-mono text-[10px] text-muted-foreground/50 transition-colors group-hover:bg-muted/80 group-hover:text-muted-foreground/70 dark:bg-white/[0.03] dark:group-hover:bg-white/[0.06]">
-                              {category.count}
-                            </span>
-                          </button>
-                        ))}
-                      </div>
-                    ))}
-                  </div>
-                  {categoryGroups.length > 0 && (
-                    <AlphabetRail
-                      availableLetters={availableLetters}
-                      onJump={jumpToLetter}
-                      className="sticky top-2 ml-1 shrink-0 rounded-full bg-muted/40 dark:bg-white/[0.03]"
-                    />
-                  )}
-                </div>
               </div>
+              <div className="relative mb-2 flex items-center">
+                <Search className="pointer-events-none absolute left-2.5 h-3.5 w-3.5 text-muted-foreground/40" />
+                <input
+                  type="text"
+                  value={categorySearch}
+                  onChange={(e) => setCategorySearch(e.target.value)}
+                  onFocus={() => setOpenSection(null)}
+                  placeholder="Search categories"
+                  aria-label="Search categories"
+                  className="w-full rounded-lg border border-border/50 bg-muted/30 py-1.5 pr-7 pl-8 text-xs text-foreground placeholder:text-muted-foreground/50 outline-none transition-shadow duration-200 focus:border-foreground/30 focus:bg-background focus:shadow-[0_0_0_3px_rgba(0,0,0,0.05)] dark:border-white/[0.06] dark:bg-white/[0.02] dark:focus:border-white/20 dark:focus:shadow-[0_0_0_3px_rgba(255,255,255,0.06)]"
+                />
+                {categorySearch && (
+                  <button
+                    type="button"
+                    onClick={() => setCategorySearch("")}
+                    aria-label="Clear category search"
+                    className="absolute right-2 flex h-4 w-4 items-center justify-center rounded-full text-muted-foreground/50 transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  >
+                    <X className="h-3 w-3" />
+                  </button>
+                )}
+              </div>
+              {categorySearch && (
+                <p role="status" aria-live="polite" className="sr-only">
+                  {filteredCategories.length === 0
+                    ? `No categories match ${categorySearch}`
+                    : `${filteredCategories.length} ${filteredCategories.length === 1 ? "category" : "categories"} found`}
+                </p>
+              )}
+              <div className="flex items-start">
+                <div className="flex min-w-0 flex-1 flex-col gap-px">
+                  {categoryGroups.length === 0 && (
+                    <div className="flex flex-col items-center gap-2 px-2 py-6 text-center">
+                      <Search className="h-4 w-4 text-muted-foreground/30" />
+                      <p className="text-[12px] text-muted-foreground/50">
+                        No categories match &ldquo;{categorySearch}&rdquo;
+                      </p>
+                      <button
+                        type="button"
+                        onClick={() => setCategorySearch("")}
+                        className="text-[11px] font-medium text-orange-600 hover:underline dark:text-orange-400"
+                      >
+                        Clear search
+                      </button>
+                    </div>
+                  )}
+                  {categoryGroups.map((group) => (
+                    <div key={group.letter}>
+                      <div
+                        ref={(el) => {
+                          if (el) letterHeaderRefs.current.set(group.letter, el);
+                          else letterHeaderRefs.current.delete(group.letter);
+                        }}
+                        className="sticky top-0 z-10 -mx-1 border-b border-border/30 bg-background/95 px-2 py-1 text-[10px] font-bold tracking-wide text-muted-foreground/60 backdrop-blur-sm dark:border-white/[0.05] dark:bg-black/70"
+                      >
+                        {group.letter}
+                      </div>
+                      {group.categories.map((category) => (
+                        <button
+                          key={category.name}
+                          type="button"
+                          onClick={() => onCategorySelect(category.name)}
+                          className={cn(
+                            "group flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] transition-all duration-200 hover:translate-x-0.5 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                            selectedCategory === category.name &&
+                              !showFavorites &&
+                              "bg-gradient-to-r from-accent/80 to-accent/40 text-accent-foreground font-medium shadow-sm shadow-black/[0.03] dark:from-white/[0.08] dark:to-white/[0.04] dark:shadow-black/20"
+                          )}
+                        >
+                          <span className="flex min-w-0 items-center gap-2">
+                            <span
+                              aria-hidden="true"
+                              className={cn(
+                                "h-1.5 w-1.5 shrink-0 rounded-full opacity-60 transition-opacity group-hover:opacity-100",
+                                categoryAccentClass(category.name),
+                              )}
+                            />
+                            <span className="truncate">{category.name}</span>
+                          </span>
+                          <span className="ml-2 shrink-0 rounded-full bg-muted/50 px-1.5 font-mono text-[10px] text-muted-foreground/50 transition-colors group-hover:bg-muted/80 group-hover:text-muted-foreground/70 dark:bg-white/[0.03] dark:group-hover:bg-white/[0.06]">
+                            {category.count}
+                          </span>
+                        </button>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+                {categoryGroups.length > 0 && (
+                  <AlphabetRail
+                    availableLetters={availableLetters}
+                    onJump={jumpToLetter}
+                    className="sticky top-2 ml-1 shrink-0 rounded-full bg-muted/40 dark:bg-white/[0.03]"
+                  />
+                )}
+              </div>
+            </div>
             </ScrollArea>
           </div>
         )}

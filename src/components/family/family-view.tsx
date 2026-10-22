@@ -52,9 +52,7 @@ function dotStyle(hex: string | undefined): CSSProperties | undefined {
 }
 
 function toneFor(icon: IconEntry): IconTone {
-  return (
-    (iconTones as Record<string, IconTone>)[icon.slug] ?? iconTone(icon.hex)
-  );
+  return (iconTones as Record<string, IconTone>)[icon.slug] ?? iconTone(icon.hex);
 }
 
 /**
@@ -90,30 +88,15 @@ function Logo({
     >
       {swap ? (
         <>
-          <img
-            src={lightSrc}
-            alt=""
-            loading="lazy"
-            className={cn(imgBase, "dark:hidden")}
-          />
-          <img
-            src={darkSrc}
-            alt=""
-            loading="lazy"
-            className={cn(imgBase, "hidden dark:block")}
-          />
+          <img src={lightSrc} alt="" loading="lazy" className={cn(imgBase, "dark:hidden")} />
+          <img src={darkSrc} alt="" loading="lazy" className={cn(imgBase, "hidden dark:block")} />
         </>
       ) : (
         <img
           src={icon.variants.default}
           alt=""
           loading="lazy"
-          className={cn(
-            imgBase,
-            chip &&
-              tone === "light" &&
-              "drop-shadow-[0_1px_5px_rgba(0,0,0,0.5)]",
-          )}
+          className={cn(imgBase, chip && tone === "light" && "drop-shadow-[0_1px_5px_rgba(0,0,0,0.5)]")}
         />
       )}
     </span>
@@ -150,26 +133,8 @@ function variantTotal(icon: IconEntry): number {
   return Object.values(icon.variants).filter(Boolean).length;
 }
 
-function Hero({
-  parent,
-  tagline,
-  accents,
-  showcase,
-  total,
-  categoryCount,
-  variantCount,
-  extra,
-}: Pick<
-  FamilyViewProps,
-  | "parent"
-  | "tagline"
-  | "accents"
-  | "showcase"
-  | "total"
-  | "categoryCount"
-  | "variantCount"
-  | "extra"
->) {
+function Hero({ parent, tagline, accents, showcase, total, categoryCount, variantCount, extra }: Pick<FamilyViewProps,
+  "parent" | "tagline" | "accents" | "showcase" | "total" | "categoryCount" | "variantCount" | "extra">) {
   const siteHost = hostOf(parent.url);
   const githubHref =
     parent.links?.github && hostOf(parent.links.github)?.endsWith("github.com")
@@ -191,31 +156,17 @@ function Hero({
       />
       <div className="relative grid gap-6 p-5 sm:gap-8 sm:p-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
         <div className="min-w-0">
-          <span
-            style={enter(0)}
-            className="animate-fade-in-up inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/70 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-muted-foreground backdrop-blur"
-          >
-            <span
-              className="h-1.5 w-1.5 rounded-full bg-[var(--fam-a)]"
-              aria-hidden
-            />
+          <span style={enter(0)} className="animate-fade-in-up inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/70 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-muted-foreground backdrop-blur">
+            <span className="h-1.5 w-1.5 rounded-full bg-[var(--fam-a)]" aria-hidden />
             {parent.title} · Brand family
           </span>
-          <h1
-            style={enter(2)}
-            className="animate-fade-in-up mt-4 bg-gradient-to-br from-foreground via-foreground/85 to-[color-mix(in_oklch,var(--fam-a)_70%,var(--foreground))] bg-clip-text text-3xl font-semibold leading-[1.1] tracking-tight text-transparent sm:text-4xl lg:text-5xl"
-          >
+          <h1 style={enter(2)} className="animate-fade-in-up mt-4 bg-gradient-to-br from-foreground via-foreground/85 to-[color-mix(in_oklch,var(--fam-a)_70%,var(--foreground))] bg-clip-text text-3xl font-semibold leading-[1.1] tracking-tight text-transparent sm:text-4xl lg:text-5xl">
             {tagline}
           </h1>
-          <dl
-            style={enter(4)}
-            className="animate-fade-in-up mt-5 flex flex-wrap gap-x-6 gap-y-1 sm:mt-6 sm:gap-x-8"
-          >
+          <dl style={enter(4)} className="animate-fade-in-up mt-5 flex flex-wrap gap-x-6 gap-y-1 sm:mt-6 sm:gap-x-8">
             {stats.map((s) => (
               <div key={s.label} className="flex items-baseline gap-2">
-                <dd className="text-2xl font-semibold tabular-nums text-foreground/90">
-                  {s.value}
-                </dd>
+                <dd className="text-2xl font-semibold tabular-nums text-foreground/90">{s.value}</dd>
                 <dt className="text-sm text-muted-foreground">{s.label}</dt>
               </div>
             ))}
@@ -228,17 +179,8 @@ function Hero({
                 <ArrowUpRight className="h-3 w-3 opacity-50" />
               </Link>
               {extra && (
-                <Link
-                  href={extra.href}
-                  className={`${PILL} text-muted-foreground hover:text-foreground`}
-                >
-                  {extra.icon && (
-                    <img
-                      src={extra.icon}
-                      alt=""
-                      className="h-4 w-4 object-contain"
-                    />
-                  )}
+                <Link href={extra.href} className={`${PILL} text-muted-foreground hover:text-foreground`}>
+                  {extra.icon && <img src={extra.icon} alt="" className="h-4 w-4 object-contain" />}
                   {extra.label}
                   <ArrowUpRight className="h-3 w-3 opacity-50" />
                 </Link>
@@ -270,13 +212,7 @@ function Hero({
                   rel="noopener noreferrer"
                   className={PILL_QUIET}
                 >
-                  <img
-                    src="/icons/github/mono.svg"
-                    alt=""
-                    width={16}
-                    height={16}
-                    className="h-4 w-4 dark:invert"
-                  />
+                  <img src="/icons/github/mono.svg" alt="" width={16} height={16} className="h-4 w-4 dark:invert" />
                   GitHub
                   <ArrowUpRight className="h-3 w-3 opacity-50" />
                 </a>
@@ -306,36 +242,23 @@ function Hero({
         </div>
 
         {showcase.length > 0 && (
-          <div
-            style={enter(3)}
-            className="animate-fade-in-up rounded-3xl border border-border/60 bg-background/70 p-4 shadow-xl backdrop-blur sm:p-5"
-          >
+          <div style={enter(3)} className="animate-fade-in-up rounded-3xl border border-border/60 bg-background/70 p-4 shadow-xl backdrop-blur sm:p-5">
             <div className="mb-4 flex items-center justify-between text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
               <span>Flagships</span>
-              <Link
-                href={`/icon/${parent.slug}`}
-                className="inline-flex items-center gap-1 hover:text-foreground"
-              >
+              <Link href={`/icon/${parent.slug}`} className="inline-flex items-center gap-1 hover:text-foreground">
                 Open <ArrowUpRight className="h-3 w-3" />
               </Link>
             </div>
             <ul className="grid grid-cols-4 gap-2 sm:gap-3">
               {showcase.slice(0, 4).map((icon, i) => (
-                <li
-                  key={icon.slug}
-                  style={enter(i, 300, 70, 4)}
-                  className="animate-float-in"
-                >
+                <li key={icon.slug} style={enter(i, 300, 70, 4)} className="animate-float-in">
                   <Link
                     href={`/icon/${icon.slug}`}
                     prefetch={false}
                     title={icon.title}
                     className="block aspect-square transition-transform hover:scale-110"
                   >
-                    <Logo
-                      icon={icon}
-                      className="h-full w-full rounded-2xl p-2"
-                    />
+                    <Logo icon={icon} className="h-full w-full rounded-2xl p-2" />
                   </Link>
                 </li>
               ))}
@@ -361,12 +284,9 @@ function Tile({ icon, index }: { icon: IconEntry; index: number }) {
         />
         <span className="mt-2 flex items-center justify-between gap-2 px-1">
           <span className="min-w-0">
-            <span className="block truncate text-[13px] font-medium text-foreground/90">
-              {icon.title}
-            </span>
+            <span className="block truncate text-[13px] font-medium text-foreground/90">{icon.title}</span>
             <span className="block truncate text-[11px] text-muted-foreground">
-              {icon.categories[0]} · {variantTotal(icon)}{" "}
-              {variantTotal(icon) === 1 ? "variant" : "variants"}
+              {icon.categories[0]} · {variantTotal(icon)} {variantTotal(icon) === 1 ? "variant" : "variants"}
             </span>
           </span>
           <span
@@ -380,17 +300,9 @@ function Tile({ icon, index }: { icon: IconEntry; index: number }) {
   );
 }
 
-function TileGrid({
-  icons,
-  className,
-}: {
-  icons: IconEntry[];
-  className?: string;
-}) {
+function TileGrid({ icons, className }: { icons: IconEntry[]; className?: string }) {
   return (
-    <ul
-      className={`grid grid-cols-2 gap-1 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 ${className ?? ""}`}
-    >
+    <ul className={`grid grid-cols-2 gap-1 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 ${className ?? ""}`}>
       {icons.map((icon, i) => (
         <Tile key={icon.slug} icon={icon} index={i} />
       ))}
@@ -402,10 +314,7 @@ function MoreFamilies({ others }: { others: OtherFamily[] }) {
   if (others.length === 0) return null;
   return (
     <section aria-labelledby="more-families" className="mt-16">
-      <h2
-        id="more-families"
-        className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground"
-      >
+      <h2 id="more-families" className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
         More brand families
       </h2>
       <ul className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -420,12 +329,8 @@ function MoreFamilies({ others }: { others: OtherFamily[] }) {
                 className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_120%_at_0%_0%,color-mix(in_oklch,var(--fam-a)_16%,transparent),transparent_70%)]"
               />
               <span className="relative min-w-0">
-                <span className="block truncate text-sm font-semibold">
-                  {f.title}
-                </span>
-                <span className="block text-[11px] text-muted-foreground">
-                  {f.count} logos
-                </span>
+                <span className="block truncate text-sm font-semibold">{f.title}</span>
+                <span className="block text-[11px] text-muted-foreground">{f.count} logos</span>
               </span>
               <span className="relative flex items-center">
                 {f.logos.map((src, i) => (
@@ -434,11 +339,7 @@ function MoreFamilies({ others }: { others: OtherFamily[] }) {
                     className="-ml-2 flex h-10 w-10 items-center justify-center rounded-xl border border-border/70 bg-background p-1.5 shadow-sm first:ml-0"
                     style={{ zIndex: f.logos.length - i }}
                   >
-                    <img
-                      src={src}
-                      alt=""
-                      className="h-full w-full object-contain"
-                    />
+                    <img src={src} alt="" className="h-full w-full object-contain" />
                   </span>
                 ))}
               </span>
@@ -454,22 +355,12 @@ export function FamilyView(props: FamilyViewProps) {
   const { parent, sections, others, featured } = props;
   // Featured products lead the full set so the page opens on what people
   // look for first; the rest follow in their groups.
-  // ⚡ Bolt: Use a single-pass loop instead of `new Set(array.map(...))` to
-  // avoid allocating intermediate arrays and reduce garbage collection pressure.
-  const featuredSlugs = new Set<string>();
-  for (const f of featured) {
-    featuredSlugs.add(f.slug);
-  }
+  const featuredSlugs = new Set(featured.map((f) => f.slug));
   const grouped = sections
-    .map((s) => ({
-      ...s,
-      icons: s.icons.filter((i) => !featuredSlugs.has(i.slug)),
-    }))
+    .map((s) => ({ ...s, icons: s.icons.filter((i) => !featuredSlugs.has(i.slug)) }))
     .filter((s) => s.icons.length > 0);
   const lead: FamilySection | null =
-    featured.length > 0
-      ? { title: "Flagship products", category: null, icons: featured }
-      : null;
+    featured.length > 0 ? { title: "Flagship products", category: null, icons: featured } : null;
   const all = lead ? [lead, ...grouped] : grouped;
 
   return (
@@ -479,9 +370,7 @@ export function FamilyView(props: FamilyViewProps) {
       <div className="mt-8 flex flex-wrap items-end justify-between gap-3 sm:mt-10">
         <h2 className="text-xl font-semibold tracking-tight text-foreground/80">
           The full set
-          <span className="ml-3 text-sm font-normal text-muted-foreground">
-            {props.total} icons
-          </span>
+          <span className="ml-3 text-sm font-normal text-muted-foreground">{props.total} icons</span>
         </h2>
         <Link
           href={`/icon/${parent.slug}`}
@@ -493,50 +382,28 @@ export function FamilyView(props: FamilyViewProps) {
       </div>
 
       {all.length > 1 && (
-        <nav
-          aria-label="Jump to a group"
-          style={enter(8)}
-          className="animate-fade-in-up mt-5 flex flex-wrap gap-2"
-        >
+        <nav aria-label="Jump to a group" style={enter(8)} className="animate-fade-in-up mt-5 flex flex-wrap gap-2">
           {all.map((s) => (
             <a
               key={s.title}
               href={`#${slugId(s.title)}`}
               className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
             >
-              <span
-                className="h-2 w-2 rounded-full bg-[var(--fam-a)]"
-                aria-hidden
-              />
+              <span className="h-2 w-2 rounded-full bg-[var(--fam-a)]" aria-hidden />
               {s.title}
-              <span className="font-mono text-[10px] opacity-60">
-                {s.icons.length}
-              </span>
+              <span className="font-mono text-[10px] opacity-60">{s.icons.length}</span>
             </a>
           ))}
         </nav>
       )}
 
-      <div
-        className="mt-8 space-y-12"
-        style={accentStyle(props.accents[0], props.accents[1])}
-      >
+      <div className="mt-8 space-y-12" style={accentStyle(props.accents[0], props.accents[1])}>
         {all.map((section) => (
-          <section
-            key={section.title}
-            id={slugId(section.title)}
-            aria-labelledby={`${slugId(section.title)}-h`}
-            className="scroll-mt-24"
-          >
+          <section key={section.title} id={slugId(section.title)} aria-labelledby={`${slugId(section.title)}-h`} className="scroll-mt-24">
             <div className="mb-2 flex items-center justify-between px-1">
-              <h3
-                id={`${slugId(section.title)}-h`}
-                className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground"
-              >
+              <h3 id={`${slugId(section.title)}-h`} className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
                 {section.title}
-                <span className="ml-2 text-xs font-normal text-muted-foreground">
-                  {section.icons.length}
-                </span>
+                <span className="ml-2 text-xs font-normal text-muted-foreground">{section.icons.length}</span>
               </h3>
               {section.category && (
                 <Link
@@ -548,13 +415,7 @@ export function FamilyView(props: FamilyViewProps) {
                 </Link>
               )}
             </div>
-            <TileGrid
-              icons={
-                section.icons.length > COLLAPSE_ABOVE
-                  ? section.icons.slice(0, VISIBLE_TILES)
-                  : section.icons
-              }
-            />
+            <TileGrid icons={section.icons.length > COLLAPSE_ABOVE ? section.icons.slice(0, VISIBLE_TILES) : section.icons} />
             {section.icons.length > COLLAPSE_ABOVE && (
               <details className="group/more mt-2">
                 <summary className="ml-1 inline-flex cursor-pointer list-none items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground shadow-sm transition-colors hover:bg-accent hover:text-foreground group-open/more:hidden [&::-webkit-details-marker]:hidden">
