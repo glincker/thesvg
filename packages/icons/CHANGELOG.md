@@ -1,5 +1,19 @@
 # @thesvg/icons
 
+## 3.4.2
+
+### Patch Changes
+
+- [#1372](https://github.com/glincker/thesvg/pull/1372) [`7bfee9b`](https://github.com/glincker/thesvg/commit/7bfee9ba86f5adb00a76b2a6189cb1949fc7adb7) Thanks [@OmShiv](https://github.com/OmShiv)! - Ship every variant listed in icons.json
+  
+  The build rebuilt each variant's file name from its key
+  (`wordmarkLight` -> `wordmarkLight.svg`), but many files are named
+  differently (`wordmark-light.svg`, or `default` pointing at
+  `color.svg`). 253 variants were silently missing, for example
+  `anthropic` had no light or dark wordmark and `antgroup` had no
+  `default`. `google-workspace` was not published at all. Variants are now
+  read from their icons.json path.
+
 ## 3.4.1
 
 ### Patch Changes
