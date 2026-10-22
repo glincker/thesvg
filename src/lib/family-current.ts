@@ -14,10 +14,16 @@ const YEAR_SUFFIX = /^(.+)-(\d{4})$/;
 
 /** Slugs in `icons` that have a newer version also in `icons`. */
 export function supersededSlugs<T extends Versioned>(icons: T[]): Set<string> {
-  const present = new Set(icons.map((i) => i.slug));
+  // ⚡ Bolt: Use a single-pass loop instead of `new Set(array.map(...))` to
+  // avoid allocating intermediate arrays and reduce garbage collection pressure.
+  const present = new Set<string>();
+  for (const i of icons) {
+    present.add(i.slug);
+  }
   const old = new Set<string>();
   for (const icon of icons) {
-    if (icon.supersedes && present.has(icon.supersedes)) old.add(icon.supersedes);
+    if (icon.supersedes && present.has(icon.supersedes))
+      old.add(icon.supersedes);
     if (icon.supersededBy && present.has(icon.supersededBy)) old.add(icon.slug);
     const m = YEAR_SUFFIX.exec(icon.slug);
     if (m && present.has(m[1])) old.add(m[1]);
@@ -35,7 +41,10 @@ export function currentOnly<T extends Versioned>(icons: T[]): T[] {
  * The slug to show for a flagship: its year-suffixed refresh when one
  * exists (gmail becomes gmail-2026), otherwise the slug itself.
  */
-export function preferCurrentSlug(slug: string, has: (s: string) => boolean): string {
+export function preferCurrentSlug(
+  slug: string,
+  has: (s: string) => boolean,
+): string {
   const refreshed = `${slug}-2026`;
   return has(refreshed) ? refreshed : slug;
 }
