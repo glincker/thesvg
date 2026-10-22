@@ -3504,12 +3504,8 @@
     "hex": "000000",
     "categories": [
       "Crypto",
-      "Cloud",
-      "Community",
-      "Open Source",
       "Finance",
-      "General",
-      "Helpdesk & CRM"
+      "Open Source"
     ],
     "variants": {
       "default": "/icons/altumptic/default.svg"
@@ -41420,12 +41416,8 @@
     "aliases": [],
     "hex": "2B2D5C",
     "categories": [
-      "Agency",
-      "Software",
-      "E-commerce",
       "Marketing",
       "Analytics",
-      "Privacy",
       "Developer Tools"
     ],
     "variants": {
@@ -43599,21 +43591,6 @@
     "url": "",
     "collection": "brands",
     "dateAdded": "2026-05-05"
-  },
-  {
-    "slug": "carbonello",
-    "title": "Carbonello",
-    "aliases": [],
-    "hex": "000000",
-    "categories": [
-      "Software"
-    ],
-    "variants": {
-      "default": "/icons/carbonello/default.svg"
-    },
-    "license": "MPL-2.0",
-    "dateAdded": "2026-10-21",
-    "collection": "brands"
   },
   {
     "slug": "cardano",
@@ -93554,6 +93531,27 @@
     "collection": "brands",
     "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
     "family": "microsoft"
+  },
+  {
+    "slug": "microsoft-copilot-legacy",
+    "title": "Microsoft Copilot (legacy)",
+    "aliases": [],
+    "hex": "0736C4",
+    "categories": [
+      "AI",
+      "Microsoft"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-copilot-legacy/default.svg",
+      "mono": "/icons/microsoft-copilot-legacy/mono.svg"
+    },
+    "license": "Trademark of Microsoft Corporation. Used for identification under nominative fair use.",
+    "url": "https://copilot.microsoft.com/",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-10-21",
+    "collection": "brands",
+    "family": "microsoft",
+    "supersededBy": "microsoft-copilot"
   },
   {
     "slug": "microsoft-defender",
