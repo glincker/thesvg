@@ -24,10 +24,15 @@ export function groupCategoriesByLetter(
       groups.set(letter, [category]);
     }
   }
-  return ALPHABET.filter((letter) => groups.has(letter)).map((letter) => ({
-    letter,
-    categories: groups.get(letter)!,
-  }));
+  // ⚡ Bolt: Single-pass for loop avoids redundant intermediate array allocations
+  // from chained .filter().map().
+  const result: CategoryGroup[] = [];
+  for (let i = 0; i < ALPHABET.length; i++) {
+    const letter = ALPHABET[i];
+    const bucket = groups.get(letter);
+    if (bucket) result.push({ letter, categories: bucket });
+  }
+  return result;
 }
 
 /** Fixed palette of Tailwind background classes (not inline styles) for the
@@ -62,5 +67,14 @@ export function filterCategories(
 ): { name: string; count: number }[] {
   const q = query.trim().toLowerCase();
   if (!q) return categories;
-  return categories.filter((category) => category.name.toLowerCase().includes(q));
+  // ⚡ Bolt: Fast-path length check prevents redundant string allocations via .toLowerCase()
+  // and using a single-pass loop prevents intermediate array allocations from .filter().
+  const result = [];
+  for (let i = 0; i < categories.length; i++) {
+    const category = categories[i];
+    if (category.name.length >= q.length && category.name.toLowerCase().includes(q)) {
+      result.push(category);
+    }
+  }
+  return result;
 }

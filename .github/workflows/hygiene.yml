@@ -3,13 +3,18 @@ name: Hygiene
 # Two independent jobs:
 #  - welcome: thanks first-time PR authors and points them at the README.
 #    Issues already get a tailored comment from triage-icon-issue.yml, so
-#    this only listens for pull_request to avoid a duplicate greeting.
+#    this only listens for pull requests to avoid a duplicate greeting.
+#    It uses pull_request_target because fork PRs (where first-time
+#    contributors come from) only get a read-only token under
+#    pull_request, so the comment POST fails with a 403. This is safe
+#    here: the job never checks out or runs PR code, it only posts a
+#    fixed message, same as labeler.yml.
 #  - stale-prs: generic 30-day-stale / +7-day-close sweep for PRs. Issues
 #    are intentionally out of scope here -- stale-icon-issues.yml already
 #    runs a more specific, triage-label-aware sweep for those.
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened]
   schedule:
     - cron: "0 3 * * *"
@@ -20,7 +25,7 @@ permissions: {}
 jobs:
   welcome:
     name: Welcome first-time contributors
-    if: github.event_name == 'pull_request' && github.event.pull_request.user.login != 'dependabot[bot]'
+    if: github.event_name == 'pull_request_target' && github.event.pull_request.user.login != 'dependabot[bot]'
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
@@ -29,7 +34,7 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           # issue_message is required by the action even though this workflow
-          # never triggers on `issues` events (only `pull_request`), so it's
+          # never triggers on `issues` events (only `pull_request_target`), so it's
           # never actually posted -- omitting it makes the action crash.
           issue_message: "Thanks for opening your first issue!"
           pr_message: |

@@ -79,6 +79,9 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2025-02-12 - Optimize Map.entries() iteration
 **Learning:** In the thesvg.org codebase, chaining `.entries().map(...)` over large `Map` objects (like icon category counts) forces V8 to allocate thousands of short-lived tuple arrays `[key, value]`, significantly increasing garbage collection pressure.
 **Action:** Replace `[...map.entries()].map(...)` with `Array.from(map, ([key, value]) => ...)` which uses the map's default iterator to populate the final array directly without allocating an intermediate array of tuples.
+## 2024-11-21 - [Array Method Chaining vs Single-Pass Loops]
+**Learning:** Chaining `.filter().map()` or using `.filter()` followed by multiple `.includes()` operations on array elements (like category names or alphabet letters) creates unnecessary intermediate array allocations.
+**Action:** When working with core utility functions that filter or group arrays (`filterCategories`, `groupCategoriesByLetter`), replace chained methods with a single-pass `for` loop and implement fast-path checks (like `string.length` comparisons) before allocating strings via `.toLowerCase()`. This minimizes execution cycles and garbage collection pressure without significantly reducing readability.
 ## 2025-05-18 - Replacing Set initialization from mapped arrays with single-pass loops
 **Learning:** Initializing Sets using `new Set(array.map(...))` creates an intermediate array, which increases memory allocation and triggers garbage collection. This is an explicit anti-pattern in this project, similar to initializing Maps with `new Map(array.map(...))`.
 **Action:** Always use an inline initialization function with a single-pass `for` loop to populate Sets, avoiding intermediate object allocations.
