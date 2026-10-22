@@ -226,7 +226,6 @@ function submitForm(action: string, fields: Record<string, string>): void {
   form.remove();
 }
 
-function buildPenHtml(svg: string, title: string): string {
 export function buildPenHtml(svg: string, title: string): string {
   const safeTitleHtml = title
     .replace(/&/g, "&amp;")
