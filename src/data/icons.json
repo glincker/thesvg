@@ -102130,7 +102130,8 @@
       "Payment"
     ],
     "variants": {
-      "default": "/icons/oddinpay/default.svg"
+      "default": "/icons/oddinpay/default.svg",
+      "mono": "/icons/oddinpay/mono.svg"
     },
     "license": "CC-BY-ND-4.0",
     "url": "https://www.oddinpay.com",
