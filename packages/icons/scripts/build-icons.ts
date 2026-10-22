@@ -30,8 +30,8 @@ import {
   generateEsmBarrel,
   generateTypesDeclaration,
   type RawIcon,
-  type RawIconVariants,
 } from "./lib/codegen.ts";
+import { resolveSvgs } from "./lib/variants.ts";
 
 // ---------------------------------------------------------------------------
 // Paths
@@ -45,40 +45,20 @@ const PKG_ROOT = resolve(__dirname, "..");
 /** Root of the thesvg monorepo */
 const REPO_ROOT = resolve(PKG_ROOT, "../..");
 const ICONS_JSON = join(REPO_ROOT, "src/data/icons.json");
-const ICONS_PUBLIC = join(REPO_ROOT, "public/icons");
 const DIST = join(PKG_ROOT, "dist");
 
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
 
-/** Read an SVG file from the public directory. Returns empty string on miss. */
-function readSvg(slug: string, variant: string): string {
-  // The JSON paths look like "/icons/{slug}/{variant}.svg" — strip the leading "/"
-  // and resolve against the REPO_ROOT/public directory.
-  const filePath = join(ICONS_PUBLIC, slug, `${variant}.svg`);
+/**
+ * Read an SVG by its icons.json-style public path ("/icons/{slug}/{file}.svg").
+ * Returns empty string on miss.
+ */
+function readPublicSvg(publicPath: string): string {
+  const filePath = join(REPO_ROOT, "public", publicPath.replace(/^\//, ""));
   if (!existsSync(filePath)) return "";
   return readFileSync(filePath, "utf8").trim();
-}
-
-/**
- * Resolve the "primary" SVG for an icon.
- * Preference order: default → color → first available variant.
- */
-function primarySvg(slug: string, variants: RawIconVariants): string {
-  const order = ["default", "color", "mono", "light", "dark", "wordmark"];
-  for (const v of order) {
-    if (v in variants) {
-      const content = readSvg(slug, v);
-      if (content) return content;
-    }
-  }
-  // Fall back to whatever variant is first in the object
-  for (const v of Object.keys(variants)) {
-    const content = readSvg(slug, v);
-    if (content) return content;
-  }
-  return "";
 }
 
 // ---------------------------------------------------------------------------
@@ -96,14 +76,9 @@ function main(): void {
   let skipped = 0;
 
   for (const icon of rawIcons) {
-    const allVariants: Record<string, string> = {};
-    for (const variantKey of Object.keys(icon.variants)) {
-      const content = readSvg(icon.slug, variantKey);
-      if (content) allVariants[variantKey] = content;
-    }
+    const { variants: allVariants, primary } = resolveSvgs(icon, readPublicSvg);
 
     // Skip icons with no SVG data - don't ship empty modules
-    const primary = primarySvg(icon.slug, icon.variants);
     if (!primary) {
       skipped++;
       continue;

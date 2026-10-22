@@ -70,9 +70,18 @@ interface RawIcon {
 // SVG reading & parsing
 // ---------------------------------------------------------------------------
 
-/** Read an SVG file from the public directory. Returns empty string on miss. */
-function readSvg(slug: string, variant: string): string {
-  const filePath = join(ICONS_PUBLIC, slug, `${variant}.svg`);
+/**
+ * Read an SVG file given its icons.json public path (e.g.
+ * "/icons/apple-music/wordmark-light.svg"). Returns empty string on miss.
+ *
+ * Variant file names aren't always the key (wordmarkLight ->
+ * wordmark-light.svg, default -> color.svg, or a dated folder), so the path
+ * must come from icons.json rather than being rebuilt from slug + variant.
+ * Only /icons/<folder>/<file>.svg paths are read.
+ */
+function readSvg(publicPath: string): string {
+  if (!/^\/icons\/(?!\.\.?\/)[\w.-]+\/(?!\.\.?\/)[\w.-]+\.svg$/.test(publicPath)) return "";
+  const filePath = join(ICONS_PUBLIC, publicPath.replace(/^\/icons\//, ""));
   if (!existsSync(filePath)) return "";
   return readFileSync(filePath, "utf8").trim();
 }
@@ -81,16 +90,18 @@ function readSvg(slug: string, variant: string): string {
  * Resolve the "primary" SVG for an icon.
  * Preference order: default -> color -> mono -> light -> dark -> wordmark -> first available.
  */
-function primarySvg(slug: string, variants: RawIconVariants): string {
+function primarySvg(variants: RawIconVariants): string {
   const order = ["default", "color", "mono", "light", "dark", "wordmark"];
   for (const v of order) {
-    if (v in variants) {
-      const content = readSvg(slug, v);
+    const path = variants[v];
+    if (path) {
+      const content = readSvg(path);
       if (content) return content;
     }
   }
-  for (const v of Object.keys(variants)) {
-    const content = readSvg(slug, v);
+  for (const path of Object.values(variants)) {
+    if (!path) continue;
+    const content = readSvg(path);
     if (content) return content;
   }
   return "";
@@ -309,7 +320,7 @@ function elementsToH(elements: SvgElement[], indent: string = "        "): strin
 // ---------------------------------------------------------------------------
 
 function generateEsmComponent(icon: RawIcon): string {
-  const svgContent = primarySvg(icon.slug, icon.variants);
+  const svgContent = primarySvg(icon.variants);
   const componentName = toPascalCase(icon.slug);
 
   if (!svgContent) {
@@ -365,7 +376,7 @@ function generateEsmComponent(icon: RawIcon): string {
 }
 
 function generateCjsComponent(icon: RawIcon): string {
-  const svgContent = primarySvg(icon.slug, icon.variants);
+  const svgContent = primarySvg(icon.variants);
   const componentName = toPascalCase(icon.slug);
 
   if (!svgContent) {
@@ -506,7 +517,7 @@ function main(): void {
     writeFileSync(join(DIST, `${icon.slug}.cjs`), generateCjsComponent(icon) + "\n");
     writeFileSync(join(DIST, `${icon.slug}.d.ts`), generateDtsComponent(icon) + "\n");
 
-    const svgExists = Boolean(primarySvg(icon.slug, icon.variants));
+    const svgExists = Boolean(primarySvg(icon.variants));
     if (!svgExists) skipped++;
 
     entries.push({ slug: icon.slug, componentName });
