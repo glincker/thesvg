@@ -93556,6 +93556,27 @@
     "family": "microsoft"
   },
   {
+    "slug": "microsoft-copilot-legacy",
+    "title": "Microsoft Copilot (legacy)",
+    "aliases": [],
+    "hex": "0736C4",
+    "categories": [
+      "AI",
+      "Microsoft"
+    ],
+    "variants": {
+      "default": "/icons/microsoft-copilot-legacy/default.svg",
+      "mono": "/icons/microsoft-copilot-legacy/mono.svg"
+    },
+    "license": "Trademark of Microsoft Corporation. Used for identification under nominative fair use.",
+    "url": "https://copilot.microsoft.com/",
+    "guidelines": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "dateAdded": "2026-10-21",
+    "collection": "brands",
+    "family": "microsoft",
+    "supersededBy": "microsoft-copilot"
+  },
+  {
     "slug": "microsoft-defender",
     "title": "Microsoft Defender",
     "aliases": [],
