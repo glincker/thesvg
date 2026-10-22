@@ -139,7 +139,10 @@ interface FamilyLine {
 
 /** Brand families (parent icon plus current members), largest first. */
 function buildFamilies(icons: IconEntry[]): FamilyLine[] {
-  const bySlug = new Map(icons.map((i) => [i.slug, i]));
+  const bySlug = new Map<string, IconEntry>();
+  for (let i = 0; i < icons.length; i++) {
+    bySlug.set(icons[i].slug, icons[i]);
+  }
   const groups = new Map<string, IconEntry[]>();
   for (const icon of icons) {
     if (!icon.family) continue;

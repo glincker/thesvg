@@ -70335,6 +70335,28 @@
     "family": "google"
   },
   {
+    "slug": "google-business-profile",
+    "title": "Google Business Profile",
+    "aliases": [
+      "google-my-business",
+      "gmb"
+    ],
+    "hex": "4285F4",
+    "categories": [
+      "Google",
+      "Business",
+      "Social"
+    ],
+    "variants": {
+      "default": "/icons/google-business-profile/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.google.com/business/",
+    "dateAdded": "2026-10-18",
+    "collection": "brands",
+    "family": "google"
+  },
+  {
     "slug": "google-calendar",
     "title": "Google Calendar",
     "aliases": [],
@@ -92920,6 +92942,26 @@
     "license": "MIT",
     "url": "https://metamask.io/",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "metamcp",
+    "title": "MetaMCP",
+    "aliases": [],
+    "hex": "16A34A",
+    "categories": [
+      "AI",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/metamcp/default.svg",
+      "wordmark": "/icons/metamcp/wordmark.svg",
+      "wordmarkDark": "/icons/metamcp/wordmark-dark.svg"
+    },
+    "license": "MIT",
+    "url": "https://docs.metamcp.com",
+    "guidelines": "https://github.com/metatool-ai/metamcp/tree/main/docs/logo",
+    "dateAdded": "2026-10-18",
     "collection": "brands"
   },
   {
@@ -119359,6 +119401,23 @@
     "license": "CC0-1.0",
     "url": "https://www.scan.co.uk",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "scanfile",
+    "title": "Scanfile",
+    "aliases": [],
+    "hex": "264BBA",
+    "categories": [
+      "AI",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/scanfile/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://scanfile.online/",
+    "dateAdded": "2026-10-17",
     "collection": "brands"
   },
   {

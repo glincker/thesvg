@@ -42,14 +42,16 @@ jobs:
         run: |
           base="${{ github.event.pull_request.base.sha }}"
           changed=$(git diff --name-only --diff-filter=ACM "$base"...HEAD -- 'public/icons/**/*.svg' || true)
-          echo "changed<<EOF" >> $GITHUB_OUTPUT
-          echo "$changed" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+          {
+            echo "changed<<EOF"
+            echo "$changed"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
           if [ -z "$changed" ]; then
             echo "(no SVG changes to validate)"
           else
             echo "Changed SVGs:"
-            echo "$changed" | sed 's/^/  /'
+            while IFS= read -r line; do echo "  $line"; done <<< "$changed"
           fi
 
       - name: Validate each SVG
@@ -102,20 +104,37 @@ jobs:
             exit 1
           fi
 
+      - uses: actions/setup-node@v7
+        if: steps.diff.outputs.changed != ''
+        with:
+          # Node 22.18+ runs .ts files directly, no tsx install needed
+          node-version: "22"
+
+      - name: Icon quality gate (scripts/validate-icons.ts)
+        if: steps.diff.outputs.changed != ''
+        env:
+          CHANGED: ${{ steps.diff.outputs.changed }}
+        run: |
+          # Mono variants must be monotone, no null/NaN attributes, no editor
+          # metadata, no duplicate ids, no empty paths, size limit (issue #1331)
+          printf '%s\n' "$CHANGED" | grep -v '^$' | xargs node scripts/validate-icons.ts
+
       - name: Compute added slugs (icons.json diff)
         id: jsondiff
         run: |
           base="${{ github.event.pull_request.base.sha }}"
           # Lines newly added in icons.json that look like "slug": "x" entries
           added=$(git diff "$base"...HEAD -- src/data/icons.json | grep -E '^\+\s+"slug":' | sed -E 's/.*"slug":\s*"([^"]+)".*/\1/' || true)
-          echo "added<<EOF" >> $GITHUB_OUTPUT
-          echo "$added" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+          {
+            echo "added<<EOF"
+            echo "$added"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
           if [ -z "$added" ]; then
             echo "(no new slugs in icons.json)"
           else
             echo "Newly added slugs:"
-            echo "$added" | sed 's/^/  /'
+            while IFS= read -r line; do echo "  $line"; done <<< "$added"
           fi
 
       - name: Validate icons.json structure
@@ -123,7 +142,7 @@ jobs:
           NEW_SLUGS: ${{ steps.jsondiff.outputs.added }}
         run: |
           set -e
-          node -e '
+          node - <<'NODE_SCRIPT'
             const fs = require("fs");
             const path = "src/data/icons.json";
             const raw = fs.readFileSync(path, "utf8");
@@ -161,4 +180,4 @@ jobs:
               process.exit(1);
             }
             console.log(`OK: ${data.length} entries, all valid`);
-          '
+          NODE_SCRIPT
