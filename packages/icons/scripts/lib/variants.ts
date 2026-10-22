@@ -19,6 +19,29 @@ const ICON_PATH = /^\/icons\/(?!\.\.?\/)[\w.-]+\/(?!\.\.?\/)[\w.-]+\.svg$/;
 /** Variants tried first when picking the SVG exported as `svg`. */
 const PRIMARY_ORDER = ["default", "color", "mono", "light", "dark", "wordmark"];
 
+/**
+ * Read `publicPath` with `read`, or return "" when it is missing or not an
+ * /icons/<folder>/<file>.svg path. Anything else (traversal, other file
+ * types) could inline files from outside the icon set into a package.
+ */
+export function readIconSvg(publicPath: string | undefined, read: SvgReader): string {
+  return publicPath && ICON_PATH.test(publicPath) ? read(publicPath) : "";
+}
+
+/**
+ * The SVG a package exports as an icon's main artwork: the first of
+ * default, color, mono, light, dark and wordmark that has a file, then any
+ * other variant in icons.json order. "" when no variant has a file.
+ */
+export function primarySvg(variants: Readonly<Record<string, string | undefined>>, read: SvgReader): string {
+  const keys = [...PRIMARY_ORDER.filter((key) => key in variants), ...Object.keys(variants)];
+  for (const key of keys) {
+    const svg = readIconSvg(variants[key], read);
+    if (svg) return svg;
+  }
+  return "";
+}
+
 export interface ResolvedSvgs {
   /** Every variant that has SVG content, keyed like icons.json. */
   variants: Record<string, string>;
@@ -36,15 +59,14 @@ export interface ResolvedSvgs {
  */
 export function resolveSvgs(icon: Pick<RawIcon, "variants">, read: SvgReader): ResolvedSvgs {
   const variants: Record<string, string> = {};
+  const byPath = new Map<string, string>();
   for (const [key, publicPath] of Object.entries(icon.variants)) {
-    // Anything else (traversal, other file types) could inline files from
-    // outside the icon set into the published package.
-    const content = publicPath && ICON_PATH.test(publicPath) ? read(publicPath) : "";
-    if (content) variants[key] = content;
+    const content = readIconSvg(publicPath, read);
+    if (!content || !publicPath) continue;
+    variants[key] = content;
+    byPath.set(publicPath, content);
   }
-
-  const keys = [...PRIMARY_ORDER.filter((key) => key in icon.variants), ...Object.keys(icon.variants)];
-  const primary = keys.map((key) => variants[key]).find(Boolean) ?? "";
-
+  // Pick from what was already read instead of reading the files again.
+  const primary = primarySvg(icon.variants, (publicPath) => byPath.get(publicPath) ?? "");
   return { variants, primary };
 }

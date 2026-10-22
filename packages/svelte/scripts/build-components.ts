@@ -17,9 +17,12 @@
  *     index.d.ts      Type barrel
  */
 
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+
+import { publicSvgReader } from "../../icons/scripts/lib/public-svg.ts";
+import { primarySvg } from "../../icons/scripts/lib/variants.ts";
 
 // ---------------------------------------------------------------------------
 // Paths
@@ -32,8 +35,9 @@ const __dirname = dirname(__filename);
 const PKG_ROOT = resolve(__dirname, "..");
 /** Root of the thesvg monorepo */
 const REPO_ROOT = resolve(PKG_ROOT, "../..");
+/** Reads icon SVGs by their icons.json path (shared with the other builders). */
+const readPublicSvg = publicSvgReader(join(REPO_ROOT, "public"));
 const ICONS_JSON = join(REPO_ROOT, "src/data/icons.json");
-const ICONS_PUBLIC = join(REPO_ROOT, "public/icons");
 const DIST = join(PKG_ROOT, "dist");
 
 // ---------------------------------------------------------------------------
@@ -67,43 +71,6 @@ interface RawIcon {
 // ---------------------------------------------------------------------------
 // SVG reading & parsing
 // ---------------------------------------------------------------------------
-
-/**
- * Read an SVG file given its icons.json public path (e.g.
- * "/icons/apple-music/wordmark-light.svg"). Returns empty string on miss.
- *
- * Variant file names aren't always the key (wordmarkLight ->
- * wordmark-light.svg, default -> color.svg, or a dated folder), so the path
- * must come from icons.json rather than being rebuilt from slug + variant.
- * Only /icons/<folder>/<file>.svg paths are read.
- */
-function readSvg(publicPath: string): string {
-  if (!/^\/icons\/(?!\.\.?\/)[\w.-]+\/(?!\.\.?\/)[\w.-]+\.svg$/.test(publicPath)) return "";
-  const filePath = join(ICONS_PUBLIC, publicPath.replace(/^\/icons\//, ""));
-  if (!existsSync(filePath)) return "";
-  return readFileSync(filePath, "utf8").trim();
-}
-
-/**
- * Resolve the "primary" SVG for an icon.
- * Preference order: default -> color -> mono -> light -> dark -> wordmark -> first available.
- */
-function primarySvg(variants: RawIconVariants): string {
-  const order = ["default", "color", "mono", "light", "dark", "wordmark"];
-  for (const v of order) {
-    const path = variants[v];
-    if (path) {
-      const content = readSvg(path);
-      if (content) return content;
-    }
-  }
-  for (const path of Object.values(variants)) {
-    if (!path) continue;
-    const content = readSvg(path);
-    if (content) return content;
-  }
-  return "";
-}
 
 // ---------------------------------------------------------------------------
 // SVG parsing helpers
@@ -153,7 +120,7 @@ function toPascalCase(slug: string): string {
 // ---------------------------------------------------------------------------
 
 function generateSvelteComponent(icon: RawIcon): string {
-  const svgContent = primarySvg(icon.variants);
+  const svgContent = primarySvg(icon.variants, readPublicSvg);
 
   if (!svgContent) {
     return [
@@ -244,7 +211,7 @@ function main(): void {
     // Write type declarations (*.svelte.d.ts so TS resolves types for .svelte imports)
     writeFileSync(join(DIST, `${icon.slug}.svelte.d.ts`), generateDtsComponent(icon) + "\n");
 
-    const svgExists = Boolean(primarySvg(icon.variants));
+    const svgExists = Boolean(primarySvg(icon.variants, readPublicSvg));
     if (!svgExists) skipped++;
 
     entries.push({ slug: icon.slug, componentName });

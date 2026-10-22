@@ -17,7 +17,7 @@
  *     index.d.ts     Type barrel
  */
 
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -31,6 +31,7 @@ import {
   generateTypesDeclaration,
   type RawIcon,
 } from "./lib/codegen.ts";
+import { publicSvgReader } from "./lib/public-svg.ts";
 import { resolveSvgs } from "./lib/variants.ts";
 
 // ---------------------------------------------------------------------------
@@ -51,15 +52,7 @@ const DIST = join(PKG_ROOT, "dist");
 // Helpers
 // ---------------------------------------------------------------------------
 
-/**
- * Read an SVG by its icons.json-style public path ("/icons/{slug}/{file}.svg").
- * Returns empty string on miss.
- */
-function readPublicSvg(publicPath: string): string {
-  const filePath = join(REPO_ROOT, "public", publicPath.replace(/^\//, ""));
-  if (!existsSync(filePath)) return "";
-  return readFileSync(filePath, "utf8").trim();
-}
+const readPublicSvg = publicSvgReader(join(REPO_ROOT, "public"));
 
 // ---------------------------------------------------------------------------
 // Main

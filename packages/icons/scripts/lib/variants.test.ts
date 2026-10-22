@@ -5,7 +5,7 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import type { RawIcon } from "./codegen.ts";
-import { resolveSvgs, type SvgReader } from "./variants.ts";
+import { primarySvg, readIconSvg, resolveSvgs, type SvgReader } from "./variants.ts";
 
 const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "../../../..");
 
@@ -112,4 +112,27 @@ test("never reads a variant path outside /icons/<folder>/<file>.svg", () => {
   const { variants } = resolveSvgs(icon, read);
   assert.deepEqual(Object.keys(variants), ["default"]);
   assert.deepEqual(requested, ["/icons/acme/default.svg"]);
+});
+
+test("readIconSvg reads only /icons/<folder>/<file>.svg paths", () => {
+  const read: SvgReader = () => "<svg/>";
+  assert.equal(readIconSvg("/icons/acme/wordmark-light.svg", read), "<svg/>");
+  for (const bad of [undefined, "", "/icons/../package.json", "/icons/acme/../../x.svg", "/og-image.png", "icons/acme/a.svg"]) {
+    assert.equal(readIconSvg(bad, read), "", `should refuse ${String(bad)}`);
+  }
+});
+
+test("primarySvg reads lazily in priority order and stops at the first file", () => {
+  const requested: string[] = [];
+  const files: Record<string, string> = { "/icons/acme/color.svg": "<svg>color</svg>", "/icons/acme/mono.svg": "<svg>mono</svg>" };
+  const read: SvgReader = (publicPath) => {
+    requested.push(publicPath);
+    return files[publicPath] ?? "";
+  };
+  const svg = primarySvg(
+    { mono: "/icons/acme/mono.svg", default: "/icons/acme/missing.svg", color: "/icons/acme/color.svg" },
+    read,
+  );
+  assert.equal(svg, "<svg>color</svg>");
+  assert.deepEqual(requested, ["/icons/acme/missing.svg", "/icons/acme/color.svg"]);
 });
