@@ -160,6 +160,8 @@ export function validateSvg(file: string, svg: string, bytes: number): Problem[]
   if (isMonoVariant(file)) {
     const paints = monoPaints(svg);
     if (paints.length) add("mono-not-mono", paints.slice(0, 4).join(", "));
+    // A gradient in a mono file is never single-color, even with identical stops.
+    if (/<(linear|radial)Gradient\b/i.test(svg)) add("mono-not-mono", "gradient in mono variant");
   }
   return out.filter((p) => !EXEMPT[p.rule]?.includes(p.file));
 }
