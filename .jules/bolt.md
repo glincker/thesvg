@@ -85,3 +85,7 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2025-05-18 - Replacing Set initialization from mapped arrays with single-pass loops
 **Learning:** Initializing Sets using `new Set(array.map(...))` creates an intermediate array, which increases memory allocation and triggers garbage collection. This is an explicit anti-pattern in this project, similar to initializing Maps with `new Map(array.map(...))`.
 **Action:** Always use an inline initialization function with a single-pass `for` loop to populate Sets, avoiding intermediate object allocations.
+
+## 2024-11-20 - Avoid N+1 mapping on full-dataset filters in server components
+**Learning:** Calling O(N) filter functions (`getIconsByCategory`) repeatedly in a loop mapping over a subset of categories creates O(C*N) computational complexity. This N+1 problem on the server adds significant overhead to Server Side Generation (e.g. going from ~2ms to ~200ms during static page generation).
+**Action:** Replace `categories.map(cat => dataset.filter(cat))` patterns with a single O(N) loop iterating over the dataset to group/bucket results into a Map.

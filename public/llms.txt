@@ -72,8 +72,34 @@ https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/{slug}/{variant}.s
 
 ## Categories
 
-141 categories including: Accessibility, Advertising, Agency, AI, AI Medical Scribe, Analytics, AntV, App Services, Architecture, Automation, Automotive, Autoscaling, Aviation, Azure Ecosystem, Azure Stack, Blockchain, Booking, Browser, Business, Canonical, Caravaning, Cloud, CMS, Communication, Community, Compiler, Compute, Config, Construction, Containers, Control Plane, Cost Management, Crypto, Customer Enablement, Customer Experience, and more.
+154 categories including: Accessibility, Advertising, Agency, AI, AI Medical Scribe, Analytics, AntV, App Services, Architecture, Automation, Automotive, Autoscaling, Aviation, Azure Ecosystem, Azure Stack, Backup, Blockchain, Booking, Bookmarks & RSS, Browser, Business, Canonical, Caravaning, Cloud, CMS, Communication, Community, Compiler, Compute, Config, Construction, Containers, Control Plane, Cost Management, Crypto, and more.
 
 ## Legal
 
 All brand icons are property of their respective owners. Provided for identification and development purposes under nominative fair use. See https://thesvg.org/legal and TRADEMARK.md.
+
+## Brand families
+
+Icons grouped by the company that owns them. Each family page lists every official logo of that brand, such as the whole Amazon, Google or Microsoft product line, with all variants. Index: https://thesvg.org/families. Machine-readable: https://thesvg.org/api/families.json
+
+- [Google](https://thesvg.org/family/google): 103 official logos
+- [Microsoft](https://thesvg.org/family/microsoft): 75 official logos
+- [Adobe](https://thesvg.org/family/adobe): 32 official logos
+- [Amazon](https://thesvg.org/family/amazon): 18 official logos
+- [Apple](https://thesvg.org/family/apple): 16 official logos
+- [JetBrains](https://thesvg.org/family/jetbrains): 16 official logos
+- [IBM](https://thesvg.org/family/ibm): 14 official logos
+- [Atlassian](https://thesvg.org/family/atlassian): 10 official logos
+- [Meta](https://thesvg.org/family/meta): 8 official logos
+- [Vercel](https://thesvg.org/family/vercel): 8 official logos
+- [ByteDance](https://thesvg.org/family/bytedance): 7 official logos
+- [Disney](https://thesvg.org/family/disney): 7 official logos
+- [Elastic](https://thesvg.org/family/elastic): 6 official logos
+- [Tencent](https://thesvg.org/family/tencent): 6 official logos
+- [Alibaba](https://thesvg.org/family/alibaba): 5 official logos
+- [Cisco](https://thesvg.org/family/cisco): 5 official logos
+- [Salesforce](https://thesvg.org/family/salesforce): 5 official logos
+- [Anthropic](https://thesvg.org/family/anthropic): 4 official logos
+- [Oracle](https://thesvg.org/family/oracle): 4 official logos
+- [Sony](https://thesvg.org/family/sony): 4 official logos
+- [xAI](https://thesvg.org/family/xai): 4 official logos

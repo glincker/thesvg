@@ -201,16 +201,16 @@ import { Github } from "@thesvg/react";
 
 Not every icon has all variants. `default` is always present.
 
-## Categories (141 total)
+## Categories (154 total)
 
-Accessibility, Advertising, Agency, AI, AI Medical Scribe, Analytics, AntV, App Services, Architecture, Automation, Automotive, Autoscaling, Aviation, Azure Ecosystem, Azure Stack, Blockchain, Booking, Browser, Business, Canonical, Caravaning, Cloud, CMS, Communication, Community, Compiler, Compute, Config, Construction, Containers, Control Plane, Cost Management, Crypto, Customer Enablement, Customer Experience, Data, Database, Design, Developer Tools, DevOps, DevTool, DEX, E-commerce, Editor, Education, Electronics, Email, End User Computing, Energy, Entertainment, and more.
+Accessibility, Advertising, Agency, AI, AI Medical Scribe, Analytics, AntV, App Services, Architecture, Automation, Automotive, Autoscaling, Aviation, Azure Ecosystem, Azure Stack, Backup, Blockchain, Booking, Bookmarks & RSS, Browser, Business, Canonical, Caravaning, Cloud, CMS, Communication, Community, Compiler, Compute, Config, Construction, Containers, Control Plane, Cost Management, Crypto, Customer Enablement, Customer Experience, Dashboard, Data, Database, Design, Developer Tools, Developer Utilities, DevOps, DevTool, DEX, E-commerce, Editor, Education, Electronics, and more.
 
 ## Statistics
 
 - 7,600+ SVG icons across 7 collections
-- 141 categories
-- 13,301+ total SVG variants
-- 1,125 icons with verified brand guidelines links
+- 154 categories
+- 13,752+ total SVG variants
+- 1,306 icons with verified brand guidelines links
 - All icons have license metadata
 - 6 of 8 packages ship with zero runtime dependencies (framework peers like React, Vue, and Svelte are not counted); the rest declare a small, explicit dependency list, see the Packages table
 
@@ -228,3 +228,29 @@ MIT for the codebase and tooling. Brand icons are property of their respective t
 - Legal: https://thesvg.org/legal
 - Submit Icon: https://thesvg.org/submit
 - Contact: https://thesvg.org/contact
+
+## Brand families
+
+Icons grouped by the company that owns them. Each family page lists every official logo of that brand, such as the whole Amazon, Google or Microsoft product line, with all variants. Index: https://thesvg.org/families. Machine-readable: https://thesvg.org/api/families.json
+
+- [Google](https://thesvg.org/family/google): 103 official logos (Android, Android Auto, Angular, Antigravity (Google), Blogger, Chrome, Chrome Web Store, Cloud Firestore, and more)
+- [Microsoft](https://thesvg.org/family/microsoft): 75 official logos (.NET, Bing, Edge, GitHub, LinkedIn, Microsoft .NET, Microsoft 365 Copilot, Microsoft Access, and more)
+- [Adobe](https://thesvg.org/family/adobe): 32 official logos (Acrobat Reader, Acrobat Reader (grayscale app icon), Acrobat Scan, Adobe Aero, Adobe Creative Cloud, Adobe Fonts, Adobe Sign, Adobe Stock, and more)
+- [Amazon](https://thesvg.org/family/amazon): 18 official logos (Amazon Fire TV, Amazon Kindle, Amazon Music, Amazon Prime, Amazon Q, Amazon Web Services, Audible, AWS, and more)
+- [Apple](https://thesvg.org/family/apple): 16 official logos (App Store, Apple Arcade, Apple Music, Apple News, Apple Pay, Apple Podcasts, Apple TV, iCloud, and more)
+- [JetBrains](https://thesvg.org/family/jetbrains): 16 official logos (Aqua, CLion, DataGrip, Dataspell, GoLand, IntelliJ IDEA, Junie, Ktor, and more)
+- [IBM](https://thesvg.org/family/ibm): 14 official logos (Ansible, CentOS, Consul, HashiCorp, IBM (Granite), Nomad, Packer, Podman, and more)
+- [Atlassian](https://thesvg.org/family/atlassian): 10 official logos (Bamboo, Bitbucket, Confluence, Jira, Loom, Opsgenie, Sourcetree, Statuspage, and more)
+- [Meta](https://thesvg.org/family/meta): 8 official logos (Facebook, Instagram, Messenger, Oculus, Threads, WhatsApp, Workplace, and more)
+- [Vercel](https://thesvg.org/family/vercel): 8 official logos (Next.js, Nuxt, Turbo, Turbopack, Turborepo, v0, Vercel Blob, and more)
+- [ByteDance](https://thesvg.org/family/bytedance): 7 official logos (CapCut, Coze, Doubao (豆包), TikTok, TRAE, Volcengine (火山引擎), and more)
+- [Disney](https://thesvg.org/family/disney): 7 official logos (Disney+, Disney+, ESPN, Hulu, Marvel Comics, Marvel Studios, and more)
+- [Elastic](https://thesvg.org/family/elastic): 6 official logos (Beats, Elastic Cloud, Elasticsearch, Kibana, Logstash, and more)
+- [Tencent](https://thesvg.org/family/tencent): 6 official logos (Hunyuan (腾讯混元), QQ, Riot Games, Supercell, WeChat, and more)
+- [Alibaba](https://thesvg.org/family/alibaba): 5 official logos (Alibaba Cloud, AliExpress, Qwen, Taobao, and more)
+- [Cisco](https://thesvg.org/family/cisco): 5 official logos (Cisco AnyConnect, Cisco Jabber, Splunk, Webex, and more)
+- [Salesforce](https://thesvg.org/family/salesforce): 5 official logos (Heroku, Mulesoft, Slack, Tableau, and more)
+- [Anthropic](https://thesvg.org/family/anthropic): 4 official logos (Claude, Claude AI, Claude Code, and more)
+- [Oracle](https://thesvg.org/family/oracle): 4 official logos (Java, MySQL, VirtualBox, and more)
+- [Sony](https://thesvg.org/family/sony): 4 official logos (Crunchyroll, Funimation, PlayStation, and more)
+- [xAI](https://thesvg.org/family/xai): 4 official logos (Grok, Twitter, X, and more)
