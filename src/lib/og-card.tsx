@@ -112,7 +112,7 @@ export function FamilyCard({ title, tagline, count, accents, parentUri, logos }:
             }}
           >
             {parentUri ? (
-              // eslint-disable-next-line @next/next/no-img-element
+
               <img src={parentUri} width={58} height={58} alt="" style={{ objectFit: "contain" }} />
             ) : null}
           </div>
@@ -150,7 +150,7 @@ export function FamilyCard({ title, tagline, count, accents, parentUri, logos }:
                 boxShadow: "0 8px 24px rgba(0,0,0,0.3)",
               }}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
+              { }
               <img src={src} width={64} height={64} alt="" style={{ objectFit: "contain" }} />
             </div>
           ))}
