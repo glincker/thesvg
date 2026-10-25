@@ -8,18 +8,23 @@
   </a>
 </p>
 
+<h3 align="center">The open SVG brand library</h3>
+
+<p align="center"><b>A HOME FOR EVERY BRAND.</b></p>
+
 <p align="center">
-  <strong>The open SVG brand library. 7,600+ logos and cloud icons, free to search, copy, and ship.</strong>
+  7,600+ brand logos and cloud icons. Search, copy and ship them as SVG, React, Vue, Svelte, CDN, CLI or MCP.<br />
+  Free, open source, no gatekeeping.
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/thesvg"><img src="https://img.shields.io/npm/v/thesvg?style=flat-square&color=F97316&label=npm" alt="npm" /></a>
-  <a href="https://www.npmjs.com/package/thesvg"><img src="https://img.shields.io/npm/dm/thesvg?style=flat-square&color=F97316&label=downloads" alt="downloads" /></a>
-  <a href="https://www.npmjs.com/package/@thesvg/mcp-server"><img src="https://img.shields.io/npm/v/@thesvg/mcp-server?style=flat-square&color=F97316&label=MCP" alt="MCP server" /></a>
+  <a href="https://www.npmjs.com/package/thesvg"><img src="https://img.shields.io/npm/v/thesvg?style=flat-square&color=C2410C&label=npm" alt="npm" /></a>
+  <a href="https://www.npmjs.com/package/thesvg"><img src="https://img.shields.io/npm/dm/thesvg?style=flat-square&color=C2410C&label=downloads" alt="downloads" /></a>
+  <a href="https://www.npmjs.com/package/@thesvg/mcp-server"><img src="https://img.shields.io/npm/v/@thesvg/mcp-server?style=flat-square&color=C2410C&label=MCP" alt="MCP server" /></a>
   <a href="https://www.jsdelivr.com/package/gh/glincker/thesvg"><img src="https://data.jsdelivr.com/v1/package/gh/glincker/thesvg/badge" alt="jsDelivr" /></a>
   <a href="https://github.com/glincker/thesvg/stargazers"><img src="https://img.shields.io/github/stars/glincker/thesvg?style=flat-square&label=stars" alt="stars" /></a>
   <a href="https://discord.gg/Ar5pcaZB99"><img src="https://img.shields.io/discord/829168897080557579?style=flat-square&logo=discord&logoColor=white&label=discord&color=5865F2" alt="Discord" /></a>
-  <a href="https://github.com/glincker/thesvg"><img src="https://img.shields.io/badge/icons-7%2C600%2B-F97316?style=flat-square" alt="7,600+ icons" /></a>
+  <a href="https://github.com/glincker/thesvg"><img src="https://img.shields.io/badge/icons-7%2C600%2B-C2410C?style=flat-square" alt="7,600+ icons" /></a>
   <a href="https://github.com/glincker/thesvg/blob/main/LICENSE"><img src="https://img.shields.io/github/license/glincker/thesvg?style=flat-square" alt="license" /></a>
   <a href="https://www.figma.com/community/plugin/1612997159050367763"><img src="https://img.shields.io/badge/Figma-Plugin-F24E1E?style=flat-square&logo=figma&logoColor=white" alt="Figma" /></a>
   <a href="https://marketplace.visualstudio.com/items?itemName=glincker.thesvg"><img src="https://img.shields.io/badge/VS%20Code-Extension-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white" alt="VS Code" /></a>
@@ -33,7 +38,8 @@
 </p>
 
 <p align="center">
-  <a href="https://thesvg.org"><strong>Browse Icons</strong></a> &nbsp;&bull;&nbsp;
+  <a href="https://thesvg.org"><strong>Browse icons</strong></a> &nbsp;&bull;&nbsp;
+  <a href="#quick-start">Quick start</a> &nbsp;&bull;&nbsp;
   <a href="#install">Install</a> &nbsp;&bull;&nbsp;
   <a href="#extensions">Extensions</a> &nbsp;&bull;&nbsp;
   <a href="#cdn">CDN</a> &nbsp;&bull;&nbsp;
@@ -41,47 +47,141 @@
   <a href="#packages">Packages</a> &nbsp;&bull;&nbsp;
   <a href="https://thesvg.org/compare">Compare</a> &nbsp;&bull;&nbsp;
   <a href="#community">Community</a> &nbsp;&bull;&nbsp;
-  <a href="#contributing">Contribute</a>
+  <a href="#contributing">Contribute</a> &nbsp;&bull;&nbsp;
+  <a href="#contributors">Contributors</a>
 </p>
-
-<br />
 
 <p align="center">
   <a href="https://thesvg.org">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" />
       <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image-light.png" />
-      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image-light.png" alt="theSVG - the open SVG brand library" width="720" />
+      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image-light.png" alt="theSVG, the open SVG brand library" width="720" />
     </picture>
   </a>
 </p>
 
 
-<h3 align="center">Use it anywhere</h3>
+<p align="center">
+  <sub>Every logo below is served straight from theSVG.</sub>
+</p>
 
-<table align="center">
+<p align="center">
+  <a href="https://thesvg.org/icon/google"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/google/default.svg" height="34" alt="Google" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://thesvg.org/icon/docker"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/docker/default.svg" height="34" alt="Docker" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://thesvg.org/icon/kubernetes"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/kubernetes/default.svg" height="34" alt="Kubernetes" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://thesvg.org/icon/react"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/react/default.svg" height="34" alt="React" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://thesvg.org/icon/vue"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/vue/default.svg" height="34" alt="Vue" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://thesvg.org/icon/svelte"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/svelte/default.svg" height="34" alt="Svelte" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://thesvg.org/icon/typescript"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/typescript/default.svg" height="34" alt="TypeScript" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://thesvg.org/icon/tailwindcss"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/tailwindcss/default.svg" height="34" alt="Tailwind CSS" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://thesvg.org/icon/figma"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/figma/default.svg" height="34" alt="Figma" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://thesvg.org/icon/stripe"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/stripe/default.svg" height="34" alt="Stripe" /></a>
+</p>
+
+<p align="center">
+  <a href="https://thesvg.org/icon/slack"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/slack/default.svg" height="34" alt="Slack" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://thesvg.org/icon/discord"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/discord/default.svg" height="34" alt="Discord" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://thesvg.org/icon/spotify"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/spotify/default.svg" height="34" alt="Spotify" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://thesvg.org/icon/supabase"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/supabase/default.svg" height="34" alt="Supabase" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://thesvg.org/icon/postgresql"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/postgresql/default.svg" height="34" alt="PostgreSQL" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://thesvg.org/icon/mongodb"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/mongodb/default.svg" height="34" alt="MongoDB" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://thesvg.org/icon/cloudflare"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/cloudflare/default.svg" height="34" alt="Cloudflare" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://thesvg.org/icon/terraform"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/terraform/default.svg" height="34" alt="Terraform" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://thesvg.org/icon/aws"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/amazon-badge/default.svg" height="34" alt="AWS" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://thesvg.org/icon/microsoft-azure"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/microsoft-azure/default.svg" height="34" alt="Azure" /></a>
+</p>
+
+<hr />
+
+
+
+## Why theSVG
+
+Most icon libraries focus on UI icons. Brand logos are scattered across press kits, Figma files, and random GitHub repos. **theSVG** is the single source for SVG icons - brand logos, cloud architecture diagrams, and more. Searchable, versioned, and available as npm packages, CDN, CLI, API, and MCP server.
+
+Every developer has hunted for a company logo: a press kit buried three clicks deep, a PNG that blurs on retina, a "mono" file that is secretly four colors, a logo that changed last month. Most icon sets cover UI glyphs. Nobody treated brand logos as real, versioned, trustworthy data.
+
+theSVG does. It is one open catalog where every logo is **official, clean, complete and current**, and it is delivered in whatever shape your project needs.
+
+### Why we built it
+
+theSVG started with a pull request. We tried to add the logo of our own product, [AskVerdict](https://www.askverdict.ai), to an existing open source logo library, and it was declined as outside that project's scope, which is a fair call for a curated set. That made us want a catalog where any real brand, large or small, can be added through a simple review. theSVG now holds over 7,600 icons, sourced from official brand assets and checked before each one is merged.
+
+**A HOME FOR EVERY BRAND.**
+
+### The theSVG standard
+
+What every icon in the catalog is held to, and what we want a brand SVG to mean everywhere:
+
+| Principle | What it means in practice |
+| --- | --- |
+| **Official, unmodified** | Taken from the brand's own kit or site, with a license and a guidelines link on every entry. No redraws. |
+| **Complete variants** | `default`, `mono`, `light`, `dark` and `wordmark` under one predictable naming scheme, so `{slug}/{variant}.svg` always works. |
+| **Truly clean** | A validator runs in CI on every changed file: no scripts, no embedded rasters, no `null` or `NaN` values, mono files really are single color, `viewBox` always present. |
+| **Rebrands keep history** | When a brand changes its logo, the new mark becomes current and the old one is kept as a `-legacy` entry, linked both ways. Nothing silently disappears. |
+| **Machine readable** | A static manifest, `llms.txt`, an MCP server and stable CDN URLs, so tools and AI assistants can use logos as reliably as people do. |
+| **Open to everyone** | MIT code, no accounts, no API keys, no gatekeeping. If a brand is real, it belongs here. |
+
+If that is the logo library you wished existed, the single most useful thing you can do is **[star the repo](https://github.com/glincker/thesvg)**. It is how other developers find it.
+
+<table>
   <tr>
-    <td align="center"><a href="https://thesvg.org"><strong>Web</strong></a><br />Search and copy in the browser</td>
-    <td align="center"><a href="https://www.npmjs.com/package/@thesvg/react"><strong>React</strong></a>, <a href="https://www.npmjs.com/package/@thesvg/vue"><strong>Vue</strong></a>, <a href="https://www.npmjs.com/package/@thesvg/svelte"><strong>Svelte</strong></a><br />Tree-shakeable npm packages</td>
-    <td align="center"><a href="https://www.npmjs.com/package/@thesvg/cli"><strong>CLI</strong></a><br />Add icons from your terminal</td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://www.npmjs.com/package/@thesvg/mcp-server"><strong>MCP server</strong></a><br />Give AI editors your logos</td>
-    <td align="center"><a href="https://www.raycast.com/thegdsks/thesvg"><strong>Raycast</strong></a><br />macOS and Windows</td>
-    <td align="center"><a href="https://marketplace.visualstudio.com/items?itemName=glincker.thesvg"><strong>VS Code</strong></a><br />Insert icons in your editor</td>
+    <td align="center" width="25%"><strong>7,600+</strong><br />icons</td>
+    <td align="center" width="25%"><strong>12,300+</strong><br />variants: color, mono, light, dark, wordmark</td>
+    <td align="center" width="25%"><strong>150+</strong><br />categories</td>
+    <td align="center" width="25%"><strong>21</strong><br />brand families</td>
   </tr>
 </table>
 
-<p align="center">
-  Free and open source. If thesvg saves you time, a star helps other developers find it.<br />
-  <a href="https://github.com/glincker/thesvg"><img src="https://img.shields.io/badge/%E2%98%85%20Star%20thesvg%20on%20GitHub-F97316?style=for-the-badge" alt="Star thesvg on GitHub" /></a>
-</p>
+### What is inside
 
-<br />
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Collection | Icons | What you get |
+| --- | --- | --- | --- |
+| <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/github/dark.svg" /><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/github/light.svg" width="28" height="28" alt="" /></picture> | [Brand icons](https://thesvg.org/collection/brands) | 4,800+ | Logos from 150+ categories in color, mono, light, dark and wordmark |
+| <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/1password/dark.svg" /><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/1password/light.svg" width="28" height="28" alt="" /></picture> | [Auth badges](https://thesvg.org/collection/auth-badges) | 858 | Circular badges for 2FA and authenticator UIs |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/amazon-badge/default.svg" width="28" height="28" alt="" /> | [AWS Architecture](https://thesvg.org/collection/aws) | 739 | Official AWS service and resource icons |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/microsoft-azure/default.svg" width="28" height="28" alt="" /> | [Azure](https://thesvg.org/collection/azure) | 626 | Microsoft Azure service icons |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/docker/default.svg" width="28" height="28" alt="" /> | [Community](https://thesvg.org/collection/community) | 256 | Dev tools, databases and frameworks |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/google-cloud/default.svg" width="28" height="28" alt="" /> | [Google Cloud](https://thesvg.org/collection/gcp) | 214 | Google Cloud Platform icons |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/kubernetes/default.svg" width="28" height="28" alt="" /> | [Kubernetes](https://thesvg.org/collection/k8s) | 38 | Official CNCF architecture icons |
 
-## Why theSVG?
+<details>
+<summary>Collections, plain table</summary>
 
-Most icon libraries focus on UI icons. Brand logos are scattered across press kits, Figma files, and random GitHub repos. **theSVG** is the single source for SVG icons - brand logos, cloud architecture diagrams, and more. Searchable, versioned, and available as npm packages, CDN, CLI, API, and MCP server.
+theSVG organizes icons into collections:
+
+| Collection | Icons | Description |
+|------------|-------|-------------|
+| **Brand Icons** | 4,800+ | Brand logos from 150+ categories |
+| **Auth Badges** | 858 | Circular icon badges styled for 2FA/authenticator apps |
+| **AWS Architecture** | 739 | Official AWS service, resource, category, and group icons (2026-Q1) |
+| **Azure Services** | 626 | Microsoft Azure service icons (2026-Q1) |
+| **Community** | 256 | Dev tools, databases, and frameworks sourced from the open-source community |
+| **Google Cloud** | 214 | Google Cloud Platform icons (2026-Q1) |
+| **Kubernetes** | 38 | Official Kubernetes/CNCF architecture icons |
+
+</details>
+
+### Brand families
+
+Products grouped by the company that owns them, so you get the whole Google, Microsoft, Amazon or Apple line in one place with every variant. Browse all 21 at [thesvg.org/families](https://thesvg.org/families).
+
+<table>
+  <tr>
+    <td align="center"><a href="https://thesvg.org/family/google"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/google/default.svg" height="32" alt="" /><br /><b>Google</b></a><br /><sub>100+ logos</sub></td>
+    <td align="center"><a href="https://thesvg.org/family/microsoft"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/microsoft/default.svg" height="32" alt="" /><br /><b>Microsoft</b></a><br /><sub>70+ logos</sub></td>
+    <td align="center"><a href="https://thesvg.org/family/adobe"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/adobe/default.svg" height="32" alt="" /><br /><b>Adobe</b></a><br /><sub>30+ logos</sub></td>
+    <td align="center"><a href="https://thesvg.org/family/amazon"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/amazon-badge/default.svg" height="32" alt="" /><br /><b>Amazon</b></a><br /><sub>18 logos</sub></td>
+    <td align="center"><a href="https://thesvg.org/family/apple"><picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/apple/dark.svg" /><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/apple/light.svg" height="32" alt="" /></picture><br /><b>Apple</b></a><br /><sub>16 logos</sub></td>
+    <td align="center"><a href="https://thesvg.org/family/jetbrains"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/jetbrains/default.svg" height="32" alt="" /><br /><b>JetBrains</b></a><br /><sub>16 logos</sub></td>
+    <td align="center"><a href="https://thesvg.org/family/ibm"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/ibm/default.svg" height="32" alt="" /><br /><b>IBM</b></a><br /><sub>14 logos</sub></td>
+  </tr>
+</table>
+
+The full breakdown lives in [Collections, families and categories](./docs/collections.md).
+
+### Highlights
 
 - **7,600+ icons** across multiple collections
 - **4,800+ brand icons** across 150+ categories
@@ -97,7 +197,16 @@ Most icon libraries focus on UI icons. Brand logos are scattered across press ki
 - **Framework-agnostic** - React, Vue, Svelte, plain HTML, or CDN
 - **AI-ready** - MCP server for Claude, Cursor, and Windsurf
 
-## Brand families
+### AWS Architecture Icons
+
+Browse all AWS service and resource icons at [thesvg.org/collection/aws](https://thesvg.org/collection/aws). Icons are sourced from the official [AWS Architecture Icons](https://aws.amazon.com/architecture/icons/) package and distributed unmodified under [CC BY-ND 2.0](https://creativecommons.org/licenses/by-nd/2.0/). Updated quarterly.
+
+### Auth Badges
+
+Browse the full set at [thesvg.org/collection/auth-badges](https://thesvg.org/collection/auth-badges). Circular, flat-color badge icons designed for authenticator-app entry lists and 2FA UI - a distinct visual style from the primary brand-mark collection above. Distributed under CC0-1.0 (public domain).
+
+<details>
+<summary>Brand families, full table</summary>
 
 Products grouped by the company that owns them, each with its own page: the whole Amazon, Google or Microsoft line in one place, with every variant.
 
@@ -113,27 +222,57 @@ Products grouped by the company that owns them, each with its own page: the whol
 
 Browse all 21 families at [thesvg.org/families](https://thesvg.org/families). The same data is available as JSON at [`/api/families.json`](https://thesvg.org/api/families.json) and in [`llms.txt`](https://thesvg.org/llms.txt).
 
-## Collections
+</details>
 
-theSVG organizes icons into collections:
+## Quick start
 
-| Collection | Icons | Description |
-|------------|-------|-------------|
-| **Brand Icons** | 4,800+ | Brand logos from 150+ categories |
-| **Auth Badges** | 858 | Circular icon badges styled for 2FA/authenticator apps |
-| **AWS Architecture** | 739 | Official AWS service, resource, category, and group icons (2026-Q1) |
-| **Azure Services** | 626 | Microsoft Azure service icons (2026-Q1) |
-| **Community** | 256 | Dev tools, databases, and frameworks sourced from the open-source community |
-| **Google Cloud** | 214 | Google Cloud Platform icons (2026-Q1) |
-| **Kubernetes** | 38 | Official Kubernetes/CNCF architecture icons |
+```bash
+# Add a single icon to your project
+npx @thesvg/cli add github
 
-### AWS Architecture Icons
+# Or install the package and import only what you use
+npm install thesvg
+```
 
-Browse all AWS service and resource icons at [thesvg.org/collection/aws](https://thesvg.org/collection/aws). Icons are sourced from the official [AWS Architecture Icons](https://aws.amazon.com/architecture/icons/) package and distributed unmodified under [CC BY-ND 2.0](https://creativecommons.org/licenses/by-nd/2.0/). Updated quarterly.
+```ts
+import github from "thesvg/github";
 
-### Auth Badges
+github.svg;      // raw SVG string
+github.title;    // "GitHub"
+github.hex;      // "181717"
+```
 
-Browse the full set at [thesvg.org/collection/auth-badges](https://thesvg.org/collection/auth-badges). Circular, flat-color badge icons designed for authenticator-app entry lists and 2FA UI - a distinct visual style from the primary brand-mark collection above. Distributed under CC0-1.0 (public domain).
+```html
+<!-- Or use the CDN, no install -->
+<img src="https://thesvg.org/icons/github/default.svg" width="32" height="32" alt="GitHub" />
+```
+
+Every icon has its own page with all variants, copy formats and a live preview, for example [thesvg.org/icon/github](https://thesvg.org/icon/github). Tree-shakeable, fully typed, ESM and CJS. More in [Install and packages](./docs/install.md), [Usage and variants](./docs/usage.md) and [CDN and API](./docs/cdn-api.md).
+
+## Built for designers and developers
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h4><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/figma/default.svg" height="20" alt="" /> If you design</h4>
+      <ul>
+        <li>Drop official logos into Figma as <b>editable vectors</b> with the <a href="https://www.figma.com/community/plugin/1612997159050367763">Figma plugin</a>.</li>
+        <li>Pick the right variant for the background: color, mono, light, dark or wordmark.</li>
+        <li>No redrawing, no recoloring guesswork. Every mark is the brand's own, with a guidelines link.</li>
+        <li>Diagramming? Use the <a href="https://icon-sets.iconify.design/thesvg-color/">Iconify sets</a> in Mermaid, plus draw.io and Excalidraw libraries, and the AWS, Azure and Google Cloud architecture icons.</li>
+      </ul>
+    </td>
+    <td width="50%" valign="top">
+      <h4><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/visual-studio-code/default.svg" height="20" alt="" /> If you build</h4>
+      <ul>
+        <li>Import one icon and ship one icon: <code>thesvg/github</code> is tree-shakeable and fully typed.</li>
+        <li>Use <a href="https://www.npmjs.com/package/@thesvg/react">React</a>, <a href="https://www.npmjs.com/package/@thesvg/vue">Vue</a> or <a href="https://www.npmjs.com/package/@thesvg/svelte">Svelte</a> components, or a plain <code>&lt;img&gt;</code> from the CDN.</li>
+        <li>Add icons from the terminal with the <a href="https://www.npmjs.com/package/@thesvg/cli">CLI</a>, or let your AI editor fetch them through the <a href="https://www.npmjs.com/package/@thesvg/mcp-server">MCP server</a>.</li>
+        <li>Stable URLs and a static JSON manifest, so you can build on it without keys or sign-ups.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 ## Install
 
@@ -167,54 +306,46 @@ npm install @thesvg/icons
 
 ## Packages
 
-| Package | Description | |
-|---------|-------------|---|
-| [`thesvg`](https://www.npmjs.com/package/thesvg) | All icons in one package | [![npm](https://img.shields.io/npm/v/thesvg?style=flat-square&color=F97316)](https://www.npmjs.com/package/thesvg) |
-| [`@thesvg/icons`](https://www.npmjs.com/package/@thesvg/icons) | Core icon data, tree-shakeable | [![npm](https://img.shields.io/npm/v/@thesvg/icons?style=flat-square&color=F97316)](https://www.npmjs.com/package/@thesvg/icons) |
-| [`@thesvg/react`](https://www.npmjs.com/package/@thesvg/react) | Typed React components | [![npm](https://img.shields.io/npm/v/@thesvg/react?style=flat-square&color=F97316)](https://www.npmjs.com/package/@thesvg/react) |
-| [`@thesvg/vue`](https://www.npmjs.com/package/@thesvg/vue) | Typed Vue 3 components | [![npm](https://img.shields.io/npm/v/@thesvg/vue?style=flat-square&color=F97316)](https://www.npmjs.com/package/@thesvg/vue) |
-| [`@thesvg/svelte`](https://www.npmjs.com/package/@thesvg/svelte) | Typed Svelte components | [![npm](https://img.shields.io/npm/v/@thesvg/svelte?style=flat-square&color=F97316)](https://www.npmjs.com/package/@thesvg/svelte) |
-| [`@thesvg/cli`](https://www.npmjs.com/package/@thesvg/cli) | CLI tool (`npx @thesvg/cli add github`) | [![npm](https://img.shields.io/npm/v/@thesvg/cli?style=flat-square&color=F97316)](https://www.npmjs.com/package/@thesvg/cli) |
-| [`@thesvg/mcp-server`](https://www.npmjs.com/package/@thesvg/mcp-server) | MCP server for AI assistants | [![npm](https://img.shields.io/npm/v/@thesvg/mcp-server?style=flat-square&color=F97316)](https://www.npmjs.com/package/@thesvg/mcp-server) |
+Every package is tree-shakeable, fully typed and ships ESM and CJS. Pick the one that fits your stack.
+
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Package | Version | Downloads | What it is | Install |
+| --- | --- | --- | --- | --- | --- |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/npm/default.svg" width="28" height="28" alt="" /> | [`thesvg`](https://www.npmjs.com/package/thesvg) | [![npm](https://img.shields.io/npm/v/thesvg?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/thesvg) | [![downloads](https://img.shields.io/npm/dm/thesvg?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/thesvg) | All icons in one package | `npm install thesvg` |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/npm/default.svg" width="28" height="28" alt="" /> | [`@thesvg/icons`](https://www.npmjs.com/package/@thesvg/icons) | [![npm](https://img.shields.io/npm/v/@thesvg/icons?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/icons) | [![downloads](https://img.shields.io/npm/dm/@thesvg/icons?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/icons) | Core icon data, tree-shakeable | `npm install @thesvg/icons` |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/react/default.svg" width="28" height="28" alt="" /> | [`@thesvg/react`](https://www.npmjs.com/package/@thesvg/react) | [![npm](https://img.shields.io/npm/v/@thesvg/react?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/react) | [![downloads](https://img.shields.io/npm/dm/@thesvg/react?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/react) | Typed React components | `npm install @thesvg/react` |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/vue/default.svg" width="28" height="28" alt="" /> | [`@thesvg/vue`](https://www.npmjs.com/package/@thesvg/vue) | [![npm](https://img.shields.io/npm/v/@thesvg/vue?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/vue) | [![downloads](https://img.shields.io/npm/dm/@thesvg/vue?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/vue) | Typed Vue 3 components | `npm install @thesvg/vue` |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/svelte/default.svg" width="28" height="28" alt="" /> | [`@thesvg/svelte`](https://www.npmjs.com/package/@thesvg/svelte) | [![npm](https://img.shields.io/npm/v/@thesvg/svelte?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/svelte) | [![downloads](https://img.shields.io/npm/dm/@thesvg/svelte?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/svelte) | Typed Svelte components | `npm install @thesvg/svelte` |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/react/default.svg" width="28" height="28" alt="" /> | [`@thesvg/react-native`](https://www.npmjs.com/package/@thesvg/react-native) | [![npm](https://img.shields.io/npm/v/@thesvg/react-native?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/react-native) | [![downloads](https://img.shields.io/npm/dm/@thesvg/react-native?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/react-native) | React Native components | `npm install @thesvg/react-native` |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/npm/default.svg" width="28" height="28" alt="" /> | [`@thesvg/cli`](https://www.npmjs.com/package/@thesvg/cli) | [![npm](https://img.shields.io/npm/v/@thesvg/cli?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/cli) | [![downloads](https://img.shields.io/npm/dm/@thesvg/cli?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/cli) | CLI tool, shadcn-style installer | `npx @thesvg/cli add github` |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/claude/default.svg" width="28" height="28" alt="" /> | [`@thesvg/mcp-server`](https://www.npmjs.com/package/@thesvg/mcp-server) | [![npm](https://img.shields.io/npm/v/@thesvg/mcp-server?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/mcp-server) | [![downloads](https://img.shields.io/npm/dm/@thesvg/mcp-server?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/mcp-server) | MCP server for AI assistants | `npx @thesvg/mcp-server` |
 
 ## Extensions
 
-Use theSVG icons everywhere you build, design, and ship. Browse the full ecosystem at [thesvg.org/extensions](https://thesvg.org/extensions).
+Use theSVG icons everywhere you build, design and ship. Browse the full ecosystem at [thesvg.org/extensions](https://thesvg.org/extensions).
 
-| Extension | Status | Description |
-|-----------|--------|-------------|
-| [Figma Plugin](https://www.figma.com/community/plugin/1612997159050367763) | Published | Browse 7,600+ brand SVGs, variant picker, recents row, keyboard shortcuts. Insert as editable vectors. |
-| [VS Code](https://marketplace.visualstudio.com/items?itemName=glincker.thesvg) | Published | Search 7,600+ icons from the command palette. Copy SVG, JSX, CDN link, or insert at cursor. |
-| [Raycast](https://www.raycast.com/thegdsks/thesvg) | Published | Search, preview, and copy any brand SVG in one keystroke. Filter by category, preview variants. |
-| [MCP Server](https://www.npmjs.com/package/@thesvg/mcp-server) | Published | AI tool calls for Claude, Cursor, Windsurf. Fetch icons by name or category. |
-| [Agent Skill](https://skills.sh/glincker/thesvg) | Published | Drop-in skill for AI agents. Install via `npx skills add glincker/thesvg`. Teaches the icon CDN and registry. |
-| [`@thesvg/cli`](https://www.npmjs.com/package/@thesvg/cli) | Published | shadcn-style installer. `npx @thesvg/cli add github` drops the SVG into your project. |
-| [Homebrew](https://github.com/glincker/homebrew-thesvg) | Published | `brew tap glincker/thesvg && brew install thesvg` |
-| [CDN via jsDelivr](https://www.jsdelivr.com/package/gh/glincker/thesvg) | Published | Serve any icon via global CDN. Drop into HTML, CSS, Markdown, Notion, Webflow, Framer. |
-| [Iconify](https://icon-sets.iconify.design/thesvg-color/) | Published | Brand icons available as [`thesvg`](https://icon-sets.iconify.design/thesvg/) (mono) and [`thesvg-color`](https://icon-sets.iconify.design/thesvg-color/) sets. Works with any Iconify-consuming tool: Mermaid architecture diagrams, Iconify's VS Code and Figma plugins, `@iconify/react`, and more. |
-| [Browser Extension](https://github.com/glincker/thesvg/tree/main/extensions/browser) | Beta | Chrome, Firefox, Edge popup with 7,600+ brand SVGs. MV3, no telemetry. |
-| [JetBrains](https://github.com/glincker/thesvg/issues?q=label%3Aextension) | Open | IntelliJ, WebStorm, PyCharm, Rider tool window. Help wanted. |
-| [Neovim](https://github.com/glincker/thesvg/tree/main/extensions/neovim) | Published | Lua plugin with Telescope picker. Insert SVG URL or inline content at cursor. |
-| [Alfred Workflow](https://github.com/glincker/thesvg/tree/main/extensions/alfred) | Published | macOS quick access. Search anywhere, copy SVG, CDN URL, or markdown. |
-| [Sketch / Blender / Webflow / Notion](https://github.com/glincker/thesvg/issues?q=label%3Aextension) | Open | Tracking issues open. Build a plugin and we will list it here. |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Extension | Status | What it does |
+| --- | --- | --- | --- |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/figma/default.svg" width="28" height="28" alt="" /> | [Figma Plugin](https://www.figma.com/community/plugin/1612997159050367763) | ![Published](https://img.shields.io/badge/-Published-2ea043?style=flat-square) | Browse 7,600+ brand SVGs, variant picker, recents row, keyboard shortcuts. Insert as editable vectors. |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/visual-studio-code/default.svg" width="28" height="28" alt="" /> | [VS Code](https://marketplace.visualstudio.com/items?itemName=glincker.thesvg) | ![Published](https://img.shields.io/badge/-Published-2ea043?style=flat-square) | Search 7,600+ icons from the command palette. Copy SVG, JSX, CDN link, or insert at cursor. |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/raycast/default.svg" width="28" height="28" alt="" /> | [Raycast](https://www.raycast.com/thegdsks/thesvg) | ![Published](https://img.shields.io/badge/-Published-2ea043?style=flat-square) | Search, preview, and copy any brand SVG in one keystroke. Filter by category, preview variants. |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/claude/default.svg" width="28" height="28" alt="" /> | [MCP Server](https://www.npmjs.com/package/@thesvg/mcp-server) | ![Published](https://img.shields.io/badge/-Published-2ea043?style=flat-square) | AI tool calls for Claude, Cursor, Windsurf. Fetch icons by name or category. |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/claude/default.svg" width="28" height="28" alt="" /> | [Agent Skill](https://skills.sh/glincker/thesvg) | ![Published](https://img.shields.io/badge/-Published-2ea043?style=flat-square) | Drop-in skill for AI agents. Install via `npx skills add glincker/thesvg`. Teaches the icon CDN and registry. |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/npm/default.svg" width="28" height="28" alt="" /> | [`@thesvg/cli`](https://www.npmjs.com/package/@thesvg/cli) | ![Published](https://img.shields.io/badge/-Published-2ea043?style=flat-square) | shadcn-style installer. `npx @thesvg/cli add github` drops the SVG into your project. |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/homebrew/default.svg" width="28" height="28" alt="" /> | [Homebrew](https://github.com/glincker/homebrew-thesvg) | ![Published](https://img.shields.io/badge/-Published-2ea043?style=flat-square) | `brew tap glincker/thesvg && brew install thesvg` |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/jsdelivr/default.svg" width="28" height="28" alt="" /> | [CDN via jsDelivr](https://www.jsdelivr.com/package/gh/glincker/thesvg) | ![Published](https://img.shields.io/badge/-Published-2ea043?style=flat-square) | Serve any icon via global CDN. Drop into HTML, CSS, Markdown, Notion, Webflow, Framer. |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/iconify/default.svg" width="28" height="28" alt="" /> | [Iconify](https://icon-sets.iconify.design/thesvg-color/) | ![Published](https://img.shields.io/badge/-Published-2ea043?style=flat-square) | Brand icons available as [`thesvg`](https://icon-sets.iconify.design/thesvg/) (mono) and [`thesvg-color`](https://icon-sets.iconify.design/thesvg-color/) sets. Works with any Iconify-consuming tool: Mermaid architecture diagrams, Iconify's VS Code and Figma plugins, `@iconify/react`, and more. |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/google-chrome/default.svg" width="28" height="28" alt="" /> | [Browser Extension](https://github.com/glincker/thesvg/tree/main/extensions/browser) | ![Beta](https://img.shields.io/badge/-Beta-d29922?style=flat-square) | Chrome, Firefox, Edge popup with 7,600+ brand SVGs. MV3, no telemetry. |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/jetbrains/default.svg" width="28" height="28" alt="" /> | [JetBrains](https://github.com/glincker/thesvg/issues?q=label%3Aextension) | ![Help wanted](https://img.shields.io/badge/-Help%20wanted-6e7681?style=flat-square) | IntelliJ, WebStorm, PyCharm, Rider tool window. Help wanted. |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/neovim/default.svg" width="28" height="28" alt="" /> | [Neovim](https://github.com/glincker/thesvg/tree/main/extensions/neovim) | ![Published](https://img.shields.io/badge/-Published-2ea043?style=flat-square) | Lua plugin with Telescope picker. Insert SVG URL or inline content at cursor. |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/alfred/default.svg" width="28" height="28" alt="" /> | [Alfred Workflow](https://github.com/glincker/thesvg/tree/main/extensions/alfred) | ![Published](https://img.shields.io/badge/-Published-2ea043?style=flat-square) | macOS quick access. Search anywhere, copy SVG, CDN URL, or markdown. |
+| <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/sketch/dark.svg" /><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/sketch/light.svg" width="28" height="28" alt="" /></picture> | [Sketch / Blender / Webflow / Notion](https://github.com/glincker/thesvg/issues?q=label%3Aextension) | ![Help wanted](https://img.shields.io/badge/-Help%20wanted-6e7681?style=flat-square) | Tracking issues open. Build a plugin and we will list it here. |
 
 > **Build your own:** the API and CDN are fully open with no auth required. Ship a plugin or workflow, then open a PR and we will add it to the table.
 
-## CDN
-
-Use any icon directly without installing:
-
-```html
-<!-- From thesvg.org -->
-<img src="https://thesvg.org/icons/github/default.svg" width="32" height="32" alt="GitHub" />
-
-<!-- From jsDelivr -->
-<img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/github/default.svg" width="32" height="32" alt="GitHub" />
-```
-
-**URL pattern:** `https://thesvg.org/icons/{slug}/{variant}.svg`
-
 ## Usage
+
+<details>
+<summary>React, Vue, Svelte, CDN and CLI examples</summary>
 
 ### React
 
@@ -261,6 +392,8 @@ npx @thesvg/cli add github
 npx @thesvg/cli search "ai"
 ```
 
+</details>
+
 ## Variants
 
 Icons support up to 7 variants to match any design context:
@@ -277,7 +410,24 @@ Icons support up to 7 variants to match any design context:
 
 Not every icon has all variants. `default` is always present.
 
+## CDN
+
+Use any icon directly without installing:
+
+```html
+<!-- From thesvg.org -->
+<img src="https://thesvg.org/icons/github/default.svg" width="32" height="32" alt="GitHub" />
+
+<!-- From jsDelivr -->
+<img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/github/default.svg" width="32" height="32" alt="GitHub" />
+```
+
+**URL pattern:** `https://thesvg.org/icons/{slug}/{variant}.svg`
+
 ## API
+
+<details>
+<summary>Static manifest, mirrors and examples</summary>
 
 thesvg ships as a fully static site, served from a CDN. There is no dynamic API; instead, two pre-built JSON manifests cover every use case. Search, filter, and pagination happen on the client.
 
@@ -312,6 +462,8 @@ You can also clone the repo (~30 MB) and self-host. The codebase is MIT-licensed
 
 > A gated, token-based API is on the roadmap at `api.thesvg.org` for advanced features (search relevance, usage analytics, webhooks). Until then, the static manifest above is the supported integration path.
 
+</details>
+
 ## Categories
 
 Icons are organized into 150+ categories:
@@ -323,6 +475,27 @@ Icons are organized into 150+ categories:
 Questions, icon requests, or showing off what you built? Join the official GLINR Discord, home of theSVG and every other GLINCKER open source project. theSVG has its own forum there, and new releases post to it automatically.
 
 <a href="https://discord.gg/Ar5pcaZB99"><img src="https://discord.com/api/guilds/829168897080557579/widget.png?style=banner2" alt="Join the GLINR Discord" /></a>
+
+## Run it locally
+
+You need [Node.js](https://nodejs.org) 20 or newer and [pnpm](https://pnpm.io).
+
+```bash
+git clone https://github.com/glincker/thesvg.git
+cd thesvg
+pnpm install
+pnpm dev          # http://localhost:3333
+```
+
+| Command | What it does |
+| --- | --- |
+| `pnpm dev` | Starts the site with hot reload on port 3333 |
+| `pnpm build` | Regenerates the API, `llms.txt`, feed and icon tones, then builds the static site |
+| `pnpm lint` | Runs ESLint |
+| `pnpm test` | Runs the Vitest suite plus the CLI and icons package tests |
+| `npx tsx scripts/validate-icons.ts` | Audits every SVG for scripts, bad values, non-mono mono files and missing `viewBox` |
+
+**Add an icon:** put the files in `public/icons/{slug}/` (`default.svg`, plus `mono`, `light`, `dark` or `wordmark` as they apply), register the slug in `src/data/icons.json`, run the validator, then open a pull request. Full rules are in [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Contributing
 
@@ -341,11 +514,44 @@ pnpm dev     # http://localhost:3333
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for full guidelines.
 
+Questions and icon requests are welcome in the [Discord](https://discord.gg/Ar5pcaZB99).
+
+## Contributors
+
+<a href="https://github.com/glincker/thesvg/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=glincker/thesvg" alt="theSVG contributors" />
+</a>
+
+## Follow along
+
+New icons, rebrands and releases land every week. To keep up:
+
+- **Star and watch** the repo. Use *Watch, Custom, Releases* to hear about each new version.
+- **Follow [GLINCKER](https://github.com/glincker)** on GitHub for the rest of what we build.
+- **Join the [Discord](https://discord.gg/Ar5pcaZB99)** to request icons and see releases the moment they ship.
+- **Browse [thesvg.org](https://thesvg.org)** to see what was added recently.
+
 ## Sponsor
 
 theSVG runs on hosting, bandwidth, and maintainer time. If the catalog saves you a couple of hours a year, [pick a tier](./SPONSORS.md) and lock that value in. Tiers start at $5/mo and stack from Sketch up to Canvas.
 
 [Sponsor on GitHub](https://github.com/sponsors/glincker)
+
+## Support
+
+theSVG runs on hosting, bandwidth and maintainer time. [Sponsor on GitHub](https://github.com/sponsors/glincker) or star the repo so other developers can find it.
+
+<p align="center">
+  <a href="https://github.com/glincker/thesvg"><img src="https://img.shields.io/badge/%E2%98%85%20Star%20thesvg%20on%20GitHub-C2410C?style=for-the-badge" alt="Star thesvg on GitHub" /></a>
+</p>
+
+<a href="https://star-history.com/#glincker/thesvg&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date" width="600" />
+  </picture>
+</a>
 
 ## Disclaimer
 
@@ -373,5 +579,26 @@ If you are a brand owner and would like an icon updated or removed, please [open
 
 <p align="center">
   <a href="https://thesvg.org">thesvg.org</a> &nbsp;&bull;&nbsp;
+  <a href="./docs/install.md">Install</a> &nbsp;&bull;&nbsp;
+  <a href="./docs/extensions.md">Extensions</a> &nbsp;&bull;&nbsp;
   <a href="https://github.com/glincker/thesvg/issues">Issues</a>
 </p>
+
+<p align="center"><sub>Built by GLINCKER. More from the team:</sub></p>
+
+<table align="center">
+  <tr>
+    <td align="center" width="33%">
+      <a href="https://github.com/glincker"><picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/glincker/light.svg" /><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/glincker/default.svg" height="40" alt="GLINCKER" /></picture><br /><b>GLINCKER</b></a><br />
+      <sub>Open source from the team behind theSVG</sub>
+    </td>
+    <td align="center" width="33%">
+      <a href="https://levelrail.com"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/levelrail/default.svg" height="40" alt="Levelrail" /><br /><b>Levelrail</b></a><br />
+      <sub>Self-hosted alternative to Vercel and Coolify. Git push, HTTPS, logs, rollback.</sub>
+    </td>
+    <td align="center" width="33%">
+      <a href="https://theauth.dev"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/theauth/default.svg" height="40" alt="theAuth" /><br /><b>theAuth</b></a><br />
+      <sub>Auth for AI agents and humans. Agent identity, MCP OAuth 2.1, audit.</sub>
+    </td>
+  </tr>
+</table>
