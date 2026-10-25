@@ -106,7 +106,7 @@ theSVG does. It is one open catalog where every logo is **official, clean, compl
 
 ### Why we built it
 
-theSVG began with a pull request. When we tried to add [AskVerdict](https://www.askverdict.ai)'s logo to an existing open source logo library, it was declined as too niche for that project. A fair call for a curated set, but it left us with nowhere to publish the logo. The next day theSVG was live: an open catalog where every brand gets a home, from global enterprises to new startups. It has grown into 7,600+ icons and 12,300+ variants, all official marks, validated and kept current.
+theSVG started with a pull request. We tried to add the logo of our own product, [AskVerdict](https://www.askverdict.ai), to an existing open source logo library, and it was declined as outside that project's scope, which is a fair call for a curated set. That made us want a catalog where any real brand, large or small, can be added through a simple review. theSVG now holds over 7,600 icons, sourced from official brand assets and checked before each one is merged.
 
 ### The theSVG standard
 
