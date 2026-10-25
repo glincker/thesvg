@@ -19,9 +19,12 @@
  *     index.d.ts     Type barrel
  */
 
-import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+
+import { publicSvgReader } from "../../icons/scripts/lib/public-svg.ts";
+import { primarySvg, readIconSvg } from "../../icons/scripts/lib/variants.ts";
 
 // ---------------------------------------------------------------------------
 // Paths
@@ -34,6 +37,8 @@ const __dirname = dirname(__filename);
 const PKG_ROOT = resolve(__dirname, "..");
 /** Root of the thesvg monorepo */
 const REPO_ROOT = resolve(PKG_ROOT, "../..");
+/** Reads icon SVGs by their icons.json path (shared with the other builders). */
+const readPublicSvg = publicSvgReader(join(REPO_ROOT, "public"));
 const ICONS_JSON = join(REPO_ROOT, "src/data/icons.json");
 const DIST = join(PKG_ROOT, "dist");
 
@@ -68,41 +73,6 @@ interface RawIcon {
 // ---------------------------------------------------------------------------
 // SVG reading & parsing
 // ---------------------------------------------------------------------------
-
-/**
- * Read an SVG file given its icons.json-relative public path (e.g.
- * "/icons/apple-music/wordmark-light.svg"). Returns empty string on miss.
- *
- * Variant SVG filenames aren't always the camelCase variant key
- * (e.g. "wordmarkLight" -> "wordmark-light.svg" on disk), so the path must
- * come from icons.json rather than being reconstructed from slug + variant.
- */
-function readSvg(publicPath: string): string {
-  const filePath = join(REPO_ROOT, "public", publicPath.replace(/^\//, ""));
-  if (!existsSync(filePath)) return "";
-  return readFileSync(filePath, "utf8").trim();
-}
-
-/**
- * Resolve the "primary" SVG for an icon.
- * Preference order: default -> color -> mono -> light -> dark -> wordmark -> first available.
- */
-function primarySvg(variants: RawIconVariants): string {
-  const order = ["default", "color", "mono", "light", "dark", "wordmark"];
-  for (const v of order) {
-    const path = variants[v];
-    if (path) {
-      const content = readSvg(path);
-      if (content) return content;
-    }
-  }
-  for (const path of Object.values(variants)) {
-    if (!path) continue;
-    const content = readSvg(path);
-    if (content) return content;
-  }
-  return "";
-}
 
 // ---------------------------------------------------------------------------
 // SVG -> JSX conversion
@@ -309,7 +279,7 @@ interface ParsedIcon {
 
 /** Parse one variant SVG file. Returns null when the file is missing/empty. */
 function parseVariant(publicPath: string): ParsedSvg | null {
-  const svgContent = readSvg(publicPath);
+  const svgContent = readIconSvg(publicPath, readPublicSvg);
   if (!svgContent) return null;
   const { inner, viewBox, fill, stroke } = svgToJsxInner(svgContent);
   return { viewBox, fill, stroke, childNodes: convertJsxToCjs(inner) };
@@ -323,7 +293,7 @@ function parseVariant(publicPath: string): ParsedSvg | null {
  * when their SVG file exists and parses. Returns null when no SVG is found.
  */
 function parseSvgForIcon(icon: RawIcon): ParsedIcon | null {
-  const svgContent = primarySvg(icon.variants);
+  const svgContent = primarySvg(icon.variants, readPublicSvg);
   if (!svgContent) return null;
 
   const { inner, viewBox, fill, stroke } = svgToJsxInner(svgContent);

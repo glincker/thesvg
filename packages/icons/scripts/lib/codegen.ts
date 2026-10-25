@@ -62,27 +62,40 @@ function serializeRecord(record: Record<string, string>): string {
 // Per-icon generators
 // ---------------------------------------------------------------------------
 
+/** Local that holds an icon's variant SVGs, so each string is written once. */
+const VARIANT_SVGS = "variantSvgs";
+
 /**
  * The named exports of a per-icon module, in emission order, each paired
  * with its JS literal. The ESM and CJS generators both render this list, so
  * the two formats can't drift apart.
+ *
+ * `svg` and `variants` refer to the VARIANT_SVGS local (see variantSvgsDecl)
+ * instead of repeating the SVG text: the primary SVG is always one of the
+ * variants.
  */
 function iconExports(
   icon: RawIcon,
   allVariants: Record<string, string>,
   primary: string,
 ): Array<[name: string, literal: string]> {
+  const primaryKey = Object.keys(allVariants).find((key) => allVariants[key] === primary);
   return [
     ["slug", JSON.stringify(icon.slug)],
     ["title", JSON.stringify(icon.title)],
     ["hex", JSON.stringify(icon.hex ?? "")],
     ["categories", serializeStringArray(icon.categories ?? [])],
     ["aliases", serializeStringArray(icon.aliases ?? [])],
-    ["svg", `\`${escapeTpl(primary)}\``],
-    ["variants", serializeRecord(allVariants)],
+    ["svg", primaryKey === undefined ? `\`${escapeTpl(primary)}\`` : `${VARIANT_SVGS}[${JSON.stringify(primaryKey)}]`],
+    ["variants", VARIANT_SVGS],
     ["license", JSON.stringify(icon.license ?? "")],
     ["url", JSON.stringify(icon.url ?? "")],
   ];
+}
+
+/** Declares the VARIANT_SVGS local that `svg` and `variants` point at. */
+function variantSvgsDecl(allVariants: Record<string, string>): string {
+  return `const ${VARIANT_SVGS} = ${serializeRecord(allVariants)};`;
 }
 
 /** ESM module for one icon. `primary` is the SVG exported as `svg`. */
@@ -95,6 +108,8 @@ export function generateEsm(
   return [
     `// @thesvg/icons - ${icon.title}`,
     `// Auto-generated. Do not edit.`,
+    ``,
+    variantSvgsDecl(allVariants),
     ``,
     ...fields.map(([name, literal]) => `export const ${name} = ${literal};`),
     ``,
@@ -117,6 +132,8 @@ export function generateCjs(
     `// Auto-generated. Do not edit.`,
     ``,
     `Object.defineProperty(exports, "__esModule", { value: true });`,
+    ``,
+    variantSvgsDecl(allVariants),
     ``,
     ...fields.map(([name, literal]) => `exports.${name} = ${literal};`),
     ``,

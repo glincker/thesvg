@@ -8,6 +8,7 @@ import { join } from "node:path";
 import ts from "typescript";
 
 import {
+  generateCjs,
   generateDts,
   generateDtsBarrel,
   generateEsm,
@@ -127,4 +128,49 @@ test("per-icon type declarations type-check even when the slug matches one of th
     .map((d) => `${d.file?.fileName.replace(dir, "") ?? ""}: ${ts.flattenDiagnosticMessageText(d.messageText, "\n")}`);
 
   assert.deepEqual(errors, []);
+});
+
+test("per-icon modules inline each SVG string only once", () => {
+  // `svg` is always one of the variants, so writing it out again doubles the
+  // largest part of every module (the package is size-capped in validate-dist).
+  const MONO = SVG.replace("M2 2", "M3 3");
+  const icon = fixtureIcon("github");
+  for (const [format, code] of [
+    ["esm", generateEsm(icon, { default: SVG, mono: MONO }, SVG)],
+    ["cjs", generateCjs(icon, { default: SVG, mono: MONO }, SVG)],
+  ] as const) {
+    assert.equal(code.split(SVG).length - 1, 1, `${format}: default SVG written more than once`);
+    assert.equal(code.split(MONO).length - 1, 1, `${format}: mono SVG written more than once`);
+  }
+});
+
+test("svg still equals its variant at runtime, and export order is unchanged", () => {
+  const MONO = SVG.replace("M2 2", "M3 3");
+  const icon = fixtureIcon("github");
+  const dir = writeDist({
+    "github.js": generateEsm(icon, { mono: MONO, default: SVG }, SVG),
+    "github.cjs": generateCjs(icon, { mono: MONO, default: SVG }, SVG),
+  });
+  const result = runEsm(
+    dir,
+    [
+      `import { createRequire } from "node:module";`,
+      `import * as esm from "./github.js";`,
+      `const cjs = createRequire(import.meta.url)("./github.cjs");`,
+      `console.log(JSON.stringify({`,
+      `  esm: [esm.svg, esm.variants, esm.default.svg, Object.keys(esm.default)],`,
+      `  cjs: [cjs.svg, cjs.variants, cjs.default.svg, Object.keys(cjs).filter((k) => k !== "default")],`,
+      `}));`,
+    ].join("\n"),
+  );
+  assert.equal(result.status, 0, result.stderr);
+  const out = JSON.parse(result.stdout) as Record<"esm" | "cjs", [string, Record<string, string>, string, string[]]>;
+  const order = ["slug", "title", "hex", "categories", "aliases", "svg", "variants", "license", "url"];
+  for (const format of ["esm", "cjs"] as const) {
+    const [svg, variants, defaultSvg, keys] = out[format];
+    assert.equal(svg, SVG, format);
+    assert.equal(defaultSvg, SVG, format);
+    assert.deepEqual(variants, { mono: MONO, default: SVG }, format);
+    assert.deepEqual(keys, order, format);
+  }
 });
