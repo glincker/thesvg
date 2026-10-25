@@ -8,7 +8,7 @@ Back to the [README](../README.md).
 
 Use theSVG icons everywhere you build, design, and ship. Browse the full ecosystem at [thesvg.org/extensions](https://thesvg.org/extensions).
 
-| | Extension | Status | What it does |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Extension | Status | What it does |
 | --- | --- | --- | --- |
 | <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/figma/default.svg" width="28" height="28" alt="" /> | [Figma Plugin](https://www.figma.com/community/plugin/1612997159050367763) | ![Published](https://img.shields.io/badge/-Published-2ea043?style=flat-square) | Browse 7,600+ brand SVGs, variant picker, recents row, keyboard shortcuts. Insert as editable vectors. |
 | <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/visual-studio-code/default.svg" width="28" height="28" alt="" /> | [VS Code](https://marketplace.visualstudio.com/items?itemName=glincker.thesvg) | ![Published](https://img.shields.io/badge/-Published-2ea043?style=flat-square) | Search 7,600+ icons from the command palette. Copy SVG, JSX, CDN link, or insert at cursor. |

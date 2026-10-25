@@ -134,7 +134,7 @@ If that is the logo library you wished existed, the single most useful thing you
 
 ### What is inside
 
-| | Collection | Icons | What you get |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Collection | Icons | What you get |
 | --- | --- | --- | --- |
 | <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/github/dark.svg" /><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/github/light.svg" width="28" height="28" alt="" /></picture> | [Brand icons](https://thesvg.org/collection/brands) | 4,800+ | Logos from 150+ categories in color, mono, light, dark and wordmark |
 | <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/1password/dark.svg" /><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/1password/light.svg" width="28" height="28" alt="" /></picture> | [Auth badges](https://thesvg.org/collection/auth-badges) | 858 | Circular badges for 2FA and authenticator UIs |
@@ -306,7 +306,7 @@ npm install @thesvg/icons
 
 Every package is tree-shakeable, fully typed and ships ESM and CJS. Pick the one that fits your stack.
 
-| | Package | Version | Downloads | What it is | Install |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Package | Version | Downloads | What it is | Install |
 | --- | --- | --- | --- | --- | --- |
 | <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/npm/default.svg" width="28" height="28" alt="" /> | [`thesvg`](https://www.npmjs.com/package/thesvg) | [![npm](https://img.shields.io/npm/v/thesvg?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/thesvg) | [![downloads](https://img.shields.io/npm/dm/thesvg?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/thesvg) | All icons in one package | `npm install thesvg` |
 | <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/npm/default.svg" width="28" height="28" alt="" /> | [`@thesvg/icons`](https://www.npmjs.com/package/@thesvg/icons) | [![npm](https://img.shields.io/npm/v/@thesvg/icons?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/icons) | [![downloads](https://img.shields.io/npm/dm/@thesvg/icons?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/icons) | Core icon data, tree-shakeable | `npm install @thesvg/icons` |
@@ -321,7 +321,7 @@ Every package is tree-shakeable, fully typed and ships ESM and CJS. Pick the one
 
 Use theSVG icons everywhere you build, design and ship. Browse the full ecosystem at [thesvg.org/extensions](https://thesvg.org/extensions).
 
-| | Extension | Status | What it does |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Extension | Status | What it does |
 | --- | --- | --- | --- |
 | <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/figma/default.svg" width="28" height="28" alt="" /> | [Figma Plugin](https://www.figma.com/community/plugin/1612997159050367763) | ![Published](https://img.shields.io/badge/-Published-2ea043?style=flat-square) | Browse 7,600+ brand SVGs, variant picker, recents row, keyboard shortcuts. Insert as editable vectors. |
 | <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/visual-studio-code/default.svg" width="28" height="28" alt="" /> | [VS Code](https://marketplace.visualstudio.com/items?itemName=glincker.thesvg) | ![Published](https://img.shields.io/badge/-Published-2ea043?style=flat-square) | Search 7,600+ icons from the command palette. Copy SVG, JSX, CDN link, or insert at cursor. |
