@@ -1,6 +1,7 @@
 import type { IconLinks } from "@/lib/icon-links";
 import iconsData from "@/data/icons.json";
 import type { CollectionId } from "@/lib/collections-meta";
+import { compareDateDesc } from "@/lib/icon-dates";
 
 /**
  * The canonical list of collection ids lives in `collections-meta.ts`
@@ -155,19 +156,6 @@ export function roundDownToHundred(n: number): number {
 
 export function getFormattedIconCount(): string {
   return roundDownToHundred(icons.length).toLocaleString("en-US");
-}
-
-/**
- * Descending comparator for ISO date strings (newest first). Plain
- * inequalities instead of localeCompare since dates are predictable
- * non-localized ASCII; missing dates sort last.
- */
-export function compareDateDesc(a?: string, b?: string): number {
-  const dateA = a ?? "";
-  const dateB = b ?? "";
-  if (dateB < dateA) return -1;
-  if (dateB > dateA) return 1;
-  return 0;
 }
 
 export function getRecentlyAddedIcons(limit = 12): IconEntry[] {
