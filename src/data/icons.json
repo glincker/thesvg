@@ -97604,22 +97604,50 @@
     "slug": "n8n",
     "title": "n8n",
     "aliases": [],
+    "hex": "191919",
+    "categories": [
+      "Automation",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/n8n/default.svg",
+      "light": "/icons/n8n/light.svg",
+      "dark": "/icons/n8n/dark.svg",
+      "mono": "/icons/n8n/mono.svg",
+      "wordmark": "/icons/n8n/wordmark.svg",
+      "wordmarkLight": "/icons/n8n/wordmark-light.svg",
+      "wordmarkDark": "/icons/n8n/wordmark-dark.svg",
+      "color": "/icons/n8n/color.svg",
+      "lockup": "/icons/n8n/lockup.svg",
+      "lockupDark": "/icons/n8n/lockup-dark.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://n8n.io/",
+    "dateAdded": "2026-10-24",
+    "collection": "brands",
+    "supersedes": "n8n-legacy"
+  },
+  {
+    "slug": "n8n-legacy",
+    "title": "n8n (legacy)",
+    "aliases": [],
     "hex": "EA4B71",
     "categories": [
       "Platform",
       "Automation"
     ],
     "variants": {
-      "default": "/icons/n8n/default.svg",
-      "mono": "/icons/n8n/mono.svg",
-      "wordmark": "/icons/n8n/wordmark.svg",
-      "wordmarkLight": "/icons/n8n/wordmark-light.svg",
-      "wordmarkDark": "/icons/n8n/wordmark-dark.svg"
+      "default": "/icons/n8n-legacy/default.svg",
+      "mono": "/icons/n8n-legacy/mono.svg",
+      "wordmark": "/icons/n8n-legacy/wordmark.svg",
+      "wordmarkLight": "/icons/n8n-legacy/wordmark-light.svg",
+      "wordmarkDark": "/icons/n8n-legacy/wordmark-dark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://n8n.io/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "supersededBy": "n8n"
   },
   {
     "slug": "nab",
@@ -110421,13 +110449,39 @@
       "mono": "/icons/posthog/mono.svg",
       "wordmark": "/icons/posthog/wordmark.svg",
       "wordmarkLight": "/icons/posthog/wordmark-light.svg",
-      "wordmarkDark": "/icons/posthog/wordmark-dark.svg"
+      "wordmarkDark": "/icons/posthog/wordmark-dark.svg",
+      "stacked": "/icons/posthog/stacked.svg",
+      "square": "/icons/posthog/square.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://posthog.com/",
+    "guidelines": "https://posthog.com/handbook/company/brand-assets",
+    "dateAdded": "2026-10-24",
+    "collection": "brands",
+    "supersedes": "posthog-legacy"
+  },
+  {
+    "slug": "posthog-legacy",
+    "title": "PostHog (legacy)",
+    "aliases": [],
+    "hex": "1D4AFF",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/posthog-legacy/default.svg",
+      "mono": "/icons/posthog-legacy/mono.svg",
+      "wordmark": "/icons/posthog-legacy/wordmark.svg",
+      "wordmarkLight": "/icons/posthog-legacy/wordmark-light.svg",
+      "wordmarkDark": "/icons/posthog-legacy/wordmark-dark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://posthog.com/",
     "guidelines": "https://posthog.com/handbook/company/brand-assets",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "supersededBy": "posthog"
   },
   {
     "slug": "postiz",
