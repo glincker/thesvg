@@ -49391,6 +49391,28 @@
     "collection": "brands"
   },
   {
+    "slug": "countly",
+    "title": "Countly",
+    "aliases": [],
+    "hex": "3EBB60",
+    "categories": [
+      "Analytics",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/countly/default.svg",
+      "light": "/icons/countly/light.svg",
+      "dark": "/icons/countly/dark.svg",
+      "wordmark": "/icons/countly/wordmark.svg",
+      "wordmarkDark": "/icons/countly/wordmark-dark.svg"
+    },
+    "license": "brand-use",
+    "url": "https://countly.com/",
+    "guidelines": "https://countly.com/brand-guidelines",
+    "dateAdded": "2026-10-24",
+    "collection": "brands"
+  },
+  {
     "slug": "coupang",
     "title": "Coupang",
     "aliases": [],
@@ -74488,18 +74510,25 @@
     "slug": "heap",
     "title": "Heap",
     "aliases": [],
-    "hex": "4F46E5",
+    "hex": "31D891",
     "categories": [
-      "Software",
-      "Analytics"
+      "Analytics",
+      "Software"
     ],
     "variants": {
-      "default": "/icons/heap/default.svg"
+      "default": "/icons/heap/default.svg",
+      "light": "/icons/heap/light.svg",
+      "dark": "/icons/heap/dark.svg",
+      "wordmark": "/icons/heap/wordmark.svg",
+      "wordmarkDark": "/icons/heap/wordmark-dark.svg",
+      "lockup": "/icons/heap/lockup.svg",
+      "lockupDark": "/icons/heap/lockup-dark.svg"
     },
     "license": "brand-use",
     "dateAdded": "2026-06-29",
     "collection": "community",
-    "url": "https://heap.io"
+    "url": "https://heap.io",
+    "guidelines": "https://www.heap.io/press"
   },
   {
     "slug": "hearth",
@@ -103878,6 +103907,27 @@
     "collection": "brands"
   },
   {
+    "slug": "openreplay",
+    "title": "OpenReplay",
+    "aliases": [],
+    "hex": "394EFF",
+    "categories": [
+      "Analytics",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/openreplay/default.svg",
+      "dark": "/icons/openreplay/dark.svg",
+      "wordmark": "/icons/openreplay/wordmark.svg",
+      "wordmarkDark": "/icons/openreplay/wordmark-dark.svg"
+    },
+    "license": "brand-use",
+    "url": "https://openreplay.com/",
+    "guidelines": "https://openreplay.com/branding/",
+    "dateAdded": "2026-10-24",
+    "collection": "brands"
+  },
+  {
     "slug": "openrouter",
     "title": "OpenRouter",
     "aliases": [],
@@ -118647,6 +118697,32 @@
     "license": "CC0-1.0",
     "url": "https://corporate.ryanair.com/media-centre/stock-images-gallery/#album-container-3",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "rybbit",
+    "title": "Rybbit",
+    "aliases": [],
+    "hex": "2FD381",
+    "categories": [
+      "Analytics",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/rybbit/default.svg",
+      "light": "/icons/rybbit/light.svg",
+      "dark": "/icons/rybbit/dark.svg",
+      "mono": "/icons/rybbit/mono.svg",
+      "wordmark": "/icons/rybbit/wordmark.svg",
+      "wordmarkLight": "/icons/rybbit/wordmark-light.svg",
+      "wordmarkDark": "/icons/rybbit/wordmark-dark.svg",
+      "lockup": "/icons/rybbit/lockup.svg",
+      "lockupDark": "/icons/rybbit/lockup-dark.svg"
+    },
+    "license": "brand-use",
+    "url": "https://rybbit.com/",
+    "guidelines": "https://rybbit.com/brand",
+    "dateAdded": "2026-10-24",
     "collection": "brands"
   },
   {
@@ -135862,6 +135938,29 @@
     "license": "Trademark",
     "url": "https://www.circle.com/usdc",
     "dateAdded": "2026-06-25",
+    "collection": "brands"
+  },
+  {
+    "slug": "userpilot",
+    "title": "Userpilot",
+    "aliases": [],
+    "hex": "0E0841",
+    "categories": [
+      "Analytics",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/userpilot/default.svg",
+      "light": "/icons/userpilot/light.svg",
+      "dark": "/icons/userpilot/dark.svg",
+      "wordmark": "/icons/userpilot/wordmark.svg",
+      "wordmarkLight": "/icons/userpilot/wordmark-light.svg",
+      "wordmarkDark": "/icons/userpilot/wordmark-dark.svg"
+    },
+    "license": "brand-use",
+    "url": "https://userpilot.com/",
+    "guidelines": "https://userpilot.com/brand/",
+    "dateAdded": "2026-10-24",
     "collection": "brands"
   },
   {
