@@ -10,7 +10,7 @@
 
 <h3 align="center">The open SVG brand library</h3>
 
-<p align="center"><em>A home for every brand.</em></p>
+<p align="center"><b>A HOME FOR EVERY BRAND.</b></p>
 
 <p align="center">
   7,600+ brand logos and cloud icons. Search, copy and ship them as SVG, React, Vue, Svelte, CDN, CLI or MCP.<br />
