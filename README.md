@@ -108,6 +108,8 @@ theSVG does. It is one open catalog where every logo is **official, clean, compl
 
 theSVG started with a pull request. We tried to add the logo of our own product, [AskVerdict](https://www.askverdict.ai), to an existing open source logo library, and it was declined as outside that project's scope, which is a fair call for a curated set. That made us want a catalog where any real brand, large or small, can be added through a simple review. theSVG now holds over 7,600 icons, sourced from official brand assets and checked before each one is merged.
 
+**A HOME FOR EVERY BRAND.**
+
 ### The theSVG standard
 
 What every icon in the catalog is held to, and what we want a brand SVG to mean everywhere:
