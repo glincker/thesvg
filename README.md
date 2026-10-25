@@ -106,7 +106,7 @@ theSVG does. It is one open catalog where every logo is **official, clean, compl
 
 ### Why we built it
 
-theSVG started with a rejection. When we launched our own product, [AskVerdict](https://www.askverdict.ai), its logo was turned away by the existing logo libraries. A small team's brand did not make the cut, and there was nowhere to put it. So we built the place we wished existed: an open catalog where **every brand gets a home**, whether it is a global company or a three-person startup. No gatekeeping, no popularity contest, just the official mark, kept clean and up to date.
+theSVG began with a gap we ran into ourselves. When we launched [AskVerdict](https://www.askverdict.ai), its logo was not accepted by the logo libraries we tried, and there was nowhere to publish it. So we built the home we had been looking for: an open catalog where any brand can be listed, from global enterprises to new startups. Every entry is the official mark, sourced from the brand, validated for quality and kept current.
 
 ### The theSVG standard
 
