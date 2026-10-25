@@ -59,7 +59,6 @@
   </a>
 </p>
 
-<br />
 
 <p align="center">
   <sub>Every logo below is served straight from theSVG.</sub>
@@ -94,7 +93,6 @@
 <hr />
 
 
-<br />
 
 ## Why theSVG
 
