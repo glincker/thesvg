@@ -85,3 +85,6 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2025-05-18 - Replacing Set initialization from mapped arrays with single-pass loops
 **Learning:** Initializing Sets using `new Set(array.map(...))` creates an intermediate array, which increases memory allocation and triggers garbage collection. This is an explicit anti-pattern in this project, similar to initializing Maps with `new Map(array.map(...))`.
 **Action:** Always use an inline initialization function with a single-pass `for` loop to populate Sets, avoiding intermediate object allocations.
+## 2026-10-25 - Preserve behavior when optimizing array methods
+**Learning:** When refactoring declarative array methods like `.map()` to imperative `for` loops for performance, it's easy to accidentally introduce behavioral changes, such as unintentionally filtering out `undefined` values (e.g., `if (val) set.add(val)`).
+**Action:** Always ensure that manual `for` loops strictly replicate the null-checking behavior of the original mapping function to prevent subtle application logic changes.
