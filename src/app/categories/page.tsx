@@ -6,7 +6,7 @@ import {
   getCategoryCounts,
   getCollections,
   getFormattedIconCount,
-  getIconsByCategory,
+  getAllIcons,
 } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 import { categoryUrl } from "@/lib/categories";
@@ -83,19 +83,23 @@ export default function CategoriesPage() {
 
   const totalCategories = brandCategories.length + awsCategories.length;
 
-  // Build sample icons for each category (up to 6 per category)
+  // One pass over the catalog instead of a full filter per category. Keys are
+  // lowercased to match getIconsByCategory's case-insensitive lookup.
+  const samplesByKey = new Map<string, { slug: string; src: string }[]>();
+  for (const icon of getAllIcons()) {
+    for (const category of icon.categories) {
+      const key = category.toLowerCase();
+      let samples = samplesByKey.get(key);
+      if (!samples) {
+        samples = [];
+        samplesByKey.set(key, samples);
+      }
+      if (samples.length < 6) samples.push({ slug: icon.slug, src: icon.variants.default });
+    }
+  }
   const samplesByCategory = new Map<string, { slug: string; src: string }[]>();
   for (const cat of [...brandCategories, ...awsCategories]) {
-    if (!samplesByCategory.has(cat.name)) {
-      const icons = getIconsByCategory(cat.name).slice(0, 6);
-      samplesByCategory.set(
-        cat.name,
-        icons.map((i) => ({
-          slug: i.slug,
-          src: i.variants.default,
-        }))
-      );
-    }
+    samplesByCategory.set(cat.name, samplesByKey.get(cat.name.toLowerCase()) ?? []);
   }
 
   return (
