@@ -142,7 +142,7 @@ If that is the logo library you wished existed, the single most useful thing you
 | <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/microsoft-azure/default.svg" width="28" height="28" alt="" /> | [Azure](https://thesvg.org/collection/azure) | 626 | Microsoft Azure service icons |
 | <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/docker/default.svg" width="28" height="28" alt="" /> | [Community](https://thesvg.org/collection/community) | 256 | Dev tools, databases and frameworks |
 | <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/google-cloud/default.svg" width="28" height="28" alt="" /> | [Google Cloud](https://thesvg.org/collection/gcp) | 214 | Google Cloud Platform icons |
-| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/kubernetes/default.svg" width="28" height="28" alt="" /> | [Kubernetes](https://thesvg.org/collection/kubernetes) | 38 | Official CNCF architecture icons |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/kubernetes/default.svg" width="28" height="28" alt="" /> | [Kubernetes](https://thesvg.org/collection/k8s) | 38 | Official CNCF architecture icons |
 
 <details>
 <summary>Collections, plain table</summary>
