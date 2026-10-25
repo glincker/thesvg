@@ -69911,7 +69911,7 @@
   },
   {
     "slug": "godonateme",
-    "title": "GoDonate.me",
+    "title": "GoDonateMe",
     "aliases": [
       "godonate",
       "godonate-me",
@@ -69925,6 +69925,7 @@
     ],
     "variants": {
       "default": "/icons/godonateme/default.svg",
+      "light": "/icons/godonateme/light.svg",
       "dark": "/icons/godonateme/dark.svg",
       "mono": "/icons/godonateme/mono.svg"
     },
