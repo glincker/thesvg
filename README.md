@@ -366,6 +366,52 @@ Not every icon has all variants. `default` is always present.
 
 ## Packages
 
+Every package is tree-shakeable, fully typed and ships ESM and CJS. Pick the one that fits your stack.
+
+| | Package | Version | Downloads | What it is | Install |
+| --- | --- | --- | --- | --- | --- |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/npm/default.svg" height="24" alt="" /> | [`thesvg`](https://www.npmjs.com/package/thesvg) | [![npm](https://img.shields.io/npm/v/thesvg?style=flat-square&color=F97316&label=)](https://www.npmjs.com/package/thesvg) | [![downloads](https://img.shields.io/npm/dm/thesvg?style=flat-square&color=F97316&label=)](https://www.npmjs.com/package/thesvg) | All icons in one package | `npm install thesvg` |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/npm/default.svg" height="24" alt="" /> | [`@thesvg/icons`](https://www.npmjs.com/package/@thesvg/icons) | [![npm](https://img.shields.io/npm/v/@thesvg/icons?style=flat-square&color=F97316&label=)](https://www.npmjs.com/package/@thesvg/icons) | [![downloads](https://img.shields.io/npm/dm/@thesvg/icons?style=flat-square&color=F97316&label=)](https://www.npmjs.com/package/@thesvg/icons) | Core icon data, tree-shakeable | `npm install @thesvg/icons` |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/react/default.svg" height="24" alt="" /> | [`@thesvg/react`](https://www.npmjs.com/package/@thesvg/react) | [![npm](https://img.shields.io/npm/v/@thesvg/react?style=flat-square&color=F97316&label=)](https://www.npmjs.com/package/@thesvg/react) | [![downloads](https://img.shields.io/npm/dm/@thesvg/react?style=flat-square&color=F97316&label=)](https://www.npmjs.com/package/@thesvg/react) | Typed React components | `npm install @thesvg/react` |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/vue/default.svg" height="24" alt="" /> | [`@thesvg/vue`](https://www.npmjs.com/package/@thesvg/vue) | [![npm](https://img.shields.io/npm/v/@thesvg/vue?style=flat-square&color=F97316&label=)](https://www.npmjs.com/package/@thesvg/vue) | [![downloads](https://img.shields.io/npm/dm/@thesvg/vue?style=flat-square&color=F97316&label=)](https://www.npmjs.com/package/@thesvg/vue) | Typed Vue 3 components | `npm install @thesvg/vue` |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/svelte/default.svg" height="24" alt="" /> | [`@thesvg/svelte`](https://www.npmjs.com/package/@thesvg/svelte) | [![npm](https://img.shields.io/npm/v/@thesvg/svelte?style=flat-square&color=F97316&label=)](https://www.npmjs.com/package/@thesvg/svelte) | [![downloads](https://img.shields.io/npm/dm/@thesvg/svelte?style=flat-square&color=F97316&label=)](https://www.npmjs.com/package/@thesvg/svelte) | Typed Svelte components | `npm install @thesvg/svelte` |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/react/default.svg" height="24" alt="" /> | [`@thesvg/react-native`](https://www.npmjs.com/package/@thesvg/react-native) | [![npm](https://img.shields.io/npm/v/@thesvg/react-native?style=flat-square&color=F97316&label=)](https://www.npmjs.com/package/@thesvg/react-native) | [![downloads](https://img.shields.io/npm/dm/@thesvg/react-native?style=flat-square&color=F97316&label=)](https://www.npmjs.com/package/@thesvg/react-native) | React Native components | `npm install @thesvg/react-native` |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/npm/default.svg" height="24" alt="" /> | [`@thesvg/cli`](https://www.npmjs.com/package/@thesvg/cli) | [![npm](https://img.shields.io/npm/v/@thesvg/cli?style=flat-square&color=F97316&label=)](https://www.npmjs.com/package/@thesvg/cli) | [![downloads](https://img.shields.io/npm/dm/@thesvg/cli?style=flat-square&color=F97316&label=)](https://www.npmjs.com/package/@thesvg/cli) | CLI tool, shadcn-style installer | `npx @thesvg/cli add github` |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/claude/default.svg" height="24" alt="" /> | [`@thesvg/mcp-server`](https://www.npmjs.com/package/@thesvg/mcp-server) | [![npm](https://img.shields.io/npm/v/@thesvg/mcp-server?style=flat-square&color=F97316&label=)](https://www.npmjs.com/package/@thesvg/mcp-server) | [![downloads](https://img.shields.io/npm/dm/@thesvg/mcp-server?style=flat-square&color=F97316&label=)](https://www.npmjs.com/package/@thesvg/mcp-server) | MCP server for AI assistants | `npx @thesvg/mcp-server` |
+
+## CDN
+
+```html
+<img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/github/default.svg" width="32" height="32" alt="GitHub" />
+```
+
+### CLI
+
+```bash
+npx @thesvg/cli add github
+npx @thesvg/cli search "ai"
+```
+
+</details>
+
+## Variants
+
+Icons support up to 7 variants to match any design context:
+
+| Variant | Key | Description |
+|---------|-----|-------------|
+| Default | `default` | Primary brand color |
+| Mono | `mono` | Inherits text color |
+| Light | `light` | White, for dark backgrounds |
+| Dark | `dark` | Black, for light backgrounds |
+| Wordmark | `wordmark` | Full text logo |
+| Wordmark Light | `wordmarkLight` | White text logo |
+| Wordmark Dark | `wordmarkDark` | Dark text logo |
+
+Not every icon has all variants. `default` is always present.
+
+## Packages
+
 <details>
 <summary>All npm packages</summary>
 
