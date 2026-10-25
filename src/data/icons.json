@@ -102197,7 +102197,11 @@
       "Payment"
     ],
     "variants": {
-      "default": "/icons/oddinpay/default.svg"
+      "default": "/icons/oddinpay/default.svg",
+      "mono": "/icons/oddinpay/mono.svg",
+      "light": "/icons/oddinpay/light.svg",
+      "dark": "/icons/oddinpay/dark.svg",
+      "wordmark": "/icons/oddinpay/wordmark.svg"
     },
     "license": "CC-BY-ND-4.0",
     "url": "https://www.oddinpay.com",
