@@ -243,6 +243,31 @@ github.hex;      // "181717"
 
 Every icon has its own page with all variants, copy formats and a live preview, for example [thesvg.org/icon/github](https://thesvg.org/icon/github). Tree-shakeable, fully typed, ESM and CJS. More in [Install and packages](./docs/install.md), [Usage and variants](./docs/usage.md) and [CDN and API](./docs/cdn-api.md).
 
+## Built for designers and developers
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h4><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/figma/default.svg" height="20" alt="" /> If you design</h4>
+      <ul>
+        <li>Drop official logos into Figma as <b>editable vectors</b> with the <a href="https://www.figma.com/community/plugin/1612997159050367763">Figma plugin</a>.</li>
+        <li>Pick the right variant for the background: color, mono, light, dark or wordmark.</li>
+        <li>No redrawing, no recoloring guesswork. Every mark is the brand's own, with a guidelines link.</li>
+        <li>Diagramming? Use the <a href="https://icon-sets.iconify.design/thesvg-color/">Iconify sets</a> in Mermaid, plus draw.io and Excalidraw libraries, and the AWS, Azure and Google Cloud architecture icons.</li>
+      </ul>
+    </td>
+    <td width="50%" valign="top">
+      <h4><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/visual-studio-code/default.svg" height="20" alt="" /> If you build</h4>
+      <ul>
+        <li>Import one icon and ship one icon: <code>thesvg/github</code> is tree-shakeable and fully typed.</li>
+        <li>Use <a href="https://www.npmjs.com/package/@thesvg/react">React</a>, <a href="https://www.npmjs.com/package/@thesvg/vue">Vue</a> or <a href="https://www.npmjs.com/package/@thesvg/svelte">Svelte</a> components, or a plain <code>&lt;img&gt;</code> from the CDN.</li>
+        <li>Add icons from the terminal with the <a href="https://www.npmjs.com/package/@thesvg/cli">CLI</a>, or let your AI editor fetch them through the <a href="https://www.npmjs.com/package/@thesvg/mcp-server">MCP server</a>.</li>
+        <li>Stable URLs and a static JSON manifest, so you can build on it without keys or sign-ups.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
 ## Install
 
 **npm**
@@ -381,54 +406,6 @@ Every package is tree-shakeable, fully typed and ships ESM and CJS. Pick the one
 
 ## CDN
 
-```html
-<img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/github/default.svg" width="32" height="32" alt="GitHub" />
-```
-
-### CLI
-
-```bash
-npx @thesvg/cli add github
-npx @thesvg/cli search "ai"
-```
-
-</details>
-
-## Variants
-
-Icons support up to 7 variants to match any design context:
-
-| Variant | Key | Description |
-|---------|-----|-------------|
-| Default | `default` | Primary brand color |
-| Mono | `mono` | Inherits text color |
-| Light | `light` | White, for dark backgrounds |
-| Dark | `dark` | Black, for light backgrounds |
-| Wordmark | `wordmark` | Full text logo |
-| Wordmark Light | `wordmarkLight` | White text logo |
-| Wordmark Dark | `wordmarkDark` | Dark text logo |
-
-Not every icon has all variants. `default` is always present.
-
-## Packages
-
-<details>
-<summary>All npm packages</summary>
-
-| Package | Description | |
-|---------|-------------|---|
-| [`thesvg`](https://www.npmjs.com/package/thesvg) | All icons in one package | [![npm](https://img.shields.io/npm/v/thesvg?style=flat-square&color=F97316)](https://www.npmjs.com/package/thesvg) |
-| [`@thesvg/icons`](https://www.npmjs.com/package/@thesvg/icons) | Core icon data, tree-shakeable | [![npm](https://img.shields.io/npm/v/@thesvg/icons?style=flat-square&color=F97316)](https://www.npmjs.com/package/@thesvg/icons) |
-| [`@thesvg/react`](https://www.npmjs.com/package/@thesvg/react) | Typed React components | [![npm](https://img.shields.io/npm/v/@thesvg/react?style=flat-square&color=F97316)](https://www.npmjs.com/package/@thesvg/react) |
-| [`@thesvg/vue`](https://www.npmjs.com/package/@thesvg/vue) | Typed Vue 3 components | [![npm](https://img.shields.io/npm/v/@thesvg/vue?style=flat-square&color=F97316)](https://www.npmjs.com/package/@thesvg/vue) |
-| [`@thesvg/svelte`](https://www.npmjs.com/package/@thesvg/svelte) | Typed Svelte components | [![npm](https://img.shields.io/npm/v/@thesvg/svelte?style=flat-square&color=F97316)](https://www.npmjs.com/package/@thesvg/svelte) |
-| [`@thesvg/cli`](https://www.npmjs.com/package/@thesvg/cli) | CLI tool (`npx @thesvg/cli add github`) | [![npm](https://img.shields.io/npm/v/@thesvg/cli?style=flat-square&color=F97316)](https://www.npmjs.com/package/@thesvg/cli) |
-| [`@thesvg/mcp-server`](https://www.npmjs.com/package/@thesvg/mcp-server) | MCP server for AI assistants | [![npm](https://img.shields.io/npm/v/@thesvg/mcp-server?style=flat-square&color=F97316)](https://www.npmjs.com/package/@thesvg/mcp-server) |
-
-</details>
-
-## CDN
-
 Use any icon directly without installing:
 
 ```html
@@ -493,6 +470,27 @@ Questions, icon requests, or showing off what you built? Join the official GLINR
 
 <a href="https://discord.gg/Ar5pcaZB99"><img src="https://discord.com/api/guilds/829168897080557579/widget.png?style=banner2" alt="Join the GLINR Discord" /></a>
 
+## Run it locally
+
+You need [Node.js](https://nodejs.org) 20 or newer and [pnpm](https://pnpm.io).
+
+```bash
+git clone https://github.com/glincker/thesvg.git
+cd thesvg
+pnpm install
+pnpm dev          # http://localhost:3333
+```
+
+| Command | What it does |
+| --- | --- |
+| `pnpm dev` | Starts the site with hot reload on port 3333 |
+| `pnpm build` | Regenerates the API, `llms.txt`, feed and icon tones, then builds the static site |
+| `pnpm lint` | Runs ESLint |
+| `pnpm test` | Runs the Vitest suite plus the CLI and icons package tests |
+| `npx tsx scripts/validate-icons.ts` | Audits every SVG for scripts, bad values, non-mono mono files and missing `viewBox` |
+
+**Add an icon:** put the files in `public/icons/{slug}/` (`default.svg`, plus `mono`, `light`, `dark` or `wordmark` as they apply), register the slug in `src/data/icons.json`, run the validator, then open a pull request. Full rules are in [CONTRIBUTING.md](./CONTRIBUTING.md).
+
 ## Contributing
 
 Every brand deserves a place. No gatekeeping.
@@ -517,6 +515,15 @@ Questions and icon requests are welcome in the [Discord](https://discord.gg/Ar5p
 <a href="https://github.com/glincker/thesvg/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=glincker/thesvg" alt="theSVG contributors" />
 </a>
+
+## Follow along
+
+New icons, rebrands and releases land every week. To keep up:
+
+- **Star and watch** the repo. Use *Watch, Custom, Releases* to hear about each new version.
+- **Follow [GLINCKER](https://github.com/glincker)** on GitHub for the rest of what we build.
+- **Join the [Discord](https://discord.gg/Ar5pcaZB99)** to request icons and see releases the moment they ship.
+- **Browse [thesvg.org](https://thesvg.org)** to see what was added recently.
 
 ## Sponsor
 
