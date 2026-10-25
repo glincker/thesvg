@@ -10,6 +10,8 @@
 
 <h3 align="center">The open SVG brand library</h3>
 
+<p align="center"><em>A home for every brand.</em></p>
+
 <p align="center">
   7,600+ brand logos and cloud icons. Search, copy and ship them as SVG, React, Vue, Svelte, CDN, CLI or MCP.<br />
   Free, open source, no gatekeeping.
@@ -101,6 +103,10 @@ Most icon libraries focus on UI icons. Brand logos are scattered across press ki
 Every developer has hunted for a company logo: a press kit buried three clicks deep, a PNG that blurs on retina, a "mono" file that is secretly four colors, a logo that changed last month. Most icon sets cover UI glyphs. Nobody treated brand logos as real, versioned, trustworthy data.
 
 theSVG does. It is one open catalog where every logo is **official, clean, complete and current**, and it is delivered in whatever shape your project needs.
+
+### Why we built it
+
+theSVG started with a rejection. When we launched our own product, [AskVerdict](https://www.askverdict.ai), its logo was turned away by the existing logo libraries. A small team's brand did not make the cut, and there was nowhere to put it. So we built the place we wished existed: an open catalog where **every brand gets a home**, whether it is a global company or a three-person startup. No gatekeeping, no popularity contest, just the official mark, kept clean and up to date.
 
 ### The theSVG standard
 
