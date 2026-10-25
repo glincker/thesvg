@@ -155,7 +155,7 @@ export function HelpFab({ iconCount }: { iconCount: string }) {
                 className="absolute top-4 right-4 rounded-xl p-2 text-zinc-500 transition-all duration-200 hover:bg-white/10 hover:text-zinc-300 hover:rotate-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
                 aria-label="Close"
               >
-                <X className="h-4 w-4" />
+                <X className="h-4 w-4" aria-hidden="true" />
               </button>
 
               {/* Header */}
