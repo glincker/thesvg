@@ -8,6 +8,6 @@
   "documentAccess": "dynamic-page",
   "networkAccess": {
     "allowedDomains": ["https://cdn.jsdelivr.net"],
-    "reasoning": "Fetches the icon catalog and SVG files from the jsDelivr CDN mirror of the open-source theSVG repository"
+    "reasoning": "Fetches the brand and UI icon catalogs and SVG files from the jsDelivr CDN mirror of the open-source theSVG repository"
   }
 }

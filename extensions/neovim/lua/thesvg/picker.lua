@@ -212,4 +212,105 @@ function M.open(icons, config)
   end
 end
 
+-- UI icons: separate kind with its own CDN path and a look per icon.
+-- SVGs use currentColor, so the inserted text is left untouched.
+local UI_CDN_BASE = "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/ui"
+
+---@param slug string
+---@param look string
+---@return string
+local function ui_url(slug, look)
+  return UI_CDN_BASE .. "/" .. slug .. "/" .. look .. ".svg"
+end
+
+--- Insert (or fetch then insert) a UI icon in the chosen look.
+local function insert_ui(icon, look, config, target)
+  local url = ui_url(icon.slug, look)
+  if config.insert_mode ~= "inline" then
+    insert_text(target, url)
+    return
+  end
+  vim.notify("[thesvg] fetching " .. icon.slug .. " (" .. look .. ")...", vim.log.levels.INFO)
+  require("thesvg.http").get_async(url, 5000, function(body, err)
+    if not body then
+      vim.notify("[thesvg] failed to fetch SVG: " .. (err or "unknown"), vim.log.levels.ERROR)
+      return
+    end
+    insert_text(target, vim.trim(body))
+  end)
+end
+
+--- Use the requested look, or ask for one (outline first) when none was given.
+local function on_select_ui(icon, index, config, target, look)
+  if not icon then
+    return
+  end
+  if look and look ~= "" then
+    insert_ui(icon, look, config, target)
+    return
+  end
+  vim.ui.select(index.looks, { prompt = "theSVG look" }, function(choice)
+    if choice then
+      insert_ui(icon, choice, config, target)
+    end
+  end)
+end
+
+local function ui_display(icon)
+  return string.format("%-32s  %-24s  %s", icon.title or icon.slug, icon.slug, icon.category or "")
+end
+
+--- Open a picker over the UI icon index.
+---@param index table  { looks: string[], icons: table[] }
+---@param config table
+---@param look? string  fixed look; prompts when nil
+function M.open_ui(index, config, look)
+  local target = capture_target()
+  local icons = index.icons
+
+  local ok, pickers = pcall(require, "telescope.pickers")
+  if ok then
+    local finders = require("telescope.finders")
+    local actions = require("telescope.actions")
+    local action_state = require("telescope.actions.state")
+    local conf = require("telescope.config").values
+    pickers.new({}, {
+      prompt_title = "theSVG UI Icons",
+      finder = finders.new_table({
+        results = icons,
+        entry_maker = function(icon)
+          local tags = type(icon.tags) == "table" and table.concat(icon.tags, " ") or ""
+          return {
+            value = icon,
+            display = ui_display(icon),
+            ordinal = table.concat({ icon.title or "", icon.slug or "", icon.category or "", tags }, " "),
+          }
+        end,
+      }),
+      sorter = conf.generic_sorter({}),
+      attach_mappings = function(prompt_bufnr)
+        actions.select_default:replace(function()
+          actions.close(prompt_bufnr)
+          local selection = action_state.get_selected_entry()
+          if selection then
+            on_select_ui(selection.value, index, config, target, look)
+          end
+        end)
+        return true
+      end,
+    }):find()
+    return
+  end
+
+  local items = {}
+  for _, icon in ipairs(icons) do
+    items[#items + 1] = ui_display(icon)
+  end
+  vim.ui.select(items, { prompt = "theSVG UI Icons" }, function(_, idx)
+    if idx then
+      on_select_ui(icons[idx], index, config, target, look)
+    end
+  end)
+end
+
 return M

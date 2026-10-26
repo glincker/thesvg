@@ -2,7 +2,7 @@
 
 Neovim plugin for [theSVG](https://thesvg.org) -- The Open SVG Brand Library.
 
-Search 7,600+ brand SVGs from a Telescope picker (or `vim.ui.select` fallback) and either
+Search brand SVGs, plus a growing set of UI icons, from a Telescope picker (or `vim.ui.select` fallback) and either
 insert the CDN URL or inline SVG content at the cursor.
 
 ## Requirements
@@ -58,6 +58,20 @@ use {
 | `:TheSVGInsert` | Open picker, insert inline SVG at cursor |
 | `:TheSVGPath` | Open picker, insert CDN URL at cursor |
 | `:Telescope thesvg` | Open Telescope picker directly |
+| `:TheSVGUI [look]` | Open the UI icon picker (respects `insert_mode`) |
+| `:TheSVGUIInsert [look]` | Pick a UI icon, insert inline SVG at cursor |
+| `:TheSVGUIPath [look]` | Pick a UI icon, insert CDN URL at cursor |
+
+### UI icons
+
+UI icons are a separate set with several looks: outline, glass, duotone, offset, fill,
+pixel and depth. Pass the look as the argument (`:TheSVGUI fill`), or omit it to be
+asked after picking an icon (outline is listed first). The SVGs use `currentColor`,
+and inline inserts keep it, so they follow the surrounding text color.
+
+The UI index is fetched on first use and cached at `stdpath('cache')/thesvg/ui-icons.json`
+with the same TTL as the brand registry. If it cannot be loaded, one warning line is
+shown and brand search is unaffected.
 
 ## Configuration
 
@@ -80,6 +94,12 @@ require("thesvg").setup({
 
 ```
 https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/{slug}/{variant}.svg
+```
+
+UI icon URL format:
+
+```
+https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/ui/{slug}/{look}.svg
 ```
 
 ## Keybinding examples

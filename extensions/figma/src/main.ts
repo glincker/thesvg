@@ -5,6 +5,8 @@
 
 const CDN_BASE = "https://cdn.jsdelivr.net/gh/glincker/thesvg@main";
 const ICONS_JSON_URL = `${CDN_BASE}/src/data/icons.json`;
+// UI icons live in a separate index and are never merged into the brand catalog.
+const UI_INDEX_URL = `${CDN_BASE}/src/data/ui-icons.json`;
 const ICONS_PATH_PREFIX = `${CDN_BASE}/public`;
 const RECENTS_KEY = "thesvg.recents";
 const RECENTS_LIMIT = 12;
@@ -34,6 +36,24 @@ interface ClearRecentsMessage {
   type: "clear-recents";
 }
 
+interface UiLoadIndexMessage {
+  type: "ui-load-index";
+}
+
+interface UiLoadSvgsMessage {
+  type: "ui-load-svgs";
+  look: string;
+  slugs: string[];
+}
+
+interface UiInsertMessage {
+  type: "ui-insert";
+  slug: string;
+  name: string;
+  look: string;
+  color: string;
+}
+
 interface CloseMessage {
   type: "close";
 }
@@ -44,6 +64,9 @@ type PluginMessage =
   | LoadCategoriesMessage
   | LoadRecentsMessage
   | ClearRecentsMessage
+  | UiLoadIndexMessage
+  | UiLoadSvgsMessage
+  | UiInsertMessage
   | CloseMessage;
 
 figma.showUI(__html__, {
@@ -183,6 +206,59 @@ async function getIconSvg(slug: string, variant: string): Promise<string> {
   return res.text();
 }
 
+// ---- UI icons ----
+interface UiIcon {
+  slug: string;
+  title: string;
+  category: string;
+  tags: string[];
+  set: string;
+  releasedOn: string;
+}
+
+interface UiIndex {
+  version: number;
+  kind: string;
+  looks: string[];
+  files: string;
+  sets: Array<{ id: string; name: string; releaseDate: string; count: number }>;
+  icons: UiIcon[];
+}
+
+const HEX_COLOR = /^#[0-9a-fA-F]{6}$/;
+let cachedUiIndex: UiIndex | null = null;
+const uiSvgCache = new Map<string, string>();
+
+async function loadUiIndex(): Promise<UiIndex> {
+  if (cachedUiIndex) return cachedUiIndex;
+  const res = await fetch(UI_INDEX_URL);
+  if (!res.ok) throw new Error(`CDN error: ${res.status}`);
+  const raw = (await res.json()) as UiIndex;
+  if (!raw || !Array.isArray(raw.icons) || !Array.isArray(raw.looks)) {
+    throw new Error("Invalid UI icon index");
+  }
+  cachedUiIndex = raw;
+  return raw;
+}
+
+async function getUiSvg(slug: string, look: string): Promise<string> {
+  const index = await loadUiIndex();
+  if (!index.looks.includes(look)) throw new Error(`Unknown look: ${look}`);
+  if (!index.icons.some((i) => i.slug === slug)) {
+    throw new Error(`Unknown icon: ${slug}`);
+  }
+  const key = `${slug}/${look}`;
+  const hit = uiSvgCache.get(key);
+  if (hit) return hit;
+  const rel = index.files
+    .replace("{slug}", encodeURIComponent(slug))
+    .replace("{look}", encodeURIComponent(look));
+  const res = await fetchWithRetry(`${ICONS_PATH_PREFIX}${rel}`, 1);
+  const text = await res.text();
+  uiSvgCache.set(key, text);
+  return text;
+}
+
 async function loadRecents(): Promise<RecentEntry[]> {
   const raw = (await figma.clientStorage.getAsync(RECENTS_KEY)) as
     | RecentEntry[]
@@ -251,6 +327,74 @@ figma.ui.onmessage = async (msg: PluginMessage) => {
         status: "done",
       });
       figma.ui.postMessage({ type: "recents", data: recents });
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : "Unknown error";
+      figma.notify(`Failed to insert SVG: ${message}`, { error: true });
+      figma.ui.postMessage({
+        type: "insert-status",
+        slug: msg.slug,
+        status: "error",
+      });
+    }
+  }
+
+  if (msg.type === "ui-load-index") {
+    try {
+      const index = await loadUiIndex();
+      figma.ui.postMessage({
+        type: "ui-index",
+        data: { looks: index.looks, icons: index.icons },
+      });
+    } catch {
+      // Not published yet or offline: the UI hides the switch, brand mode is unaffected
+      figma.ui.postMessage({ type: "ui-index-unavailable" });
+    }
+  }
+
+  if (msg.type === "ui-load-svgs") {
+    const items: Record<string, string> = {};
+    // Failures are skipped so one bad file never blanks the whole grid
+    await Promise.all(
+      msg.slugs.map(async (slug) => {
+        try {
+          items[slug] = await getUiSvg(slug, msg.look);
+        } catch {
+          // leave the card without a preview
+        }
+      })
+    );
+    figma.ui.postMessage({ type: "ui-svgs", look: msg.look, items });
+  }
+
+  if (msg.type === "ui-insert") {
+    try {
+      figma.ui.postMessage({
+        type: "insert-status",
+        slug: msg.slug,
+        status: "loading",
+      });
+      const color = HEX_COLOR.test(msg.color) ? msg.color : "#111111";
+      // Figma does not resolve currentColor, so bake the chosen color in.
+      const svg = (await getUiSvg(msg.slug, msg.look)).replace(
+        /currentColor/g,
+        color
+      );
+      const node = figma.createNodeFromSvg(svg);
+      node.name = `${msg.name} (${msg.look})`;
+
+      node.x = figma.viewport.center.x - node.width / 2;
+      node.y = figma.viewport.center.y - node.height / 2;
+
+      figma.currentPage.selection = [node];
+      figma.viewport.scrollAndZoomIntoView([node]);
+
+      figma.notify(`Inserted "${msg.name}"`);
+      figma.ui.postMessage({
+        type: "insert-status",
+        slug: msg.slug,
+        status: "done",
+      });
     } catch (error) {
       const message =
         error instanceof Error ? error.message : "Unknown error";

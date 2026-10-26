@@ -1,5 +1,16 @@
 # theSVG Raycast Extension Changelog
 
+## [Unreleased]
+
+### Added
+- UI icons as a second kind of icon in the search command, loaded lazily from a separate index and skipped quietly if unavailable
+- Type dropdown (All, Brand Icons, UI Icons) and Brand or UI tags on results
+- Look picker for UI icons (outline, glass, duotone, offset, fill, pixel, depth)
+- Copy UI icons as SVG, JSX, HTML img tag, Data URI, or URL, keeping `currentColor`
+
+### Updated
+- Search command renamed to Search Icons; descriptions no longer hard-code icon counts
+
 ## [1.1.1] - 2026-06-11
 
 ### Updated

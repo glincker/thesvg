@@ -1,12 +1,14 @@
 # theSVG for Raycast
 
-Search, preview, and copy 7,600+ brand SVG icons from [thesvg.org](https://thesvg.org) directly in Raycast.
+Search, preview, and copy brand SVG icons, plus a growing set of UI icons, from [thesvg.org](https://thesvg.org) directly in Raycast.
 
 ## Commands
 
-### Search Brand Icons
+### Search Icons
 
-Browse and search the full theSVG library. Filter by category, preview icons, and copy SVG source code instantly.
+Browse and search brand icons and UI icons in one list. Use the dropdown to show all icons, brand icons only, UI icons only, or a single brand category. Each result carries a Brand or UI tag, and the search bar shows counts read from the loaded indexes.
+
+The UI icon index loads lazily. If it is unavailable, only brand results are shown.
 
 **Actions:**
 
@@ -20,9 +22,17 @@ Browse and search the full theSVG library. Filter by category, preview icons, an
 - **Copy as Data URI** (`Cmd+Shift+D`) - Copy as inline data URI
 - **Copy Hex Color** (`Cmd+Shift+X`) - Copy brand color
 
+**UI icon actions:**
+
+- Copy SVG, JSX, HTML img tag, Data URI, or direct URL. Copied SVG keeps `currentColor` so it stays themeable
+- **Choose Look** (`Cmd+L`) - outline (default), glass, duotone, offset, fill, pixel, or depth
+- **Open on theSVG** (`Cmd+O`) - Open thesvg.org/ui/&lt;slug&gt;
+
+List previews of UI icons use a fixed readable color.
+
 ### Quick Copy
 
-Copy a brand SVG instantly without opening Raycast's UI. Type the brand name as an argument.
+Copy a brand SVG instantly (brand icons only) without opening Raycast's UI. Type the brand name as an argument.
 
 Example: `Copy Brand Icon` > `github` copies the GitHub SVG to your clipboard.
 
@@ -34,7 +44,7 @@ Example: `Copy Brand Icon` > `github` copies the GitHub SVG to your clipboard.
 
 ## Features
 
-- Search 7,600+ brand icons with alias matching
+- Search brand icons with alias matching, plus a growing set of UI icons in 7 looks
 - Filter by 100+ categories (AI, Design, DevTool, Cloud, etc.)
 - Preview icon thumbnails in the list
 - View all available variants (up to 7 per icon)

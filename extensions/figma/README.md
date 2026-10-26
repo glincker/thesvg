@@ -1,20 +1,22 @@
 # theSVG for Figma
 
-Browse and insert 7,600+ brand SVG logos directly into your Figma designs.
+Browse and insert 7,600+ brand SVG logos, plus a growing set of UI icons, directly into your Figma designs.
 
 ## Features
 
+- Brand icons | UI icons switch at the top of the plugin
 - Search across 7,600+ brand icons
 - Filter by category (AI, Analytics, Browser, CMS, etc.)
 - One-click insert as editable vector nodes
 - Variant picker for icons with light, dark, mono, or color versions (hover an icon, click the number badge in the corner)
 - Recent icons row: the last 12 you inserted, kept across sessions
 - Keyboard shortcuts: `Enter` inserts the first result, `Cmd/Ctrl+F` focuses search, `Esc` closes the plugin
+- UI icons: search by name or tag, filter by category, pick one of seven looks (outline, glass, duotone, offset, fill, pixel, depth) and a color before inserting. If the UI icon set is not reachable, the switch is hidden and brand icons keep working
 - Adapts to Figma light and dark themes automatically
 
 ## How it works
 
-The plugin pulls the icon catalog and SVG files from the jsDelivr CDN mirror of the [open-source theSVG repo](https://github.com/glincker/thesvg). No traffic touches the thesvg.org website, so the plugin keeps working at full speed even during peak usage of the site. The CDN cache refreshes every few hours, so newly merged icons appear in the plugin within roughly a day of landing on `main`.
+The plugin pulls the brand catalog, the UI icon index and SVG files from the jsDelivr CDN mirror of the [open-source theSVG repo](https://github.com/glincker/thesvg). No traffic touches the thesvg.org website, so the plugin keeps working at full speed even during peak usage of the site. The CDN cache refreshes every few hours, so newly merged icons appear in the plugin within roughly a day of landing on `main`.
 
 ## Development
 

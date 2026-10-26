@@ -349,6 +349,120 @@
         text-transform: capitalize;
       }
 
+      /* ---- Mode switch and UI icon controls ---- */
+      .hidden {
+        display: none !important;
+      }
+
+      .mode-switch {
+        display: flex;
+        gap: 2px;
+        padding: 2px;
+        border-radius: 6px;
+        background: var(--figma-color-bg-secondary, #f0f0f0);
+      }
+
+      .mode-btn {
+        flex: 1;
+        height: 24px;
+        border: none;
+        border-radius: 4px;
+        background: transparent;
+        color: var(--figma-color-text-secondary, #666);
+        font-family: inherit;
+        font-size: 11px;
+        cursor: pointer;
+      }
+
+      .mode-btn.active {
+        background: var(--figma-color-bg, #fff);
+        color: var(--figma-color-text, #333);
+        font-weight: 600;
+      }
+
+      .ui-controls {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .look-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      .look-btn {
+        height: 22px;
+        padding: 0 8px;
+        border: 1px solid var(--figma-color-border, #e5e5e5);
+        border-radius: 11px;
+        background: var(--figma-color-bg, #fff);
+        color: var(--figma-color-text-secondary, #666);
+        font-family: inherit;
+        font-size: 10px;
+        text-transform: capitalize;
+        cursor: pointer;
+      }
+
+      .look-btn.active {
+        border-color: var(--figma-color-border-brand, #18a0fb);
+        color: var(--figma-color-text-brand, #18a0fb);
+      }
+
+      .color-row {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 10px;
+        color: var(--figma-color-text-secondary, #666);
+      }
+
+      .swatch {
+        width: 16px;
+        height: 16px;
+        padding: 0;
+        border: 1px solid var(--figma-color-border, #ccc);
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .swatch.active {
+        outline: 2px solid var(--figma-color-border-brand, #18a0fb);
+        outline-offset: 1px;
+      }
+
+      .swatch[data-color="#111111"] { background: #111111; }
+      .swatch[data-color="#ffffff"] { background: #ffffff; }
+      .swatch[data-color="#ef4444"] { background: #ef4444; }
+      .swatch[data-color="#3b82f6"] { background: #3b82f6; }
+      .swatch[data-color="#22c55e"] { background: #22c55e; }
+
+      .color-input {
+        width: 22px;
+        height: 22px;
+        padding: 0;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+      }
+
+      .ui-preview svg {
+        width: 32px;
+        height: 32px;
+        display: block;
+      }
+
+      .grid.on-dark .icon-preview {
+        background: #222222;
+        border-radius: 4px;
+      }
+
+      .grid.on-light .icon-preview {
+        background: #ffffff;
+        border-radius: 4px;
+      }
+
       /* ---- Empty / scrollbar ---- */
       .empty {
         grid-column: 1 / -1;
@@ -378,6 +492,10 @@
   </head>
   <body>
     <div class="header">
+      <div id="mode-switch" class="mode-switch hidden" role="tablist" aria-label="Icon set">
+        <button id="mode-brand" class="mode-btn active" type="button" role="tab" aria-selected="true">Brand icons</button>
+        <button id="mode-ui" class="mode-btn" type="button" role="tab" aria-selected="false">UI icons</button>
+      </div>
       <div class="search-row">
         <input
           id="search"
@@ -389,6 +507,18 @@
         <select id="category" class="category-select">
           <option value="all">All</option>
         </select>
+      </div>
+      <div id="ui-controls" class="ui-controls hidden">
+        <div id="look-row" class="look-row" role="group" aria-label="Look"></div>
+        <div class="color-row">
+          <span>Color</span>
+          <button class="swatch active" type="button" data-color="#111111" aria-label="Near black"></button>
+          <button class="swatch" type="button" data-color="#ffffff" aria-label="White"></button>
+          <button class="swatch" type="button" data-color="#ef4444" aria-label="Red"></button>
+          <button class="swatch" type="button" data-color="#3b82f6" aria-label="Blue"></button>
+          <button class="swatch" type="button" data-color="#22c55e" aria-label="Green"></button>
+          <input id="color-input" class="color-input" type="color" value="#111111" aria-label="Custom color" />
+        </div>
       </div>
       <div class="status-bar">
         <span id="status">Loading catalog...</span>
