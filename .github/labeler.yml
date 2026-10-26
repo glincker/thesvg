@@ -7,6 +7,18 @@ icons:
           - "public/icons/**"
           - "src/data/icons.json"
 
+ui-icons:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "src/data/ui/**"
+          - "src/data/ui-icons.json"
+          - "src/lib/ui-icons/**"
+          - "src/components/ui-icons/**"
+          - "src/app/ui/**"
+          - "scripts/ui/**"
+          - "packages/ui/**"
+          - "packages/ui-*/**"
+
 ui:
   - changed-files:
       - any-glob-to-any-file:
