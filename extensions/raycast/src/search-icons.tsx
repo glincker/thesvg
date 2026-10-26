@@ -19,73 +19,43 @@ import {
   getIconUrl,
   getIconPageUrl,
   getCdnUrl,
-  searchUiIcons,
   toJsx,
   toHtmlImg,
   toDataUri,
   type IconEntry,
   type IconDetail,
   type Preferences,
-  type UiLook,
 } from "./api";
-import { UiIconListItem } from "./ui-icon-item";
 
 export default function SearchIcons() {
   const [searchText, setSearchText] = useState("");
-  // Filter values: "all" (brand + UI), "kind:brand", "kind:ui", or a brand category name.
-  const [filter, setFilter] = useState("all");
-  const [look, setLook] = useState<UiLook>("outline");
-
-  const showBrand = filter !== "kind:ui";
-  const showUi = filter === "all" || filter === "kind:ui";
-  const category =
-    filter === "all" || filter.startsWith("kind:") ? "all" : filter;
+  const [category, setCategory] = useState("all");
 
   const { data: categories } = useCachedPromise(getCategories);
 
   const { data, isLoading } = useCachedPromise(
     searchIcons,
     [searchText || undefined, category, 100],
-    { keepPreviousData: true, execute: showBrand },
+    { keepPreviousData: true },
   );
 
-  const { data: uiData, isLoading: uiLoading } = useCachedPromise(
-    searchUiIcons,
-    [searchText || undefined, 50],
-    { keepPreviousData: true, execute: showUi },
-  );
-
-  const icons = showBrand ? (data?.icons ?? []) : [];
-  const uiIcons = showUi ? (uiData?.icons ?? []) : [];
-  const loading = (showBrand && isLoading) || (showUi && uiLoading);
-  const counts = [
-    showBrand && data?.total ? `${data.total.toLocaleString()} brand` : "",
-    showUi && uiData?.total ? `${uiData.total.toLocaleString()} UI` : "",
-  ]
-    .filter(Boolean)
-    .join(" and ");
+  const icons = data?.icons ?? [];
 
   return (
     <List
-      isLoading={loading}
+      isLoading={isLoading}
       searchText={searchText}
       onSearchTextChange={setSearchText}
-      searchBarPlaceholder={
-        counts ? `Search ${counts} icons...` : "Search icons..."
-      }
+      searchBarPlaceholder="Search 7,600+ brand icons..."
       filtering={false}
       searchBarAccessory={
         <List.Dropdown
-          tooltip="Filter by type or category"
-          value={filter}
-          onChange={setFilter}
+          tooltip="Filter by category"
+          value={category}
+          onChange={setCategory}
         >
-          <List.Dropdown.Item title="All Icons" value="all" />
-          <List.Dropdown.Section title="Type">
-            <List.Dropdown.Item title="Brand Icons" value="kind:brand" />
-            <List.Dropdown.Item title="UI Icons" value="kind:ui" />
-          </List.Dropdown.Section>
-          <List.Dropdown.Section title="Brand Categories">
+          <List.Dropdown.Item title="All Categories" value="all" />
+          <List.Dropdown.Section title="Categories">
             {(categories ?? []).map((cat) => (
               <List.Dropdown.Item
                 key={cat.name}
@@ -97,28 +67,16 @@ export default function SearchIcons() {
         </List.Dropdown>
       }
     >
-      <List.Section title="Brand Icons" subtitle={String(icons.length)}>
-        {icons.map((icon) => (
-          <IconListItem key={icon.slug} icon={icon} />
-        ))}
-      </List.Section>
-      <List.Section title="UI Icons" subtitle={String(uiIcons.length)}>
-        {uiIcons.map((icon) => (
-          <UiIconListItem
-            key={`ui:${icon.slug}`}
-            icon={icon}
-            look={look}
-            onLookChange={setLook}
-          />
-        ))}
-      </List.Section>
-      {icons.length === 0 && uiIcons.length === 0 && !loading && (
+      {icons.map((icon) => (
+        <IconListItem key={icon.slug} icon={icon} />
+      ))}
+      {icons.length === 0 && !isLoading && (
         <List.EmptyView
           title="No icons found"
           description={
             searchText
               ? `No results for "${searchText}"`
-              : "Try a different filter"
+              : "Try a different category"
           }
           icon={Icon.MagnifyingGlass}
         />
@@ -140,7 +98,6 @@ function IconListItem({ icon }: { icon: IconEntry }) {
         ...(icon.variants.length > 1
           ? [{ text: `${icon.variants.length} variants`, icon: Icon.Layers }]
           : []),
-        { tag: { value: "Brand" } },
       ]}
       keywords={[icon.slug, ...icon.categories, ...icon.aliases]}
       actions={

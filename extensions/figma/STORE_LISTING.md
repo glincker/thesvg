@@ -8,8 +8,8 @@ Keep this file in sync when the catalog grows or features change.
 ## Description
 
 ```
-Browse and insert 7,600+ brand SVG logos, plus a growing set of UI icons,
-directly into your Figma designs. One click and the mark drops in as an editable vector node.
+Browse and insert 7,600+ brand SVG logos directly into your Figma designs.
+One click and the mark drops in as an editable vector node.
 
 What's in the catalog:
 - 7,600+ brand icons across finance, gaming, entertainment, dev tools,
@@ -18,8 +18,6 @@ What's in the catalog:
   dark, wordmark
 - Filter by 50+ categories
 - Real-time search across brand names and aliases
-- A growing set of UI icons in seven looks (outline, glass, duotone,
-  offset, fill, pixel, depth), recolorable before you insert
 
 Workflow:
 - Insert any icon with one click
@@ -42,7 +40,7 @@ Website: https://thesvg.org
 ## Tagline (one-liner)
 
 ```
-Search, preview, and insert from 7,600+ brand SVG logos and a growing set of UI icons.
+Search, preview, and insert from 7,600+ brand SVG logos.
 ```
 
 ---
@@ -52,10 +50,6 @@ Search, preview, and insert from 7,600+ brand SVG logos and a growing set of UI 
 ```
 v1.2.0
 
-- Added a Brand icons | UI icons switch. UI mode has search by name
-  and tag, a category filter, a picker for seven looks and a color
-  picker. The UI icon index loads from the same jsDelivr host; if it
-  is unavailable the switch is hidden and brand mode is unchanged.
 - Fixed the API host redirect that caused all network requests to fail
   in the previous submission (root cause of the prior rejection).
 - Added a Recents row: last 12 inserted icons, persisted via
@@ -86,7 +80,7 @@ Pick: **Design tools** · **Brand assets** (or whatever closest match Figma offe
 ## Tags
 
 ```
-brands, logos, svg, icons, ui-icons, brand-assets, design-system, open-source, free
+brands, logos, svg, icons, brand-assets, design-system, open-source, free
 ```
 
 ---

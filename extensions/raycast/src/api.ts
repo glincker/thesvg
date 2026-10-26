@@ -1,6 +1,4 @@
 const BASE_URL = "https://thesvg.org";
-// Single source for jsDelivr-hosted data, brand SVG CDN links and UI icon data.
-const CDN_BASE = "https://cdn.jsdelivr.net/gh/glincker/thesvg@main";
 
 export interface Preferences {
   defaultVariant: string;
@@ -125,7 +123,7 @@ export async function getIcon(slug: string): Promise<IconDetail> {
 export async function getCategories(): Promise<Category[]> {
   const res = await fetch(`${BASE_URL}/api/categories.json`);
   if (!res.ok) throw new Error(`API error: ${res.status}`);
-  const data = (await res.json()) as { categories: Category[] };
+  const data: { categories: Category[] } = await res.json();
   return data.categories;
 }
 
@@ -138,7 +136,7 @@ export function getIconPageUrl(slug: string): string {
 }
 
 export function getCdnUrl(slug: string, variant = "default"): string {
-  return `${CDN_BASE}/public/icons/${slug}/${variant}.svg`;
+  return `https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/${slug}/${variant}.svg`;
 }
 
 // --- Copy format helpers ---
@@ -175,107 +173,4 @@ export function toDataUri(svg: string): string {
     .replace(/'/g, "%27")
     .replace(/"/g, "%22");
   return `data:image/svg+xml,${encoded}`;
-}
-
-// --- UI icons (separate index, never merged into brand data) ---
-
-export const UI_LOOKS = [
-  "outline",
-  "glass",
-  "duotone",
-  "offset",
-  "fill",
-  "pixel",
-  "depth",
-] as const;
-
-export type UiLook = (typeof UI_LOOKS)[number];
-
-export interface UiIconEntry {
-  slug: string;
-  title: string;
-  category: string;
-  tags: string[];
-  set: string;
-  releasedOn: string;
-}
-
-interface UiIndex {
-  version: number;
-  kind: "ui";
-  looks: string[];
-  icons: UiIconEntry[];
-}
-
-export interface UiSearchResult {
-  total: number;
-  icons: UiIconEntry[];
-}
-
-let uiIndexPromise: Promise<UiIndex | null> | null = null;
-
-// Fails soft: the data may not be published yet, so callers get null, not an error.
-async function fetchUiIndex(): Promise<UiIndex | null> {
-  if (!uiIndexPromise) {
-    uiIndexPromise = (async () => {
-      try {
-        const res = await fetch(`${CDN_BASE}/src/data/ui-icons.json`);
-        if (!res.ok) return null;
-        const data = (await res.json()) as UiIndex;
-        return Array.isArray(data.icons) ? data : null;
-      } catch {
-        return null;
-      }
-    })().then((index) => {
-      // Do not remember a failure, so a later search can retry.
-      if (!index) uiIndexPromise = null;
-      return index;
-    });
-  }
-  return uiIndexPromise;
-}
-
-export async function searchUiIcons(
-  query?: string,
-  limit = 50,
-): Promise<UiSearchResult> {
-  const index = await fetchUiIndex();
-  if (!index) return { total: 0, icons: [] };
-
-  let filtered = index.icons;
-  if (query) {
-    const q = query.toLowerCase();
-    filtered = filtered.filter(
-      (icon) =>
-        icon.title.toLowerCase().includes(q) ||
-        icon.slug.toLowerCase().includes(q) ||
-        icon.category.toLowerCase().includes(q) ||
-        icon.tags.some((t) => t.toLowerCase().includes(q)),
-    );
-  }
-  return { total: index.icons.length, icons: filtered.slice(0, limit) };
-}
-
-export function getUiIconUrl(slug: string, look: UiLook = "outline"): string {
-  return `${CDN_BASE}/public/ui/${slug}/${look}.svg`;
-}
-
-export function getUiIconPageUrl(slug: string): string {
-  return `${BASE_URL}/ui/${slug}`;
-}
-
-// Returns the raw SVG with currentColor intact so copies stay themeable.
-export async function getUiSvg(slug: string, look: UiLook): Promise<string> {
-  const svg = await fetchSvg(getUiIconUrl(slug, look));
-  if (!svg) throw new Error("SVG not available");
-  return svg;
-}
-
-// Previews have no CSS context, so swap currentColor for a fixed readable color.
-export function toPreviewDataUri(svg: string, color: string): string {
-  return toDataUri(svg.replace(/currentColor/g, color));
-}
-
-export function toUiHtmlImg(slug: string, title: string, look: UiLook): string {
-  return `<img src="${getUiIconUrl(slug, look)}" alt="${title}" width="24" height="24" />`;
 }
