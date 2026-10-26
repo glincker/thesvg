@@ -10,7 +10,7 @@ const CATEGORY_RULES: [string, RegExp][] = [
   ["Security", /(shield|lock|key|fingerprint|eye|scan|passkey|vault|incognito|id-card)/],
   ["Files", /(^file|folder|archive|clipboard|^book|copy|^save|download|upload|paperclip|notebook|scroll|newspaper|sticky|receipt|library)/],
   ["Communication", /(mail|message|chat|send|phone|share|megaphone|inbox|at-sign|rss|podcast|radio|voicemail)/],
-  ["Dev", /(code|terminal|git|database|server|bug|cpu|plug|webhook|binary|package|cloud|network|bot|braces|brackets|component|container|blocks|hard-drive|regex|cable|workflow)/],
+  ["Dev", /(code|terminal|git|database|server|bug|brain|cpu|plug|webhook|binary|package|cloud|network|bot|braces|brackets|component|container|blocks|hard-drive|regex|cable|workflow)/],
   ["Commerce", /(cart|credit|dollar|coins|wallet|^tag|store|shopping|bank|banknote|gift|percent|ticket|piggy|crown|euro|pound)/],
   ["Media", /(image|camera|video|music|^mic|play|pause|volume|film|palette|brush|clapper|headphones|speaker|aperture|photo|disc|tv)/],
   ["People", /(user|contact|person|smile|frown|hand|thumbs|baby|accessibility|heart-handshake|handshake)/],
@@ -24,8 +24,13 @@ const CATEGORY_RULES: [string, RegExp][] = [
   ["Interface", /(plus|minus|heart|bookmark|link|trash|edit|more|power|lightbulb|bolt|lightning|command|option|focus|crosshair|pin)/],
 ];
 
+// A slug is words joined by dashes. A rule must start at the beginning of a word, so "lock" does not match "clock",
+// "rain" does not match "brain" and "phone" does not match "smartphone". Rules already anchored with ^ stay as they are.
+const anchored = (re: RegExp): RegExp => (re.source.startsWith("^") ? re : new RegExp(`(?:^|-)${re.source}`, re.flags));
+const ANCHORED_RULES: [string, RegExp][] = CATEGORY_RULES.map(([name, re]) => [name, anchored(re)]);
+
 export function categoryOf(slug: string): string {
-  return CATEGORY_RULES.find(([, re]) => re.test(slug))?.[0] ?? "General";
+  return ANCHORED_RULES.find(([, re]) => re.test(slug))?.[0] ?? "General";
 }
 
 

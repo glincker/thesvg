@@ -4,7 +4,8 @@ export type SnippetTab = (typeof USE_TABS)[number] | (typeof COPY_TABS)[number];
 
 export const pascal = (slug: string): string => `${slug.split("-").map((p) => p.charAt(0).toUpperCase() + p.slice(1)).join("")}Icon`;
 const camel = (svg: string): string => svg.replace(/\s([a-z]+(?:-[a-z]+)+)=/g, (_m, a: string) => ` ${a.replace(/-([a-z])/g, (_x, c: string) => c.toUpperCase())}=`);
-const noSize = (svg: string): string => svg.replace(/\s(width|height)="[^"]*"/g, "");
+// Only the root element loses its size. Rectangles inside masks need their width and height or the icon loses its shape.
+const noSize = (svg: string): string => svg.replace(/^<svg[^>]*>/, (root) => root.replace(/\s(width|height)="[^"]*"/g, ""));
 const pretty = (svg: string): string => svg.replace(/></g, ">\n<");
 
 export function codeFor(tab: SnippetTab, svg: string, slug: string): string {

@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { BottomSheet } from "@/components/mobile/bottom-sheet";
 import { ColorPicker } from "./color-picker";
 import { cn } from "@/lib/ui-icons/utils";
+import { styleFor } from "@/lib/ui-icons/glyphs";
 import { useUi } from "./ui-state";
 
 const SWATCHES = ["f5c542", "fb923c", "fb7185", "a78bfa", "38bdf8", "34d399"] as const;
@@ -45,10 +46,10 @@ function Cell({ label, children }: { label: string; children: React.ReactNode })
 /** What the style currently is, in words and one color dot, so the collapsed bar says something useful. */
 function useSummary(): { chips: string[]; touched: boolean } {
   const ui = useUi();
-  const glass = ui.variant === "glass";
-  const weight = ui.lab.strokeWidth ?? (glass ? 1.5 : 1.75);
-  const corner = ui.lab.corner ?? (glass ? "round" : "chamfer");
-  const cut = ui.lab.cutTerminals ?? !glass;
+  const base = styleFor(ui.variant);
+  const weight = ui.lab.strokeWidth ?? base.strokeWidth;
+  const corner = ui.lab.corner ?? base.corner;
+  const cut = ui.lab.cutTerminals ?? base.cutTerminals;
   return {
     chips: [`weight ${weight}`, corner, cut ? "cut ends" : "plain ends"],
     touched: Object.keys(ui.lab).length > 0 || ui.accent !== "",
@@ -132,10 +133,12 @@ export function StylePill() {
 /** The style lab on the page: every control re-draws all icons on screen live. */
 export function StyleLab(props: { className?: string; stacked?: boolean }) {
   const ui = useUi();
-  const weight = ui.lab.strokeWidth ?? (ui.variant === "glass" ? 1.5 : 1.75);
-  const scale = ui.lab.scale ?? (ui.variant === "glass" ? 1 : 0.92);
-  const corner = ui.lab.corner ?? (ui.variant === "glass" ? "round" : "chamfer");
-  const cut = ui.lab.cutTerminals ?? ui.variant !== "glass";
+  // The defaults come from the same function that draws the icons, so the controls always show what is on screen.
+  const base = styleFor(ui.variant);
+  const weight = ui.lab.strokeWidth ?? base.strokeWidth;
+  const scale = ui.lab.scale ?? base.scale;
+  const corner = ui.lab.corner ?? base.corner;
+  const cut = ui.lab.cutTerminals ?? base.cutTerminals;
   return (
     <div className={cn("grid gap-x-5 gap-y-4 rounded-xl border bg-card/70 p-4 backdrop-blur-xl", props.stacked ? "grid-cols-1" : "sm:grid-cols-2 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_auto_auto_auto_auto] xl:items-end", props.className)}>
       <Range label="Weight" value={weight} min={0.75} max={3} step={0.05} onChange={(v) => ui.setLab({ strokeWidth: Math.round(v * 100) / 100 })} />

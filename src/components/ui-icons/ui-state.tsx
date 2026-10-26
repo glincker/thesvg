@@ -93,6 +93,8 @@ export function UiStateProvider({ children }: { children: React.ReactNode }) {
     if (scale !== null) l.scale = scale;
     const corner = ["sharp", "chamfer", "round"].find((c) => c === q.get("cr"));
     if (corner === "sharp" || corner === "chamfer" || corner === "round") l.corner = corner;
+    const radius = num("rd");
+    if (radius !== null) l.radius = radius;
     if (q.get("ct") === "1") l.cutTerminals = true;
     if (q.get("ct") === "0") l.cutTerminals = false;
     setLabState(l);
@@ -130,6 +132,7 @@ export function UiStateProvider({ children }: { children: React.ReactNode }) {
     if (lab.strokeWidth !== undefined) q.set("w", String(lab.strokeWidth));
     if (lab.scale !== undefined) q.set("sc", String(lab.scale));
     if (lab.corner === "sharp" || lab.corner === "chamfer" || lab.corner === "round") q.set("cr", lab.corner);
+    if (lab.radius !== undefined) q.set("rd", String(lab.radius));
     if (lab.cutTerminals !== undefined) q.set("ct", lab.cutTerminals ? "1" : "0");
     window.history.replaceState(null, "", `${window.location.pathname}?${q.toString()}`);
   }, [ready, variant, accent, query, category, set, lab, brandCollection]);

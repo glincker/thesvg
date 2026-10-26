@@ -19,7 +19,7 @@ export function QuickView({ glyph, onClose }: { glyph: GlyphData; onClose: () =>
   const fav = ui.favorites.includes(glyph.slug);
 
   const copy = async (key: "svg" | "react") => {
-    const svg = svgText(glyph.nodes, look, 24, ui.accent, ui.lab);
+    const svg = svgText(glyph.nodes, look, 24, ui.accent, ui.lab, glyph.slug);
     try {
       await navigator.clipboard.writeText(key === "svg" ? svg : codeFor("react", svg, glyph.slug));
       setDone(key);
@@ -29,7 +29,7 @@ export function QuickView({ glyph, onClose }: { glyph: GlyphData; onClose: () =>
     }
   };
   const download = () => {
-    const url = URL.createObjectURL(new Blob([svgText(glyph.nodes, look, 24, ui.accent, ui.lab)], { type: "image/svg+xml" }));
+    const url = URL.createObjectURL(new Blob([svgText(glyph.nodes, look, 24, ui.accent, ui.lab, glyph.slug)], { type: "image/svg+xml" }));
     const a = document.createElement("a");
     a.href = url;
     a.download = `${glyph.slug}-${look}.svg`;

@@ -1465,16 +1465,6 @@ html {
 }
 
 /* UI icons section. */
-/* Drift like the brand icon glow, transform only. Intensity lives on a wrapper so this cannot override it. */
-@keyframes glow-drift {
-  0%, 100% { transform: translate(-4%, 0) scale(1); }
-  50% { transform: translate(4%, 2%) scale(1.08); }
-}
-.animate-glow-drift { animation: glow-drift 10s ease-in-out infinite; }
-@media (prefers-reduced-motion: reduce) {
-  .animate-glow-drift { animation: none; }
-}
-
 /* A picked swatch colors every icon in every look. With none picked it simply inherits the text color. */
 .ink { color: var(--glyph-ink, currentColor); }
 

@@ -284,7 +284,8 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
     // Drop any keyboard highlight so a stale index can't point past the new
     // result set once it resolves.
     setSelectedIdx(-1);
-    if (!isHome) {
+    // In the UI section the same query filters UI icons in place, so typing never leaves it.
+    if (!isHome && !pathname.startsWith("/ui")) {
       router.push(`/?q=${encodeURIComponent(value)}`);
     }
   }

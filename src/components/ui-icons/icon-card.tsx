@@ -17,7 +17,7 @@ export function IconCard({ glyph }: { glyph: GlyphData }) {
 
   const copy = async () => {
     try {
-      await navigator.clipboard.writeText(svgText(glyph.nodes, ui.variant, 24, ui.accent, ui.lab));
+      await navigator.clipboard.writeText(svgText(glyph.nodes, ui.variant, 24, ui.accent, ui.lab, glyph.slug));
       setCopied(true);
       window.setTimeout(() => setCopied(false), 1400);
     } catch {
@@ -25,7 +25,7 @@ export function IconCard({ glyph }: { glyph: GlyphData }) {
     }
   };
   const download = () => {
-    const url = URL.createObjectURL(new Blob([svgText(glyph.nodes, ui.variant, 24, ui.accent, ui.lab)], { type: "image/svg+xml" }));
+    const url = URL.createObjectURL(new Blob([svgText(glyph.nodes, ui.variant, 24, ui.accent, ui.lab, glyph.slug)], { type: "image/svg+xml" }));
     const a = document.createElement("a");
     a.href = url;
     a.download = `${glyph.slug}-${ui.variant}.svg`;

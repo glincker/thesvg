@@ -235,7 +235,7 @@ export function Detail({ glyph }: { glyph: GlyphData }) {
     setSample(glyph.slug);
     return () => setSample(null);
   }, [glyph.slug, setSample]);
-  const svg = svgText(glyph.nodes, ui.variant, 24, ui.accent, ui.lab);
+  const svg = svgText(glyph.nodes, ui.variant, 24, ui.accent, ui.lab, glyph.slug);
   const tint = ui.accent || "#111111";
   const related = GLYPHS.filter((g) => g.category === glyph.category && g.slug !== glyph.slug).slice(0, 10);
   const title = glyph.slug.replace(/-/g, " ");
