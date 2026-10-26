@@ -55881,6 +55881,29 @@
     "collection": "brands"
   },
   {
+    "slug": "easy-ai",
+    "title": "Easy AI",
+    "aliases": [],
+    "hex": "773A92",
+    "categories": [
+      "AI",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/easy-ai/default.svg",
+      "mono": "/icons/easy-ai/mono.svg",
+      "light": "/icons/easy-ai/light.svg",
+      "dark": "/icons/easy-ai/dark.svg",
+      "wordmark": "/icons/easy-ai/wordmark.svg",
+      "wordmarkLight": "/icons/easy-ai/wordmark-light.svg",
+      "wordmarkDark": "/icons/easy-ai/wordmark-dark.svg"
+    },
+    "license": "Trademark",
+    "url": "https://geteasy.ai",
+    "dateAdded": "2026-10-26",
+    "collection": "brands"
+  },
+  {
     "slug": "easy-appointments",
     "title": "Easy!Appointments",
     "aliases": [
