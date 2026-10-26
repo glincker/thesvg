@@ -1,10 +1,16 @@
 // Usage: node scripts/ui/validate-package.mjs packages/ui-react
 // Checks a built UI package: every icon has its files, the barrel exports every look once, nothing is missing.
 import { existsSync, readFileSync } from "node:fs";
-import { join, resolve } from "node:path";
+import { basename, join, relative, resolve } from "node:path";
 import { exportName, loadManifest } from "./package-builder.mjs";
 
+// Only a UI package folder inside this repository's packages directory may be checked, whatever argument is passed.
+const PACKAGES = resolve(import.meta.dirname, "../../packages");
 const pkgDir = resolve(process.argv[2] ?? ".");
+if (relative(PACKAGES, pkgDir).startsWith("..") || !/^ui(-[a-z-]+)?$/.test(basename(pkgDir))) {
+  console.error(`not a UI package folder: ${pkgDir}`);
+  process.exit(2);
+}
 const dist = join(pkgDir, "dist");
 const manifest = loadManifest();
 const svelte = existsSync(join(dist, "index.js")) && /\.svelte"/.test(readFileSync(join(dist, "index.js"), "utf8"));

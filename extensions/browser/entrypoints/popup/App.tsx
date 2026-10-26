@@ -90,9 +90,14 @@ async function loadUiIndex(): Promise<UiIndex | null> {
   }
 }
 
+const UI_SITE = "https://thesvg.org";
+const SAFE_NAME = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+
 function uiSvgUrl(slug: string, look: string): string {
-  // The per-icon files are served by the site, not committed to the repo.
-  return `https://thesvg.org/ui/${slug}/${look}.svg`;
+  // The per-icon files are served by the site, not committed to the repo. Both parts come from data we fetched, so they
+  // are checked before they become part of a request.
+  if (!SAFE_NAME.test(slug) || !SAFE_NAME.test(look)) throw new Error(`invalid UI icon name: ${slug}/${look}`);
+  return `${UI_SITE}/ui/${encodeURIComponent(slug)}/${encodeURIComponent(look)}.svg`;
 }
 
 async function loadRegistry(): Promise<IconEntry[]> {
@@ -126,6 +131,8 @@ function cdnUrl(slug: string, variant = "default"): string {
 }
 
 async function fetchSvgBody(url: string): Promise<string> {
+  // The popup only ever reads icon files from the CDN or the site, never from any other address.
+  if (!url.startsWith(`${CDN_BASE}/`) && !url.startsWith(`${UI_SITE}/`)) throw new Error("svg url is not allowed");
   const res = await fetch(url);
   if (!res.ok) {
     throw new Error(`svg fetch failed: ${res.status}`);

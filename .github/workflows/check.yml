@@ -33,7 +33,7 @@ jobs:
       site: ${{ steps.filter.outputs.site }}
       code: ${{ steps.filter.outputs.code }}
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           fetch-depth: 0
 
@@ -70,20 +70,11 @@ jobs:
     if: needs.changes.outputs.code == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v6
-        with:
-          version: 9
-
-      - uses: actions/setup-node@v7
+      - uses: ./.github/actions/setup
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: pnpm
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
 
       # The import boundary between brand and UI icon code is enforced here (see eslint.config.mjs).
       - name: Lint
@@ -98,20 +89,11 @@ jobs:
     if: needs.changes.outputs.brand == 'true' || needs.changes.outputs.shared == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v6
-        with:
-          version: 9
-
-      - uses: actions/setup-node@v7
+      - uses: ./.github/actions/setup
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: pnpm
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
 
       - name: Test
         run: pnpm test:brand
@@ -122,20 +104,11 @@ jobs:
     if: needs.changes.outputs.ui == 'true' || needs.changes.outputs.shared == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v6
-        with:
-          version: 9
-
-      - uses: actions/setup-node@v7
+      - uses: ./.github/actions/setup
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: pnpm
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
 
       # Fails when the generated files no longer match the set files, or an icon drops below the quality minimum.
       - name: Test
@@ -147,20 +120,11 @@ jobs:
     if: needs.changes.outputs.site == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v6
-        with:
-          version: 9
-
-      - uses: actions/setup-node@v7
+      - uses: ./.github/actions/setup
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: pnpm
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
 
       - name: Build
         run: pnpm build
