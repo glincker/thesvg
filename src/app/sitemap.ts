@@ -3,6 +3,7 @@ import { getAllCategories, getAllIcons } from "@/lib/icons";
 import { slugifyCategory } from "@/lib/categories";
 import { getFamilySlugs } from "@/lib/families";
 import { DOCS_NAV } from "@/lib/docs-nav";
+import { GLYPHS } from "@/lib/ui-icons/glyphs";
 import postsData from "@/data/posts.json";
 
 export const dynamic = "force-static";
@@ -30,6 +31,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: item.href === "/docs" ? 0.9 : 0.8,
     })),
+    { url: `${BASE_URL}/ui`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE_URL}/ui/docs`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE_URL}/ui/changelog`, lastModified: now, changeFrequency: "weekly", priority: 0.6 },
+    { url: `${BASE_URL}/packages`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    ...GLYPHS.filter((g) => g.released).map((g) => ({ url: `${BASE_URL}/ui/${g.slug}`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.5 })),
     { url: `${BASE_URL}/viewer`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/compare`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/extensions`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },

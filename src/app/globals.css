@@ -1457,3 +1457,67 @@ html {
   overscroll-behavior: auto;
   -webkit-overflow-scrolling: touch;
 }
+
+/* UI icons section. */
+/* Drift like the brand icon glow, transform only. Intensity lives on a wrapper so this cannot override it. */
+@keyframes glow-drift {
+  0%, 100% { transform: translate(-4%, 0) scale(1); }
+  50% { transform: translate(4%, 2%) scale(1.08); }
+}
+.animate-glow-drift { animation: glow-drift 10s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .animate-glow-drift { animation: none; }
+}
+
+/* A picked swatch colors every icon in every look. With none picked it simply inherits the text color. */
+.ink { color: var(--glyph-ink, currentColor); }
+
+/* Slow horizontal drift for the hero icon rows. The track holds two copies, so -50% loops seamlessly. */
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee-track { animation: marquee 60s linear infinite; }
+.marquee-track.reverse { animation-direction: reverse; animation-duration: 75s; }
+@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+
+/* An animated conic border for the selected look. @property lets the angle itself animate. */
+@property --angle { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+@keyframes spin-angle { to { --angle: 360deg; } }
+.conic-border {
+  background: conic-gradient(from var(--angle), transparent 0 55%, var(--glow, #f97316) 78%, transparent 100%) border-box;
+  -webkit-mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: spin-angle 5s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) { .conic-border { animation: none; } }
+
+/* A small noise tile as a data URI. Film grain gives the gradients a tactile, less digital feel. */
+.grain-glow {
+  /* Same blobs again, shown only where thresholded noise passes, so the glow dissolves into grain not a smooth falloff. */
+  filter: saturate(1.2) brightness(1.5);
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 9 0 0 0 -4.3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  -webkit-mask-image: var(--grain);
+  mask-image: var(--grain);
+  -webkit-mask-size: 220px 220px;
+  mask-size: 220px 220px;
+}
+
+.grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Page enter animation: a short fade and rise whenever a route mounts. Respects reduced motion. */
+@keyframes page-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+.page-in { animation: page-in 260ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+@layer components {
+  /* Raised frosted card, the surface thesvg uses on its icon pages: translucent fill, a hairline edge, a top highlight and a soft drop.
+     No backdrop blur on purpose: it is costly across many cards and adds little on a flat page. */
+  .glass {
+    background: color-mix(in oklab, var(--card) 72%, transparent);
+    border: 1px solid color-mix(in oklab, var(--foreground) 9%, transparent);
+    box-shadow: inset 0 1px 0 color-mix(in oklab, #fff 55%, transparent), 0 10px 28px -18px rgba(15, 15, 20, 0.28);
+  }
+  .dark .glass {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 12px 32px -16px rgba(0, 0, 0, 0.7);
+  }
+}

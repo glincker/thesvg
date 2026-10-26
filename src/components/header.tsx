@@ -5,7 +5,11 @@ import Link from "next/link";
 import posthog from "posthog-js";
 import { usePathname, useRouter } from "next/navigation";
 import { ArrowRight, BookOpen, ChevronDown, FileText, Menu, Moon, Package, Plus, Search, Sparkles, Star, Sun, X } from "lucide-react";
-import { TheSVGMark } from "@/components/icons/the-svg-mark";
+import { LogoMorph, ModeSwitch } from "@/components/ui-icons/mode-switch";
+import { PackagesMenu } from "@/components/packages-menu";
+import { SearchGroups } from "@/components/ui-icons/search-groups";
+import { GLYPHS } from "@/lib/ui-icons/glyphs";
+import { rank } from "@/lib/ui-icons/search";
 import { formatStarCount } from "@/lib/github-stars";
 import { useGithubStars } from "@/lib/hooks/use-github-stars";
 import { trackStarCta } from "@/lib/track-star-cta";
@@ -147,13 +151,14 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
     return () => clearTimeout(timer);
   }, [charIdx, isDeleting, placeholderIdx, query, focused, prefersReducedMotion]);
 
-  const dynamicPlaceholder = query || focused
+  const dynamicPlaceholder = pathname.startsWith("/ui") ? "Search UI icons..." : query || focused
     ? "Search icons..."
     : prefersReducedMotion
       ? `Search "${PLACEHOLDER_BRANDS[0]}"`
       : `Search "${PLACEHOLDER_BRANDS[placeholderIdx].slice(0, charIdx)}"`;
 
   const isHome = pathname === "/";
+  const isUi = pathname.startsWith("/ui");
 
   // Shared search hook (also used by the mobile sheet) so ranking, debounce,
   // and analytics stay in one place. `isLoading` gates the empty state below
@@ -164,10 +169,21 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
     total: totalMatches,
     isLoading: searchLoading,
     error: searchError,
-  } = useIconSearch({ query, source: "header", limit: 6 });
+  } = useIconSearch({ query, source: "header", limit: pathname.startsWith("/ui") ? 4 : 6 });
   const [recentViewedIcons, setRecentViewedIcons] = useState<IconEntry[]>([]);
   const hasQuery = query.trim().length >= 2;
   const docsMatches = useMemo(() => searchDocs(query), [query]);
+  const uiAll = useMemo(
+    () => (hasQuery ? rank(query.trim().toLowerCase(), GLYPHS, (g) => ({ name: g.slug, extra: g.tags, weak: [g.category] }), 200) : []),
+    [hasQuery, query],
+  );
+  const uiShown = uiAll.slice(0, pathname.startsWith("/ui") ? 6 : 4);
+  // One flat list in on-screen order (current section first) so the arrow keys walk both groups.
+  const flat = useMemo(() => {
+    const b = suggestions.map((icon) => ({ kind: "brand" as const, slug: icon.slug }));
+    const u = uiShown.map((g) => ({ kind: "ui" as const, slug: g.slug }));
+    return pathname.startsWith("/ui") ? [...u, ...b] : [...b, ...u];
+  }, [suggestions, uiShown, pathname]);
   const showDropdown = focused;
 
   // Keep the dropdown mounted briefly after showDropdown flips false so it
@@ -254,6 +270,15 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
     [router]
   );
 
+  const navigateToUi = useCallback(
+    (slug: string) => {
+      setFocused(false);
+      inputRef.current?.blur();
+      router.push(`/ui/${slug}`);
+    },
+    [router],
+  );
+
   function handleSearchChange(value: string) {
     setQuery(value);
     // Drop any keyboard highlight so a stale index can't point past the new
@@ -266,12 +291,14 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
 
   function handleSearchSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (showDropdown && selectedIdx >= 0 && selectedIdx < suggestions.length) {
-      navigateToIcon(suggestions[selectedIdx].slug);
+    if (showDropdown && hasQuery && selectedIdx >= 0 && selectedIdx < flat.length) {
+      const hit = flat[selectedIdx];
+      if (hit.kind === "ui") navigateToUi(hit.slug);
+      else navigateToIcon(hit.slug);
       return;
     }
     setFocused(false);
-    if (!isHome && query) {
+    if (!isHome && !pathname.startsWith("/ui") && query) {
       router.push(`/?q=${encodeURIComponent(query)}`);
     }
   }
@@ -280,10 +307,10 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
     if (!showDropdown) return;
     if (e.key === "ArrowDown") {
       e.preventDefault();
-      setSelectedIdx((prev) => (prev < suggestions.length - 1 ? prev + 1 : 0));
+      setSelectedIdx((prev) => (prev < flat.length - 1 ? prev + 1 : 0));
     } else if (e.key === "ArrowUp") {
       e.preventDefault();
-      setSelectedIdx((prev) => (prev > 0 ? prev - 1 : suggestions.length - 1));
+      setSelectedIdx((prev) => (prev > 0 ? prev - 1 : flat.length - 1));
     }
   }
 
@@ -312,18 +339,19 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
             </Button>
 
             <Link href="/" className="group/logo flex items-center gap-1.5 text-foreground" aria-label="theSVG home">
-              <TheSVGMark className="h-9 w-9 rounded-lg transition-transform duration-200 group-hover/logo:scale-105" />
+              <LogoMorph mode={isUi ? "ui" : "brand"} className="h-9 w-9 rounded-lg transition-transform duration-200 group-hover/logo:scale-105" />
               <span className="hidden text-[15px] font-bold tracking-tight text-foreground sm:inline">
                 the<span className="text-orange-500">SVG</span>
               </span>
             </Link>
+            <ModeSwitch mode={isUi ? "ui" : "brand"} className="ml-1 hidden sm:grid" onChange={(m) => router.push(m === "ui" ? "/ui" : "/")} />
           </div>
 
           {/* Collection switcher. "brands" is excluded - the logo already
               links home to the all-brands view. Lower-traffic collections
               (community, auth-badges) move into the "More" dropdown instead
               of their own pills, so the row doesn't get crowded. */}
-          <nav className="hidden items-center gap-0.5 md:flex" aria-label="Icon collections">
+          <nav className={cn("hidden items-center gap-0.5", isUi ? "" : "md:flex")} aria-label="Icon collections">
             {COLLECTIONS_LIST.filter(
               (meta) => !["brands", "community", "auth-badges"].includes(meta.id)
             ).map((meta) => {
@@ -432,94 +460,29 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
               <div
                 ref={dropdownRef}
                 id={listboxId}
-                className={`absolute top-full right-0 left-0 z-50 mt-1.5 min-w-[min(460px,calc(100vw-1.5rem))] origin-top overflow-hidden rounded-2xl border border-border/60 bg-background shadow-[0_24px_64px_-16px_rgba(0,0,0,0.3),0_8px_24px_-8px_rgba(0,0,0,0.15)] transition-all duration-150 sm:mx-auto sm:max-w-3xl dark:border-white/[0.12] dark:bg-[#0f0f10] dark:shadow-[0_24px_64px_-16px_rgba(0,0,0,0.75),0_8px_24px_-8px_rgba(0,0,0,0.5)] ${
+                className={`fixed inset-x-0 top-[calc(var(--banner-h,0px)+4.25rem)] z-50 mx-auto w-[980px] max-w-[calc(100vw-1.5rem)] origin-top overflow-hidden rounded-2xl border border-border/60 bg-background shadow-[0_24px_64px_-16px_rgba(0,0,0,0.3),0_8px_24px_-8px_rgba(0,0,0,0.15)] transition-all duration-150 dark:border-white/[0.12] dark:bg-[#0f0f10] dark:shadow-[0_24px_64px_-16px_rgba(0,0,0,0.75),0_8px_24px_-8px_rgba(0,0,0,0.5)] ${
                   showDropdown ? "animate-dropdown-in" : "translate-y-1 scale-[0.98] opacity-0"
                 }`}
                 role="listbox"
               >
                 {hasQuery ? (
                   <>
-                  {suggestions.length > 0 ? (
-                    /* Search results */
-                    <div className="px-2 py-1.5">
-                      <p className="px-2 py-1 text-[10px] font-medium uppercase tracking-wider text-muted-foreground/50">
-                        Results
-                      </p>
-                      {suggestions.map((icon, i) => (
-                        <button
-                          key={icon.slug}
-                          id={`${activeOptionId}-${i}`}
-                          type="button"
-                          role="option"
-                          aria-selected={i === selectedIdx}
-                          onMouseEnter={() => setSelectedIdx(i)}
-                          onClick={() => navigateToIcon(icon.slug)}
-                          className={`group flex w-full items-center gap-2 rounded-lg px-2 py-2 text-left transition-all duration-150 sm:gap-3 ${
-                            i === selectedIdx
-                              ? "translate-x-0.5 bg-accent text-accent-foreground"
-                              : "text-foreground hover:translate-x-0.5 hover:bg-accent/50"
-                          }`}
-                        >
-                          <img
-                            src={icon.variants.default}
-                            alt=""
-                            className="h-6 w-6 shrink-0 rounded object-contain transition-transform duration-150 group-hover:scale-110"
-                          />
-                          <div className="min-w-0 flex-1">
-                            <p className="truncate text-sm font-medium">{icon.title}</p>
-                            <p className="truncate text-[11px] text-muted-foreground">
-                              {icon.categories[0] || icon.slug}
-                            </p>
-                          </div>
-                          <span className="hidden shrink-0 text-[10px] text-muted-foreground/50 sm:inline">
-                            {icon.slug}
-                          </span>
-                        </button>
-                      ))}
-                      {totalMatches > suggestions.length && (
-                        <Link
-                          href={`/?q=${encodeURIComponent(query)}`}
-                          onClick={() => setFocused(false)}
-                          className="flex items-center justify-center gap-1 rounded-lg px-2 py-2 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent/50 hover:text-foreground"
-                        >
-                          View all {totalMatches.toLocaleString()} results
-                          <ArrowRight className="h-3 w-3" />
-                        </Link>
-                      )}
-                    </div>
-                  ) : searchLoading ? (
-                    /* Searching, never show the empty state while the
-                       manifest fetch or Fuse build is still running, or the
-                       dropdown falsely claims there are no matches. */
-                    <div className="flex flex-col items-center gap-2 px-4 py-8 text-center">
-                      <Search className="h-5 w-5 animate-pulse text-muted-foreground/30" />
-                      <p className="text-sm text-muted-foreground">
-                        Searching&hellip;
-                      </p>
-                    </div>
-                  ) : searchError ? (
-                    <div className="flex flex-col items-center gap-2 px-4 py-8 text-center">
-                      <Search className="h-5 w-5 text-muted-foreground/30" />
-                      <p className="text-sm text-muted-foreground">
-                        Search failed to load. Check your connection and try again.
-                      </p>
-                    </div>
-                  ) : (
-                    /* No matches */
-                    <div className="flex flex-col items-center gap-2 px-4 py-8 text-center">
-                      <Search className="h-5 w-5 text-muted-foreground/30" />
-                      <p className="text-sm text-muted-foreground">
-                        No icons match &ldquo;{query.trim()}&rdquo;
-                      </p>
-                      <Link
-                        href="/submit"
-                        onClick={() => setFocused(false)}
-                        className="text-xs font-medium text-orange-600 hover:underline dark:text-orange-400"
-                      >
-                        Submit this icon
-                      </Link>
-                    </div>
-                  )}
+                  <SearchGroups
+                    primary={isUi ? "ui" : "brand"}
+                    brands={suggestions}
+                    brandTotal={totalMatches}
+                    uiGlyphs={uiShown}
+                    uiTotal={uiAll.length}
+                    query={query}
+                    loading={searchLoading}
+                    error={Boolean(searchError)}
+                    selectedIdx={selectedIdx}
+                    optionId={activeOptionId}
+                    onHover={setSelectedIdx}
+                    onPickBrand={navigateToIcon}
+                    onPickUi={navigateToUi}
+                    onClose={() => setFocused(false)}
+                  />
                   {docsMatches.length > 0 && (
                     <div className="border-t border-border/30 px-2 py-1.5 dark:border-white/[0.04]">
                       <p className="px-2 py-1 text-[10px] font-medium uppercase tracking-wider text-muted-foreground/50">
@@ -703,22 +666,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
             <SubmitButton />
 
             <div className="ml-1 flex items-center gap-0.5 sm:gap-1">
-              <a
-                href={withUtm("https://www.npmjs.com/package/thesvg", "header")}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="View on npm"
-                title="npm"
-                className="hidden h-8 w-8 items-center justify-center rounded-lg border border-border/50 text-muted-foreground transition-all hover:border-[#cb3837]/30 hover:bg-[#cb3837]/5 hover:text-[#cb3837] lg:inline-flex dark:border-white/[0.06] dark:hover:border-[#cb3837]/30"
-              >
-                <img
-                  src="/icons/npm/default.svg"
-                  alt=""
-                  width={18}
-                  height={18}
-                  className="h-[18px] w-[18px]"
-                />
-              </a>
+              <PackagesMenu inUi={isUi} />
               <a
                 href={withUtm("https://www.raycast.com/thegdsks/thesvg", "header")}
                 target="_blank"
