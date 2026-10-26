@@ -1,19 +1,25 @@
 import { fetchIconList, ApiError, type IconEntry } from "../utils/api.js";
 import { error, info, header, dim, colorize, warn } from "../utils/colors.js";
+import { fetchUiIconList } from "../utils/ui.js";
 
 interface SearchOptions {
   query: string;
   limit: number;
+  /** Only set when --ui is passed, so brand-only parsing is unchanged. */
+  ui?: boolean;
 }
 
 export function parseSearchArgs(args: string[]): SearchOptions {
   let query = "";
   let limit = 20;
+  let ui = false;
 
   for (let i = 0; i < args.length; i++) {
     const arg = args[i];
 
-    if (arg === "--limit" || arg === "-l") {
+    if (arg === "--ui") {
+      ui = true;
+    } else if (arg === "--limit" || arg === "-l") {
       const val = parseInt(args[++i] ?? "20", 10);
       if (!isNaN(val) && val > 0) limit = val;
     } else if (arg?.startsWith("--limit=")) {
@@ -25,7 +31,41 @@ export function parseSearchArgs(args: string[]): SearchOptions {
     }
   }
 
-  return { query, limit };
+  const result: SearchOptions = { query, limit };
+  if (ui) result.ui = true;
+  return result;
+}
+
+async function runSearchUi(opts: SearchOptions): Promise<void> {
+  console.log(info(`Searching UI icons for "${opts.query}"...`));
+
+  let result;
+  try {
+    result = await fetchUiIconList({ query: opts.query, limit: opts.limit });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : "Unknown error";
+    console.error(error(`UI search failed: ${message}`));
+    process.exit(1);
+  }
+
+  if (result.icons.length === 0) {
+    console.log(warn(`\nNo UI icons found matching "${opts.query}"`));
+    return;
+  }
+
+  console.log(
+    header(`\nFound ${result.total} UI result${result.total === 1 ? "" : "s"} for "${opts.query}"`)
+  );
+  console.log();
+  const maxSlug = Math.max(4, ...result.icons.map((i) => i.slug.length));
+  const maxTitle = Math.max(5, ...result.icons.map((i) => i.title.length));
+  for (const icon of result.icons) {
+    console.log(
+      `  ${colorize("cyan", icon.slug.padEnd(maxSlug))}  ${icon.title.padEnd(maxTitle)}  ${dim(icon.category)}`
+    );
+  }
+  console.log();
+  console.log(dim(`  Run "thesvg add ui:<slug> [--look glass]" to add a UI icon.`));
 }
 
 /**
@@ -70,10 +110,12 @@ export async function runSearch(args: string[]): Promise<void> {
 
   if (!opts.query) {
     console.error(error("No search query provided."));
-    console.error(dim("Usage: thesvg search <query>"));
+    console.error(dim("Usage: thesvg search <query> [--ui]"));
     console.error(dim("       thesvg search github"));
     process.exit(1);
   }
+
+  if (opts.ui) return runSearchUi(opts);
 
   console.log(info(`Searching for "${opts.query}"...`));
 

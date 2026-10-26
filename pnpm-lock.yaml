@@ -36,10 +36,10 @@ importers:
         version: 3.14.22(react-dom@19.2.8(react@19.3.1))(react@19.3.1)
       '@vercel/analytics':
         specifier: ^2.0.1
-        version: 2.0.1(next@16.4.2(@babel/core@8.0.6)(@opentelemetry/api@1.9.1)(@types/node@26.6.4)(react-dom@19.2.8(react@19.3.1))(react@19.3.1))(react@19.3.1)(svelte@5.55.9(@typescript-eslint/types@8.69.0))(vue@3.5.30(typescript@6.0.3))
+        version: 2.0.1(next@16.4.2(@babel/core@7.29.7)(@opentelemetry/api@1.9.1)(@types/node@26.6.4)(react-dom@19.2.8(react@19.3.1))(react@19.3.1))(react@19.3.1)(svelte@5.55.9(@typescript-eslint/types@8.69.0))(vue@3.5.30(typescript@6.0.3))
       '@vercel/speed-insights':
         specifier: ^2.0.0
-        version: 2.0.0(next@16.4.2(@babel/core@8.0.6)(@opentelemetry/api@1.9.1)(@types/node@26.6.4)(react-dom@19.2.8(react@19.3.1))(react@19.3.1))(react@19.3.1)(svelte@5.55.9(@typescript-eslint/types@8.69.0))(vue@3.5.30(typescript@6.0.3))
+        version: 2.0.0(next@16.4.2(@babel/core@7.29.7)(@opentelemetry/api@1.9.1)(@types/node@26.6.4)(react-dom@19.2.8(react@19.3.1))(react@19.3.1))(react@19.3.1)(svelte@5.55.9(@typescript-eslint/types@8.69.0))(vue@3.5.30(typescript@6.0.3))
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -60,7 +60,7 @@ importers:
         version: 1.56.0(@types/react@19.3.0)(react@19.3.1)
       next:
         specifier: 16.4.2
-        version: 16.4.2(@babel/core@8.0.6)(@opentelemetry/api@1.9.1)(@types/node@26.6.4)(react-dom@19.2.8(react@19.3.1))(react@19.3.1)
+        version: 16.4.2(@babel/core@7.29.7)(@opentelemetry/api@1.9.1)(@types/node@26.6.4)(react-dom@19.2.8(react@19.3.1))(react@19.3.1)
       next-themes:
         specifier: ^0.4.6
         version: 0.4.6(react-dom@19.2.8(react@19.3.1))(react@19.3.1)
@@ -79,6 +79,9 @@ importers:
       shiki:
         specifier: ^4.5.0
         version: 4.5.0
+      svg-path-commander:
+        specifier: ^2.3.3
+        version: 2.3.3
       tailwind-merge:
         specifier: ^3.7.0
         version: 3.7.0
@@ -262,6 +265,57 @@ importers:
       '@thesvg/icons':
         specifier: workspace:*
         version: link:../icons
+
+  packages/ui: {}
+
+  packages/ui-react:
+    dependencies:
+      react:
+        specifier: '>=18'
+        version: 19.3.1
+    devDependencies:
+      '@types/react':
+        specifier: ^19.3.0
+        version: 19.3.0
+      typescript:
+        specifier: ^6.0.3
+        version: 6.0.3
+
+  packages/ui-react-native:
+    dependencies:
+      react:
+        specifier: '>=18'
+        version: 19.3.1
+      react-native:
+        specifier: '>=0.72'
+        version: 0.88.0(@babel/core@8.0.6)(@types/react@19.3.0)(react@19.3.1)
+      react-native-svg:
+        specifier: '>=13'
+        version: 15.16.0(react-native@0.88.0(@babel/core@8.0.6)(@types/react@19.3.0)(react@19.3.1))(react@19.3.1)
+    devDependencies:
+      typescript:
+        specifier: ^6.0.3
+        version: 6.0.3
+
+  packages/ui-svelte:
+    dependencies:
+      svelte:
+        specifier: '>=5.55.7'
+        version: 5.55.9(@typescript-eslint/types@8.69.0)
+    devDependencies:
+      typescript:
+        specifier: ^6.0.3
+        version: 6.0.3
+
+  packages/ui-vue:
+    dependencies:
+      vue:
+        specifier: '>=3.3'
+        version: 3.5.30(typescript@6.0.3)
+    devDependencies:
+      typescript:
+        specifier: ^6.0.3
+        version: 6.0.3
 
   packages/vue:
     dependencies:
@@ -1817,6 +1871,9 @@ packages:
 
   '@tanstack/virtual-core@3.19.7':
     resolution: {integrity: sha512-gxy5SvH0mFRJ0YujtrflB/1HAu9Wn1KGvL0bjZfQkYVVMsIpQiwcf1mR06/ViN4NjllUb4HNCjqE9FGwgTvMCQ==}
+
+  '@thednp/dommatrix@3.1.2':
+    resolution: {integrity: sha512-wxRH2/Qdqd+JxFpjb5vw+ZMaij8Hqa/9Hgl41n2Jb+3WNRhdemrosK0FxEo/yEvhvHGW8D1tZ3oPH9N0m1QG+A==}
 
   '@ts-morph/common@0.27.0':
     resolution: {integrity: sha512-Wf29UqxWDpc+i61k3oIOzcUfQt79PIT9y/MWfAGlrkjg6lBC1hwDECLXPVJAhWjiGbfBCxZd65F/LIZF3+jeJQ==}
@@ -4839,6 +4896,9 @@ packages:
     resolution: {integrity: sha512-fTjjT8cHLDwigcu2j3pv7Jq04LklXevPB8uBgyHNiTXv+RMNvVnrjS4UEYrLMkhuq1vpCodHjiW+z/95SDs/fg==}
     engines: {node: '>=18'}
 
+  svg-path-commander@2.3.3:
+    resolution: {integrity: sha512-eeNMlh4JHxAG0820MwHM7A4UD3PRMFALNORZbEwCJx5O1Uhn2CWnLBNxHXWGdahiJVtSsG8VKoW+HzLtY73J/A==}
+
   systeminformation@5.33.8:
     resolution: {integrity: sha512-v4F6OGYGh7wDvV68YmjOmZwGixV9A/GQ7d2b84t0UF4CaOy9jipNWIJDkHqYDYiTPuiojqlwVQd0hfUKOUN7tQ==}
     engines: {node: '>=10.0.0'}
@@ -6602,6 +6662,15 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.3.0
 
+  '@react-native/virtualized-lists@0.88.0(@types/react@19.3.0)(react-native@0.88.0(@babel/core@8.0.6)(@types/react@19.3.0)(react@19.3.1))(react@19.3.1)':
+    dependencies:
+      invariant: 2.2.4
+      nullthrows: 1.1.1
+      react: 19.3.1
+      react-native: 0.88.0(@babel/core@8.0.6)(@types/react@19.3.0)(react@19.3.1)
+    optionalDependencies:
+      '@types/react': 19.3.0
+
   '@rolldown/binding-android-arm-eabi@1.2.8':
     optional: true
 
@@ -6822,6 +6891,8 @@ snapshots:
       react-dom: 19.2.8(react@19.3.1)
 
   '@tanstack/virtual-core@3.19.7': {}
+
+  '@thednp/dommatrix@3.1.2': {}
 
   '@ts-morph/common@0.27.0':
     dependencies:
@@ -7062,16 +7133,16 @@ snapshots:
   '@unrs/resolver-binding-win32-x64-msvc@1.12.2':
     optional: true
 
-  '@vercel/analytics@2.0.1(next@16.4.2(@babel/core@8.0.6)(@opentelemetry/api@1.9.1)(@types/node@26.6.4)(react-dom@19.2.8(react@19.3.1))(react@19.3.1))(react@19.3.1)(svelte@5.55.9(@typescript-eslint/types@8.69.0))(vue@3.5.30(typescript@6.0.3))':
+  '@vercel/analytics@2.0.1(next@16.4.2(@babel/core@7.29.7)(@opentelemetry/api@1.9.1)(@types/node@26.6.4)(react-dom@19.2.8(react@19.3.1))(react@19.3.1))(react@19.3.1)(svelte@5.55.9(@typescript-eslint/types@8.69.0))(vue@3.5.30(typescript@6.0.3))':
     optionalDependencies:
-      next: 16.4.2(@babel/core@8.0.6)(@opentelemetry/api@1.9.1)(@types/node@26.6.4)(react-dom@19.2.8(react@19.3.1))(react@19.3.1)
+      next: 16.4.2(@babel/core@7.29.7)(@opentelemetry/api@1.9.1)(@types/node@26.6.4)(react-dom@19.2.8(react@19.3.1))(react@19.3.1)
       react: 19.3.1
       svelte: 5.55.9(@typescript-eslint/types@8.69.0)
       vue: 3.5.30(typescript@6.0.3)
 
-  '@vercel/speed-insights@2.0.0(next@16.4.2(@babel/core@8.0.6)(@opentelemetry/api@1.9.1)(@types/node@26.6.4)(react-dom@19.2.8(react@19.3.1))(react@19.3.1))(react@19.3.1)(svelte@5.55.9(@typescript-eslint/types@8.69.0))(vue@3.5.30(typescript@6.0.3))':
+  '@vercel/speed-insights@2.0.0(next@16.4.2(@babel/core@7.29.7)(@opentelemetry/api@1.9.1)(@types/node@26.6.4)(react-dom@19.2.8(react@19.3.1))(react@19.3.1))(react@19.3.1)(svelte@5.55.9(@typescript-eslint/types@8.69.0))(vue@3.5.30(typescript@6.0.3))':
     optionalDependencies:
-      next: 16.4.2(@babel/core@8.0.6)(@opentelemetry/api@1.9.1)(@types/node@26.6.4)(react-dom@19.2.8(react@19.3.1))(react@19.3.1)
+      next: 16.4.2(@babel/core@7.29.7)(@opentelemetry/api@1.9.1)(@types/node@26.6.4)(react-dom@19.2.8(react@19.3.1))(react@19.3.1)
       react: 19.3.1
       svelte: 5.55.9(@typescript-eslint/types@8.69.0)
       vue: 3.5.30(typescript@6.0.3)
@@ -9205,7 +9276,7 @@ snapshots:
       react: 19.3.1
       react-dom: 19.2.8(react@19.3.1)
 
-  next@16.4.2(@babel/core@8.0.6)(@opentelemetry/api@1.9.1)(@types/node@26.6.4)(react-dom@19.2.8(react@19.3.1))(react@19.3.1):
+  next@16.4.2(@babel/core@7.29.7)(@opentelemetry/api@1.9.1)(@types/node@26.6.4)(react-dom@19.2.8(react@19.3.1))(react@19.3.1):
     dependencies:
       '@next/env': 16.4.2
       '@swc/helpers': 0.5.23
@@ -9214,7 +9285,7 @@ snapshots:
       postcss: 8.5.28
       react: 19.3.1
       react-dom: 19.2.8(react@19.3.1)
-      styled-jsx: 5.1.6(@babel/core@8.0.6)(react@19.3.1)
+      styled-jsx: 5.1.6(@babel/core@7.29.7)(react@19.3.1)
     optionalDependencies:
       '@next/swc-darwin-arm64': 16.4.2
       '@next/swc-darwin-x64': 16.4.2
@@ -9569,6 +9640,13 @@ snapshots:
       react: 19.3.0
       react-native: 0.88.0(@babel/core@8.0.6)(@types/react@19.3.0)(react@19.3.0)
 
+  react-native-svg@15.16.0(react-native@0.88.0(@babel/core@8.0.6)(@types/react@19.3.0)(react@19.3.1))(react@19.3.1):
+    dependencies:
+      css-select: 5.2.2
+      css-tree: 1.1.3
+      react: 19.3.1
+      react-native: 0.88.0(@babel/core@8.0.6)(@types/react@19.3.0)(react@19.3.1)
+
   react-native@0.88.0(@babel/core@8.0.6)(@types/react@19.3.0)(react@19.3.0):
     dependencies:
       '@react-native/asset-utils': 0.88.0
@@ -9591,6 +9669,48 @@ snapshots:
       pretty-format: 29.7.0
       promise: 8.3.0
       react: 19.3.0
+      react-devtools-core: 6.1.5
+      react-refresh: 0.14.2
+      regenerator-runtime: 0.13.11
+      scheduler: 0.28.0
+      semver: 7.8.5
+      stacktrace-parser: 0.1.11
+      tinyglobby: 0.2.17
+      whatwg-fetch: 3.6.20
+      ws: 7.5.13
+      yargs: 17.7.3
+    optionalDependencies:
+      '@types/react': 19.3.0
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@react-native-community/cli'
+      - '@react-native/metro-config'
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+
+  react-native@0.88.0(@babel/core@8.0.6)(@types/react@19.3.0)(react@19.3.1):
+    dependencies:
+      '@react-native/asset-utils': 0.88.0
+      '@react-native/codegen': 0.88.0(@babel/core@8.0.6)
+      '@react-native/community-cli-plugin': 0.88.0
+      '@react-native/gradle-plugin': 0.88.0
+      '@react-native/normalize-colors': 0.88.0
+      '@react-native/virtualized-lists': 0.88.0(@types/react@19.3.0)(react-native@0.88.0(@babel/core@8.0.6)(@types/react@19.3.0)(react@19.3.1))(react@19.3.1)
+      anser: 1.4.10
+      ansi-regex: 5.0.1
+      base64-js: 1.5.1
+      flow-enums-runtime: 0.0.6
+      flow-parser: 0.327.0
+      hermes-compiler: 260318099.0.4
+      invariant: 2.2.4
+      memoize-one: 5.2.1
+      metro-runtime: 0.87.1
+      metro-source-map: 0.87.1
+      nullthrows: 1.1.1
+      pretty-format: 29.7.0
+      promise: 8.3.0
+      react: 19.3.1
       react-devtools-core: 6.1.5
       react-refresh: 0.14.2
       regenerator-runtime: 0.13.11
@@ -10147,12 +10267,12 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  styled-jsx@5.1.6(@babel/core@8.0.6)(react@19.3.1):
+  styled-jsx@5.1.6(@babel/core@7.29.7)(react@19.3.1):
     dependencies:
       client-only: 0.0.1
       react: 19.3.1
     optionalDependencies:
-      '@babel/core': 8.0.6
+      '@babel/core': 7.29.7
 
   supports-color@10.2.2: {}
 
@@ -10186,6 +10306,10 @@ snapshots:
       zimmerframe: 1.1.4
     transitivePeerDependencies:
       - '@typescript-eslint/types'
+
+  svg-path-commander@2.3.3:
+    dependencies:
+      '@thednp/dommatrix': 3.1.2
 
   systeminformation@5.33.8: {}
 

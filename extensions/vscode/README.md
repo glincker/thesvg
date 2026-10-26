@@ -1,10 +1,11 @@
 # theSVG for VS Code
 
-Search and copy 7,600+ SVG icons directly from VS Code. Brand logos, AWS, Azure, GCP, and Kubernetes architecture icons.
+Search and copy brand icons directly from VS Code, plus a growing set of UI icons. Brand logos, AWS, Azure, GCP, and Kubernetes architecture icons, and UI icons in seven looks.
 
 ## Features
 
-- **Search** across 7,600+ icons from the command palette
+- **Search** brand icons from the command palette
+- **UI icons** as a second kind: use the button in the picker title bar to switch between Brand and UI icons. Search by title, slug, tag or category, then pick a look (outline, glass, duotone, offset, fill, pixel, depth). Copies keep `currentColor` so icons follow your theme. If the UI index cannot be loaded, the picker stays on brand icons
 - **Copy SVG** to clipboard with one keystroke
 - **Copy as JSX** for React projects
 - **Copy CDN link** (jsDelivr) for HTML/CSS
@@ -32,6 +33,8 @@ Search and copy 7,600+ SVG icons directly from VS Code. Brand logos, AWS, Azure,
 | `theSVG: Insert SVG at Cursor` | Search and insert into editor |
 
 ## Collections
+
+UI icons load on demand, so their count is shown in the picker once loaded.
 
 | Collection | Icons |
 |-----------|-------|

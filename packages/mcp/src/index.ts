@@ -6,6 +6,8 @@ import Fuse from "fuse.js";
 import { createRequire } from "module";
 import { fileURLToPath } from "url";
 import path from "path";
+import { DEFAULT_LOOK } from "./ui.js";
+import { uiCategories, uiGet, uiLooks, uiSearch, uiUrl } from "./ui-tools.js";
 
 // --- Constants ---
 
@@ -124,6 +126,21 @@ export function searchIcons(query: string, limit = 20): SearchResult[] {
 
 // --- MCP Server ---
 
+// Optional on every tool; "brand" keeps all existing calls identical.
+const kindSchema = z
+  .enum(["brand", "ui"])
+  .optional()
+  .default("brand")
+  .describe("Icon kind: 'brand' (default) or 'ui' for UI icons.");
+
+const lookSchema = z
+  .string()
+  .optional()
+  .default(DEFAULT_LOOK)
+  .describe(
+    "UI icon look (kind 'ui' only): outline, glass, duotone, offset, fill, pixel, depth. Defaults to 'outline'."
+  );
+
 const server = new McpServer({
   name: "thesvg",
   version: "0.6.0",
@@ -143,8 +160,10 @@ server.tool(
       .optional()
       .default(20)
       .describe("Maximum number of results (1-100, default 20)"),
+    kind: kindSchema,
   },
-  async ({ query, limit }) => {
+  async ({ query, limit, kind }) => {
+    if (kind === "ui") return uiSearch(query, limit);
     try {
       const results = searchIcons(query, limit);
 
@@ -204,8 +223,11 @@ server.tool(
       .describe(
         "Icon variant to fetch: 'default', 'mono', 'light', 'dark', 'wordmark', 'color'. Defaults to 'default'. Use list_variants to see what a specific icon supports."
       ),
+    kind: kindSchema,
+    look: lookSchema,
   },
-  async ({ slug, variant }) => {
+  async ({ slug, variant, kind, look }) => {
+    if (kind === "ui") return uiGet(slug, look);
     try {
       const icon = findIcon(slug);
       if (!icon) {
@@ -286,8 +308,10 @@ server.tool(
       .describe(
         "Icon slug identifier (e.g. 'github', 'openai'). Use search_icons to find slugs."
       ),
+    kind: kindSchema,
   },
-  async ({ slug }) => {
+  async ({ slug, kind }) => {
+    if (kind === "ui") return uiLooks(slug);
     try {
       const icon = findIcon(slug);
       if (!icon) {
@@ -342,8 +366,11 @@ server.tool(
       .describe(
         "Icon variant: 'default', 'mono', 'light', 'dark', 'wordmark', 'color'. Defaults to 'default'."
       ),
+    kind: kindSchema,
+    look: lookSchema,
   },
-  async ({ slug, variant }) => {
+  async ({ slug, variant, kind, look }) => {
+    if (kind === "ui") return uiUrl(slug, look);
     try {
       const icon = findIcon(slug);
       if (!icon) {
@@ -411,8 +438,9 @@ server.tool(
 server.tool(
   "list_categories",
   "List all icon categories available in thesvg.org library with icon counts. Use this to discover what categories exist in the library and to inform follow-up search_icons queries.",
-  {},
-  async () => {
+  { kind: kindSchema },
+  async ({ kind }) => {
+    if (kind === "ui") return uiCategories();
     try {
       const icons = loadIndex();
       const counts = new Map<string, number>();

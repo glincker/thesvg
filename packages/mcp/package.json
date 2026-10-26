@@ -36,7 +36,8 @@
     "build": "tsc",
     "postbuild": "node -e \"require('fs').copyFileSync('./src/icons.json','./dist/icons.json')\"",
     "start": "node dist/index.js",
-    "dev": "tsc --watch"
+    "dev": "tsc --watch",
+    "test": "node --test tests/ui.test.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.31.0",

@@ -1,19 +1,25 @@
 import { fetchIconList, ApiError } from "../utils/api.js";
 import { error, info, header, dim, colorize } from "../utils/colors.js";
+import { fetchUiIconList } from "../utils/ui.js";
 
 interface ListOptions {
   category: string | undefined;
   limit: number;
+  /** Only set when --ui is passed, so brand-only parsing is unchanged. */
+  ui?: boolean;
 }
 
 export function parseListArgs(args: string[]): ListOptions {
   let category: string | undefined;
   let limit = 50;
+  let ui = false;
 
   for (let i = 0; i < args.length; i++) {
     const arg = args[i];
 
-    if (arg === "--category" || arg === "-c") {
+    if (arg === "--ui") {
+      ui = true;
+    } else if (arg === "--category" || arg === "-c") {
       category = args[++i];
     } else if (arg?.startsWith("--category=")) {
       category = arg.slice("--category=".length);
@@ -26,11 +32,56 @@ export function parseListArgs(args: string[]): ListOptions {
     }
   }
 
-  return { category, limit };
+  const result: ListOptions = { category, limit };
+  if (ui) result.ui = true;
+  return result;
+}
+
+async function runListUi(opts: ListOptions): Promise<void> {
+  console.log(
+    info(
+      opts.category
+        ? `Fetching UI icons in category "${opts.category}"...`
+        : "Fetching UI icons..."
+    )
+  );
+
+  let result;
+  try {
+    result = await fetchUiIconList({ category: opts.category, limit: opts.limit });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : "Unknown error";
+    console.error(error(`Failed to fetch UI icon list: ${message}`));
+    process.exit(1);
+  }
+
+  const { icons, total } = result;
+  if (icons.length === 0) {
+    console.log(dim("No UI icons found"));
+    return;
+  }
+
+  console.log(header(`\n${total} UI icon${total === 1 ? "" : "s"} total`));
+  if (icons.length < total) console.log(dim(`  (showing ${icons.length} of ${total})`));
+  console.log();
+
+  const maxSlug = Math.max(4, ...icons.map((i) => i.slug.length));
+  const maxTitle = Math.max(5, ...icons.map((i) => i.title.length));
+  console.log(
+    `  ${colorize("bold", "Slug".padEnd(maxSlug))}  ${colorize("bold", "Title".padEnd(maxTitle))}  ${colorize("bold", "Category")}`
+  );
+  for (const icon of icons) {
+    console.log(
+      `  ${colorize("cyan", icon.slug.padEnd(maxSlug))}  ${icon.title.padEnd(maxTitle)}  ${dim(icon.category)}`
+    );
+  }
+  console.log();
+  console.log(dim(`  Run "thesvg add ui:<slug> [--look glass]" to add a UI icon.`));
 }
 
 export async function runList(args: string[]): Promise<void> {
   const opts = parseListArgs(args);
+  if (opts.ui) return runListUi(opts);
 
   const label = opts.category
     ? `icons in category "${opts.category}"`

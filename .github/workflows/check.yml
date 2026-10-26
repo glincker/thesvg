@@ -21,33 +21,129 @@ env:
   NODE_VERSION: "20"
 
 jobs:
-  lint-and-build:
-    name: Lint & Build
+  # Works out which parts of the repo the PR touches, so each job below only runs when it can be affected.
+  # Brand icons and UI icons are checked separately. Anything outside both counts as shared and runs everything.
+  changes:
+    name: Detect changes
+    runs-on: ubuntu-latest
+    outputs:
+      ui: ${{ steps.filter.outputs.ui }}
+      brand: ${{ steps.filter.outputs.brand }}
+      shared: ${{ steps.filter.outputs.shared }}
+      site: ${{ steps.filter.outputs.site }}
+      code: ${{ steps.filter.outputs.code }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          fetch-depth: 0
+
+      - name: Classify changed files
+        id: filter
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: |
+          files=$(git diff --name-only "origin/${BASE_REF}...HEAD")
+          echo "Changed files:"; echo "$files"
+
+          UI='^(src/(lib|components)/ui-icons/|src/app/ui/|src/data/ui/|src/data/ui-icons\.json|scripts/ui/|packages/ui(-[a-z-]+)?/|public/ui/)'
+          BRAND='^(public/icons/|src/data/icons\.json|src/(lib|components)/icons/|packages/(icons|react|vue|svelte|react-native|thesvg|cli|mcp|mcp-worker)/)'
+          OUTSIDE='^(docs/|docs-local/|extensions/|\.github/(ISSUE_TEMPLATE|labeler\.yml|dependabot\.yml)|.*\.md$|LICENSE|TRADEMARK\.md|LEGAL\.md)'
+          SITE='^(src/|public/|scripts/|next\.config|package\.json|pnpm-lock\.yaml|pnpm-workspace\.yaml|tsconfig|eslint\.config|vitest\.config|postcss)'
+
+          # A here-string, not a pipe: grep -q can exit before echo finishes writing a long file list, and under pipefail
+          # that SIGPIPE would turn a real match into "false" and skip every check.
+          has() { if grep -Eq "$1" <<< "$files"; then echo true; else echo false; fi; }
+          ui=$(has "$UI")
+          brand=$(has "$BRAND")
+          site=$(has "$SITE")
+          # Shared: any changed file that is neither UI-only, brand-only nor outside the app (docs, extensions).
+          other=$(grep -Ev "$UI" <<< "$files" | grep -Ev "$BRAND" | grep -Ev "$OUTSIDE" | grep -v '^$' || true)
+          shared=false; [ -n "$other" ] && shared=true
+          code=false; { [ "$ui" = true ] || [ "$brand" = true ] || [ "$shared" = true ]; } && code=true
+
+          { echo "ui=$ui"; echo "brand=$brand"; echo "shared=$shared"; echo "site=$site"; echo "code=$code"; } >> "$GITHUB_OUTPUT"
+          echo "ui=$ui brand=$brand shared=$shared site=$site code=$code"
+
+  lint-and-types:
+    name: Lint and types
+    needs: changes
+    if: needs.changes.outputs.code == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v6
-        with:
-          version: 9
-
-      - uses: actions/setup-node@v7
+      - uses: ./.github/actions/setup
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: pnpm
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
+      # The import boundary between brand and UI icon code is enforced here (see eslint.config.mjs).
       - name: Lint
         run: pnpm lint
 
       - name: Type check
         run: pnpm exec tsc --noEmit
 
+  test-brand:
+    name: Test brand icons
+    needs: changes
+    if: needs.changes.outputs.brand == 'true' || needs.changes.outputs.shared == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - uses: ./.github/actions/setup
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
       - name: Test
-        run: pnpm test
+        run: pnpm test:brand
+
+  test-ui:
+    name: Test UI icons
+    needs: changes
+    if: needs.changes.outputs.ui == 'true' || needs.changes.outputs.shared == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - uses: ./.github/actions/setup
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      # Fails when the generated files no longer match the set files, or an icon drops below the quality minimum.
+      - name: Test
+        run: pnpm test:ui
+
+  build:
+    name: Build site
+    needs: changes
+    if: needs.changes.outputs.site == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - uses: ./.github/actions/setup
+        with:
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: Build
         run: pnpm build
+
+  # One stable check to require in branch protection. A job that was skipped on purpose counts as passing.
+  lint-and-build:
+    name: Lint & Build
+    needs: [changes, lint-and-types, test-brand, test-ui, build]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check every job that ran
+        env:
+          RESULTS: ${{ join(needs.*.result, ' ') }}
+        run: |
+          echo "Job results: $RESULTS"
+          for r in $RESULTS; do
+            if [ "$r" != "success" ] && [ "$r" != "skipped" ]; then
+              echo "A required job did not pass: $r"
+              exit 1
+            fi
+          done

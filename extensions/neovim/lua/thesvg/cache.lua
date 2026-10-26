@@ -145,4 +145,79 @@ function M.get_registry(opts)
   return FALLBACK_ICONS
 end
 
+-- UI icons: a separate index, fetched lazily on first use and cached on disk
+-- the same way as the brand registry. Never merged into it.
+local UI_INDEX_URL =
+  "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/src/data/ui-icons.json"
+local DEFAULT_LOOKS = { "outline", "glass", "duotone", "offset", "fill", "pixel", "depth" }
+
+---@return string
+local function ui_cache_path()
+  local dir = vim.fs.joinpath(vim.fn.stdpath("cache"), "thesvg")
+  vim.fn.mkdir(dir, "p")
+  return vim.fs.joinpath(dir, "ui-icons.json")
+end
+
+---@param raw string
+---@return table|nil
+local function decode_ui(raw)
+  local ok, data = pcall(vim.json.decode, raw)
+  if ok and type(data) == "table" and type(data.icons) == "table" then
+    data.looks = data.looks or DEFAULT_LOOKS
+    return data
+  end
+  return nil
+end
+
+---@return string|nil raw
+local function read_ui_cache()
+  local fd = io.open(ui_cache_path(), "r")
+  if not fd then
+    return nil
+  end
+  local raw = fd:read("*a")
+  fd:close()
+  return raw
+end
+
+--- Return the UI icon index { looks, icons }, or nil plus a one-line message.
+--- Never throws; brand search does not depend on it.
+---@param opts? { ttl?: integer, http?: table }
+---@return table|nil index, string|nil err
+function M.get_ui_index(opts)
+  opts = opts or {}
+  local ttl = opts.ttl or 86400
+  local http = opts.http or require("thesvg.http")
+
+  local stat = vim.uv.fs_stat(ui_cache_path())
+  local cached_raw = read_ui_cache()
+  if stat and os.time() - stat.mtime.sec < ttl and cached_raw then
+    local data = decode_ui(cached_raw)
+    if data then
+      return data, nil
+    end
+  end
+
+  local body = http.get(UI_INDEX_URL, 3000)
+  local data = body and decode_ui(body)
+  if data then
+    local fd = io.open(ui_cache_path(), "w")
+    if fd then
+      fd:write(body)
+      fd:close()
+    end
+    return data, nil
+  end
+
+  -- Stale cache beats an error when the network or the file is unavailable.
+  local stale = cached_raw and decode_ui(cached_raw)
+  if stale then
+    return stale, nil
+  end
+  if body then
+    return nil, "UI icon index has an unexpected format"
+  end
+  return nil, "UI icons are unavailable (not published yet, or offline)"
+end
+
 return M

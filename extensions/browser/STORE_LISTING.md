@@ -4,15 +4,15 @@
 
 ### Chrome Web Store (132 chars max)
 ```
-Search and copy 7,600+ brand SVGs instantly. Get SVG code, CDN URL, or markdown, no account needed.
+Search and copy brand SVGs plus a growing set of UI icons. Get SVG code, CDN URL, or markdown, no account.
 ```
-(101 chars)
+(104 chars)
 
 ### Firefox AMO (250 chars max)
 ```
-thesvg puts 7,600+ open brand SVGs one click away. Search any brand, preview variants, and copy the SVG code, jsDelivr CDN URL, or ready-to-paste markdown. All offline-capable, no account required.
+thesvg puts open brand SVGs and a growing set of UI icons one click away. Search, pick a variant or look, and copy the SVG code, jsDelivr CDN URL, or ready-to-paste markdown. No account required.
 ```
-(199 chars)
+(197 chars)
 
 ---
 
@@ -20,7 +20,7 @@ thesvg puts 7,600+ open brand SVGs one click away. Search any brand, preview var
 
 ### Version for Chrome Web Store and Edge Add-ons
 
-thesvg is the open SVG brand library. Over 7,600 brand icons, all MIT-licensed, all one click away from wherever you are on the web.
+thesvg is the open SVG brand library, with a growing set of UI icons alongside it. All MIT-licensed, all one click away from wherever you are on the web.
 
 **Search as you type.** Open the popup, start typing a brand name, and results appear instantly using a local Fuse.js index. No server round trips, no rate limits, no sign-in.
 
@@ -28,6 +28,8 @@ thesvg is the open SVG brand library. Over 7,600 brand icons, all MIT-licensed, 
 - Raw SVG code, ready to paste into your project
 - jsDelivr CDN URL, for dropping into an `<img>` tag or CSS background
 - Markdown snippet, formatted for README files and documentation
+
+**Brand and UI icons.** A Brand | UI icons switch in the popup changes the catalog. UI icons come in seven looks (outline, glass, duotone, offset, fill, pixel, depth) and keep currentColor so they follow your theme.
 
 **Multiple variants per brand.** Many brands ship with color, mono, light, dark, and wordmark variants. The extension shows all available variants so you pick the exact look your project needs.
 
@@ -39,7 +41,7 @@ Built on the same open dataset powering thesvg.org. The full library is MIT-lice
 
 ### Version for Firefox AMO
 
-thesvg is the open SVG brand library. Over 7,600 brand icons, all MIT-licensed, all one click away from wherever you are on the web.
+thesvg is the open SVG brand library, with a growing set of UI icons alongside it. All MIT-licensed, all one click away from wherever you are on the web.
 
 **Search as you type.** Open the popup, start typing a brand name, and results appear instantly using a local Fuse.js index. No server round trips, no rate limits, no sign-in.
 
@@ -47,6 +49,8 @@ thesvg is the open SVG brand library. Over 7,600 brand icons, all MIT-licensed, 
 - Raw SVG code, ready to paste into your project
 - jsDelivr CDN URL, for dropping into an `<img>` tag or CSS background
 - Markdown snippet, formatted for README files and documentation
+
+**Brand and UI icons.** A Brand | UI icons switch in the popup changes the catalog. UI icons come in seven looks (outline, glass, duotone, offset, fill, pixel, depth) and keep currentColor so they follow your theme.
 
 **Multiple variants per brand.** Many brands ship with color, mono, light, dark, and wordmark variants. The extension shows all available variants so you pick the exact look your project needs.
 
@@ -124,4 +128,4 @@ Chrome requires a single-sentence justification for each requested permission wh
 > Adds a right-click "Search theSVG" item that appears when the user selects text on any page. Clicking it opens a new tab to thesvg.org with that text pre-filled as a search query. No page content is read or transmitted outside of the text the user explicitly selects and clicks to search.
 
 ### `host_permissions: https://cdn.jsdelivr.net/*`
-> SVG files are fetched on demand from the jsDelivr public CDN when a user previews or copies an icon. The full icon registry (7,600+ icons) is not bundled in the extension to keep the download size small. Only the specific icon the user selects is fetched, using the standard public jsDelivr URL format.
+> SVG files are fetched on demand from the jsDelivr public CDN when a user previews or copies an icon. The full icon registries (brand and UI) are not bundled in the extension to keep the download size small. Only the specific icon the user selects is fetched, using the standard public jsDelivr URL format.

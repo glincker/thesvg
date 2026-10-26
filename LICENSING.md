@@ -32,6 +32,8 @@ A logo can have a **permissive license** (the SVG is free to copy) **and** still
 
 **The submission form is only asking about the *license* of the SVG file itself, not whether you have permission to use the brand commercially.**
 
+> **UI icons are different.** The interface icons at thesvg.org/ui are original drawings made for theSVG, not brand marks, so there is no trademark to consider. They are released under the [MIT license](./LICENSE) like the rest of the repository. Only contribute a UI icon you drew yourself, and never trace, convert or adapt an icon from another set. See [CONTRIBUTING.md](./CONTRIBUTING.md#ui-icons).
+
 ---
 
 ## 2. What you promise when you submit
