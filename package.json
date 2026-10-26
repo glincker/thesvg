@@ -8,7 +8,9 @@
     "build": "tsx src/scripts/generate-icon-tones.ts && tsx src/scripts/generate-api.ts && tsx scripts/generate-feed.ts && tsx src/scripts/generate-llms-txt.ts && tsx src/scripts/generate-drawio-libraries.ts && tsx src/scripts/generate-excalidraw-libraries.ts && next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "vitest run --passWithNoTests && find src -name '*.test.mjs' -print0 | xargs -0 -r tsx --test && pnpm --filter @thesvg/cli test && pnpm --filter @thesvg/icons test && pnpm --filter @thesvg/ui test && pnpm --filter @thesvg/ui-react test && pnpm --filter @thesvg/ui-vue test && pnpm --filter @thesvg/ui-svelte test && pnpm --filter @thesvg/ui-react-native test"
+    "ui:build": "tsx scripts/ui/build-data.ts",
+    "ui:check": "tsx scripts/ui/build-data.ts --check",
+    "test": "pnpm ui:check && vitest run --passWithNoTests && find src -name '*.test.mjs' -print0 | xargs -0 -r tsx --test && pnpm --filter @thesvg/cli test && pnpm --filter @thesvg/icons test && pnpm --filter @thesvg/ui test && pnpm --filter @thesvg/ui-react test && pnpm --filter @thesvg/ui-vue test && pnpm --filter @thesvg/ui-svelte test && pnpm --filter @thesvg/ui-react-native test"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",
