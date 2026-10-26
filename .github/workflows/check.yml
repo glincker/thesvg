@@ -50,12 +50,14 @@ jobs:
           OUTSIDE='^(docs/|docs-local/|extensions/|\.github/(ISSUE_TEMPLATE|labeler\.yml|dependabot\.yml)|.*\.md$|LICENSE|TRADEMARK\.md|LEGAL\.md)'
           SITE='^(src/|public/|scripts/|next\.config|package\.json|pnpm-lock\.yaml|pnpm-workspace\.yaml|tsconfig|eslint\.config|vitest\.config|postcss)'
 
-          has() { echo "$files" | grep -Eq "$1" && echo true || echo false; }
+          # A here-string, not a pipe: grep -q can exit before echo finishes writing a long file list, and under pipefail
+          # that SIGPIPE would turn a real match into "false" and skip every check.
+          has() { if grep -Eq "$1" <<< "$files"; then echo true; else echo false; fi; }
           ui=$(has "$UI")
           brand=$(has "$BRAND")
           site=$(has "$SITE")
           # Shared: any changed file that is neither UI-only, brand-only nor outside the app (docs, extensions).
-          other=$(echo "$files" | grep -Ev "$UI" | grep -Ev "$BRAND" | grep -Ev "$OUTSIDE" | grep -v '^$' || true)
+          other=$(grep -Ev "$UI" <<< "$files" | grep -Ev "$BRAND" | grep -Ev "$OUTSIDE" | grep -v '^$' || true)
           shared=false; [ -n "$other" ] && shared=true
           code=false; { [ "$ui" = true ] || [ "$brand" = true ] || [ "$shared" = true ]; } && code=true
 
