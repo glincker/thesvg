@@ -295,9 +295,7 @@ export function renderIcon(nodes: IconNode[], opts: RenderOptions = {}): RenderR
     const pane = bodies.map((i) => `<path d="${ds[i]}" fill="url(#${gid})" stroke="none"/>`).join("");
     // One opaque union of every stroke, painted through a single gradient: overlaps never double up.
     const edge = `<rect x="${-margin}" y="${-margin}" width="${m + margin * 2}" height="${m + margin * 2}" fill="url(#${gid}e)" mask="url(#${gid}m)"/>`;
-    // Details inside a pane are etched in dark ink, which keeps them readable on the light glass.
     const openHolesG = holes.filter((i) => !closedOf(shapes[i] ?? { subpaths: [] }));
-    const insideMask = `<mask id="${gid}i" maskUnits="userSpaceOnUse" x="-2" y="-2" width="${m + 4}" height="${m + 4}"><rect x="-2" y="-2" width="${m + 4}" height="${m + 4}" fill="#000"/>${bodies.map((i) => `<path d="${ds[i]}" fill="#fff"/>`).join("")}</mask>`;
     const outsideMaskG = `<mask id="${gid}o" maskUnits="userSpaceOnUse" x="-2" y="-2" width="${m + 4}" height="${m + 4}"><rect x="-2" y="-2" width="${m + 4}" height="${m + 4}" fill="#fff"/>${bodies.map((i) => `<path d="${ds[i]}" fill="#000"/>`).join("")}</mask>`;
     const sticking = openHolesG
       .map((i) => `<path d="${ds[i]}" fill="none" stroke="url(#${gid}e)" stroke-width="${edgeW}" stroke-linecap="${style.cap}" stroke-linejoin="${style.join}" mask="url(#${gid}o)"/>`)
@@ -305,11 +303,14 @@ export function renderIcon(nodes: IconNode[], opts: RenderOptions = {}): RenderR
     const etch = holes
       .map(
         (i) =>
-          `<path d="${ds[i]}" fill="none" stroke="#000" stroke-opacity="0.62" stroke-width="${Math.round(Math.max(0.9, edgeW * 1.4) * 100) / 100}" stroke-linecap="${style.cap}" stroke-linejoin="${style.join}"/>`,
+          `<path d="${ds[i]}" fill="none" stroke="#000" stroke-opacity="0.92" stroke-width="${Math.round(Math.max(0.9, edgeW * 1.4) * 100) / 100}" stroke-linecap="${style.cap}" stroke-linejoin="${style.join}"/>`,
       )
       .join("");
-    const withMasks = defs.replace("</defs>", `${insideMask}${outsideMaskG}</defs>`);
-    return { svg: wrap(withMasks + pane + depth.layer + `<g mask="url(#${gid}i)">${etch}</g>` + sticking + edge), d: ds, anchors, handles, meta };
+    // Details are cut out of the pane, not painted on it. Painted dark ink only reads on a light pane, which is a dark page.
+    // A cut-out shows whatever is behind the icon, so it stays readable on both light and dark pages.
+    const paneMask = `<mask id="${gid}p" maskUnits="userSpaceOnUse" x="-2" y="-2" width="${m + 4}" height="${m + 4}"><rect x="-2" y="-2" width="${m + 4}" height="${m + 4}" fill="#fff"/>${etch}</mask>`;
+    const withMasks = defs.replace("</defs>", `${paneMask}${outsideMaskG}</defs>`);
+    return { svg: wrap(withMasks + `<g mask="url(#${gid}p)">${pane}${depth.layer}</g>` + sticking + edge), d: ds, anchors, handles, meta };
   }
 
   if (variant === "depth") {
