@@ -7,7 +7,7 @@ import posthog from "posthog-js";
 import { compareDateDesc } from "@/lib/icon-dates";
 import type { Collection, IconEntry } from "@/lib/icons";
 import { COLLECTIONS_META } from "@/lib/collections-meta";
-import { loadIconsManifest } from "@/lib/icons-manifest";
+import { getIconsBySlugMap, loadIconsManifest } from "@/lib/icons-manifest";
 import { IconCard } from "@/components/icons/icon-card";
 import { IconGrid } from "@/components/icons/icon-grid";
 import { IconDetail } from "@/components/icons/icon-detail";
@@ -273,14 +273,8 @@ export function HomeHero({
   // icons appear progressively as the manifest loads.
   const [icons, setIcons] = useState<IconEntry[]>([]);
   const iconsBySlug = useMemo(() => {
-    // Single-pass map initialization to avoid creating an intermediate array of tuples
-    // which causes significant garbage collection overhead for large datasets.
-    const map = new Map<string, IconEntry>();
-    for (let i = 0; i < icons.length; i++) {
-      const icon = icons[i];
-      map.set(icon.slug, icon);
-    }
-    return map;
+    // ⚡ Bolt: Reuse the centrally cached map instead of re-allocating a new Map per consumer.
+    return icons.length > 0 ? getIconsBySlugMap() : new Map<string, IconEntry>();
   }, [icons]);
   useEffect(() => {
     loadIconsManifest()

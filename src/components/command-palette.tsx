@@ -14,7 +14,7 @@ import {
   CommandSeparator,
 } from "@/components/ui/command";
 import type { IconEntry } from "@/lib/icons";
-import { loadIconsManifest } from "@/lib/icons-manifest";
+import { getIconsBySlugMap, loadIconsManifest } from "@/lib/icons-manifest";
 import { formatSvg } from "@/lib/copy-formats";
 import { useIconSearch } from "@/lib/hooks/use-icon-search";
 import { useCommandPaletteStore } from "@/lib/stores/command-palette-store";
@@ -111,13 +111,8 @@ export function CommandPalette() {
   });
 
   const bySlug = useMemo(() => {
-    // ⚡ Bolt: Use a single-pass for loop with map.set() to avoid creating intermediate tuple arrays.
-    const map = new Map<string, IconEntry>();
-    for (let i = 0; i < manifest.length; i++) {
-      const entry = manifest[i];
-      map.set(entry.slug, entry);
-    }
-    return map;
+    // ⚡ Bolt: Reuse the centrally cached map instead of re-allocating a new Map per consumer.
+    return manifest.length > 0 ? getIconsBySlugMap() : new Map<string, IconEntry>();
   }, [manifest]);
   const categories = useMemo(() => categoriesFromIcons(manifest), [manifest]);
   const lastCopied = copied.length > 0 ? bySlug.get(copied[0].slug) : undefined;

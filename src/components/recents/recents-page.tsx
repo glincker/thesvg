@@ -14,7 +14,7 @@ import {
   Trash2,
 } from "lucide-react";
 import type { IconEntry } from "@/lib/icons";
-import { loadIconsManifest } from "@/lib/icons-manifest";
+import { getIconsBySlugMap, loadIconsManifest } from "@/lib/icons-manifest";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import { cn } from "@/lib/utils";
 import { logoImgClass, logoPlateClass } from "@/lib/logo-surface";
@@ -82,13 +82,9 @@ export function RecentsPage() {
     let active = true;
     setManifestError(false);
     loadIconsManifest()
-      .then((manifest) => {
+      .then(() => {
         if (!active) return;
-        const bySlug = new Map<string, IconEntry>();
-        for (let i = 0; i < manifest.length; i++) {
-          bySlug.set(manifest[i].slug, manifest[i]);
-        }
-        setIconsBySlug(bySlug);
+        setIconsBySlug(getIconsBySlugMap());
         setManifestLoaded(true);
       })
       .catch(() => {

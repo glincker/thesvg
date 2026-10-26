@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Clock } from "lucide-react";
 import { useRecentsStore } from "@/lib/stores/recents-store";
-import { loadIconsManifest } from "@/lib/icons-manifest";
+import { getIconsBySlugMap, loadIconsManifest } from "@/lib/icons-manifest";
 import type { IconEntry } from "@/lib/icons";
 
 interface MobileRecentsRowProps {
@@ -36,12 +36,9 @@ export function MobileRecentsRow({
     }
     let active = true;
     loadIconsManifest()
-      .then((manifest) => {
+      .then(() => {
         if (!active) return;
-        const bySlug = new Map<string, IconEntry>();
-        for (let i = 0; i < manifest.length; i++) {
-          bySlug.set(manifest[i].slug, manifest[i]);
-        }
+        const bySlug = getIconsBySlugMap();
         const resolved = viewed
           .map((v) => bySlug.get(v.slug))
           .filter((i): i is IconEntry => Boolean(i))
