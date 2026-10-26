@@ -16,7 +16,7 @@ import { cn } from "@/lib/utils";
  */
 
 /** A single pulsing placeholder bar; callers set size, radius and shade. */
-function Pulse({ className }: { className?: string }) {
+export function Pulse({ className }: { className?: string }) {
   return (
     <div
       aria-hidden

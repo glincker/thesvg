@@ -1,6 +1,8 @@
 # theSVG browser extension
 
-Search 7,600+ brand SVGs from a popup in Chrome, Firefox, or Edge. Copy raw SVG, the jsDelivr CDN URL, or markdown image syntax.
+Search brand SVGs, plus a growing set of UI icons, from a popup in Chrome, Firefox, or Edge. Copy raw SVG, the jsDelivr CDN URL, or markdown image syntax.
+
+A Brand | UI icons switch in the popup changes the catalog. UI icons come in seven looks (outline, glass, duotone, offset, fill, pixel, depth), are searchable by name and tag, and keep `currentColor` so they follow your theme. The UI index loads only when you switch to it and is cached for 24 hours; if it cannot be loaded the popup stays on brand icons.
 
 Manifest V3. No telemetry. Only `cdn.jsdelivr.net` host permission.
 
@@ -35,7 +37,7 @@ Output lands in `.output/`.
 
 The extension declares only what it needs to function:
 
-- `storage`: cache the icon registry locally for 24 hours so the popup opens fast
+- `storage`: cache the brand and UI icon registries locally for 24 hours so the popup opens fast
 - `clipboardWrite`: copy the SVG, URL, or markdown to the user's clipboard
 - `host_permissions`: `https://cdn.jsdelivr.net/*` only
 
