@@ -50,7 +50,7 @@ export function QuickView({ glyph, onClose }: { glyph: GlyphData; onClose: () =>
               onClick={() => ui.toggleFavorite(glyph.slug)}
               className={cn("absolute left-3 top-3 grid size-7 place-items-center rounded-full bg-background/60 text-muted-foreground backdrop-blur-sm hover:text-foreground", fav && "text-orange-500")}
             >
-              <UiGlyph name="heart" look={fav ? "fill" : "outline"} className="size-3.5" />
+              <UiGlyph name="heart" look={fav ? "fill" : "outline"} className="size-4" />
             </button>
           </div>
           <div className="flex flex-col gap-4 p-4">
@@ -68,17 +68,17 @@ export function QuickView({ glyph, onClose }: { glyph: GlyphData; onClose: () =>
             </div>
             <div className="grid grid-cols-[1fr_1fr_auto] gap-2">
               <button type="button" onClick={() => copy("svg")} className="inline-flex h-9 items-center justify-center gap-1.5 rounded-lg bg-foreground text-xs font-medium text-background">
-                {done === "svg" ? <UiGlyph name="check" className="size-3.5" /> : <UiGlyph name="copy" className="size-3.5" />} Copy SVG
+                {done === "svg" ? <UiGlyph name="check" className="size-4" /> : <UiGlyph name="copy" className="size-4" />} Copy SVG
               </button>
               <button type="button" onClick={() => copy("react")} className="inline-flex h-9 items-center justify-center gap-1.5 rounded-lg border text-xs font-medium hover:bg-accent">
-                {done === "react" ? <UiGlyph name="check" className="size-3.5" /> : <UiGlyph name="copy" className="size-3.5" />} Copy React
+                {done === "react" ? <UiGlyph name="check" className="size-4" /> : <UiGlyph name="copy" className="size-4" />} Copy React
               </button>
               <button type="button" aria-label="Download SVG" onClick={download} className="grid size-9 place-items-center rounded-lg border hover:bg-accent">
-                <UiGlyph name="download" className="size-3.5" />
+                <UiGlyph name="download" className="size-4" />
               </button>
             </div>
             <Link href={`/ui/${glyph.slug}`} onClick={onClose} className="inline-flex items-center justify-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-foreground">
-              Open full page <UiGlyph name="arrow-right" className="size-3.5" />
+              Open full page <UiGlyph name="arrow-right" className="size-4" />
             </Link>
           </div>
         </div>

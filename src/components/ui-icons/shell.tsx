@@ -42,8 +42,8 @@ export function SidebarNav({ onNavigate }: { onNavigate?: () => void }) {
   })();
   return (
     <>
-      <NavItem icon={<UiGlyph name="layout-grid" className="size-4" />} label="All icons" badge={String(GLYPHS.length)} active={onList && ui.set === "all" && !ui.onlyFavorites} onClick={() => { onNavigate?.(); ui.runOnList(() => { ui.setCategory("All"); ui.setSet("all"); ui.setOnlyFavorites(false); ui.setQuery(""); }); }} />
-      <NavItem icon={<UiGlyph name="heart" className="size-4" />} label="Favorites" badge={String(ui.favorites.length)} active={onList && ui.onlyFavorites} onClick={() => { onNavigate?.(); ui.runOnList(() => ui.setOnlyFavorites(onList ? !ui.onlyFavorites : true)); }} />
+      <NavItem icon={<UiGlyph name="layout-grid" className="size-5" />} label="All icons" badge={String(GLYPHS.length)} active={onList && ui.set === "all" && !ui.onlyFavorites} onClick={() => { onNavigate?.(); ui.runOnList(() => { ui.setCategory("All"); ui.setSet("all"); ui.setOnlyFavorites(false); ui.setQuery(""); }); }} />
+      <NavItem icon={<UiGlyph name="heart" className="size-5" />} label="Favorites" badge={String(ui.favorites.length)} active={onList && ui.onlyFavorites} onClick={() => { onNavigate?.(); ui.runOnList(() => ui.setOnlyFavorites(onList ? !ui.onlyFavorites : true)); }} />
       <p className="mt-3 px-3 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">Looks</p>
       {VARIANTS.map((v) => (
         <button
@@ -60,7 +60,7 @@ export function SidebarNav({ onNavigate }: { onNavigate?: () => void }) {
       {sidebarSets.map((st) => (
         <NavItem
           key={st.id}
-          icon={<UiGlyph name="layers" className="size-4" />}
+          icon={<UiGlyph name="layers" className="size-5" />}
           label={st.name}
           badge={st.badge}
           active={onList && (st.id === "drops" ? ui.set.startsWith("drop-") || ui.set === "drops" : ui.set === st.id)}
@@ -68,10 +68,10 @@ export function SidebarNav({ onNavigate }: { onNavigate?: () => void }) {
         />
       ))}
       <Link href="/ui/extensions" onClick={() => onNavigate?.()} className="mt-1 flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground">
-        <UiGlyph name="layout-grid" className="size-4" /> <span className="flex-1">Extensions</span>
+        <UiGlyph name="layout-grid" className="size-5" /> <span className="flex-1">Extensions</span>
       </Link>
       <Link href="/ui/changelog" onClick={() => onNavigate?.()} className="mt-1 flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground">
-        <UiGlyph name="sparkles" className="size-4" /> <span className="flex-1">What is new</span>
+        <UiGlyph name="sparkles" className="size-5" /> <span className="flex-1">What is new</span>
       </Link>
     </>
   );

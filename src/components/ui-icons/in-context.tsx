@@ -107,7 +107,7 @@ function Surface({ dark }: { dark: boolean }) {
       >
         <StateGlyph size={16} />
         <input onFocus={() => setFocused(true)} onBlur={() => setFocused(false)} placeholder="Type to focus this field" className="min-w-0 flex-1 bg-transparent outline-none placeholder:text-current placeholder:opacity-50" />
-        <UiGlyph name="search" className="size-3.5 opacity-50" />
+        <UiGlyph name="search" className="size-4 opacity-50" />
       </label>
 
       <div className="flex flex-wrap items-center gap-2">

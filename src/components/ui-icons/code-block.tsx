@@ -57,7 +57,7 @@ export function CodeBlock(props: { svg: string; slug: string }) {
             copied ? "bg-green-500/10 text-green-400" : "bg-orange-500/15 text-orange-400 backdrop-blur-sm hover:bg-orange-500/25 hover:text-orange-300",
           )}
         >
-          {copied ? <UiGlyph name="check" className="size-3" /> : <UiGlyph name="copy" className="size-3" />}
+          {copied ? <UiGlyph name="check" className="size-3.5" /> : <UiGlyph name="copy" className="size-3.5" />}
           {copied ? "Copied" : "Copy"}
         </button>
         <div className="bg-zinc-950">

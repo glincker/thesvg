@@ -201,7 +201,7 @@ export function ColorPicker({ value, onChange, active }: { value: string; onChan
             />
             {canPipette && (
               <button type="button" aria-label="Pick a color from the screen" onClick={pipette} className="grid size-7 shrink-0 place-items-center rounded-lg border text-muted-foreground transition-colors hover:text-foreground">
-                <UiGlyph name="target" className="size-3.5" />
+                <UiGlyph name="target" className="size-4" />
               </button>
             )}
           </div>

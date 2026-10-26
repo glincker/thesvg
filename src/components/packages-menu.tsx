@@ -35,7 +35,7 @@ export function PackagesMenu({ inUi }: { inUi: boolean }) {
         }
       >
         <img src="/icons/npm/default.svg" alt="" width={18} height={18} className="h-[18px] w-[18px]" />
-        <UiGlyph name="chevron-down" className="h-3 w-3 opacity-60" />
+        <UiGlyph name="chevron-down" className="h-3.5 w-3.5 opacity-60" />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" sideOffset={8} className="w-[300px] p-0">
         <div className="max-h-[70vh] overflow-y-auto p-1.5">
@@ -53,7 +53,7 @@ export function PackagesMenu({ inUi }: { inUi: boolean }) {
                     <span className="block truncate font-mono text-xs text-foreground">{p.name}</span>
                     <span className="block text-[10px] text-muted-foreground">{p.label}</span>
                   </span>
-                  {copied === p.name ? <UiGlyph name="check" className="h-3.5 w-3.5 text-emerald-500" /> : <UiGlyph name="copy" className="h-3.5 w-3.5 text-muted-foreground/50 group-hover:text-foreground" />}
+                  {copied === p.name ? <UiGlyph name="check" className="h-4 w-4 text-emerald-500" /> : <UiGlyph name="copy" className="h-4 w-4 text-muted-foreground/50 group-hover:text-foreground" />}
                 </button>
               ))}
             </div>

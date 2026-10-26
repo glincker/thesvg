@@ -1,4 +1,5 @@
 import { renderIcon, type Variant } from "@/lib/ui-icons/engine";
+import { chromeLook } from "@/lib/ui-icons/chrome-look";
 import { GLYPH_BY_SLUG, styleFor } from "@/lib/ui-icons/glyphs";
 import { cn } from "@/lib/utils";
 
@@ -18,10 +19,11 @@ function markup(name: string, look: Variant): string | null {
 
 /**
  * One of our own UI icons for site chrome, the same icons the UI icon section ships.
- * Size it with a class (`size-4`), it takes the text color. Names are checked by a test, so a typo fails CI.
+ * Size it with a class (`size-4`), it takes the text color. Glass by default, outline below 16px, or pass `look` to choose.
+ * Names are checked by a test, so a typo fails CI.
  */
-export function UiGlyph({ name, look = "outline", className }: { name: string; look?: Variant; className?: string }) {
-  const svg = markup(name, look);
+export function UiGlyph({ name, look, className = "size-5" }: { name: string; look?: Variant; className?: string }) {
+  const svg = markup(name, look ?? chromeLook(className));
   if (!svg) return null;
-  return <span aria-hidden="true" className={cn("inline-flex shrink-0 [&>svg]:size-full", className ?? "size-4")} dangerouslySetInnerHTML={{ __html: svg }} />;
+  return <span aria-hidden="true" className={cn("inline-flex shrink-0 [&>svg]:size-full", className)} dangerouslySetInnerHTML={{ __html: svg }} />;
 }

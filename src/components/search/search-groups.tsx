@@ -61,7 +61,7 @@ export function SearchGroups(p: Props) {
   if (nothing && p.loading) {
     return (
       <div className="flex flex-col items-center gap-2 px-4 py-8 text-center">
-        <UiGlyph name="search" className="h-5 w-5 animate-pulse text-muted-foreground/30" />
+        <UiGlyph name="search" className="h-6 w-6 animate-pulse text-muted-foreground/30" />
         <p className="text-sm text-muted-foreground">Searching&hellip;</p>
       </div>
     );
@@ -72,7 +72,7 @@ export function SearchGroups(p: Props) {
   if (nothing) {
     return (
       <div className="flex flex-col items-center gap-2 px-4 py-8 text-center">
-        <UiGlyph name="search" className="h-5 w-5 text-muted-foreground/30" />
+        <UiGlyph name="search" className="h-6 w-6 text-muted-foreground/30" />
         <p className="text-sm text-muted-foreground">No icons match &ldquo;{p.query.trim()}&rdquo;</p>
         <Link href="/submit" onClick={p.onClose} className="text-xs font-medium text-orange-600 hover:underline dark:text-orange-400">Submit this icon</Link>
       </div>
@@ -117,7 +117,7 @@ export function SearchGroups(p: Props) {
             })}
             {g.total > g.rows.length && (
               <Link href={g.all} onClick={p.onClose} className="flex items-center justify-center gap-1 rounded-lg px-2 py-2 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent/50 hover:text-foreground">
-                View all {g.total.toLocaleString()} <UiGlyph name="arrow-right" className="h-3 w-3" />
+                View all {g.total.toLocaleString()} <UiGlyph name="arrow-right" className="h-3.5 w-3.5" />
               </Link>
             )}
           </div>

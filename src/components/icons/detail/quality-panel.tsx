@@ -97,7 +97,7 @@ export function QualityPanel({
         className="flex w-full items-center justify-between gap-2 p-3 text-left transition-colors hover:bg-accent/50"
       >
         <div className="flex items-center gap-2">
-          <UiGlyph name="list-checks" className="h-3.5 w-3.5 text-muted-foreground" />
+          <UiGlyph name="list-checks" className="h-4 w-4 text-muted-foreground" />
           <span className="text-xs font-semibold text-muted-foreground">{title}</span>
         </div>
         <div className="flex items-center gap-2">
@@ -115,9 +115,9 @@ export function QualityPanel({
                 return (
                   <div key={b.label} className="flex items-center gap-1.5">
                     {done ? (
-                      <UiGlyph name="circle-check" look="fill" className="h-3.5 w-3.5 text-green-500" />
+                      <UiGlyph name="circle-check" look="fill" className="h-4 w-4 text-green-500" />
                     ) : (
-                      <UiGlyph name="circle-x" look="fill" className="h-3.5 w-3.5 text-muted-foreground/40" />
+                      <UiGlyph name="circle-x" look="fill" className="h-4 w-4 text-muted-foreground/40" />
                     )}
                     <span className={cn("text-[11px]", done ? "text-foreground" : "text-muted-foreground")}>
                       {b.label}

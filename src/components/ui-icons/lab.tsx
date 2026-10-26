@@ -80,7 +80,7 @@ export function StyleBar({ className }: { className?: string }) {
     <>
       <div className={cn("glass hidden rounded-xl bg-background/95 backdrop-blur-xl md:sticky md:top-[calc(4.25rem+var(--banner-h,0px)+0.25rem)] md:z-30 md:block", className)}>
         <button type="button" onClick={toggle} aria-expanded={open} className="flex w-full items-center gap-2.5 px-3 py-2 text-left text-xs text-muted-foreground transition-colors hover:text-foreground">
-          <UiGlyph name="sliders-horizontal" className="size-3.5" />
+          <UiGlyph name="sliders-horizontal" className="size-4" />
           <span className="font-medium text-foreground">Style</span>
           <span className="hidden items-center gap-1.5 sm:flex">
             {chips.map((c) => (
@@ -117,7 +117,7 @@ export function StylePill() {
         onClick={() => setOpen(true)}
         className="glass fixed bottom-24 right-4 z-40 inline-flex h-10 items-center gap-2 rounded-full bg-background/90 px-4 text-xs font-medium shadow-lg backdrop-blur-xl md:hidden"
       >
-        <UiGlyph name="sliders-horizontal" className="size-3.5" /> Style
+        <UiGlyph name="sliders-horizontal" className="size-4" /> Style
         {touched && <span className="size-1.5 rounded-full bg-orange-500" />}
       </button>
       <BottomSheet open={open} onClose={() => setOpen(false)} fixedSnap="half" label="Icon style">
@@ -178,7 +178,7 @@ export function StyleLab(props: { className?: string; stacked?: boolean }) {
         </div>
       </Cell>
       <button type="button" onClick={() => { ui.resetLab(); ui.setAccent(""); }} className="inline-flex h-7 items-center justify-center gap-1.5 rounded-lg border px-2.5 text-[11px] text-muted-foreground transition-colors hover:text-foreground">
-        <UiGlyph name="rotate-ccw" className="size-3" /> Reset
+        <UiGlyph name="rotate-ccw" className="size-3.5" /> Reset
       </button>
     </div>
   );

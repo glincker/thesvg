@@ -119,7 +119,7 @@ function Preview(props: { glyph: GlyphData }) {
             onClick={() => { setZoom(zoom === "fit" ? 96 : "fit"); setGrid(false); setAnchors(false); }}
             className="glass absolute bottom-3 right-3 grid size-8 place-items-center rounded-full text-orange-500 transition-colors hover:text-orange-400 [transform:translateZ(30px)]"
           >
-            <UiGlyph name="search" className="size-3.5" />
+            <UiGlyph name="search" className="size-4" />
           </button>
         </div>
       </div>
@@ -133,11 +133,11 @@ function Preview(props: { glyph: GlyphData }) {
       <div className="flex gap-1.5">
         {([[grid, setGrid, "Grid", "layout-grid"], [anchors, setAnchors, "Anchors", "waypoint"]] as const).map(([on, set, label, icon]) => (
           <button key={label} type="button" onClick={() => set(!on)} className={cn("inline-flex h-8 flex-1 items-center justify-center gap-1.5 rounded-xl border text-xs text-muted-foreground transition-colors hover:text-foreground", on && "border-orange-500/40 text-orange-400")}>
-            <UiGlyph name={icon} className="size-3.5" /> {label}
+            <UiGlyph name={icon} className="size-4" /> {label}
           </button>
         ))}
         <button type="button" aria-label="Toggle light canvas" onClick={() => setLight(!light)} className="grid h-8 w-9 place-items-center rounded-xl border text-muted-foreground transition-colors hover:text-foreground">
-          {light ? <UiGlyph name="moon" className="size-3.5" /> : <UiGlyph name="sun" className="size-3.5" />}
+          {light ? <UiGlyph name="moon" className="size-4" /> : <UiGlyph name="sun" className="size-4" />}
         </button>
       </div>
     </div>
@@ -221,7 +221,7 @@ function CommandRow(props: { tag: string; text: string }) {
       <span className="shrink-0 rounded-md bg-orange-500/10 px-1.5 py-0.5 text-[10px] font-semibold text-orange-400">{props.tag}</span>
       <code className="min-w-0 flex-1 truncate font-mono text-[11px] text-muted-foreground">{props.text}</code>
       <button type="button" aria-label={`Copy ${props.tag}`} onClick={() => copy(props.tag, props.text)} className="text-muted-foreground transition-colors hover:text-foreground">
-        {done === props.tag ? <UiGlyph name="check" className="size-3.5 text-emerald-400" /> : <UiGlyph name="copy" className="size-3.5" />}
+        {done === props.tag ? <UiGlyph name="check" className="size-4 text-emerald-400" /> : <UiGlyph name="copy" className="size-4" />}
       </button>
     </div>
   );
@@ -244,9 +244,9 @@ export function Detail({ glyph }: { glyph: GlyphData }) {
     <div className="relative mx-auto flex w-full max-w-[1240px] flex-col gap-6">
       <nav className="flex items-center gap-1.5 text-xs text-muted-foreground" aria-label="Breadcrumb">
         <Link href="/ui" className="hover:text-foreground">UI icons</Link>
-        <UiGlyph name="chevron-right" className="size-3" />
+        <UiGlyph name="chevron-right" className="size-3.5" />
         <button type="button" onClick={() => ui.runOnList(() => { ui.setCategory(glyph.category); ui.setSet("all"); ui.setQuery(""); })} className="hover:text-foreground">{glyph.category}</button>
-        <UiGlyph name="chevron-right" className="size-3" />
+        <UiGlyph name="chevron-right" className="size-3.5" />
         <span className="text-foreground">{glyph.slug}</span>
       </nav>
 
@@ -279,7 +279,7 @@ export function Detail({ glyph }: { glyph: GlyphData }) {
             </div>
             <div className="flex flex-wrap items-center gap-2">
               <button type="button" onClick={() => copy("svg", svg)} className="inline-flex h-9 items-center gap-1.5 rounded-lg border px-3 text-[13px] text-muted-foreground transition-colors hover:text-foreground">
-                {done === "svg" ? <UiGlyph name="check" className="size-3.5 text-emerald-400" /> : <UiGlyph name="copy" className="size-3.5" />} {done === "svg" ? "Copied" : "Copy SVG"}
+                {done === "svg" ? <UiGlyph name="check" className="size-4 text-emerald-400" /> : <UiGlyph name="copy" className="size-4" />} {done === "svg" ? "Copied" : "Copy SVG"}
               </button>
               <OpenInEditorMenu svg={svg} title={title} slug={glyph.slug} />
               <DownloadMenu
