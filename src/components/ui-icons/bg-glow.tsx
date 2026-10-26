@@ -1,6 +1,6 @@
 "use client";
 
-import { Sparkle } from "lucide-react";
+import { UiGlyph } from "@/components/ui-glyph";
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/ui-icons/utils";
 import { useUi } from "./ui-state";
@@ -103,7 +103,7 @@ export function BgGlow() {
         title={on ? "Turn off background effects" : "Turn on background effects"}
         className="fixed right-4 top-20 z-40 grid size-8 place-items-center rounded-full border bg-card/90 text-muted-foreground shadow-sm backdrop-blur-sm transition-colors hover:text-foreground"
       >
-        <Sparkle className={cn("size-3.5", on && "fill-orange-500 text-orange-500")} />
+        <UiGlyph name="sparkles" className={cn("size-3.5", on && "fill-orange-500 text-orange-500")} />
         <span className={cn("absolute -right-0.5 -top-0.5 size-2 rounded-full ring-2 ring-card", on ? "bg-green-500" : "bg-muted-foreground/40")} />
       </button>
     </>

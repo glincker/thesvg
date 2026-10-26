@@ -1,6 +1,6 @@
 "use client";
 
-import { Pipette } from "lucide-react";
+import { UiGlyph } from "@/components/ui-glyph";
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/ui-icons/utils";
 
@@ -201,7 +201,7 @@ export function ColorPicker({ value, onChange, active }: { value: string; onChan
             />
             {canPipette && (
               <button type="button" aria-label="Pick a color from the screen" onClick={pipette} className="grid size-7 shrink-0 place-items-center rounded-lg border text-muted-foreground transition-colors hover:text-foreground">
-                <Pipette className="size-3.5" />
+                <UiGlyph name="target" className="size-3.5" />
               </button>
             )}
           </div>

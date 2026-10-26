@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, Copy, Download, Eye, Heart } from "lucide-react";
+import { UiGlyph } from "@/components/ui-glyph";
 import Link from "next/link";
 import { useState } from "react";
 import type { Glyph as GlyphData } from "@/lib/ui-icons/glyphs";
@@ -51,7 +51,7 @@ export function IconCard({ glyph }: { glyph: GlyphData }) {
           onClick={(e) => { e.preventDefault(); ui.toggleFavorite(glyph.slug); }}
           className={cn("absolute right-2 top-2 grid size-7 place-items-center rounded-lg text-muted-foreground opacity-0 transition-opacity hover:text-foreground group-hover/card:opacity-100", fav && "text-orange-500 opacity-100")}
         >
-          <Heart className={cn("size-3.5", fav && "fill-current")} />
+          <UiGlyph name="heart" look={fav ? "fill" : "outline"} className="size-3.5" />
         </button>
       </Link>
       <div className="px-3 pb-1.5 pt-2.5 text-center">
@@ -60,14 +60,14 @@ export function IconCard({ glyph }: { glyph: GlyphData }) {
       </div>
       <div className="grid grid-cols-[1fr_auto_auto] border-t text-[11px] text-muted-foreground opacity-0 transition-opacity duration-150 focus-within:opacity-100 group-hover/card:opacity-100 [@media(hover:none)]:opacity-100">
         <button type="button" onClick={copy} className="flex items-center justify-center gap-1.5 py-1.5 transition-colors hover:bg-accent hover:text-foreground">
-          {copied ? <Check className="size-3.5 text-emerald-400" /> : <Copy className="size-3.5" />}
+          {copied ? <UiGlyph name="check" className="size-3.5 text-emerald-400" /> : <UiGlyph name="copy" className="size-3.5" />}
           {copied ? "Copied" : "Copy"}
         </button>
         <button type="button" aria-label="Download SVG" onClick={download} className="px-3 py-2 transition-colors hover:bg-accent hover:text-foreground">
-          <Download className="size-3.5" />
+          <UiGlyph name="download" className="size-3.5" />
         </button>
         <button type="button" aria-label="Quick preview" onClick={() => setPreview(true)} className="px-3 py-2 transition-colors hover:bg-accent hover:text-foreground">
-          <Eye className="size-3.5" />
+          <UiGlyph name="eye" className="size-3.5" />
         </button>
       </div>
       {preview && <QuickView glyph={glyph} onClose={() => setPreview(false)} />}

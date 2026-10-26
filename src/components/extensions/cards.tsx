@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { UiGlyph } from "@/components/ui-glyph";
 import Link from "next/link";
 import { withUtm } from "@/lib/external-link";
 
@@ -64,7 +64,7 @@ function ExtLink({
         className={className}
       >
         {children}
-        <ArrowUpRight className="h-3.5 w-3.5 opacity-50 transition-opacity group-hover/link:opacity-100" />
+        <UiGlyph name="arrow-up-right" className="h-3.5 w-3.5 opacity-50 transition-opacity group-hover/link:opacity-100" />
       </a>
     );
   }
@@ -72,7 +72,7 @@ function ExtLink({
   return (
     <Link href={href} className={className}>
       {children}
-      <ArrowRight className="h-3.5 w-3.5 opacity-50 transition-opacity group-hover/link:opacity-100" />
+      <UiGlyph name="arrow-right" className="h-3.5 w-3.5 opacity-50 transition-opacity group-hover/link:opacity-100" />
     </Link>
   );
 }

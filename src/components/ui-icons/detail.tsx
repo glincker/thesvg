@@ -3,7 +3,7 @@
 import { renderIcon } from "@/lib/ui-icons/engine";
 import { DownloadMenu } from "@/components/icons/detail/download-menu";
 import { OpenInEditorMenu } from "@/components/icons/detail/open-in-editor-menu";
-import { Check, ChevronDown, ChevronRight, Copy, Grid3x3, Heart, Moon, Sun, Waypoints, ZoomIn } from "lucide-react";
+import { UiGlyph } from "@/components/ui-glyph";
 import Link from "next/link";
 import { useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { GLYPHS, VARIANTS, styleFor, type Glyph as GlyphData } from "@/lib/ui-icons/glyphs";
@@ -12,6 +12,7 @@ import { CodeBlock } from "./code-block";
 import { Glyph, svgText } from "./glyph";
 import { InContext } from "./in-context";
 import { StyleLab, StylePill } from "./lab";
+import { UiQualityCard } from "./quality-card";
 import { useUi } from "./ui-state";
 
 const SIZES = [16, 20, 24, 32, 48] as const;
@@ -105,7 +106,7 @@ function Preview(props: { glyph: GlyphData }) {
             onClick={() => ui.toggleFavorite(props.glyph.slug)}
             className="glass absolute left-3 top-3 grid size-8 place-items-center rounded-full text-muted-foreground transition-colors hover:text-foreground [transform:translateZ(30px)]"
           >
-            <Heart className={cn("size-3.5", ui.favorites.includes(props.glyph.slug) && "fill-orange-500 text-orange-500")} />
+            <UiGlyph name="heart" look={ui.favorites.includes(props.glyph.slug) ? "fill" : "outline"} className={cn("size-3.5", ui.favorites.includes(props.glyph.slug) && "text-orange-500")} />
           </button>
           <span className="glass absolute right-3 top-3 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] text-muted-foreground [transform:translateZ(30px)]">
             <span className={cn("size-2 rounded-full", ui.accent ? "" : "bg-foreground")} ref={(el) => { el?.style.setProperty("background-color", ui.accent || ""); }} />
@@ -118,7 +119,7 @@ function Preview(props: { glyph: GlyphData }) {
             onClick={() => { setZoom(zoom === "fit" ? 96 : "fit"); setGrid(false); setAnchors(false); }}
             className="glass absolute bottom-3 right-3 grid size-8 place-items-center rounded-full text-orange-500 transition-colors hover:text-orange-400 [transform:translateZ(30px)]"
           >
-            <ZoomIn className="size-3.5" />
+            <UiGlyph name="search" className="size-3.5" />
           </button>
         </div>
       </div>
@@ -130,13 +131,13 @@ function Preview(props: { glyph: GlyphData }) {
         ))}
       </div>
       <div className="flex gap-1.5">
-        {([[grid, setGrid, "Grid", Grid3x3], [anchors, setAnchors, "Anchors", Waypoints]] as const).map(([on, set, label, Icon]) => (
+        {([[grid, setGrid, "Grid", "layout-grid"], [anchors, setAnchors, "Anchors", "waypoint"]] as const).map(([on, set, label, icon]) => (
           <button key={label} type="button" onClick={() => set(!on)} className={cn("inline-flex h-8 flex-1 items-center justify-center gap-1.5 rounded-xl border text-xs text-muted-foreground transition-colors hover:text-foreground", on && "border-orange-500/40 text-orange-400")}>
-            <Icon className="size-3.5" /> {label}
+            <UiGlyph name={icon} className="size-3.5" /> {label}
           </button>
         ))}
         <button type="button" aria-label="Toggle light canvas" onClick={() => setLight(!light)} className="grid h-8 w-9 place-items-center rounded-xl border text-muted-foreground transition-colors hover:text-foreground">
-          {light ? <Moon className="size-3.5" /> : <Sun className="size-3.5" />}
+          {light ? <UiGlyph name="moon" className="size-3.5" /> : <UiGlyph name="sun" className="size-3.5" />}
         </button>
       </div>
     </div>
@@ -200,7 +201,7 @@ function Coverage({ glyph }: { glyph: GlyphData }) {
       <button type="button" onClick={() => setOpen(!open)} aria-expanded={open} className="flex w-full items-center gap-2 px-4 py-3 text-left text-xs">
         <span className="font-medium">Looks</span>
         <span className="ml-auto text-muted-foreground">{full}/{VARIANTS.length}</span>
-        <ChevronDown className={cn("size-3.5 text-muted-foreground transition-transform", open && "rotate-180")} />
+        <UiGlyph name="chevron-down" className={cn("size-3.5 text-muted-foreground transition-transform", open && "rotate-180")} />
       </button>
       {open && (
         <p className="border-t px-4 py-3 text-[11px] leading-relaxed text-muted-foreground">
@@ -220,7 +221,7 @@ function CommandRow(props: { tag: string; text: string }) {
       <span className="shrink-0 rounded-md bg-orange-500/10 px-1.5 py-0.5 text-[10px] font-semibold text-orange-400">{props.tag}</span>
       <code className="min-w-0 flex-1 truncate font-mono text-[11px] text-muted-foreground">{props.text}</code>
       <button type="button" aria-label={`Copy ${props.tag}`} onClick={() => copy(props.tag, props.text)} className="text-muted-foreground transition-colors hover:text-foreground">
-        {done === props.tag ? <Check className="size-3.5 text-emerald-400" /> : <Copy className="size-3.5" />}
+        {done === props.tag ? <UiGlyph name="check" className="size-3.5 text-emerald-400" /> : <UiGlyph name="copy" className="size-3.5" />}
       </button>
     </div>
   );
@@ -243,9 +244,9 @@ export function Detail({ glyph }: { glyph: GlyphData }) {
     <div className="relative mx-auto flex w-full max-w-[1240px] flex-col gap-6">
       <nav className="flex items-center gap-1.5 text-xs text-muted-foreground" aria-label="Breadcrumb">
         <Link href="/ui" className="hover:text-foreground">UI icons</Link>
-        <ChevronRight className="size-3" />
+        <UiGlyph name="chevron-right" className="size-3" />
         <button type="button" onClick={() => ui.runOnList(() => { ui.setCategory(glyph.category); ui.setSet("all"); ui.setQuery(""); })} className="hover:text-foreground">{glyph.category}</button>
-        <ChevronRight className="size-3" />
+        <UiGlyph name="chevron-right" className="size-3" />
         <span className="text-foreground">{glyph.slug}</span>
       </nav>
 
@@ -262,6 +263,7 @@ export function Detail({ glyph }: { glyph: GlyphData }) {
               <dt className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">Color</dt><dd className="text-right">currentColor</dd>
             </dl>
             <Coverage glyph={glyph} />
+            <UiQualityCard glyph={glyph} />
             <div className="glass flex flex-wrap gap-1.5 rounded-2xl p-4">
               {glyph.tags.slice(0, 8).map((t) => <span key={t} className="rounded-full border px-2.5 py-0.5 text-[11px] text-muted-foreground">{t}</span>)}
               {glyph.tags.length === 0 && <span className="text-xs text-muted-foreground">No tags yet</span>}
@@ -277,7 +279,7 @@ export function Detail({ glyph }: { glyph: GlyphData }) {
             </div>
             <div className="flex flex-wrap items-center gap-2">
               <button type="button" onClick={() => copy("svg", svg)} className="inline-flex h-9 items-center gap-1.5 rounded-lg border px-3 text-[13px] text-muted-foreground transition-colors hover:text-foreground">
-                {done === "svg" ? <Check className="size-3.5 text-emerald-400" /> : <Copy className="size-3.5" />} {done === "svg" ? "Copied" : "Copy SVG"}
+                {done === "svg" ? <UiGlyph name="check" className="size-3.5 text-emerald-400" /> : <UiGlyph name="copy" className="size-3.5" />} {done === "svg" ? "Copied" : "Copy SVG"}
               </button>
               <OpenInEditorMenu svg={svg} title={title} slug={glyph.slug} />
               <DownloadMenu

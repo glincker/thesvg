@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Blocks, Code, Package, Palette, Terminal, Zap } from "lucide-react";
+import { UiGlyph } from "@/components/ui-glyph";
 import { CategorySection, type Category } from "@/components/extensions/cards";
 import { withUtm } from "@/lib/external-link";
 import { Github } from "@/components/icons/shared/brand-icons";
@@ -25,7 +25,7 @@ const CATEGORIES: Category[] = [
     id: "npm",
     label: "Libraries & SDKs",
     description: "Install and import the UI icons in your project",
-    icon: <Package className="h-5 w-5" />,
+    icon: <UiGlyph name="package" className="h-5 w-5" />,
     items: [
       { name: "@thesvg/ui-react", description: `${COUNT} typed React components. One export per look, so unused looks never reach your bundle.`, status: "available", cta: "npm", href: npm("@thesvg/ui-react"), iconSlug: "react" },
       { name: "@thesvg/ui-vue", description: "Typed Vue 3 components with the same per-look exports. No SFC compiler needed.", status: "available", cta: "npm", href: npm("@thesvg/ui-vue"), iconSlug: "vuedotjs" },
@@ -38,7 +38,7 @@ const CATEGORIES: Category[] = [
     id: "design",
     label: "Design & Launchers",
     description: "Find and insert icons without leaving your tools",
-    icon: <Palette className="h-5 w-5" />,
+    icon: <UiGlyph name="palette" className="h-5 w-5" />,
     items: [
       { name: "Figma", description: "Browse UI icons in the plugin, pick one of seven looks and a color, and insert it as a vector.", status: "coming-soon", cta: "Get the plugin", href: "https://www.figma.com/community/plugin/1612997159050367763", iconSlug: "figma" },
       { name: "Raycast", description: "Search brand and UI icons from one command. Pick a look, then copy SVG, JSX or the CDN link.", status: "coming-soon", cta: "Get the extension", href: "https://www.raycast.com/thegdsks/thesvg", iconSlug: "raycast" },
@@ -49,7 +49,7 @@ const CATEGORIES: Category[] = [
     id: "editors",
     label: "Editors & Browser",
     description: "Search and insert icons where you write code",
-    icon: <Code className="h-5 w-5" />,
+    icon: <UiGlyph name="code" className="h-5 w-5" />,
     items: [
       { name: "VS Code", description: "Toggle the picker to UI icons, choose a look, then copy SVG or insert at the cursor.", status: "available", cta: "Install", href: "https://marketplace.visualstudio.com/items?itemName=glincker.thesvg", iconSlug: "visual-studio-code" },
       { name: "Neovim", description: "TheSVGUI, TheSVGUIInsert and TheSVGUIPath, each with an optional look.", status: "available", cta: "View plugin", href: "https://github.com/GLINCKER/thesvg/tree/main/extensions/neovim", iconSlug: "neovim" },
@@ -60,10 +60,10 @@ const CATEGORIES: Category[] = [
     id: "tools",
     label: "CLI & AI",
     description: "Script it or let your agent add icons",
-    icon: <Terminal className="h-5 w-5" />,
+    icon: <UiGlyph name="terminal" className="h-5 w-5" />,
     items: [
       { name: "CLI", description: "npx @thesvg/cli add ui:bell --look glass. List and search with --ui.", status: "available", cta: "npm", href: npm("@thesvg/cli"), iconSlug: "npm" },
-      { name: "MCP server", description: "Ask your agent for a UI icon. The kind and look parameters default to brand icons, so nothing existing changes.", status: "available", cta: "npm", href: npm("@thesvg/mcp-server"), iconFallback: <Blocks className="h-6 w-6 text-muted-foreground" /> },
+      { name: "MCP server", description: "Ask your agent for a UI icon. The kind and look parameters default to brand icons, so nothing existing changes.", status: "available", cta: "npm", href: npm("@thesvg/mcp-server"), iconFallback: <UiGlyph name="layout-grid" className="h-6 w-6 text-muted-foreground" /> },
     ],
   },
 ];
@@ -94,7 +94,7 @@ export default function UiExtensionsPage() {
         <div className="p-6 sm:p-8">
           <div className="mb-4 flex items-center gap-3">
             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-orange-500/10 text-orange-500">
-              <Zap className="h-5 w-5" />
+              <UiGlyph name="zap" className="h-5 w-5" />
             </div>
             <h2 className="text-lg font-semibold">Build your own</h2>
           </div>
@@ -121,7 +121,7 @@ export default function UiExtensionsPage() {
               View on GitHub
             </a>
             <a href={withUtm("https://www.jsdelivr.com/package/gh/glincker/thesvg", "ui_extensions_page")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent">
-              <Code className="h-4 w-4" />
+              <UiGlyph name="code" className="h-4 w-4" />
               CDN docs
             </a>
           </div>

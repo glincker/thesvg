@@ -1,6 +1,6 @@
 "use client";
 
-import { CalendarDays } from "lucide-react";
+import { UiGlyph } from "@/components/ui-glyph";
 import Link from "next/link";
 import { GLYPHS, VIEW_SETS } from "@/lib/ui-icons/glyphs";
 import { Glyph } from "./glyph";
@@ -25,7 +25,7 @@ export function Changelog() {
             <div className="mb-3 flex flex-wrap items-center gap-3">
               <h2 className="text-lg font-semibold">{s.name}</h2>
               <span className="rounded-full border px-2.5 py-0.5 text-[11px] text-muted-foreground">{s.count} icons</span>
-              <span className="ml-auto inline-flex items-center gap-1.5 text-xs text-muted-foreground"><CalendarDays className="size-3.5" />{s.releaseDate}</span>
+              <span className="ml-auto inline-flex items-center gap-1.5 text-xs text-muted-foreground"><UiGlyph name="calendar" className="size-3.5" />{s.releaseDate}</span>
             </div>
             <div className="grid grid-cols-5 gap-2 sm:grid-cols-8 lg:grid-cols-10">
               {items.map((g) => (

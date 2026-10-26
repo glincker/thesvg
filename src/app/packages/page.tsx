@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { ExternalLink } from "lucide-react";
+import { UiGlyph } from "@/components/ui-glyph";
 import { GROUP_TITLES, PACKAGES, installCommand, npmUrl } from "@/lib/packages-list";
 
 export const metadata: Metadata = {
@@ -46,7 +46,7 @@ export default function PackagesPage() {
                 <div className="mt-auto flex items-center justify-between gap-2 pt-1">
                   <code className="min-w-0 truncate rounded-lg bg-muted/60 px-2 py-1 font-mono text-[11px]">{installCommand(p.name)}</code>
                   <a href={npmUrl(p.name)} target="_blank" rel="noopener noreferrer" className="inline-flex shrink-0 items-center gap-1 text-[11px] text-muted-foreground hover:text-foreground">
-                    npm <ExternalLink className="h-3 w-3" />
+                    npm <UiGlyph name="external-link" className="h-3 w-3" />
                   </a>
                 </div>
               </div>

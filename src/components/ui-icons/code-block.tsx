@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, Copy } from "lucide-react";
+import { UiGlyph } from "@/components/ui-glyph";
 import { useMemo, useState } from "react";
 import { COPY_TABS, USE_TABS, codeFor, type SnippetTab } from "@/lib/ui-icons/snippets";
 import { colorizeCode } from "@/lib/ui-icons/syntax";
@@ -57,7 +57,7 @@ export function CodeBlock(props: { svg: string; slug: string }) {
             copied ? "bg-green-500/10 text-green-400" : "bg-orange-500/15 text-orange-400 backdrop-blur-sm hover:bg-orange-500/25 hover:text-orange-300",
           )}
         >
-          {copied ? <Check className="size-3" /> : <Copy className="size-3" />}
+          {copied ? <UiGlyph name="check" className="size-3" /> : <UiGlyph name="copy" className="size-3" />}
           {copied ? "Copied" : "Copy"}
         </button>
         <div className="bg-zinc-950">

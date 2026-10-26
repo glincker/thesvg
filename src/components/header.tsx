@@ -4,10 +4,10 @@ import { useCallback, useEffect, useId, useMemo, useRef, useState, useSyncExtern
 import Link from "next/link";
 import posthog from "posthog-js";
 import { usePathname, useRouter } from "next/navigation";
-import { ArrowRight, BookOpen, ChevronDown, FileText, Menu, Moon, Package, Plus, Search, Sparkles, Star, Sun, X } from "lucide-react";
+import { UiGlyph } from "@/components/ui-glyph";
 import { LogoMorph, ModeSwitch } from "@/components/ui-icons/mode-switch";
 import { PackagesMenu } from "@/components/packages-menu";
-import { SearchGroups } from "@/components/ui-icons/search-groups";
+import { SearchGroups } from "@/components/search/search-groups";
 import { GLYPHS } from "@/lib/ui-icons/glyphs";
 import { rank } from "@/lib/ui-icons/search";
 import { formatStarCount } from "@/lib/github-stars";
@@ -43,7 +43,7 @@ function SubmitButton() {
       <span className="relative inline-flex h-9 items-center gap-1.5 overflow-hidden rounded-lg bg-gradient-to-b from-orange-400 to-orange-600 px-3 text-xs font-semibold text-white shadow-[0_1px_3px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all duration-200 hover:from-orange-400 hover:to-orange-500 hover:shadow-[0_3px_12px_rgba(249,115,22,0.4),inset_0_1px_0_rgba(255,255,255,0.25)] active:scale-[0.97] active:shadow-[0_0px_1px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(0,0,0,0.1)] sm:h-8 sm:px-3.5">
         {/* Shimmer */}
         <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-700 group-hover/submit:translate-x-full" />
-        <Plus className="relative h-4 w-4 transition-transform duration-200 group-hover/submit:rotate-90 sm:h-3.5 sm:w-3.5" />
+        <UiGlyph name="plus" className="relative h-4 w-4 transition-transform duration-200 group-hover/submit:rotate-90 sm:h-3.5 sm:w-3.5" />
         <span className="relative hidden sm:inline">Submit Icon</span>
       </span>
     </Link>
@@ -335,7 +335,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
               onClick={toggleSidebar}
               aria-label="Toggle menu"
             >
-              <Menu className="h-5 w-5" />
+              <UiGlyph name="menu" className="h-5 w-5" />
             </Button>
 
             <Link href="/" className="group/logo flex items-center gap-1.5 text-foreground" aria-label="theSVG home">
@@ -379,7 +379,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
             <DropdownMenu>
               <DropdownMenuTrigger className="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-xs font-medium text-muted-foreground transition-all hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
                 More
-                <ChevronDown className="h-3 w-3 opacity-60" />
+                <UiGlyph name="chevron-down" className="h-3 w-3 opacity-60" />
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start">
                 <DropdownMenuGroup>
@@ -411,7 +411,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
             className="relative order-last w-full basis-full sm:order-none sm:w-auto sm:flex-1 sm:basis-auto"
           >
             <div className="relative w-full sm:mx-auto sm:max-w-2xl">
-              <Search className="absolute top-1/2 left-3 h-3.5 w-3.5 -translate-y-1/2 text-muted-foreground/60" />
+              <UiGlyph name="search" className="absolute top-1/2 left-3 h-3.5 w-3.5 -translate-y-1/2 text-muted-foreground/60" />
               <input
                 ref={inputRef}
                 type="text"
@@ -443,7 +443,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                     className="flex h-5 w-5 items-center justify-center rounded text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                     aria-label="Clear search"
                   >
-                    <X className="h-3 w-3" />
+                    <UiGlyph name="x" className="h-3 w-3" />
                   </button>
                 )}
                 <kbd className="hidden rounded border border-border/40 bg-muted/50 px-1.5 py-0.5 font-mono text-[10px] text-muted-foreground/50 sm:inline-block dark:border-white/[0.06]">
@@ -495,9 +495,9 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                           onClick={() => setFocused(false)}
                           className="flex items-center gap-2.5 rounded-lg px-2 py-2 text-left transition-all duration-150 hover:translate-x-0.5 hover:bg-accent/50"
                         >
-                          <BookOpen className="h-4 w-4 shrink-0 text-muted-foreground/60" />
+                          <UiGlyph name="book-open" className="h-4 w-4 shrink-0 text-muted-foreground/60" />
                           <span className="min-w-0 flex-1 truncate text-sm text-foreground">{entry.title}</span>
-                          <ArrowRight className="h-3 w-3 shrink-0 text-muted-foreground/30" />
+                          <UiGlyph name="arrow-right" className="h-3 w-3 shrink-0 text-muted-foreground/30" />
                         </Link>
                       ))}
                     </div>
@@ -575,7 +575,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                                 }}
                                 className="inline-flex items-center gap-1 rounded-full border border-border/30 bg-muted/30 px-2 py-0.5 text-[11px] text-muted-foreground transition-colors hover:border-foreground/20 hover:bg-accent hover:text-foreground dark:border-white/[0.06] dark:bg-white/[0.03] dark:hover:border-white/[0.15]"
                               >
-                                <Search className="h-2.5 w-2.5" />
+                                <UiGlyph name="search" className="h-2.5 w-2.5" />
                                 {r.query}
                               </button>
                             ))}
@@ -599,7 +599,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                           <meta.icon className={`h-4 w-4 shrink-0 ${meta.color}`} />
                           <span className="flex-1 text-sm font-medium text-foreground">{meta.label}</span>
                           <span className="text-[10px] text-muted-foreground/50">{count.toLocaleString()}</span>
-                          <ArrowRight className="h-3 w-3 text-muted-foreground/30" />
+                          <UiGlyph name="arrow-right" className="h-3 w-3 text-muted-foreground/30" />
                         </Link>
                       );
                     })}
@@ -610,10 +610,10 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                       Pages
                     </p>
                     {[
-                      { href: "/docs", icon: BookOpen, label: "Docs & Guides" },
-                      { href: "/extensions", icon: Package, label: "Extensions & Integrations" },
-                      { href: "/blog", icon: FileText, label: "Blog & Updates" },
-                      { href: "/submit", icon: Sparkles, label: "Submit an Icon" },
+                      { href: "/docs", icon: "book-open", label: "Docs & Guides" },
+                      { href: "/extensions", icon: "package", label: "Extensions & Integrations" },
+                      { href: "/blog", icon: "file-text", label: "Blog & Updates" },
+                      { href: "/submit", icon: "sparkles", label: "Submit an Icon" },
                     ].map((item) => (
                       <Link
                         key={item.href}
@@ -621,9 +621,9 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                         onClick={() => setFocused(false)}
                         className="group flex w-full items-center gap-3 rounded-lg px-2 py-1.5 text-left transition-all duration-150 hover:translate-x-0.5 hover:bg-accent/50"
                       >
-                        <item.icon className="h-3.5 w-3.5 shrink-0 text-muted-foreground/60" />
+                        <UiGlyph name={item.icon} className="h-3.5 w-3.5 text-muted-foreground/60" />
                         <span className="flex-1 text-xs text-muted-foreground hover:text-foreground">{item.label}</span>
-                        <ArrowRight className="h-3 w-3 text-muted-foreground/20" />
+                        <UiGlyph name="arrow-right" className="h-3 w-3 text-muted-foreground/20" />
                       </Link>
                     ))}
 
@@ -659,7 +659,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                 pathname.startsWith("/docs") && "border-foreground/20 bg-accent text-foreground dark:border-white/20 dark:bg-white/[0.06]"
               )}
             >
-              <BookOpen className="h-3.5 w-3.5" />
+              <UiGlyph name="book-open" className="h-3.5 w-3.5" />
               Docs
             </Link>
 
@@ -745,7 +745,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                 </span>
                 {stars !== null && (
                   <span className="hidden h-full items-center gap-1 border-l border-amber-500/30 bg-amber-500/[0.14] px-2 tabular-nums text-amber-700 sm:inline-flex dark:border-amber-400/25 dark:bg-amber-400/[0.12] dark:text-amber-300">
-                    <Star className="h-3 w-3 fill-current text-amber-500" aria-hidden="true" />
+                    <UiGlyph name="star" className="h-3 w-3 fill-current text-amber-500" aria-hidden="true" />
                     {formatStarCount(stars)}
                   </span>
                 )}
@@ -758,8 +758,8 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 aria-label="Toggle theme"
               >
-                <Sun className="h-4 w-4 scale-100 rotate-0 transition-transform dark:scale-0 dark:-rotate-90" />
-                <Moon className="absolute h-4 w-4 scale-0 rotate-90 transition-transform dark:scale-100 dark:rotate-0" />
+                <UiGlyph name="sun" className="h-4 w-4 scale-100 rotate-0 transition-transform dark:scale-0 dark:-rotate-90" />
+                <UiGlyph name="moon" className="absolute h-4 w-4 scale-0 rotate-90 transition-transform dark:scale-100 dark:rotate-0" />
               </Button>
             </div>
           </div>
