@@ -2,6 +2,7 @@
 
 import { ChevronDown, RotateCcw, SlidersHorizontal } from "lucide-react";
 import { useEffect, useState } from "react";
+import { ColorPicker } from "./color-picker";
 import { cn } from "@/lib/ui-icons/utils";
 import { useUi } from "./ui-state";
 
@@ -97,6 +98,7 @@ export function StyleLab(props: { className?: string; stacked?: boolean }) {
           {SWATCHES.map((hex) => (
             <button key={hex} type="button" aria-label={`Accent #${hex}`} onClick={() => ui.setAccent(`#${hex}`)} className={cn("size-4 rounded-full border-2", SWATCH_BG[hex], ui.accent === `#${hex}` ? "border-foreground" : "border-transparent")} />
           ))}
+          <ColorPicker value={ui.accent} onChange={ui.setAccent} active={ui.accent !== "" && !SWATCHES.some((h) => `#${h}` === ui.accent)} />
         </div>
       </div>
       <button type="button" aria-label="Reset style" onClick={() => { ui.resetLab(); ui.setAccent(""); }} className="grid size-7 place-items-center rounded-lg border text-muted-foreground transition-colors hover:text-foreground">
