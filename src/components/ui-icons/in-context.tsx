@@ -45,7 +45,7 @@ function StateGlyph({ size = 18 }: { size?: number }) {
 
 function Pick(props: { label: string; value: Variant; onChange: (v: Variant) => void }) {
   return (
-    <label className="flex items-center gap-2 text-[11px] text-muted-foreground">
+    <label className="flex items-center gap-2 text-[0.75rem] text-muted-foreground">
       {props.label}
       <select value={props.value} onChange={(e) => props.onChange(e.target.value as Variant)} className="rounded-lg border bg-background/60 px-2 py-1 text-xs capitalize text-foreground outline-none focus:border-ring">
         {VARIANTS.map((v) => <option key={v} value={v}>{v}</option>)}
@@ -150,8 +150,8 @@ export function InContext({ glyph }: { glyph: GlyphData }) {
   return (
     <Ctx.Provider value={{ glyph, map, force, accent: ui.accent }}>
       <div className="mb-3 flex flex-wrap items-center gap-x-5 gap-y-2 glass rounded-xl px-4 py-2">
-        <span className="text-[11px] text-muted-foreground">Rest <span className="ml-1 rounded-md border px-1.5 py-0.5 capitalize text-foreground">{ui.variant}</span></span>
-        <label className="flex items-center gap-2 text-[11px] text-muted-foreground">
+        <span className="text-[0.75rem] text-muted-foreground">Rest <span className="ml-1 rounded-md border px-1.5 py-0.5 capitalize text-foreground">{ui.variant}</span></span>
+        <label className="flex items-center gap-2 text-[0.75rem] text-muted-foreground">
           Hover
           <select value={hover} onChange={(e) => setHover(e.target.value as Variant | "same")} className="rounded-lg border bg-background/60 px-2 py-1 text-xs capitalize text-foreground outline-none focus:border-ring">
             <option value="same">same as rest</option>

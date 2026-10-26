@@ -207,7 +207,7 @@ export function ColorPicker({ value, onChange, active }: { value: string; onChan
           </div>
           {recent.length > 0 && (
             <div className="mt-3">
-              <p className="mb-1.5 text-[10px] text-muted-foreground">Recent</p>
+              <p className="mb-1.5 text-[0.75rem] text-muted-foreground">Recent</p>
               <div className="flex gap-1.5">
                 {recent.map((c) => (
                   <RecentDot key={c} hex={c} onPick={() => { apply(hexToHsv(c)); }} />

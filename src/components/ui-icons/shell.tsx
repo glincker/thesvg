@@ -20,7 +20,7 @@ function NavItem(props: { icon: React.ReactNode; label: string; active?: boolean
     >
       {props.icon}
       <span className="flex-1 text-left">{props.label}</span>
-      {props.badge && <span className="text-[10px] text-muted-foreground">{props.badge}</span>}
+      {props.badge && <span className="text-[0.75rem] text-muted-foreground">{props.badge}</span>}
     </button>
   );
 }
@@ -44,7 +44,7 @@ export function SidebarNav({ onNavigate }: { onNavigate?: () => void }) {
     <>
       <NavItem icon={<UiGlyph name="layout-grid" className="size-5" />} label="All icons" badge={String(GLYPHS.length)} active={onList && ui.set === "all" && !ui.onlyFavorites} onClick={() => { onNavigate?.(); ui.runOnList(() => { ui.setCategory("All"); ui.setSet("all"); ui.setOnlyFavorites(false); ui.setQuery(""); }); }} />
       <NavItem icon={<UiGlyph name="heart" className="size-5" />} label="Favorites" badge={String(ui.favorites.length)} active={onList && ui.onlyFavorites} onClick={() => { onNavigate?.(); ui.runOnList(() => ui.setOnlyFavorites(onList ? !ui.onlyFavorites : true)); }} />
-      <p className="mt-3 px-3 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">Looks</p>
+      <p className="mt-3 px-3 text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground">Looks</p>
       {VARIANTS.map((v) => (
         <button
           key={v}
@@ -56,7 +56,7 @@ export function SidebarNav({ onNavigate }: { onNavigate?: () => void }) {
           {v}
         </button>
       ))}
-      <p className="mt-3 px-3 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">Sets</p>
+      <p className="mt-3 px-3 text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground">Sets</p>
       {sidebarSets.map((st) => (
         <NavItem
           key={st.id}

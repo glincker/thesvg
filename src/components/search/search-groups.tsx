@@ -85,10 +85,10 @@ export function SearchGroups(p: Props) {
         g.rows.length === 0 ? null : (
           <div key={g.id} className={cn("min-w-0 px-2 py-1.5", gi > 0 && "border-t border-border/30 bg-muted/20 sm:border-l sm:border-t-0 dark:border-white/[0.05] dark:bg-white/[0.02]")}>
             <div className="flex items-center justify-between px-2 py-1">
-              <p className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground/60">
+              <p className="text-[0.75rem] font-medium uppercase tracking-wider text-muted-foreground/60">
                 {g.title} <span className="ml-1 text-muted-foreground/40">{g.total.toLocaleString()}</span>
               </p>
-              {gi === 0 && <span className="rounded-full bg-orange-500/10 px-1.5 py-px text-[9px] font-medium text-orange-500">This section</span>}
+              {gi === 0 && <span className="rounded-full bg-orange-500/10 px-1.5 py-px text-[0.6875rem] font-medium text-orange-500">This section</span>}
             </div>
             {g.rows.map((r, ri) => {
               const idx = g.start + ri;
@@ -100,7 +100,7 @@ export function SearchGroups(p: Props) {
                     <img src={r.icon.variants.default} alt="" className="h-6 w-6 shrink-0 rounded object-contain transition-transform duration-150 group-hover:scale-110" />
                     <span className="min-w-0 flex-1">
                       <span className="block truncate text-sm font-medium">{r.icon.title}</span>
-                      <span className="block truncate text-[11px] text-muted-foreground">{r.icon.categories[0] || r.icon.slug}</span>
+                      <span className="block truncate text-[0.75rem] text-muted-foreground">{r.icon.categories[0] || r.icon.slug}</span>
                     </span>
                   </button>
                 );
@@ -110,7 +110,7 @@ export function SearchGroups(p: Props) {
                   <span className="grid size-6 shrink-0 place-items-center transition-transform duration-150 group-hover:scale-110"><StaticGlyph glyph={r.glyph} size={22} /></span>
                   <span className="min-w-0 flex-1">
                     <span className="block truncate text-sm font-medium">{r.glyph.slug}</span>
-                    <span className="block truncate text-[11px] text-muted-foreground">{r.glyph.category}</span>
+                    <span className="block truncate text-[0.75rem] text-muted-foreground">{r.glyph.category}</span>
                   </span>
                 </button>
               );

@@ -16,9 +16,9 @@ const CORNERS = ["sharp", "chamfer", "round"] as const;
 function Range(props: { label: string; value: number; min: number; max: number; step: number; onChange: (v: number) => void }) {
   return (
     <label className="flex min-w-0 flex-col gap-1.5">
-      <span className="flex items-center justify-between text-[11px] text-muted-foreground">
+      <span className="flex items-center justify-between text-[0.75rem] text-muted-foreground">
         {props.label}
-        <span className="rounded-md bg-muted px-1.5 py-px font-mono text-[10px] text-foreground">{props.value}</span>
+        <span className="rounded-md bg-muted px-1.5 py-px font-mono text-[0.75rem] text-foreground">{props.value}</span>
       </span>
       <input
         type="range"
@@ -36,7 +36,7 @@ function Range(props: { label: string; value: number; min: number; max: number; 
 function Cell({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="flex min-w-0 flex-col gap-1.5">
-      <span className="text-[11px] text-muted-foreground">{label}</span>
+      <span className="text-[0.75rem] text-muted-foreground">{label}</span>
       {children}
     </div>
   );
@@ -84,11 +84,11 @@ export function StyleBar({ className }: { className?: string }) {
           <span className="font-medium text-foreground">Style</span>
           <span className="hidden items-center gap-1.5 sm:flex">
             {chips.map((c) => (
-              <span key={c} className="rounded-full border px-2 py-px text-[10px] capitalize">{c}</span>
+              <span key={c} className="rounded-full border px-2 py-px text-[0.75rem] capitalize">{c}</span>
             ))}
             {ui.accent && <AccentDot hex={ui.accent} />}
           </span>
-          {touched && <span className="rounded-full bg-orange-500/10 px-2 py-px text-[10px] text-orange-400">customised</span>}
+          {touched && <span className="rounded-full bg-orange-500/10 px-2 py-px text-[0.75rem] text-orange-400">customised</span>}
           <UiGlyph name="chevron-down" className={cn("ml-auto size-3.5 transition-transform", open && "rotate-180")} />
         </button>
         {open && <StyleLab className="rounded-t-none border-0 border-t bg-transparent" />}
@@ -149,7 +149,7 @@ export function StyleLab(props: { className?: string; stacked?: boolean }) {
               role="radio"
               aria-checked={corner === c}
               onClick={() => ui.setLab({ corner: c, radius: c === "round" ? 3.5 : 1.5 })}
-              className={cn("h-6 flex-1 rounded-md px-2.5 text-[11px] capitalize text-muted-foreground transition-colors hover:text-foreground", corner === c && "bg-foreground text-background hover:text-background")}
+              className={cn("h-6 flex-1 rounded-md px-2.5 text-[0.75rem] capitalize text-muted-foreground transition-colors hover:text-foreground", corner === c && "bg-foreground text-background hover:text-background")}
             >
               {c}
             </button>
@@ -170,14 +170,14 @@ export function StyleLab(props: { className?: string; stacked?: boolean }) {
       </Cell>
       <Cell label="Accent">
         <div className="flex h-7 items-center gap-1.5">
-          <button type="button" aria-label="No accent" onClick={() => ui.setAccent("")} className={cn("h-5 rounded-full border px-2 text-[10px] text-muted-foreground", ui.accent === "" && "border-foreground text-foreground")}>none</button>
+          <button type="button" aria-label="No accent" onClick={() => ui.setAccent("")} className={cn("h-5 rounded-full border px-2 text-[0.75rem] text-muted-foreground", ui.accent === "" && "border-foreground text-foreground")}>none</button>
           {SWATCHES.map((hex) => (
             <button key={hex} type="button" aria-label={`Accent #${hex}`} onClick={() => ui.setAccent(`#${hex}`)} className={cn("size-4 rounded-full border-2", SWATCH_BG[hex], ui.accent === `#${hex}` ? "border-foreground" : "border-transparent")} />
           ))}
           <ColorPicker value={ui.accent} onChange={ui.setAccent} active={ui.accent !== "" && !SWATCHES.some((h) => `#${h}` === ui.accent)} />
         </div>
       </Cell>
-      <button type="button" onClick={() => { ui.resetLab(); ui.setAccent(""); }} className="inline-flex h-7 items-center justify-center gap-1.5 rounded-lg border px-2.5 text-[11px] text-muted-foreground transition-colors hover:text-foreground">
+      <button type="button" onClick={() => { ui.resetLab(); ui.setAccent(""); }} className="inline-flex h-7 items-center justify-center gap-1.5 rounded-lg border px-2.5 text-[0.75rem] text-muted-foreground transition-colors hover:text-foreground">
         <UiGlyph name="rotate-ccw" className="size-3.5" /> Reset
       </button>
     </div>

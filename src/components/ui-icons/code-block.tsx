@@ -30,7 +30,7 @@ export function CodeBlock(props: { svg: string; slug: string }) {
       type="button"
       onClick={() => setTab(t)}
       className={cn(
-        "flex items-center gap-1.5 rounded-md px-2.5 py-1 text-[11px] font-medium transition-colors",
+        "flex items-center gap-1.5 rounded-md px-2.5 py-1 text-[0.75rem] font-medium transition-colors",
         tab === t ? "bg-foreground text-background" : "bg-muted text-muted-foreground hover:bg-accent hover:text-accent-foreground",
       )}
     >
@@ -53,7 +53,7 @@ export function CodeBlock(props: { svg: string; slug: string }) {
           type="button"
           onClick={copy}
           className={cn(
-            "absolute right-3 top-2 z-10 flex items-center gap-1 rounded-md px-2 py-1 text-[10px] font-medium transition-colors",
+            "absolute right-3 top-2 z-10 flex items-center gap-1 rounded-md px-2 py-1 text-[0.75rem] font-medium transition-colors",
             copied ? "bg-green-500/10 text-green-400" : "bg-orange-500/15 text-orange-400 backdrop-blur-sm hover:bg-orange-500/25 hover:text-orange-300",
           )}
         >
@@ -61,7 +61,7 @@ export function CodeBlock(props: { svg: string; slug: string }) {
           {copied ? "Copied" : "Copy"}
         </button>
         <div className="bg-zinc-950">
-          <pre className="max-h-64 overflow-auto p-4 pr-16 font-mono text-[11px] leading-6 text-zinc-300">
+          <pre className="max-h-64 overflow-auto p-4 pr-16 font-mono text-[0.75rem] leading-6 text-zinc-300">
             <code className="block whitespace-pre-wrap break-all">{rendered}</code>
           </pre>
         </div>

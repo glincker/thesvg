@@ -31,8 +31,8 @@ function Section(props: { title: string; aside?: string; children: React.ReactNo
   return (
     <section>
       <div className="mb-2 flex items-baseline justify-between">
-        <h2 className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">{props.title}</h2>
-        {props.aside && <span className="text-[11px] text-muted-foreground">{props.aside}</span>}
+        <h2 className="text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground">{props.title}</h2>
+        {props.aside && <span className="text-[0.75rem] text-muted-foreground">{props.aside}</span>}
       </div>
       {props.children}
     </section>
@@ -108,11 +108,11 @@ function Preview(props: { glyph: GlyphData }) {
           >
             <UiGlyph name="heart" look={ui.favorites.includes(props.glyph.slug) ? "fill" : "outline"} className={cn("size-3.5", ui.favorites.includes(props.glyph.slug) && "text-orange-500")} />
           </button>
-          <span className="glass absolute right-3 top-3 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] text-muted-foreground [transform:translateZ(30px)]">
+          <span className="glass absolute right-3 top-3 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[0.75rem] text-muted-foreground [transform:translateZ(30px)]">
             <span className={cn("size-2 rounded-full", ui.accent ? "" : "bg-foreground")} ref={(el) => { el?.style.setProperty("background-color", ui.accent || ""); }} />
             {ui.accent || "currentColor"}
           </span>
-          <span className="glass absolute bottom-3 left-3 rounded-full px-2.5 py-1 text-[11px] capitalize text-foreground [transform:translateZ(30px)]">{ui.variant} · {fit ? "fit" : `${px}px`}</span>
+          <span className="glass absolute bottom-3 left-3 rounded-full px-2.5 py-1 text-[0.75rem] capitalize text-foreground [transform:translateZ(30px)]">{ui.variant} · {fit ? "fit" : `${px}px`}</span>
           <button
             type="button"
             aria-label={zoom === "fit" ? "Back to real size" : "Zoom to fit"}
@@ -184,7 +184,7 @@ function LookPicker(props: { glyph: GlyphData }) {
           <span className="relative grid aspect-square w-full place-items-center rounded-xl bg-gradient-to-b from-foreground/[0.07] to-transparent">
             <Glyph nodes={props.glyph.nodes} variant={v} size={30} accent={ui.accent} className={cn("text-foreground transition-transform duration-300 group-hover/tile:scale-110", ui.variant === v && "scale-110")} />
           </span>
-          <span className={cn("relative text-[10px] capitalize", ui.variant === v ? "font-medium text-foreground" : "text-muted-foreground")}>{v}</span>
+          <span className={cn("relative text-[0.75rem] capitalize", ui.variant === v ? "font-medium text-foreground" : "text-muted-foreground")}>{v}</span>
         </button>
       ))}
     </div>
@@ -204,7 +204,7 @@ function Coverage({ glyph }: { glyph: GlyphData }) {
         <UiGlyph name="chevron-down" className={cn("size-3.5 text-muted-foreground transition-transform", open && "rotate-180")} />
       </button>
       {open && (
-        <p className="border-t px-4 py-3 text-[11px] leading-relaxed text-muted-foreground">
+        <p className="border-t px-4 py-3 text-[0.75rem] leading-relaxed text-muted-foreground">
           {lineOnly
             ? "This is a line-only glyph, so fill, glass and depth use a heavier outline. Outline, duotone, offset and pixel draw it fully."
             : "Every look draws this glyph fully."}
@@ -218,8 +218,8 @@ function CommandRow(props: { tag: string; text: string }) {
   const [done, copy] = useCopy();
   return (
     <div className="glass flex min-w-0 items-center gap-3 rounded-xl px-3 py-2">
-      <span className="shrink-0 rounded-md bg-orange-500/10 px-1.5 py-0.5 text-[10px] font-semibold text-orange-400">{props.tag}</span>
-      <code className="min-w-0 flex-1 truncate font-mono text-[11px] text-muted-foreground">{props.text}</code>
+      <span className="shrink-0 rounded-md bg-orange-500/10 px-1.5 py-0.5 text-[0.75rem] font-semibold text-orange-400">{props.tag}</span>
+      <code className="min-w-0 flex-1 truncate font-mono text-[0.75rem] text-muted-foreground">{props.text}</code>
       <button type="button" aria-label={`Copy ${props.tag}`} onClick={() => copy(props.tag, props.text)} className="text-muted-foreground transition-colors hover:text-foreground">
         {done === props.tag ? <UiGlyph name="check" className="size-4 text-emerald-400" /> : <UiGlyph name="copy" className="size-4" />}
       </button>
@@ -257,15 +257,15 @@ export function Detail({ glyph }: { glyph: GlyphData }) {
           </div>
           <div className="flex min-w-0 flex-col gap-3">
             <dl className="glass grid grid-cols-2 gap-y-2.5 rounded-2xl p-4 text-xs">
-              <dt className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">Grid</dt><dd className="text-right">24 by 24</dd>
-              <dt className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">Looks</dt><dd className="text-right">{VARIANTS.length}</dd>
-              <dt className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">Category</dt><dd className="text-right">{glyph.category}</dd>
-              <dt className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">Color</dt><dd className="text-right">currentColor</dd>
+              <dt className="text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground">Grid</dt><dd className="text-right">24 by 24</dd>
+              <dt className="text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground">Looks</dt><dd className="text-right">{VARIANTS.length}</dd>
+              <dt className="text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground">Category</dt><dd className="text-right">{glyph.category}</dd>
+              <dt className="text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground">Color</dt><dd className="text-right">currentColor</dd>
             </dl>
             <Coverage glyph={glyph} />
             <UiQualityCard glyph={glyph} />
             <div className="glass flex flex-wrap gap-1.5 rounded-2xl p-4">
-              {glyph.tags.slice(0, 8).map((t) => <span key={t} className="rounded-full border px-2.5 py-0.5 text-[11px] text-muted-foreground">{t}</span>)}
+              {glyph.tags.slice(0, 8).map((t) => <span key={t} className="rounded-full border px-2.5 py-0.5 text-[0.75rem] text-muted-foreground">{t}</span>)}
               {glyph.tags.length === 0 && <span className="text-xs text-muted-foreground">No tags yet</span>}
             </div>
           </div>
@@ -278,7 +278,7 @@ export function Detail({ glyph }: { glyph: GlyphData }) {
               <p className="mt-0.5 text-xs text-muted-foreground">{glyph.slug} · {glyph.category} UI icon</p>
             </div>
             <div className="flex flex-wrap items-center gap-2">
-              <button type="button" onClick={() => copy("svg", svg)} className="inline-flex h-9 items-center gap-1.5 rounded-lg border px-3 text-[13px] text-muted-foreground transition-colors hover:text-foreground">
+              <button type="button" onClick={() => copy("svg", svg)} className="inline-flex h-9 items-center gap-1.5 rounded-lg border px-3 text-[0.8125rem] text-muted-foreground transition-colors hover:text-foreground">
                 {done === "svg" ? <UiGlyph name="check" className="size-4 text-emerald-400" /> : <UiGlyph name="copy" className="size-4" />} {done === "svg" ? "Copied" : "Copy SVG"}
               </button>
               <OpenInEditorMenu svg={svg} title={title} slug={glyph.slug} />
@@ -319,7 +319,7 @@ export function Detail({ glyph }: { glyph: GlyphData }) {
               {SIZES.map((s) => (
                 <div key={s} className="flex flex-col items-center gap-2">
                   <Glyph nodes={glyph.nodes} variant={ui.variant} size={s} accent={ui.accent} className="text-foreground" />
-                  <span className="text-[10px] text-muted-foreground">{s}px</span>
+                  <span className="text-[0.75rem] text-muted-foreground">{s}px</span>
                 </div>
               ))}
             </div>
@@ -331,7 +331,7 @@ export function Detail({ glyph }: { glyph: GlyphData }) {
                 {related.map((g) => (
                   <Link key={g.slug} href={`/ui/${g.slug}`} title={g.slug} className="flex flex-col items-center gap-1.5 rounded-2xl border bg-card/60 p-2.5 transition-colors hover:border-foreground/25">
                     <Glyph nodes={g.nodes} variant={ui.variant} size={30} accent={ui.accent} className="text-foreground" />
-                    <span className="w-full truncate text-center text-[9px] text-muted-foreground">{g.slug}</span>
+                    <span className="w-full truncate text-center text-[0.75rem] text-muted-foreground">{g.slug}</span>
                   </Link>
                 ))}
               </div>

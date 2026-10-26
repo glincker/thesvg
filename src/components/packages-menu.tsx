@@ -41,7 +41,7 @@ export function PackagesMenu({ inUi }: { inUi: boolean }) {
         <div className="max-h-[70vh] overflow-y-auto p-1.5">
           {groups.map((g, gi) => (
             <div key={g} className={cn(gi > 0 && "mt-1 border-t border-border/40 pt-1")}>
-              <p className="px-2 pb-1 pt-1.5 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/70">{GROUP_TITLES[g]}</p>
+              <p className="px-2 pb-1 pt-1.5 text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground/70">{GROUP_TITLES[g]}</p>
               {PACKAGES.filter((p) => p.group === g).map((p) => (
                 <button
                   key={p.name}
@@ -51,7 +51,7 @@ export function PackagesMenu({ inUi }: { inUi: boolean }) {
                 >
                   <span className="min-w-0 flex-1">
                     <span className="block truncate font-mono text-xs text-foreground">{p.name}</span>
-                    <span className="block text-[10px] text-muted-foreground">{p.label}</span>
+                    <span className="block text-[0.75rem] text-muted-foreground">{p.label}</span>
                   </span>
                   {copied === p.name ? <UiGlyph name="check" className="h-4 w-4 text-emerald-500" /> : <UiGlyph name="copy" className="h-4 w-4 text-muted-foreground/50 group-hover:text-foreground" />}
                 </button>

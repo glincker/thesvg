@@ -60,7 +60,7 @@ export function QuickView({ glyph, onClose }: { glyph: GlyphData; onClose: () =>
             </div>
             <div className="grid grid-cols-7 gap-1.5">
               {VARIANTS.map((v) => (
-                <button key={v} type="button" onClick={() => setLook(v)} aria-pressed={look === v} className={cn("flex flex-col items-center gap-1 rounded-xl border p-2 text-[10px] capitalize text-muted-foreground transition-colors hover:text-foreground", look === v && "border-orange-500/50 text-foreground")}>
+                <button key={v} type="button" onClick={() => setLook(v)} aria-pressed={look === v} className={cn("flex flex-col items-center gap-1 rounded-xl border p-2 text-[0.75rem] capitalize text-muted-foreground transition-colors hover:text-foreground", look === v && "border-orange-500/50 text-foreground")}>
                   <Glyph nodes={glyph.nodes} variant={v} size={22} accent={ui.accent} className="text-foreground" />
                   {v}
                 </button>

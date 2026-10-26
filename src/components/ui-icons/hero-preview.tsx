@@ -19,7 +19,7 @@ export function UiHeroPreview() {
           {glyphs.map((g) => (
             <Mark key={g.slug} glyph={g} variant={v} />
           ))}
-          <span className="text-[10px] capitalize text-muted-foreground">{v}</span>
+          <span className="text-[0.75rem] capitalize text-muted-foreground">{v}</span>
         </div>
       ))}
     </div>

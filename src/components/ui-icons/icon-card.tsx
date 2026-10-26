@@ -41,7 +41,7 @@ export function IconCard({ glyph }: { glyph: GlyphData }) {
       <Link href={`/ui/${glyph.slug}`} className="relative flex h-24 items-center justify-center bg-gradient-to-b from-foreground/[0.07] to-transparent">
         <Glyph nodes={glyph.nodes} variant={ui.variant} size={44} accent={ui.accent} className="text-foreground transition-transform duration-200 group-hover/card:scale-110" />
         {!glyph.released && (
-          <span className={cn("absolute left-2 top-2 rounded-full border px-2 py-0.5 text-[10px] font-medium", "border-foreground/15 bg-background/60 text-muted-foreground")}>
+          <span className={cn("absolute left-2 top-2 rounded-full border px-2 py-0.5 text-[0.75rem] font-medium", "border-foreground/15 bg-background/60 text-muted-foreground")}>
             {glyph.setId === "backlog" ? "Backlog" : "Draft"}
           </span>
         )}
@@ -55,10 +55,10 @@ export function IconCard({ glyph }: { glyph: GlyphData }) {
         </button>
       </Link>
       <div className="px-3 pb-1.5 pt-2.5 text-center">
-        <div className="truncate text-[13px] font-medium">{glyph.slug}</div>
-        <div className="truncate text-[11px] text-muted-foreground">{glyph.category}</div>
+        <div className="truncate text-[0.8125rem] font-medium">{glyph.slug}</div>
+        <div className="truncate text-[0.75rem] text-muted-foreground">{glyph.category}</div>
       </div>
-      <div className="grid grid-cols-[1fr_auto_auto] border-t text-[11px] text-muted-foreground opacity-0 transition-opacity duration-150 focus-within:opacity-100 group-hover/card:opacity-100 [@media(hover:none)]:opacity-100">
+      <div className="grid grid-cols-[1fr_auto_auto] border-t text-[0.75rem] text-muted-foreground opacity-0 transition-opacity duration-150 focus-within:opacity-100 group-hover/card:opacity-100 [@media(hover:none)]:opacity-100">
         <button type="button" onClick={copy} className="flex items-center justify-center gap-1.5 py-1.5 transition-colors hover:bg-accent hover:text-foreground">
           {copied ? <UiGlyph name="check" className="size-4 text-emerald-400" /> : <UiGlyph name="copy" className="size-4" />}
           {copied ? "Copied" : "Copy"}

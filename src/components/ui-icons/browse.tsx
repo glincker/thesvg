@@ -69,7 +69,7 @@ export function Browse() {
             )}
           >
             {c.name}
-            {c.name === "All" && <span className={cn("rounded-full bg-foreground/10 px-1.5 text-[10px]", ui.category === c.name && "bg-background/20")}>{c.count}</span>}
+            {c.name === "All" && <span className={cn("rounded-full bg-foreground/10 px-1.5 text-[0.75rem]", ui.category === c.name && "bg-background/20")}>{c.count}</span>}
           </button>
         ))}
       </div>

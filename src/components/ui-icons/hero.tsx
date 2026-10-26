@@ -54,7 +54,7 @@ function LookTile(props: { look: (typeof VARIANTS)[number]; active: boolean; onP
           return g ? <Glyph key={slug} nodes={g.nodes} variant={props.look} size={38} accent={ui.accent} className="text-foreground" /> : null;
         })}
       </div>
-      <span className={cn("relative text-[11px] capitalize", props.active ? "text-foreground" : "text-muted-foreground")}>{props.look}</span>
+      <span className={cn("relative text-[0.75rem] capitalize", props.active ? "text-foreground" : "text-muted-foreground")}>{props.look}</span>
     </button>
   );
 }

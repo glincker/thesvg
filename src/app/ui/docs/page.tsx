@@ -47,7 +47,7 @@ export function Launch() {
       <H id="props">Props</H>
       <div className="mt-3 overflow-hidden rounded-xl border">
         <table className="w-full text-left text-sm">
-          <thead className="bg-card/60 text-[11px] uppercase tracking-wider text-muted-foreground">
+          <thead className="bg-card/60 text-[0.75rem] uppercase tracking-wider text-muted-foreground">
             <tr><th className="px-4 py-2 font-medium">Prop</th><th className="px-4 py-2 font-medium">Type</th><th className="px-4 py-2 font-medium">What it does</th></tr>
           </thead>
           <tbody>
@@ -67,7 +67,7 @@ export function Launch() {
       <dl className="mt-3 grid gap-2">
         {LOOKS.map(([name, suffix, text]) => (
           <div key={name} className="flex gap-4 rounded-xl border bg-card/50 px-4 py-3 text-sm">
-            <dt className="w-24 shrink-0 font-medium">{name}<span className="mt-0.5 block font-mono text-[10px] font-normal text-muted-foreground">{`Rocket${suffix}Icon`}</span></dt>
+            <dt className="w-24 shrink-0 font-medium">{name}<span className="mt-0.5 block font-mono text-[0.75rem] font-normal text-muted-foreground">{`Rocket${suffix}Icon`}</span></dt>
             <dd className="text-muted-foreground">{text}</dd>
           </div>
         ))}
