@@ -36,6 +36,8 @@ import {
 } from "./rate-limit";
 import { textResult, errorResult, findIconOrNotFound } from "./tool-helpers";
 import { slugAndVariantSchema } from "./tool-schemas";
+import { DEFAULT_LOOK } from "./ui-data";
+import { uiCategories, uiGet, uiLooks, uiSearch, uiUrl } from "./ui-tools";
 
 interface Env {
   // Optional: Cloudflare's native Rate Limiting binding. See
@@ -44,6 +46,21 @@ interface Env {
 }
 
 const FETCH_TIMEOUT_MS = 10_000;
+
+// Optional on every tool; "brand" keeps all existing calls identical.
+const kindSchema = z
+  .enum(["brand", "ui"])
+  .optional()
+  .default("brand")
+  .describe("Icon kind: 'brand' (default) or 'ui' for UI icons.");
+
+const lookSchema = z
+  .string()
+  .optional()
+  .default(DEFAULT_LOOK)
+  .describe(
+    "UI icon look (kind 'ui' only): outline, glass, duotone, offset, fill, pixel, depth. Defaults to 'outline'."
+  );
 
 function createServer(): McpServer {
   const server = new McpServer({
@@ -89,10 +106,12 @@ function createServer(): McpServer {
           .optional()
           .default(20)
           .describe("Maximum number of results (1-100, default 20)"),
+        kind: kindSchema,
       }),
       _meta: widgetDescriptorMeta(),
     },
-    async ({ query, limit }) => {
+    async ({ query, limit, kind }) => {
+      if (kind === "ui") return uiSearch(query, limit);
       const results = searchIcons(query, limit);
 
       if (results.length === 0) {
@@ -137,9 +156,10 @@ function createServer(): McpServer {
         "Fetch the raw SVG content for a specific brand icon from thesvg.org. Returns SVG markup, metadata, and the CDN URL.",
       inputSchema: slugAndVariantSchema(
         "Icon variant to fetch: 'default', 'mono', 'light', 'dark', 'wordmark', 'color'. Defaults to 'default'. Use list_variants to see what a specific icon supports."
-      ),
+      ).extend({ kind: kindSchema, look: lookSchema }),
     },
-    async ({ slug, variant }) => {
+    async ({ slug, variant, kind, look }) => {
+      if (kind === "ui") return uiGet(slug, look);
       const found = findIconOrNotFound(slug);
       if (!found.ok) return found.result;
       const icon = found.icon;
@@ -198,9 +218,11 @@ function createServer(): McpServer {
           .describe(
             "Icon slug identifier (e.g. 'github', 'openai'). Use search_icons to find slugs."
           ),
+        kind: kindSchema,
       }),
     },
-    async ({ slug }) => {
+    async ({ slug, kind }) => {
+      if (kind === "ui") return uiLooks(slug);
       const found = findIconOrNotFound(slug);
       if (!found.ok) return found.result;
       const icon = found.icon;
@@ -224,9 +246,10 @@ function createServer(): McpServer {
         "Get a thesvg.org CDN URL for a brand icon without fetching the SVG content. Use this to embed icons in HTML, Markdown, Notion, Webflow, or any img tag. Cheaper than get_icon when you only need the URL.",
       inputSchema: slugAndVariantSchema(
         "Icon variant: 'default', 'mono', 'light', 'dark', 'wordmark', 'color'. Defaults to 'default'."
-      ),
+      ).extend({ kind: kindSchema, look: lookSchema }),
     },
-    async ({ slug, variant }) => {
+    async ({ slug, variant, kind, look }) => {
+      if (kind === "ui") return uiUrl(slug, look);
       const found = findIconOrNotFound(slug);
       if (!found.ok) return found.result;
       const icon = found.icon;
@@ -266,9 +289,10 @@ function createServer(): McpServer {
       title: "List categories",
       description:
         "List all icon categories available in thesvg.org library with icon counts. Use this to discover what categories exist in the library and to inform follow-up search_icons queries.",
-      inputSchema: z.object({}),
+      inputSchema: z.object({ kind: kindSchema }),
     },
-    async () => {
+    async ({ kind }) => {
+      if (kind === "ui") return uiCategories();
       const categories = listCategories();
       const total = loadIcons().length;
 

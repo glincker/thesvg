@@ -98,7 +98,7 @@
 
 ## Why theSVG
 
-Most icon libraries focus on UI icons. Brand logos are scattered across press kits, Figma files, and random GitHub repos. **theSVG** is the single source for SVG icons - brand logos, cloud architecture diagrams, and more. Searchable, versioned, and available as npm packages, CDN, CLI, API, and MCP server.
+Brand logos are scattered across press kits, Figma files, and random GitHub repos. **theSVG** is the single source for SVG icons - brand logos, cloud architecture diagrams, and a set of interface icons of our own. Searchable, versioned, and available as npm packages, CDN, CLI, API, and MCP server.
 
 Every developer has hunted for a company logo: a press kit buried three clicks deep, a PNG that blurs on retina, a "mono" file that is secretly four colors, a logo that changed last month. Most icon sets cover UI glyphs. Nobody treated brand logos as real, versioned, trustworthy data.
 
@@ -162,6 +162,10 @@ theSVG organizes icons into collections:
 | **Kubernetes** | 38 | Official Kubernetes/CNCF architecture icons |
 
 </details>
+
+### UI icons
+
+**New in theSVG 4.0.** Alongside the brand catalog, theSVG ships a set of **interface icons we draw ourselves**, at [thesvg.org/ui](https://thesvg.org/ui). 129 icons today, each in seven looks (outline, glass, duotone, offset, fill, pixel and depth), all using `currentColor`, with more arriving in small drops. They are a separate section with their own data, packages and tests, and the two kinds of icons never mix their data or code. See [UI icons](#ui-icons-1) below.
 
 ### Brand families
 
@@ -306,7 +310,7 @@ npm install @thesvg/icons
 
 ## Packages
 
-Every package is tree-shakeable, fully typed and ships ESM and CJS. Pick the one that fits your stack.
+Every package is tree-shakeable, fully typed and ships ESM and CJS. Pick the one that fits your stack. Brand icons and UI icons are separate packages (`@thesvg/ui*`), so adding one never makes the other heavier.
 
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Package | Version | Downloads | What it is | Install |
 | --- | --- | --- | --- | --- | --- |
@@ -316,6 +320,11 @@ Every package is tree-shakeable, fully typed and ships ESM and CJS. Pick the one
 | <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/vue/default.svg" width="28" height="28" alt="" /> | [`@thesvg/vue`](https://www.npmjs.com/package/@thesvg/vue) | [![npm](https://img.shields.io/npm/v/@thesvg/vue?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/vue) | [![downloads](https://img.shields.io/npm/dm/@thesvg/vue?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/vue) | Typed Vue 3 components | `npm install @thesvg/vue` |
 | <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/svelte/default.svg" width="28" height="28" alt="" /> | [`@thesvg/svelte`](https://www.npmjs.com/package/@thesvg/svelte) | [![npm](https://img.shields.io/npm/v/@thesvg/svelte?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/svelte) | [![downloads](https://img.shields.io/npm/dm/@thesvg/svelte?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/svelte) | Typed Svelte components | `npm install @thesvg/svelte` |
 | <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/react/default.svg" width="28" height="28" alt="" /> | [`@thesvg/react-native`](https://www.npmjs.com/package/@thesvg/react-native) | [![npm](https://img.shields.io/npm/v/@thesvg/react-native?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/react-native) | [![downloads](https://img.shields.io/npm/dm/@thesvg/react-native?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/react-native) | React Native components | `npm install @thesvg/react-native` |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/npm/default.svg" width="28" height="28" alt="" /> | [`@thesvg/ui`](https://www.npmjs.com/package/@thesvg/ui) | [![npm](https://img.shields.io/npm/v/@thesvg/ui?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/ui) | [![downloads](https://img.shields.io/npm/dm/@thesvg/ui?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/ui) | UI icons: raw SVG files and JSON manifest | `npm install @thesvg/ui` |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/npm/default.svg" width="28" height="28" alt="" /> | [`@thesvg/ui-react`](https://www.npmjs.com/package/@thesvg/ui-react) | [![npm](https://img.shields.io/npm/v/@thesvg/ui-react?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/ui-react) | [![downloads](https://img.shields.io/npm/dm/@thesvg/ui-react?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/ui-react) | UI icons as typed React components | `npm install @thesvg/ui-react` |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/npm/default.svg" width="28" height="28" alt="" /> | [`@thesvg/ui-vue`](https://www.npmjs.com/package/@thesvg/ui-vue) | [![npm](https://img.shields.io/npm/v/@thesvg/ui-vue?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/ui-vue) | [![downloads](https://img.shields.io/npm/dm/@thesvg/ui-vue?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/ui-vue) | UI icons as Vue 3 components | `npm install @thesvg/ui-vue` |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/npm/default.svg" width="28" height="28" alt="" /> | [`@thesvg/ui-svelte`](https://www.npmjs.com/package/@thesvg/ui-svelte) | [![npm](https://img.shields.io/npm/v/@thesvg/ui-svelte?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/ui-svelte) | [![downloads](https://img.shields.io/npm/dm/@thesvg/ui-svelte?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/ui-svelte) | UI icons as Svelte components | `npm install @thesvg/ui-svelte` |
+| <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/npm/default.svg" width="28" height="28" alt="" /> | [`@thesvg/ui-react-native`](https://www.npmjs.com/package/@thesvg/ui-react-native) | [![npm](https://img.shields.io/npm/v/@thesvg/ui-react-native?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/ui-react-native) | [![downloads](https://img.shields.io/npm/dm/@thesvg/ui-react-native?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/ui-react-native) | UI icons for React Native | `npm install @thesvg/ui-react-native` |
 | <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/npm/default.svg" width="28" height="28" alt="" /> | [`@thesvg/cli`](https://www.npmjs.com/package/@thesvg/cli) | [![npm](https://img.shields.io/npm/v/@thesvg/cli?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/cli) | [![downloads](https://img.shields.io/npm/dm/@thesvg/cli?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/cli) | CLI tool, shadcn-style installer | `npx @thesvg/cli add github` |
 | <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/claude/default.svg" width="28" height="28" alt="" /> | [`@thesvg/mcp-server`](https://www.npmjs.com/package/@thesvg/mcp-server) | [![npm](https://img.shields.io/npm/v/@thesvg/mcp-server?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/mcp-server) | [![downloads](https://img.shields.io/npm/dm/@thesvg/mcp-server?style=flat-square&color=C2410C&label=)](https://www.npmjs.com/package/@thesvg/mcp-server) | MCP server for AI assistants | `npx @thesvg/mcp-server` |
 
@@ -339,6 +348,8 @@ Use theSVG icons everywhere you build, design and ship. Browse the full ecosyste
 | <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/neovim/default.svg" width="28" height="28" alt="" /> | [Neovim](https://github.com/glincker/thesvg/tree/main/extensions/neovim) | ![Published](https://img.shields.io/badge/-Published-2ea043?style=flat-square) | Lua plugin with Telescope picker. Insert SVG URL or inline content at cursor. |
 | <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/alfred/default.svg" width="28" height="28" alt="" /> | [Alfred Workflow](https://github.com/glincker/thesvg/tree/main/extensions/alfred) | ![Published](https://img.shields.io/badge/-Published-2ea043?style=flat-square) | macOS quick access. Search anywhere, copy SVG, CDN URL, or markdown. |
 | <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/sketch/dark.svg" /><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/sketch/light.svg" width="28" height="28" alt="" /></picture> | [Sketch / Blender / Webflow / Notion](https://github.com/glincker/thesvg/issues?q=label%3Aextension) | ![Help wanted](https://img.shields.io/badge/-Help%20wanted-6e7681?style=flat-square) | Tracking issues open. Build a plugin and we will list it here. |
+
+> **UI icons in extensions:** the CLI, MCP server, VS Code, the browser extension, Alfred and Neovim search UI icons as well as brand icons. Figma and Raycast follow after launch. Each extension reads the UI icons from their own file, so brand search is never affected.
 
 > **Build your own:** the API and CDN are fully open with no auth required. Ship a plugin or workflow, then open a PR and we will add it to the table.
 
@@ -409,6 +420,33 @@ Icons support up to 7 variants to match any design context:
 | Wordmark Dark | `wordmarkDark` | Dark text logo |
 
 Not every icon has all variants. `default` is always present.
+
+## UI icons
+
+Interface icons we draw ourselves, in seven looks. Browse them at [thesvg.org/ui](https://thesvg.org/ui).
+
+```bash
+npm install @thesvg/ui-react
+```
+
+```tsx
+import { BellIcon, BellGlassIcon } from "@thesvg/ui-react";
+
+// Outline is the plain name, every other look adds its name.
+<BellIcon size={24} aria-label="Notifications" />
+<BellGlassIcon size={32} />
+```
+
+One export per look means a look you do not import never reaches your bundle. Vue, Svelte and React Native packages follow the same naming (`@thesvg/ui-vue`, `@thesvg/ui-svelte`, `@thesvg/ui-react-native`).
+
+| What | Where |
+|------|-------|
+| One icon file | `https://thesvg.org/ui/{slug}/{look}.svg` |
+| Every icon in one look | `https://cdn.jsdelivr.net/gh/glincker/thesvg@main/src/data/ui/looks/{look}.json` |
+| Manifest (slugs, tags, categories, quality) | `https://cdn.jsdelivr.net/gh/glincker/thesvg@main/src/data/ui-icons.json` |
+| CLI | `npx @thesvg/cli add ui:bell --look glass` |
+
+Looks: `outline`, `glass`, `duotone`, `offset`, `fill`, `pixel`, `depth`. The UI icons are original drawings released under the [MIT license](./LICENSE) like the rest of the code. To add or change icons, see [Contributing to UI icons](./CONTRIBUTING.md#ui-icons).
 
 ## CDN
 
@@ -512,7 +550,7 @@ pnpm install
 pnpm dev     # http://localhost:3333
 ```
 
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for full guidelines.
+**UI icons** have their own flow: edit a set file in `src/data/ui/sets`, run `pnpm ui:build`, and test with `pnpm test:ui`. Brand work stays in `pnpm test:brand`. See [CONTRIBUTING.md](./CONTRIBUTING.md) for full guidelines.
 
 Questions and icon requests are welcome in the [Discord](https://discord.gg/Ar5pcaZB99).
 
@@ -563,7 +601,7 @@ If you are a brand owner and would like an icon updated or removed, please [open
 
 ## License
 
-[MIT](./LICENSE) for the codebase and tooling. Individual brand icons remain the intellectual property of their respective trademark holders.
+[MIT](./LICENSE) for the codebase, tooling and the UI icons. Individual brand icons remain the intellectual property of their respective trademark holders.
 
 ## Star History
 

@@ -31,6 +31,10 @@ interface DownloadMenuProps {
   slug: string;
   title: string;
   activeVariant: string;
+  /** Optional SVG text used for PNG, JPG and WebP only, for icons whose vector uses currentColor. */
+  rasterSvg?: string;
+  /** Optional line shown under the raster sizes, to explain how the raster color was chosen. */
+  rasterNote?: string;
 }
 
 const RASTER_SIZES = [32, 64, 128, 256, 512, 1024] as const;
@@ -54,6 +58,8 @@ export function DownloadMenu({
   slug,
   title,
   activeVariant,
+  rasterSvg,
+  rasterNote,
 }: DownloadMenuProps) {
   // Tracked per action so one in-flight (or stalled) export never disables the
   // other half of the split button or any unrelated menu item. Combined with
@@ -120,7 +126,7 @@ export function DownloadMenu({
       if (busy.has(key)) return;
       startBusy(key);
       try {
-        const source = svgContent || currentPath;
+        const source = rasterSvg || svgContent || currentPath;
         const blob = await svgToRaster(source, size, format);
         const fmt = RASTER_FORMATS.find((f) => f.id === format);
         downloadBlob(
@@ -141,7 +147,7 @@ export function DownloadMenu({
         endBusy(key);
       }
     },
-    [busy, svgContent, currentPath, slug, activeVariant, flashDone, flashError, startBusy, endBusy],
+    [busy, rasterSvg, svgContent, currentPath, slug, activeVariant, flashDone, flashError, startBusy, endBusy],
   );
 
   const handleCopyDataUri = useCallback(async () => {
@@ -330,6 +336,7 @@ export function DownloadMenu({
                 );
               })}
             </div>
+            {rasterNote && <p className="mt-2 px-1 text-[10px] leading-snug text-muted-foreground/70">{rasterNote}</p>}
           </div>
         </DropdownMenuContent>
       </DropdownMenu>

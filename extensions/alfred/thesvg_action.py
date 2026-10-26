@@ -27,6 +27,11 @@ def cdn_url(slug: str, variant: str = "default") -> str:
     return f"{CDN_BASE}/{slug}/{variant}.svg"
 
 
+def ui_url(slug: str, look: str = "outline") -> str:
+    # UI icons live beside the brand folder and use currentColor.
+    return f"https://thesvg.org/ui/{slug}/{look}.svg"
+
+
 def fetch_svg(url: str) -> str:
     req = urllib.request.Request(
         url,
@@ -56,12 +61,17 @@ def main() -> None:
     slug = parts[0] if len(parts) > 0 else ""
     variant = parts[1] if len(parts) > 1 else "default"
     mode = parts[2] if len(parts) > 2 else ""
+    # UI icons arrive as "ui:<slug>|<look>"; the look defaults to outline.
+    is_ui = slug.startswith("ui:")
+    if is_ui:
+        slug = slug[3:]
+        variant = parts[1] if len(parts) > 1 else "outline"
 
     if not slug:
         sys.stderr.write("thesvg_action: empty slug\n")
         sys.exit(1)
 
-    url = cdn_url(slug, variant)
+    url = ui_url(slug, variant) if is_ui else cdn_url(slug, variant)
 
     try:
         if mode == "url":

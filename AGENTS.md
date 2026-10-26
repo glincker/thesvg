@@ -47,6 +47,23 @@ public/icons/{slug}/
 - No uppercase, no spaces, no underscores
 - Must match the directory name under `public/icons/`
 
+## UI Icon Rules
+
+UI icons are a separate section from brand icons (`/ui`, `@thesvg/ui*`). They share the site shell, never their code or data.
+
+### Where things live
+- Source of truth: `src/data/ui/sets/<set-id>.json`, one file per release set, one line per icon (slug, tags, geometry).
+- Generated, never edit by hand: `src/data/ui-icons.json`, `src/data/ui/looks/*.json`, `src/lib/ui-icons/sets.generated.ts`. Run `pnpm ui:build` after changing a set file and commit the result. `pnpm ui:check` fails when they are stale.
+- `public/ui/**` are build artifacts and are not committed.
+- UI code lives in `src/lib/ui-icons`, `src/components/ui-icons` and `src/app/ui`. Brand code never imports from there.
+
+### Review checklist
+- A new icon has a kebab-case slug, at least two tags (four for full marks), geometry inside the 1 to 23 live area and a real category (not `General`).
+- Every icon scores at least the build's quality minimum (`UI_QUALITY_MIN_SCORE`, default 70). Thresholds come from the environment, never from literals in the code that uses them.
+- UI code does not import brand code (`@/lib/icons`, `@/components/icons/*` and so on) except the shared pieces allowed in `eslint.config.mjs`, and brand code does not import UI code except the files in `BRAND_TO_UI_ALLOWED`. The linter enforces both directions. Do not widen an allow list to silence an error.
+- Brand icons and UI icons are tested separately: `pnpm test:brand` and `pnpm test:ui`. A change to one side should not need the other side's tests.
+- Package builds for `@thesvg/ui-*` go through `scripts/ui/package-builder.mjs`. Do not copy a generator into a package.
+
 ## Code Quality Rules
 
 ### TypeScript
@@ -60,9 +77,12 @@ public/icons/{slug}/
   runtime value (e.g. a color derived from an icon's own hex) that cannot
   be expressed as a static utility class
 - shadcn/ui components, extend don't reinvent
-- Phosphor icons (`@phosphor-icons/react/dist/ssr`) for new or touched UI
-  chrome; existing untouched Lucide usage can stay during the gradual
-  migration, but do not add new Lucide icons
+- Icons in site chrome are our own UI icons: `<UiGlyph name="arrow-right" />`
+  from `@/components/ui-glyph`. Do not add Lucide or Phosphor imports. Files
+  already converted are locked by ESLint (`OWN_ICONS_ONLY` in
+  `eslint.config.mjs`); older files still on those libraries move over in their
+  own PRs. If an icon you need is missing, add it to a set file instead of
+  reaching for a library.
 
 ### Git
 - Never commit directly to `main`
