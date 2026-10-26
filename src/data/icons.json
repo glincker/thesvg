@@ -3550,7 +3550,8 @@
     "license": "Fair use",
     "url": "https://amazon.com",
     "dateAdded": "2026-03-18",
-    "collection": "brands"
+    "collection": "brands",
+    "guidelines": "https://pages.awscloud.com/rs/112-TZM-766/images/Amazon%20Global_Brand%20Guidelines_DF_v3.pdf"
   },
   {
     "slug": "amazon-badge",
@@ -104705,7 +104706,7 @@
     "slug": "oracle",
     "title": "Oracle",
     "aliases": [],
-    "hex": "F80000",
+    "hex": "C74634",
     "categories": [
       "Database",
       "Cloud"
@@ -104716,7 +104717,8 @@
     "license": "Fair Use",
     "url": "https://www.oracle.com",
     "dateAdded": "2026-03-09",
-    "collection": "brands"
+    "collection": "brands",
+    "guidelines": "https://www.oracle.com/europe/a/ocom/docs/oracle-brand-guidelines.pdf"
   },
   {
     "slug": "oracle-badge",
