@@ -16,7 +16,7 @@ const clamp = (n: number, lo: number, hi: number): number => Math.min(hi, Math.m
 function hexToHsv(hex: string): Hsv {
   const m = /^#?([0-9a-f]{6})$/i.exec(hex);
   if (!m) return { h: 24, s: 90, v: 98 };
-  const n = parseInt(m[1], 16);
+  const n = Number.parseInt(m[1], 16);
   const r = ((n >> 16) & 255) / 255, g = ((n >> 8) & 255) / 255, b = (n & 255) / 255;
   const max = Math.max(r, g, b), min = Math.min(r, g, b), d = max - min;
   let h = 0;

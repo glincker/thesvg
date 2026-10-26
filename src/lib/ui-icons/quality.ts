@@ -27,7 +27,7 @@ export const DEFAULT_QUALITY_CONFIG: QualityConfig = {
 export function qualityConfigFromEnv(env: Record<string, string | undefined>): QualityConfig {
   const num = (key: string, fallback: number): number => {
     const raw = env[key];
-    const n = raw === undefined || raw === "" ? NaN : Number(raw);
+    const n = raw === undefined || raw === "" ? Number.NaN : Number(raw);
     return Number.isFinite(n) ? n : fallback;
   };
   const d = DEFAULT_QUALITY_CONFIG;

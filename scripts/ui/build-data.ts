@@ -88,7 +88,9 @@ for (const icon of icons) {
 }
 if (low.length) throw new Error(`Icons below the quality minimum of ${qualityConfig.minScore}: ${low.join(", ")}`);
 icons.sort((a, b) => a.slug.localeCompare(b.slug));
-for (const [look, lines] of looks) out.set(`src/data/ui/looks/${look}.json`, `{\n${lines.sort().join(",\n")}\n}\n`);
+// Plain code-unit order, spelled out so the files come out identical on every machine and locale.
+const byText = (a: string, b: string): number => (a < b ? -1 : a > b ? 1 : 0);
+for (const [look, lines] of looks) out.set(`src/data/ui/looks/${look}.json`, `{\n${lines.sort(byText).join(",\n")}\n}\n`);
 const manifest = { version: 1, kind: "ui", looks: VARIANTS, files: "/ui/{slug}/{look}.svg", lookFiles: "/src/data/ui/looks/{look}.json", sets: sets.map((s) => ({ id: s.id, name: s.name, releaseDate: s.releaseDate, count: s.glyphs.length })), icons };
 out.set("src/data/ui-icons.json", `${JSON.stringify(manifest)}\n`);
 

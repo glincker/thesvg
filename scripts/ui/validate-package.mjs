@@ -1,16 +1,19 @@
 // Usage: node scripts/ui/validate-package.mjs packages/ui-react
 // Checks a built UI package: every icon has its files, the barrel exports every look once, nothing is missing.
-import { existsSync, readFileSync } from "node:fs";
-import { basename, join, relative, resolve } from "node:path";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
+import { basename, join, resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 import { exportName, loadManifest } from "./package-builder.mjs";
 
-// Only a UI package folder inside this repository's packages directory may be checked, whatever argument is passed.
+// The folder is picked from the UI packages that exist on disk, so the argument can only choose between them.
 const PACKAGES = resolve(import.meta.dirname, "../../packages");
-const pkgDir = resolve(process.argv[2] ?? ".");
-if (relative(PACKAGES, pkgDir).startsWith("..") || !/^ui(-[a-z-]+)?$/.test(basename(pkgDir))) {
-  console.error(`not a UI package folder: ${pkgDir}`);
+const requested = basename(resolve(process.argv[2] ?? "."));
+const name = readdirSync(PACKAGES).find((n) => /^ui(-[a-z-]+)?$/.test(n) && n === requested);
+if (!name) {
+  console.error(`not a UI package: ${requested}`);
   process.exit(2);
 }
+const pkgDir = join(PACKAGES, name);
 const dist = join(pkgDir, "dist");
 const manifest = loadManifest();
 const svelte = existsSync(join(dist, "index.js")) && /\.svelte"/.test(readFileSync(join(dist, "index.js"), "utf8"));
@@ -31,7 +34,7 @@ for (const icon of manifest.icons) {
 }
 // Every instance of an icon needs its own ids. The scoper renames definitions and references together, only whole ids.
 if (existsSync(join(dist, "_scope.js"))) {
-  const { scoper } = await import(join(dist, "_scope.js"));
+  const { scoper } = await import(pathToFileURL(join(dist, "_scope.js")).href);
   const out = scoper(["a-g", "a-m"])('<g id="a-g"/><g id="a-grid"/><rect fill="url(#a-g)" mask="url(#a-m)"/>', "u1");
   if (out !== '<g id="a-g-u1"/><g id="a-grid"/><rect fill="url(#a-g-u1)" mask="url(#a-m-u1)"/>') fail(`scoper output is wrong: ${out}`);
 }

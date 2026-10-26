@@ -130,10 +130,13 @@ function cdnUrl(slug: string, variant = "default"): string {
   return `${CDN_BASE}/${slug}/${variant}.svg`;
 }
 
+const ALLOWED_ORIGINS = new Set([new URL(CDN_BASE).origin, new URL(UI_SITE).origin]);
+
 async function fetchSvgBody(url: string): Promise<string> {
-  // The popup only ever reads icon files from the CDN or the site, never from any other address.
-  if (!url.startsWith(`${CDN_BASE}/`) && !url.startsWith(`${UI_SITE}/`)) throw new Error("svg url is not allowed");
-  const res = await fetch(url);
+  // The popup only ever reads .svg files from the CDN or the site, never from any other address.
+  const target = new URL(url);
+  if (!ALLOWED_ORIGINS.has(target.origin) || !/^\/[\w.@/-]+\.svg$/.test(target.pathname)) throw new Error("svg url is not allowed");
+  const res = await fetch(target.href);
   if (!res.ok) {
     throw new Error(`svg fetch failed: ${res.status}`);
   }
@@ -269,17 +272,23 @@ export default function App() {
       return;
     }
     setUiLoading(true);
-    loadUiIndex().then((idx) => {
-      setUiLoading(false);
-      if (idx) {
-        setUiIndex(idx);
-        setUiUnavailable(false);
-        setMode("ui");
-      } else {
+    loadUiIndex()
+      .then((idx) => {
+        setUiLoading(false);
+        if (idx) {
+          setUiIndex(idx);
+          setUiUnavailable(false);
+          setMode("ui");
+        } else {
+          setUiUnavailable(true);
+          setSelectedVariant("default");
+        }
+      })
+      .catch(() => {
+        setUiLoading(false);
         setUiUnavailable(true);
         setSelectedVariant("default");
-      }
-    });
+      });
   }
 
   const selected = useMemo(
