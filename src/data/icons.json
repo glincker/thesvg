@@ -1951,6 +1951,32 @@
     "collection": "brands"
   },
   {
+    "slug": "agent-qa",
+    "title": "agent-qa",
+    "aliases": [
+      "vostride",
+      "agentqa"
+    ],
+    "hex": "1BA8A4",
+    "categories": [
+      "AI",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/agent-qa/default.svg",
+      "mono": "/icons/agent-qa/mono.svg"
+    },
+    "license": "FSL-1.1-ALv2",
+    "url": "https://vostride.com",
+    "guidelines": "https://github.com/vostride/agent-qa/blob/33cd7dbe52f77d661482977ed0437889d04fdf93/LICENSE.md",
+    "links": {
+      "github": "https://github.com/vostride/agent-qa",
+      "docs": "https://vostride.com/docs/agent-qa"
+    },
+    "dateAdded": "2026-10-25",
+    "collection": "brands"
+  },
+  {
     "slug": "agora",
     "title": "Agora",
     "aliases": [],
