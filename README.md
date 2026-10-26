@@ -165,7 +165,7 @@ theSVG organizes icons into collections:
 
 ### UI icons
 
-Alongside the brand catalog, theSVG ships a set of **interface icons we draw ourselves**, at [thesvg.org/ui](https://thesvg.org/ui). 129 icons today, each in seven looks (outline, glass, duotone, offset, fill, pixel and depth), all using `currentColor`, with more arriving in small drops. They are a separate section with their own data, packages and tests, and the two kinds of icons never mix their data or code. See [UI icons](#ui-icons-1) below.
+**New in theSVG 4.0.** Alongside the brand catalog, theSVG ships a set of **interface icons we draw ourselves**, at [thesvg.org/ui](https://thesvg.org/ui). 129 icons today, each in seven looks (outline, glass, duotone, offset, fill, pixel and depth), all using `currentColor`, with more arriving in small drops. They are a separate section with their own data, packages and tests, and the two kinds of icons never mix their data or code. See [UI icons](#ui-icons-1) below.
 
 ### Brand families
 

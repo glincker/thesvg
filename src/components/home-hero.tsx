@@ -34,9 +34,9 @@ const POPULAR_AUTH_BADGES_SLUGS = getPopularSlugs("auth-badges");
 
 const ALL_SLIDES = [
   {
-    badge: "New: UI icons",
+    badge: "theSVG 4.0",
     badgeIcon: Sparkles,
-    title: "UI icons, in seven looks",
+    title: "UI icons are here, in seven looks",
     description: "A new set of interface icons, drawn on one grid and restyled live. Outline, glass, duotone, offset, fill, pixel and depth. Free to copy.",
     cta: { label: "Explore UI icons", href: "/ui" },
     ctaSecondary: { label: "How it works", href: "/ui/docs" },

@@ -8,10 +8,10 @@
     <lastBuildDate>Mon, 26 Oct 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://thesvg.org/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>Introducing UI Icons on theSVG</title>
+      <title>theSVG 4.0 is here, with UI icons</title>
       <link>https://thesvg.org/blog/introducing-ui-icons</link>
       <guid isPermaLink="true">https://thesvg.org/blog/introducing-ui-icons</guid>
-      <description>theSVG now has a UI icons section: 129 icons drawn on a 24 grid, seven looks from one drawing, and a style lab that saves its settings in the URL.</description>
+      <description>theSVG 4.0 adds a second section: 129 UI icons drawn on a 24 grid, seven looks from one drawing, a style lab, and new packages for React, Vue, Svelte and React Native.</description>
       <pubDate>Mon, 26 Oct 2026 00:00:00 GMT</pubDate>
             <author>team@thesvg.org (theSVG Team)</author>
       <category>launch</category>
