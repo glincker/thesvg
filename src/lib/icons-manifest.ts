@@ -87,12 +87,18 @@ export function prefetchIconsManifest(): void {
  * O(1) slug lookup against the loaded manifest. The Map is built lazily on
  * first use. Returns null until loadIconsManifest() has resolved.
  */
-export function getIconBySlugFromManifest(slug: string): IconEntry | null {
-  if (!cachedIcons) return null;
+export function getIconsBySlugMap(): Map<string, IconEntry> {
+  if (!cachedIcons) return new Map();
   if (!iconsBySlugCache) {
     const map = new Map<string, IconEntry>();
-    for (const icon of cachedIcons) map.set(icon.slug, icon);
+    for (let i = 0; i < cachedIcons.length; i++) {
+      map.set(cachedIcons[i].slug, cachedIcons[i]);
+    }
     iconsBySlugCache = map;
   }
-  return iconsBySlugCache.get(slug) ?? null;
+  return iconsBySlugCache;
+}
+
+export function getIconBySlugFromManifest(slug: string): IconEntry | null {
+  return getIconsBySlugMap().get(slug) ?? null;
 }

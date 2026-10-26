@@ -29,7 +29,7 @@ import { useSearchStore } from "@/lib/stores/search-store";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import type { Collection, IconEntry } from "@/lib/icons";
 import { COLLECTIONS_LIST } from "@/lib/collections-meta";
-import { loadIconsManifest } from "@/lib/icons-manifest";
+import { getIconsBySlugMap, loadIconsManifest } from "@/lib/icons-manifest";
 import { useIconSearch } from "@/lib/hooks/use-icon-search";
 import { searchDocs } from "@/lib/docs-search-index";
 import { cn } from "@/lib/utils";
@@ -212,12 +212,9 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
     if (!focused || recentViewed.length === 0) return;
     let active = true;
     loadIconsManifest()
-      .then((icons) => {
+      .then(() => {
         if (!active) return;
-        const bySlug = new Map<string, IconEntry>();
-        for (let i = 0; i < icons.length; i++) {
-          bySlug.set(icons[i].slug, icons[i]);
-        }
+        const bySlug = getIconsBySlugMap();
         const resolved = recentViewed
           .map((r) => bySlug.get(r.slug))
           .filter((i): i is IconEntry => Boolean(i));
