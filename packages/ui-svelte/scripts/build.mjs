@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 import { buildSveltePackage } from "../../../scripts/ui/package-builder.mjs";
 
-buildSveltePackage(new URL("..", import.meta.url).pathname, "@thesvg/ui-svelte");
+buildSveltePackage(fileURLToPath(new URL("..", import.meta.url)), "@thesvg/ui-svelte");

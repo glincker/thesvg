@@ -85,11 +85,12 @@ async function addUiIcon(
   await assertValidLook(look);
   const meta = await fetchUiIcon(slug);
   const svg = await fetchUiSvgContent(slug, look);
-  // Outline is the default look, so it gets the plain filename like a default variant.
+  // A UI icon and a brand icon can share a name (x, github), so UI files carry a ui- prefix and never replace a brand file.
+  // Outline is the default look, so it gets the plain name like a default variant.
   const result = await writeIcon(svg, {
     dir: outputDir,
     format,
-    slug,
+    slug: `ui-${slug}`,
     variant: look === DEFAULT_LOOK ? "default" : look,
   });
   console.log(

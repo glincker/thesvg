@@ -68,7 +68,7 @@ thesvg add github vercel --format jsx --dir ./components/icons
 | `--dir` | `-d` | Output directory | `./public/icons` or `./src/icons` |
 | `--format` | `-f` | Output format: `svg`, `jsx`, `vue` | `svg` |
 
-**UI icons:** prefix a slug with `ui:` to add a UI icon instead of a brand icon. The default look is `outline`; pass `--look` for another one.
+**UI icons:** prefix a slug with `ui:` to add a UI icon instead of a brand icon. The default look is `outline`; pass `--look` for another one. UI files are written as `ui-<slug>.svg` (`ui-<slug>-glass.svg` for other looks), so a UI icon never replaces a brand icon of the same name.
 
 ```bash
 thesvg add ui:arrow-down

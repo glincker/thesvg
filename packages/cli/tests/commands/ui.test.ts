@@ -94,8 +94,8 @@ describe("thesvg add ui:<slug>", () => {
     const urls = installFetch();
     await runAdd(["ui:arrow-down", "--dir", outDir]);
     const files = await readdir(outDir);
-    assert.deepEqual(files, ["arrow-down.svg"]);
-    const body = await readFile(join(outDir, "arrow-down.svg"), "utf-8");
+    assert.deepEqual(files, ["ui-arrow-down.svg"]);
+    const body = await readFile(join(outDir, "ui-arrow-down.svg"), "utf-8");
     assert.match(body, /data-look="outline"/);
     assert.ok(urls.some((u) => u.endsWith("/src/data/ui/looks/outline.json")));
   });
@@ -103,7 +103,7 @@ describe("thesvg add ui:<slug>", () => {
   test("writes the requested look", async () => {
     installFetch();
     await runAdd(["ui:arrow-down", "--look", "glass", "--dir", outDir]);
-    const body = await readFile(join(outDir, "arrow-down-glass.svg"), "utf-8");
+    const body = await readFile(join(outDir, "ui-arrow-down-glass.svg"), "utf-8");
     assert.match(body, /data-look="glass"/);
   });
 
@@ -156,5 +156,16 @@ describe("UI fetch failure", () => {
     assert.equal(brand.total, 1);
     assert.equal(brand.icons[0]?.slug, "github");
     assert.equal(exitMock.mock.callCount(), 0);
+  });
+});
+
+describe("thesvg add ui:<slug> next to a brand icon", () => {
+  test("never overwrites a brand file that has the same name", async () => {
+    installFetch();
+    const { writeFile } = await import("node:fs/promises");
+    await writeFile(join(outDir, "arrow-down.svg"), "<svg data-brand/>");
+    await runAdd(["ui:arrow-down", "--dir", outDir]);
+    assert.equal(await readFile(join(outDir, "arrow-down.svg"), "utf-8"), "<svg data-brand/>");
+    assert.deepEqual((await readdir(outDir)).sort(), ["arrow-down.svg", "ui-arrow-down.svg"]);
   });
 });

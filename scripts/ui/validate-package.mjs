@@ -23,6 +23,12 @@ for (const icon of manifest.icons) {
   }
   if (!svelte) for (const ext of ["js", "cjs", "d.ts"]) if (!existsSync(join(dist, `${icon.slug}.${ext}`))) fail(`missing ${icon.slug}.${ext}`);
 }
+// Every instance of an icon needs its own ids. The scoper renames definitions and references together, only whole ids.
+if (existsSync(join(dist, "_scope.js"))) {
+  const { scoper } = await import(join(dist, "_scope.js"));
+  const out = scoper(["a-g", "a-m"])('<g id="a-g"/><g id="a-grid"/><rect fill="url(#a-g)" mask="url(#a-m)"/>', "u1");
+  if (out !== '<g id="a-g-u1"/><g id="a-grid"/><rect fill="url(#a-g-u1)" mask="url(#a-m-u1)"/>') fail(`scoper output is wrong: ${out}`);
+}
 const expected = manifest.icons.length * manifest.looks.length;
 if (bad) process.exit(1);
 console.log(`ok: ${expected} exports in ${pkgDir.split("/").pop()}`);
