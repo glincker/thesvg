@@ -120,6 +120,12 @@
     overflow-x: clip;
     overscroll-behavior-y: contain;
   }
+  html[data-interface-size="large"] {
+    font-size: 112.5%;
+  }
+  html[data-interface-size="larger"] {
+    font-size: 125%;
+  }
   html {
     @apply font-sans;
     /* iOS double-tap zoom dampens text resize jumps. */

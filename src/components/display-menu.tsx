@@ -14,6 +14,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { FORMAT_BUTTONS, FORMAT_LABELS } from "@/components/icons/shared/icon-constants";
+import { INTERFACE_SIZES, parseInterfaceSize } from "@/lib/interface-size";
 import { useSettingsStore, type PreviewBackground } from "@/lib/stores/settings-store";
 import { cn } from "@/lib/utils";
 
@@ -52,6 +53,8 @@ export function DisplayMenu() {
   const setDefaultCopyFormat = useSettingsStore((s) => s.setDefaultCopyFormat);
   const previewBackground = useSettingsStore((s) => s.previewBackground);
   const setPreviewBackground = useSettingsStore((s) => s.setPreviewBackground);
+  const interfaceSize = useSettingsStore((s) => s.interfaceSize);
+  const setInterfaceSize = useSettingsStore((s) => s.setInterfaceSize);
   const formatLabel = FORMAT_LABELS.get(defaultCopyFormat) || defaultCopyFormat;
 
   return (
@@ -123,6 +126,25 @@ export function DisplayMenu() {
                 aria-hidden="true"
                 className={cn("mt-0.5 h-5 w-5 shrink-0 rounded-md border border-border/60", opt.swatch)}
               />
+              <span className="flex flex-1 flex-col gap-0.5">
+                <span className="text-xs font-medium text-foreground">{opt.label}</span>
+                <span className="text-[10px] leading-relaxed text-muted-foreground/70">{opt.description}</span>
+              </span>
+            </DropdownMenuRadioItem>
+          ))}
+        </DropdownMenuRadioGroup>
+        <DropdownMenuSeparator />
+        <DropdownMenuGroup>
+          <DropdownMenuLabel className="font-normal">
+            <p className="text-xs font-semibold text-foreground">Interface size</p>
+            <p className="mt-0.5 text-[11px] font-normal text-muted-foreground">
+              Make text, icons and controls bigger, instead of zooming the page
+            </p>
+          </DropdownMenuLabel>
+        </DropdownMenuGroup>
+        <DropdownMenuRadioGroup value={interfaceSize} onValueChange={(value) => setInterfaceSize(parseInterfaceSize(value))}>
+          {INTERFACE_SIZES.map((opt) => (
+            <DropdownMenuRadioItem key={opt.id} value={opt.id} className="items-start gap-2.5 py-2">
               <span className="flex flex-1 flex-col gap-0.5">
                 <span className="text-xs font-medium text-foreground">{opt.label}</span>
                 <span className="text-[10px] leading-relaxed text-muted-foreground/70">{opt.description}</span>
