@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "kind": "ui",
+  "looks": [
+    "outline",
+    "glass",
+    "duotone",
+    "offset",
+    "fill",
+    "pixel",
+    "depth"
+  ],
+  "files": "/ui/{slug}/{look}.svg",
+  "sets": [
+    {
+      "id": "launch",
+      "name": "Launch set",
+      "releaseDate": "2026-10-26",
+      "count": 3
+    },
+    {
+      "id": "space",
+      "name": "Space and robotics",
+      "releaseDate": "2026-10-26",
+      "count": 1
+    }
+  ],
+  "icons": [
+    {
+      "slug": "activity",
+      "title": "Activity",
+      "category": "Charts",
+      "tags": [
+        "pulse",
+        "heartbeat",
+        "status"
+      ],
+      "set": "launch",
+      "releasedOn": "2026-10-26"
+    },
+    {
+      "slug": "antenna",
+      "title": "Antenna",
+      "category": "General",
+      "tags": [
+        "signal",
+        "broadcast",
+        "radio",
+        "tower"
+      ],
+      "set": "space",
+      "releasedOn": "2026-10-26"
+    },
+    {
+      "slug": "arrow-down",
+      "title": "Arrow Down",
+      "category": "Arrows",
+      "tags": [
+        "down",
+        "decrease",
+        "bottom"
+      ],
+      "set": "launch",
+      "releasedOn": "2026-10-26"
+    },
+    {
+      "slug": "arrow-left",
+      "title": "Arrow Left",
+      "category": "Arrows",
+      "tags": [
+        "back",
+        "previous",
+        "return",
+        "left"
+      ],
+      "set": "launch",
+      "releasedOn": "2026-10-26"
+    }
+  ]
+}

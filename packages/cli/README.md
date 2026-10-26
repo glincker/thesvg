@@ -68,6 +68,19 @@ thesvg add github vercel --format jsx --dir ./components/icons
 | `--dir` | `-d` | Output directory | `./public/icons` or `./src/icons` |
 | `--format` | `-f` | Output format: `svg`, `jsx`, `vue` | `svg` |
 
+**UI icons:** prefix a slug with `ui:` to add a UI icon instead of a brand icon. The default look is `outline`; pass `--look` for another one.
+
+```bash
+thesvg add ui:arrow-down
+thesvg add ui:arrow-down --look glass
+```
+
+| Flag | Description | Default |
+|------|-------------|---------|
+| `--look` | UI look: `outline`, `glass`, `duotone`, `offset`, `fill`, `pixel`, `depth`. An unknown look is rejected with the valid list. | `outline` |
+
+UI icons use `currentColor` and are 24x24. Non-outline looks are saved as `<slug>-<look>.svg`. The UI index is fetched only when a UI command runs, so brand commands never depend on it.
+
 **Output directory detection:**
 
 - If a `public/` directory exists (Next.js, Vite, Astro): saves to `./public/icons/`
@@ -90,6 +103,10 @@ thesvg list --category "Version Control"
 
 # Show more results
 thesvg list --limit 200
+
+# List UI icons instead of brand icons
+thesvg list --ui
+thesvg list --ui --category Arrows
 ```
 
 **Options:**
@@ -98,6 +115,7 @@ thesvg list --limit 200
 |------|-------|-------------|---------|
 | `--category` | `-c` | Filter by category name | - |
 | `--limit` | `-l` | Max results to display | `50` |
+| `--ui` | | List UI icons instead of brand icons | off |
 
 ---
 
@@ -114,6 +132,9 @@ thesvg search "version control"
 
 # Show more results
 thesvg search cloud --limit 30
+
+# Search UI icons (name, category and tags)
+thesvg search arrow --ui
 ```
 
 **Options:**
@@ -121,6 +142,7 @@ thesvg search cloud --limit 30
 | Flag | Alias | Description | Default |
 |------|-------|-------------|---------|
 | `--limit` | `-l` | Max results to display | `20` |
+| `--ui` | | Search UI icons instead of brand icons | off |
 
 ---
 

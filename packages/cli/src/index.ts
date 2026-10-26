@@ -17,7 +17,7 @@ ${colorize("bold", "USAGE")}
 
 ${colorize("bold", "COMMANDS")}
 
-  ${colorize("cyan", "add")} <slug> [slug...]    Add one or more icons to your project
+  ${colorize("cyan", "add")} <slug> [slug...]    Add one or more icons to your project (ui:<slug> for UI icons)
   ${colorize("cyan", "list")} [options]          List available icons (with optional category filter)
   ${colorize("cyan", "search")} <query>          Search icons by name or keyword
 
@@ -41,6 +41,15 @@ ${colorize("bold", "EXAMPLES")}
   ${dim("# Add a specific variant")}
   thesvg add github --variant dark
 
+  ${dim("# Add a UI icon in a specific look")}
+  thesvg add ui:arrow-down --look glass
+
+  ${dim("# List UI icons, optionally by category")}
+  thesvg list --ui --category Arrows
+
+  ${dim("# Search UI icons")}
+  thesvg search arrow --ui
+
   ${dim("# List all icons")}
   thesvg list
 
@@ -55,15 +64,18 @@ ${colorize("bold", "ADD OPTIONS")}
   --variant, -v <name>    Icon variant: default, light, dark, mono, wordmark (default: default)
   --dir,     -d <path>    Output directory (default: ./public/icons or ./src/icons)
   --format,  -f <fmt>     Output format: svg, jsx, vue (default: svg)
+  --look <name>           UI icons only (ui:<slug>): outline, glass, duotone, offset, fill, pixel, depth (default: outline)
 
 ${colorize("bold", "LIST OPTIONS")}
 
   --category, -c <name>   Filter by category name
   --limit,    -l <n>      Max results to show (default: 50)
+  --ui                    List UI icons instead of brand icons
 
 ${colorize("bold", "SEARCH OPTIONS")}
 
   --limit, -l <n>         Max results to show (default: 20)
+  --ui                    Search UI icons instead of brand icons
 
 ${colorize("bold", "FLAGS")}
 
