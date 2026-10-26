@@ -214,7 +214,8 @@ end
 
 -- UI icons: separate kind with its own CDN path and a look per icon.
 -- SVGs use currentColor, so the inserted text is left untouched.
-local UI_CDN_BASE = "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/ui"
+-- The per-icon files are served by the site, not committed to the repo.
+local UI_CDN_BASE = "https://thesvg.org/ui"
 
 ---@param slug string
 ---@param look string

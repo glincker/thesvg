@@ -16,7 +16,7 @@ function stubFetch(opts: { uiDown?: boolean } = {}) {
         if (opts.uiDown) throw new Error("ECONNREFUSED");
         return new Response(JSON.stringify(fixture), { status: 200 });
       }
-      const m = /\/public\/ui\/([^/]+)\/([^/]+)\.svg$/.exec(url);
+      const m = /\/ui\/([^/]+)\/([^/]+)\.svg$/.exec(url);
       if (m) return new Response(`<svg data-look="${m[2]}"/>`, { status: 200 });
       return new Response("", { status: 404 });
     })
@@ -51,7 +51,7 @@ describe("UI tools", () => {
     const glass = await uiGet("arrow-down", "glass");
     expect(glass.isError).toBeUndefined();
     expect(textOf(glass)).toContain('data-look="glass"');
-    expect(calls.some((u) => u.endsWith("/public/ui/arrow-down/glass.svg"))).toBe(true);
+    expect(calls.some((u) => u.endsWith("/ui/arrow-down/glass.svg"))).toBe(true);
 
     const outline = await uiGet("arrow-down", "outline");
     expect(textOf(outline)).toContain('data-look="outline"');

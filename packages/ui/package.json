@@ -15,6 +15,7 @@
   "keywords": ["svg", "icons", "ui-icons", "currentcolor", "tree-shakeable"],
   "exports": {
     "./ui-icons.json": "./dist/ui-icons.json",
+    "./looks/*": "./dist/looks/*",
     "./svg/*": "./dist/svg/*",
     "./package.json": "./package.json"
   },

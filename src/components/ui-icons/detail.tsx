@@ -303,7 +303,7 @@ export function Detail({ glyph }: { glyph: GlyphData }) {
 
           <div className="grid min-w-0 grid-cols-1 gap-2">
             <CommandRow tag="CLI" text={`npx @thesvg/cli add ui:${glyph.slug}${ui.variant === "outline" ? "" : ` --look ${ui.variant}`}`} />
-            <CommandRow tag="CDN" text={`cdn.jsdelivr.net/gh/glincker/thesvg@main/public/ui/${glyph.slug}/${ui.variant}.svg`} />
+            <CommandRow tag="CDN" text={`thesvg.org/ui/${glyph.slug}/${ui.variant}.svg`} />
           </div>
 
           <CodeBlock svg={svg} slug={glyph.slug} />

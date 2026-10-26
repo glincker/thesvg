@@ -119,8 +119,9 @@ async function fetchUiIndex(token?: vscode.CancellationToken): Promise<UiIndex |
   }
 }
 
+// The per-icon files are served by the site, not committed to the repo.
 function getUiSvgUrl(slug: string, look: string): string {
-  return `${CDN}/public/ui/${slug}/${look}.svg`;
+  return `${BASE_URL}/ui/${slug}/${look}.svg`;
 }
 
 function brandTarget(icon: IconEntry): Target {

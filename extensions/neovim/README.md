@@ -99,7 +99,7 @@ https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/{slug}/{variant}.s
 UI icon URL format:
 
 ```
-https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/ui/{slug}/{look}.svg
+https://thesvg.org/ui/{slug}/{look}.svg
 ```
 
 ## Keybinding examples

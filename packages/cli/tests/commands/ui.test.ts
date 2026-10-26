@@ -11,6 +11,7 @@ import { fetchIconList, __resetCachedRegistryForTest } from "../../src/utils/api
 import {
   fetchUiIconList,
   __resetCachedUiIndexForTest,
+  __resetUiLookCacheForTest,
 } from "../../src/utils/ui.ts";
 
 const fixture = await readFile(
@@ -55,11 +56,11 @@ function installFetch(opts: { uiDown?: boolean } = {}): string[] {
       throw new Error("ECONNREFUSED");
     }
     if (url.endsWith("/src/data/ui-icons.json")) return jsonResponse(fixture);
-    if (url.includes("/public/ui/")) {
-      const [, slug, file] = /\/public\/ui\/([^/]+)\/([^/]+)\.svg$/.exec(url) ?? [];
-      return new Response(`<svg data-slug="${slug}" data-look="${file}"/>`, {
-        status: 200,
-      });
+    if (url.includes("/src/data/ui/looks/")) {
+      const look = /\/looks\/([^/]+)\.json$/.exec(url)?.[1] ?? "";
+      const body: Record<string, string> = {};
+      for (const icon of (JSON.parse(fixture) as { icons: { slug: string }[] }).icons) body[icon.slug] = `<svg data-slug="${icon.slug}" data-look="${look}"/>`;
+      return jsonResponse(body);
     }
     return new Response("", { status: 404 });
   }) as typeof fetch;
@@ -70,6 +71,7 @@ beforeEach(async () => {
   outDir = await mkdtemp(join(tmpdir(), "thesvg-ui-"));
   __resetCachedRegistryForTest();
   __resetCachedUiIndexForTest();
+  __resetUiLookCacheForTest();
   errors = [];
   exitMock = mock.method(process, "exit", (code: number) => {
     throw new Error(`exit ${code}`);
@@ -95,7 +97,7 @@ describe("thesvg add ui:<slug>", () => {
     assert.deepEqual(files, ["arrow-down.svg"]);
     const body = await readFile(join(outDir, "arrow-down.svg"), "utf-8");
     assert.match(body, /data-look="outline"/);
-    assert.ok(urls.some((u) => u.endsWith("/public/ui/arrow-down/outline.svg")));
+    assert.ok(urls.some((u) => u.endsWith("/src/data/ui/looks/outline.json")));
   });
 
   test("writes the requested look", async () => {

@@ -6,6 +6,8 @@ import Fuse from "fuse.js";
 
 // UI data is not part of the bundled brand registry, so it reads from main.
 export const UI_CDN_BASE = "https://cdn.jsdelivr.net/gh/glincker/thesvg@main";
+// The per-icon SVG files are build artifacts served by the site, not committed, so links point there.
+export const UI_SITE_BASE = "https://thesvg.org";
 export const UI_INDEX_URL = `${UI_CDN_BASE}/src/data/ui-icons.json`;
 export const DEFAULT_LOOK = "outline";
 
@@ -91,7 +93,7 @@ export async function loadUiIndex(): Promise<UiIndex> {
 }
 
 export function buildUiUrl(slug: string, look: string): string {
-  return `${UI_CDN_BASE}/public/ui/${encodeURIComponent(slug)}/${encodeURIComponent(look)}.svg`;
+  return `${UI_SITE_BASE}/ui/${encodeURIComponent(slug)}/${encodeURIComponent(look)}.svg`;
 }
 
 export async function searchUiIcons(query: string, limit = 20): Promise<UiIcon[]> {

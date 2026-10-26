@@ -40,8 +40,8 @@ const CATEGORIES: Category[] = [
     description: "Find and insert icons without leaving your tools",
     icon: <Palette className="h-5 w-5" />,
     items: [
-      { name: "Figma", description: "Switch the plugin to UI icons, pick one of seven looks and a color, and insert it as a vector.", status: "available", cta: "Open plugin", href: "https://www.figma.com/community/plugin/1612997159050367763", iconSlug: "figma" },
-      { name: "Raycast", description: "Search brand and UI icons from one command. Pick a look, then copy SVG, JSX or the CDN link.", status: "available", cta: "Install", href: "https://www.raycast.com/thegdsks/thesvg", iconSlug: "raycast" },
+      { name: "Figma", description: "Browse UI icons in the plugin, pick one of seven looks and a color, and insert it as a vector.", status: "coming-soon", cta: "Get the plugin", href: "https://www.figma.com/community/plugin/1612997159050367763", iconSlug: "figma" },
+      { name: "Raycast", description: "Search brand and UI icons from one command. Pick a look, then copy SVG, JSX or the CDN link.", status: "coming-soon", cta: "Get the extension", href: "https://www.raycast.com/thegdsks/thesvg", iconSlug: "raycast" },
       { name: "Alfred", description: "Type ui and a word, press Tab for every look, Enter to copy.", status: "available", cta: "Get workflow", href: "https://github.com/GLINCKER/thesvg/tree/main/extensions/alfred", iconSlug: "alfred" },
     ],
   },
@@ -99,20 +99,20 @@ export default function UiExtensionsPage() {
             <h2 className="text-lg font-semibold">Build your own</h2>
           </div>
           <p className="mb-6 max-w-2xl text-sm text-muted-foreground">
-            The files and the manifest are open on the CDN with no auth. Build a plugin or workflow, then open a PR to list it here.
+            Every icon file, the manifest and one JSON file per look (every icon in that look, slug to SVG) are open with no auth. Build a plugin or workflow, then open a PR to list it here.
           </p>
           <div className="mb-6 space-y-1.5 rounded-lg border border-border/40 bg-background/50 p-4 font-mono text-xs">
             <div className="flex gap-3">
               <span className="w-8 shrink-0 text-orange-500/80">GET</span>
-              <span className="min-w-0 break-all text-muted-foreground">cdn.jsdelivr.net/gh/glincker/thesvg@main/public/ui/<span className="text-foreground/60">{"{slug}"}</span>/<span className="text-foreground/60">{"{look}"}</span>.svg</span>
+              <span className="min-w-0 break-all text-muted-foreground">thesvg.org/ui/<span className="text-foreground/60">{"{slug}"}</span>/<span className="text-foreground/60">{"{look}"}</span>.svg</span>
+            </div>
+            <div className="flex gap-3">
+              <span className="w-8 shrink-0 text-orange-500/80">GET</span>
+              <span className="min-w-0 break-all text-muted-foreground">cdn.jsdelivr.net/gh/glincker/thesvg@main/src/data/ui/looks/<span className="text-foreground/60">{"{look}"}</span>.json</span>
             </div>
             <div className="flex gap-3">
               <span className="w-8 shrink-0 text-orange-500/80">GET</span>
               <span className="min-w-0 break-all text-muted-foreground">cdn.jsdelivr.net/gh/glincker/thesvg@main/src/data/ui-icons.json</span>
-            </div>
-            <div className="flex gap-3">
-              <span className="w-8 shrink-0 text-orange-500/80">GET</span>
-              <span className="min-w-0 break-all text-muted-foreground">thesvg.org/api/ui-icons.json</span>
             </div>
           </div>
           <div className="flex flex-wrap gap-3">

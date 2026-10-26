@@ -1,7 +1,8 @@
 // Builds everything derived from the UI icon set files in src/data/ui/sets:
 //   src/data/ui-icons.json          the manifest every extension and package reads
-//   public/ui/<slug>/<look>.svg     one file per icon and look, served from the CDN
+//   src/data/ui/looks/<look>.json   every icon rendered in one look, slug to full SVG text, one icon per line
 //   src/lib/ui-icons/sets.generated.ts   the site's import list for the set files
+// The per-icon .svg files (public/ui) are not committed. `pnpm ui:svgs` writes them from the look files for the site build.
 // Run `pnpm ui:build` after adding or changing a set file. `--check` fails if the committed output is stale.
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
@@ -36,19 +37,21 @@ for (const s of sets) {
 }
 
 const out = new Map<string, string>();
+const looks = new Map<string, string[]>(VARIANTS.map((l) => [l, []]));
 const icons: { slug: string; title: string; category: string; tags: string[]; set: string; releasedOn: string }[] = [];
 for (const s of sets) {
   for (const g of s.glyphs) {
     for (const look of VARIANTS) {
       const svg = renderIcon(g.nodes, { variant: look, style: styleFor(look), size: 24, idPrefix: `${g.slug}-${look}` }).svg;
       if (!svg.startsWith("<svg") || svg.includes("NaN")) throw new Error(`bad svg for ${g.slug} ${look}`);
-      out.set(`public/ui/${g.slug}/${look}.svg`, `${svg}\n`);
+      looks.get(look)?.push(`  ${JSON.stringify(g.slug)}: ${JSON.stringify(svg)}`);
     }
     icons.push({ slug: g.slug, title: g.slug.split("-").map((p) => p[0].toUpperCase() + p.slice(1)).join(" "), category: categoryOf(g.slug), tags: g.tags, set: s.id, releasedOn: s.releaseDate });
   }
 }
 icons.sort((a, b) => a.slug.localeCompare(b.slug));
-const manifest = { version: 1, kind: "ui", looks: VARIANTS, files: "/ui/{slug}/{look}.svg", sets: sets.map((s) => ({ id: s.id, name: s.name, releaseDate: s.releaseDate, count: s.glyphs.length })), icons };
+for (const [look, lines] of looks) out.set(`src/data/ui/looks/${look}.json`, `{\n${lines.sort().join(",\n")}\n}\n`);
+const manifest = { version: 1, kind: "ui", looks: VARIANTS, files: "/ui/{slug}/{look}.svg", lookFiles: "/src/data/ui/looks/{look}.json", sets: sets.map((s) => ({ id: s.id, name: s.name, releaseDate: s.releaseDate, count: s.glyphs.length })), icons };
 out.set("src/data/ui-icons.json", `${JSON.stringify(manifest)}\n`);
 
 // The file name is the set id, so the generated import list follows release order without a second index to keep in sync.
@@ -66,15 +69,13 @@ if (check) {
     const p = join(ROOT, rel);
     if (!existsSync(p) || readFileSync(p, "utf8") !== content) stale.push(rel);
   }
-  const onDisk = existsSync(join(ROOT, "public/ui")) ? readdirSync(join(ROOT, "public/ui")) : [];
-  for (const slug of onDisk) if (!seen.has(slug)) stale.push(`public/ui/${slug} (no set lists it)`);
   if (stale.length) {
     console.error(`UI icon output is out of date (${stale.length} files, first: ${stale.slice(0, 3).join(", ")}). Run pnpm ui:build.`);
     process.exit(1);
   }
   console.log(`ok: ${icons.length} icons x ${VARIANTS.length} looks are up to date`);
 } else {
-  rmSync(join(ROOT, "public/ui"), { recursive: true, force: true });
+  rmSync(join(ROOT, "src/data/ui/looks"), { recursive: true, force: true });
   for (const [rel, content] of out) {
     const p = join(ROOT, rel);
     mkdirSync(dirname(p), { recursive: true });

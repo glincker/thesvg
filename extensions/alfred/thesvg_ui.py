@@ -29,7 +29,8 @@ DEFAULT_LOOK = "outline"
 
 
 def ui_svg_url(slug: str, look: str) -> str:
-    return f"{CDN}/public/ui/{slug}/{look}.svg"
+    # The per-icon files are served by the site, not committed to the repo.
+    return f"https://thesvg.org/ui/{slug}/{look}.svg"
 
 
 def _read_cache() -> dict[str, Any] | None:

@@ -91,7 +91,8 @@ async function loadUiIndex(): Promise<UiIndex | null> {
 }
 
 function uiSvgUrl(slug: string, look: string): string {
-  return `${CDN}/public/ui/${slug}/${look}.svg`;
+  // The per-icon files are served by the site, not committed to the repo.
+  return `https://thesvg.org/ui/${slug}/${look}.svg`;
 }
 
 async function loadRegistry(): Promise<IconEntry[]> {

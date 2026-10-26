@@ -13,7 +13,7 @@ globalThis.fetch = async (input) => {
     if (process.env.THESVG_TEST_UI === "down") throw new Error("ECONNREFUSED");
     return new Response(fixture, { status: 200 });
   }
-  const ui = /\/public\/ui\/([^/]+)\/([^/]+)\.svg$/.exec(url);
+  const ui = /thesvg\.org\/ui\/([^/]+)\/([^/]+)\.svg$/.exec(url);
   if (ui) return new Response(`<svg data-ui="${ui[1]}" data-look="${ui[2]}"/>`);
   if (/\/public\/icons\//.test(url)) return new Response("<svg data-brand/>");
   return new Response("", { status: 404 });

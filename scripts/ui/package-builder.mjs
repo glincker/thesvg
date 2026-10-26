@@ -13,7 +13,14 @@ const inner = (svg) => svg.replace(/^<svg[^>]*>/, "").replace(/<\/svg>\s*$/, "")
 export function loadManifest() {
   return JSON.parse(readFileSync(join(ROOT, "src/data/ui-icons.json"), "utf8"));
 }
-const readSvg = (slug, look) => readFileSync(join(ROOT, "public/ui", slug, `${look}.svg`), "utf8").trim();
+const lookCache = new Map();
+/** Full SVG text for one icon in one look, read from the committed look files. */
+export function readSvg(slug, look) {
+  if (!lookCache.has(look)) lookCache.set(look, JSON.parse(readFileSync(join(ROOT, "src/data/ui/looks", `${look}.json`), "utf8")));
+  const svg = lookCache.get(look)[slug];
+  if (!svg) throw new Error(`no ${look} look for ${slug}`);
+  return svg.trim();
+}
 
 /** `import { a } from "x"` becomes `const { a } = require("x")`, which is all the small factories need. */
 const toCjs = (esm) =>

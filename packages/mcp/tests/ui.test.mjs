@@ -72,7 +72,7 @@ test("kind ui searches, gets the right look and lists categories", async () => {
       arguments: { slug: "arrow-down", kind: "ui", look: "glass" },
     });
     assert.match(textOf(glass), /data-look="glass"/);
-    assert.match(textOf(glass), /\/public\/ui\/arrow-down\/glass\.svg/);
+    assert.match(textOf(glass), /thesvg\.org\/ui\/arrow-down\/glass\.svg/);
 
     const bad = await client.callTool({
       name: "get_icon",

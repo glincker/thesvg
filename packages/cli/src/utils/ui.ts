@@ -24,6 +24,7 @@ export interface UiIndex {
   kind: string;
   looks: string[];
   files: string;
+  lookFiles?: string;
   icons: UiIcon[];
 }
 
@@ -136,28 +137,43 @@ export async function fetchUiIcon(slug: string): Promise<UiIcon> {
   return found;
 }
 
+const lookCache = new Map<string, Promise<Record<string, string>>>();
+const DEFAULT_LOOK_FILES = "/src/data/ui/looks/{look}.json";
+
+/** One request per look: every icon in that look as slug to SVG text, cached for the run. */
+function fetchLookFile(look: string, template: string): Promise<Record<string, string>> {
+  const hit = lookCache.get(look);
+  if (hit) return hit;
+  const url = `${UI_BASE_URL}${template.replace("{look}", encodeURIComponent(look))}`;
+  const pending = (async () => {
+    let response: Response;
+    try {
+      response = await fetch(url);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Unknown network error";
+      throw new ApiError(`Network error fetching UI icons from ${url}: ${message}`);
+    }
+    if (!response.ok) {
+      throw new ApiError(`Failed to fetch UI icons for look "${look}": HTTP ${response.status}`, response.status);
+    }
+    return (await response.json()) as Record<string, string>;
+  })();
+  lookCache.set(look, pending);
+  pending.catch(() => lookCache.delete(look));
+  return pending;
+}
+
+export function __resetUiLookCacheForTest(): void {
+  lookCache.clear();
+}
+
 export async function fetchUiSvgContent(
   slug: string,
   look: string = DEFAULT_LOOK
 ): Promise<string> {
-  const url = `${UI_BASE_URL}/public/ui/${encodeURIComponent(slug)}/${encodeURIComponent(look)}.svg`;
-
-  let response: Response;
-  try {
-    response = await fetch(url);
-  } catch (err) {
-    const message = err instanceof Error ? err.message : "Unknown network error";
-    throw new ApiError(`Network error fetching SVG from ${url}: ${message}`);
-  }
-
-  if (!response.ok) {
-    throw new ApiError(
-      response.status === 404
-        ? `SVG not found for UI icon "${slug}" (look: ${look})`
-        : `Failed to fetch SVG: HTTP ${response.status}`,
-      response.status
-    );
-  }
-
-  return response.text();
+  const index = await fetchUiIndex();
+  const icons = await fetchLookFile(look, index.lookFiles ?? DEFAULT_LOOK_FILES);
+  const svg = icons[slug];
+  if (!svg) throw new ApiError(`SVG not found for UI icon "${slug}" (look: ${look})`, 404);
+  return svg;
 }

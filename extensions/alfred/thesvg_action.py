@@ -29,7 +29,7 @@ def cdn_url(slug: str, variant: str = "default") -> str:
 
 def ui_url(slug: str, look: str = "outline") -> str:
     # UI icons live beside the brand folder and use currentColor.
-    return f"{CDN_BASE.rsplit('/', 1)[0]}/ui/{slug}/{look}.svg"
+    return f"https://thesvg.org/ui/{slug}/{look}.svg"
 
 
 def fetch_svg(url: str) -> str:
