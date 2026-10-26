@@ -33,6 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     { url: `${BASE_URL}/ui`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE_URL}/ui/docs`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE_URL}/ui/extensions`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/ui/changelog`, lastModified: now, changeFrequency: "weekly", priority: 0.6 },
     { url: `${BASE_URL}/packages`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     ...GLYPHS.filter((g) => g.released).map((g) => ({ url: `${BASE_URL}/ui/${g.slug}`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.5 })),

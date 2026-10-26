@@ -1,6 +1,6 @@
 "use client";
 
-import { Heart, LayoutGrid, Shapes, Sparkles } from "lucide-react";
+import { Blocks, Heart, LayoutGrid, Shapes, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { GLYPHS, GLYPH_BY_SLUG, VARIANTS, VIEW_SETS } from "@/lib/ui-icons/glyphs";
@@ -67,6 +67,9 @@ export function SidebarNav({ onNavigate }: { onNavigate?: () => void }) {
           onClick={() => { onNavigate?.(); ui.runOnList(() => { ui.setSet(st.id); ui.setOnlyFavorites(false); }); }}
         />
       ))}
+      <Link href="/ui/extensions" onClick={() => onNavigate?.()} className="mt-1 flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground">
+        <Blocks className="size-4" /> <span className="flex-1">Extensions</span>
+      </Link>
       <Link href="/ui/changelog" onClick={() => onNavigate?.()} className="mt-1 flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground">
         <Sparkles className="size-4" /> <span className="flex-1">What is new</span>
       </Link>
