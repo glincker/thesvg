@@ -32,7 +32,7 @@
   "files": ["dist", "README.md"],
   "scripts": {
     "build": "node scripts/build.mjs",
-    "test": "node scripts/build.mjs && node scripts/validate.mjs"
+    "test": "node scripts/build.mjs && node ../../scripts/ui/validate-package.mjs ."
   },
   "peerDependencies": { "react": ">=18" },
   "devDependencies": { "@types/react": "^19.3.0", "typescript": "^6.0.3" },
