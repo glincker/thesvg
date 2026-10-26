@@ -40,7 +40,7 @@
     "test": "node --test tests/ui.test.mjs"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.31.0",
+    "@modelcontextprotocol/sdk": "^1.32.1",
     "fuse.js": "^7.5.0",
     "zod": "^4.6.7"
   },
