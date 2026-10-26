@@ -1,0 +1,29 @@
+{
+  "name": "@thesvg/ui",
+  "version": "4.0.0",
+  "description": "UI icons from thesvg.org: raw SVG files in seven looks plus a JSON manifest",
+  "type": "module",
+  "sideEffects": false,
+  "license": "MIT",
+  "author": "thesvg.org",
+  "homepage": "https://thesvg.org/ui",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/glincker/thesvg.git",
+    "directory": "packages/ui"
+  },
+  "keywords": ["svg", "icons", "ui-icons", "currentcolor", "tree-shakeable"],
+  "exports": {
+    "./ui-icons.json": "./dist/ui-icons.json",
+    "./looks/*": "./dist/looks/*",
+    "./svg/*": "./dist/svg/*",
+    "./package.json": "./package.json"
+  },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/build.mjs --check"
+  },
+  "engines": { "node": ">=18" },
+  "publishConfig": { "provenance": true, "access": "public" }
+}

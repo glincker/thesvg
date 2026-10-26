@@ -26,12 +26,13 @@ export function CategoryPills({
       >
         <button
           type="button"
+          aria-pressed={!selected}
           onClick={() => {
             onSelect(null);
             posthog.capture("category_filtered", { category: null, action: "cleared" });
           }}
           className={cn(
-            "group relative flex shrink-0 items-center gap-1.5 overflow-hidden rounded-full border px-3 py-1 text-xs font-medium transition-all duration-200",
+            "group relative flex shrink-0 items-center gap-1.5 overflow-hidden rounded-full border px-3 py-1 text-xs font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
             !selected
               ? "border-orange-500/40 bg-gradient-to-b from-orange-500 to-orange-600 text-white shadow-[0_1px_0_0_rgba(255,255,255,0.25)_inset,0_4px_12px_-2px_rgba(249,115,22,0.5)]"
               : "border-border bg-card text-muted-foreground hover:border-foreground/50 hover:text-foreground"
@@ -49,13 +50,14 @@ export function CategoryPills({
             <button
               key={cat}
               type="button"
+              aria-pressed={active}
               onClick={() => {
                 const next = active ? null : cat;
                 onSelect(next);
                 posthog.capture("category_filtered", { category: cat, action: next === null ? "deselected" : "selected" });
               }}
               className={cn(
-                "relative shrink-0 overflow-hidden rounded-full border px-3 py-1 text-xs font-medium transition-all duration-200",
+                "relative shrink-0 overflow-hidden rounded-full border px-3 py-1 text-xs font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                 active
                   ? "border-orange-500/40 bg-gradient-to-b from-orange-500 to-orange-600 text-white shadow-[0_1px_0_0_rgba(255,255,255,0.25)_inset,0_4px_12px_-2px_rgba(249,115,22,0.5)]"
                   : "border-border bg-card text-muted-foreground hover:border-foreground/50 hover:text-foreground"

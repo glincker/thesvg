@@ -50,4 +50,28 @@ function M.insert_inline()
   picker.open(icons, cfg)
 end
 
+--- Open the UI icon picker. The UI index is loaded on first use; any failure
+--- is reported as one line and leaves brand search untouched.
+---@param look? string  fixed look (e.g. "fill"); prompts when omitted
+---@param mode? "url"|"inline"  overrides config.insert_mode
+function M.pick_ui(look, mode)
+  local cfg = vim.tbl_extend("force", M.config, { insert_mode = mode or M.config.insert_mode })
+  local index, err = require("thesvg.cache").get_ui_index({ ttl = cfg.cache_ttl })
+  if not index then
+    vim.notify("[thesvg] " .. err, vim.log.levels.WARN)
+    return
+  end
+  if look and look ~= "" and not vim.tbl_contains(index.looks, look) then
+    vim.notify("[thesvg] unknown look '" .. look .. "', use one of: " .. table.concat(index.looks, ", "), vim.log.levels.WARN)
+    return
+  end
+  require("thesvg.picker").open_ui(index, cfg, look)
+end
+
+--- Known look names for command completion (no network; cache only).
+---@return string[]
+function M.ui_looks()
+  return { "outline", "glass", "duotone", "offset", "fill", "pixel", "depth" }
+end
+
 return M

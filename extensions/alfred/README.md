@@ -1,6 +1,6 @@
 # theSVG Alfred Workflow
 
-Search and copy brand SVGs from [thesvg.org](https://thesvg.org) directly from Alfred 5.
+Search and copy brand SVGs, plus a growing set of UI icons, from [thesvg.org](https://thesvg.org) directly from Alfred 5.
 
 ## Install
 
@@ -40,6 +40,23 @@ tsvg aws
 | Cmd+Enter | Copy CDN URL to clipboard |
 | Alt+Enter | Copy markdown image syntax to clipboard |
 
+### UI icons
+
+Type `ui` followed by a name to search UI icons:
+
+```
+ui bell
+ui bell fill
+```
+
+Enter copies the `outline` look. Press Tab on a result (or type the look after the
+name) to pick another look: outline, glass, duotone, offset, fill, pixel or depth.
+Cmd+Enter and Alt+Enter work the same as for brand icons. UI icons use
+`currentColor`, so the copied SVG takes the color of the surrounding text.
+
+The UI index is loaded on first use. If it cannot be fetched you get a one-line
+message in the result list and brand search is unaffected.
+
 ### Example output
 
 **Enter** copies:
@@ -64,7 +81,8 @@ The icon registry is cached at:
 ~/Library/Caches/com.glincker.thesvg-alfred/registry.json
 ```
 
-TTL is 6 hours. Delete the file to force a refresh.
+TTL is 6 hours. Delete the file to force a refresh. The UI icon index is cached
+next to it as `ui-icons.json` with the same TTL.
 
 ## Screenshot
 
@@ -75,6 +93,7 @@ TTL is 6 hours. Delete the file to force a refresh.
 | File | Purpose |
 |------|---------|
 | `thesvg_search.py` | Alfred Script Filter - searches registry, returns JSON results |
+| `thesvg_ui.py` | Alfred Script Filter for UI icons - separate index, look selection |
 | `thesvg_action.py` | Action handler - fetches SVG and copies to clipboard via pbcopy |
 | `info.plist` | Alfred 5 workflow manifest |
 | `icon.png` | Workflow icon (128x128) |

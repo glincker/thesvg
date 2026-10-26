@@ -17,6 +17,7 @@ import { useCompactHeroStore } from "@/lib/stores/compact-hero-store";
 import { useHomePrefsStore } from "@/lib/stores/home-prefs-store";
 import { cn } from "@/lib/utils";
 import { withUtm } from "@/lib/external-link";
+import { UiHeroPreview } from "@/components/ui-icons/hero-preview";
 
 import { getPopularSlugs } from "@/lib/popular-icons";
 
@@ -32,6 +33,20 @@ const POPULAR_COMMUNITY_SLUGS = getPopularSlugs("community");
 const POPULAR_AUTH_BADGES_SLUGS = getPopularSlugs("auth-badges");
 
 const ALL_SLIDES = [
+  {
+    badge: "theSVG 4.0",
+    badgeIcon: Sparkles,
+    title: "UI icons are here, in seven looks",
+    description: "A new set of interface icons, drawn on one grid and restyled live. Outline, glass, duotone, offset, fill, pixel and depth. Free to copy.",
+    cta: { label: "Explore UI icons", href: "/ui" },
+    ctaSecondary: { label: "How it works", href: "/ui/docs" },
+    gradient: "from-orange-50/60 via-background to-sky-50/30 dark:from-orange-950/25 dark:via-background dark:to-sky-950/10",
+    accent: "border-orange-200/50 bg-orange-50/80 text-orange-600 dark:border-orange-500/20 dark:bg-orange-500/10 dark:text-orange-400",
+    blob: "bg-orange-400/10 dark:bg-orange-500/5",
+    collection: "brands" as const,
+    floatSlugs: [] as string[],
+    ui: true as const,
+  },
   {
     badge: "Open Source",
     badgeIcon: Sparkles,
@@ -412,7 +427,7 @@ export function HomeHero({
       .slice(0, 12);
   }, [activeCollection, collectionIcons, recentIcons]);
 
-  const fallbackSlide = ALL_SLIDES[0];
+  const fallbackSlide = ALL_SLIDES.find((s) => s.dynamicCount) ?? ALL_SLIDES[0];
   const slide = collectionSlides.length > 0
     ? collectionSlides[currentSlide % collectionSlides.length]
     : fallbackSlide;
@@ -630,6 +645,11 @@ export function HomeHero({
               inner div holds the continuous float + resting dim opacity, so
               the two animations don't fight over the same CSS property. */}
           <div className="pointer-events-none absolute inset-0 hidden lg:block">
+            {"ui" in slide && (
+              <div key={`ui-${currentSlide}`} className="animate-float-in absolute right-10 top-1/2 -translate-y-1/2 xl:right-16">
+                <UiHeroPreview />
+              </div>
+            )}
             {floatingIcons.map((icon, i) => {
               const pos = FLOAT_POSITIONS[i];
               return (

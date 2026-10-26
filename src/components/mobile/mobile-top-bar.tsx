@@ -30,6 +30,8 @@ export function MobileTopBar() {
 
   function onChange(value: string) {
     setQuery(value);
+    // In the UI icons section the query filters UI icons in place, so typing never leaves it.
+    if (pathname.startsWith("/ui")) return;
     // If we're not on home, focusing a search jumps to home so the
     // result grid is visible. Mirrors the desktop combobox behavior.
     if (!pathname.startsWith("/") || pathname.length > 1) {

@@ -1,0 +1,41 @@
+{
+  "name": "@thesvg/ui-react",
+  "version": "4.0.0",
+  "description": "Typed React components for the UI icons from thesvg.org, one file per icon and one export per look",
+  "type": "module",
+  "sideEffects": false,
+  "license": "MIT",
+  "author": "thesvg.org",
+  "homepage": "https://thesvg.org/ui",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/glincker/thesvg.git",
+    "directory": "packages/ui-react"
+  },
+  "keywords": ["svg", "icons", "ui-icons", "react", "components", "tree-shakeable", "esm", "typescript"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.js",
+      "require": "./dist/*.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/build.mjs && node ../../scripts/ui/validate-package.mjs ."
+  },
+  "peerDependencies": { "react": ">=18" },
+  "devDependencies": { "@types/react": "^19.3.0", "typescript": "^6.0.3" },
+  "engines": { "node": ">=18" },
+  "publishConfig": { "provenance": true, "access": "public" }
+}

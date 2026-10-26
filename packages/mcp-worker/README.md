@@ -18,6 +18,12 @@ Exposes the same five tools as `packages/mcp`, adapted for the edge runtime:
 | `get_icon_url` | Get a `thesvg.org` CDN URL for embedding (no SVG fetch) |
 | `list_categories` | List all icon categories with counts |
 
+## UI icons (`kind`)
+
+Every tool also accepts an optional `kind` parameter: `"brand"` (default, identical to previous behavior) or `"ui"` for the UI icon set. `get_icon` and `get_icon_url` take an optional `look` for UI icons (`outline` by default, also `glass`, `duotone`, `offset`, `fill`, `pixel`, `depth`); an unknown look returns an error listing the valid ones. For `kind: "ui"`, `list_variants` lists looks and `list_categories` counts UI categories.
+
+The UI index is a separate file (`https://cdn.jsdelivr.net/gh/glincker/thesvg@main/src/data/ui-icons.json`). It is fetched lazily on the first UI request and cached in memory. If that fetch fails, only UI requests return an error; brand tools never depend on it.
+
 ## Runtime approach
 
 Cloudflare deprecated the Durable-Object-backed `McpAgent` class in Agents SDK v0.20.0 (2026-07-27) in favor of a stateless `createMcpHandler(factory)` built on MCP SDK v2 (`@modelcontextprotocol/server`), which ships a `workerd` export condition specifically for the Workers runtime (no `nodejs_compat` flag needed). See:
