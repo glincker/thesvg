@@ -1,5 +1,11 @@
 # @thesvg/cli
 
+## 0.8.0
+
+### Minor Changes
+
+- [#1408](https://github.com/glincker/thesvg/pull/1408) [`e6a825f`](https://github.com/glincker/thesvg/commit/e6a825f21b0de10f2a4df4dbcee0ba30a086bfa3) Thanks [@thegdsks](https://github.com/thegdsks)! - Add UI icon support. The CLI gains `add ui:<slug> [--look <look>]`, `list --ui` and `search --ui`. The MCP server gains an optional `kind` parameter (`brand` by default, or `ui`) and a `look` parameter. Existing calls behave exactly as before.
+
 ## 0.7.5
 
 ### Patch Changes
