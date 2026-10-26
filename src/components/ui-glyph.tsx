@@ -11,8 +11,9 @@ function markup(name: string, look: Variant): string | null {
   if (hit) return hit;
   const glyph = GLYPH_BY_SLUG.get(name);
   if (!glyph) return null;
-  // The size comes from the wrapper's class, so strip the fixed width and height from the root.
-  const svg = renderIcon(glyph.nodes, { variant: look, style: styleFor(look), size: 24, idPrefix: `g-${name}-${look}` }).svg.replace(/ width="24" height="24"/, "");
+  // The size comes from the wrapper's class, so the fixed width and height go. The size-full class on the svg also keeps
+  // buttons that force a size on bare svgs (our Button does) from shrinking it.
+  const svg = renderIcon(glyph.nodes, { variant: look, style: styleFor(look), size: 24, idPrefix: `g-${name}-${look}` }).svg.replace(/ width="24" height="24"/, "").replace(/^<svg /, '<svg class="size-full" ');
   cache.set(key, svg);
   return svg;
 }

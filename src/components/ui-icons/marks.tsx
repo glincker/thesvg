@@ -14,13 +14,14 @@ export function TheSVGMark({ className }: { className?: string }) {
 /**
  * The UI icons mark: one square cut along its diagonal, the halves pulled apart. One half is an outline, the other
  * solid orange, so it reads as "one shape, every look" and carries our 45 degree cut. Same grammar as the brand
- * mark (outline plus orange), so the two read as one family.
+ * mark (outline plus orange), so the two read as one family. Drawn inside the same 3 to 21 box as the brand mark, so the
+ * two have the same footprint and swapping them never makes the logo jump in size.
  */
 export function UiMark({ className }: { className?: string }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" role="img" aria-label="theSVG UI icons" className={className}>
-      <path d="M1.87 1.87H19.64L1.87 19.64Z" />
-      <path d="M22.13 4.36V22.13H4.36Z" fill={ORANGE} stroke={ORANGE} />
+      <path d="M3 3H18.79L3 18.79Z" />
+      <path d="M21 5.21V21H5.21Z" fill={ORANGE} stroke={ORANGE} />
     </svg>
   );
 }
