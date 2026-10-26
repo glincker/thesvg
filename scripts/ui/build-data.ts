@@ -7,7 +7,9 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { renderIcon, type IconNode } from "@/lib/ui-icons/engine";
+import SVGPathCommander from "svg-path-commander";
+import { DEFAULT_STYLE, renderIcon, type IconNode } from "@/lib/ui-icons/engine";
+import { medianOf, qualityConfigFromEnv, scoreQuality, type Measurements } from "@/lib/ui-icons/quality";
 import { VARIANTS, categoryOf, styleFor } from "@/lib/ui-icons/style";
 
 interface SetFile {
@@ -36,19 +38,55 @@ for (const s of sets) {
   }
 }
 
+/** Bounds and ink length of the outline drawing, sampled along the path. */
+function measureGeometry(nodes: IconNode[]): Pick<Measurements, "minX" | "maxX" | "minY" | "maxY" | "length"> {
+  const d = renderIcon(nodes, { variant: "outline", style: { ...DEFAULT_STYLE, corner: "source" } }).d;
+  let minX = 99, maxX = -99, minY = 99, maxY = -99, length = 0;
+  for (const path of d) {
+    for (const part of path.split("M").filter(Boolean)) {
+      const spc = new SVGPathCommander(`M${part}`);
+      const total = spc.getTotalLength();
+      length += total;
+      const n = Math.max(2, Math.ceil(total / 0.5));
+      for (let i = 0; i <= n; i++) {
+        const p = spc.getPointAtLength((total * i) / n);
+        minX = Math.min(minX, p.x); maxX = Math.max(maxX, p.x); minY = Math.min(minY, p.y); maxY = Math.max(maxY, p.y);
+      }
+    }
+  }
+  return { minX, maxX, minY, maxY, length };
+}
+
+const qualityConfig = qualityConfigFromEnv(process.env);
+const measured = new Map<string, Measurements>();
 const out = new Map<string, string>();
 const looks = new Map<string, string[]>(VARIANTS.map((l) => [l, []]));
-const icons: { slug: string; title: string; category: string; tags: string[]; set: string; releasedOn: string }[] = [];
+const icons: { slug: string; title: string; category: string; tags: string[]; set: string; releasedOn: string; score?: number; q?: number[] }[] = [];
 for (const s of sets) {
   for (const g of s.glyphs) {
+    let looksOk = 0;
     for (const look of VARIANTS) {
       const svg = renderIcon(g.nodes, { variant: look, style: styleFor(look), size: 24, idPrefix: `${g.slug}-${look}` }).svg;
       if (!svg.startsWith("<svg") || svg.includes("NaN")) throw new Error(`bad svg for ${g.slug} ${look}`);
+      looksOk++;
       looks.get(look)?.push(`  ${JSON.stringify(g.slug)}: ${JSON.stringify(svg)}`);
     }
+    measured.set(g.slug, { ...measureGeometry(g.nodes), looksOk, looks: VARIANTS.length });
     icons.push({ slug: g.slug, title: g.slug.split("-").map((p) => p[0].toUpperCase() + p.slice(1)).join(" "), category: categoryOf(g.slug), tags: g.tags, set: s.id, releasedOn: s.releaseDate });
   }
 }
+// Quality needs the whole set for its weight check, so it is scored after every icon is measured.
+const median = medianOf([...measured.values()].map((m) => m.length));
+const low: string[] = [];
+for (const icon of icons) {
+  const m = measured.get(icon.slug);
+  if (!m) continue;
+  const { total, parts } = scoreQuality({ tags: icon.tags, category: icon.category }, m, median, qualityConfig);
+  icon.score = total;
+  icon.q = parts;
+  if (total < qualityConfig.minScore) low.push(`${icon.slug} (${total})`);
+}
+if (low.length) throw new Error(`Icons below the quality minimum of ${qualityConfig.minScore}: ${low.join(", ")}`);
 icons.sort((a, b) => a.slug.localeCompare(b.slug));
 for (const [look, lines] of looks) out.set(`src/data/ui/looks/${look}.json`, `{\n${lines.sort().join(",\n")}\n}\n`);
 const manifest = { version: 1, kind: "ui", looks: VARIANTS, files: "/ui/{slug}/{look}.svg", lookFiles: "/src/data/ui/looks/{look}.json", sets: sets.map((s) => ({ id: s.id, name: s.name, releaseDate: s.releaseDate, count: s.glyphs.length })), icons };
@@ -73,7 +111,7 @@ if (check) {
     console.error(`UI icon output is out of date (${stale.length} files, first: ${stale.slice(0, 3).join(", ")}). Run pnpm ui:build.`);
     process.exit(1);
   }
-  console.log(`ok: ${icons.length} icons x ${VARIANTS.length} looks are up to date`);
+  console.log(`ok: ${icons.length} icons x ${VARIANTS.length} looks are up to date, lowest quality ${Math.min(...icons.map((i) => i.score ?? 0))}`);
 } else {
   rmSync(join(ROOT, "src/data/ui/looks"), { recursive: true, force: true });
   for (const [rel, content] of out) {
@@ -81,5 +119,5 @@ if (check) {
     mkdirSync(dirname(p), { recursive: true });
     writeFileSync(p, content);
   }
-  console.log(`built ${icons.length} icons x ${VARIANTS.length} looks from ${sets.length} sets`);
+  console.log(`built ${icons.length} icons x ${VARIANTS.length} looks from ${sets.length} sets, lowest quality ${Math.min(...icons.map((i) => i.score ?? 0))}`);
 }

@@ -1,6 +1,7 @@
 import type { IconNode } from "@/lib/ui-icons/engine";
 import { SETS } from "./sets.generated";
 import popular from "@/data/ui/popular.json";
+import manifest from "@/data/ui-icons.json";
 import { categoryOf } from "./style";
 
 export { VARIANTS, categoryOf, styleFor } from "./style";
@@ -15,6 +16,8 @@ export interface Glyph {
   released: boolean;
   isNew: boolean;
   releasedOn: string | null;
+  /** Craft score from the build, with the four parts that make it up. */
+  quality?: { score: number; parts: number[] };
 }
 
 export interface ViewSet {
@@ -29,6 +32,7 @@ export interface ViewSet {
 
 // Every set file committed under src/data/ui/sets is released. The newest release date is the "new" drop,
 // so the label never depends on today's date and server and browser always agree.
+const scores = new Map((manifest.icons as { slug: string; score?: number; q?: number[] }[]).map((i) => [i.slug, i]));
 const newest = SETS.reduce((max, s) => (s.releaseDate > max ? s.releaseDate : max), "");
 
 export const GLYPHS: Glyph[] = SETS.flatMap((s) =>
@@ -42,6 +46,7 @@ export const GLYPHS: Glyph[] = SETS.flatMap((s) =>
     released: true,
     isNew: s.releaseDate === newest,
     releasedOn: s.releaseDate,
+    quality: scores.get(g.slug)?.score !== undefined ? { score: scores.get(g.slug)?.score ?? 0, parts: scores.get(g.slug)?.q ?? [] } : undefined,
   })),
 );
 export const VIEW_SETS: ViewSet[] = SETS.map((s) => ({ id: s.id, name: s.name, note: s.note, releaseDate: s.releaseDate, released: true, isNew: s.releaseDate === newest, count: s.glyphs.length }));
