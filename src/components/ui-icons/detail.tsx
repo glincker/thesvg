@@ -11,7 +11,7 @@ import { cn } from "@/lib/ui-icons/utils";
 import { CodeBlock } from "./code-block";
 import { Glyph, svgText } from "./glyph";
 import { InContext } from "./in-context";
-import { StyleLab } from "./lab";
+import { StyleLab, StylePill } from "./lab";
 import { useUi } from "./ui-state";
 
 const SIZES = [16, 20, 24, 32, 48] as const;
@@ -298,6 +298,7 @@ export function Detail({ glyph }: { glyph: GlyphData }) {
 
           <Section title="Style" aside="saved in the page link">
             <StyleLab className="glass" />
+            <StylePill />
           </Section>
 
           <div className="grid min-w-0 grid-cols-1 gap-2">
