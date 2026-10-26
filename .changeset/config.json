@@ -7,7 +7,8 @@
   "commit": false,
   "fixed": [],
   "linked": [
-    ["@thesvg/icons", "thesvg", "@thesvg/react", "@thesvg/vue", "@thesvg/svelte", "@thesvg/react-native"]
+    ["@thesvg/icons", "thesvg", "@thesvg/react", "@thesvg/vue", "@thesvg/svelte", "@thesvg/react-native"],
+    ["@thesvg/ui", "@thesvg/ui-react", "@thesvg/ui-vue", "@thesvg/ui-svelte", "@thesvg/ui-react-native"]
   ],
   "access": "public",
   "baseBranch": "main",

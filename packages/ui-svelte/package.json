@@ -1,0 +1,61 @@
+{
+  "name": "@thesvg/ui-svelte",
+  "version": "0.1.0",
+  "description": "Typed Svelte components for the UI icons from thesvg.org, one file per icon and look",
+  "type": "module",
+  "sideEffects": false,
+  "license": "MIT",
+  "author": "thesvg.org",
+  "homepage": "https://thesvg.org/ui",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/glincker/thesvg.git",
+    "directory": "packages/ui-svelte"
+  },
+  "keywords": [
+    "svg",
+    "icons",
+    "ui-icons",
+    "svelte",
+    "components",
+    "tree-shakeable",
+    "esm",
+    "typescript"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./dist/*.svelte.d.ts",
+      "svelte": "./dist/*.svelte",
+      "default": "./dist/*.svelte"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/build.mjs && node scripts/validate.mjs"
+  },
+  "peerDependencies": {
+    "svelte": ">=4"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "provenance": true,
+    "access": "public"
+  },
+  "svelte": "./dist/index.js"
+}

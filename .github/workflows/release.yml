@@ -56,6 +56,11 @@ jobs:
           cd packages/react && npm run build && cd ../..
           cd packages/vue && npm run build && cd ../..
           cd packages/svelte && npm run build && cd ../..
+          cd packages/ui && npm run build && cd ../..
+          cd packages/ui-react && npm run build && cd ../..
+          cd packages/ui-vue && npm run build && cd ../..
+          cd packages/ui-svelte && npm run build && cd ../..
+          cd packages/ui-react-native && npm run build && cd ../..
 
       - name: Publish to npm
         # pnpm changeset publish ships README.md inside the tarball but does
