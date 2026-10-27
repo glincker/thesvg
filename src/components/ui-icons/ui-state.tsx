@@ -137,6 +137,13 @@ export function UiStateProvider({ children }: { children: React.ReactNode }) {
     window.history.replaceState(null, "", `${window.location.pathname}?${q.toString()}`);
   }, [ready, variant, accent, query, category, set, lab, brandCollection]);
 
+  // Static export cannot read ?v= on the server, so the look goes into the tab title here for analytics.
+  useEffect(() => {
+    if (!ready || pathname !== "/ui") return;
+    const look = variant.replace(/-/g, " ");
+    document.title = `${look.charAt(0).toUpperCase()}${look.slice(1)} UI Icons | theSVG`;
+  }, [ready, variant, pathname]);
+
   const value = useMemo<UiState>(
     () => ({
       variant, setVariant, accent, setAccent, query, setQuery, category, setCategory, favorites, onlyFavorites, setOnlyFavorites,

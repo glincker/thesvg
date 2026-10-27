@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!g) return {};
   const name = slug.replace(/-/g, " ");
   return {
-    title: `${name} icon`,
+    title: `${name} UI icon`,
     description: `${name} UI icon in ${VARIANTS.slice(0, -1).join(", ")} and ${VARIANTS.at(-1)}. Copy or download the SVG, themeable with currentColor.`,
   };
 }

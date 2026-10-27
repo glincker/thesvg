@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Snippet } from "@/components/ui-icons/snippet";
 
-export const metadata: Metadata = { title: "Docs", description: "Use the UI icons: install, props, looks, states, color and accessibility." };
+export const metadata: Metadata = { title: "UI Icons docs", description: "Use the UI icons: install, props, looks, states, color and accessibility." };
 
 const PROPS: [string, string, string][] = [
   ["size", "number or string", "Width and height. The icons are drawn for 16 to 48, 24 is the default."],
@@ -17,7 +17,7 @@ const LOOKS: [string, string, string][] = [
   ["Duotone", "Duotone", "A soft second tone. Good for rest and hover states and for empty states."],
   ["Offset", "Offset", "A shifted shadow tone. A friendlier look for onboarding and marketing."],
   ["Fill", "Fill", "Solid. Use it for the active or selected state. Line-only glyphs (arrows, chevrons) get a heavier outline instead."],
-  ["Pixel", "Pixel", "A grid of squares, for retro and technical interfaces."],
+  ["Glass outline", "GlassOutline", "A crisp outline over a faint pane with a thin inner highlight. Reads on light and dark pages at 16px and up."],
   ["Depth", "Depth", "An extruded body with a lit face. For large, playful uses."],
 ];
 

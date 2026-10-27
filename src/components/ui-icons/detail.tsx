@@ -206,7 +206,7 @@ function Coverage({ glyph }: { glyph: GlyphData }) {
       {open && (
         <p className="border-t px-4 py-3 text-[0.75rem] leading-relaxed text-muted-foreground">
           {lineOnly
-            ? "This is a line-only glyph, so fill, glass and depth use a heavier outline. Outline, duotone, offset and pixel draw it fully."
+            ? "This is a line-only glyph, so fill, glass and depth use a heavier outline. Outline, duotone, offset and glass outline draw it fully."
             : "Every look draws this glyph fully."}
         </p>
       )}
@@ -341,7 +341,7 @@ export function Detail({ glyph }: { glyph: GlyphData }) {
           <section className="rounded-2xl border bg-card/40 p-5 text-sm leading-relaxed text-muted-foreground">
             <h2 className="mb-2 text-sm font-semibold text-foreground">About the {title} icon</h2>
             <p>
-              The {title} icon is a {glyph.category.toLowerCase()} UI icon drawn on a 24 by 24 grid and available in {VARIANTS.length} looks: outline, glass, duotone, offset, fill, pixel and depth. It uses currentColor, so it takes the text color around it, and every look can be copied as SVG, React, Vue, Svelte, HTML or a CSS mask.
+              The {title} icon is a {glyph.category.toLowerCase()} UI icon drawn on a 24 by 24 grid and available in {VARIANTS.length} looks: outline, glass, duotone, offset, fill, glass outline and depth. It uses currentColor, so it takes the text color around it, and every look can be copied as SVG, React, Vue, Svelte, HTML or a CSS mask.
             </p>
           </section>
         </div>
