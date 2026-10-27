@@ -8324,7 +8324,8 @@
       "default": "/icons/aws/color.svg",
       "color": "/icons/aws/color.svg",
       "mono": "/icons/aws/mono.svg",
-      "icon": "/icons/aws/icon.svg"
+      "icon": "/icons/aws/icon.svg",
+      "refresh": "/icons/aws/refresh.svg"
     },
     "license": "MIT",
     "url": "https://aws.amazon.com",
@@ -104761,7 +104762,8 @@
       "Cloud"
     ],
     "variants": {
-      "default": "/icons/oracle/default.svg"
+      "default": "/icons/oracle/default.svg",
+      "icon": "/icons/oracle/icon.svg"
     },
     "license": "Fair Use",
     "url": "https://www.oracle.com",
