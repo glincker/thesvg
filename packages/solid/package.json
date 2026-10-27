@@ -1,0 +1,71 @@
+{
+  "name": "@thesvg/solid",
+  "version": "4.0.0",
+  "description": "Typed Solid SVG components for all 7,600+ brand icons from thesvg.org",
+  "type": "module",
+  "sideEffects": false,
+  "license": "MIT",
+  "author": "thesvg.org",
+  "homepage": "https://thesvg.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/glincker/thesvg.git",
+    "directory": "packages/solid"
+  },
+  "bugs": {
+    "url": "https://github.com/glincker/thesvg/issues"
+  },
+  "keywords": [
+    "svg",
+    "icons",
+    "brand",
+    "logos",
+    "solid",
+    "solidjs",
+    "components",
+    "tree-shakeable",
+    "esm",
+    "typescript"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.js",
+      "require": "./dist/*.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsx scripts/build-components.ts",
+    "validate": "tsx scripts/validate-output.ts",
+    "test": "tsx scripts/validate-output.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "solid-js": ">=1.8"
+  },
+  "devDependencies": {
+    "solid-js": "^1.9.0",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "provenance": true,
+    "access": "public"
+  }
+}
