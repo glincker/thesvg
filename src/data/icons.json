@@ -8324,7 +8324,8 @@
       "default": "/icons/aws/color.svg",
       "color": "/icons/aws/color.svg",
       "mono": "/icons/aws/mono.svg",
-      "icon": "/icons/aws/icon.svg"
+      "icon": "/icons/aws/icon.svg",
+      "refresh": "/icons/aws/refresh.svg"
     },
     "license": "MIT",
     "url": "https://aws.amazon.com",
@@ -102605,6 +102606,25 @@
     "collection": "auth-badges"
   },
   {
+    "slug": "olive-garden",
+    "title": "Olive Garden",
+    "aliases": [
+      "Olive Garden Italian Restaurant"
+    ],
+    "hex": "9FA73A",
+    "categories": [
+      "Food"
+    ],
+    "variants": {
+      "default": "/icons/olive-garden/default.svg",
+      "wordmark": "/icons/olive-garden/wordmark.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.olivegarden.com",
+    "dateAdded": "2026-10-26",
+    "collection": "brands"
+  },
+  {
     "slug": "ollama",
     "title": "Ollama",
     "aliases": [],
@@ -104761,7 +104781,8 @@
       "Cloud"
     ],
     "variants": {
-      "default": "/icons/oracle/default.svg"
+      "default": "/icons/oracle/default.svg",
+      "icon": "/icons/oracle/icon.svg"
     },
     "license": "Fair Use",
     "url": "https://www.oracle.com",
@@ -121043,6 +121064,24 @@
     "license": "CC0-1.0",
     "url": "https://serverless.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "servicenow",
+    "title": "ServiceNow",
+    "aliases": [],
+    "hex": "62D84E",
+    "categories": [
+      "Management",
+      "SaaS"
+    ],
+    "variants": {
+      "default": "/icons/servicenow/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.servicenow.com",
+    "guidelines": "https://www.servicenow.com/logousage.html",
+    "dateAdded": "2026-10-26",
     "collection": "brands"
   },
   {
