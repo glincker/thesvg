@@ -67,13 +67,13 @@ function cutWedges(shapes: Shape[], style: StyleParams, cfg: EngineConfig = DEFA
   const wedges: string[] = [];
   const wedge = (p: Pt, out: Pt): void => {
     const n = { x: -out.y, y: out.x };
-    const a = { x: p.x + n.x * hw, y: p.y + n.y * hw };
-    const b = { x: a.x - out.x * 2 * hw, y: a.y - out.y * 2 * hw };
-    const c = { x: p.x - n.x * hw, y: p.y - n.y * hw };
-    // Pad the wedge outwards so round caps and joins beyond the end are removed as well.
-    const a2 = { x: a.x + out.x * hw * 2, y: a.y + out.y * hw * 2 };
-    const c2 = { x: c.x + out.x * hw * 2, y: c.y + out.y * hw * 2 };
-    wedges.push(`<polygon points="${f(a.x)},${f(a.y)} ${f(a2.x)},${f(a2.y)} ${f(c2.x)},${f(c2.y)} ${f(c.x)},${f(c.y)} ${f(b.x)},${f(b.y)}" fill="#000"/>`);
+    // 45 degree diagonal from (+hw side, 2hw back) to (-hw side, at the end), run 0.5hw past the stroke edges
+    // on both sides: an edge lying exactly on the stroke edge leaves an antialiased hairline.
+    const at = (side: number, along: number): string => {
+      const q = { x: p.x + n.x * hw * side + out.x * hw * along, y: p.y + n.y * hw * side + out.y * hw * along };
+      return `${f(q.x)},${f(q.y)}`;
+    };
+    wedges.push(`<polygon points="${at(1.5, -2.5)} ${at(1.5, 2)} ${at(-1.5, 2.5)} ${at(-1.5, 0.5)}" fill="#000"/>`);
   };
   for (const sh of shapes) {
     for (const sp of sh.subpaths) {
