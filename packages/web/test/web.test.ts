@@ -44,8 +44,9 @@ class StubRoot {
   }
 }
 class StubDoc {
+  private readonly self: StubDoc = this;
   createElement(): { content: { firstElementChild: StubEl | null }; innerHTML: string } {
-    const doc = this;
+    const doc = this.self;
     const t = {
       content: { firstElementChild: null as StubEl | null },
       set innerHTML(html: string) {
