@@ -24,7 +24,7 @@ export type IconNode = [tag: string, attrs: Record<string, string>];
 export type CornerStyle = "source" | "sharp" | "round" | "chamfer" | "squircle";
 export type CapStyle = "round" | "butt" | "square";
 export type JoinStyle = "round" | "miter" | "bevel";
-export type Variant = "outline" | "duotone" | "offset" | "fill" | "pixel" | "glass" | "depth";
+export type Variant = "outline" | "duotone" | "offset" | "fill" | "glass" | "glass-outline" | "depth";
 
 export interface StyleParams {
   strokeWidth: number;
@@ -58,8 +58,12 @@ export interface StyleParams {
   /** Offset duotone: shift of the back layer in viewBox units. */
   offsetX: number;
   offsetY: number;
-  /** Pixel variant: cells per side across the 24 box. */
-  pixelGrid: number;
-  /** Pixel variant: share of half stroke width a cell centre may be from the line to be lit. */
-  pixelReach: number;
+  /** Glass outline: fill opacity of the translucent pane inside closed bodies. */
+  glassPane: number;
+  /** Glass outline: opacity of the inner highlight stroke, 0 turns it off. */
+  glassShine: number;
+  /** Glass outline: width of the highlight band in viewBox units. */
+  glassShineWidth: number;
+  /** Glass outline: gap between the outline and the highlight band in viewBox units. */
+  glassShineGap: number;
 }

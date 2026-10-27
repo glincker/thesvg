@@ -52,6 +52,8 @@ export const DEFAULT_STYLE: StyleParams = {
   cutTerminals: false,
   offsetX: 1.25,
   offsetY: 1.25,
-  pixelGrid: 24,
-  pixelReach: 0.95,
+  glassPane: 0.14,
+  glassShine: 0.6,
+  glassShineWidth: 0.7,
+  glassShineGap: 0.45,
 };

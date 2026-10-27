@@ -24,8 +24,6 @@ export interface RenderMeta {
   bodies: number;
   /** Shapes knocked out of a body in the fill variant. */
   holes: number;
-  /** Lit pixel runs in the pixel variant. */
-  pixelRuns: number;
   /** True when the variant needs a body but the glyph is line only, so it renders as a bolder outline. */
   fallback: boolean;
 }
@@ -58,53 +56,6 @@ function flatten(d: string, samples: number): Pt[] {
   for (let i = 0; i < samples; i++) {
     const p = spc.getPointAtLength((total * i) / samples);
     out.push({ x: p.x, y: p.y });
-  }
-  return out;
-}
-
-/** Lit cells are those whose centre lies within reach of a stroke centreline, merged into row runs. */
-function pixelPath(ds: string[], style: StyleParams, cfg: EngineConfig): string {
-  const n = Math.max(4, Math.round(style.pixelGrid));
-  const cell = cfg.viewBox / n;
-  const reach = (style.strokeWidth / 2) * style.pixelReach;
-  const lines: Pt[][] = ds.flatMap((d) =>
-    d
-      .split("M")
-      .filter(Boolean)
-      .map((part) => {
-        const spc = new SVGPathCommander(`M${part}`);
-        const total = spc.getTotalLength();
-        const count = Math.max(2, Math.ceil(total / (cell / 2)));
-        return Array.from({ length: count + 1 }, (_, i) => {
-          const q = spc.getPointAtLength((total * i) / count);
-          return { x: q.x, y: q.y };
-        });
-      }),
-  );
-  const lit: boolean[][] = [];
-  for (let r = 0; r < n; r++) {
-    const row: boolean[] = [];
-    for (let c = 0; c < n; c++) {
-      const cx = (c + 0.5) * cell;
-      const cy = (r + 0.5) * cell;
-      row.push(lines.some((l) => l.some((q) => Math.hypot(q.x - cx, q.y - cy) <= reach)));
-    }
-    lit.push(row);
-  }
-  const f = (v: number): string => String(Math.round(v * 1000) / 1000);
-  let out = "";
-  for (let r = 0; r < n; r++) {
-    let c = 0;
-    while (c < n) {
-      if (!lit[r]?.[c]) {
-        c++;
-        continue;
-      }
-      let e = c;
-      while (lit[r]?.[e + 1]) e++;
-      out += `M${f(c * cell)} ${f(r * cell)}h${f((e - c + 1) * cell)}v${f(cell)}h${f(-(e - c + 1) * cell)}z`;
-      c = e + 1;
-    }
   }
   return out;
 }
@@ -153,8 +104,8 @@ function cutMask(shapes: Shape[], style: StyleParams, cfg: EngineConfig, id: str
   return `<defs><mask id="${id}" maskUnits="userSpaceOnUse" x="-2" y="-2" width="${m + 4}" height="${m + 4}"><rect x="-2" y="-2" width="${m + 4}" height="${m + 4}" fill="#fff"/>${w}</mask></defs>`;
 }
 
-/** Blurred dark ellipse clipped to the glyph bodies, offset to the lower right, so the pane reads as thick glass. */
-function glassDepth(poly: Pt[], ds: string[], bodies: number[], gid: string, strength: number): { defs: string; layer: string } {
+/** Blurred ellipse that thins the pane towards the lower right, so it reads as thick glass. Lives in a mask, so it needs no ink color. */
+function glassDepth(poly: Pt[], gid: string, strength: number): { defs: string; mask: string } {
   const xs = poly.map((p) => p.x);
   const ys = poly.map((p) => p.y);
   const x1 = Math.max(...xs);
@@ -163,10 +114,11 @@ function glassDepth(poly: Pt[], ds: string[], bodies: number[], gid: string, str
   const w = x1 - Math.min(...xs);
   const h = y1 - y0;
   const f = (v: number): string => String(Math.round(v * 100) / 100);
-  const clip = `<clipPath id="${gid}c">${bodies.map((i) => `<path d="${ds[i]}"/>`).join("")}</clipPath>`;
   const blur = `<filter id="${gid}b" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="${f(Math.max(1.2, w * 0.12))}"/></filter>`;
-  const layer = `<g clip-path="url(#${gid}c)"><ellipse cx="${f(x1 - w * 0.08)}" cy="${f(y1 - h * 0.28)}" rx="${f(w * 0.12)}" ry="${f(h * 0.34)}" transform="rotate(25 ${f(x1 - w * 0.08)} ${f(y1 - h * 0.28)})" fill="#000" opacity="${strength}" filter="url(#${gid}b)"/></g>`;
-  return { defs: clip + blur, layer };
+  const ellipse = `<ellipse cx="${f(x1 - w * 0.08)}" cy="${f(y1 - h * 0.28)}" rx="${f(w * 0.12)}" ry="${f(h * 0.34)}" transform="rotate(25 ${f(x1 - w * 0.08)} ${f(y1 - h * 0.28)})" fill="#000" opacity="${strength}" filter="url(#${gid}b)"/>`;
+  const m = 24;
+  const mask = `<mask id="${gid}s" maskUnits="userSpaceOnUse" x="-2" y="-2" width="${m + 4}" height="${m + 4}"><rect x="-2" y="-2" width="${m + 4}" height="${m + 4}" fill="#fff"/>${ellipse}</mask>`;
+  return { defs: blur + mask, mask: `${gid}s` };
 }
 
 const f2 = (v: number): string => String(Math.round(v * 100) / 100);
@@ -203,23 +155,11 @@ export function renderIcon(nodes: IconNode[], opts: RenderOptions = {}): RenderR
     .map((d, i) => `<path d="${d}"${cuts[i] ? ` mask="url(#${opts.idPrefix ?? "m"}-c${i})"` : ""}/>`)
     .join("")}</g>`;
   const tone = /^#[0-9a-f]{6}$/i.test(style.accent) ? style.accent : "currentColor";
-  const meta: RenderMeta = { bodies: 0, holes: 0, pixelRuns: 0, fallback: false };
+  const meta: RenderMeta = { bodies: 0, holes: 0, fallback: false };
   const wrap = (inner: string): string =>
     `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${cfg.viewBox} ${cfg.viewBox}" overflow="visible">${inner}</svg>`;
 
   if (variant === "outline") return { svg: wrap(strokeAll), d: ds, anchors, handles, meta };
-
-  if (variant === "pixel") {
-    const pd = pixelPath(ds, style, cfg);
-    meta.pixelRuns = (pd.match(/M/g) ?? []).length;
-    return {
-      meta,
-      svg: wrap(`<path d="${pd}" fill="currentColor" shape-rendering="crispEdges"/>`),
-      d: ds,
-      anchors,
-      handles,
-    };
-  }
 
   const polys = ds.map((d) => flatten(d, cfg.flattenSamples * 2));
   const isBodyCandidate = (i: number): boolean => {
@@ -284,7 +224,7 @@ export function renderIcon(nodes: IconNode[], opts: RenderOptions = {}): RenderR
     // Light comes from above: the pane and the rim both fade towards the bottom.
     const defs0 = `<linearGradient id="${gid}" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="${m}"><stop offset="0" stop-color="${tone}" stop-opacity="0.78"/><stop offset="1" stop-color="${tone}" stop-opacity="0.36"/></linearGradient><linearGradient id="${gid}e" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="${m}"><stop offset="0" stop-color="currentColor" stop-opacity="${rim[0]}"/><stop offset="1" stop-color="currentColor" stop-opacity="${rim[1]}"/></linearGradient>`;
     const bodyPoly = bodies.flatMap((i) => polys[i] ?? []);
-    const depth = style.glassDepth > 0 && bodies.length > 0 && bodyPoly.length > 0 ? glassDepth(bodyPoly, ds, bodies, gid, style.glassDepth) : { defs: "", layer: "" };
+    const depth = style.glassDepth > 0 && bodies.length > 0 && bodyPoly.length > 0 ? glassDepth(bodyPoly, gid, style.glassDepth) : { defs: "", mask: "" };
     const rimIdx = [...bodies, ...free];
     const defs = `<defs>${defs0}${depth.defs}<mask id="${gid}m" maskUnits="userSpaceOnUse" x="${-margin}" y="${-margin}" width="${m + margin * 2}" height="${m + margin * 2}">${rimIdx
       .map(
@@ -310,7 +250,37 @@ export function renderIcon(nodes: IconNode[], opts: RenderOptions = {}): RenderR
     // A cut-out shows whatever is behind the icon, so it stays readable on both light and dark pages.
     const paneMask = `<mask id="${gid}p" maskUnits="userSpaceOnUse" x="-2" y="-2" width="${m + 4}" height="${m + 4}"><rect x="-2" y="-2" width="${m + 4}" height="${m + 4}" fill="#fff"/>${etch}</mask>`;
     const withMasks = defs.replace("</defs>", `${paneMask}${outsideMaskG}</defs>`);
-    return { svg: wrap(withMasks + `<g mask="url(#${gid}p)">${pane}${depth.layer}</g>` + sticking + edge), d: ds, anchors, handles, meta };
+    return { svg: wrap(withMasks + `<g mask="url(#${gid}p)">${depth.mask ? `<g mask="url(#${depth.mask})">${pane}</g>` : pane}</g>` + sticking + edge), d: ds, anchors, handles, meta };
+  }
+
+  if (variant === "glass-outline") {
+    const gid = `${opts.idPrefix ?? "m"}-o`;
+    const m = cfg.viewBox;
+    // Pane: a faint tint of the ink inside each body. Open strokes stay plain outline.
+    const pane = bodies.map((i) => `<path d="${ds[i]}" fill="currentColor" fill-opacity="${style.glassPane}" stroke="none"/>`).join("");
+    // Highlight: a thin band just inside the outline, kept to the upper left by a diagonal fade. Clip keeps it inside the body,
+    // the black stroke in the mask leaves a gap so it reads as a separate reflection line.
+    const gap = style.glassShineGap;
+    const band = Math.round((style.strokeWidth + 2 * (gap + style.glassShineWidth)) * 100) / 100;
+    const keep = Math.round((style.strokeWidth + 2 * gap) * 100) / 100;
+    const shineDefs =
+      bodies.length > 0 && style.glassShine > 0
+        ? `<defs><linearGradient id="${gid}g" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="${m}" y2="${m}"><stop offset="0.15" stop-color="#fff"/><stop offset="0.6" stop-color="#000"/></linearGradient>${bodies
+            .map(
+              (i) =>
+                `<clipPath id="${gid}c${i}"><path d="${ds[i]}"/></clipPath><mask id="${gid}m${i}" maskUnits="userSpaceOnUse" x="-2" y="-2" width="${m + 4}" height="${m + 4}"><rect x="-2" y="-2" width="${m + 4}" height="${m + 4}" fill="url(#${gid}g)"/><path d="${ds[i]}" fill="none" stroke="#000" stroke-width="${keep}" stroke-linejoin="${style.join}"/></mask>`,
+            )
+            .join("")}</defs>`
+        : "";
+    const shine = shineDefs
+      ? bodies
+          .map(
+            (i) =>
+              `<g clip-path="url(#${gid}c${i})"><path d="${ds[i]}" fill="none" stroke="${tone}" stroke-opacity="${style.glassShine}" stroke-width="${band}" stroke-linejoin="${style.join}" mask="url(#${gid}m${i})"/></g>`,
+          )
+          .join("")
+      : "";
+    return { svg: wrap(shineDefs + pane + shine + strokeAll), d: ds, anchors, handles, meta };
   }
 
   if (variant === "depth") {
@@ -328,14 +298,15 @@ export function renderIcon(nodes: IconNode[], opts: RenderOptions = {}): RenderR
     const sides = Array.from({ length: n }, (_, k) => layer(n - k, tone)).join("");
     // Face reuses the fill look, so details stay knocked out and line-only glyphs fall back to a bold outline.
     const face = renderIcon(nodes, { ...opts, variant: "fill", idPrefix: `${opts.idPrefix ?? "m"}-f` }).svg.replace(/^<svg[^>]*>/, "").replace(/<\/svg>$/, "");
-    // Light from the top left: the face fades to a darker lower right, and a thin bright edge runs along the lit sides.
+    // Light from the top left: the face fades towards the lower right. A grey mask thins it, so no fixed ink color is painted.
     const gid = `${opts.idPrefix ?? "m"}-dl`;
     const lit =
       bodies.length > 0
-        ? `<defs><linearGradient id="${gid}" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="${cfg.viewBox}" y2="${cfg.viewBox}"><stop offset="0" stop-color="#fff" stop-opacity="0.28"/><stop offset="0.5" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.34"/></linearGradient></defs>${bodies.map((b) => `<path d="${ds[b]}" fill="url(#${gid})" stroke="none"/>`).join("")}`
+        ? `<defs><linearGradient id="${gid}g" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="${cfg.viewBox}" y2="${cfg.viewBox}"><stop offset="0.3" stop-color="#fff"/><stop offset="1" stop-color="#999"/></linearGradient><mask id="${gid}" maskUnits="userSpaceOnUse" x="-2" y="-2" width="${cfg.viewBox + 4}" height="${cfg.viewBox + 4}"><rect x="-2" y="-2" width="${cfg.viewBox + 4}" height="${cfg.viewBox + 4}" fill="url(#${gid}g)"/></mask></defs>`
         : "";
+    const litFace = lit ? `<g mask="url(#${gid})">${face}</g>` : face;
     return {
-      svg: wrap(`<g opacity="0.45">${sides}</g>${face}${lit}`),
+      svg: wrap(`${lit}<g opacity="0.45">${sides}</g>${litFace}`),
       d: ds,
       anchors,
       handles,
