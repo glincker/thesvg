@@ -3,6 +3,8 @@
 import { UiGlyph } from "@/components/ui-glyph";
 import Link from "next/link";
 import { useState } from "react";
+import { formatSvg } from "@/lib/copy-formats";
+import { useSettingsStore } from "@/lib/stores/settings-store";
 import type { Glyph as GlyphData } from "@/lib/ui-icons/glyphs";
 import { cn } from "@/lib/ui-icons/utils";
 import { Glyph, svgText } from "./glyph";
@@ -13,11 +15,15 @@ export function IconCard({ glyph }: { glyph: GlyphData }) {
   const ui = useUi();
   const [copied, setCopied] = useState(false);
   const [preview, setPreview] = useState(false);
+  const defaultCopyFormat = useSettingsStore((st) => st.defaultCopyFormat);
+  const previewBackground = useSettingsStore((st) => st.previewBackground);
   const fav = ui.favorites.includes(glyph.slug);
 
   const copy = async () => {
     try {
-      await navigator.clipboard.writeText(svgText(glyph.nodes, ui.variant, 24, ui.accent, ui.lab, glyph.slug));
+      const svg = svgText(glyph.nodes, ui.variant, 24, ui.accent, ui.lab, glyph.slug);
+      // UI icons are not on the brand CDN, so the CDN format falls back to raw SVG.
+      await navigator.clipboard.writeText(formatSvg(svg, defaultCopyFormat === "cdn" ? "svg" : defaultCopyFormat, glyph.slug, ui.variant));
       setCopied(true);
       window.setTimeout(() => setCopied(false), 1400);
     } catch {
@@ -38,8 +44,8 @@ export function IconCard({ glyph }: { glyph: GlyphData }) {
       {/* Light from the top edge that fades in on hover, the same lit-glass cue the look tiles use. */}
       <span aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-28 opacity-0 transition-opacity duration-300 [background:radial-gradient(ellipse_70%_100%_at_50%_0%,rgba(249,115,22,0.22),transparent_72%)] group-hover/card:opacity-100" />
       <span aria-hidden="true" className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-orange-400/70 to-transparent opacity-0 transition-opacity duration-300 group-hover/card:opacity-100" />
-      <Link href={`/ui/${glyph.slug}`} className="relative flex h-24 items-center justify-center bg-gradient-to-b from-foreground/[0.07] to-transparent">
-        <Glyph nodes={glyph.nodes} variant={ui.variant} size={44} accent={ui.accent} className="text-foreground transition-transform duration-200 group-hover/card:scale-110" />
+      <Link href={`/ui/${glyph.slug}`} data-preview={previewBackground} className={cn("relative flex h-24 items-center justify-center", previewBackground === "auto" ? "bg-gradient-to-b from-foreground/[0.07] to-transparent" : "icon-preview-bg")}>
+        <Glyph nodes={glyph.nodes} variant={ui.variant} size={44} accent={ui.accent} className={cn("transition-transform duration-200 group-hover/card:scale-110", previewBackground === "light" ? "text-neutral-900" : previewBackground === "dark" ? "text-neutral-50" : "text-foreground")} />
         {!glyph.released && (
           <span className={cn("absolute left-2 top-2 rounded-full border px-2 py-0.5 text-[0.75rem] font-medium", "border-foreground/15 bg-background/60 text-muted-foreground")}>
             {glyph.setId === "backlog" ? "Backlog" : "Draft"}
