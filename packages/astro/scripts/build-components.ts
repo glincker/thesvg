@@ -21,14 +21,14 @@ import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { publicSvgReader } from "../../icons/scripts/lib/public-svg.ts";
 import { primarySvg } from "../../icons/scripts/lib/variants.ts";
+import { makeReader, parseSvg, type SvgNode } from "./lib/svg-tree.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const PKG_ROOT = resolve(__dirname, "..");
 const REPO_ROOT = resolve(PKG_ROOT, "../..");
-const readPublicSvg = publicSvgReader(join(REPO_ROOT, "public"));
+const readPublicSvg = makeReader(REPO_ROOT);
 const ICONS_JSON = join(REPO_ROOT, "src/data/icons.json");
 const DIST = join(PKG_ROOT, "dist");
 
@@ -42,21 +42,17 @@ interface RawIcon {
 // SVG parsing helpers
 // ---------------------------------------------------------------------------
 
-function extractViewBox(svg: string): string {
-  const match = svg.match(/<svg[^>]*?\bviewBox=["']([^"']+)["']/s);
-  return match ? match[1] : "0 0 24 24";
-}
-
-function extractRootTag(svg: string): string {
-  const match = svg.match(/<svg[^>]*>/s);
-  return match ? match[0] : "";
-}
-
-function extractInner(svg: string): string {
-  return svg
-    .replace(/^<svg[^>]*>/s, "")
-    .replace(/<\/svg>\s*$/, "")
-    .trim();
+/** Re-serializes the parsed tree (styles already baked in, nested <svg> kept). */
+function serialize(nodes: (SvgNode | string)[]): string {
+  return nodes
+    .map((n) => {
+      if (typeof n === "string") return n;
+      const attrs = Object.entries(n.props)
+        .map(([k, v]) => ` ${k}="${v.replace(/"/g, "&quot;")}"`)
+        .join("");
+      return n.children.length > 0 ? `<${n.type}${attrs}>${serialize(n.children)}</${n.type}>` : `<${n.type}${attrs}/>`;
+    })
+    .join("");
 }
 
 /** Drop <title> so the icon does not show a tooltip; aria props are the caller's. */
@@ -89,7 +85,7 @@ function namespaceIds(inner: string, slug: string): string {
     const escaped = id.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     out = out
       .replace(new RegExp(`(\\sid=["'])${escaped}(["'])`, "g"), `$1${prefix}${id}$2`)
-      .replace(new RegExp(`url\\(#${escaped}\\)`, "g"), `url(#${prefix}${id})`)
+      .replace(new RegExp(`url\\((\\s*(?:&quot;|["'])?)#${escaped}(?=["'&)\\s])`, "g"), `url($1#${prefix}${id}`)
       .replace(new RegExp(`((?:xlink:)?href=["'])#${escaped}(["'])`, "g"), `$1#${prefix}${id}$2`);
   }
   return out;
@@ -111,15 +107,11 @@ function generateAstroComponent(icon: RawIcon): string | null {
   const svg = primarySvg(icon.variants, readPublicSvg);
   if (!svg) return null;
 
-  const viewBox = extractViewBox(svg);
-  const rootTag = extractRootTag(svg);
-  const rootFill = rootTag.match(/\sfill=["']([^"']+)["']/)?.[1];
-  const hasRootStroke = /\sstroke=["']/.test(rootTag);
-  const inner = namespaceIds(stripTitle(extractInner(svg)), icon.slug);
+  const parsed = parseSvg(svg);
+  const { viewBox, fill } = parsed;
+  const { class: rootClass, style: rootStyle, ...rootAttrs } = parsed.attrs;
+  const inner = namespaceIds(stripTitle(serialize(parsed.childNodes)), icon.slug);
   const mono = isMono(inner);
-  // Mono icons paint with currentColor so `color` and CSS text color apply.
-  const strokeOnly = hasRootStroke || /\sstroke=/.test(inner);
-  const fill = rootFill === "none" && mono && !strokeOnly ? "currentColor" : (rootFill ?? (strokeOnly ? "none" : "currentColor"));
 
   // The markup goes in via set:html because Astro would otherwise parse
   // braces and <style>/<script> inside the SVG as template syntax.
@@ -136,9 +128,22 @@ function generateAstroComponent(icon: RawIcon): string | null {
     `}`,
     ``,
     `const { size = "1em", color, class: className, style, ...rest } = Astro.props;`,
-    `const inlineStyle = [color ? \`color:\${color}\` : "", typeof style === "string" ? style : ""]`,
+    `// Style may be a string or an object (kebab-case or camelCase keys).`,
+    `const styleText =`,
+    `  style && typeof style === "object"`,
+    `    ? Object.entries(style)`,
+    `        .filter(([, v]) => v !== null && v !== undefined && v !== "")`,
+    `        .map(([k, v]) => \`\${k.startsWith("--") ? k : k.replace(/[A-Z]/g, (m) => "-" + m.toLowerCase())}:\${v}\`)`,
+    `        .join(";")`,
+    `    : typeof style === "string"`,
+    `      ? style`,
+    `      : "";`,
+    `const inlineStyle = [${JSON.stringify(rootStyle ?? "")}, color ? \`color:\${color}\` : "", styleText]`,
+    `  .map((part) => part.replace(/;\\s*$/, ""))`,
     `  .filter(Boolean)`,
     `  .join(";");`,
+    `const classes = [${JSON.stringify(rootClass ?? "")}, className].filter(Boolean).join(" ");`,
+    `const rootAttrs = ${JSON.stringify(rootAttrs)};`,
     `const markup = ${JSON.stringify(inner)};`,
     `---`,
     `<svg`,
@@ -147,7 +152,8 @@ function generateAstroComponent(icon: RawIcon): string | null {
     `  fill="${fill}"`,
     `  width={size}`,
     `  height={size}`,
-    `  class={className}`,
+    `  {...rootAttrs}`,
+    `  class={classes || undefined}`,
     `  style={inlineStyle || undefined}`,
     `  {...rest}`,
     `><Fragment set:html={markup} /></svg>`,

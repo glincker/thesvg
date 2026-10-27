@@ -17,7 +17,7 @@ function ns(props, p) {
     const v = props[k];
     if (k === 'id') out[k] = p + v;
     else if (k === 'href' && v.charCodeAt(0) === 35) out[k] = '#' + p + v.slice(1);
-    else out[k] = v.replace(/url\\(#([^)]+)\\)/g, (_m, id) => 'url(#' + p + id + ')');
+    else out[k] = v.replace(/url\\(\\s*(&quot;|["'])?#([^)"'&\\s]+)/g, (_m, q, id) => 'url(' + (q || '') + '#' + p + id);
   }
   return out;
 }
@@ -37,7 +37,8 @@ function makeIcon(name, variants, usesIds) {
     return h(
       'svg',
       Object.assign(
-        { xmlns: 'http://www.w3.org/2000/svg', viewBox: viewBox || v.viewBox, fill: v.fill, stroke: v.stroke },
+        { xmlns: 'http://www.w3.org/2000/svg', viewBox: viewBox || v.viewBox, fill: v.fill },
+        p ? ns(v.attrs, p) : v.attrs,
         rest,
       ),
       ...nodes(v.childNodes, p),

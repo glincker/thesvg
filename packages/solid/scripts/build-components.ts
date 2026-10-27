@@ -18,7 +18,7 @@ function ns(props, p) {
     const v = props[k];
     if (k === 'id') out[k] = p + v;
     else if (k === 'href' && v.charCodeAt(0) === 35) out[k] = '#' + p + v.slice(1);
-    else out[k] = v.replace(/url\\(#([^)]+)\\)/g, (_m, id) => 'url(#' + p + id + ')');
+    else out[k] = v.replace(/url\\(\\s*(&quot;|["'])?#([^)"'&\\s]+)/g, (_m, q, id) => 'url(' + (q || '') + '#' + p + id);
   }
   return out;
 }
@@ -33,25 +33,28 @@ function nodes(list, p) {
 }
 
 function makeIcon(name, variants, usesIds) {
+  const attrKeys = new Set();
+  if (variants) for (const k in variants) for (const a in variants[k].attrs) attrKeys.add(a);
   function Icon(props) {
     if (!variants) return null;
     const [local, rest] = splitProps(props, ['variant', 'viewBox']);
     const p = usesIds ? 'tsvg' + createUniqueId().replace(/[^a-zA-Z0-9]/g, '') + '-' : '';
     const cur = () => variants[local.variant || 'default'] || variants.default;
-    return createComponent(
-      Dynamic,
-      mergeProps(
-        {
-          component: 'svg',
-          xmlns: 'http://www.w3.org/2000/svg',
-          get viewBox() { return local.viewBox || cur().viewBox; },
-          get fill() { return cur().fill; },
-          get stroke() { return cur().stroke; },
-          get children() { return nodes(cur().childNodes, p); },
-        },
-        rest,
-      ),
-    );
+    const base = {
+      component: 'svg',
+      xmlns: 'http://www.w3.org/2000/svg',
+      get viewBox() { return local.viewBox || cur().viewBox; },
+      get fill() { return cur().fill; },
+      get children() { return nodes(cur().childNodes, p); },
+    };
+    // Source root attributes (stroke, stroke-width, ...) as reactive getters; caller props win.
+    for (const a of attrKeys) {
+      Object.defineProperty(base, a, {
+        enumerable: true,
+        get() { const v = cur().attrs[a]; return v === undefined || !p ? v : ns({ [a]: v }, p)[a]; },
+      });
+    }
+    return createComponent(Dynamic, mergeProps(base, rest));
   }
   Object.defineProperty(Icon, 'name', { value: name });
   return Icon;

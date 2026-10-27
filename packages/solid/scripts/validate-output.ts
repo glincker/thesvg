@@ -3,7 +3,8 @@
  *
  * Checks the built dist/ of this package (identical copy in @thesvg/solid and
  * @thesvg/preact). Fails when a module carries TypeScript-only syntax, editor
- * leftovers (XML prolog, DOCTYPE, <style>), a changed root fill/stroke, or is
+ * leftovers (XML prolog, DOCTYPE, <style>), a changed root fill/stroke, fails the
+ * fidelity regression probes (slash, yarn, theauth), or is
  * missing an icon or a variant that icons.json declares.
  *
  * Run with: tsx scripts/validate-output.ts
@@ -72,11 +73,12 @@ for (const file of readdirSync(DIST).filter((f) => f.endsWith(".js") && !SKIP.ha
   if (/<svg=/.test(content)) fail(`${file} contains a broken nested <svg=`);
 
   const svgPath = primarySvgPath(file.replace(/\.js$/, ""));
-  const out = content.match(/"default":\{"viewBox":"[^"]*","fill":"([^"]*)"(?:,"stroke":"([^"]*)")?/);
+  const out = content.match(/"default":\{"viewBox":"[^"]*","fill":"([^"]*)","attrs":\{(.*?)\},"childNodes"/);
   if (svgPath && out) {
     const src = sourcePaint(readFileSync(svgPath, "utf8"));
+    const outStroke = out[2].match(/"stroke":"([^"]*)"/)?.[1] ?? "";
     if (src.fill !== out[1]) fail(`${file} changed root fill from "${src.fill}" to "${out[1]}"`);
-    if (src.stroke !== (out[2] ?? "")) fail(`${file} changed root stroke from "${src.stroke}" to "${out[2] ?? ""}"`);
+    if (src.stroke !== outStroke) fail(`${file} changed root stroke from "${src.stroke}" to "${outStroke}"`);
   }
 }
 if (checked === 0) fail("no component modules found in dist/");
@@ -94,6 +96,18 @@ for (const icon of icons) {
   }
   variantChecked++;
 }
+
+// Regression checks for fidelity bugs: each probes one fixed behavior in the
+// built output of a real icon (root attributes, baked <style>, nested svg, mono none).
+function probe(slug: string, label: string, test: (src: string) => boolean): void {
+  const f = join(DIST, `${slug}.js`);
+  if (!existsSync(f)) return;
+  if (!test(readFileSync(f, "utf8"))) fail(`regression: ${slug} ${label}`);
+}
+probe("slash", "lost root stroke-width or stroke-linecap", (c) => c.includes('"stroke-width":"2"') && c.includes('"stroke-linecap":"round"'));
+probe("yarn", "lost class-based fill from <style>", (c) => c.includes('"fill":"#2c8ebb"') && !c.includes('"class"'));
+probe("theauth", "lost nested <svg> wrapper or its viewBox", (c) => c.includes('"type":"svg"') && c.includes('"x":"-1"') && c.includes('"viewBox":"0 0 64 64"'));
+probe("theauth", "mono variant rewrote fill=none", (c) => /"mono":\{"viewBox":"[^"]*","fill":"none"/.test(c));
 
 if (errors > 0) {
   console.error(`\n${errors} error(s) in ${checked} modules.`);

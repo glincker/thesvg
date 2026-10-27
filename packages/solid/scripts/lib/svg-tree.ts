@@ -1,8 +1,8 @@
 /**
  * svg-tree.ts
  *
- * Framework-neutral core shared by the @thesvg/solid and @thesvg/preact
- * builders (kept as an identical copy in each package). Turns an icon's SVG
+ * Framework-neutral core shared by the @thesvg/solid, @thesvg/preact and
+ * @thesvg/astro builders (kept as an identical copy in each package). Turns an icon's SVG
  * files into a plain element tree plus the root paint, and holds the naming
  * helpers. Attribute names are kept as written in the SVG (kebab-case), which
  * is what both Solid and Preact expect on SVG elements.
@@ -28,7 +28,8 @@ export interface SvgNode {
 export interface ParsedSvg {
   viewBox: string;
   fill: string;
-  stroke?: string;
+  /** Every other root attribute from the source (stroke, stroke-width, ...). */
+  attrs: Record<string, string>;
   childNodes: (SvgNode | string)[];
 }
 
@@ -46,18 +47,6 @@ export function makeReader(repoRoot: string): (publicPath: string) => string {
 function keepAttr(name: string): boolean {
   if (name === "xmlns" || name.startsWith("xmlns:")) return false;
   return !/^(inkscape|sodipodi|xml|dc|cc|rdf):/.test(name);
-}
-
-function extractRootPaint(svg: string): { fill: string; stroke?: string } {
-  const tag = svg.match(/<svg[^>]*>/s);
-  if (!tag) return { fill: "currentColor" };
-  const fill = tag[0].match(/\bfill=["']([^"']+)["']/);
-  const stroke = tag[0].match(/\bstroke=["']([^"']+)["']/);
-  // Stroke-only icons must not get a filled root; everything else inherits text color.
-  return {
-    fill: fill ? fill[1] : stroke ? "none" : "currentColor",
-    stroke: stroke ? stroke[1] : undefined,
-  };
 }
 
 function findMatchingClose(html: string, tag: string): number {
@@ -129,26 +118,141 @@ function parseNodes(src: string): (SvgNode | string)[] {
   return nodes;
 }
 
-export function parseSvg(svg: string): ParsedSvg {
-  const viewBox = svg.match(/viewBox=["']([^"']+)["']/)?.[1] ?? "0 0 24 24";
-  const { fill, stroke } = extractRootPaint(svg);
+// CSS properties that exist as SVG presentation attributes. Anything else a
+// <style> rule sets (transform, mix-blend-mode, ...) goes into a style string.
+const PRESENTATION = new Set([
+  "clip-path", "clip-rule", "color", "display", "fill", "fill-opacity", "fill-rule", "filter",
+  "flood-color", "flood-opacity", "lighting-color", "marker-start", "marker-mid", "marker-end",
+  "mask", "opacity", "paint-order", "shape-rendering", "stop-color", "stop-opacity", "stroke",
+  "stroke-dasharray", "stroke-dashoffset", "stroke-linecap", "stroke-linejoin",
+  "stroke-miterlimit", "stroke-opacity", "stroke-width", "visibility",
+]);
 
-  const inner = svg
-    .replace(/^<svg[^>]*>/s, "")
-    .replace(/<\/svg>\s*$/, "")
+interface CssRule {
+  selector: string;
+  spec: number;
+  order: number;
+  decls: [string, string][];
+}
+
+function parseDecls(body: string): [string, string][] {
+  const out: [string, string][] = [];
+  for (const part of body.split(";")) {
+    const i = part.indexOf(":");
+    if (i < 0) continue;
+    const prop = part.slice(0, i).trim().toLowerCase();
+    const value = part.slice(i + 1).replace(/!important/i, "").trim();
+    if (prop && value) out.push([prop, value]);
+  }
+  return out;
+}
+
+/** Only flat selectors are resolvable: .a, tag, tag.a, #id, *. Others are skipped. */
+function simpleSelector(sel: string): { spec: number } | null {
+  if (!/^(\*|[a-zA-Z][a-zA-Z0-9]*)?(\.[a-zA-Z_][\w-]*|#[a-zA-Z_][\w-]*)*$/.test(sel) || sel === "") return null;
+  const ids = (sel.match(/#/g) ?? []).length;
+  const classes = (sel.match(/\./g) ?? []).length;
+  const tag = /^[a-zA-Z]/.test(sel) ? 1 : 0;
+  return { spec: ids * 100 + classes * 10 + tag };
+}
+
+function parseCss(css: string, rules: CssRule[]): void {
+  const text = css.replace(/<!\[CDATA\[|\]\]>/g, "").replace(/\/\*[\s\S]*?\*\//g, "");
+  let i = 0;
+  while (i < text.length) {
+    const open = text.indexOf("{", i);
+    if (open < 0) break;
+    // Find the matching close so nested at-rule bodies (@media, @container) are skipped whole.
+    let depth = 1;
+    let j = open + 1;
+    while (j < text.length && depth > 0) {
+      if (text[j] === "{") depth++;
+      else if (text[j] === "}") depth--;
+      j++;
+    }
+    const head = text.slice(i, open).trim();
+    const body = text.slice(open + 1, j - 1);
+    i = j;
+    // Conditional blocks cannot be baked into static attributes.
+    if (head.startsWith("@")) continue;
+    const decls = parseDecls(body);
+    for (const sel of head.split(",")) {
+      const s = simpleSelector(sel.trim());
+      if (s) rules.push({ selector: sel.trim(), spec: s.spec, order: rules.length, decls });
+    }
+  }
+}
+
+function matches(selector: string, node: SvgNode): boolean {
+  const tag = selector.match(/^[a-zA-Z][a-zA-Z0-9]*/)?.[0];
+  if (tag && tag !== node.type) return false;
+  const classes = (node.props.class ?? "").split(/\s+/);
+  for (const c of selector.matchAll(/\.([\w-]+)/g)) if (!classes.includes(c[1])) return false;
+  for (const i of selector.matchAll(/#([\w-]+)/g)) if (node.props.id !== i[1]) return false;
+  return true;
+}
+
+/**
+ * Bakes <style> rules into the matching elements and removes the blocks, so
+ * icons paint the same without leaking global CSS. Inline style="" wins over
+ * rules, as in a browser.
+ */
+function applyStyles(node: SvgNode, rules: CssRule[]): void {
+  if (node.type !== "style") {
+    const won = new Map<string, { value: string; spec: number; order: number }>();
+    for (const r of rules) {
+      if (!matches(r.selector, node)) continue;
+      for (const [prop, value] of r.decls) {
+        const cur = won.get(prop);
+        if (!cur || r.spec > cur.spec || (r.spec === cur.spec && r.order > cur.order)) {
+          won.set(prop, { value, spec: r.spec, order: r.order });
+        }
+      }
+    }
+    const inline = new Set(parseDecls(node.props.style ?? "").map(([p]) => p));
+    let extra = "";
+    for (const [prop, { value }] of won) {
+      if (inline.has(prop)) continue;
+      if (PRESENTATION.has(prop)) node.props[prop] = value;
+      else extra += `${prop}:${value};`;
+    }
+    if (extra) node.props.style = (node.props.style ? node.props.style.replace(/;?\s*$/, ";") : "") + extra;
+    if (rules.length > 0) delete node.props.class;
+  }
+  node.children = node.children.filter((c) => typeof c === "string" || c.type !== "style");
+  for (const c of node.children) if (typeof c !== "string") applyStyles(c, rules);
+}
+
+function collectCss(src: string): string[] {
+  return [...src.matchAll(/<style(?:\s[^>]*)?>([\s\S]*?)<\/style>/g)].map((m) => m[1]);
+}
+
+export function parseSvg(svg: string): ParsedSvg {
+  const clean = svg
     .replace(/<\?xml[^?]*\?>/g, "")
     .replace(/<!DOCTYPE[^>]*>/gi, "")
     .replace(/<!--[\s\S]*?-->/g, "")
     .replace(/<sodipodi:[^>]*(?:\/>|>[\s\S]*?<\/sodipodi:[^>]+>)/g, "")
     .replace(/<metadata[\s\S]*?<\/metadata>/g, "")
-    .replace(/<style[\s\S]*?<\/style>/g, "")
     .replace(/<(rdf|dc|cc):[^>]*(?:\/>|>[\s\S]*?<\/\1:[^>]+>)/g, "")
-    // Nested <svg> wrappers from editor exports: keep their children only.
-    .replace(/<svg[^>]*>/gs, "")
-    .replace(/<\/svg>/g, "")
     .trim();
 
-  return { viewBox, fill, stroke, childNodes: parseNodes(inner) };
+  const rules: CssRule[] = [];
+  for (const css of collectCss(clean)) parseCss(css, rules);
+
+  const root = parseNodes(clean).find((n): n is SvgNode => typeof n !== "string" && n.type === "svg");
+  if (!root) return { viewBox: "0 0 24 24", fill: "currentColor", attrs: {}, childNodes: [] };
+  applyStyles(root, rules);
+
+  const attrs = { ...root.props };
+  // Size comes from the caller or viewBox; a shared root id would collide across icons.
+  const w = parseFloat(attrs.width ?? "");
+  const h = parseFloat(attrs.height ?? "");
+  const viewBox = attrs.viewBox ?? (w > 0 && h > 0 ? `0 0 ${w} ${h}` : "0 0 24 24");
+  const fill = attrs.fill ?? (attrs.stroke ? "none" : "currentColor");
+  for (const k of ["viewBox", "fill", "width", "height", "id"]) delete attrs[k];
+
+  return { viewBox, fill, attrs, childNodes: root.children };
 }
 
 /** Parse every variant of an icon once. Null when no SVG exists. */
@@ -161,9 +265,7 @@ export function parseIcon(icon: RawIcon, read: (p: string) => string): ParsedIco
     if (key === "default" || !path) continue;
     const svg = readIconSvg(path, read);
     if (!svg) continue;
-    const parsed = parseSvg(svg);
-    if (key === "mono" && parsed.fill === "none") parsed.fill = "currentColor";
-    variants[key] = parsed;
+    variants[key] = parseSvg(svg);
   }
   return { keys: Object.keys(variants), variants };
 }
@@ -175,7 +277,7 @@ export function parseIcon(icon: RawIcon, read: (p: string) => string): ParsedIco
  */
 export function needsIdNamespacing(parsed: ParsedIcon): boolean {
   const json = JSON.stringify(parsed.variants);
-  return json.includes("url(#") || /"id":/.test(json) || /"href":"#/.test(json);
+  return /url\(\s*(?:&quot;|["'])?#/.test(json) || /"id":/.test(json) || /"href":"#/.test(json);
 }
 
 export function toPascalCase(slug: string): string {
