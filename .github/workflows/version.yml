@@ -70,6 +70,21 @@ jobs:
           if echo "$CHANGED_FILES" | grep -q "^packages/svelte/"; then
             PACKAGES="$PACKAGES \"@thesvg/svelte\": patch"$'\n'
           fi
+          if echo "$CHANGED_FILES" | grep -q "^packages/solid/"; then
+            PACKAGES="$PACKAGES \"@thesvg/solid\": patch"$'\n'
+          fi
+          if echo "$CHANGED_FILES" | grep -q "^packages/preact/"; then
+            PACKAGES="$PACKAGES \"@thesvg/preact\": patch"$'\n'
+          fi
+          if echo "$CHANGED_FILES" | grep -q "^packages/astro/"; then
+            PACKAGES="$PACKAGES \"@thesvg/astro\": patch"$'\n'
+          fi
+          if echo "$CHANGED_FILES" | grep -q "^packages/web/"; then
+            PACKAGES="$PACKAGES \"@thesvg/web\": patch"$'\n'
+          fi
+          if echo "$CHANGED_FILES" | grep -q "^packages/static/"; then
+            PACKAGES="$PACKAGES \"@thesvg/static\": patch"$'\n'
+          fi
           if echo "$CHANGED_FILES" | grep -q "^packages/thesvg/"; then
             PACKAGES="$PACKAGES \"thesvg\": patch"$'\n'
           fi
@@ -82,7 +97,7 @@ jobs:
 
           # If icons changed, also bump framework packages (they re-export icons)
           if echo "$CHANGED_FILES" | grep -q "^packages/icons/\|^icons/\|^public/icons/\|^src/data/icons\.json"; then
-            for PKG in "@thesvg/react" "@thesvg/vue" "@thesvg/svelte" "thesvg"; do
+            for PKG in "@thesvg/react" "@thesvg/vue" "@thesvg/svelte" "@thesvg/solid" "@thesvg/preact" "@thesvg/astro" "@thesvg/static" "thesvg"; do
               if ! echo "$PACKAGES" | grep -q "$PKG"; then
                 PACKAGES="$PACKAGES \"$PKG\": patch"$'\n'
               fi

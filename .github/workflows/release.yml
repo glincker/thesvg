@@ -56,6 +56,11 @@ jobs:
           cd packages/react && npm run build && cd ../..
           cd packages/vue && npm run build && cd ../..
           cd packages/svelte && npm run build && cd ../..
+          cd packages/solid && npm run build && cd ../..
+          cd packages/preact && npm run build && cd ../..
+          cd packages/astro && npm run build && cd ../..
+          cd packages/web && npm run build && cd ../..
+          cd packages/static && npm run build && cd ../..
           cd packages/ui && npm run build && cd ../..
           cd packages/ui-react && npm run build && cd ../..
           cd packages/ui-vue && npm run build && cd ../..

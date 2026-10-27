@@ -46,7 +46,7 @@ jobs:
           echo "Changed files:"; echo "$files"
 
           UI='^(src/(lib|components)/ui-icons/|src/app/ui/|src/data/ui/|src/data/ui-icons\.json|scripts/ui/|packages/ui(-[a-z-]+)?/|public/ui/)'
-          BRAND='^(public/icons/|src/data/icons\.json|src/(lib|components)/icons/|packages/(icons|react|vue|svelte|react-native|thesvg|cli|mcp|mcp-worker)/)'
+          BRAND='^(public/icons/|src/data/icons\.json|src/(lib|components)/icons/|packages/(icons|react|vue|svelte|solid|preact|astro|web|static|react-native|thesvg|cli|mcp|mcp-worker)/)'
           OUTSIDE='^(docs/|docs-local/|extensions/|\.github/(ISSUE_TEMPLATE|labeler\.yml|dependabot\.yml)|.*\.md$|LICENSE|TRADEMARK\.md|LEGAL\.md)'
           SITE='^(src/|public/|scripts/|next\.config|package\.json|pnpm-lock\.yaml|pnpm-workspace\.yaml|tsconfig|eslint\.config|vitest\.config|postcss)'
 
