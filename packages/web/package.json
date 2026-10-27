@@ -1,0 +1,48 @@
+{
+  "name": "@thesvg/web",
+  "version": "4.0.0",
+  "description": "Framework-free helper that swaps data-thesvg elements for inline brand SVGs from @thesvg/icons",
+  "type": "module",
+  "sideEffects": false,
+  "license": "MIT",
+  "author": "thesvg.org",
+  "homepage": "https://thesvg.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/glincker/thesvg.git",
+    "directory": "packages/web"
+  },
+  "bugs": {
+    "url": "https://github.com/glincker/thesvg/issues"
+  },
+  "keywords": ["svg", "icons", "brand", "logos", "vanilla", "dom", "tree-shakeable", "esm", "typescript"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/cjs/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/build.mjs && tsx --test test/*.test.ts",
+    "prepublishOnly": "node scripts/build.mjs"
+  },
+  "peerDependencies": {
+    "@thesvg/icons": ">=4"
+  },
+  "peerDependenciesMeta": {
+    "@thesvg/icons": { "optional": true }
+  },
+  "devDependencies": {
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3"
+  },
+  "engines": { "node": ">=18" },
+  "publishConfig": { "provenance": true, "access": "public" }
+}
