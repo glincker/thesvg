@@ -1,6 +1,6 @@
 {
   "name": "@thesvg/solid",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Typed Solid SVG components for all 7,600+ brand icons from thesvg.org",
   "type": "module",
   "sideEffects": false,
