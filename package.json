@@ -12,7 +12,7 @@
     "ui:svgs": "node scripts/ui/emit-svgs.mjs",
     "ui:check": "tsx scripts/ui/build-data.ts --check",
     "test": "pnpm test:brand && pnpm test:ui",
-    "test:brand": "vitest run --passWithNoTests --exclude 'src/**/ui-icons/**' --exclude 'src/app/ui/**' && find src -name '*.test.mjs' -print0 | xargs -0 -r tsx --test && pnpm --filter @thesvg/cli test && pnpm --filter @thesvg/icons test",
+    "test:brand": "vitest run --passWithNoTests --exclude 'src/**/ui-icons/**' --exclude 'src/app/ui/**' && find src -name '*.test.mjs' -print0 | xargs -0 -r tsx --test && pnpm --filter @thesvg/cli test && pnpm --filter @thesvg/icons test && pnpm --filter @thesvg/web test && pnpm --filter @thesvg/static test",
     "test:ui": "pnpm ui:check && vitest run --passWithNoTests src/lib/ui-icons src/components/ui-icons src/app/ui && pnpm --filter @thesvg/ui test && pnpm --filter @thesvg/ui-react test && pnpm --filter @thesvg/ui-vue test && pnpm --filter @thesvg/ui-svelte test && pnpm --filter @thesvg/ui-react-native test"
   },
   "dependencies": {
