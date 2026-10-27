@@ -111,14 +111,14 @@ function glassDepth(poly: Pt[], gid: string, strength: number): { defs: string; 
   const x1 = Math.max(...xs);
   const y0 = Math.min(...ys);
   const y1 = Math.max(...ys);
-  const w = x1 - Math.min(...xs);
-  const h = y1 - y0;
+  const x0 = Math.min(...xs);
   const f = (v: number): string => String(Math.round(v * 100) / 100);
-  const blur = `<filter id="${gid}b" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="${f(Math.max(1.2, w * 0.12))}"/></filter>`;
-  const ellipse = `<ellipse cx="${f(x1 - w * 0.08)}" cy="${f(y1 - h * 0.28)}" rx="${f(w * 0.12)}" ry="${f(h * 0.34)}" transform="rotate(25 ${f(x1 - w * 0.08)} ${f(y1 - h * 0.28)})" fill="#000" opacity="${strength}" filter="url(#${gid}b)"/>`;
+  // A smooth diagonal fade over the body box, no blob and no edge: the pane thins evenly towards the lower right.
+  const grey = Math.round(255 * (1 - Math.min(1, strength) * 0.7)).toString(16).padStart(2, "0");
+  const ramp = `<linearGradient id="${gid}r" gradientUnits="userSpaceOnUse" x1="${f(x0)}" y1="${f(y0)}" x2="${f(x1)}" y2="${f(y1)}"><stop offset="0.25" stop-color="#fff"/><stop offset="1" stop-color="#${grey}${grey}${grey}"/></linearGradient>`;
   const m = 24;
-  const mask = `<mask id="${gid}s" maskUnits="userSpaceOnUse" x="-2" y="-2" width="${m + 4}" height="${m + 4}"><rect x="-2" y="-2" width="${m + 4}" height="${m + 4}" fill="#fff"/>${ellipse}</mask>`;
-  return { defs: blur + mask, mask: `${gid}s` };
+  const mask = `<mask id="${gid}s" maskUnits="userSpaceOnUse" x="-2" y="-2" width="${m + 4}" height="${m + 4}"><rect x="-2" y="-2" width="${m + 4}" height="${m + 4}" fill="url(#${gid}r)"/></mask>`;
+  return { defs: ramp + mask, mask: `${gid}s` };
 }
 
 const f2 = (v: number): string => String(Math.round(v * 100) / 100);
@@ -235,7 +235,12 @@ function renderBase(nodes: IconNode[], opts: RenderOptions = {}): RenderResult {
     const defs0 = `<linearGradient id="${gid}" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="${m}"><stop offset="0" stop-color="${tone}" stop-opacity="0.78"/><stop offset="1" stop-color="${tone}" stop-opacity="0.36"/></linearGradient><linearGradient id="${gid}e" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="${m}"><stop offset="0" stop-color="currentColor" stop-opacity="${rim[0]}"/><stop offset="1" stop-color="currentColor" stop-opacity="${rim[1]}"/></linearGradient>`;
     const bodyPoly = bodies.flatMap((i) => polys[i] ?? []);
     const depth = style.glassDepth > 0 && bodies.length > 0 && bodyPoly.length > 0 ? glassDepth(bodyPoly, gid, style.glassDepth) : { defs: "", mask: "" };
-    const rimIdx = [...bodies, ...free];
+    // Loose strokes beside a body (ring marks, exhaust) stay solid, the fading rim would leave them looking detached.
+    const rimIdx = lineOnly ? [...bodies, ...free] : bodies;
+    const looseW = Math.round(Math.max(1.1, edgeW * 1.6) * 100) / 100;
+    const loose = lineOnly
+      ? ""
+      : free.map((i) => `<path d="${ds[i]}" fill="none" stroke="${tone}" stroke-opacity="0.8" stroke-width="${looseW}" stroke-linecap="${style.cap}" stroke-linejoin="${style.join}"/>`).join("");
     const defs = `<defs>${defs0}${depth.defs}<mask id="${gid}m" maskUnits="userSpaceOnUse" x="${-margin}" y="${-margin}" width="${m + margin * 2}" height="${m + margin * 2}">${rimIdx
       .map(
         (i) =>
@@ -260,7 +265,7 @@ function renderBase(nodes: IconNode[], opts: RenderOptions = {}): RenderResult {
     // A cut-out shows whatever is behind the icon, so it stays readable on both light and dark pages.
     const paneMask = `<mask id="${gid}p" maskUnits="userSpaceOnUse" x="-2" y="-2" width="${m + 4}" height="${m + 4}"><rect x="-2" y="-2" width="${m + 4}" height="${m + 4}" fill="#fff"/>${etch}</mask>`;
     const withMasks = defs.replace("</defs>", `${paneMask}${outsideMaskG}</defs>`);
-    return { svg: wrap(withMasks + `<g mask="url(#${gid}p)">${depth.mask ? `<g mask="url(#${depth.mask})">${pane}</g>` : pane}</g>` + sticking + edge), d: ds, anchors, handles, meta };
+    return { svg: wrap(withMasks + `<g mask="url(#${gid}p)">${depth.mask ? `<g mask="url(#${depth.mask})">${pane}</g>` : pane}</g>` + sticking + loose + edge), d: ds, anchors, handles, meta };
   }
 
   if (variant === "glass-outline") {
