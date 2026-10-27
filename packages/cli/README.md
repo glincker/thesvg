@@ -77,7 +77,7 @@ thesvg add ui:arrow-down --look glass
 
 | Flag | Description | Default |
 |------|-------------|---------|
-| `--look` | UI look: `outline`, `glass`, `duotone`, `offset`, `fill`, `pixel`, `depth`. An unknown look is rejected with the valid list. | `outline` |
+| `--look` | UI look: `outline`, `glass`, `duotone`, `offset`, `fill`, `glass-outline`, `depth`. An unknown look is rejected with the valid list. | `outline` |
 
 UI icons use `currentColor` and are 24x24. Non-outline looks are saved as `<slug>-<look>.svg`. The UI index is fetched only when a UI command runs, so brand commands never depend on it.
 

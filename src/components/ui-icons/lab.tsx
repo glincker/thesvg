@@ -139,10 +139,12 @@ export function StyleLab(props: { className?: string; stacked?: boolean }) {
   const scale = ui.lab.scale ?? base.scale;
   const corner = ui.lab.corner ?? base.corner;
   const cut = ui.lab.cutTerminals ?? base.cutTerminals;
+  const shadow = ui.lab.shadow ?? base.shadow;
   return (
-    <div className={cn("grid gap-x-5 gap-y-4 rounded-xl border bg-card/70 p-4 backdrop-blur-xl", props.stacked ? "grid-cols-1" : "sm:grid-cols-2 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_auto_auto_auto_auto] xl:items-end", props.className)}>
+    <div className={cn("grid gap-x-5 gap-y-4 rounded-xl border bg-card/70 p-4 backdrop-blur-xl", props.stacked ? "grid-cols-1" : "sm:grid-cols-2 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)_auto_auto_auto_auto] xl:items-end", props.className)}>
       <Range label="Weight" value={weight} min={0.75} max={3} step={0.05} onChange={(v) => ui.setLab({ strokeWidth: Math.round(v * 100) / 100 })} />
       <Range label="Scale" value={scale} min={0.7} max={1.1} step={0.02} onChange={(v) => ui.setLab({ scale: Math.round(v * 100) / 100 })} />
+      <Range label="Shadow" value={shadow} min={0} max={0.6} step={0.05} onChange={(v) => ui.setLab({ shadow: Math.round(v * 100) / 100 })} />
       <Cell label="Corners">
         <div role="radiogroup" aria-label="Corners" className="flex gap-0.5 rounded-lg border bg-muted/30 p-0.5">
           {CORNERS.map((c) => (

@@ -64,7 +64,7 @@ ${colorize("bold", "ADD OPTIONS")}
   --variant, -v <name>    Icon variant: default, light, dark, mono, wordmark (default: default)
   --dir,     -d <path>    Output directory (default: ./public/icons or ./src/icons)
   --format,  -f <fmt>     Output format: svg, jsx, vue (default: svg)
-  --look <name>           UI icons only (ui:<slug>): outline, glass, duotone, offset, fill, pixel, depth (default: outline)
+  --look <name>           UI icons only (ui:<slug>): outline, glass, duotone, offset, fill, glass-outline, depth (default: outline)
 
 ${colorize("bold", "LIST OPTIONS")}
 

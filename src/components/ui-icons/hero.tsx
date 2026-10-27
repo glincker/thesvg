@@ -96,7 +96,7 @@ export function Hero() {
             <UiGlyph name="sparkles" className="size-4" /> New in 4.0: UI icons
           </span>
           <h1 className="mt-3 text-balance text-2xl font-bold tracking-tight md:text-3xl">One skeleton, every look</h1>
-          <p className="mt-2 text-sm text-muted-foreground">Drawn on a grid, restyled live. Outline, duotone, fill, glass and pixel, all themeable with currentColor.</p>
+          <p className="mt-2 text-sm text-muted-foreground">Drawn on a grid, restyled live. Outline, duotone, fill, glass and glass outline, all themeable with currentColor.</p>
           <a href="#browse" className="mt-4 inline-flex h-10 items-center gap-2 rounded-xl bg-foreground px-4 text-sm font-medium text-background">
             Browse icons <UiGlyph name="arrow-right" className="size-5" />
           </a>

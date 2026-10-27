@@ -1,0 +1,71 @@
+name: Release - Window
+
+# The Version PR collects every changeset that lands on main, so one release carries all of them at the highest semver
+# bump among them. This job merges it on a schedule, with limits so the registry is not flooded:
+#   - at least RELEASE_MIN_GAP_HOURS since the last release (default 2)
+#   - at most RELEASE_MAX_PER_12H releases in any 12 hours (default 3)
+#   - skipped while the PR has the hold-release label
+# A person can always merge the Version PR by hand, or run this workflow with force to skip the limits.
+# Set the repository variables to tune the limits.
+on:
+  schedule:
+    - cron: "0 */2 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Skip the gap, the cap and the hold label"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: release-window
+  cancel-in-progress: false
+
+jobs:
+  merge:
+    name: Merge the Version PR
+    runs-on: ubuntu-latest
+    steps:
+      - name: Find, check the limits, merge
+        env:
+          # RELEASE_TOKEN is a PAT or app token. A merge made with the default token does not start the publish workflow.
+          GH_TOKEN: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          MIN_GAP_HOURS: ${{ vars.RELEASE_MIN_GAP_HOURS || '2' }}
+          MAX_PER_12H: ${{ vars.RELEASE_MAX_PER_12H || '3' }}
+          FORCE: ${{ inputs.force }}
+        run: |
+          TITLE="chore(release): version packages"
+          PR=$(gh pr list --state open --search "$TITLE in:title" --json number,title --jq "[.[] | select(.title == \"$TITLE\")][0].number // empty")
+          if [ -z "$PR" ]; then
+            echo "No open Version PR, nothing to release"
+            exit 0
+          fi
+
+          if [ "$FORCE" != "true" ]; then
+            if gh pr view "$PR" --json labels --jq '.labels[].name' | grep -qx "hold-release"; then
+              echo "Version PR #$PR has hold-release, skipping"
+              exit 0
+            fi
+            NOW=$(date -u +%s)
+            RELEASES=$(gh pr list --state merged --search "$TITLE in:title" --limit 30 --json title,mergedAt \
+              --jq "[.[] | select(.title == \"$TITLE\") | (.mergedAt | fromdateiso8601)] | sort | reverse | .[]")
+            LAST=$(echo "$RELEASES" | head -1)
+            if [ -n "$LAST" ] && [ $((NOW - LAST)) -lt $((MIN_GAP_HOURS * 3600)) ]; then
+              echo "Last release was under ${MIN_GAP_HOURS}h ago, the changes keep batching"
+              exit 0
+            fi
+            RECENT=$(echo "$RELEASES" | awk -v since=$((NOW - 43200)) 'NF && $1 >= since' | wc -l | tr -d ' ')
+            if [ "$RECENT" -ge "$MAX_PER_12H" ]; then
+              echo "$RECENT releases in the last 12h (cap $MAX_PER_12H), the changes keep batching"
+              exit 0
+            fi
+          fi
+
+          # Auto-merge waits for the required checks, so a red PR is never forced through.
+          gh pr merge "$PR" --auto --squash
+          echo "Version PR #$PR will merge once its checks pass"

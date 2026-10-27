@@ -37,7 +37,7 @@ const ALL_SLIDES = [
     badge: "theSVG 4.0",
     badgeIcon: Sparkles,
     title: "UI icons are here, in seven looks",
-    description: "A new set of interface icons, drawn on one grid and restyled live. Outline, glass, duotone, offset, fill, pixel and depth. Free to copy.",
+    description: "A new set of interface icons, drawn on one grid and restyled live. Outline, glass, duotone, offset, fill, glass outline and depth. Free to copy.",
     cta: { label: "Explore UI icons", href: "/ui" },
     ctaSecondary: { label: "How it works", href: "/ui/docs" },
     gradient: "from-orange-50/60 via-background to-sky-50/30 dark:from-orange-950/25 dark:via-background dark:to-sky-950/10",

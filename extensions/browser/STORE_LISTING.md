@@ -29,7 +29,7 @@ thesvg is the open SVG brand library, with a growing set of UI icons alongside i
 - jsDelivr CDN URL, for dropping into an `<img>` tag or CSS background
 - Markdown snippet, formatted for README files and documentation
 
-**Brand and UI icons.** A Brand | UI icons switch in the popup changes the catalog. UI icons come in seven looks (outline, glass, duotone, offset, fill, pixel, depth) and keep currentColor so they follow your theme.
+**Brand and UI icons.** A Brand | UI icons switch in the popup changes the catalog. UI icons come in seven looks (outline, glass, duotone, offset, fill, glass-outline, depth) and keep currentColor so they follow your theme.
 
 **Multiple variants per brand.** Many brands ship with color, mono, light, dark, and wordmark variants. The extension shows all available variants so you pick the exact look your project needs.
 
@@ -50,7 +50,7 @@ thesvg is the open SVG brand library, with a growing set of UI icons alongside i
 - jsDelivr CDN URL, for dropping into an `<img>` tag or CSS background
 - Markdown snippet, formatted for README files and documentation
 
-**Brand and UI icons.** A Brand | UI icons switch in the popup changes the catalog. UI icons come in seven looks (outline, glass, duotone, offset, fill, pixel, depth) and keep currentColor so they follow your theme.
+**Brand and UI icons.** A Brand | UI icons switch in the popup changes the catalog. UI icons come in seven looks (outline, glass, duotone, offset, fill, glass-outline, depth) and keep currentColor so they follow your theme.
 
 **Multiple variants per brand.** Many brands ship with color, mono, light, dark, and wordmark variants. The extension shows all available variants so you pick the exact look your project needs.
 
