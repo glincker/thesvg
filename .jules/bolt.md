@@ -88,3 +88,7 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2026-10-25 - Preserve behavior when optimizing array methods
 **Learning:** When refactoring declarative array methods like `.map()` to imperative `for` loops for performance, it's easy to accidentally introduce behavioral changes, such as unintentionally filtering out `undefined` values (e.g., `if (val) set.add(val)`).
 **Action:** Always ensure that manual `for` loops strictly replicate the null-checking behavior of the original mapping function to prevent subtle application logic changes.
+
+## 2025-05-18 - Replacing nested filter operations when initializing arrays from Maps with single-pass loops
+**Learning:** Chained array methods like `.filter()` or spreading a `Set` combined with mapping over arrays to count occurrences forces O(N * C) passes and memory allocations, blocking the JS thread and triggering unnecessary garbage collection overhead when C and N are large (e.g., categories and icons).
+**Action:** Replace operations like `[...new Set(array.map(...))].map((name) => ({ name, count: array.filter(...).length }))` with a single-pass `for` loop over a `Map` that tallies counts, avoiding tuple arrays and excessive iterations.
