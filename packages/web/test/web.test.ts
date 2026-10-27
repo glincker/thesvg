@@ -111,3 +111,51 @@ test("createIcons honours a custom nameAttr, variant and size", () => {
   assert.match(root.children[0].outer, /M1 1/);
   assert.equal(root.children[0].getAttribute("width"), "48");
 });
+
+const zulip = {
+  slug: "zulip",
+  svg: '<svg viewBox="0 0 24 24"><defs><linearGradient id="a"><stop offset="0"/></linearGradient><clipPath id="c"><rect/></clipPath><mask id="m"><rect/></mask><filter id="f"/><pattern id="p"/><symbol id="s"/></defs><path fill="url(#a)" clip-path="url(\'#c\')" mask="url(#m)" filter="url(#f)" stroke="url(#p)"/><use href="#s"/><use xlink:href="#a"/><g aria-labelledby="a nope"/><style>#a{fill:red}</style></svg>',
+};
+
+test("getIconSvg gives each call unique ids and rewrites every reference", () => {
+  const one = getIconSvg(zulip)!;
+  const two = getIconSvg(zulip)!;
+  const idsOf = (s: string): string[] => Array.from(s.matchAll(/\sid="([^"]+)"/g), (m) => m[1]);
+  const a = idsOf(one);
+  const b = idsOf(two);
+  assert.equal(a.length, 6);
+  for (const id of a) assert.ok(!b.includes(id), `${id} reused`);
+  const prefix = /^(thesvg-\d+-)a$/.exec(a[0])![1];
+  assert.match(one, new RegExp(`fill="url\\(#${prefix}a\\)"`));
+  assert.match(one, new RegExp(`clip-path="url\\('#${prefix}c'\\)"`));
+  assert.match(one, new RegExp(`mask="url\\(#${prefix}m\\)"`));
+  assert.match(one, new RegExp(`filter="url\\(#${prefix}f\\)"`));
+  assert.match(one, new RegExp(`stroke="url\\(#${prefix}p\\)"`));
+  assert.match(one, new RegExp(` href="#${prefix}s"`));
+  assert.match(one, new RegExp(`xlink:href="#${prefix}a"`));
+  assert.match(one, new RegExp(`aria-labelledby="${prefix}a nope"`));
+  assert.match(one, new RegExp(`#${prefix}a\\{fill:red\\}`));
+  assert.doesNotMatch(one, /url\(#a\)/);
+});
+
+test("getIconSvg does not touch svgs without ids", () => {
+  assert.doesNotMatch(getIconSvg(github)!, /thesvg-/);
+});
+
+test("getIconSvg skips aria-hidden when an accessible name is supplied", () => {
+  assert.doesNotMatch(getIconSvg(github, { attrs: { "aria-label": "GitHub" } })!, /aria-hidden/);
+  assert.doesNotMatch(getIconSvg(github, { attrs: { "aria-labelledby": "lbl" } })!, /aria-hidden/);
+  assert.doesNotMatch(getIconSvg(github, { title: "GitHub" })!, /aria-hidden/);
+  assert.match(getIconSvg(github)!, /aria-hidden="true"/);
+});
+
+test("createIcons keeps a named placeholder exposed and decorative ones hidden", () => {
+  const { root } = setup([
+    { "data-thesvg": "github", role: "img", "aria-label": "GitHub" },
+    { "data-thesvg": "github" },
+  ]);
+  createIcons({ icons, root: root as unknown as ParentNode });
+  assert.doesNotMatch(root.children[0].outer, /aria-hidden/);
+  assert.equal(root.children[0].getAttribute("aria-label"), "GitHub");
+  assert.match(root.children[1].outer, /aria-hidden="true"/);
+});

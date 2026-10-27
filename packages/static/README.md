@@ -38,7 +38,9 @@ CSS:
 ## Node usage
 
 ```js
-import manifest from "@thesvg/static/icons.json" with { type: "json" };
+import { createRequire } from "node:module";
+const require = createRequire(import.meta.url);
+const manifest = require("@thesvg/static/icons.json");
 const github = manifest.find((i) => i.slug === "github");
 // file on disk: require.resolve("@thesvg/static/svg/github/default.svg")
 ```
