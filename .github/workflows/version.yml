@@ -132,4 +132,5 @@ jobs:
           commit-message: "chore(release): version packages"
           pr-title: "chore(release): version packages"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # RELEASE_TOKEN is a PAT or app token: pull requests made with the default token do not start the checks.
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}

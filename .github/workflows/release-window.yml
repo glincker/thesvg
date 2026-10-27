@@ -1,0 +1,36 @@
+name: Release - Window
+
+# The Version PR collects every changeset that lands on main, so one release carries all of them at the highest semver
+# bump among them. This job merges it at most once per window, which starts the publish workflow.
+on:
+  schedule:
+    - cron: "0 */2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: release-window
+  cancel-in-progress: false
+
+jobs:
+  merge:
+    name: Merge the Version PR
+    runs-on: ubuntu-latest
+    steps:
+      - name: Find and merge
+        env:
+          # RELEASE_TOKEN is a PAT or app token. A merge made with the default token does not start the publish workflow.
+          GH_TOKEN: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          PR=$(gh pr list --state open --search "chore(release): version packages in:title" --json number,title --jq '[.[] | select(.title == "chore(release): version packages")][0].number // empty')
+          if [ -z "$PR" ]; then
+            echo "No open Version PR, nothing to release"
+            exit 0
+          fi
+          # Auto-merge waits for the required checks, so a red PR is never forced through.
+          gh pr merge "$PR" --auto --squash
+          echo "Version PR #$PR will merge once its checks pass"
