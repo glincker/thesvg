@@ -1,4 +1,4 @@
-import { ArrowUpRight, Download, Hand, Layers, Package } from "lucide-react";
+import { UiGlyph } from "@/components/ui-glyph";
 import { Github } from "@/components/icons/shared/brand-icons";
 import { TheSVGMark } from "@/components/icons/the-svg-mark";
 import Link from "next/link";
@@ -15,62 +15,78 @@ interface FooterLink {
   label: string;
   href: string;
   external?: boolean;
+  /** UI glyph shown before the label. */
+  glyph?: string;
+  /** Brand icon slug under /icons, shown before the label. */
+  brand?: string;
 }
 
 const PRODUCT_LINKS: FooterLink[] = [
-  { label: "Browse Icons", href: "/" },
-  { label: "Docs", href: "/docs" },
-  { label: "Categories", href: "/categories" },
-  { label: "Extensions", href: "/extensions" },
-  { label: "Submit Icon", href: "/submit" },
-  { label: "Blog", href: "/blog" },
+  { label: "Brand Icons", href: "/", glyph: "layout-grid" },
+  { label: "UI Icons", href: "/ui", glyph: "layers" },
+  { label: "Categories", href: "/categories", glyph: "box" },
+  { label: "Docs", href: "/docs", glyph: "book-open" },
+  { label: "Submit Icon", href: "/submit", glyph: "rocket" },
+  { label: "Blog", href: "/blog", glyph: "file-text" },
 ];
 
 const RESOURCE_LINKS: FooterLink[] = [
-  { label: "Figma Plugin", href: "https://www.figma.com/community/plugin/1612997159050367763", external: true },
-  { label: "VS Code Extension", href: "https://marketplace.visualstudio.com/items?itemName=glincker.thesvg", external: true },
-  { label: "Raycast Extension", href: "https://www.raycast.com/thegdsks/thesvg", external: true },
-  { label: "npm Package", href: "https://www.npmjs.com/package/thesvg", external: true },
-  { label: "CDN Usage", href: "/extensions" },
-  { label: "Compare", href: "/compare" },
+  { label: "Figma Plugin", href: "https://www.figma.com/community/plugin/1612997159050367763", external: true, brand: "figma" },
+  { label: "VS Code Extension", href: "https://marketplace.visualstudio.com/items?itemName=glincker.thesvg", external: true, brand: "visual-studio-code" },
+  { label: "Raycast Extension", href: "https://www.raycast.com/thegdsks/thesvg", external: true, brand: "raycast" },
+  { label: "npm Packages", href: "/packages", brand: "npm" },
+  { label: "CDN Usage", href: "/extensions", glyph: "terminal" },
+  { label: "Compare", href: "/compare", glyph: "scale" },
 ];
 
 const COMMUNITY_LINKS: FooterLink[] = [
-  { label: "GitHub", href: "https://github.com/GLINCKER/thesvg", external: true },
-  { label: "Issues", href: "https://github.com/GLINCKER/thesvg/issues", external: true },
-  { label: "Discussions", href: "https://github.com/GLINCKER/thesvg/discussions", external: true },
-  { label: "Discord", href: "https://discord.gg/Ar5pcaZB99", external: true },
-  { label: "Contributing", href: "https://github.com/GLINCKER/thesvg/blob/main/CONTRIBUTING.md", external: true },
-  { label: "Sponsor", href: "https://github.com/sponsors/glincker", external: true },
+  { label: "GitHub", href: "https://github.com/GLINCKER/thesvg", external: true, glyph: "code" },
+  { label: "Issues", href: "https://github.com/GLINCKER/thesvg/issues", external: true, glyph: "star" },
+  { label: "Discussions", href: "https://github.com/GLINCKER/thesvg/discussions", external: true, glyph: "users" },
+  { label: "Discord", href: "https://discord.gg/Ar5pcaZB99", external: true, brand: "discord" },
+  { label: "Contributing", href: "https://github.com/GLINCKER/thesvg/blob/main/CONTRIBUTING.md", external: true, glyph: "file-text" },
+  { label: "Sponsor", href: "https://github.com/sponsors/glincker", external: true, glyph: "heart" },
 ];
 
 const LEGAL_LINKS: FooterLink[] = [
-  { label: "Legal", href: "/legal" },
-  { label: "Privacy", href: "/privacy" },
-  { label: "Trademark Policy", href: TRADEMARK_POLICY_URL, external: true },
-  { label: "Contact", href: "/contact" },
+  { label: "Legal", href: "/legal", glyph: "scale" },
+  { label: "Privacy", href: "/privacy", glyph: "shield" },
+  { label: "Trademark Policy", href: TRADEMARK_POLICY_URL, external: true, glyph: "file-text" },
+  { label: "Contact", href: "/contact", glyph: "mail" },
 ];
 
+const SOCIALS = [
+  { label: "GitHub", slug: "github", href: "https://github.com/GLINCKER/thesvg" },
+  { label: "npm packages", slug: "npm", href: "https://www.npmjs.com/package/thesvg" },
+  { label: "Figma plugin", slug: "figma", href: "https://www.figma.com/community/plugin/1612997159050367763" },
+  { label: "VS Code extension", slug: "visual-studio-code", href: "https://marketplace.visualstudio.com/items?itemName=glincker.thesvg" },
+  { label: "Raycast extension", slug: "raycast", href: "https://www.raycast.com/thegdsks/thesvg" },
+  { label: "Discord", slug: "discord", href: "https://discord.gg/Ar5pcaZB99" },
+];
+
+function LinkIcon({ link }: { link: FooterLink }) {
+  if (link.brand) {
+    return <img src={`/icons/${link.brand}/default.svg`} alt="" width={16} height={16} className="size-4 shrink-0" />;
+  }
+  if (link.glyph) return <UiGlyph name={link.glyph} className="size-4 text-muted-foreground/70 transition-colors group-hover:text-orange-500" />;
+  return null;
+}
+
 function FooterLinkItem({ link }: { link: FooterLink }) {
+  const cls = "group flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm";
   if (link.external) {
     return (
-      <a
-        href={withUtm(link.href, "footer")}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
-      >
+      <a href={withUtm(link.href, "footer")} target="_blank" rel="noopener noreferrer" className={cls}>
+        <LinkIcon link={link} />
         {link.label}
-        <ArrowUpRight className="h-3 w-3 opacity-0 transition-opacity group-hover:opacity-100" />
+        <UiGlyph name="arrow-up-right" className="size-3 opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100" />
       </a>
     );
   }
 
   return (
-    <Link
-      href={link.href}
-      className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-    >
+    <Link href={link.href} className={cls}>
+      <LinkIcon link={link} />
       {link.label}
     </Link>
   );
@@ -79,7 +95,7 @@ function FooterLinkItem({ link }: { link: FooterLink }) {
 function FooterColumn({ title, links }: { title: string; links: FooterLink[] }) {
   return (
     <div className="flex flex-col gap-3">
-      <h3 className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">
+      <h3 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground/80">
         {title}
       </h3>
       <ul className="flex flex-col gap-2.5">
@@ -109,7 +125,7 @@ function StatItem({
       </div>
       <div>
         <AnimatedCounter value={value} className="text-sm font-semibold text-foreground" />
-        <p className="text-[11px] text-muted-foreground/70">{label}</p>
+        <p className="text-xs text-muted-foreground">{label}</p>
       </div>
     </div>
   );
@@ -135,19 +151,19 @@ export function Footer() {
                 Use them in any project, no attribution required.
               </p>
             </div>
-            <div className="flex flex-wrap gap-6 sm:gap-8">
+            <div className="flex flex-wrap gap-x-8 gap-y-4">
               <StatItem
-                icon={<Layers className="h-4 w-4 text-orange-500" />}
+                icon={<UiGlyph name="layers" className="size-5 text-orange-500" />}
                 value={iconCount}
                 label="Brand Icons"
               />
               <StatItem
-                icon={<Package className="h-4 w-4 text-orange-500" />}
+                icon={<UiGlyph name="package" className="size-5 text-orange-500" />}
                 value={variantCount}
                 label="SVG Variants"
               />
               <StatItem
-                icon={<Download className="h-4 w-4 text-orange-500" />}
+                icon={<UiGlyph name="download" className="size-5 text-orange-500" />}
                 value={collectionCount}
                 label="Collections"
               />
@@ -202,56 +218,26 @@ export function Footer() {
                 </a>{" "}
                 project
               </p>
-              <div className="flex items-center gap-3">
-                <a
-                  href={withUtm("https://github.com/GLINCKER/thesvg", "footer")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground/60 transition-colors hover:text-foreground"
-                  aria-label="GitHub"
-                >
-                  <Github className="h-4 w-4" />
-                </a>
-                <a
-                  href={withUtm("https://www.figma.com/community/plugin/1612997159050367763", "footer")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="opacity-60 transition-opacity hover:opacity-100"
-                  aria-label="Figma plugin"
-                >
-                  <img
-                    src="/icons/figma/default.svg"
-                    alt=""
-                    width={14}
-                    height={14}
-                    className="h-3.5 w-3.5"
-                  />
-                </a>
-                <a
-                  href={withUtm("https://www.npmjs.com/package/thesvg", "footer")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/60 transition-colors hover:text-foreground"
-                  aria-label="npm"
-                >
-                  npm
-                </a>
-                <a
-                  href={withUtm("https://discord.gg/Ar5pcaZB99", "footer")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="opacity-60 transition-opacity hover:opacity-100"
-                  aria-label="Discord"
-                >
-                  <img
-                    src="/icons/discord/default.svg"
-                    alt=""
-                    width={18}
-                    height={14}
-                    className="h-3.5 w-[18px]"
-                  />
-                </a>
-              </div>
+              <ul className="-ml-1.5 flex flex-wrap items-center gap-0.5" aria-label="theSVG on the web">
+                {SOCIALS.map((item) => (
+                  <li key={item.label}>
+                    <a
+                      href={withUtm(item.href, "footer")}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={item.label}
+                      title={item.label}
+                      className="inline-flex size-9 items-center justify-center rounded-lg opacity-75 transition-opacity hover:bg-accent/60 hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    >
+                      {item.slug === "github" ? (
+                        <Github className="size-[18px] text-foreground" />
+                      ) : (
+                        <img src={`/icons/${item.slug}/default.svg`} alt="" width={18} height={18} className="size-[18px]" />
+                      )}
+                    </a>
+                  </li>
+                ))}
+              </ul>
               <a
                 href={withUtm(
                   "https://www.producthunt.com/products/thesvg/reviews/new?utm_source=badge-product_review&utm_medium=badge&utm_source=badge-thesvg",
@@ -291,10 +277,10 @@ export function Footer() {
                 className="group mt-1 inline-flex w-fit items-center gap-1.5 rounded-full border border-orange-500/25 bg-orange-500/[0.06] py-1 pl-1 pr-3 text-xs font-medium text-foreground transition-colors hover:border-orange-500/40 hover:bg-orange-500/10"
               >
                 <span className="flex h-5 w-5 items-center justify-center rounded-full bg-orange-500/15">
-                  <Hand className="h-3 w-3 text-orange-500" />
+                  <UiGlyph name="heart" className="size-3 text-orange-500" />
                 </span>
                 Meet the founder
-                <ArrowUpRight className="h-3 w-3 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
+                <UiGlyph name="arrow-up-right" className="size-3 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
               </a>
             </div>
             <FooterColumn title="Legal" links={LEGAL_LINKS} />
@@ -314,7 +300,7 @@ export function Footer() {
               </a>
             </p>
             <div className="mt-4 flex flex-col items-center gap-3">
-              <span className="text-[10px] uppercase tracking-wider text-muted-foreground/50">
+              <span className="text-xs uppercase tracking-wider text-muted-foreground/70">
                 Founding Partners
               </span>
               <div className="flex items-center gap-6">
@@ -373,10 +359,10 @@ export function Footer() {
 
           {/* Bottom bar */}
           <div className="mt-8 flex flex-col items-center gap-3 border-t border-border/40 pt-6 dark:border-white/[0.06] sm:flex-row sm:justify-between">
-            <p className="text-[11px] text-muted-foreground/50">
+            <p className="text-xs text-muted-foreground/70">
               &copy; {new Date().getFullYear()} GLINCKER. All rights reserved.
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[11px] text-muted-foreground/50">
+            <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-muted-foreground/70">
               <span>
                 All brand logos and trademarks belong to their respective owners.{" "}
                 <a
