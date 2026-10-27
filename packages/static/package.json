@@ -1,0 +1,32 @@
+{
+  "name": "@thesvg/static",
+  "version": "4.0.0",
+  "description": "Raw SVG files for every brand icon variant from thesvg.org plus a JSON manifest, for CDN and non-JS use",
+  "type": "module",
+  "sideEffects": false,
+  "license": "MIT",
+  "author": "thesvg.org",
+  "homepage": "https://thesvg.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/glincker/thesvg.git",
+    "directory": "packages/static"
+  },
+  "bugs": {
+    "url": "https://github.com/glincker/thesvg/issues"
+  },
+  "keywords": ["svg", "icons", "brand", "logos", "cdn", "static", "jsdelivr", "unpkg"],
+  "exports": {
+    "./icons.json": "./dist/icons.json",
+    "./svg/*": "./dist/svg/*",
+    "./package.json": "./package.json"
+  },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/build.mjs --check",
+    "prepublishOnly": "node scripts/build.mjs"
+  },
+  "engines": { "node": ">=18" },
+  "publishConfig": { "provenance": true, "access": "public" }
+}
