@@ -56,4 +56,7 @@ export const DEFAULT_STYLE: StyleParams = {
   glassShine: 0.6,
   glassShineWidth: 0.7,
   glassShineGap: 0.45,
+  shadow: 0,
+  shadowBlur: 0.9,
+  shadowOffset: 1,
 };

@@ -66,4 +66,9 @@ export interface StyleParams {
   glassShineWidth: number;
   /** Glass outline: gap between the outline and the highlight band in viewBox units. */
   glassShineGap: number;
+  /** Lift shadow under the whole icon, any look: opacity from 0 (off) to 1. */
+  shadow: number;
+  /** Shadow blur radius and downward offset in viewBox units. */
+  shadowBlur: number;
+  shadowOffset: number;
 }

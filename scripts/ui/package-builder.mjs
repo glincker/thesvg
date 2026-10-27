@@ -41,6 +41,13 @@ const SCOPE_JS = String.raw`export const scoper = (ids) => {
 let n = 0;
 export const nextId = () => ++n;
 `;
+export const LIFT_JS = `export const lift = (shadow, size) => {
+  const a = shadow === true ? 0.3 : Number(shadow) || 0;
+  if (a <= 0) return undefined;
+  const k = (Number(size) || 24) / 24;
+  return "drop-shadow(0 " + (k).toFixed(2) + "px " + (k * 1.8).toFixed(2) + "px color-mix(in srgb, currentColor " + Math.round(Math.min(1, a) * 100) + "%, transparent))";
+};
+`;
 const SCOPE_DTS = `export declare const scoper: (ids: string[]) => (html: string, uid: string | number) => string;\nexport declare const nextId: () => number;\n`;
 const idsOf = (svg) => {
   const ids = [...new Set([...svg.matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]))];
@@ -104,14 +111,16 @@ export function buildSveltePackage(pkgDir, name) {
   const barrel = [];
   writeFileSync(join(dist, "_scope.js"), SCOPE_JS);
   writeFileSync(join(dist, "_scope.d.ts"), SCOPE_DTS);
+  writeFileSync(join(dist, "_lift.js"), LIFT_JS);
+  writeFileSync(join(dist, "_lift.d.ts"), `export declare const lift: (shadow: boolean | number, size: number | string) => string | undefined;\n`);
   for (const icon of manifest.icons) {
     for (const look of manifest.looks) {
       const base = look === "outline" ? icon.slug : `${icon.slug}-${look}`;
       const svg = readSvg(icon.slug, look);
       const html = JSON.stringify(inner(svg));
       const ids = JSON.stringify(idsOf(svg));
-      writeFileSync(join(dist, `${base}.svelte`), `<script>\n  import { scoper, nextId } from "./_scope.js";\n  export let size = 24;\n  const markup = scoper(${ids})(${html}, nextId());\n</script>\n\n<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={size} height={size} overflow="visible" aria-hidden={$$restProps["aria-label"] ? undefined : "true"} {...$$restProps}>{@html markup}</svg>\n`);
-      writeFileSync(join(dist, `${base}.svelte.d.ts`), `import type { SvelteComponent } from "svelte";\nimport type { SVGAttributes } from "svelte/elements";\n\nexport default class ${exportName(icon.slug, look)} extends SvelteComponent<SVGAttributes<SVGSVGElement> & { size?: number | string }> {}\n`);
+      writeFileSync(join(dist, `${base}.svelte`), `<script>\n  import { scoper, nextId } from "./_scope.js";\n  import { lift } from "./_lift.js";\n  export let size = 24;\n  export let shadow = 0;\n  $: filter = lift(shadow, size);\n  const markup = scoper(${ids})(${html}, nextId());\n</script>\n\n<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={size} height={size} overflow="visible" style={filter ? "filter:" + filter : undefined} aria-hidden={$$restProps["aria-label"] ? undefined : "true"} {...$$restProps}>{@html markup}</svg>\n`);
+      writeFileSync(join(dist, `${base}.svelte.d.ts`), `import type { SvelteComponent } from "svelte";\nimport type { SVGAttributes } from "svelte/elements";\n\nexport default class ${exportName(icon.slug, look)} extends SvelteComponent<SVGAttributes<SVGSVGElement> & { size?: number | string; shadow?: boolean | number }> {}\n`);
       barrel.push(`export { default as ${exportName(icon.slug, look)} } from "./${base}.svelte";`);
     }
   }

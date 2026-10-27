@@ -139,6 +139,16 @@ function insideRatio(detail: Pt[], poly: Pt[]): number {
 }
 
 export function renderIcon(nodes: IconNode[], opts: RenderOptions = {}): RenderResult {
+  const res = renderBase(nodes, opts);
+  const st = { ...DEFAULT_STYLE, ...opts.style };
+  if (!(st.shadow > 0)) return res;
+  // The shadow follows the ink colour, so it reads as lift on a light page and as a soft glow on a dark one.
+  const id = `${opts.idPrefix ?? "m"}-sh`;
+  const f = `<defs><filter id="${id}" x="-25%" y="-25%" width="150%" height="160%" color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="${st.shadowOffset}" stdDeviation="${st.shadowBlur}" flood-color="currentColor" flood-opacity="${Math.min(1, st.shadow)}"/></filter></defs>`;
+  return { ...res, svg: res.svg.replace(/(<svg[^>]*>)([\s\S]*)<\/svg>$/, `$1${f}<g filter="url(#${id})">$2</g></svg>`) };
+}
+
+function renderBase(nodes: IconNode[], opts: RenderOptions = {}): RenderResult {
   const style: StyleParams = { ...DEFAULT_STYLE, ...opts.style };
   const cfg: EngineConfig = { ...DEFAULT_ENGINE, ...opts.engine };
   const variant = opts.variant ?? "outline";
