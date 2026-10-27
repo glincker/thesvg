@@ -121046,6 +121046,24 @@
     "collection": "brands"
   },
   {
+    "slug": "servicenow",
+    "title": "ServiceNow",
+    "aliases": [],
+    "hex": "62D84E",
+    "categories": [
+      "Management",
+      "SaaS"
+    ],
+    "variants": {
+      "default": "/icons/servicenow/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.servicenow.com",
+    "guidelines": "https://www.servicenow.com/logousage.html",
+    "dateAdded": "2026-10-26",
+    "collection": "brands"
+  },
+  {
     "slug": "session",
     "title": "Session",
     "aliases": [],
