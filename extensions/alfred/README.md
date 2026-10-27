@@ -50,7 +50,7 @@ ui bell fill
 ```
 
 Enter copies the `outline` look. Press Tab on a result (or type the look after the
-name) to pick another look: outline, glass, duotone, offset, fill, pixel or depth.
+name) to pick another look: outline, glass, duotone, offset, fill, glass-outline or depth.
 Cmd+Enter and Alt+Enter work the same as for brand icons. UI icons use
 `currentColor`, so the copied SVG takes the color of the surrounding text.
 

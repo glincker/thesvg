@@ -7,7 +7,7 @@
     "duotone",
     "offset",
     "fill",
-    "pixel",
+    "glass-outline",
     "depth"
   ],
   "files": "/ui/{slug}/{look}.svg",

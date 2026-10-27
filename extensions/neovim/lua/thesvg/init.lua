@@ -71,7 +71,7 @@ end
 --- Known look names for command completion (no network; cache only).
 ---@return string[]
 function M.ui_looks()
-  return { "outline", "glass", "duotone", "offset", "fill", "pixel", "depth" }
+  return { "outline", "glass", "duotone", "offset", "fill", "glass-outline", "depth" }
 end
 
 return M

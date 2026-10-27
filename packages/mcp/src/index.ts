@@ -138,7 +138,7 @@ const lookSchema = z
   .optional()
   .default(DEFAULT_LOOK)
   .describe(
-    "UI icon look (kind 'ui' only): outline, glass, duotone, offset, fill, pixel, depth. Defaults to 'outline'."
+    "UI icon look (kind 'ui' only): outline, glass, duotone, offset, fill, glass-outline, depth. Defaults to 'outline'."
   );
 
 const server = new McpServer({

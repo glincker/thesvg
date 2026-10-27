@@ -5,7 +5,7 @@ Search and copy brand icons directly from VS Code, plus a growing set of UI icon
 ## Features
 
 - **Search** brand icons from the command palette
-- **UI icons** as a second kind: use the button in the picker title bar to switch between Brand and UI icons. Search by title, slug, tag or category, then pick a look (outline, glass, duotone, offset, fill, pixel, depth). Copies keep `currentColor` so icons follow your theme. If the UI index cannot be loaded, the picker stays on brand icons
+- **UI icons** as a second kind: use the button in the picker title bar to switch between Brand and UI icons. Search by title, slug, tag or category, then pick a look (outline, glass, duotone, offset, fill, glass-outline, depth). Copies keep `currentColor` so icons follow your theme. If the UI index cannot be loaded, the picker stays on brand icons
 - **Copy SVG** to clipboard with one keystroke
 - **Copy as JSX** for React projects
 - **Copy CDN link** (jsDelivr) for HTML/CSS

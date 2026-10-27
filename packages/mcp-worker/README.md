@@ -20,7 +20,7 @@ Exposes the same five tools as `packages/mcp`, adapted for the edge runtime:
 
 ## UI icons (`kind`)
 
-Every tool also accepts an optional `kind` parameter: `"brand"` (default, identical to previous behavior) or `"ui"` for the UI icon set. `get_icon` and `get_icon_url` take an optional `look` for UI icons (`outline` by default, also `glass`, `duotone`, `offset`, `fill`, `pixel`, `depth`); an unknown look returns an error listing the valid ones. For `kind: "ui"`, `list_variants` lists looks and `list_categories` counts UI categories.
+Every tool also accepts an optional `kind` parameter: `"brand"` (default, identical to previous behavior) or `"ui"` for the UI icon set. `get_icon` and `get_icon_url` take an optional `look` for UI icons (`outline` by default, also `glass`, `duotone`, `offset`, `fill`, `glass-outline`, `depth`); an unknown look returns an error listing the valid ones. For `kind: "ui"`, `list_variants` lists looks and `list_categories` counts UI categories.
 
 The UI index is a separate file (`https://cdn.jsdelivr.net/gh/glincker/thesvg@main/src/data/ui-icons.json`). It is fetched lazily on the first UI request and cached in memory. If that fetch fails, only UI requests return an error; brand tools never depend on it.
 

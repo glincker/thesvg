@@ -24,7 +24,7 @@ CACHE_DIR = os.path.expanduser("~/Library/Caches/com.glincker.thesvg-alfred")
 CACHE_FILE = os.path.join(CACHE_DIR, "ui-icons.json")
 CACHE_TTL_SECONDS = 6 * 60 * 60
 MAX_RESULTS = 20
-DEFAULT_LOOKS = ["outline", "glass", "duotone", "offset", "fill", "pixel", "depth"]
+DEFAULT_LOOKS = ["outline", "glass", "duotone", "offset", "fill", "glass-outline", "depth"]
 DEFAULT_LOOK = "outline"
 
 

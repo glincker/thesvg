@@ -149,7 +149,7 @@ end
 -- the same way as the brand registry. Never merged into it.
 local UI_INDEX_URL =
   "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/src/data/ui-icons.json"
-local DEFAULT_LOOKS = { "outline", "glass", "duotone", "offset", "fill", "pixel", "depth" }
+local DEFAULT_LOOKS = { "outline", "glass", "duotone", "offset", "fill", "glass-outline", "depth" }
 
 ---@return string
 local function ui_cache_path()

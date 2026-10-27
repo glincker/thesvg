@@ -9,4 +9,4 @@ import { BellIcon, BellFillIcon } from "@thesvg/ui-react-native";
 <BellFillIcon size={24} color="#f97316" />
 ```
 
-One export per look: `BellIcon` is outline, the others add the look (`BellGlassIcon`, `BellDuotoneIcon`, `BellOffsetIcon`, `BellFillIcon`, `BellPixelIcon`, `BellDepthIcon`). Unused looks are dropped by your bundler.
+One export per look: `BellIcon` is outline, the others add the look (`BellGlassIcon`, `BellDuotoneIcon`, `BellOffsetIcon`, `BellFillIcon`, `BellGlassOutlineIcon`, `BellDepthIcon`). Unused looks are dropped by your bundler.

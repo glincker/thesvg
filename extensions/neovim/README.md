@@ -65,7 +65,7 @@ use {
 ### UI icons
 
 UI icons are a separate set with several looks: outline, glass, duotone, offset, fill,
-pixel and depth. Pass the look as the argument (`:TheSVGUI fill`), or omit it to be
+glass outline and depth. Pass the look as the argument (`:TheSVGUI fill`), or omit it to be
 asked after picking an icon (outline is listed first). The SVGs use `currentColor`,
 and inline inserts keep it, so they follow the surrounding text color.
 

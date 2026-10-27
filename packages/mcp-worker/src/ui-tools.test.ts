@@ -61,7 +61,7 @@ describe("UI tools", () => {
     stubFetch();
     const res = await uiUrl("arrow-down", "neon");
     expect(res.isError).toBe(true);
-    expect(textOf(res)).toContain("outline, glass, duotone, offset, fill, pixel, depth");
+    expect(textOf(res)).toContain("outline, glass, duotone, offset, fill, glass-outline, depth");
   });
 
   it("searches by tag and lists categories", async () => {

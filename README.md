@@ -165,7 +165,7 @@ theSVG organizes icons into collections:
 
 ### UI icons
 
-**New in theSVG 4.0.** Alongside the brand catalog, theSVG ships a set of **interface icons we draw ourselves**, at [thesvg.org/ui](https://thesvg.org/ui). 129 icons today, each in seven looks (outline, glass, duotone, offset, fill, pixel and depth), all using `currentColor`, with more arriving in small drops. They are a separate section with their own data, packages and tests, and the two kinds of icons never mix their data or code. See [UI icons](#ui-icons-1) below.
+**New in theSVG 4.0.** Alongside the brand catalog, theSVG ships a set of **interface icons we draw ourselves**, at [thesvg.org/ui](https://thesvg.org/ui). 129 icons today, each in seven looks (outline, glass, duotone, offset, fill, glass outline and depth), all using `currentColor`, with more arriving in small drops. They are a separate section with their own data, packages and tests, and the two kinds of icons never mix their data or code. See [UI icons](#ui-icons-1) below.
 
 ### Brand families
 
@@ -446,7 +446,7 @@ One export per look means a look you do not import never reaches your bundle. Vu
 | Manifest (slugs, tags, categories, quality) | `https://cdn.jsdelivr.net/gh/glincker/thesvg@main/src/data/ui-icons.json` |
 | CLI | `npx @thesvg/cli add ui:bell --look glass` |
 
-Looks: `outline`, `glass`, `duotone`, `offset`, `fill`, `pixel`, `depth`. The UI icons are original drawings released under the [MIT license](./LICENSE) like the rest of the code. To add or change icons, see [Contributing to UI icons](./CONTRIBUTING.md#ui-icons).
+Looks: `outline`, `glass`, `duotone`, `offset`, `fill`, `glass-outline`, `depth`. The UI icons are original drawings released under the [MIT license](./LICENSE) like the rest of the code. To add or change icons, see [Contributing to UI icons](./CONTRIBUTING.md#ui-icons).
 
 ## CDN
 

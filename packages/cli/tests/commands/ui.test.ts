@@ -115,7 +115,7 @@ describe("thesvg add ui:<slug>", () => {
     );
     const msg = errors.join("\n");
     assert.match(msg, /Unknown look "neon"/);
-    assert.match(msg, /outline, glass, duotone, offset, fill, pixel, depth/);
+    assert.match(msg, /outline, glass, duotone, offset, fill, glass-outline, depth/);
     assert.deepEqual(await readdir(outDir), []);
   });
 
