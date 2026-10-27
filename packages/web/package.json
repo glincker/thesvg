@@ -1,6 +1,6 @@
 {
   "name": "@thesvg/web",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Framework-free helper that swaps data-thesvg elements for inline brand SVGs from @thesvg/icons",
   "type": "module",
   "sideEffects": false,
