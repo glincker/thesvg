@@ -151,7 +151,13 @@ export function UiStateProvider({ children }: { children: React.ReactNode }) {
       lab, setLab: (patch) => setLabState((cur) => ({ ...cur, ...patch })), resetLab: () => setLabState({}), set, setSet, brandCollection, setBrandCollection,
       toggleFavorite: (slug) =>
         setFavorites((cur) => {
-          const next = cur.includes(slug) ? cur.filter((s) => s !== slug) : [...cur, slug];
+          const idx = cur.indexOf(slug);
+          const next = [...cur];
+          if (idx !== -1) {
+            next.splice(idx, 1);
+          } else {
+            next.push(slug);
+          }
           try {
             window.localStorage.setItem(FAV_KEY, JSON.stringify(next));
           } catch {

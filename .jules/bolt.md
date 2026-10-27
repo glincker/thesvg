@@ -88,3 +88,7 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2026-10-25 - Preserve behavior when optimizing array methods
 **Learning:** When refactoring declarative array methods like `.map()` to imperative `for` loops for performance, it's easy to accidentally introduce behavioral changes, such as unintentionally filtering out `undefined` values (e.g., `if (val) set.add(val)`).
 **Action:** Always ensure that manual `for` loops strictly replicate the null-checking behavior of the original mapping function to prevent subtle application logic changes.
+
+## 2025-05-18 - Replacing `.includes()` followed by `.filter()` in array toggle operations
+**Learning:** Using `.includes()` followed by `.filter()` (e.g., `cur.includes(slug) ? cur.filter((s) => s !== slug) : [...cur, slug]`) forces two complete iterations over the array, creating an intermediate array on filter, and another intermediate array on spread. This causes unnecessary garbage collection overhead on high-frequency UI interactions (like toggling favorites).
+**Action:** Replace this pattern with a single `Array.indexOf()` combined with `Array.splice()` and `Array.push()` on a cloned array, effectively reducing iterations and object allocations.
