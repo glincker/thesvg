@@ -126,7 +126,7 @@ export function RecentsPage() {
     const result: {
       entry: IconEntry;
       ts: number;
-      format: typeof copied[number]["format"];
+      format: (typeof copied)[number]["format"];
       count: number;
     }[] = [];
     for (let i = 0; i < copied.length; i++) {
@@ -155,7 +155,8 @@ export function RecentsPage() {
   // it doesn't flash before the icons resolve.
   const resolving = hasSlugs && !manifestLoaded && !manifestError;
   const manifestFailed = hydrated && hasSlugs && manifestError;
-  const isEmpty = hydrated && !resolving && !manifestFailed && totalEntries === 0;
+  const isEmpty =
+    hydrated && !resolving && !manifestFailed && totalEntries === 0;
 
   const handleCopyAgain = useCallback(
     async (entry: IconEntry, format: "svg" | "url") => {
@@ -239,7 +240,7 @@ export function RecentsPage() {
                 type="button"
                 onClick={() => setWin(w.id)}
                 aria-pressed={win === w.id}
-                className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
+                className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
                   win === w.id
                     ? "border-foreground/40 bg-foreground text-background"
                     : "border-border/50 bg-card/40 text-muted-foreground hover:border-foreground/20 hover:text-foreground dark:border-white/[0.06] dark:bg-white/[0.02]"
@@ -253,7 +254,7 @@ export function RecentsPage() {
               onClick={() => {
                 if (window.confirm("Clear all recent activity?")) clearAll();
               }}
-              className="ml-auto inline-flex items-center gap-1.5 rounded-full border border-border/50 px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:border-destructive/40 hover:bg-destructive/10 hover:text-destructive dark:border-white/[0.06]"
+              className="ml-auto inline-flex items-center gap-1.5 rounded-full border border-border/50 px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:border-destructive/40 hover:bg-destructive/10 hover:text-destructive focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-destructive focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:border-white/[0.06]"
             >
               <Trash2 className="h-3 w-3" />
               Clear everything
@@ -263,7 +264,11 @@ export function RecentsPage() {
       </header>
 
       {(!hydrated || resolving) && (
-        <div className="flex justify-center py-24" role="status" aria-label="Loading your recents">
+        <div
+          className="flex justify-center py-24"
+          role="status"
+          aria-label="Loading your recents"
+        >
           <div className="h-6 w-6 animate-spin rounded-full border-2 border-muted-foreground/30 border-t-foreground" />
         </div>
       )}
@@ -274,12 +279,13 @@ export function RecentsPage() {
             Couldn&apos;t load your recent icons
           </h2>
           <p className="mx-auto mt-1 max-w-sm text-sm text-muted-foreground">
-            Your viewed and copied history is saved, it just couldn&apos;t be resolved this time.
+            Your viewed and copied history is saved, it just couldn&apos;t be
+            resolved this time.
           </p>
           <button
             type="button"
             onClick={() => setReloadToken((t) => t + 1)}
-            className="mt-6 inline-flex items-center gap-1.5 rounded-xl bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-all hover:scale-[1.02] hover:opacity-90 active:scale-95"
+            className="mt-6 inline-flex items-center gap-1.5 rounded-xl bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-all hover:scale-[1.02] hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-95"
           >
             Retry
           </button>
@@ -296,7 +302,8 @@ export function RecentsPage() {
             Nothing here yet
           </h2>
           <p className="mx-auto mt-1 max-w-sm text-sm text-muted-foreground">
-            Browse a few icons and they will land here for one-tap recopy and quick reopen.
+            Browse a few icons and they will land here for one-tap recopy and
+            quick reopen.
           </p>
           <Link
             href="/"
@@ -431,10 +438,10 @@ export function RecentsPage() {
                               {entry.title}
                             </p>
                             <p className="text-[11px] text-muted-foreground">
-                              <span className="font-mono uppercase">{format}</span>
-                              {count > 1 && (
-                                <span> · {count}&times;</span>
-                              )}
+                              <span className="font-mono uppercase">
+                                {format}
+                              </span>
+                              {count > 1 && <span> · {count}&times;</span>}
                               <span> · {timeAgo(ts)} ago</span>
                             </p>
                           </div>
