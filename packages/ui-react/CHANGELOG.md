@@ -1,5 +1,11 @@
 # @thesvg/ui-react
 
+## 4.2.0
+
+### Minor Changes
+
+- [#1442](https://github.com/glincker/thesvg/pull/1442) [`177b1c8`](https://github.com/glincker/thesvg/commit/177b1c83ef0b2cff5e60008cb9d7273721309e1c) Thanks [@thegdsks](https://github.com/thegdsks)! - Animated theme icons. New `theme-system` icon (373 icons now), an `animated` prop on the React, Vue and Svelte components that pops an icon in and draws its strokes, a `ThemeIcon` for React that shows sun, moon or a display and replays the motion when the theme changes, and `-animated.svg` files for sun, moon and theme-system. The motion is plain CSS inside the SVG and respects reduced motion.
+
 ## 4.1.0
 
 ### Minor Changes
