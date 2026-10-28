@@ -38,6 +38,13 @@ if (existsSync(join(dist, "_scope.js"))) {
   const out = scoper(["a-g", "a-m"])('<g id="a-g"/><g id="a-grid"/><rect fill="url(#a-g)" mask="url(#a-m)"/>', "u1");
   if (out !== '<g id="a-g-u1"/><g id="a-grid"/><rect fill="url(#a-g-u1)" mask="url(#a-m-u1)"/>') fail(`scoper output is wrong: ${out}`);
 }
+// Every package ships the animation runtime, and it must wrap the markup and normalise stroke length.
+if (!existsSync(join(dist, "_anim.js"))) fail("missing _anim.js");
+else {
+  const { animate } = await import(pathToFileURL(join(dist, "_anim.js")).href);
+  const out = animate('<g fill="none" stroke="currentColor"><path d="M0 0L1 1"/></g>', "x1");
+  if (!out.html.includes("<style>") || !out.html.includes('pathLength="1"') || !out.html.includes('class="ua-x1"')) fail(`animate output is wrong: ${out.html.slice(0, 120)}`);
+}
 const expected = manifest.icons.length * manifest.looks.length;
 if (bad) process.exit(1);
 console.log(`ok: ${expected} exports in ${pkgDir.split("/").pop()}`);

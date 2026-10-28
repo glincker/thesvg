@@ -4,13 +4,13 @@
 [![downloads](https://img.shields.io/npm/dm/@thesvg/ui-react-native?color=F97316&label=downloads)](https://www.npmjs.com/package/@thesvg/ui-react-native)
 [![license](https://img.shields.io/npm/l/@thesvg/ui-react-native?color=F97316)](https://github.com/glincker/thesvg/blob/main/LICENSE)
 
-React Native components for the theSVG UI icons: 372 own icons in seven looks (outline, glass, duotone, offset, fill, glass outline, depth), typed and tree-shakeable, drawn with `react-native-svg`.
+React Native components for the theSVG UI icons: 373 own icons in seven looks (outline, glass, duotone, offset, fill, glass outline, depth), typed and tree-shakeable, drawn with `react-native-svg`.
 
 Part of [thesvg.org/ui](https://thesvg.org/ui), the open UI icon set for iOS and Android apps built with React Native and Expo.
 
 ## Features
 
-- 372 own UI icons in four sets (core interface, space, wave 2, AI agents), more every release
+- 373 own UI icons in five sets (core interface, space, wave 2, AI agents, theme), more every release
 - Seven looks for every icon, so one drawing serves outline, glass, duotone, offset, fill, glass outline and depth designs
 - `currentColor` everywhere: icons follow your text color and work in light and dark themes with no extra files
 - Tree-shakeable, one file per icon, typed
@@ -82,6 +82,7 @@ The lift `shadow` prop is not available in React Native, which has no CSS filter
 | Wave 2 | 171 | The next most used icons: charts, devices, layout, nature, tools |
 | Agents | 40 | Agent runs, tools, memory, guardrails and evals |
 | Space | 40 | Telemetry, orbit, actuators and sensors |
+| Theme | 1 | The system icon, next to sun and moon, with motion |
 
 Search by name or tag at [thesvg.org/ui](https://thesvg.org/ui). Missing an icon? [Submit one](https://thesvg.org/submit).
 
