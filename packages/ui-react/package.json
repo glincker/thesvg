@@ -1,6 +1,6 @@
 {
   "name": "@thesvg/ui-react",
-  "version": "4.2.0",
+  "version": "4.3.0",
   "description": "Typed React components for the UI icons from thesvg.org, one file per icon and one export per look",
   "type": "module",
   "sideEffects": false,
