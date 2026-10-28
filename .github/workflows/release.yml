@@ -96,12 +96,14 @@ jobs:
               continue
             fi
             echo "Packing and publishing $PKG_NAME@$PKG_VERSION"
+            # Bash ignores `set -e` inside a subshell that is used as an `if` condition, so a failed npm publish
+            # would be swallowed by the rm below. Every command that can fail exits explicitly.
             if ! (
-              cd "$PKG_DIR"
+              cd "$PKG_DIR" || exit 1
               # pnpm pack rewrites workspace:* deps to concrete versions
-              TARBALL=$(pnpm pack 2>/dev/null | tail -1)
+              TARBALL=$(pnpm pack 2>/dev/null | tail -1) || exit 1
               # npm publish populates the readme field on the registry manifest
-              npm publish "$TARBALL" --access public --provenance
+              npm publish "$TARBALL" --access public --provenance || exit 1
               rm -f "$TARBALL"
             ); then
               echo "::error::Failed to publish $PKG_NAME@$PKG_VERSION"
