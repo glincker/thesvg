@@ -32,8 +32,22 @@ export interface ViewSet {
 
 // Every set file committed under src/data/ui/sets is released. The newest release date is the "new" drop,
 // so the label never depends on today's date and server and browser always agree.
-const scores = new Map((manifest.icons as { slug: string; score?: number; q?: number[] }[]).map((i) => [i.slug, i]));
-const newest = SETS.reduce((max, s) => (s.releaseDate > max ? s.releaseDate : max), "");
+const scores = new Map<
+  string,
+  { slug: string; score?: number; q?: number[] }
+>();
+const manifestIcons = manifest.icons as {
+  slug: string;
+  score?: number;
+  q?: number[];
+}[];
+for (let i = 0; i < manifestIcons.length; i++) {
+  scores.set(manifestIcons[i].slug, manifestIcons[i]);
+}
+const newest = SETS.reduce(
+  (max, s) => (s.releaseDate > max ? s.releaseDate : max),
+  "",
+);
 
 export const GLYPHS: Glyph[] = SETS.flatMap((s) =>
   s.glyphs.map((g) => ({
@@ -46,12 +60,43 @@ export const GLYPHS: Glyph[] = SETS.flatMap((s) =>
     released: true,
     isNew: s.releaseDate === newest,
     releasedOn: s.releaseDate,
-    quality: scores.get(g.slug)?.score !== undefined ? { score: scores.get(g.slug)?.score ?? 0, parts: scores.get(g.slug)?.q ?? [] } : undefined,
+    quality:
+      scores.get(g.slug)?.score !== undefined
+        ? {
+            score: scores.get(g.slug)?.score ?? 0,
+            parts: scores.get(g.slug)?.q ?? [],
+          }
+        : undefined,
   })),
 );
-export const VIEW_SETS: ViewSet[] = SETS.map((s) => ({ id: s.id, name: s.name, note: s.note, releaseDate: s.releaseDate, released: true, isNew: s.releaseDate === newest, count: s.glyphs.length }));
-export const POPULAR_SLUGS: string[] = (popular as string[]).filter((slug) => GLYPHS.some((g) => g.slug === slug));
-export const GLYPH_BY_SLUG = new Map(GLYPHS.map((g) => [g.slug, g]));
-export const CATEGORIES: { name: string; count: number }[] = [...new Set(GLYPHS.map((g) => g.category))]
-  .map((name) => ({ name, count: GLYPHS.filter((g) => g.category === name).length }))
-  .sort((a, b) => b.count - a.count);
+export const VIEW_SETS: ViewSet[] = SETS.map((s) => ({
+  id: s.id,
+  name: s.name,
+  note: s.note,
+  releaseDate: s.releaseDate,
+  released: true,
+  isNew: s.releaseDate === newest,
+  count: s.glyphs.length,
+}));
+export const GLYPH_BY_SLUG = new Map<string, Glyph>();
+for (let i = 0; i < GLYPHS.length; i++) {
+  GLYPH_BY_SLUG.set(GLYPHS[i].slug, GLYPHS[i]);
+}
+
+export const POPULAR_SLUGS: string[] = [];
+const popularArray = popular as string[];
+for (let i = 0; i < popularArray.length; i++) {
+  if (GLYPH_BY_SLUG.has(popularArray[i])) {
+    POPULAR_SLUGS.push(popularArray[i]);
+  }
+}
+
+const categoryCounts = new Map<string, number>();
+for (let i = 0; i < GLYPHS.length; i++) {
+  const cat = GLYPHS[i].category;
+  categoryCounts.set(cat, (categoryCounts.get(cat) ?? 0) + 1);
+}
+export const CATEGORIES: { name: string; count: number }[] = Array.from(
+  categoryCounts,
+  ([name, count]) => ({ name, count }),
+).sort((a, b) => b.count - a.count);
