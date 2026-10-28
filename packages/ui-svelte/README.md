@@ -4,13 +4,13 @@
 [![downloads](https://img.shields.io/npm/dm/@thesvg/ui-svelte?color=F97316&label=downloads)](https://www.npmjs.com/package/@thesvg/ui-svelte)
 [![license](https://img.shields.io/npm/l/@thesvg/ui-svelte?color=F97316)](https://github.com/glincker/thesvg/blob/main/LICENSE)
 
-Svelte components for the theSVG UI icons: 372 own icons in seven looks (outline, glass, duotone, offset, fill, glass outline, depth), typed, tree-shakeable and themeable with `currentColor`.
+Svelte components for the theSVG UI icons: 373 own icons in seven looks (outline, glass, duotone, offset, fill, glass outline, depth), typed, tree-shakeable and themeable with `currentColor`.
 
 Part of [thesvg.org/ui](https://thesvg.org/ui), the open UI icon set for Svelte and SvelteKit apps.
 
 ## Features
 
-- 372 own UI icons in four sets (core interface, space, wave 2, AI agents), more every release
+- 373 own UI icons in five sets (core interface, space, wave 2, AI agents, theme), more every release
 - Seven looks for every icon, so one drawing serves outline, glass, duotone, offset, fill, glass outline and depth designs
 - `currentColor` everywhere: icons follow your text color and work in light and dark themes with no extra files
 - Optional soft `shadow` that lifts any look
@@ -61,6 +61,16 @@ Any svg attribute passes through. Icons without an `aria-label` are hidden from 
 ```
 
 
+## Animated icons
+
+Add `animated` to pop an icon in and draw its strokes, once. It works on every look, and the stroke drawing shows on outline and glass outline.
+
+```svelte
+<SunIcon animated />
+```
+
+The motion is plain CSS inside the SVG, so there is no animation library to install, and it stands still for people who prefer reduced motion. Sun, moon and the new `ThemeSystemIcon` are made for theme switchers.
+
 ## Looks
 
 Every icon ships in all seven looks. Outline is the plain name, every other look adds its name to the export.
@@ -95,6 +105,7 @@ Add `shadow` to lift any look off the page with a soft shadow that follows the i
 | Wave 2 | 171 | The next most used icons: charts, devices, layout, nature, tools |
 | Agents | 40 | Agent runs, tools, memory, guardrails and evals |
 | Space | 40 | Telemetry, orbit, actuators and sensors |
+| Theme | 1 | The system icon, next to sun and moon, with motion |
 
 Search by name or tag at [thesvg.org/ui](https://thesvg.org/ui). Missing an icon? [Submit one](https://thesvg.org/submit).
 

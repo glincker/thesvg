@@ -3,6 +3,7 @@ import set0 from "@/data/ui/sets/launch.json";
 import set1 from "@/data/ui/sets/space.json";
 import set2 from "@/data/ui/sets/agents.json";
 import set3 from "@/data/ui/sets/wave-2.json";
+import set4 from "@/data/ui/sets/theme.json";
 
 export interface SetData {
   id: string;
@@ -12,4 +13,4 @@ export interface SetData {
   glyphs: { slug: string; tags: string[]; nodes: unknown[] }[];
 }
 
-export const SETS: SetData[] = [set0, set1, set2, set3];
+export const SETS: SetData[] = [set0, set1, set2, set3, set4];
