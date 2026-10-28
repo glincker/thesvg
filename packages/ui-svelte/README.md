@@ -61,15 +61,26 @@ Any svg attribute passes through. Icons without an `aria-label` are hidden from 
 ```
 
 
-## Animated icons
+## Motion
 
-Add `animated` to pop an icon in and draw its strokes, once. It works on every look, and the stroke drawing shows on outline and glass outline.
+Add `animated` to give an icon motion. It works on every look.
 
 ```svelte
 <SunIcon animated />
+<LoaderCircleIcon animated="spin" />
+<BellIcon animated="ring" />
 ```
 
-The motion is plain CSS inside the SVG, so there is no animation library to install, and it stands still for people who prefer reduced motion. Sun, moon and the new `ThemeSystemIcon` are made for theme switchers.
+| `animated` | Motion |
+| --- | --- |
+| `true` or `"draw"` | Pops in with a spring and draws the strokes one after another, once |
+| `"pop"` | The spring only, once |
+| `"bounce"` | A short hop, once |
+| `"ring"` | A swing from the top, once. Made for a bell |
+| `"spin"` | Turns forever. Made for loaders |
+| `"pulse"` | Breathes forever. Made for a heart |
+
+It is plain CSS inside the SVG: no animation library, and it stands still for people who prefer reduced motion. Import only the icons you use, for example `import Bell from "@thesvg/ui-svelte/bell"`. The motion code is one small helper (about 1.6 KB gzipped) shared by every icon, and an icon you never animate carries no motion CSS.
 
 ## Looks
 

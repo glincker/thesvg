@@ -62,13 +62,24 @@ import { BellIcon, BellGlassIcon } from "@thesvg/ui-react/bell";
 ```
 
 
-## Animated icons
+## Motion
 
-Add `animated` to pop an icon in and draw its strokes, once. It works on every look, and the stroke drawing shows on outline and glass outline.
+Add `animated` to give an icon motion. It works on every look.
 
 ```tsx
-<SunIcon animated />
+<SunIcon animated />          {/* draw */}
+<LoaderCircleIcon animated="spin" />
+<BellIcon animated="ring" />
 ```
+
+| `animated` | Motion |
+| --- | --- |
+| `true` or `"draw"` | Pops in with a spring and draws the strokes one after another, once |
+| `"pop"` | The spring only, once |
+| `"bounce"` | A short hop, once |
+| `"ring"` | A swing from the top, once. Made for a bell |
+| `"spin"` | Turns forever. Made for loaders |
+| `"pulse"` | Breathes forever. Made for a heart |
 
 `ThemeIcon` is a ready-made switcher icon: a sun for light, a moon for dark and a display for system. It plays the motion each time the theme changes.
 
@@ -78,7 +89,15 @@ import { ThemeIcon } from "@thesvg/ui-react";
 <ThemeIcon theme={theme} size={20} /> {/* "light" | "dark" | "system" */}
 ```
 
-The motion is plain CSS inside the SVG, so there is no animation library to install, and it stands still for people who prefer reduced motion.
+`IconSwap` cross-fades between two icons with a small turn and scale, for a toggle like menu and close, or play and pause:
+
+```tsx
+import { IconSwap, MenuIcon, XIcon } from "@thesvg/ui-react";
+
+<IconSwap active={open} off={MenuIcon} on={XIcon} size={20} />
+```
+
+It is plain CSS inside the SVG: no animation library, and it stands still for people who prefer reduced motion. Import only the icons you use, for example `import { BellIcon } from "@thesvg/ui-react/bell"`. The motion code is one small helper (about 1.6 KB gzipped) shared by every icon, and an icon you never animate carries no motion CSS.
 
 ## Looks
 

@@ -52,13 +52,20 @@ Inline the SVG when you want the icon to take the text color, since `currentColo
 
 ## Animated files
 
-Sun, moon and `theme-system` also ship as `<look>-animated.svg`. They pop in and draw their strokes once when they load, which works in an `<img>` tag too:
+These icons also ship a `<look>-animated.svg` that moves when it loads, which works in an `<img>` tag too:
+
+| Icon | Motion |
+| --- | --- |
+| `sun`, `moon`, `theme-system` | Pop in and draw, once |
+| `bell` | Swing, once |
+| `heart` | Pulse, forever |
+| `loader-circle`, `refresh-cw` | Spin, forever |
 
 ```html
-<img src="https://cdn.jsdelivr.net/npm/@thesvg/ui/dist/svg/theme-system/outline-animated.svg" width="24" height="24" alt="" />
+<img src="https://cdn.jsdelivr.net/npm/@thesvg/ui/dist/svg/loader-circle/outline-animated.svg" width="24" height="24" alt="" />
 ```
 
-The motion stands still for people who prefer reduced motion. To animate when a theme changes, use the `animated` prop in `@thesvg/ui-react`, `@thesvg/ui-vue` or `@thesvg/ui-svelte`.
+The motion stands still for people who prefer reduced motion. To choose the motion yourself, or to play it when a state changes, use the `animated` prop in `@thesvg/ui-react`, `@thesvg/ui-vue` or `@thesvg/ui-svelte`.
 
 ## Looks
 

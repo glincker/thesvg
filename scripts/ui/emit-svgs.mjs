@@ -2,7 +2,7 @@
 // at thesvg.org/ui/<slug>/<look>.svg for hotlinking, but they are not committed. Runs as part of `pnpm build`.
 import { mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
-import { ANIMATED_SLUGS, animateSvg } from "./anim-runtime.mjs";
+import { ANIMATED, animateSvg } from "./anim-runtime.mjs";
 
 const ROOT = resolve(import.meta.dirname, "../..");
 const dir = join(ROOT, "src/data/ui/looks");
@@ -16,8 +16,8 @@ for (const file of readdirSync(dir).filter((f) => f.endsWith(".json"))) {
     mkdirSync(join(out, slug), { recursive: true });
     writeFileSync(join(out, slug, `${look}.svg`), `${svg}\n`);
     n++;
-    if (ANIMATED_SLUGS.includes(slug)) {
-      writeFileSync(join(out, slug, `${look}-animated.svg`), `${animateSvg(svg)}\n`);
+    if (ANIMATED[slug]) {
+      writeFileSync(join(out, slug, `${look}-animated.svg`), `${animateSvg(svg, ANIMATED[slug])}\n`);
       n++;
     }
   }
