@@ -1,5 +1,11 @@
 # @thesvg/ui
 
+## 4.3.0
+
+### Minor Changes
+
+- [#1445](https://github.com/glincker/thesvg/pull/1445) [`cc053a3`](https://github.com/glincker/thesvg/commit/cc053a35f3e17c54820bf1744748d95b68b0e4d4) Thanks [@thegdsks](https://github.com/thegdsks)! - Motion presets. `animated` now takes a preset: `draw` (what `animated` alone means), `pop`, `bounce`, `ring`, `spin` and `pulse`, on the React, Vue and Svelte components and on every look. New `IconSwap` for React cross-fades between two icons, for toggles like menu and close. Loader, refresh, heart and bell join sun, moon and theme-system with ready-made `-animated.svg` files. Plain CSS inside the SVG, tree-shakeable, and it respects reduced motion.
+
 ## 4.2.0
 
 ### Minor Changes
