@@ -4,6 +4,7 @@
     "title": "theSVG 4.0 is here, with UI icons",
     "excerpt": "theSVG 4.0 adds a second section: 129 UI icons drawn on a 24 grid, seven looks from one drawing, a style lab, and new packages for React, Vue, Svelte and React Native.",
     "date": "2026-10-26",
+    "image": "/blog/introducing-ui-icons-og.png",
     "author": "theSVG Team",
     "tags": [
       "launch",

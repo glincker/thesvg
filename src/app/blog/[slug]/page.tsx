@@ -27,6 +27,9 @@ interface PageProps {
 
 const posts = postsData as Post[];
 
+// Posts without their own cover fall back to the site card so the page always has og:image.
+const DEFAULT_COVER = "/og-image.png";
+
 export function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
 }
@@ -58,13 +61,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       siteName: "theSVG",
       section: post.tags[0],
       tags: post.tags,
-      ...(post.image ? { images: [{ url: post.image, width: 1200, height: 630, alt: post.title }] } : {}),
+      images: [{ url: post.image ?? DEFAULT_COVER, width: 1200, height: 630, alt: post.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.excerpt,
-      ...(post.image ? { images: [post.image] } : {}),
+      images: [post.image ?? DEFAULT_COVER],
     },
     alternates: {
       canonical: `https://thesvg.org/blog/${slug}`,
@@ -209,7 +212,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     datePublished: post.date,
     author: { "@type": "Organization", name: post.author },
     publisher: { "@type": "Organization", name: "theSVG", url: "https://thesvg.org" },
-    ...(post.image ? { image: `https://thesvg.org${post.image}` } : {}),
+    image: `https://thesvg.org${post.image ?? DEFAULT_COVER}`,
     url: `https://thesvg.org/blog/${slug}`,
     isPartOf: { "@type": "WebSite", name: "theSVG", url: "https://thesvg.org" },
   };
@@ -257,25 +260,21 @@ export default async function BlogPostPage({ params }: PageProps) {
             </div>
           </header>
 
-          {post.image ? (
-            <>
-              <img
-                src={post.image}
-                alt={post.title}
-                width={1200}
-                height={630}
-                className={`mb-8 w-full rounded-xl border border-border/40 dark:border-white/[0.06]${post.imageLight ? " hidden dark:block" : ""}`}
-              />
-              {post.imageLight ? (
-                <img
-                  src={post.imageLight}
-                  alt={post.title}
-                  width={1200}
-                  height={630}
-                  className="mb-8 w-full rounded-xl border border-border/40 dark:hidden"
-                />
-              ) : null}
-            </>
+          <img
+            src={post.image ?? DEFAULT_COVER}
+            alt={post.title}
+            width={1200}
+            height={630}
+            className={`mb-8 w-full rounded-xl border border-border/40 dark:border-white/[0.06]${post.imageLight ? " hidden dark:block" : ""}`}
+          />
+          {post.imageLight ? (
+            <img
+              src={post.imageLight}
+              alt={post.title}
+              width={1200}
+              height={630}
+              className="mb-8 w-full rounded-xl border border-border/40 dark:hidden"
+            />
           ) : null}
 
           {/* Body with sticky share sidebar */}
