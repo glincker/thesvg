@@ -50,8 +50,8 @@ export const LIFT_JS = `export const lift = (shadow, size) => {
 };
 `;
 const ANIM_SRC = readFileSync(new URL("./anim-runtime.mjs", import.meta.url), "utf8");
-const ANIM_CJS = `${ANIM_SRC.replace(/^export const (\w+) =/gm, "const $1 =")}module.exports = { animate, animateSvg };\n`;
-const ANIM_DTS = `export declare const animate: (html: string, uid: string | number) => { cls: string; html: string };\nexport declare const animateSvg: (svg: string) => string;\nexport declare const ANIMATED_SLUGS: string[];\n`;
+const ANIM_CJS = `${ANIM_SRC.replace(/^export const (\w+) =/gm, "const $1 =")}module.exports = { animate, animateSvg, ANIMATED, ANIMATED_SLUGS, PRESETS };\n`;
+const ANIM_DTS = `export declare const animate: (html: string, uid: string | number, kind?: string | boolean) => { cls: string; html: string };\nexport declare const animateSvg: (svg: string, kind?: string) => string;\nexport declare const ANIMATED_SLUGS: string[];\nexport declare const ANIMATED: Record<string, string>;\nexport declare const PRESETS: string[];\n`;
 const SCOPE_DTS = `export declare const scoper: (ids: string[]) => (html: string, uid: string | number) => string;\nexport declare const nextId: () => number;\n`;
 const idsOf = (svg) => {
   const ids = [...new Set([...svg.matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]))];
@@ -137,8 +137,8 @@ export function buildSveltePackage(pkgDir, name) {
       const svg = readSvg(icon.slug, look);
       const html = JSON.stringify(inner(svg));
       const ids = JSON.stringify(idsOf(svg));
-      writeFileSync(join(dist, `${base}.svelte`), `<script>\n  import { scoper, nextId } from "./_scope.js";\n  import { lift } from "./_lift.js";\n  import { animate } from "./_anim.js";\n  export let size = 24;\n  export let shadow = 0;\n  export let animated = false;\n  $: filter = lift(shadow, size);\n  const html = ${html};\n  const ids = ${ids};\n  const uid = nextId();\n  $: markup = animated ? scoper(ids)(animate(html, uid).html, uid) : scoper(ids)(html, uid);\n</script>\n\n<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={size} height={size} overflow="visible" style={filter ? "filter:" + filter : undefined} aria-hidden={$$restProps["aria-label"] ? undefined : "true"} {...$$restProps}>{@html markup}</svg>\n`);
-      writeFileSync(join(dist, `${base}.svelte.d.ts`), `import type { SvelteComponent } from "svelte";\nimport type { SVGAttributes } from "svelte/elements";\n\nexport default class ${exportName(icon.slug, look)} extends SvelteComponent<SVGAttributes<SVGSVGElement> & { size?: number | string; shadow?: boolean | number; /** Pop in and draw the strokes, once. */ animated?: boolean }> {}\n`);
+      writeFileSync(join(dist, `${base}.svelte`), `<script>\n  import { scoper, nextId } from "./_scope.js";\n  import { lift } from "./_lift.js";\n  import { animate } from "./_anim.js";\n  export let size = 24;\n  export let shadow = 0;\n  export let animated = false;\n  $: filter = lift(shadow, size);\n  const html = ${html};\n  const ids = ${ids};\n  const uid = nextId();\n  $: markup = animated ? scoper(ids)(animate(html, uid, animated).html, uid) : scoper(ids)(html, uid);\n</script>\n\n<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={size} height={size} overflow="visible" style={filter ? "filter:" + filter : undefined} aria-hidden={$$restProps["aria-label"] ? undefined : "true"} {...$$restProps}>{@html markup}</svg>\n`);
+      writeFileSync(join(dist, `${base}.svelte.d.ts`), `import type { SvelteComponent } from "svelte";\nimport type { SVGAttributes } from "svelte/elements";\n\nexport default class ${exportName(icon.slug, look)} extends SvelteComponent<SVGAttributes<SVGSVGElement> & { size?: number | string; shadow?: boolean | number; /** Motion: true or "draw" pops in and draws the strokes once. Also pop, bounce, ring (once) and spin, pulse (forever). */ animated?: boolean | "draw" | "pop" | "bounce" | "ring" | "spin" | "pulse" }> {}\n`);
       barrel.push(`export { default as ${exportName(icon.slug, look)} } from "./${base}.svelte";`);
     }
   }
