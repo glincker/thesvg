@@ -4,13 +4,13 @@
 [![downloads](https://img.shields.io/npm/dm/@thesvg/ui?color=F97316&label=downloads)](https://www.npmjs.com/package/@thesvg/ui)
 [![license](https://img.shields.io/npm/l/@thesvg/ui?color=F97316)](https://github.com/glincker/thesvg/blob/main/LICENSE)
 
-The theSVG UI icons as raw SVG files: 372 own icons in seven looks (outline, glass, duotone, offset, fill, glass outline, depth), plus a JSON manifest. Every icon uses `currentColor`, so it follows your theme.
+The theSVG UI icons as raw SVG files: 373 own icons in seven looks (outline, glass, duotone, offset, fill, glass outline, depth), plus a JSON manifest. Every icon uses `currentColor`, so it follows your theme.
 
 Part of [thesvg.org/ui](https://thesvg.org/ui), the open UI icon set. Use it for build pipelines, icon fonts, design tools and anything that wants plain SVG.
 
 ## Features
 
-- 372 own UI icons in four sets (core interface, space, wave 2, AI agents), more every release
+- 373 own UI icons in five sets (core interface, space, wave 2, AI agents, theme), more every release
 - Seven looks for every icon, so one drawing serves outline, glass, duotone, offset, fill, glass outline and depth designs
 - `currentColor` everywhere: icons follow your text color and work in light and dark themes with no extra files
 - One file per icon and look, plus a JSON manifest with names, tags and sets
@@ -50,6 +50,16 @@ Use a file straight from a CDN:
 Inline the SVG when you want the icon to take the text color, since `currentColor` does not pass through `<img>`.
 
 
+## Animated files
+
+Sun, moon and `theme-system` also ship as `<look>-animated.svg`. They pop in and draw their strokes once when they load, which works in an `<img>` tag too:
+
+```html
+<img src="https://cdn.jsdelivr.net/npm/@thesvg/ui/dist/svg/theme-system/outline-animated.svg" width="24" height="24" alt="" />
+```
+
+The motion stands still for people who prefer reduced motion. To animate when a theme changes, use the `animated` prop in `@thesvg/ui-react`, `@thesvg/ui-vue` or `@thesvg/ui-svelte`.
+
 ## Looks
 
 Every icon ships in all seven looks. Outline is the plain name, every other look adds its name to the export.
@@ -77,6 +87,7 @@ Looks in file names are `outline`, `glass`, `duotone`, `offset`, `fill`, `glass-
 | Wave 2 | 171 | The next most used icons: charts, devices, layout, nature, tools |
 | Agents | 40 | Agent runs, tools, memory, guardrails and evals |
 | Space | 40 | Telemetry, orbit, actuators and sensors |
+| Theme | 1 | The system icon, next to sun and moon, with motion |
 
 Search by name or tag at [thesvg.org/ui](https://thesvg.org/ui). Missing an icon? [Submit one](https://thesvg.org/submit).
 

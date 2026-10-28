@@ -27,6 +27,7 @@ const toCjs = (esm) =>
   `${esm
     .replace(/^import \{([^}]*)\} from ("[^"]+");$/gm, "const {$1} = require($2);")
     .replace('"./_scope.js"', '"./_scope.cjs"')
+    .replace('"./_anim.js"', '"./_anim.cjs"')
     .replace("export const make =", "const make =")}module.exports = { make };\n`;
 
 // Every icon defines its own gradient and mask ids. Two copies of one icon on a page would share them, and a gradient's
@@ -48,6 +49,9 @@ export const LIFT_JS = `export const lift = (shadow, size) => {
   return "drop-shadow(0 " + (k).toFixed(2) + "px " + (k * 1.8).toFixed(2) + "px color-mix(in srgb, currentColor " + Math.round(Math.min(1, a) * 100) + "%, transparent))";
 };
 `;
+const ANIM_SRC = readFileSync(new URL("./anim-runtime.mjs", import.meta.url), "utf8");
+const ANIM_CJS = `${ANIM_SRC.replace(/^export const (\w+) =/gm, "const $1 =")}module.exports = { animate, animateSvg };\n`;
+const ANIM_DTS = `export declare const animate: (html: string, uid: string | number) => { cls: string; html: string };\nexport declare const animateSvg: (svg: string) => string;\nexport declare const ANIMATED_SLUGS: string[];\n`;
 const SCOPE_DTS = `export declare const scoper: (ids: string[]) => (html: string, uid: string | number) => string;\nexport declare const nextId: () => number;\n`;
 const idsOf = (svg) => {
   const ids = [...new Set([...svg.matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]))];
@@ -67,6 +71,9 @@ export function buildJsPackage(pkgDir, profile) {
   writeFileSync(join(dist, "_scope.js"), SCOPE_JS);
   writeFileSync(join(dist, "_scope.cjs"), `${SCOPE_JS.replace(/^export const (\w+) =/gm, "const $1 =")}module.exports = { scoper, nextId };\n`);
   writeFileSync(join(dist, "_scope.d.ts"), SCOPE_DTS);
+  writeFileSync(join(dist, "_anim.js"), ANIM_SRC);
+  writeFileSync(join(dist, "_anim.cjs"), ANIM_CJS);
+  writeFileSync(join(dist, "_anim.d.ts"), ANIM_DTS);
   writeFileSync(join(dist, "_make.js"), profile.factory);
   writeFileSync(join(dist, "_make.cjs"), toCjs(profile.factory));
   writeFileSync(join(dist, "_make.d.ts"), profile.factoryDts);
@@ -96,6 +103,15 @@ export function buildJsPackage(pkgDir, profile) {
     cjsBarrel.push(`Object.assign(exports, require("./${icon.slug}.cjs"));`);
     dtsBarrel.push(`export { ${names.join(", ")} } from "./${icon.slug}.js";`);
   }
+  // Hand written components that are not one per icon (the theme switcher icon), exported next to the icons.
+  for (const x of profile.extras ?? []) {
+    writeFileSync(join(dist, `${x.file}.js`), x.esm);
+    writeFileSync(join(dist, `${x.file}.cjs`), x.cjs);
+    writeFileSync(join(dist, `${x.file}.d.ts`), x.dts);
+    esmBarrel.push(`export { ${x.names.join(", ")} } from "./${x.file}.js";`);
+    cjsBarrel.push(`Object.assign(exports, require("./${x.file}.cjs"));`);
+    dtsBarrel.push(`export { ${x.names.join(", ")} } from "./${x.file}.js";`);
+  }
   writeFileSync(join(dist, "index.js"), `${esmBarrel.join("\n")}\n`);
   writeFileSync(join(dist, "index.cjs"), `"use strict";\n${cjsBarrel.join("\n")}\n`);
   writeFileSync(join(dist, "index.d.ts"), `${profile.barrelDtsExtra}\n${dtsBarrel.join("\n")}\n`);
@@ -111,6 +127,8 @@ export function buildSveltePackage(pkgDir, name) {
   const barrel = [];
   writeFileSync(join(dist, "_scope.js"), SCOPE_JS);
   writeFileSync(join(dist, "_scope.d.ts"), SCOPE_DTS);
+  writeFileSync(join(dist, "_anim.js"), ANIM_SRC);
+  writeFileSync(join(dist, "_anim.d.ts"), ANIM_DTS);
   writeFileSync(join(dist, "_lift.js"), LIFT_JS);
   writeFileSync(join(dist, "_lift.d.ts"), `export declare const lift: (shadow: boolean | number, size: number | string) => string | undefined;\n`);
   for (const icon of manifest.icons) {
@@ -119,8 +137,8 @@ export function buildSveltePackage(pkgDir, name) {
       const svg = readSvg(icon.slug, look);
       const html = JSON.stringify(inner(svg));
       const ids = JSON.stringify(idsOf(svg));
-      writeFileSync(join(dist, `${base}.svelte`), `<script>\n  import { scoper, nextId } from "./_scope.js";\n  import { lift } from "./_lift.js";\n  export let size = 24;\n  export let shadow = 0;\n  $: filter = lift(shadow, size);\n  const markup = scoper(${ids})(${html}, nextId());\n</script>\n\n<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={size} height={size} overflow="visible" style={filter ? "filter:" + filter : undefined} aria-hidden={$$restProps["aria-label"] ? undefined : "true"} {...$$restProps}>{@html markup}</svg>\n`);
-      writeFileSync(join(dist, `${base}.svelte.d.ts`), `import type { SvelteComponent } from "svelte";\nimport type { SVGAttributes } from "svelte/elements";\n\nexport default class ${exportName(icon.slug, look)} extends SvelteComponent<SVGAttributes<SVGSVGElement> & { size?: number | string; shadow?: boolean | number }> {}\n`);
+      writeFileSync(join(dist, `${base}.svelte`), `<script>\n  import { scoper, nextId } from "./_scope.js";\n  import { lift } from "./_lift.js";\n  import { animate } from "./_anim.js";\n  export let size = 24;\n  export let shadow = 0;\n  export let animated = false;\n  $: filter = lift(shadow, size);\n  const html = ${html};\n  const ids = ${ids};\n  const uid = nextId();\n  $: markup = animated ? scoper(ids)(animate(html, uid).html, uid) : scoper(ids)(html, uid);\n</script>\n\n<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={size} height={size} overflow="visible" style={filter ? "filter:" + filter : undefined} aria-hidden={$$restProps["aria-label"] ? undefined : "true"} {...$$restProps}>{@html markup}</svg>\n`);
+      writeFileSync(join(dist, `${base}.svelte.d.ts`), `import type { SvelteComponent } from "svelte";\nimport type { SVGAttributes } from "svelte/elements";\n\nexport default class ${exportName(icon.slug, look)} extends SvelteComponent<SVGAttributes<SVGSVGElement> & { size?: number | string; shadow?: boolean | number; /** Pop in and draw the strokes, once. */ animated?: boolean }> {}\n`);
       barrel.push(`export { default as ${exportName(icon.slug, look)} } from "./${base}.svelte";`);
     }
   }
