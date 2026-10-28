@@ -32,7 +32,11 @@ export interface ViewSet {
 
 // Every set file committed under src/data/ui/sets is released. The newest release date is the "new" drop,
 // so the label never depends on today's date and server and browser always agree.
-const scores = new Map((manifest.icons as { slug: string; score?: number; q?: number[] }[]).map((i) => [i.slug, i]));
+// ⚡ Bolt: Avoid intermediate array allocation via `manifest.icons.map`
+const scores = new Map<string, { slug: string; score?: number; q?: number[] }>();
+for (const i of manifest.icons as { slug: string; score?: number; q?: number[] }[]) {
+  scores.set(i.slug, i);
+}
 const newest = SETS.reduce((max, s) => (s.releaseDate > max ? s.releaseDate : max), "");
 
 export const GLYPHS: Glyph[] = SETS.flatMap((s) =>
@@ -51,7 +55,15 @@ export const GLYPHS: Glyph[] = SETS.flatMap((s) =>
 );
 export const VIEW_SETS: ViewSet[] = SETS.map((s) => ({ id: s.id, name: s.name, note: s.note, releaseDate: s.releaseDate, released: true, isNew: s.releaseDate === newest, count: s.glyphs.length }));
 export const POPULAR_SLUGS: string[] = (popular as string[]).filter((slug) => GLYPHS.some((g) => g.slug === slug));
-export const GLYPH_BY_SLUG = new Map(GLYPHS.map((g) => [g.slug, g]));
-export const CATEGORIES: { name: string; count: number }[] = [...new Set(GLYPHS.map((g) => g.category))]
-  .map((name) => ({ name, count: GLYPHS.filter((g) => g.category === name).length }))
+// ⚡ Bolt: Avoid intermediate array allocation via `GLYPHS.map`
+export const GLYPH_BY_SLUG = new Map<string, Glyph>();
+for (const g of GLYPHS) {
+  GLYPH_BY_SLUG.set(g.slug, g);
+}
+// ⚡ Bolt: Use a single-pass loop with a Map to tally counts instead of chained O(N*C) operations
+const categoryCounts = new Map<string, number>();
+for (const g of GLYPHS) {
+  categoryCounts.set(g.category, (categoryCounts.get(g.category) || 0) + 1);
+}
+export const CATEGORIES: { name: string; count: number }[] = Array.from(categoryCounts, ([name, count]) => ({ name, count }))
   .sort((a, b) => b.count - a.count);
