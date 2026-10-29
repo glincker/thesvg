@@ -61,6 +61,13 @@ export const GLYPHS: Glyph[] = SETS.flatMap((s) =>
 export const VIEW_SETS: ViewSet[] = SETS.map((s) => ({ id: s.id, name: s.name, note: s.note, releaseDate: s.releaseDate, released: true, isNew: s.releaseDate === newest, count: s.glyphs.length }));
 export const POPULAR_SLUGS: string[] = (popular as string[]).filter((slug) => GLYPHS.some((g) => g.slug === slug));
 export const GLYPH_BY_SLUG = new Map(GLYPHS.map((g) => [g.slug, g]));
-export const CATEGORIES: { name: string; count: number }[] = [...new Set(GLYPHS.map((g) => g.category))]
-  .map((name) => ({ name, count: GLYPHS.filter((g) => g.category === name).length }))
-  .sort((a, b) => b.count - a.count);
+const _catCounts = new Map<string, number>();
+for (let i = 0; i < GLYPHS.length; i++) {
+  const cat = GLYPHS[i].category;
+  _catCounts.set(cat, (_catCounts.get(cat) || 0) + 1);
+}
+
+export const CATEGORIES: { name: string; count: number }[] = Array.from(_catCounts, ([name, count]) => ({
+  name,
+  count,
+})).sort((a, b) => b.count - a.count);
