@@ -1,8 +1,8 @@
 "use client";
 
+import { UiGlyph } from "@/components/ui-glyph";
 import { useRef } from "react";
 import posthog from "posthog-js";
-import { SquaresFour } from "@phosphor-icons/react/dist/ssr";
 import { cn } from "@/lib/utils";
 
 interface CategoryPillsProps {
@@ -41,7 +41,7 @@ export function CategoryPills({
           {!selected && (
             <span className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/25 to-transparent" />
           )}
-          <SquaresFour weight={!selected ? "fill" : "regular"} className="relative h-3 w-3" />
+          <UiGlyph name="layout-grid" look={!selected ? "fill" : undefined} className="relative h-3 w-3" />
           <span className="relative">All</span>
         </button>
         {categories.map((cat) => {

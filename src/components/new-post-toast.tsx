@@ -1,8 +1,8 @@
 "use client";
 
+import { UiGlyph } from "@/components/ui-glyph";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Newspaper, X } from "@phosphor-icons/react/dist/ssr";
 
 interface LatestPost {
   slug: string;
@@ -58,7 +58,7 @@ export function NewPostToast({ post }: { post: LatestPost | undefined }) {
       className="fixed bottom-6 left-6 z-50 flex max-w-xs items-start gap-3 rounded-2xl border border-border/60 bg-card/95 p-4 shadow-xl backdrop-blur-xl animate-in slide-in-from-bottom-4 fade-in duration-500 dark:border-white/[0.08] dark:bg-black/80"
     >
       <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-orange-500/10">
-        <Newspaper className="h-4 w-4 text-orange-500" />
+        <UiGlyph name="newspaper" className="h-4 w-4 text-orange-500" />
       </div>
       <div className="min-w-0 flex-1 space-y-1">
         <p className="text-xs font-medium text-muted-foreground">New post</p>
@@ -78,7 +78,7 @@ export function NewPostToast({ post }: { post: LatestPost | undefined }) {
         aria-label="Dismiss"
         className="shrink-0 rounded-full p-1 text-muted-foreground transition-colors hover:bg-foreground/[0.06] dark:hover:bg-white/[0.06]"
       >
-        <X className="h-3.5 w-3.5" />
+        <UiGlyph name="x" className="h-3.5 w-3.5" />
       </button>
     </div>
   );

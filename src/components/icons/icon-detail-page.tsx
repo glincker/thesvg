@@ -1,5 +1,6 @@
 "use client";
 
+import { UiGlyph } from "@/components/ui-glyph";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 import posthog from "posthog-js";
@@ -10,7 +11,6 @@ import {
   Heart,
   Home,
 } from "lucide-react";
-import { BookOpenText } from "@phosphor-icons/react/dist/ssr";
 import { Badge } from "@/components/ui/badge";
 import type { IconEntry } from "@/lib/icons";
 import { useFavoritesStore } from "@/lib/stores/favorites-store";
@@ -494,7 +494,7 @@ export function IconDetailPage({
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 rounded-lg border border-violet-500/25 bg-violet-500/[0.06] px-3 py-2 text-xs text-violet-600 shadow-sm transition-colors hover:bg-violet-500/[0.12] dark:text-violet-400"
               >
-                <BookOpenText weight="fill" className="h-3.5 w-3.5 opacity-80" />
+                <UiGlyph name="book-open-text" look="fill" className="h-3.5 w-3.5 opacity-80" />
                 <span className="flex-1 truncate">Brand guidelines</span>
                 <ArrowUpRight className="h-3 w-3 opacity-50" />
               </a>

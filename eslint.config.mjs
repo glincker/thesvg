@@ -10,7 +10,7 @@ const UI_PATTERNS = ["@/lib/ui-icons", "@/lib/ui-icons/**", "@/components/ui-ico
 const BRAND_TO_UI_ALLOWED = ["src/components/header.tsx", "src/components/home-hero.tsx", "src/components/footer.tsx", "src/components/search/search-groups.tsx", "src/components/ui-glyph.tsx", "src/app/sitemap.ts"];
 // Chrome icons come from our own UI icons (<UiGlyph name="..." />), not from third-party icon libraries. These files are
 // already converted; older files still on those libraries move over in their own PRs, and are removed from the gap here.
-const OWN_ICONS_ONLY = ["src/components/header.tsx", "src/components/search/search-groups.tsx", "src/components/ui-glyph.tsx", "src/components/packages-menu.tsx", "src/components/extensions/cards.tsx", "src/components/icons/detail/quality-panel.tsx", "src/app/packages/**"];
+const OWN_ICONS_ONLY = ["src/components/header.tsx", "src/components/search/search-groups.tsx", "src/components/ui-glyph.tsx", "src/components/packages-menu.tsx", "src/components/extensions/cards.tsx", "src/components/icons/detail/quality-panel.tsx", "src/app/packages/**", "src/components/new-post-toast.tsx", "src/components/filters/category-pills.tsx", "src/components/icons/detail/contribution-cta.tsx", "src/components/icons/detail/icon-inspector-modal.tsx", "src/components/icons/detail/brand-glow.tsx"];
 const ICON_LIBRARIES = {
   paths: [
     { name: "lucide-react", message: "Use our own UI icons: <UiGlyph name=\"...\" /> from @/components/ui-glyph." },
@@ -71,7 +71,11 @@ const eslintConfig = defineConfig([
     rules: {
       "no-restricted-imports": [
         "error",
-        { patterns: [{ group: UI_PATTERNS, message: "Brand code must not depend on UI icon code. Only the files in BRAND_TO_UI_ALLOWED may cross over." }] },
+        {
+          // Phosphor is gone from this site. Files still on Lucide move to our own icons in their own PRs.
+          paths: ICON_LIBRARIES.paths.filter((p) => p.name.includes("phosphor")),
+          patterns: [{ group: UI_PATTERNS, message: "Brand code must not depend on UI icon code. Only the files in BRAND_TO_UI_ALLOWED may cross over." }],
+        },
       ],
     },
   },

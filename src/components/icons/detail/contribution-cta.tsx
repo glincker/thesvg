@@ -1,6 +1,6 @@
 "use client";
 
-import { GitPullRequest, SealWarning, Sparkle } from "@phosphor-icons/react/dist/ssr";
+import { UiGlyph } from "@/components/ui-glyph";
 import { withUtm } from "@/lib/external-link";
 
 const REPO = "glincker/thesvg";
@@ -114,7 +114,7 @@ export function ContributionCta({
       />
       <div className="relative mb-3 flex items-center gap-2.5">
         <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-orange-500/10 text-orange-600 dark:text-orange-400">
-          <Sparkle weight="fill" className="h-3.5 w-3.5" />
+          <UiGlyph name="sparkles" look="fill" className="h-3.5 w-3.5" />
         </div>
         <div className="min-w-0">
           <p className="text-xs font-semibold text-foreground">{label}</p>
@@ -128,7 +128,7 @@ export function ContributionCta({
           rel="noopener noreferrer"
           className="group flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-1.5 text-[11px] font-medium text-muted-foreground shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:border-foreground/30 hover:text-foreground hover:shadow-md active:translate-y-0 active:scale-95"
         >
-          <SealWarning className="h-3.5 w-3.5 transition-transform duration-150 group-hover:rotate-12" />
+          <UiGlyph name="seal-warning" className="h-3.5 w-3.5 transition-transform duration-150 group-hover:rotate-12" />
           Request via Issue
         </a>
         <a
@@ -138,7 +138,7 @@ export function ContributionCta({
           className="group relative flex items-center gap-1.5 overflow-hidden rounded-lg border border-orange-500/40 bg-gradient-to-b from-orange-500 to-orange-600 px-3 py-1.5 text-[11px] font-medium text-white shadow-[0_1px_0_0_rgba(255,255,255,0.25)_inset,0_2px_8px_-2px_rgba(249,115,22,0.5)] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_1px_0_0_rgba(255,255,255,0.25)_inset,0_6px_16px_-2px_rgba(249,115,22,0.6)] active:translate-y-0 active:scale-95"
         >
           <span className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/25 to-transparent" />
-          <GitPullRequest weight="bold" className="relative h-3.5 w-3.5 transition-transform duration-150 group-hover:-rotate-12" />
+          <UiGlyph name="git-pull-request" className="relative h-3.5 w-3.5 transition-transform duration-150 group-hover:-rotate-12" />
           <span className="relative">Submit a PR</span>
         </a>
       </div>
