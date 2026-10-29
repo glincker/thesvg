@@ -58,7 +58,7 @@ export function SidebarNavItem({
     <>
       <Icon
         className={cn(
-          ICON_SIZE.sidebar, "shrink-0 transition-all duration-200 group-hover:scale-110 group-hover:text-orange-500",
+          ICON_SIZE.sidebar, "shrink-0 text-muted-foreground transition-all duration-200 group-hover:scale-110 group-hover:text-orange-500", active && "text-orange-500",
           iconClassName,
         )}
       />

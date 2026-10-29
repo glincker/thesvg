@@ -40,7 +40,7 @@ function Item({ icon, label, rail, active, badge, hover = "group-hover:text-oran
   );
   const body = (
     <>
-      <UiGlyph name={icon} className={cn(ICON_SIZE.sidebar, "transition-colors", active ? inkClass : hover)} />
+      <UiGlyph name={icon} className={cn(ICON_SIZE.sidebar, "transition-colors", active ? inkClass : cn("text-muted-foreground", hover))} />
       {rail ? <span className="sr-only">{label}</span> : <span className="flex-1 truncate text-left">{label}</span>}
       {!rail && badge && <span className="text-[0.75rem] text-muted-foreground">{badge}</span>}
     </>

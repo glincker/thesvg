@@ -108,6 +108,7 @@ export function SidebarNav({
               aria-hidden="true"
               className={cn(
                 ICON_SIZE.sidebar, "shrink-0 transition-all duration-200 group-hover:scale-110",
+                !isFavoritesActive && "text-muted-foreground group-hover:text-red-500",
                 isFavoritesActive && "fill-red-500 text-red-500",
               )}
             />
@@ -175,7 +176,7 @@ export function SidebarNav({
                 "bg-gradient-to-r from-accent/80 to-accent/40 text-accent-foreground font-medium shadow-sm shadow-black/[0.03] dark:from-white/[0.08] dark:to-white/[0.04] dark:shadow-black/20",
             )}
           >
-            <Blocks className={cn(ICON_SIZE.sidebar, "shrink-0 transition-all duration-200 group-hover:scale-110 group-hover:text-orange-500")} />
+            <Blocks className={cn(ICON_SIZE.sidebar, "shrink-0 text-muted-foreground transition-all duration-200 group-hover:scale-110 group-hover:text-orange-500", isExtensionsPage && "text-orange-500")} />
             <span className="flex-1 text-left">Extensions</span>
             <ChevronRight
               className={cn(

@@ -55,7 +55,7 @@ export function NewPostToast({ post }: { post: LatestPost | undefined }) {
   return (
     <div
       role="alert"
-      className="fixed bottom-6 left-6 z-50 flex max-w-xs items-start gap-3 rounded-2xl border border-border/60 bg-card/95 p-4 shadow-xl backdrop-blur-xl animate-in slide-in-from-bottom-4 fade-in duration-500 dark:border-white/[0.08] dark:bg-black/80"
+      className="fixed right-6 bottom-6 z-50 flex max-w-xs items-start gap-3 rounded-2xl border border-border/60 bg-card/95 p-4 shadow-xl backdrop-blur-xl animate-in slide-in-from-bottom-4 fade-in duration-500 dark:border-white/[0.08] dark:bg-black/80"
     >
       <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-orange-500/10">
         <UiGlyph name="newspaper" className="h-4 w-4 text-orange-500" />

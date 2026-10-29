@@ -301,7 +301,7 @@ export function Sidebar({
                             <Icon
                               className={cn(
                                 `${ICON_SIZE.sidebar} shrink-0 transition-all duration-200 group-hover:scale-110`,
-                                isActive ? meta?.color : "opacity-60 group-hover:text-orange-500 group-hover:opacity-100",
+                                isActive ? meta?.color : "text-muted-foreground group-hover:text-orange-500",
                               )}
                             />
                             <span className="truncate text-sm">
@@ -443,7 +443,7 @@ export function Sidebar({
                     )}
                   >
                     <span className="flex items-center gap-3 truncate">
-                      <Clock className="h-5 w-5 shrink-0 opacity-60 transition-colors group-hover:text-orange-500 group-hover:opacity-100" />
+                      <Clock className="h-5 w-5 shrink-0 text-muted-foreground transition-colors group-hover:text-orange-500" />
                       <span className="truncate">Recently Added</span>
                     </span>
                   </Link>
@@ -454,7 +454,7 @@ export function Sidebar({
                     )}
                   >
                     <span className="flex items-center gap-3 truncate">
-                      <Flame className="h-5 w-5 shrink-0 opacity-60 transition-colors group-hover:text-orange-500 group-hover:opacity-100" />
+                      <Flame className="h-5 w-5 shrink-0 text-muted-foreground transition-colors group-hover:text-orange-500" />
                       <span className="truncate">Popular</span>
                     </span>
                   </Link>
