@@ -299,8 +299,8 @@ export function Sidebar({
                           <span className="flex items-center gap-2.5 truncate">
                             <Icon
                               className={cn(
-                                "h-4 w-4 shrink-0 transition-transform duration-200 group-hover:scale-110",
-                                isActive ? meta?.color : "opacity-60",
+                                "h-5 w-5 shrink-0 transition-all duration-200 group-hover:scale-110",
+                                isActive ? meta?.color : "opacity-60 group-hover:text-orange-500 group-hover:opacity-100",
                               )}
                             />
                             <span className="truncate text-[13px]">
@@ -428,7 +428,7 @@ export function Sidebar({
                     )}
                   >
                     <span className="flex items-center gap-2 truncate">
-                      <Sparkles className="h-3.5 w-3.5 shrink-0 text-amber-500" />
+                      <Sparkles className="h-4.5 w-4.5 shrink-0 text-amber-500" />
                       <span className="truncate">Google 2026</span>
                     </span>
                     <span className="ml-2 shrink-0 rounded-full bg-gradient-to-r from-fuchsia-500/90 via-orange-500/90 to-amber-400/90 px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase leading-none tracking-wider text-white shadow-sm shadow-black/20">
@@ -442,7 +442,7 @@ export function Sidebar({
                     )}
                   >
                     <span className="flex items-center gap-2 truncate">
-                      <Clock className="h-3.5 w-3.5 shrink-0 opacity-60" />
+                      <Clock className="h-4.5 w-4.5 shrink-0 opacity-60 transition-colors group-hover:text-orange-500 group-hover:opacity-100" />
                       <span className="truncate">Recently Added</span>
                     </span>
                   </Link>
@@ -453,7 +453,7 @@ export function Sidebar({
                     )}
                   >
                     <span className="flex items-center gap-2 truncate">
-                      <Flame className="h-3.5 w-3.5 shrink-0 opacity-60" />
+                      <Flame className="h-4.5 w-4.5 shrink-0 opacity-60 transition-colors group-hover:text-orange-500 group-hover:opacity-100" />
                       <span className="truncate">Popular</span>
                     </span>
                   </Link>

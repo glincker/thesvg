@@ -2,9 +2,9 @@ import { describe, expect, it } from "vitest";
 import { chromeLook } from "../chrome-look";
 
 describe("chromeLook", () => {
-  it("uses the crisp glass outline from 16px, and frosted glass from 24px", () => {
-    expect(chromeLook("size-4")).toBe("glass-outline");
-    expect(chromeLook("h-5 w-5")).toBe("glass-outline");
+  it("uses glass from 16px up", () => {
+    expect(chromeLook("size-4")).toBe("glass");
+    expect(chromeLook("h-5 w-5")).toBe("glass");
     expect(chromeLook("size-6")).toBe("glass");
     expect(chromeLook("size-7 text-foreground")).toBe("glass");
   });
@@ -15,6 +15,6 @@ describe("chromeLook", () => {
   });
 
   it("treats a class with no size as the 16px default", () => {
-    expect(chromeLook("text-orange-500")).toBe("glass-outline");
+    expect(chromeLook("text-orange-500")).toBe("glass");
   });
 });
