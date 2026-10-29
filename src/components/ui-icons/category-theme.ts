@@ -57,6 +57,7 @@ export const THEMES: Record<string, Theme> = {
 
 /** Signature icons shown first in each banner, so it leads with what the category is about. The rest fill in by craft score. */
 export const FEATURED: Record<string, string[]> = {
+  social: ["social-github", "social-x", "social-linkedin", "social-youtube", "social-discord", "social-reddit", "repost", "like-burst"],
   space: ["orbit", "satellite", "rocket", "telescope", "lander", "antenna", "comet", "galaxy"],
   robotics: ["rover", "drone", "gripper", "joint", "quadruped", "servo", "lidar", "end-effector"],
   agents: ["bot", "brain-circuit", "prompt", "tool-call", "memory-save", "multi-agent", "guardrail"],

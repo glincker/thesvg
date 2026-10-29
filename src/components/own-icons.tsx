@@ -145,3 +145,10 @@ export const X = make("x", "X");
 export const XCircle = make("circle-x", "XCircle");
 export const XIcon = make("x", "XIcon");
 export const Zap = make("zap", "Zap");
+
+// Network marks drawn for the social set.
+export const Github = make("social-github", "Github");
+export const Codepen = make("social-codepen", "Codepen");
+export const SocialX = make("social-x", "SocialX");
+export const SocialLinkedin = make("social-linkedin", "SocialLinkedin");
+export const SocialReddit = make("social-reddit", "SocialReddit");

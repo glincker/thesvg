@@ -1,5 +1,6 @@
 "use client";
 
+import { defaultColorOf } from "@/lib/ui-icons/default-color";
 import { UiGlyph } from "@/components/ui-glyph";
 import Link from "next/link";
 import { useState } from "react";
@@ -44,8 +45,8 @@ export function IconCard({ glyph }: { glyph: GlyphData }) {
       {/* Light from the top edge that fades in on hover, the same lit-glass cue the look tiles use. */}
       <span aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-28 opacity-0 transition-opacity duration-300 [background:radial-gradient(ellipse_70%_100%_at_50%_0%,rgba(249,115,22,0.22),transparent_72%)] group-hover/card:opacity-100" />
       <span aria-hidden="true" className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-orange-400/70 to-transparent opacity-0 transition-opacity duration-300 group-hover/card:opacity-100" />
-      <Link href={`/ui/${glyph.slug}`} data-preview={previewBackground} className={cn("relative flex h-24 items-center justify-center", previewBackground === "auto" ? "bg-gradient-to-b from-foreground/[0.07] to-transparent" : "icon-preview-bg")}>
-        <Glyph nodes={glyph.nodes} variant={ui.variant} size={44} accent={ui.accent} className={cn("transition-transform duration-200 group-hover/card:scale-110", previewBackground === "light" ? "text-neutral-900" : previewBackground === "dark" ? "text-neutral-50" : "text-foreground")} />
+      <Link href={`/ui/${glyph.slug}`} data-preview={previewBackground} className={cn("relative flex h-24 items-center justify-center", previewBackground === "light" ? "text-neutral-900" : previewBackground === "dark" ? "text-neutral-50" : (!ui.accent && defaultColorOf(glyph.slug)) || "text-foreground", previewBackground === "auto" ? "bg-gradient-to-b from-foreground/[0.07] to-transparent" : "icon-preview-bg")}>
+        <Glyph nodes={glyph.nodes} variant={ui.variant} size={44} accent={ui.accent} className="transition-transform duration-200 group-hover/card:scale-110" />
         {!glyph.released && (
           <span className={cn("absolute left-2 top-2 rounded-full border px-2 py-0.5 text-[0.75rem] font-medium", "border-foreground/15 bg-background/60 text-muted-foreground")}>
             {glyph.setId === "backlog" ? "Backlog" : "Draft"}

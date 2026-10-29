@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Mail, MessageSquare, Shield } from "@/components/own-icons";
-import { Github } from "@/components/icons/shared/brand-icons";
+import { Github } from "@/components/own-icons";
 import { TRADEMARK_POLICY_URL } from "@/lib/constants";
 import { withUtm } from "@/lib/external-link";
 

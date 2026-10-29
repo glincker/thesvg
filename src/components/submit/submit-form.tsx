@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import posthog from "posthog-js";
 import { Check, CheckCircle, ClipboardCopy, ExternalLink, Palette, Upload, X, XCircle } from "@/components/own-icons";
-import { Github } from "@/components/icons/shared/brand-icons";
+import { Github } from "@/components/own-icons";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";

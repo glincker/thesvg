@@ -8,7 +8,7 @@ import {
   Download,
   ExternalLink,
 } from "@/components/own-icons";
-import { Codepen } from "@/components/icons/shared/brand-icons";
+import { Codepen } from "@/components/own-icons";
 import { cn } from "@/lib/utils";
 import {
   DEEP_LINK_TARGETS,

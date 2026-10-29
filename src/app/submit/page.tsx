@@ -8,7 +8,7 @@ import {
   Upload,
   Zap,
 } from "@/components/own-icons";
-import { Github } from "@/components/icons/shared/brand-icons";
+import { Github } from "@/components/own-icons";
 import type { Metadata } from "next";
 import { getAllCategories, getCategoryCounts, getIconCount } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";

@@ -2,7 +2,7 @@
 
 import { useCallback, useState } from "react";
 import { ArrowUpRight, Check, ChevronDown, ClipboardCopy, Download as DownloadIcon, ExternalLink, Pencil } from "@/components/own-icons";
-import { Codepen } from "@/components/icons/shared/brand-icons";
+import { Codepen } from "@/components/own-icons";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
