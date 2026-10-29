@@ -27,10 +27,12 @@ export function CategoryPage({ domainId }: { domainId: string }) {
         <span className="text-foreground">{domain.label}</span>
       </nav>
       <CategoryBanner category={domain.label} />
-      <StyleBar />
-      <h2 className="text-sm font-semibold">
-        All {domain.label} icons <span className="ml-1 font-normal text-muted-foreground">{glyphs.length}</span>
-      </h2>
+      <div className="flex items-center justify-between gap-3">
+        <h2 className="text-sm font-semibold">
+          All {domain.label} icons <span className="ml-1 font-normal text-muted-foreground">{glyphs.length}</span>
+        </h2>
+        <StyleBar />
+      </div>
       <div className="grid grid-cols-[repeat(auto-fill,minmax(148px,1fr))] gap-3">
         {glyphs.map((g) => (
           <IconCard key={g.slug} glyph={g} />

@@ -156,7 +156,7 @@ export function CodeBlock({ svgContent, slug, title, activeVariant }: CodeBlockP
               : "bg-orange-500/15 text-orange-400 backdrop-blur-sm hover:bg-orange-500/25 hover:text-orange-300"
           )}
         >
-          {copied ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
+          {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
           {copied ? "Copied" : "Copy"}
         </button>
         <div className="bg-zinc-950">

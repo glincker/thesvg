@@ -50,7 +50,7 @@ export default function PrivacyPage() {
         <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-12">
           <div className="mb-10">
             <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-border/50 bg-muted/30 px-3 py-1 text-xs font-medium text-muted-foreground dark:border-white/[0.08] dark:bg-white/[0.04]">
-              <Shield className="h-3 w-3" />
+              <Shield className="h-3.5 w-3.5" />
               Privacy
             </div>
             <h1 className="mb-2 text-2xl font-bold sm:text-3xl">Privacy Policy</h1>

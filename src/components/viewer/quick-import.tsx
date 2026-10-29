@@ -219,7 +219,7 @@ export function QuickImport({ onImport, className }: QuickImportProps) {
       {starterIcons.length > 0 && (
         <div className="flex flex-wrap items-center gap-1.5">
           <span className="flex items-center gap-1 text-[10px] uppercase tracking-wider text-muted-foreground/60">
-            <Sparkles className="h-3 w-3" />
+            <Sparkles className="h-3.5 w-3.5" />
             Try
           </span>
           {starterIcons.map((icon) => (

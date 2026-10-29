@@ -1,5 +1,4 @@
 import { UiGlyph } from "@/components/ui-glyph";
-import { Github } from "@/components/icons/shared/brand-icons";
 import { TheSVGMark } from "@/components/icons/the-svg-mark";
 import Link from "next/link";
 import { TRADEMARK_POLICY_URL } from "@/lib/constants";
@@ -133,6 +132,11 @@ function StatItem({
   );
 }
 
+/** The real GitHub brand icon, not our UI mark: the footer links to GitHub itself. */
+function GithubMark({ className }: { className: string }) {
+  return <img src="/icons/github/mono.svg" alt="" aria-hidden="true" width={18} height={18} className={`${className} dark:invert`} />;
+}
+
 export function Footer() {
   const iconCount = getIconCount();
   const uiIconCount = uiManifest.icons.length;
@@ -190,7 +194,7 @@ export function Footer() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border border-border/60 px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground dark:border-white/[0.1]"
             >
-              <Github className="h-4 w-4" />
+              <GithubMark className="h-4 w-4" />
               Star on GitHub
             </a>
           </div>
@@ -238,7 +242,7 @@ export function Footer() {
                       className="inline-flex size-9 items-center justify-center rounded-lg opacity-75 transition-opacity hover:bg-accent/60 hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                     >
                       {item.slug === "github" ? (
-                        <Github className="size-[18px] text-foreground" />
+                        <GithubMark className="size-[18px]" />
                       ) : (
                         <img src={`/icons/${item.slug}/default.svg`} alt="" width={18} height={18} className="size-[18px]" />
                       )}

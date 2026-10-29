@@ -2,10 +2,11 @@
 
 import type { ComponentType, CSSProperties } from "react";
 import { UiGlyph } from "@/components/ui-glyph";
+import { chromeLook } from "@/lib/ui-icons/chrome-look";
 
 /**
  * Our own icons under the names and props the site already uses, so every icon on the site is drawn by our set.
- * Props that only make sense for a stroke-only icon library (strokeWidth) are accepted and ignored. A size is honoured,
+ * A size is honoured, a strokeWidth becomes the stroke weight (2 is the house weight),
  * a "fill-current" class asks for the solid look, and below 16px the icon draws as outline on its own.
  */
 export interface OwnIconProps {
@@ -22,14 +23,26 @@ export interface OwnIconProps {
 
 export type OwnIcon = ComponentType<OwnIconProps>;
 
+const HAS_SIZE = /(^|\s)(size|h|w)-/;
+const toNumber = (v: number | string | undefined): number | undefined => {
+  const n = typeof v === "string" ? Number.parseFloat(v) : v;
+  return n !== undefined && Number.isFinite(n) ? n : undefined;
+};
+
 function make(slug: string, displayName: string): OwnIcon {
-  const Icon = ({ className, style, size, color, fill }: OwnIconProps) => {
+  const Icon = ({ className, style, size, color, fill, strokeWidth }: OwnIconProps) => {
     const boxed = size !== undefined ? { width: size, height: size } : undefined;
-    const classes = className ?? (size === undefined ? "size-6" : "");
+    // A caller that only passes spacing or visibility classes still gets a box, so rows keep their 16px icon.
+    const classes = className === undefined ? (size === undefined ? "size-6" : "") : HAS_SIZE.test(className) || size !== undefined ? className : `size-4 ${className}`;
+    // With only a numeric size there is no class to read the look from, so read it from the size.
+    const px = toNumber(size);
+    const sizeLook = className === undefined && px !== undefined ? chromeLook(`size-${px / 4}`) : undefined;
+    const wantsFill = /\bfill-current\b/.test(classes) || (fill !== undefined && fill !== "none");
     return (
       <UiGlyph
         name={slug}
-        look={/\bfill-current\b/.test(classes) || (fill !== undefined && fill !== "none") ? "fill" : undefined}
+        look={wantsFill ? "fill" : sizeLook}
+        weight={toNumber(strokeWidth)}
         className={classes}
         style={boxed || color || style ? { ...boxed, ...(color ? { color } : null), ...style } : undefined}
       />
@@ -145,3 +158,10 @@ export const X = make("x", "X");
 export const XCircle = make("circle-x", "XCircle");
 export const XIcon = make("x", "XIcon");
 export const Zap = make("zap", "Zap");
+
+// Network marks drawn for the social set.
+export const Github = make("social-github", "Github");
+export const Codepen = make("social-codepen", "Codepen");
+export const SocialX = make("social-x", "SocialX");
+export const SocialLinkedin = make("social-linkedin", "SocialLinkedin");
+export const SocialReddit = make("social-reddit", "SocialReddit");

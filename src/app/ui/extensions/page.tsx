@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { UiGlyph } from "@/components/ui-glyph";
 import { CategorySection, type Category } from "@/components/extensions/cards";
 import { withUtm } from "@/lib/external-link";
-import { Github } from "@/components/icons/shared/brand-icons";
+import { Github } from "@/components/own-icons";
 import { GLYPHS } from "@/lib/ui-icons/glyphs";
 
 const COUNT = GLYPHS.length;

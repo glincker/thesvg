@@ -8,7 +8,7 @@ import {
   Upload,
   Zap,
 } from "@/components/own-icons";
-import { Github } from "@/components/icons/shared/brand-icons";
+import { Github } from "@/components/own-icons";
 import type { Metadata } from "next";
 import { getAllCategories, getCategoryCounts, getIconCount } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
@@ -44,7 +44,7 @@ export default function SubmitPage() {
               <div className="relative overflow-hidden rounded-2xl border border-border/30 bg-gradient-to-br from-orange-50/60 via-background to-amber-50/40 p-6 sm:p-8 dark:border-white/[0.06] dark:from-orange-950/20 dark:via-background dark:to-amber-950/10">
                 <div className="relative z-10">
                   <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-orange-200/50 bg-orange-50/80 px-3 py-1 text-xs font-medium text-orange-600 dark:border-orange-500/20 dark:bg-orange-500/10 dark:text-orange-400">
-                    <Zap className="h-3 w-3" />
+                    <Zap className="h-3.5 w-3.5" />
                     {iconCount.toLocaleString()}+ icons and growing
                   </div>
                   <h1 className="mb-2 text-2xl font-bold sm:text-3xl">Submit an Icon</h1>
@@ -126,7 +126,7 @@ export default function SubmitPage() {
                 >
                   <Github className="h-4 w-4" />
                   View Repository
-                  <ArrowUpRight className="h-3 w-3 opacity-50" />
+                  <ArrowUpRight className="h-3.5 w-3.5 opacity-50" />
                 </a>
                 <a
                   href={withUtm("https://github.com/GLINCKER/thesvg/issues", "submit_page")}
@@ -136,7 +136,7 @@ export default function SubmitPage() {
                 >
                   <GitPullRequest className="h-4 w-4" />
                   Open Issues
-                  <ArrowUpRight className="h-3 w-3 opacity-50" />
+                  <ArrowUpRight className="h-3.5 w-3.5 opacity-50" />
                 </a>
               </div>
 

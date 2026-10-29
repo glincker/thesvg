@@ -78,7 +78,7 @@ export default function NotFound() {
         href="/"
         className="mt-6 inline-flex items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
       >
-        <ArrowLeft className="h-3 w-3" />
+        <ArrowLeft className="h-3.5 w-3.5" />
         Back to home
       </Link>
     </div>

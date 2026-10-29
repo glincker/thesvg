@@ -2,22 +2,22 @@ import { GLYPHS, type Glyph } from "@/lib/ui-icons/glyphs";
 
 // Tailwind only sees whole class names, so every tone spells its classes out.
 export const TONES = {
-  violet: { hover: "group-hover:text-violet-400", glow: "from-violet-500/20", ink: "text-violet-400", chip: "border-violet-500/25 bg-violet-500/10 text-violet-400" },
-  sky: { hover: "group-hover:text-sky-400", glow: "from-sky-500/20", ink: "text-sky-400", chip: "border-sky-500/25 bg-sky-500/10 text-sky-400" },
-  emerald: { hover: "group-hover:text-emerald-400", glow: "from-emerald-500/20", ink: "text-emerald-400", chip: "border-emerald-500/25 bg-emerald-500/10 text-emerald-400" },
-  amber: { hover: "group-hover:text-amber-400", glow: "from-amber-500/20", ink: "text-amber-400", chip: "border-amber-500/25 bg-amber-500/10 text-amber-400" },
-  blue: { hover: "group-hover:text-blue-400", glow: "from-blue-500/20", ink: "text-blue-400", chip: "border-blue-500/25 bg-blue-500/10 text-blue-400" },
-  lime: { hover: "group-hover:text-lime-400", glow: "from-lime-500/20", ink: "text-lime-400", chip: "border-lime-500/25 bg-lime-500/10 text-lime-400" },
-  rose: { hover: "group-hover:text-rose-400", glow: "from-rose-500/20", ink: "text-rose-400", chip: "border-rose-500/25 bg-rose-500/10 text-rose-400" },
-  fuchsia: { hover: "group-hover:text-fuchsia-400", glow: "from-fuchsia-500/20", ink: "text-fuchsia-400", chip: "border-fuchsia-500/25 bg-fuchsia-500/10 text-fuchsia-400" },
-  orange: { hover: "group-hover:text-orange-400", glow: "from-orange-500/20", ink: "text-orange-400", chip: "border-orange-500/25 bg-orange-500/10 text-orange-400" },
-  teal: { hover: "group-hover:text-teal-400", glow: "from-teal-500/20", ink: "text-teal-400", chip: "border-teal-500/25 bg-teal-500/10 text-teal-400" },
-  indigo: { hover: "group-hover:text-indigo-400", glow: "from-indigo-500/25", ink: "text-indigo-400", chip: "border-indigo-500/25 bg-indigo-500/10 text-indigo-400" },
-  cyan: { hover: "group-hover:text-cyan-400", glow: "from-cyan-500/20", ink: "text-cyan-400", chip: "border-cyan-500/25 bg-cyan-500/10 text-cyan-400" },
-  green: { hover: "group-hover:text-green-400", glow: "from-green-500/20", ink: "text-green-400", chip: "border-green-500/25 bg-green-500/10 text-green-400" },
-  pink: { hover: "group-hover:text-pink-400", glow: "from-pink-500/20", ink: "text-pink-400", chip: "border-pink-500/25 bg-pink-500/10 text-pink-400" },
-  red: { hover: "group-hover:text-red-400", glow: "from-red-500/20", ink: "text-red-400", chip: "border-red-500/25 bg-red-500/10 text-red-400" },
-  yellow: { hover: "group-hover:text-yellow-400", glow: "from-yellow-500/20", ink: "text-yellow-400", chip: "border-yellow-500/25 bg-yellow-500/10 text-yellow-400" },
+  violet: { rest: "text-violet-500 dark:text-violet-400", hover: "group-hover:text-violet-400", glow: "from-violet-500/20", ink: "text-violet-400", chip: "border-violet-500/25 bg-violet-500/10 text-violet-400" },
+  sky: { rest: "text-sky-500 dark:text-sky-400", hover: "group-hover:text-sky-400", glow: "from-sky-500/20", ink: "text-sky-400", chip: "border-sky-500/25 bg-sky-500/10 text-sky-400" },
+  emerald: { rest: "text-emerald-500 dark:text-emerald-400", hover: "group-hover:text-emerald-400", glow: "from-emerald-500/20", ink: "text-emerald-400", chip: "border-emerald-500/25 bg-emerald-500/10 text-emerald-400" },
+  amber: { rest: "text-amber-500 dark:text-amber-400", hover: "group-hover:text-amber-400", glow: "from-amber-500/20", ink: "text-amber-400", chip: "border-amber-500/25 bg-amber-500/10 text-amber-400" },
+  blue: { rest: "text-blue-500 dark:text-blue-400", hover: "group-hover:text-blue-400", glow: "from-blue-500/20", ink: "text-blue-400", chip: "border-blue-500/25 bg-blue-500/10 text-blue-400" },
+  lime: { rest: "text-lime-500 dark:text-lime-400", hover: "group-hover:text-lime-400", glow: "from-lime-500/20", ink: "text-lime-400", chip: "border-lime-500/25 bg-lime-500/10 text-lime-400" },
+  rose: { rest: "text-rose-500 dark:text-rose-400", hover: "group-hover:text-rose-400", glow: "from-rose-500/20", ink: "text-rose-400", chip: "border-rose-500/25 bg-rose-500/10 text-rose-400" },
+  fuchsia: { rest: "text-fuchsia-500 dark:text-fuchsia-400", hover: "group-hover:text-fuchsia-400", glow: "from-fuchsia-500/20", ink: "text-fuchsia-400", chip: "border-fuchsia-500/25 bg-fuchsia-500/10 text-fuchsia-400" },
+  orange: { rest: "text-orange-500 dark:text-orange-400", hover: "group-hover:text-orange-400", glow: "from-orange-500/20", ink: "text-orange-400", chip: "border-orange-500/25 bg-orange-500/10 text-orange-400" },
+  teal: { rest: "text-teal-500 dark:text-teal-400", hover: "group-hover:text-teal-400", glow: "from-teal-500/20", ink: "text-teal-400", chip: "border-teal-500/25 bg-teal-500/10 text-teal-400" },
+  indigo: { rest: "text-indigo-500 dark:text-indigo-400", hover: "group-hover:text-indigo-400", glow: "from-indigo-500/25", ink: "text-indigo-400", chip: "border-indigo-500/25 bg-indigo-500/10 text-indigo-400" },
+  cyan: { rest: "text-cyan-500 dark:text-cyan-400", hover: "group-hover:text-cyan-400", glow: "from-cyan-500/20", ink: "text-cyan-400", chip: "border-cyan-500/25 bg-cyan-500/10 text-cyan-400" },
+  green: { rest: "text-green-500 dark:text-green-400", hover: "group-hover:text-green-400", glow: "from-green-500/20", ink: "text-green-400", chip: "border-green-500/25 bg-green-500/10 text-green-400" },
+  pink: { rest: "text-pink-500 dark:text-pink-400", hover: "group-hover:text-pink-400", glow: "from-pink-500/20", ink: "text-pink-400", chip: "border-pink-500/25 bg-pink-500/10 text-pink-400" },
+  red: { rest: "text-red-500 dark:text-red-400", hover: "group-hover:text-red-400", glow: "from-red-500/20", ink: "text-red-400", chip: "border-red-500/25 bg-red-500/10 text-red-400" },
+  yellow: { rest: "text-yellow-500 dark:text-yellow-400", hover: "group-hover:text-yellow-400", glow: "from-yellow-500/20", ink: "text-yellow-400", chip: "border-yellow-500/25 bg-yellow-500/10 text-yellow-400" },
 } as const;
 
 export type Motif = "hero" | "wall" | "rows" | "stack" | "scatter" | "line";
@@ -50,12 +50,14 @@ export const THEMES: Record<string, Theme> = {
   data: { tone: "blue", motif: "line", icon: "chart-line", tagline: "Charts, trends and the shape of numbers." },
   space: { tone: "indigo", motif: "hero", icon: "orbit", tagline: "Orbits, launch, telemetry and everything beyond the atmosphere." },
   robotics: { tone: "orange", motif: "hero", icon: "joint", tagline: "Arms, joints, sensors and machines that move." },
+  social: { tone: "pink", motif: "rows", icon: "message-circle", tagline: "Networks, shares, replies and the marks people recognise." },
   agents: { tone: "violet", motif: "hero", icon: "bot", tagline: "Tools, memory, plans and guardrails for AI agents." },
   general: { tone: "sky", motif: "scatter", icon: "star", tagline: "Everything that does not fit a box." },
 };
 
 /** Signature icons shown first in each banner, so it leads with what the category is about. The rest fill in by craft score. */
 export const FEATURED: Record<string, string[]> = {
+  social: ["social-github", "social-x", "social-linkedin", "social-youtube", "social-discord", "social-reddit", "repost", "like-burst"],
   space: ["orbit", "satellite", "rocket", "telescope", "lander", "antenna", "comet", "galaxy"],
   robotics: ["rover", "drone", "gripper", "joint", "quadruped", "servo", "lidar", "end-effector"],
   agents: ["bot", "brain-circuit", "prompt", "tool-call", "memory-save", "multi-agent", "guardrail"],

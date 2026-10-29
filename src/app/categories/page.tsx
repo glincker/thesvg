@@ -109,7 +109,7 @@ export default function CategoriesPage() {
           {/* Header */}
           <div className="mb-8">
             <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-border/40 bg-muted/50 px-3 py-1 text-xs font-medium text-muted-foreground dark:border-white/[0.08] dark:bg-white/[0.04]">
-              <Shapes className="h-3 w-3" />
+              <Shapes className="h-3.5 w-3.5" />
               {totalCategories} categories
             </div>
             <h1 className="mb-2 text-2xl font-bold tracking-tight sm:text-3xl">

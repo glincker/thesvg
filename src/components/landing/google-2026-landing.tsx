@@ -201,7 +201,7 @@ export function Google2026Landing({ icons }: Props) {
               decoding="async"
             />
             <span className="g26-hero-mark-cta" aria-hidden>
-              Open <ArrowUpRight className="h-3 w-3" />
+              Open <ArrowUpRight className="h-3.5 w-3.5" />
             </span>
           </Link>
         ) : null}
@@ -290,7 +290,7 @@ export function Google2026Landing({ icons }: Props) {
               onClick={clearAllFilters}
               className="g26-chip g26-chip-clear"
             >
-              <X className="h-3 w-3" />
+              <X className="h-3.5 w-3.5" />
               <span>Clear</span>
             </button>
           )}

@@ -266,9 +266,9 @@ function InstallBadge({
       <span className="select-all opacity-50">$</span>
       <span className="font-medium">{command}</span>
       {copied ? (
-        <Check className="h-3 w-3 shrink-0 text-emerald-500" />
+        <Check className="h-3.5 w-3.5 shrink-0 text-emerald-500" />
       ) : (
-        <Copy className="h-3 w-3 shrink-0 opacity-50 transition-opacity group-hover:opacity-100" />
+        <Copy className="h-3.5 w-3.5 shrink-0 opacity-50 transition-opacity group-hover:opacity-100" />
       )}
     </button>
   );
@@ -483,11 +483,11 @@ export function HomeHero({
         )}
       />
       <span className={cn("relative z-10 flex w-[64px] items-center justify-center gap-1 text-[10px] font-medium transition-colors", effectiveOrder === "popular" ? "text-background" : "text-muted-foreground")}>
-        <Flame className="h-3 w-3" />
+        <Flame className="h-3.5 w-3.5" />
         Popular
       </span>
       <span className={cn("relative z-10 flex w-[64px] items-center justify-center gap-1 text-[10px] font-medium transition-colors", effectiveOrder === "recent" ? "text-background" : "text-muted-foreground")}>
-        <Clock className="h-3 w-3" />
+        <Clock className="h-3.5 w-3.5" />
         Recent
       </span>
     </button>
@@ -505,7 +505,7 @@ export function HomeHero({
           className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
         >
           View all
-          <ArrowRight className="h-3 w-3" />
+          <ArrowRight className="h-3.5 w-3.5" />
         </Link>
       </div>
       <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 sm:gap-3 lg:grid-cols-6">
@@ -529,7 +529,7 @@ export function HomeHero({
           className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
         >
           View all
-          <ArrowRight className="h-3 w-3" />
+          <ArrowRight className="h-3.5 w-3.5" />
         </Link>
       </div>
       <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 sm:gap-3 lg:grid-cols-5 xl:grid-cols-6">
@@ -714,7 +714,7 @@ export function HomeHero({
               className="inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-foreground px-3 py-1.5 text-xs font-medium text-background shadow-sm transition-opacity hover:opacity-90"
             >
               {compactSlide.cta.label}
-              <ArrowRight className="h-3 w-3" />
+              <ArrowRight className="h-3.5 w-3.5" />
             </a>
           ) : (
             <Link
@@ -722,7 +722,7 @@ export function HomeHero({
               className="inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-foreground px-3 py-1.5 text-xs font-medium text-background shadow-sm transition-opacity hover:opacity-90"
             >
               {compactSlide.cta.label}
-              <ArrowRight className="h-3 w-3" />
+              <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           )}
           <button
@@ -761,7 +761,7 @@ export function HomeHero({
                 className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
               >
                 View all
-                <ArrowRight className="h-3 w-3" />
+                <ArrowRight className="h-3.5 w-3.5" />
               </Link>
               <button
                 type="button"

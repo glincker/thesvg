@@ -72,8 +72,8 @@ export function Browse() {
   return (
     <div className="mx-auto flex w-full min-w-0 flex-col gap-4">
       {ui.query.trim() ? null : ui.category !== "All" && ui.set === "all" && !ui.onlyFavorites ? <CategoryBanner category={ui.category} /> : <Hero />}
-      <StyleBar />
-      <div id="browse" className="-mx-1 flex items-center gap-1.5 overflow-x-auto px-1 pb-1">
+      <div className="flex items-center gap-3">
+      <div id="browse" className="-mx-1 flex min-w-0 flex-1 items-center gap-1.5 overflow-x-auto px-1 pb-1">
         {[{ name: "All", count: categories.total }, ...categories.rows].map((c) => (
           <button
             key={c.name}
@@ -88,6 +88,8 @@ export function Browse() {
             {c.name === "All" && <span className={cn("rounded-full bg-foreground/10 px-1.5 text-[0.75rem]", ui.category === c.name && "bg-background/20")}>{c.count}</span>}
           </button>
         ))}
+      </div>
+      <StyleBar />
       </div>
       {popular.length > 0 && (
         <section aria-label="Popular">
