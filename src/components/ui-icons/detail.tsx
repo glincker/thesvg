@@ -1,5 +1,6 @@
 "use client";
 
+import { brandForUiMark } from "@/lib/brand-ui-links";
 import { renderIcon } from "@/lib/ui-icons/engine";
 import { DownloadMenu } from "@/components/icons/detail/download-menu";
 import { OpenInEditorMenu } from "@/components/icons/detail/open-in-editor-menu";
@@ -292,6 +293,13 @@ export function Detail({ glyph }: { glyph: GlyphData }) {
                 activeVariant={ui.variant}
               />
             </div>
+            {brandForUiMark(glyph.slug) && (
+              <Link href={`/icon/${brandForUiMark(glyph.slug)}`} className="mt-3 inline-flex items-center gap-2 rounded-lg border px-3 py-2 text-[0.8125rem] text-muted-foreground transition-colors hover:border-orange-500/50 hover:text-foreground">
+                <img src={`/icons/${brandForUiMark(glyph.slug)}/default.svg`} alt="" width={20} height={20} className="size-5 object-contain" />
+                Official brand logo and variants
+                <UiGlyph name="arrow-up-right" className="size-4 text-orange-500" />
+              </Link>
+            )}
           </header>
 
           <Section title="Looks" aside="pick one, everything below follows">

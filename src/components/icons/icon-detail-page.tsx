@@ -1,5 +1,6 @@
 "use client";
 
+import { uiMarkForBrand } from "@/lib/brand-ui-links";
 import { UiGlyph } from "@/components/ui-glyph";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties } from "react";
@@ -461,6 +462,22 @@ export function IconDetailPage({
               </Link>
             );
           })()}
+
+          {uiMarkForBrand(icon.slug) && (
+            <Link
+              href={`/ui/${uiMarkForBrand(icon.slug)}`}
+              className="group/ui-mark flex items-center gap-3 rounded-xl border border-orange-500/30 bg-gradient-to-r from-orange-500/[0.06] to-transparent p-3 shadow-sm transition-all hover:border-orange-500/50"
+            >
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-background ring-1 ring-inset ring-border/40">
+                <UiGlyph name={uiMarkForBrand(icon.slug) ?? ""} className="size-6" />
+              </span>
+              <span className="min-w-0 flex-1">
+                <span className="block text-[10px] font-semibold uppercase tracking-wider text-orange-600 dark:text-orange-400">Also as a UI icon</span>
+                <span className="block truncate text-sm font-medium text-foreground">Glass mark for interfaces</span>
+              </span>
+              <ArrowUpRight className="h-4 w-4 shrink-0 text-orange-600 dark:text-orange-400" />
+            </Link>
+          )}
 
           {/* Website + Guidelines links */}
           <div className="space-y-1.5">
