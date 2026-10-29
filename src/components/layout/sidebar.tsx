@@ -222,7 +222,7 @@ export function Sidebar({
             ? "flex h-full w-full flex-col bg-background pt-6"
             : cn(
                 "group/sidebar fixed top-[calc(4.25rem+var(--banner-h,0px))] left-2 z-30 hidden h-[calc(100vh-4.75rem-var(--banner-h,0px))] flex-col rounded-2xl border border-black/[0.06] bg-background/90 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08),0_0_0_1px_rgba(0,0,0,0.03)] backdrop-blur-2xl transition-[width] duration-200 ease-in-out md:flex dark:border-white/[0.08] dark:bg-black/60 dark:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.05)]",
-                collapsed ? "w-16" : "w-54",
+                collapsed ? "w-16" : "w-56",
               ),
         )}
       >
@@ -261,7 +261,7 @@ export function Sidebar({
                     onClick={() => toggleSection("collections")}
                     aria-expanded={collectionsExpanded}
                     aria-controls="collections-menu"
-                    className="flex w-full items-center justify-between rounded-lg px-1 pt-3 pb-1.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/70 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    className="flex w-full items-center justify-between rounded-lg px-1 pt-3 pb-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground/70 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                   >
                     Collections
                     <ChevronRight
@@ -328,7 +328,7 @@ export function Sidebar({
                     onClick={() => toggleSection("families")}
                     aria-expanded={familiesExpanded}
                     aria-controls="families-menu"
-                    className="flex w-full items-center justify-between rounded-lg px-1 pt-3 pb-1.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/70 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    className="flex w-full items-center justify-between rounded-lg px-1 pt-3 pb-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground/70 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                   >
                     <span className="flex items-center gap-2">
                       Families
@@ -401,7 +401,7 @@ export function Sidebar({
                   onClick={() => toggleSection("featured")}
                   aria-expanded={featuredExpanded}
                   aria-controls="featured-menu"
-                  className="flex w-full items-center justify-between rounded-lg px-1 pt-3 pb-1.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/70 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  className="flex w-full items-center justify-between rounded-lg px-1 pt-3 pb-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground/70 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >
                   Featured
                   <ChevronRight
