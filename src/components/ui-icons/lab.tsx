@@ -18,6 +18,7 @@ const SWATCH_BG: Record<(typeof SWATCHES)[number], string> = {
 };
 const CORNERS = ["sharp", "chamfer", "round"] as const;
 const MINE_KEY = "svg-icons-my-style";
+const HINT_KEY = "svg-icons-style-hint";
 const STYLE_QUERY = ["w", "sc", "cr", "rd", "sh", "ct", "accent"];
 // Icons with a closed body, so corners, weight and shadow all show in the preview.
 const PREVIEW = ["rocket", "shield-check", "bell", "folder", "heart", "social-github"];
@@ -216,6 +217,36 @@ export function StyleBar({ className }: { className?: string }) {
   const ui = useUi();
   const [open, setOpen] = useState(false);
   const wrap = useRef<HTMLDivElement>(null);
+  // Half open: hovering or focusing the button shows the presets, a click opens everything.
+  const [peek, setPeek] = useState(false);
+  // First visit only: a pulse and a short hint so the button gets noticed once, then stays quiet.
+  const [hint, setHint] = useState(false);
+  const [mine, setMine] = useState<Mine | null>(null);
+  useEffect(() => {
+    setMine(readMine());
+    try {
+      if (window.localStorage.getItem(HINT_KEY) === "1") return;
+    } catch {
+      return;
+    }
+    const show = window.setTimeout(() => setHint(true), 900);
+    const hide = window.setTimeout(() => setHint(false), 9000);
+    return () => { window.clearTimeout(show); window.clearTimeout(hide); };
+  }, []);
+  const seen = () => {
+    setHint(false);
+    try {
+      window.localStorage.setItem(HINT_KEY, "1");
+    } catch {
+      /* storage can be blocked, the hint then shows again next visit */
+    }
+  };
+  const applyMine = () => {
+    if (!mine) return;
+    ui.resetLab();
+    if (Object.keys(mine.lab).length) ui.setLab(mine.lab);
+    ui.setAccent(mine.accent);
+  };
   // A saved style comes back on its own, unless a shared link already carries a style.
   const restored = useRef(false);
   useEffect(() => {
@@ -242,10 +273,10 @@ export function StyleBar({ className }: { className?: string }) {
   const { chips, changes } = useSummary();
   return (
     <>
-      <div ref={wrap} className={cn("relative hidden shrink-0 md:block", className)}>
+      <div ref={wrap} onPointerEnter={() => { setPeek(true); seen(); }} onPointerLeave={() => setPeek(false)} onFocus={() => setPeek(true)} onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget)) setPeek(false); }} className={cn("relative hidden shrink-0 md:block", className)}>
         <button
           type="button"
-          onClick={() => setOpen((o) => !o)}
+          onClick={() => { setOpen((o) => !o); setPeek(false); seen(); }}
           aria-expanded={open}
           aria-haspopup="dialog"
           className={cn(
@@ -253,6 +284,7 @@ export function StyleBar({ className }: { className?: string }) {
             (open || changes > 0) && "border-orange-500/60 bg-orange-500/[0.06]",
           )}
         >
+          {hint && <span aria-hidden="true" className="pointer-events-none absolute inset-0 rounded-full ring-2 ring-orange-500/60 animate-ping" />}
           <span className="flex items-center gap-1 rounded-full bg-muted/70 px-2 py-1">
             {PREVIEW.slice(0, 3).map((slug) => {
               const g = GLYPH_BY_SLUG.get(slug);
@@ -271,8 +303,24 @@ export function StyleBar({ className }: { className?: string }) {
           {changes > 0 && <span className="grid size-4 place-items-center rounded-full bg-orange-500 text-[0.75rem] leading-none text-white">{changes}</span>}
           <UiGlyph name="chevron-down" className={cn("size-4 text-muted-foreground transition-transform group-hover:text-foreground", open && "rotate-180")} />
         </button>
+        {hint && !open && !peek && (
+          <span role="status" className="pointer-events-none absolute right-2 top-full z-40 mt-2 animate-in fade-in slide-in-from-top-1 whitespace-nowrap rounded-lg bg-orange-500 px-2.5 py-1 text-[0.75rem] font-medium text-white shadow-lg duration-300">
+            Make the icons yours: weight, corners, colour
+          </span>
+        )}
+        {peek && !open && (
+          <div className="absolute right-0 top-full z-40 w-max max-w-[min(34rem,calc(100vw-3rem))] pt-2 animate-in fade-in slide-in-from-top-1 duration-150">
+            <div className="rounded-xl border bg-background/90 p-2 opacity-95 shadow-xl backdrop-blur-xl">
+              <div className="mb-1.5 flex items-center justify-between gap-6 px-1 text-[0.75rem] text-muted-foreground">
+                <span>Quick styles</span>
+                <span>Click Style for every control</span>
+              </div>
+              <Presets mine={mine} onApplyMine={applyMine} />
+            </div>
+          </div>
+        )}
         {open && (
-          <div role="dialog" aria-label="Icon style" className="absolute right-0 top-full z-50 mt-2 w-[min(60rem,calc(100vw-3rem))] animate-in fade-in slide-in-from-top-1 duration-150">
+          <div role="dialog" aria-label="Icon style" className="absolute right-0 top-full z-50 w-[min(60rem,calc(100vw-3rem))] pt-2 animate-in fade-in slide-in-from-top-1 duration-150">
             <StyleLab className="bg-background shadow-2xl ring-1 ring-black/5 dark:ring-white/10" />
           </div>
         )}
