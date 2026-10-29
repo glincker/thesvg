@@ -2,77 +2,122 @@
 
 import { UiGlyph } from "@/components/ui-glyph";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { GLYPHS, GLYPH_BY_SLUG, VARIANTS, VIEW_SETS } from "@/lib/ui-icons/glyphs";
+import { DOMAINS, GLYPHS, VIEW_SETS } from "@/lib/ui-icons/glyphs";
 import { cn } from "@/lib/ui-icons/utils";
-import { Glyph } from "./glyph";
 import { useUi } from "./ui-state";
 
-function NavItem(props: { icon: React.ReactNode; label: string; active?: boolean; badge?: string; onClick?: () => void }) {
-  return (
-    <button
-      type="button"
-      onClick={props.onClick}
-      className={cn(
-        "flex w-full items-center gap-3 rounded-xl px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground",
-        props.active && "bg-accent text-foreground",
-      )}
-    >
-      {props.icon}
-      <span className="flex-1 text-left">{props.label}</span>
-      {props.badge && <span className="text-[0.75rem] text-muted-foreground">{props.badge}</span>}
-    </button>
+const DOMAIN_ICON: Record<string, string> = {
+  interface: "sliders-horizontal", arrows: "arrow-up-right", status: "circle-check", files: "file", communication: "message-square", dev: "code",
+  security: "shield", media: "play", people: "user", commerce: "shopping-cart", layout: "layout-dashboard", time: "clock", tools: "wrench",
+  nature: "sun", devices: "smartphone", shapes: "diamond", places: "map", data: "chart-line", space: "orbit", robotics: "joint", agents: "bot", general: "star",
+};
+
+const CATS_KEY = "ui-sidebar-categories";
+
+interface ItemProps {
+  icon: string;
+  label: string;
+  rail: boolean;
+  active?: boolean;
+  badge?: string;
+  href?: string;
+  onClick?: () => void;
+}
+
+/** One row. In the rail only the icon shows, with the label as a tooltip and for screen readers. */
+function Item({ icon, label, rail, active, badge, href, onClick }: ItemProps) {
+  const cls = cn(
+    "flex w-full items-center gap-3 rounded-xl py-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground",
+    rail ? "justify-center px-0" : "px-3",
+    active && "bg-accent text-foreground",
+  );
+  const body = (
+    <>
+      <UiGlyph name={icon} className="size-5" />
+      {rail ? <span className="sr-only">{label}</span> : <span className="flex-1 truncate text-left">{label}</span>}
+      {!rail && badge && <span className="text-[0.75rem] text-muted-foreground">{badge}</span>}
+    </>
+  );
+  return href ? (
+    <Link href={href} title={rail ? label : undefined} aria-current={active ? "page" : undefined} onClick={onClick} className={cls}>{body}</Link>
+  ) : (
+    <button type="button" title={rail ? label : undefined} aria-pressed={active} onClick={onClick} className={cls}>{body}</button>
   );
 }
 
-export function SidebarNav({ onNavigate }: { onNavigate?: () => void }) {
+export function SidebarNav({ onNavigate, rail = false }: { onNavigate?: () => void; rail?: boolean }) {
   const ui = useUi();
   const pathname = usePathname();
   const onList = pathname === "/ui";
-  const sample = GLYPH_BY_SLUG.get(ui.sample ?? "") ?? GLYPH_BY_SLUG.get("shield-check");
-  // Daily drops pile up, so they are one entry here. The What is new page lists every drop on its own.
-  const sidebarSets = (() => {
-    const real = VIEW_SETS.filter((st) => st.count > 0);
-    const drops = real.filter((st) => st.id.startsWith("drop-"));
-    const rest = real.filter((st) => !st.id.startsWith("drop-"));
-    const label = (st: (typeof real)[number]): string => (st.isNew ? `New · ${st.count}` : st.released ? String(st.count) : `Draft · ${st.count}`);
-    const out = rest.map((st) => ({ id: st.id, name: st.name, badge: label(st) }));
-    if (drops.length) out.splice(Math.max(0, out.findIndex((x) => x.id === "backlog")), 0, { id: "drops", name: "Daily drops", badge: `${drops.reduce((n, d) => n + d.count, 0)}` });
-    return out;
-  })();
+  const [catsOpen, setCatsOpen] = useState(true);
+  useEffect(() => {
+    try {
+      setCatsOpen(window.localStorage.getItem(CATS_KEY) !== "0");
+    } catch {
+      /* storage can be blocked, the section then stays open */
+    }
+  }, []);
+  const toggleCats = () => {
+    setCatsOpen((open) => {
+      try {
+        window.localStorage.setItem(CATS_KEY, open ? "0" : "1");
+      } catch {
+        /* the choice then lasts until reload */
+      }
+      return !open;
+    });
+  };
+
+  const domainCounts = new Map<string, number>();
+  for (const g of GLYPHS) domainCounts.set(g.domain, (domainCounts.get(g.domain) ?? 0) + 1);
+  const domains = DOMAINS.filter((d) => domainCounts.has(d.id));
+  const newest = VIEW_SETS.find((st) => st.isNew && st.count > 0);
+  const allActive = onList && ui.set === "all" && ui.category === "All" && !ui.onlyFavorites;
+  const go = (apply: () => void) => () => {
+    onNavigate?.();
+    ui.runOnList(apply);
+  };
+
   return (
     <>
-      <NavItem icon={<UiGlyph name="layout-grid" className="size-5" />} label="All icons" badge={String(GLYPHS.length)} active={onList && ui.set === "all" && !ui.onlyFavorites} onClick={() => { onNavigate?.(); ui.runOnList(() => { ui.setCategory("All"); ui.setSet("all"); ui.setOnlyFavorites(false); ui.setQuery(""); }); }} />
-      <NavItem icon={<UiGlyph name="heart" className="size-5" />} label="Favorites" badge={String(ui.favorites.length)} active={onList && ui.onlyFavorites} onClick={() => { onNavigate?.(); ui.runOnList(() => ui.setOnlyFavorites(onList ? !ui.onlyFavorites : true)); }} />
-      <p className="mt-3 px-3 text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground">Looks</p>
-      {VARIANTS.map((v) => (
+      <Item icon="layout-grid" label="All icons" rail={rail} badge={String(GLYPHS.length)} active={allActive} onClick={go(() => { ui.setSet("all"); ui.setCategory("All"); ui.setOnlyFavorites(false); })} />
+      <Item icon="heart" label="Favorites" rail={rail} badge={String(ui.favorites.length)} active={onList && ui.onlyFavorites} onClick={go(() => { ui.setSet("all"); ui.setCategory("All"); ui.setOnlyFavorites(true); })} />
+      <Item icon="plug" label="Extensions" rail={rail} href="/ui/extensions" active={pathname === "/ui/extensions"} onClick={() => onNavigate?.()} />
+      <Item icon="sparkles" label="What is new" rail={rail} href="/ui/changelog" active={pathname === "/ui/changelog"} onClick={() => onNavigate?.()} />
+
+      {rail ? (
+        <div className="my-1 h-px bg-border/60" role="separator" />
+      ) : (
         <button
-          key={v}
           type="button"
-          onClick={() => { ui.setVariant(v); onNavigate?.(); }}
-          className={cn("flex items-center gap-3 rounded-xl px-3 py-1.5 text-sm capitalize text-muted-foreground transition-colors hover:bg-accent hover:text-foreground", ui.variant === v && "bg-accent text-foreground")}
+          onClick={toggleCats}
+          aria-expanded={catsOpen}
+          className="mt-3 flex items-center gap-1.5 px-3 text-left text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground transition-colors hover:text-foreground"
         >
-          {sample && <Glyph nodes={sample.nodes} variant={v} size={20} accent={ui.accent} className="text-foreground" />}
-          {v}
+          <UiGlyph name="chevron-down" className={cn("size-3.5 transition-transform", !catsOpen && "-rotate-90")} />
+          Categories
         </button>
-      ))}
-      <p className="mt-3 px-3 text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground">Sets</p>
-      {sidebarSets.map((st) => (
-        <NavItem
-          key={st.id}
-          icon={<UiGlyph name="layers" className="size-5" />}
-          label={st.name}
-          badge={st.badge}
-          active={onList && (st.id === "drops" ? ui.set.startsWith("drop-") || ui.set === "drops" : ui.set === st.id)}
-          onClick={() => { onNavigate?.(); ui.runOnList(() => { ui.setSet(st.id); ui.setOnlyFavorites(false); }); }}
-        />
-      ))}
-      <Link href="/ui/extensions" onClick={() => onNavigate?.()} className="mt-1 flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground">
-        <UiGlyph name="layout-grid" className="size-5" /> <span className="flex-1">Extensions</span>
-      </Link>
-      <Link href="/ui/changelog" onClick={() => onNavigate?.()} className="mt-1 flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground">
-        <UiGlyph name="sparkles" className="size-5" /> <span className="flex-1">What is new</span>
-      </Link>
+      )}
+      {(rail || catsOpen) && (
+        <>
+          {newest && (
+            <Item icon="sparkles" label="New" rail={rail} badge={String(newest.count)} active={onList && ui.set === newest.id} onClick={go(() => { ui.setSet(newest.id); ui.setCategory("All"); ui.setOnlyFavorites(false); })} />
+          )}
+          {domains.map((d) => (
+            <Item
+              key={d.id}
+              icon={DOMAIN_ICON[d.id] ?? "layers"}
+              label={d.label}
+              rail={rail}
+              badge={String(domainCounts.get(d.id))}
+              active={onList && ui.set === "all" && ui.category === d.label && !ui.onlyFavorites}
+              onClick={go(() => { ui.setSet("all"); ui.setCategory(d.label); ui.setOnlyFavorites(false); })}
+            />
+          ))}
+        </>
+      )}
     </>
   );
 }

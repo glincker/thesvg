@@ -2,17 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import posthog from "posthog-js";
-import {
-  Check,
-  CheckCircle,
-  ClipboardCopy,
-  ExternalLink,
-  Loader2,
-  Palette,
-  Upload,
-  X,
-  XCircle,
-} from "lucide-react";
+import { Check, CheckCircle, ClipboardCopy, ExternalLink, Palette, Upload, X, XCircle } from "lucide-react";
 import { Github } from "@/components/icons/shared/brand-icons";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -25,6 +15,7 @@ import {
   OTHER_LICENSE_ID,
   validateLicenseSelection,
 } from "@/lib/license-options";
+import { Busy } from "@/components/skeletons";
 
 const GITHUB_ISSUES_URL =
   "https://github.com/glincker/thesvg/issues/new";
@@ -706,7 +697,7 @@ export function SubmitForm({
               )}
             >
               {isValidating ? (
-                <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
+                <Busy className="h-5 w-5 text-muted-foreground" />
               ) : (
                 <Upload
                   className={cn(

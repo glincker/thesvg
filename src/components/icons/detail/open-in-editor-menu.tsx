@@ -1,16 +1,7 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import {
-  ArrowUpRight,
-  Check,
-  ChevronDown,
-  ClipboardCopy,
-  Download as DownloadIcon,
-  ExternalLink,
-  Loader2,
-  Pencil,
-} from "lucide-react";
+import { ArrowUpRight, Check, ChevronDown, ClipboardCopy, Download as DownloadIcon, ExternalLink, Pencil } from "lucide-react";
 import { Codepen } from "@/components/icons/shared/brand-icons";
 import { Button } from "@/components/ui/button";
 import {
@@ -29,6 +20,7 @@ import {
   openDeepLink,
 } from "@/lib/svg-utils";
 import Link from "next/link";
+import { Busy } from "@/components/skeletons";
 
 interface OpenInEditorMenuProps {
   svg: string;
@@ -157,7 +149,7 @@ export function OpenInEditorMenu({
               >
                 <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center">
                   {isBusy ? (
-                    <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                    <Busy className="h-3.5 w-3.5" />
                   ) : isToast ? (
                     <Check className="h-3.5 w-3.5 text-emerald-500" />
                   ) : (

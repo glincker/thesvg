@@ -1,7 +1,8 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { Download, Loader2, Image as ImageIcon } from "lucide-react";
+import { Download, Image as ImageIcon } from "lucide-react";
+import { Busy } from "@/components/skeletons";
 import posthog from "posthog-js";
 import { svgToPng, downloadPng } from "@/lib/svg-to-png";
 import { cn } from "@/lib/utils";
@@ -77,10 +78,9 @@ export function PngExport({ currentPath, svgContent, slug, activeVariant }: PngE
             {/* Fixed-height preview area with progressive icon size */}
             <div className="icon-preview-bg flex h-14 w-full items-center justify-center rounded-lg">
               {exportingSize === size ? (
-                <Loader2
-                  className="animate-spin text-orange-500"
-                  style={{ width: display, height: display }}
-                />
+                <span className="inline-grid place-items-center text-orange-500" style={{ width: display, height: display }}>
+                  <Busy className="size-1/2" />
+                </span>
               ) : (
                 <img
                   src={currentPath}

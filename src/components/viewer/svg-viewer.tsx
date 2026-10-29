@@ -36,6 +36,7 @@ import {
 import { DeepLinkActions } from "@/components/viewer/deep-link-actions";
 import { QuickImport } from "@/components/viewer/quick-import";
 import { withUtm } from "@/lib/external-link";
+import { Busy } from "@/components/skeletons";
 
 type PreviewBg = "checker" | "light" | "dark";
 
@@ -376,7 +377,7 @@ export function SvgViewer() {
 
           {autoloading && (
             <p className="flex items-center gap-2 rounded-lg border border-border/40 bg-card/30 px-3 py-2 text-xs text-muted-foreground">
-              <span className="h-3 w-3 animate-spin rounded-full border border-muted-foreground/30 border-t-foreground" />
+              <Busy className="h-3 w-3" />
               Loading <span className="font-mono">{autoloading}</span> from
               library...
             </p>

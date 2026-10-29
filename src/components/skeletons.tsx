@@ -25,6 +25,22 @@ export function Pulse({ className }: { className?: string }) {
   );
 }
 
+/** Inline "working" mark for buttons and rows: a soft pulse in the current text colour, never a spinner. */
+export function Busy({ className }: { className?: string }) {
+  return <span aria-hidden className={cn("inline-block shrink-0 animate-pulse rounded-full bg-current opacity-50", className)} />;
+}
+
+/** Card-shaped placeholders for any icon grid that is still loading. */
+export function IconGridSkeleton({ count = 18, className }: { count?: number; className?: string }) {
+  return (
+    <div aria-hidden className={cn("grid grid-cols-[repeat(auto-fill,minmax(148px,1fr))] gap-3", className)}>
+      {Array.from({ length: count }).map((_, i) => (
+        <Pulse key={i} className="h-[176px] rounded-2xl border border-border/40 bg-muted-foreground/[0.06]" />
+      ))}
+    </div>
+  );
+}
+
 /** Desktop header shell, mirrors the real header's card, height and logo. */
 export function HeaderSkeleton() {
   return (
