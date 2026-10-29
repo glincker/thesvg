@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { svgText } from "@/components/ui-icons/glyph";
 import { GLYPH_BY_SLUG } from "../glyphs";
 import { conceptOf, isDomain } from "../taxonomy";
-import { codeFor } from "../snippets";
+import { codeFor, exportName, installCommand, packageCode } from "../snippets";
 
 const idsOf = (svg: string): string[] => [...svg.matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]);
 
@@ -58,5 +58,28 @@ describe("taxonomy", () => {
       expect(seen.has(key)).toBe(false);
       seen.add(key);
     }
+  });
+});
+
+describe("package usage snippets", () => {
+  it("names the export the way the package builder does", () => {
+    expect(exportName("bell", "outline")).toBe("BellIcon");
+    expect(exportName("lightbulb", "glass")).toBe("LightbulbGlassIcon");
+    expect(exportName("bell", "glass-outline")).toBe("BellGlassOutlineIcon");
+    expect(exportName("3d-rotate", "fill")).toBe("I3dRotateFillIcon");
+  });
+
+  it("imports from the right package for each framework", () => {
+    expect(packageCode("react", "bell", "glass")).toContain('from "@thesvg/ui-react"');
+    expect(packageCode("vue", "bell", "glass")).toContain('from "@thesvg/ui-vue"');
+    expect(packageCode("svelte", "bell", "glass")).toContain('from "@thesvg/ui-svelte"');
+    expect(packageCode("native", "bell", "fill")).toContain('from "@thesvg/ui-react-native"');
+    expect(packageCode("js", "bell", "glass")).toContain("/dist/svg/bell/glass.svg");
+  });
+
+  it("installs what each package needs", () => {
+    expect(installCommand("react")).toBe("npm install @thesvg/ui-react");
+    expect(installCommand("native")).toBe("npm install @thesvg/ui-react-native react-native-svg");
+    expect(installCommand("js")).toBe("npm install @thesvg/ui");
   });
 });

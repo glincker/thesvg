@@ -4,7 +4,7 @@ import { UiGlyph } from "@/components/ui-glyph";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { DOMAINS, GLYPHS, VIEW_SETS } from "@/lib/ui-icons/glyphs";
+import { DOMAINS, GLYPHS } from "@/lib/ui-icons/glyphs";
 import { cn } from "@/lib/ui-icons/utils";
 import { useUi } from "./ui-state";
 
@@ -73,7 +73,7 @@ export function SidebarNav({ onNavigate, rail = false }: { onNavigate?: () => vo
   const domainCounts = new Map<string, number>();
   for (const g of GLYPHS) domainCounts.set(g.domain, (domainCounts.get(g.domain) ?? 0) + 1);
   const domains = DOMAINS.filter((d) => domainCounts.has(d.id));
-  const newest = VIEW_SETS.find((st) => st.isNew && st.count > 0);
+  const newCount = GLYPHS.filter((g) => g.isNew).length;
   const allActive = onList && ui.set === "all" && ui.category === "All" && !ui.onlyFavorites;
   const go = (apply: () => void) => () => {
     onNavigate?.();
@@ -102,9 +102,10 @@ export function SidebarNav({ onNavigate, rail = false }: { onNavigate?: () => vo
       )}
       {(rail || catsOpen) && (
         <>
-          {newest && (
-            <Item icon="sparkles" label="New" rail={rail} badge={String(newest.count)} active={onList && ui.set === newest.id} onClick={go(() => { ui.setSet(newest.id); ui.setCategory("All"); ui.setOnlyFavorites(false); })} />
+          {newCount > 0 && (
+            <Item icon="sparkles" label="New" rail={rail} badge={String(newCount)} active={onList && ui.set === "new"} onClick={go(() => { ui.setSet("new"); ui.setCategory("All"); ui.setOnlyFavorites(false); })} />
           )}
+          <Item icon="layout-grid" label="All categories" rail={rail} href="/ui/categories" active={pathname === "/ui/categories"} onClick={() => onNavigate?.()} />
           {domains.map((d) => (
             <Item
               key={d.id}
@@ -112,8 +113,9 @@ export function SidebarNav({ onNavigate, rail = false }: { onNavigate?: () => vo
               label={d.label}
               rail={rail}
               badge={String(domainCounts.get(d.id))}
-              active={onList && ui.set === "all" && ui.category === d.label && !ui.onlyFavorites}
-              onClick={go(() => { ui.setSet("all"); ui.setCategory(d.label); ui.setOnlyFavorites(false); })}
+              href={`/ui/category/${d.id}`}
+              active={pathname === `/ui/category/${d.id}`}
+              onClick={() => onNavigate?.()}
             />
           ))}
         </>

@@ -10,6 +10,9 @@ import { IconCard } from "./icon-card";
 import { StyleBar } from "./lab";
 import { useUi } from "./ui-state";
 
+/** "new" is every glyph of the newest drop, whichever set file it lives in. */
+const inSet = (g: (typeof GLYPHS)[number], set: string): boolean => set === "all" || g.setId === set || (set === "drops" && g.setId.startsWith("drop-")) || (set === "new" && g.isNew);
+
 const PAGE = 48;
 
 /** One row of card placeholders under the grid while the next batch is on its way. */
@@ -29,7 +32,7 @@ export function Browse() {
   const [shown, setShown] = useState(PAGE);
   // Category counts follow the selected set, so the pills never promise more than the grid shows.
   const categories = useMemo(() => {
-    const pool = GLYPHS.filter((g) => ui.set === "all" || g.setId === ui.set || (ui.set === "drops" && g.setId.startsWith("drop-")));
+    const pool = GLYPHS.filter((g) => inSet(g, ui.set));
     const counts = new Map<string, number>();
     for (const g of pool) counts.set(g.category, (counts.get(g.category) ?? 0) + 1);
     return { total: pool.length, rows: [...counts.entries()].map(([name, count]) => ({ name, count })).sort((a, b) => b.count - a.count) };
@@ -38,7 +41,7 @@ export function Browse() {
     const q = ui.query.trim().toLowerCase();
     return GLYPHS.filter(
       (g) =>
-        (ui.set === "all" || g.setId === ui.set || (ui.set === "drops" && g.setId.startsWith("drop-"))) &&
+        (inSet(g, ui.set)) &&
         (ui.category === "All" || g.category === ui.category) &&
         (!ui.onlyFavorites || ui.favorites.includes(g.slug)) &&
         (!q || g.slug.includes(q) || g.tags.some((t) => t.toLowerCase().includes(q))),

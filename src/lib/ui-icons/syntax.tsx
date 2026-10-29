@@ -36,7 +36,8 @@ function colorize(line: string, tab: SnippetTab): string {
   return expand(s);
 }
 
-export function colorizeCode(code: string, tab: SnippetTab): React.ReactNode {
+export function colorizeCode(code: string, shown: SnippetTab): React.ReactNode {
+  const tab: SnippetTab = shown === "native" ? "react" : shown === "js" ? "html" : shown;
   return code.split("\n").map((line, i, arr) => (
     <span key={i}>
       <span dangerouslySetInnerHTML={{ __html: colorize(line, tab) }} />
