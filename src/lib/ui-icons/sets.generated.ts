@@ -10,7 +10,7 @@ export interface SetData {
   name: string;
   note: string;
   releaseDate: string;
-  glyphs: { slug: string; tags: string[]; nodes: unknown[] }[];
+  glyphs: { slug: string; domain: string; tags: string[]; nodes: unknown[] }[];
 }
 
 export const SETS: SetData[] = [set0, set1, set2, set3, set4];

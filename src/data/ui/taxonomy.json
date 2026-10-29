@@ -1,0 +1,27 @@
+{
+  "domains": [
+    {"id": "interface", "label": "Interface"},
+    {"id": "arrows", "label": "Arrows"},
+    {"id": "status", "label": "Status"},
+    {"id": "files", "label": "Files"},
+    {"id": "communication", "label": "Communication"},
+    {"id": "dev", "label": "Dev"},
+    {"id": "security", "label": "Security"},
+    {"id": "media", "label": "Media"},
+    {"id": "people", "label": "People"},
+    {"id": "commerce", "label": "Commerce"},
+    {"id": "layout", "label": "Layout"},
+    {"id": "time", "label": "Time"},
+    {"id": "tools", "label": "Tools"},
+    {"id": "nature", "label": "Nature"},
+    {"id": "devices", "label": "Devices"},
+    {"id": "shapes", "label": "Shapes"},
+    {"id": "places", "label": "Places"},
+    {"id": "data", "label": "Data"},
+    {"id": "space", "label": "Space"},
+    {"id": "robotics", "label": "Robotics"},
+    {"id": "agents", "label": "Agents"},
+    {"id": "general", "label": "General"}
+  ],
+  "modifiers": ["plus", "minus", "check", "x", "off", "alert", "ban", "slash", "question", "lock", "open", "close", "up", "down", "left", "right", "in", "out", "dashed", "dot", "stop", "pause", "play", "user", "cog", "image", "text", "search", "copy", "down-left", "down-right", "up-left", "up-right"]
+}
