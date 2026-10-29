@@ -5,6 +5,7 @@ import { useTheme } from "next-themes";
 import { useSearchStore } from "@/lib/stores/search-store";
 import { usePathname, useRouter } from "next/navigation";
 import { createContext, useContext, useEffect, useMemo, useRef, useState } from "react";
+import { type CopyTarget, isCopyTarget } from "@/lib/ui-icons/copy-target";
 import { VARIANTS } from "@/lib/ui-icons/glyphs";
 
 export interface UiState {
@@ -12,6 +13,18 @@ export interface UiState {
   setVariant: (v: Variant) => void;
   accent: string;
   setAccent: (hex: string) => void;
+  /** "natural" gives each icon its own colour (green check, red alert), "mono" keeps them all on the text colour. */
+  colorMode: "natural" | "mono";
+  setColorMode: (m: "natural" | "mono") => void;
+  /** The open icon's own colour. Detail pages set it so every drawing on the page follows, in natural mode. */
+  naturalInk: string;
+  setNaturalInk: (hex: string) => void;
+  /** What copying an icon puts on the clipboard. */
+  copyTarget: CopyTarget;
+  setCopyTarget: (t: CopyTarget) => void;
+  /** When on, a click on an icon copies it instead of opening its page. */
+  clickToCopy: boolean;
+  setClickToCopy: (v: boolean) => void;
   query: string;
   setQuery: (q: string) => void;
   category: string;
@@ -46,11 +59,51 @@ export function useUi(): UiState {
 }
 
 const FAV_KEY = "svg-icons-favorites";
+const COLOR_MODE_KEY = "svg-icons-color-mode";
+const COPY_TARGET_KEY = "svg-icons-copy-target";
+const CLICK_COPY_KEY = "svg-icons-click-to-copy";
 
 /** Holds the browsing choices and mirrors them into the URL so a design can be shared by link. */
 export function UiStateProvider({ children }: { children: React.ReactNode }) {
   const [variant, setVariant] = useState<Variant>("glass");
   const [accent, setAccent] = useState("");
+  const [colorMode, setColorModeState] = useState<"natural" | "mono">("natural");
+  useEffect(() => {
+    try {
+      if (window.localStorage.getItem(COLOR_MODE_KEY) === "mono") setColorModeState("mono");
+    } catch {
+      /* storage can be blocked, the mode then stays natural */
+    }
+  }, []);
+  const [naturalInk, setNaturalInk] = useState("");
+  const [copyTarget, setCopyTargetState] = useState<CopyTarget>("svg");
+  const [clickToCopy, setClickToCopyState] = useState(false);
+  useEffect(() => {
+    try {
+      const t = window.localStorage.getItem(COPY_TARGET_KEY);
+      if (isCopyTarget(t)) setCopyTargetState(t);
+      setClickToCopyState(window.localStorage.getItem(CLICK_COPY_KEY) === "1");
+    } catch {
+      /* storage can be blocked, the defaults then apply */
+    }
+  }, []);
+  const remember = (key: string, value: string) => {
+    try {
+      window.localStorage.setItem(key, value);
+    } catch {
+      /* the choice then lasts until reload */
+    }
+  };
+  const setCopyTarget = (t: CopyTarget) => { setCopyTargetState(t); remember(COPY_TARGET_KEY, t); };
+  const setClickToCopy = (v: boolean) => { setClickToCopyState(v); remember(CLICK_COPY_KEY, v ? "1" : "0"); };
+  const setColorMode = (m: "natural" | "mono") => {
+    setColorModeState(m);
+    try {
+      window.localStorage.setItem(COLOR_MODE_KEY, m);
+    } catch {
+      /* the choice then lasts until reload */
+    }
+  };
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All");
   // The header search box is thesvg's own, so in this section it drives the UI query.
@@ -118,9 +171,10 @@ export function UiStateProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const root = document.documentElement;
-    if (accent) root.style.setProperty("--glyph-ink", accent);
+    const ink = accent || (colorMode === "natural" ? naturalInk : "");
+    if (ink) root.style.setProperty("--glyph-ink", ink);
     else root.style.removeProperty("--glyph-ink");
-  }, [accent]);
+  }, [accent, colorMode, naturalInk]);
 
   useEffect(() => {
     if (!ready) return;
@@ -149,7 +203,7 @@ export function UiStateProvider({ children }: { children: React.ReactNode }) {
 
   const value = useMemo<UiState>(
     () => ({
-      variant, setVariant, accent, setAccent, query, setQuery, category, setCategory, favorites, onlyFavorites, setOnlyFavorites,
+      variant, setVariant, accent, setAccent, colorMode, setColorMode, naturalInk, setNaturalInk, copyTarget, setCopyTarget, clickToCopy, setClickToCopy, query, setQuery, category, setCategory, favorites, onlyFavorites, setOnlyFavorites,
       sample, setSample,
       runOnList: (fn) => {
         if (window.location.pathname === "/ui") fn();
@@ -170,7 +224,7 @@ export function UiStateProvider({ children }: { children: React.ReactNode }) {
           return next;
         }),
     }),
-    [variant, accent, query, category, favorites, onlyFavorites, lab, set, router, sample, brandCollection],
+    [variant, accent, colorMode, naturalInk, copyTarget, clickToCopy, query, category, favorites, onlyFavorites, lab, set, router, sample, brandCollection],
   );
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }

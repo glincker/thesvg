@@ -27,12 +27,14 @@ interface ItemProps {
   /** Tailwind classes for the icon colour: brand orange by default, the category tone for category rows. */
   hover?: string;
   inkClass?: string;
+  /** Resting icon colour. Category rows rest in their own tone, the rest stay neutral. */
+  rest?: string;
   href?: string;
   onClick?: () => void;
 }
 
 /** One row. In the rail only the icon shows, with the label as a tooltip and for screen readers. */
-function Item({ icon, label, rail, active, badge, hover = "group-hover:text-orange-500", inkClass = "text-orange-500", href, onClick }: ItemProps) {
+function Item({ icon, label, rail, active, badge, hover = "group-hover:text-orange-500", inkClass = "text-orange-500", rest = "text-muted-foreground", href, onClick }: ItemProps) {
   const cls = cn(
     "group flex w-full items-center gap-3 rounded-xl py-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground",
     rail ? "justify-center px-0" : "px-3",
@@ -40,7 +42,7 @@ function Item({ icon, label, rail, active, badge, hover = "group-hover:text-oran
   );
   const body = (
     <>
-      <UiGlyph name={icon} className={cn(ICON_SIZE.sidebar, "transition-colors", active ? inkClass : cn("text-muted-foreground", hover))} />
+      <UiGlyph name={icon} className={cn(ICON_SIZE.sidebar, "transition-colors", active ? inkClass : cn(rest, hover))} />
       {rail ? <span className="sr-only">{label}</span> : <span className="flex-1 truncate text-left">{label}</span>}
       {!rail && badge && <span className="text-[0.75rem] text-muted-foreground">{badge}</span>}
     </>
@@ -120,6 +122,7 @@ export function SidebarNav({ onNavigate, rail = false }: { onNavigate?: () => vo
               badge={String(domainCounts.get(d.id))}
               hover={TONES[THEMES[d.id]?.tone ?? "orange"].hover}
               inkClass={TONES[THEMES[d.id]?.tone ?? "orange"].ink}
+              rest={TONES[THEMES[d.id]?.tone ?? "orange"].rest}
               href={`/ui/category/${d.id}`}
               active={pathname === `/ui/category/${d.id}`}
               onClick={() => onNavigate?.()}

@@ -1,5 +1,7 @@
 "use client";
 
+import { useTheme } from "next-themes";
+import { defaultColorHex, defaultColorName, defaultColorOf } from "@/lib/ui-icons/default-color";
 import { brandForUiMark } from "@/lib/brand-ui-links";
 import { renderIcon } from "@/lib/ui-icons/engine";
 import { DownloadMenu } from "@/components/icons/detail/download-menu";
@@ -12,7 +14,7 @@ import { cn } from "@/lib/ui-icons/utils";
 import { CodeBlock } from "./code-block";
 import { Glyph, svgText } from "./glyph";
 import { InContext } from "./in-context";
-import { StyleLab, StylePill } from "./lab";
+import { StyleBar } from "./lab";
 import { UiQualityCard } from "./quality-card";
 import { useUi } from "./ui-state";
 
@@ -28,10 +30,10 @@ function useCopy(): [string | null, (key: string, text: string) => void] {
   }];
 }
 
-function Section(props: { title: string; aside?: string; children: React.ReactNode }) {
+function Section(props: { title: string; aside?: React.ReactNode; children: React.ReactNode }) {
   return (
     <section>
-      <div className="mb-2 flex items-baseline justify-between">
+      <div className="mb-2 flex items-center justify-between">
         <h2 className="text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground">{props.title}</h2>
         {props.aside && <span className="text-[0.75rem] text-muted-foreground">{props.aside}</span>}
       </div>
@@ -48,6 +50,9 @@ function Preview(props: { glyph: GlyphData }) {
   const [grid, setGrid] = useState(false);
   const [anchors, setAnchors] = useState(false);
   const [light, setLight] = useState(false);
+  const natural = defaultColorOf(props.glyph.slug);
+  const naturalName = defaultColorName(props.glyph.slug);
+  const useNatural = ui.colorMode === "natural" && !ui.accent && natural !== "";
   // Icons are drawn for 16 to 48px, so the preview opens at a realistic size and only the construction
   // view (grid, anchors) blows it up to fill the card.
   const [zoom, setZoom] = useState<(typeof ZOOMS)[number]>(96);
@@ -76,8 +81,9 @@ function Preview(props: { glyph: GlyphData }) {
           onPointerMove={tilt}
           onPointerLeave={rest}
           className={cn(
-            "relative aspect-square w-full overflow-hidden rounded-3xl border transition-transform duration-150 ease-out [transform-style:preserve-3d] [transform:rotateX(var(--rx,0deg))_rotateY(var(--ry,0deg))] motion-reduce:transform-none",
-            light ? "bg-zinc-100 text-zinc-900" : "bg-gradient-to-b from-foreground/[0.07] to-transparent text-foreground",
+            "relative aspect-square w-full overflow-hidden rounded-3xl border [transition:transform_150ms_ease-out,color_600ms_ease] [transform-style:preserve-3d] [transform:rotateX(var(--rx,0deg))_rotateY(var(--ry,0deg))] motion-reduce:transform-none",
+            light ? "bg-zinc-100" : "bg-gradient-to-b from-foreground/[0.07] to-transparent",
+            useNatural ? natural : light ? "text-zinc-900" : "text-foreground",
           )}
         >
           {grid && (
@@ -109,10 +115,28 @@ function Preview(props: { glyph: GlyphData }) {
           >
             <UiGlyph name="heart" look={ui.favorites.includes(props.glyph.slug) ? "fill" : "outline"} className={cn("size-3.5", ui.favorites.includes(props.glyph.slug) && "text-orange-500")} />
           </button>
-          <span className="glass absolute right-3 top-3 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[0.75rem] text-muted-foreground [transform:translateZ(30px)]">
-            <span className={cn("size-2 rounded-full", ui.accent ? "" : "bg-foreground")} ref={(el) => { el?.style.setProperty("background-color", ui.accent || ""); }} />
-            {ui.accent || "currentColor"}
-          </span>
+          {ui.accent || !naturalName ? (
+            <span className="glass absolute right-3 top-3 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[0.75rem] text-muted-foreground [transform:translateZ(30px)]">
+              <span className={cn("size-2 rounded-full", ui.accent ? "" : "bg-foreground")} ref={(el) => { el?.style.setProperty("background-color", ui.accent || ""); }} />
+              {ui.accent || "currentColor"}
+            </span>
+          ) : (
+            <span role="radiogroup" aria-label="Icon colour" className="glass absolute right-3 top-3 inline-flex items-center gap-0.5 rounded-full p-0.5 text-[0.75rem] [transform:translateZ(30px)]">
+              {([["mono", "currentColor", ""], ["natural", naturalName, natural]] as const).map(([mode, label, cls]) => (
+                <button
+                  key={mode}
+                  type="button"
+                  role="radio"
+                  aria-checked={ui.colorMode === mode}
+                  onClick={() => ui.setColorMode(mode)}
+                  className={cn("inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 transition-colors", ui.colorMode === mode ? "bg-foreground text-background" : "text-muted-foreground hover:text-foreground")}
+                >
+                  <span className={cn("size-2 rounded-full bg-current", ui.colorMode !== mode && cls)} />
+                  {label}
+                </button>
+              ))}
+            </span>
+          )}
           <span className="glass absolute bottom-3 left-3 rounded-full px-2.5 py-1 text-[0.75rem] capitalize text-foreground [transform:translateZ(30px)]">{ui.variant} · {fit ? "fit" : `${px}px`}</span>
           <button
             type="button"
@@ -231,13 +255,20 @@ function CommandRow(props: { tag: string; text: string }) {
 export function Detail({ glyph }: { glyph: GlyphData }) {
   const ui = useUi();
   const [done, copy] = useCopy();
-  const { setSample } = ui;
+  const { setSample, setNaturalInk } = ui;
+  const { resolvedTheme } = useTheme();
+  const naturalHex = defaultColorHex(glyph.slug, resolvedTheme === "dark");
+  // In natural mode every drawing on the page takes the icon's own colour, and fades to it.
+  useEffect(() => {
+    setNaturalInk(naturalHex ?? "");
+    return () => setNaturalInk("");
+  }, [naturalHex, setNaturalInk]);
   useEffect(() => {
     setSample(glyph.slug);
     return () => setSample(null);
   }, [glyph.slug, setSample]);
   const svg = svgText(glyph.nodes, ui.variant, 24, ui.accent, ui.lab, glyph.slug);
-  const tint = ui.accent || "#111111";
+  const tint = ui.accent || (ui.colorMode === "natural" ? defaultColorHex(glyph.slug) : null) || "#111111";
   const related = GLYPHS.filter((g) => g.category === glyph.category && g.slug !== glyph.slug).slice(0, 10);
   const title = glyph.slug.replace(/-/g, " ");
 
@@ -261,7 +292,7 @@ export function Detail({ glyph }: { glyph: GlyphData }) {
               <dt className="text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground">Grid</dt><dd className="text-right">24 by 24</dd>
               <dt className="text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground">Looks</dt><dd className="text-right">{VARIANTS.length}</dd>
               <dt className="text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground">Category</dt><dd className="text-right">{glyph.category}</dd>
-              <dt className="text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground">Color</dt><dd className="text-right">currentColor</dd>
+              <dt className="text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground">Color</dt><dd className="text-right">{ui.accent || (ui.colorMode === "natural" && defaultColorName(glyph.slug)) || "currentColor"}</dd>
             </dl>
             <Coverage glyph={glyph} />
             <UiQualityCard glyph={glyph} />
@@ -302,14 +333,11 @@ export function Detail({ glyph }: { glyph: GlyphData }) {
             )}
           </header>
 
-          <Section title="Looks" aside="pick one, everything below follows">
+          <Section title="Looks" aside={<span className="flex items-center gap-3"><span className="hidden lg:inline">pick one, everything below follows</span><StyleBar /></span>}>
             <LookPicker glyph={glyph} />
           </Section>
 
-          <Section title="Style" aside="saved in the page link">
-            <StyleLab className="glass" />
-            <StylePill />
-          </Section>
+          
 
           <div className="grid min-w-0 grid-cols-1 gap-2">
             <CommandRow tag="CLI" text={`npx @thesvg/cli add ui:${glyph.slug}${ui.variant === "outline" ? "" : ` --look ${ui.variant}`}`} />

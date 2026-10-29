@@ -1466,7 +1466,8 @@ html {
 
 /* UI icons section. */
 /* A picked swatch colors every icon in every look. With none picked it simply inherits the text color. */
-.ink { color: var(--glyph-ink, currentColor); }
+.ink { color: var(--glyph-ink, currentColor); transition: color 600ms ease; }
+@media (prefers-reduced-motion: reduce) { .ink { transition: none; } }
 
 /* Slow horizontal drift for the hero icon rows. The track holds two copies, so -50% loops seamlessly. */
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }

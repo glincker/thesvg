@@ -65,9 +65,29 @@ const RULES: [RegExp, keyof typeof TONES][] = [
   [/(^|-)(code|terminal|git|database|server|cpu|chip|plug|puzzle)(-|$)/, "teal"],
 ];
 
-/** Default text-colour classes for an icon, or an empty string when it should stay neutral. */
-export function defaultColorOf(slug: string): string {
-  if (slug.startsWith("social-")) return SOCIAL[slug] ?? "";
-  for (const [re, tone] of RULES) if (re.test(slug)) return TONES[tone];
-  return "";
+const HEX: Record<keyof typeof TONES, string> = {
+  green: "#059669", red: "#dc2626", amber: "#d97706", blue: "#2563eb", rose: "#e11d48", orange: "#ea580c", violet: "#7c3aed", teal: "#0d9488", yellow: "#ca8a04",
+};
+
+const HEX_DARK: Record<keyof typeof TONES, string> = {
+  green: "#34d399", red: "#f87171", amber: "#fbbf24", blue: "#60a5fa", rose: "#fb7185", orange: "#fb923c", violet: "#a78bfa", teal: "#2dd4bf", yellow: "#facc15",
+};
+
+interface Resolved { cls: string; hex: string; hexDark: string; name: string }
+
+function resolve(slug: string): Resolved | null {
+  if (slug.startsWith("social-")) {
+    const cls = SOCIAL[slug];
+    const hex = cls ? /\[(#[0-9a-fA-F]{6})\]/.exec(cls)?.[1] : undefined;
+    return cls && hex ? { cls, hex, hexDark: hex, name: hex.toUpperCase() } : null;
+  }
+  for (const [re, tone] of RULES) if (re.test(slug)) return { cls: TONES[tone], hex: HEX[tone], hexDark: HEX_DARK[tone], name: tone[0].toUpperCase() + tone.slice(1) };
+  return null;
 }
+
+/** Default text-colour classes for an icon, or an empty string when it should stay neutral. */
+export const defaultColorOf = (slug: string): string => resolve(slug)?.cls ?? "";
+/** The same colour as a hex value, for raster export. */
+export const defaultColorHex = (slug: string, dark = false): string | null => { const r = resolve(slug); return r ? (dark ? r.hexDark : r.hex) : null; };
+/** A short name for the colour ("Red", "#0A66C2"), or null when the icon is neutral. */
+export const defaultColorName = (slug: string): string | null => resolve(slug)?.name ?? null;
