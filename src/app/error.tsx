@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import posthog from "posthog-js";
-import { AlertTriangle, RefreshCw } from "lucide-react";
+import { AlertTriangle, RefreshCw } from "@/components/own-icons";
 import { Button } from "@/components/ui/button";
 
 export default function Error({

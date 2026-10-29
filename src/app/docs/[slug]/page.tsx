@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ExternalLink, Package as PackageIcon } from "lucide-react";
+import { ExternalLink, Package as PackageIcon } from "@/components/own-icons";
 import { FRAMEWORK_GUIDES, FAQ_ITEMS } from "@/lib/docs-content";
 import { slugifyHeading } from "@/lib/docs-nav";
 import { GUIDE_RELATED_FAQ } from "@/lib/docs-related-faq";

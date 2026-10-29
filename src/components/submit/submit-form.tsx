@@ -2,8 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import posthog from "posthog-js";
-import { Check, CheckCircle, ClipboardCopy, ExternalLink, Palette, Upload, X, XCircle } from "lucide-react";
-import { Github } from "@/components/icons/shared/brand-icons";
+import { Check, CheckCircle, ClipboardCopy, ExternalLink, Palette, Upload, X, XCircle } from "@/components/own-icons";
+import { Github } from "@/components/own-icons";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
@@ -236,7 +236,7 @@ function LicenseSelector({
             className="inline-flex items-center gap-1 text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
           >
             Licensing guide
-            <ExternalLink className="h-3 w-3" />
+            <ExternalLink className="h-3.5 w-3.5" />
           </a>
         </div>
       </div>

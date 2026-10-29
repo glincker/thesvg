@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { Download, FolderTree, ListChecks } from "lucide-react";
+import { Download, FolderTree, ListChecks } from "@/components/own-icons";
 import type { Metadata } from "next";
 import { getCategoryCounts } from "@/lib/icons";
 import { DRAWIO_LIBRARIES, type DrawioLibraryDef } from "@/lib/drawio-libraries";

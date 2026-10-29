@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { JsonLd } from "@/components/json-ld";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Calendar, Tag } from "lucide-react";
+import { ArrowLeft, Calendar, Tag } from "@/components/own-icons";
 import { ShareButtons } from "@/components/blog/share-buttons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 import { getCategoryCounts } from "@/lib/icons";
@@ -227,14 +227,14 @@ export default async function BlogPostPage({ params }: PageProps) {
               href="/blog"
               className="mb-6 inline-flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
             >
-              <ArrowLeft className="h-3 w-3" />
+              <ArrowLeft className="h-3.5 w-3.5" />
               Back to blog
             </Link>
 
               <header className="mb-8">
                 <div className="flex items-center gap-3 text-xs text-muted-foreground">
                   <span className="flex items-center gap-1">
-                    <Calendar className="h-3 w-3" />
+                    <Calendar className="h-3.5 w-3.5" />
                     {new Date(post.date).toLocaleDateString("en-US", {
                       month: "long",
                       day: "numeric",

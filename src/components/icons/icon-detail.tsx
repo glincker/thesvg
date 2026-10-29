@@ -15,7 +15,7 @@ import {
   Heart,
   Link2,
   Terminal,
-} from "lucide-react";
+} from "@/components/own-icons";
 import Link from "next/link";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
@@ -36,11 +36,11 @@ interface IconDetailProps {
 }
 
 const FORMAT_ICONS: Record<string, React.ReactNode> = {
-  svg: <Copy className="h-3 w-3" />,
-  jsx: <Code className="h-3 w-3" />,
-  vue: <FileCode2 className="h-3 w-3" />,
-  cdn: <Link2 className="h-3 w-3" />,
-  "data-uri": <Globe className="h-3 w-3" />,
+  svg: <Copy className="h-3.5 w-3.5" />,
+  jsx: <Code className="h-3.5 w-3.5" />,
+  vue: <FileCode2 className="h-3.5 w-3.5" />,
+  cdn: <Link2 className="h-3.5 w-3.5" />,
+  "data-uri": <Globe className="h-3.5 w-3.5" />,
 };
 
 export function IconDetail({ icon, onClose }: IconDetailProps) {
@@ -307,7 +307,7 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
                   onClick={() => handleCopy(fmt.value)}
                 >
                   {copiedFormat === fmt.value ? (
-                    <Check className="h-3 w-3" />
+                    <Check className="h-3.5 w-3.5" />
                   ) : (
                     FORMAT_ICONS[fmt.value]
                   )}
@@ -327,14 +327,14 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
                   : "border-border bg-card hover:bg-accent/50"
               )}
             >
-              <Terminal className="h-3 w-3 shrink-0 text-orange-500/70" />
+              <Terminal className="h-3.5 w-3.5 shrink-0 text-orange-500/70" />
               <code className="flex-1 truncate text-left font-mono text-[11px] text-muted-foreground">
                 npx @thesvg/cli add {icon.slug}
               </code>
               {copiedFormat === "cli" ? (
-                <Check className="h-3 w-3 shrink-0 text-green-500" />
+                <Check className="h-3.5 w-3.5 shrink-0 text-green-500" />
               ) : (
-                <Copy className="h-3 w-3 shrink-0 text-muted-foreground/40" />
+                <Copy className="h-3.5 w-3.5 shrink-0 text-muted-foreground/40" />
               )}
             </button>
 

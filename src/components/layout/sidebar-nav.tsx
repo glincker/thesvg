@@ -19,10 +19,11 @@ import {
   Shapes,
   Share,
   Terminal,
-} from "lucide-react";
+} from "@/components/own-icons";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SidebarNavItem } from "@/components/layout/sidebar-nav-item";
+import { ICON_SIZE } from "@/lib/chrome-sizes";
 import { cn } from "@/lib/utils";
 
 const EXTENSION_CATEGORIES = [
@@ -106,7 +107,8 @@ export function SidebarNav({
             <Heart
               aria-hidden="true"
               className={cn(
-                "h-4 w-4 shrink-0 transition-all duration-200 group-hover:scale-110",
+                ICON_SIZE.sidebar, "shrink-0 transition-all duration-200 group-hover:scale-110",
+                !isFavoritesActive && "text-muted-foreground group-hover:text-red-500",
                 isFavoritesActive && "fill-red-500 text-red-500",
               )}
             />
@@ -143,9 +145,9 @@ export function SidebarNav({
               className="absolute top-1/2 right-3 flex h-5 w-5 -translate-y-1/2 items-center justify-center rounded-md text-muted-foreground/70 hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
               {favoritesShareCopied ? (
-                <Check className="h-3 w-3 text-green-500" />
+                <Check className="h-3.5 w-3.5 text-green-500" />
               ) : (
-                <Share className="h-3 w-3" />
+                <Share className="h-3.5 w-3.5" />
               )}
             </button>
           )}
@@ -174,7 +176,7 @@ export function SidebarNav({
                 "bg-gradient-to-r from-accent/80 to-accent/40 text-accent-foreground font-medium shadow-sm shadow-black/[0.03] dark:from-white/[0.08] dark:to-white/[0.04] dark:shadow-black/20",
             )}
           >
-            <Blocks className="h-4 w-4 shrink-0 transition-transform duration-200 group-hover:scale-110" />
+            <Blocks className={cn(ICON_SIZE.sidebar, "shrink-0 text-muted-foreground transition-all duration-200 group-hover:scale-110 group-hover:text-orange-500", isExtensionsPage && "text-orange-500")} />
             <span className="flex-1 text-left">Extensions</span>
             <ChevronRight
               className={cn(
@@ -199,7 +201,7 @@ export function SidebarNav({
                   href={`/extensions#${ext.id}`}
                   className="flex items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-xs text-muted-foreground transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >
-                  <Icon className="h-3.5 w-3.5 shrink-0 opacity-60" />
+                  <Icon className="h-4 w-4 shrink-0 opacity-60" />
                   <span className="truncate">{ext.label}</span>
                 </Link>
               );

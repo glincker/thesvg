@@ -12,7 +12,7 @@ import {
   Search,
   Sparkles,
   Trash2,
-} from "lucide-react";
+} from "@/components/own-icons";
 import type { IconEntry } from "@/lib/icons";
 import { getIconsBySlugMap, loadIconsManifest } from "@/lib/icons-manifest";
 import { useRecentsStore } from "@/lib/stores/recents-store";
@@ -257,7 +257,7 @@ export function RecentsPage() {
               }}
               className="ml-auto inline-flex items-center gap-1.5 rounded-full border border-border/50 px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:border-destructive/40 hover:bg-destructive/10 hover:text-destructive focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-destructive focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:border-white/[0.06]"
             >
-              <Trash2 className="h-3 w-3" />
+              <Trash2 className="h-3.5 w-3.5" />
               Clear everything
             </button>
           </div>
@@ -375,7 +375,7 @@ export function RecentsPage() {
                           title="Copy SVG"
                           className="flex h-7 flex-1 items-center justify-center gap-1 rounded-lg bg-foreground/95 text-[11px] font-medium text-background backdrop-blur-sm transition-transform active:scale-95"
                         >
-                          <Copy className="h-3 w-3" />
+                          <Copy className="h-3.5 w-3.5" />
                           Copy
                         </button>
                         <a
@@ -449,7 +449,7 @@ export function RecentsPage() {
                           aria-label={`Copy ${entry.title} again`}
                           className="flex h-7 shrink-0 items-center gap-1 rounded-lg bg-foreground/90 px-2.5 text-[11px] font-medium text-background opacity-0 transition-all group-hover:opacity-100 active:scale-95"
                         >
-                          <Copy className="h-3 w-3" />
+                          <Copy className="h-3.5 w-3.5" />
                           Recopy
                         </button>
                       </div>
@@ -480,7 +480,7 @@ export function RecentsPage() {
                       }
                       className="group inline-flex items-center gap-1.5 rounded-full border border-border/40 bg-card/60 px-3 py-1.5 text-sm transition-all hover:-translate-y-0.5 hover:border-foreground/20 hover:bg-accent dark:border-white/[0.06] dark:bg-white/[0.02] dark:hover:border-white/[0.15]"
                     >
-                      <Search className="h-3 w-3 text-muted-foreground transition-colors group-hover:text-foreground" />
+                      <Search className="h-3.5 w-3.5 text-muted-foreground transition-colors group-hover:text-foreground" />
                       <span className="text-foreground">{r.query}</span>
                       <span className="text-[10px] text-muted-foreground/60">
                         {timeAgo(r.ts)}

@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { Network } from "lucide-react";
+import { Network } from "@/components/own-icons";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getCategoryCounts } from "@/lib/icons";

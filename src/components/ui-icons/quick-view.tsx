@@ -50,7 +50,7 @@ export function QuickView({ glyph, onClose }: { glyph: GlyphData; onClose: () =>
               onClick={() => ui.toggleFavorite(glyph.slug)}
               className={cn("absolute left-3 top-3 grid size-7 place-items-center rounded-full bg-background/60 text-muted-foreground backdrop-blur-sm hover:text-foreground", fav && "text-orange-500")}
             >
-              <UiGlyph name="heart" look={fav ? "fill" : "outline"} className="size-4" />
+              <UiGlyph name="heart" plain look={fav ? "fill" : "outline"} className="size-4" />
             </button>
           </div>
           <div className="flex flex-col gap-4 p-4">

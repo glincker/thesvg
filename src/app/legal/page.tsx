@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import Link from "next/link";
-import { Shield, Mail, FileText, Scale, ExternalLink } from "lucide-react";
+import { Shield, Mail, FileText, Scale, ExternalLink } from "@/components/own-icons";
 import { getCategoryCounts } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 import { withUtm } from "@/lib/external-link";
@@ -51,7 +51,7 @@ export default function LegalPage() {
           {/* Header */}
           <div className="mb-10">
             <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-border/50 bg-muted/30 px-3 py-1 text-xs font-medium text-muted-foreground dark:border-white/[0.08] dark:bg-white/[0.04]">
-              <Scale className="h-3 w-3" />
+              <Scale className="h-3.5 w-3.5" />
               Legal
             </div>
             <h1 className="mb-2 text-2xl font-bold sm:text-3xl">Legal Notice</h1>
@@ -168,14 +168,14 @@ export default function LegalPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-xs font-medium text-foreground transition-colors hover:bg-accent dark:border-white/[0.08]"
                 >
-                  <ExternalLink className="h-3 w-3" />
+                  <ExternalLink className="h-3.5 w-3.5" />
                   Open removal request
                 </a>
                 <a
                   href={withUtm("mailto:support@glinr.com", "legal_page")}
                   className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-xs font-medium text-foreground transition-colors hover:bg-accent dark:border-white/[0.08]"
                 >
-                  <Mail className="h-3 w-3" />
+                  <Mail className="h-3.5 w-3.5" />
                   support@glinr.com
                 </a>
               </div>

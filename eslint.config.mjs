@@ -7,7 +7,7 @@ import nextTs from "eslint-config-next/typescript";
 const UI_CODE = ["src/lib/ui-icons/**", "src/components/ui-icons/**", "src/app/ui/**"];
 const UI_PATTERNS = ["@/lib/ui-icons", "@/lib/ui-icons/**", "@/components/ui-icons/**", "@/data/ui/**", "@/data/ui-icons.json"];
 // The few brand files that show UI icons next to brand icons: the header switch and search, the home banner, the footer count, the sitemap.
-const BRAND_TO_UI_ALLOWED = ["src/components/header.tsx", "src/components/home-hero.tsx", "src/components/footer.tsx", "src/components/search/search-groups.tsx", "src/components/ui-glyph.tsx", "src/app/sitemap.ts"];
+const BRAND_TO_UI_ALLOWED = ["src/components/header.tsx", "src/components/home-hero.tsx", "src/components/footer.tsx", "src/components/search/search-groups.tsx", "src/components/ui-glyph.tsx", "src/components/own-icons.tsx", "src/app/sitemap.ts"];
 // Chrome icons come from our own UI icons (<UiGlyph name="..." />), not from third-party icon libraries. These files are
 // already converted; older files still on those libraries move over in their own PRs, and are removed from the gap here.
 const OWN_ICONS_ONLY = ["src/components/header.tsx", "src/components/search/search-groups.tsx", "src/components/ui-glyph.tsx", "src/components/packages-menu.tsx", "src/components/extensions/cards.tsx", "src/components/icons/detail/quality-panel.tsx", "src/app/packages/**", "src/components/new-post-toast.tsx", "src/components/filters/category-pills.tsx", "src/components/icons/detail/contribution-cta.tsx", "src/components/icons/detail/icon-inspector-modal.tsx", "src/components/icons/detail/brand-glow.tsx"];
@@ -72,8 +72,8 @@ const eslintConfig = defineConfig([
       "no-restricted-imports": [
         "error",
         {
-          // Phosphor is gone from this site. Files still on Lucide move to our own icons in their own PRs.
-          paths: ICON_LIBRARIES.paths.filter((p) => p.name.includes("phosphor")),
+          // Every icon on this site is drawn by our own set. No third-party icon library, anywhere.
+          paths: ICON_LIBRARIES.paths,
           patterns: [{ group: UI_PATTERNS, message: "Brand code must not depend on UI icon code. Only the files in BRAND_TO_UI_ALLOWED may cross over." }],
         },
       ],

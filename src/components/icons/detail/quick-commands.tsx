@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Copy } from "lucide-react";
+import { Check, Copy } from "@/components/own-icons";
 import posthog from "posthog-js";
 import { getJsDelivrUrl } from "@/components/icons/shared/icon-constants";
 
@@ -44,9 +44,9 @@ export function QuickCommands({ slug, activeVariant }: QuickCommandsProps) {
           className="shrink-0 rounded-md p-1.5 text-orange-500 transition-colors hover:bg-orange-500/10 hover:text-orange-600 dark:hover:text-orange-400"
         >
           {copiedCmd === "cli" ? (
-            <Check className="h-3 w-3 text-green-500" />
+            <Check className="h-3.5 w-3.5 text-green-500" />
           ) : (
-            <Copy className="h-3 w-3" />
+            <Copy className="h-3.5 w-3.5" />
           )}
         </button>
       </div>
@@ -65,9 +65,9 @@ export function QuickCommands({ slug, activeVariant }: QuickCommandsProps) {
           className="shrink-0 rounded-md p-1.5 text-orange-500 transition-colors hover:bg-orange-500/10 hover:text-orange-600 dark:hover:text-orange-400"
         >
           {copiedCmd === "cdn" ? (
-            <Check className="h-3 w-3 text-green-500" />
+            <Check className="h-3.5 w-3.5 text-green-500" />
           ) : (
-            <Copy className="h-3 w-3" />
+            <Copy className="h-3.5 w-3.5" />
           )}
         </button>
       </div>

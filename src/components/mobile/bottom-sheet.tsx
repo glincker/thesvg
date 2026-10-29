@@ -9,7 +9,7 @@ import {
   useState,
 } from "react";
 import { createPortal } from "react-dom";
-import { X } from "lucide-react";
+import { X } from "@/components/own-icons";
 import { cn } from "@/lib/utils";
 
 export type BottomSheetSnap = "peek" | "half" | "full";

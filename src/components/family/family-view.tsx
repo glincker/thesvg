@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { ArrowUpRight, BookOpen, LayoutGrid, Plus } from "lucide-react";
+import { ArrowUpRight, BookOpen, LayoutGrid, Plus } from "@/components/own-icons";
 import { withUtm } from "@/lib/external-link";
 import type { IconEntry } from "@/lib/icons";
 import type { OtherFamily } from "@/lib/families";
@@ -225,7 +225,7 @@ function Hero({
               <Link href={`/icon/${parent.slug}`} className={PILL}>
                 <Logo icon={parent} chip={false} className="h-4 w-4" />
                 {parent.title} main logo
-                <ArrowUpRight className="h-3 w-3 opacity-50" />
+                <ArrowUpRight className="h-3.5 w-3.5 opacity-50" />
               </Link>
               {extra && (
                 <Link
@@ -240,7 +240,7 @@ function Hero({
                     />
                   )}
                   {extra.label}
-                  <ArrowUpRight className="h-3 w-3 opacity-50" />
+                  <ArrowUpRight className="h-3.5 w-3.5 opacity-50" />
                 </Link>
               )}
             </div>
@@ -260,7 +260,7 @@ function Hero({
                     className="h-4 w-4 rounded-sm"
                   />
                   {siteHost}
-                  <ArrowUpRight className="h-3 w-3 opacity-50" />
+                  <ArrowUpRight className="h-3.5 w-3.5 opacity-50" />
                 </a>
               )}
               {githubHref && (
@@ -278,7 +278,7 @@ function Hero({
                     className="h-4 w-4 dark:invert"
                   />
                   GitHub
-                  <ArrowUpRight className="h-3 w-3 opacity-50" />
+                  <ArrowUpRight className="h-3.5 w-3.5 opacity-50" />
                 </a>
               )}
               {parent.guidelines && (
@@ -290,7 +290,7 @@ function Hero({
                 >
                   <BookOpen className="h-4 w-4" aria-hidden />
                   Brand guidelines
-                  <ArrowUpRight className="h-3 w-3 opacity-50" />
+                  <ArrowUpRight className="h-3.5 w-3.5 opacity-50" />
                 </a>
               )}
               <Link href="/families" className={PILL_QUIET}>
@@ -316,7 +316,7 @@ function Hero({
                 href={`/icon/${parent.slug}`}
                 className="inline-flex items-center gap-1 hover:text-foreground"
               >
-                Open <ArrowUpRight className="h-3 w-3" />
+                Open <ArrowUpRight className="h-3.5 w-3.5" />
               </Link>
             </div>
             <ul className="grid grid-cols-4 gap-2 sm:gap-3">
@@ -488,7 +488,7 @@ export function FamilyView(props: FamilyViewProps) {
           className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-card px-3 py-2 text-xs font-semibold shadow-sm transition-colors hover:bg-accent"
         >
           All {parent.title} icons
-          <ArrowUpRight className="h-3 w-3 opacity-50" />
+          <ArrowUpRight className="h-3.5 w-3.5 opacity-50" />
         </Link>
       </div>
 
@@ -544,7 +544,7 @@ export function FamilyView(props: FamilyViewProps) {
                   className="flex items-center gap-1 text-[11px] font-medium text-muted-foreground transition-colors hover:text-foreground"
                 >
                   All {section.category}
-                  <ArrowUpRight className="h-3 w-3" />
+                  <ArrowUpRight className="h-3.5 w-3.5" />
                 </Link>
               )}
             </div>

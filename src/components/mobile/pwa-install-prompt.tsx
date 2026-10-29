@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { Download, Plus, Share, X } from "lucide-react";
+import { Download, Plus, Share, X } from "@/components/own-icons";
 
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>;
@@ -105,10 +105,10 @@ export function PwaInstallPrompt() {
             </p>
             <p className="mt-0.5 text-[11px] leading-snug text-muted-foreground">
               Tap{" "}
-              <Share className="inline h-3 w-3 -translate-y-px text-blue-500" />{" "}
+              <Share className="inline h-3.5 w-3.5 -translate-y-px text-blue-500" />{" "}
               Share, then{" "}
               <span className="inline-flex items-center gap-0.5 font-medium text-foreground">
-                <Plus className="h-3 w-3" />
+                <Plus className="h-3.5 w-3.5" />
                 Add to Home Screen
               </span>
               .

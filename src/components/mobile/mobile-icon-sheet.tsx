@@ -5,7 +5,7 @@ import type { BottomSheetSnap } from "./bottom-sheet";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import posthog from "posthog-js";
-import { ArrowUpRight, Check, Copy, Download, Globe, Heart, Layers, Scale, Sparkles } from "lucide-react";
+import { ArrowUpRight, Check, Copy, Download, Globe, Heart, Layers, Scale, Sparkles } from "@/components/own-icons";
 import { BottomSheet } from "./bottom-sheet";
 import { useMobileShellStore } from "@/lib/stores/mobile-shell-store";
 import { useMobilePrefsStore } from "@/lib/stores/mobile-prefs-store";
@@ -225,7 +225,7 @@ export function MobileIconSheet() {
                 >
                   {copied ? (
                     <span className="inline-flex items-center gap-1">
-                      <Check className="h-3 w-3" /> Copied
+                      <Check className="h-3.5 w-3.5" /> Copied
                     </span>
                   ) : (
                     fmt.label
@@ -257,23 +257,23 @@ export function MobileIconSheet() {
           {/* Detail meta grid */}
           <dl className="mx-4 mt-4 grid grid-cols-2 gap-2 rounded-2xl border border-border/40 bg-card/40 p-3 text-[11px] dark:border-white/[0.06] dark:bg-white/[0.02]">
             <MetaCell
-              icon={<Scale className="h-3 w-3" />}
+              icon={<Scale className="h-3.5 w-3.5" />}
               label="License"
               value={icon.license || "Unknown"}
             />
             <MetaCell
-              icon={<Layers className="h-3 w-3" />}
+              icon={<Layers className="h-3.5 w-3.5" />}
               label="Variants"
               value={`${variantKeys.length}`}
               hint={variantKeys.slice(0, 4).join(", ")}
             />
             <MetaCell
-              icon={<Sparkles className="h-3 w-3" />}
+              icon={<Sparkles className="h-3.5 w-3.5" />}
               label="Collection"
               value={icon.collection}
             />
             <MetaCell
-              icon={<Globe className="h-3 w-3" />}
+              icon={<Globe className="h-3.5 w-3.5" />}
               label="Slug"
               value={icon.slug}
               mono

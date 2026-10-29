@@ -21,6 +21,7 @@
     {"id": "space", "label": "Space"},
     {"id": "robotics", "label": "Robotics"},
     {"id": "agents", "label": "Agents"},
+    {"id": "social", "label": "Social"},
     {"id": "general", "label": "General"}
   ],
   "modifiers": ["plus", "minus", "check", "x", "off", "alert", "ban", "slash", "question", "lock", "open", "close", "up", "down", "left", "right", "in", "out", "dashed", "dot", "stop", "pause", "play", "user", "cog", "image", "text", "search", "copy", "down-left", "down-right", "up-left", "up-right"]

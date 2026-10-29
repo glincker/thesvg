@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Search, X } from "lucide-react";
+import { Search, X } from "@/components/own-icons";
 import { BottomSheet } from "./bottom-sheet";
 import { useMobileShellStore } from "@/lib/stores/mobile-shell-store";
 import { useSearchStore } from "@/lib/stores/search-store";
@@ -207,7 +207,7 @@ export function MobileSearchSheet() {
                         "inline-flex items-center gap-1 rounded-full border border-border/40 bg-card/60 px-2.5 py-1 text-xs text-muted-foreground transition-colors hover:bg-accent hover:text-foreground",
                       )}
                     >
-                      <Search className="h-3 w-3" />
+                      <Search className="h-3.5 w-3.5" />
                       {r.query}
                     </button>
                   ))}
