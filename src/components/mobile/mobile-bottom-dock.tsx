@@ -3,7 +3,7 @@
 import { useCallback, useRef } from "react";
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { Clock, Compass, Heart, MoreHorizontal, Plus } from "lucide-react";
+import { Clock, Compass, Heart, MoreHorizontal, Plus } from "@/components/own-icons";
 import { useMobileShellStore } from "@/lib/stores/mobile-shell-store";
 import { useFavoritesStore } from "@/lib/stores/favorites-store";
 import { cn } from "@/lib/utils";

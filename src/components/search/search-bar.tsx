@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useSyncExternalStore } from "react";
-import { Search, X } from "lucide-react";
+import { Search, X } from "@/components/own-icons";
 import posthog from "posthog-js";
 
 interface SearchBarProps {

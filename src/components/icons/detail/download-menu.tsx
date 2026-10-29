@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useRef, useState } from "react";
-import { Check, ChevronDown, Clipboard, Download, FileCode, ImageIcon } from "lucide-react";
+import { Check, ChevronDown, Clipboard, Download, FileCode, ImageIcon } from "@/components/own-icons";
 import posthog from "posthog-js";
 import { Button } from "@/components/ui/button";
 import {

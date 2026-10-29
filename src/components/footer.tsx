@@ -69,8 +69,8 @@ function LinkIcon({ link }: { link: FooterLink }) {
   if (link.brand) {
     return <img src={`/icons/${link.brand}/default.svg`} alt="" width={16} height={16} className="size-4 shrink-0" />;
   }
-  // Outline reads crisply at 16px, where the frosted look turns to a dim blob. Full text colour keeps it level with the brand marks beside it.
-  if (link.glyph) return <UiGlyph name={link.glyph} look="outline" className="size-4 text-muted-foreground transition-colors group-hover:text-orange-500" />;
+  // Our glass look, a touch larger than the text so the frosted pane has room to read.
+  if (link.glyph) return <UiGlyph name={link.glyph} className="size-4.5 shrink-0 text-foreground/70 transition-colors group-hover:text-orange-500" />;
   return null;
 }
 

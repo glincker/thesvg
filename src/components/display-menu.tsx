@@ -1,7 +1,7 @@
 "use client";
 
 import type { ComponentType } from "react";
-import { Binary, Braces, Component, FileCode, Link2, SlidersHorizontal } from "lucide-react";
+import { Binary, Braces, Component, FileCode, Link2, SlidersHorizontal } from "@/components/own-icons";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,

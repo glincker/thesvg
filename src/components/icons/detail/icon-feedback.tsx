@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import posthog from "posthog-js";
-import { ArrowUpRight, RotateCcw, ThumbsDown, ThumbsUp } from "lucide-react";
+import { ArrowUpRight, RotateCcw, ThumbsDown, ThumbsUp } from "@/components/own-icons";
 import { cn } from "@/lib/utils";
 import { withUtm } from "@/lib/external-link";
 import { usePrefersReducedMotion } from "@/lib/hooks/use-media-query";

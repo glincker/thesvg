@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useMemo, useState } from "react";
-import { Check, Copy } from "lucide-react";
+import { Check, Copy } from "@/components/own-icons";
 import type { CopyFormat } from "@/lib/copy-formats";
 import { formatSvg } from "@/lib/copy-formats";
 import { generateSnippet, type SnippetFormat } from "@/lib/code-snippets";

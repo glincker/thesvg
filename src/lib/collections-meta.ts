@@ -1,5 +1,5 @@
 import { createElement, type ComponentType } from "react";
-import { ShieldCheck, Shapes, Users } from "lucide-react";
+import { ShieldCheck, Shapes, Users } from "@/components/own-icons";
 import { cn } from "@/lib/utils";
 
 /**

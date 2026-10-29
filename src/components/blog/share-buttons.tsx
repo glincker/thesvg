@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Link2 } from "lucide-react";
+import { Check, Link2 } from "@/components/own-icons";
 import posthog from "posthog-js";
 import { cn } from "@/lib/utils";
 import { withUtm } from "@/lib/external-link";

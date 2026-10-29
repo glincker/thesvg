@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Rss, Sparkles } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Rss, Sparkles } from "@/components/own-icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 import { getCategoryCounts } from "@/lib/icons";
 import postsData from "@/data/posts.json";

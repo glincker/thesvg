@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { Download, Image as ImageIcon } from "lucide-react";
+import { Download, Image as ImageIcon } from "@/components/own-icons";
 import { Busy } from "@/components/skeletons";
 import posthog from "posthog-js";
 import { svgToPng, downloadPng } from "@/lib/svg-to-png";

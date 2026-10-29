@@ -2,7 +2,7 @@
 
 import { useCallback, useState } from "react";
 import Link from "next/link";
-import { Check, Copy, Download, Hash } from "lucide-react";
+import { Check, Copy, Download, Hash } from "@/components/own-icons";
 import posthog from "posthog-js";
 import type { IconEntry } from "@/lib/icons";
 import { useRecentsStore } from "@/lib/stores/recents-store";

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Star, X } from "lucide-react";
+import { Star, X } from "@/components/own-icons";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import { withUtm } from "@/lib/external-link";
 import { formatStarCount } from "@/lib/github-stars";

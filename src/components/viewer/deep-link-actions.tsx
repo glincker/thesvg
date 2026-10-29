@@ -7,7 +7,7 @@ import {
   ClipboardCopy,
   Download,
   ExternalLink,
-} from "lucide-react";
+} from "@/components/own-icons";
 import { Codepen } from "@/components/icons/shared/brand-icons";
 import { cn } from "@/lib/utils";
 import {

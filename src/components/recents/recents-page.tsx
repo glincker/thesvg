@@ -12,7 +12,7 @@ import {
   Search,
   Sparkles,
   Trash2,
-} from "lucide-react";
+} from "@/components/own-icons";
 import type { IconEntry } from "@/lib/icons";
 import { getIconsBySlugMap, loadIconsManifest } from "@/lib/icons-manifest";
 import { useRecentsStore } from "@/lib/stores/recents-store";

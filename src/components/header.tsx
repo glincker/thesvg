@@ -409,7 +409,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
             className="relative order-last w-full basis-full sm:order-none sm:w-auto sm:flex-1 sm:basis-auto"
           >
             <div className="relative w-full sm:mx-auto sm:max-w-2xl">
-              <UiGlyph name="search" look="outline" className="absolute top-1/2 left-3 h-4.5 w-4.5 -translate-y-1/2 text-muted-foreground" />
+              <UiGlyph name="search" className="absolute top-1/2 left-3 h-4.5 w-4.5 -translate-y-1/2 text-muted-foreground" />
               <input
                 ref={inputRef}
                 type="text"
@@ -657,7 +657,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                 pathname.startsWith("/docs") && "border-foreground/20 bg-accent text-foreground dark:border-white/20 dark:bg-white/[0.06]"
               )}
             >
-              <UiGlyph name="book-open" look="outline" className="h-4 w-4" />
+              <UiGlyph name="book-open" className="h-4 w-4" />
               Docs
             </Link>
 

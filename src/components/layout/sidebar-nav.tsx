@@ -19,7 +19,7 @@ import {
   Shapes,
   Share,
   Terminal,
-} from "lucide-react";
+} from "@/components/own-icons";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SidebarNavItem } from "@/components/layout/sidebar-nav-item";

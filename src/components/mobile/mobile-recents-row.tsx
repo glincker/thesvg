@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Clock } from "lucide-react";
+import { Clock } from "@/components/own-icons";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import { getIconsBySlugMap, loadIconsManifest } from "@/lib/icons-manifest";
 import type { IconEntry } from "@/lib/icons";

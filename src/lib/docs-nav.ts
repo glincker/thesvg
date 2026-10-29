@@ -1,4 +1,4 @@
-import { Rocket, Server, Bot, Wrench, Lightbulb, Sparkles, ArrowLeftRight, HelpCircle, type LucideIcon } from "lucide-react";
+import { Rocket, Server, Bot, Wrench, Lightbulb, Sparkles, ArrowLeftRight, HelpCircle, type LucideIcon } from "@/components/own-icons";
 
 /**
  * Central docs navigation registry, used by the left sidebar and the

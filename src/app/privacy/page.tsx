@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import Link from "next/link";
-import { Shield, Database, Globe, Clipboard, BarChart3, Mail } from "lucide-react";
+import { Shield, Database, Globe, Clipboard, BarChart3, Mail } from "@/components/own-icons";
 import { getCategoryCounts } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 import { withUtm } from "@/lib/external-link";

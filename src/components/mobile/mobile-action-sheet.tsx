@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import posthog from "posthog-js";
-import { Copy, Download, ExternalLink } from "lucide-react";
+import { Copy, Download, ExternalLink } from "@/components/own-icons";
 import { BottomSheet } from "./bottom-sheet";
 import { useMobileShellStore } from "@/lib/stores/mobile-shell-store";
 import { useRecentsStore } from "@/lib/stores/recents-store";

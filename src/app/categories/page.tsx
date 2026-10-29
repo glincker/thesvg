@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Shapes } from "lucide-react";
+import { Shapes } from "@/components/own-icons";
 import {
   getCategoryCounts,
   getCollections,

@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Search, Sparkles } from "lucide-react";
+import { Search, Sparkles } from "@/components/own-icons";
 import { cn } from "@/lib/utils";
 import { loadIconsManifest } from "@/lib/icons-manifest";
 import type { IconEntry } from "@/lib/icons";

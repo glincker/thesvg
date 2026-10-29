@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "@/components/own-icons";
 import type { OtherFamily } from "@/lib/families";
 
 export interface FamilyIndexItem extends OtherFamily {

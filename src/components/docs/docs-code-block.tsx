@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Check, Copy, X } from "lucide-react";
+import { Check, Copy, X } from "@/components/own-icons";
 import { colorizeSnippet } from "@/components/icons/shared/syntax-highlight";
 import type { DocsSnippet } from "@/lib/docs-content";
 

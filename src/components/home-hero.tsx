@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Anchor, ArrowRight, Check, ChevronRight, Clock, Cloud, Copy, Flame, Package, ShieldCheck, Sparkles, Users, X, Zap } from "lucide-react";
+import { Anchor, ArrowRight, Check, ChevronRight, Clock, Cloud, Copy, Flame, Package, ShieldCheck, Sparkles, Users, X, Zap } from "@/components/own-icons";
 import Link from "next/link";
 import posthog from "posthog-js";
 import { compareDateDesc } from "@/lib/icon-dates";

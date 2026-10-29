@@ -4,7 +4,7 @@ import { useMemo, useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import posthog from "posthog-js";
-import { ArrowDownAZ, ArrowDownZA, ArrowUpDown, Clock, Flame, Grid3X3, LayoutGrid, X } from "lucide-react";
+import { ArrowDownAZ, ArrowDownZA, ArrowUpDown, Clock, Flame, Grid3X3, LayoutGrid, X } from "@/components/own-icons";
 import { compareDateDesc } from "@/lib/icon-dates";
 import type { Collection, IconEntry } from "@/lib/icons";
 import { getPopularSlugs, getAllPopularSlugs } from "@/lib/popular-icons";

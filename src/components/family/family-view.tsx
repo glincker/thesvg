@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { ArrowUpRight, BookOpen, LayoutGrid, Plus } from "lucide-react";
+import { ArrowUpRight, BookOpen, LayoutGrid, Plus } from "@/components/own-icons";
 import { withUtm } from "@/lib/external-link";
 import type { IconEntry } from "@/lib/icons";
 import type { OtherFamily } from "@/lib/families";
