@@ -297,14 +297,14 @@ export function Sidebar({
                               "bg-gradient-to-r from-accent/80 to-accent/40 text-accent-foreground font-medium shadow-sm shadow-black/[0.03] dark:from-white/[0.08] dark:to-white/[0.04] dark:shadow-black/20",
                           )}
                         >
-                          <span className="flex items-center gap-2.5 truncate">
+                          <span className="flex items-center gap-3 truncate">
                             <Icon
                               className={cn(
                                 `${ICON_SIZE.sidebar} shrink-0 transition-all duration-200 group-hover:scale-110`,
                                 isActive ? meta?.color : "opacity-60 group-hover:text-orange-500 group-hover:opacity-100",
                               )}
                             />
-                            <span className="truncate text-[13px]">
+                            <span className="truncate text-sm">
                               {meta?.label || col.name}
                             </span>
                           </span>
@@ -358,7 +358,7 @@ export function Sidebar({
                       <Link
                         href="/families"
                         className={cn(
-                          "flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] text-muted-foreground transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                          "flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm text-muted-foreground transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                           pathname === "/families" &&
                             "bg-accent/60 text-accent-foreground font-medium",
                         )}
@@ -373,12 +373,12 @@ export function Sidebar({
                             key={family.slug}
                             href={href}
                             className={cn(
-                              "group flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                              "group flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                               pathname === href &&
                                 "bg-gradient-to-r from-accent/80 to-accent/40 text-accent-foreground font-medium shadow-sm shadow-black/[0.03] dark:from-white/[0.08] dark:to-white/[0.04] dark:shadow-black/20",
                             )}
                           >
-                            <span className="flex items-center gap-2 truncate">
+                            <span className="flex items-center gap-3 truncate">
                               <FamilyLogo family={family} />
                               <span className="truncate">{family.title}</span>
                             </span>
@@ -423,12 +423,12 @@ export function Sidebar({
                   <Link
                     href="/category/google-2026"
                     className={cn(
-                      "group flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                      "group flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                       pathname === "/category/google-2026" &&
                         "bg-gradient-to-r from-accent/80 to-accent/40 text-accent-foreground font-medium shadow-sm shadow-black/[0.03] dark:from-white/[0.08] dark:to-white/[0.04] dark:shadow-black/20",
                     )}
                   >
-                    <span className="flex items-center gap-2 truncate">
+                    <span className="flex items-center gap-3 truncate">
                       <Sparkles className="h-5 w-5 shrink-0 text-amber-500" />
                       <span className="truncate">Google 2026</span>
                     </span>
@@ -439,10 +439,10 @@ export function Sidebar({
                   <Link
                     href="/?sort=recent"
                     className={cn(
-                      "group flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                      "group flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                     )}
                   >
-                    <span className="flex items-center gap-2 truncate">
+                    <span className="flex items-center gap-3 truncate">
                       <Clock className="h-5 w-5 shrink-0 opacity-60 transition-colors group-hover:text-orange-500 group-hover:opacity-100" />
                       <span className="truncate">Recently Added</span>
                     </span>
@@ -450,10 +450,10 @@ export function Sidebar({
                   <Link
                     href="/?sort=popular"
                     className={cn(
-                      "group flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                      "group flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                     )}
                   >
-                    <span className="flex items-center gap-2 truncate">
+                    <span className="flex items-center gap-3 truncate">
                       <Flame className="h-5 w-5 shrink-0 opacity-60 transition-colors group-hover:text-orange-500 group-hover:opacity-100" />
                       <span className="truncate">Popular</span>
                     </span>
@@ -540,7 +540,7 @@ export function Sidebar({
                             type="button"
                             onClick={() => onCategorySelect(category.name)}
                             className={cn(
-                              "group flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] transition-all duration-200 hover:translate-x-0.5 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                              "group flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm transition-all duration-200 hover:translate-x-0.5 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                               selectedCategory === category.name &&
                                 !showFavorites &&
                                 "bg-gradient-to-r from-accent/80 to-accent/40 text-accent-foreground font-medium shadow-sm shadow-black/[0.03] dark:from-white/[0.08] dark:to-white/[0.04] dark:shadow-black/20",
