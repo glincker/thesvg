@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { DOMAINS, GLYPHS } from "@/lib/ui-icons/glyphs";
+import { ICON_SIZE } from "@/lib/chrome-sizes";
 import { cn } from "@/lib/ui-icons/utils";
 import { THEMES, TONES } from "./category-theme";
 import { useUi } from "./ui-state";
@@ -39,7 +40,7 @@ function Item({ icon, label, rail, active, badge, hover = "group-hover:text-oran
   );
   const body = (
     <>
-      <UiGlyph name={icon} className={cn("size-6 transition-colors", active ? inkClass : hover)} />
+      <UiGlyph name={icon} className={cn(ICON_SIZE.sidebar, "transition-colors", active ? inkClass : hover)} />
       {rail ? <span className="sr-only">{label}</span> : <span className="flex-1 truncate text-left">{label}</span>}
       {!rail && badge && <span className="text-[0.75rem] text-muted-foreground">{badge}</span>}
     </>
@@ -100,7 +101,7 @@ export function SidebarNav({ onNavigate, rail = false }: { onNavigate?: () => vo
           aria-expanded={catsOpen}
           className="mt-3 flex items-center gap-1.5 px-3 text-left text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground transition-colors hover:text-foreground"
         >
-          <UiGlyph name="chevron-down" className={cn("size-3.5 transition-transform", !catsOpen && "-rotate-90")} />
+          <UiGlyph name="chevron-down" className={cn("h-4 w-4 transition-transform", !catsOpen && "-rotate-90")} />
           Categories
         </button>
       )}

@@ -29,8 +29,9 @@ function markup(name: string, look: Variant): string | null {
  */
 export function UiGlyph({ name, look, className = "size-5", style, plain = false }: Readonly<{ name: string; look?: Variant; className?: string; style?: React.CSSProperties; plain?: boolean }>) {
   const uid = useId().replaceAll(/[^a-zA-Z0-9]/g, "");
-  const svg = markup(name, look ?? chromeLook(className));
+  const lookUsed = look ?? chromeLook(className);
+  const svg = markup(name, lookUsed);
   if (!svg) return null;
   // The drawing is cached, but each copy on the page gets its own ids so copies never share a gradient or a mask.
-  return <span aria-hidden="true" style={style} className={cn("inline-flex shrink-0 [&>svg]:size-full", !plain && !/(^|\s)text-/.test(className) && defaultColorOf(name), className)} dangerouslySetInnerHTML={{ __html: scopeIds(svg, uid) }} />;
+  return <span aria-hidden="true" style={style} className={cn("inline-flex shrink-0 [&>svg]:size-full", lookUsed === "glass" && "drop-shadow-[0_1px_1.5px_rgb(0_0_0/0.28)] dark:drop-shadow-[0_1px_2px_rgb(0_0_0/0.6)]", !plain && !/(^|\s)text-/.test(className) && defaultColorOf(name), className)} dangerouslySetInnerHTML={{ __html: scopeIds(svg, uid) }} />;
 }

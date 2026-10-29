@@ -33,6 +33,7 @@ import { AlphabetRail } from "@/components/layout/alphabet-rail";
 import { SidebarNav } from "@/components/layout/sidebar-nav";
 import { SidebarCollapseToggle } from "@/components/layout/sidebar-collapse-toggle";
 
+import { ICON_SIZE } from "@/lib/chrome-sizes";
 import { cn } from "@/lib/utils";
 
 const CATEGORY_SEARCH_DEBOUNCE_MS = 400;
@@ -51,22 +52,22 @@ interface SidebarFamily {
 
 /** Parent logo that stays visible in both themes. */
 function FamilyLogo({ family }: { family: SidebarFamily }) {
-  const base = "h-4 w-4 shrink-0 object-contain";
+  const base = `${ICON_SIZE.sidebar} shrink-0 object-contain`;
   if (family.logoDark) {
     return (
       <>
         <img
           src={family.logo}
           alt=""
-          width={16}
-          height={16}
+          width={20}
+          height={20}
           className={cn(base, "dark:hidden")}
         />
         <img
           src={family.logoDark}
           alt=""
-          width={16}
-          height={16}
+          width={20}
+          height={20}
           className={cn(base, "hidden dark:block")}
         />
       </>
@@ -265,7 +266,7 @@ export function Sidebar({
                     Collections
                     <ChevronRight
                       className={cn(
-                        "h-3 w-3 shrink-0 transition-transform duration-200",
+                        "h-4 w-4 shrink-0 transition-transform duration-200",
                         collectionsExpanded && "rotate-90",
                       )}
                     />
@@ -299,7 +300,7 @@ export function Sidebar({
                           <span className="flex items-center gap-2.5 truncate">
                             <Icon
                               className={cn(
-                                "h-5 w-5 shrink-0 transition-all duration-200 group-hover:scale-110",
+                                `${ICON_SIZE.sidebar} shrink-0 transition-all duration-200 group-hover:scale-110`,
                                 isActive ? meta?.color : "opacity-60 group-hover:text-orange-500 group-hover:opacity-100",
                               )}
                             />
@@ -339,7 +340,7 @@ export function Sidebar({
                     </span>
                     <ChevronRight
                       className={cn(
-                        "h-3 w-3 shrink-0 transition-transform duration-200",
+                        "h-4 w-4 shrink-0 transition-transform duration-200",
                         familiesExpanded && "rotate-90",
                       )}
                     />
@@ -363,7 +364,7 @@ export function Sidebar({
                         )}
                       >
                         <span>All families</span>
-                        <ChevronRight className="h-3 w-3" aria-hidden />
+                        <ChevronRight className="h-4 w-4" aria-hidden />
                       </Link>
                       {(familiesData as SidebarFamily[]).map((family) => {
                         const href = `/family/${family.slug}`;
@@ -405,7 +406,7 @@ export function Sidebar({
                   Featured
                   <ChevronRight
                     className={cn(
-                      "h-3 w-3 shrink-0 transition-transform duration-200",
+                      "h-4 w-4 shrink-0 transition-transform duration-200",
                       featuredExpanded && "rotate-90",
                     )}
                   />
@@ -428,7 +429,7 @@ export function Sidebar({
                     )}
                   >
                     <span className="flex items-center gap-2 truncate">
-                      <Sparkles className="h-4.5 w-4.5 shrink-0 text-amber-500" />
+                      <Sparkles className="h-5 w-5 shrink-0 text-amber-500" />
                       <span className="truncate">Google 2026</span>
                     </span>
                     <span className="ml-2 shrink-0 rounded-full bg-gradient-to-r from-fuchsia-500/90 via-orange-500/90 to-amber-400/90 px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase leading-none tracking-wider text-white shadow-sm shadow-black/20">
@@ -442,7 +443,7 @@ export function Sidebar({
                     )}
                   >
                     <span className="flex items-center gap-2 truncate">
-                      <Clock className="h-4.5 w-4.5 shrink-0 opacity-60 transition-colors group-hover:text-orange-500 group-hover:opacity-100" />
+                      <Clock className="h-5 w-5 shrink-0 opacity-60 transition-colors group-hover:text-orange-500 group-hover:opacity-100" />
                       <span className="truncate">Recently Added</span>
                     </span>
                   </Link>
@@ -453,7 +454,7 @@ export function Sidebar({
                     )}
                   >
                     <span className="flex items-center gap-2 truncate">
-                      <Flame className="h-4.5 w-4.5 shrink-0 opacity-60 transition-colors group-hover:text-orange-500 group-hover:opacity-100" />
+                      <Flame className="h-5 w-5 shrink-0 opacity-60 transition-colors group-hover:text-orange-500 group-hover:opacity-100" />
                       <span className="truncate">Popular</span>
                     </span>
                   </Link>
@@ -476,7 +477,7 @@ export function Sidebar({
                   )}
                 </div>
                 <div className="relative mb-2 flex items-center">
-                  <Search className="pointer-events-none absolute left-2.5 h-3.5 w-3.5 text-muted-foreground/40" />
+                  <Search className="pointer-events-none absolute left-2.5 h-4 w-4 text-muted-foreground/40" />
                   <input
                     type="text"
                     value={categorySearch}
