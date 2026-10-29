@@ -74,7 +74,7 @@ export function IconCard({ glyph }: { glyph: GlyphData }) {
           onClick={(e) => { e.preventDefault(); ui.toggleFavorite(glyph.slug); }}
           className={cn("absolute right-2 top-2 grid size-7 place-items-center rounded-lg text-muted-foreground opacity-0 transition-opacity hover:text-foreground group-hover/card:opacity-100", fav && "text-orange-500 opacity-100")}
         >
-          <UiGlyph name="heart" look={fav ? "fill" : "outline"} className="size-4" />
+          <UiGlyph name="heart" plain look={fav ? "fill" : "outline"} className="size-4" />
         </button>
       </Link>
       <div className="px-3 pb-1.5 pt-2.5 text-center">
