@@ -2,6 +2,8 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { GLYPHS } from "@/lib/ui-icons/glyphs";
+import { closest, rankTiered } from "@/lib/ui-icons/search";
+import { searchableOf } from "@/lib/ui-icons/searchable";
 import { POPULAR } from "@/lib/ui-icons/popular";
 import { cn } from "@/lib/ui-icons/utils";
 import { CategoryBanner } from "./category-banner";
@@ -37,16 +39,15 @@ export function Browse() {
     for (const g of pool) counts.set(g.category, (counts.get(g.category) ?? 0) + 1);
     return { total: pool.length, rows: [...counts.entries()].map(([name, count]) => ({ name, count })).sort((a, b) => b.count - a.count) };
   }, [ui.set]);
-  const list = useMemo(() => {
-    const q = ui.query.trim().toLowerCase();
-    return GLYPHS.filter(
-      (g) =>
-        (inSet(g, ui.set)) &&
-        (ui.category === "All" || g.category === ui.category) &&
-        (!ui.onlyFavorites || ui.favorites.includes(g.slug)) &&
-        (!q || g.slug.includes(q) || g.tags.some((t) => t.toLowerCase().includes(q))),
-    );
+  // A query ranks by how well each icon matches and splits into the strong matches and the related ones. With none, the grid keeps its own order.
+  const tiers = useMemo(() => {
+    const q = ui.query.trim();
+    const scoped = GLYPHS.filter((g) => inSet(g, ui.set) && (ui.category === "All" || g.category === ui.category) && (!ui.onlyFavorites || ui.favorites.includes(g.slug)));
+    return { scoped, ranked: q ? rankTiered(q, scoped, searchableOf) : null };
   }, [ui.query, ui.category, ui.onlyFavorites, ui.favorites, ui.set]);
+  const list = useMemo(() => (tiers.ranked ? [...tiers.ranked.best, ...tiers.ranked.related] : tiers.scoped), [tiers]);
+  const bestCount = tiers.ranked?.best.length ?? 0;
+  const suggestion = useMemo(() => (list.length === 0 && ui.query.trim() ? closest(ui.query, GLYPHS.flatMap((g) => [g.slug, ...g.tags])) : null), [list.length, ui.query]);
 
   // With no filter on, lead with the glyphs people reach for most and list the rest alphabetically below them.
   const unfiltered = ui.category === "All" && ui.set === "all" && !ui.query.trim() && !ui.onlyFavorites;
@@ -70,7 +71,7 @@ export function Browse() {
 
   return (
     <div className="mx-auto flex w-full min-w-0 flex-col gap-4">
-      {ui.category !== "All" && ui.set === "all" && !ui.onlyFavorites ? <CategoryBanner category={ui.category} /> : <Hero />}
+      {ui.query.trim() ? null : ui.category !== "All" && ui.set === "all" && !ui.onlyFavorites ? <CategoryBanner category={ui.category} /> : <Hero />}
       <StyleBar />
       <div id="browse" className="-mx-1 flex items-center gap-1.5 overflow-x-auto px-1 pb-1">
         {[{ name: "All", count: categories.total }, ...categories.rows].map((c) => (
@@ -101,18 +102,63 @@ export function Browse() {
           </div>
         </section>
       )}
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <h2 className="text-sm font-semibold">
-          {ui.onlyFavorites ? "Favorites" : ui.category === "All" ? "All UI icons" : ui.category}
-          <span className="ml-2 font-normal text-muted-foreground">{list.length}</span>
-        </h2>
-      </div>
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(148px,1fr))] gap-3">
-        {rest.slice(0, shown).map((g) => (
-          <IconCard key={g.slug} glyph={g} />
-        ))}
-      </div>
-      {list.length === 0 && <p className="py-16 text-center text-sm text-muted-foreground">No icons match. Try another word or clear the filter.</p>}
+      {tiers.ranked ? (
+        <>
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <h2 className="text-sm font-semibold">
+              Best matches<span className="ml-2 font-normal text-muted-foreground">{bestCount}</span>
+            </h2>
+          </div>
+          <div className="grid grid-cols-[repeat(auto-fill,minmax(148px,1fr))] gap-3">
+            {rest.slice(0, Math.min(shown, bestCount)).map((g) => (
+              <IconCard key={g.slug} glyph={g} />
+            ))}
+          </div>
+          {list.length > bestCount && shown > bestCount && (
+            <>
+              <h2 className="mt-2 text-sm font-semibold">
+                Related<span className="ml-2 font-normal text-muted-foreground">{list.length - bestCount}</span>
+                <span className="ml-2 text-xs font-normal text-muted-foreground">same family, synonyms and close spellings</span>
+              </h2>
+              <div className="grid grid-cols-[repeat(auto-fill,minmax(148px,1fr))] gap-3">
+                {rest.slice(bestCount, shown).map((g) => (
+                  <IconCard key={g.slug} glyph={g} />
+                ))}
+              </div>
+            </>
+          )}
+        </>
+      ) : (
+        <>
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <h2 className="text-sm font-semibold">
+              {ui.onlyFavorites ? "Favorites" : ui.category === "All" ? "All UI icons" : ui.category}
+              <span className="ml-2 font-normal text-muted-foreground">{list.length}</span>
+            </h2>
+          </div>
+          <div className="grid grid-cols-[repeat(auto-fill,minmax(148px,1fr))] gap-3">
+            {rest.slice(0, shown).map((g) => (
+              <IconCard key={g.slug} glyph={g} />
+            ))}
+          </div>
+        </>
+      )}
+      {list.length === 0 && (
+        <p className="py-16 text-center text-sm text-muted-foreground">
+          No icons match.{" "}
+          {suggestion ? (
+            <>
+              Did you mean{" "}
+              <button type="button" onClick={() => ui.setQuery(suggestion)} className="font-medium text-foreground underline underline-offset-2">
+                {suggestion}
+              </button>
+              ?
+            </>
+          ) : (
+            "Try another word or clear the filter."
+          )}
+        </p>
+      )}
       {rest.length > shown ? (
         <div ref={sentinel} role="status" aria-label="Loading more icons"><Skeletons /></div>
       ) : (
