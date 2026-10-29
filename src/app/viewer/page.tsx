@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/json-ld";
 import { Suspense } from "react";
-import { Zap } from "lucide-react";
+import { Zap } from "@/components/own-icons";
 import { getCategoryCounts, getCollections } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 import { SvgViewer } from "@/components/viewer/svg-viewer";

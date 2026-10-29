@@ -2,22 +2,22 @@ import { GLYPHS, type Glyph } from "@/lib/ui-icons/glyphs";
 
 // Tailwind only sees whole class names, so every tone spells its classes out.
 export const TONES = {
-  violet: { glow: "from-violet-500/20", ink: "text-violet-400", chip: "border-violet-500/25 bg-violet-500/10 text-violet-400" },
-  sky: { glow: "from-sky-500/20", ink: "text-sky-400", chip: "border-sky-500/25 bg-sky-500/10 text-sky-400" },
-  emerald: { glow: "from-emerald-500/20", ink: "text-emerald-400", chip: "border-emerald-500/25 bg-emerald-500/10 text-emerald-400" },
-  amber: { glow: "from-amber-500/20", ink: "text-amber-400", chip: "border-amber-500/25 bg-amber-500/10 text-amber-400" },
-  blue: { glow: "from-blue-500/20", ink: "text-blue-400", chip: "border-blue-500/25 bg-blue-500/10 text-blue-400" },
-  lime: { glow: "from-lime-500/20", ink: "text-lime-400", chip: "border-lime-500/25 bg-lime-500/10 text-lime-400" },
-  rose: { glow: "from-rose-500/20", ink: "text-rose-400", chip: "border-rose-500/25 bg-rose-500/10 text-rose-400" },
-  fuchsia: { glow: "from-fuchsia-500/20", ink: "text-fuchsia-400", chip: "border-fuchsia-500/25 bg-fuchsia-500/10 text-fuchsia-400" },
-  orange: { glow: "from-orange-500/20", ink: "text-orange-400", chip: "border-orange-500/25 bg-orange-500/10 text-orange-400" },
-  teal: { glow: "from-teal-500/20", ink: "text-teal-400", chip: "border-teal-500/25 bg-teal-500/10 text-teal-400" },
-  indigo: { glow: "from-indigo-500/25", ink: "text-indigo-400", chip: "border-indigo-500/25 bg-indigo-500/10 text-indigo-400" },
-  cyan: { glow: "from-cyan-500/20", ink: "text-cyan-400", chip: "border-cyan-500/25 bg-cyan-500/10 text-cyan-400" },
-  green: { glow: "from-green-500/20", ink: "text-green-400", chip: "border-green-500/25 bg-green-500/10 text-green-400" },
-  pink: { glow: "from-pink-500/20", ink: "text-pink-400", chip: "border-pink-500/25 bg-pink-500/10 text-pink-400" },
-  red: { glow: "from-red-500/20", ink: "text-red-400", chip: "border-red-500/25 bg-red-500/10 text-red-400" },
-  yellow: { glow: "from-yellow-500/20", ink: "text-yellow-400", chip: "border-yellow-500/25 bg-yellow-500/10 text-yellow-400" },
+  violet: { hover: "group-hover:text-violet-400", glow: "from-violet-500/20", ink: "text-violet-400", chip: "border-violet-500/25 bg-violet-500/10 text-violet-400" },
+  sky: { hover: "group-hover:text-sky-400", glow: "from-sky-500/20", ink: "text-sky-400", chip: "border-sky-500/25 bg-sky-500/10 text-sky-400" },
+  emerald: { hover: "group-hover:text-emerald-400", glow: "from-emerald-500/20", ink: "text-emerald-400", chip: "border-emerald-500/25 bg-emerald-500/10 text-emerald-400" },
+  amber: { hover: "group-hover:text-amber-400", glow: "from-amber-500/20", ink: "text-amber-400", chip: "border-amber-500/25 bg-amber-500/10 text-amber-400" },
+  blue: { hover: "group-hover:text-blue-400", glow: "from-blue-500/20", ink: "text-blue-400", chip: "border-blue-500/25 bg-blue-500/10 text-blue-400" },
+  lime: { hover: "group-hover:text-lime-400", glow: "from-lime-500/20", ink: "text-lime-400", chip: "border-lime-500/25 bg-lime-500/10 text-lime-400" },
+  rose: { hover: "group-hover:text-rose-400", glow: "from-rose-500/20", ink: "text-rose-400", chip: "border-rose-500/25 bg-rose-500/10 text-rose-400" },
+  fuchsia: { hover: "group-hover:text-fuchsia-400", glow: "from-fuchsia-500/20", ink: "text-fuchsia-400", chip: "border-fuchsia-500/25 bg-fuchsia-500/10 text-fuchsia-400" },
+  orange: { hover: "group-hover:text-orange-400", glow: "from-orange-500/20", ink: "text-orange-400", chip: "border-orange-500/25 bg-orange-500/10 text-orange-400" },
+  teal: { hover: "group-hover:text-teal-400", glow: "from-teal-500/20", ink: "text-teal-400", chip: "border-teal-500/25 bg-teal-500/10 text-teal-400" },
+  indigo: { hover: "group-hover:text-indigo-400", glow: "from-indigo-500/25", ink: "text-indigo-400", chip: "border-indigo-500/25 bg-indigo-500/10 text-indigo-400" },
+  cyan: { hover: "group-hover:text-cyan-400", glow: "from-cyan-500/20", ink: "text-cyan-400", chip: "border-cyan-500/25 bg-cyan-500/10 text-cyan-400" },
+  green: { hover: "group-hover:text-green-400", glow: "from-green-500/20", ink: "text-green-400", chip: "border-green-500/25 bg-green-500/10 text-green-400" },
+  pink: { hover: "group-hover:text-pink-400", glow: "from-pink-500/20", ink: "text-pink-400", chip: "border-pink-500/25 bg-pink-500/10 text-pink-400" },
+  red: { hover: "group-hover:text-red-400", glow: "from-red-500/20", ink: "text-red-400", chip: "border-red-500/25 bg-red-500/10 text-red-400" },
+  yellow: { hover: "group-hover:text-yellow-400", glow: "from-yellow-500/20", ink: "text-yellow-400", chip: "border-yellow-500/25 bg-yellow-500/10 text-yellow-400" },
 } as const;
 
 export type Motif = "hero" | "wall" | "rows" | "stack" | "scatter" | "line";

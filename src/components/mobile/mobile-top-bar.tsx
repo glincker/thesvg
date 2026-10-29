@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { Moon, Search, Sun, X } from "lucide-react";
+import { Moon, Search, Sun, X } from "@/components/own-icons";
 import { TheSVGMark } from "@/components/icons/the-svg-mark";
 import { useTheme } from "next-themes";
 import { usePathname, useRouter } from "next/navigation";

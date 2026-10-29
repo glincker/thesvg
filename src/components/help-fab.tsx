@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { X, MousePointerClick, Copy, Download, Search, Heart, Keyboard, Sparkles } from "lucide-react";
+import { X, MousePointerClick, Copy, Download, Search, Heart, Keyboard, Sparkles } from "@/components/own-icons";
 
 function getTips(iconCount: string) {
   return [

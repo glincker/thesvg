@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ArrowUpRight, Search, X } from "lucide-react";
+import { ArrowUpRight, Search, X } from "@/components/own-icons";
 import type { IconEntry } from "@/lib/icons";
 import { Google2026Tile } from "./google-2026-tile";
 import {

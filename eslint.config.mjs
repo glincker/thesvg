@@ -72,8 +72,8 @@ const eslintConfig = defineConfig([
       "no-restricted-imports": [
         "error",
         {
-          // Phosphor is gone from this site. Files still on Lucide move to our own icons in their own PRs.
-          paths: ICON_LIBRARIES.paths.filter((p) => p.name.includes("phosphor")),
+          // Every icon on this site is drawn by our own set. No third-party icon library, anywhere.
+          paths: ICON_LIBRARIES.paths,
           patterns: [{ group: UI_PATTERNS, message: "Brand code must not depend on UI icon code. Only the files in BRAND_TO_UI_ALLOWED may cross over." }],
         },
       ],

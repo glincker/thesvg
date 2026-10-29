@@ -5,6 +5,7 @@ describe("chromeLook", () => {
   it("uses glass from 16px up", () => {
     expect(chromeLook("size-4")).toBe("glass");
     expect(chromeLook("h-5 w-5")).toBe("glass");
+    expect(chromeLook("size-6")).toBe("glass");
     expect(chromeLook("size-7 text-foreground")).toBe("glass");
   });
 

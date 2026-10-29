@@ -16,7 +16,7 @@ import {
   Star,
   Sparkles,
   TrendingUp,
-} from "lucide-react";
+} from "@/components/own-icons";
 import { getCategoryCounts, getFormattedIconCount, getIconCount } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 import { withUtm } from "@/lib/external-link";

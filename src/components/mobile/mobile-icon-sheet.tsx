@@ -5,7 +5,7 @@ import type { BottomSheetSnap } from "./bottom-sheet";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import posthog from "posthog-js";
-import { ArrowUpRight, Check, Copy, Download, Globe, Heart, Layers, Scale, Sparkles } from "lucide-react";
+import { ArrowUpRight, Check, Copy, Download, Globe, Heart, Layers, Scale, Sparkles } from "@/components/own-icons";
 import { BottomSheet } from "./bottom-sheet";
 import { useMobileShellStore } from "@/lib/stores/mobile-shell-store";
 import { useMobilePrefsStore } from "@/lib/stores/mobile-prefs-store";

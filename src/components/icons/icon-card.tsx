@@ -1,7 +1,7 @@
 "use client";
 
 import { memo, useCallback, useRef, useState, type CSSProperties } from "react";
-import { Check, Copy, Download, Eye, Heart } from "lucide-react";
+import { Check, Copy, Download, Eye, Heart } from "@/components/own-icons";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import posthog from "posthog-js";

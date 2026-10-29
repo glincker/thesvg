@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { Download, MousePointerClick, Shapes } from "lucide-react";
+import { Download, MousePointerClick, Shapes } from "@/components/own-icons";
 import type { Metadata } from "next";
 
 import { getCategoryCounts } from "@/lib/icons";

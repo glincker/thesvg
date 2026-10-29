@@ -15,7 +15,7 @@ import {
   Heart,
   Link2,
   Terminal,
-} from "lucide-react";
+} from "@/components/own-icons";
 import Link from "next/link";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";

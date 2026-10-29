@@ -10,7 +10,7 @@ import {
   ArrowUpRight,
   Heart,
   Home,
-} from "lucide-react";
+} from "@/components/own-icons";
 import { Badge } from "@/components/ui/badge";
 import type { IconEntry } from "@/lib/icons";
 import { useFavoritesStore } from "@/lib/stores/favorites-store";

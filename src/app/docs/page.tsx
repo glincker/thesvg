@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BookOpen, ArrowRight } from "lucide-react";
+import { BookOpen, ArrowRight } from "@/components/own-icons";
 import { getFormattedIconCount } from "@/lib/icons";
 import { JsonLd } from "@/components/json-ld";
 import { DOCS_NAV } from "@/lib/docs-nav";

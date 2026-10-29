@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Sparkles, ChevronDown } from "lucide-react";
+import { Sparkles, ChevronDown } from "@/components/own-icons";
 import { cn } from "@/lib/utils";
 import { DocsBrandIcon } from "@/components/docs/docs-nav-icon";
 

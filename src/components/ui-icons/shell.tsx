@@ -5,7 +5,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { DOMAINS, GLYPHS } from "@/lib/ui-icons/glyphs";
+import { ICON_SIZE } from "@/lib/chrome-sizes";
 import { cn } from "@/lib/ui-icons/utils";
+import { THEMES, TONES } from "./category-theme";
 import { useUi } from "./ui-state";
 
 const DOMAIN_ICON: Record<string, string> = {
@@ -22,20 +24,23 @@ interface ItemProps {
   rail: boolean;
   active?: boolean;
   badge?: string;
+  /** Tailwind classes for the icon colour: brand orange by default, the category tone for category rows. */
+  hover?: string;
+  inkClass?: string;
   href?: string;
   onClick?: () => void;
 }
 
 /** One row. In the rail only the icon shows, with the label as a tooltip and for screen readers. */
-function Item({ icon, label, rail, active, badge, href, onClick }: ItemProps) {
+function Item({ icon, label, rail, active, badge, hover = "group-hover:text-orange-500", inkClass = "text-orange-500", href, onClick }: ItemProps) {
   const cls = cn(
-    "flex w-full items-center gap-3 rounded-xl py-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground",
+    "group flex w-full items-center gap-3 rounded-xl py-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground",
     rail ? "justify-center px-0" : "px-3",
     active && "bg-accent text-foreground",
   );
   const body = (
     <>
-      <UiGlyph name={icon} className="size-5" />
+      <UiGlyph name={icon} className={cn(ICON_SIZE.sidebar, "transition-colors", active ? inkClass : cn("text-muted-foreground", hover))} />
       {rail ? <span className="sr-only">{label}</span> : <span className="flex-1 truncate text-left">{label}</span>}
       {!rail && badge && <span className="text-[0.75rem] text-muted-foreground">{badge}</span>}
     </>
@@ -96,7 +101,7 @@ export function SidebarNav({ onNavigate, rail = false }: { onNavigate?: () => vo
           aria-expanded={catsOpen}
           className="mt-3 flex items-center gap-1.5 px-3 text-left text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground transition-colors hover:text-foreground"
         >
-          <UiGlyph name="chevron-down" className={cn("size-3.5 transition-transform", !catsOpen && "-rotate-90")} />
+          <UiGlyph name="chevron-down" className={cn("h-4 w-4 transition-transform", !catsOpen && "-rotate-90")} />
           Categories
         </button>
       )}
@@ -113,6 +118,8 @@ export function SidebarNav({ onNavigate, rail = false }: { onNavigate?: () => vo
               label={d.label}
               rail={rail}
               badge={String(domainCounts.get(d.id))}
+              hover={TONES[THEMES[d.id]?.tone ?? "orange"].hover}
+              inkClass={TONES[THEMES[d.id]?.tone ?? "orange"].ink}
               href={`/ui/category/${d.id}`}
               active={pathname === `/ui/category/${d.id}`}
               onClick={() => onNavigate?.()}

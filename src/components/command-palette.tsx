@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { BookOpen, Clock, Copy, Folder, Plug, Upload } from "lucide-react";
+import { BookOpen, Clock, Copy, Folder, Plug, Upload } from "@/components/own-icons";
 import {
   Command,
   CommandDialog,

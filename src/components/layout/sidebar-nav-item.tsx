@@ -1,16 +1,17 @@
 "use client";
 
-import type { LucideIcon } from "lucide-react";
+import type { OwnIcon } from "@/components/own-icons";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { ICON_SIZE } from "@/lib/chrome-sizes";
 import { cn } from "@/lib/utils";
 
 interface SidebarNavItemProps {
   /** When true, renders as a fixed-size icon-only rail button/link and shows
    * the label as a hover/focus tooltip instead of inline text. */
   collapsed: boolean;
-  icon: LucideIcon;
+  icon: OwnIcon;
   label: string;
   /** Applies the shared active-row styling (gradient background). Omit and
    * fold custom active styling into `className` for rows that need a
@@ -57,7 +58,7 @@ export function SidebarNavItem({
     <>
       <Icon
         className={cn(
-          "h-4 w-4 shrink-0 transition-transform duration-200 group-hover:scale-110",
+          ICON_SIZE.sidebar, "shrink-0 text-muted-foreground transition-all duration-200 group-hover:scale-110 group-hover:text-orange-500", active && "text-orange-500",
           iconClassName,
         )}
       />

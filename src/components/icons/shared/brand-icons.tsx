@@ -17,9 +17,8 @@ const baseProps = {
 };
 
 /**
- * Local replacements for brand glyphs that were dropped from lucide-react v1.0.
- * These are simple line-icon versions intended for UI chrome (matching the
- * lucide visual style), not the rich brand SVGs in /public/icons. Used for
+ * Simple line-icon versions of a few brand marks for UI chrome, not the rich
+ * brand SVGs in /public/icons. Used for
  * GitHub repo links, Codepen deep-links, and similar affordances.
  */
 

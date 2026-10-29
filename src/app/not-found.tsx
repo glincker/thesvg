@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Search, Home, ArrowLeft } from "lucide-react";
+import { Search, Home, ArrowLeft } from "@/components/own-icons";
 import { getFormattedIconCount } from "@/lib/icons";
 
 export default function NotFound() {

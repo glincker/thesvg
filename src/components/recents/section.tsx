@@ -1,4 +1,4 @@
-import { Clock } from "lucide-react";
+import { Clock } from "@/components/own-icons";
 
 export interface SectionProps {
   title: string;

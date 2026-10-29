@@ -10,7 +10,7 @@ import {
   Sparkles,
   Terminal,
   Zap,
-} from "lucide-react";
+} from "@/components/own-icons";
 import { Github } from "@/components/icons/shared/brand-icons";
 import type { Metadata } from "next";
 import { getCategoryCounts, getFormattedIconCount } from "@/lib/icons";
