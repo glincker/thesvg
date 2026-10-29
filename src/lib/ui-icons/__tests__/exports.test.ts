@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { svgText } from "@/components/ui-icons/glyph";
-import { GLYPH_BY_SLUG, categoryOf } from "../glyphs";
-import { codeFor } from "../snippets";
+import { GLYPH_BY_SLUG } from "../glyphs";
+import { conceptOf, isDomain } from "../taxonomy";
+import { codeFor, exportName, installCommand, packageCode } from "../snippets";
 
 const idsOf = (svg: string): string[] => [...svg.matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]);
 
@@ -34,11 +35,51 @@ describe("exported svg text", () => {
   });
 });
 
-describe("categoryOf", () => {
-  it("matches the start of a word, not any substring", () => {
-    expect(categoryOf("clock")).toBe("Time");
-    expect(categoryOf("lock")).toBe("Security");
-    expect(categoryOf("smartphone")).toBe("Devices");
-    expect(categoryOf("brain")).not.toBe("Nature");
+describe("taxonomy", () => {
+  it("files glyphs under an explicit domain, not a slug guess", () => {
+    expect(GLYPH_BY_SLUG.get("clock")?.domain).toBe("time");
+    expect(GLYPH_BY_SLUG.get("lock")?.domain).toBe("security");
+    expect(GLYPH_BY_SLUG.get("circle-check")?.domain).toBe("status");
+    expect(GLYPH_BY_SLUG.get("solar-panel")?.domain).toBe("space");
+    expect(GLYPH_BY_SLUG.get("vector-store")?.domain).toBe("agents");
+    expect(GLYPH_BY_SLUG.get("keyboard")?.domain).toBe("devices");
+  });
+  it("splits a slug into a concept and its modifiers", () => {
+    expect(conceptOf("folder-plus")).toEqual({ concept: "folder", modifiers: ["plus"] });
+    expect(conceptOf("arrow-up-right")).toEqual({ concept: "arrow", modifiers: ["up-right"] });
+    expect(conceptOf("bell-off")).toEqual({ concept: "bell", modifiers: ["off"] });
+    expect(conceptOf("plus")).toEqual({ concept: "plus", modifiers: [] });
+  });
+  it("gives every glyph a known domain and a unique concept plus modifiers", () => {
+    const seen = new Set<string>();
+    for (const g of GLYPH_BY_SLUG.values()) {
+      expect(isDomain(g.domain)).toBe(true);
+      const key = `${g.concept}|${g.modifiers.join(",")}`;
+      expect(seen.has(key)).toBe(false);
+      seen.add(key);
+    }
+  });
+});
+
+describe("package usage snippets", () => {
+  it("names the export the way the package builder does", () => {
+    expect(exportName("bell", "outline")).toBe("BellIcon");
+    expect(exportName("lightbulb", "glass")).toBe("LightbulbGlassIcon");
+    expect(exportName("bell", "glass-outline")).toBe("BellGlassOutlineIcon");
+    expect(exportName("3d-rotate", "fill")).toBe("I3dRotateFillIcon");
+  });
+
+  it("imports from the right package for each framework", () => {
+    expect(packageCode("react", "bell", "glass")).toContain('from "@thesvg/ui-react"');
+    expect(packageCode("vue", "bell", "glass")).toContain('from "@thesvg/ui-vue"');
+    expect(packageCode("svelte", "bell", "glass")).toContain('from "@thesvg/ui-svelte"');
+    expect(packageCode("native", "bell", "fill")).toContain('from "@thesvg/ui-react-native"');
+    expect(packageCode("js", "bell", "glass")).toContain("/dist/svg/bell/glass.svg");
+  });
+
+  it("installs what each package needs", () => {
+    expect(installCommand("react")).toBe("npm install @thesvg/ui-react");
+    expect(installCommand("native")).toBe("npm install @thesvg/ui-react-native react-native-svg");
+    expect(installCommand("js")).toBe("npm install @thesvg/ui");
   });
 });

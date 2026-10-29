@@ -4,13 +4,14 @@ import set1 from "@/data/ui/sets/space.json";
 import set2 from "@/data/ui/sets/agents.json";
 import set3 from "@/data/ui/sets/wave-2.json";
 import set4 from "@/data/ui/sets/theme.json";
+import set5 from "@/data/ui/sets/wave-3.json";
 
 export interface SetData {
   id: string;
   name: string;
   note: string;
   releaseDate: string;
-  glyphs: { slug: string; tags: string[]; nodes: unknown[] }[];
+  glyphs: { slug: string; domain: string; tags: string[]; nodes: unknown[] }[];
 }
 
-export const SETS: SetData[] = [set0, set1, set2, set3, set4];
+export const SETS: SetData[] = [set0, set1, set2, set3, set4, set5];

@@ -20,6 +20,7 @@ import { cn } from "@/lib/utils";
 import { logoImgClass, logoPlateClass } from "@/lib/logo-surface";
 import { StatCard } from "./stat-card";
 import { Section } from "./section";
+import { IconGridSkeleton } from "@/components/skeletons";
 
 type TimeWindow = "all" | "today" | "week" | "month";
 
@@ -264,12 +265,8 @@ export function RecentsPage() {
       </header>
 
       {(!hydrated || resolving) && (
-        <div
-          className="flex justify-center py-24"
-          role="status"
-          aria-label="Loading your recents"
-        >
-          <div className="h-6 w-6 animate-spin rounded-full border-2 border-muted-foreground/30 border-t-foreground" />
+        <div role="status" aria-label="Loading your recents">
+          <IconGridSkeleton count={12} className="py-4" />
         </div>
       )}
 

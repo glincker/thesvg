@@ -21,6 +21,7 @@ import { useSearchStore } from "@/lib/stores/search-store";
 import { hasCategoryLanding, slugifyCategory } from "@/lib/categories";
 import { MobileRecentsRow } from "@/components/mobile/mobile-recents-row";
 import { cn } from "@/lib/utils";
+import { IconGridSkeleton } from "@/components/skeletons";
 
 const SORT_OPTIONS = ["default", "recent", "popular", "az", "za"] as const;
 
@@ -586,9 +587,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                   Failed to load icons. Please refresh and try again.
                 </p>
               ) : !allIcons ? (
-                <div className="flex justify-center py-24">
-                  <div className="h-6 w-6 animate-spin rounded-full border-2 border-muted-foreground/30 border-t-foreground" />
-                </div>
+                <IconGridSkeleton count={24} className="py-4" />
               ) : (
                 <IconGrid key={gridKey} icons={filtered} view={viewParam} />
               )}

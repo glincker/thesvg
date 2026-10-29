@@ -308,7 +308,7 @@ export function Detail({ glyph }: { glyph: GlyphData }) {
             <CommandRow tag="CDN" text={`thesvg.org/ui/${glyph.slug}/${ui.variant}.svg`} />
           </div>
 
-          <CodeBlock svg={svg} slug={glyph.slug} />
+          <CodeBlock svg={svg} slug={glyph.slug} look={ui.variant} customized={Object.keys(ui.lab).length > 0} />
 
           <Section title="In context" aside="hover, focus, press and toggle all work">
             <InContext glyph={glyph} />

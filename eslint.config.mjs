@@ -6,8 +6,8 @@ import nextTs from "eslint-config-next/typescript";
 // shared building blocks listed here. Add to an allow list on purpose, in review, never to make a lint error go away.
 const UI_CODE = ["src/lib/ui-icons/**", "src/components/ui-icons/**", "src/app/ui/**"];
 const UI_PATTERNS = ["@/lib/ui-icons", "@/lib/ui-icons/**", "@/components/ui-icons/**", "@/data/ui/**", "@/data/ui-icons.json"];
-// The few brand files that show UI icons next to brand icons: the header switch and search, the home banner, the sitemap.
-const BRAND_TO_UI_ALLOWED = ["src/components/header.tsx", "src/components/home-hero.tsx", "src/components/search/search-groups.tsx", "src/components/ui-glyph.tsx", "src/app/sitemap.ts"];
+// The few brand files that show UI icons next to brand icons: the header switch and search, the home banner, the footer count, the sitemap.
+const BRAND_TO_UI_ALLOWED = ["src/components/header.tsx", "src/components/home-hero.tsx", "src/components/footer.tsx", "src/components/search/search-groups.tsx", "src/components/ui-glyph.tsx", "src/app/sitemap.ts"];
 // Chrome icons come from our own UI icons (<UiGlyph name="..." />), not from third-party icon libraries. These files are
 // already converted; older files still on those libraries move over in their own PRs, and are removed from the gap here.
 const OWN_ICONS_ONLY = ["src/components/header.tsx", "src/components/search/search-groups.tsx", "src/components/ui-glyph.tsx", "src/components/packages-menu.tsx", "src/components/extensions/cards.tsx", "src/components/icons/detail/quality-panel.tsx", "src/app/packages/**"];

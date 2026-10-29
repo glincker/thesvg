@@ -2,18 +2,28 @@
 
 import { UiGlyph } from "@/components/ui-glyph";
 import { useMemo, useState } from "react";
-import { COPY_TABS, USE_TABS, codeFor, type SnippetTab } from "@/lib/ui-icons/snippets";
+import type { Variant } from "@/lib/ui-icons/engine";
+import { COPY_TABS, PACKAGE_TABS, SOURCE_TABS, USE_TABS, codeFor, installCommand, packageCode, type PackageTab, type SnippetTab, type SourceTab } from "@/lib/ui-icons/snippets";
 import { colorizeCode } from "@/lib/ui-icons/syntax";
 import { cn } from "@/lib/ui-icons/utils";
 
-const LABELS: Record<SnippetTab, string> = { react: "React", vue: "Vue", svelte: "Svelte", html: "HTML", css: "CSS mask", svg: "SVG", uri: "Data URI" };
-const LOGOS: Partial<Record<SnippetTab, string>> = { react: "react", vue: "vue", svelte: "svelte", html: "html5", css: "css" };
+const LABELS: Record<SnippetTab, string> = { react: "React", vue: "Vue", svelte: "Svelte", native: "React Native", js: "JS / CDN", html: "HTML", css: "CSS mask", svg: "SVG", uri: "Data URI" };
+const LOGOS: Partial<Record<SnippetTab, string>> = { react: "react", vue: "vue", svelte: "svelte", native: "react", js: "javascript", html: "html5", css: "css" };
+
+const isPackageTab = (t: SnippetTab): t is PackageTab => (PACKAGE_TABS as readonly SnippetTab[]).includes(t);
+const hasSource = (t: SnippetTab): t is SourceTab & (typeof SOURCE_TABS)[number] => (SOURCE_TABS as readonly SnippetTab[]).includes(t);
 
 /** Same structure as the brand icon page: usage tabs, a divider, copy formats, a dark code surface. */
-export function CodeBlock(props: { svg: string; slug: string }) {
+export function CodeBlock(props: { svg: string; slug: string; look: Variant; customized: boolean }) {
   const [tab, setTab] = useState<SnippetTab>("react");
+  const [source, setSource] = useState(false);
+  // Package usage is the default. Custom weight, corners or scale only exist in the copied source, so that view is one click away.
+  const showSource = hasSource(tab) && source;
   const [copied, setCopied] = useState(false);
-  const code = useMemo(() => codeFor(tab, props.svg, props.slug), [tab, props.svg, props.slug]);
+  const code = useMemo(
+    () => (isPackageTab(tab) && !showSource ? packageCode(tab, props.slug, props.look) : codeFor(tab as SourceTab, props.svg, props.slug)),
+    [tab, showSource, props.svg, props.slug, props.look],
+  );
   const rendered = useMemo(() => colorizeCode(code, tab), [code, tab]);
   const copy = async () => {
     try {
@@ -48,6 +58,27 @@ export function CodeBlock(props: { svg: string; slug: string }) {
         <div className="h-4 w-px shrink-0 bg-border" />
         <div className="flex flex-wrap gap-1.5">{COPY_TABS.map((t) => pill(t, false))}</div>
       </div>
+      {isPackageTab(tab) && (
+        <div className="flex flex-wrap items-center gap-2 border-b px-4 py-2 text-[0.75rem]">
+          {hasSource(tab) && (
+            <div className="flex gap-1" role="group" aria-label="Code form">
+              {([false, true] as const).map((src) => (
+                <button
+                  key={String(src)}
+                  type="button"
+                  aria-pressed={source === src}
+                  onClick={() => setSource(src)}
+                  className={cn("rounded-md px-2 py-0.5 font-medium transition-colors", source === src ? "bg-foreground text-background" : "text-muted-foreground hover:text-foreground")}
+                >
+                  {src ? "Source" : "Package"}
+                </button>
+              ))}
+            </div>
+          )}
+          {!showSource && <code className="rounded-md bg-muted px-2 py-0.5 font-mono text-muted-foreground">{installCommand(tab)}</code>}
+          {props.customized && !showSource && <span className="text-amber-400">Custom style only applies to the copied source.</span>}
+        </div>
+      )}
       <div className="relative">
         <button
           type="button"

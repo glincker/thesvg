@@ -2,15 +2,22 @@ import type { IconNode } from "@/lib/ui-icons/engine";
 import { SETS } from "./sets.generated";
 import popular from "@/data/ui/popular.json";
 import manifest from "@/data/ui-icons.json";
-import { categoryOf } from "./style";
+import { conceptOf, domainLabel } from "./taxonomy";
 
-export { VARIANTS, categoryOf, styleFor } from "./style";
+export { VARIANTS, styleFor } from "./style";
+export { DOMAINS, MODIFIERS, domainLabel } from "./taxonomy";
 
 export interface Glyph {
   slug: string;
   nodes: IconNode[];
   tags: string[];
+  /** Controlled vocabulary id from src/data/ui/taxonomy.json. */
+  domain: string;
+  /** Display label of the domain. */
   category: string;
+  /** What the glyph shows, with variations split off into modifiers: "folder-plus" is concept "folder". */
+  concept: string;
+  modifiers: string[];
   setId: string;
   setName: string;
   released: boolean;
@@ -40,7 +47,9 @@ export const GLYPHS: Glyph[] = SETS.flatMap((s) =>
     slug: g.slug,
     nodes: g.nodes as IconNode[],
     tags: g.tags,
-    category: categoryOf(g.slug),
+    domain: g.domain,
+    category: domainLabel(g.domain),
+    ...conceptOf(g.slug),
     setId: s.id,
     setName: s.name,
     released: true,

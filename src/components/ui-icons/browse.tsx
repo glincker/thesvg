@@ -4,12 +4,27 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { GLYPHS } from "@/lib/ui-icons/glyphs";
 import { POPULAR } from "@/lib/ui-icons/popular";
 import { cn } from "@/lib/ui-icons/utils";
+import { CategoryBanner } from "./category-banner";
 import { Hero } from "./hero";
 import { IconCard } from "./icon-card";
 import { StyleBar } from "./lab";
 import { useUi } from "./ui-state";
 
+/** "new" is every glyph of the newest drop, whichever set file it lives in. */
+const inSet = (g: (typeof GLYPHS)[number], set: string): boolean => set === "all" || g.setId === set || (set === "drops" && g.setId.startsWith("drop-")) || (set === "new" && g.isNew);
+
 const PAGE = 48;
+
+/** One row of card placeholders under the grid while the next batch is on its way. */
+function Skeletons() {
+  return (
+    <div aria-hidden className="grid grid-cols-[repeat(auto-fill,minmax(148px,1fr))] gap-3">
+      {Array.from({ length: 6 }).map((_, i) => (
+        <div key={i} className="h-[176px] animate-pulse rounded-2xl border border-border/40 bg-muted-foreground/[0.06]" />
+      ))}
+    </div>
+  );
+}
 const POPULAR_SHOWN = 14;
 
 export function Browse() {
@@ -17,7 +32,7 @@ export function Browse() {
   const [shown, setShown] = useState(PAGE);
   // Category counts follow the selected set, so the pills never promise more than the grid shows.
   const categories = useMemo(() => {
-    const pool = GLYPHS.filter((g) => ui.set === "all" || g.setId === ui.set || (ui.set === "drops" && g.setId.startsWith("drop-")));
+    const pool = GLYPHS.filter((g) => inSet(g, ui.set));
     const counts = new Map<string, number>();
     for (const g of pool) counts.set(g.category, (counts.get(g.category) ?? 0) + 1);
     return { total: pool.length, rows: [...counts.entries()].map(([name, count]) => ({ name, count })).sort((a, b) => b.count - a.count) };
@@ -26,7 +41,7 @@ export function Browse() {
     const q = ui.query.trim().toLowerCase();
     return GLYPHS.filter(
       (g) =>
-        (ui.set === "all" || g.setId === ui.set || (ui.set === "drops" && g.setId.startsWith("drop-"))) &&
+        (inSet(g, ui.set)) &&
         (ui.category === "All" || g.category === ui.category) &&
         (!ui.onlyFavorites || ui.favorites.includes(g.slug)) &&
         (!q || g.slug.includes(q) || g.tags.some((t) => t.toLowerCase().includes(q))),
@@ -55,7 +70,7 @@ export function Browse() {
 
   return (
     <div className="mx-auto flex w-full min-w-0 flex-col gap-4">
-      <Hero />
+      {ui.category !== "All" && ui.set === "all" && !ui.onlyFavorites ? <CategoryBanner category={ui.category} /> : <Hero />}
       <StyleBar />
       <div id="browse" className="-mx-1 flex items-center gap-1.5 overflow-x-auto px-1 pb-1">
         {[{ name: "All", count: categories.total }, ...categories.rows].map((c) => (
@@ -99,7 +114,7 @@ export function Browse() {
       </div>
       {list.length === 0 && <p className="py-16 text-center text-sm text-muted-foreground">No icons match. Try another word or clear the filter.</p>}
       {rest.length > shown ? (
-        <div ref={sentinel} className="py-6 text-center text-xs text-muted-foreground">Loading more icons</div>
+        <div ref={sentinel} role="status" aria-label="Loading more icons"><Skeletons /></div>
       ) : (
         rest.length > PAGE && <p className="py-6 text-center text-xs text-muted-foreground">That is all {list.length}</p>
       )}

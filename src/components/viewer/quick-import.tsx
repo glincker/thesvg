@@ -5,6 +5,7 @@ import { Search, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { loadIconsManifest } from "@/lib/icons-manifest";
 import type { IconEntry } from "@/lib/icons";
+import { Busy } from "@/components/skeletons";
 
 interface QuickImportProps {
   /** Receives raw SVG XML string and the icon's title (for export filename / pen title). */
@@ -204,7 +205,7 @@ export function QuickImport({ onImport, className }: QuickImportProps) {
                       </span>
                     </span>
                     {loadingSlug === icon.slug && (
-                      <span className="h-3 w-3 animate-spin rounded-full border border-muted-foreground/30 border-t-foreground" />
+                      <Busy className="h-3 w-3" />
                     )}
                   </button>
                 </li>

@@ -1,7 +1,7 @@
 "use client";
 
 import { memo, useCallback, useRef, useState, type CSSProperties } from "react";
-import { Check, Copy, Download, Eye, Heart, Loader2 } from "lucide-react";
+import { Check, Copy, Download, Eye, Heart } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import posthog from "posthog-js";
@@ -16,6 +16,7 @@ import { FORMAT_LABELS } from "./shared/icon-constants";
 import { cn } from "@/lib/utils";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { NewBadge } from "@/components/icons/new-badge";
+import { Busy } from "@/components/skeletons";
 
 interface IconCardProps {
   icon: IconEntry;
@@ -317,7 +318,7 @@ export const IconCard = memo(function IconCard({
           className="flex h-7 flex-1 items-center justify-center gap-1 rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50"
         >
           {isCopying ? (
-            <Loader2 className="h-3.5 w-3.5 animate-spin" />
+            <Busy className="h-3.5 w-3.5" />
           ) : copied ? (
             <Check className="h-3.5 w-3.5 text-green-500" />
           ) : (
@@ -338,7 +339,7 @@ export const IconCard = memo(function IconCard({
             }
           >
             {isDownloading ? (
-              <Loader2 className="h-3.5 w-3.5 animate-spin" />
+              <Busy className="h-3.5 w-3.5" />
             ) : (
               <Download className="h-3.5 w-3.5" />
             )}

@@ -10,6 +10,7 @@ import {
   getCollections,
 } from "@/lib/icons";
 import { AnimatedCounter } from "@/components/footer-counter";
+import uiManifest from "@/data/ui-icons.json";
 
 interface FooterLink {
   label: string;
@@ -133,6 +134,7 @@ function StatItem({
 
 export function Footer() {
   const iconCount = getIconCount();
+  const uiIconCount = uiManifest.icons.length;
   const variantCount = getVariantCount();
   const collectionCount = getCollections().length;
 
@@ -156,6 +158,11 @@ export function Footer() {
                 icon={<UiGlyph name="layers" className="size-5 text-orange-500" />}
                 value={iconCount}
                 label="Brand Icons"
+              />
+              <StatItem
+                icon={<UiGlyph name="shapes" className="size-5 text-orange-500" />}
+                value={uiIconCount}
+                label="UI Icons"
               />
               <StatItem
                 icon={<UiGlyph name="package" className="size-5 text-orange-500" />}
@@ -330,28 +337,14 @@ export function Footer() {
                 </a>
                 <span className="text-border/40">|</span>
                 <a
-                  href={withUtm("https://askverdict.ai", "footer")}
+                  href={withUtm("https://levelrail.com", "footer")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 opacity-60 transition-opacity hover:opacity-100"
                 >
                   { }
-                  <img
-                    src="/icons/askverdict-ai/light.svg"
-                    alt="AskVerdict"
-                    width={20}
-                    height={20}
-                    className="hidden dark:block"
-                  />
-                  { }
-                  <img
-                    src="/icons/askverdict-ai/dark.svg"
-                    alt="AskVerdict"
-                    width={20}
-                    height={20}
-                    className="block dark:hidden"
-                  />
-                  <span className="text-xs text-muted-foreground">askverdict.ai</span>
+                  <img src="/icons/levelrail/default.svg" alt="Levelrail" width={20} height={20} />
+                  <span className="text-xs text-muted-foreground">levelrail.com</span>
                 </a>
               </div>
             </div>

@@ -1,15 +1,7 @@
 "use client";
 
 import { useCallback, useRef, useState } from "react";
-import {
-  Check,
-  ChevronDown,
-  Clipboard,
-  Download,
-  FileCode,
-  ImageIcon,
-  Loader2,
-} from "lucide-react";
+import { Check, ChevronDown, Clipboard, Download, FileCode, ImageIcon } from "lucide-react";
 import posthog from "posthog-js";
 import { Button } from "@/components/ui/button";
 import {
@@ -24,6 +16,7 @@ import {
   type RasterFormat,
   svgToRaster,
 } from "@/lib/svg-to-png";
+import { Busy } from "@/components/skeletons";
 
 interface DownloadMenuProps {
   svgContent: string;
@@ -181,7 +174,7 @@ export function DownloadMenu({
         {done ? (
           <Check className="mr-1.5 h-4 w-4" />
         ) : busy.has("svg") ? (
-          <Loader2 className="mr-1.5 h-4 w-4 animate-spin" />
+          <Busy className="mr-1.5 h-4 w-4" />
         ) : (
           <Download className="mr-1.5 h-4 w-4" />
         )}
@@ -242,7 +235,7 @@ export function DownloadMenu({
               >
                 <span className="flex items-center gap-1.5">
                   {busy.has("svg") ? (
-                    <Loader2 className="h-3.5 w-3.5 animate-spin text-muted-foreground" />
+                    <Busy className="h-3.5 w-3.5 text-muted-foreground" />
                   ) : (
                     <Download className="h-3.5 w-3.5 text-muted-foreground transition-colors group-hover:text-foreground" />
                   )}
@@ -265,7 +258,7 @@ export function DownloadMenu({
               >
                 <span className="flex items-center gap-1.5">
                   {busy.has("uri") ? (
-                    <Loader2 className="h-3.5 w-3.5 animate-spin text-muted-foreground" />
+                    <Busy className="h-3.5 w-3.5 text-muted-foreground" />
                   ) : (
                     <Clipboard className="h-3.5 w-3.5 text-muted-foreground transition-colors group-hover:text-foreground" />
                   )}
@@ -321,7 +314,7 @@ export function DownloadMenu({
                     )}
                   >
                     {busy.has(key) ? (
-                      <Loader2 className="h-4 w-4 animate-spin text-muted-foreground" />
+                      <Busy className="h-4 w-4 text-muted-foreground" />
                     ) : (
                       <>
                         <span className="text-xs font-semibold text-foreground">
