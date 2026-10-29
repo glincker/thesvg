@@ -54,6 +54,7 @@ jobs:
           cd packages/cli && npm run build && cd ../..
           cd packages/mcp && npm run build && cd ../..
           cd packages/react && npm run build && cd ../..
+          cd packages/react-native && npm run build && npm run validate && cd ../..
           cd packages/vue && npm run build && cd ../..
           cd packages/svelte && npm run build && cd ../..
           cd packages/solid && npm run build && cd ../..
