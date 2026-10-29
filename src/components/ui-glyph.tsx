@@ -1,6 +1,6 @@
 import { useId } from "react";
 import { renderIcon, type Variant } from "@/lib/ui-icons/engine";
-import { chromeLook } from "@/lib/ui-icons/chrome-look";
+import { CHROME_SCALE, chromeLook } from "@/lib/ui-icons/chrome-look";
 import { GLYPH_BY_SLUG, styleFor } from "@/lib/ui-icons/glyphs";
 import { defaultColorOf } from "@/lib/ui-icons/default-color";
 import { scopeIds } from "@/lib/ui-icons/scope-ids";
@@ -16,7 +16,7 @@ function markup(name: string, look: Variant): string | null {
   if (!glyph) return null;
   // The size comes from the wrapper's class, so the fixed width and height go. The size-full class on the svg also keeps
   // buttons that force a size on bare svgs (our Button does) from shrinking it.
-  const svg = renderIcon(glyph.nodes, { variant: look, style: styleFor(look), size: 24, idPrefix: `g-${name}-${look}` }).svg.replace(/ width="24" height="24"/, "").replace(/^<svg /, '<svg class="size-full" ');
+  const svg = renderIcon(glyph.nodes, { variant: look, style: { ...styleFor(look), scale: styleFor(look).scale * CHROME_SCALE }, size: 24, idPrefix: `g-${name}-${look}` }).svg.replace(/ width="24" height="24"/, "").replace(/^<svg /, '<svg class="size-full" ');
   cache.set(key, svg);
   return svg;
 }
