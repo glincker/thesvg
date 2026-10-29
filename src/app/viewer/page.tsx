@@ -80,7 +80,7 @@ export default function ViewerPage() {
           <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-10">
             <div className="mb-8">
               <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-gradient-to-r from-amber-400/10 via-orange-400/10 to-fuchsia-400/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-amber-700 dark:border-amber-400/20 dark:text-amber-300">
-                <Zap className="h-3 w-3" />
+                <Zap className="h-3.5 w-3.5" />
                 Beta
               </div>
               <h1 className="mb-2 text-2xl font-bold tracking-tight sm:text-3xl">

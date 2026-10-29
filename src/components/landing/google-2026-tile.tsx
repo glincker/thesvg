@@ -177,12 +177,12 @@ export function Google2026Tile({ icon, delay, cleanTitle }: Props) {
           <span className="g26-tile-tip" role="tooltip">
             {flash === "hex" ? (
               <>
-                <Check className="h-3 w-3" />
+                <Check className="h-3.5 w-3.5" />
                 Copied
               </>
             ) : (
               <>
-                <Hash className="h-3 w-3" />
+                <Hash className="h-3.5 w-3.5" />
                 {icon.hex?.toUpperCase()}
               </>
             )}

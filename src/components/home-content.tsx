@@ -499,7 +499,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                     aria-label="Remove collection filter"
                   >
                     {collectionParam === "aws" ? "AWS" : collectionParam}
-                    <X className="h-3 w-3" aria-hidden="true" />
+                    <X className="h-3.5 w-3.5" aria-hidden="true" />
                   </button>
                 )}
                 {categoryParam && (
@@ -510,7 +510,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                     aria-label="Remove category filter"
                   >
                     {categoryParam}
-                    <X className="h-3 w-3 text-muted-foreground" aria-hidden="true" />
+                    <X className="h-3.5 w-3.5 text-muted-foreground" aria-hidden="true" />
                   </button>
                 )}
                 {favoritesParam && (
@@ -521,7 +521,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                     aria-label="Remove favorites filter"
                   >
                     Favorites
-                    <X className="h-3 w-3" aria-hidden="true" />
+                    <X className="h-3.5 w-3.5" aria-hidden="true" />
                   </button>
                 )}
                 {query.trim() && (
@@ -532,7 +532,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                     aria-label="Remove search filter"
                   >
                     &ldquo;{query.trim()}&rdquo;
-                    <X className="h-3 w-3 text-muted-foreground" aria-hidden="true" />
+                    <X className="h-3.5 w-3.5 text-muted-foreground" aria-hidden="true" />
                   </button>
                 )}
                 <button
@@ -574,7 +574,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                   </div>
                   <span className="hidden shrink-0 items-center gap-1 rounded-full bg-foreground px-3 py-1.5 text-xs font-medium text-background transition-opacity group-hover:opacity-90 sm:inline-flex">
                     View 2026 set
-                    <ArrowDownAZ className="h-3 w-3 rotate-90" />
+                    <ArrowDownAZ className="h-3.5 w-3.5 rotate-90" />
                   </span>
                 </Link>
               </div>

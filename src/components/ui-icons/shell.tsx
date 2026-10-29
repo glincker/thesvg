@@ -13,7 +13,7 @@ import { useUi } from "./ui-state";
 const DOMAIN_ICON: Record<string, string> = {
   interface: "sliders-horizontal", arrows: "arrow-up-right", status: "circle-check", files: "file", communication: "message-square", dev: "code",
   security: "shield", media: "play", people: "user", commerce: "shopping-cart", layout: "layout-dashboard", time: "clock", tools: "wrench",
-  nature: "sun", devices: "smartphone", shapes: "diamond", places: "map", data: "chart-line", space: "orbit", robotics: "joint", agents: "bot", general: "star",
+  nature: "sun", devices: "smartphone", shapes: "diamond", places: "map", data: "chart-line", space: "orbit", robotics: "joint", agents: "bot", social: "message-circle", general: "star",
 };
 
 const CATS_KEY = "ui-sidebar-categories";

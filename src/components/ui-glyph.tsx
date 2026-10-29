@@ -23,7 +23,7 @@ function markup(name: string, look: Variant): string | null {
 
 /**
  * One of our own UI icons for site chrome, the same icons the UI icon section ships.
- * Size it with a class (`size-4`), it takes the text color. Glass by default, outline below 16px, or pass `look` to choose.
+ * Size it with a class (`size-4`), it takes the text color. Glass by default, outline below 14px, or pass `look` to choose.
  * Each icon has a default colour (a check is green, an alert red). A `text-*` class in `className` overrides it, and `plain` keeps it neutral.
  * Names are checked by a test, so a typo fails CI.
  */

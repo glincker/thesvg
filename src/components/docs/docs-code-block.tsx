@@ -47,9 +47,9 @@ export function DocsCodeBlock({ snippet }: Readonly<{ snippet: DocsSnippet }>) {
           onClick={handleCopy}
           className={`flex items-center gap-1 rounded-md px-2 py-1 text-[10px] font-medium transition-colors ${STATUS_BUTTON_CLASS[status]}`}
         >
-          {status === "copied" && <Check className="h-3 w-3" />}
-          {status === "failed" && <X className="h-3 w-3" />}
-          {status === "idle" && <Copy className="h-3 w-3" />}
+          {status === "copied" && <Check className="h-3.5 w-3.5" />}
+          {status === "failed" && <X className="h-3.5 w-3.5" />}
+          {status === "idle" && <Copy className="h-3.5 w-3.5" />}
           {STATUS_LABEL[status]}
         </button>
       </div>

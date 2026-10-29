@@ -93,11 +93,11 @@ function ActionRow({
       {toast ? (
         <Check className="h-3.5 w-3.5 text-emerald-500" />
       ) : target.kind === "copy" ? (
-        <ClipboardCopy className="h-3 w-3 opacity-40 transition-opacity group-hover:opacity-100" />
+        <ClipboardCopy className="h-3.5 w-3.5 opacity-40 transition-opacity group-hover:opacity-100" />
       ) : target.kind === "download" ? (
-        <Download className="h-3 w-3 opacity-40 transition-opacity group-hover:opacity-100" />
+        <Download className="h-3.5 w-3.5 opacity-40 transition-opacity group-hover:opacity-100" />
       ) : (
-        <ArrowUpRight className="h-3 w-3 opacity-40 transition-opacity group-hover:opacity-100" />
+        <ArrowUpRight className="h-3.5 w-3.5 opacity-40 transition-opacity group-hover:opacity-100" />
       )}
     </button>
   );

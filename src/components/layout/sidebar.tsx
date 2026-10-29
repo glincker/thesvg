@@ -494,7 +494,7 @@ export function Sidebar({
                       aria-label="Clear category search"
                       className="absolute right-2 flex h-4 w-4 items-center justify-center rounded-full text-muted-foreground/50 transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                     >
-                      <X className="h-3 w-3" aria-hidden="true" />
+                      <X className="h-3.5 w-3.5" aria-hidden="true" />
                     </button>
                   )}
                 </div>

@@ -220,7 +220,7 @@ export function DownloadMenu({
           {/* Vector section */}
           <div className="border-b border-border/40 p-2">
             <p className="mb-1.5 flex items-center gap-1.5 px-1 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/70">
-              <FileCode className="h-3 w-3" />
+              <FileCode className="h-3.5 w-3.5" />
               Vector
             </p>
             <div className="grid grid-cols-2 gap-1.5">
@@ -277,7 +277,7 @@ export function DownloadMenu({
           <div className="p-2">
             <div className="mb-2 flex items-center justify-between px-1">
               <p className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/70">
-                <ImageIcon className="h-3 w-3" />
+                <ImageIcon className="h-3.5 w-3.5" />
                 Raster
               </p>
               <div className="flex items-center gap-0.5 rounded-md border border-border/40 bg-muted/40 p-0.5 dark:bg-white/[0.03]">

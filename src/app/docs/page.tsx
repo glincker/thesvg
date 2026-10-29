@@ -60,7 +60,7 @@ export default function DocsPage() {
       <JsonLd data={itemListJsonLd} />
       <div className="mb-10">
         <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-orange-200/50 bg-orange-50/80 px-3 py-1 text-xs font-medium text-orange-600 dark:border-orange-500/20 dark:bg-orange-500/10 dark:text-orange-400">
-          <BookOpen className="h-3 w-3" />
+          <BookOpen className="h-3.5 w-3.5" />
           Docs
         </div>
         <div className="mb-2 flex flex-wrap items-center justify-between gap-3">
@@ -105,7 +105,7 @@ export default function DocsPage() {
                   <div className="min-w-0 flex-1">
                     <h3 className="mb-1 flex items-center gap-1.5 text-sm font-semibold">
                       {item.label}
-                      <ArrowRight className="h-3 w-3 shrink-0 -translate-x-1 text-orange-500 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
+                      <ArrowRight className="h-3.5 w-3.5 shrink-0 -translate-x-1 text-orange-500 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
                     </h3>
                     <p className="line-clamp-2 text-xs leading-relaxed text-muted-foreground">
                       {description}

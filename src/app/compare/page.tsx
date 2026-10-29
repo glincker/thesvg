@@ -62,20 +62,20 @@ function FeatureIcon({ value }: { value: Val }) {
   if (value === "yes") {
     return (
       <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-green-500/10 text-green-600 dark:text-green-400">
-        <Check className="h-3 w-3" strokeWidth={3} />
+        <Check className="h-3.5 w-3.5" strokeWidth={3} />
       </span>
     );
   }
   if (value === "partial") {
     return (
       <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400">
-        <Minus className="h-3 w-3" strokeWidth={3} />
+        <Minus className="h-3.5 w-3.5" strokeWidth={3} />
       </span>
     );
   }
   return (
     <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-red-500/10 text-red-400">
-      <X className="h-3 w-3" strokeWidth={3} />
+      <X className="h-3.5 w-3.5" strokeWidth={3} />
     </span>
   );
 }
@@ -255,7 +255,7 @@ export default function ComparePage() {
           {/* Header */}
           <div className="mb-10">
             <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-orange-200/50 bg-orange-50/80 px-3 py-1 text-xs font-medium text-orange-600 dark:border-orange-500/20 dark:bg-orange-500/10 dark:text-orange-400">
-              <Palette className="h-3 w-3" />
+              <Palette className="h-3.5 w-3.5" />
               Honest comparison
             </div>
             <h1 className="mb-2 text-2xl font-bold sm:text-3xl">
@@ -273,7 +273,7 @@ export default function ComparePage() {
             <div className="relative flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <div className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
-                  <TrendingUp className="h-3 w-3" />
+                  <TrendingUp className="h-3.5 w-3.5" />
                   2026 milestone
                 </div>
                 <h2 className="text-lg font-bold tracking-tight sm:text-xl">
@@ -289,7 +289,7 @@ export default function ComparePage() {
               >
                 <Sparkles className="h-3.5 w-3.5" />
                 Read the milestone post
-                <ArrowRight className="h-3 w-3" />
+                <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </div>
           </div>

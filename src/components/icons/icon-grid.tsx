@@ -3,6 +3,7 @@
 import { useCallback, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { useWindowVirtualizer } from "@tanstack/react-virtual";
 import type { IconEntry } from "@/lib/icons";
+import { Search } from "@/components/own-icons";
 import { IconCard } from "./icon-card";
 import { IconDetail } from "./icon-detail";
 import { cn } from "@/lib/utils";
@@ -129,9 +130,7 @@ export function IconGrid({ icons, view = "comfortable" }: IconGridProps) {
     return (
       <div className="flex flex-col items-center justify-center py-24 text-center">
         <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-muted/50 dark:bg-white/[0.04]">
-          <svg className="h-7 w-7 text-muted-foreground/50" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-          </svg>
+          <Search className="h-7 w-7 text-muted-foreground/50" />
         </div>
         <p className="text-base font-medium text-foreground">No icons found</p>
         <p className="mt-1 text-sm text-muted-foreground">Try a different search term or category</p>

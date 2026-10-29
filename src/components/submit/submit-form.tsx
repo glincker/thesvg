@@ -236,7 +236,7 @@ function LicenseSelector({
             className="inline-flex items-center gap-1 text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
           >
             Licensing guide
-            <ExternalLink className="h-3 w-3" />
+            <ExternalLink className="h-3.5 w-3.5" />
           </a>
         </div>
       </div>

@@ -76,7 +76,7 @@ export default function BlogPage() {
         <div className="mb-10 flex items-end justify-between">
           <div>
             <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-orange-500/20 bg-orange-500/10 px-3 py-1 text-xs font-medium text-orange-500">
-              <Sparkles className="h-3 w-3" />
+              <Sparkles className="h-3.5 w-3.5" />
               Updates
             </div>
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Blog</h1>
@@ -198,7 +198,7 @@ export default function BlogPage() {
                     </p>
 
                     <span className="mt-2 inline-flex items-center gap-1 text-[11px] font-medium text-orange-500 opacity-0 transition-all duration-200 group-hover:opacity-100">
-                      Read post <ArrowUpRight className="h-3 w-3" />
+                      Read post <ArrowUpRight className="h-3.5 w-3.5" />
                     </span>
                   </div>
                 </Link>
@@ -230,7 +230,7 @@ export default function BlogPage() {
               className="inline-flex items-center gap-1.5 rounded-xl bg-foreground px-4 py-2 text-xs font-medium text-background shadow-sm transition-all hover:opacity-90"
             >
               Star on GitHub
-              <ArrowUpRight className="h-3 w-3" />
+              <ArrowUpRight className="h-3.5 w-3.5" />
             </a>
           </div>
         </div>

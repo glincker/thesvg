@@ -50,6 +50,7 @@ export const THEMES: Record<string, Theme> = {
   data: { tone: "blue", motif: "line", icon: "chart-line", tagline: "Charts, trends and the shape of numbers." },
   space: { tone: "indigo", motif: "hero", icon: "orbit", tagline: "Orbits, launch, telemetry and everything beyond the atmosphere." },
   robotics: { tone: "orange", motif: "hero", icon: "joint", tagline: "Arms, joints, sensors and machines that move." },
+  social: { tone: "pink", motif: "rows", icon: "message-circle", tagline: "Networks, shares, replies and the marks people recognise." },
   agents: { tone: "violet", motif: "hero", icon: "bot", tagline: "Tools, memory, plans and guardrails for AI agents." },
   general: { tone: "sky", motif: "scatter", icon: "star", tagline: "Everything that does not fit a box." },
 };

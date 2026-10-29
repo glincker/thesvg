@@ -161,7 +161,7 @@ export function HelpFab({ iconCount }: { iconCount: string }) {
               {/* Header */}
               <div className="mb-6">
                 <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-orange-500/20 bg-orange-500/10 px-3 py-1 text-xs font-medium text-orange-400 shadow-lg shadow-orange-500/5">
-                  <Sparkles className="h-3 w-3" />
+                  <Sparkles className="h-3.5 w-3.5" />
                   Getting Started
                 </div>
                 <h2 id="help-modal-title" className="text-xl font-bold tracking-tight text-white">Quick Tips</h2>

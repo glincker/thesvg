@@ -69,10 +69,10 @@ function TargetIcon({ id }: { id: string }) {
 
 function KindIcon({ kind }: { kind: DeepLinkTarget["kind"] }) {
   if (kind === "copy")
-    return <ClipboardCopy className="h-3 w-3 opacity-40" />;
+    return <ClipboardCopy className="h-3.5 w-3.5 opacity-40" />;
   if (kind === "download")
     return <DownloadIcon className="h-3 w-3 opacity-40" />;
-  return <ArrowUpRight className="h-3 w-3 opacity-40" />;
+  return <ArrowUpRight className="h-3.5 w-3.5 opacity-40" />;
 }
 
 export function OpenInEditorMenu({
@@ -187,7 +187,7 @@ export function OpenInEditorMenu({
               >
                 <ExternalLink className="h-3.5 w-3.5" />
                 <span className="flex-1">Inspect in SVG Viewer</span>
-                <ArrowUpRight className="h-3 w-3 opacity-40" />
+                <ArrowUpRight className="h-3.5 w-3.5 opacity-40" />
               </Link>
             }
           />

@@ -483,7 +483,7 @@ export function IconDetailPage({
                       className="h-3.5 w-3.5 rounded-sm"
                     />
                     <span className="flex-1 truncate">{hostname}</span>
-                    <ArrowUpRight className="h-3 w-3 opacity-50" />
+                    <ArrowUpRight className="h-3.5 w-3.5 opacity-50" />
                   </a>
                 );
               })()}
@@ -496,7 +496,7 @@ export function IconDetailPage({
               >
                 <UiGlyph name="book-open-text" look="fill" className="h-3.5 w-3.5 opacity-80" />
                 <span className="flex-1 truncate">Brand guidelines</span>
-                <ArrowUpRight className="h-3 w-3 opacity-50" />
+                <ArrowUpRight className="h-3.5 w-3.5 opacity-50" />
               </a>
             )}
             <IconLinksRow links={icon.links} source="icon_detail" />
@@ -537,11 +537,11 @@ export function IconDetailPage({
                           {versionCounterpartYear}
                         </span>
                         <span>See the {versionCounterpartYear} refresh</span>
-                        <ArrowUpRight className="h-3 w-3 opacity-50" />
+                        <ArrowUpRight className="h-3.5 w-3.5 opacity-50" />
                       </>
                     ) : (
                       <>
-                        <ArrowUpRight className="h-3 w-3 rotate-180 opacity-50" />
+                        <ArrowUpRight className="h-3.5 w-3.5 rotate-180 opacity-50" />
                         <span>Compare with original</span>
                       </>
                     )}
@@ -563,7 +563,7 @@ export function IconDetailPage({
                         ? `${family.title} family`
                         : `Part of ${family.title}`}
                     </span>
-                    <ArrowUpRight className="h-3 w-3 opacity-50" />
+                    <ArrowUpRight className="h-3.5 w-3.5 opacity-50" />
                   </Link>
                 )}
                 {icon.categories.includes("Google 2026") && (
@@ -577,7 +577,7 @@ export function IconDetailPage({
                       aria-hidden
                     />
                     <span>Part of Google 2026</span>
-                    <ArrowUpRight className="h-3 w-3 opacity-50" />
+                    <ArrowUpRight className="h-3.5 w-3.5 opacity-50" />
                   </Link>
                 )}
               </div>
@@ -662,7 +662,7 @@ export function IconDetailPage({
                   className="flex items-center gap-1 text-[11px] font-medium text-muted-foreground transition-colors hover:text-foreground"
                 >
                   View all
-                  <ArrowUpRight className="h-3 w-3" />
+                  <ArrowUpRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
               <div className="grid grid-cols-4 gap-2 sm:grid-cols-5 md:grid-cols-6">

@@ -1,7 +1,7 @@
 import type { Variant } from "@/lib/ui-icons/engine";
 
 // Glass is a translucent pane and loses its detail when it is very small, so below this size the icon draws as outline.
-export const GLASS_MIN_PX = 16;
+export const GLASS_MIN_PX = 14;
 
 /** Glass by default, outline only for the smallest sizes. The size is read from the Tailwind class (`size-4`, `h-3.5`, ...). */
 export function chromeLook(className: string): Variant {

@@ -227,14 +227,14 @@ export default async function BlogPostPage({ params }: PageProps) {
               href="/blog"
               className="mb-6 inline-flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
             >
-              <ArrowLeft className="h-3 w-3" />
+              <ArrowLeft className="h-3.5 w-3.5" />
               Back to blog
             </Link>
 
               <header className="mb-8">
                 <div className="flex items-center gap-3 text-xs text-muted-foreground">
                   <span className="flex items-center gap-1">
-                    <Calendar className="h-3 w-3" />
+                    <Calendar className="h-3.5 w-3.5" />
                     {new Date(post.date).toLocaleDateString("en-US", {
                       month: "long",
                       day: "numeric",

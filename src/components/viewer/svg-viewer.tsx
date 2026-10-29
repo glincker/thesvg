@@ -261,7 +261,7 @@ export function SvgViewer() {
                   onClick={() => fileInputRef.current?.click()}
                   className="inline-flex h-6 items-center gap-1 rounded-md px-2 text-[10px] font-medium text-neutral-400 transition-colors hover:bg-white/[0.06] hover:text-neutral-100"
                 >
-                  <Upload className="h-3 w-3" />
+                  <Upload className="h-3.5 w-3.5" />
                   Upload
                 </button>
                 <button
@@ -270,7 +270,7 @@ export function SvgViewer() {
                   disabled={!isValid}
                   className="inline-flex h-6 items-center gap-1 rounded-md px-2 text-[10px] font-medium text-neutral-400 transition-colors hover:bg-white/[0.06] hover:text-neutral-100 disabled:cursor-not-allowed disabled:opacity-40"
                 >
-                  <Braces className="h-3 w-3" />
+                  <Braces className="h-3.5 w-3.5" />
                   Format
                 </button>
                 <button
@@ -279,7 +279,7 @@ export function SvgViewer() {
                   disabled={!isValid}
                   className="inline-flex h-6 items-center gap-1 rounded-md px-2 text-[10px] font-medium text-neutral-400 transition-colors hover:bg-white/[0.06] hover:text-neutral-100 disabled:cursor-not-allowed disabled:opacity-40"
                 >
-                  <Minimize2 className="h-3 w-3" />
+                  <Minimize2 className="h-3.5 w-3.5" />
                   Minify
                 </button>
                 {hasContent && (
@@ -288,7 +288,7 @@ export function SvgViewer() {
                     onClick={handleClear}
                     className="inline-flex h-6 items-center gap-1 rounded-md px-2 text-[10px] font-medium text-neutral-400 transition-colors hover:bg-white/[0.06] hover:text-rose-300"
                   >
-                    <Trash2 className="h-3 w-3" />
+                    <Trash2 className="h-3.5 w-3.5" />
                     Clear
                   </button>
                 )}
@@ -548,7 +548,7 @@ export function SvgViewer() {
               </p>
               <span className="mt-2 inline-flex items-center gap-1 text-[11px] font-medium text-foreground/80 transition-colors group-hover:text-foreground">
                 Visit Filagram
-                <ArrowUpRight className="h-3 w-3" />
+                <ArrowUpRight className="h-3.5 w-3.5" />
               </span>
             </div>
           </a>
