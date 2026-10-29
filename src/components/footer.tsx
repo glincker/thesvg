@@ -24,11 +24,11 @@ interface FooterLink {
 
 const PRODUCT_LINKS: FooterLink[] = [
   { label: "Brand Icons", href: "/", glyph: "layout-grid" },
-  { label: "UI Icons", href: "/ui", glyph: "layers" },
-  { label: "Categories", href: "/categories", glyph: "box" },
+  { label: "UI Icons", href: "/ui", glyph: "shapes" },
+  { label: "Categories", href: "/categories", glyph: "layers" },
   { label: "Docs", href: "/docs", glyph: "book-open" },
-  { label: "Submit Icon", href: "/submit", glyph: "rocket" },
-  { label: "Blog", href: "/blog", glyph: "file-text" },
+  { label: "Submit Icon", href: "/submit", glyph: "upload" },
+  { label: "Blog", href: "/blog", glyph: "newspaper" },
 ];
 
 const RESOURCE_LINKS: FooterLink[] = [
@@ -36,23 +36,23 @@ const RESOURCE_LINKS: FooterLink[] = [
   { label: "VS Code Extension", href: "https://marketplace.visualstudio.com/items?itemName=glincker.thesvg", external: true, brand: "visual-studio-code" },
   { label: "Raycast Extension", href: "https://www.raycast.com/thegdsks/thesvg", external: true, brand: "raycast" },
   { label: "npm Packages", href: "/packages", brand: "npm" },
-  { label: "CDN Usage", href: "/extensions", glyph: "terminal" },
-  { label: "Compare", href: "/compare", glyph: "scale" },
+  { label: "CDN Usage", href: "/extensions", glyph: "cloud" },
+  { label: "Compare", href: "/compare", glyph: "git-compare" },
 ];
 
 const COMMUNITY_LINKS: FooterLink[] = [
-  { label: "GitHub", href: "https://github.com/GLINCKER/thesvg", external: true, glyph: "code" },
-  { label: "Issues", href: "https://github.com/GLINCKER/thesvg/issues", external: true, glyph: "star" },
-  { label: "Discussions", href: "https://github.com/GLINCKER/thesvg/discussions", external: true, glyph: "users" },
+  { label: "GitHub", href: "https://github.com/GLINCKER/thesvg", external: true, glyph: "git-branch" },
+  { label: "Issues", href: "https://github.com/GLINCKER/thesvg/issues", external: true, glyph: "circle-alert" },
+  { label: "Discussions", href: "https://github.com/GLINCKER/thesvg/discussions", external: true, glyph: "messages-square" },
   { label: "Discord", href: "https://discord.gg/Ar5pcaZB99", external: true, brand: "discord" },
-  { label: "Contributing", href: "https://github.com/GLINCKER/thesvg/blob/main/CONTRIBUTING.md", external: true, glyph: "file-text" },
+  { label: "Contributing", href: "https://github.com/GLINCKER/thesvg/blob/main/CONTRIBUTING.md", external: true, glyph: "git-pull-request" },
   { label: "Sponsor", href: "https://github.com/sponsors/glincker", external: true, glyph: "heart" },
 ];
 
 const LEGAL_LINKS: FooterLink[] = [
   { label: "Legal", href: "/legal", glyph: "scale" },
-  { label: "Privacy", href: "/privacy", glyph: "shield" },
-  { label: "Trademark Policy", href: TRADEMARK_POLICY_URL, external: true, glyph: "file-text" },
+  { label: "Privacy", href: "/privacy", glyph: "lock" },
+  { label: "Trademark Policy", href: TRADEMARK_POLICY_URL, external: true, glyph: "badge-check" },
   { label: "Contact", href: "/contact", glyph: "mail" },
 ];
 
@@ -69,7 +69,8 @@ function LinkIcon({ link }: { link: FooterLink }) {
   if (link.brand) {
     return <img src={`/icons/${link.brand}/default.svg`} alt="" width={16} height={16} className="size-4 shrink-0" />;
   }
-  if (link.glyph) return <UiGlyph name={link.glyph} className="size-4 text-muted-foreground/70 transition-colors group-hover:text-orange-500" />;
+  // Outline reads crisply at 16px, where the frosted look turns to a dim blob. Full text colour keeps it level with the brand marks beside it.
+  if (link.glyph) return <UiGlyph name={link.glyph} look="outline" className="size-4 text-muted-foreground transition-colors group-hover:text-orange-500" />;
   return null;
 }
 
@@ -343,7 +344,10 @@ export function Footer() {
                   className="flex items-center gap-2 opacity-60 transition-opacity hover:opacity-100"
                 >
                   { }
-                  <img src="/icons/levelrail/default.svg" alt="Levelrail" width={20} height={20} />
+                  { }
+                  <img src="/icons/levelrail/mono.svg" alt="Levelrail" width={20} height={20} className="hidden dark:invert dark:block" />
+                  { }
+                  <img src="/icons/levelrail/mono.svg" alt="Levelrail" width={20} height={20} className="block dark:hidden" />
                   <span className="text-xs text-muted-foreground">levelrail.com</span>
                 </a>
               </div>
