@@ -4,6 +4,7 @@ import type { LucideIcon } from "@/components/own-icons";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { ICON_SIZE } from "@/lib/chrome-sizes";
 import { cn } from "@/lib/utils";
 
 interface SidebarNavItemProps {
@@ -57,7 +58,7 @@ export function SidebarNavItem({
     <>
       <Icon
         className={cn(
-          "h-4 w-4 shrink-0 transition-transform duration-200 group-hover:scale-110",
+          ICON_SIZE.sidebar, "shrink-0 transition-all duration-200 group-hover:scale-110 group-hover:text-orange-500",
           iconClassName,
         )}
       />
