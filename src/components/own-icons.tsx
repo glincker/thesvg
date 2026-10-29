@@ -20,9 +20,9 @@ export interface OwnIconProps {
   "aria-label"?: string;
 }
 
-export type LucideIcon = ComponentType<OwnIconProps>;
+export type OwnIcon = ComponentType<OwnIconProps>;
 
-function make(slug: string, displayName: string): LucideIcon {
+function make(slug: string, displayName: string): OwnIcon {
   const Icon = ({ className, style, size, color, fill }: OwnIconProps) => {
     const boxed = size !== undefined ? { width: size, height: size } : undefined;
     const classes = className ?? (size === undefined ? "size-6" : "");

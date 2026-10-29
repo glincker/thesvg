@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
  * Renders the real brand SVG shipped in `public/icons/{slug}/default.svg`
  * as a component matching the `ComponentType<{ className?: string }>`
  * contract every collection-icon consumer already expects, so cloud
- * collections show their actual logo instead of a generic Lucide glyph.
+ * collections show their actual logo instead of a generic glyph.
  */
 function brandIcon(slug: string): ComponentType<{ className?: string }> {
   const BrandIcon = ({ className }: { className?: string }) =>
@@ -41,7 +41,7 @@ export interface CollectionMeta {
   label: string;
   /** Compact 1-2 word label for tight nav chrome (header collection switcher). */
   shortLabel: string;
-  /** Lucide icon component used to represent the collection in UI chrome. */
+  /** Icon component used to represent the collection in UI chrome. */
   icon: ComponentType<{ className?: string }>;
   /** Tailwind text-color class applied to the icon when active/selected. */
   color: string;

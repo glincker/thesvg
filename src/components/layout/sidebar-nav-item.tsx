@@ -1,6 +1,6 @@
 "use client";
 
-import type { LucideIcon } from "@/components/own-icons";
+import type { OwnIcon } from "@/components/own-icons";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
@@ -11,7 +11,7 @@ interface SidebarNavItemProps {
   /** When true, renders as a fixed-size icon-only rail button/link and shows
    * the label as a hover/focus tooltip instead of inline text. */
   collapsed: boolean;
-  icon: LucideIcon;
+  icon: OwnIcon;
   label: string;
   /** Applies the shared active-row styling (gradient background). Omit and
    * fold custom active styling into `className` for rows that need a

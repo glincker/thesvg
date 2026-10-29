@@ -1,13 +1,13 @@
-import { Rocket, Server, Bot, Wrench, Lightbulb, Sparkles, ArrowLeftRight, HelpCircle, type LucideIcon } from "@/components/own-icons";
+import { Rocket, Server, Bot, Wrench, Lightbulb, Sparkles, ArrowLeftRight, HelpCircle, type OwnIcon } from "@/components/own-icons";
 
 /**
  * Central docs navigation registry, used by the left sidebar and the
  * sitemap. Framework/tool sections use theSVG's own brand icons (dogfooding
  * the product in its own docs) instead of generic UI icons; sections with
- * no natural brand (API, MCP, and the non-framework guides) use Lucide.
+ * no natural brand (API, MCP, and the non-framework guides) use our own UI icons.
  */
 
-export type DocsIcon = { kind: "brand"; slug: string } | { kind: "lucide"; Icon: LucideIcon };
+export type DocsIcon = { kind: "brand"; slug: string } | { kind: "own"; Icon: OwnIcon };
 
 export interface DocsNavItem {
   href: string;
@@ -24,7 +24,7 @@ export interface DocsNavGroup {
 export const DOCS_NAV: DocsNavGroup[] = [
   {
     title: "Getting Started",
-    items: [{ href: "/docs", label: "Overview", icon: { kind: "lucide", Icon: Rocket } }],
+    items: [{ href: "/docs", label: "Overview", icon: { kind: "own", Icon: Rocket } }],
   },
   {
     title: "Frameworks & Tools",
@@ -35,22 +35,22 @@ export const DOCS_NAV: DocsNavGroup[] = [
       { href: "/docs/svelte", label: "Svelte", icon: { kind: "brand", slug: "svelte" } },
       { href: "/docs/react-native", label: "React Native", icon: { kind: "brand", slug: "reactnative" } },
       { href: "/docs/cli", label: "CLI", icon: { kind: "brand", slug: "npm" } },
-      { href: "/docs/api", label: "REST API", icon: { kind: "lucide", Icon: Server } },
-      { href: "/docs/mcp", label: "AI Assistants (MCP)", icon: { kind: "lucide", Icon: Bot } },
+      { href: "/docs/api", label: "REST API", icon: { kind: "own", Icon: Server } },
+      { href: "/docs/mcp", label: "AI Assistants (MCP)", icon: { kind: "own", Icon: Bot } },
     ],
   },
   {
     title: "Guides",
     items: [
-      { href: "/docs/recipes", label: "Recipes", icon: { kind: "lucide", Icon: Wrench } },
-      { href: "/docs/best-practices", label: "Best Practices", icon: { kind: "lucide", Icon: Lightbulb } },
-      { href: "/docs/tricks", label: "Tricks", icon: { kind: "lucide", Icon: Sparkles } },
-      { href: "/docs/migration", label: "Migrating", icon: { kind: "lucide", Icon: ArrowLeftRight } },
+      { href: "/docs/recipes", label: "Recipes", icon: { kind: "own", Icon: Wrench } },
+      { href: "/docs/best-practices", label: "Best Practices", icon: { kind: "own", Icon: Lightbulb } },
+      { href: "/docs/tricks", label: "Tricks", icon: { kind: "own", Icon: Sparkles } },
+      { href: "/docs/migration", label: "Migrating", icon: { kind: "own", Icon: ArrowLeftRight } },
     ],
   },
   {
     title: "Reference",
-    items: [{ href: "/docs/faq", label: "FAQ", icon: { kind: "lucide", Icon: HelpCircle } }],
+    items: [{ href: "/docs/faq", label: "FAQ", icon: { kind: "own", Icon: HelpCircle } }],
   },
 ];
 

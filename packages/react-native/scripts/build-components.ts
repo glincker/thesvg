@@ -3,7 +3,7 @@
  *
  * Generates the @thesvg/react-native distribution from the monorepo source
  * data. Unlike @thesvg/react (one self-contained inline-JSX component per
- * icon), this package mirrors the lucide-react-native architecture:
+ * icon), this package compiles each icon to shared data:
  *
  *   - Each icon compiles down to lightweight *data*: a tree of
  *     [tagName, props, children] tuples extracted from its SVG.
