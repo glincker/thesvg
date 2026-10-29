@@ -1,5 +1,11 @@
 # @thesvg/react-native
 
+## 4.0.2
+
+### Patch Changes
+
+- [#1451](https://github.com/glincker/thesvg/pull/1451) [`93ed710`](https://github.com/glincker/thesvg/commit/93ed7104ac60db1e6dc1e7537bb8c7ca343603db) Thanks [@gyamfidennist](https://github.com/gyamfidennist)! - Build and validate the React Native package before publishing so npm releases include the compiled icons and type declarations.
+
 ## 4.0.0
 
 ### Major Changes
