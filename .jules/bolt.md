@@ -88,3 +88,7 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2026-10-25 - Preserve behavior when optimizing array methods
 **Learning:** When refactoring declarative array methods like `.map()` to imperative `for` loops for performance, it's easy to accidentally introduce behavioral changes, such as unintentionally filtering out `undefined` values (e.g., `if (val) set.add(val)`).
 **Action:** Always ensure that manual `for` loops strictly replicate the null-checking behavior of the original mapping function to prevent subtle application logic changes.
+
+## 2024-05-15 - Chained .map().filter() in global exports
+**Learning:** This codebase sometimes derives static categorizations using `[...new Set(array.map(...))].map(... filter(...))` directly in module exports. This causes a massive $O(N \times C)$ iteration at module load time (and in Next.js builds).
+**Action:** Replace these static array derivations with single-pass `for` loops using a `Map` to tally counts, reducing complexity to $O(N)$ and preventing garbage collection spikes during SSR or static site generation.
