@@ -9,7 +9,8 @@ import { LogoMorph, ModeSwitch } from "@/components/ui-icons/mode-switch";
 import { PackagesMenu } from "@/components/packages-menu";
 import { SearchGroups } from "@/components/search/search-groups";
 import { GLYPHS } from "@/lib/ui-icons/glyphs";
-import { rank } from "@/lib/ui-icons/search";
+import { rankTiered } from "@/lib/ui-icons/search";
+import { searchableOf } from "@/lib/ui-icons/searchable";
 import { formatStarCount } from "@/lib/github-stars";
 import { useGithubStars } from "@/lib/hooks/use-github-stars";
 import { trackStarCta } from "@/lib/track-star-cta";
@@ -173,11 +174,10 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
   const [recentViewedIcons, setRecentViewedIcons] = useState<IconEntry[]>([]);
   const hasQuery = query.trim().length >= 2;
   const docsMatches = useMemo(() => searchDocs(query), [query]);
-  const uiAll = useMemo(
-    () => (hasQuery ? rank(query.trim().toLowerCase(), GLYPHS, (g) => ({ name: g.slug, extra: g.tags, weak: [g.category] }), 200) : []),
-    [hasQuery, query],
-  );
-  const uiShown = uiAll.slice(0, pathname.startsWith("/ui") ? 6 : 4);
+  // The page lists every result, so on the UI pages the modal is a jump list of the best few. Elsewhere it shows a few more and links to all.
+  const uiRanked = useMemo(() => (hasQuery ? rankTiered(query.trim().toLowerCase(), GLYPHS, searchableOf) : { best: [], related: [] }), [hasQuery, query]);
+  const uiAll = useMemo(() => [...uiRanked.best, ...uiRanked.related], [uiRanked]);
+  const uiShown = (uiRanked.best.length > 0 ? uiRanked.best : uiAll).slice(0, pathname.startsWith("/ui") ? 4 : 6);
   // One flat list in on-screen order (current section first) so the arrow keys walk both groups.
   const flat = useMemo(() => {
     const b = suggestions.map((icon) => ({ kind: "brand" as const, slug: icon.slug }));

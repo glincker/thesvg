@@ -1,5 +1,6 @@
 "use client";
 
+import { UiGlyph } from "@/components/ui-glyph";
 import { useCallback, useEffect, useRef, useState } from "react";
 import posthog from "posthog-js";
 import {
@@ -15,7 +16,6 @@ import {
   Link2,
   Terminal,
 } from "lucide-react";
-import { BookOpenText } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
@@ -368,7 +368,7 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 rounded-lg border border-violet-500/25 bg-violet-500/[0.06] px-2.5 py-1.5 text-[11px] text-violet-600 transition-colors hover:bg-violet-500/[0.12] dark:text-violet-400"
                   >
-                    <BookOpenText weight="fill" className="h-3 w-3 opacity-70" />
+                    <UiGlyph name="book-open-text" look="fill" className="h-3 w-3 opacity-70" />
                     Guidelines
                     <ArrowUpRight className="h-2.5 w-2.5 opacity-40" />
                   </a>
