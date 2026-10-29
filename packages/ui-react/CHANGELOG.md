@@ -1,5 +1,15 @@
 # @thesvg/ui-react
 
+## 4.4.0
+
+### Minor Changes
+
+- [#1454](https://github.com/glincker/thesvg/pull/1454) [`3c6b26c`](https://github.com/glincker/thesvg/commit/3c6b26c40f2d0aebc1fbcf009a67bbc26a10ee33) Thanks [@thegdsks](https://github.com/thegdsks)! - A new Social category with 56 icons: marks for the networks developers use (GitHub, X, LinkedIn, YouTube, Discord, Reddit and more) and social interactions such as repost, quote post, hashtag and follow.
+
+- [#1448](https://github.com/glincker/thesvg/pull/1448) [`6575593`](https://github.com/glincker/thesvg/commit/65755931ea67497df9dde2a9c09ea6d8863b2e09) Thanks [@thegdsks](https://github.com/thegdsks)! - 497 more UI icons (870 in total), covering space, robotics, agents, infrastructure and interface staples. The outline and glass-outline looks now fill the 24 px box like the glass look, so icons read larger and consistent across looks. The manifest gains a `domain`, `concept` and `modifiers` for every icon.
+
+- [#1450](https://github.com/glincker/thesvg/pull/1450) [`30e9b35`](https://github.com/glincker/thesvg/commit/30e9b35f9d79919345a6586a31edcc3b47a37ff6) Thanks [@thegdsks](https://github.com/thegdsks)! - 265 more UI icons (1,133 in total): interface patterns, developer workflow, cloud and infrastructure, data, agents, robotics and space. Seventeen wave 3 icons are redrawn so they read more clearly and stand apart from common artwork.
+
 ## 4.3.0
 
 ### Minor Changes
