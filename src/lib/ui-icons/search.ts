@@ -126,12 +126,19 @@ export function scoreEntry(query: string, e: Searchable): number {
 }
 
 export function rank<T>(query: string, items: T[], pick: (t: T) => Searchable, limit: number): T[] {
-  return items
-    .map((it) => ({ it, s: scoreEntry(query, pick(it)) }))
-    .filter((r) => r.s > 0)
-    .sort((a, b) => b.s - a.s)
-    .slice(0, limit)
-    .map((r) => r.it);
+  const scored: { it: T; s: number }[] = [];
+  for (let i = 0; i < items.length; i++) {
+    const it = items[i];
+    const s = scoreEntry(query, pick(it));
+    if (s > 0) scored.push({ it, s });
+  }
+  scored.sort((a, b) => b.s - a.s);
+  const result: T[] = [];
+  const end = Math.min(scored.length, limit);
+  for (let i = 0; i < end; i++) {
+    result.push(scored[i].it);
+  }
+  return result;
 }
 
 /** A result is a strong match when it is within reach of the best one and clears a floor: a name, a whole word of it or a tag. */
@@ -143,13 +150,23 @@ const BEST_SHARE = 0.5;
  * matched: a weaker tag, a synonym, a typo, a broad label. Both keep their ranked order.
  */
 export function rankTiered<T>(query: string, items: T[], pick: (t: T) => Searchable): { best: T[]; related: T[] } {
-  const scored = items
-    .map((it) => ({ it, s: scoreEntry(query, pick(it)) }))
-    .filter((r) => r.s > 0)
-    .sort((a, b) => b.s - a.s);
+  const scored: { it: T; s: number }[] = [];
+  for (let i = 0; i < items.length; i++) {
+    const it = items[i];
+    const s = scoreEntry(query, pick(it));
+    if (s > 0) scored.push({ it, s });
+  }
+  scored.sort((a, b) => b.s - a.s);
   const top = scored[0]?.s ?? 0;
   const cut = Math.max(BEST_FLOOR, top * BEST_SHARE);
-  return { best: scored.filter((r) => r.s >= cut).map((r) => r.it), related: scored.filter((r) => r.s < cut).map((r) => r.it) };
+  const best: T[] = [];
+  const related: T[] = [];
+  for (let i = 0; i < scored.length; i++) {
+    const r = scored[i];
+    if (r.s >= cut) best.push(r.it);
+    else related.push(r.it);
+  }
+  return { best, related };
 }
 
 /** The nearest known word to a query that found nothing, for a "did you mean" line. */

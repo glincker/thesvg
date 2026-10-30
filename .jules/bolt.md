@@ -92,3 +92,6 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2024-05-15 - Chained .map().filter() in global exports
 **Learning:** This codebase sometimes derives static categorizations using `[...new Set(array.map(...))].map(... filter(...))` directly in module exports. This causes a massive $O(N \times C)$ iteration at module load time (and in Next.js builds).
 **Action:** Replace these static array derivations with single-pass `for` loops using a `Map` to tally counts, reducing complexity to $O(N)$ and preventing garbage collection spikes during SSR or static site generation.
+## 2024-11-25 - Avoid chained .map().filter().sort().slice().map() operations on search results
+**Learning:** The `rank` and `rankTiered` functions in `src/lib/ui-icons/search.ts` were processing icon search results by chaining multiple array methods. This forced V8 to create temporary array allocations at each step of the chain, increasing garbage collection pauses which significantly blocked the UI thread on keystrokes.
+**Action:** Unrolled the array method chains into single-pass `for` loops and used inline comparisons and early slice limits where possible to avoid the intermediate array allocations.
