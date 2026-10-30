@@ -128966,6 +128966,30 @@
     "collection": "brands"
   },
   {
+    "slug": "taskade",
+    "title": "Taskade",
+    "aliases": [
+      "Taskade Genesis"
+    ],
+    "hex": "FF2D60",
+    "categories": [
+      "Software",
+      "AI"
+    ],
+    "variants": {
+      "default": "/icons/taskade/default.svg",
+      "mono": "/icons/taskade/mono.svg",
+      "light": "/icons/taskade/light.svg",
+      "dark": "/icons/taskade/dark.svg",
+      "wordmark": "/icons/taskade/wordmark.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.taskade.com/",
+    "guidelines": "https://www.taskade.com/press",
+    "dateAdded": "2026-10-30",
+    "collection": "brands"
+  },
+  {
     "slug": "tasmota",
     "title": "Tasmota",
     "aliases": [],
