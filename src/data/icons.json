@@ -90906,9 +90906,10 @@
       "Platform"
     ],
     "variants": {
-      "default": "/icons/mango/default.svg"
+      "default": "/icons/mango/default.svg",
+      "mono": "/icons/mango/mono.svg"
     },
-    "license": "Unofficial SVG based on official PNG, project licensed under GPL-3.0-or-later",
+    "license": "Official SVG from mangowm.github.io/brand (no artwork licence published), project licensed under GPL-3.0-or-later",
     "url": "https://mangowm.github.io/",
     "dateAdded": "2026-09-13",
     "collection": "community"
