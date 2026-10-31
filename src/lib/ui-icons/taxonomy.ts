@@ -5,7 +5,12 @@ import taxonomy from "@/data/ui/taxonomy.json";
 export const DOMAINS: readonly { id: string; label: string }[] = taxonomy.domains;
 export const MODIFIERS: readonly string[] = taxonomy.modifiers;
 
-const LABELS = new Map(DOMAINS.map((d) => [d.id, d.label]));
+// ⚡ Bolt: Use a single-pass loop to avoid intermediate array allocations
+const LABELS = new Map<string, string>();
+for (const d of DOMAINS) {
+  LABELS.set(d.id, d.label);
+}
+
 const MODIFIER_SET = new Set(MODIFIERS);
 
 export function domainLabel(id: string): string {

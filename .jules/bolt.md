@@ -92,3 +92,7 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2024-05-15 - Chained .map().filter() in global exports
 **Learning:** This codebase sometimes derives static categorizations using `[...new Set(array.map(...))].map(... filter(...))` directly in module exports. This causes a massive $O(N \times C)$ iteration at module load time (and in Next.js builds).
 **Action:** Replace these static array derivations with single-pass `for` loops using a `Map` to tally counts, reducing complexity to $O(N)$ and preventing garbage collection spikes during SSR or static site generation.
+
+## 2024-05-18 - Optimized `POPULAR_SLUGS` filtering
+**Learning:** Initializing maps with chained array operations or mapping large objects like `GLYPHS` and filtering over large arrays using `Array.prototype.some` create hidden N*M runtime complexities for large data lists during component loads (e.g. `(popular as string[]).filter((slug) => GLYPHS.some((g) => g.slug === slug))`).
+**Action:** Always prefer to replace nested loops (`.filter().some()`) and inline map creations (`new Map(array.map(...))`) in global scopes and components with `for` loops utilizing precalculated `Map` configurations for O(1) object/element retrieval (e.g. `GLYPH_BY_SLUG`).
