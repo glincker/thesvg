@@ -59188,6 +59188,23 @@
     "collection": "brands"
   },
   {
+    "slug": "fans",
+    "title": "Fans",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/fans/default.svg",
+      "mono": "/icons/fans/mono.svg"
+    },
+    "license": "Trademark",
+    "url": "https://app.fans/",
+    "dateAdded": "2026-10-31",
+    "collection": "brands"
+  },
+  {
     "slug": "fansly-badge",
     "title": "Fansly",
     "aliases": [],
