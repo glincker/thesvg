@@ -1,5 +1,11 @@
 # @thesvg/vue
 
+## 4.0.3
+
+### Patch Changes
+
+- feat: add Taskade icon ([#1459](https://github.com/glincker/thesvg/issues/1459))
+
 ## 4.0.0
 
 ### Major Changes
