@@ -59,8 +59,10 @@ export const GLYPHS: Glyph[] = SETS.flatMap((s) =>
   })),
 );
 export const VIEW_SETS: ViewSet[] = SETS.map((s) => ({ id: s.id, name: s.name, note: s.note, releaseDate: s.releaseDate, released: true, isNew: s.releaseDate === newest, count: s.glyphs.length }));
-export const POPULAR_SLUGS: string[] = (popular as string[]).filter((slug) => GLYPHS.some((g) => g.slug === slug));
 export const GLYPH_BY_SLUG = new Map(GLYPHS.map((g) => [g.slug, g]));
+// ⚡ Bolt: Replace O(N*M) chained .filter().some() loop with an O(M) lookup
+// against the newly ordered GLYPH_BY_SLUG map to avoid redundant iterations.
+export const POPULAR_SLUGS: string[] = (popular as string[]).filter((slug) => GLYPH_BY_SLUG.has(slug));
 const _catCounts = new Map<string, number>();
 for (let i = 0; i < GLYPHS.length; i++) {
   const cat = GLYPHS[i].category;
