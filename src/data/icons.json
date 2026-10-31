@@ -90818,10 +90818,10 @@
       "default": "/icons/mango/default.svg",
       "mono": "/icons/mango/mono.svg"
     },
-    "license": "CC0-1.0",
+    "license": "Official SVG from mangowm.github.io/brand (no artwork licence published), project licensed under GPL-3.0-or-later",
     "url": "https://mangowm.github.io/",
     "dateAdded": "2026-09-13",
-    "collection": "brands"
+    "collection": "community"
   },
   {
     "slug": "manifest",
