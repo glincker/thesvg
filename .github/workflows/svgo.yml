@@ -77,7 +77,7 @@ jobs:
         env:
           CHANGED_FILES: ${{ steps.changed.outputs.files }}
         run: |
-          printf '%s\n' "$CHANGED_FILES" | xargs -d '\n' -r npx --yes svgo@3 --multipass
+          printf '%s\n' "$CHANGED_FILES" | xargs -d '\n' -r npx --yes svgo@3.3.5 --multipass
 
       - name: Commit optimized SVGs
         if: |

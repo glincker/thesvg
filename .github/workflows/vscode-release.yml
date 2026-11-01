@@ -57,7 +57,7 @@ jobs:
         working-directory: extensions/vscode
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
-        run: npx vsce publish
+        run: npx --no-install vsce publish
 
       - name: Tag release
         if: steps.version.outputs.bumped == 'true'
