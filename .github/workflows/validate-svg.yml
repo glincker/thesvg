@@ -56,6 +56,8 @@ jobs:
 
       - name: Validate each SVG
         if: steps.diff.outputs.changed != ''
+        env:
+          CHANGED: ${{ steps.diff.outputs.changed }}
         run: |
           set -e
           max_bytes=51200
@@ -98,7 +100,7 @@ jobs:
               fail=1
             fi
             echo "::endgroup::"
-          done <<< "${{ steps.diff.outputs.changed }}"
+          done <<< "$CHANGED"
           if [ "$fail" -eq 1 ]; then
             echo "::error::one or more SVGs failed validation"
             exit 1
