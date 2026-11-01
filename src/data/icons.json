@@ -59197,7 +59197,8 @@
     ],
     "variants": {
       "default": "/icons/fans/default.svg",
-      "mono": "/icons/fans/mono.svg"
+      "mono": "/icons/fans/mono.svg",
+      "dark": "/icons/fans/dark.svg"
     },
     "license": "Trademark",
     "url": "https://app.fans/",
