@@ -34,7 +34,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  issues: write
+  contents: read
 
 concurrency:
   group: stale-icon-issues
@@ -44,6 +44,8 @@ jobs:
   ensure-labels:
     name: Ensure stale labels exist
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     steps:
       - uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
         with:
@@ -74,6 +76,8 @@ jobs:
     name: Mark and close blocked icon issues
     runs-on: ubuntu-latest
     needs: ensure-labels
+    permissions:
+      issues: write
     steps:
       - name: Process triage:needs-svg
         uses: actions/stale@4391f3da665fdf50b6810c1a66712fb9ba21aa93 # v11
