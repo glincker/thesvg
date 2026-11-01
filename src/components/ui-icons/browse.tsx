@@ -37,7 +37,8 @@ export function Browse() {
     const pool = GLYPHS.filter((g) => inSet(g, ui.set));
     const counts = new Map<string, number>();
     for (const g of pool) counts.set(g.category, (counts.get(g.category) ?? 0) + 1);
-    return { total: pool.length, rows: [...counts.entries()].map(([name, count]) => ({ name, count })).sort((a, b) => b.count - a.count) };
+    // ⚡ Bolt: Use Array.from instead of [...counts.entries()].map(...) to prevent intermediate array allocations
+    return { total: pool.length, rows: Array.from(counts, ([name, count]) => ({ name, count })).sort((a, b) => b.count - a.count) };
   }, [ui.set]);
   // A query ranks by how well each icon matches and splits into the strong matches and the related ones. With none, the grid keeps its own order.
   const tiers = useMemo(() => {
@@ -54,7 +55,10 @@ export function Browse() {
   const popular = useMemo(() => (unfiltered ? POPULAR.slice(0, POPULAR_SHOWN) : []), [unfiltered]);
   const rest = useMemo(() => {
     if (!unfiltered) return list;
-    const top = new Set(popular.map((g) => g.slug));
+    // ⚡ Bolt: Use a single-pass loop instead of `new Set(array.map(...))` to
+    // avoid allocating intermediate arrays and reduce garbage collection pressure.
+    const top = new Set<string>();
+    for (let i = 0; i < popular.length; i++) top.add(popular[i].slug);
     return list.filter((g) => !top.has(g.slug)).sort((a, b) => a.slug.localeCompare(b.slug));
   }, [list, popular, unfiltered]);
 

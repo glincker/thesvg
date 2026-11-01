@@ -92,3 +92,9 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2024-05-15 - Chained .map().filter() in global exports
 **Learning:** This codebase sometimes derives static categorizations using `[...new Set(array.map(...))].map(... filter(...))` directly in module exports. This causes a massive $O(N \times C)$ iteration at module load time (and in Next.js builds).
 **Action:** Replace these static array derivations with single-pass `for` loops using a `Map` to tally counts, reducing complexity to $O(N)$ and preventing garbage collection spikes during SSR or static site generation.
+## 2024-03-20 - [Performance Anti-Pattern: Micro-optimizing Small Arrays]
+**Learning:** Replacing `.includes()` + `.filter()` with `.indexOf()` + `.splice()` for a small UI state array (like toggling favorites) yields no measurable performance improvement, as both are O(N) operations that allocate a new array. It violates the constraint to not sacrifice readability for micro-optimizations.
+**Action:** Do not micro-optimize small UI state operations. Focus on hot loops, large datasets, or significant resource allocations instead.
+## 2024-03-20 - [Performance Optimization: Array.from and Set initialization]
+**Learning:** Using `[...counts.entries()].map(...)` or `new Set(popular.map(...))` causes intermediate array allocations, triggering unnecessary garbage collection.
+**Action:** Use `Array.from(counts, mappingFunction)` and a single-pass `for` loop to initialize large Sets directly, preventing intermediate allocations and reducing GC pressure.
