@@ -19,14 +19,14 @@ jobs:
     env:
       TRIAGE_OUTPUT: ${{ github.workspace }}/triage.json
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           sparse-checkout: |
             src/data/icons.json
             .github/scripts
           sparse-checkout-cone-mode: false
 
-      - uses: actions/setup-node@v7
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
         with:
           node-version: "20"
 
@@ -35,7 +35,7 @@ jobs:
         run: node .github/scripts/triage-issue.mjs
 
       - name: Apply labels and comment
-        uses: actions/github-script@v9
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |

@@ -35,20 +35,20 @@ jobs:
     steps:
       - name: Checkout (push to main)
         if: github.event_name == 'push'
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           fetch-depth: 2
 
       - name: Checkout (same-repo PR branch)
         if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
 
       - name: Checkout (fork PR, read-only)
         if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
@@ -77,7 +77,7 @@ jobs:
         env:
           CHANGED_FILES: ${{ steps.changed.outputs.files }}
         run: |
-          printf '%s\n' "$CHANGED_FILES" | xargs -d '\n' -r npx --yes svgo@3 --multipass
+          printf '%s\n' "$CHANGED_FILES" | xargs -d '\n' -r npx --yes svgo@3.3.5 --multipass
 
       - name: Commit optimized SVGs
         if: |
