@@ -123866,6 +123866,23 @@
     "collection": "brands"
   },
   {
+    "slug": "sonojs",
+    "title": "SonoJS",
+    "aliases": [],
+    "hex": "2563EB",
+    "categories": [
+      "Software",
+      "Developer Tools"
+    ],
+    "variants": {
+      "default": "/icons/sonojs/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://sonojs.com",
+    "dateAdded": "2026-10-29",
+    "collection": "brands"
+  },
+  {
     "slug": "sonos",
     "title": "Sonos",
     "aliases": [],
