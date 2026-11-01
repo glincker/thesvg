@@ -59348,6 +59348,24 @@
     "collection": "brands"
   },
   {
+  "slug": "farsiui",
+  "title": "FarsiUI",
+  "aliases": [],
+  "hex": "BRAND_COLOR",
+  "categories": [
+    "Software",
+    "Developer Tools"
+  ],
+  "variants": {
+    "default": "/icons/farsiui/default.svg",
+    "mono": "/icons/farsiui/mono.svg"
+  },
+  "license": "CC0-1.0",
+  "url": "https://farsiui.ir",
+  "dateAdded": "2026-11-01",
+  "collection": "brands"
+  },
+  {
     "slug": "fastapi",
     "title": "FastAPI",
     "aliases": [],
