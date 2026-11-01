@@ -35,6 +35,9 @@
   <a href="https://github.com/glincker/thesvg/tree/main/extensions/browser"><img src="https://img.shields.io/badge/Chrome-Coming%20Soon-4285F4?style=flat-square&logo=googlechrome&logoColor=white" alt="Chrome" /></a>
   <a href="https://skills.sh/glincker/thesvg"><img src="https://skills.sh/b/glincker/thesvg" alt="skills.sh" /></a>
   <a href="https://github.com/glincker/homebrew-thesvg"><img src="https://img.shields.io/badge/Homebrew-thesvg-FBB040?style=flat-square&logo=homebrew&logoColor=white" alt="Homebrew" /></a>
+  <a href="https://socket.dev/npm/package/@thesvg/icons"><img src="https://socket.dev/api/badge/npm/package/@thesvg/icons" alt="Socket score for @thesvg/icons" /></a>
+  <a href="https://socket.dev/npm/package/thesvg"><img src="https://socket.dev/api/badge/npm/package/thesvg" alt="Socket score for thesvg" /></a>
+  <a href="https://www.npmjs.com/package/@thesvg/icons"><img src="https://img.shields.io/badge/provenance-verified-2EA44F?style=flat-square" alt="npm provenance verified" /></a>
 </p>
 
 <p align="center">
