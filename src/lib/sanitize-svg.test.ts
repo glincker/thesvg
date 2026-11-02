@@ -74,4 +74,62 @@ describe("sanitizeSvg", () => {
     expect(out).not.toContain("data:");
     expect(out).not.toContain("evil.test");
   });
+  it("removes prefixed script and foreignObject by local name", () => {
+    const out = sanitizeSvg(
+      wrap(
+        '<x:script xmlns:x="http://www.w3.org/2000/svg">alert(1)</x:script><X:SCRIPT/><svg:foreignObject><div>hi</div></svg:foreignObject><a:ForeignObject/><path id="keep" d="M1 1"/>',
+      ),
+    );
+    expect(out).not.toMatch(/script|foreignobject|alert|<div>/i);
+    expect(out).toContain('id="keep"');
+  });
+
+  it("removes animate and set that target href", () => {
+    const out = sanitizeSvg(
+      wrap(
+        '<a href="#x"><animate attributeName="href" values="javascript:alert(1)"/></a>' +
+          '<a><set attributeName="xlink:href" to="javascript:alert(2)"></set></a>' +
+          '<a><svg:animate attributeName="XLINK:HREF" to="javascript:alert(3)"></svg:animate></a>' +
+          '<a><set attributeName="&#104;ref" to="javascript:alert(4)"/></a>',
+      ),
+    );
+    expect(out).not.toMatch(/animate|<set|javascript|alert/i);
+  });
+
+  it("keeps animate and set on harmless attributes", () => {
+    const svg = wrap(
+      '<path d="M0 0"><animate attributeName="opacity" values="0;1" dur="1s"/><set attributeName="fill" to="red"/><animateTransform attributeName="transform" type="rotate" dur="1s"/></path>',
+    );
+    expect(sanitizeSvg(svg)).toBe(svg);
+  });
+
+  it("drops external url() in presentation attributes", () => {
+    const out = sanitizeSvg(
+      wrap(
+        '<path fill="url(http://evil.test/a.svg#g)" d="M0 0"/><path stroke=\'url( "//evil.test/x" )\' filter="url(&#104;ttps://evil.test/f)" d="M1 1"/><path mask="url(data:image/svg+xml;base64,AAAA)" d="M2 2"/>',
+      ),
+    );
+    expect(out).not.toMatch(/evil\.test|data:|fill=|stroke=|filter=|mask=/);
+    expect(out).toContain('d="M0 0"');
+    expect(out).toContain('d="M2 2"');
+  });
+
+  it("keeps fragment url() references", () => {
+    const svg = wrap(
+      '<defs><linearGradient id="g"/></defs><path fill="url(#g)" stroke="url( \'#g\' )" clip-path="url(&quot;#g&quot;)" style="fill:url(#g);stroke:red" d="M0 0"/>',
+    );
+    expect(sanitizeSvg(svg)).toBe(svg);
+  });
+
+  it("drops external url() declarations from style but keeps the rest", () => {
+    const out = sanitizeSvg(
+      wrap(
+        '<path style="fill:red;background:url(http://evil.test/x);stroke:blue" d="M0 0"/><path style="fill:URL( https://evil.test/y )" d="M1 1"/><path style="fill:u\\72l(http://evil.test/z)" d="M2 2"/>',
+      ),
+    );
+    expect(out).not.toMatch(/evil\.test/);
+    expect(out).toContain('style="fill:red;stroke:blue"');
+    expect(out).toContain('d="M1 1"');
+    expect(out).toContain('d="M2 2"');
+  });
 });
