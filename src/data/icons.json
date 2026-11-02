@@ -59197,7 +59197,11 @@
     ],
     "variants": {
       "default": "/icons/fans/default.svg",
-      "mono": "/icons/fans/mono.svg"
+      "mono": "/icons/fans/mono.svg",
+      "dark": "/icons/fans/dark.svg",
+      "wordmark": "/icons/fans/wordmark.svg",
+      "wordmarkLight": "/icons/fans/wordmark-light.svg",
+      "wordmarkDark": "/icons/fans/wordmark-dark.svg"
     },
     "license": "Trademark",
     "url": "https://app.fans/",
