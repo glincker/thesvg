@@ -59197,7 +59197,11 @@
     ],
     "variants": {
       "default": "/icons/fans/default.svg",
-      "mono": "/icons/fans/mono.svg"
+      "mono": "/icons/fans/mono.svg",
+      "dark": "/icons/fans/dark.svg",
+      "wordmark": "/icons/fans/wordmark.svg",
+      "wordmarkLight": "/icons/fans/wordmark-light.svg",
+      "wordmarkDark": "/icons/fans/wordmark-dark.svg"
     },
     "license": "Trademark",
     "url": "https://app.fans/",
@@ -59359,7 +59363,7 @@
   "variants": {
     "default": "/icons/farsiui/default.svg"
   },
-  "license": "CC0-1.0",
+  "license": "Trademark",
   "url": "https://farsiui.ir",
   "dateAdded": "2026-11-01",
   "collection": "brands"
@@ -123880,6 +123884,23 @@
     "license": "CC0-1.0",
     "url": "https://brandfolder.com/sonicwall/sonicwall-external",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "sonojs",
+    "title": "SonoJS",
+    "aliases": [],
+    "hex": "2563EB",
+    "categories": [
+      "Software",
+      "Developer Tools"
+    ],
+    "variants": {
+      "default": "/icons/sonojs/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://sonojs.com",
+    "dateAdded": "2026-10-29",
     "collection": "brands"
   },
   {
