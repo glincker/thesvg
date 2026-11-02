@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>Kokoro TTS</title>
+  <!-- Cup base -->
+  <path d="M6 8v16c0 2 2 4 4 4h8c2 0 4-2 4-4V8H6z" 
+        fill="#6c5ce7" 
+        stroke="black" 
+        stroke-width="3"/>
+  <path d="M6 8v16c0 2 2 4 4 4h8c2 0 4-2 4-4V8H6z" 
+        fill="#6c5ce7" 
+        stroke="white" 
+        stroke-width="1.5"/>
+  
+  <!-- Handle -->
+  <path d="M22 12v8c2 0 4-2 4-4s-2-4-4-4z" 
+        fill="none" 
+        stroke="black" 
+        stroke-width="3"/>
+  <path d="M22 12v8c2 0 4-2 4-4s-2-4-4-4z" 
+        fill="none" 
+        stroke="white" 
+        stroke-width="1.5"/>
+  
+  <!-- Steam -->
+  <path d="M10 4c0 0 2-2 4 0s4 0 4 0" 
+        fill="none" 
+        stroke="black" 
+        stroke-width="3" 
+        stroke-linecap="round">
+    <animate attributeName="d" 
+             dur="2s" 
+             repeatCount="indefinite"
+             values="M10 4c0 0 2-2 4 0s4 0 4 0;
+                     M10 2c0 0 2-2 4 0s4 0 4 0;
+                     M10 4c0 0 2-2 4 0s4 0 4 0"/>
+  </path>
+  <path d="M10 4c0 0 2-2 4 0s4 0 4 0" 
+        fill="none" 
+        stroke="white" 
+        stroke-width="1.5" 
+        stroke-linecap="round">
+    <animate attributeName="d" 
+             dur="2s" 
+             repeatCount="indefinite"
+             values="M10 4c0 0 2-2 4 0s4 0 4 0;
+                     M10 2c0 0 2-2 4 0s4 0 4 0;
+                     M10 4c0 0 2-2 4 0s4 0 4 0"/>
+  </path>
+</svg>
