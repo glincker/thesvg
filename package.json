@@ -16,8 +16,8 @@
     "test:ui": "pnpm ui:check && vitest run --passWithNoTests src/lib/ui-icons src/components/ui-icons src/app/ui && pnpm --filter @thesvg/ui test && pnpm --filter @thesvg/ui-react test && pnpm --filter @thesvg/ui-vue test && pnpm --filter @thesvg/ui-svelte test && pnpm --filter @thesvg/ui-react-native test"
   },
   "dependencies": {
-    "@base-ui/react": "^1.8.0",
-    "@tanstack/react-virtual": "^3.14.21",
+    "@base-ui/react": "^1.9.0",
+    "@tanstack/react-virtual": "^3.14.24",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "class-variance-authority": "^0.7.1",
@@ -27,7 +27,7 @@
     "fuse.js": "^7.5.0",
     "next": "16.4.3",
     "next-themes": "^0.4.6",
-    "posthog-js": "^1.438.12",
+    "posthog-js": "^1.443.0",
     "react": "19.3.1",
     "react-dom": "19.3.1",
     "shadcn": "^4.21.4",
