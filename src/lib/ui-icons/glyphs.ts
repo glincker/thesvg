@@ -39,7 +39,12 @@ export interface ViewSet {
 
 // Every set file committed under src/data/ui/sets is released. The newest release date is the "new" drop,
 // so the label never depends on today's date and server and browser always agree.
-const scores = new Map((manifest.icons as { slug: string; score?: number; q?: number[] }[]).map((i) => [i.slug, i]));
+// ⚡ Bolt: Use a single-pass loop instead of `new Map(array.map(...))` to prevent intermediate tuple array allocations.
+const scores = new Map<string, { slug: string; score?: number; q?: number[] }>();
+const manifestIcons = manifest.icons as { slug: string; score?: number; q?: number[] }[];
+for (let i = 0; i < manifestIcons.length; i++) {
+  scores.set(manifestIcons[i].slug, manifestIcons[i]);
+}
 const newest = SETS.reduce((max, s) => (s.releaseDate > max ? s.releaseDate : max), "");
 
 export const GLYPHS: Glyph[] = SETS.flatMap((s) =>
@@ -59,8 +64,14 @@ export const GLYPHS: Glyph[] = SETS.flatMap((s) =>
   })),
 );
 export const VIEW_SETS: ViewSet[] = SETS.map((s) => ({ id: s.id, name: s.name, note: s.note, releaseDate: s.releaseDate, released: true, isNew: s.releaseDate === newest, count: s.glyphs.length }));
-export const POPULAR_SLUGS: string[] = (popular as string[]).filter((slug) => GLYPHS.some((g) => g.slug === slug));
-export const GLYPH_BY_SLUG = new Map(GLYPHS.map((g) => [g.slug, g]));
+// ⚡ Bolt: Use a single-pass loop instead of `new Map(array.map(...))` to reduce GC pressure.
+export const GLYPH_BY_SLUG = new Map<string, Glyph>();
+for (let i = 0; i < GLYPHS.length; i++) {
+  GLYPH_BY_SLUG.set(GLYPHS[i].slug, GLYPHS[i]);
+}
+
+// ⚡ Bolt: Use O(1) Map lookup instead of O(N*M) nested iterations.
+export const POPULAR_SLUGS: string[] = (popular as string[]).filter((slug) => GLYPH_BY_SLUG.has(slug));
 const _catCounts = new Map<string, number>();
 for (let i = 0; i < GLYPHS.length; i++) {
   const cat = GLYPHS[i].category;
