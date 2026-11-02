@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, Tag } from "@/components/own-icons";
 import { ShareButtons } from "@/components/blog/share-buttons";
+import { GithubStarCard } from "@/components/blog/github-star-card";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 import { getCategoryCounts } from "@/lib/icons";
 import postsData from "@/data/posts.json";
@@ -293,6 +294,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
             <div dangerouslySetInnerHTML={{ __html: renderMarkdown(post.body) }} />
 
+            <GithubStarCard />
           </div>
 
           <div className="mt-8 border-t border-border/40 pt-6 dark:border-white/[0.06]">
