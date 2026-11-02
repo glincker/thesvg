@@ -125289,8 +125289,7 @@
       "Self-hosted"
     ],
     "variants": {
-      "default": "/icons/spoolman/default.svg",
-      "mono": "/icons/spoolman/mono.svg"
+      "default": "/icons/spoolman/default.svg"
     },
     "license": "MIT",
     "url": "https://github.com/Donkie/Spoolman",
