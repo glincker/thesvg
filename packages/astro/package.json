@@ -1,6 +1,6 @@
 {
   "name": "@thesvg/astro",
-  "version": "4.0.1",
+  "version": "4.0.3",
   "description": "Typed Astro SVG components for all 7,600+ brand icons from thesvg.org",
   "type": "module",
   "sideEffects": false,
