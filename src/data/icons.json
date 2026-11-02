@@ -37899,6 +37899,23 @@
     "collection": "brands"
   },
   {
+    "slug": "backrest",
+    "title": "Backrest",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Self-hosted"
+    ],
+    "variants": {
+      "default": "/icons/backrest/default.svg",
+      "dark": "/icons/backrest/dark.svg"
+    },
+    "license": "Trademark",
+    "url": "https://github.com/garethgeorge/backrest",
+    "dateAdded": "2026-11-02",
+    "collection": "brands"
+  },
+  {
     "slug": "backstage",
     "title": "Backstage",
     "aliases": [],
@@ -45201,6 +45218,22 @@
     "collection": "brands"
   },
   {
+    "slug": "chronograf",
+    "title": "Chronograf",
+    "aliases": [],
+    "hex": "22ADF6",
+    "categories": [
+      "Monitoring"
+    ],
+    "variants": {
+      "default": "/icons/chronograf/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/influxdata/chronograf",
+    "dateAdded": "2026-11-02",
+    "collection": "brands"
+  },
+  {
     "slug": "chrysler",
     "title": "Chrysler",
     "aliases": [],
@@ -45775,6 +45808,22 @@
     "dateAdded": "2026-03-07",
     "collection": "brands",
     "family": "anthropic"
+  },
+  {
+    "slug": "cleanuparr",
+    "title": "Cleanuparr",
+    "aliases": [],
+    "hex": "420268",
+    "categories": [
+      "Self-hosted"
+    ],
+    "variants": {
+      "default": "/icons/cleanuparr/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://github.com/Cleanuparr/Cleanuparr",
+    "dateAdded": "2026-11-02",
+    "collection": "brands"
   },
   {
     "slug": "clearml",
@@ -48069,6 +48118,22 @@
     "license": "CC0-1.0",
     "url": "https://comma.ai",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "commafeed",
+    "title": "CommaFeed",
+    "aliases": [],
+    "hex": "F88A14",
+    "categories": [
+      "Self-hosted"
+    ],
+    "variants": {
+      "default": "/icons/commafeed/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://github.com/Athou/commafeed",
+    "dateAdded": "2026-11-02",
     "collection": "brands"
   },
   {
@@ -60885,6 +60950,23 @@
     "dateAdded": "2026-06-29",
     "collection": "community",
     "url": "https://flagger.app"
+  },
+  {
+    "slug": "flagsmith",
+    "title": "Flagsmith",
+    "aliases": [],
+    "hex": "6633FF",
+    "categories": [
+      "DevOps"
+    ],
+    "variants": {
+      "default": "/icons/flagsmith/default.svg",
+      "wordmark": "/icons/flagsmith/wordmark.svg"
+    },
+    "license": "BSD-3-Clause",
+    "url": "https://github.com/Flagsmith/flagsmith",
+    "dateAdded": "2026-11-02",
+    "collection": "brands"
   },
   {
     "slug": "flame",
@@ -74561,6 +74643,23 @@
     "collection": "brands"
   },
   {
+    "slug": "headscale",
+    "title": "Headscale",
+    "aliases": [],
+    "hex": "F8B5CB",
+    "categories": [
+      "Networking"
+    ],
+    "variants": {
+      "default": "/icons/headscale/default.svg",
+      "wordmark": "/icons/headscale/wordmark.svg"
+    },
+    "license": "BSD-3-Clause",
+    "url": "https://headscale.net/stable/",
+    "dateAdded": "2026-11-02",
+    "collection": "brands"
+  },
+  {
     "slug": "headspace",
     "title": "Headspace",
     "aliases": [],
@@ -76615,6 +76714,23 @@
     "collection": "brands"
   },
   {
+    "slug": "huginn",
+    "title": "Huginn",
+    "aliases": [],
+    "hex": "FFC107",
+    "categories": [
+      "Automation"
+    ],
+    "variants": {
+      "default": "/icons/huginn/default.svg",
+      "wordmark": "/icons/huginn/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/huginn/huginn",
+    "dateAdded": "2026-11-02",
+    "collection": "brands"
+  },
+  {
     "slug": "hugo",
     "title": "Hugo",
     "aliases": [],
@@ -76941,6 +77057,22 @@
     "license": "MIT",
     "url": "https://hyperbolic.xyz",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "hyperdx",
+    "title": "HyperDX",
+    "aliases": [],
+    "hex": "25E2A5",
+    "categories": [
+      "Monitoring"
+    ],
+    "variants": {
+      "default": "/icons/hyperdx/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/hyperdxio/hyperdx",
+    "dateAdded": "2026-11-02",
     "collection": "brands"
   },
   {
@@ -77944,6 +78076,24 @@
     "dateAdded": "2026-03-07",
     "collection": "brands",
     "family": "apple"
+  },
+  {
+    "slug": "imgproxy",
+    "title": "imgproxy",
+    "aliases": [],
+    "hex": "1680D6",
+    "categories": [
+      "DevOps"
+    ],
+    "variants": {
+      "default": "/icons/imgproxy/default.svg",
+      "wordmarkLight": "/icons/imgproxy/wordmark-light.svg",
+      "wordmarkDark": "/icons/imgproxy/wordmark-dark.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://github.com/imgproxy/imgproxy",
+    "dateAdded": "2026-11-02",
+    "collection": "brands"
   },
   {
     "slug": "imgur",
@@ -79888,6 +80038,22 @@
     "license": "CC0-1.0",
     "url": "https://www.isro.gov.in/publications.html",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "isso",
+    "title": "Isso",
+    "aliases": [],
+    "hex": "5DC1CF",
+    "categories": [
+      "Self-hosted"
+    ],
+    "variants": {
+      "default": "/icons/isso/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/isso-comments/isso",
+    "dateAdded": "2026-11-02",
     "collection": "brands"
   },
   {
@@ -84888,6 +85054,22 @@
     "collection": "brands"
   },
   {
+    "slug": "kokoro-tts",
+    "title": "Kokoro TTS",
+    "aliases": [],
+    "hex": "6C5CE7",
+    "categories": [
+      "AI"
+    ],
+    "variants": {
+      "default": "/icons/kokoro-tts/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://github.com/remsky/Kokoro-FastAPI",
+    "dateAdded": "2026-11-02",
+    "collection": "brands"
+  },
+  {
     "slug": "kolors",
     "title": "Kolors (快手可图)",
     "aliases": [],
@@ -85299,6 +85481,22 @@
     "license": "Fair Use",
     "url": "https://www.kroger.com",
     "dateAdded": "2026-03-09",
+    "collection": "brands"
+  },
+  {
+    "slug": "kroki",
+    "title": "Kroki",
+    "aliases": [],
+    "hex": "363636",
+    "categories": [
+      "Developer Tools"
+    ],
+    "variants": {
+      "default": "/icons/kroki/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/yuzutech/kroki",
+    "dateAdded": "2026-11-02",
     "collection": "brands"
   },
   {
@@ -90043,6 +90241,22 @@
     "collection": "brands"
   },
   {
+    "slug": "lychee",
+    "title": "Lychee",
+    "aliases": [],
+    "hex": "179E58",
+    "categories": [
+      "Media"
+    ],
+    "variants": {
+      "default": "/icons/lychee/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/LycheeOrg/Lychee",
+    "dateAdded": "2026-11-02",
+    "collection": "brands"
+  },
+  {
     "slug": "lydia",
     "title": "Lydia",
     "aliases": [],
@@ -90220,6 +90434,22 @@
     "url": "https://maestro.mobile.dev",
     "dateAdded": "2026-06-29",
     "collection": "community"
+  },
+  {
+    "slug": "mafl",
+    "title": "Mafl",
+    "aliases": [],
+    "hex": "609966",
+    "categories": [
+      "Self-hosted"
+    ],
+    "variants": {
+      "default": "/icons/mafl/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/hywax/mafl",
+    "dateAdded": "2026-11-02",
+    "collection": "brands"
   },
   {
     "slug": "magasins-u",
@@ -97266,6 +97496,22 @@
     "collection": "brands"
   },
   {
+    "slug": "multi-scrobbler",
+    "title": "Multi-Scrobbler",
+    "aliases": [],
+    "hex": "C34A36",
+    "categories": [
+      "Media"
+    ],
+    "variants": {
+      "default": "/icons/multi-scrobbler/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/FoxxMD/multi-scrobbler",
+    "dateAdded": "2026-11-02",
+    "collection": "brands"
+  },
+  {
     "slug": "multipass",
     "title": "Multipass",
     "aliases": [],
@@ -103223,6 +103469,22 @@
     "license": "CC0-1.0",
     "url": "https://github.com/opencontainers/artwork/blob/d8ccfe94471a0236b1d4a3f0f90862c4fe5486ce/oci/icon/black/oci-icon-black.svg",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "open-notebook",
+    "title": "Open Notebook",
+    "aliases": [],
+    "hex": "BD34FE",
+    "categories": [
+      "AI"
+    ],
+    "variants": {
+      "default": "/icons/open-notebook/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lfnovo/open-notebook",
+    "dateAdded": "2026-11-02",
     "collection": "brands"
   },
   {
@@ -114264,6 +114526,22 @@
     "collection": "brands"
   },
   {
+    "slug": "radicale",
+    "title": "Radicale",
+    "aliases": [],
+    "hex": "A40000",
+    "categories": [
+      "Self-hosted"
+    ],
+    "variants": {
+      "default": "/icons/radicale/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://github.com/Kozea/Radicale",
+    "dateAdded": "2026-11-02",
+    "collection": "brands"
+  },
+  {
     "slug": "radio-france",
     "title": "Radio France",
     "aliases": [],
@@ -117786,6 +118064,23 @@
     "collection": "community"
   },
   {
+    "slug": "romm",
+    "title": "RomM",
+    "aliases": [],
+    "hex": "553F99",
+    "categories": [
+      "Gaming"
+    ],
+    "variants": {
+      "default": "/icons/romm/default.svg",
+      "wordmark": "/icons/romm/wordmark.svg"
+    },
+    "license": "Trademark",
+    "url": "https://github.com/rommapp/romm",
+    "dateAdded": "2026-11-02",
+    "collection": "brands"
+  },
+  {
     "slug": "roocode",
     "title": "RooCode",
     "aliases": [],
@@ -118144,6 +118439,22 @@
     "license": "CC0-1.0",
     "url": "https://en.wikipedia.org/wiki/Feed_icon",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "rss-bridge",
+    "title": "RSS-Bridge",
+    "aliases": [],
+    "hex": "1182DB",
+    "categories": [
+      "Self-hosted"
+    ],
+    "variants": {
+      "default": "/icons/rss-bridge/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://github.com/RSS-Bridge/rss-bridge",
+    "dateAdded": "2026-11-02",
     "collection": "brands"
   },
   {
@@ -118978,6 +119289,23 @@
     "license": "CC0-1.0",
     "url": "https://www.sabeco.com.vn",
     "dateAdded": "2026-05-24",
+    "collection": "brands"
+  },
+  {
+    "slug": "sabnzbd",
+    "title": "SABnzbd",
+    "aliases": [],
+    "hex": "FFB300",
+    "categories": [
+      "Self-hosted"
+    ],
+    "variants": {
+      "default": "/icons/sabnzbd/default.svg",
+      "wordmark": "/icons/sabnzbd/wordmark.svg"
+    },
+    "license": "Trademark",
+    "url": "https://github.com/sabnzbd/sabnzbd",
+    "dateAdded": "2026-11-02",
     "collection": "brands"
   },
   {
@@ -120469,6 +120797,23 @@
     "collection": "brands"
   },
   {
+    "slug": "seerr",
+    "title": "Seerr",
+    "aliases": [],
+    "hex": "4F65F5",
+    "categories": [
+      "Media"
+    ],
+    "variants": {
+      "default": "/icons/seerr/default.svg",
+      "wordmark": "/icons/seerr/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/seerr-team/seerr",
+    "dateAdded": "2026-11-02",
+    "collection": "brands"
+  },
+  {
     "slug": "sefaria",
     "title": "Sefaria",
     "aliases": [],
@@ -121289,6 +121634,22 @@
       "github": "https://github.com/drakkan/sftpgo",
       "linkedin": "https://www.linkedin.com/company/107964786"
     }
+  },
+  {
+    "slug": "shaarli",
+    "title": "Shaarli",
+    "aliases": [],
+    "hex": "484848",
+    "categories": [
+      "Self-hosted"
+    ],
+    "variants": {
+      "default": "/icons/shaarli/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://github.com/shaarli/Shaarli",
+    "dateAdded": "2026-11-02",
+    "collection": "brands"
   },
   {
     "slug": "shadcn-ui",
@@ -124850,6 +125211,22 @@
     "collection": "auth-badges"
   },
   {
+    "slug": "spliit",
+    "title": "Spliit",
+    "aliases": [],
+    "hex": "ED5167",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/spliit/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/spliit-app/spliit",
+    "dateAdded": "2026-11-02",
+    "collection": "brands"
+  },
+  {
     "slug": "splunk",
     "title": "Splunk",
     "aliases": [],
@@ -124901,6 +125278,22 @@
     "license": "MIT",
     "url": "https://spongepowered.org",
     "dateAdded": "2026-03-09",
+    "collection": "brands"
+  },
+  {
+    "slug": "spoolman",
+    "title": "Spoolman",
+    "aliases": [],
+    "hex": "DC7734",
+    "categories": [
+      "Self-hosted"
+    ],
+    "variants": {
+      "default": "/icons/spoolman/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/Donkie/Spoolman",
+    "dateAdded": "2026-11-02",
     "collection": "brands"
   },
   {
@@ -130543,6 +130936,25 @@
     "license": "CC0-1.0",
     "url": "https://www.irishtimes.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "the-lounge",
+    "title": "The Lounge",
+    "aliases": [],
+    "hex": "FF9E18",
+    "categories": [
+      "Communication"
+    ],
+    "variants": {
+      "default": "/icons/the-lounge/default.svg",
+      "dark": "/icons/the-lounge/dark.svg",
+      "wordmark": "/icons/the-lounge/wordmark.svg",
+      "wordmarkDark": "/icons/the-lounge/wordmark-dark.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/thelounge/thelounge",
+    "dateAdded": "2026-11-02",
     "collection": "brands"
   },
   {
@@ -141455,6 +141867,22 @@
     "collection": "brands"
   },
   {
+    "slug": "wiremock",
+    "title": "WireMock",
+    "aliases": [],
+    "hex": "0FB2EF",
+    "categories": [
+      "Developer Tools"
+    ],
+    "variants": {
+      "default": "/icons/wiremock/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://github.com/wiremock/wiremock",
+    "dateAdded": "2026-11-02",
+    "collection": "brands"
+  },
+  {
     "slug": "wireshark",
     "title": "Wireshark",
     "aliases": [],
@@ -143550,6 +143978,23 @@
     "license": "MIT",
     "url": "https://youmind.ai",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "yourls",
+    "title": "YOURLS",
+    "aliases": [],
+    "hex": "026090",
+    "categories": [
+      "Self-hosted"
+    ],
+    "variants": {
+      "default": "/icons/yourls/default.svg",
+      "wordmark": "/icons/yourls/wordmark.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/YOURLS/YOURLS",
+    "dateAdded": "2026-11-02",
     "collection": "brands"
   },
   {
