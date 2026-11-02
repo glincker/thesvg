@@ -1,6 +1,6 @@
 {
   "name": "@thesvg/static",
-  "version": "4.0.1",
+  "version": "4.0.3",
   "description": "Raw SVG files for every brand icon variant from thesvg.org plus a JSON manifest, for CDN and non-JS use",
   "type": "module",
   "sideEffects": false,
