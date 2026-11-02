@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import posthog from "posthog-js";
-import { ArrowUpRight, RotateCcw, ThumbsDown, ThumbsUp } from "lucide-react";
+import { ArrowUpRight, RotateCcw, ThumbsDown, ThumbsUp } from "@/components/own-icons";
 import { cn } from "@/lib/utils";
 import { withUtm } from "@/lib/external-link";
 import { usePrefersReducedMotion } from "@/lib/hooks/use-media-query";
@@ -290,7 +290,7 @@ export function IconFeedback({ slug, title }: Readonly<{ slug: string; title: st
           )}
         >
           Glad it helped - leave a review?
-          <ArrowUpRight className="h-3 w-3 opacity-60" />
+          <ArrowUpRight className="h-3.5 w-3.5 opacity-60" />
         </a>
       )}
 
@@ -312,7 +312,7 @@ export function IconFeedback({ slug, title }: Readonly<{ slug: string; title: st
             title="Reset your feedback"
             className="flex h-6 w-6 items-center justify-center rounded-full text-muted-foreground/70 transition-colors hover:bg-accent hover:text-foreground"
           >
-            <RotateCcw className="h-3 w-3" />
+            <RotateCcw className="h-3.5 w-3.5" />
           </button>
         )}
         <div className="flex items-center gap-1.5">

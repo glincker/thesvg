@@ -22,11 +22,24 @@
 				<false/>
 			</dict>
 		</array>
+		<key>script-filter-ui-01</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>run-script-01</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Glinr</string>
 	<key>description</key>
-	<string>Search and copy brand SVGs from theSVG (thesvg.org)</string>
+	<string>Search and copy brand and UI SVG icons from theSVG (thesvg.org)</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -68,13 +81,13 @@
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Search 7,600+ brand SVGs</string>
+				<string>Search brand SVGs</string>
 				<key>title</key>
 				<string>theSVG - Search brand icons</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>waitingsubtext</key>
-				<string>Search 7,600+ brand SVGs</string>
+				<string>Search brand SVGs</string>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -82,6 +95,54 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>script-filter-01</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<!-- Object 3: Script Filter for UI icons (keyword "ui"), same action -->
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>ui</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>3</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Searching UI icons...</string>
+				<key>script</key>
+				<string>python3 "$alfred_workflow_dir/thesvg_ui.py" "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Search UI icons, Tab to choose a look</string>
+				<key>title</key>
+				<string>theSVG - Search UI icons</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>script-filter-ui-01</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -112,6 +173,7 @@
 	</array>
 	<key>readme</key>
 	<string>Type "tsvg" followed by a brand name to search theSVG.
+Type "ui" followed by a name to search UI icons. Enter copies the outline look, Tab lists every look.
 
 Enter: Copy raw SVG to clipboard
 Cmd+Enter: Copy CDN URL to clipboard

@@ -2,7 +2,7 @@
 
 import { useCallback, useState } from "react";
 import Link from "next/link";
-import { Check, Copy, Download, Hash } from "lucide-react";
+import { Check, Copy, Download, Hash } from "@/components/own-icons";
 import posthog from "posthog-js";
 import type { IconEntry } from "@/lib/icons";
 import { useRecentsStore } from "@/lib/stores/recents-store";
@@ -177,12 +177,12 @@ export function Google2026Tile({ icon, delay, cleanTitle }: Props) {
           <span className="g26-tile-tip" role="tooltip">
             {flash === "hex" ? (
               <>
-                <Check className="h-3 w-3" />
+                <Check className="h-3.5 w-3.5" />
                 Copied
               </>
             ) : (
               <>
-                <Hash className="h-3 w-3" />
+                <Hash className="h-3.5 w-3.5" />
                 {icon.hex?.toUpperCase()}
               </>
             )}

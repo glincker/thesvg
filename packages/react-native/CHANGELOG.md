@@ -1,5 +1,17 @@
 # @thesvg/react-native
 
+## 4.0.2
+
+### Patch Changes
+
+- [#1451](https://github.com/glincker/thesvg/pull/1451) [`93ed710`](https://github.com/glincker/thesvg/commit/93ed7104ac60db1e6dc1e7537bb8c7ca343603db) Thanks [@gyamfidennist](https://github.com/gyamfidennist)! - Build and validate the React Native package before publishing so npm releases include the compiled icons and type declarations.
+
+## 4.0.0
+
+### Major Changes
+
+- [#1408](https://github.com/glincker/thesvg/pull/1408) [`e6a825f`](https://github.com/glincker/thesvg/commit/e6a825f21b0de10f2a4df4dbcee0ba30a086bfa3) Thanks [@thegdsks](https://github.com/thegdsks)! - theSVG 4.0: UI icons are here. The major version marks the release that adds a second section of 129 UI icons (outline, glass, duotone, offset, fill, pixel and depth), published as the new `@thesvg/ui`, `@thesvg/ui-react`, `@thesvg/ui-vue`, `@thesvg/ui-svelte` and `@thesvg/ui-react-native` packages. There are no API changes in this package: existing brand imports, names and files are unchanged.
+
 ## 3.4.0
 
 ### Minor Changes

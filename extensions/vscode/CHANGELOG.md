@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Add UI icons as a second kind with a Brand and UI switch in the picker, a 7-look chooser, and the same copy and insert actions. The UI index loads lazily and fails soft.
+
 ## 0.1.4
 
 - Updated marketplace icon to the new theSVG mark (orange overlap, dark background)

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "@/components/own-icons";
 import type { OtherFamily } from "@/lib/families";
 
 export interface FamilyIndexItem extends OtherFamily {
@@ -57,7 +57,7 @@ export function FamiliesIndex({ families }: { families: FamilyIndexItem[] }) {
                 </span>
                 <span className="flex shrink-0 items-center gap-1 rounded-full border border-border/60 bg-background/70 px-2.5 py-1 text-[11px] font-medium text-muted-foreground">
                   {f.count} logos
-                  <ArrowUpRight className="h-3 w-3 opacity-60" />
+                  <ArrowUpRight className="h-3.5 w-3.5 opacity-60" />
                 </span>
               </span>
             </Link>

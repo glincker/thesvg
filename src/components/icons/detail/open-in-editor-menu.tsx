@@ -1,17 +1,8 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import {
-  ArrowUpRight,
-  Check,
-  ChevronDown,
-  ClipboardCopy,
-  Download as DownloadIcon,
-  ExternalLink,
-  Loader2,
-  Pencil,
-} from "lucide-react";
-import { Codepen } from "@/components/icons/shared/brand-icons";
+import { ArrowUpRight, Check, ChevronDown, ClipboardCopy, Download as DownloadIcon, ExternalLink, Pencil } from "@/components/own-icons";
+import { Codepen } from "@/components/own-icons";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -29,6 +20,7 @@ import {
   openDeepLink,
 } from "@/lib/svg-utils";
 import Link from "next/link";
+import { Busy } from "@/components/skeletons";
 
 interface OpenInEditorMenuProps {
   svg: string;
@@ -77,10 +69,10 @@ function TargetIcon({ id }: { id: string }) {
 
 function KindIcon({ kind }: { kind: DeepLinkTarget["kind"] }) {
   if (kind === "copy")
-    return <ClipboardCopy className="h-3 w-3 opacity-40" />;
+    return <ClipboardCopy className="h-3.5 w-3.5 opacity-40" />;
   if (kind === "download")
     return <DownloadIcon className="h-3 w-3 opacity-40" />;
-  return <ArrowUpRight className="h-3 w-3 opacity-40" />;
+  return <ArrowUpRight className="h-3.5 w-3.5 opacity-40" />;
 }
 
 export function OpenInEditorMenu({
@@ -157,7 +149,7 @@ export function OpenInEditorMenu({
               >
                 <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center">
                   {isBusy ? (
-                    <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                    <Busy className="h-3.5 w-3.5" />
                   ) : isToast ? (
                     <Check className="h-3.5 w-3.5 text-emerald-500" />
                   ) : (
@@ -195,7 +187,7 @@ export function OpenInEditorMenu({
               >
                 <ExternalLink className="h-3.5 w-3.5" />
                 <span className="flex-1">Inspect in SVG Viewer</span>
-                <ArrowUpRight className="h-3 w-3 opacity-40" />
+                <ArrowUpRight className="h-3.5 w-3.5 opacity-40" />
               </Link>
             }
           />

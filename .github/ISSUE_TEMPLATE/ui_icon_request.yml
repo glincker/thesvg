@@ -1,0 +1,42 @@
+name: UI Icon Request
+description: Ask for a new UI icon, or a fix to an existing one
+labels: ["ui-icons"]
+title: "UI icon: "
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        UI icons are the interface icons theSVG draws itself (thesvg.org/ui). For brand logos use the Icon Request form instead.
+
+  - type: input
+    id: icon_name
+    attributes:
+      label: Icon name
+      description: A short kebab-case name, like `shield-check` or `arrow-up-right`
+      placeholder: e.g. bookmark-plus
+    validations:
+      required: true
+
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Where would you use it?
+      description: What should the icon mean, and in what kind of interface? A screen or flow you have in mind helps a lot.
+    validations:
+      required: true
+
+  - type: textarea
+    id: related
+    attributes:
+      label: Related icons
+      description: Existing UI icons it should sit next to or be told apart from
+      placeholder: e.g. bookmark, plus
+
+  - type: checkboxes
+    id: originality
+    attributes:
+      label: Originality
+      options:
+        - label: I am describing an idea, or I drew this myself. I am not asking to copy or trace an icon from another icon set.
+          required: true

@@ -1,7 +1,7 @@
 {
   "name": "thesvg-browser-extension",
   "version": "0.1.0",
-  "description": "Search 7,600+ brand SVGs. Copy SVG, CDN URL, or markdown.",
+  "description": "Search brand SVGs plus a growing set of UI icons. Copy SVG, CDN URL, or markdown.",
   "private": true,
   "scripts": {
     "dev": "wxt",

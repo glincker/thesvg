@@ -57,6 +57,10 @@ You have two options:
 
 Use the appropriate [issue template](https://github.com/glincker/thesvg/issues/new/choose).
 
+### Add or Improve a UI Icon
+
+UI icons are the interface icons we draw ourselves (a separate section from brand icons). See [UI icons](#ui-icons) below.
+
 ### Improve the Code
 
 1. Fork the repository
@@ -86,6 +90,59 @@ npm run build
 npm run audit
 npm run validate
 ```
+
+Brand icons and UI icons are tested separately, so run only what your change affects:
+
+```bash
+pnpm test:brand   # brand icon code, data and the brand packages
+pnpm test:ui      # UI icon data, generated files, the quality score and the @thesvg/ui* packages
+pnpm test         # both
+pnpm lint         # also enforces the brand and UI import boundary
+```
+
+CI does the same: it looks at which files a pull request changes and runs only the matching test jobs. A change outside both areas (shared components, config, the lockfile) runs everything.
+
+## UI Icons
+
+UI icons live apart from brand icons, with their own data, tests and packages (`@thesvg/ui*`).
+
+### Where things live
+
+| Path | What it is | Edit by hand? |
+|------|------------|---------------|
+| `src/data/ui/sets/<set-id>.json` | One file per release set, one line per icon: slug, tags, geometry | Yes, this is the source |
+| `src/data/ui/popular.json` | Slugs shown first on the UI icons home | Yes |
+| `src/data/ui-icons.json` | Manifest the packages, CLI, MCP server and extensions read | No, generated |
+| `src/data/ui/looks/<look>.json` | Every icon in one look, slug to SVG text | No, generated |
+| `src/lib/ui-icons/sets.generated.ts` | The site's import list for the set files | No, generated |
+| `src/lib/ui-icons/`, `src/components/ui-icons/`, `src/app/ui/` | The UI icons code | Yes |
+
+The per-icon `.svg` files (`public/ui`) are build artifacts for hotlinking and are not committed.
+
+### Adding an icon
+
+1. Draw it on a 24 by 24 grid, inside the 1 to 23 live area. Only submit icons you drew yourself. Do not trace, convert or adapt icons from another set.
+2. Add one line to a set file. Geometry is a list of `[tag, attributes]` pairs (`path`, `circle`, `line`, `rect`, `polyline` and so on):
+
+   ```json
+   {"slug":"bell","tags":["notification","alert","ring"],"nodes":[["path",{"d":"M6 17V11a6 6 0 0 1 12 0v6Z"}],["path",{"d":"M10 20h4"}]]}
+   ```
+
+   A new drop is a new file in `src/data/ui/sets/`. The file name must equal the set id and it needs a `releaseDate`.
+3. Run `pnpm ui:build`. It renders all seven looks, writes the manifest and look files and prints the lowest quality score.
+4. Run `pnpm test:ui`, then commit the set file together with everything `ui:build` changed.
+
+Slugs are kebab-case and unique across all sets. Give every icon at least two tags, four for full marks, and a real category (the category comes from the slug, see `src/lib/ui-icons/style.ts`).
+
+### Quality score
+
+Every icon is scored out of 100 when the set is built: grid fit (inside the live area and centered), looks (all seven render cleanly), visual weight (against the median of the set) and metadata (tags and category). The build fails if any icon scores below the minimum. Thresholds are read from the environment and have defaults in `src/lib/ui-icons/quality.ts`: `UI_QUALITY_MIN_SCORE` (70), `UI_QUALITY_LIVE_MIN`, `UI_QUALITY_LIVE_MAX`, `UI_QUALITY_CENTER_TOLERANCE`, `UI_QUALITY_WEIGHT_LOW` and `UI_QUALITY_WEIGHT_HIGH`.
+
+### Keeping brand and UI apart
+
+- UI code (`src/lib/ui-icons`, `src/components/ui-icons`, `src/app/ui`) does not import brand code, and brand code does not import UI code. ESLint enforces both directions. The few shared building blocks and the files allowed to cross are listed at the top of `eslint.config.mjs`. Do not widen those lists to silence an error.
+- The npm packages `@thesvg/ui-react`, `-vue`, `-svelte` and `-react-native` are built by one shared builder in `scripts/ui`. Do not copy a generator into a package.
+- Icons in site chrome use our own UI icons: `<UiGlyph name="arrow-right" />` from `@/components/ui-glyph`. Do not add Lucide or Phosphor imports. If an icon you need is missing, add it to a set file.
 
 ## Commit Convention
 

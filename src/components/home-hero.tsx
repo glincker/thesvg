@@ -1,13 +1,13 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Anchor, ArrowRight, Check, ChevronRight, Clock, Cloud, Copy, Flame, Package, ShieldCheck, Sparkles, Users, X, Zap } from "lucide-react";
+import { Anchor, ArrowRight, Check, ChevronRight, Clock, Cloud, Copy, Flame, Package, ShieldCheck, Sparkles, Users, X, Zap } from "@/components/own-icons";
 import Link from "next/link";
 import posthog from "posthog-js";
 import { compareDateDesc } from "@/lib/icon-dates";
 import type { Collection, IconEntry } from "@/lib/icons";
 import { COLLECTIONS_META } from "@/lib/collections-meta";
-import { loadIconsManifest } from "@/lib/icons-manifest";
+import { getIconsBySlugMap, loadIconsManifest } from "@/lib/icons-manifest";
 import { IconCard } from "@/components/icons/icon-card";
 import { IconGrid } from "@/components/icons/icon-grid";
 import { IconDetail } from "@/components/icons/icon-detail";
@@ -17,6 +17,7 @@ import { useCompactHeroStore } from "@/lib/stores/compact-hero-store";
 import { useHomePrefsStore } from "@/lib/stores/home-prefs-store";
 import { cn } from "@/lib/utils";
 import { withUtm } from "@/lib/external-link";
+import { UiHeroPreview } from "@/components/ui-icons/hero-preview";
 
 import { getPopularSlugs } from "@/lib/popular-icons";
 
@@ -32,6 +33,20 @@ const POPULAR_COMMUNITY_SLUGS = getPopularSlugs("community");
 const POPULAR_AUTH_BADGES_SLUGS = getPopularSlugs("auth-badges");
 
 const ALL_SLIDES = [
+  {
+    badge: "theSVG 4.0",
+    badgeIcon: Sparkles,
+    title: "UI icons are here, in seven looks",
+    description: "A new set of interface icons, drawn on one grid and restyled live. Outline, glass, duotone, offset, fill, glass outline and depth. Free to copy.",
+    cta: { label: "Explore UI icons", href: "/ui" },
+    ctaSecondary: { label: "How it works", href: "/ui/docs" },
+    gradient: "from-orange-50/60 via-background to-sky-50/30 dark:from-orange-950/25 dark:via-background dark:to-sky-950/10",
+    accent: "border-orange-200/50 bg-orange-50/80 text-orange-600 dark:border-orange-500/20 dark:bg-orange-500/10 dark:text-orange-400",
+    blob: "bg-orange-400/10 dark:bg-orange-500/5",
+    collection: "brands" as const,
+    floatSlugs: [] as string[],
+    ui: true as const,
+  },
   {
     badge: "Open Source",
     badgeIcon: Sparkles,
@@ -251,9 +266,9 @@ function InstallBadge({
       <span className="select-all opacity-50">$</span>
       <span className="font-medium">{command}</span>
       {copied ? (
-        <Check className="h-3 w-3 shrink-0 text-emerald-500" />
+        <Check className="h-3.5 w-3.5 shrink-0 text-emerald-500" />
       ) : (
-        <Copy className="h-3 w-3 shrink-0 opacity-50 transition-opacity group-hover:opacity-100" />
+        <Copy className="h-3.5 w-3.5 shrink-0 opacity-50 transition-opacity group-hover:opacity-100" />
       )}
     </button>
   );
@@ -273,14 +288,8 @@ export function HomeHero({
   // icons appear progressively as the manifest loads.
   const [icons, setIcons] = useState<IconEntry[]>([]);
   const iconsBySlug = useMemo(() => {
-    // Single-pass map initialization to avoid creating an intermediate array of tuples
-    // which causes significant garbage collection overhead for large datasets.
-    const map = new Map<string, IconEntry>();
-    for (let i = 0; i < icons.length; i++) {
-      const icon = icons[i];
-      map.set(icon.slug, icon);
-    }
-    return map;
+    // ⚡ Bolt: Reuse the centrally cached map instead of re-allocating a new Map per consumer.
+    return icons.length > 0 ? getIconsBySlugMap() : new Map<string, IconEntry>();
   }, [icons]);
   useEffect(() => {
     loadIconsManifest()
@@ -412,7 +421,7 @@ export function HomeHero({
       .slice(0, 12);
   }, [activeCollection, collectionIcons, recentIcons]);
 
-  const fallbackSlide = ALL_SLIDES[0];
+  const fallbackSlide = ALL_SLIDES.find((s) => s.dynamicCount) ?? ALL_SLIDES[0];
   const slide = collectionSlides.length > 0
     ? collectionSlides[currentSlide % collectionSlides.length]
     : fallbackSlide;
@@ -474,11 +483,11 @@ export function HomeHero({
         )}
       />
       <span className={cn("relative z-10 flex w-[64px] items-center justify-center gap-1 text-[10px] font-medium transition-colors", effectiveOrder === "popular" ? "text-background" : "text-muted-foreground")}>
-        <Flame className="h-3 w-3" />
+        <Flame className="h-3.5 w-3.5" />
         Popular
       </span>
       <span className={cn("relative z-10 flex w-[64px] items-center justify-center gap-1 text-[10px] font-medium transition-colors", effectiveOrder === "recent" ? "text-background" : "text-muted-foreground")}>
-        <Clock className="h-3 w-3" />
+        <Clock className="h-3.5 w-3.5" />
         Recent
       </span>
     </button>
@@ -496,7 +505,7 @@ export function HomeHero({
           className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
         >
           View all
-          <ArrowRight className="h-3 w-3" />
+          <ArrowRight className="h-3.5 w-3.5" />
         </Link>
       </div>
       <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 sm:gap-3 lg:grid-cols-6">
@@ -520,7 +529,7 @@ export function HomeHero({
           className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
         >
           View all
-          <ArrowRight className="h-3 w-3" />
+          <ArrowRight className="h-3.5 w-3.5" />
         </Link>
       </div>
       <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 sm:gap-3 lg:grid-cols-5 xl:grid-cols-6">
@@ -630,6 +639,11 @@ export function HomeHero({
               inner div holds the continuous float + resting dim opacity, so
               the two animations don't fight over the same CSS property. */}
           <div className="pointer-events-none absolute inset-0 hidden lg:block">
+            {"ui" in slide && (
+              <div key={`ui-${currentSlide}`} className="animate-float-in absolute right-10 top-1/2 -translate-y-1/2 xl:right-16">
+                <UiHeroPreview />
+              </div>
+            )}
             {floatingIcons.map((icon, i) => {
               const pos = FLOAT_POSITIONS[i];
               return (
@@ -700,7 +714,7 @@ export function HomeHero({
               className="inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-foreground px-3 py-1.5 text-xs font-medium text-background shadow-sm transition-opacity hover:opacity-90"
             >
               {compactSlide.cta.label}
-              <ArrowRight className="h-3 w-3" />
+              <ArrowRight className="h-3.5 w-3.5" />
             </a>
           ) : (
             <Link
@@ -708,7 +722,7 @@ export function HomeHero({
               className="inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-foreground px-3 py-1.5 text-xs font-medium text-background shadow-sm transition-opacity hover:opacity-90"
             >
               {compactSlide.cta.label}
-              <ArrowRight className="h-3 w-3" />
+              <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           )}
           <button
@@ -747,7 +761,7 @@ export function HomeHero({
                 className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
               >
                 View all
-                <ArrowRight className="h-3 w-3" />
+                <ArrowRight className="h-3.5 w-3.5" />
               </Link>
               <button
                 type="button"

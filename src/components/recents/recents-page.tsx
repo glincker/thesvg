@@ -12,14 +12,15 @@ import {
   Search,
   Sparkles,
   Trash2,
-} from "lucide-react";
+} from "@/components/own-icons";
 import type { IconEntry } from "@/lib/icons";
-import { loadIconsManifest } from "@/lib/icons-manifest";
+import { getIconsBySlugMap, loadIconsManifest } from "@/lib/icons-manifest";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import { cn } from "@/lib/utils";
 import { logoImgClass, logoPlateClass } from "@/lib/logo-surface";
 import { StatCard } from "./stat-card";
 import { Section } from "./section";
+import { IconGridSkeleton } from "@/components/skeletons";
 
 type TimeWindow = "all" | "today" | "week" | "month";
 
@@ -82,13 +83,9 @@ export function RecentsPage() {
     let active = true;
     setManifestError(false);
     loadIconsManifest()
-      .then((manifest) => {
+      .then(() => {
         if (!active) return;
-        const bySlug = new Map<string, IconEntry>();
-        for (let i = 0; i < manifest.length; i++) {
-          bySlug.set(manifest[i].slug, manifest[i]);
-        }
-        setIconsBySlug(bySlug);
+        setIconsBySlug(getIconsBySlugMap());
         setManifestLoaded(true);
       })
       .catch(() => {
@@ -130,7 +127,7 @@ export function RecentsPage() {
     const result: {
       entry: IconEntry;
       ts: number;
-      format: typeof copied[number]["format"];
+      format: (typeof copied)[number]["format"];
       count: number;
     }[] = [];
     for (let i = 0; i < copied.length; i++) {
@@ -159,7 +156,8 @@ export function RecentsPage() {
   // it doesn't flash before the icons resolve.
   const resolving = hasSlugs && !manifestLoaded && !manifestError;
   const manifestFailed = hydrated && hasSlugs && manifestError;
-  const isEmpty = hydrated && !resolving && !manifestFailed && totalEntries === 0;
+  const isEmpty =
+    hydrated && !resolving && !manifestFailed && totalEntries === 0;
 
   const handleCopyAgain = useCallback(
     async (entry: IconEntry, format: "svg" | "url") => {
@@ -243,7 +241,7 @@ export function RecentsPage() {
                 type="button"
                 onClick={() => setWin(w.id)}
                 aria-pressed={win === w.id}
-                className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
+                className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
                   win === w.id
                     ? "border-foreground/40 bg-foreground text-background"
                     : "border-border/50 bg-card/40 text-muted-foreground hover:border-foreground/20 hover:text-foreground dark:border-white/[0.06] dark:bg-white/[0.02]"
@@ -257,9 +255,9 @@ export function RecentsPage() {
               onClick={() => {
                 if (window.confirm("Clear all recent activity?")) clearAll();
               }}
-              className="ml-auto inline-flex items-center gap-1.5 rounded-full border border-border/50 px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:border-destructive/40 hover:bg-destructive/10 hover:text-destructive dark:border-white/[0.06]"
+              className="ml-auto inline-flex items-center gap-1.5 rounded-full border border-border/50 px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:border-destructive/40 hover:bg-destructive/10 hover:text-destructive focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-destructive focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:border-white/[0.06]"
             >
-              <Trash2 className="h-3 w-3" />
+              <Trash2 className="h-3.5 w-3.5" />
               Clear everything
             </button>
           </div>
@@ -267,8 +265,8 @@ export function RecentsPage() {
       </header>
 
       {(!hydrated || resolving) && (
-        <div className="flex justify-center py-24" role="status" aria-label="Loading your recents">
-          <div className="h-6 w-6 animate-spin rounded-full border-2 border-muted-foreground/30 border-t-foreground" />
+        <div role="status" aria-label="Loading your recents">
+          <IconGridSkeleton count={12} className="py-4" />
         </div>
       )}
 
@@ -278,12 +276,13 @@ export function RecentsPage() {
             Couldn&apos;t load your recent icons
           </h2>
           <p className="mx-auto mt-1 max-w-sm text-sm text-muted-foreground">
-            Your viewed and copied history is saved, it just couldn&apos;t be resolved this time.
+            Your viewed and copied history is saved, it just couldn&apos;t be
+            resolved this time.
           </p>
           <button
             type="button"
             onClick={() => setReloadToken((t) => t + 1)}
-            className="mt-6 inline-flex items-center gap-1.5 rounded-xl bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-all hover:scale-[1.02] hover:opacity-90 active:scale-95"
+            className="mt-6 inline-flex items-center gap-1.5 rounded-xl bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-all hover:scale-[1.02] hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-95"
           >
             Retry
           </button>
@@ -300,7 +299,8 @@ export function RecentsPage() {
             Nothing here yet
           </h2>
           <p className="mx-auto mt-1 max-w-sm text-sm text-muted-foreground">
-            Browse a few icons and they will land here for one-tap recopy and quick reopen.
+            Browse a few icons and they will land here for one-tap recopy and
+            quick reopen.
           </p>
           <Link
             href="/"
@@ -375,7 +375,7 @@ export function RecentsPage() {
                           title="Copy SVG"
                           className="flex h-7 flex-1 items-center justify-center gap-1 rounded-lg bg-foreground/95 text-[11px] font-medium text-background backdrop-blur-sm transition-transform active:scale-95"
                         >
-                          <Copy className="h-3 w-3" />
+                          <Copy className="h-3.5 w-3.5" />
                           Copy
                         </button>
                         <a
@@ -435,10 +435,10 @@ export function RecentsPage() {
                               {entry.title}
                             </p>
                             <p className="text-[11px] text-muted-foreground">
-                              <span className="font-mono uppercase">{format}</span>
-                              {count > 1 && (
-                                <span> · {count}&times;</span>
-                              )}
+                              <span className="font-mono uppercase">
+                                {format}
+                              </span>
+                              {count > 1 && <span> · {count}&times;</span>}
                               <span> · {timeAgo(ts)} ago</span>
                             </p>
                           </div>
@@ -449,7 +449,7 @@ export function RecentsPage() {
                           aria-label={`Copy ${entry.title} again`}
                           className="flex h-7 shrink-0 items-center gap-1 rounded-lg bg-foreground/90 px-2.5 text-[11px] font-medium text-background opacity-0 transition-all group-hover:opacity-100 active:scale-95"
                         >
-                          <Copy className="h-3 w-3" />
+                          <Copy className="h-3.5 w-3.5" />
                           Recopy
                         </button>
                       </div>
@@ -480,7 +480,7 @@ export function RecentsPage() {
                       }
                       className="group inline-flex items-center gap-1.5 rounded-full border border-border/40 bg-card/60 px-3 py-1.5 text-sm transition-all hover:-translate-y-0.5 hover:border-foreground/20 hover:bg-accent dark:border-white/[0.06] dark:bg-white/[0.02] dark:hover:border-white/[0.15]"
                     >
-                      <Search className="h-3 w-3 text-muted-foreground transition-colors group-hover:text-foreground" />
+                      <Search className="h-3.5 w-3.5 text-muted-foreground transition-colors group-hover:text-foreground" />
                       <span className="text-foreground">{r.query}</span>
                       <span className="text-[10px] text-muted-foreground/60">
                         {timeAgo(r.ts)}

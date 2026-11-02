@@ -1,4 +1,4 @@
-import { BookOpen } from "lucide-react";
+import { BookOpen } from "@/components/own-icons";
 import { withUtm } from "@/lib/external-link";
 import { getIconLinks } from "@/lib/icon-links";
 import type { IconLinks } from "@/lib/icon-links";

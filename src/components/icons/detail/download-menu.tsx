@@ -1,15 +1,7 @@
 "use client";
 
 import { useCallback, useRef, useState } from "react";
-import {
-  Check,
-  ChevronDown,
-  Clipboard,
-  Download,
-  FileCode,
-  ImageIcon,
-  Loader2,
-} from "lucide-react";
+import { Check, ChevronDown, Clipboard, Download, FileCode, ImageIcon } from "@/components/own-icons";
 import posthog from "posthog-js";
 import { Button } from "@/components/ui/button";
 import {
@@ -24,6 +16,7 @@ import {
   type RasterFormat,
   svgToRaster,
 } from "@/lib/svg-to-png";
+import { Busy } from "@/components/skeletons";
 
 interface DownloadMenuProps {
   svgContent: string;
@@ -31,6 +24,10 @@ interface DownloadMenuProps {
   slug: string;
   title: string;
   activeVariant: string;
+  /** Optional SVG text used for PNG, JPG and WebP only, for icons whose vector uses currentColor. */
+  rasterSvg?: string;
+  /** Optional line shown under the raster sizes, to explain how the raster color was chosen. */
+  rasterNote?: string;
 }
 
 const RASTER_SIZES = [32, 64, 128, 256, 512, 1024] as const;
@@ -54,6 +51,8 @@ export function DownloadMenu({
   slug,
   title,
   activeVariant,
+  rasterSvg,
+  rasterNote,
 }: DownloadMenuProps) {
   // Tracked per action so one in-flight (or stalled) export never disables the
   // other half of the split button or any unrelated menu item. Combined with
@@ -120,7 +119,7 @@ export function DownloadMenu({
       if (busy.has(key)) return;
       startBusy(key);
       try {
-        const source = svgContent || currentPath;
+        const source = rasterSvg || svgContent || currentPath;
         const blob = await svgToRaster(source, size, format);
         const fmt = RASTER_FORMATS.find((f) => f.id === format);
         downloadBlob(
@@ -141,7 +140,7 @@ export function DownloadMenu({
         endBusy(key);
       }
     },
-    [busy, svgContent, currentPath, slug, activeVariant, flashDone, flashError, startBusy, endBusy],
+    [busy, rasterSvg, svgContent, currentPath, slug, activeVariant, flashDone, flashError, startBusy, endBusy],
   );
 
   const handleCopyDataUri = useCallback(async () => {
@@ -175,7 +174,7 @@ export function DownloadMenu({
         {done ? (
           <Check className="mr-1.5 h-4 w-4" />
         ) : busy.has("svg") ? (
-          <Loader2 className="mr-1.5 h-4 w-4 animate-spin" />
+          <Busy className="mr-1.5 h-4 w-4" />
         ) : (
           <Download className="mr-1.5 h-4 w-4" />
         )}
@@ -221,7 +220,7 @@ export function DownloadMenu({
           {/* Vector section */}
           <div className="border-b border-border/40 p-2">
             <p className="mb-1.5 flex items-center gap-1.5 px-1 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/70">
-              <FileCode className="h-3 w-3" />
+              <FileCode className="h-3.5 w-3.5" />
               Vector
             </p>
             <div className="grid grid-cols-2 gap-1.5">
@@ -236,7 +235,7 @@ export function DownloadMenu({
               >
                 <span className="flex items-center gap-1.5">
                   {busy.has("svg") ? (
-                    <Loader2 className="h-3.5 w-3.5 animate-spin text-muted-foreground" />
+                    <Busy className="h-3.5 w-3.5 text-muted-foreground" />
                   ) : (
                     <Download className="h-3.5 w-3.5 text-muted-foreground transition-colors group-hover:text-foreground" />
                   )}
@@ -259,7 +258,7 @@ export function DownloadMenu({
               >
                 <span className="flex items-center gap-1.5">
                   {busy.has("uri") ? (
-                    <Loader2 className="h-3.5 w-3.5 animate-spin text-muted-foreground" />
+                    <Busy className="h-3.5 w-3.5 text-muted-foreground" />
                   ) : (
                     <Clipboard className="h-3.5 w-3.5 text-muted-foreground transition-colors group-hover:text-foreground" />
                   )}
@@ -278,7 +277,7 @@ export function DownloadMenu({
           <div className="p-2">
             <div className="mb-2 flex items-center justify-between px-1">
               <p className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/70">
-                <ImageIcon className="h-3 w-3" />
+                <ImageIcon className="h-3.5 w-3.5" />
                 Raster
               </p>
               <div className="flex items-center gap-0.5 rounded-md border border-border/40 bg-muted/40 p-0.5 dark:bg-white/[0.03]">
@@ -315,7 +314,7 @@ export function DownloadMenu({
                     )}
                   >
                     {busy.has(key) ? (
-                      <Loader2 className="h-4 w-4 animate-spin text-muted-foreground" />
+                      <Busy className="h-4 w-4 text-muted-foreground" />
                     ) : (
                       <>
                         <span className="text-xs font-semibold text-foreground">
@@ -330,6 +329,7 @@ export function DownloadMenu({
                 );
               })}
             </div>
+            {rasterNote && <p className="mt-2 px-1 text-[10px] leading-snug text-muted-foreground/70">{rasterNote}</p>}
           </div>
         </DropdownMenuContent>
       </DropdownMenu>

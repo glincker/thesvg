@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Link as LinkIcon, Check } from "lucide-react";
+import { Link as LinkIcon, Check } from "@/components/own-icons";
 
 /** h2 with a hover-reveal "#" anchor link, so a subsection has a stable,
  * copyable URL (`/docs/react#usage`) instead of only being reachable by

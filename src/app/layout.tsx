@@ -13,6 +13,8 @@ import { CommandPalette } from "@/components/command-palette";
 import { StarPrompt } from "@/components/star-prompt";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { StoreHydration } from "@/components/store-hydration";
+import { InterfaceSizeSync } from "@/components/interface-size-sync";
+import { INTERFACE_SIZE_SCRIPT } from "@/lib/interface-size";
 import { HeaderSkeleton, MobileHeaderSkeleton, ContentSkeleton } from "@/components/skeletons";
 import { getFormattedIconCount, getCollections } from "@/lib/icons";
 import postsData from "@/data/posts.json";
@@ -142,6 +144,7 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: INTERFACE_SIZE_SCRIPT }} />
         <link rel="search" type="application/opensearchdescription+xml" title="theSVG" href="/opensearch.xml" />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-1VSDVTDKDR"
@@ -165,6 +168,7 @@ export default async function RootLayout({
         >
           <TooltipProvider delay={300}>
           <StoreHydration />
+          <InterfaceSizeSync />
           <ScrollToTop />
           {/* Desktop header, `md:` and above. Rendered as a body-level
               sibling (not wrapped) so position: sticky keeps a containing

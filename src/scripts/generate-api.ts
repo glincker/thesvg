@@ -136,6 +136,13 @@ function main() {
   writeFileSync(join(PUBLIC_API, "icons-full.json"), JSON.stringify(browseIndex));
   console.log(`  icons-full.json: ${icons.length} icons (slim browse index)`);
 
+  // --- ui-icons.json (UI icon manifest, a separate file so the brand index never grows with it) ---
+  const uiManifest = join(ROOT, "src/data/ui-icons.json");
+  if (existsSync(uiManifest)) {
+    writeFileSync(join(PUBLIC_API, "ui-icons.json"), readFileSync(uiManifest));
+    console.log("  ui-icons.json: copied UI icon manifest");
+  }
+
   console.log("API generation complete.");
 }
 

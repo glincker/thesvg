@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { X, MousePointerClick } from "lucide-react";
+import { X, MousePointerClick } from "@/components/own-icons";
 
 const STORAGE_KEY = "thesvg-hint-dismissed";
 

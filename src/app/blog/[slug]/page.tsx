@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { JsonLd } from "@/components/json-ld";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Calendar, Tag } from "lucide-react";
+import { ArrowLeft, Calendar, Tag } from "@/components/own-icons";
 import { ShareButtons } from "@/components/blog/share-buttons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 import { getCategoryCounts } from "@/lib/icons";
@@ -26,6 +26,9 @@ interface PageProps {
 }
 
 const posts = postsData as Post[];
+
+// Posts without their own cover fall back to the site card so the page always has og:image.
+const DEFAULT_COVER = "/og-image.png";
 
 export function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
@@ -58,13 +61,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       siteName: "theSVG",
       section: post.tags[0],
       tags: post.tags,
-      ...(post.image ? { images: [{ url: post.image, width: 1200, height: 630, alt: post.title }] } : {}),
+      images: [{ url: post.image ?? DEFAULT_COVER, width: 1200, height: 630, alt: post.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.excerpt,
-      ...(post.image ? { images: [post.image] } : {}),
+      images: [post.image ?? DEFAULT_COVER],
     },
     alternates: {
       canonical: `https://thesvg.org/blog/${slug}`,
@@ -209,7 +212,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     datePublished: post.date,
     author: { "@type": "Organization", name: post.author },
     publisher: { "@type": "Organization", name: "theSVG", url: "https://thesvg.org" },
-    ...(post.image ? { image: `https://thesvg.org${post.image}` } : {}),
+    image: `https://thesvg.org${post.image ?? DEFAULT_COVER}`,
     url: `https://thesvg.org/blog/${slug}`,
     isPartOf: { "@type": "WebSite", name: "theSVG", url: "https://thesvg.org" },
   };
@@ -224,14 +227,14 @@ export default async function BlogPostPage({ params }: PageProps) {
               href="/blog"
               className="mb-6 inline-flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
             >
-              <ArrowLeft className="h-3 w-3" />
+              <ArrowLeft className="h-3.5 w-3.5" />
               Back to blog
             </Link>
 
               <header className="mb-8">
                 <div className="flex items-center gap-3 text-xs text-muted-foreground">
                   <span className="flex items-center gap-1">
-                    <Calendar className="h-3 w-3" />
+                    <Calendar className="h-3.5 w-3.5" />
                     {new Date(post.date).toLocaleDateString("en-US", {
                       month: "long",
                       day: "numeric",
@@ -257,25 +260,21 @@ export default async function BlogPostPage({ params }: PageProps) {
             </div>
           </header>
 
-          {post.image ? (
-            <>
-              <img
-                src={post.image}
-                alt={post.title}
-                width={1200}
-                height={630}
-                className={`mb-8 w-full rounded-xl border border-border/40 dark:border-white/[0.06]${post.imageLight ? " hidden dark:block" : ""}`}
-              />
-              {post.imageLight ? (
-                <img
-                  src={post.imageLight}
-                  alt={post.title}
-                  width={1200}
-                  height={630}
-                  className="mb-8 w-full rounded-xl border border-border/40 dark:hidden"
-                />
-              ) : null}
-            </>
+          <img
+            src={post.image ?? DEFAULT_COVER}
+            alt={post.title}
+            width={1200}
+            height={630}
+            className={`mb-8 w-full rounded-xl border border-border/40 dark:border-white/[0.06]${post.imageLight ? " hidden dark:block" : ""}`}
+          />
+          {post.imageLight ? (
+            <img
+              src={post.imageLight}
+              alt={post.title}
+              width={1200}
+              height={630}
+              className="mb-8 w-full rounded-xl border border-border/40 dark:hidden"
+            />
           ) : null}
 
           {/* Body with sticky share sidebar */}

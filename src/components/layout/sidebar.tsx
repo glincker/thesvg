@@ -16,7 +16,7 @@ import {
   Shapes,
   Sparkles,
   X,
-} from "lucide-react";
+} from "@/components/own-icons";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -33,6 +33,7 @@ import { AlphabetRail } from "@/components/layout/alphabet-rail";
 import { SidebarNav } from "@/components/layout/sidebar-nav";
 import { SidebarCollapseToggle } from "@/components/layout/sidebar-collapse-toggle";
 
+import { ICON_SIZE } from "@/lib/chrome-sizes";
 import { cn } from "@/lib/utils";
 
 const CATEGORY_SEARCH_DEBOUNCE_MS = 400;
@@ -51,22 +52,22 @@ interface SidebarFamily {
 
 /** Parent logo that stays visible in both themes. */
 function FamilyLogo({ family }: { family: SidebarFamily }) {
-  const base = "h-4 w-4 shrink-0 object-contain";
+  const base = `${ICON_SIZE.sidebar} shrink-0 object-contain`;
   if (family.logoDark) {
     return (
       <>
         <img
           src={family.logo}
           alt=""
-          width={16}
-          height={16}
+          width={20}
+          height={20}
           className={cn(base, "dark:hidden")}
         />
         <img
           src={family.logoDark}
           alt=""
-          width={16}
-          height={16}
+          width={20}
+          height={20}
           className={cn(base, "hidden dark:block")}
         />
       </>
@@ -221,7 +222,7 @@ export function Sidebar({
             ? "flex h-full w-full flex-col bg-background pt-6"
             : cn(
                 "group/sidebar fixed top-[calc(4.25rem+var(--banner-h,0px))] left-2 z-30 hidden h-[calc(100vh-4.75rem-var(--banner-h,0px))] flex-col rounded-2xl border border-black/[0.06] bg-background/90 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08),0_0_0_1px_rgba(0,0,0,0.03)] backdrop-blur-2xl transition-[width] duration-200 ease-in-out md:flex dark:border-white/[0.08] dark:bg-black/60 dark:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.05)]",
-                collapsed ? "w-16" : "w-54",
+                collapsed ? "w-16" : "w-56",
               ),
         )}
       >
@@ -260,12 +261,12 @@ export function Sidebar({
                     onClick={() => toggleSection("collections")}
                     aria-expanded={collectionsExpanded}
                     aria-controls="collections-menu"
-                    className="flex w-full items-center justify-between rounded-lg px-1 pt-3 pb-1.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/70 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    className="flex w-full items-center justify-between rounded-lg px-1 pt-3 pb-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground/70 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                   >
                     Collections
                     <ChevronRight
                       className={cn(
-                        "h-3 w-3 shrink-0 transition-transform duration-200",
+                        "h-4 w-4 shrink-0 transition-transform duration-200",
                         collectionsExpanded && "rotate-90",
                       )}
                     />
@@ -296,14 +297,14 @@ export function Sidebar({
                               "bg-gradient-to-r from-accent/80 to-accent/40 text-accent-foreground font-medium shadow-sm shadow-black/[0.03] dark:from-white/[0.08] dark:to-white/[0.04] dark:shadow-black/20",
                           )}
                         >
-                          <span className="flex items-center gap-2.5 truncate">
+                          <span className="flex items-center gap-3 truncate">
                             <Icon
                               className={cn(
-                                "h-4 w-4 shrink-0 transition-transform duration-200 group-hover:scale-110",
-                                isActive ? meta?.color : "opacity-60",
+                                `${ICON_SIZE.sidebar} shrink-0 transition-all duration-200 group-hover:scale-110`,
+                                isActive ? meta?.color : "text-muted-foreground group-hover:text-orange-500",
                               )}
                             />
-                            <span className="truncate text-[13px]">
+                            <span className="truncate text-sm">
                               {meta?.label || col.name}
                             </span>
                           </span>
@@ -327,7 +328,7 @@ export function Sidebar({
                     onClick={() => toggleSection("families")}
                     aria-expanded={familiesExpanded}
                     aria-controls="families-menu"
-                    className="flex w-full items-center justify-between rounded-lg px-1 pt-3 pb-1.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/70 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    className="flex w-full items-center justify-between rounded-lg px-1 pt-3 pb-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground/70 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                   >
                     <span className="flex items-center gap-2">
                       Families
@@ -339,7 +340,7 @@ export function Sidebar({
                     </span>
                     <ChevronRight
                       className={cn(
-                        "h-3 w-3 shrink-0 transition-transform duration-200",
+                        "h-4 w-4 shrink-0 transition-transform duration-200",
                         familiesExpanded && "rotate-90",
                       )}
                     />
@@ -357,13 +358,13 @@ export function Sidebar({
                       <Link
                         href="/families"
                         className={cn(
-                          "flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] text-muted-foreground transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                          "flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm text-muted-foreground transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                           pathname === "/families" &&
                             "bg-accent/60 text-accent-foreground font-medium",
                         )}
                       >
                         <span>All families</span>
-                        <ChevronRight className="h-3 w-3" aria-hidden />
+                        <ChevronRight className="h-4 w-4" aria-hidden />
                       </Link>
                       {(familiesData as SidebarFamily[]).map((family) => {
                         const href = `/family/${family.slug}`;
@@ -372,12 +373,12 @@ export function Sidebar({
                             key={family.slug}
                             href={href}
                             className={cn(
-                              "group flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                              "group flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                               pathname === href &&
                                 "bg-gradient-to-r from-accent/80 to-accent/40 text-accent-foreground font-medium shadow-sm shadow-black/[0.03] dark:from-white/[0.08] dark:to-white/[0.04] dark:shadow-black/20",
                             )}
                           >
-                            <span className="flex items-center gap-2 truncate">
+                            <span className="flex items-center gap-3 truncate">
                               <FamilyLogo family={family} />
                               <span className="truncate">{family.title}</span>
                             </span>
@@ -400,12 +401,12 @@ export function Sidebar({
                   onClick={() => toggleSection("featured")}
                   aria-expanded={featuredExpanded}
                   aria-controls="featured-menu"
-                  className="flex w-full items-center justify-between rounded-lg px-1 pt-3 pb-1.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/70 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  className="flex w-full items-center justify-between rounded-lg px-1 pt-3 pb-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground/70 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >
                   Featured
                   <ChevronRight
                     className={cn(
-                      "h-3 w-3 shrink-0 transition-transform duration-200",
+                      "h-4 w-4 shrink-0 transition-transform duration-200",
                       featuredExpanded && "rotate-90",
                     )}
                   />
@@ -422,13 +423,13 @@ export function Sidebar({
                   <Link
                     href="/category/google-2026"
                     className={cn(
-                      "group flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                      "group flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                       pathname === "/category/google-2026" &&
                         "bg-gradient-to-r from-accent/80 to-accent/40 text-accent-foreground font-medium shadow-sm shadow-black/[0.03] dark:from-white/[0.08] dark:to-white/[0.04] dark:shadow-black/20",
                     )}
                   >
-                    <span className="flex items-center gap-2 truncate">
-                      <Sparkles className="h-3.5 w-3.5 shrink-0 text-amber-500" />
+                    <span className="flex items-center gap-3 truncate">
+                      <Sparkles className="h-5 w-5 shrink-0 text-amber-500" />
                       <span className="truncate">Google 2026</span>
                     </span>
                     <span className="ml-2 shrink-0 rounded-full bg-gradient-to-r from-fuchsia-500/90 via-orange-500/90 to-amber-400/90 px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase leading-none tracking-wider text-white shadow-sm shadow-black/20">
@@ -438,22 +439,22 @@ export function Sidebar({
                   <Link
                     href="/?sort=recent"
                     className={cn(
-                      "group flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                      "group flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                     )}
                   >
-                    <span className="flex items-center gap-2 truncate">
-                      <Clock className="h-3.5 w-3.5 shrink-0 opacity-60" />
+                    <span className="flex items-center gap-3 truncate">
+                      <Clock className="h-5 w-5 shrink-0 text-muted-foreground transition-colors group-hover:text-orange-500" />
                       <span className="truncate">Recently Added</span>
                     </span>
                   </Link>
                   <Link
                     href="/?sort=popular"
                     className={cn(
-                      "group flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                      "group flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                     )}
                   >
-                    <span className="flex items-center gap-2 truncate">
-                      <Flame className="h-3.5 w-3.5 shrink-0 opacity-60" />
+                    <span className="flex items-center gap-3 truncate">
+                      <Flame className="h-5 w-5 shrink-0 text-muted-foreground transition-colors group-hover:text-orange-500" />
                       <span className="truncate">Popular</span>
                     </span>
                   </Link>
@@ -476,7 +477,7 @@ export function Sidebar({
                   )}
                 </div>
                 <div className="relative mb-2 flex items-center">
-                  <Search className="pointer-events-none absolute left-2.5 h-3.5 w-3.5 text-muted-foreground/40" />
+                  <Search className="pointer-events-none absolute left-2.5 h-4 w-4 text-muted-foreground/40" />
                   <input
                     type="text"
                     value={categorySearch}
@@ -493,7 +494,7 @@ export function Sidebar({
                       aria-label="Clear category search"
                       className="absolute right-2 flex h-4 w-4 items-center justify-center rounded-full text-muted-foreground/50 transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                     >
-                      <X className="h-3 w-3" aria-hidden="true" />
+                      <X className="h-3.5 w-3.5" aria-hidden="true" />
                     </button>
                   )}
                 </div>
@@ -539,7 +540,7 @@ export function Sidebar({
                             type="button"
                             onClick={() => onCategorySelect(category.name)}
                             className={cn(
-                              "group flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-[13px] transition-all duration-200 hover:translate-x-0.5 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                              "group flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm transition-all duration-200 hover:translate-x-0.5 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                               selectedCategory === category.name &&
                                 !showFavorites &&
                                 "bg-gradient-to-r from-accent/80 to-accent/40 text-accent-foreground font-medium shadow-sm shadow-black/[0.03] dark:from-white/[0.08] dark:to-white/[0.04] dark:shadow-black/20",

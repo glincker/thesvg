@@ -1,7 +1,7 @@
 "use client";
 
+import { UiGlyph } from "@/components/ui-glyph";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Sparkle } from "@phosphor-icons/react/dist/ssr";
 import { brandGlowColor } from "@/lib/brand-glow-color";
 import { cn } from "@/lib/utils";
 
@@ -145,11 +145,9 @@ export function BrandGlow({ hex }: { hex?: string }) {
             title={enabled ? "Turn off background glow" : "Turn on background glow"}
             className="relative flex h-8 w-8 items-center justify-center rounded-full border border-border/60 bg-card/90 text-muted-foreground shadow-sm backdrop-blur-sm transition-colors hover:text-foreground"
           >
-            <Sparkle
-              weight={enabled ? "fill" : "regular"}
-              className="h-3.5 w-3.5"
-              style={enabled ? { color: glowColor } : undefined}
-            />
+            <span className="inline-flex" style={enabled ? { color: glowColor } : undefined}>
+              <UiGlyph name="sparkles" look={enabled ? "fill" : undefined} className="h-3.5 w-3.5" />
+            </span>
             <span
               className={cn(
                 "absolute -top-0.5 -right-0.5 h-2 w-2 rounded-full ring-2 ring-card transition-colors",

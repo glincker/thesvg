@@ -1,14 +1,7 @@
 "use client";
 
+import { UiGlyph } from "@/components/ui-glyph";
 import { useMemo, useState } from "react";
-import {
-  Checkerboard,
-  GridFour,
-  MagnifyingGlassMinus,
-  MagnifyingGlassPlus,
-  Moon,
-  Sun,
-} from "@phosphor-icons/react/dist/ssr";
 import {
   Dialog,
   DialogContent,
@@ -117,7 +110,7 @@ export function IconInspectorModal({ title, src }: IconInspectorModalProps) {
           />
         }
       >
-        <MagnifyingGlassPlus className="h-4 w-4" weight="bold" />
+        <UiGlyph name="plus" className="h-4 w-4" />
       </DialogTrigger>
 
       <DialogContent className="flex max-h-[85vh] w-full max-w-[calc(100%-2rem)] flex-col gap-4 overflow-y-auto sm:max-w-2xl">
@@ -178,11 +171,11 @@ export function IconInspectorModal({ title, src }: IconInspectorModalProps) {
           <div className="flex items-center gap-1 rounded-lg border border-border/60 bg-muted/30 p-1">
             {(
               [
-                { value: "checker" as const, icon: Checkerboard, label: "Transparent" },
-                { value: "light" as const, icon: Sun, label: "Light" },
-                { value: "dark" as const, icon: Moon, label: "Dark" },
+                { value: "checker" as const, icon: "grid-2x2", label: "Transparent" },
+                { value: "light" as const, icon: "sun", label: "Light" },
+                { value: "dark" as const, icon: "moon", label: "Dark" },
               ]
-            ).map(({ value, icon: Icon, label }) => (
+            ).map(({ value, icon, label }) => (
               <button
                 key={value}
                 type="button"
@@ -196,7 +189,7 @@ export function IconInspectorModal({ title, src }: IconInspectorModalProps) {
                     : "text-muted-foreground hover:text-foreground"
                 )}
               >
-                <Icon className="h-4 w-4" />
+                <UiGlyph name={icon} className="h-4 w-4" />
               </button>
             ))}
           </div>
@@ -214,7 +207,7 @@ export function IconInspectorModal({ title, src }: IconInspectorModalProps) {
                   : "text-muted-foreground hover:text-foreground"
               )}
             >
-              <GridFour className="h-3.5 w-3.5" />
+              <UiGlyph name="layout-grid" className="h-3.5 w-3.5" />
               Grid
             </button>
 
@@ -227,7 +220,7 @@ export function IconInspectorModal({ title, src }: IconInspectorModalProps) {
                 aria-label="Zoom out"
                 className="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors hover:text-foreground disabled:opacity-30"
               >
-                <MagnifyingGlassMinus className="h-4 w-4" />
+                <UiGlyph name="minus" className="h-4 w-4" />
               </button>
               <span className="w-12 text-center font-mono text-xs text-muted-foreground">
                 {zoom}px
@@ -241,7 +234,7 @@ export function IconInspectorModal({ title, src }: IconInspectorModalProps) {
                 aria-label="Zoom in"
                 className="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors hover:text-foreground disabled:opacity-30"
               >
-                <MagnifyingGlassPlus className="h-4 w-4" />
+                <UiGlyph name="plus" className="h-4 w-4" />
               </button>
             </div>
           </div>

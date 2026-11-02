@@ -1951,6 +1951,32 @@
     "collection": "brands"
   },
   {
+    "slug": "agent-qa",
+    "title": "agent-qa",
+    "aliases": [
+      "vostride",
+      "agentqa"
+    ],
+    "hex": "1BA8A4",
+    "categories": [
+      "AI",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/agent-qa/default.svg",
+      "mono": "/icons/agent-qa/mono.svg"
+    },
+    "license": "FSL-1.1-ALv2",
+    "url": "https://vostride.com",
+    "guidelines": "https://github.com/vostride/agent-qa/blob/33cd7dbe52f77d661482977ed0437889d04fdf93/LICENSE.md",
+    "links": {
+      "github": "https://github.com/vostride/agent-qa",
+      "docs": "https://vostride.com/docs/agent-qa"
+    },
+    "dateAdded": "2026-10-25",
+    "collection": "brands"
+  },
+  {
     "slug": "agora",
     "title": "Agora",
     "aliases": [],
@@ -3550,7 +3576,8 @@
     "license": "Fair use",
     "url": "https://amazon.com",
     "dateAdded": "2026-03-18",
-    "collection": "brands"
+    "collection": "brands",
+    "guidelines": "https://pages.awscloud.com/rs/112-TZM-766/images/Amazon%20Global_Brand%20Guidelines_DF_v3.pdf"
   },
   {
     "slug": "amazon-badge",
@@ -8297,7 +8324,8 @@
       "default": "/icons/aws/color.svg",
       "color": "/icons/aws/color.svg",
       "mono": "/icons/aws/mono.svg",
-      "icon": "/icons/aws/icon.svg"
+      "icon": "/icons/aws/icon.svg",
+      "refresh": "/icons/aws/refresh.svg"
     },
     "license": "MIT",
     "url": "https://aws.amazon.com",
@@ -55854,6 +55882,29 @@
     "collection": "brands"
   },
   {
+    "slug": "easy-ai",
+    "title": "Easy AI",
+    "aliases": [],
+    "hex": "773A92",
+    "categories": [
+      "AI",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/easy-ai/default.svg",
+      "mono": "/icons/easy-ai/mono.svg",
+      "light": "/icons/easy-ai/light.svg",
+      "dark": "/icons/easy-ai/dark.svg",
+      "wordmark": "/icons/easy-ai/wordmark.svg",
+      "wordmarkLight": "/icons/easy-ai/wordmark-light.svg",
+      "wordmarkDark": "/icons/easy-ai/wordmark-dark.svg"
+    },
+    "license": "Trademark",
+    "url": "https://geteasy.ai",
+    "dateAdded": "2026-10-26",
+    "collection": "brands"
+  },
+  {
     "slug": "easy-appointments",
     "title": "Easy!Appointments",
     "aliases": [
@@ -58797,7 +58848,7 @@
     },
     "license": "CC0-1.0",
     "url": "https://www.facebook.com",
-    "guidelines": "https://about.meta.com/brand/resources/facebook/logo",
+    "guidelines": "https://www.meta.com/brand/resources/facebook/logo/",
     "dateAdded": "2026-03-07",
     "collection": "brands",
     "family": "meta"
@@ -59134,6 +59185,23 @@
     "license": "CC0-1.0",
     "url": "https://fanfou.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "fans",
+    "title": "Fans",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/fans/default.svg",
+      "mono": "/icons/fans/mono.svg"
+    },
+    "license": "Trademark",
+    "url": "https://app.fans/",
+    "dateAdded": "2026-10-31",
     "collection": "brands"
   },
   {
@@ -78920,14 +78988,17 @@
     "variants": {
       "default": "/icons/instagram/default.svg",
       "mono": "/icons/instagram/mono.svg",
-      "wordmark": "/icons/instagram/wordmark.svg"
+      "wordmark": "/icons/instagram/wordmark.svg",
+      "wordmarkLight": "/icons/instagram/wordmark-light.svg",
+      "wordmarkDark": "/icons/instagram/wordmark-dark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://www.instagram.com/",
-    "guidelines": "https://about.instagram.com/brand",
+    "guidelines": "https://www.meta.com/brand/resources/instagram/instagram-brand/",
     "dateAdded": "2026-03-07",
     "collection": "brands",
-    "family": "meta"
+    "family": "meta",
+    "supersedes": "instagram-legacy"
   },
   {
     "slug": "instagram-badge",
@@ -78945,6 +79016,26 @@
     "url": "https://www.instagram.com/",
     "dateAdded": "2026-09-12",
     "collection": "auth-badges"
+  },
+  {
+    "slug": "instagram-legacy",
+    "title": "Instagram (legacy wordmark)",
+    "aliases": [],
+    "hex": "343433",
+    "categories": [
+      "Social",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/instagram-legacy/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.instagram.com/",
+    "guidelines": "https://www.meta.com/brand/resources/instagram/instagram-brand/",
+    "dateAdded": "2026-03-07",
+    "collection": "brands",
+    "family": "meta",
+    "supersededBy": "instagram"
   },
   {
     "slug": "instapaper",
@@ -92886,7 +92977,7 @@
     },
     "license": "CC0-1.0",
     "url": "https://www.messenger.com/",
-    "guidelines": "https://about.meta.com/brand/resources/facebook/messenger-icon",
+    "guidelines": "https://www.meta.com/brand/resources/facebook/messenger-icon/",
     "dateAdded": "2026-03-07",
     "collection": "brands",
     "family": "meta"
@@ -92907,7 +92998,7 @@
     },
     "license": "CC0-1.0",
     "url": "https://about.meta.com/es/",
-    "guidelines": "https://about.meta.com/brand/resources/",
+    "guidelines": "https://www.meta.com/brand/resources/meta/company-brand/",
     "dateAdded": "2026-03-07",
     "collection": "brands"
   },
@@ -102184,7 +102275,7 @@
     },
     "license": "CC0-1.0",
     "url": "https://en.facebookbrand.com/oculus/assets/oculus?audience=oculus-landing",
-    "guidelines": "https://en.facebookbrand.com/oculus/",
+    "guidelines": "https://www.meta.com/brand/resources/",
     "dateAdded": "2026-03-07",
     "collection": "brands",
     "family": "meta"
@@ -102531,6 +102622,25 @@
     "url": "",
     "dateAdded": "2026-09-12",
     "collection": "auth-badges"
+  },
+  {
+    "slug": "olive-garden",
+    "title": "Olive Garden",
+    "aliases": [
+      "Olive Garden Italian Restaurant"
+    ],
+    "hex": "9FA73A",
+    "categories": [
+      "Food"
+    ],
+    "variants": {
+      "default": "/icons/olive-garden/default.svg",
+      "wordmark": "/icons/olive-garden/wordmark.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.olivegarden.com",
+    "dateAdded": "2026-10-26",
+    "collection": "brands"
   },
   {
     "slug": "ollama",
@@ -104683,18 +104793,20 @@
     "slug": "oracle",
     "title": "Oracle",
     "aliases": [],
-    "hex": "F80000",
+    "hex": "C74634",
     "categories": [
       "Database",
       "Cloud"
     ],
     "variants": {
-      "default": "/icons/oracle/default.svg"
+      "default": "/icons/oracle/default.svg",
+      "icon": "/icons/oracle/icon.svg"
     },
     "license": "Fair Use",
     "url": "https://www.oracle.com",
     "dateAdded": "2026-03-09",
-    "collection": "brands"
+    "collection": "brands",
+    "guidelines": "https://www.oracle.com/europe/a/ocom/docs/oracle-brand-guidelines.pdf"
   },
   {
     "slug": "oracle-badge",
@@ -120973,6 +121085,24 @@
     "collection": "brands"
   },
   {
+    "slug": "servicenow",
+    "title": "ServiceNow",
+    "aliases": [],
+    "hex": "62D84E",
+    "categories": [
+      "Management",
+      "SaaS"
+    ],
+    "variants": {
+      "default": "/icons/servicenow/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.servicenow.com",
+    "guidelines": "https://www.servicenow.com/logousage.html",
+    "dateAdded": "2026-10-26",
+    "collection": "brands"
+  },
+  {
     "slug": "session",
     "title": "Session",
     "aliases": [],
@@ -128854,6 +128984,28 @@
     "collection": "brands"
   },
   {
+    "slug": "taskade",
+    "title": "Taskade",
+    "aliases": [
+      "Taskade Genesis"
+    ],
+    "hex": "FF2D60",
+    "categories": [
+      "AI",
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/taskade/default.svg",
+      "mono": "/icons/taskade/mono.svg",
+      "wordmark": "/icons/taskade/wordmark.svg"
+    },
+    "license": "Trademark of Taskade. Used for identification under nominative fair use.",
+    "url": "https://www.taskade.com/",
+    "guidelines": "https://www.taskade.com/press",
+    "dateAdded": "2026-10-30",
+    "collection": "brands"
+  },
+  {
     "slug": "tasmota",
     "title": "Tasmota",
     "aliases": [],
@@ -130833,7 +130985,7 @@
     },
     "license": "CC0-1.0",
     "url": "https://threads.net/",
-    "guidelines": "https://about.meta.com/brand/resources/instagram/threads",
+    "guidelines": "https://www.meta.com/brand/resources/threads/",
     "dateAdded": "2026-03-07",
     "collection": "brands",
     "family": "meta"
@@ -140593,7 +140745,7 @@
     },
     "license": "CC0-1.0",
     "url": "https://web.whatsapp.com",
-    "guidelines": "https://www.meta.com/brand/resources/whatsapp/whatsapp-brand",
+    "guidelines": "https://www.meta.com/brand/resources/whatsapp/whatsapp-brand/",
     "dateAdded": "2026-03-07",
     "collection": "brands",
     "family": "meta"
@@ -141786,7 +141938,7 @@
     },
     "license": "CC0-1.0",
     "url": "https://about.meta.com/brand/resources/workplace/workplace-brand",
-    "guidelines": "https://about.meta.com/brand/resources/workplace/workplace-brand",
+    "guidelines": "https://www.meta.com/brand/resources/workplace/workplace-brand/",
     "dateAdded": "2026-03-07",
     "collection": "brands",
     "family": "meta"

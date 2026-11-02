@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { Moon, Search, Sun, X } from "lucide-react";
+import { Moon, Search, Sun, X } from "@/components/own-icons";
 import { TheSVGMark } from "@/components/icons/the-svg-mark";
 import { useTheme } from "next-themes";
 import { usePathname, useRouter } from "next/navigation";
@@ -30,6 +30,8 @@ export function MobileTopBar() {
 
   function onChange(value: string) {
     setQuery(value);
+    // In the UI icons section the query filters UI icons in place, so typing never leaves it.
+    if (pathname.startsWith("/ui")) return;
     // If we're not on home, focusing a search jumps to home so the
     // result grid is visible. Mirrors the desktop combobox behavior.
     if (!pathname.startsWith("/") || pathname.length > 1) {

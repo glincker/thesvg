@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "@/components/own-icons";
 import type { IconEntry } from "@/lib/icons";
 import { cn } from "@/lib/utils";
 import { logoImgClass, logoPlateClass } from "@/lib/logo-surface";
@@ -51,7 +51,7 @@ export function FamilyStrip({
           className="flex items-center gap-1 text-[11px] font-medium text-muted-foreground transition-colors hover:text-foreground"
         >
           View all {total}
-          <ArrowUpRight className="h-3 w-3" />
+          <ArrowUpRight className="h-3.5 w-3.5" />
         </Link>
       </div>
       <ul className="grid grid-cols-3 gap-2 sm:grid-cols-6">

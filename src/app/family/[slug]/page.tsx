@@ -126,7 +126,14 @@ export default async function FamilyPage({ params }: PageProps) {
   const members = getFamilyMembers(slug);
   const children = members.filter((m) => m.slug !== slug);
   const sections = buildSections(children, parent.title, slug);
-  const categoryCount = new Set(children.map((c) => c.categories[0])).size;
+
+  // ⚡ Bolt: Use a single-pass loop instead of `new Set(array.map(...))` to
+  // avoid allocating intermediate arrays and reduce garbage collection pressure.
+  const categorySet = new Set<string | undefined>();
+  for (const c of children) {
+    categorySet.add(c.categories[0]);
+  }
+  const categoryCount = categorySet.size;
   const extra = FAMILY_COLLECTIONS[slug];
 
   const jsonLd = {

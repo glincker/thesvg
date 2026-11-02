@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Clock } from "lucide-react";
+import { Clock } from "@/components/own-icons";
 import { useRecentsStore } from "@/lib/stores/recents-store";
-import { loadIconsManifest } from "@/lib/icons-manifest";
+import { getIconsBySlugMap, loadIconsManifest } from "@/lib/icons-manifest";
 import type { IconEntry } from "@/lib/icons";
 
 interface MobileRecentsRowProps {
@@ -36,12 +36,9 @@ export function MobileRecentsRow({
     }
     let active = true;
     loadIconsManifest()
-      .then((manifest) => {
+      .then(() => {
         if (!active) return;
-        const bySlug = new Map<string, IconEntry>();
-        for (let i = 0; i < manifest.length; i++) {
-          bySlug.set(manifest[i].slug, manifest[i]);
-        }
+        const bySlug = getIconsBySlugMap();
         const resolved = viewed
           .map((v) => bySlug.get(v.slug))
           .filter((i): i is IconEntry => Boolean(i))
@@ -65,7 +62,7 @@ export function MobileRecentsRow({
     >
       <div className="flex items-center justify-between px-3 pb-2">
         <h3 className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-          <Clock className="h-3 w-3" /> {label}
+          <Clock className="h-3.5 w-3.5" /> {label}
         </h3>
         <Link
           href="/recents"

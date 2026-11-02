@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Check } from "lucide-react";
+import { Check } from "@/components/own-icons";
 import posthog from "posthog-js";
 import { getJsDelivrUrl } from "@/components/icons/shared/icon-constants";
 import { cn } from "@/lib/utils";

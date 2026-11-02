@@ -2,18 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import posthog from "posthog-js";
-import {
-  Check,
-  CheckCircle,
-  ClipboardCopy,
-  ExternalLink,
-  Loader2,
-  Palette,
-  Upload,
-  X,
-  XCircle,
-} from "lucide-react";
-import { Github } from "@/components/icons/shared/brand-icons";
+import { Check, CheckCircle, ClipboardCopy, ExternalLink, Palette, Upload, X, XCircle } from "@/components/own-icons";
+import { Github } from "@/components/own-icons";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
@@ -25,6 +15,7 @@ import {
   OTHER_LICENSE_ID,
   validateLicenseSelection,
 } from "@/lib/license-options";
+import { Busy } from "@/components/skeletons";
 
 const GITHUB_ISSUES_URL =
   "https://github.com/glincker/thesvg/issues/new";
@@ -245,7 +236,7 @@ function LicenseSelector({
             className="inline-flex items-center gap-1 text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
           >
             Licensing guide
-            <ExternalLink className="h-3 w-3" />
+            <ExternalLink className="h-3.5 w-3.5" />
           </a>
         </div>
       </div>
@@ -706,7 +697,7 @@ export function SubmitForm({
               )}
             >
               {isValidating ? (
-                <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
+                <Busy className="h-5 w-5 text-muted-foreground" />
               ) : (
                 <Upload
                   className={cn(

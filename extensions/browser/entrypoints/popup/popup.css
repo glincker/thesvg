@@ -44,3 +44,10 @@ html,body{width:360px;height:500px;overflow:hidden;background:var(--bg);color:va
 .retry-btn{background:var(--bg-a);border:1px solid var(--b);border-radius:var(--rs);color:var(--acc);font-size:11px;padding:5px 12px;cursor:pointer;transition:background .1s;margin-top:4px}
 .retry-btn:hover{background:var(--bg-h)}
 .toast{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);background:var(--bg-h);color:var(--t);border:1px solid var(--b);border-radius:6px;padding:6px 12px;font-size:12px;z-index:10}
+.mode-switch{display:flex;gap:2px;margin:10px 14px 0;padding:2px;background:var(--bg-s);border:1px solid var(--b);border-radius:var(--r);flex-shrink:0}
+.mode-btn{flex:1;background:transparent;border:0;border-radius:var(--rs);color:var(--tm);font-size:12px;font-weight:500;padding:5px 8px;cursor:pointer;transition:background .1s,color .1s}
+.mode-btn:hover:not(:disabled){color:var(--t)}
+.mode-btn:disabled{opacity:.5;cursor:default}
+.mode-btn.active{background:var(--bg-a);color:var(--acc)}
+.mode-note{margin:6px 14px 0;font-size:11px;color:var(--tm)}
+.result-icon img.ui-glyph{filter:invert(1)}

@@ -28,14 +28,14 @@ jobs:
        startsWith(github.event.pull_request.title, 'chore(release)'))
 
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v6
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
         with:
           version: 9
 
-      - uses: actions/setup-node@v7
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
         with:
           node-version: ${{ env.NODE_VERSION }}
           registry-url: 'https://registry.npmjs.org'
@@ -54,10 +54,25 @@ jobs:
           cd packages/cli && npm run build && cd ../..
           cd packages/mcp && npm run build && cd ../..
           cd packages/react && npm run build && cd ../..
+          cd packages/react-native && npm run build && npm run validate && cd ../..
           cd packages/vue && npm run build && cd ../..
           cd packages/svelte && npm run build && cd ../..
+          cd packages/solid && npm run build && cd ../..
+          cd packages/preact && npm run build && cd ../..
+          cd packages/astro && npm run build && cd ../..
+          cd packages/web && npm run build && cd ../..
+          cd packages/static && npm run build && cd ../..
+          cd packages/ui && npm run build && cd ../..
+          cd packages/ui-react && npm run build && cd ../..
+          cd packages/ui-vue && npm run build && cd ../..
+          cd packages/ui-svelte && npm run build && cd ../..
+          cd packages/ui-react-native && npm run build && cd ../..
 
       - name: Publish to npm
+        id: publish
+        # A failed package is reported at the end of this step but does not stop the ones after it, and the
+        # job still fails (see the last step), so a broken publisher setup stays visible.
+        continue-on-error: true
         # pnpm changeset publish ships README.md inside the tarball but does
         # not populate the per-version `readme` field on the npm registry
         # manifest, which is what npmjs.com renders. To get both correct
@@ -66,6 +81,7 @@ jobs:
         # versions) and then `npm publish <tarball>` (which populates the
         # readme field on the registry manifest).
         run: |
+          FAILED=""
           for PKG_DIR in packages/*/; do
             PKG_DIR="${PKG_DIR%/}"
             [ -f "$PKG_DIR/package.json" ] || continue
@@ -81,15 +97,24 @@ jobs:
               continue
             fi
             echo "Packing and publishing $PKG_NAME@$PKG_VERSION"
-            (
-              cd "$PKG_DIR"
+            # Bash ignores `set -e` inside a subshell that is used as an `if` condition, so a failed npm publish
+            # would be swallowed by the rm below. Every command that can fail exits explicitly.
+            if ! (
+              cd "$PKG_DIR" || exit 1
               # pnpm pack rewrites workspace:* deps to concrete versions
-              TARBALL=$(pnpm pack 2>/dev/null | tail -1)
+              TARBALL=$(pnpm pack 2>/dev/null | tail -1) || exit 1
               # npm publish populates the readme field on the registry manifest
-              npm publish "$TARBALL" --access public --provenance
+              npm publish "$TARBALL" --access public --provenance || exit 1
               rm -f "$TARBALL"
-            )
+            ); then
+              echo "::error::Failed to publish $PKG_NAME@$PKG_VERSION"
+              FAILED="$FAILED $PKG_NAME@$PKG_VERSION"
+            fi
           done
+          if [ -n "$FAILED" ]; then
+            echo "Packages that did not publish:$FAILED"
+            exit 1
+          fi
 
       - name: Create git tags
         run: |
@@ -110,6 +135,10 @@ jobs:
             PKG_NAME=$(node -p "require('./$PKG_DIR/package.json').name")
             PKG_VERSION=$(node -p "require('./$PKG_DIR/package.json').version")
             TAG="$PKG_NAME@$PKG_VERSION"
+            if ! npm view "$PKG_NAME@$PKG_VERSION" version >/dev/null 2>&1; then
+              echo "Not on npm, no tag: $TAG"
+              continue
+            fi
             if git rev-parse "refs/tags/$TAG" >/dev/null 2>&1; then
               echo "Tag already present locally: $TAG"
             elif git ls-remote --tags --exit-code origin "refs/tags/$TAG" >/dev/null 2>&1; then
@@ -163,6 +192,7 @@ jobs:
                 PKG_VERSION=$(node -p "require('./$PKG_DIR/package.json').version")
                 PKG_PRIVATE=$(node -p "require('./$PKG_DIR/package.json').private || false")
                 [ "$PKG_PRIVATE" = "true" ] && continue
+                npm view "$PKG_NAME@$PKG_VERSION" version >/dev/null 2>&1 || continue
                 echo "- \`$PKG_NAME@$PKG_VERSION\`"
               done
 
@@ -176,6 +206,7 @@ jobs:
                 PKG_VERSION=$(node -p "require('./$PKG_DIR/package.json').version")
                 PKG_PRIVATE=$(node -p "require('./$PKG_DIR/package.json').private || false")
                 [ "$PKG_PRIVATE" = "true" ] && continue
+                npm view "$PKG_NAME@$PKG_VERSION" version >/dev/null 2>&1 || continue
                 CHANGELOG="$PKG_DIR/CHANGELOG.md"
                 SECTION=""
                 [ -f "$CHANGELOG" ] && SECTION=$(extract_section "$CHANGELOG" "$PKG_VERSION")
@@ -198,6 +229,7 @@ jobs:
                 PKG_VERSION=$(node -p "require('./$PKG_DIR/package.json').version")
                 PKG_PRIVATE=$(node -p "require('./$PKG_DIR/package.json').private || false")
                 [ "$PKG_PRIVATE" = "true" ] && continue
+                npm view "$PKG_NAME@$PKG_VERSION" version >/dev/null 2>&1 || continue
                 [ "$PKG_NAME" = "@thesvg/cli" ] && continue
                 echo "npm i $PKG_NAME@$PKG_VERSION"
               done
@@ -247,3 +279,9 @@ jobs:
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Fail if a package did not publish
+        if: steps.publish.outcome == 'failure'
+        run: |
+          echo "One or more packages did not publish. The rest were published and tagged. See the Publish to npm step."
+          exit 1

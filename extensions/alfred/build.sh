@@ -2,5 +2,5 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 rm -f thesvg.alfredworkflow
-zip -r thesvg.alfredworkflow info.plist icon.png thesvg_search.py thesvg_action.py
+zip -r thesvg.alfredworkflow info.plist icon.png thesvg_search.py thesvg_ui.py thesvg_action.py
 echo "Built thesvg.alfredworkflow"

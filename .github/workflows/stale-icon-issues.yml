@@ -34,7 +34,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  issues: write
+  contents: read
 
 concurrency:
   group: stale-icon-issues
@@ -44,8 +44,10 @@ jobs:
   ensure-labels:
     name: Ensure stale labels exist
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     steps:
-      - uses: actions/github-script@v9
+      - uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
         with:
           script: |
             const labels = [
@@ -74,9 +76,11 @@ jobs:
     name: Mark and close blocked icon issues
     runs-on: ubuntu-latest
     needs: ensure-labels
+    permissions:
+      issues: write
     steps:
       - name: Process triage:needs-svg
-        uses: actions/stale@v11
+        uses: actions/stale@4391f3da665fdf50b6810c1a66712fb9ba21aa93 # v11
         with:
           days-before-issue-stale: 14
           days-before-issue-close: 7
@@ -104,7 +108,7 @@ jobs:
             Closing as `not-planned` since we haven't heard back for 21 days. Happy to revisit if you reopen this with the SVG. Thanks for your interest in thesvg.
 
       - name: Process triage:needs-license
-        uses: actions/stale@v11
+        uses: actions/stale@4391f3da665fdf50b6810c1a66712fb9ba21aa93 # v11
         with:
           days-before-issue-stale: 14
           days-before-issue-close: 7
@@ -128,7 +132,7 @@ jobs:
             Closing as `not-planned` since we haven't heard back for 21 days. Happy to revisit if you reopen this with a licensing source. Thanks for your interest in thesvg.
 
       - name: Process triage:invalid-svg
-        uses: actions/stale@v11
+        uses: actions/stale@4391f3da665fdf50b6810c1a66712fb9ba21aa93 # v11
         with:
           days-before-issue-stale: 14
           days-before-issue-close: 7
@@ -152,7 +156,7 @@ jobs:
             Closing as `not-planned` since we haven't heard back for 21 days. Happy to revisit if you reopen with a parseable SVG. Thanks for your interest in thesvg.
 
       - name: Process triage:svg-oversize
-        uses: actions/stale@v11
+        uses: actions/stale@4391f3da665fdf50b6810c1a66712fb9ba21aa93 # v11
         with:
           days-before-issue-stale: 14
           days-before-issue-close: 7
@@ -180,7 +184,7 @@ jobs:
             Closing as `not-planned` since we haven't heard back for 21 days. Happy to revisit if you reopen with an SVG under 50KB. Thanks for your interest in thesvg.
 
       - name: Process triage:needs-info
-        uses: actions/stale@v11
+        uses: actions/stale@4391f3da665fdf50b6810c1a66712fb9ba21aa93 # v11
         with:
           days-before-issue-stale: 21
           days-before-issue-close: 7

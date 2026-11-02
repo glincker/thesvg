@@ -14,7 +14,7 @@ import {
   Layers,
   LayoutGrid,
   Shapes,
-} from "lucide-react";
+} from "@/components/own-icons";
 import { BottomSheet, type BottomSheetSnap } from "./bottom-sheet";
 import { useMobileShellStore } from "@/lib/stores/mobile-shell-store";
 import { withUtm } from "@/lib/external-link";

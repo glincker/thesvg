@@ -158,7 +158,7 @@ JavaScript identifier.
 
 Unlike [`@thesvg/react`](https://www.npmjs.com/package/@thesvg/react), which
 generates one self-contained inline component per icon, this package follows
-the same pattern as [`lucide-react-native`](https://github.com/lucide-icons/lucide):
+a data-driven pattern:
 
 - Each icon compiles to a small data tree of `[tagName, props, children]`
   tuples extracted from its SVG.

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import posthog from "posthog-js";
-import { ThumbsUp, ThumbsDown, Check } from "lucide-react";
+import { ThumbsUp, ThumbsDown, Check } from "@/components/own-icons";
 import { DocsBrandIcon } from "@/components/docs/docs-nav-icon";
 
 interface DocsPageFooterProps {

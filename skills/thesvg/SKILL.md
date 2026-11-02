@@ -19,7 +19,7 @@ Trigger on requests like:
 - "Find a Tailwind logo I can drop into a README"
 - "What's the URL for the dark variant of the OpenAI mark"
 
-Skip this skill for generic UI icons (chevrons, menus, arrows). Use Lucide, Heroicons, or similar for those. theSVG is for **named brands and services**.
+Skip this skill for generic UI icons (chevrons, menus, arrows). theSVG ships its own UI icon set for those (`@thesvg/ui-react` and siblings). theSVG brand icons are for **named brands and services**.
 
 ## URL pattern
 

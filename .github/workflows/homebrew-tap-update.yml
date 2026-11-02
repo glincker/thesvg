@@ -10,6 +10,9 @@ on:
         required: false
         type: string
 
+permissions:
+  contents: read
+
 jobs:
   bump-formula:
     name: Bump thesvg formula
@@ -22,7 +25,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
       - name: Resolve CLI version
         id: pkg
@@ -51,7 +54,7 @@ jobs:
 
       - name: Update formula in tap repo
         if: steps.gate.outputs.skip == 'false'
-        uses: dawidd6/action-homebrew-bump-formula@v10
+        uses: dawidd6/action-homebrew-bump-formula@b12d2bc99c46444125e606142f28200ec71a1214 # v10
         with:
           token: ${{ secrets.HOMEBREW_TAP_TOKEN }}
           # Homebrew tap naming: 'glincker/thesvg' resolves to the repo

@@ -185,6 +185,25 @@ ${lines.join("\n")}
 `;
 }
 
+const UI_ICONS_JSON = join(ROOT, "src/data/ui-icons.json");
+
+/** A short section on the UI icons, read from their own manifest so the brand index is never touched. */
+function uiSection(): string {
+  if (!existsSync(UI_ICONS_JSON)) return "";
+  const m = JSON.parse(readFileSync(UI_ICONS_JSON, "utf-8")) as { looks: string[]; icons: { slug: string }[] };
+  return `
+## UI icons
+
+${m.icons.length} interface icons drawn by theSVG, each in ${m.looks.length} looks (${m.looks.join(", ")}), all using currentColor. Browse: https://thesvg.org/ui. Separate from the brand icons above.
+
+- One icon file: https://thesvg.org/ui/{slug}/{look}.svg
+- Every icon in one look: https://cdn.jsdelivr.net/gh/glincker/thesvg@main/src/data/ui/looks/{look}.json
+- Manifest (slugs, tags, categories): https://cdn.jsdelivr.net/gh/glincker/thesvg@main/src/data/ui-icons.json
+- npm: @thesvg/ui, @thesvg/ui-react, @thesvg/ui-vue, @thesvg/ui-svelte, @thesvg/ui-react-native
+- CLI: npx @thesvg/cli add ui:{slug} --look {look}
+`;
+}
+
 function main() {
   const icons: IconEntry[] = JSON.parse(readFileSync(ICONS_JSON, "utf-8"));
   const iconCount = icons.length;
@@ -232,7 +251,7 @@ function main() {
     categories,
   });
   const families = buildFamilies(icons);
-  writeFileSync(join(PUBLIC_DIR, "llms.txt"), llmsTxt + familiesSection(families, false));
+  writeFileSync(join(PUBLIC_DIR, "llms.txt"), llmsTxt + familiesSection(families, false) + uiSection());
   console.log(`  llms.txt: ${formattedIconCount} icons, ${categories.length} categories, ${packages.length} packages`);
 
   const llmsFullTxt = buildLlmsFullTxt({
@@ -244,7 +263,7 @@ function main() {
     formattedVariantCount,
     guidelinesCount,
   });
-  writeFileSync(join(PUBLIC_DIR, "llms-full.txt"), llmsFullTxt + familiesSection(families, true));
+  writeFileSync(join(PUBLIC_DIR, "llms-full.txt"), llmsFullTxt + familiesSection(families, true) + uiSection());
   console.log(
     `  llms-full.txt: ${formattedIconCount} icons, ${categories.length} categories, ${packages.length} packages`,
   );

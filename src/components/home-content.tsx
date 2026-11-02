@@ -4,7 +4,7 @@ import { useMemo, useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import posthog from "posthog-js";
-import { ArrowDownAZ, ArrowDownZA, ArrowUpDown, Clock, Flame, Grid3X3, LayoutGrid, X } from "lucide-react";
+import { ArrowDownAZ, ArrowDownZA, ArrowUpDown, Clock, Flame, Grid3X3, LayoutGrid, X } from "@/components/own-icons";
 import { compareDateDesc } from "@/lib/icon-dates";
 import type { Collection, IconEntry } from "@/lib/icons";
 import { getPopularSlugs, getAllPopularSlugs } from "@/lib/popular-icons";
@@ -21,6 +21,7 @@ import { useSearchStore } from "@/lib/stores/search-store";
 import { hasCategoryLanding, slugifyCategory } from "@/lib/categories";
 import { MobileRecentsRow } from "@/components/mobile/mobile-recents-row";
 import { cn } from "@/lib/utils";
+import { IconGridSkeleton } from "@/components/skeletons";
 
 const SORT_OPTIONS = ["default", "recent", "popular", "az", "za"] as const;
 
@@ -498,7 +499,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                     aria-label="Remove collection filter"
                   >
                     {collectionParam === "aws" ? "AWS" : collectionParam}
-                    <X className="h-3 w-3" aria-hidden="true" />
+                    <X className="h-3.5 w-3.5" aria-hidden="true" />
                   </button>
                 )}
                 {categoryParam && (
@@ -509,7 +510,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                     aria-label="Remove category filter"
                   >
                     {categoryParam}
-                    <X className="h-3 w-3 text-muted-foreground" aria-hidden="true" />
+                    <X className="h-3.5 w-3.5 text-muted-foreground" aria-hidden="true" />
                   </button>
                 )}
                 {favoritesParam && (
@@ -520,7 +521,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                     aria-label="Remove favorites filter"
                   >
                     Favorites
-                    <X className="h-3 w-3" aria-hidden="true" />
+                    <X className="h-3.5 w-3.5" aria-hidden="true" />
                   </button>
                 )}
                 {query.trim() && (
@@ -531,7 +532,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                     aria-label="Remove search filter"
                   >
                     &ldquo;{query.trim()}&rdquo;
-                    <X className="h-3 w-3 text-muted-foreground" aria-hidden="true" />
+                    <X className="h-3.5 w-3.5 text-muted-foreground" aria-hidden="true" />
                   </button>
                 )}
                 <button
@@ -573,7 +574,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                   </div>
                   <span className="hidden shrink-0 items-center gap-1 rounded-full bg-foreground px-3 py-1.5 text-xs font-medium text-background transition-opacity group-hover:opacity-90 sm:inline-flex">
                     View 2026 set
-                    <ArrowDownAZ className="h-3 w-3 rotate-90" />
+                    <ArrowDownAZ className="h-3.5 w-3.5 rotate-90" />
                   </span>
                 </Link>
               </div>
@@ -586,9 +587,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                   Failed to load icons. Please refresh and try again.
                 </p>
               ) : !allIcons ? (
-                <div className="flex justify-center py-24">
-                  <div className="h-6 w-6 animate-spin rounded-full border-2 border-muted-foreground/30 border-t-foreground" />
-                </div>
+                <IconGridSkeleton count={24} className="py-4" />
               ) : (
                 <IconGrid key={gridKey} icons={filtered} view={viewParam} />
               )}

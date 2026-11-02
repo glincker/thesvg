@@ -65,3 +65,6 @@ public/integrations/excalidraw/
 # marketing assets (exported PNGs - too large for OSS repo)
 public/banners/
 posthog-setup-report.md
+
+# UI icon SVG files are build artifacts, generated from src/data/ui/looks by pnpm ui:svgs
+/public/ui/
