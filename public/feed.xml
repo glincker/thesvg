@@ -5,15 +5,28 @@
     <link>https://thesvg.org/blog</link>
     <description>Announcements, releases, and updates from theSVG - the open SVG brand library</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 26 Oct 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://thesvg.org/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Your logos folder is already out of date</title>
+      <link>https://thesvg.org/blog/logos-folder-out-of-date</link>
+      <guid isPermaLink="true">https://thesvg.org/blog/logos-folder-out-of-date</guid>
+      <description>Copying brand SVGs into a logos folder feels free until a brand changes its logo. Here is why a versioned icon library keeps your logos current, and how to set it up in five minutes.</description>
+      <pubDate>Mon, 02 Nov 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://thesvg.org/blog/logos-folder-out-of-date-og.png" length="166367" type="image/png"/>
+      <media:content url="https://thesvg.org/blog/logos-folder-out-of-date-og.png" medium="image" type="image/png" width="1200" height="630"/>
+      <media:thumbnail url="https://thesvg.org/blog/logos-folder-out-of-date-og.png" width="1200" height="630"/>
+            <author>team@thesvg.org (theSVG Team)</author>
+      <category>guide</category>
+      <category>open-source</category>
+    </item>
     <item>
       <title>theSVG 4.0 is here, with UI icons</title>
       <link>https://thesvg.org/blog/introducing-ui-icons</link>
       <guid isPermaLink="true">https://thesvg.org/blog/introducing-ui-icons</guid>
       <description>theSVG 4.0 adds a second section: 129 UI icons drawn on a 24 grid, seven looks from one drawing, a style lab, and new packages for React, Vue, Svelte and React Native.</description>
       <pubDate>Mon, 26 Oct 2026 00:00:00 GMT</pubDate>
-      <enclosure url="https://thesvg.org/blog/introducing-ui-icons-og.png" length="105144" type="image/png"/>
+      <enclosure url="https://thesvg.org/blog/introducing-ui-icons-og.png" length="632135" type="image/png"/>
       <media:content url="https://thesvg.org/blog/introducing-ui-icons-og.png" medium="image" type="image/png" width="1200" height="630"/>
       <media:thumbnail url="https://thesvg.org/blog/introducing-ui-icons-og.png" width="1200" height="630"/>
             <author>team@thesvg.org (theSVG Team)</author>
