@@ -98,3 +98,6 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2024-03-20 - [Performance Optimization: Array.from and Set initialization]
 **Learning:** Using `[...counts.entries()].map(...)` or `new Set(popular.map(...))` causes intermediate array allocations, triggering unnecessary garbage collection.
 **Action:** Use `Array.from(counts, mappingFunction)` and a single-pass `for` loop to initialize large Sets directly, preventing intermediate allocations and reducing GC pressure.
+## 2024-11-23 - Optimize Array Partitioning
+**Learning:** When partitioning an array into two subsets based on a condition, using parallel `.filter()` passes (e.g., `same = arr.filter(cond); rest = arr.filter(!cond)`) creates redundant O(N) iterations and memory allocations.
+**Action:** Replace parallel `.filter()` passes with a single-pass `for` loop that conditionally pushes elements into distinct arrays to eliminate redundant iteration cycles.

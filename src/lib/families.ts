@@ -94,11 +94,31 @@ export function pickFamilySiblings(
   members: IconEntry[],
   icon: IconEntry,
 ): IconEntry[] {
-  const others = members.filter((m) => m.slug !== icon.slug);
   const primary = icon.categories[0];
-  const same = others.filter((m) => m.categories[0] === primary);
-  const rest = others.filter((m) => m.categories[0] !== primary);
-  return [...same, ...rest].slice(0, SIBLINGS_SHOWN);
+  const same: IconEntry[] = [];
+  const rest: IconEntry[] = [];
+
+  // ⚡ Bolt: Single-pass for loop avoiding redundant array allocations (.filter().filter())
+  for (const m of members) {
+    if (m.slug === icon.slug) continue;
+    if (m.categories[0] === primary) {
+      same.push(m);
+    } else {
+      rest.push(m);
+    }
+  }
+
+  const out: IconEntry[] = [];
+  for (const m of same) {
+    if (out.length >= SIBLINGS_SHOWN) return out;
+    out.push(m);
+  }
+  for (const m of rest) {
+    if (out.length >= SIBLINGS_SHOWN) return out;
+    out.push(m);
+  }
+
+  return out;
 }
 
 export interface FamilySectionRule {
