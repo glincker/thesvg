@@ -4,10 +4,19 @@
  * one's color. This gives one rendered copy its own ids by adding a suffix to each definition and every reference.
  */
 export function scopeIds(svg: string, uid: string): string {
-  const ids = [...new Set([...svg.matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]))];
-  if (ids.length === 0) return svg;
-  // Ids are plain words and dashes, so they need no escaping. Anything else is left alone rather than guessed at.
-  const safe = ids.filter((id) => /^[\w-]+$/.test(id));
+  // ⚡ Bolt: Use a single-pass loop instead of `new Set(array.map(...))` to
+  // prevent intermediate array allocations and reduce GC pressure.
+  const safe: string[] = [];
+  const seen = new Set<string>();
+  for (const match of svg.matchAll(/\bid="([^"]+)"/g)) {
+    const id = match[1];
+    if (!seen.has(id)) {
+      seen.add(id);
+      if (/^[\w-]+$/.test(id)) {
+        safe.push(id);
+      }
+    }
+  }
   if (safe.length === 0) return svg;
   const pattern = new RegExp(`(id="|url\\(#|href="#)(${safe.join("|")})(?=["\\)])`, "g");
   return svg.replace(pattern, `$1$2-${uid}`);
