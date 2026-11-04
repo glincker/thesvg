@@ -98,6 +98,9 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2024-03-20 - [Performance Optimization: Array.from and Set initialization]
 **Learning:** Using `[...counts.entries()].map(...)` or `new Set(popular.map(...))` causes intermediate array allocations, triggering unnecessary garbage collection.
 **Action:** Use `Array.from(counts, mappingFunction)` and a single-pass `for` loop to initialize large Sets directly, preventing intermediate allocations and reducing GC pressure.
+## 2024-11-23 - Optimize Array Partitioning
+**Learning:** When partitioning an array into two subsets based on a condition, using parallel `.filter()` passes (e.g., `same = arr.filter(cond); rest = arr.filter(!cond)`) creates redundant O(N) iterations and memory allocations.
+**Action:** Replace parallel `.filter()` passes with a single-pass `for` loop that conditionally pushes elements into distinct arrays to eliminate redundant iteration cycles.
 ## 2025-05-18 - Replacing chained array methods with single-pass loops in search algorithms
 **Learning:** Chained array methods like `.map().filter().sort().slice().map()` and `.map().filter().sort().map()` in search algorithms (like `rank` and `rankTiered` in `src/lib/ui-icons/search.ts`) create a severe performance bottleneck during hot path executions (e.g. on every keystroke). They force V8 to allocate several temporary intermediary arrays per query, triggering unnecessary garbage collection pauses on the JS thread.
 **Action:** Always collapse these contiguous higher-order array chains into an explicit, single-pass `for` loop to minimize memory allocation and execution cycles. When mapping and slicing results, initialize the final output array with a known size (`new Array(length)`) instead of relying on `push()` or `.map()` to further reduce dynamic array resizing overhead.
