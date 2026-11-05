@@ -139886,6 +139886,31 @@
     "collection": "brands"
   },
   {
+    "slug": "warden",
+    "title": "Warden",
+    "aliases": [
+      "Warden Protocol"
+    ],
+    "hex": "C7FF8E",
+    "categories": [
+      "Crypto",
+      "AI"
+    ],
+    "variants": {
+      "default": "/icons/warden/default.svg",
+      "mono": "/icons/warden/mono.svg",
+      "light": "/icons/warden/light.svg",
+      "dark": "/icons/warden/dark.svg",
+      "wordmark": "/icons/warden/wordmark.svg",
+      "wordmarkLight": "/icons/warden/wordmark-light.svg",
+      "wordmarkDark": "/icons/warden/wordmark-dark.svg"
+    },
+    "license": "brand-use",
+    "url": "https://wardenprotocol.org/",
+    "dateAdded": "2026-11-05",
+    "collection": "brands"
+  },
+  {
     "slug": "wargaming-net-badge",
     "title": "Wargaming.net",
     "aliases": [],
