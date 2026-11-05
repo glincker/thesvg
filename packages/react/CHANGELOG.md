@@ -1,5 +1,11 @@
 # @thesvg/react
 
+## 4.0.5
+
+### Patch Changes
+
+- feat: add warden icon ([#1497](https://github.com/glincker/thesvg/issues/1497))
+
 ## 4.0.4
 
 ### Patch Changes
