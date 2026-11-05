@@ -1,5 +1,11 @@
 # @thesvg/react
 
+## 4.0.4
+
+### Patch Changes
+
+- feat: add lumin icon ([#1493](https://github.com/glincker/thesvg/issues/1493))
+
 ## 4.0.3
 
 ### Patch Changes
