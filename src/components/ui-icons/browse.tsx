@@ -43,7 +43,9 @@ export function Browse() {
   // A query ranks by how well each icon matches and splits into the strong matches and the related ones. With none, the grid keeps its own order.
   const tiers = useMemo(() => {
     const q = ui.query.trim();
-    const scoped = GLYPHS.filter((g) => inSet(g, ui.set) && (ui.category === "All" || g.category === ui.category) && (!ui.onlyFavorites || ui.favorites.includes(g.slug)));
+    // ⚡ Bolt: Convert favorites array to a Set for O(1) lookups during the O(N) filter pass
+    const favs = ui.onlyFavorites ? new Set(ui.favorites) : null;
+    const scoped = GLYPHS.filter((g) => inSet(g, ui.set) && (ui.category === "All" || g.category === ui.category) && (!ui.onlyFavorites || favs!.has(g.slug)));
     return { scoped, ranked: q ? rankTiered(q, scoped, searchableOf) : null };
   }, [ui.query, ui.category, ui.onlyFavorites, ui.favorites, ui.set]);
   const list = useMemo(() => (tiers.ranked ? [...tiers.ranked.best, ...tiers.ranked.related] : tiers.scoped), [tiers]);
