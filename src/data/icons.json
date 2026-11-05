@@ -90079,6 +90079,28 @@
     "collection": "brands"
   },
   {
+    "slug": "lumin",
+    "title": "Lumin",
+    "aliases": [],
+    "hex": "000000",
+    "categories": [
+      "Productivity"
+    ],
+    "variants": {
+      "default": "/icons/lumin/default.svg",
+      "light": "/icons/lumin/light.svg",
+      "dark": "/icons/lumin/dark.svg",
+      "wordmark": "/icons/lumin/wordmark.svg",
+      "wordmarkLight": "/icons/lumin/wordmark-light.svg",
+      "wordmarkDark": "/icons/lumin/wordmark-dark.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.luminpdf.com/",
+    "guidelines": "https://lumin.guide/docs/logos",
+    "dateAdded": "2026-11-05",
+    "collection": "brands"
+  },
+  {
     "slug": "lunacy",
     "title": "Lunacy",
     "aliases": [],
