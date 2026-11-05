@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMemo } from "react";
-import { DOMAINS, GLYPHS } from "@/lib/ui-icons/glyphs";
+import { DOMAINS, GLYPHS, USED_DOMAINS } from "@/lib/ui-icons/glyphs";
 import { cn } from "@/lib/ui-icons/utils";
 import { CategoryBanner } from "./category-banner";
 import { THEMES, TONES, domainGlyphs } from "./category-theme";
@@ -15,7 +15,7 @@ import { useUi } from "./ui-state";
 export function CategoryPage({ domainId }: { domainId: string }) {
   const domain = DOMAINS.find((d) => d.id === domainId);
   const glyphs = useMemo(() => domainGlyphs(domainId), [domainId]);
-  const others = useMemo(() => DOMAINS.filter((d) => d.id !== domainId && GLYPHS.some((g) => g.domain === d.id)), [domainId]);
+  const others = useMemo(() => USED_DOMAINS.filter((d) => d.id !== domainId), [domainId]);
   if (!domain) return null;
   return (
     <div className="flex flex-col gap-4">

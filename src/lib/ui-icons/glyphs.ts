@@ -3,6 +3,7 @@ import { SETS } from "./sets.generated";
 import popular from "@/data/ui/popular.json";
 import manifest from "@/data/ui-icons.json";
 import { conceptOf, domainLabel } from "./taxonomy";
+import { DOMAINS as _taxonomyDomains } from "./taxonomy";
 
 export { VARIANTS, styleFor } from "./style";
 export { DOMAINS, MODIFIERS, domainLabel } from "./taxonomy";
@@ -72,6 +73,19 @@ for (let i = 0; i < GLYPHS.length; i++) {
 
 // ⚡ Bolt: Use O(1) Map lookup instead of O(N*M) nested iterations.
 export const POPULAR_SLUGS: string[] = (popular as string[]).filter((slug) => GLYPH_BY_SLUG.has(slug));
+
+// ⚡ Bolt: Populate a Set first to avoid O(N * M) nested iterations from chained .filter().some()
+const _usedDomainIds = new Set<string>();
+for (let i = 0; i < GLYPHS.length; i++) {
+  _usedDomainIds.add(GLYPHS[i].domain);
+}
+export const USED_DOMAINS: { id: string; label: string }[] = [];
+for (let i = 0; i < _taxonomyDomains.length; i++) {
+  const d = _taxonomyDomains[i];
+  if (_usedDomainIds.has(d.id)) {
+    USED_DOMAINS.push(d);
+  }
+}
 const _catCounts = new Map<string, number>();
 for (let i = 0; i < GLYPHS.length; i++) {
   const cat = GLYPHS[i].category;
