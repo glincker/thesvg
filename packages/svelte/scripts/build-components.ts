@@ -86,13 +86,14 @@ function extractViewBox(svgContent: string): string {
 }
 
 /**
- * Extract the inner content of an SVG (everything between <svg> and </svg>).
+ * Extract the inner content of the root <svg> element. Skips any XML prolog,
+ * doctype or leading comments so they never leak into the component body.
  */
 function extractSvgInner(svgContent: string): string {
-  return svgContent
-    .replace(/^<svg[^>]*>/s, "")
-    .replace(/<\/svg>\s*$/, "")
-    .trim();
+  const open = svgContent.match(/<svg\b[^>]*>/s);
+  const close = svgContent.lastIndexOf("</svg>");
+  if (!open || open.index === undefined || close < 0) return "";
+  return svgContent.slice(open.index + open[0].length, close).trim();
 }
 
 // ---------------------------------------------------------------------------
@@ -133,18 +134,11 @@ function generateSvelteComponent(icon: RawIcon): string {
   const viewBox = extractViewBox(svgContent);
   const inner = extractSvgInner(svgContent);
 
-  // Indent inner content for readability
-  const indentedInner = inner
-    .split("\n")
-    .map((line) => (line.trim() ? `  ${line}` : ""))
-    .join("\n");
-
+  // {@html} keeps Svelte from parsing raw SVG (nested <svg>, <style>, braces, unclosed tags).
   return [
     `<!-- @thesvg/svelte - ${icon.title} -->`,
     `<!-- Auto-generated. Do not edit. -->`,
-    `<svg viewBox="${viewBox}" fill="none" xmlns="http://www.w3.org/2000/svg" {...$$restProps}>`,
-    indentedInner,
-    `</svg>`,
+    `<svg viewBox="${viewBox}" fill="none" xmlns="http://www.w3.org/2000/svg" {...$$restProps}>{@html ${JSON.stringify(inner)}}</svg>`,
   ].join("\n");
 }
 
