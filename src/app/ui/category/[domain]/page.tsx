@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CategoryPage } from "@/components/ui-icons/category-page";
-import { DOMAINS, GLYPHS, USED_DOMAINS } from "@/lib/ui-icons/glyphs";
+import { GLYPHS, USED_DOMAINS } from "@/lib/ui-icons/glyphs";
 
 export const dynamicParams = false;
 
