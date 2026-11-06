@@ -3,7 +3,7 @@ import { getAllCategories, getAllIcons } from "@/lib/icons";
 import { slugifyCategory } from "@/lib/categories";
 import { getFamilySlugs } from "@/lib/families";
 import { DOCS_NAV } from "@/lib/docs-nav";
-import { DOMAINS, GLYPHS } from "@/lib/ui-icons/glyphs";
+import { GLYPHS, USED_DOMAINS } from "@/lib/ui-icons/glyphs";
 import postsData from "@/data/posts.json";
 
 export const dynamic = "force-static";
@@ -36,7 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/ui/extensions`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/ui/changelog`, lastModified: now, changeFrequency: "weekly", priority: 0.6 },
     { url: `${BASE_URL}/ui/categories`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
-    ...DOMAINS.filter((d) => GLYPHS.some((g) => g.domain === d.id)).map((d) => ({ url: `${BASE_URL}/ui/category/${d.id}`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.6 })),
+    ...USED_DOMAINS.map((d) => ({ url: `${BASE_URL}/ui/category/${d.id}`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.6 })),
     { url: `${BASE_URL}/packages`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     ...GLYPHS.filter((g) => g.released).map((g) => ({ url: `${BASE_URL}/ui/${g.slug}`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.5 })),
     { url: `${BASE_URL}/viewer`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },

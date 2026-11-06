@@ -5,6 +5,7 @@ import manifest from "@/data/ui-icons.json";
 import { conceptOf, domainLabel } from "./taxonomy";
 
 export { VARIANTS, styleFor } from "./style";
+import { DOMAINS } from "./taxonomy";
 export { DOMAINS, MODIFIERS, domainLabel } from "./taxonomy";
 
 export interface Glyph {
@@ -72,6 +73,13 @@ for (let i = 0; i < GLYPHS.length; i++) {
 
 // ⚡ Bolt: Use O(1) Map lookup instead of O(N*M) nested iterations.
 export const POPULAR_SLUGS: string[] = (popular as string[]).filter((slug) => GLYPH_BY_SLUG.has(slug));
+
+const usedDomainIds = new Set<string>();
+for (let i = 0; i < GLYPHS.length; i++) {
+  usedDomainIds.add(GLYPHS[i].domain);
+}
+export const USED_DOMAINS = DOMAINS.filter((d) => usedDomainIds.has(d.id));
+
 const _catCounts = new Map<string, number>();
 for (let i = 0; i < GLYPHS.length; i++) {
   const cat = GLYPHS[i].category;

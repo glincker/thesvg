@@ -39,6 +39,16 @@ Full feature-by-feature matrix: https://thesvg.org/compare
 - `@thesvg/react-native` - Typed React Native SVG components for all 7,600+ icons from thesvg.org
 - `@thesvg/vue` - Typed Vue 3 SVG components for all 7,600+ icons from thesvg.org
 - `@thesvg/svelte` - Typed Svelte SVG components for all 7,600+ icons from thesvg.org
+- `@thesvg/astro` - Typed Astro SVG components for all 7,600+ icons from thesvg.org
+- `@thesvg/preact` - Typed Preact SVG components for all 7,600+ icons from thesvg.org
+- `@thesvg/solid` - Typed Solid SVG components for all 7,600+ icons from thesvg.org
+- `@thesvg/static` - Raw SVG files for every brand icon variant from thesvg.org plus a JSON manifest, for CDN and non-JS use
+- `@thesvg/ui` - UI icons from thesvg.org: raw SVG files in seven looks plus a JSON manifest
+- `@thesvg/ui-react` - Typed React components for the UI icons from thesvg.org, one file per icon and one export per look
+- `@thesvg/ui-react-native` - React Native components for the UI icons from thesvg.org, one file per icon and one export per look
+- `@thesvg/ui-svelte` - Typed Svelte components for the UI icons from thesvg.org, one file per icon and look
+- `@thesvg/ui-vue` - Typed Vue 3 components for the UI icons from thesvg.org, one file per icon and one export per look
+- `@thesvg/web` - Framework-free helper that swaps data-thesvg elements for inline brand SVGs from @thesvg/icons
 
 ## API
 
@@ -72,8 +82,44 @@ https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/{slug}/{variant}.s
 
 ## Categories
 
-141 categories including: Accessibility, Advertising, Agency, AI, AI Medical Scribe, Analytics, AntV, App Services, Architecture, Automation, Automotive, Autoscaling, Aviation, Azure Ecosystem, Azure Stack, Blockchain, Booking, Browser, Business, Canonical, Caravaning, Cloud, CMS, Communication, Community, Compiler, Compute, Config, Construction, Containers, Control Plane, Cost Management, Crypto, Customer Enablement, Customer Experience, and more.
+155 categories including: Accessibility, Advertising, Agency, AI, AI Medical Scribe, Analytics, AntV, App Services, Architecture, Automation, Automotive, Autoscaling, Aviation, Azure Ecosystem, Azure Stack, Backup, Blockchain, Booking, Bookmarks & RSS, Browser, Business, Canonical, Caravaning, Cloud, CMS, Communication, Community, Compiler, Compute, Config, Construction, Containers, Control Plane, Cost Management, Crypto, and more.
 
 ## Legal
 
 All brand icons are property of their respective owners. Provided for identification and development purposes under nominative fair use. See https://thesvg.org/legal and TRADEMARK.md.
+
+## Brand families
+
+Icons grouped by the company that owns them. Each family page lists every official logo of that brand, such as the whole Amazon, Google or Microsoft product line, with all variants. Index: https://thesvg.org/families. Machine-readable: https://thesvg.org/api/families.json
+
+- [Google](https://thesvg.org/family/google): 103 official logos
+- [Microsoft](https://thesvg.org/family/microsoft): 75 official logos
+- [Adobe](https://thesvg.org/family/adobe): 32 official logos
+- [Amazon](https://thesvg.org/family/amazon): 18 official logos
+- [Apple](https://thesvg.org/family/apple): 16 official logos
+- [JetBrains](https://thesvg.org/family/jetbrains): 16 official logos
+- [IBM](https://thesvg.org/family/ibm): 14 official logos
+- [Atlassian](https://thesvg.org/family/atlassian): 10 official logos
+- [Meta](https://thesvg.org/family/meta): 8 official logos
+- [Vercel](https://thesvg.org/family/vercel): 8 official logos
+- [ByteDance](https://thesvg.org/family/bytedance): 7 official logos
+- [Disney](https://thesvg.org/family/disney): 7 official logos
+- [Elastic](https://thesvg.org/family/elastic): 6 official logos
+- [Tencent](https://thesvg.org/family/tencent): 6 official logos
+- [Alibaba](https://thesvg.org/family/alibaba): 5 official logos
+- [Cisco](https://thesvg.org/family/cisco): 5 official logos
+- [Salesforce](https://thesvg.org/family/salesforce): 5 official logos
+- [Anthropic](https://thesvg.org/family/anthropic): 4 official logos
+- [Oracle](https://thesvg.org/family/oracle): 4 official logos
+- [Sony](https://thesvg.org/family/sony): 4 official logos
+- [xAI](https://thesvg.org/family/xai): 4 official logos
+
+## UI icons
+
+1189 interface icons drawn by theSVG, each in 7 looks (outline, glass, duotone, offset, fill, glass-outline, depth), all using currentColor. Browse: https://thesvg.org/ui. Separate from the brand icons above.
+
+- One icon file: https://thesvg.org/ui/{slug}/{look}.svg
+- Every icon in one look: https://cdn.jsdelivr.net/gh/glincker/thesvg@main/src/data/ui/looks/{look}.json
+- Manifest (slugs, tags, categories): https://cdn.jsdelivr.net/gh/glincker/thesvg@main/src/data/ui-icons.json
+- npm: @thesvg/ui, @thesvg/ui-react, @thesvg/ui-vue, @thesvg/ui-svelte, @thesvg/ui-react-native
+- CLI: npx @thesvg/cli add ui:{slug} --look {look}
