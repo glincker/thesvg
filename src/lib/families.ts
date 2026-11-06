@@ -260,7 +260,9 @@ export function getOtherFamilies(currentSlug: string, limit = 6): OtherFamily[] 
     .map((f) => {
       const members = getFamilyMembers(f.slug);
       const featured = getFamilyFeatured(f.slug);
-      const logos = [...featured, ...members.filter((m) => !featured.includes(m))]
+      // ⚡ Bolt: Convert `featured` array to a Set for O(1) lookups to avoid O(N*M) filtering overhead.
+      const featuredSet = new Set(featured);
+      const logos = [...featured, ...members.filter((m) => !featuredSet.has(m))]
         .slice(0, 4)
         .map((m) => m.variants.default);
       return {
