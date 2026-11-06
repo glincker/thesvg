@@ -145687,5 +145687,18 @@
     "url": "https://www.zyte.com",
     "dateAdded": "2026-03-07",
     "collection": "brands"
+  },
+  {
+    "slug": "eps-file",
+    "title": "eps file",
+    "aliases": [],
+    "hex": "ffffff",
+    "categories": ["Design", "extension", "Software"],
+    "variants": {
+        "default": "/icons/eps-file/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://en.wikipedia.org/wiki/Encapsulated_PostScript",
+    "guidelines": "https://www.adobe.com/creativecloud/file-types/image/vector/eps-file.html"
   }
 ]
