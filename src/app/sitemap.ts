@@ -3,7 +3,7 @@ import { getAllCategories, getAllIcons } from "@/lib/icons";
 import { slugifyCategory } from "@/lib/categories";
 import { getFamilySlugs } from "@/lib/families";
 import { DOCS_NAV } from "@/lib/docs-nav";
-import { DOMAINS, GLYPHS, USED_DOMAINS } from "@/lib/ui-icons/glyphs";
+import { GLYPHS, USED_DOMAINS } from "@/lib/ui-icons/glyphs";
 import postsData from "@/data/posts.json";
 
 export const dynamic = "force-static";
