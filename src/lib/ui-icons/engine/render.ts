@@ -186,14 +186,25 @@ function renderBase(nodes: IconNode[], opts: RenderOptions = {}): RenderResult {
     const chord = first && last ? Math.hypot(first.x - last.x, first.y - last.y) : 0;
     return polygonArea(poly) / (w * h) >= cfg.fillOpenMinRatio && chord <= cfg.fillOpenMaxChord * Math.max(w, h);
   };
-  const candidates = shapes.map((_, i) => i).filter(isBodyCandidate);
+  // ⚡ Bolt: Use a single-pass loop instead of chained `.map().filter()` to avoid intermediate array allocations.
+  const candidates: number[] = [];
+  for (let i = 0; i < shapes.length; i++) {
+    if (isBodyCandidate(i)) candidates.push(i);
+  }
   // Bodies are candidates that no other candidate contains, so order in the source never matters.
   const bodies = candidates.filter(
     (i) => !candidates.some((j) => j !== i && insideRatio(polys[i] ?? [], polys[j] ?? []) > 0.6),
   );
-  const rest = shapes.map((_, i) => i).filter((i) => !bodies.includes(i));
-  const holes = rest.filter((i) => bodies.some((b) => insideRatio(polys[i] ?? [], polys[b] ?? []) > 0.6));
-  const free = rest.filter((i) => !holes.includes(i));
+  const rest: number[] = [];
+  const holes: number[] = [];
+  const free: number[] = [];
+  for (let i = 0; i < shapes.length; i++) {
+    if (!bodies.includes(i)) {
+      rest.push(i);
+      if (bodies.some((b) => insideRatio(polys[i] ?? [], polys[b] ?? []) > 0.6)) holes.push(i);
+      else free.push(i);
+    }
+  }
   meta.bodies = bodies.length;
   meta.holes = holes.length;
   meta.fallback = bodies.length === 0;
