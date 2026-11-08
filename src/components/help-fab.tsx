@@ -103,6 +103,8 @@ export function HelpFab({ iconCount }: { iconCount: string }) {
           onClick={handleOpen}
           className="group relative flex h-10 w-10 items-center justify-center rounded-full border border-border/60 bg-card/90 text-muted-foreground shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-orange-500/40 hover:text-orange-500 hover:shadow-xl hover:shadow-orange-500/10 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/50 focus-visible:ring-offset-2 dark:border-white/10 dark:bg-white/5"
           aria-label="Help and tips"
+          aria-haspopup="dialog"
+          aria-expanded={open}
         >
           <Sparkles className="h-4 w-4 transition-transform duration-300 group-hover:rotate-12" />
         </button>
