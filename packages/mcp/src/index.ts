@@ -450,9 +450,9 @@ server.tool(
         }
       }
 
-      const sorted = Array.from(counts.entries())
-        .sort((a, b) => b[1] - a[1])
-        .map(([name, count]) => ({ name, count }));
+      // ⚡ Bolt: Use Array.from with mapping function instead of Array.from(counts.entries()).map()
+      const sorted = Array.from(counts, ([name, count]) => ({ name, count }))
+        .sort((a, b) => b.count - a.count);
 
       if (sorted.length === 0) {
         return {

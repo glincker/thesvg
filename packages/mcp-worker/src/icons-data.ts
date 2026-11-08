@@ -130,7 +130,7 @@ export function listCategories(): CategoryCount[] {
       counts.set(cat, (counts.get(cat) ?? 0) + 1);
     }
   }
-  return Array.from(counts.entries())
-    .sort((a, b) => b[1] - a[1])
-    .map(([name, count]) => ({ name, count }));
+  // ⚡ Bolt: Use Array.from with mapping function instead of Array.from(counts.entries()).map()
+  return Array.from(counts, ([name, count]) => ({ name, count }))
+    .sort((a, b) => b.count - a.count);
 }

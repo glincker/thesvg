@@ -120,9 +120,9 @@ export async function listUiCategories(): Promise<{ name: string; count: number 
   for (const icon of (await loadUiIndex()).icons) {
     counts.set(icon.category, (counts.get(icon.category) ?? 0) + 1);
   }
-  return Array.from(counts.entries())
-    .sort((a, b) => b[1] - a[1])
-    .map(([name, count]) => ({ name, count }));
+  // ⚡ Bolt: Use Array.from with mapping function instead of Array.from(counts.entries()).map()
+  return Array.from(counts, ([name, count]) => ({ name, count }))
+    .sort((a, b) => b.count - a.count);
 }
 
 /** Returns an error message when the look is unknown, otherwise null. */
