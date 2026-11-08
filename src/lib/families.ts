@@ -254,25 +254,43 @@ export interface OtherFamily {
 
 /** Other families for the "More families" row, largest first. */
 export function getOtherFamilies(currentSlug: string, limit = 6): OtherFamily[] {
-  return getFamilySummaries()
-    .filter((f) => f.slug !== currentSlug)
-    .slice(0, limit)
-    .map((f) => {
-      const members = getFamilyMembers(f.slug);
-      const featured = getFamilyFeatured(f.slug);
-      // ⚡ Bolt: Convert `featured` array to a Set for O(1) lookups to avoid O(N*M) filtering overhead.
-      const featuredSet = new Set(featured);
-      const logos = [...featured, ...members.filter((m) => !featuredSet.has(m))]
-        .slice(0, 4)
-        .map((m) => m.variants.default);
-      return {
-        slug: f.slug,
-        title: f.title,
-        count: f.count,
-        logos,
-        accents: FAMILY_THEME[f.slug]?.accents ?? ["#f97316", "#a1a1aa"],
-      };
+  const summaries = getFamilySummaries();
+  const out: OtherFamily[] = [];
+  for (let i = 0; i < summaries.length; i++) {
+    if (out.length >= limit) break;
+    const f = summaries[i];
+    if (f.slug === currentSlug) continue;
+
+    const members = getFamilyMembers(f.slug);
+    const featured = getFamilyFeatured(f.slug);
+    // ⚡ Bolt: Use a single-pass loop instead of chained spread, filter, slice, and map
+    // to prevent intermediate array allocations and avoid O(N*M) filtering overhead.
+    const featuredSet = new Set(featured);
+
+    const logos: string[] = [];
+    for (let j = 0; j < featured.length; j++) {
+      if (logos.length >= 4) break;
+      logos.push(featured[j].variants.default);
+    }
+
+    if (logos.length < 4) {
+      for (let j = 0; j < members.length; j++) {
+        if (logos.length >= 4) break;
+        if (!featuredSet.has(members[j])) {
+          logos.push(members[j].variants.default);
+        }
+      }
+    }
+
+    out.push({
+      slug: f.slug,
+      title: f.title,
+      count: f.count,
+      logos,
+      accents: FAMILY_THEME[f.slug]?.accents ?? ["#f97316", "#a1a1aa"],
     });
+  }
+  return out;
 }
 
 /** Flagship icons for a family, upgraded to refreshed marks where they exist. */
