@@ -45,13 +45,13 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.4.3",
+    "eslint-config-next": "16.4.5",
     "html-to-image": "^1.11.13",
-    "playwright": "^1.64.1",
+    "playwright": "^1.65.0",
     "tailwindcss": "^4",
     "tsx": "^4.23.15",
     "typescript": "^6",
-    "vitest": "^5.0.5"
+    "vitest": "^5.1.0"
   },
   "pnpm": {
     "overrides": {
