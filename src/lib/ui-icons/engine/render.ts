@@ -176,24 +176,40 @@ function renderBase(nodes: IconNode[], opts: RenderOptions = {}): RenderResult {
     if (closedOf(shapes[i] ?? { subpaths: [] })) return true;
     const poly = polys[i] ?? [];
     if (poly.length < 3) return false;
-    const xs = poly.map((p) => p.x);
-    const ys = poly.map((p) => p.y);
-    const w = Math.max(...xs) - Math.min(...xs);
-    const h = Math.max(...ys) - Math.min(...ys);
+    let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+    for (let j = 0; j < poly.length; j++) {
+      const p = poly[j];
+      if (p.x < minX) minX = p.x;
+      if (p.x > maxX) maxX = p.x;
+      if (p.y < minY) minY = p.y;
+      if (p.y > maxY) maxY = p.y;
+    }
+    const w = maxX - minX;
+    const h = maxY - minY;
     if (w < cfg.fillOpenMinSpan || h < cfg.fillOpenMinSpan) return false;
     const first = poly[0];
     const last = poly[poly.length - 1];
     const chord = first && last ? Math.hypot(first.x - last.x, first.y - last.y) : 0;
     return polygonArea(poly) / (w * h) >= cfg.fillOpenMinRatio && chord <= cfg.fillOpenMaxChord * Math.max(w, h);
   };
-  const candidates = shapes.map((_, i) => i).filter(isBodyCandidate);
+  // ⚡ Bolt: Use single-pass loops instead of .map().filter() chained methods
+  // to avoid intermediary array allocations in hot paths.
+  const candidates: number[] = [];
+  for (let i = 0; i < shapes.length; i++) {
+    if (isBodyCandidate(i)) candidates.push(i);
+  }
   // Bodies are candidates that no other candidate contains, so order in the source never matters.
   const bodies = candidates.filter(
     (i) => !candidates.some((j) => j !== i && insideRatio(polys[i] ?? [], polys[j] ?? []) > 0.6),
   );
-  const rest = shapes.map((_, i) => i).filter((i) => !bodies.includes(i));
+  const rest: number[] = [];
+  const bodiesSet = new Set(bodies);
+  for (let i = 0; i < shapes.length; i++) {
+    if (!bodiesSet.has(i)) rest.push(i);
+  }
   const holes = rest.filter((i) => bodies.some((b) => insideRatio(polys[i] ?? [], polys[b] ?? []) > 0.6));
-  const free = rest.filter((i) => !holes.includes(i));
+  const holesSet = new Set(holes);
+  const free = rest.filter((i) => !holesSet.has(i));
   meta.bodies = bodies.length;
   meta.holes = holes.length;
   meta.fallback = bodies.length === 0;
