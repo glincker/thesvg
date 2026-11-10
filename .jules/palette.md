@@ -7,3 +7,6 @@
 ## 2024-10-23 - Hide decorative icons in interactive elements from screen readers
 **Learning:** Decorative icons (e.g. `<Search />`, `<X />`) used inside interactive elements like buttons or inputs are sometimes announced redundantly or inappropriately by screen readers. A clear `<button aria-label="Close">` is sufficient.
 **Action:** When adding descriptive `aria-label`s to interactive elements (like filter chips or close buttons) containing purely visual or decorative icons, always add `aria-hidden="true"` to the inner icon to prevent screen readers from announcing it redundantly.
+## 2024-11-10 - Add aria-pressed to category pills in Browse
+**Learning:** Category buttons lacking aria-pressed attributes were discovered, creating an ambiguous experience for screen reader users trying to understand the active state of filter pills.
+**Action:** Always add aria-pressed to custom filter pills, tags, or toggle buttons acting as radio groups to communicate their active state properly.
