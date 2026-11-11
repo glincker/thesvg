@@ -110,3 +110,6 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2025-05-18 - Avoid array allocation when counting values
 **Learning:** In hot loops, counting truthy values in an object using `Object.values(obj).filter(Boolean).length` allocates an intermediate array of all values, and then another array from `.filter`, putting unnecessary pressure on the garbage collector.
 **Action:** Replace `Object.values(obj).filter(Boolean).length` with a fast, non-allocating `for...in` loop and a local counter variable. Extract this loop into a small helper function if it's needed in multiple places.
+## 2025-05-18 - Avoid indirect import of server-only data in client components
+**Learning:** Refactoring server-only utility files (`src/lib/icons.ts`) to be imported by files that are used in client components (`src/lib/icon-quality-score.ts`) can create an indirect import chain to `src/data/icons.json`. This causes the client bundle test (`client-bundle.test.ts`) to fail, as the 3MB JSON file is accidentally shipped to the browser.
+**Action:** When extracting functions for client-used modules (like `computeQualityScore`), keep their implementation inline or inside a module that has no static dependency on large server-only data sources.
