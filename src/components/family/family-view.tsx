@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { CSSProperties } from "react";
 import { ArrowUpRight, BookOpen, LayoutGrid, Plus } from "@/components/own-icons";
 import { withUtm } from "@/lib/external-link";
-import type { IconEntry } from "@/lib/icons";
+import { type IconEntry, countIconVariants } from "@/lib/icons";
 import type { OtherFamily } from "@/lib/families";
 import { categoryUrl } from "@/lib/categories";
 import { iconTone } from "@/lib/icon-tone";
@@ -147,7 +147,7 @@ const PILL_QUIET =
   "inline-flex min-h-9 items-center gap-2 rounded-xl px-2.5 py-2 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground";
 
 function variantTotal(icon: IconEntry): number {
-  return Object.values(icon.variants).filter(Boolean).length;
+  return countIconVariants(icon);
 }
 
 function Hero({

@@ -13,7 +13,7 @@ import {
   getFamilySlugs,
   getOtherFamilies,
 } from "@/lib/families";
-import { getCategoryCounts, getCollectionCount, getIconBySlug } from "@/lib/icons";
+import { getCategoryCounts, getCollectionCount, getIconBySlug, countIconVariants } from "@/lib/icons";
 import type { Collection, IconEntry } from "@/lib/icons";
 import { getJsDelivrUrl } from "@/components/icons/shared/icon-constants";
 import { FamilyView } from "@/components/family/family-view";
@@ -170,7 +170,7 @@ export default async function FamilyPage({ params }: PageProps) {
   // among the flagship tiles.
   const featured = [parent, ...getFamilyFeatured(slug)];
   const variantCount = members.reduce(
-    (n, m) => n + Object.values(m.variants).filter(Boolean).length,
+    (n, m) => n + countIconVariants(m),
     0,
   );
 

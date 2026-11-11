@@ -107,3 +107,6 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2024-11-06 - Avoid micro-optimizing map calls and nested includes arrays
 **Learning:** Replacing `.map()` with `new Array()` and manual `for` loops degrades readability and does not provide memory benefits, as `.map()` natively allocates exactly one array. In contrast, resolving O(N*M) complexity when filtering elements of one array against another (using `.filter(x => !array.includes(x))`) by pre-computing a `Set` offers meaningful mathematical gains. Also, Next.js runs on port 3333 in this project.
 **Action:** Do not micro-optimize `.map()` calls. Do resolve O(N*M) array iterations by converting the lookup array into a `Set` before the loop. Use port 3333 for testing local dev servers.
+## 2025-05-18 - Avoid array allocation when counting values
+**Learning:** In hot loops, counting truthy values in an object using `Object.values(obj).filter(Boolean).length` allocates an intermediate array of all values, and then another array from `.filter`, putting unnecessary pressure on the garbage collector.
+**Action:** Replace `Object.values(obj).filter(Boolean).length` with a fast, non-allocating `for...in` loop and a local counter variable. Extract this loop into a small helper function if it's needed in multiple places.

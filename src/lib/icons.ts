@@ -165,10 +165,18 @@ export function getRecentlyAddedIcons(limit = 12): IconEntry[] {
     .slice(0, limit);
 }
 
+export function countIconVariants(icon: IconEntry): number {
+  let count = 0;
+  for (const key in icon.variants) {
+    if (icon.variants[key as keyof typeof icon.variants]) count++;
+  }
+  return count;
+}
+
 export function getVariantCount(): number {
   let count = 0;
   for (const icon of icons) {
-    count += Object.values(icon.variants).filter(Boolean).length;
+    count += countIconVariants(icon);
   }
   return count;
 }

@@ -1,4 +1,4 @@
-import type { IconEntry } from "@/lib/icons";
+import { type IconEntry, countIconVariants } from "@/lib/icons";
 
 export interface QualityScoreBreakdown {
   label: string;
@@ -22,7 +22,7 @@ const VAGUE_LICENSES = new Set(["", "unknown", "todo", "tbd"]);
  * a contributor PR should add.
  */
 export function computeQualityScore(icon: IconEntry): QualityScore {
-  const variantCount = Object.values(icon.variants).filter(Boolean).length;
+  const variantCount = countIconVariants(icon);
   const variantsScore = Math.min(variantCount - 1, 4) * (25 / 4);
 
   const hasClearLicense = !VAGUE_LICENSES.has(icon.license?.trim().toLowerCase() ?? "");
