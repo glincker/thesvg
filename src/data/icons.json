@@ -70368,7 +70368,9 @@
       "Productivity"
     ],
     "variants": {
-      "default": "/icons/gong/default.svg"
+      "default": "/icons/gong/default.svg",
+      "icon": "/icons/gong/icon.svg",
+      "iconDark": "/icons/gong/iconDark.svg"
     },
     "license": "Trademark",
     "url": "https://gong.io",
