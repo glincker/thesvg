@@ -3872,7 +3872,9 @@
       "Analytics"
     ],
     "variants": {
-      "default": "/icons/amplitude/default.svg"
+      "default": "/icons/amplitude/default.svg",
+      "icon": "/icons/amplitude/icon.svg",
+      "iconDark": "/icons/amplitude/iconDark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://amplitude.com",
