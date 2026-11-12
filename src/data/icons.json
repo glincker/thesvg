@@ -102610,6 +102610,24 @@
     "collection": "brands"
   },
   {
+    "slug": "octopus",
+    "title": "Octopus",
+    "aliases": [],
+    "hex": "466551",
+    "categories": [
+      "AI",
+      "DevTool",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/octopus/default.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://github.com/bestruirui/octopus",
+    "dateAdded": "2026-11-12",
+    "collection": "brands"
+  },
+  {
     "slug": "octopus-deploy",
     "title": "Octopus Deploy",
     "aliases": [],
