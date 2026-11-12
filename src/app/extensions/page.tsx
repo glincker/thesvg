@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import Link from "next/link";
 import {
   Bot,
   Blocks,
@@ -474,6 +475,17 @@ export default function ExtensionsPage() {
               </div>
             </div>
           </div>
+
+          <p className="mt-8 text-sm text-muted-foreground">
+            Looking for where thesvg is listed?{" "}
+            <Link
+              href="/extensions/mentions"
+              className="text-foreground underline underline-offset-4 hover:opacity-80"
+            >
+              See mentions
+            </Link>
+            .
+          </p>
         </div>
       </SidebarShell>
     </Suspense>
