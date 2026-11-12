@@ -774,13 +774,13 @@ export function HomeHero({
           </div>
 
         {/* Thin glowing progress dots */}
-        <div className="absolute bottom-1 left-1/2 z-10 flex -translate-x-1/2 items-center gap-1.5 sm:bottom-2">
+        <div className="absolute bottom-3 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2">
           {collectionSlides.map((_, i) => (
             <button
               key={i}
               type="button"
               onClick={() => setCurrentSlide(i)}
-              className="group relative flex h-8 items-center px-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-full sm:h-6"
+              className="group relative rounded-full before:absolute before:-inset-x-1 before:-inset-y-3 before:content-[''] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               aria-label={`Go to slide ${i + 1}`}
             >
               <div
