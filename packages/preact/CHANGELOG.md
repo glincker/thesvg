@@ -1,5 +1,11 @@
 # @thesvg/preact
 
+## 4.0.5
+
+### Patch Changes
+
+- feat: add gong symbol variant ([#1531](https://github.com/glincker/thesvg/issues/1531))
+
 ## 4.0.4
 
 ### Patch Changes
