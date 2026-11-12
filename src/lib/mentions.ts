@@ -42,7 +42,7 @@ export const MENTIONS: readonly Mention[] = [
   },
   {
     title: "awesome-svg: Icons",
-    url: "https://github.com/willianjusten/awesome-svg/blob/master/topics/Icons.md",
+    url: "https://github.com/willianjusten/awesome-svg",
     source: "awesome-svg",
     evidenceUrl: "https://github.com/willianjusten/awesome-svg/pull/186",
     homepageUrl: "https://github.com/willianjusten/awesome-svg",
@@ -53,7 +53,7 @@ export const MENTIONS: readonly Mention[] = [
   },
   {
     title: "media-use resolves brand logos from theSVG",
-    url: "https://github.com/heygen-com/hyperframes/pull/4291",
+    url: "https://github.com/heygen-com/hyperframes",
     source: "HyperFrames",
     evidenceUrl: "https://github.com/heygen-com/hyperframes/pull/4291",
     homepageUrl: "https://hyperframes.heygen.com",
@@ -66,7 +66,7 @@ export const MENTIONS: readonly Mention[] = [
   },
   {
     title: "Provider icons fallback",
-    url: "https://github.com/cheaper-inference/OmniRoute/pull/6317",
+    url: "https://github.com/cheaper-inference/OmniRoute",
     source: "OmniRoute",
     evidenceUrl: "https://github.com/cheaper-inference/OmniRoute/pull/6317",
     homepageUrl: "https://omniroute.online",
@@ -78,7 +78,7 @@ export const MENTIONS: readonly Mention[] = [
   },
   {
     title: "Built-in icon source",
-    url: "https://github.com/lumeland/lume/blob/main/packages/plugin-icons/deps/icons.ts",
+    url: "https://github.com/lumeland/lume",
     source: "Lume",
     evidenceUrl: "https://github.com/lumeland/lume/commit/1d44d31d2c3a0b2dbb382bb5a4a2cb26831758b4",
     homepageUrl: "https://lume.land",
@@ -91,7 +91,7 @@ export const MENTIONS: readonly Mention[] = [
   },
   {
     title: "Model and channel icons",
-    url: "https://github.com/bestruirui/octopus/blob/master/web/package.json",
+    url: "https://github.com/bestruirui/octopus",
     source: "Octopus",
     evidenceUrl: "https://github.com/bestruirui/octopus/commit/ae295af02b4e64ea379a99f9645646ec22923b51",
     homepageUrl: "https://github.com/bestruirui/octopus",
@@ -103,7 +103,7 @@ export const MENTIONS: readonly Mention[] = [
   },
   {
     title: "Editor icons in the UI package",
-    url: "https://github.com/infi-pc/locatorjs/blob/master/packages/ui/ICON-LICENSES.md",
+    url: "https://github.com/infi-pc/locatorjs",
     source: "LocatorJS",
     evidenceUrl: "https://github.com/infi-pc/locatorjs/pull/216",
     homepageUrl: "https://www.locatorjs.com",
@@ -115,7 +115,7 @@ export const MENTIONS: readonly Mention[] = [
   },
   {
     title: "Integration logos",
-    url: "https://github.com/vellum-ai/vellum-assistant/blob/main/clients/web/public/images/integrations/ATTRIBUTION.md",
+    url: "https://github.com/vellum-ai/vellum-assistant",
     source: "Vellum",
     evidenceUrl: "https://github.com/vellum-ai/vellum-assistant/pull/40460",
     homepageUrl: "https://vellum.ai",
@@ -127,7 +127,7 @@ export const MENTIONS: readonly Mention[] = [
   },
   {
     title: "Third-party notices",
-    url: "https://github.com/siyuan-note/siyuan/blob/master/scripts/generate-third-party-notices.py",
+    url: "https://github.com/siyuan-note/siyuan",
     source: "SiYuan",
     evidenceUrl: "https://github.com/siyuan-note/siyuan/commit/057b5d0f235b3d7f2ce06822c90b60436755c2cc",
     homepageUrl: "https://b3log.org/siyuan",
@@ -139,7 +139,7 @@ export const MENTIONS: readonly Mention[] = [
   },
   {
     title: "Agent icons",
-    url: "https://github.com/delexw/claude-code-trace/blob/main/package.json",
+    url: "https://github.com/delexw/claude-code-trace",
     source: "claude-code-trace",
     evidenceUrl: "https://github.com/delexw/claude-code-trace/commit/cdf251c1618b119d20147b5bef6b0179d8237cc1",
     homepageUrl: "https://github.com/delexw/claude-code-trace",
@@ -169,5 +169,38 @@ export const MENTIONS: readonly Mention[] = [
     date: "2026-04-13",
     description:
       "Listed in the curated Svelte list as @thesvg/svelte, in the Icons section.",
+  },
+  {
+    title: "Integrations grid",
+    url: "https://github.com/oceanbase/powercontext",
+    source: "PowerContext",
+    homepageUrl: "https://powercontext.oceanbase.io",
+    kind: "code",
+    logo: "oceanbase",
+    date: "2026-11-12",
+    description:
+      "Their README integrations grid loads agent and tool logos straight from the thesvg CDN.",
+  },
+  {
+    title: "Brand marks in UI demos",
+    url: "https://github.com/neondatabase/ui",
+    source: "Neon UI",
+    homepageUrl: "https://ui.neon.com",
+    kind: "code",
+    logo: "neon",
+    date: "2026-11-12",
+    description:
+      "Component demos load thesvg brand marks as masks and credit them in a code comment.",
+  },
+  {
+    title: "Provider icons",
+    url: "https://github.com/gitkraken/gitbench",
+    source: "GitBench",
+    homepageUrl: "https://gitbench.gitkraken.com",
+    kind: "code",
+    logo: "gitkraken",
+    date: "2026-11-12",
+    description:
+      "Depends on @thesvg/icons and @thesvg/react for model provider icons.",
   },
 ];

@@ -714,7 +714,7 @@ export function HomeHero({
 
           {/* Decorative blobs - the first one drifts slowly for an ambient,
               alive backdrop instead of a static painted gradient. */}
-          <div className={`animate-glow-drift pointer-events-none absolute -top-24 -right-24 h-80 w-80 rounded-full ${slide.blob} opacity-80 blur-3xl transition-colors duration-700`} />
+          <div className={`pointer-events-none absolute -top-24 -right-24 h-80 w-80 rounded-full ${slide.blob} opacity-80 blur-3xl transition-colors duration-700`} />
           <div className={`pointer-events-none absolute -bottom-14 -right-14 h-52 w-52 rounded-full ${slide.blob} opacity-70 blur-2xl transition-colors duration-700`} />
           <div className={`pointer-events-none absolute top-1/2 left-1/3 h-40 w-40 -translate-y-1/2 rounded-full ${slide.blob} opacity-30 blur-3xl transition-colors duration-700`} />
 
