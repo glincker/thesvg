@@ -37,13 +37,15 @@ const inter = Inter({
 
 const count = getFormattedIconCount();
 const collectionCounts = getCollections();
+// Keep under 155 characters so search snippets do not truncate it.
+const DESCRIPTION = `Search, copy, and ship ${count}+ brand SVG icons. Open source, with npm, React, Vue, Svelte, CLI, CDN and MCP support. Used in Lume and HyperFrames.`;
 
 export const metadata: Metadata = {
   title: {
     default: `theSVG - ${count}+ Free Brand SVG Icons for Developers and Designers`,
     template: "%s | theSVG",
   },
-  description: `Search, copy, and ship ${count}+ brand SVG icons. Open-source library with npm, React, Vue, Svelte, CLI, CDN, and MCP server support.`,
+  description: DESCRIPTION,
   keywords: [
     "svg",
     "brand icons",
@@ -69,7 +71,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://thesvg.org"),
   openGraph: {
     title: `theSVG - ${count}+ Free Brand SVG Icons for Developers and Designers`,
-    description: `Search, copy, and ship ${count}+ brand SVG icons. Open-source library with npm, React, Vue, Svelte, CLI, CDN, and MCP server support.`,
+    description: DESCRIPTION,
     url: "https://thesvg.org",
     siteName: "theSVG",
     type: "website",
@@ -86,7 +88,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: `theSVG - ${count}+ Free Brand SVG Icons for Developers and Designers`,
-    description: `Search, copy, and ship ${count}+ brand SVG icons. Open-source library with npm, React, Vue, Svelte, CLI, CDN, and MCP server support.`,
+    description: DESCRIPTION,
     images: ["/og-image.png"],
   },
   icons: {
