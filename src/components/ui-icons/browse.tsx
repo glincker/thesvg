@@ -83,6 +83,7 @@ export function Browse() {
           <button
             key={c.name}
             type="button"
+            aria-pressed={ui.category === c.name}
             onClick={() => { ui.setCategory(c.name); setShown(PAGE); }}
             className={cn(
               "inline-flex shrink-0 items-center gap-2 rounded-full px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground",
