@@ -3872,7 +3872,9 @@
       "Analytics"
     ],
     "variants": {
-      "default": "/icons/amplitude/default.svg"
+      "default": "/icons/amplitude/default.svg",
+      "icon": "/icons/amplitude/icon.svg",
+      "iconDark": "/icons/amplitude/iconDark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://amplitude.com",
@@ -48509,20 +48511,40 @@
     "slug": "confluence",
     "title": "Confluence",
     "aliases": [],
+    "hex": "1868DB",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/confluence/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.atlassian.com/company/news/press-kit",
+    "dateAdded": "2026-11-11",
+    "collection": "brands",
+    "family": "atlassian",
+    "supersedes": "confluence-legacy"
+  },
+  {
+    "slug": "confluence-legacy",
+    "title": "Confluence (legacy)",
+    "aliases": [],
     "hex": "172B4D",
     "categories": [
       "DevTool",
       "Software"
     ],
     "variants": {
-      "default": "/icons/confluence/default.svg",
-      "mono": "/icons/confluence/mono.svg"
+      "default": "/icons/confluence-legacy/default.svg",
+      "mono": "/icons/confluence-legacy/mono.svg"
     },
     "license": "CC0-1.0",
     "url": "https://www.atlassian.com/company/news/press-kit",
     "dateAdded": "2026-03-07",
     "collection": "brands",
-    "family": "atlassian"
+    "family": "atlassian",
+    "supersededBy": "confluence"
   },
   {
     "slug": "confluent",
@@ -97440,6 +97462,26 @@
     "license": "CC0-1.0",
     "url": "https://mubi.com",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "mudblazor",
+    "title": "MudBlazor",
+    "aliases": [],
+    "hex": "594AE2",
+    "categories": [
+      "Design",
+      "DevTool",
+      "Framework",
+      "UI Library",
+      "Frontend"
+    ],
+    "variants": {
+      "default": "/icons/mudblazor/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://mudblazor.com/",
+    "dateAdded": "2026-11-11",
     "collection": "brands"
   },
   {
