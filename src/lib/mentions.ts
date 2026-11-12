@@ -33,12 +33,12 @@ export const MENTIONS: readonly Mention[] = [
       "Listed in the curated SVG list as a library of brand logos with variants and a free API.",
   },
   {
-    title: "Logo provider in the media-use skill",
-    url: "https://github.com/heygen-com/hyperframes",
+    title: "media-use resolves brand logos from theSVG",
+    url: "https://github.com/heygen-com/hyperframes/pull/4291",
     source: "HyperFrames",
-    date: "2026-11-12",
+    date: "2026-09-23",
     description:
-      "Its media-use skill and CLI look up brand logos from thesvg, pinned to a specific commit.",
+      "Merged change that makes thesvg the first source for brand logos in their media-use skill, pinned to a commit and gated by license.",
   },
   {
     title: "Provider icons fallback",
