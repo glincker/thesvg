@@ -89238,6 +89238,24 @@
     "collection": "brands"
   },
   {
+    "slug": "locatorjs",
+    "title": "LocatorJS",
+    "aliases": [],
+    "hex": "1909D1",
+    "categories": [
+      "DevTool",
+      "Library",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/locatorjs/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://www.locatorjs.com",
+    "dateAdded": "2026-11-12",
+    "collection": "brands"
+  },
+  {
     "slug": "lockheed-martin",
     "title": "Lockheed Martin",
     "aliases": [],
