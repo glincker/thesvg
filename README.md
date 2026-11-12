@@ -416,8 +416,8 @@ Icons support up to 7 variants to match any design context:
 |---------|-----|-------------|
 | Default | `default` | Primary brand color |
 | Mono | `mono` | Inherits text color |
-| Light | `light` | White, for dark backgrounds |
-| Dark | `dark` | Black, for light backgrounds |
+| Light | `light` | Dark fill, for light backgrounds |
+| Dark | `dark` | Light fill, for dark backgrounds |
 | Wordmark | `wordmark` | Full text logo |
 | Wordmark Light | `wordmarkLight` | White text logo |
 | Wordmark Dark | `wordmarkDark` | Dark text logo |

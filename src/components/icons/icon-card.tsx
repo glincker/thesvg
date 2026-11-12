@@ -134,7 +134,7 @@ export const IconCard = memo(function IconCard({
 
   const primaryCategory = icon.categories[0];
 
-  // Theme-aware variant: show light variant on light bg, dark on dark bg
+  // Theme-aware variant: `light` is for light backgrounds, `dark` for dark backgrounds
   const lightSrc = icon.variants.light || icon.variants.default;
   const darkSrc = icon.variants.dark || icon.variants.default;
   const needsThemeSwap = lightSrc !== darkSrc;

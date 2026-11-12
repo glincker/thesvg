@@ -57,8 +57,8 @@ No authentication required. CORS enabled. A gated, token-based API at api.thesvg
 Each icon can have up to 7 variants:
 - `default` - Primary brand color (always present)
 - `mono` - Single color, inherits text color
-- `light` - White, for dark backgrounds
-- `dark` - Black, for light backgrounds
+- `light` - Dark fill, for light backgrounds
+- `dark` - Light fill, for dark backgrounds
 - `wordmark` - Full text logo
 - `wordmarkLight` - White text logo
 - `wordmarkDark` - Dark text logo
