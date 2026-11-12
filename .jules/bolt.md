@@ -107,9 +107,3 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2024-11-06 - Avoid micro-optimizing map calls and nested includes arrays
 **Learning:** Replacing `.map()` with `new Array()` and manual `for` loops degrades readability and does not provide memory benefits, as `.map()` natively allocates exactly one array. In contrast, resolving O(N*M) complexity when filtering elements of one array against another (using `.filter(x => !array.includes(x))`) by pre-computing a `Set` offers meaningful mathematical gains. Also, Next.js runs on port 3333 in this project.
 **Action:** Do not micro-optimize `.map()` calls. Do resolve O(N*M) array iterations by converting the lookup array into a `Set` before the loop. Use port 3333 for testing local dev servers.
-## 2026-11-10 - Chained array methods in hot paths
-**Learning:** The `render.ts` icon engine creates severe intermediate array allocations and causes GC pressure due to multiple `.map()` and `.filter()` array operations in a hot path.
-**Action:** Remove `shapes.map((_, i) => i).filter(isBodyCandidate)` and `poly.map((p) => p.x)` in hot paths using single-pass loops.
-## 2026-11-10 - Using Sets for O(1) lookups in loops
-**Learning:** When doing lookups like `!holes.includes(i)` within a `.filter()` or a loop over an array, converting the lookup target to a Set (`new Set(holes)`) first avoids O(N*M) complexity.
-**Action:** Replaced `.includes()` with `.has()` against a Set where applicable, especially in hot paths like the icon engine render pipeline.
