@@ -41,12 +41,12 @@ export const MENTIONS: readonly Mention[] = [
       "Merged change that makes thesvg the first source for brand logos in their media-use skill, pinned to a commit and gated by license.",
   },
   {
-    title: "Provider icons fallback",
-    url: "https://github.com/cheaper-inference/OmniRoute",
+    title: "Provider icon fallback chain",
+    url: "https://github.com/cheaper-inference/OmniRoute/pull/6317",
     source: "OmniRoute",
-    date: "2026-11-12",
+    date: "2026-07-10",
     description:
-      "Falls back to the thesvg CDN when a provider has no bundled icon.",
+      "Merged change that makes the thesvg CDN the third tier of their provider icon chain, used for providers with no bundled icon.",
   },
   {
     title: "Built-in icon source",
@@ -58,7 +58,7 @@ export const MENTIONS: readonly Mention[] = [
   },
   {
     title: "Model and channel icons",
-    url: "https://github.com/bestruirui/octopus/blob/main/web/package.json",
+    url: "https://github.com/bestruirui/octopus/blob/master/web/package.json",
     source: "Octopus",
     date: "2026-11-12",
     description:
@@ -66,7 +66,7 @@ export const MENTIONS: readonly Mention[] = [
   },
   {
     title: "Editor icons in the UI package",
-    url: "https://github.com/infi-pc/locatorjs/blob/main/packages/ui/ICON-LICENSES.md",
+    url: "https://github.com/infi-pc/locatorjs/blob/master/packages/ui/ICON-LICENSES.md",
     source: "LocatorJS",
     date: "2026-11-12",
     description:
