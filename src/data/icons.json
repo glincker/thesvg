@@ -57582,6 +57582,24 @@
     "collection": "brands"
   },
   {
+    "slug": "eps-file",
+    "title": "EPS File",
+    "aliases": [],
+    "hex": "4B4B4B",
+    "categories": [
+      "Design",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/eps-file/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://en.wikipedia.org/wiki/Encapsulated_PostScript",
+    "guidelines": "https://www.adobe.com/creativecloud/file-types/image/vector/eps-file.html",
+    "dateAdded": "2026-11-11",
+    "collection": "brands"
+  },
+  {
     "slug": "epsagon",
     "title": "Epsagon",
     "aliases": [],
@@ -59417,21 +59435,21 @@
     "collection": "brands"
   },
   {
-  "slug": "farsiui",
-  "title": "FarsiUI",
-  "aliases": [],
-  "hex": "2E2E2E",
-  "categories": [
-    "Developer Tools",
-    "Software"
-  ],
-  "variants": {
-    "default": "/icons/farsiui/default.svg"
-  },
-  "license": "MIT",
-  "url": "https://farsiui.ir",
-  "dateAdded": "2026-11-01",
-  "collection": "brands"
+    "slug": "farsiui",
+    "title": "FarsiUI",
+    "aliases": [],
+    "hex": "2E2E2E",
+    "categories": [
+      "Developer Tools",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/farsiui/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://farsiui.ir",
+    "dateAdded": "2026-11-01",
+    "collection": "brands"
   },
   {
     "slug": "fastapi",
@@ -145687,18 +145705,5 @@
     "url": "https://www.zyte.com",
     "dateAdded": "2026-03-07",
     "collection": "brands"
-  },
-  {
-    "slug": "eps-file",
-    "title": "eps file",
-    "aliases": [],
-    "hex": "ffffff",
-    "categories": ["Design", "extension", "Software"],
-    "variants": {
-        "default": "/icons/eps-file/default.svg"
-    },
-    "license": "CC0-1.0",
-    "url": "https://en.wikipedia.org/wiki/Encapsulated_PostScript",
-    "guidelines": "https://www.adobe.com/creativecloud/file-types/image/vector/eps-file.html"
   }
 ]
