@@ -97443,6 +97443,26 @@
     "collection": "brands"
   },
   {
+    "slug": "mudblazor",
+    "title": "MudBlazor",
+    "aliases": [],
+    "hex": "594AE2",
+    "categories": [
+      "Design",
+      "DevTool",
+      "Framework",
+      "UI Library",
+      "Frontend"
+    ],
+    "variants": {
+      "default": "/icons/mudblazor/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://mudblazor.com/",
+    "dateAdded": "2026-11-11",
+    "collection": "brands"
+  },
+  {
     "slug": "mui",
     "title": "MUI",
     "aliases": [
