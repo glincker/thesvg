@@ -107,6 +107,3 @@ Simulating with N=5000 icons, M=20 slugs:
 ## 2024-11-06 - Avoid micro-optimizing map calls and nested includes arrays
 **Learning:** Replacing `.map()` with `new Array()` and manual `for` loops degrades readability and does not provide memory benefits, as `.map()` natively allocates exactly one array. In contrast, resolving O(N*M) complexity when filtering elements of one array against another (using `.filter(x => !array.includes(x))`) by pre-computing a `Set` offers meaningful mathematical gains. Also, Next.js runs on port 3333 in this project.
 **Action:** Do not micro-optimize `.map()` calls. Do resolve O(N*M) array iterations by converting the lookup array into a `Set` before the loop. Use port 3333 for testing local dev servers.
-## 2024-05-19 - Optimize Map.entries() iteration in mcp packages
-**Learning:** In the `mcp` and `mcp-worker` packages, chaining `.entries().map(...)` over large `Map` objects (like icon category counts) forces V8 to allocate thousands of short-lived tuple arrays `[key, value]`, significantly increasing garbage collection pressure.
-**Action:** Replace `Array.from(map.entries()).map(...)` with `Array.from(map, ([key, value]) => ...)` which uses the map's default iterator to populate the final array directly without allocating an intermediate array of tuples.
