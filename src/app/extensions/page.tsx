@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import Link from "next/link";
 import {
+  ArrowRight,
   Bot,
   Blocks,
   Code,
@@ -396,6 +397,16 @@ export default function ExtensionsPage() {
             <p className="text-muted-foreground">
               Use theSVG icons everywhere you build, design, and ship.
             </p>
+            <Link
+              href="/extensions/mentions"
+              className="group mt-4 inline-flex items-center gap-2 rounded-full border border-border/40 bg-card/30 py-1 pl-1 pr-3 text-xs font-medium text-muted-foreground transition-colors hover:border-border/70 hover:text-foreground dark:border-white/[0.06] dark:bg-white/[0.02] dark:hover:border-white/[0.1]"
+            >
+              <span className="rounded-full bg-orange-500/10 px-2 py-0.5 text-orange-500">
+                New
+              </span>
+              See where thesvg is mentioned
+              <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
+            </Link>
           </div>
 
           {/* Quick nav */}
@@ -476,16 +487,6 @@ export default function ExtensionsPage() {
             </div>
           </div>
 
-          <p className="mt-8 text-sm text-muted-foreground">
-            Looking for where thesvg is listed?{" "}
-            <Link
-              href="/extensions/mentions"
-              className="text-foreground underline underline-offset-4 hover:opacity-80"
-            >
-              See mentions
-            </Link>
-            .
-          </p>
         </div>
       </SidebarShell>
     </Suspense>
