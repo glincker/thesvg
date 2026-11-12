@@ -77118,6 +77118,24 @@
     "collection": "brands"
   },
   {
+    "slug": "hyperframes",
+    "title": "HyperFrames",
+    "aliases": [],
+    "hex": "06E3FA",
+    "categories": [
+      "Media",
+      "DevTool",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/hyperframes/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://hyperframes.heygen.com",
+    "dateAdded": "2026-11-12",
+    "collection": "brands"
+  },
+  {
     "slug": "hyperskill",
     "title": "Hyperskill",
     "aliases": [],
