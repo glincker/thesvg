@@ -89,7 +89,7 @@ Pick the form that best matches the user's context:
 
 ## Light vs dark backgrounds
 
-When the user mentions a dark background (or asks for a "white version"), prefer `light` or `mono` if available. When they mention a light background, prefer `dark` or `mono`. Always fall back to `default` if the variant doesn't exist.
+When the user mentions a dark background (or asks for a "white version"), prefer `dark` (the variant for dark backgrounds, light fill) or `mono` if available. When they mention a light background, prefer `light` (dark fill) or `mono`. Always fall back to `default` if the variant doesn't exist.
 
 ## Cloud architecture diagrams
 

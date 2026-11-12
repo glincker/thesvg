@@ -93,8 +93,8 @@ interface IconEntry {
   variants: {
     default: string;       // always present - URL path to SVG
     mono?: string;         // single color variant
-    light?: string;        // white variant for dark backgrounds
-    dark?: string;         // dark variant for light backgrounds
+    light?: string;        // dark-fill variant for light backgrounds
+    dark?: string;         // light-fill variant for dark backgrounds
     wordmark?: string;     // full logo with text
     wordmarkLight?: string;
     wordmarkDark?: string;
@@ -193,11 +193,11 @@ import { Github } from "@thesvg/react";
 |---------|-----|----------|
 | Default | `default` | General use, brand's primary colors |
 | Mono | `mono` | Monochrome UIs, inherits `currentColor` |
-| Light | `light` | Dark backgrounds (white fill) |
-| Dark | `dark` | Light backgrounds (dark fill) |
+| Light | `light` | Light backgrounds (dark fill) |
+| Dark | `dark` | Dark backgrounds (light fill) |
 | Wordmark | `wordmark` | Full logo with brand text |
-| Wordmark Light | `wordmarkLight` | Wordmark for dark backgrounds |
-| Wordmark Dark | `wordmarkDark` | Wordmark for light backgrounds |
+| Wordmark Light | `wordmarkLight` | Wordmark for light backgrounds |
+| Wordmark Dark | `wordmarkDark` | Wordmark for dark backgrounds |
 
 Not every icon has all variants. `default` is always present.
 

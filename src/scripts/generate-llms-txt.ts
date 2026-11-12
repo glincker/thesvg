@@ -337,8 +337,8 @@ No authentication required. CORS enabled. A gated, token-based API at api.thesvg
 Each icon can have up to 7 variants:
 - \`default\` - Primary brand color (always present)
 - \`mono\` - Single color, inherits text color
-- \`light\` - White, for dark backgrounds
-- \`dark\` - Black, for light backgrounds
+- \`light\` - Dark fill, for light backgrounds
+- \`dark\` - Light fill, for dark backgrounds
 - \`wordmark\` - Full text logo
 - \`wordmarkLight\` - White text logo
 - \`wordmarkDark\` - Dark text logo
@@ -478,8 +478,8 @@ interface IconEntry {
   variants: {
     default: string;       // always present - URL path to SVG
     mono?: string;         // single color variant
-    light?: string;        // white variant for dark backgrounds
-    dark?: string;         // dark variant for light backgrounds
+    light?: string;        // dark-fill variant for light backgrounds
+    dark?: string;         // light-fill variant for dark backgrounds
     wordmark?: string;     // full logo with text
     wordmarkLight?: string;
     wordmarkDark?: string;
@@ -578,11 +578,11 @@ import { Github } from "@thesvg/react";
 |---------|-----|----------|
 | Default | \`default\` | General use, brand's primary colors |
 | Mono | \`mono\` | Monochrome UIs, inherits \`currentColor\` |
-| Light | \`light\` | Dark backgrounds (white fill) |
-| Dark | \`dark\` | Light backgrounds (dark fill) |
+| Light | \`light\` | Light backgrounds (dark fill) |
+| Dark | \`dark\` | Dark backgrounds (light fill) |
 | Wordmark | \`wordmark\` | Full logo with brand text |
-| Wordmark Light | \`wordmarkLight\` | Wordmark for dark backgrounds |
-| Wordmark Dark | \`wordmarkDark\` | Wordmark for light backgrounds |
+| Wordmark Light | \`wordmarkLight\` | Wordmark for light backgrounds |
+| Wordmark Dark | \`wordmarkDark\` | Wordmark for dark backgrounds |
 
 Not every icon has all variants. \`default\` is always present.
 
