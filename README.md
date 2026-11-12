@@ -17,6 +17,8 @@
   Free, open source, no gatekeeping.
 </p>
 
+![thesvg — search 7,600+ brand logos and copy any one as SVG or React](https://raw.githubusercontent.com/yasirwhite/opendemo-media/main/glincker-thesvg/thesvg-demo.gif)
+
 <p align="center">
   <a href="https://www.npmjs.com/package/thesvg"><img src="https://img.shields.io/npm/v/thesvg?style=flat-square&color=C2410C&label=npm" alt="npm" /></a>
   <a href="https://www.npmjs.com/package/thesvg"><img src="https://img.shields.io/npm/dm/thesvg?style=flat-square&color=C2410C&label=downloads" alt="downloads" /></a>
