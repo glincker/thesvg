@@ -44,6 +44,7 @@ const COMMUNITY_LINKS: FooterLink[] = [
   { label: "Issues", href: "https://github.com/GLINCKER/thesvg/issues", external: true, glyph: "circle-alert" },
   { label: "Discussions", href: "https://github.com/GLINCKER/thesvg/discussions", external: true, glyph: "messages-square" },
   { label: "Discord", href: "https://discord.gg/Ar5pcaZB99", external: true, brand: "discord" },
+  { label: "Mentions", href: "/extensions/mentions", glyph: "megaphone" },
   { label: "Contributing", href: "https://github.com/GLINCKER/thesvg/blob/main/CONTRIBUTING.md", external: true, glyph: "git-pull-request" },
   { label: "Sponsor", href: "https://github.com/sponsors/glincker", external: true, glyph: "heart" },
 ];

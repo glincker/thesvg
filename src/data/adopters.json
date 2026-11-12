@@ -1,0 +1,859 @@
+{
+  "generatedAt": "2026-11-12T08:18:52.394Z",
+  "method": "GitHub code search, forks and archived repos excluded, results are capped by the API so this is a lower bound.",
+  "total": 962,
+  "byKind": {
+    "dependency": 178,
+    "code": 430,
+    "docs": 354
+  },
+  "repos": [
+    {
+      "repo": "nexu-io/open-design",
+      "url": "https://github.com/nexu-io/open-design",
+      "stars": 107281,
+      "kind": "code",
+      "description": "The 1st Collaborative AI Design Agent Workspace. Local-first and open source. Create motion, prototypes, websites, apps, dashboards, presentations, images, and videos with your team and AI agents. Share work, exchange feedback, and iterate together in one workspace."
+    },
+    {
+      "repo": "cheaper-inference/OmniRoute",
+      "url": "https://github.com/cheaper-inference/OmniRoute",
+      "stars": 86687,
+      "kind": "code",
+      "description": "Never stop coding. Free MIT AI gateway: one endpoint, 375 providers (150+ free), 1,400+ models Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 900+ contributors"
+    },
+    {
+      "repo": "heygen-com/hyperframes",
+      "url": "https://github.com/heygen-com/hyperframes",
+      "stars": 83094,
+      "kind": "code",
+      "description": "Write HTML. Render video. Built for agents."
+    },
+    {
+      "repo": "enaqx/awesome-react",
+      "url": "https://github.com/enaqx/awesome-react",
+      "stars": 75250,
+      "kind": "docs",
+      "description": "A collection of awesome things regarding React ecosystem"
+    },
+    {
+      "repo": "sickn33/agentic-awesome-skills",
+      "url": "https://github.com/sickn33/agentic-awesome-skills",
+      "stars": 49578,
+      "kind": "docs",
+      "description": "2,955+ reusable AI agent skills for Claude Code, Codex, Cursor and Gemini CLI. AAS Core adds local catalog discovery, agent-owned selection and plan preview. CLI, MCP and plugins."
+    },
+    {
+      "repo": "siyuan-note/siyuan",
+      "url": "https://github.com/siyuan-note/siyuan",
+      "stars": 47197,
+      "kind": "code",
+      "description": "An open-source, privacy-first, self-hosted knowledge workspace where humans and AI agents work together 开源、隐私优先、自托管的知识工作空间，让人与智能体在此协作"
+    },
+    {
+      "repo": "raycast/extensions",
+      "url": "https://github.com/raycast/extensions",
+      "stars": 7837,
+      "kind": "dependency",
+      "description": "Everything you need to extend Raycast."
+    },
+    {
+      "repo": "willianjusten/awesome-svg",
+      "url": "https://github.com/willianjusten/awesome-svg",
+      "stars": 4663,
+      "kind": "docs",
+      "description": "A curated list of SVG. "
+    },
+    {
+      "repo": "BraveOPotato/NoSignups",
+      "url": "https://github.com/BraveOPotato/NoSignups",
+      "stars": 4580,
+      "kind": "docs",
+      "description": "A list of tools that are open-source, in-browser, and require no-signups!"
+    },
+    {
+      "repo": "Natively-AI-assistant/natively-cluely-ai-assistant",
+      "url": "https://github.com/Natively-AI-assistant/natively-cluely-ai-assistant",
+      "stars": 3267,
+      "kind": "docs",
+      "description": "Natively — Free open-source AI meeting assistant, interview copilot, and note taker. The best alternative to Cluely, Otter, Granola, Final Round AI, Fireflies, and Interview Coder. Real-time transcription, AI meeting notes, lecture recording, local RAG, BYOK, and stealth mode. Runs locally. No subscriptions. No data breaches."
+    },
+    {
+      "repo": "bestruirui/octopus",
+      "url": "https://github.com/bestruirui/octopus",
+      "stars": 2748,
+      "kind": "dependency",
+      "description": "One Hub All LLMs For You | 为个人打造的 LLM API 聚合网关"
+    },
+    {
+      "repo": "lumeland/lume",
+      "url": "https://github.com/lumeland/lume",
+      "stars": 2281,
+      "kind": "code",
+      "description": "🔥🪰 Static site generator for Deno"
+    },
+    {
+      "repo": "TheComputerM/awesome-svelte",
+      "url": "https://github.com/TheComputerM/awesome-svelte",
+      "stars": 2179,
+      "kind": "docs",
+      "description": "⚡ A curated list of awesome Svelte resources"
+    },
+    {
+      "repo": "infi-pc/locatorjs",
+      "url": "https://github.com/infi-pc/locatorjs",
+      "stars": 1828,
+      "kind": "docs",
+      "description": ""
+    },
+    {
+      "repo": "icopy-site/awesome-cn",
+      "url": "https://github.com/icopy-site/awesome-cn",
+      "stars": 1728,
+      "kind": "docs",
+      "description": "超赞列表合集"
+    },
+    {
+      "repo": "oceanbase/powercontext",
+      "url": "https://github.com/oceanbase/powercontext",
+      "stars": 1601,
+      "kind": "code",
+      "description": "Agent memory: long-term memory & agent memory handoff. Claude Code & Codex."
+    },
+    {
+      "repo": "vkarampinis/awesome-icons",
+      "url": "https://github.com/vkarampinis/awesome-icons",
+      "stars": 1583,
+      "kind": "docs",
+      "description": "A curated list of awesome Web Font Icons"
+    },
+    {
+      "repo": "vellum-ai/vellum-assistant",
+      "url": "https://github.com/vellum-ai/vellum-assistant",
+      "stars": 1492,
+      "kind": "code",
+      "description": "An AI Assistant that’s easy to setup, does your work 24/7, knows your preferences and gets better over time."
+    },
+    {
+      "repo": "Naresh-Khatri/3d-portfolio",
+      "url": "https://github.com/Naresh-Khatri/3d-portfolio",
+      "stars": 1348,
+      "kind": "docs",
+      "description": "Interactive 3D developer portfolio with a keyboard where every keycap is a skill. Built with Next.js, React, TypeScript, GSAP & Motion. Free to use!"
+    },
+    {
+      "repo": "Dpro-at/Tel-Agent",
+      "url": "https://github.com/Dpro-at/Tel-Agent",
+      "stars": 1199,
+      "kind": "docs",
+      "description": "AI phone assistant | open-source "
+    },
+    {
+      "repo": "iconify/icon-sets",
+      "url": "https://github.com/iconify/icon-sets",
+      "stars": 1083,
+      "kind": "docs",
+      "description": "200+ open source icon sets. Icons are validated, cleaned up, optimised, ready to render as SVG. Updated automatically several times a week."
+    },
+    {
+      "repo": "freekmurze/dotfiles",
+      "url": "https://github.com/freekmurze/dotfiles",
+      "stars": 1019,
+      "kind": "docs",
+      "description": "My personal dotfiles"
+    },
+    {
+      "repo": "trackawesomelist/trackawesomelist",
+      "url": "https://github.com/trackawesomelist/trackawesomelist",
+      "stars": 697,
+      "kind": "docs",
+      "description": "Track 500+ Awesome List Updates, Track it - not just star it!"
+    },
+    {
+      "repo": "jasonkneen/openclicky",
+      "url": "https://github.com/jasonkneen/openclicky",
+      "stars": 594,
+      "kind": "docs",
+      "description": "openclicky -- the open source version of clicky"
+    },
+    {
+      "repo": "cubeplexai/cubeplex",
+      "url": "https://github.com/cubeplexai/cubeplex",
+      "stars": 575,
+      "kind": "docs",
+      "description": "CubePlex is a cloud-native platform for managed agents in team workspaces — skills, shared memory, MCP tools, persistent sandboxes, governed access, and self-hosted deploy on Docker Compose or Kubernetes."
+    },
+    {
+      "repo": "Kevin-Liu-01/Claude-of-Tanks",
+      "url": "https://github.com/Kevin-Liu-01/Claude-of-Tanks",
+      "stars": 537,
+      "kind": "docs",
+      "description": "A World of Tanks-style armored combat simulator built directly with Three.js and Vite: 220 vehicles, 33 destructible battlefields, and 13 modes, with plate-level armor, ballistics, modules, spotting, and physics. Play in your browser on desktop or mobile. Built end-to-end by a multi-agent Claude/Codex pipeline."
+    },
+    {
+      "repo": "yicheng47/runner",
+      "url": "https://github.com/yicheng47/runner",
+      "stars": 513,
+      "kind": "code",
+      "description": "Where terminal agents work together. Claude Code, Codex, Copilot CLI and pi on the same task, in one mission, each keeping its own TUI in a real terminal."
+    },
+    {
+      "repo": "text2future/flowix",
+      "url": "https://github.com/text2future/flowix",
+      "stars": 502,
+      "kind": "code",
+      "description": "A tool for exploring AI agent workspaces."
+    },
+    {
+      "repo": "PrismorSec/prismor",
+      "url": "https://github.com/PrismorSec/prismor",
+      "stars": 486,
+      "kind": "docs",
+      "description": " Self-hosted runtime control plane for AI agents. Observe or HITL approve or Block rogue tool calls before it executes: secret leaks, prompt injection, supply chain etc in a local dashboard. Agent agnostic (Claude, codex, langchain etc.)"
+    },
+    {
+      "repo": "delexw/claude-code-trace",
+      "url": "https://github.com/delexw/claude-code-trace",
+      "stars": 390,
+      "kind": "dependency",
+      "description": "Claude Code session log viewer for JSONL files in ~/.claude/projects. Browse conversations, tool calls, tokens, and live tail sessions on desktop, web, and TUI."
+    },
+    {
+      "repo": "Utopai-Research/pai-code",
+      "url": "https://github.com/Utopai-Research/pai-code",
+      "stars": 354,
+      "kind": "docs",
+      "description": "Local AI filmmaking studio — skills, canvas, timeline — driven from your coding agent."
+    },
+    {
+      "repo": "mrdainami/nami",
+      "url": "https://github.com/mrdainami/nami",
+      "stars": 350,
+      "kind": "code",
+      "description": "Put the world's best AI agents to work. One workspace for all of them -- Claude Code, Codex, Gemini, Grok and more, running side by side on your Desktop."
+    },
+    {
+      "repo": "unacms/UNA",
+      "url": "https://github.com/unacms/UNA",
+      "stars": 329,
+      "kind": "code",
+      "description": "UNA Community Management System"
+    },
+    {
+      "repo": "tom-doerr/repo_posts",
+      "url": "https://github.com/tom-doerr/repo_posts",
+      "stars": 327,
+      "kind": "docs",
+      "description": ""
+    },
+    {
+      "repo": "siyuan-community/siyuan",
+      "url": "https://github.com/siyuan-community/siyuan",
+      "stars": 326,
+      "kind": "code",
+      "description": "A privacy-first, self-hosted, fully open source personal knowledge management software, written in typescript and golang."
+    },
+    {
+      "repo": "deliro/moka-py",
+      "url": "https://github.com/deliro/moka-py",
+      "stars": 314,
+      "kind": "docs",
+      "description": "A high performance caching library for Python written in Rust"
+    },
+    {
+      "repo": "zhiyingzzhou/renewlet",
+      "url": "https://github.com/zhiyingzzhou/renewlet",
+      "stars": 313,
+      "kind": "code",
+      "description": "Self-hosted subscription tracker for recurring renewals, with timezone-aware reminders, ten notification channels, budgets, and spending insights."
+    },
+    {
+      "repo": "Arnon-hs/open-source",
+      "url": "https://github.com/Arnon-hs/open-source",
+      "stars": 311,
+      "kind": "docs",
+      "description": "A living, machine-readable catalog of open-source projects with practical summaries, categories, quality signals and transparent scoring."
+    },
+    {
+      "repo": "Roshanjossey/code-contributions",
+      "url": "https://github.com/Roshanjossey/code-contributions",
+      "stars": 291,
+      "kind": "code",
+      "description": "🚀✨ Learn how to make code contributions to open source projects"
+    },
+    {
+      "repo": "vstorm-co/agenticos",
+      "url": "https://github.com/vstorm-co/agenticos",
+      "stars": 257,
+      "kind": "code",
+      "description": "Open-source, self-hosted AI agent platform for your company's AI teammates. Build, run and govern agents on your own servers and models: shared chat, RAG, skills, a real browser, 4,700+ MCP servers, budgets, approvals and an audit trail. An alternative to ChatGPT Enterprise and Grok Bot. Apache-2.0, built on Pydantic AI."
+    },
+    {
+      "repo": "jianyintang/find-disk-killer",
+      "url": "https://github.com/jianyintang/find-disk-killer",
+      "stars": 225,
+      "kind": "docs",
+      "description": "See what keeps using your disk."
+    },
+    {
+      "repo": "tuanminhhole/openclaw-setup",
+      "url": "https://github.com/tuanminhhole/openclaw-setup",
+      "stars": 213,
+      "kind": "code",
+      "description": "Setup AI Telegram Bot miễn phí bằng OpenClaw + Google Gemini + Docker"
+    },
+    {
+      "repo": "Ar9av/gemini-nano-chrome",
+      "url": "https://github.com/Ar9av/gemini-nano-chrome",
+      "stars": 206,
+      "kind": "docs",
+      "description": "Using Gemini Nano through Chrome's built-in Prompt API, with scripts to automate setup and verification"
+    },
+    {
+      "repo": "uptonking/note4yaoo",
+      "url": "https://github.com/uptonking/note4yaoo",
+      "stars": 175,
+      "kind": "docs",
+      "description": "daily notes"
+    },
+    {
+      "repo": "bormaxi8080/osint-timeline",
+      "url": "https://github.com/bormaxi8080/osint-timeline",
+      "stars": 157,
+      "kind": "docs",
+      "description": "OSINT Timeline Weekly Newsletter with collection of tools, services and investigations"
+    },
+    {
+      "repo": "yamcodes/arkenv",
+      "url": "https://github.com/yamcodes/arkenv",
+      "stars": 151,
+      "kind": "docs",
+      "description": "⛯ Typesafe environment variables with ArkType, Zod, or Valibot."
+    },
+    {
+      "repo": "FJRG2007/polaris",
+      "url": "https://github.com/FJRG2007/polaris",
+      "stars": 135,
+      "kind": "code",
+      "description": "✷ Self-hosted control plane for your own hardware: Railway-style deploys, Slack/Discord-style chat with calls, ClickUp-style tasks, CI runners, a Bitwarden-compatible vault, NAS browsing, cameras, firewall, backups and analytics. One install, one login."
+    },
+    {
+      "repo": "GuqierMcl/NexusPilot",
+      "url": "https://github.com/GuqierMcl/NexusPilot",
+      "stars": 128,
+      "kind": "dependency",
+      "description": "AI-native cross-platform database workbench for developers and data teams."
+    },
+    {
+      "repo": "PixelPaw-Labs/codex-trace",
+      "url": "https://github.com/PixelPaw-Labs/codex-trace",
+      "stars": 120,
+      "kind": "dependency",
+      "description": "OpenAI Codex CLI session log viewer for JSONL files in ~/.codex/sessions. Browse conversations, tool calls, tokens, collaboration chains, and live sessions on desktop and web."
+    },
+    {
+      "repo": "j3lte/awesome-raycast",
+      "url": "https://github.com/j3lte/awesome-raycast",
+      "stars": 117,
+      "kind": "docs",
+      "description": "Automated list of all Raycast extensions"
+    },
+    {
+      "repo": "LeulAria/Aria-Icons",
+      "url": "https://github.com/LeulAria/Aria-Icons",
+      "stars": 106,
+      "kind": "code",
+      "description": "MCP server for 1M+  SVG icons"
+    },
+    {
+      "repo": "harrysun-code/awesome-with-star",
+      "url": "https://github.com/harrysun-code/awesome-with-star",
+      "stars": 97,
+      "kind": "docs",
+      "description": "😎 Curated list of awesome lists with github star"
+    },
+    {
+      "repo": "JuliaDocs/FranklinTemplates.jl",
+      "url": "https://github.com/JuliaDocs/FranklinTemplates.jl",
+      "stars": 90,
+      "kind": "code",
+      "description": "Simple website templates for Franklin.jl"
+    },
+    {
+      "repo": "stimma-ai/stimma",
+      "url": "https://github.com/stimma-ai/stimma",
+      "stars": 82,
+      "kind": "code",
+      "description": ""
+    },
+    {
+      "repo": "0xDarkMatter/claude-mods",
+      "url": "https://github.com/0xDarkMatter/claude-mods",
+      "stars": 81,
+      "kind": "docs",
+      "description": "Expert skills, agents, commands, rules, hooks & output styles for Claude Code — session continuity + modern CLI tooling for real-world dev workflows"
+    },
+    {
+      "repo": "prathamdby/pr-agent",
+      "url": "https://github.com/prathamdby/pr-agent",
+      "stars": 63,
+      "kind": "docs",
+      "description": "🚀 A self-hosted AI PR reviewer."
+    },
+    {
+      "repo": "Vex-Foundation/Vex",
+      "url": "https://github.com/Vex-Foundation/Vex",
+      "stars": 62,
+      "kind": "dependency",
+      "description": ""
+    },
+    {
+      "repo": "DoktainerApp/doktainer",
+      "url": "https://github.com/DoktainerApp/doktainer",
+      "stars": 60,
+      "kind": "code",
+      "description": "Doktainer is an open-source, self-hosted platform for managing servers, applications, containers, domains, SSL, backups, and deployment operations from a single web panel."
+    },
+    {
+      "repo": "vargasjr-dev/mycadet-temp",
+      "url": "https://github.com/vargasjr-dev/mycadet-temp",
+      "stars": 60,
+      "kind": "code",
+      "description": "Temporary private mirror of vellum-ai/vellum-assistant for the Cadet rebrand"
+    },
+    {
+      "repo": "ShiningForceCentral/SF2DISASM",
+      "url": "https://github.com/ShiningForceCentral/SF2DISASM",
+      "stars": 56,
+      "kind": "docs",
+      "description": "A disassembly of the game \"Shining Force II\" for documentation and fan-project purposes."
+    },
+    {
+      "repo": "ikenxuan/karin-plugin-kkk",
+      "url": "https://github.com/ikenxuan/karin-plugin-kkk",
+      "stars": 53,
+      "kind": "dependency",
+      "description": "给群聊机器人提供视频作品、动态解析和推送功能，并使用 React + Tailwindcss 构建出现代审美设计的信息卡片"
+    },
+    {
+      "repo": "imMamdouhaboammar/motion-graphics-skills",
+      "url": "https://github.com/imMamdouhaboammar/motion-graphics-skills",
+      "stars": 53,
+      "kind": "docs",
+      "description": "Motion graphics for AI agents. Creative direction + production skills for Claude Code & Codex, powered by HyperFrames. Build brand films, kinetic type, 2D/3D and programmatic video. Every frame is code"
+    },
+    {
+      "repo": "985563349/house",
+      "url": "https://github.com/985563349/house",
+      "stars": 50,
+      "kind": "code",
+      "description": ""
+    },
+    {
+      "repo": "Nice-Derrick/DK_Theme",
+      "url": "https://github.com/Nice-Derrick/DK_Theme",
+      "stars": 50,
+      "kind": "code",
+      "description": "适配Xboard/V2Board的开源主题"
+    },
+    {
+      "repo": "O-kai/Xiaomi-HyperOs-pickup-code-grabber",
+      "url": "https://github.com/O-kai/Xiaomi-HyperOs-pickup-code-grabber",
+      "stars": 48,
+      "kind": "docs",
+      "description": "取件码助手 · LSPosed 模块：从短信与 App 通知里提取取件码，App 内留一份、桌面小组件常驻，可写进系统待办（小米 / ColorOS）。零短信权限，全程本地。"
+    },
+    {
+      "repo": "f0rr0/f0rr0.dev",
+      "url": "https://github.com/f0rr0/f0rr0.dev",
+      "stars": 45,
+      "kind": "code",
+      "description": ":octocat: Source for for my site"
+    },
+    {
+      "repo": "bazodev/open-vids",
+      "url": "https://github.com/bazodev/open-vids",
+      "stars": 43,
+      "kind": "code",
+      "description": "Open-source desktop video editor for macOS that you work in together with AI agents. Runs locally; projects are folders of plain files."
+    },
+    {
+      "repo": "QuotaBar/QuotaBar",
+      "url": "https://github.com/QuotaBar/QuotaBar",
+      "stars": 43,
+      "kind": "docs",
+      "description": "Every AI coding limit, in your menu bar. macOS menu-bar meter for Claude, Codex, Gemini, Cursor, Grok and more."
+    },
+    {
+      "repo": "spacesdrive/ferion",
+      "url": "https://github.com/spacesdrive/ferion",
+      "stars": 43,
+      "kind": "dependency",
+      "description": "Most portfolios are just a list of skills and a contact form. This one actually tells a story."
+    },
+    {
+      "repo": "niyamvora/ILoveNotch",
+      "url": "https://github.com/niyamvora/ILoveNotch",
+      "stars": 41,
+      "kind": "docs",
+      "description": "Free, open-source notch app for MacBooks: now playing, file shelf, calendar, Reminders, notes, shortcuts, timers, camera mirror, and your Claude, Codex, Cursor, and Copilot usage. Native SwiftUI, near-zero idle CPU."
+    },
+    {
+      "repo": "CrackerCat/feed",
+      "url": "https://github.com/CrackerCat/feed",
+      "stars": 36,
+      "kind": "docs",
+      "description": ""
+    },
+    {
+      "repo": "lava-sh/toml-rs",
+      "url": "https://github.com/lava-sh/toml-rs",
+      "stars": 35,
+      "kind": "docs",
+      "description": "A High-Performance TOML Parser for Python written in Rust"
+    },
+    {
+      "repo": "chertik77/TaskPro-frontend",
+      "url": "https://github.com/chertik77/TaskPro-frontend",
+      "stars": 34,
+      "kind": "dependency",
+      "description": "The ultimate task management tool for individuals. Organize your tasks, set deadlines, and track your progress. Get more done with TaskPro!"
+    },
+    {
+      "repo": "Hive-Academy/PtahCode",
+      "url": "https://github.com/Hive-Academy/PtahCode",
+      "stars": 34,
+      "kind": "code",
+      "description": "Provider-agnostic AI orchestration for Electron Desktop, Cli and VS Code. Intelligent workspace analysis, Code Execution MCP server, and project-adaptive multi-agent workflows — all natively integrated into Electron Desktop, Cli and VS Code."
+    },
+    {
+      "repo": "useshape/Shape",
+      "url": "https://github.com/useshape/Shape",
+      "stars": 34,
+      "kind": "code",
+      "description": "A powerful, lightweight agentic desktop agent built for engineers and work."
+    },
+    {
+      "repo": "STARDUSTLC666/dsh-hyperframes",
+      "url": "https://github.com/STARDUSTLC666/dsh-hyperframes",
+      "stars": 33,
+      "kind": "code",
+      "description": "DSH HTML 视频工作台：官方 HyperFrames 技能、工程检索、模板、素材排序、预览与本地 MP4 导出。欢迎提交 issues 和 PR。"
+    },
+    {
+      "repo": "tanu360/kiro-reverse-api",
+      "url": "https://github.com/tanu360/kiro-reverse-api",
+      "stars": 33,
+      "kind": "code",
+      "description": "Self-hosted Kiro API proxy with OpenAI/Anthropic-compatible endpoints and a web admin dashboard."
+    },
+    {
+      "repo": "Blinks44/monny",
+      "url": "https://github.com/Blinks44/monny",
+      "stars": 32,
+      "kind": "docs",
+      "description": "See what your Mac is doing and keep its battery healthy with a charge limit. Free, open source and native."
+    },
+    {
+      "repo": "haneoka-gakuen/haneoka",
+      "url": "https://github.com/haneoka-gakuen/haneoka",
+      "stars": 31,
+      "kind": "dependency",
+      "description": "Haneoka — the BanG Dream! Our Notes database, tools and community"
+    },
+    {
+      "repo": "Naresh-Khatri/Coding-Ducks",
+      "url": "https://github.com/Naresh-Khatri/Coding-Ducks",
+      "stars": 31,
+      "kind": "code",
+      "description": ""
+    },
+    {
+      "repo": "Kevin-Liu-01/Jarhead",
+      "url": "https://github.com/Kevin-Liu-01/Jarhead",
+      "stars": 30,
+      "kind": "dependency",
+      "description": "Voice-first Mac assistant that uses the computer for you. GPT-Live-1 voice behind a wake word; brains: Codex, Claude Code, an API or a local model; Swift hands in parallel threads; alarms and automations that fire while it sleeps; a notch island control surface; a Console into every coding-agent session; memory. Rewrites itself, with your yes."
+    },
+    {
+      "repo": "WizisCool/dsh-ears",
+      "url": "https://github.com/WizisCool/dsh-ears",
+      "stars": 30,
+      "kind": "dependency",
+      "description": "Voice input plugin for DeepSeek Harness (DSH) with text polishing. Supports local GPU Whisper and STT(ASR) API | 一款支持润色整理的 DeepSeek Harness 语音输入插件，为 DSH 提供语音输入能力，支持本地 GPU Whisper 和主流语音识别转写 API"
+    },
+    {
+      "repo": "NatnaelTaddese/qali",
+      "url": "https://github.com/NatnaelTaddese/qali",
+      "stars": 29,
+      "kind": "dependency",
+      "description": "calendaring"
+    },
+    {
+      "repo": "surrealdb/surrealfs",
+      "url": "https://github.com/surrealdb/surrealfs",
+      "stars": 27,
+      "kind": "docs",
+      "description": "Virtual file system for AI agents built on SurrealDB"
+    },
+    {
+      "repo": "swadhinbiswas/swadhinbiswas",
+      "url": "https://github.com/swadhinbiswas/swadhinbiswas",
+      "stars": 27,
+      "kind": "code",
+      "description": "README repository"
+    },
+    {
+      "repo": "J-StaR-Films-Studios/VibeCode-Protocol-Suite",
+      "url": "https://github.com/J-StaR-Films-Studios/VibeCode-Protocol-Suite",
+      "stars": 26,
+      "kind": "docs",
+      "description": "A comprehensive suite of protocols, meta-prompts, and orchestration tools designed to streamline software development workflows, project management, and team collaboration. Includes the VibeCode Protocol Suite with web interface, user manuals, and reusable templates for efficient development processes."
+    },
+    {
+      "repo": "MohamedAbdallah-14/prompt-to-asset",
+      "url": "https://github.com/MohamedAbdallah-14/prompt-to-asset",
+      "stars": 24,
+      "kind": "docs",
+      "description": "MCP server + CLI for production-grade software assets (logos, app icons, favicons, OG, illustrations) — routes across 30+ image models, zero-key first, validates before shipping."
+    },
+    {
+      "repo": "Subhan-code/oxygen-ui-solana",
+      "url": "https://github.com/Subhan-code/oxygen-ui-solana",
+      "stars": 24,
+      "kind": "dependency",
+      "description": ""
+    },
+    {
+      "repo": "duyet/monorepo",
+      "url": "https://github.com/duyet/monorepo",
+      "stars": 23,
+      "kind": "dependency",
+      "description": "duyet.net monorepo — blog, home, kb, CV, timeline. TanStack Start, Cloudflare Workers/Pages, Rust/WASM."
+    },
+    {
+      "repo": "probstreetlabs/probstreet",
+      "url": "https://github.com/probstreetlabs/probstreet",
+      "stars": 22,
+      "kind": "code",
+      "description": "A paper trading prediction market platform where users trade on the outcome of real-world events."
+    },
+    {
+      "repo": "YourTongji/YourTJ-Hub",
+      "url": "https://github.com/YourTongji/YourTJ-Hub",
+      "stars": 22,
+      "kind": "code",
+      "description": "A campus community for Tongji University based on GooseForum."
+    },
+    {
+      "repo": "Nyrest/hindsight-ingestion",
+      "url": "https://github.com/Nyrest/hindsight-ingestion",
+      "stars": 21,
+      "kind": "dependency",
+      "description": "Self-hosted, multi-source ingestion for Hindsight with incremental sync, multimodal support, and a Web UI."
+    },
+    {
+      "repo": "gabrielmoreira/agent-skills-mirror",
+      "url": "https://github.com/gabrielmoreira/agent-skills-mirror",
+      "stars": 20,
+      "kind": "docs",
+      "description": "Periodically refreshed mirror of agents, skills, prompts and instruction files from public repositories."
+    },
+    {
+      "repo": "Kevin-Liu-01/Glyphfield",
+      "url": "https://github.com/Kevin-Liu-01/Glyphfield",
+      "stars": 20,
+      "kind": "docs",
+      "description": "A local-first brand studio for identity systems, motion, and repeatable graphics. Includes a configurable shader workshop, animation studio, and brand templates."
+    },
+    {
+      "repo": "SrIzan10/hctv",
+      "url": "https://github.com/SrIzan10/hctv",
+      "stars": 20,
+      "kind": "code",
+      "description": "The Hack Club streaming service."
+    },
+    {
+      "repo": "clawnify/ateam",
+      "url": "https://github.com/clawnify/ateam",
+      "stars": 18,
+      "kind": "code",
+      "description": "Orchestrate a crew of AI coding agents — Claude Code, OpenCode, and Codex — each isolated in its own git worktree. Run them on your Mac or a remote box."
+    },
+    {
+      "repo": "wimpywarlord/wimpywarlord.github.io",
+      "url": "https://github.com/wimpywarlord/wimpywarlord.github.io",
+      "stars": 18,
+      "kind": "code",
+      "description": "😎  A virtual description of Tjay one bit at a time. "
+    },
+    {
+      "repo": "Hela-Ecosystem/designer-mcp",
+      "url": "https://github.com/Hela-Ecosystem/designer-mcp",
+      "stars": 17,
+      "kind": "docs",
+      "description": "MCP server for production-grade UI and brand design — 37 tools: anti-slop quality gates, OKLCH tokens with auto dark mode, WCAG 2.1 audits, React/Vue/HTML output, CSS/SCSS generation, motion.dev & anime.js, and logo/brand-mark design with a 1,432-mark reference library."
+    },
+    {
+      "repo": "chrismsmr-celcom/cerbere-AG",
+      "url": "https://github.com/chrismsmr-celcom/cerbere-AG",
+      "stars": 16,
+      "kind": "code",
+      "description": "Welcome to cerbere-agent guard, originally just agent guard, then rebranded after the mythical hound of the underworld. Our mission? Guarding your AI agents, keeping them in line, and blocking unauthorized actions. Think of it as the ultimate guard dog for AI security and guardrails. 🐕🛡️"
+    },
+    {
+      "repo": "manishiitg/agentworks",
+      "url": "https://github.com/manishiitg/agentworks",
+      "stars": 16,
+      "kind": "code",
+      "description": "AgentWorks: AI agents that own the work. Goals that chase a metric, and Crews your team asks from Claude, ChatGPT or Cursor. Open source."
+    },
+    {
+      "repo": "1broseidon/hotline",
+      "url": "https://github.com/1broseidon/hotline",
+      "stars": 15,
+      "kind": "docs",
+      "description": "Open-source, self-hosted room for AI agent teams. Any model, Claude Code & Codex over ACP, its own computer in a container. Desktop + phone."
+    },
+    {
+      "repo": "gitkraken/gitbench",
+      "url": "https://github.com/gitkraken/gitbench",
+      "stars": 15,
+      "kind": "dependency",
+      "description": "A benchmark to test how well LLMs know git"
+    },
+    {
+      "repo": "ndjordjevic/agentic-ai-wiki",
+      "url": "https://github.com/ndjordjevic/agentic-ai-wiki",
+      "stars": 15,
+      "kind": "docs",
+      "description": "A demo created with https://github.com/ndjordjevic/pin-llm-wiki"
+    },
+    {
+      "repo": "neondatabase/ui",
+      "url": "https://github.com/neondatabase/ui",
+      "stars": 15,
+      "kind": "code",
+      "description": "The official Neon UI Registry production-ready components, blocks, and starter kits for building modern applications on Neon."
+    },
+    {
+      "repo": "linny006/mcp-servers-live",
+      "url": "https://github.com/linny006/mcp-servers-live",
+      "stars": 13,
+      "kind": "code",
+      "description": "Auto-updated index of MCP servers shipping on GitHub, refreshed every 15 minutes"
+    },
+    {
+      "repo": "MDMAtk/TormentNexus",
+      "url": "https://github.com/MDMAtk/TormentNexus",
+      "stars": 13,
+      "kind": "code",
+      "description": "At long last"
+    },
+    {
+      "repo": "reclear-io/llmref",
+      "url": "https://github.com/reclear-io/llmref",
+      "stars": 13,
+      "kind": "docs",
+      "description": "Open, versioned documentation and semantic search for AI coding tools"
+    },
+    {
+      "repo": "boisenoise/skills-collections",
+      "url": "https://github.com/boisenoise/skills-collections",
+      "stars": 12,
+      "kind": "docs",
+      "description": "Getting Skills Together to Learn from the Best"
+    },
+    {
+      "repo": "JHamidun/claude-code-config-pack",
+      "url": "https://github.com/JHamidun/claude-code-config-pack",
+      "stars": 12,
+      "kind": "docs",
+      "description": "Depersonalised Claude Code configuration pack — 314 skills, 74 agents, 155 commands, 18 rules, 33 plugins. One-shot deploy via install.ps1 / install.sh."
+    },
+    {
+      "repo": "Alplox/mis-recursos-webdev",
+      "url": "https://github.com/Alplox/mis-recursos-webdev",
+      "stars": 11,
+      "kind": "docs",
+      "description": "Lista de todo sitio (útil) que he ido encontrando durante mi proceso de auto aprendizaje para desarrollo web."
+    },
+    {
+      "repo": "emdgroup/maestro",
+      "url": "https://github.com/emdgroup/maestro",
+      "stars": 11,
+      "kind": "dependency",
+      "description": "Orchestrate tasks execution using your coding agent of choice."
+    },
+    {
+      "repo": "Kevin-Liu-01/CoTFly",
+      "url": "https://github.com/Kevin-Liu-01/CoTFly",
+      "stars": 11,
+      "kind": "docs",
+      "description": "A fruit fly in a tiny tank helmet plays Claude of Tanks. Live spiking neurons, a miniature 3D cockpit, and autonomous battles with 171 vehicles and 30 maps. Built with Three.js and TypeScript. Play in your browser."
+    },
+    {
+      "repo": "kumi-stack/diagrams",
+      "url": "https://github.com/kumi-stack/diagrams",
+      "stars": 11,
+      "kind": "code",
+      "description": "Simple dektop application to create and manage mermaid diagrams for project. Free, open-source, private with support for local AI with Ollama"
+    },
+    {
+      "repo": "phanduykhai05/PhimHay",
+      "url": "https://github.com/phanduykhai05/PhimHay",
+      "stars": 11,
+      "kind": "code",
+      "description": "Tài liệu API: https://mocphim.onrender.com/api/docs"
+    },
+    {
+      "repo": "R0GGER/favicon-api",
+      "url": "https://github.com/R0GGER/favicon-api",
+      "stars": 11,
+      "kind": "code",
+      "description": "Get the highest resolution favicon for any domain - or look up a service icon by name."
+    },
+    {
+      "repo": "Kevin-Liu-01/Sigil-UI",
+      "url": "https://github.com/Kevin-Liu-01/Sigil-UI",
+      "stars": 10,
+      "kind": "docs",
+      "description": "Opinionated design language + token-driven React components. 31 presets, 70+ components, one markdown file. Built to kill the AI-generated aesthetic."
+    },
+    {
+      "repo": "lqhuang/awesome",
+      "url": "https://github.com/lqhuang/awesome",
+      "stars": 10,
+      "kind": "docs",
+      "description": "My toolbox"
+    },
+    {
+      "repo": "mappls-api/mappls-rest-apis",
+      "url": "https://github.com/mappls-api/mappls-rest-apis",
+      "stars": 10,
+      "kind": "docs",
+      "description": "Building Blocks to Add Powerful Location Intelligence & Mapping Functionality to your Apps"
+    },
+    {
+      "repo": "plost-dev/plost",
+      "url": "https://github.com/plost-dev/plost",
+      "stars": 10,
+      "kind": "docs",
+      "description": "Lightweight Go + SQLite website analytics for personal self-hosting."
+    },
+    {
+      "repo": "Requo-App/requo",
+      "url": "https://github.com/Requo-App/requo",
+      "stars": 10,
+      "kind": "dependency",
+      "description": "Requo helps service businesses manage client inquiries, quotes, and follow-ups in one place."
+    },
+    {
+      "repo": "Vytral/harly",
+      "url": "https://github.com/Vytral/harly",
+      "stars": 10,
+      "kind": "code",
+      "description": "Open-source, self-hosted Applicant Tracking System (ATS) — an alternative to Ashby, Greenhouse, and Workable."
+    }
+  ]
+}

@@ -18,6 +18,7 @@ import { useHomePrefsStore } from "@/lib/stores/home-prefs-store";
 import { cn } from "@/lib/utils";
 import { withUtm } from "@/lib/external-link";
 import { UiHeroPreview } from "@/components/ui-icons/hero-preview";
+import { MENTIONS } from "@/lib/mentions";
 
 import { getPopularSlugs } from "@/lib/popular-icons";
 
@@ -32,21 +33,53 @@ const POPULAR_K8S_SLUGS = getPopularSlugs("k8s");
 const POPULAR_COMMUNITY_SLUGS = getPopularSlugs("community");
 const POPULAR_AUTH_BADGES_SLUGS = getPopularSlugs("auth-badges");
 
-const ALL_SLIDES = [
-  {
-    badge: "theSVG 4.0",
-    badgeIcon: Sparkles,
-    title: "UI icons are here, in seven looks",
-    description: "A new set of interface icons, drawn on one grid and restyled live. Outline, glass, duotone, offset, fill, glass outline and depth. Free to copy.",
-    cta: { label: "Explore UI icons", href: "/ui" },
-    ctaSecondary: { label: "How it works", href: "/ui/docs" },
-    gradient: "from-orange-50/60 via-background to-sky-50/30 dark:from-orange-950/25 dark:via-background dark:to-sky-950/10",
-    accent: "border-orange-200/50 bg-orange-50/80 text-orange-600 dark:border-orange-500/20 dark:bg-orange-500/10 dark:text-orange-400",
-    blob: "bg-orange-400/10 dark:bg-orange-500/5",
-    collection: "brands" as const,
-    floatSlugs: [] as string[],
-    ui: true as const,
-  },
+// Adopters come from the mentions data (entries that carry a logo slug) so the
+// slide cannot drift from /extensions/mentions. Slugs missing from the icons
+// manifest are skipped at render time.
+const ADOPTERS: { slug: string; label: string; href: string }[] = [];
+for (const m of [...MENTIONS].sort((a, b) => Number(!!b.featured) - Number(!!a.featured))) {
+  if (m.logo && m.kind === "code" && !ADOPTERS.some((a) => a.slug === m.logo)) {
+    ADOPTERS.push({ slug: m.logo, label: `${m.source}, opens ${m.title}`, href: m.url });
+  }
+}
+
+interface Slide {
+  badge: string;
+  badgeIcon: React.ComponentType<{ className?: string }>;
+  title: string;
+  dynamicCount?: boolean;
+  description: string;
+  adopters?: { slug: string; label: string; href: string }[];
+  cta: { label: string; href: string };
+  ctaSecondary: { label: string; href: string };
+  gradient: string;
+  accent: string;
+  blob: string;
+  collection: Collection;
+  floatSlugs: string[];
+  ui?: boolean;
+}
+
+const PROOF_SLIDES: Slide[] = ADOPTERS.length
+  ? [
+      {
+        badge: "In the wild",
+        badgeIcon: Users,
+        title: "Used in real projects",
+        description: "Open source projects that pull their brand logos from thesvg.",
+        adopters: ADOPTERS,
+        cta: { label: "See all mentions", href: "/extensions/mentions" },
+        ctaSecondary: { label: "Browse Icons", href: "/" },
+        gradient: "from-violet-50/50 via-background to-violet-50/30 dark:from-violet-950/20 dark:via-background dark:to-violet-950/10",
+        accent: "border-violet-200/50 bg-violet-50/80 text-violet-700 dark:border-violet-500/20 dark:bg-violet-500/10 dark:text-violet-300",
+        blob: "bg-violet-400/10 dark:bg-violet-500/5",
+        collection: "brands" as const,
+        floatSlugs: ADOPTERS.map((a) => a.slug),
+      },
+    ]
+  : [];
+
+const ALL_SLIDES: Slide[] = [
   {
     badge: "Open Source",
     badgeIcon: Sparkles,
@@ -56,10 +89,25 @@ const ALL_SLIDES = [
     cta: { label: "Get Started", href: "/extensions" },
     ctaSecondary: { label: "Submit an Icon", href: "/submit" },
     gradient: "from-orange-50/50 via-background to-orange-50/30 dark:from-orange-950/20 dark:via-background dark:to-orange-950/10",
-    accent: "border-orange-200/50 bg-orange-50/80 text-orange-600 dark:border-orange-500/20 dark:bg-orange-500/10 dark:text-orange-400",
+    accent: "border-orange-200/50 bg-orange-50/80 text-orange-700 dark:border-orange-500/20 dark:bg-orange-500/10 dark:text-orange-400",
     blob: "bg-orange-400/10 dark:bg-orange-500/5",
     collection: "brands" as const,
     floatSlugs: POPULAR_SLUGS,
+  },
+  ...PROOF_SLIDES,
+  {
+    badge: "theSVG 4.0",
+    badgeIcon: Sparkles,
+    title: "UI icons are here, in seven looks",
+    description: "Interface icons drawn on one grid and restyled live. Free to copy.",
+    cta: { label: "Explore UI icons", href: "/ui" },
+    ctaSecondary: { label: "How it works", href: "/ui/docs" },
+    gradient: "from-orange-50/60 via-background to-sky-50/30 dark:from-orange-950/25 dark:via-background dark:to-sky-950/10",
+    accent: "border-orange-200/50 bg-orange-50/80 text-orange-700 dark:border-orange-500/20 dark:bg-orange-500/10 dark:text-orange-400",
+    blob: "bg-orange-400/10 dark:bg-orange-500/5",
+    collection: "brands" as const,
+    floatSlugs: [] as string[],
+    ui: true as const,
   },
   {
     badge: "npm install thesvg",
@@ -69,7 +117,7 @@ const ALL_SLIDES = [
     cta: { label: "View on npm", href: "https://www.npmjs.com/package/thesvg" },
     ctaSecondary: { label: "Extensions", href: "/extensions" },
     gradient: "from-blue-50/50 via-background to-blue-50/30 dark:from-blue-950/20 dark:via-background dark:to-blue-950/10",
-    accent: "border-blue-200/50 bg-blue-50/80 text-blue-600 dark:border-blue-500/20 dark:bg-blue-500/10 dark:text-blue-400",
+    accent: "border-blue-200/50 bg-blue-50/80 text-blue-700 dark:border-blue-500/20 dark:bg-blue-500/10 dark:text-blue-400",
     blob: "bg-blue-400/10 dark:bg-blue-500/5",
     collection: "brands" as const,
     floatSlugs: POPULAR_SLUGS,
@@ -82,7 +130,7 @@ const ALL_SLIDES = [
     cta: { label: "Browse Icons", href: "/" },
     ctaSecondary: { label: "Extensions", href: "/extensions" },
     gradient: "from-emerald-50/50 via-background to-emerald-50/30 dark:from-emerald-950/20 dark:via-background dark:to-emerald-950/10",
-    accent: "border-emerald-200/50 bg-emerald-50/80 text-emerald-600 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-400",
+    accent: "border-emerald-200/50 bg-emerald-50/80 text-emerald-700 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-400",
     blob: "bg-emerald-400/10 dark:bg-emerald-500/5",
     collection: "brands" as const,
     floatSlugs: POPULAR_SLUGS,
@@ -199,7 +247,7 @@ const ALL_SLIDES = [
     cta: { label: "Browse Icons", href: "#popular" },
     ctaSecondary: { label: "Submit an Icon", href: "/submit" },
     gradient: "from-teal-50/50 via-background to-teal-50/30 dark:from-teal-950/20 dark:via-background dark:to-teal-950/10",
-    accent: "border-teal-200/50 bg-teal-50/80 text-teal-600 dark:border-teal-500/20 dark:bg-teal-500/10 dark:text-teal-400",
+    accent: "border-teal-200/50 bg-teal-50/80 text-teal-700 dark:border-teal-500/20 dark:bg-teal-500/10 dark:text-teal-400",
     blob: "bg-teal-400/10 dark:bg-teal-500/5",
     collection: "community" as const,
     floatSlugs: POPULAR_COMMUNITY_SLUGS,
@@ -212,7 +260,7 @@ const ALL_SLIDES = [
     cta: { label: "Browse Badges", href: "#popular" },
     ctaSecondary: { label: "All Categories", href: "#categories" },
     gradient: "from-emerald-50/50 via-background to-emerald-50/30 dark:from-emerald-950/20 dark:via-background dark:to-emerald-950/10",
-    accent: "border-emerald-200/50 bg-emerald-50/80 text-emerald-600 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-400",
+    accent: "border-emerald-200/50 bg-emerald-50/80 text-emerald-700 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-400",
     blob: "bg-emerald-400/10 dark:bg-emerald-500/5",
     collection: "auth-badges" as const,
     floatSlugs: POPULAR_AUTH_BADGES_SLUGS,
@@ -426,6 +474,10 @@ export function HomeHero({
     ? collectionSlides[currentSlide % collectionSlides.length]
     : fallbackSlide;
   const BadgeIcon = slide.badgeIcon;
+  const proofLogos = (slide.adopters ?? []).flatMap((a) => {
+    const icon = iconsBySlug.get(a.slug);
+    return icon ? [{ a, icon }] : [];
+  });
 
   // Compact hero (md-to-lg gap, ~768-1023px) always shows the active
   // collection's first slide and never rotates - there are no pagination
@@ -433,17 +485,18 @@ export function HomeHero({
   const compactSlide = collectionSlides.length > 0 ? collectionSlides[0] : fallbackSlide;
   const CompactIcon = compactSlide.badgeIcon;
 
-  // Pick 6 floating icons matching the current slide's collection
+  // Pick up to 6 (8 on the proof slide) floating icons matching the current slide's collection
   const floatingIcons = useMemo(() => {
     const activeSlide = collectionSlides.length > 0
       ? collectionSlides[currentSlide % collectionSlides.length]
       : fallbackSlide;
+    const MAX_FLOAT = activeSlide.adopters ? 8 : 6;
     const result: IconEntry[] = [];
     for (let i = 0; i < activeSlide.floatSlugs.length; i++) {
       const entry = iconsBySlug.get(activeSlide.floatSlugs[i]);
       if (entry) {
         result.push(entry);
-        if (result.length >= 6) break;
+        if (result.length >= MAX_FLOAT) break;
       }
     }
     return result;
@@ -459,6 +512,19 @@ export function HomeHero({
     { position: "top-[40%] right-[22%]", entranceDelay: "[animation-delay:0.24s]", size: "h-7 w-7", opacity: "opacity-20", floatTiming: "[animation-delay:2.4s] [animation-duration:5.5s]" },
     { position: "top-[70%] right-[15%]", entranceDelay: "[animation-delay:0.32s]", size: "h-11 w-11", opacity: "opacity-15", floatTiming: "[animation-delay:0.4s] [animation-duration:6s]" },
     { position: "top-[15%] right-[30%]", entranceDelay: "[animation-delay:0.4s]", size: "h-6 w-6", opacity: "opacity-10", floatTiming: "[animation-delay:1.2s] [animation-duration:6.5s]" },
+  ];
+
+  // Proof slide: real logos stay legible, so larger tiles, full opacity and a
+  // tighter right-hand band that clears the copy at 1024 to 1440.
+  const PROOF_POSITIONS = [
+    { position: "top-[7%] right-[4%]", entranceDelay: "[animation-delay:0s]", size: "h-12 w-12", opacity: "opacity-100", floatTiming: "[animation-delay:0s] [animation-duration:4s]" },
+    { position: "top-[12%] right-[21%]", entranceDelay: "[animation-delay:0.08s]", size: "h-10 w-10", opacity: "opacity-100", floatTiming: "[animation-delay:0.8s] [animation-duration:4.5s]" },
+    { position: "top-[36%] right-[11%]", entranceDelay: "[animation-delay:0.16s]", size: "h-11 w-11", opacity: "opacity-100", floatTiming: "[animation-delay:1.6s] [animation-duration:5s]" },
+    { position: "top-[40%] right-[27%]", entranceDelay: "[animation-delay:0.24s]", size: "h-9 w-9", opacity: "opacity-100", floatTiming: "[animation-delay:2.4s] [animation-duration:5.5s]" },
+    { position: "top-[60%] right-[3%]", entranceDelay: "[animation-delay:0.32s]", size: "h-10 w-10", opacity: "opacity-100", floatTiming: "[animation-delay:0.4s] [animation-duration:6s]" },
+    { position: "top-[62%] right-[19%]", entranceDelay: "[animation-delay:0.4s]", size: "h-12 w-12", opacity: "opacity-100", floatTiming: "[animation-delay:1.2s] [animation-duration:6.5s]" },
+    { position: "top-[8%] right-[36%]", entranceDelay: "[animation-delay:0.48s]", size: "h-9 w-9", opacity: "opacity-100", floatTiming: "[animation-delay:2s] [animation-duration:5s]" },
+    { position: "top-[78%] right-[9%]", entranceDelay: "[animation-delay:0.56s]", size: "h-9 w-9", opacity: "opacity-100", floatTiming: "[animation-delay:2.8s] [animation-duration:5.5s]" },
   ];
 
   // Sliding switch between the two orders. "auto" picks popular-first for
@@ -552,7 +618,7 @@ export function HomeHero({
         <div className="absolute -bottom-1 left-8 right-8 h-4 rounded-2xl bg-black/[0.03] blur-md dark:bg-black/20" />
 
         <div
-          className={`relative overflow-hidden rounded-3xl border border-border/40 bg-gradient-to-br ${slide.gradient} px-5 py-6 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.08),0_2px_8px_-2px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.15)] transition-all duration-700 sm:px-10 sm:py-11 dark:border-white/[0.08] dark:shadow-[0_8px_30px_-6px_rgba(0,0,0,0.4),0_2px_8px_-2px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.05)]`}
+          className={`relative overflow-hidden rounded-3xl border border-border/40 bg-gradient-to-br ${slide.gradient} px-5 pb-11 pt-6 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.08),0_2px_8px_-2px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.15)] transition-all duration-700 sm:px-10 sm:pb-14 sm:pt-11 dark:border-white/[0.08] dark:shadow-[0_8px_30px_-6px_rgba(0,0,0,0.4),0_2px_8px_-2px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.05)]`}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
@@ -568,7 +634,7 @@ export function HomeHero({
           {/* Min-height reserves space so rotating slide titles/descriptions
               of different lengths don't trigger Cumulative Layout Shift.
               Sized to the longest expected slide content. */}
-          <div className="relative z-10 max-w-2xl min-h-[150px] sm:min-h-[200px]">
+          <div className="relative z-10 max-w-2xl min-h-[190px] sm:min-h-[200px]">
             {/* Slide content with fade */}
             <div key={currentSlide} className="animate-fade-in">
               {slide.badge.startsWith("npm install") ? (
@@ -584,7 +650,7 @@ export function HomeHero({
               <h1 className="mb-1.5 text-lg font-bold tracking-tight sm:mb-2 sm:text-3xl">
                 {slide.dynamicCount ? `${count.toLocaleString()}+ ${slide.title}` : slide.title}
               </h1>
-              <p className="mb-4 max-w-lg text-[13px] leading-snug text-muted-foreground sm:mb-6 sm:text-base sm:leading-relaxed">
+              <p className="mb-4 max-w-lg text-[13px] leading-snug text-foreground/75 sm:mb-6 sm:text-base sm:leading-relaxed">
                 {slide.description}
               </p>
               <div className="flex flex-wrap gap-2 sm:gap-3">
@@ -625,12 +691,30 @@ export function HomeHero({
                   </Link>
                 )}
               </div>
+              {proofLogos.length > 0 && (
+                <ul className="mt-4 flex flex-wrap items-center gap-2 lg:hidden">
+                  {proofLogos.map(({ a, icon }) => (
+                    <li key={a.slug}>
+                      <a
+                        href={a.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={a.label}
+                        className={cn("flex h-10 w-10 items-center justify-center rounded-xl border border-border/50 bg-background/70 p-2 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring dark:border-white/10 dark:bg-white/[0.06]", logoPlateClass(a.slug))}
+                      >
+                        <img src={icon.variants.light || icon.variants.default} alt="" className="h-full w-full object-contain dark:hidden" />
+                        <img src={icon.variants.dark || icon.variants.default} alt="" className="hidden h-full w-full object-contain dark:block" />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </div>
 
           {/* Decorative blobs - the first one drifts slowly for an ambient,
               alive backdrop instead of a static painted gradient. */}
-          <div className={`animate-glow-drift pointer-events-none absolute -top-24 -right-24 h-80 w-80 rounded-full ${slide.blob} opacity-80 blur-3xl transition-colors duration-700`} />
+          <div className={`pointer-events-none absolute -top-24 -right-24 h-80 w-80 rounded-full ${slide.blob} opacity-80 blur-3xl transition-colors duration-700`} />
           <div className={`pointer-events-none absolute -bottom-14 -right-14 h-52 w-52 rounded-full ${slide.blob} opacity-70 blur-2xl transition-colors duration-700`} />
           <div className={`pointer-events-none absolute top-1/2 left-1/3 h-40 w-40 -translate-y-1/2 rounded-full ${slide.blob} opacity-30 blur-3xl transition-colors duration-700`} />
 
@@ -639,13 +723,40 @@ export function HomeHero({
               inner div holds the continuous float + resting dim opacity, so
               the two animations don't fight over the same CSS property. */}
           <div className="pointer-events-none absolute inset-0 hidden lg:block">
-            {"ui" in slide && (
+            {slide.ui && (
               <div key={`ui-${currentSlide}`} className="animate-float-in absolute right-10 top-1/2 -translate-y-1/2 xl:right-16">
                 <UiHeroPreview />
               </div>
             )}
             {floatingIcons.map((icon, i) => {
-              const pos = FLOAT_POSITIONS[i];
+              const pos = (slide.adopters ? PROOF_POSITIONS : FLOAT_POSITIONS)[i];
+              const adopter = slide.adopters?.find((a) => a.slug === icon.slug);
+              const tile = (
+                <div className={cn(pos.size, "rounded-xl border border-border/40 bg-background/70 p-1.5 shadow-lg shadow-black/5 backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.06] dark:shadow-black/20", logoPlateClass(icon.slug))}>
+                  <img src={icon.variants.light || icon.variants.default} alt="" className={cn("h-full w-full object-contain dark:hidden", logoImgClass(icon.slug))} />
+                  <img src={icon.variants.dark || icon.variants.default} alt="" className={cn("hidden h-full w-full object-contain dark:block", logoImgClass(icon.slug))} />
+                </div>
+              );
+              if (adopter) {
+                return (
+                  <div
+                    key={`${currentSlide}-${icon.slug}`}
+                    className={`animate-float-in absolute ${pos.position} ${pos.entranceDelay}`}
+                  >
+                    <div className={`animate-float ${pos.floatTiming}`}>
+                      <a
+                        href={adopter.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={adopter.label}
+                        className="pointer-events-auto block rounded-xl opacity-90 transition-opacity hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                      >
+                        {tile}
+                      </a>
+                    </div>
+                  </div>
+                );
+              }
               return (
                 <div
                   key={`${currentSlide}-${icon.slug}`}
@@ -669,7 +780,7 @@ export function HomeHero({
               key={i}
               type="button"
               onClick={() => setCurrentSlide(i)}
-              className="group relative"
+              className="group relative rounded-full before:absolute before:-inset-x-1 before:-inset-y-3 before:content-[''] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               aria-label={`Go to slide ${i + 1}`}
             >
               <div
