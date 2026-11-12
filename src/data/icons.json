@@ -77118,6 +77118,24 @@
     "collection": "brands"
   },
   {
+    "slug": "hyperframes",
+    "title": "HyperFrames",
+    "aliases": [],
+    "hex": "06E3FA",
+    "categories": [
+      "Media",
+      "DevTool",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/hyperframes/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://hyperframes.heygen.com",
+    "dateAdded": "2026-11-12",
+    "collection": "brands"
+  },
+  {
     "slug": "hyperskill",
     "title": "Hyperskill",
     "aliases": [],
@@ -89217,6 +89235,24 @@
     "license": "CC0-1.0",
     "url": "https://localxpose.io",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "locatorjs",
+    "title": "LocatorJS",
+    "aliases": [],
+    "hex": "1909D1",
+    "categories": [
+      "DevTool",
+      "Library",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/locatorjs/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://www.locatorjs.com",
+    "dateAdded": "2026-11-12",
     "collection": "brands"
   },
   {
@@ -102592,6 +102628,24 @@
     "collection": "brands"
   },
   {
+    "slug": "octopus",
+    "title": "Octopus",
+    "aliases": [],
+    "hex": "466551",
+    "categories": [
+      "AI",
+      "DevTool",
+      "Self-Hosted"
+    ],
+    "variants": {
+      "default": "/icons/octopus/default.svg"
+    },
+    "license": "AGPL-3.0",
+    "url": "https://github.com/bestruirui/octopus",
+    "dateAdded": "2026-11-12",
+    "collection": "brands"
+  },
+  {
     "slug": "octopus-deploy",
     "title": "Octopus Deploy",
     "aliases": [],
@@ -103082,6 +103136,24 @@
     "collection": "auth-badges"
   },
   {
+    "slug": "omniroute",
+    "title": "OmniRoute",
+    "aliases": [],
+    "hex": "E54D5E",
+    "categories": [
+      "AI",
+      "DevTool",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/omniroute/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://omniroute.online",
+    "dateAdded": "2026-11-12",
+    "collection": "brands"
+  },
+  {
     "slug": "one-com-badge",
     "title": "one.com",
     "aliases": [],
@@ -103552,6 +103624,24 @@
     "license": "CC0-1.0",
     "url": "https://github.com/opencontainers/artwork/blob/d8ccfe94471a0236b1d4a3f0f90862c4fe5486ce/oci/icon/black/oci-icon-black.svg",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "open-design",
+    "title": "Open Design",
+    "aliases": [],
+    "hex": "26251E",
+    "categories": [
+      "Design",
+      "AI",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/open-design/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://open-design.ai",
+    "dateAdded": "2026-11-12",
     "collection": "brands"
   },
   {
@@ -137475,6 +137565,23 @@
     "dateAdded": "2026-06-29",
     "collection": "community",
     "url": "https://velero.io"
+  },
+  {
+    "slug": "vellum",
+    "title": "Vellum",
+    "aliases": [],
+    "hex": "262624",
+    "categories": [
+      "AI",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/vellum/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://vellum.ai",
+    "dateAdded": "2026-11-12",
+    "collection": "brands"
   },
   {
     "slug": "velocity",
