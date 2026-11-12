@@ -103555,6 +103555,24 @@
     "collection": "brands"
   },
   {
+    "slug": "open-design",
+    "title": "Open Design",
+    "aliases": [],
+    "hex": "26251E",
+    "categories": [
+      "Design",
+      "AI",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/open-design/default.svg"
+    },
+    "license": "Apache-2.0",
+    "url": "https://open-design.ai",
+    "dateAdded": "2026-11-12",
+    "collection": "brands"
+  },
+  {
     "slug": "open-notebook",
     "title": "Open Notebook",
     "aliases": [],
