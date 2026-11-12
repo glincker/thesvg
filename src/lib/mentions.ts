@@ -65,16 +65,16 @@ export const MENTIONS: readonly Mention[] = [
       "Merged change that makes thesvg the first source for brand logos in their media-use skill, pinned to a commit and gated by license.",
   },
   {
-    title: "Provider icons fallback",
+    title: "Provider icon fallback chain",
     url: "https://github.com/cheaper-inference/OmniRoute",
     source: "OmniRoute",
     evidenceUrl: "https://github.com/cheaper-inference/OmniRoute/pull/6317",
     homepageUrl: "https://omniroute.online",
     kind: "code",
     logo: "omniroute",
-    date: "2026-11-12",
+    date: "2026-07-10",
     description:
-      "Falls back to the thesvg CDN when a provider has no bundled icon.",
+      "Merged change that makes the thesvg CDN the third tier of their provider icon chain, used for providers with no bundled icon.",
   },
   {
     title: "Built-in icon source",
