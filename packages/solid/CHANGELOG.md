@@ -1,5 +1,11 @@
 # @thesvg/solid
 
+## 4.0.6
+
+### Patch Changes
+
+- feat: add icons for projects that use thesvg ([#1535](https://github.com/glincker/thesvg/issues/1535))
+
 ## 4.0.5
 
 ### Patch Changes
