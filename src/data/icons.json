@@ -48509,20 +48509,40 @@
     "slug": "confluence",
     "title": "Confluence",
     "aliases": [],
+    "hex": "1868DB",
+    "categories": [
+      "DevTool",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/confluence/default.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://www.atlassian.com/company/news/press-kit",
+    "dateAdded": "2026-11-11",
+    "collection": "brands",
+    "family": "atlassian",
+    "supersedes": "confluence-legacy"
+  },
+  {
+    "slug": "confluence-legacy",
+    "title": "Confluence (legacy)",
+    "aliases": [],
     "hex": "172B4D",
     "categories": [
       "DevTool",
       "Software"
     ],
     "variants": {
-      "default": "/icons/confluence/default.svg",
-      "mono": "/icons/confluence/mono.svg"
+      "default": "/icons/confluence-legacy/default.svg",
+      "mono": "/icons/confluence-legacy/mono.svg"
     },
     "license": "CC0-1.0",
     "url": "https://www.atlassian.com/company/news/press-kit",
     "dateAdded": "2026-03-07",
     "collection": "brands",
-    "family": "atlassian"
+    "family": "atlassian",
+    "supersededBy": "confluence"
   },
   {
     "slug": "confluent",
