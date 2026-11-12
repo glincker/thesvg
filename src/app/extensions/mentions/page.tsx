@@ -6,6 +6,7 @@ import { getCategoryCounts, getIconBySlug } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 import { MENTIONS, type Mention } from "@/lib/mentions";
 import { cn } from "@/lib/utils";
+import { logoPlateClass } from "@/lib/logo-surface";
 
 export const metadata: Metadata = {
   title: "Mentioned on - Where thesvg is listed",
@@ -71,6 +72,7 @@ function LogoTile({ mention, large }: { mention: Mention; large: boolean }) {
       className={cn(
         "flex shrink-0 items-center justify-center rounded-lg border border-border/40 bg-background/60 dark:border-white/[0.06] dark:bg-white/[0.04]",
         large ? "h-12 w-12" : "h-10 w-10",
+        mention.logo ? logoPlateClass(mention.logo) : "",
       )}
     >
       {hasLogo && mention.logo ? (
@@ -84,32 +86,57 @@ function LogoTile({ mention, large }: { mention: Mention; large: boolean }) {
   );
 }
 
+const secondaryLink =
+  "relative z-10 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+
 function MentionCard({ mention }: { mention: Mention }) {
   const large = !!mention.featured;
   const link = describeLink(mention.url);
+  const evidenceLabel = mention.evidenceUrl?.includes("/pull/") ? "PR" : "Commit";
+  const identity = (
+    <>
+      <LogoTile mention={mention} large={large} />
+      <span className="min-w-0">
+        <span className="block truncate text-sm font-medium text-foreground">{mention.source}</span>
+        <span className="block text-xs text-muted-foreground">
+          <time dateTime={mention.date}>{formatDate(mention.date)}</time>
+        </span>
+      </span>
+    </>
+  );
   return (
     <li className={cn("flex", large && "md:col-span-2")}>
-      <a
-        href={mention.url}
-        target="_blank"
-        rel="noopener noreferrer"
+      {/* Stretched-link card: the title link covers the card, other links sit above it. */}
+      <article
         className={cn(
-          "group flex w-full flex-col rounded-xl border border-border/40 bg-card/30 transition-colors hover:border-border/70 hover:bg-card/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:border-white/[0.06] dark:bg-white/[0.02] dark:hover:border-white/[0.1] dark:hover:bg-white/[0.04]",
+          "group relative flex w-full flex-col rounded-xl border border-border/40 bg-card/30 transition-colors hover:border-border/70 hover:bg-card/60 dark:border-white/[0.06] dark:bg-white/[0.02] dark:hover:border-white/[0.1] dark:hover:bg-white/[0.04]",
           large ? "p-6" : "p-5",
         )}
       >
-        <div className="mb-4 flex items-center gap-3">
-          <LogoTile mention={mention} large={large} />
-          <div className="min-w-0">
-            <p className="truncate text-sm font-medium text-foreground">{mention.source}</p>
-            <p className="text-xs text-muted-foreground">
-              <time dateTime={mention.date}>{formatDate(mention.date)}</time>
-            </p>
-          </div>
-        </div>
+        {mention.homepageUrl ? (
+          <a
+            href={mention.homepageUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${mention.source} homepage (opens in a new tab)`}
+            className={cn(secondaryLink, "mb-4 flex items-center gap-3 self-start")}
+          >
+            {identity}
+          </a>
+        ) : (
+          <div className="mb-4 flex items-center gap-3">{identity}</div>
+        )}
 
         <h3 className={cn("font-semibold leading-snug", large ? "text-lg" : "text-base")}>
-          {mention.title}
+          <a
+            href={mention.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-xl after:absolute after:inset-0 after:rounded-xl focus-visible:outline-none focus-visible:after:ring-2 focus-visible:after:ring-ring focus-visible:after:ring-offset-2 focus-visible:after:ring-offset-background"
+          >
+            {mention.title}
+            <span className="sr-only"> (opens in a new tab)</span>
+          </a>
         </h3>
         <p className="mt-2 flex-1 text-sm text-muted-foreground">{mention.description}</p>
 
@@ -118,13 +145,25 @@ function MentionCard({ mention }: { mention: Mention }) {
             {link.isGithub ? <Logo slug="github" className="h-3.5 w-3.5 shrink-0 object-contain" /> : null}
             <span className="truncate">{link.label}</span>
           </span>
-          <span className="inline-flex shrink-0 items-center gap-1 font-medium transition-colors group-hover:text-foreground">
-            Open
-            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-            <span className="sr-only">(opens in a new tab)</span>
-          </span>
+          {mention.evidenceUrl ? (
+            <a
+              href={mention.evidenceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(secondaryLink, "inline-flex shrink-0 items-center gap-1 font-medium transition-colors hover:text-foreground")}
+            >
+              {evidenceLabel}
+              <ArrowUpRight className="h-3.5 w-3.5" />
+              <span className="sr-only"> that added thesvg (opens in a new tab)</span>
+            </a>
+          ) : (
+            <ArrowUpRight
+              aria-hidden="true"
+              className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+            />
+          )}
         </div>
-      </a>
+      </article>
     </li>
   );
 }

@@ -485,17 +485,18 @@ export function HomeHero({
   const compactSlide = collectionSlides.length > 0 ? collectionSlides[0] : fallbackSlide;
   const CompactIcon = compactSlide.badgeIcon;
 
-  // Pick 6 floating icons matching the current slide's collection
+  // Pick up to 6 (8 on the proof slide) floating icons matching the current slide's collection
   const floatingIcons = useMemo(() => {
     const activeSlide = collectionSlides.length > 0
       ? collectionSlides[currentSlide % collectionSlides.length]
       : fallbackSlide;
+    const MAX_FLOAT = activeSlide.adopters ? 8 : 6;
     const result: IconEntry[] = [];
     for (let i = 0; i < activeSlide.floatSlugs.length; i++) {
       const entry = iconsBySlug.get(activeSlide.floatSlugs[i]);
       if (entry) {
         result.push(entry);
-        if (result.length >= 6) break;
+        if (result.length >= MAX_FLOAT) break;
       }
     }
     return result;
@@ -511,6 +512,19 @@ export function HomeHero({
     { position: "top-[40%] right-[22%]", entranceDelay: "[animation-delay:0.24s]", size: "h-7 w-7", opacity: "opacity-20", floatTiming: "[animation-delay:2.4s] [animation-duration:5.5s]" },
     { position: "top-[70%] right-[15%]", entranceDelay: "[animation-delay:0.32s]", size: "h-11 w-11", opacity: "opacity-15", floatTiming: "[animation-delay:0.4s] [animation-duration:6s]" },
     { position: "top-[15%] right-[30%]", entranceDelay: "[animation-delay:0.4s]", size: "h-6 w-6", opacity: "opacity-10", floatTiming: "[animation-delay:1.2s] [animation-duration:6.5s]" },
+  ];
+
+  // Proof slide: real logos stay legible, so larger tiles, full opacity and a
+  // tighter right-hand band that clears the copy at 1024 to 1440.
+  const PROOF_POSITIONS = [
+    { position: "top-[7%] right-[4%]", entranceDelay: "[animation-delay:0s]", size: "h-12 w-12", opacity: "opacity-100", floatTiming: "[animation-delay:0s] [animation-duration:4s]" },
+    { position: "top-[12%] right-[21%]", entranceDelay: "[animation-delay:0.08s]", size: "h-10 w-10", opacity: "opacity-100", floatTiming: "[animation-delay:0.8s] [animation-duration:4.5s]" },
+    { position: "top-[36%] right-[11%]", entranceDelay: "[animation-delay:0.16s]", size: "h-11 w-11", opacity: "opacity-100", floatTiming: "[animation-delay:1.6s] [animation-duration:5s]" },
+    { position: "top-[40%] right-[27%]", entranceDelay: "[animation-delay:0.24s]", size: "h-9 w-9", opacity: "opacity-100", floatTiming: "[animation-delay:2.4s] [animation-duration:5.5s]" },
+    { position: "top-[60%] right-[3%]", entranceDelay: "[animation-delay:0.32s]", size: "h-10 w-10", opacity: "opacity-100", floatTiming: "[animation-delay:0.4s] [animation-duration:6s]" },
+    { position: "top-[62%] right-[19%]", entranceDelay: "[animation-delay:0.4s]", size: "h-12 w-12", opacity: "opacity-100", floatTiming: "[animation-delay:1.2s] [animation-duration:6.5s]" },
+    { position: "top-[8%] right-[36%]", entranceDelay: "[animation-delay:0.48s]", size: "h-9 w-9", opacity: "opacity-100", floatTiming: "[animation-delay:2s] [animation-duration:5s]" },
+    { position: "top-[78%] right-[9%]", entranceDelay: "[animation-delay:0.56s]", size: "h-9 w-9", opacity: "opacity-100", floatTiming: "[animation-delay:2.8s] [animation-duration:5.5s]" },
   ];
 
   // Sliding switch between the two orders. "auto" picks popular-first for
@@ -686,7 +700,7 @@ export function HomeHero({
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={a.label}
-                        className="flex h-10 w-10 items-center justify-center rounded-xl border border-border/50 bg-background/70 p-2 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring dark:border-white/10 dark:bg-white/[0.06]"
+                        className={cn("flex h-10 w-10 items-center justify-center rounded-xl border border-border/50 bg-background/70 p-2 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring dark:border-white/10 dark:bg-white/[0.06]", logoPlateClass(a.slug))}
                       >
                         <img src={icon.variants.light || icon.variants.default} alt="" className="h-full w-full object-contain dark:hidden" />
                         <img src={icon.variants.dark || icon.variants.default} alt="" className="hidden h-full w-full object-contain dark:block" />
@@ -715,12 +729,12 @@ export function HomeHero({
               </div>
             )}
             {floatingIcons.map((icon, i) => {
-              const pos = FLOAT_POSITIONS[i];
+              const pos = (slide.adopters ? PROOF_POSITIONS : FLOAT_POSITIONS)[i];
               const adopter = slide.adopters?.find((a) => a.slug === icon.slug);
               const tile = (
-                <div className={`${pos.size} rounded-xl border border-border/40 bg-background/70 p-1.5 shadow-lg shadow-black/5 backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.06] dark:shadow-black/20`}>
-                  <img src={icon.variants.light || icon.variants.default} alt="" className="h-full w-full object-contain dark:hidden" />
-                  <img src={icon.variants.dark || icon.variants.default} alt="" className="hidden h-full w-full object-contain dark:block" />
+                <div className={cn(pos.size, "rounded-xl border border-border/40 bg-background/70 p-1.5 shadow-lg shadow-black/5 backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.06] dark:shadow-black/20", logoPlateClass(icon.slug))}>
+                  <img src={icon.variants.light || icon.variants.default} alt="" className={cn("h-full w-full object-contain dark:hidden", logoImgClass(icon.slug))} />
+                  <img src={icon.variants.dark || icon.variants.default} alt="" className={cn("hidden h-full w-full object-contain dark:block", logoImgClass(icon.slug))} />
                 </div>
               );
               if (adopter) {
