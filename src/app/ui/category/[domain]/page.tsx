@@ -5,8 +5,6 @@ import { DOMAINS, GLYPHS, USED_DOMAINS } from "@/lib/ui-icons/glyphs";
 
 export const dynamicParams = false;
 
-
-
 export function generateStaticParams(): { domain: string }[] {
   return USED_DOMAINS.map((d) => ({ domain: d.id }));
 }

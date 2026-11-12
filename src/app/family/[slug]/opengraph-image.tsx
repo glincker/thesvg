@@ -30,7 +30,9 @@ export default async function Image({ params }: ImageProps) {
 
   const members = getFamilyMembers(slug);
   const featured = getFamilyFeatured(slug);
-  const shown = [...featured, ...members.filter((m) => !featured.includes(m) && m.slug !== slug)];
+  // ⚡ Bolt: Convert `featured` array to a Set for O(1) lookups to avoid O(N*M) filtering overhead.
+  const featuredSet = new Set(featured);
+  const shown = [...featured, ...members.filter((m) => !featuredSet.has(m) && m.slug !== slug)];
   const logos = (await Promise.all(shown.slice(0, 7).map((m) => logoUri(m.slug)))).filter(
     (u): u is string => Boolean(u),
   );
