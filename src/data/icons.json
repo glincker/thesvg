@@ -137567,6 +137567,23 @@
     "url": "https://velero.io"
   },
   {
+    "slug": "vellum",
+    "title": "Vellum",
+    "aliases": [],
+    "hex": "262624",
+    "categories": [
+      "AI",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/vellum/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://vellum.ai",
+    "dateAdded": "2026-11-12",
+    "collection": "brands"
+  },
+  {
     "slug": "velocity",
     "title": "Velocity",
     "aliases": [],
