@@ -48,4 +48,68 @@ export const MENTIONS: readonly Mention[] = [
     description:
       "Falls back to the thesvg CDN when a provider has no bundled icon.",
   },
+  {
+    title: "Built-in icon source",
+    url: "https://github.com/lumeland/lume/blob/main/packages/plugin-icons/deps/icons.ts",
+    source: "Lume",
+    date: "2026-11-12",
+    description:
+      "The static site generator's icons plugin ships thesvg as a built-in source, fetched through jsDelivr.",
+  },
+  {
+    title: "Model and channel icons",
+    url: "https://github.com/bestruirui/octopus/blob/main/web/package.json",
+    source: "Octopus",
+    date: "2026-11-12",
+    description:
+      "An LLM gateway whose web UI depends on the @thesvg/react package for provider icons.",
+  },
+  {
+    title: "Editor icons in the UI package",
+    url: "https://github.com/infi-pc/locatorjs/blob/main/packages/ui/ICON-LICENSES.md",
+    source: "LocatorJS",
+    date: "2026-11-12",
+    description:
+      "Vendors the editor icons it shows from thesvg and credits the source with the MIT notice.",
+  },
+  {
+    title: "Integration logos",
+    url: "https://github.com/vellum-ai/vellum-assistant/blob/main/clients/web/public/images/integrations/ATTRIBUTION.md",
+    source: "Vellum",
+    date: "2026-11-12",
+    description:
+      "Vendors integration logos from thesvg and lists them, with the MIT notice, in an attribution file.",
+  },
+  {
+    title: "Third-party notices",
+    url: "https://github.com/siyuan-note/siyuan/blob/master/scripts/generate-third-party-notices.py",
+    source: "SiYuan",
+    date: "2026-11-12",
+    description:
+      "Credits thesvg in its generated third-party notices for a vendored provider logo.",
+  },
+  {
+    title: "Agent icons",
+    url: "https://github.com/delexw/claude-code-trace/blob/main/package.json",
+    source: "claude-code-trace",
+    date: "2026-11-12",
+    description:
+      "A Claude Code session viewer that depends on @thesvg/react for its agent icons.",
+  },
+  {
+    title: "Listed in awesome-react",
+    url: "https://github.com/enaqx/awesome-react",
+    source: "awesome-react",
+    date: "2026-11-12",
+    description:
+      "Listed in the curated React ecosystem list as a collection of free brand SVG icons.",
+  },
+  {
+    title: "Listed in awesome-svelte",
+    url: "https://github.com/TheComputerM/awesome-svelte",
+    source: "awesome-svelte",
+    date: "2026-04-13",
+    description:
+      "Listed in the curated Svelte list as @thesvg/svelte, in the Icons section.",
+  },
 ];
