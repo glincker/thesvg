@@ -103082,6 +103082,24 @@
     "collection": "auth-badges"
   },
   {
+    "slug": "omniroute",
+    "title": "OmniRoute",
+    "aliases": [],
+    "hex": "E54D5E",
+    "categories": [
+      "AI",
+      "DevTool",
+      "Open Source"
+    ],
+    "variants": {
+      "default": "/icons/omniroute/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://omniroute.online",
+    "dateAdded": "2026-11-12",
+    "collection": "brands"
+  },
+  {
     "slug": "one-com-badge",
     "title": "one.com",
     "aliases": [],
