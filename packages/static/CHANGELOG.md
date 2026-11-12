@@ -1,5 +1,11 @@
 # @thesvg/static
 
+## 4.0.7
+
+### Patch Changes
+
+- fix: update deepgram brand color to E042FF ([#1541](https://github.com/glincker/thesvg/issues/1541))
+
 ## 4.0.6
 
 ### Patch Changes
