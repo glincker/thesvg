@@ -52,7 +52,7 @@ function FlagTileImpl({ tile, variant, size, starred, tabIndex, onOpen, onToggle
           tabIndex={tabIndex}
           data-flag-button={tile.code}
           title={detail}
-          aria-label={`${tile.name}${tile.iso ? `, ${tile.iso}` : ""}`}
+          aria-label={`${tile.name}${tile.iso ? ` ${tile.iso}` : ""}`}
           className="flex flex-1 flex-col items-center outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
           <span className="icon-preview-bg flex h-24 w-full items-center justify-center">

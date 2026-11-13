@@ -260,6 +260,7 @@ export function IconDetailPage({
       >
         <Link
           href="/"
+          aria-label="Home"
           className="flex items-center gap-1 transition-colors hover:text-foreground"
         >
           <Home className="h-3.5 w-3.5" />
