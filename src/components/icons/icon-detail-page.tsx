@@ -773,8 +773,9 @@ export function IconDetailPage({
           </dl>
         </div>
         <p className="border-t border-border/40 px-5 py-3 text-xs leading-relaxed text-muted-foreground dark:border-white/[0.06] sm:px-6">
-          &ldquo;{icon.title}&rdquo; is a trademark of its respective owner and is shown for identification only.
-          {icon.license === "Trademark" ? " Do not modify the mark or imply endorsement." : ""}{" "}
+          {icon.collection === "flags"
+            ? `The flag of ${icon.title} is a public symbol of its country or region. Showing it is not a statement about sovereignty or borders.`
+            : `\u201C${icon.title}\u201D is a trademark of its respective owner and is shown for identification only.${icon.license === "Trademark" ? " Do not modify the mark or imply endorsement." : ""}`}{" "}
           {icon.url &&
             (() => {
               try {

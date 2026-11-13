@@ -82,6 +82,14 @@ const CATEGORIES: Category[] = [
         iconSlug: "react",
       },
       {
+        name: "@thesvg/flags",
+        description: "263 country and region flags in 4x3, square and circle. Per-flag React components, plain SVG and a locale helper.",
+        status: "available",
+        cta: "npm",
+        href: "https://www.npmjs.com/package/@thesvg/flags",
+        iconSlug: "flag-us",
+      },
+      {
         name: "@thesvg/vue",
         description: `${iconCount}+ typed Vue 3 components. Render-function based, tree-shakeable, no SFC compiler needed.`,
         status: "available",
