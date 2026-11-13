@@ -1,5 +1,20 @@
 # @thesvg/flags
 
+<p align="center">
+  <img src="https://cdn.jsdelivr.net/npm/@thesvg/flags@0.1.0/dist/svg/4x3/us.svg" height="32" alt="US" />
+  <img src="https://cdn.jsdelivr.net/npm/@thesvg/flags@0.1.0/dist/svg/4x3/gb.svg" height="32" alt="GB" />
+  <img src="https://cdn.jsdelivr.net/npm/@thesvg/flags@0.1.0/dist/svg/4x3/de.svg" height="32" alt="DE" />
+  <img src="https://cdn.jsdelivr.net/npm/@thesvg/flags@0.1.0/dist/svg/4x3/fr.svg" height="32" alt="FR" />
+  <img src="https://cdn.jsdelivr.net/npm/@thesvg/flags@0.1.0/dist/svg/4x3/es.svg" height="32" alt="ES" />
+  <img src="https://cdn.jsdelivr.net/npm/@thesvg/flags@0.1.0/dist/svg/4x3/it.svg" height="32" alt="IT" />
+  <img src="https://cdn.jsdelivr.net/npm/@thesvg/flags@0.1.0/dist/svg/4x3/jp.svg" height="32" alt="JP" />
+  <img src="https://cdn.jsdelivr.net/npm/@thesvg/flags@0.1.0/dist/svg/4x3/br.svg" height="32" alt="BR" />
+  <img src="https://cdn.jsdelivr.net/npm/@thesvg/flags@0.1.0/dist/svg/4x3/in.svg" height="32" alt="IN" />
+  <img src="https://cdn.jsdelivr.net/npm/@thesvg/flags@0.1.0/dist/svg/4x3/ca.svg" height="32" alt="CA" />
+  <img src="https://cdn.jsdelivr.net/npm/@thesvg/flags@0.1.0/dist/svg/4x3/au.svg" height="32" alt="AU" />
+  <img src="https://cdn.jsdelivr.net/npm/@thesvg/flags@0.1.0/dist/svg/4x3/kr.svg" height="32" alt="KR" />
+</p>
+
 Country and region flags as plain SVG and React components. <!-- flags:count -->263<!-- /flags:count --> flags: every ISO 3166-1 country plus England, Scotland, Wales, Catalonia, the Basque Country, Galicia, the Valencian Community, the Balearic Islands, the Canary Islands, Corsica, Occitania, the European Union and the United Nations, each in three shapes: 4x3, square and circle.
 
 Full guide: [docs/flags.md](../../docs/flags.md). Browse: [thesvg.org/collection/flags](https://thesvg.org/collection/flags).
