@@ -1,5 +1,7 @@
 # @thesvg/flags
 
+[![npm](https://img.shields.io/npm/v/@thesvg/flags?style=flat-square&color=C2410C&label=npm)](https://www.npmjs.com/package/@thesvg/flags)
+
 <p align="center">
   <img src="https://cdn.jsdelivr.net/npm/@thesvg/flags@0.1.0/dist/svg/4x3/us.svg" height="32" alt="US" />
   <img src="https://cdn.jsdelivr.net/npm/@thesvg/flags@0.1.0/dist/svg/4x3/gb.svg" height="32" alt="GB" />

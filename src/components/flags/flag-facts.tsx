@@ -51,7 +51,7 @@ import { ${"Flag" + flag.code.split("-").map((p) => p.charAt(0).toUpperCase() + 
       <p className="mt-2 text-xs text-muted-foreground">
         Raw files: {Object.entries(FILE).map(([shape, file], i) => (
           <span key={shape}>{i > 0 ? ", " : ""}<a className="underline" href={`/icons/${flag.slug}/${file}.svg`}>{shape}</a></span>
-        ))}. <Link href="/docs/flags" className="underline">Flags guide</Link>. <Link href="/collection/flags" className="underline">All flags</Link>.
+        ))}. <a className="underline" href="https://www.npmjs.com/package/@thesvg/flags" target="_blank" rel="noopener noreferrer">npm package</a>. <Link href="/docs/flags" className="underline">Flags guide</Link>. <Link href="/collection/flags" className="underline">All flags</Link>.
       </p>
 
       {sameRegion.length > 0 ? (
