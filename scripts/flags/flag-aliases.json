@@ -325,12 +325,6 @@
     "islas canarias",
     "canarian"
   ],
-  "fr-bre": [
-    "brittany",
-    "bretagne",
-    "breton",
-    "gwenn ha du"
-  ],
   "occitania": [
     "occitan",
     "occitanie",
@@ -349,5 +343,13 @@
     "uno",
     "onu",
     "u.n."
+  ],
+  "fr-cor": [
+    "corsica",
+    "corse",
+    "corsican",
+    "corsu",
+    "moor head",
+    "testa mora"
   ]
 }

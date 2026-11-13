@@ -163,7 +163,7 @@ theSVG organizes icons into collections:
 | **Community** | 256 | Dev tools, databases, and frameworks sourced from the open-source community |
 | **Google Cloud** | 214 | Google Cloud Platform icons (2026-Q1) |
 | **Kubernetes** | 38 | Official Kubernetes/CNCF architecture icons |
-| **Flags** | <!-- flags:count -->258<!-- /flags:count --> | Country and region flags in 4x3, square and circle (category `Flags`, slugs `flag-us`, `flag-gb-eng`) |
+| **Flags** | <!-- flags:count -->263<!-- /flags:count --> | Country and region flags in 4x3, square and circle (category `Flags`, slugs `flag-us`, `flag-gb-eng`) |
 
 </details>
 
@@ -199,7 +199,7 @@ The full breakdown lives in [Collections, families and categories](./docs/collec
 - **626 Azure Service icons** (2026-Q1)
 - **256 community-curated icons** - dev tools, databases, frameworks
 - **214 Google Cloud icons** (2026-Q1)
-- **<!-- flags:count -->258<!-- /flags:count --> country and region flags** - ISO 3166-1 plus England, Scotland, Wales, Catalonia and more, in 4x3, square and circle
+- **<!-- flags:count -->263<!-- /flags:count --> country and region flags** - ISO 3166-1 plus England, Scotland, Wales, Catalonia and more, in 4x3, square and circle
 - **<!-- flags:total-variants -->14,600+<!-- /flags:total-variants --> SVG variants** - color, mono, light, dark, wordmark, flag shapes
 - **Tree-shakeable** - import one icon, ship only that icon
 - **TypeScript-first** - fully typed, dual ESM/CJS
@@ -208,7 +208,7 @@ The full breakdown lives in [Collections, families and categories](./docs/collec
 
 ### Flags
 
-Browse at [thesvg.org/collection/flags](https://thesvg.org/collection/flags). Every ISO 3166-1 country plus England, Scotland, Wales, Catalonia, the Basque Country, Galicia, the EU and the UN, in three shapes. Slugs are `flag-<code>` (`flag-us`, `flag-gb-eng`); variants are `default` (4x3), `square` and `circle`.
+Browse at [thesvg.org/collection/flags](https://thesvg.org/collection/flags). Every ISO 3166-1 country plus England, Scotland, Wales, Catalonia, the Basque Country, Galicia, the Valencian Community, the Balearic Islands, the Canary Islands, Corsica, Occitania, the EU and the UN, in three shapes. Slugs are `flag-<code>` (`flag-us`, `flag-gb-eng`); variants are `default` (4x3), `square` and `circle`.
 
 ```bash
 npm i @thesvg/flags

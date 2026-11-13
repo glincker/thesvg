@@ -32,37 +32,37 @@ describe("flags browser", () => {
   it("renders every flag as a lazy image with explicit dimensions and no giant DOM per tile", async () => {
     render(<FlagsBrowser tiles={tiles} />);
     await waitFor(() => expect(screen.getByTestId("flags-browser").dataset.ready).toBe("true"));
-    expect(count()).toBe("258 of 258 flags");
+    expect(count()).toBe(`${tiles.length} of ${tiles.length} flags`);
     const first = tileImgs()[0];
     expect(first.getAttribute("loading")).toBe("lazy");
     expect(first.getAttribute("decoding")).toBe("async");
     expect(first.getAttribute("width")).toBeTruthy();
     expect(first.getAttribute("height")).toBeTruthy();
     expect(first.getAttribute("alt")).toBe("");
-    expect(document.querySelectorAll("[data-flag-tile]").length).toBe(258);
+    expect(document.querySelectorAll("[data-flag-tile]").length).toBe(tiles.length);
   });
 
   it("searches by alias after the alias file loads, shows count and empty state", async () => {
     render(<FlagsBrowser tiles={tiles} />);
     const box = screen.getByLabelText("Search flags");
     fireEvent.change(box, { target: { value: "deutschland" } });
-    await waitFor(() => expect(count()).toBe("1 of 258 flags"));
+    await waitFor(() => expect(count()).toBe(`1 of ${tiles.length} flags`));
     expect(document.querySelector("[data-flag-tile='de']")).not.toBeNull();
     fireEvent.change(box, { target: { value: "日本" } });
     await waitFor(() => expect(document.querySelector("[data-flag-tile='jp']")).not.toBeNull());
     fireEvent.change(box, { target: { value: "qqqqqqq" } });
     await waitFor(() => expect(screen.getByTestId("empty-state")).toBeTruthy());
-    expect(count()).toBe("0 of 258 flags");
+    expect(count()).toBe(`0 of ${tiles.length} flags`);
   });
 
   it("filters by region chip and color chips and can clear", () => {
     render(<FlagsBrowser tiles={tiles} />);
     fireEvent.click(screen.getByRole("button", { name: "Regional" }));
-    expect(count()).toMatch(/^\d+ of 258 flags$/);
+    expect(count()).toMatch(/^\d+ of \d+ flags$/);
     expect(document.querySelector("[data-flag-tile='gb-eng']")).not.toBeNull();
     expect(document.querySelector("[data-flag-tile='de']")).toBeNull();
     fireEvent.click(screen.getByRole("button", { name: "Clear filters" }));
-    expect(count()).toBe("258 of 258 flags");
+    expect(count()).toBe(`${tiles.length} of ${tiles.length} flags`);
     fireEvent.click(screen.getByRole("button", { name: "green" }));
     fireEvent.click(screen.getByRole("button", { name: "orange" }));
     fireEvent.click(screen.getByRole("button", { name: "Any color" }));
@@ -88,13 +88,13 @@ describe("flags browser", () => {
     render(<FlagsBrowser tiles={tiles} />);
     fireEvent.click(screen.getByRole("radio", { name: "Square" }));
     expect(tileImgs()[0].getAttribute("src")).toMatch(/square\.svg$/);
-    expect(count()).toBe("258 of 258 flags");
+    expect(count()).toBe(`${tiles.length} of ${tiles.length} flags`);
   });
 
   it("reads filters from the URL and writes them back so a view is shareable", async () => {
     window.history.replaceState(null, "", "/collection/flags?region=europe&variant=circle&q=germany");
     render(<FlagsBrowser tiles={tiles} />);
-    await waitFor(() => expect(count()).toBe("1 of 258 flags"));
+    await waitFor(() => expect(count()).toBe(`1 of ${tiles.length} flags`));
     expect(tileImgs()[0].getAttribute("src")).toMatch(/flag-de\/circle\.svg$/);
     fireEvent.click(screen.getByRole("button", { name: "Asia" }));
     expect(window.location.search).toContain("region=asia");

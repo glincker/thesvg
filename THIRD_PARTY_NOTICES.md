@@ -64,8 +64,18 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+## wikimedia-commons (rectangle variants of a few regional flags)
+
+- URL: https://commons.wikimedia.org
+- License: public domain or CC0, per file, verified through the Commons API on 2026-11-13. Neither requires attribution; the files are listed for transparency.
+
+- Flag of Corsica.svg by Patricia.fidi, CC0: https://commons.wikimedia.org/wiki/File:Flag_of_Corsica.svg
+- Flag of Occitania (with star).svg by Nimlar and others, Public domain: https://commons.wikimedia.org/wiki/File:Flag_of_Occitania_(with_star).svg
+- Flag of the Balearic Islands.svg by see file page, CC0: https://commons.wikimedia.org/wiki/File:Flag_of_the_Balearic_Islands.svg
+- Flag of the Land of Valencia (official).svg by Mutxamel and others, Public domain: https://commons.wikimedia.org/wiki/File:Flag_of_the_Land_of_Valencia_(official).svg
+
 ## Reference data used only to validate and label (not redistributed)
 
 - i18n-iso-countries 7.14.0 (MIT): ISO 3166-1 alpha-2, alpha-3 and numeric codes and localized country names.
 - Unicode CLDR via cldr-core 47.0.0 (Unicode License V3): territory languages.
-- Wikimedia Commons national flag files were consulted manually as a cross-check only. Nothing was copied from them.
+- Wikimedia Commons files were used only where listed above; otherwise they were a manual cross-check.

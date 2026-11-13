@@ -5075,6 +5075,66 @@ export const FLAGS: readonly FlagMeta[] = [
     ]
   },
   {
+    "slug": "flag-es-cn",
+    "code": "es-cn",
+    "iso": null,
+    "alpha3": null,
+    "numeric": null,
+    "name": "Canary Islands",
+    "official": "Canary Islands",
+    "native": "Canarias",
+    "emoji": null,
+    "kind": "subdivision",
+    "parent": "ES",
+    "continent": null,
+    "capital": null,
+    "languages": [
+      "es"
+    ],
+    "flagOf": [
+      "es-ES-CN"
+    ],
+    "aliases": [
+      "es-es-cn",
+      "canarias",
+      "islas canarias",
+      "canarian",
+      "es cn",
+      "blue",
+      "gold",
+      "white",
+      "0768a9",
+      "ffcc00",
+      "ffffff",
+      "tricolor",
+      "tricolour"
+    ],
+    "colors": [
+      {
+        "hex": "0768a9",
+        "share": 33
+      },
+      {
+        "hex": "ffcc00",
+        "share": 33
+      },
+      {
+        "hex": "ffffff",
+        "share": 33
+      }
+    ],
+    "colorNames": [
+      "blue",
+      "gold",
+      "white"
+    ],
+    "variants": [
+      "default",
+      "square",
+      "circle"
+    ]
+  },
+  {
     "slug": "flag-es-ct",
     "code": "es-ct",
     "iso": null,
@@ -5193,6 +5253,83 @@ export const FLAGS: readonly FlagMeta[] = [
     ]
   },
   {
+    "slug": "flag-es-ib",
+    "code": "es-ib",
+    "iso": null,
+    "alpha3": null,
+    "numeric": null,
+    "name": "Balearic Islands",
+    "official": "Balearic Islands",
+    "native": "Illes Balears",
+    "emoji": null,
+    "kind": "subdivision",
+    "parent": "ES",
+    "continent": null,
+    "capital": null,
+    "languages": [
+      "ca",
+      "es"
+    ],
+    "flagOf": [
+      "ca-ES-IB",
+      "es-ES-IB"
+    ],
+    "aliases": [
+      "ca-es-ib",
+      "es-es-ib",
+      "illes balears",
+      "baleares",
+      "mallorca",
+      "majorca",
+      "es ib",
+      "yellow",
+      "red",
+      "purple",
+      "fcdd09",
+      "da121a",
+      "40104c",
+      "e24416",
+      "eb7812",
+      "f3ab0e"
+    ],
+    "colors": [
+      {
+        "hex": "fcdd09",
+        "share": 38
+      },
+      {
+        "hex": "da121a",
+        "share": 30
+      },
+      {
+        "hex": "40104c",
+        "share": 16
+      },
+      {
+        "hex": "e24416",
+        "share": 2
+      },
+      {
+        "hex": "eb7812",
+        "share": 2
+      },
+      {
+        "hex": "f3ab0e",
+        "share": 2
+      }
+    ],
+    "colorNames": [
+      "yellow",
+      "red",
+      "purple"
+    ],
+    "variants": [
+      "default",
+      "square",
+      "circle"
+    ]
+  },
+  {
     "slug": "flag-es-pv",
     "code": "es-pv",
     "iso": null,
@@ -5253,6 +5390,79 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "green",
       "white"
+    ],
+    "variants": [
+      "default",
+      "square",
+      "circle"
+    ]
+  },
+  {
+    "slug": "flag-es-vc",
+    "code": "es-vc",
+    "iso": null,
+    "alpha3": null,
+    "numeric": null,
+    "name": "Valencian Community",
+    "official": "Valencian Community",
+    "native": "Comunitat Valenciana",
+    "emoji": null,
+    "kind": "subdivision",
+    "parent": "ES",
+    "continent": null,
+    "capital": null,
+    "languages": [
+      "ca",
+      "es"
+    ],
+    "flagOf": [
+      "ca-ES-valencia",
+      "ca-ES-VC",
+      "es-ES-VC"
+    ],
+    "aliases": [
+      "ca-es-valencia",
+      "ca-es-vc",
+      "es-es-vc",
+      "comunitat valenciana",
+      "valencia",
+      "valenciano",
+      "es vc",
+      "yellow",
+      "red",
+      "blue",
+      "fcdd09",
+      "da121a",
+      "0072bc",
+      "e24416",
+      "f3aa0e"
+    ],
+    "colors": [
+      {
+        "hex": "fcdd09",
+        "share": 38
+      },
+      {
+        "hex": "da121a",
+        "share": 32
+      },
+      {
+        "hex": "0072bc",
+        "share": 12
+      },
+      {
+        "hex": "e24416",
+        "share": 7
+      },
+      {
+        "hex": "f3aa0e",
+        "share": 3
+      }
+    ],
+    "colorNames": [
+      "yellow",
+      "red",
+      "blue"
     ],
     "variants": [
       "default",
@@ -5860,6 +6070,67 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "red",
       "white"
+    ],
+    "variants": [
+      "default",
+      "square",
+      "circle"
+    ]
+  },
+  {
+    "slug": "flag-fr-cor",
+    "code": "fr-cor",
+    "iso": null,
+    "alpha3": null,
+    "numeric": null,
+    "name": "Corsica",
+    "official": "Corsica",
+    "native": "Corsica",
+    "emoji": null,
+    "kind": "subdivision",
+    "parent": "FR",
+    "continent": null,
+    "capital": null,
+    "languages": [
+      "co",
+      "fr"
+    ],
+    "flagOf": [
+      "co-FR-COR",
+      "fr-FR-COR"
+    ],
+    "aliases": [
+      "co-fr-cor",
+      "fr-fr-cor",
+      "corse",
+      "corsican",
+      "corsu",
+      "moor head",
+      "testa mora",
+      "fr cor",
+      "white",
+      "black",
+      "ffffff",
+      "000000",
+      "a9a9a9"
+    ],
+    "colors": [
+      {
+        "hex": "ffffff",
+        "share": 71
+      },
+      {
+        "hex": "000000",
+        "share": 18
+      },
+      {
+        "hex": "a9a9a9",
+        "share": 2
+      }
+    ],
+    "colorNames": [
+      "white",
+      "black"
     ],
     "variants": [
       "default",
@@ -13252,6 +13523,69 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "red",
       "white"
+    ],
+    "variants": [
+      "default",
+      "square",
+      "circle"
+    ]
+  },
+  {
+    "slug": "flag-occitania",
+    "code": "occitania",
+    "iso": null,
+    "alpha3": null,
+    "numeric": null,
+    "name": "Occitania",
+    "official": "Occitania",
+    "native": "Occitania",
+    "emoji": null,
+    "kind": "region",
+    "parent": "FR",
+    "continent": null,
+    "capital": null,
+    "languages": [
+      "oc",
+      "fr"
+    ],
+    "flagOf": [
+      "oc-FR-OCCITANIA",
+      "fr-FR-OCCITANIA"
+    ],
+    "aliases": [
+      "oc-fr-occitania",
+      "fr-fr-occitania",
+      "occitan",
+      "occitanie",
+      "oc",
+      "red",
+      "yellow",
+      "d4001c",
+      "fddd00",
+      "de3815",
+      "f2a607"
+    ],
+    "colors": [
+      {
+        "hex": "d4001c",
+        "share": 82
+      },
+      {
+        "hex": "fddd00",
+        "share": 10
+      },
+      {
+        "hex": "de3815",
+        "share": 3
+      },
+      {
+        "hex": "f2a607",
+        "share": 3
+      }
+    ],
+    "colorNames": [
+      "red",
+      "yellow"
     ],
     "variants": [
       "default",

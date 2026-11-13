@@ -28,7 +28,7 @@ test("every ISO 3166-1 alpha-2 code has a flag, plus Kosovo", () => {
 
 test("required regional flags are present", () => {
   const codes = new Set(FLAGS.map((f) => f.code));
-  for (const c of ["gb-eng", "gb-sct", "gb-wls", "es-ct", "es-pv", "es-ga", "eu", "un"]) assert.ok(codes.has(c), c);
+  for (const c of ["gb-eng", "gb-sct", "gb-wls", "es-ct", "es-pv", "es-ga", "es-vc", "es-ib", "es-cn", "fr-cor", "occitania", "eu", "un"]) assert.ok(codes.has(c), c);
 });
 
 test("slugs, codes and strong identifiers are unique", () => {
@@ -43,7 +43,7 @@ test("slugs, codes and strong identifiers are unique", () => {
   unique("emoji", FLAGS.map((f) => f.emoji));
   unique("name", FLAGS.map((f) => f.name));
   unique("locale tag", FLAGS.flatMap((f) => f.flagOf));
-  for (const f of FLAGS) assert.match(f.slug, /^flag-[a-z]{2}(-[a-z]+)?$|^flag-(eu|un|xk)$/);
+  for (const f of FLAGS) assert.match(f.slug, /^flag-[a-z]{2}(-[a-z]+)?$|^flag-(eu|un|xk|occitania)$/);
 });
 
 test("every flag has valid SVG in all three variants", () => {
@@ -67,7 +67,7 @@ test("shapes: circle and square are 1:1, default is 4:3", () => {
   for (const f of FLAGS) {
     const vb = (v: string): number[] => (readFileSync(join(ICONS_DIR, f.slug, `${v}.svg`), "utf8").match(/viewBox="([^"]+)"/)![1].split(" ").map(Number));
     const [, , w43, h43] = vb("default");
-    assert.equal(w43 / h43, 4 / 3, `${f.slug} default`);
+    assert.ok(Math.abs(w43 / h43 - 4 / 3) < 1e-3, `${f.slug} default`);
     for (const v of ["square", "circle"]) {
       const [, , w, h] = vb(v);
       assert.equal(w, h, `${f.slug} ${v}`);
@@ -79,17 +79,26 @@ test("the license manifest covers every flag file and nothing else", () => {
   const onDisk = readdirSync(ICONS_DIR).filter((d) => d.startsWith("flag-")).flatMap((d) => readdirSync(join(ICONS_DIR, d)).map((x) => `public/icons/${d}/${x}`)).sort();
   assert.deepEqual(licenses.files.map((x) => x.file).sort(), onDisk);
   assert.equal(onDisk.length, FLAGS.length * 3);
+  const ACCEPTED = new Set(["MIT", "CC0", "Public domain", "Apache-2.0"]);
   for (const x of licenses.files) {
-    assert.equal(x.license, "MIT");
+    assert.ok(ACCEPTED.has(x.license), `${x.file}: ${x.license}`);
     assert.ok(licenses.sources[x.source], x.source);
   }
-  for (const s of Object.values(licenses.sources)) {
-    assert.match(s.commit, /^[0-9a-f]{40}$/);
-    assert.match(s.accessed, /^\d{4}-\d{2}-\d{2}$/);
-    assert.equal(s.license, "MIT");
-  }
   const notice = readFileSync(join(ROOT, "THIRD_PARTY_NOTICES.md"), "utf8");
-  for (const s of Object.values(licenses.sources)) assert.ok(notice.includes(s.url) && notice.includes(s.commit));
+  for (const [key, s] of Object.entries(licenses.sources) as [string, { url: string; commit: string | null; accessed: string; license: string; files?: { title: string; license: string; url: string }[] }][]) {
+    assert.match(s.accessed, /^\d{4}-\d{2}-\d{2}$/, key);
+    assert.ok(notice.includes(s.url), key);
+    if (key === "wikimedia-commons") {
+      assert.ok(s.files && s.files.length > 0);
+      for (const f of s.files) { assert.ok(ACCEPTED.has(f.license) && f.license !== "MIT", f.title); assert.ok(notice.includes(f.url), f.title); }
+      // Every commons-sourced file is covered by a listed file.
+      for (const x of licenses.files.filter((y) => y.source === key)) assert.ok(s.files.some((f) => x.upstream.startsWith(f.title)), x.file);
+    } else {
+      assert.match(s.commit ?? "", /^[0-9a-f]{40}$/, key);
+      assert.equal(s.license, "MIT");
+      assert.ok(notice.includes(s.commit!), key);
+    }
+  }
 });
 
 test("icons.json registry matches the flag metadata", () => {

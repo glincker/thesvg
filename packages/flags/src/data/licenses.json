@@ -15,6 +15,40 @@
       "license": "MIT",
       "holder": "Copyright (c) 2026 HatScripts",
       "accessed": "2026-11-13"
+    },
+    "wikimedia-commons": {
+      "url": "https://commons.wikimedia.org",
+      "commit": null,
+      "version": "per file",
+      "license": "Public domain or CC0, per file",
+      "holder": "see the file list",
+      "accessed": "2026-11-13",
+      "files": [
+        {
+          "title": "Flag of Corsica.svg",
+          "author": "Patricia.fidi",
+          "license": "CC0",
+          "url": "https://commons.wikimedia.org/wiki/File:Flag_of_Corsica.svg"
+        },
+        {
+          "title": "Flag of Occitania (with star).svg",
+          "author": "Nimlar and others",
+          "license": "Public domain",
+          "url": "https://commons.wikimedia.org/wiki/File:Flag_of_Occitania_(with_star).svg"
+        },
+        {
+          "title": "Flag of the Balearic Islands.svg",
+          "author": "see file page",
+          "license": "CC0",
+          "url": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Balearic_Islands.svg"
+        },
+        {
+          "title": "Flag of the Land of Valencia (official).svg",
+          "author": "Mutxamel and others",
+          "license": "Public domain",
+          "url": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Land_of_Valencia_(official).svg"
+        }
+      ]
     }
   },
   "excluded": [
@@ -41,6 +75,14 @@
     [
       "Per-state and per-province subdivision flags (US states, Australian states, Indian states, etc.)",
       "Out of scope for this release; may come later as a separate collection."
+    ],
+    [
+      "fr-bre (Brittany)",
+      "circle-flags has it, but the only rectangle source on Commons is CC BY-SA 4.0, which this catalog does not use; a circle-only flag would need a missing-variant path everywhere, so it is skipped for now."
+    ],
+    [
+      "Sardinia, Sicily and other Italian regions",
+      "circle-flags it-* files are not mapped confidently to regions yet."
     ],
     [
       "Language flags in circle-flags/language",
@@ -6194,6 +6236,126 @@
       "variant": "circle",
       "source": "circle-flags",
       "upstream": "flags/es-ga.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-es-vc/default.svg",
+      "slug": "flag-es-vc",
+      "variant": "default",
+      "source": "wikimedia-commons",
+      "upstream": "Flag of the Land of Valencia (official).svg",
+      "license": "Public domain"
+    },
+    {
+      "file": "public/icons/flag-es-vc/square.svg",
+      "slug": "flag-es-vc",
+      "variant": "square",
+      "source": "wikimedia-commons",
+      "upstream": "Flag of the Land of Valencia (official).svg (center crop)",
+      "license": "Public domain"
+    },
+    {
+      "file": "public/icons/flag-es-vc/circle.svg",
+      "slug": "flag-es-vc",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/es-vc.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-es-ib/default.svg",
+      "slug": "flag-es-ib",
+      "variant": "default",
+      "source": "wikimedia-commons",
+      "upstream": "Flag of the Balearic Islands.svg",
+      "license": "CC0"
+    },
+    {
+      "file": "public/icons/flag-es-ib/square.svg",
+      "slug": "flag-es-ib",
+      "variant": "square",
+      "source": "wikimedia-commons",
+      "upstream": "Flag of the Balearic Islands.svg (center crop)",
+      "license": "CC0"
+    },
+    {
+      "file": "public/icons/flag-es-ib/circle.svg",
+      "slug": "flag-es-ib",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/es-ib.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-es-cn/default.svg",
+      "slug": "flag-es-cn",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ic.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-es-cn/square.svg",
+      "slug": "flag-es-cn",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ic.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-es-cn/circle.svg",
+      "slug": "flag-es-cn",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/es-cn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-fr-cor/default.svg",
+      "slug": "flag-fr-cor",
+      "variant": "default",
+      "source": "wikimedia-commons",
+      "upstream": "Flag of Corsica.svg",
+      "license": "CC0"
+    },
+    {
+      "file": "public/icons/flag-fr-cor/square.svg",
+      "slug": "flag-fr-cor",
+      "variant": "square",
+      "source": "wikimedia-commons",
+      "upstream": "Flag of Corsica.svg (center crop)",
+      "license": "CC0"
+    },
+    {
+      "file": "public/icons/flag-fr-cor/circle.svg",
+      "slug": "flag-fr-cor",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/fr-20r.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-occitania/default.svg",
+      "slug": "flag-occitania",
+      "variant": "default",
+      "source": "wikimedia-commons",
+      "upstream": "Flag of Occitania (with star).svg",
+      "license": "Public domain"
+    },
+    {
+      "file": "public/icons/flag-occitania/square.svg",
+      "slug": "flag-occitania",
+      "variant": "square",
+      "source": "wikimedia-commons",
+      "upstream": "Flag of Occitania (with star).svg (center crop)",
+      "license": "Public domain"
+    },
+    {
+      "file": "public/icons/flag-occitania/circle.svg",
+      "slug": "flag-occitania",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/occitania.svg",
       "license": "MIT"
     },
     {

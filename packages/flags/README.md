@@ -1,6 +1,6 @@
 # @thesvg/flags
 
-Country and region flags as plain SVG and React components. <!-- flags:count -->258<!-- /flags:count --> flags: every ISO 3166-1 country plus England, Scotland, Wales, Catalonia, the Basque Country, Galicia, the European Union and the United Nations, each in three shapes: 4x3, square and circle.
+Country and region flags as plain SVG and React components. <!-- flags:count -->263<!-- /flags:count --> flags: every ISO 3166-1 country plus England, Scotland, Wales, Catalonia, the Basque Country, Galicia, the Valencian Community, the Balearic Islands, the Canary Islands, Corsica, Occitania, the European Union and the United Nations, each in three shapes: 4x3, square and circle.
 
 Full guide: [docs/flags.md](../../docs/flags.md). Browse: [thesvg.org/collection/flags](https://thesvg.org/collection/flags).
 

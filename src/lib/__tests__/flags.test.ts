@@ -73,6 +73,7 @@ describe("docs and counts do not drift from the metadata", () => {
       expect(text).toContain("flag-gb-eng");
     }
     expect(read("public/llms-full.txt")).toContain("getFlagForLocale");
+    expect(read("src/components/home-hero.tsx")).toContain(`${FLAGS.length} Country and Region Flags`);
     expect(read("public/llms.txt")).toContain(`${label(total).replace("+", "")}`.slice(0, 3));
   });
 });

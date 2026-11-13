@@ -78,6 +78,10 @@ const SOURCES = {
   "flag-icons": mkSource("flag-icons", "https://github.com/lipis/flag-icons", FI, "Copyright (c) 2013 Panayiotis Lipiridis", "MIT", "package.json"),
   "circle-flags": mkSource("circle-flags", "https://github.com/HatScripts/circle-flags", CF, "Copyright (c) 2026 HatScripts", "MIT"),
 };
+if (args.commons) {
+  // Files are public domain or CC0 per file; the list is filled in while building and verified against the Commons API when added.
+  SOURCES["wikimedia-commons"] = { url: "https://commons.wikimedia.org", commit: null, version: "per file", license: "Public domain or CC0, per file", holder: "see the file list", accessed: priorLicenses?.sources?.["wikimedia-commons"]?.accessed ?? today, files: [] };
+}
 // A further source is added to SOURCES with its own license entry and a LICENSE file path here.
 // A source used by any file but missing from either table aborts the run.
 const SOURCE_LICENSE_FILES = { "flag-icons": [FI, "LICENSE"], "circle-flags": [CF, "LICENSE.md"] };
@@ -90,6 +94,11 @@ const EXTRAS = {
   "es-ct": { name: "Catalonia", parent: "ES", languages: ["ca", "es", "oc"], kind: "subdivision", native: "Catalunya" },
   "es-pv": { name: "Basque Country", parent: "ES", languages: ["eu", "es"], kind: "subdivision", native: "Euskadi" },
   "es-ga": { name: "Galicia", parent: "ES", languages: ["gl", "es"], kind: "subdivision", native: "Galicia" },
+  "es-vc": { name: "Valencian Community", parent: "ES", languages: ["ca", "es"], kind: "subdivision", native: "Comunitat Valenciana", localeTag: "ca-ES-valencia", files: { default: { commons: { file: "valencia.svg", title: "Flag of the Land of Valencia (official).svg", author: "Mutxamel and others", license: "Public domain", url: "https://commons.wikimedia.org/wiki/File:Flag_of_the_Land_of_Valencia_(official).svg" } } } },
+  "es-ib": { name: "Balearic Islands", parent: "ES", languages: ["ca", "es"], kind: "subdivision", native: "Illes Balears", files: { default: { commons: { file: "balearic.svg", title: "Flag of the Balearic Islands.svg", author: "see file page", license: "CC0", url: "https://commons.wikimedia.org/wiki/File:Flag_of_the_Balearic_Islands.svg" } } } },
+  "es-cn": { name: "Canary Islands", parent: "ES", languages: ["es"], kind: "subdivision", native: "Canarias", files: { default: { stem: "ic" }, square: { stem: "ic" } } },
+  "fr-cor": { name: "Corsica", parent: "FR", languages: ["co", "fr"], kind: "subdivision", native: "Corsica", files: { default: { commons: { file: "corsica.svg", title: "Flag of Corsica.svg", author: "Patricia.fidi", license: "CC0", url: "https://commons.wikimedia.org/wiki/File:Flag_of_Corsica.svg" } }, circle: { stem: "fr-20r" } } },
+  occitania: { name: "Occitania", parent: "FR", languages: ["oc", "fr"], kind: "region", native: "Occitania", files: { default: { commons: { file: "occitania.svg", title: "Flag of Occitania (with star).svg", author: "Nimlar and others", license: "Public domain", url: "https://commons.wikimedia.org/wiki/File:Flag_of_Occitania_(with_star).svg" } } } },
   eu: { name: "European Union", official: "European Union", languages: ["bg", "hr", "cs", "da", "nl", "en", "et", "fi", "fr", "de", "el", "hu", "ga", "it", "lv", "lt", "mt", "pl", "pt", "ro", "sk", "sl", "es", "sv"], kind: "organization" },
   un: { name: "United Nations", official: "United Nations", languages: ["ar", "zh", "en", "fr", "ru", "es"], kind: "organization" },
 };
@@ -106,6 +115,8 @@ const EXCLUDED = [
   ["Disputed or unrecognized entities (Artsakh, Somaliland, Transnistria, Northern Cyprus, South Ossetia, Sealand, Donetsk and Luhansk, etc.)", "Politically contested; not in the ISO list. Left out beyond what the ISO list and Kosovo (user-assigned code XK, widely used) require."],
   ["Historical, ethnic, LGBT, pirate, sports and novelty flags in the sources", "Out of scope: a country and region flag category only."],
   ["Per-state and per-province subdivision flags (US states, Australian states, Indian states, etc.)", "Out of scope for this release; may come later as a separate collection."],
+  ["fr-bre (Brittany)", "circle-flags has it, but the only rectangle source on Commons is CC BY-SA 4.0, which this catalog does not use; a circle-only flag would need a missing-variant path everywhere, so it is skipped for now."],
+  ["Sardinia, Sicily and other Italian regions", "circle-flags it-* files are not mapped confidently to regions yet."],
   ["Language flags in circle-flags/language", "A flag represents a country, not a language."],
   ["Wikimedia Commons flag SVGs", "Not bundled: per-file license review required; used only as a manual cross-check reference, nothing copied."],
 ];
@@ -222,39 +233,91 @@ const licenses = [];
 const priorIcons = prior("src/data/icons.json") ?? [];
 const priorDate = new Map(priorIcons.filter((i) => i.collection === "flags").map((i) => [i.slug, i.dateAdded]));
 
+// ---------------------------------------------------------------------------
+// Per-variant sources. A flag that is not in the default sources lists them in EXTRAS[code].files.
+// ---------------------------------------------------------------------------
+const ALLOWED_FILE_LICENSES = new Set(["Public domain", "CC0", "MIT", "Apache-2.0"]);
+const COMMONS_DIR = args.commons ? resolve(args.commons) : null;
+const commonsUsed = [];
+const viewBoxOf = (svg) => {
+  const vb = svg.match(/viewBox="([^"]+)"/)?.[1];
+  if (vb) return vb.trim().split(/[\s,]+/).map(Number);
+  const w = parseFloat(svg.match(/<svg\b[^>]*\swidth="([\d.]+)/)?.[1]);
+  const h = parseFloat(svg.match(/<svg\b[^>]*\sheight="([\d.]+)/)?.[1]);
+  return Number.isFinite(w) && Number.isFinite(h) ? [0, 0, w, h] : null;
+};
+const withViewBox = (svg, [x, y, w, h]) => svg.replace(/<svg\b([^>]*)>/, (m, a) => `<svg${a.replace(/\sviewBox="[^"]*"/, "").replace(/\s(width|height)="[^"]*"/g, "")} viewBox="${x} ${y} ${w} ${h}">`);
+/** 4:3 frame without distortion: pad the short side with empty space, centered. */
+const to4x3 = (svg) => {
+  const [x, y, w, h] = viewBoxOf(svg);
+  if (w / h > 4 / 3) { const h2 = (w * 3) / 4; return withViewBox(svg, [x, y - (h2 - h) / 2, w, h2]); }
+  const w2 = (h * 4) / 3;
+  return withViewBox(svg, [x - (w2 - w) / 2, y, w2, h]);
+};
+/** 1x1 the way flag-icons does it: center crop of the flag. */
+const toSquare = (svg) => {
+  const [x, y, w, h] = viewBoxOf(svg);
+  return w >= h ? withViewBox(svg, [x + (w - h) / 2, y, h, h]) : withViewBox(svg, [x, y + (h - w) / 2, w, w]);
+};
+function planFor(code, extra) {
+  const files = extra?.files;
+  const fi = (kind, stem) => {
+    const f = join(FI, "flags", kind, `${stem}.svg`);
+    if (!existsSync(f)) { problems.push(`missing flag-icons file for ${code}`); return null; }
+    return { svg: rd(f), source: "flag-icons", upstream: `flags/${kind}/${stem}.svg` };
+  };
+  const cf = (stem) => {
+    const f = join(CF, "flags", `${stem}.svg`);
+    return existsSync(f) ? { svg: rd(f), source: "circle-flags", upstream: `flags/${stem}.svg` } : null;
+  };
+  const commons = (spec) => {
+    if (!COMMONS_DIR || !existsSync(join(COMMONS_DIR, spec.file))) { problems.push(`missing Wikimedia Commons file ${spec.file} for ${code}`); return null; }
+    commonsUsed.push(spec);
+    return { svg: rd(join(COMMONS_DIR, spec.file)), source: "wikimedia-commons", upstream: spec.title, license: spec.license };
+  };
+  let def, sq, circ;
+  if (files?.default?.commons) {
+    const c = commons(files.default.commons);
+    if (!c) return null;
+    def = { ...c, svg: to4x3(c.svg) };
+    sq = { ...c, svg: toSquare(c.svg), upstream: `${c.upstream} (center crop)` };
+  } else {
+    def = fi("4x3", files?.default?.stem ?? code);
+    sq = fi("1x1", files?.square?.stem ?? code);
+  }
+  circ = cf(files?.circle?.stem ?? code);
+  if (!def || !sq) return null;
+  if (!circ) circ = { svg: circleFrom1x1(sq.svg), source: sq.source, upstream: `derived from ${sq.upstream}`, license: sq.license };
+  return { default: def, square: sq, circle: circ };
+}
+
 for (const t of territories) {
   const stem = t.code;
-  const p43 = join(FI, "flags/4x3", `${stem}.svg`);
-  const p11 = join(FI, "flags/1x1", `${stem}.svg`);
-  const pc = join(CF, "flags", `${stem}.svg`);
-  if (!existsSync(p43) || !existsSync(p11)) { problems.push(`missing flag-icons file for ${t.code}`); continue; }
   const extra = EXTRAS[t.code];
   const name = extra ? extra.name : regionNames.of(t.upper)?.replace(/ SAR China$/, "").replace(/ & /g, " and ");
   if (!name) { problems.push(`no name for ${t.code}`); continue; }
   const allNames = extra ? [] : (isoCountries.getName(t.upper, "en", { select: "all" }) ?? []);
   const slug = `flag-${t.code}`;
 
-  const circleFromCf = existsSync(pc);
-  const rawCircle = circleFromCf ? rd(pc) : circleFrom1x1(rd(p11));
+  // Where each variant comes from. Default: flag-icons 4x3 and 1x1, circle-flags circle (or a crop of the 1x1).
+  const plan = planFor(t.code, extra);
+  if (!plan) continue;
   const svgs = {
-    default: optimizeSvg(rd(p43), `${slug}/default`),
-    square: optimizeSvg(rd(p11), `${slug}/square`),
-    circle: optimizeSvg(rawCircle, `${slug}/circle`),
+    default: optimizeSvg(plan.default.svg, `${slug}/default`),
+    square: optimizeSvg(plan.square.svg, `${slug}/square`),
+    circle: optimizeSvg(plan.circle.svg, `${slug}/circle`),
   };
   const variants = {};
   for (const [v, svg] of Object.entries(svgs)) {
     if (!/viewBox="/.test(svg)) problems.push(`${slug}/${v}: missing viewBox`);
     if (/<script|<image|onload=|javascript:|<foreignObject|<!--|<metadata|<desc|<title/i.test(svg)) problems.push(`${slug}/${v}: unsafe or credit content`);
     if (Buffer.byteLength(svg) > LIMIT && !(OVERSIZE_OK.has(t.code) && v !== "circle")) problems.push(`${slug}/${v}: over limit (${Buffer.byteLength(svg)})`);
-    writes.set(`public/icons/${slug}/${v}.svg`, svg + "\n");
+    writes.set(`public/icons/${slug}/${v}.svg`, svg); // no trailing newline: matches what the svgo workflow writes
     variants[v] = `/icons/${slug}/${v}.svg`;
-    const source = v === "circle" && circleFromCf ? "circle-flags" : "flag-icons";
-    if (!SOURCES[source] || !SOURCE_LICENSE_FILES[source]) problems.push(`${slug}/${v}: source ${source} has no license entry`);
-    licenses.push({
-      file: `public/icons/${slug}/${v}.svg`, slug, variant: v, source,
-      upstream: v === "default" ? `flags/4x3/${stem}.svg` : v === "square" ? `flags/1x1/${stem}.svg` : circleFromCf ? `flags/${stem}.svg` : `derived from flags/1x1/${stem}.svg`,
-      license: SOURCES[source]?.license ?? "UNKNOWN",
-    });
+    const { source, upstream, license } = plan[v];
+    if (!SOURCES[source] || (!SOURCE_LICENSE_FILES[source] && source !== "wikimedia-commons")) problems.push(`${slug}/${v}: source ${source} has no license entry`);
+    if (source === "wikimedia-commons" && !ALLOWED_FILE_LICENSES.has(license)) problems.push(`${slug}/${v}: license "${license}" is not accepted`);
+    licenses.push({ file: `public/icons/${slug}/${v}.svg`, slug, variant: v, source, upstream, license: license ?? SOURCES[source]?.license ?? "UNKNOWN" });
   }
 
   const colors = palette(svgs.default);
@@ -273,7 +336,7 @@ for (const t of territories) {
     }
     return undefined;
   })();
-  const locales = extra?.kind === "organization" ? [] : extra ? langs.map((l) => `${l}-${extra.parent}-${t.code.split("-")[1].toUpperCase()}`) : langs.map((l) => `${l}-${t.upper}`);
+  const locales = extra?.kind === "organization" ? [] : extra ? [...(extra.localeTag ? [extra.localeTag] : []), ...langs.map((l) => `${l}-${extra.parent}-${(t.code.includes("-") ? t.code.split("-")[1] : t.code).toUpperCase()}`)] : langs.map((l) => `${l}-${t.upper}`);
   const emoji = TAG_EMOJI[t.code] ? tagEmoji(TAG_EMOJI[t.code]) : extra ? "" : emojiFor(t.code);
   const alpha3 = extra ? undefined : t.code === "xk" ? "XKX" : isoCountries.alpha2ToAlpha3(t.upper);
   const numeric = extra || t.code === "xk" ? undefined : isoCountries.alpha2ToNumeric(t.upper);
@@ -298,6 +361,11 @@ for (const t of territories) {
     url: SOURCES["flag-icons"].url, collection: "flags", dateAdded: priorDate.get(slug) ?? today,
     collectionMeta: { type: "flag", kind, ...(meta.iso ? { iso: meta.iso } : {}), colors: colors.map((c) => `${c.hex}:${c.share}`), colorNames: families },
   });
+}
+
+if (SOURCES["wikimedia-commons"]) {
+  const seen = new Map(commonsUsed.map((c) => [c.file, c]));
+  SOURCES["wikimedia-commons"].files = [...seen.values()].sort((a, b) => (a.title < b.title ? -1 : 1)).map(({ title, author, license, url }) => ({ title, author, license, url }));
 }
 
 // Cross-checks: every ISO alpha-2 present, counts at or above the floor.
@@ -327,7 +395,13 @@ writes.set("public/data/flags-search.json", JSON.stringify(Object.fromEntries(fl
 writes.set(`${dataDir}/licenses.json`, JSON.stringify({ sources: SOURCES, excluded: EXCLUDED, files: licenses }, null, 2) + "\n");
 
 const licenseText = ([dir, file]) => rd(join(dir, file)).trim();
-const sourceBlocks = Object.entries(SOURCES).map(([key, s]) => `## ${key}
+const sourceBlocks = Object.entries(SOURCES).map(([key, s]) => key === "wikimedia-commons" ? `## wikimedia-commons (rectangle variants of a few regional flags)
+
+- URL: ${s.url}
+- License: public domain or CC0, per file, verified through the Commons API on ${s.accessed}. Neither requires attribution; the files are listed for transparency.
+
+${s.files.map((f) => `- ${f.title} by ${f.author}, ${f.license}: ${f.url}`).join("\n")}
+` : `## ${key}
 
 - URL: ${s.url}
 - Version: ${s.version}, commit ${s.commit}
@@ -349,7 +423,7 @@ ${sourceBlocks}
 
 - i18n-iso-countries ${refRequire("i18n-iso-countries/package.json").version} (MIT): ISO 3166-1 alpha-2, alpha-3 and numeric codes and localized country names.
 - Unicode CLDR via cldr-core ${refRequire("cldr-core/package.json").version} (Unicode License V3): territory languages.
-- Wikimedia Commons national flag files were consulted manually as a cross-check only. Nothing was copied from them.
+- Wikimedia Commons files were used only where listed above; otherwise they were a manual cross-check.
 `);
 
 // Docs and READMEs: marker blocks are rewritten, never hand-edited.

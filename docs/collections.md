@@ -9,7 +9,7 @@ Back to the [README](../README.md).
 Most icon libraries focus on UI icons. Brand logos are scattered across press kits, Figma files, and random GitHub repos. **theSVG** is the single source for SVG icons - brand logos, cloud architecture diagrams, and more. Searchable, versioned, and available as npm packages, CDN, CLI, API, and MCP server.
 
 - **<!-- flags:total-icons -->7,900+<!-- /flags:total-icons --> icons** across multiple collections
-- **<!-- flags:count -->258<!-- /flags:count --> country and region flags** (see [Flags](./flags.md))
+- **<!-- flags:count -->263<!-- /flags:count --> country and region flags** (see [Flags](./flags.md))
 - **4,800+ brand icons** across 150+ categories
 - **21 brand families** - every product from Amazon, Google, Microsoft and more, grouped by owner
 - **858 Auth Badge icons** - circular icon badges for 2FA/authenticator apps
@@ -52,7 +52,7 @@ theSVG organizes icons into collections:
 | **Community** | 256 | Dev tools, databases, and frameworks sourced from the open-source community |
 | **Google Cloud** | 214 | Google Cloud Platform icons (2026-Q1) |
 | **Kubernetes** | 38 | Official Kubernetes/CNCF architecture icons |
-| **Flags** | <!-- flags:count -->258<!-- /flags:count --> | ISO 3166-1 plus regional flags, three shapes each |
+| **Flags** | <!-- flags:count -->263<!-- /flags:count --> | ISO 3166-1 plus regional flags, three shapes each |
 
 ### AWS Architecture Icons
 

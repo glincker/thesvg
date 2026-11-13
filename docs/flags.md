@@ -1,6 +1,6 @@
 # Flags
 
-Country and region flags as SVG and components. <!-- flags:count -->258<!-- /flags:count --> flags: every ISO 3166-1 country (<!-- flags:iso -->250<!-- /flags:iso --> including Kosovo, which uses the user-assigned code XK) plus <!-- flags:extras -->8<!-- /flags:extras --> extras for locales and regions: England, Scotland, Wales, Catalonia, the Basque Country, Galicia, the European Union and the United Nations. Each flag comes in three shapes, so <!-- flags:files -->774<!-- /flags:files --> SVG files in all.
+Country and region flags as SVG and components. <!-- flags:count -->263<!-- /flags:count --> flags: every ISO 3166-1 country (<!-- flags:iso -->250<!-- /flags:iso --> including Kosovo, which uses the user-assigned code XK) plus <!-- flags:extras -->13<!-- /flags:extras --> extras for locales and regions: England, Scotland, Wales, Catalonia, the Basque Country, Galicia, the Valencian Community, the Balearic Islands, the Canary Islands, Corsica, Occitania, the European Union and the United Nations. Each flag comes in three shapes, so <!-- flags:files -->789<!-- /flags:files --> SVG files in all.
 
 Back to the [README](../README.md). Package details: [`@thesvg/flags`](../packages/flags/README.md).
 

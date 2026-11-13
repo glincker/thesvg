@@ -117,12 +117,13 @@ Icons grouped by the company that owns them. Each family page lists every offici
 
 ## Flags
 
-258 country and region flags: every ISO 3166-1 country plus England, Scotland, Wales, Catalonia, the Basque Country, Galicia, the European Union and the United Nations. Category "Flags", collection "flags". Browse: https://thesvg.org/collection/flags
+263 country and region flags: every ISO 3166-1 country plus England, Scotland, Wales, Catalonia, the Basque Country, Galicia, the Valencian Community, the Balearic Islands, the Canary Islands, Corsica, Occitania, the European Union and the United Nations. Category "Flags", collection "flags". Browse: https://thesvg.org/collection/flags
 
 - Slugs: flag-{code}, the lowercase ISO 3166-1 alpha-2 code (flag-us, flag-de) or the regional code (flag-gb-eng, flag-es-ct, flag-eu, flag-un)
 - Variants: default (4x3 rectangle), square (1x1), circle. File: https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/flag-us/circle.svg
 - Search aliases cover English and native names, official names, ISO alpha-2, alpha-3 and numeric codes, emoji, former names and locale tags (deutschland, DEU, 276, holland, england, catalunya, pt-BR)
-- npm: @thesvg/flags (per-flag imports, React components, getFlagForLocale)
+- Metadata: ISO alpha-2, alpha-3 and numeric codes, native name, emoji, region, languages, locale hints, and a color palette (colors: hex and share in percent in painted-area order, colorNames: red, blue, gold and so on). The catalog hex is the dominant non-white color. Search by color too (red white blue, #ed2939, tricolor).
+- Need only flags? Install @thesvg/flags (per-flag imports, React components, getFlagForLocale). Need everything else? Use @thesvg/icons or your framework package: flags are not bundled into them. The CDN paths and raw SVG URLs for flags stay valid.
 - CLI: npx @thesvg/cli add flag-de --variant circle
 - A flag is a country, not a language. Show the native language name beside it, mark the flag aria-hidden when decorative, and do not use flags as the only language selector. Flags are public symbols: see LEGAL and DISCLAIMER.
 

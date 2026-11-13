@@ -243,8 +243,8 @@ const ALL_SLIDES: Slide[] = [
   {
     badge: "Flags",
     badgeIcon: Package,
-    title: "258 Country and Region Flags",
-    description: "Every ISO 3166-1 country plus England, Scotland, Wales, Catalonia, the EU and the UN. Three shapes each: 4x3, square and circle.",
+    title: "263 Country and Region Flags",
+    description: "Every ISO 3166-1 country plus England, Scotland, Wales, Catalonia, the Canary Islands, the EU and the UN. Three shapes each: 4x3, square and circle.",
     cta: { label: "Browse Flags", href: "#popular" },
     ctaSecondary: { label: "All Categories", href: "#categories" },
     gradient: "from-sky-50/50 via-background to-sky-50/30 dark:from-sky-950/20 dark:via-background dark:to-sky-950/10",

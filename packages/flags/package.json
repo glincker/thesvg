@@ -72,8 +72,8 @@
   "scripts": {
     "generate": "node ../../scripts/flags/generate-flags.mjs",
     "build": "tsx scripts/build.ts",
-    "test": "tsx scripts/build.ts && tsx --test tests/*.test.ts",
-    "prepack": "npm run build"
+    "test": "tsx scripts/build.ts && tsx --test --test-concurrency=1 tests/*.test.ts",
+    "prepack": "node -e \"const fs=require('fs');if(!fs.existsSync('dist/manifest.json'))require('child_process').execSync('npm run build',{stdio:'inherit'})\""
   },
   "peerDependencies": {
     "react": ">=18"

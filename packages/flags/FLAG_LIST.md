@@ -1,6 +1,6 @@
 <!-- flags-list:start -->
 <details>
-<summary>Flag list (258)</summary>
+<summary>Flag list (263)</summary>
 
 **Africa** (59): Angola (`flag-ao`), Burkina Faso (`flag-bf`), Burundi (`flag-bi`), Benin (`flag-bj`), Botswana (`flag-bw`), Congo - Kinshasa (`flag-cd`), Central African Republic (`flag-cf`), Congo - Brazzaville (`flag-cg`), Côte d’Ivoire (`flag-ci`), Cameroon (`flag-cm`), Cape Verde (`flag-cv`), Djibouti (`flag-dj`), Algeria (`flag-dz`), Egypt (`flag-eg`), Western Sahara (`flag-eh`), Eritrea (`flag-er`), Ethiopia (`flag-et`), Gabon (`flag-ga`), Ghana (`flag-gh`), Gambia (`flag-gm`), Guinea (`flag-gn`), Equatorial Guinea (`flag-gq`), Guinea-Bissau (`flag-gw`), Kenya (`flag-ke`), Comoros (`flag-km`), Liberia (`flag-lr`), Lesotho (`flag-ls`), Libya (`flag-ly`), Morocco (`flag-ma`), Madagascar (`flag-mg`), Mali (`flag-ml`), Mauritania (`flag-mr`), Mauritius (`flag-mu`), Malawi (`flag-mw`), Mozambique (`flag-mz`), Namibia (`flag-na`), Niger (`flag-ne`), Nigeria (`flag-ng`), Réunion (`flag-re`), Rwanda (`flag-rw`), Seychelles (`flag-sc`), Sudan (`flag-sd`), St. Helena (`flag-sh`), Sierra Leone (`flag-sl`), Senegal (`flag-sn`), Somalia (`flag-so`), South Sudan (`flag-ss`), São Tomé and Príncipe (`flag-st`), Eswatini (`flag-sz`), Chad (`flag-td`), French Southern Territories (`flag-tf`), Togo (`flag-tg`), Tunisia (`flag-tn`), Tanzania (`flag-tz`), Uganda (`flag-ug`), Mayotte (`flag-yt`), South Africa (`flag-za`), Zambia (`flag-zm`), Zimbabwe (`flag-zw`)
 
@@ -16,7 +16,7 @@
 
 **Oceania** (25): American Samoa (`flag-as`), Australia (`flag-au`), Cook Islands (`flag-ck`), Fiji (`flag-fj`), Micronesia (`flag-fm`), Guam (`flag-gu`), Kiribati (`flag-ki`), Marshall Islands (`flag-mh`), Northern Mariana Islands (`flag-mp`), New Caledonia (`flag-nc`), Norfolk Island (`flag-nf`), Nauru (`flag-nr`), Niue (`flag-nu`), New Zealand (`flag-nz`), French Polynesia (`flag-pf`), Papua New Guinea (`flag-pg`), Pitcairn Islands (`flag-pn`), Palau (`flag-pw`), Solomon Islands (`flag-sb`), Tokelau (`flag-tk`), Tonga (`flag-to`), Tuvalu (`flag-tv`), Vanuatu (`flag-vu`), Wallis and Futuna (`flag-wf`), Samoa (`flag-ws`)
 
-**Regional** (6): Antarctica (`flag-aq`), Bouvet Island (`flag-bv`), Catalonia (`flag-es-ct`), Galicia (`flag-es-ga`), Basque Country (`flag-es-pv`), Heard and McDonald Islands (`flag-hm`)
+**Regional** (11): Antarctica (`flag-aq`), Bouvet Island (`flag-bv`), Canary Islands (`flag-es-cn`), Catalonia (`flag-es-ct`), Galicia (`flag-es-ga`), Balearic Islands (`flag-es-ib`), Basque Country (`flag-es-pv`), Valencian Community (`flag-es-vc`), Corsica (`flag-fr-cor`), Heard and McDonald Islands (`flag-hm`), Occitania (`flag-occitania`)
 
 **South America** (18): Argentina (`flag-ar`), Aruba (`flag-aw`), Bolivia (`flag-bo`), Caribbean Netherlands (`flag-bq`), Brazil (`flag-br`), Chile (`flag-cl`), Colombia (`flag-co`), Curaçao (`flag-cw`), Ecuador (`flag-ec`), Falkland Islands (`flag-fk`), French Guiana (`flag-gf`), Guyana (`flag-gy`), Peru (`flag-pe`), Paraguay (`flag-py`), Suriname (`flag-sr`), Trinidad and Tobago (`flag-tt`), Uruguay (`flag-uy`), Venezuela (`flag-ve`)
 

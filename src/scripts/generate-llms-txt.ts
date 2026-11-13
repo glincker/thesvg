@@ -200,7 +200,7 @@ function flagsSection(icons: IconEntry[], detailed: boolean): string {
   const base = `
 ## Flags
 
-${flags.length} country and region flags: every ISO 3166-1 country plus England, Scotland, Wales, Catalonia, the Basque Country, Galicia, the European Union and the United Nations. Category "Flags", collection "flags". Browse: https://thesvg.org/collection/flags
+${flags.length} country and region flags: every ISO 3166-1 country plus England, Scotland, Wales, Catalonia, the Basque Country, Galicia, the Valencian Community, the Balearic Islands, the Canary Islands, Corsica, Occitania, the European Union and the United Nations. Category "Flags", collection "flags". Browse: https://thesvg.org/collection/flags
 
 - Slugs: flag-{code}, the lowercase ISO 3166-1 alpha-2 code (flag-us, flag-de) or the regional code (flag-gb-eng, flag-es-ct, flag-eu, flag-un)
 - Variants: default (4x3 rectangle), square (1x1), circle. File: https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/flag-us/circle.svg

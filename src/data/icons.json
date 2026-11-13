@@ -64962,6 +64962,52 @@
     }
   },
   {
+    "slug": "flag-es-cn",
+    "title": "Canary Islands",
+    "aliases": [
+      "es-es-cn",
+      "canarias",
+      "islas canarias",
+      "canarian",
+      "es cn",
+      "blue",
+      "gold",
+      "white",
+      "0768a9",
+      "ffcc00",
+      "ffffff",
+      "tricolor",
+      "tricolour"
+    ],
+    "hex": "0768a9",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-es-cn/default.svg",
+      "square": "/icons/flag-es-cn/square.svg",
+      "circle": "/icons/flag-es-cn/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "subdivision",
+      "colors": [
+        "0768a9:33",
+        "ffcc00:33",
+        "ffffff:33"
+      ],
+      "colorNames": [
+        "blue",
+        "gold",
+        "white"
+      ]
+    }
+  },
+  {
     "slug": "flag-es-ct",
     "title": "Catalonia",
     "aliases": [
@@ -65049,6 +65095,58 @@
     }
   },
   {
+    "slug": "flag-es-ib",
+    "title": "Balearic Islands",
+    "aliases": [
+      "ca-es-ib",
+      "es-es-ib",
+      "illes balears",
+      "baleares",
+      "mallorca",
+      "majorca",
+      "es ib",
+      "yellow",
+      "red",
+      "purple",
+      "fcdd09",
+      "da121a",
+      "40104c",
+      "e24416",
+      "eb7812",
+      "f3ab0e"
+    ],
+    "hex": "fcdd09",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-es-ib/default.svg",
+      "square": "/icons/flag-es-ib/square.svg",
+      "circle": "/icons/flag-es-ib/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "subdivision",
+      "colors": [
+        "fcdd09:38",
+        "da121a:30",
+        "40104c:16",
+        "e24416:2",
+        "eb7812:2",
+        "f3ab0e:2"
+      ],
+      "colorNames": [
+        "yellow",
+        "red",
+        "purple"
+      ]
+    }
+  },
+  {
     "slug": "flag-es-pv",
     "title": "Basque Country",
     "aliases": [
@@ -65094,6 +65192,56 @@
         "red",
         "green",
         "white"
+      ]
+    }
+  },
+  {
+    "slug": "flag-es-vc",
+    "title": "Valencian Community",
+    "aliases": [
+      "ca-es-valencia",
+      "ca-es-vc",
+      "es-es-vc",
+      "comunitat valenciana",
+      "valencia",
+      "valenciano",
+      "es vc",
+      "yellow",
+      "red",
+      "blue",
+      "fcdd09",
+      "da121a",
+      "0072bc",
+      "e24416",
+      "f3aa0e"
+    ],
+    "hex": "fcdd09",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-es-vc/default.svg",
+      "square": "/icons/flag-es-vc/square.svg",
+      "circle": "/icons/flag-es-vc/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "subdivision",
+      "colors": [
+        "fcdd09:38",
+        "da121a:32",
+        "0072bc:12",
+        "e24416:7",
+        "f3aa0e:3"
+      ],
+      "colorNames": [
+        "yellow",
+        "red",
+        "blue"
       ]
     }
   },
@@ -65555,6 +65703,51 @@
         "blue",
         "red",
         "white"
+      ]
+    }
+  },
+  {
+    "slug": "flag-fr-cor",
+    "title": "Corsica",
+    "aliases": [
+      "co-fr-cor",
+      "fr-fr-cor",
+      "corse",
+      "corsican",
+      "corsu",
+      "moor head",
+      "testa mora",
+      "fr cor",
+      "white",
+      "black",
+      "ffffff",
+      "000000",
+      "a9a9a9"
+    ],
+    "hex": "000000",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-fr-cor/default.svg",
+      "square": "/icons/flag-fr-cor/square.svg",
+      "circle": "/icons/flag-fr-cor/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "subdivision",
+      "colors": [
+        "ffffff:71",
+        "000000:18",
+        "a9a9a9:2"
+      ],
+      "colorNames": [
+        "white",
+        "black"
       ]
     }
   },
@@ -71320,6 +71513,50 @@
         "blue",
         "red",
         "white"
+      ]
+    }
+  },
+  {
+    "slug": "flag-occitania",
+    "title": "Occitania",
+    "aliases": [
+      "oc-fr-occitania",
+      "fr-fr-occitania",
+      "occitan",
+      "occitanie",
+      "oc",
+      "red",
+      "yellow",
+      "d4001c",
+      "fddd00",
+      "de3815",
+      "f2a607"
+    ],
+    "hex": "d4001c",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-occitania/default.svg",
+      "square": "/icons/flag-occitania/square.svg",
+      "circle": "/icons/flag-occitania/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "region",
+      "colors": [
+        "d4001c:82",
+        "fddd00:10",
+        "de3815:3",
+        "f2a607:3"
+      ],
+      "colorNames": [
+        "red",
+        "yellow"
       ]
     }
   },
