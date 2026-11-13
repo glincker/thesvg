@@ -28,6 +28,16 @@ import { rect, square, circle } from "@thesvg/flags/flags/de"; // SVG strings
 
 Raw files: `@thesvg/flags/svg/4x3/de.svg`, `@thesvg/flags/svg/1x1/de.svg`, `@thesvg/flags/svg/circle/de.svg`.
 
+No build step? Use a plain image from the CDN:
+
+```html
+<img src="https://cdn.jsdelivr.net/npm/@thesvg/flags/dist/svg/4x3/de.svg" width="32" height="24" alt="" />
+```
+
+## About the SVGs
+
+Each flag is a small, flat-color SVG with no scripts, no external references and no embedded credit text, optimized for inline use and safe to restyle with CSS sizing. The same files power every flag page on [thesvg.org](https://thesvg.org/collection/flags).
+
 ## Variants and props
 
 | Variant | File | Ratio |
