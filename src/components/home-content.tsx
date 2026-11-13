@@ -82,9 +82,11 @@ interface HomeContentProps {
   defaultCollection?: Collection;
   defaultCategory?: string;
   defaultCategorySlug?: string;
+  /** A collection with its own browser (Flags) passes it here and keeps the sidebar and shell. */
+  children?: React.ReactNode;
 }
 
-export function HomeContent({ categoryCounts, count, recentIcons, collections, defaultCollection, defaultCategory, defaultCategorySlug }: HomeContentProps) {
+export function HomeContent({ categoryCounts, count, recentIcons, collections, defaultCollection, defaultCategory, defaultCategorySlug, children }: HomeContentProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -417,7 +419,9 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
 
       {/* Main content area */}
       <div className={cn("transition-[padding] duration-200 ease-in-out", collapsed ? "md:pl-21" : "md:pl-59")}>
-        {isDefaultView ? (
+        {children ? (
+          <div className="mx-auto max-w-7xl px-3 py-4 sm:px-4">{children}</div>
+        ) : isDefaultView ? (
           /* Hero landing */
           <div className="mx-auto max-w-7xl px-3 py-4 sm:px-4">
             <HomeHero

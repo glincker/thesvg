@@ -42,7 +42,7 @@ function FlagTileImpl({ tile, variant, size, starred, tabIndex, onOpen, onToggle
         className="flex w-full flex-col items-center gap-2 rounded-xl border border-border/40 bg-card/30 p-3 pb-2 text-center outline-none transition-colors hover:bg-muted focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 motion-reduce:transition-none dark:border-white/[0.06] dark:bg-white/[0.02]"
       >
         <span className="flex h-16 items-center justify-center">
-          <img src={flagSrc(tile.slug, variant)} alt="" width={width} height={height} loading="lazy" decoding="async" className="max-h-16 w-auto object-contain" />
+          <img src={flagSrc(tile.slug, variant)} alt="" width={width} height={height} loading="lazy" decoding="async" className="object-contain" />
         </span>
         <span className="line-clamp-2 text-xs font-medium leading-tight">{tile.name}</span>
         <span className="text-[10px] text-muted-foreground">{tile.iso ?? tile.code.toUpperCase()}</span>
