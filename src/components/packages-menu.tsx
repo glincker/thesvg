@@ -9,10 +9,29 @@ import { cn } from "@/lib/utils";
 
 const SHOWN: PackageEntry["group"][] = ["brand", "ui", "flags"];
 
+const size = (g: PackageEntry["group"]): number => PACKAGES.filter((p) => p.group === g).length;
+
+/** Two columns with the lead group first in the first one; the other groups are placed to even out the heights. */
+function splitColumns(lead: PackageEntry["group"]): PackageEntry["group"][][] {
+  const rest = SHOWN.filter((g) => g !== lead);
+  let best: PackageEntry["group"][][] = [[lead, ...rest], []];
+  let bestGap = Infinity;
+  for (let mask = 0; mask < 1 << rest.length; mask++) {
+    const first = [lead, ...rest.filter((_, i) => mask & (1 << i))];
+    const second = rest.filter((_, i) => !(mask & (1 << i)));
+    const gap = Math.abs(first.reduce((n, g) => n + size(g), 0) - second.reduce((n, g) => n + size(g), 0));
+    if (gap < bestGap && second.length > 0) {
+      best = [first, second];
+      bestGap = gap;
+    }
+  }
+  return best;
+}
+
 /** Header menu for the npm packages. The group for the section you are in comes first; two columns keep it all in view. */
 export function PackagesMenu({ lead }: { lead: PackageEntry["group"] }) {
   const [copied, setCopied] = useState<string | null>(null);
-  const groups = [lead, ...SHOWN.filter((g) => g !== lead)].filter((g) => SHOWN.includes(g));
+  const columns = splitColumns(lead);
   const copy = async (name: string) => {
     try {
       await navigator.clipboard.writeText(installCommand(name));
@@ -38,9 +57,11 @@ export function PackagesMenu({ lead }: { lead: PackageEntry["group"] }) {
         <UiGlyph name="chevron-down" className="h-3.5 w-3.5 opacity-60" />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" sideOffset={8} className="w-[min(40rem,calc(100vw-2rem))] p-0">
-        <div className="max-h-[80vh] overflow-y-auto p-1.5 sm:columns-2 sm:gap-2">
-          {groups.map((g, gi) => (
-            <div key={g} className={cn("break-inside-avoid", gi > 0 && "mt-1 border-t border-border/40 pt-1 sm:mt-3 sm:border-t-0 sm:pt-0")}>
+        <div className="grid max-h-[80vh] gap-x-2 overflow-y-auto p-1.5 sm:grid-cols-2">
+          {columns.map((col, ci) => (
+            <div key={ci} className="min-w-0">
+              {col.map((g, gi) => (
+            <div key={g} className={cn(gi > 0 && "mt-3")}>
               <p className="px-2 pb-1 pt-1.5 text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground/70">{GROUP_TITLES[g]}</p>
               {PACKAGES.filter((p) => p.group === g).map((p) => (
                 <div key={p.name} className="group flex items-center gap-1 rounded-lg transition-colors hover:bg-accent/60 focus-within:bg-accent/60">
@@ -67,6 +88,8 @@ export function PackagesMenu({ lead }: { lead: PackageEntry["group"] }) {
                     <UiGlyph name="external-link" className="size-5" />
                   </a>
                 </div>
+              ))}
+            </div>
               ))}
             </div>
           ))}
