@@ -21,9 +21,10 @@ const ROWS = [
   { dir: "left", speed: "a" },
   { dir: "right", speed: "c" },
   { dir: "left", speed: "e" },
+  { dir: "right", speed: "b" },
 ] as const;
 
-const PER_ROW = 16;
+const PER_ROW = 20;
 
 function shuffled(codes: string[]): string[] {
   const a = [...codes];
@@ -43,13 +44,13 @@ export function FlagsHeroVisual() {
 
   return (
     <div className="flags-scene relative h-[19rem] w-[34rem] -rotate-[9deg] overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_16%,black_84%,transparent)] xl:w-[40rem]">
-      <div className="flex h-full flex-col justify-center gap-3.5">
+      <div className="flex h-full flex-col justify-center gap-3">
         {ROWS.map((row, r) => {
           const codes = pool.slice(r * PER_ROW, (r + 1) * PER_ROW);
           return (
-            <div key={r} className="flags-row relative flex w-max gap-3.5 hover:z-20" data-dir={row.dir} data-speed={row.speed}>
+            <div key={r} className="flags-row relative flex w-max gap-3 hover:z-20" data-dir={row.dir} data-speed={row.speed}>
               {[0, 1].map((copy) => (
-                <ul key={copy} className="flex shrink-0 gap-3.5" aria-hidden={copy === 1 ? true : undefined}>
+                <ul key={copy} className="flex shrink-0 gap-3" aria-hidden={copy === 1 ? true : undefined}>
                   {codes.map((code) => (
                     <li key={`${copy}-${code}`} className="group/flag relative">
                       <Link
@@ -60,7 +61,7 @@ export function FlagsHeroVisual() {
                         className="pointer-events-auto block rounded-md ring-1 ring-white/10 transition-transform duration-200 hover:scale-110 focus-visible:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400"
                       >
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={`/icons/flag-${code}/default.svg`} alt="" width={64} height={48} loading="lazy" decoding="async" className="h-12 w-16 rounded-md object-cover" />
+                        <img src={`/icons/flag-${code}/default.svg`} alt="" width={48} height={36} loading="lazy" decoding="async" className="h-9 w-12 rounded object-cover" />
                       </Link>
                       <span role="tooltip" className="pointer-events-none absolute -top-7 left-1/2 z-10 -translate-x-1/2 rotate-[9deg] whitespace-nowrap rounded-md bg-black/85 px-2 py-1 text-[0.6875rem] font-medium text-white opacity-0 transition-opacity duration-150 group-hover/flag:opacity-100 group-focus-within/flag:opacity-100 motion-reduce:transition-none">
                         {NAMES.get(code) ?? code}

@@ -369,12 +369,13 @@ html {
   border-radius: 1.25rem;
 }
 .dark .icon-preview-bg[data-tone="dark"]::before {
-  background: oklch(0.74 0.006 260);
-  box-shadow: 0 1px 2px oklch(0 0 0 / 0.35), inset 0 1px 0 oklch(1 0 0 / 0.18);
+  /* A mid-gray backing, not white: enough contrast for a near-black mark while the tile stays matte. */
+  background: oklch(0.55 0.006 260);
+  box-shadow: inset 0 0 0 1px oklch(1 0 0 / 0.1);
 }
 .icon-preview-bg[data-tone="light"]::before {
-  background: oklch(0.3 0.008 260);
-  box-shadow: 0 1px 2px oklch(0 0 0 / 0.18);
+  background: oklch(0.5 0.008 260);
+  box-shadow: inset 0 0 0 1px oklch(0 0 0 / 0.08);
 }
 .dark .icon-preview-bg[data-tone="light"]::before {
   content: none;
