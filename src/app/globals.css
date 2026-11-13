@@ -349,7 +349,8 @@ html {
   background-color: oklch(0.25 0.007 260);
 }
 
-/* Plate behind artwork that would vanish: near-black marks in dark mode, near-white marks in light mode. */
+/* White plate behind artwork that would vanish: near-black marks in dark mode, near-white marks in light mode.
+   Temporary until generated light variants replace it; the artwork itself is never touched. */
 .dark .icon-preview-bg[data-tone="dark"]::before,
 .icon-preview-bg[data-tone="light"]::before {
   content: "";
@@ -357,7 +358,6 @@ html {
   z-index: -1;
   left: 50%;
   top: 50%;
-  /* About 1.25x the icon, so the plate frames the mark instead of competing with it. */
   height: min(60%, 3rem);
   aspect-ratio: 1;
   transform: translate(-50%, -50%);
@@ -369,13 +369,12 @@ html {
   border-radius: 1.25rem;
 }
 .dark .icon-preview-bg[data-tone="dark"]::before {
-  /* A mid-gray backing, not white: enough contrast for a near-black mark while the tile stays matte. */
-  background: oklch(0.55 0.006 260);
-  box-shadow: inset 0 0 0 1px oklch(1 0 0 / 0.1);
+  background: oklch(0.97 0.002 260);
+  box-shadow: 0 1px 2px oklch(0 0 0 / 0.35);
 }
 .icon-preview-bg[data-tone="light"]::before {
-  background: oklch(0.5 0.008 260);
-  box-shadow: inset 0 0 0 1px oklch(0 0 0 / 0.08);
+  background: oklch(0.3 0.008 260);
+  box-shadow: 0 1px 2px oklch(0 0 0 / 0.18);
 }
 .dark .icon-preview-bg[data-tone="light"]::before {
   content: none;
