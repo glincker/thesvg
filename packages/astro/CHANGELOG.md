@@ -1,5 +1,11 @@
 # @thesvg/astro
 
+## 4.0.9
+
+### Patch Changes
+
+- feat: flags in the packages menu and extensions, no repo link on flag pages ([#1548](https://github.com/glincker/thesvg/issues/1548))
+
 ## 4.0.8
 
 ### Patch Changes
