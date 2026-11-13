@@ -9,10 +9,10 @@ import { cn } from "@/lib/utils";
 
 const SHOWN: PackageEntry["group"][] = ["brand", "ui", "flags"];
 
-/** Header menu for the npm packages. Leads with the group for the section you are in and copies the install command. */
-export function PackagesMenu({ inUi }: { inUi: boolean }) {
+/** Header menu for the npm packages. The group for the section you are in comes first; two columns keep it all in view. */
+export function PackagesMenu({ lead }: { lead: PackageEntry["group"] }) {
   const [copied, setCopied] = useState<string | null>(null);
-  const groups = inUi ? [...SHOWN].reverse() : SHOWN;
+  const groups = [lead, ...SHOWN.filter((g) => g !== lead)].filter((g) => SHOWN.includes(g));
   const copy = async (name: string) => {
     try {
       await navigator.clipboard.writeText(installCommand(name));
@@ -37,10 +37,10 @@ export function PackagesMenu({ inUi }: { inUi: boolean }) {
         <img src="/icons/npm/default.svg" alt="" width={18} height={18} className="h-[18px] w-[18px]" />
         <UiGlyph name="chevron-down" className="h-3.5 w-3.5 opacity-60" />
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" sideOffset={8} className="w-[300px] p-0">
-        <div className="max-h-[70vh] overflow-y-auto p-1.5">
+      <DropdownMenuContent align="end" sideOffset={8} className="w-[min(40rem,calc(100vw-2rem))] p-0">
+        <div className="max-h-[80vh] overflow-y-auto p-1.5 sm:columns-2 sm:gap-2">
           {groups.map((g, gi) => (
-            <div key={g} className={cn(gi > 0 && "mt-1 border-t border-border/40 pt-1")}>
+            <div key={g} className={cn("break-inside-avoid", gi > 0 && "mt-1 border-t border-border/40 pt-1 sm:mt-3 sm:border-t-0 sm:pt-0")}>
               <p className="px-2 pb-1 pt-1.5 text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground/70">{GROUP_TITLES[g]}</p>
               {PACKAGES.filter((p) => p.group === g).map((p) => (
                 <div key={p.name} className="group flex items-center gap-1 rounded-lg transition-colors hover:bg-accent/60 focus-within:bg-accent/60">

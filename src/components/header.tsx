@@ -161,6 +161,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
 
   const isHome = pathname === "/";
   const isUi = pathname.startsWith("/ui");
+  const isFlags = pathname.startsWith("/collection/flags") || pathname.startsWith("/icon/flag-") || pathname.startsWith("/docs/flags");
 
   // Shared search hook (also used by the mobile sheet) so ranking, debounce,
   // and analytics stay in one place. `isLoading` gates the empty state below
@@ -681,7 +682,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
             <SubmitButton />
 
             <div className="ml-1 flex items-center gap-0.5 sm:gap-1">
-              <PackagesMenu inUi={isUi} />
+              <PackagesMenu lead={isUi ? "ui" : isFlags ? "flags" : "brand"} />
               <a
                 href={withUtm("https://www.raycast.com/thegdsks/thesvg", "header")}
                 target="_blank"
