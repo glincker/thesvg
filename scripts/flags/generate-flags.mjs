@@ -37,6 +37,10 @@ const args = Object.fromEntries(process.argv.slice(2).reduce((a, v, i, all) => (
 const ROOT = resolve(args.root ?? repoRoot);
 const REF = resolve(args.ref ?? join(repoRoot, "packages/flags"));
 const ONLY = args.only ? new Set(args.only.split(",").map((s) => s.trim().toLowerCase())) : null;
+if (ONLY && !args.root) {
+  console.error("--only makes a partial run: pass --root <scratch dir> so it cannot replace the checked-in collection");
+  process.exit(2);
+}
 if (!args.fi || !args.cf) {
   console.error("usage: generate-flags.mjs --fi <flag-icons dir> --cf <circle-flags dir>");
   process.exit(2);
@@ -210,10 +214,15 @@ const optimizeSvgOnce = (svg, label) => {
   return out;
 };
 const circleFrom1x1 = (svg) => {
-  const m = prep(svg).match(/<svg\b[^>]*viewBox="([^"]+)"[^>]*>([\s\S]*)<\/svg>/);
-  const [, vb, inner] = m;
+  const m = prep(svg).match(/<svg\b([^>]*viewBox="([^"]+)"[^>]*)>([\s\S]*)<\/svg>/);
+  const [, rootAttrs, vb, inner] = m;
+  const inherited = ["fill", "stroke", "fill-rule", "clip-rule", "stroke-width", "stroke-linecap", "stroke-linejoin", "opacity", "fill-opacity", "stroke-opacity"]
+    .map((n) => rootAttrs.match(new RegExp(`\\s${n}="([^"]*)"`)))
+    .filter(Boolean)
+    .map((r) => `${r[0].trim()}`)
+    .join(" ");
   const [, , w, h] = vb.split(/\s+/).map(Number);
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${vb}"><defs><clipPath id="c"><circle cx="${w / 2}" cy="${h / 2}" r="${w / 2}"/></clipPath></defs><g clip-path="url(#c)">${inner}</g></svg>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${vb}"><defs><clipPath id="c"><circle cx="${w / 2}" cy="${h / 2}" r="${w / 2}"/></clipPath></defs><g clip-path="url(#c)"${inherited ? ` ${inherited}` : ""}>${inner}</g></svg>`;
 };
 
 // ---------------------------------------------------------------------------
@@ -337,7 +346,7 @@ for (const t of territories) {
     return undefined;
   })();
   const locales = extra?.kind === "organization" ? [] : extra ? [...(extra.localeTag ? [extra.localeTag] : []), ...langs.map((l) => `${l}-${extra.parent}-${(t.code.includes("-") ? t.code.split("-")[1] : t.code).toUpperCase()}`)] : langs.map((l) => `${l}-${t.upper}`);
-  const emoji = TAG_EMOJI[t.code] ? tagEmoji(TAG_EMOJI[t.code]) : extra ? "" : emojiFor(t.code);
+  const emoji = TAG_EMOJI[t.code] ? tagEmoji(TAG_EMOJI[t.code]) : extra && !["eu", "un"].includes(t.code) ? "" : emojiFor(t.code);
   const alpha3 = extra ? undefined : t.code === "xk" ? "XKX" : isoCountries.alpha2ToAlpha3(t.upper);
   const numeric = extra || t.code === "xk" ? undefined : isoCountries.alpha2ToNumeric(t.upper);
   const fiMeta = fiCountries.find((c) => c.code === stem);

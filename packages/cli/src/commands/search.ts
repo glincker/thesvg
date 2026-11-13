@@ -92,7 +92,7 @@ function fuzzyMatch(haystack: string, needle: string): boolean {
  * Exact slug match > slug contains > title match > alias match.
  */
 function scoreMatch(icon: IconEntry, query: string): number {
-  const q = query.toLowerCase();
+  const q = query.toLowerCase().replace(/^#/, "");
 
   if (icon.slug === q) return 0;
   if (icon.slug.startsWith(q)) return 1;
@@ -140,7 +140,11 @@ export async function runSearch(args: string[]): Promise<void> {
   }
 
   // Apply client-side fuzzy filter for more permissive matching
-  const queryWords = opts.query.toLowerCase().split(/\s+/);
+  const queryWords = opts.query
+    .toLowerCase()
+    .split(/\s+/)
+    .map((w) => w.replace(/^#/, ""))
+    .filter(Boolean);
 
   const matched = allIcons.filter((icon) => {
     const searchable = [

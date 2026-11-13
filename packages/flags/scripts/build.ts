@@ -24,6 +24,12 @@ const VARIANT_FILES = { "4x3": "default", square: "square", circle: "circle" } a
 const DIR_NAMES = { "4x3": "4x3", square: "1x1", circle: "circle" } as const;
 type Shape = keyof typeof VARIANT_FILES;
 
+// ESM and CommonJS consumers get their own declarations (dist/cjs has its own type: commonjs package.json).
+const writeTypes = (rel: string, content: string): void => {
+  writeFileSync(join(DIST, "types", rel), content);
+  writeFileSync(join(DIST, "cjs", rel), content);
+};
+
 const pascal = (code: string): string => "Flag" + code.split("-").map((p) => p[0].toUpperCase() + p.slice(1)).join("");
 
 rmSync(DIST, { recursive: true, force: true });
@@ -58,7 +64,7 @@ for (const f of FLAGS) {
   const esmStr = Object.entries(strings).map(([k, v]) => `export const ${k} = ${JSON.stringify(v)};`).join("\n");
   writeFileSync(join(DIST, "esm/flags", `${f.code}.js`), esmStr + "\n");
   writeFileSync(join(DIST, "cjs/flags", `${f.code}.js`), Object.entries(strings).map(([k, v]) => `exports.${k} = ${JSON.stringify(v)};`).join("\n") + "\n");
-  writeFileSync(join(DIST, "types/flags", `${f.code}.d.ts`), "export declare const rect: string;\nexport declare const square: string;\nexport declare const circle: string;\n");
+  writeTypes(`flags/${f.code}.d.ts`, "export declare const rect: string;\nexport declare const square: string;\nexport declare const circle: string;\n");
 
   for (const sh of Object.values(shapes)) {
     const ids = [...sh.inner.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]);
@@ -67,15 +73,15 @@ for (const f of FLAGS) {
   const data = JSON.stringify(shapes);
   writeFileSync(join(DIST, "esm/react", `${f.code}.js`), `import { createFlag } from "./create-flag.js";\nexport const ${name} = /* @__PURE__ */ createFlag("${name}", ${data});\nexport default ${name};\n`);
   writeFileSync(join(DIST, "cjs/react", `${f.code}.js`), `"use strict";\nconst { createFlag } = require("./create-flag.js");\nconst ${name} = createFlag("${name}", ${data});\nexports.${name} = ${name};\nexports.default = ${name};\n`);
-  writeFileSync(join(DIST, "types/react", `${f.code}.d.ts`), `import type { FlagComponent } from "./create-flag.js";\nexport declare const ${name}: FlagComponent;\nexport default ${name};\n`);
+  writeTypes(`react/${f.code}.d.ts`, `import type { FlagComponent } from "./create-flag.js";\nexport declare const ${name}: FlagComponent;\nexport default ${name};\n`);
 }
 
 const barrel = (cjs: boolean): string =>
   FLAGS.map((f) => (cjs ? `Object.defineProperty(exports, "${pascal(f.code)}", { enumerable: true, get: () => require("./${f.code}.js").${pascal(f.code)} });` : `export { ${pascal(f.code)} } from "./${f.code}.js";`)).join("\n") + "\n";
 writeFileSync(join(DIST, "esm/react/index.js"), `export { createFlag } from "./create-flag.js";\n` + barrel(false));
 writeFileSync(join(DIST, "cjs/react/index.js"), `"use strict";\nObject.defineProperty(exports, "createFlag", { enumerable: true, get: () => require("./create-flag.js").createFlag });\n` + barrel(true));
-writeFileSync(
-  join(DIST, "types/react/index.d.ts"),
+writeTypes(
+  "react/index.d.ts",
   `export { createFlag } from "./create-flag.js";\nexport type { FlagComponent, FlagProps } from "./create-flag.js";\n` + FLAGS.map((f) => `export { ${pascal(f.code)} } from "./${f.code}.js";`).join("\n") + "\n",
 );
 

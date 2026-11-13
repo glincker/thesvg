@@ -11,7 +11,9 @@ const PUBLIC_DIR = fileURLToPath(new URL("../../../public", import.meta.url));
 const variantPaths = [
   ...new Set(
     (iconsData as IconEntry[]).flatMap((icon) =>
-      Object.values(icon.variants).filter((p): p is string => typeof p === "string"),
+      Object.values(icon.variants).filter(
+        (p): p is string => typeof p === "string",
+      ),
     ),
   ),
 ];
@@ -23,7 +25,9 @@ const variantPaths = [
  */
 function hasUsableViewBox(svg: string): boolean {
   const root = svg.match(/<svg\b[^>]*>/)?.[0] ?? "";
-  return /\sviewBox\s*=\s*(["'])\s*-?[\d.]+(?:[\s,]+-?[\d.]+){3}\s*\1/.test(root);
+  return /\sviewBox\s*=\s*(["'])\s*-?[\d.]+(?:[\s,]+-?[\d.]+){3}\s*\1/.test(
+    root,
+  );
 }
 
 describe("hasUsableViewBox", () => {
@@ -51,8 +55,10 @@ describe("icon SVG files", () => {
       const file = `${PUBLIC_DIR}${variantPath}`;
       // A missing file is a different failure; this test is only about viewBox.
       if (!existsSync(file)) continue;
-      if (!hasUsableViewBox(readFileSync(file, "utf8"))) missing.push(variantPath);
+      if (!hasUsableViewBox(readFileSync(file, "utf8")))
+        missing.push(variantPath);
     }
     expect(missing).toEqual([]);
-  });
+    // Reads every catalog SVG (thousands of files), so it needs more than the default 5 s.
+  }, 120_000);
 });

@@ -36,7 +36,9 @@ export function FlagsBrowser({ tiles, syncUrl = true }: Props) {
 
   // Prefs first, then the URL on top, so a shared link wins over what this browser remembers.
   useEffect(() => {
-    const prefs = readJson<Partial<Prefs>>(PREFS_KEY, {});
+    // A link that carries its own filters must not pick up this browser's saved ones.
+    const sharedLink = syncUrl && window.location.search.length > 1;
+    const prefs = sharedLink ? {} : readJson<Partial<Prefs>>(PREFS_KEY, {});
     const base = parseState(new URLSearchParams(), { ...DEFAULT_STATE, ...prefs });
     setState(syncUrl ? parseState(new URLSearchParams(window.location.search), base) : base);
     setRecent(readJson<string[]>(RECENT_KEY, []));
@@ -66,6 +68,11 @@ export function FlagsBrowser({ tiles, syncUrl = true }: Props) {
     aliasRequested.current = true;
     fetch("/data/flags-search.json").then((r) => (r.ok ? r.json() : null)).then((d: Record<string, string[]> | null) => { if (d) setAliases(d); }).catch(() => { aliasRequested.current = false; });
   }, []);
+
+  // Opening a shared ?q= link has no focus or typing event, so load the alias index as soon as there is a query.
+  useEffect(() => {
+    if (ready && state.q.trim() !== "") loadAliases();
+  }, [ready, state.q, loadAliases]);
 
   const byCode = useMemo(() => new Map(tiles.map((t) => [t.code, t])), [tiles]);
   const results = useMemo(() => filterTiles(tiles, state, aliases), [tiles, state, aliases]);

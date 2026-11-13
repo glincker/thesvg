@@ -27,34 +27,64 @@
   ],
   "exports": {
     ".": {
-      "types": "./dist/types/index.d.ts",
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
+      "import": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
     },
     "./search": {
-      "types": "./dist/types/search.d.ts",
-      "import": "./dist/esm/search.js",
-      "require": "./dist/cjs/search.js"
+      "import": {
+        "types": "./dist/types/search.d.ts",
+        "default": "./dist/esm/search.js"
+      },
+      "require": {
+        "types": "./dist/cjs/search.d.ts",
+        "default": "./dist/cjs/search.js"
+      }
     },
     "./locale": {
-      "types": "./dist/types/locale.d.ts",
-      "import": "./dist/esm/locale.js",
-      "require": "./dist/cjs/locale.js"
+      "import": {
+        "types": "./dist/types/locale.d.ts",
+        "default": "./dist/esm/locale.js"
+      },
+      "require": {
+        "types": "./dist/cjs/locale.d.ts",
+        "default": "./dist/cjs/locale.js"
+      }
     },
     "./react": {
-      "types": "./dist/types/react/index.d.ts",
-      "import": "./dist/esm/react/index.js",
-      "require": "./dist/cjs/react/index.js"
+      "import": {
+        "types": "./dist/types/react/index.d.ts",
+        "default": "./dist/esm/react/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/react/index.d.ts",
+        "default": "./dist/cjs/react/index.js"
+      }
     },
     "./react/*": {
-      "types": "./dist/types/react/*.d.ts",
-      "import": "./dist/esm/react/*.js",
-      "require": "./dist/cjs/react/*.js"
+      "import": {
+        "types": "./dist/types/react/*.d.ts",
+        "default": "./dist/esm/react/*.js"
+      },
+      "require": {
+        "types": "./dist/cjs/react/*.d.ts",
+        "default": "./dist/cjs/react/*.js"
+      }
     },
     "./flags/*": {
-      "types": "./dist/types/flags/*.d.ts",
-      "import": "./dist/esm/flags/*.js",
-      "require": "./dist/cjs/flags/*.js"
+      "import": {
+        "types": "./dist/types/flags/*.d.ts",
+        "default": "./dist/esm/flags/*.js"
+      },
+      "require": {
+        "types": "./dist/cjs/flags/*.d.ts",
+        "default": "./dist/cjs/flags/*.js"
+      }
     },
     "./svg/*": "./dist/svg/*",
     "./manifest.json": "./dist/manifest.json",

@@ -107,7 +107,14 @@ export function FlagPanel({ tile, similar, variant, onSelect, onClose }: Props) 
             </section>
 
             <p className="text-[11px] leading-relaxed text-muted-foreground">
-              License: the 4x3 and square files come from flag-icons and the circle file from circle-flags, both MIT. Notices are in THIRD_PARTY_NOTICES.md. A flag is a public symbol of a state or organization; this is not a statement about sovereignty.
+              {tile.credits.length > 0 ? (
+                <>
+                  Credits: {tile.credits.map((c) => `${c.variant} from ${c.source} (${c.license}, ${c.file})`).join("; ")}. Any other variant comes from flag-icons or circle-flags, both MIT.{" "}
+                </>
+              ) : (
+                <>License: the 4x3 and square files come from flag-icons and the circle file from circle-flags, both MIT. </>
+              )}
+              Notices are in THIRD_PARTY_NOTICES.md. A flag is a public symbol of a state or organization; this is not a statement about sovereignty.
             </p>
 
             {similar.length > 0 ? (

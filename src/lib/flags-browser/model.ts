@@ -24,6 +24,8 @@ export interface FlagTile {
   flagOf: string[];
   colors: { hex: string; share: number }[];
   colorNames: string[];
+  /** Per-variant credit when a file does not come from the default sources (flag-icons and circle-flags, MIT). */
+  credits: { variant: string; source: string; license: string; file: string }[];
 }
 
 export const REGIONS: { id: RegionId; label: string }[] = [

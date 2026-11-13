@@ -8,6 +8,9 @@ import { fileURLToPath } from "node:url";
 
 const PKG = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
+// Export conditions nest (import and require each carry their own types), so walk the whole map.
+const collect = (v: unknown): string[] => (typeof v === "string" ? [v] : v && typeof v === "object" ? Object.values(v).flatMap(collect) : []);
+
 test("the packed tarball contains every file the exports map points at", () => {
   const dest = mkdtempSync(join(tmpdir(), "flags-pack-"));
   try {
@@ -17,8 +20,8 @@ test("the packed tarball contains every file the exports map points at", () => {
     const list = spawnSync("tar", ["-tzf", tarball.startsWith("/") ? tarball : join(dest, tarball)], { encoding: "utf8", maxBuffer: 1 << 28 });
     assert.equal(list.status, 0, list.stderr);
     const files = new Set(list.stdout.split("\n").map((l) => l.replace(/^package\//, "")));
-    const pkg = JSON.parse(readFileSync(join(PKG, "package.json"), "utf8")) as { exports: Record<string, string | Record<string, string>>; main: string; module: string; types: string };
-    const targets = [pkg.main, pkg.module, pkg.types, ...Object.values(pkg.exports).flatMap((v) => (typeof v === "string" ? [v] : Object.values(v)))];
+    const pkg = JSON.parse(readFileSync(join(PKG, "package.json"), "utf8")) as { exports: Record<string, unknown>; main: string; module: string; types: string };
+    const targets = [pkg.main, pkg.module, pkg.types, ...Object.values(pkg.exports).flatMap(collect)];
     for (const t of targets) {
       const path = t.replace(/^\.\//, "");
       if (path.includes("*")) {
