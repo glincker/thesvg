@@ -7,17 +7,21 @@
 import { readdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { toneFromSvg } from "../lib/icon-tone";
+import raster from "../data/icon-tone-raster.json";
 
 const ICONS_DIR = join(process.cwd(), "public", "icons");
 const OUT = join(process.cwd(), "src", "data", "icon-tones.json");
 
+const rasterDark = new Set<string>(raster.dark);
+const rasterLight = new Set<string>(raster.light);
 const tones: Record<string, "dark" | "light"> = {};
 let scanned = 0;
 for (const slug of readdirSync(ICONS_DIR).sort()) {
   const file = join(ICONS_DIR, slug, "default.svg");
   if (!existsSync(file)) continue;
   scanned++;
-  const tone = toneFromSvg(readFileSync(file, "utf8"));
+  // The rasterized measurement (scripts/icon-tones-raster.mjs) wins; the color-based check covers icons added since.
+  const tone = rasterDark.has(slug) ? "dark" : rasterLight.has(slug) ? "light" : toneFromSvg(readFileSync(file, "utf8"));
   if (tone !== "neutral") tones[slug] = tone;
 }
 

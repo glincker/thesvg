@@ -326,69 +326,59 @@ html {
   animation: hero-shimmer 2.2s ease-in-out both;
 }
 
-/* Subtle icon preview background (ensures visibility in both themes) */
+/* Icon preview tiles: a flat, matte surface in both themes. Low-contrast artwork gets a small
+   flat plate (never a blurred glow), so a grid of near-black or near-white logos stays calm and
+   every tile reads the same. The brand colors are never altered. */
 .icon-preview-bg {
-  background: radial-gradient(
-    circle at center,
-    oklch(0.98 0 0) 0%,
-    oklch(0.94 0.003 260) 100%
-  );
+  isolation: isolate;
+  --tile-grain-opacity: 0.05;
+  background-color: oklch(0.968 0.003 260);
+  /* A fine tiled grain: tiny noise in an inline SVG, so there is no image request. */
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='96' height='96'><filter id='n' x='0' y='0' width='100%25' height='100%25'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='96' height='96' filter='url(%23n)' opacity='0.9'/></svg>");
+  background-size: 96px 96px;
+  background-blend-mode: soft-light;
+  transition: background-color 200ms ease;
 }
-
 .dark .icon-preview-bg {
-  /* A brighter hotspot sits behind the icon itself (contrast for the many
-     icons that only ship a dark/near-black `default` variant), fading to a
-     near-black edge past the icon's footprint. The hue is held at a barely
-     cool neutral: the earlier saturated blue clashed with blue brand marks.
-     Icons that are still too dark for it get a light disc via data-tone
-     below. Tinting the fill with the brand color was tried and reverted
-     because mixing hue into the backdrop softened the contrast this rule
-     exists to fix; brand cohesion comes from `.icon-preview-bg--tinted`. */
-  background: radial-gradient(
-    circle at center,
-    oklch(0.44 0.012 260) 0%,
-    oklch(0.3 0.012 260) 50%,
-    oklch(0.15 0.012 260) 100%
-  );
+  background-color: oklch(0.22 0.006 260);
+}
+.group:hover .icon-preview-bg {
+  background-color: oklch(0.955 0.004 260);
+}
+.dark .group:hover .icon-preview-bg {
+  background-color: oklch(0.25 0.007 260);
 }
 
-/* Adaptive tiles ("auto" preview): every tile keeps its normal surface and a
-   soft disc behind the artwork supplies the contrast, so a grid with many
-   near-black logos does not turn into a patchwork of dark and bright
-   rectangles. Near-black brands get a light disc in dark mode, near-white
-   brands a dark disc in light mode. */
-.dark .icon-preview-bg[data-tone="dark"] {
-  background:
-    radial-gradient(
-      circle at center,
-      oklch(0.74 0.004 260) 0,
-      oklch(0.7 0.004 260) 24px,
-      oklch(0.7 0.004 260 / 0) 52px
-    ),
-    radial-gradient(
-      circle at center,
-      oklch(0.44 0.012 260) 0%,
-      oklch(0.3 0.012 260) 50%,
-      oklch(0.15 0.012 260) 100%
-    );
+/* Plate behind artwork that would vanish: near-black marks in dark mode, near-white marks in light mode. */
+.dark .icon-preview-bg[data-tone="dark"]::before,
+.icon-preview-bg[data-tone="light"]::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 50%;
+  /* About 1.25x the icon, so the plate frames the mark instead of competing with it. */
+  height: min(60%, 3rem);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 0.75rem;
 }
-.icon-preview-bg[data-tone="light"] {
-  background:
-    radial-gradient(
-      circle at center,
-      oklch(0.4 0.01 260) 0,
-      oklch(0.44 0.01 260) 24px,
-      oklch(0.44 0.01 260 / 0) 50px
-    ),
-    radial-gradient(circle at center, oklch(0.98 0 0) 0%, oklch(0.94 0.003 260) 100%);
+.dark .icon-preview-bg[data-tone="dark"]::before {
+  background: oklch(0.74 0.006 260);
+  box-shadow: 0 1px 2px oklch(0 0 0 / 0.35), inset 0 1px 0 oklch(1 0 0 / 0.18);
 }
-.dark .icon-preview-bg[data-tone="light"] {
-  background: radial-gradient(
-    circle at center,
-    oklch(0.44 0.012 260) 0%,
-    oklch(0.3 0.012 260) 50%,
-    oklch(0.15 0.012 260) 100%
-  );
+.icon-preview-bg[data-tone="light"]::before {
+  background: oklch(0.3 0.008 260);
+  box-shadow: 0 1px 2px oklch(0 0 0 / 0.18);
+}
+.dark .icon-preview-bg[data-tone="light"]::before {
+  content: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .icon-preview-bg {
+    transition: none;
+  }
 }
 
 /* Explicit preview background chosen in the Display menu. */
