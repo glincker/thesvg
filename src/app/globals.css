@@ -1508,3 +1508,29 @@ html {
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 12px 32px -16px rgba(0, 0, 0, 0.7);
   }
 }
+
+/* Homepage flags banner: rows of flags drift in opposite directions. Each row holds two identical copies, so
+   moving it by half its width loops without a jump. */
+@keyframes flags-drift-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes flags-drift-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+.flags-row {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.flags-row[data-dir="left"] { animation-name: flags-drift-left; }
+.flags-row[data-dir="right"] { animation-name: flags-drift-right; }
+.flags-row[data-speed="a"] { animation-duration: 62s; }
+.flags-row[data-speed="b"] { animation-duration: 70s; }
+.flags-row[data-speed="c"] { animation-duration: 78s; }
+.flags-row[data-speed="d"] { animation-duration: 85s; }
+.flags-row[data-speed="e"] { animation-duration: 92s; }
+.flags-scene:hover .flags-row { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .flags-row { animation: none; }
+}

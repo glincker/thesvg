@@ -6,6 +6,7 @@ import { IconPageClient } from "@/components/icons/icon-page-client";
 import { categoryUrl } from "@/lib/categories";
 import { getFamilyMembers, getFamilySlugFor, pickFamilySiblings } from "@/lib/families";
 import type { Metadata } from "next";
+import IconLoading from "./loading";
 import { FlagFacts } from "@/components/flags/flag-facts";
 import { FlagPalette } from "@/components/flags/flag-palette";
 import { flagSeo, getFlagBySlug } from "@/lib/flag-seo";
@@ -392,7 +393,7 @@ export default async function IconPage({ params }: PageProps) {
   return (
     <>
       <JsonLd data={jsonLd} />
-      <Suspense>
+      <Suspense fallback={<IconLoading />}>
         <IconPageClient
           icon={icon}
           categoryCounts={categoryCounts}
@@ -405,8 +406,8 @@ export default async function IconPage({ params }: PageProps) {
           badgeCounterpart={badgeCounterpart}
           headerExtra={icon.collection === "flags" && getFlagBySlug(slug) ? <FlagPalette colors={getFlagBySlug(slug)!.colors} name={icon.title} /> : undefined}
         />
+        {icon.collection === "flags" && getFlagBySlug(slug) ? <FlagFacts flag={getFlagBySlug(slug)!} /> : null}
       </Suspense>
-      {icon.collection === "flags" && getFlagBySlug(slug) ? <FlagFacts flag={getFlagBySlug(slug)!} /> : null}
     </>
   );
 }

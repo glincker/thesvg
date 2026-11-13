@@ -7,6 +7,7 @@ import posthog from "posthog-js";
 import { compareDateDesc } from "@/lib/icon-dates";
 import type { Collection, IconEntry } from "@/lib/icons";
 import { COLLECTIONS_META } from "@/lib/collections-meta";
+import { FlagsHeroVisual } from "@/components/flags/flags-hero-visual";
 import { getIconsBySlugMap, loadIconsManifest } from "@/lib/icons-manifest";
 import { IconCard } from "@/components/icons/icon-card";
 import { IconGrid } from "@/components/icons/icon-grid";
@@ -59,6 +60,8 @@ interface Slide {
   collection: Collection;
   floatSlugs: string[];
   ui?: boolean;
+  /** Show the angled rows of flags on the right instead of scattered icons. */
+  flags?: boolean;
 }
 
 const PROOF_SLIDES: Slide[] = ADOPTERS.length
@@ -81,6 +84,20 @@ const PROOF_SLIDES: Slide[] = ADOPTERS.length
   : [];
 
 const ALL_SLIDES: Slide[] = [
+  {
+    badge: "New: Flags",
+    badgeIcon: Sparkles,
+    title: "Flags are here: 263 countries and regions",
+    description: "Every country plus England, Scotland, Catalonia and more. Three shapes each, one small package.",
+    cta: { label: "Browse flags", href: "/collection/flags" },
+    ctaSecondary: { label: "How to use", href: "/docs/flags" },
+    gradient: "from-sky-50/50 via-background to-orange-50/30 dark:from-sky-950/25 dark:via-background dark:to-orange-950/10",
+    accent: "border-sky-200/50 bg-sky-50/80 text-sky-700 dark:border-sky-500/20 dark:bg-sky-500/10 dark:text-sky-400",
+    blob: "bg-sky-400/10 dark:bg-sky-500/5",
+    collection: "brands" as const,
+    floatSlugs: [] as string[],
+    flags: true as const,
+  },
   {
     badge: "Open Source",
     badgeIcon: Sparkles,
@@ -246,12 +263,13 @@ const ALL_SLIDES: Slide[] = [
     title: "263 Country and Region Flags",
     description: "Every ISO 3166-1 country plus England, Scotland, Wales, Catalonia, the Canary Islands, the EU and the UN. Three shapes each: 4x3, square and circle.",
     cta: { label: "Browse Flags", href: "#popular" },
-    ctaSecondary: { label: "All Categories", href: "#categories" },
+    ctaSecondary: { label: "How to use", href: "/docs/flags" },
     gradient: "from-sky-50/50 via-background to-sky-50/30 dark:from-sky-950/20 dark:via-background dark:to-sky-950/10",
     accent: "border-sky-200/50 bg-sky-50/80 text-sky-700 dark:border-sky-500/20 dark:bg-sky-500/10 dark:text-sky-400",
     blob: "bg-sky-400/10 dark:bg-sky-500/5",
     collection: "flags" as const,
-    floatSlugs: POPULAR_FLAG_SLUGS,
+    floatSlugs: [] as string[],
+    flags: true as const,
   },
   {
     badge: "Community",
@@ -737,6 +755,11 @@ export function HomeHero({
               inner div holds the continuous float + resting dim opacity, so
               the two animations don't fight over the same CSS property. */}
           <div className="pointer-events-none absolute inset-0 hidden lg:block">
+            {slide.flags && (
+              <div key={`flags-${currentSlide}`} className="animate-float-in absolute -right-6 top-1/2 -translate-y-1/2">
+                <FlagsHeroVisual />
+              </div>
+            )}
             {slide.ui && (
               <div key={`ui-${currentSlide}`} className="animate-float-in absolute right-10 top-1/2 -translate-y-1/2 xl:right-16">
                 <UiHeroPreview />
