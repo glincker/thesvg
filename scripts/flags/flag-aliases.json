@@ -1,0 +1,345 @@
+{
+  "_note": "Hand-curated search aliases that no ISO or CLDR dataset provides: common short names, former names, nicknames and demonyms for the most searched countries. Lowercase, keyed by lowercase ISO alpha-2 or extra slug code.",
+  "us": [
+    "usa",
+    "america",
+    "united states of america",
+    "american",
+    "the states",
+    "us of a"
+  ],
+  "gb": [
+    "uk",
+    "great britain",
+    "britain",
+    "british",
+    "united kingdom",
+    "england uk",
+    "u.k."
+  ],
+  "de": [
+    "deutschland",
+    "germany",
+    "german",
+    "bundesrepublik",
+    "federal republic of germany"
+  ],
+  "nl": [
+    "holland",
+    "dutch",
+    "the netherlands",
+    "nederland",
+    "netherlands"
+  ],
+  "cz": [
+    "czechia",
+    "czech republic",
+    "czechoslovakia",
+    "czech",
+    "cesko",
+    "ceska republika"
+  ],
+  "tr": [
+    "turkey",
+    "turkiye",
+    "turkish",
+    "turkei"
+  ],
+  "mm": [
+    "burma",
+    "myanmar",
+    "burmese"
+  ],
+  "cv": [
+    "cape verde",
+    "cabo verde"
+  ],
+  "ci": [
+    "ivory coast",
+    "cote d ivoire",
+    "cote divoire"
+  ],
+  "sz": [
+    "swaziland",
+    "eswatini"
+  ],
+  "mk": [
+    "macedonia",
+    "north macedonia",
+    "fyrom"
+  ],
+  "tl": [
+    "east timor",
+    "timor leste"
+  ],
+  "ru": [
+    "russian federation",
+    "russian",
+    "rossiya",
+    "ussr successor"
+  ],
+  "cn": [
+    "china",
+    "prc",
+    "chinese",
+    "zhongguo",
+    "peoples republic of china"
+  ],
+  "tw": [
+    "taiwan",
+    "republic of china",
+    "roc",
+    "formosa",
+    "chinese taipei",
+    "taiwanese"
+  ],
+  "hk": [
+    "hong kong",
+    "hksar",
+    "hongkong"
+  ],
+  "mo": [
+    "macau",
+    "macao"
+  ],
+  "kr": [
+    "south korea",
+    "korea",
+    "republic of korea",
+    "korean",
+    "hanguk"
+  ],
+  "kp": [
+    "north korea",
+    "dprk",
+    "democratic peoples republic of korea"
+  ],
+  "jp": [
+    "japan",
+    "japanese",
+    "nippon",
+    "nihon"
+  ],
+  "es": [
+    "spain",
+    "spanish",
+    "espana",
+    "espana flag"
+  ],
+  "ch": [
+    "switzerland",
+    "swiss",
+    "schweiz",
+    "suisse",
+    "svizzera",
+    "confoederatio helvetica"
+  ],
+  "va": [
+    "vatican",
+    "vatican city",
+    "holy see",
+    "city of the vatican"
+  ],
+  "ae": [
+    "uae",
+    "emirates",
+    "united arab emirates"
+  ],
+  "sa": [
+    "saudi",
+    "saudi arabia",
+    "ksa"
+  ],
+  "ps": [
+    "palestine",
+    "palestinian",
+    "state of palestine"
+  ],
+  "eh": [
+    "western sahara",
+    "sahrawi",
+    "sadr"
+  ],
+  "xk": [
+    "kosovo",
+    "kosovar",
+    "kosova"
+  ],
+  "in": [
+    "india",
+    "indian",
+    "bharat",
+    "hindustan"
+  ],
+  "br": [
+    "brazil",
+    "brasil",
+    "brazilian"
+  ],
+  "mx": [
+    "mexico",
+    "mexican",
+    "mejico"
+  ],
+  "fr": [
+    "france",
+    "french",
+    "francais"
+  ],
+  "it": [
+    "italy",
+    "italian",
+    "italia"
+  ],
+  "pt": [
+    "portugal",
+    "portuguese"
+  ],
+  "pl": [
+    "poland",
+    "polish",
+    "polska"
+  ],
+  "id": [
+    "indonesia",
+    "indonesian"
+  ],
+  "ar": [
+    "argentina",
+    "argentinian",
+    "argentine"
+  ],
+  "ie": [
+    "ireland",
+    "irish",
+    "eire",
+    "republic of ireland"
+  ],
+  "nz": [
+    "new zealand",
+    "aotearoa",
+    "kiwi"
+  ],
+  "za": [
+    "south africa",
+    "rsa",
+    "south african"
+  ],
+  "ir": [
+    "iran",
+    "persia",
+    "persian"
+  ],
+  "sy": [
+    "syria",
+    "syrian"
+  ],
+  "vn": [
+    "vietnam",
+    "viet nam",
+    "vietnamese"
+  ],
+  "la": [
+    "laos",
+    "lao pdr"
+  ],
+  "bo": [
+    "bolivia"
+  ],
+  "ve": [
+    "venezuela"
+  ],
+  "md": [
+    "moldova"
+  ],
+  "fm": [
+    "micronesia"
+  ],
+  "gb-eng": [
+    "england",
+    "english",
+    "st george",
+    "saint george",
+    "three lions"
+  ],
+  "gb-sct": [
+    "scotland",
+    "scottish",
+    "saltire",
+    "st andrew",
+    "alba"
+  ],
+  "gb-wls": [
+    "wales",
+    "welsh",
+    "cymru",
+    "y ddraig goch",
+    "red dragon"
+  ],
+  "es-ct": [
+    "catalonia",
+    "catalunya",
+    "cataluna",
+    "catalan",
+    "senyera",
+    "catalan flag"
+  ],
+  "es-pv": [
+    "basque country",
+    "basque",
+    "euskadi",
+    "pais vasco",
+    "ikurrina",
+    "euskal herria"
+  ],
+  "es-ga": [
+    "galicia",
+    "galiza",
+    "galician",
+    "galego"
+  ],
+  "es-vc": [
+    "valencia",
+    "valencian community",
+    "comunitat valenciana",
+    "valenciano"
+  ],
+  "es-ib": [
+    "balearic islands",
+    "baleares",
+    "illes balears",
+    "mallorca",
+    "majorca"
+  ],
+  "es-cn": [
+    "canary islands",
+    "canarias",
+    "islas canarias",
+    "canarian"
+  ],
+  "fr-bre": [
+    "brittany",
+    "bretagne",
+    "breton",
+    "gwenn ha du"
+  ],
+  "occitania": [
+    "occitan",
+    "occitanie",
+    "oc"
+  ],
+  "eu": [
+    "european union",
+    "europe",
+    "europa",
+    "eu flag",
+    "brussels",
+    "european"
+  ],
+  "un": [
+    "united nations",
+    "uno",
+    "onu",
+    "u.n."
+  ]
+}

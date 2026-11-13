@@ -60975,6 +60975,8027 @@
     "collection": "brands"
   },
   {
+    "slug": "flag-ad",
+    "title": "Andorra",
+    "aliases": [
+      "ca-ad",
+      "es-ad",
+      "ad",
+      "and",
+      "020",
+      "🇦🇩"
+    ],
+    "hex": "fedf00",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ad/default.svg",
+      "square": "/icons/flag-ad/square.svg",
+      "circle": "/icons/flag-ad/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "AD"
+    }
+  },
+  {
+    "slug": "flag-ae",
+    "title": "United Arab Emirates",
+    "aliases": [
+      "ar-ae",
+      "en-ae",
+      "uae",
+      "emirates",
+      "ae",
+      "are",
+      "784",
+      "🇦🇪"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ae/default.svg",
+      "square": "/icons/flag-ae/square.svg",
+      "circle": "/icons/flag-ae/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "AE"
+    }
+  },
+  {
+    "slug": "flag-af",
+    "title": "Afghanistan",
+    "aliases": [
+      "fa-af",
+      "ps-af",
+      "uz-af",
+      "tk-af",
+      "af",
+      "afg",
+      "004",
+      "🇦🇫"
+    ],
+    "hex": "bd6b00",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-af/default.svg",
+      "square": "/icons/flag-af/square.svg",
+      "circle": "/icons/flag-af/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "AF"
+    }
+  },
+  {
+    "slug": "flag-ag",
+    "title": "Antigua and Barbuda",
+    "aliases": [
+      "en-ag",
+      "ag",
+      "atg",
+      "028",
+      "🇦🇬"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ag/default.svg",
+      "square": "/icons/flag-ag/square.svg",
+      "circle": "/icons/flag-ag/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "AG"
+    }
+  },
+  {
+    "slug": "flag-ai",
+    "title": "Anguilla",
+    "aliases": [
+      "en-ai",
+      "ai",
+      "aia",
+      "660",
+      "🇦🇮"
+    ],
+    "hex": "012169",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ai/default.svg",
+      "square": "/icons/flag-ai/square.svg",
+      "circle": "/icons/flag-ai/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "AI"
+    }
+  },
+  {
+    "slug": "flag-al",
+    "title": "Albania",
+    "aliases": [
+      "sq-al",
+      "shqiperi",
+      "al",
+      "alb",
+      "008",
+      "🇦🇱"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-al/default.svg",
+      "square": "/icons/flag-al/square.svg",
+      "circle": "/icons/flag-al/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "AL"
+    }
+  },
+  {
+    "slug": "flag-am",
+    "title": "Armenia",
+    "aliases": [
+      "hy-am",
+      "am",
+      "arm",
+      "051",
+      "🇦🇲"
+    ],
+    "hex": "0033a0",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-am/default.svg",
+      "square": "/icons/flag-am/square.svg",
+      "circle": "/icons/flag-am/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "AM"
+    }
+  },
+  {
+    "slug": "flag-ao",
+    "title": "Angola",
+    "aliases": [
+      "pt-ao",
+      "umb-ao",
+      "kmb-ao",
+      "ao",
+      "ago",
+      "024",
+      "🇦🇴"
+    ],
+    "hex": "ffec00",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ao/default.svg",
+      "square": "/icons/flag-ao/square.svg",
+      "circle": "/icons/flag-ao/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "AO"
+    }
+  },
+  {
+    "slug": "flag-aq",
+    "title": "Antarctica",
+    "aliases": [
+      "und-aq",
+      "aq",
+      "ata",
+      "010",
+      "🇦🇶"
+    ],
+    "hex": "3a7dce",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-aq/default.svg",
+      "square": "/icons/flag-aq/square.svg",
+      "circle": "/icons/flag-aq/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "AQ"
+    }
+  },
+  {
+    "slug": "flag-ar",
+    "title": "Argentina",
+    "aliases": [
+      "es-ar",
+      "argentinian",
+      "argentine",
+      "ar",
+      "arg",
+      "032",
+      "🇦🇷"
+    ],
+    "hex": "85340a",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ar/default.svg",
+      "square": "/icons/flag-ar/square.svg",
+      "circle": "/icons/flag-ar/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "AR"
+    }
+  },
+  {
+    "slug": "flag-as",
+    "title": "American Samoa",
+    "aliases": [
+      "sm-as",
+      "en-as",
+      "as",
+      "asm",
+      "016",
+      "🇦🇸"
+    ],
+    "hex": "5a3719",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-as/default.svg",
+      "square": "/icons/flag-as/square.svg",
+      "circle": "/icons/flag-as/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "AS"
+    }
+  },
+  {
+    "slug": "flag-at",
+    "title": "Austria",
+    "aliases": [
+      "de-at",
+      "hr-at",
+      "sl-at",
+      "hu-at",
+      "bar-at",
+      "en-at",
+      "osterreich",
+      "at",
+      "aut",
+      "040",
+      "🇦🇹"
+    ],
+    "hex": "c8102e",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-at/default.svg",
+      "square": "/icons/flag-at/square.svg",
+      "circle": "/icons/flag-at/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "AT"
+    }
+  },
+  {
+    "slug": "flag-au",
+    "title": "Australia",
+    "aliases": [
+      "en-au",
+      "au",
+      "aus",
+      "036",
+      "🇦🇺"
+    ],
+    "hex": "ff0000",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-au/default.svg",
+      "square": "/icons/flag-au/square.svg",
+      "circle": "/icons/flag-au/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "AU"
+    }
+  },
+  {
+    "slug": "flag-aw",
+    "title": "Aruba",
+    "aliases": [
+      "nl-aw",
+      "pap-aw",
+      "aw",
+      "abw",
+      "533",
+      "🇦🇼"
+    ],
+    "hex": "ffcccc",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-aw/default.svg",
+      "square": "/icons/flag-aw/square.svg",
+      "circle": "/icons/flag-aw/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "AW"
+    }
+  },
+  {
+    "slug": "flag-ax",
+    "title": "Åland Islands",
+    "aliases": [
+      "sv-ax",
+      "aland",
+      "ax",
+      "ala",
+      "248",
+      "🇦🇽"
+    ],
+    "hex": "0053a5",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ax/default.svg",
+      "square": "/icons/flag-ax/square.svg",
+      "circle": "/icons/flag-ax/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "AX"
+    }
+  },
+  {
+    "slug": "flag-az",
+    "title": "Azerbaijan",
+    "aliases": [
+      "az-az",
+      "az rbaycan",
+      "az",
+      "aze",
+      "031",
+      "🇦🇿"
+    ],
+    "hex": "ed2939",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-az/default.svg",
+      "square": "/icons/flag-az/square.svg",
+      "circle": "/icons/flag-az/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "AZ"
+    }
+  },
+  {
+    "slug": "flag-ba",
+    "title": "Bosnia and Herzegovina",
+    "aliases": [
+      "bs-ba",
+      "hr-ba",
+      "sr-ba",
+      "en-ba",
+      "bosna i hercegovina",
+      "ba",
+      "bih",
+      "070",
+      "🇧🇦"
+    ],
+    "hex": "000099",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ba/default.svg",
+      "square": "/icons/flag-ba/square.svg",
+      "circle": "/icons/flag-ba/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "BA"
+    }
+  },
+  {
+    "slug": "flag-bb",
+    "title": "Barbados",
+    "aliases": [
+      "en-bb",
+      "bb",
+      "brb",
+      "052",
+      "🇧🇧"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-bb/default.svg",
+      "square": "/icons/flag-bb/square.svg",
+      "circle": "/icons/flag-bb/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "BB"
+    }
+  },
+  {
+    "slug": "flag-bd",
+    "title": "Bangladesh",
+    "aliases": [
+      "bn-bd",
+      "bd",
+      "bgd",
+      "050",
+      "🇧🇩"
+    ],
+    "hex": "006a4e",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-bd/default.svg",
+      "square": "/icons/flag-bd/square.svg",
+      "circle": "/icons/flag-bd/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "BD"
+    }
+  },
+  {
+    "slug": "flag-be",
+    "title": "Belgium",
+    "aliases": [
+      "nl-be",
+      "fr-be",
+      "de-be",
+      "en-be",
+      "koninkrijk belgie",
+      "be",
+      "bel",
+      "056",
+      "🇧🇪"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-be/default.svg",
+      "square": "/icons/flag-be/square.svg",
+      "circle": "/icons/flag-be/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "BE"
+    }
+  },
+  {
+    "slug": "flag-bf",
+    "title": "Burkina Faso",
+    "aliases": [
+      "fr-bf",
+      "mos-bf",
+      "dyu-bf",
+      "bf",
+      "bfa",
+      "854",
+      "🇧🇫"
+    ],
+    "hex": "35a100",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-bf/default.svg",
+      "square": "/icons/flag-bf/square.svg",
+      "circle": "/icons/flag-bf/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "BF"
+    }
+  },
+  {
+    "slug": "flag-bg",
+    "title": "Bulgaria",
+    "aliases": [
+      "bg-bg",
+      "en-bg",
+      "bg",
+      "bgr",
+      "100",
+      "🇧🇬"
+    ],
+    "hex": "00966e",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-bg/default.svg",
+      "square": "/icons/flag-bg/square.svg",
+      "circle": "/icons/flag-bg/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "BG"
+    }
+  },
+  {
+    "slug": "flag-bh",
+    "title": "Bahrain",
+    "aliases": [
+      "ar-bh",
+      "bh",
+      "bhr",
+      "048",
+      "🇧🇭"
+    ],
+    "hex": "ce1126",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-bh/default.svg",
+      "square": "/icons/flag-bh/square.svg",
+      "circle": "/icons/flag-bh/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "BH"
+    }
+  },
+  {
+    "slug": "flag-bi",
+    "title": "Burundi",
+    "aliases": [
+      "rn-bi",
+      "fr-bi",
+      "en-bi",
+      "bi",
+      "bdi",
+      "108",
+      "🇧🇮"
+    ],
+    "hex": "cf0921",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-bi/default.svg",
+      "square": "/icons/flag-bi/square.svg",
+      "circle": "/icons/flag-bi/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "BI"
+    }
+  },
+  {
+    "slug": "flag-bj",
+    "title": "Benin",
+    "aliases": [
+      "fr-bj",
+      "fon-bj",
+      "bj",
+      "ben",
+      "204",
+      "🇧🇯"
+    ],
+    "hex": "319400",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-bj/default.svg",
+      "square": "/icons/flag-bj/square.svg",
+      "circle": "/icons/flag-bj/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "BJ"
+    }
+  },
+  {
+    "slug": "flag-bl",
+    "title": "St. Barthélemy",
+    "aliases": [
+      "fr-bl",
+      "saint barthelemy",
+      "bl",
+      "blm",
+      "652",
+      "🇧🇱"
+    ],
+    "hex": "000091",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-bl/default.svg",
+      "square": "/icons/flag-bl/square.svg",
+      "circle": "/icons/flag-bl/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "BL"
+    }
+  },
+  {
+    "slug": "flag-bm",
+    "title": "Bermuda",
+    "aliases": [
+      "en-bm",
+      "bm",
+      "bmu",
+      "060",
+      "🇧🇲"
+    ],
+    "hex": "64b4d1",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-bm/default.svg",
+      "square": "/icons/flag-bm/square.svg",
+      "circle": "/icons/flag-bm/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "BM"
+    }
+  },
+  {
+    "slug": "flag-bn",
+    "title": "Brunei",
+    "aliases": [
+      "ms-bn",
+      "brunei darussalam",
+      "bn",
+      "brn",
+      "096",
+      "🇧🇳"
+    ],
+    "hex": "f7e017",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-bn/default.svg",
+      "square": "/icons/flag-bn/square.svg",
+      "circle": "/icons/flag-bn/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "BN"
+    }
+  },
+  {
+    "slug": "flag-bo",
+    "title": "Bolivia",
+    "aliases": [
+      "es-bo",
+      "qu-bo",
+      "ay-bo",
+      "bo",
+      "bol",
+      "068",
+      "🇧🇴"
+    ],
+    "hex": "e8a30e",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-bo/default.svg",
+      "square": "/icons/flag-bo/square.svg",
+      "circle": "/icons/flag-bo/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "BO"
+    }
+  },
+  {
+    "slug": "flag-bq",
+    "title": "Caribbean Netherlands",
+    "aliases": [
+      "nl-bq",
+      "pap-bq",
+      "bonaire sint eustatius and saba",
+      "bonaire sint eustatius en saba",
+      "bq",
+      "bes",
+      "535",
+      "🇧🇶"
+    ],
+    "hex": "21468b",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-bq/default.svg",
+      "square": "/icons/flag-bq/square.svg",
+      "circle": "/icons/flag-bq/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "BQ"
+    }
+  },
+  {
+    "slug": "flag-br",
+    "title": "Brazil",
+    "aliases": [
+      "pt-br",
+      "vec-br",
+      "brasil",
+      "brazilian",
+      "br",
+      "bra",
+      "076",
+      "🇧🇷"
+    ],
+    "hex": "309e3a",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-br/default.svg",
+      "square": "/icons/flag-br/square.svg",
+      "circle": "/icons/flag-br/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "BR"
+    }
+  },
+  {
+    "slug": "flag-bs",
+    "title": "Bahamas",
+    "aliases": [
+      "en-bs",
+      "bs",
+      "bhs",
+      "044",
+      "🇧🇸"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-bs/default.svg",
+      "square": "/icons/flag-bs/square.svg",
+      "circle": "/icons/flag-bs/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "BS"
+    }
+  },
+  {
+    "slug": "flag-bt",
+    "title": "Bhutan",
+    "aliases": [
+      "dz-bt",
+      "bt",
+      "btn",
+      "064",
+      "🇧🇹"
+    ],
+    "hex": "ff4e12",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-bt/default.svg",
+      "square": "/icons/flag-bt/square.svg",
+      "circle": "/icons/flag-bt/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "BT"
+    }
+  },
+  {
+    "slug": "flag-bv",
+    "title": "Bouvet Island",
+    "aliases": [
+      "no-bv",
+      "bouvet ya",
+      "bv",
+      "bvt",
+      "074",
+      "🇧🇻"
+    ],
+    "hex": "003897",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-bv/default.svg",
+      "square": "/icons/flag-bv/square.svg",
+      "circle": "/icons/flag-bv/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "BV"
+    }
+  },
+  {
+    "slug": "flag-bw",
+    "title": "Botswana",
+    "aliases": [
+      "en-bw",
+      "tn-bw",
+      "bw",
+      "bwa",
+      "072",
+      "🇧🇼"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-bw/default.svg",
+      "square": "/icons/flag-bw/square.svg",
+      "circle": "/icons/flag-bw/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "BW"
+    }
+  },
+  {
+    "slug": "flag-by",
+    "title": "Belarus",
+    "aliases": [
+      "be-by",
+      "ru-by",
+      "by",
+      "blr",
+      "112",
+      "🇧🇾"
+    ],
+    "hex": "007c30",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-by/default.svg",
+      "square": "/icons/flag-by/square.svg",
+      "circle": "/icons/flag-by/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "BY"
+    }
+  },
+  {
+    "slug": "flag-bz",
+    "title": "Belize",
+    "aliases": [
+      "en-bz",
+      "es-bz",
+      "belice",
+      "bz",
+      "blz",
+      "084",
+      "🇧🇿"
+    ],
+    "hex": "730000",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-bz/default.svg",
+      "square": "/icons/flag-bz/square.svg",
+      "circle": "/icons/flag-bz/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "BZ"
+    }
+  },
+  {
+    "slug": "flag-ca",
+    "title": "Canada",
+    "aliases": [
+      "en-ca",
+      "fr-ca",
+      "iu-ca",
+      "crk-ca",
+      "chp-ca",
+      "den-ca",
+      "dgr-ca",
+      "gwi-ca",
+      "ca",
+      "can",
+      "124",
+      "🇨🇦"
+    ],
+    "hex": "d52b1e",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ca/default.svg",
+      "square": "/icons/flag-ca/square.svg",
+      "circle": "/icons/flag-ca/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "CA"
+    }
+  },
+  {
+    "slug": "flag-cc",
+    "title": "Cocos (Keeling) Islands",
+    "aliases": [
+      "en-cc",
+      "ms-cc",
+      "kepulauan cocos keeling",
+      "cc",
+      "cck",
+      "166",
+      "🇨🇨"
+    ],
+    "hex": "008000",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-cc/default.svg",
+      "square": "/icons/flag-cc/square.svg",
+      "circle": "/icons/flag-cc/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "CC"
+    }
+  },
+  {
+    "slug": "flag-cd",
+    "title": "Congo - Kinshasa",
+    "aliases": [
+      "fr-cd",
+      "sw-cd",
+      "lua-cd",
+      "ln-cd",
+      "kg-cd",
+      "democratic republic of the congo",
+      "congo",
+      "republique democratique du congo",
+      "cd",
+      "cod",
+      "180",
+      "🇨🇩"
+    ],
+    "hex": "007fff",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-cd/default.svg",
+      "square": "/icons/flag-cd/square.svg",
+      "circle": "/icons/flag-cd/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "CD"
+    }
+  },
+  {
+    "slug": "flag-cf",
+    "title": "Central African Republic",
+    "aliases": [
+      "sg-cf",
+      "fr-cf",
+      "republique centrafricaine",
+      "cf",
+      "caf",
+      "140",
+      "🇨🇫"
+    ],
+    "hex": "ffff00",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-cf/default.svg",
+      "square": "/icons/flag-cf/square.svg",
+      "circle": "/icons/flag-cf/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "CF"
+    }
+  },
+  {
+    "slug": "flag-cg",
+    "title": "Congo - Brazzaville",
+    "aliases": [
+      "fr-cg",
+      "republic of the congo",
+      "congo",
+      "republique du congo",
+      "cg",
+      "cog",
+      "178",
+      "🇨🇬"
+    ],
+    "hex": "00ca00",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-cg/default.svg",
+      "square": "/icons/flag-cg/square.svg",
+      "circle": "/icons/flag-cg/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "CG"
+    }
+  },
+  {
+    "slug": "flag-ch",
+    "title": "Switzerland",
+    "aliases": [
+      "de-ch",
+      "gsw-ch",
+      "fr-ch",
+      "it-ch",
+      "rm-ch",
+      "en-ch",
+      "schweiz",
+      "swiss",
+      "suisse",
+      "svizzera",
+      "confoederatio helvetica",
+      "ch",
+      "che",
+      "756",
+      "🇨🇭"
+    ],
+    "hex": "ff0000",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ch/default.svg",
+      "square": "/icons/flag-ch/square.svg",
+      "circle": "/icons/flag-ch/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "CH"
+    }
+  },
+  {
+    "slug": "flag-ci",
+    "title": "Côte d’Ivoire",
+    "aliases": [
+      "fr-ci",
+      "cote divoire",
+      "ivory coast",
+      "ci",
+      "civ",
+      "384",
+      "🇨🇮"
+    ],
+    "hex": "009a44",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ci/default.svg",
+      "square": "/icons/flag-ci/square.svg",
+      "circle": "/icons/flag-ci/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "CI"
+    }
+  },
+  {
+    "slug": "flag-ck",
+    "title": "Cook Islands",
+    "aliases": [
+      "en-ck",
+      "ck",
+      "cok",
+      "184",
+      "🇨🇰"
+    ],
+    "hex": "000066",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ck/default.svg",
+      "square": "/icons/flag-ck/square.svg",
+      "circle": "/icons/flag-ck/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "CK"
+    }
+  },
+  {
+    "slug": "flag-cl",
+    "title": "Chile",
+    "aliases": [
+      "es-cl",
+      "cl",
+      "chl",
+      "152",
+      "🇨🇱"
+    ],
+    "hex": "0039a6",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-cl/default.svg",
+      "square": "/icons/flag-cl/square.svg",
+      "circle": "/icons/flag-cl/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "CL"
+    }
+  },
+  {
+    "slug": "flag-cm",
+    "title": "Cameroon",
+    "aliases": [
+      "fr-cm",
+      "en-cm",
+      "cameroun",
+      "cm",
+      "cmr",
+      "120",
+      "🇨🇲"
+    ],
+    "hex": "fcd116",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-cm/default.svg",
+      "square": "/icons/flag-cm/square.svg",
+      "circle": "/icons/flag-cm/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "CM"
+    }
+  },
+  {
+    "slug": "flag-cn",
+    "title": "China",
+    "aliases": [
+      "zh-cn",
+      "ug-cn",
+      "za-cn",
+      "mn-cn",
+      "bo-cn",
+      "ko-cn",
+      "peoples republic of china",
+      "prc",
+      "chinese",
+      "zhongguo",
+      "cn",
+      "chn",
+      "156",
+      "🇨🇳"
+    ],
+    "hex": "ee1c25",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-cn/default.svg",
+      "square": "/icons/flag-cn/square.svg",
+      "circle": "/icons/flag-cn/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "CN"
+    }
+  },
+  {
+    "slug": "flag-co",
+    "title": "Colombia",
+    "aliases": [
+      "es-co",
+      "co",
+      "col",
+      "170",
+      "🇨🇴"
+    ],
+    "hex": "00148e",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-co/default.svg",
+      "square": "/icons/flag-co/square.svg",
+      "circle": "/icons/flag-co/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "CO"
+    }
+  },
+  {
+    "slug": "flag-cr",
+    "title": "Costa Rica",
+    "aliases": [
+      "es-cr",
+      "cr",
+      "cri",
+      "188",
+      "🇨🇷"
+    ],
+    "hex": "0000b4",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-cr/default.svg",
+      "square": "/icons/flag-cr/square.svg",
+      "circle": "/icons/flag-cr/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "CR"
+    }
+  },
+  {
+    "slug": "flag-cu",
+    "title": "Cuba",
+    "aliases": [
+      "es-cu",
+      "cu",
+      "cub",
+      "192",
+      "🇨🇺"
+    ],
+    "hex": "002a8f",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-cu/default.svg",
+      "square": "/icons/flag-cu/square.svg",
+      "circle": "/icons/flag-cu/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "CU"
+    }
+  },
+  {
+    "slug": "flag-cv",
+    "title": "Cape Verde",
+    "aliases": [
+      "pt-cv",
+      "kea-cv",
+      "cabo verde",
+      "cv",
+      "cpv",
+      "132",
+      "🇨🇻"
+    ],
+    "hex": "081873",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-cv/default.svg",
+      "square": "/icons/flag-cv/square.svg",
+      "circle": "/icons/flag-cv/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "CV"
+    }
+  },
+  {
+    "slug": "flag-cw",
+    "title": "Curaçao",
+    "aliases": [
+      "pap-cw",
+      "nl-cw",
+      "cw",
+      "cuw",
+      "531",
+      "🇨🇼"
+    ],
+    "hex": "002b7f",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-cw/default.svg",
+      "square": "/icons/flag-cw/square.svg",
+      "circle": "/icons/flag-cw/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "CW"
+    }
+  },
+  {
+    "slug": "flag-cx",
+    "title": "Christmas Island",
+    "aliases": [
+      "en-cx",
+      "cx",
+      "cxr",
+      "162",
+      "🇨🇽"
+    ],
+    "hex": "1c8a42",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-cx/default.svg",
+      "square": "/icons/flag-cx/square.svg",
+      "circle": "/icons/flag-cx/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "CX"
+    }
+  },
+  {
+    "slug": "flag-cy",
+    "title": "Cyprus",
+    "aliases": [
+      "el-cy",
+      "tr-cy",
+      "en-cy",
+      "cy",
+      "cyp",
+      "196",
+      "🇨🇾"
+    ],
+    "hex": "435125",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-cy/default.svg",
+      "square": "/icons/flag-cy/square.svg",
+      "circle": "/icons/flag-cy/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "CY"
+    }
+  },
+  {
+    "slug": "flag-cz",
+    "title": "Czechia",
+    "aliases": [
+      "cs-cz",
+      "en-cz",
+      "czech republic",
+      "ceska republika",
+      "czechoslovakia",
+      "czech",
+      "cesko",
+      "cz",
+      "cze",
+      "203",
+      "🇨🇿"
+    ],
+    "hex": "11457e",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-cz/default.svg",
+      "square": "/icons/flag-cz/square.svg",
+      "circle": "/icons/flag-cz/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "CZ"
+    }
+  },
+  {
+    "slug": "flag-de",
+    "title": "Germany",
+    "aliases": [
+      "de-de",
+      "frr-de",
+      "en-de",
+      "deutschland",
+      "german",
+      "bundesrepublik",
+      "federal republic of germany",
+      "de",
+      "deu",
+      "276",
+      "🇩🇪"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-de/default.svg",
+      "square": "/icons/flag-de/square.svg",
+      "circle": "/icons/flag-de/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "DE"
+    }
+  },
+  {
+    "slug": "flag-dj",
+    "title": "Djibouti",
+    "aliases": [
+      "fr-dj",
+      "ar-dj",
+      "aa-dj",
+      "so-dj",
+      "dj",
+      "dji",
+      "262",
+      "🇩🇯"
+    ],
+    "hex": "00cc00",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-dj/default.svg",
+      "square": "/icons/flag-dj/square.svg",
+      "circle": "/icons/flag-dj/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "DJ"
+    }
+  },
+  {
+    "slug": "flag-dk",
+    "title": "Denmark",
+    "aliases": [
+      "da-dk",
+      "de-dk",
+      "kl-dk",
+      "en-dk",
+      "danmark",
+      "dk",
+      "dnk",
+      "208",
+      "🇩🇰"
+    ],
+    "hex": "c8102e",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-dk/default.svg",
+      "square": "/icons/flag-dk/square.svg",
+      "circle": "/icons/flag-dk/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "DK"
+    }
+  },
+  {
+    "slug": "flag-dm",
+    "title": "Dominica",
+    "aliases": [
+      "en-dm",
+      "dm",
+      "dma",
+      "212",
+      "🇩🇲"
+    ],
+    "hex": "108c00",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-dm/default.svg",
+      "square": "/icons/flag-dm/square.svg",
+      "circle": "/icons/flag-dm/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "DM"
+    }
+  },
+  {
+    "slug": "flag-do",
+    "title": "Dominican Republic",
+    "aliases": [
+      "es-do",
+      "republica dominicana",
+      "do",
+      "dom",
+      "214",
+      "🇩🇴"
+    ],
+    "hex": "002d62",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-do/default.svg",
+      "square": "/icons/flag-do/square.svg",
+      "circle": "/icons/flag-do/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "DO"
+    }
+  },
+  {
+    "slug": "flag-dz",
+    "title": "Algeria",
+    "aliases": [
+      "ar-dz",
+      "fr-dz",
+      "arq-dz",
+      "dz",
+      "dza",
+      "012",
+      "🇩🇿"
+    ],
+    "hex": "006233",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-dz/default.svg",
+      "square": "/icons/flag-dz/square.svg",
+      "circle": "/icons/flag-dz/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "DZ"
+    }
+  },
+  {
+    "slug": "flag-ec",
+    "title": "Ecuador",
+    "aliases": [
+      "es-ec",
+      "qu-ec",
+      "ec",
+      "ecu",
+      "218",
+      "🇪🇨"
+    ],
+    "hex": "005b00",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ec/default.svg",
+      "square": "/icons/flag-ec/square.svg",
+      "circle": "/icons/flag-ec/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "EC"
+    }
+  },
+  {
+    "slug": "flag-ee",
+    "title": "Estonia",
+    "aliases": [
+      "et-ee",
+      "ru-ee",
+      "en-ee",
+      "eesti",
+      "ee",
+      "est",
+      "233",
+      "🇪🇪"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ee/default.svg",
+      "square": "/icons/flag-ee/square.svg",
+      "circle": "/icons/flag-ee/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "EE"
+    }
+  },
+  {
+    "slug": "flag-eg",
+    "title": "Egypt",
+    "aliases": [
+      "ar-eg",
+      "arz-eg",
+      "en-eg",
+      "eg",
+      "egy",
+      "818",
+      "🇪🇬"
+    ],
+    "hex": "c09300",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-eg/default.svg",
+      "square": "/icons/flag-eg/square.svg",
+      "circle": "/icons/flag-eg/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "EG"
+    }
+  },
+  {
+    "slug": "flag-eh",
+    "title": "Western Sahara",
+    "aliases": [
+      "ar-eh",
+      "sahrawi",
+      "sadr",
+      "eh",
+      "esh",
+      "732",
+      "🇪🇭"
+    ],
+    "hex": "c4111b",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-eh/default.svg",
+      "square": "/icons/flag-eh/square.svg",
+      "circle": "/icons/flag-eh/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "EH"
+    }
+  },
+  {
+    "slug": "flag-er",
+    "title": "Eritrea",
+    "aliases": [
+      "ti-er",
+      "en-er",
+      "ar-er",
+      "er",
+      "eri",
+      "232",
+      "🇪🇷"
+    ],
+    "hex": "239e46",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-er/default.svg",
+      "square": "/icons/flag-er/square.svg",
+      "circle": "/icons/flag-er/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "ER"
+    }
+  },
+  {
+    "slug": "flag-es",
+    "title": "Spain",
+    "aliases": [
+      "es-es",
+      "ca-es",
+      "gl-es",
+      "eu-es",
+      "ast-es",
+      "oc-es",
+      "espana",
+      "spanish",
+      "espana flag",
+      "es",
+      "esp",
+      "724",
+      "🇪🇸"
+    ],
+    "hex": "c8b100",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-es/default.svg",
+      "square": "/icons/flag-es/square.svg",
+      "circle": "/icons/flag-es/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "ES"
+    }
+  },
+  {
+    "slug": "flag-es-ct",
+    "title": "Catalonia",
+    "aliases": [
+      "ca-es-ct",
+      "es-es-ct",
+      "oc-es-ct",
+      "catalunya",
+      "cataluna",
+      "catalan",
+      "senyera",
+      "catalan flag",
+      "es ct"
+    ],
+    "hex": "fcdd09",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-es-ct/default.svg",
+      "square": "/icons/flag-es-ct/square.svg",
+      "circle": "/icons/flag-es-ct/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "subdivision"
+    }
+  },
+  {
+    "slug": "flag-es-ga",
+    "title": "Galicia",
+    "aliases": [
+      "gl-es-ga",
+      "es-es-ga",
+      "galiza",
+      "galician",
+      "galego",
+      "es ga"
+    ],
+    "hex": "bcac0b",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-es-ga/default.svg",
+      "square": "/icons/flag-es-ga/square.svg",
+      "circle": "/icons/flag-es-ga/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "subdivision"
+    }
+  },
+  {
+    "slug": "flag-es-pv",
+    "title": "Basque Country",
+    "aliases": [
+      "eu-es-pv",
+      "es-es-pv",
+      "euskadi",
+      "basque",
+      "pais vasco",
+      "ikurrina",
+      "euskal herria",
+      "es pv"
+    ],
+    "hex": "009b48",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-es-pv/default.svg",
+      "square": "/icons/flag-es-pv/square.svg",
+      "circle": "/icons/flag-es-pv/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "subdivision"
+    }
+  },
+  {
+    "slug": "flag-et",
+    "title": "Ethiopia",
+    "aliases": [
+      "am-et",
+      "en-et",
+      "om-et",
+      "et",
+      "eth",
+      "231",
+      "🇪🇹"
+    ],
+    "hex": "ffc621",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-et/default.svg",
+      "square": "/icons/flag-et/square.svg",
+      "circle": "/icons/flag-et/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "ET"
+    }
+  },
+  {
+    "slug": "flag-eu",
+    "title": "European Union",
+    "aliases": [
+      "europe",
+      "europa",
+      "eu flag",
+      "brussels",
+      "european",
+      "eu"
+    ],
+    "hex": "003399",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-eu/default.svg",
+      "square": "/icons/flag-eu/square.svg",
+      "circle": "/icons/flag-eu/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "organization"
+    }
+  },
+  {
+    "slug": "flag-fi",
+    "title": "Finland",
+    "aliases": [
+      "fi-fi",
+      "sv-fi",
+      "sms-fi",
+      "en-fi",
+      "suomi",
+      "fi",
+      "fin",
+      "246",
+      "🇫🇮"
+    ],
+    "hex": "002f6c",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-fi/default.svg",
+      "square": "/icons/flag-fi/square.svg",
+      "circle": "/icons/flag-fi/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "FI"
+    }
+  },
+  {
+    "slug": "flag-fj",
+    "title": "Fiji",
+    "aliases": [
+      "en-fj",
+      "hif-fj",
+      "fj-fj",
+      "hi-fj",
+      "fj",
+      "fji",
+      "242",
+      "🇫🇯"
+    ],
+    "hex": "00a651",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-fj/default.svg",
+      "square": "/icons/flag-fj/square.svg",
+      "circle": "/icons/flag-fj/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "FJ"
+    }
+  },
+  {
+    "slug": "flag-fk",
+    "title": "Falkland Islands",
+    "aliases": [
+      "en-fk",
+      "falkland islands malvinas",
+      "fk",
+      "flk",
+      "238",
+      "🇫🇰"
+    ],
+    "hex": "dd8b59",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-fk/default.svg",
+      "square": "/icons/flag-fk/square.svg",
+      "circle": "/icons/flag-fk/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "FK"
+    }
+  },
+  {
+    "slug": "flag-fm",
+    "title": "Micronesia",
+    "aliases": [
+      "en-fm",
+      "chk-fm",
+      "micronesia federated states of",
+      "fm",
+      "fsm",
+      "583",
+      "🇫🇲"
+    ],
+    "hex": "6797d6",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-fm/default.svg",
+      "square": "/icons/flag-fm/square.svg",
+      "circle": "/icons/flag-fm/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "FM"
+    }
+  },
+  {
+    "slug": "flag-fo",
+    "title": "Faroe Islands",
+    "aliases": [
+      "fo-fo",
+      "fo",
+      "fro",
+      "234",
+      "🇫🇴"
+    ],
+    "hex": "003897",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-fo/default.svg",
+      "square": "/icons/flag-fo/square.svg",
+      "circle": "/icons/flag-fo/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "FO"
+    }
+  },
+  {
+    "slug": "flag-fr",
+    "title": "France",
+    "aliases": [
+      "fr-fr",
+      "en-fr",
+      "french",
+      "francais",
+      "fr",
+      "fra",
+      "250",
+      "🇫🇷"
+    ],
+    "hex": "000091",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-fr/default.svg",
+      "square": "/icons/flag-fr/square.svg",
+      "circle": "/icons/flag-fr/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "FR"
+    }
+  },
+  {
+    "slug": "flag-ga",
+    "title": "Gabon",
+    "aliases": [
+      "fr-ga",
+      "ga",
+      "gab",
+      "266",
+      "🇬🇦"
+    ],
+    "hex": "006dbc",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ga/default.svg",
+      "square": "/icons/flag-ga/square.svg",
+      "circle": "/icons/flag-ga/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "GA"
+    }
+  },
+  {
+    "slug": "flag-gb",
+    "title": "United Kingdom",
+    "aliases": [
+      "en-gb",
+      "cy-gb",
+      "ga-gb",
+      "gd-gb",
+      "uk",
+      "great britain",
+      "y deyrnas unedig",
+      "britain",
+      "british",
+      "england uk",
+      "gb",
+      "gbr",
+      "826",
+      "🇬🇧"
+    ],
+    "hex": "c8102e",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-gb/default.svg",
+      "square": "/icons/flag-gb/square.svg",
+      "circle": "/icons/flag-gb/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "GB"
+    }
+  },
+  {
+    "slug": "flag-gb-eng",
+    "title": "England",
+    "aliases": [
+      "en-gb-eng",
+      "english",
+      "st george",
+      "saint george",
+      "three lions",
+      "gb eng",
+      "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
+    ],
+    "hex": "ce1124",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-gb-eng/default.svg",
+      "square": "/icons/flag-gb-eng/square.svg",
+      "circle": "/icons/flag-gb-eng/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "subdivision"
+    }
+  },
+  {
+    "slug": "flag-gb-sct",
+    "title": "Scotland",
+    "aliases": [
+      "en-gb-sct",
+      "gd-gb-sct",
+      "sco-gb-sct",
+      "scottish",
+      "saltire",
+      "st andrew",
+      "alba",
+      "gb sct",
+      "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
+    ],
+    "hex": "0065bd",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-gb-sct/default.svg",
+      "square": "/icons/flag-gb-sct/square.svg",
+      "circle": "/icons/flag-gb-sct/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "subdivision"
+    }
+  },
+  {
+    "slug": "flag-gb-wls",
+    "title": "Wales",
+    "aliases": [
+      "cy-gb-wls",
+      "en-gb-wls",
+      "welsh",
+      "cymru",
+      "y ddraig goch",
+      "red dragon",
+      "gb wls",
+      "🏴󠁧󠁢󠁷󠁬󠁳󠁿"
+    ],
+    "hex": "00ab39",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-gb-wls/default.svg",
+      "square": "/icons/flag-gb-wls/square.svg",
+      "circle": "/icons/flag-gb-wls/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "subdivision"
+    }
+  },
+  {
+    "slug": "flag-gd",
+    "title": "Grenada",
+    "aliases": [
+      "en-gd",
+      "gd",
+      "grd",
+      "308",
+      "🇬🇩"
+    ],
+    "hex": "ce1126",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-gd/default.svg",
+      "square": "/icons/flag-gd/square.svg",
+      "circle": "/icons/flag-gd/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "GD"
+    }
+  },
+  {
+    "slug": "flag-ge",
+    "title": "Georgia",
+    "aliases": [
+      "ka-ge",
+      "ab-ge",
+      "os-ge",
+      "ge",
+      "geo",
+      "268",
+      "🇬🇪"
+    ],
+    "hex": "ff0000",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ge/default.svg",
+      "square": "/icons/flag-ge/square.svg",
+      "circle": "/icons/flag-ge/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "GE"
+    }
+  },
+  {
+    "slug": "flag-gf",
+    "title": "French Guiana",
+    "aliases": [
+      "fr-gf",
+      "gcr-gf",
+      "guyane francaise",
+      "gf",
+      "guf",
+      "254",
+      "🇬🇫"
+    ],
+    "hex": "000091",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-gf/default.svg",
+      "square": "/icons/flag-gf/square.svg",
+      "circle": "/icons/flag-gf/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "GF"
+    }
+  },
+  {
+    "slug": "flag-gg",
+    "title": "Guernsey",
+    "aliases": [
+      "en-gg",
+      "gg",
+      "ggy",
+      "831",
+      "🇬🇬"
+    ],
+    "hex": "e8112d",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-gg/default.svg",
+      "square": "/icons/flag-gg/square.svg",
+      "circle": "/icons/flag-gg/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "GG"
+    }
+  },
+  {
+    "slug": "flag-gh",
+    "title": "Ghana",
+    "aliases": [
+      "ak-gh",
+      "en-gh",
+      "ee-gh",
+      "gaa-gh",
+      "gh",
+      "gha",
+      "288",
+      "🇬🇭"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-gh/default.svg",
+      "square": "/icons/flag-gh/square.svg",
+      "circle": "/icons/flag-gh/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "GH"
+    }
+  },
+  {
+    "slug": "flag-gi",
+    "title": "Gibraltar",
+    "aliases": [
+      "en-gi",
+      "es-gi",
+      "gi",
+      "gib",
+      "292",
+      "🇬🇮"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-gi/default.svg",
+      "square": "/icons/flag-gi/square.svg",
+      "circle": "/icons/flag-gi/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "GI"
+    }
+  },
+  {
+    "slug": "flag-gl",
+    "title": "Greenland",
+    "aliases": [
+      "kl-gl",
+      "gl",
+      "grl",
+      "304",
+      "🇬🇱"
+    ],
+    "hex": "d00c33",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-gl/default.svg",
+      "square": "/icons/flag-gl/square.svg",
+      "circle": "/icons/flag-gl/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "GL"
+    }
+  },
+  {
+    "slug": "flag-gm",
+    "title": "Gambia",
+    "aliases": [
+      "en-gm",
+      "man-gm",
+      "republic of the gambia",
+      "the gambia",
+      "gm",
+      "gmb",
+      "270",
+      "🇬🇲"
+    ],
+    "hex": "000099",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-gm/default.svg",
+      "square": "/icons/flag-gm/square.svg",
+      "circle": "/icons/flag-gm/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "GM"
+    }
+  },
+  {
+    "slug": "flag-gn",
+    "title": "Guinea",
+    "aliases": [
+      "fr-gn",
+      "ff-gn",
+      "guinee",
+      "gn",
+      "gin",
+      "324",
+      "🇬🇳"
+    ],
+    "hex": "009900",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-gn/default.svg",
+      "square": "/icons/flag-gn/square.svg",
+      "circle": "/icons/flag-gn/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "GN"
+    }
+  },
+  {
+    "slug": "flag-gp",
+    "title": "Guadeloupe",
+    "aliases": [
+      "fr-gp",
+      "gp",
+      "glp",
+      "312",
+      "🇬🇵"
+    ],
+    "hex": "000091",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-gp/default.svg",
+      "square": "/icons/flag-gp/square.svg",
+      "circle": "/icons/flag-gp/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "GP"
+    }
+  },
+  {
+    "slug": "flag-gq",
+    "title": "Equatorial Guinea",
+    "aliases": [
+      "es-gq",
+      "fr-gq",
+      "pt-gq",
+      "fan-gq",
+      "guinea ecuatorial",
+      "gq",
+      "gnq",
+      "226",
+      "🇬🇶"
+    ],
+    "hex": "73452b",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-gq/default.svg",
+      "square": "/icons/flag-gq/square.svg",
+      "circle": "/icons/flag-gq/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "GQ"
+    }
+  },
+  {
+    "slug": "flag-gr",
+    "title": "Greece",
+    "aliases": [
+      "el-gr",
+      "en-gr",
+      "gr",
+      "grc",
+      "300",
+      "🇬🇷"
+    ],
+    "hex": "0d5eaf",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-gr/default.svg",
+      "square": "/icons/flag-gr/square.svg",
+      "circle": "/icons/flag-gr/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "GR"
+    }
+  },
+  {
+    "slug": "flag-gs",
+    "title": "South Georgia and South Sandwich Islands",
+    "aliases": [
+      "en-gs",
+      "south georgia and the south sandwich islands",
+      "gs",
+      "sgs",
+      "239",
+      "🇬🇸"
+    ],
+    "hex": "2b2b2b",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-gs/default.svg",
+      "square": "/icons/flag-gs/square.svg",
+      "circle": "/icons/flag-gs/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "GS"
+    }
+  },
+  {
+    "slug": "flag-gt",
+    "title": "Guatemala",
+    "aliases": [
+      "es-gt",
+      "quc-gt",
+      "gt",
+      "gtm",
+      "320",
+      "🇬🇹"
+    ],
+    "hex": "406325",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-gt/default.svg",
+      "square": "/icons/flag-gt/square.svg",
+      "circle": "/icons/flag-gt/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "GT"
+    }
+  },
+  {
+    "slug": "flag-gu",
+    "title": "Guam",
+    "aliases": [
+      "en-gu",
+      "ch-gu",
+      "gu",
+      "gum",
+      "316",
+      "🇬🇺"
+    ],
+    "hex": "bd0728",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-gu/default.svg",
+      "square": "/icons/flag-gu/square.svg",
+      "circle": "/icons/flag-gu/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "GU"
+    }
+  },
+  {
+    "slug": "flag-gw",
+    "title": "Guinea-Bissau",
+    "aliases": [
+      "pt-gw",
+      "guine bissau",
+      "gw",
+      "gnb",
+      "624",
+      "🇬🇼"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-gw/default.svg",
+      "square": "/icons/flag-gw/square.svg",
+      "circle": "/icons/flag-gw/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "GW"
+    }
+  },
+  {
+    "slug": "flag-gy",
+    "title": "Guyana",
+    "aliases": [
+      "en-gy",
+      "gy",
+      "guy",
+      "328",
+      "🇬🇾"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-gy/default.svg",
+      "square": "/icons/flag-gy/square.svg",
+      "circle": "/icons/flag-gy/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "GY"
+    }
+  },
+  {
+    "slug": "flag-hk",
+    "title": "Hong Kong",
+    "aliases": [
+      "zh-hk",
+      "en-hk",
+      "yue-hk",
+      "hksar",
+      "hongkong",
+      "hk",
+      "hkg",
+      "344",
+      "🇭🇰"
+    ],
+    "hex": "ec1b2e",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-hk/default.svg",
+      "square": "/icons/flag-hk/square.svg",
+      "circle": "/icons/flag-hk/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "HK"
+    }
+  },
+  {
+    "slug": "flag-hm",
+    "title": "Heard and McDonald Islands",
+    "aliases": [
+      "und-hm",
+      "heard island and mcdonald islands",
+      "hm",
+      "hmd",
+      "334",
+      "🇭🇲"
+    ],
+    "hex": "ff0000",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-hm/default.svg",
+      "square": "/icons/flag-hm/square.svg",
+      "circle": "/icons/flag-hm/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "HM"
+    }
+  },
+  {
+    "slug": "flag-hn",
+    "title": "Honduras",
+    "aliases": [
+      "es-hn",
+      "hn",
+      "hnd",
+      "340",
+      "🇭🇳"
+    ],
+    "hex": "18c3df",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-hn/default.svg",
+      "square": "/icons/flag-hn/square.svg",
+      "circle": "/icons/flag-hn/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "HN"
+    }
+  },
+  {
+    "slug": "flag-hr",
+    "title": "Croatia",
+    "aliases": [
+      "hr-hr",
+      "it-hr",
+      "vec-hr",
+      "en-hr",
+      "hrvatska",
+      "hr",
+      "hrv",
+      "191",
+      "🇭🇷"
+    ],
+    "hex": "ff0000",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-hr/default.svg",
+      "square": "/icons/flag-hr/square.svg",
+      "circle": "/icons/flag-hr/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "HR"
+    }
+  },
+  {
+    "slug": "flag-ht",
+    "title": "Haiti",
+    "aliases": [
+      "ht-ht",
+      "fr-ht",
+      "ht",
+      "hti",
+      "332",
+      "🇭🇹"
+    ],
+    "hex": "d20014",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ht/default.svg",
+      "square": "/icons/flag-ht/square.svg",
+      "circle": "/icons/flag-ht/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "HT"
+    }
+  },
+  {
+    "slug": "flag-hu",
+    "title": "Hungary",
+    "aliases": [
+      "hu-hu",
+      "magyarorszag",
+      "hu",
+      "hun",
+      "348",
+      "🇭🇺"
+    ],
+    "hex": "388d00",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-hu/default.svg",
+      "square": "/icons/flag-hu/square.svg",
+      "circle": "/icons/flag-hu/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "HU"
+    }
+  },
+  {
+    "slug": "flag-id",
+    "title": "Indonesia",
+    "aliases": [
+      "id-id",
+      "jv-id",
+      "indonesian",
+      "id",
+      "idn",
+      "360",
+      "🇮🇩"
+    ],
+    "hex": "e70011",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-id/default.svg",
+      "square": "/icons/flag-id/square.svg",
+      "circle": "/icons/flag-id/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "ID"
+    }
+  },
+  {
+    "slug": "flag-ie",
+    "title": "Ireland",
+    "aliases": [
+      "en-ie",
+      "ga-ie",
+      "eire",
+      "irish",
+      "republic of ireland",
+      "ie",
+      "irl",
+      "372",
+      "🇮🇪"
+    ],
+    "hex": "009a49",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ie/default.svg",
+      "square": "/icons/flag-ie/square.svg",
+      "circle": "/icons/flag-ie/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "IE"
+    }
+  },
+  {
+    "slug": "flag-il",
+    "title": "Israel",
+    "aliases": [
+      "he-il",
+      "ar-il",
+      "en-il",
+      "il",
+      "isr",
+      "376",
+      "🇮🇱"
+    ],
+    "hex": "0038b8",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-il/default.svg",
+      "square": "/icons/flag-il/square.svg",
+      "circle": "/icons/flag-il/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "IL"
+    }
+  },
+  {
+    "slug": "flag-im",
+    "title": "Isle of Man",
+    "aliases": [
+      "en-im",
+      "gv-im",
+      "im",
+      "imn",
+      "833",
+      "🇮🇲"
+    ],
+    "hex": "ffef00",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-im/default.svg",
+      "square": "/icons/flag-im/square.svg",
+      "circle": "/icons/flag-im/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "IM"
+    }
+  },
+  {
+    "slug": "flag-in",
+    "title": "India",
+    "aliases": [
+      "hi-in",
+      "en-in",
+      "bn-in",
+      "te-in",
+      "mr-in",
+      "ta-in",
+      "ur-in",
+      "gu-in",
+      "kn-in",
+      "ml-in",
+      "or-in",
+      "pa-in",
+      "as-in",
+      "mai-in",
+      "ne-in",
+      "sat-in",
+      "ks-in",
+      "kok-in",
+      "sd-in",
+      "kha-in",
+      "sa-in",
+      "indian",
+      "bharat",
+      "hindustan",
+      "in",
+      "ind",
+      "356",
+      "🇮🇳"
+    ],
+    "hex": "000088",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-in/default.svg",
+      "square": "/icons/flag-in/square.svg",
+      "circle": "/icons/flag-in/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "IN"
+    }
+  },
+  {
+    "slug": "flag-io",
+    "title": "British Indian Ocean Territory",
+    "aliases": [
+      "en-io",
+      "io",
+      "iot",
+      "086",
+      "🇮🇴"
+    ],
+    "hex": "fff100",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-io/default.svg",
+      "square": "/icons/flag-io/square.svg",
+      "circle": "/icons/flag-io/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "IO"
+    }
+  },
+  {
+    "slug": "flag-iq",
+    "title": "Iraq",
+    "aliases": [
+      "ar-iq",
+      "ckb-iq",
+      "az-iq",
+      "en-iq",
+      "iq",
+      "irq",
+      "368",
+      "🇮🇶"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-iq/default.svg",
+      "square": "/icons/flag-iq/square.svg",
+      "circle": "/icons/flag-iq/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "IQ"
+    }
+  },
+  {
+    "slug": "flag-ir",
+    "title": "Iran",
+    "aliases": [
+      "fa-ir",
+      "islamic republic of iran",
+      "persia",
+      "persian",
+      "ir",
+      "irn",
+      "364",
+      "🇮🇷"
+    ],
+    "hex": "da0000",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ir/default.svg",
+      "square": "/icons/flag-ir/square.svg",
+      "circle": "/icons/flag-ir/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "IR"
+    }
+  },
+  {
+    "slug": "flag-is",
+    "title": "Iceland",
+    "aliases": [
+      "is-is",
+      "island",
+      "is",
+      "isl",
+      "352",
+      "🇮🇸"
+    ],
+    "hex": "003897",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-is/default.svg",
+      "square": "/icons/flag-is/square.svg",
+      "circle": "/icons/flag-is/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "IS"
+    }
+  },
+  {
+    "slug": "flag-it",
+    "title": "Italy",
+    "aliases": [
+      "it-it",
+      "fr-it",
+      "vec-it",
+      "en-it",
+      "italia",
+      "italian",
+      "it",
+      "ita",
+      "380",
+      "🇮🇹"
+    ],
+    "hex": "009246",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-it/default.svg",
+      "square": "/icons/flag-it/square.svg",
+      "circle": "/icons/flag-it/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "IT"
+    }
+  },
+  {
+    "slug": "flag-je",
+    "title": "Jersey",
+    "aliases": [
+      "en-je",
+      "je",
+      "jey",
+      "832",
+      "🇯🇪"
+    ],
+    "hex": "377bc8",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-je/default.svg",
+      "square": "/icons/flag-je/square.svg",
+      "circle": "/icons/flag-je/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "JE"
+    }
+  },
+  {
+    "slug": "flag-jm",
+    "title": "Jamaica",
+    "aliases": [
+      "en-jm",
+      "jam-jm",
+      "jm",
+      "jam",
+      "388",
+      "🇯🇲"
+    ],
+    "hex": "ffcc00",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-jm/default.svg",
+      "square": "/icons/flag-jm/square.svg",
+      "circle": "/icons/flag-jm/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "JM"
+    }
+  },
+  {
+    "slug": "flag-jo",
+    "title": "Jordan",
+    "aliases": [
+      "ar-jo",
+      "apc-jo",
+      "en-jo",
+      "jo",
+      "jor",
+      "400",
+      "🇯🇴"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-jo/default.svg",
+      "square": "/icons/flag-jo/square.svg",
+      "circle": "/icons/flag-jo/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "JO"
+    }
+  },
+  {
+    "slug": "flag-jp",
+    "title": "Japan",
+    "aliases": [
+      "ja-jp",
+      "japanese",
+      "nippon",
+      "nihon",
+      "jp",
+      "jpn",
+      "392",
+      "🇯🇵"
+    ],
+    "hex": "bc002d",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-jp/default.svg",
+      "square": "/icons/flag-jp/square.svg",
+      "circle": "/icons/flag-jp/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "JP"
+    }
+  },
+  {
+    "slug": "flag-ke",
+    "title": "Kenya",
+    "aliases": [
+      "sw-ke",
+      "en-ke",
+      "ke",
+      "ken",
+      "404",
+      "🇰🇪"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ke/default.svg",
+      "square": "/icons/flag-ke/square.svg",
+      "circle": "/icons/flag-ke/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "KE"
+    }
+  },
+  {
+    "slug": "flag-kg",
+    "title": "Kyrgyzstan",
+    "aliases": [
+      "ky-kg",
+      "ru-kg",
+      "kg",
+      "kgz",
+      "417",
+      "🇰🇬"
+    ],
+    "hex": "ff0000",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-kg/default.svg",
+      "square": "/icons/flag-kg/square.svg",
+      "circle": "/icons/flag-kg/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "KG"
+    }
+  },
+  {
+    "slug": "flag-kh",
+    "title": "Cambodia",
+    "aliases": [
+      "km-kh",
+      "kh",
+      "khm",
+      "116",
+      "🇰🇭"
+    ],
+    "hex": "032ea1",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-kh/default.svg",
+      "square": "/icons/flag-kh/square.svg",
+      "circle": "/icons/flag-kh/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "KH"
+    }
+  },
+  {
+    "slug": "flag-ki",
+    "title": "Kiribati",
+    "aliases": [
+      "en-ki",
+      "gil-ki",
+      "ki",
+      "kir",
+      "296",
+      "🇰🇮"
+    ],
+    "hex": "fec74a",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ki/default.svg",
+      "square": "/icons/flag-ki/square.svg",
+      "circle": "/icons/flag-ki/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "KI"
+    }
+  },
+  {
+    "slug": "flag-km",
+    "title": "Comoros",
+    "aliases": [
+      "ar-km",
+      "zdj-km",
+      "wni-km",
+      "fr-km",
+      "km",
+      "com",
+      "174",
+      "🇰🇲"
+    ],
+    "hex": "239e46",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-km/default.svg",
+      "square": "/icons/flag-km/square.svg",
+      "circle": "/icons/flag-km/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "KM"
+    }
+  },
+  {
+    "slug": "flag-kn",
+    "title": "St. Kitts and Nevis",
+    "aliases": [
+      "en-kn",
+      "saint kitts and nevis",
+      "kn",
+      "kna",
+      "659",
+      "🇰🇳"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-kn/default.svg",
+      "square": "/icons/flag-kn/square.svg",
+      "circle": "/icons/flag-kn/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "KN"
+    }
+  },
+  {
+    "slug": "flag-kp",
+    "title": "North Korea",
+    "aliases": [
+      "ko-kp",
+      "dprk",
+      "democratic peoples republic of korea",
+      "kp",
+      "prk",
+      "408",
+      "🇰🇵"
+    ],
+    "hex": "3e5698",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-kp/default.svg",
+      "square": "/icons/flag-kp/square.svg",
+      "circle": "/icons/flag-kp/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "KP"
+    }
+  },
+  {
+    "slug": "flag-kr",
+    "title": "South Korea",
+    "aliases": [
+      "ko-kr",
+      "korea republic of",
+      "republic of korea",
+      "korea",
+      "korean",
+      "hanguk",
+      "kr",
+      "kor",
+      "410",
+      "🇰🇷"
+    ],
+    "hex": "cd2e3a",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-kr/default.svg",
+      "square": "/icons/flag-kr/square.svg",
+      "circle": "/icons/flag-kr/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "KR"
+    }
+  },
+  {
+    "slug": "flag-kw",
+    "title": "Kuwait",
+    "aliases": [
+      "ar-kw",
+      "kw",
+      "kwt",
+      "414",
+      "🇰🇼"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-kw/default.svg",
+      "square": "/icons/flag-kw/square.svg",
+      "circle": "/icons/flag-kw/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "KW"
+    }
+  },
+  {
+    "slug": "flag-ky",
+    "title": "Cayman Islands",
+    "aliases": [
+      "en-ky",
+      "ky",
+      "cym",
+      "136",
+      "🇰🇾"
+    ],
+    "hex": "c8102e",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ky/default.svg",
+      "square": "/icons/flag-ky/square.svg",
+      "circle": "/icons/flag-ky/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "KY"
+    }
+  },
+  {
+    "slug": "flag-kz",
+    "title": "Kazakhstan",
+    "aliases": [
+      "ru-kz",
+      "kk-kz",
+      "kz",
+      "kaz",
+      "398",
+      "🇰🇿"
+    ],
+    "hex": "00abc2",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-kz/default.svg",
+      "square": "/icons/flag-kz/square.svg",
+      "circle": "/icons/flag-kz/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "KZ"
+    }
+  },
+  {
+    "slug": "flag-la",
+    "title": "Laos",
+    "aliases": [
+      "lo-la",
+      "lao peoples democratic republic",
+      "lao pdr",
+      "la",
+      "lao",
+      "418",
+      "🇱🇦"
+    ],
+    "hex": "002868",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-la/default.svg",
+      "square": "/icons/flag-la/square.svg",
+      "circle": "/icons/flag-la/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "LA"
+    }
+  },
+  {
+    "slug": "flag-lb",
+    "title": "Lebanon",
+    "aliases": [
+      "ar-lb",
+      "apc-lb",
+      "en-lb",
+      "fr-lb",
+      "lb",
+      "lbn",
+      "422",
+      "🇱🇧"
+    ],
+    "hex": "00a850",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-lb/default.svg",
+      "square": "/icons/flag-lb/square.svg",
+      "circle": "/icons/flag-lb/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "LB"
+    }
+  },
+  {
+    "slug": "flag-lc",
+    "title": "St. Lucia",
+    "aliases": [
+      "en-lc",
+      "saint lucia",
+      "lc",
+      "lca",
+      "662",
+      "🇱🇨"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-lc/default.svg",
+      "square": "/icons/flag-lc/square.svg",
+      "circle": "/icons/flag-lc/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "LC"
+    }
+  },
+  {
+    "slug": "flag-li",
+    "title": "Liechtenstein",
+    "aliases": [
+      "de-li",
+      "gsw-li",
+      "li",
+      "lie",
+      "438",
+      "🇱🇮"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-li/default.svg",
+      "square": "/icons/flag-li/square.svg",
+      "circle": "/icons/flag-li/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "LI"
+    }
+  },
+  {
+    "slug": "flag-lk",
+    "title": "Sri Lanka",
+    "aliases": [
+      "si-lk",
+      "ta-lk",
+      "lk",
+      "lka",
+      "144",
+      "🇱🇰"
+    ],
+    "hex": "ffb700",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-lk/default.svg",
+      "square": "/icons/flag-lk/square.svg",
+      "circle": "/icons/flag-lk/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "LK"
+    }
+  },
+  {
+    "slug": "flag-lr",
+    "title": "Liberia",
+    "aliases": [
+      "en-lr",
+      "lr",
+      "lbr",
+      "430",
+      "🇱🇷"
+    ],
+    "hex": "cc0000",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-lr/default.svg",
+      "square": "/icons/flag-lr/square.svg",
+      "circle": "/icons/flag-lr/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "LR"
+    }
+  },
+  {
+    "slug": "flag-ls",
+    "title": "Lesotho",
+    "aliases": [
+      "st-ls",
+      "en-ls",
+      "ls",
+      "lso",
+      "426",
+      "🇱🇸"
+    ],
+    "hex": "00209f",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ls/default.svg",
+      "square": "/icons/flag-ls/square.svg",
+      "circle": "/icons/flag-ls/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "LS"
+    }
+  },
+  {
+    "slug": "flag-lt",
+    "title": "Lithuania",
+    "aliases": [
+      "lt-lt",
+      "ru-lt",
+      "en-lt",
+      "lietuva",
+      "lt",
+      "ltu",
+      "440",
+      "🇱🇹"
+    ],
+    "hex": "006a44",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-lt/default.svg",
+      "square": "/icons/flag-lt/square.svg",
+      "circle": "/icons/flag-lt/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "LT"
+    }
+  },
+  {
+    "slug": "flag-lu",
+    "title": "Luxembourg",
+    "aliases": [
+      "fr-lu",
+      "lb-lu",
+      "de-lu",
+      "en-lu",
+      "luxemburg",
+      "lu",
+      "lux",
+      "442",
+      "🇱🇺"
+    ],
+    "hex": "00a1de",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-lu/default.svg",
+      "square": "/icons/flag-lu/square.svg",
+      "circle": "/icons/flag-lu/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "LU"
+    }
+  },
+  {
+    "slug": "flag-lv",
+    "title": "Latvia",
+    "aliases": [
+      "lv-lv",
+      "en-lv",
+      "ru-lv",
+      "latvija",
+      "lv",
+      "lva",
+      "428",
+      "🇱🇻"
+    ],
+    "hex": "981e32",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-lv/default.svg",
+      "square": "/icons/flag-lv/square.svg",
+      "circle": "/icons/flag-lv/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "LV"
+    }
+  },
+  {
+    "slug": "flag-ly",
+    "title": "Libya",
+    "aliases": [
+      "ar-ly",
+      "ly",
+      "lby",
+      "434",
+      "🇱🇾"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ly/default.svg",
+      "square": "/icons/flag-ly/square.svg",
+      "circle": "/icons/flag-ly/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "LY"
+    }
+  },
+  {
+    "slug": "flag-ma",
+    "title": "Morocco",
+    "aliases": [
+      "ar-ma",
+      "fr-ma",
+      "tzm-ma",
+      "ary-ma",
+      "ma",
+      "mar",
+      "504",
+      "🇲🇦"
+    ],
+    "hex": "c1272d",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ma/default.svg",
+      "square": "/icons/flag-ma/square.svg",
+      "circle": "/icons/flag-ma/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "MA"
+    }
+  },
+  {
+    "slug": "flag-mc",
+    "title": "Monaco",
+    "aliases": [
+      "fr-mc",
+      "mc",
+      "mco",
+      "492",
+      "🇲🇨"
+    ],
+    "hex": "f31830",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-mc/default.svg",
+      "square": "/icons/flag-mc/square.svg",
+      "circle": "/icons/flag-mc/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "MC"
+    }
+  },
+  {
+    "slug": "flag-md",
+    "title": "Moldova",
+    "aliases": [
+      "ro-md",
+      "moldova republic of",
+      "republica moldova",
+      "md",
+      "mda",
+      "498",
+      "🇲🇩"
+    ],
+    "hex": "ffff00",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-md/default.svg",
+      "square": "/icons/flag-md/square.svg",
+      "circle": "/icons/flag-md/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "MD"
+    }
+  },
+  {
+    "slug": "flag-me",
+    "title": "Montenegro",
+    "aliases": [
+      "sr-me",
+      "me",
+      "mne",
+      "499",
+      "🇲🇪"
+    ],
+    "hex": "d4af3a",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-me/default.svg",
+      "square": "/icons/flag-me/square.svg",
+      "circle": "/icons/flag-me/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "ME"
+    }
+  },
+  {
+    "slug": "flag-mf",
+    "title": "St. Martin",
+    "aliases": [
+      "fr-mf",
+      "saint martin french part",
+      "saint martin partie francaise",
+      "mf",
+      "maf",
+      "663",
+      "🇲🇫"
+    ],
+    "hex": "000091",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-mf/default.svg",
+      "square": "/icons/flag-mf/square.svg",
+      "circle": "/icons/flag-mf/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "MF"
+    }
+  },
+  {
+    "slug": "flag-mg",
+    "title": "Madagascar",
+    "aliases": [
+      "mg-mg",
+      "fr-mg",
+      "en-mg",
+      "mg",
+      "mdg",
+      "450",
+      "🇲🇬"
+    ],
+    "hex": "007e3a",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-mg/default.svg",
+      "square": "/icons/flag-mg/square.svg",
+      "circle": "/icons/flag-mg/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "MG"
+    }
+  },
+  {
+    "slug": "flag-mh",
+    "title": "Marshall Islands",
+    "aliases": [
+      "en-mh",
+      "mh-mh",
+      "mh",
+      "mhl",
+      "584",
+      "🇲🇭"
+    ],
+    "hex": "3b5aa3",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-mh/default.svg",
+      "square": "/icons/flag-mh/square.svg",
+      "circle": "/icons/flag-mh/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "MH"
+    }
+  },
+  {
+    "slug": "flag-mk",
+    "title": "North Macedonia",
+    "aliases": [
+      "mk-mk",
+      "sq-mk",
+      "the republic of north macedonia",
+      "macedonia",
+      "fyrom",
+      "mk",
+      "mkd",
+      "807",
+      "🇲🇰"
+    ],
+    "hex": "ffe600",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-mk/default.svg",
+      "square": "/icons/flag-mk/square.svg",
+      "circle": "/icons/flag-mk/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "MK"
+    }
+  },
+  {
+    "slug": "flag-ml",
+    "title": "Mali",
+    "aliases": [
+      "fr-ml",
+      "bm-ml",
+      "ml",
+      "mli",
+      "466",
+      "🇲🇱"
+    ],
+    "hex": "009a00",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ml/default.svg",
+      "square": "/icons/flag-ml/square.svg",
+      "circle": "/icons/flag-ml/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "ML"
+    }
+  },
+  {
+    "slug": "flag-mm",
+    "title": "Myanmar (Burma)",
+    "aliases": [
+      "my-mm",
+      "myanmar",
+      "burma",
+      "burmese",
+      "mm",
+      "mmr",
+      "104",
+      "🇲🇲"
+    ],
+    "hex": "34b233",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-mm/default.svg",
+      "square": "/icons/flag-mm/square.svg",
+      "circle": "/icons/flag-mm/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "MM"
+    }
+  },
+  {
+    "slug": "flag-mn",
+    "title": "Mongolia",
+    "aliases": [
+      "mn-mn",
+      "mn",
+      "mng",
+      "496",
+      "🇲🇳"
+    ],
+    "hex": "da2032",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-mn/default.svg",
+      "square": "/icons/flag-mn/square.svg",
+      "circle": "/icons/flag-mn/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "MN"
+    }
+  },
+  {
+    "slug": "flag-mo",
+    "title": "Macao",
+    "aliases": [
+      "zh-mo",
+      "yue-mo",
+      "pt-mo",
+      "macau",
+      "mo",
+      "mac",
+      "446",
+      "🇲🇴"
+    ],
+    "hex": "fbd116",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-mo/default.svg",
+      "square": "/icons/flag-mo/square.svg",
+      "circle": "/icons/flag-mo/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "MO"
+    }
+  },
+  {
+    "slug": "flag-mp",
+    "title": "Northern Mariana Islands",
+    "aliases": [
+      "en-mp",
+      "mp",
+      "mnp",
+      "580",
+      "🇲🇵"
+    ],
+    "hex": "217900",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-mp/default.svg",
+      "square": "/icons/flag-mp/square.svg",
+      "circle": "/icons/flag-mp/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "MP"
+    }
+  },
+  {
+    "slug": "flag-mq",
+    "title": "Martinique",
+    "aliases": [
+      "fr-mq",
+      "mq",
+      "mtq",
+      "474",
+      "🇲🇶"
+    ],
+    "hex": "00a650",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-mq/default.svg",
+      "square": "/icons/flag-mq/square.svg",
+      "circle": "/icons/flag-mq/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "MQ"
+    }
+  },
+  {
+    "slug": "flag-mr",
+    "title": "Mauritania",
+    "aliases": [
+      "ar-mr",
+      "mr",
+      "mrt",
+      "478",
+      "🇲🇷"
+    ],
+    "hex": "ffc400",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-mr/default.svg",
+      "square": "/icons/flag-mr/square.svg",
+      "circle": "/icons/flag-mr/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "MR"
+    }
+  },
+  {
+    "slug": "flag-ms",
+    "title": "Montserrat",
+    "aliases": [
+      "en-ms",
+      "ms",
+      "msr",
+      "500",
+      "🇲🇸"
+    ],
+    "hex": "012169",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ms/default.svg",
+      "square": "/icons/flag-ms/square.svg",
+      "circle": "/icons/flag-ms/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "MS"
+    }
+  },
+  {
+    "slug": "flag-mt",
+    "title": "Malta",
+    "aliases": [
+      "mt-mt",
+      "en-mt",
+      "it-mt",
+      "mt",
+      "mlt",
+      "470",
+      "🇲🇹"
+    ],
+    "hex": "cf142b",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-mt/default.svg",
+      "square": "/icons/flag-mt/square.svg",
+      "circle": "/icons/flag-mt/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "MT"
+    }
+  },
+  {
+    "slug": "flag-mu",
+    "title": "Mauritius",
+    "aliases": [
+      "fr-mu",
+      "en-mu",
+      "mfe-mu",
+      "maurice",
+      "mu",
+      "mus",
+      "480",
+      "🇲🇺"
+    ],
+    "hex": "00a04d",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-mu/default.svg",
+      "square": "/icons/flag-mu/square.svg",
+      "circle": "/icons/flag-mu/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "MU"
+    }
+  },
+  {
+    "slug": "flag-mv",
+    "title": "Maldives",
+    "aliases": [
+      "dv-mv",
+      "en-mv",
+      "mv",
+      "mdv",
+      "462",
+      "🇲🇻"
+    ],
+    "hex": "007e3a",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-mv/default.svg",
+      "square": "/icons/flag-mv/square.svg",
+      "circle": "/icons/flag-mv/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "MV"
+    }
+  },
+  {
+    "slug": "flag-mw",
+    "title": "Malawi",
+    "aliases": [
+      "en-mw",
+      "ny-mw",
+      "mw",
+      "mwi",
+      "454",
+      "🇲🇼"
+    ],
+    "hex": "f31509",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-mw/default.svg",
+      "square": "/icons/flag-mw/square.svg",
+      "circle": "/icons/flag-mw/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "MW"
+    }
+  },
+  {
+    "slug": "flag-mx",
+    "title": "Mexico",
+    "aliases": [
+      "es-mx",
+      "mexican",
+      "mejico",
+      "mx",
+      "mex",
+      "484",
+      "🇲🇽"
+    ],
+    "hex": "fcca3e",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-mx/default.svg",
+      "square": "/icons/flag-mx/square.svg",
+      "circle": "/icons/flag-mx/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "MX"
+    }
+  },
+  {
+    "slug": "flag-my",
+    "title": "Malaysia",
+    "aliases": [
+      "ms-my",
+      "my",
+      "mys",
+      "458",
+      "🇲🇾"
+    ],
+    "hex": "cc0000",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-my/default.svg",
+      "square": "/icons/flag-my/square.svg",
+      "circle": "/icons/flag-my/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "MY"
+    }
+  },
+  {
+    "slug": "flag-mz",
+    "title": "Mozambique",
+    "aliases": [
+      "pt-mz",
+      "mocambique",
+      "mz",
+      "moz",
+      "508",
+      "🇲🇿"
+    ],
+    "hex": "ffca00",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-mz/default.svg",
+      "square": "/icons/flag-mz/square.svg",
+      "circle": "/icons/flag-mz/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "MZ"
+    }
+  },
+  {
+    "slug": "flag-na",
+    "title": "Namibia",
+    "aliases": [
+      "en-na",
+      "af-na",
+      "kj-na",
+      "namibie",
+      "na",
+      "nam",
+      "516",
+      "🇳🇦"
+    ],
+    "hex": "3662a2",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-na/default.svg",
+      "square": "/icons/flag-na/square.svg",
+      "circle": "/icons/flag-na/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "NA"
+    }
+  },
+  {
+    "slug": "flag-nc",
+    "title": "New Caledonia",
+    "aliases": [
+      "fr-nc",
+      "nouvelle caledonie",
+      "nc",
+      "ncl",
+      "540",
+      "🇳🇨"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-nc/default.svg",
+      "square": "/icons/flag-nc/square.svg",
+      "circle": "/icons/flag-nc/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "NC"
+    }
+  },
+  {
+    "slug": "flag-ne",
+    "title": "Niger",
+    "aliases": [
+      "fr-ne",
+      "ha-ne",
+      "nijar",
+      "ne",
+      "ner",
+      "562",
+      "🇳🇪"
+    ],
+    "hex": "e05206",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ne/default.svg",
+      "square": "/icons/flag-ne/square.svg",
+      "circle": "/icons/flag-ne/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "NE"
+    }
+  },
+  {
+    "slug": "flag-nf",
+    "title": "Norfolk Island",
+    "aliases": [
+      "en-nf",
+      "nf",
+      "nfk",
+      "574",
+      "🇳🇫"
+    ],
+    "hex": "198200",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-nf/default.svg",
+      "square": "/icons/flag-nf/square.svg",
+      "circle": "/icons/flag-nf/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "NF"
+    }
+  },
+  {
+    "slug": "flag-ng",
+    "title": "Nigeria",
+    "aliases": [
+      "en-ng",
+      "yo-ng",
+      "ng",
+      "nga",
+      "566",
+      "🇳🇬"
+    ],
+    "hex": "008753",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ng/default.svg",
+      "square": "/icons/flag-ng/square.svg",
+      "circle": "/icons/flag-ng/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "NG"
+    }
+  },
+  {
+    "slug": "flag-ni",
+    "title": "Nicaragua",
+    "aliases": [
+      "es-ni",
+      "ni",
+      "nic",
+      "558",
+      "🇳🇮"
+    ],
+    "hex": "97c924",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ni/default.svg",
+      "square": "/icons/flag-ni/square.svg",
+      "circle": "/icons/flag-ni/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "NI"
+    }
+  },
+  {
+    "slug": "flag-nl",
+    "title": "Netherlands",
+    "aliases": [
+      "nl-nl",
+      "fy-nl",
+      "en-nl",
+      "de-nl",
+      "the netherlands",
+      "netherlands kingdom of the",
+      "koninkrijk der nederlanden",
+      "holland",
+      "dutch",
+      "nederland",
+      "nl",
+      "nld",
+      "528",
+      "🇳🇱"
+    ],
+    "hex": "21468b",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-nl/default.svg",
+      "square": "/icons/flag-nl/square.svg",
+      "circle": "/icons/flag-nl/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "NL"
+    }
+  },
+  {
+    "slug": "flag-no",
+    "title": "Norway",
+    "aliases": [
+      "nb-no",
+      "no-no",
+      "nn-no",
+      "se-no",
+      "norge",
+      "no",
+      "nor",
+      "578",
+      "🇳🇴"
+    ],
+    "hex": "002664",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-no/default.svg",
+      "square": "/icons/flag-no/square.svg",
+      "circle": "/icons/flag-no/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "NO"
+    }
+  },
+  {
+    "slug": "flag-np",
+    "title": "Nepal",
+    "aliases": [
+      "ne-np",
+      "np",
+      "npl",
+      "524",
+      "🇳🇵"
+    ],
+    "hex": "ce0000",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-np/default.svg",
+      "square": "/icons/flag-np/square.svg",
+      "circle": "/icons/flag-np/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "NP"
+    }
+  },
+  {
+    "slug": "flag-nr",
+    "title": "Nauru",
+    "aliases": [
+      "en-nr",
+      "na-nr",
+      "nr",
+      "nru",
+      "520",
+      "🇳🇷"
+    ],
+    "hex": "002170",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-nr/default.svg",
+      "square": "/icons/flag-nr/square.svg",
+      "circle": "/icons/flag-nr/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "NR"
+    }
+  },
+  {
+    "slug": "flag-nu",
+    "title": "Niue",
+    "aliases": [
+      "en-nu",
+      "niu-nu",
+      "nu",
+      "niu",
+      "570",
+      "🇳🇺"
+    ],
+    "hex": "012169",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-nu/default.svg",
+      "square": "/icons/flag-nu/square.svg",
+      "circle": "/icons/flag-nu/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "NU"
+    }
+  },
+  {
+    "slug": "flag-nz",
+    "title": "New Zealand",
+    "aliases": [
+      "en-nz",
+      "mi-nz",
+      "aotearoa",
+      "kiwi",
+      "nz",
+      "nzl",
+      "554",
+      "🇳🇿"
+    ],
+    "hex": "cc142b",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-nz/default.svg",
+      "square": "/icons/flag-nz/square.svg",
+      "circle": "/icons/flag-nz/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "NZ"
+    }
+  },
+  {
+    "slug": "flag-om",
+    "title": "Oman",
+    "aliases": [
+      "ar-om",
+      "om",
+      "omn",
+      "512",
+      "🇴🇲"
+    ],
+    "hex": "ef0000",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-om/default.svg",
+      "square": "/icons/flag-om/square.svg",
+      "circle": "/icons/flag-om/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "OM"
+    }
+  },
+  {
+    "slug": "flag-pa",
+    "title": "Panama",
+    "aliases": [
+      "es-pa",
+      "pa",
+      "pan",
+      "591",
+      "🇵🇦"
+    ],
+    "hex": "0000ab",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-pa/default.svg",
+      "square": "/icons/flag-pa/square.svg",
+      "circle": "/icons/flag-pa/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "PA"
+    }
+  },
+  {
+    "slug": "flag-pe",
+    "title": "Peru",
+    "aliases": [
+      "es-pe",
+      "qu-pe",
+      "pe",
+      "per",
+      "604",
+      "🇵🇪"
+    ],
+    "hex": "d91023",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-pe/default.svg",
+      "square": "/icons/flag-pe/square.svg",
+      "circle": "/icons/flag-pe/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "PE"
+    }
+  },
+  {
+    "slug": "flag-pf",
+    "title": "French Polynesia",
+    "aliases": [
+      "fr-pf",
+      "ty-pf",
+      "polynesie francaise",
+      "pf",
+      "pyf",
+      "258",
+      "🇵🇫"
+    ],
+    "hex": "083d9c",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-pf/default.svg",
+      "square": "/icons/flag-pf/square.svg",
+      "circle": "/icons/flag-pf/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "PF"
+    }
+  },
+  {
+    "slug": "flag-pg",
+    "title": "Papua New Guinea",
+    "aliases": [
+      "tpi-pg",
+      "en-pg",
+      "ho-pg",
+      "pg",
+      "png",
+      "598",
+      "🇵🇬"
+    ],
+    "hex": "ff0000",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-pg/default.svg",
+      "square": "/icons/flag-pg/square.svg",
+      "circle": "/icons/flag-pg/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "PG"
+    }
+  },
+  {
+    "slug": "flag-ph",
+    "title": "Philippines",
+    "aliases": [
+      "en-ph",
+      "fil-ph",
+      "ceb-ph",
+      "ilo-ph",
+      "hil-ph",
+      "war-ph",
+      "pag-ph",
+      "mdh-ph",
+      "tsg-ph",
+      "es-ph",
+      "filipinas",
+      "ph",
+      "phl",
+      "608",
+      "🇵🇭"
+    ],
+    "hex": "0038a8",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ph/default.svg",
+      "square": "/icons/flag-ph/square.svg",
+      "circle": "/icons/flag-ph/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "PH"
+    }
+  },
+  {
+    "slug": "flag-pk",
+    "title": "Pakistan",
+    "aliases": [
+      "ur-pk",
+      "en-pk",
+      "pa-pk",
+      "lah-pk",
+      "pk",
+      "pak",
+      "586",
+      "🇵🇰"
+    ],
+    "hex": "0c590b",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-pk/default.svg",
+      "square": "/icons/flag-pk/square.svg",
+      "circle": "/icons/flag-pk/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "PK"
+    }
+  },
+  {
+    "slug": "flag-pl",
+    "title": "Poland",
+    "aliases": [
+      "pl-pl",
+      "de-pl",
+      "csb-pl",
+      "lt-pl",
+      "en-pl",
+      "polska",
+      "polish",
+      "pl",
+      "pol",
+      "616",
+      "🇵🇱"
+    ],
+    "hex": "dc143c",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-pl/default.svg",
+      "square": "/icons/flag-pl/square.svg",
+      "circle": "/icons/flag-pl/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "PL"
+    }
+  },
+  {
+    "slug": "flag-pm",
+    "title": "St. Pierre and Miquelon",
+    "aliases": [
+      "fr-pm",
+      "saint pierre and miquelon",
+      "saint pierre et miquelon",
+      "pm",
+      "spm",
+      "666",
+      "🇵🇲"
+    ],
+    "hex": "000091",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-pm/default.svg",
+      "square": "/icons/flag-pm/square.svg",
+      "circle": "/icons/flag-pm/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "PM"
+    }
+  },
+  {
+    "slug": "flag-pn",
+    "title": "Pitcairn Islands",
+    "aliases": [
+      "en-pn",
+      "pitcairn",
+      "pn",
+      "pcn",
+      "612",
+      "🇵🇳"
+    ],
+    "hex": "f7e017",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-pn/default.svg",
+      "square": "/icons/flag-pn/square.svg",
+      "circle": "/icons/flag-pn/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "PN"
+    }
+  },
+  {
+    "slug": "flag-pr",
+    "title": "Puerto Rico",
+    "aliases": [
+      "es-pr",
+      "en-pr",
+      "pr",
+      "pri",
+      "630",
+      "🇵🇷"
+    ],
+    "hex": "0050f0",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-pr/default.svg",
+      "square": "/icons/flag-pr/square.svg",
+      "circle": "/icons/flag-pr/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "PR"
+    }
+  },
+  {
+    "slug": "flag-ps",
+    "title": "Palestinian Territories",
+    "aliases": [
+      "ar-ps",
+      "apc-ps",
+      "state of palestine",
+      "palestine",
+      "palestinian",
+      "ps",
+      "pse",
+      "275",
+      "🇵🇸"
+    ],
+    "hex": "009639",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ps/default.svg",
+      "square": "/icons/flag-ps/square.svg",
+      "circle": "/icons/flag-ps/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "PS"
+    }
+  },
+  {
+    "slug": "flag-pt",
+    "title": "Portugal",
+    "aliases": [
+      "pt-pt",
+      "en-pt",
+      "portuguese",
+      "pt",
+      "prt",
+      "620",
+      "🇵🇹"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-pt/default.svg",
+      "square": "/icons/flag-pt/square.svg",
+      "circle": "/icons/flag-pt/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "PT"
+    }
+  },
+  {
+    "slug": "flag-pw",
+    "title": "Palau",
+    "aliases": [
+      "pau-pw",
+      "en-pw",
+      "pw",
+      "plw",
+      "585",
+      "🇵🇼"
+    ],
+    "hex": "4aadd6",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-pw/default.svg",
+      "square": "/icons/flag-pw/square.svg",
+      "circle": "/icons/flag-pw/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "PW"
+    }
+  },
+  {
+    "slug": "flag-py",
+    "title": "Paraguay",
+    "aliases": [
+      "gn-py",
+      "es-py",
+      "py",
+      "pry",
+      "600",
+      "🇵🇾"
+    ],
+    "hex": "0038a8",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-py/default.svg",
+      "square": "/icons/flag-py/square.svg",
+      "circle": "/icons/flag-py/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "PY"
+    }
+  },
+  {
+    "slug": "flag-qa",
+    "title": "Qatar",
+    "aliases": [
+      "ar-qa",
+      "qa",
+      "qat",
+      "634",
+      "🇶🇦"
+    ],
+    "hex": "8d1b3d",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-qa/default.svg",
+      "square": "/icons/flag-qa/square.svg",
+      "circle": "/icons/flag-qa/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "QA"
+    }
+  },
+  {
+    "slug": "flag-re",
+    "title": "Réunion",
+    "aliases": [
+      "fr-re",
+      "rcf-re",
+      "re",
+      "reu",
+      "638",
+      "🇷🇪"
+    ],
+    "hex": "000091",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-re/default.svg",
+      "square": "/icons/flag-re/square.svg",
+      "circle": "/icons/flag-re/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "RE"
+    }
+  },
+  {
+    "slug": "flag-ro",
+    "title": "Romania",
+    "aliases": [
+      "ro-ro",
+      "en-ro",
+      "ro",
+      "rou",
+      "642",
+      "🇷🇴"
+    ],
+    "hex": "00319c",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ro/default.svg",
+      "square": "/icons/flag-ro/square.svg",
+      "circle": "/icons/flag-ro/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "RO"
+    }
+  },
+  {
+    "slug": "flag-rs",
+    "title": "Serbia",
+    "aliases": [
+      "sr-rs",
+      "hu-rs",
+      "ro-rs",
+      "hr-rs",
+      "sk-rs",
+      "uk-rs",
+      "rs",
+      "srb",
+      "688",
+      "🇷🇸"
+    ],
+    "hex": "21231e",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-rs/default.svg",
+      "square": "/icons/flag-rs/square.svg",
+      "circle": "/icons/flag-rs/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "RS"
+    }
+  },
+  {
+    "slug": "flag-ru",
+    "title": "Russia",
+    "aliases": [
+      "ru-ru",
+      "tt-ru",
+      "ba-ru",
+      "ce-ru",
+      "av-ru",
+      "udm-ru",
+      "sah-ru",
+      "kbd-ru",
+      "myv-ru",
+      "mdf-ru",
+      "kum-ru",
+      "kv-ru",
+      "lez-ru",
+      "krc-ru",
+      "inh-ru",
+      "tyv-ru",
+      "az-ru",
+      "ady-ru",
+      "lbe-ru",
+      "koi-ru",
+      "russian federation",
+      "russian",
+      "rossiya",
+      "ussr successor",
+      "ru",
+      "rus",
+      "643",
+      "🇷🇺"
+    ],
+    "hex": "0039a6",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ru/default.svg",
+      "square": "/icons/flag-ru/square.svg",
+      "circle": "/icons/flag-ru/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "RU"
+    }
+  },
+  {
+    "slug": "flag-rw",
+    "title": "Rwanda",
+    "aliases": [
+      "rw-rw",
+      "en-rw",
+      "fr-rw",
+      "rw",
+      "rwa",
+      "646",
+      "🇷🇼"
+    ],
+    "hex": "e5be01",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-rw/default.svg",
+      "square": "/icons/flag-rw/square.svg",
+      "circle": "/icons/flag-rw/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "RW"
+    }
+  },
+  {
+    "slug": "flag-sa",
+    "title": "Saudi Arabia",
+    "aliases": [
+      "ar-sa",
+      "saudi",
+      "ksa",
+      "sa",
+      "sau",
+      "682",
+      "🇸🇦"
+    ],
+    "hex": "165d31",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-sa/default.svg",
+      "square": "/icons/flag-sa/square.svg",
+      "circle": "/icons/flag-sa/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "SA"
+    }
+  },
+  {
+    "slug": "flag-sb",
+    "title": "Solomon Islands",
+    "aliases": [
+      "en-sb",
+      "pis-sb",
+      "sb",
+      "slb",
+      "090",
+      "🇸🇧"
+    ],
+    "hex": "0000d6",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-sb/default.svg",
+      "square": "/icons/flag-sb/square.svg",
+      "circle": "/icons/flag-sb/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "SB"
+    }
+  },
+  {
+    "slug": "flag-sc",
+    "title": "Seychelles",
+    "aliases": [
+      "fr-sc",
+      "en-sc",
+      "crs-sc",
+      "sc",
+      "syc",
+      "690",
+      "🇸🇨"
+    ],
+    "hex": "003d88",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-sc/default.svg",
+      "square": "/icons/flag-sc/square.svg",
+      "circle": "/icons/flag-sc/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "SC"
+    }
+  },
+  {
+    "slug": "flag-sd",
+    "title": "Sudan",
+    "aliases": [
+      "ar-sd",
+      "en-sd",
+      "apd-sd",
+      "sd",
+      "sdn",
+      "729",
+      "🇸🇩"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-sd/default.svg",
+      "square": "/icons/flag-sd/square.svg",
+      "circle": "/icons/flag-sd/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "SD"
+    }
+  },
+  {
+    "slug": "flag-se",
+    "title": "Sweden",
+    "aliases": [
+      "sv-se",
+      "fi-se",
+      "en-se",
+      "sverige",
+      "se",
+      "swe",
+      "752",
+      "🇸🇪"
+    ],
+    "hex": "005293",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-se/default.svg",
+      "square": "/icons/flag-se/square.svg",
+      "circle": "/icons/flag-se/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "SE"
+    }
+  },
+  {
+    "slug": "flag-sg",
+    "title": "Singapore",
+    "aliases": [
+      "en-sg",
+      "zh-sg",
+      "ms-sg",
+      "ta-sg",
+      "sg",
+      "sgp",
+      "702",
+      "🇸🇬"
+    ],
+    "hex": "df0000",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-sg/default.svg",
+      "square": "/icons/flag-sg/square.svg",
+      "circle": "/icons/flag-sg/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "SG"
+    }
+  },
+  {
+    "slug": "flag-sh",
+    "title": "St. Helena",
+    "aliases": [
+      "en-sh",
+      "saint helena",
+      "sh",
+      "shn",
+      "654",
+      "🇸🇭"
+    ],
+    "hex": "c8102e",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-sh/default.svg",
+      "square": "/icons/flag-sh/square.svg",
+      "circle": "/icons/flag-sh/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "SH"
+    }
+  },
+  {
+    "slug": "flag-si",
+    "title": "Slovenia",
+    "aliases": [
+      "sl-si",
+      "vec-si",
+      "hr-si",
+      "en-si",
+      "de-si",
+      "slovenija",
+      "si",
+      "svn",
+      "705",
+      "🇸🇮"
+    ],
+    "hex": "0000bf",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-si/default.svg",
+      "square": "/icons/flag-si/square.svg",
+      "circle": "/icons/flag-si/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "SI"
+    }
+  },
+  {
+    "slug": "flag-sj",
+    "title": "Svalbard and Jan Mayen",
+    "aliases": [
+      "nb-sj",
+      "ru-sj",
+      "svalbard og jan mayen",
+      "sj",
+      "sjm",
+      "744",
+      "🇸🇯"
+    ],
+    "hex": "002868",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-sj/default.svg",
+      "square": "/icons/flag-sj/square.svg",
+      "circle": "/icons/flag-sj/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "SJ"
+    }
+  },
+  {
+    "slug": "flag-sk",
+    "title": "Slovakia",
+    "aliases": [
+      "sk-sk",
+      "cs-sk",
+      "en-sk",
+      "slovensko",
+      "sk",
+      "svk",
+      "703",
+      "🇸🇰"
+    ],
+    "hex": "0b4ea2",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-sk/default.svg",
+      "square": "/icons/flag-sk/square.svg",
+      "circle": "/icons/flag-sk/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "SK"
+    }
+  },
+  {
+    "slug": "flag-sl",
+    "title": "Sierra Leone",
+    "aliases": [
+      "en-sl",
+      "kri-sl",
+      "men-sl",
+      "tem-sl",
+      "sl",
+      "sle",
+      "694",
+      "🇸🇱"
+    ],
+    "hex": "0000cd",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-sl/default.svg",
+      "square": "/icons/flag-sl/square.svg",
+      "circle": "/icons/flag-sl/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "SL"
+    }
+  },
+  {
+    "slug": "flag-sm",
+    "title": "San Marino",
+    "aliases": [
+      "it-sm",
+      "sm",
+      "smr",
+      "674",
+      "🇸🇲"
+    ],
+    "hex": "006800",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-sm/default.svg",
+      "square": "/icons/flag-sm/square.svg",
+      "circle": "/icons/flag-sm/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "SM"
+    }
+  },
+  {
+    "slug": "flag-sn",
+    "title": "Senegal",
+    "aliases": [
+      "wo-sn",
+      "fr-sn",
+      "ff-sn",
+      "srr-sn",
+      "dyo-sn",
+      "sav-sn",
+      "mfv-sn",
+      "bjt-sn",
+      "snf-sn",
+      "knf-sn",
+      "bsc-sn",
+      "mey-sn",
+      "tnr-sn",
+      "sn",
+      "sen",
+      "686",
+      "🇸🇳"
+    ],
+    "hex": "0b7226",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-sn/default.svg",
+      "square": "/icons/flag-sn/square.svg",
+      "circle": "/icons/flag-sn/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "SN"
+    }
+  },
+  {
+    "slug": "flag-so",
+    "title": "Somalia",
+    "aliases": [
+      "so-so",
+      "ar-so",
+      "soomaaliya",
+      "so",
+      "som",
+      "706",
+      "🇸🇴"
+    ],
+    "hex": "40a6ff",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-so/default.svg",
+      "square": "/icons/flag-so/square.svg",
+      "circle": "/icons/flag-so/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "SO"
+    }
+  },
+  {
+    "slug": "flag-sr",
+    "title": "Suriname",
+    "aliases": [
+      "nl-sr",
+      "srn-sr",
+      "republiek suriname",
+      "sr",
+      "sur",
+      "740",
+      "🇸🇷"
+    ],
+    "hex": "377e3f",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-sr/default.svg",
+      "square": "/icons/flag-sr/square.svg",
+      "circle": "/icons/flag-sr/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "SR"
+    }
+  },
+  {
+    "slug": "flag-ss",
+    "title": "South Sudan",
+    "aliases": [
+      "en-ss",
+      "ar-ss",
+      "ss",
+      "ssd",
+      "728",
+      "🇸🇸"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ss/default.svg",
+      "square": "/icons/flag-ss/square.svg",
+      "circle": "/icons/flag-ss/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "SS"
+    }
+  },
+  {
+    "slug": "flag-st",
+    "title": "São Tomé and Príncipe",
+    "aliases": [
+      "pt-st",
+      "sao tome e principe",
+      "st",
+      "stp",
+      "678",
+      "🇸🇹"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-st/default.svg",
+      "square": "/icons/flag-st/square.svg",
+      "circle": "/icons/flag-st/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "ST"
+    }
+  },
+  {
+    "slug": "flag-sv",
+    "title": "El Salvador",
+    "aliases": [
+      "es-sv",
+      "sv",
+      "slv",
+      "222",
+      "🇸🇻"
+    ],
+    "hex": "ffcc00",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-sv/default.svg",
+      "square": "/icons/flag-sv/square.svg",
+      "circle": "/icons/flag-sv/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "SV"
+    }
+  },
+  {
+    "slug": "flag-sx",
+    "title": "Sint Maarten",
+    "aliases": [
+      "en-sx",
+      "nl-sx",
+      "sint maarten dutch part",
+      "sx",
+      "sxm",
+      "534",
+      "🇸🇽"
+    ],
+    "hex": "ffff00",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-sx/default.svg",
+      "square": "/icons/flag-sx/square.svg",
+      "circle": "/icons/flag-sx/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "SX"
+    }
+  },
+  {
+    "slug": "flag-sy",
+    "title": "Syria",
+    "aliases": [
+      "ar-sy",
+      "apc-sy",
+      "syrian arab republic",
+      "syrian",
+      "sy",
+      "syr",
+      "760",
+      "🇸🇾"
+    ],
+    "hex": "007a3d",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-sy/default.svg",
+      "square": "/icons/flag-sy/square.svg",
+      "circle": "/icons/flag-sy/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "SY"
+    }
+  },
+  {
+    "slug": "flag-sz",
+    "title": "Eswatini",
+    "aliases": [
+      "en-sz",
+      "ss-sz",
+      "swaziland",
+      "sz",
+      "swz",
+      "748",
+      "🇸🇿"
+    ],
+    "hex": "333333",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-sz/default.svg",
+      "square": "/icons/flag-sz/square.svg",
+      "circle": "/icons/flag-sz/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "SZ"
+    }
+  },
+  {
+    "slug": "flag-tc",
+    "title": "Turks and Caicos Islands",
+    "aliases": [
+      "en-tc",
+      "tc",
+      "tca",
+      "796",
+      "🇹🇨"
+    ],
+    "hex": "c8102e",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-tc/default.svg",
+      "square": "/icons/flag-tc/square.svg",
+      "circle": "/icons/flag-tc/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "TC"
+    }
+  },
+  {
+    "slug": "flag-td",
+    "title": "Chad",
+    "aliases": [
+      "ar-td",
+      "fr-td",
+      "td",
+      "tcd",
+      "148",
+      "🇹🇩"
+    ],
+    "hex": "002664",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-td/default.svg",
+      "square": "/icons/flag-td/square.svg",
+      "circle": "/icons/flag-td/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "TD"
+    }
+  },
+  {
+    "slug": "flag-tf",
+    "title": "French Southern Territories",
+    "aliases": [
+      "fr-tf",
+      "terres australes francaises",
+      "tf",
+      "atf",
+      "260",
+      "🇹🇫"
+    ],
+    "hex": "002395",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-tf/default.svg",
+      "square": "/icons/flag-tf/square.svg",
+      "circle": "/icons/flag-tf/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "TF"
+    }
+  },
+  {
+    "slug": "flag-tg",
+    "title": "Togo",
+    "aliases": [
+      "fr-tg",
+      "tg",
+      "tgo",
+      "768",
+      "🇹🇬"
+    ],
+    "hex": "118600",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-tg/default.svg",
+      "square": "/icons/flag-tg/square.svg",
+      "circle": "/icons/flag-tg/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "TG"
+    }
+  },
+  {
+    "slug": "flag-th",
+    "title": "Thailand",
+    "aliases": [
+      "th-th",
+      "en-th",
+      "th",
+      "tha",
+      "764",
+      "🇹🇭"
+    ],
+    "hex": "2d2a4a",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-th/default.svg",
+      "square": "/icons/flag-th/square.svg",
+      "circle": "/icons/flag-th/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "TH"
+    }
+  },
+  {
+    "slug": "flag-tj",
+    "title": "Tajikistan",
+    "aliases": [
+      "tg-tj",
+      "tj",
+      "tjk",
+      "762",
+      "🇹🇯"
+    ],
+    "hex": "f8c300",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-tj/default.svg",
+      "square": "/icons/flag-tj/square.svg",
+      "circle": "/icons/flag-tj/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "TJ"
+    }
+  },
+  {
+    "slug": "flag-tk",
+    "title": "Tokelau",
+    "aliases": [
+      "tkl-tk",
+      "en-tk",
+      "tk",
+      "tkl",
+      "772",
+      "🇹🇰"
+    ],
+    "hex": "00247d",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-tk/default.svg",
+      "square": "/icons/flag-tk/square.svg",
+      "circle": "/icons/flag-tk/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "TK"
+    }
+  },
+  {
+    "slug": "flag-tl",
+    "title": "Timor-Leste",
+    "aliases": [
+      "pt-tl",
+      "tet-tl",
+      "east timor",
+      "tl",
+      "tls",
+      "626",
+      "🇹🇱"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-tl/default.svg",
+      "square": "/icons/flag-tl/square.svg",
+      "circle": "/icons/flag-tl/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "TL"
+    }
+  },
+  {
+    "slug": "flag-tm",
+    "title": "Turkmenistan",
+    "aliases": [
+      "tk-tm",
+      "tm",
+      "tkm",
+      "795",
+      "🇹🇲"
+    ],
+    "hex": "d22630",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-tm/default.svg",
+      "square": "/icons/flag-tm/square.svg",
+      "circle": "/icons/flag-tm/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "TM"
+    }
+  },
+  {
+    "slug": "flag-tn",
+    "title": "Tunisia",
+    "aliases": [
+      "ar-tn",
+      "fr-tn",
+      "aeb-tn",
+      "tn",
+      "tun",
+      "788",
+      "🇹🇳"
+    ],
+    "hex": "e70013",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-tn/default.svg",
+      "square": "/icons/flag-tn/square.svg",
+      "circle": "/icons/flag-tn/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "TN"
+    }
+  },
+  {
+    "slug": "flag-to",
+    "title": "Tonga",
+    "aliases": [
+      "to-to",
+      "en-to",
+      "to",
+      "ton",
+      "776",
+      "🇹🇴"
+    ],
+    "hex": "c10000",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-to/default.svg",
+      "square": "/icons/flag-to/square.svg",
+      "circle": "/icons/flag-to/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "TO"
+    }
+  },
+  {
+    "slug": "flag-tr",
+    "title": "Türkiye",
+    "aliases": [
+      "tr-tr",
+      "turkey",
+      "turkish",
+      "turkei",
+      "tr",
+      "tur",
+      "792",
+      "🇹🇷"
+    ],
+    "hex": "e30a17",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-tr/default.svg",
+      "square": "/icons/flag-tr/square.svg",
+      "circle": "/icons/flag-tr/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "TR"
+    }
+  },
+  {
+    "slug": "flag-tt",
+    "title": "Trinidad and Tobago",
+    "aliases": [
+      "en-tt",
+      "tt",
+      "tto",
+      "780",
+      "🇹🇹"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-tt/default.svg",
+      "square": "/icons/flag-tt/square.svg",
+      "circle": "/icons/flag-tt/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "TT"
+    }
+  },
+  {
+    "slug": "flag-tv",
+    "title": "Tuvalu",
+    "aliases": [
+      "tvl-tv",
+      "en-tv",
+      "tv",
+      "tuv",
+      "798",
+      "🇹🇻"
+    ],
+    "hex": "c8102e",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-tv/default.svg",
+      "square": "/icons/flag-tv/square.svg",
+      "circle": "/icons/flag-tv/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "TV"
+    }
+  },
+  {
+    "slug": "flag-tw",
+    "title": "Taiwan",
+    "aliases": [
+      "zh-tw",
+      "nan-tw",
+      "hak-tw",
+      "taiwan province of china",
+      "republic of china",
+      "roc",
+      "formosa",
+      "chinese taipei",
+      "taiwanese",
+      "tw",
+      "twn",
+      "158",
+      "🇹🇼"
+    ],
+    "hex": "000095",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-tw/default.svg",
+      "square": "/icons/flag-tw/square.svg",
+      "circle": "/icons/flag-tw/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "TW"
+    }
+  },
+  {
+    "slug": "flag-tz",
+    "title": "Tanzania",
+    "aliases": [
+      "sw-tz",
+      "en-tz",
+      "united republic of tanzania",
+      "tanzania jamhuri ya muungano",
+      "tz",
+      "tza",
+      "834",
+      "🇹🇿"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-tz/default.svg",
+      "square": "/icons/flag-tz/square.svg",
+      "circle": "/icons/flag-tz/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "TZ"
+    }
+  },
+  {
+    "slug": "flag-ua",
+    "title": "Ukraine",
+    "aliases": [
+      "uk-ua",
+      "ru-ua",
+      "ua",
+      "ukr",
+      "804",
+      "🇺🇦"
+    ],
+    "hex": "0057b8",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ua/default.svg",
+      "square": "/icons/flag-ua/square.svg",
+      "circle": "/icons/flag-ua/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "UA"
+    }
+  },
+  {
+    "slug": "flag-ug",
+    "title": "Uganda",
+    "aliases": [
+      "sw-ug",
+      "en-ug",
+      "ug",
+      "uga",
+      "800",
+      "🇺🇬"
+    ],
+    "hex": "9ca69c",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ug/default.svg",
+      "square": "/icons/flag-ug/square.svg",
+      "circle": "/icons/flag-ug/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "UG"
+    }
+  },
+  {
+    "slug": "flag-um",
+    "title": "U.S. Outlying Islands",
+    "aliases": [
+      "en-um",
+      "united states minor outlying islands",
+      "um",
+      "umi",
+      "581",
+      "🇺🇲"
+    ],
+    "hex": "192f5d",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-um/default.svg",
+      "square": "/icons/flag-um/square.svg",
+      "circle": "/icons/flag-um/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "UM"
+    }
+  },
+  {
+    "slug": "flag-un",
+    "title": "United Nations",
+    "aliases": [
+      "uno",
+      "onu",
+      "un"
+    ],
+    "hex": "4b92db",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-un/default.svg",
+      "square": "/icons/flag-un/square.svg",
+      "circle": "/icons/flag-un/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "organization"
+    }
+  },
+  {
+    "slug": "flag-us",
+    "title": "United States",
+    "aliases": [
+      "en-us",
+      "es-us",
+      "haw-us",
+      "united states of america",
+      "usa",
+      "us",
+      "estados unidos",
+      "america",
+      "american",
+      "the states",
+      "us of a",
+      "840",
+      "🇺🇸"
+    ],
+    "hex": "192f5d",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-us/default.svg",
+      "square": "/icons/flag-us/square.svg",
+      "circle": "/icons/flag-us/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "US"
+    }
+  },
+  {
+    "slug": "flag-uy",
+    "title": "Uruguay",
+    "aliases": [
+      "es-uy",
+      "uy",
+      "ury",
+      "858",
+      "🇺🇾"
+    ],
+    "hex": "0038a8",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-uy/default.svg",
+      "square": "/icons/flag-uy/square.svg",
+      "circle": "/icons/flag-uy/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "UY"
+    }
+  },
+  {
+    "slug": "flag-uz",
+    "title": "Uzbekistan",
+    "aliases": [
+      "uz-uz",
+      "o zbekiston",
+      "uz",
+      "uzb",
+      "860",
+      "🇺🇿"
+    ],
+    "hex": "0099b5",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-uz/default.svg",
+      "square": "/icons/flag-uz/square.svg",
+      "circle": "/icons/flag-uz/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "UZ"
+    }
+  },
+  {
+    "slug": "flag-va",
+    "title": "Vatican City",
+    "aliases": [
+      "it-va",
+      "la-va",
+      "holy see vatican city state",
+      "citta del vaticano",
+      "vatican",
+      "holy see",
+      "city of the vatican",
+      "va",
+      "vat",
+      "336",
+      "🇻🇦"
+    ],
+    "hex": "ce9d09",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-va/default.svg",
+      "square": "/icons/flag-va/square.svg",
+      "circle": "/icons/flag-va/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "VA"
+    }
+  },
+  {
+    "slug": "flag-vc",
+    "title": "St. Vincent and Grenadines",
+    "aliases": [
+      "en-vc",
+      "saint vincent and the grenadines",
+      "vc",
+      "vct",
+      "670",
+      "🇻🇨"
+    ],
+    "hex": "199a00",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-vc/default.svg",
+      "square": "/icons/flag-vc/square.svg",
+      "circle": "/icons/flag-vc/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "VC"
+    }
+  },
+  {
+    "slug": "flag-ve",
+    "title": "Venezuela",
+    "aliases": [
+      "es-ve",
+      "ve",
+      "ven",
+      "862",
+      "🇻🇪"
+    ],
+    "hex": "00247d",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ve/default.svg",
+      "square": "/icons/flag-ve/square.svg",
+      "circle": "/icons/flag-ve/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "VE"
+    }
+  },
+  {
+    "slug": "flag-vg",
+    "title": "British Virgin Islands",
+    "aliases": [
+      "en-vg",
+      "virgin islands british",
+      "vg",
+      "vgb",
+      "092",
+      "🇻🇬"
+    ],
+    "hex": "ffc72c",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-vg/default.svg",
+      "square": "/icons/flag-vg/square.svg",
+      "circle": "/icons/flag-vg/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "VG"
+    }
+  },
+  {
+    "slug": "flag-vi",
+    "title": "U.S. Virgin Islands",
+    "aliases": [
+      "en-vi",
+      "virgin islands us",
+      "vi",
+      "vir",
+      "850",
+      "🇻🇮"
+    ],
+    "hex": "0081c6",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-vi/default.svg",
+      "square": "/icons/flag-vi/square.svg",
+      "circle": "/icons/flag-vi/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "VI"
+    }
+  },
+  {
+    "slug": "flag-vn",
+    "title": "Vietnam",
+    "aliases": [
+      "vi-vn",
+      "viet nam",
+      "vietnamese",
+      "vn",
+      "vnm",
+      "704",
+      "🇻🇳"
+    ],
+    "hex": "da251d",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-vn/default.svg",
+      "square": "/icons/flag-vn/square.svg",
+      "circle": "/icons/flag-vn/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "VN"
+    }
+  },
+  {
+    "slug": "flag-vu",
+    "title": "Vanuatu",
+    "aliases": [
+      "bi-vu",
+      "en-vu",
+      "fr-vu",
+      "vu",
+      "vut",
+      "548",
+      "🇻🇺"
+    ],
+    "hex": "fdce12",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-vu/default.svg",
+      "square": "/icons/flag-vu/square.svg",
+      "circle": "/icons/flag-vu/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "VU"
+    }
+  },
+  {
+    "slug": "flag-wf",
+    "title": "Wallis and Futuna",
+    "aliases": [
+      "fr-wf",
+      "wls-wf",
+      "fud-wf",
+      "wallis et futuna",
+      "wf",
+      "wlf",
+      "876",
+      "🇼🇫"
+    ],
+    "hex": "000091",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-wf/default.svg",
+      "square": "/icons/flag-wf/square.svg",
+      "circle": "/icons/flag-wf/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "WF"
+    }
+  },
+  {
+    "slug": "flag-ws",
+    "title": "Samoa",
+    "aliases": [
+      "sm-ws",
+      "en-ws",
+      "ws",
+      "wsm",
+      "882",
+      "🇼🇸"
+    ],
+    "hex": "002b7f",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ws/default.svg",
+      "square": "/icons/flag-ws/square.svg",
+      "circle": "/icons/flag-ws/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "WS"
+    }
+  },
+  {
+    "slug": "flag-xk",
+    "title": "Kosovo",
+    "aliases": [
+      "sq-xk",
+      "sr-xk",
+      "aln-xk",
+      "kosove",
+      "kosovar",
+      "kosova",
+      "xk",
+      "xkx",
+      "🇽🇰"
+    ],
+    "hex": "244aa5",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-xk/default.svg",
+      "square": "/icons/flag-xk/square.svg",
+      "circle": "/icons/flag-xk/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "user-assigned",
+      "iso": "XK"
+    }
+  },
+  {
+    "slug": "flag-ye",
+    "title": "Yemen",
+    "aliases": [
+      "ar-ye",
+      "ye",
+      "yem",
+      "887",
+      "🇾🇪"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-ye/default.svg",
+      "square": "/icons/flag-ye/square.svg",
+      "circle": "/icons/flag-ye/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "YE"
+    }
+  },
+  {
+    "slug": "flag-yt",
+    "title": "Mayotte",
+    "aliases": [
+      "fr-yt",
+      "swb-yt",
+      "yt",
+      "myt",
+      "175",
+      "🇾🇹"
+    ],
+    "hex": "000091",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-yt/default.svg",
+      "square": "/icons/flag-yt/square.svg",
+      "circle": "/icons/flag-yt/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "YT"
+    }
+  },
+  {
+    "slug": "flag-za",
+    "title": "South Africa",
+    "aliases": [
+      "en-za",
+      "zu-za",
+      "xh-za",
+      "af-za",
+      "nso-za",
+      "tn-za",
+      "st-za",
+      "ts-za",
+      "ss-za",
+      "ve-za",
+      "nr-za",
+      "suid afrika",
+      "rsa",
+      "south african",
+      "za",
+      "zaf",
+      "710",
+      "🇿🇦"
+    ],
+    "hex": "000001",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-za/default.svg",
+      "square": "/icons/flag-za/square.svg",
+      "circle": "/icons/flag-za/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "ZA"
+    }
+  },
+  {
+    "slug": "flag-zm",
+    "title": "Zambia",
+    "aliases": [
+      "en-zm",
+      "bem-zm",
+      "zm",
+      "zmb",
+      "894",
+      "🇿🇲"
+    ],
+    "hex": "ef7d00",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-zm/default.svg",
+      "square": "/icons/flag-zm/square.svg",
+      "circle": "/icons/flag-zm/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "ZM"
+    }
+  },
+  {
+    "slug": "flag-zw",
+    "title": "Zimbabwe",
+    "aliases": [
+      "sn-zw",
+      "en-zw",
+      "nd-zw",
+      "zw",
+      "zwe",
+      "716",
+      "🇿🇼"
+    ],
+    "hex": "d40000",
+    "categories": [
+      "Flags"
+    ],
+    "variants": {
+      "default": "/icons/flag-zw/default.svg",
+      "square": "/icons/flag-zw/square.svg",
+      "circle": "/icons/flag-zw/circle.svg"
+    },
+    "license": "MIT",
+    "url": "https://github.com/lipis/flag-icons",
+    "collection": "flags",
+    "dateAdded": "2026-11-13",
+    "collectionMeta": {
+      "type": "flag",
+      "kind": "iso",
+      "iso": "ZW"
+    }
+  },
+  {
     "slug": "flagger",
     "title": "Flagger",
     "aliases": [],
