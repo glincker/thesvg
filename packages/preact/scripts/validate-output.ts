@@ -13,6 +13,7 @@
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { filterPackaged } from "../../icons/scripts/lib/catalog.ts";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const DIST = resolve(here, "../dist");
@@ -49,7 +50,7 @@ if (!existsSync(DIST)) {
   process.exit(1);
 }
 
-const icons = JSON.parse(readFileSync(join(REPO_ROOT, "src/data/icons.json"), "utf8")) as RawIcon[];
+const icons = filterPackaged(JSON.parse(readFileSync(join(REPO_ROOT, "src/data/icons.json"), "utf8")) as RawIcon[]);
 let errors = 0;
 const fail = (msg: string): void => {
   console.error(`FAIL: ${msg}`);

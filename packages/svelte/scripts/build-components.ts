@@ -23,6 +23,7 @@ import { fileURLToPath } from "node:url";
 
 import { publicSvgReader } from "../../icons/scripts/lib/public-svg.ts";
 import { primarySvg } from "../../icons/scripts/lib/variants.ts";
+import { filterPackaged } from "../../icons/scripts/lib/catalog.ts";
 
 // ---------------------------------------------------------------------------
 // Paths
@@ -189,7 +190,7 @@ function generateDtsBarrel(entries: Array<{ slug: string; componentName: string 
 
 function main(): void {
   console.log("Reading icons.json...");
-  const rawIcons: RawIcon[] = JSON.parse(readFileSync(ICONS_JSON, "utf8")) as RawIcon[];
+  const rawIcons: RawIcon[] = filterPackaged(JSON.parse(readFileSync(ICONS_JSON, "utf8")) as RawIcon[]);
   console.log(`Found ${rawIcons.length} icons.`);
 
   mkdirSync(DIST, { recursive: true });

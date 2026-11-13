@@ -7,6 +7,7 @@ import { createRequire } from "module";
 import { fileURLToPath } from "url";
 import path from "path";
 import { DEFAULT_LOOK } from "./ui.js";
+import { flagHintLines } from "./flag-hint.js";
 import { uiCategories, uiGet, uiLooks, uiSearch, uiUrl } from "./ui-tools.js";
 
 // --- Constants ---
@@ -120,7 +121,8 @@ export function searchIcons(query: string, limit = 20): SearchResult[] {
   // Codes, numbers and emoji (DEU, 276, a flag emoji) are exact identifiers:
   // fuzzy scoring buries them, so exact alias and slug hits go first.
   const q = query.trim().toLowerCase();
-  const exact = q ? loadIndex().filter((i) => i.slug === q || i.aliases.some((a) => a.toLowerCase() === q)) : [];
+  const COLOR_WORDS = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "brown", "black", "white", "gray", "gold", "tricolor", "tricolour"];
+  const exact = q && !COLOR_WORDS.includes(q) ? loadIndex().filter((i) => i.slug === q || i.aliases.some((a) => a.toLowerCase() === q)) : [];
   const merged = [...exact, ...ordered.filter((i) => !exact.includes(i))].slice(0, limit);
   return merged.map((item) => ({
     slug: item.slug,
@@ -200,7 +202,7 @@ server.tool(
       ];
 
       return {
-        content: [{ type: "text", text: lines.join("\n") }],
+        content: [{ type: "text", text: [...lines, ...flagHintLines(results.map((r) => r.slug))].join("\n") }],
       };
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);
@@ -292,7 +294,7 @@ server.tool(
       ].filter((line): line is string => line !== null);
 
       return {
-        content: [{ type: "text", text: lines.join("\n") }],
+        content: [{ type: "text", text: [...lines, ...flagHintLines([slug])].join("\n") }],
       };
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);
@@ -424,6 +426,7 @@ server.tool(
               "```markdown",
               `![${name}](${url})`,
               "```",
+              ...flagHintLines([slug]),
             ].join("\n"),
           },
         ],

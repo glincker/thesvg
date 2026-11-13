@@ -22,6 +22,7 @@
 import { createMcpHandler } from "agents/mcp/server";
 import { McpServer } from "@modelcontextprotocol/server";
 import { z } from "zod";
+import { flagHintLines } from "./flag-hint";
 import { loadIcons, searchIcons, buildIconUrl, listCategories } from "./icons-data";
 import {
   SEARCH_WIDGET_TEMPLATE_URI,
@@ -137,7 +138,7 @@ function createServer(): McpServer {
       ];
 
       return {
-        ...textResult(lines.join("\n")),
+        ...textResult([...lines, ...flagHintLines(results.map((r) => r.slug))].join("\n")),
         structuredContent: {
           query,
           count: results.length,
@@ -201,7 +202,7 @@ function createServer(): McpServer {
         "```",
       ].filter((line): line is string => line !== null);
 
-      return textResult(lines.join("\n"));
+      return textResult([...lines, ...flagHintLines([slug])].join("\n"));
     }
   );
 
@@ -277,6 +278,7 @@ function createServer(): McpServer {
           "```markdown",
           `![${icon.name}](${url})`,
           "```",
+          ...flagHintLines([slug]),
         ].join("\n")
       );
     }

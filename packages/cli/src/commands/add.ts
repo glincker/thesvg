@@ -5,6 +5,7 @@ import {
   relativeToCwd,
   type OutputFormat,
 } from "../utils/writer.js";
+import { flagHint } from "../utils/flag-hint.js";
 import { success, error, info, warn, dim, colorize } from "../utils/colors.js";
 import {
   DEFAULT_LOOK,
@@ -182,6 +183,9 @@ export async function runAdd(args: string[]): Promise<void> {
       }
     }
   }
+
+  const hint = flagHint(opts.slugs);
+  if (hint) console.log(dim(`\n${hint}`));
 
   const total = opts.slugs.length;
   const added = total - failCount;

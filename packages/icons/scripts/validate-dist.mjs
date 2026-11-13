@@ -82,6 +82,15 @@ async function main() {
   }
 
   // 3. Check barrel files exist
+  // Specialty collections ship in their own package: no flag-* modules, and module count is
+  // the catalog minus the excluded collections (index and types are not icons).
+  const catalog = JSON.parse(await fs.readFile(path.join(ROOT, "../../src/data/icons.json"), "utf8"));
+  const { excluded } = JSON.parse(await fs.readFile(path.join(ROOT, "scripts/lib/excluded-collections.json"), "utf8"));
+  const expectedModules = catalog.filter((i) => !excluded.includes(i.collection)).length;
+  const strayFlags = jsFiles.filter((f) => f.startsWith("flag-"));
+  if (strayFlags.length > 0) errors.push(`Excluded collection leaked into dist: ${strayFlags.slice(0, 3).join(", ")}`);
+  if (jsFiles.length - 2 !== expectedModules) errors.push(`ESM modules ${jsFiles.length - 2} != catalog minus excluded ${expectedModules}`);
+
   const barrels = ["index.js", "index.cjs", "index.d.ts", "types.d.ts"];
   for (const barrel of barrels) {
     if (!distFiles.includes(barrel)) {

@@ -39,6 +39,7 @@ import { fileURLToPath } from "node:url";
 
 import { publicSvgReader } from "../../icons/scripts/lib/public-svg.ts";
 import { primarySvg, readIconSvg } from "../../icons/scripts/lib/variants.ts";
+import { filterPackaged } from "../../icons/scripts/lib/catalog.ts";
 
 // ---------------------------------------------------------------------------
 // Paths
@@ -829,7 +830,7 @@ function validateOutput(): boolean {
 
 function main(): void {
   console.log("Reading icons.json…");
-  const rawIcons: RawIcon[] = JSON.parse(readFileSync(ICONS_JSON, "utf8")) as RawIcon[];
+  const rawIcons: RawIcon[] = filterPackaged(JSON.parse(readFileSync(ICONS_JSON, "utf8")) as RawIcon[]);
   console.log(`Found ${rawIcons.length} icons.`);
 
   // Clean stale output first so components for removed/renamed slugs (orphans)

@@ -1,5 +1,6 @@
 import { fetchIconList, ApiError, type IconEntry } from "../utils/api.js";
 import { error, info, header, dim, colorize, warn } from "../utils/colors.js";
+import { flagHint } from "../utils/flag-hint.js";
 import { fetchUiIconList } from "../utils/ui.js";
 
 interface SearchOptions {
@@ -182,6 +183,9 @@ export async function runSearch(args: string[]): Promise<void> {
   if (results.length < total) {
     console.log(dim(`  (showing top ${results.length})`));
   }
+
+  const hint = flagHint(results.map((i) => i.slug));
+  if (hint) console.log(dim(`  ${hint}`));
 
   console.log();
 

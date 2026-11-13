@@ -33,6 +33,7 @@ import {
 } from "./lib/codegen.ts";
 import { publicSvgReader } from "./lib/public-svg.ts";
 import { resolveSvgs } from "./lib/variants.ts";
+import { filterPackaged } from "./lib/catalog.ts";
 
 // ---------------------------------------------------------------------------
 // Paths
@@ -60,7 +61,7 @@ const readPublicSvg = publicSvgReader(join(REPO_ROOT, "public"));
 
 function main(): void {
   console.log("Reading icons.json…");
-  const rawIcons: RawIcon[] = JSON.parse(readFileSync(ICONS_JSON, "utf8")) as RawIcon[];
+  const rawIcons: RawIcon[] = filterPackaged(JSON.parse(readFileSync(ICONS_JSON, "utf8")) as RawIcon[]);
   console.log(`Found ${rawIcons.length} icons.`);
 
   mkdirSync(DIST, { recursive: true });

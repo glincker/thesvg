@@ -14,6 +14,7 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { filterPackaged } from "../../icons/scripts/lib/catalog.ts";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -163,7 +164,7 @@ interface RawIcon {
   variants: Record<string, string>;
 }
 
-const icons: RawIcon[] = JSON.parse(readFileSync(ICONS_JSON, "utf8"));
+const icons: RawIcon[] = filterPackaged(JSON.parse(readFileSync(ICONS_JSON, "utf8")) as RawIcon[]);
 let iconsChecked = 0;
 
 for (const icon of icons) {
