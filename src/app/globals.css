@@ -1554,3 +1554,22 @@ html {
 @media (prefers-reduced-motion: reduce) {
   .search-row-in { animation: none; }
 }
+
+/* Big hero visuals fade in with opacity only: scaling a large rotated, masked layer of images on every slide change janks. */
+@keyframes hero-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.hero-fade-in {
+  animation: hero-fade-in 0.45s ease-out both;
+  will-change: opacity;
+}
+/* Pause every hero animation (blobs, shimmer, progress, drifting rows) while the banner is off screen. */
+.hero-root[data-offscreen="true"] *,
+.hero-root[data-offscreen="true"] *::before,
+.hero-root[data-offscreen="true"] *::after {
+  animation-play-state: paused !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-fade-in { animation: none; }
+}
