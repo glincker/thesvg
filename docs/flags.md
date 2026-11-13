@@ -2,7 +2,7 @@
 
 Country and region flags as SVG and components. <!-- flags:count -->263<!-- /flags:count --> flags: every ISO 3166-1 country (<!-- flags:iso -->250<!-- /flags:iso --> including Kosovo, which uses the user-assigned code XK) plus <!-- flags:extras -->13<!-- /flags:extras --> extras for locales and regions: England, Scotland, Wales, Catalonia, the Basque Country, Galicia, the Valencian Community, the Balearic Islands, the Canary Islands, Corsica, Occitania, the European Union and the United Nations. Each flag comes in three shapes, so <!-- flags:files -->789<!-- /flags:files --> SVG files in all.
 
-Back to the [README](../README.md). Package details: [`@thesvg/flags`](../packages/flags/README.md).
+Back to the [README](../README.md). Package details: [`@thesvg/flags`](../packages/flags/README.md) ([on npm](https://www.npmjs.com/package/@thesvg/flags)).
 
 ## Naming
 
@@ -211,6 +211,6 @@ const accent = `#${de.colors[0].hex}`; // use as a border or underline, and chec
 
 ## Flags are a separate package
 
-Flags are in the shared catalog (website, search, CLI, MCP, CDN) but not bundled into `@thesvg/icons` or the framework packages. Need only flags? Install `@thesvg/flags`. Need everything else? Use `@thesvg/icons` or your framework package.
+Flags are in the shared catalog (website, search, CLI, MCP, CDN) but not bundled into `@thesvg/icons` or the framework packages. Need only flags? Install [`@thesvg/flags`](https://www.npmjs.com/package/@thesvg/flags). Need everything else? Use `@thesvg/icons` or your framework package.
 
 Missing or wrong a flag? See [Contributing flags](./flags-contributing.md): flags are open to community updates through the generator.

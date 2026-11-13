@@ -134,7 +134,7 @@ export default async function CollectionPage({ params }: PageProps) {
           >
             <h1 className="text-2xl font-bold">{meta.label}</h1>
             <p className="mb-6 mt-1 max-w-2xl text-sm text-muted-foreground">
-              {collectionItemCount} country and region flags in three shapes. Install with <code>pnpm add @thesvg/flags</code>.{" "}
+              {collectionItemCount} country and region flags in three shapes. Install with <code>pnpm add @thesvg/flags</code> (<a className="underline" href="https://www.npmjs.com/package/@thesvg/flags" target="_blank" rel="noopener noreferrer">on npm</a>).{" "}
               <Link href="/docs/flags" className="underline">Read the guide</Link>.
             </p>
             <FlagsBrowser tiles={getFlagTiles()} />
