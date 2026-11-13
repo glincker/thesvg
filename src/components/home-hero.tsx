@@ -64,6 +64,9 @@ const ROW_TILE: Record<string, string> = {
   "auth-badges": "border-emerald-400/25 bg-emerald-400/10 dark:border-emerald-400/20 dark:bg-emerald-400/[0.07]",
 };
 
+type HeroOrder = "flags-first" | "icons-first";
+const HERO_ORDER_KEY = "thesvg:hero-order";
+
 interface Slide {
   badge: string;
   badgeIcon: React.ComponentType<{ className?: string }>;
@@ -382,11 +385,37 @@ export function HomeHero({
   const [selectedIcon, setSelectedIcon] = useState<IconEntry | null>(null);
   const [activeCollection, setActiveCollection] = useState<Collection>(defaultCollection ?? "brands");
 
+  // Which of the first two banners leads is picked once per session, so it holds while a visitor browses and
+  // PostHog can compare clicks. Server and first paint use "flags-first".
+  const [heroOrder, setHeroOrder] = useState<HeroOrder>("flags-first");
+  useEffect(() => {
+    let order: HeroOrder | null = null;
+    try {
+      const saved = window.sessionStorage.getItem(HERO_ORDER_KEY);
+      if (saved === "flags-first" || saved === "icons-first") order = saved;
+    } catch {
+      /* storage blocked: fall through to a fresh pick */
+    }
+    if (!order) {
+      order = Math.random() < 0.5 ? "flags-first" : "icons-first";
+      try {
+        window.sessionStorage.setItem(HERO_ORDER_KEY, order);
+      } catch {
+        /* the pick just is not remembered */
+      }
+    }
+    posthog.register({ hero_first_slide: order });
+    setHeroOrder(order);
+  }, []);
+
   // Filter slides by active collection
-  const collectionSlides = useMemo(
-    () => ALL_SLIDES.filter((s) => s.collection === activeCollection),
-    [activeCollection]
-  );
+  const collectionSlides = useMemo(() => {
+    const slides = ALL_SLIDES.filter((s) => s.collection === activeCollection);
+    if (activeCollection === "brands" && heroOrder === "icons-first" && slides.length > 1) {
+      return [slides[1], slides[0], ...slides.slice(2)];
+    }
+    return slides;
+  }, [activeCollection, heroOrder]);
 
   // Reset slide when collection changes
   useEffect(() => {
