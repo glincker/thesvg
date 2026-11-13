@@ -1,0 +1,14 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://thesvg.org/api/registry.json",
+      "service-desc": [{ "href": "https://thesvg.org/api/registry.json", "type": "application/json" }],
+      "service-doc": [{ "href": "https://thesvg.org/docs/api", "type": "text/html" }]
+    },
+    {
+      "anchor": "https://thesvg.org/api/categories.json",
+      "service-desc": [{ "href": "https://thesvg.org/api/categories.json", "type": "application/json" }],
+      "service-doc": [{ "href": "https://thesvg.org/docs/api", "type": "text/html" }]
+    }
+  ]
+}
