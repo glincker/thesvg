@@ -250,9 +250,9 @@ export function IconDetailPage({
   }, [currentPath]);
 
   const primaryCategory = icon.categories[0] ?? null;
-  // Near-black and near-white marks get a plate so they stay visible; icons with their own light and dark variants already adapt.
-  const hasThemeVariants = Boolean(icon.variants.light && icon.variants.dark && icon.variants.light !== icon.variants.dark);
-  const previewTone: IconTone = hasThemeVariants ? "neutral" : ((iconTones as Record<string, IconTone>)[icon.slug] ?? "neutral");
+  // Near-black and near-white marks get a plate so they stay visible. The tile shows the default artwork, so the
+  // tone applies whenever that variant is selected; the Light and Dark variants are made for their own surface.
+  const previewTone: IconTone = activeVariant === "default" ? ((iconTones as Record<string, IconTone>)[icon.slug] ?? "neutral") : "neutral";
   const previewTint = useMemo(() => brandGlowColor(icon.hex), [icon.hex]);
 
   return (

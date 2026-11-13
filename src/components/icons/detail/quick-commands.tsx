@@ -29,6 +29,37 @@ const readPm = (): PackageManager => {
   }
 };
 
+const SUBCOMMANDS = new Set(["install", "add", "i", "run", "dlx", "exec"]);
+
+/** Splits a command or URL into colored parts, so the line reads at a glance. */
+function Highlighted({ text }: { text: string }) {
+  if (/^https?:\/\//.test(text)) {
+    const m = /^(https?:\/\/)([^/]+)(.*)$/.exec(text);
+    if (m) {
+      return (
+        <>
+          <span className="text-muted-foreground">{m[1]}</span>
+          <span className="text-sky-400">{m[2]}</span>
+          <span className="text-emerald-400">{m[3]}</span>
+        </>
+      );
+    }
+  }
+  return (
+    <>
+      {text.split(" ").map((word, i) => {
+        const tone =
+          i === 0 ? "text-orange-400"
+          : word.startsWith("@") || (i > 1 && /^[a-z][\w.-]*$/i.test(word)) ? "text-emerald-400"
+          : SUBCOMMANDS.has(word) ? "text-violet-400"
+          : word.startsWith("-") ? "text-sky-400"
+          : "text-foreground";
+        return <span key={i} className={tone}>{i > 0 ? " " : ""}{word}</span>;
+      })}
+    </>
+  );
+}
+
 interface CodeRowProps {
   text: string;
   id: string;
@@ -39,7 +70,7 @@ interface CodeRowProps {
 function CodeRow({ text, id, copied, onCopy }: CodeRowProps) {
   return (
     <div className="flex items-center gap-2 rounded-lg border border-border/60 bg-background/60 px-3 py-1">
-      <code className="min-w-0 flex-1 truncate font-mono text-xs text-foreground">{text}</code>
+      <code className="min-w-0 flex-1 truncate font-mono text-xs text-foreground"><Highlighted text={text} /></code>
       <button
         type="button"
         onClick={() => onCopy(text, id)}
