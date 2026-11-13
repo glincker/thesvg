@@ -1,0 +1,97 @@
+{
+  "name": "@thesvg/flags",
+  "version": "0.0.0",
+  "description": "Country and region flags as SVG and React components: every ISO 3166-1 country plus England, Scotland, Wales, Catalonia, the Basque Country, the EU and the UN, in 4x3, square and circle",
+  "type": "module",
+  "sideEffects": false,
+  "license": "MIT",
+  "author": "thesvg.org",
+  "homepage": "https://thesvg.org/collection/flags",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/glincker/thesvg.git",
+    "directory": "packages/flags"
+  },
+  "bugs": {
+    "url": "https://github.com/glincker/thesvg/issues"
+  },
+  "keywords": [
+    "flags",
+    "country-flags",
+    "iso-3166",
+    "svg",
+    "circle-flags",
+    "react",
+    "locale",
+    "tree-shakeable"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./locale": {
+      "types": "./dist/types/locale.d.ts",
+      "import": "./dist/esm/locale.js",
+      "require": "./dist/cjs/locale.js"
+    },
+    "./react": {
+      "types": "./dist/types/react/index.d.ts",
+      "import": "./dist/esm/react/index.js",
+      "require": "./dist/cjs/react/index.js"
+    },
+    "./react/*": {
+      "types": "./dist/types/react/*.d.ts",
+      "import": "./dist/esm/react/*.js",
+      "require": "./dist/cjs/react/*.js"
+    },
+    "./flags/*": {
+      "types": "./dist/types/flags/*.d.ts",
+      "import": "./dist/esm/flags/*.js",
+      "require": "./dist/cjs/flags/*.js"
+    },
+    "./svg/*": "./dist/svg/*",
+    "./manifest.json": "./dist/manifest.json",
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "scripts": {
+    "generate": "node ../../scripts/flags/generate-flags.mjs",
+    "build": "tsx scripts/build.ts",
+    "test": "tsx --test tests/*.test.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19.3.0",
+    "i18n-iso-countries": "^7.14.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "provenance": true,
+    "access": "public"
+  }
+}
