@@ -1534,3 +1534,13 @@ html {
 @media (prefers-reduced-motion: reduce) {
   .flags-row { animation: none; }
 }
+
+/* Search rows fade up when they first appear; rows that stay between keystrokes keep their key and do not replay. */
+@keyframes search-row-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.search-row-in { animation: search-row-in 180ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+@media (prefers-reduced-motion: reduce) {
+  .search-row-in { animation: none; }
+}

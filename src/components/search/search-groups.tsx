@@ -1,6 +1,7 @@
 "use client";
 
 import { UiGlyph } from "@/components/ui-glyph";
+import iconTones from "@/data/icon-tones.json";
 import Link from "next/link";
 import type { IconEntry } from "@/lib/icons";
 import { type Glyph, styleFor } from "@/lib/ui-icons/glyphs";
@@ -8,6 +9,15 @@ import { renderIcon } from "@/lib/ui-icons/engine";
 import { cn } from "@/lib/ui-icons/utils";
 
 /** Static glyph for places outside the UI section, where the shared style state is not available. */
+// A mark that matches the surface (black on dark, white on light) gets a soft plate so it stays visible.
+const TONE_PLATE: Record<string, string> = {
+  dark: "dark:bg-white/90",
+  light: "bg-neutral-700 dark:bg-transparent",
+  "": "",
+};
+// Staggered entrance, capped so long lists do not feel slow.
+const ROW_DELAY = ["[animation-delay:0ms]", "[animation-delay:25ms]", "[animation-delay:50ms]", "[animation-delay:75ms]", "[animation-delay:100ms]", "[animation-delay:125ms]", "[animation-delay:150ms]"];
+
 function StaticGlyph({ glyph, size }: { glyph: Glyph; size: number }) {
   const svg = renderIcon(glyph.nodes, { variant: "outline", style: styleFor("outline"), size, idPrefix: `sg-${glyph.slug}` }).svg;
   return <span aria-hidden="true" className="shrink-0 text-foreground" dangerouslySetInnerHTML={{ __html: svg }} />;
@@ -99,9 +109,11 @@ export function SearchGroups(p: Props) {
               const active = idx === p.selectedIdx;
               if (r.kind === "brand") {
                 return (
-                  <button key={r.key} id={`${p.optionId}-${idx}`} type="button" role="option" aria-selected={active} onMouseEnter={() => p.onHover(idx)} onClick={() => p.onPickBrand(r.icon.slug)} className={rowClass(active)}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={r.icon.variants.default} alt="" className="h-6 w-6 shrink-0 rounded object-contain transition-transform duration-150 group-hover:scale-110" />
+                  <button key={r.key} id={`${p.optionId}-${idx}`} type="button" role="option" aria-selected={active} onMouseEnter={() => p.onHover(idx)} onClick={() => p.onPickBrand(r.icon.slug)} className={cn(rowClass(active), "search-row-in", ROW_DELAY[Math.min(ri, ROW_DELAY.length - 1)])}>
+                    <span className={cn("grid size-7 shrink-0 place-items-center rounded-md transition-transform duration-150 group-hover:scale-110", TONE_PLATE[(iconTones as Record<string, string>)[r.icon.slug] ?? ""])}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={r.icon.variants.default} alt="" className="h-6 w-6 rounded object-contain" />
+                    </span>
                     <span className="min-w-0 flex-1">
                       <span className="block truncate text-sm font-medium">{r.icon.title}</span>
                       <span className="block truncate text-[0.75rem] text-muted-foreground">{r.icon.categories[0] || r.icon.slug}</span>
@@ -110,7 +122,7 @@ export function SearchGroups(p: Props) {
                 );
               }
               return (
-                <button key={r.key} id={`${p.optionId}-${idx}`} type="button" role="option" aria-selected={active} onMouseEnter={() => p.onHover(idx)} onClick={() => p.onPickUi(r.glyph.slug)} className={rowClass(active)}>
+                <button key={r.key} id={`${p.optionId}-${idx}`} type="button" role="option" aria-selected={active} onMouseEnter={() => p.onHover(idx)} onClick={() => p.onPickUi(r.glyph.slug)} className={cn(rowClass(active), "search-row-in", ROW_DELAY[Math.min(ri, ROW_DELAY.length - 1)])}>
                   <span className="grid size-6 shrink-0 place-items-center transition-transform duration-150 group-hover:scale-110"><StaticGlyph glyph={r.glyph} size={22} /></span>
                   <span className="min-w-0 flex-1">
                     <span className="block truncate text-sm font-medium">{r.glyph.slug}</span>
