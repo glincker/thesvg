@@ -367,7 +367,7 @@ for (const t of territories) {
   flags.push(meta);
   entries.push({
     slug, title: name, aliases: meta.aliases, hex, categories: ["Flags"], variants, license: "MIT",
-    url: SOURCES["flag-icons"].url, collection: "flags", dateAdded: priorDate.get(slug) ?? today,
+    collection: "flags", dateAdded: priorDate.get(slug) ?? today,
     collectionMeta: { type: "flag", kind, ...(meta.iso ? { iso: meta.iso } : {}), colors: colors.map((c) => `${c.hex}:${c.share}`), colorNames: families },
   });
 }

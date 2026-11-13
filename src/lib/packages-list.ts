@@ -2,7 +2,7 @@ export interface PackageEntry {
   name: string;
   /** Folder under packages/, used to read the live version and description at build time. */
   dir: string;
-  group: "brand" | "ui" | "tools";
+  group: "brand" | "ui" | "flags" | "tools";
   label: string;
 }
 
@@ -24,6 +24,7 @@ export const PACKAGES: PackageEntry[] = [
   { name: "@thesvg/ui-vue", dir: "ui-vue", group: "ui", label: "Vue" },
   { name: "@thesvg/ui-svelte", dir: "ui-svelte", group: "ui", label: "Svelte" },
   { name: "@thesvg/ui-react-native", dir: "ui-react-native", group: "ui", label: "React Native" },
+  { name: "@thesvg/flags", dir: "flags", group: "flags", label: "Country and region flags" },
   { name: "@thesvg/cli", dir: "cli", group: "tools", label: "Command line" },
   { name: "@thesvg/mcp-server", dir: "mcp", group: "tools", label: "MCP server" },
 ];
@@ -31,6 +32,7 @@ export const PACKAGES: PackageEntry[] = [
 export const GROUP_TITLES: Record<PackageEntry["group"], string> = {
   brand: "Brand icons",
   ui: "UI icons",
+  flags: "Flags",
   tools: "Tools",
 };
 

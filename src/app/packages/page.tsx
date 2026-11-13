@@ -19,7 +19,7 @@ function readPackage(dir: string): { version: string; description: string } {
 }
 
 export default function PackagesPage() {
-  const groups = (["brand", "ui", "tools"] as const).map((g) => ({
+  const groups = (["brand", "ui", "flags", "tools"] as const).map((g) => ({
     id: g,
     items: PACKAGES.filter((p) => p.group === g).map((p) => ({ ...p, ...readPackage(p.dir) })),
   }));
@@ -27,7 +27,7 @@ export default function PackagesPage() {
     <div className="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6">
       <h1 className="text-3xl font-bold tracking-tight">Packages</h1>
       <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-        Everything theSVG publishes to npm, in one place. Brand icons and UI icons are separate packages, so adding one never makes the other heavier. Every package is tree-shakeable and versions move together within each group.
+        Everything theSVG publishes to npm, in one place. Brand icons, UI icons and flags are separate packages, so adding one never makes the other heavier. Every package is tree-shakeable and versions move together within each group.
       </p>
       {groups.map((g) => (
         <section key={g.id} className="mt-8">

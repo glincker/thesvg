@@ -7,7 +7,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/compon
 import { GROUP_TITLES, PACKAGES, type PackageEntry, installCommand, npmUrl } from "@/lib/packages-list";
 import { cn } from "@/lib/utils";
 
-const SHOWN: PackageEntry["group"][] = ["brand", "ui"];
+const SHOWN: PackageEntry["group"][] = ["brand", "ui", "flags"];
 
 /** Header menu for the npm packages. Leads with the group for the section you are in and copies the install command. */
 export function PackagesMenu({ inUi }: { inUi: boolean }) {
