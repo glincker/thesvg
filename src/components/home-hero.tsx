@@ -76,25 +76,6 @@ interface Slide {
   flags?: boolean;
 }
 
-const PROOF_SLIDES: Slide[] = ADOPTERS.length
-  ? [
-      {
-        badge: "In the wild",
-        badgeIcon: Users,
-        title: "Used in real projects",
-        description: "Open source projects that pull their brand logos from thesvg.",
-        adopters: ADOPTERS,
-        cta: { label: "See all mentions", href: "/extensions/mentions" },
-        ctaSecondary: { label: "Browse Icons", href: "/" },
-        gradient: "from-violet-50/50 via-background to-violet-50/30 dark:from-violet-950/20 dark:via-background dark:to-violet-950/10",
-        accent: "border-violet-200/50 bg-violet-50/80 text-violet-700 dark:border-violet-500/20 dark:bg-violet-500/10 dark:text-violet-300",
-        blob: "bg-violet-400/10 dark:bg-violet-500/5",
-        collection: "brands" as const,
-        floatSlugs: ADOPTERS.map((a) => a.slug),
-      },
-    ]
-  : [];
-
 const ALL_SLIDES: Slide[] = [
   {
     badge: "New: Flags",
@@ -124,7 +105,6 @@ const ALL_SLIDES: Slide[] = [
     collection: "brands" as const,
     floatSlugs: POPULAR_SLUGS,
   },
-  ...PROOF_SLIDES,
   {
     badge: "theSVG 4.0",
     badgeIcon: Sparkles,
@@ -546,19 +526,23 @@ export function HomeHero({
     return result;
   }, [currentSlide, collectionSlides, fallbackSlide, iconsBySlug]);
 
-  // Collection slides show angled rows of up to 24 of their icons instead of a few scattered ones.
+  // Collection slides show angled rows drawn from the whole collection (popular first), so the rows do not repeat.
   const rowIcons = useMemo(() => {
     const activeSlide = collectionSlides.length > 0
       ? collectionSlides[currentSlide % collectionSlides.length]
       : fallbackSlide;
+    const seen = new Set<string>();
     const out: IconEntry[] = [];
     for (const slug of activeSlide.floatSlugs) {
       const entry = iconsBySlug.get(slug);
-      if (entry) out.push(entry);
-      if (out.length >= 24) break;
+      if (entry && !seen.has(slug)) { seen.add(slug); out.push(entry); }
+    }
+    for (const entry of icons) {
+      if (out.length >= 70) break;
+      if (entry.collection === activeSlide.collection && !seen.has(entry.slug)) { seen.add(entry.slug); out.push(entry); }
     }
     return out;
-  }, [currentSlide, collectionSlides, fallbackSlide, iconsBySlug]);
+  }, [currentSlide, collectionSlides, fallbackSlide, iconsBySlug, icons]);
 
   const rowsMode = !slide.flags && !slide.ui && !slide.adopters && rowIcons.length > 0;
 

@@ -44,7 +44,7 @@ export function FlagsHeroVisual() {
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img src={`/icons/flag-${code}/default.svg`} alt="" width={64} height={48} loading="lazy" decoding="async" className="h-12 w-16 rounded-md object-cover" />
                       </Link>
-                      <span role="tooltip" className="pointer-events-none absolute -top-7 left-1/2 z-10 -translate-x-1/2 rotate-[9deg] whitespace-nowrap rounded-md bg-black/85 px-2 py-1 text-[11px] font-medium text-white opacity-0 transition-opacity duration-150 group-hover/flag:opacity-100 group-focus-within/flag:opacity-100 motion-reduce:transition-none">
+                      <span role="tooltip" className="pointer-events-none absolute -top-7 left-1/2 z-10 -translate-x-1/2 rotate-[9deg] whitespace-nowrap rounded-md bg-black/85 px-2 py-1 text-[0.6875rem] font-medium text-white opacity-0 transition-opacity duration-150 group-hover/flag:opacity-100 group-focus-within/flag:opacity-100 motion-reduce:transition-none">
                         {flagName(code)}
                       </span>
                     </li>
