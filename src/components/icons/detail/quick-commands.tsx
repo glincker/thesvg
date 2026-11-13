@@ -38,9 +38,9 @@ function Highlighted({ text }: { text: string }) {
     if (m) {
       return (
         <>
-          <span className="text-zinc-500">{m[1]}</span>
-          <span className="text-sky-400">{m[2]}</span>
-          <span className="text-emerald-400">{m[3]}</span>
+          <span className="text-muted-foreground">{m[1]}</span>
+          <span className="text-sky-700 dark:text-sky-400">{m[2]}</span>
+          <span className="text-emerald-700 dark:text-emerald-400">{m[3]}</span>
         </>
       );
     }
@@ -49,11 +49,11 @@ function Highlighted({ text }: { text: string }) {
     <>
       {text.split(" ").map((word, i) => {
         const tone =
-          i === 0 ? "text-orange-400"
-          : word.startsWith("@") || (i > 1 && /^[a-z][\w.-]*$/i.test(word)) ? "text-emerald-400"
-          : SUBCOMMANDS.has(word) ? "text-violet-400"
-          : word.startsWith("-") ? "text-sky-400"
-          : "text-zinc-200";
+          i === 0 ? "text-orange-600 dark:text-orange-400"
+          : word.startsWith("@") || (i > 1 && /^[a-z][\w.-]*$/i.test(word)) ? "text-emerald-700 dark:text-emerald-400"
+          : SUBCOMMANDS.has(word) ? "text-violet-700 dark:text-violet-400"
+          : word.startsWith("-") ? "text-sky-700 dark:text-sky-400"
+          : "text-foreground";
         return <span key={i} className={tone}>{i > 0 ? " " : ""}{word}</span>;
       })}
     </>
@@ -69,8 +69,8 @@ interface CodeRowProps {
 
 function CodeRow({ text, id, copied, onCopy }: CodeRowProps) {
   return (
-    <div className="flex items-center gap-2 rounded-lg border border-zinc-800 bg-zinc-950 px-3 py-1">
-      <code className="min-w-0 flex-1 truncate font-mono text-xs text-zinc-200"><Highlighted text={text} /></code>
+    <div className="flex items-center gap-2 rounded-lg border border-border/60 bg-background/60 px-3 py-1">
+      <code className="min-w-0 flex-1 truncate font-mono text-xs text-foreground"><Highlighted text={text} /></code>
       <button
         type="button"
         onClick={() => onCopy(text, id)}
