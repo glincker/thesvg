@@ -84,11 +84,10 @@ export function SearchGroups(p: Props) {
     );
   }
 
-  return (
-    <div className={cn("grid", brandRows.length > 0 && (uiRows.length > 0 || flagRows.length > 0) && "sm:grid-cols-[1.35fr_1fr]")}>
-      {placed.map((g, gi) =>
-        g.rows.length === 0 ? null : (
-          <div key={g.id} className={cn("min-w-0 px-2 py-1.5", gi > 0 && "border-t border-border/30 bg-muted/20 sm:border-l sm:border-t-0 dark:border-white/[0.05] dark:bg-white/[0.02]")}>
+  const renderGroup = (g: (typeof placed)[number], gi: number) =>
+    g.rows.length === 0 ? null : (
+
+          <div key={g.id} className="min-w-0 px-2 py-1.5">
             <div className="flex items-center justify-between px-2 py-1">
               <p className="text-[0.75rem] font-medium uppercase tracking-wider text-muted-foreground/60">
                 {g.title} <span className="ml-1 text-muted-foreground/40">{g.total.toLocaleString()}</span>
@@ -126,10 +125,19 @@ export function SearchGroups(p: Props) {
               </Link>
             )}
           </div>
-        ),
-      )}
+    );
+
+  const two = brandRows.length > 0 && (uiRows.length > 0 || flagRows.length > 0);
+  const second = placed[1];
+  const hasRight = (second && second.rows.length > 0) || flagRows.length > 0;
+  return (
+    <div className={cn("grid", two && "sm:grid-cols-[1.35fr_1fr]")}>
+      {renderGroup(placed[0], 0)}
+      {hasRight && (
+        <div className="flex min-w-0 flex-col border-t border-border/30 bg-muted/20 sm:border-l sm:border-t-0 dark:border-white/[0.05] dark:bg-white/[0.015]">
+          {second && second.rows.length > 0 ? renderGroup(second, 1) : null}
       {flagRows.length > 0 && (
-        <div className={cn("min-w-0 border-t border-border/30 px-2 py-1.5 sm:border-t sm:border-l-0", brandRows.length > 0 && uiRows.length > 0 ? "sm:col-start-2 sm:row-start-2 sm:border-l" : "sm:border-l")}>
+        <div className="min-w-0 px-2 py-1.5">
           <div className="flex items-center justify-between px-2 py-1">
             <p className="text-[0.75rem] font-medium uppercase tracking-wider text-muted-foreground/60">
               Flags <span className="ml-1 text-muted-foreground/40">{p.flagTotal.toLocaleString()}</span>
@@ -150,6 +158,8 @@ export function SearchGroups(p: Props) {
               View all {p.flagTotal.toLocaleString()} flags <UiGlyph name="arrow-right" className="h-3.5 w-3.5" />
             </Link>
           )}
+        </div>
+      )}
         </div>
       )}
     </div>

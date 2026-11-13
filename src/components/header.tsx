@@ -253,6 +253,14 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
 
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
+      // Cmd or Ctrl+K focuses this search box, the one the shortcut hint sits in; the palette is only the fallback.
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k" && inputRef.current && inputRef.current.offsetParent !== null) {
+        e.preventDefault();
+        inputRef.current.focus();
+        inputRef.current.select();
+        setFocused(true);
+        return;
+      }
       if (e.key === "Escape") {
         inputRef.current?.blur();
         setFocused(false);
@@ -418,6 +426,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
               <UiGlyph name="search" className="absolute top-1/2 left-3 h-4.5 w-4.5 -translate-y-1/2 text-muted-foreground" />
               <input
                 ref={inputRef}
+                data-global-search
                 type="text"
                 value={query}
                 onChange={(e) => handleSearchChange(e.target.value)}
