@@ -1,8 +1,8 @@
 /**
  * Packages that are on npm today. The icon page only offers an install tab for a package listed here, so it
- * never points visitors at something that returns a 404. Add "@thesvg/flags" after its first publish.
+ * never points visitors at something that returns a 404.
  */
-export const PUBLISHED_PACKAGES: readonly string[] = ["@thesvg/react", "@thesvg/icons", "@thesvg/cli"];
+export const PUBLISHED_PACKAGES: readonly string[] = ["@thesvg/react", "@thesvg/icons", "@thesvg/cli", "@thesvg/flags"];
 
 export const isPackagePublished = (name: string): boolean => PUBLISHED_PACKAGES.includes(name);
 

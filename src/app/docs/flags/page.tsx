@@ -74,7 +74,7 @@ export default function FlagsDocsPage() {
         <h2 id="flags-usage" className="mb-3 text-lg font-semibold">Usage guide</h2>
         <ol className="space-y-4 text-sm text-muted-foreground">
           <li><span className="font-medium text-foreground">1. Pick a flag.</span> Search by name, ISO code, emoji or locale in <Link className="underline" href="/collection/flags">the flags collection</Link>. Each flag has its own page with copy and download buttons.</li>
-          <li><span className="font-medium text-foreground">2. Use it without installing.</span> Link the file from the CDN: <code>https://cdn.jsdelivr.net/npm/@thesvg/flags/icons/us/default.svg</code>, or copy the SVG from the flag page.</li>
+          <li><span className="font-medium text-foreground">2. Use it without installing.</span> Link the file from the CDN: <code>https://cdn.jsdelivr.net/npm/@thesvg/flags/dist/svg/4x3/us.svg</code>, or use <code>1x1</code> or <code>circle</code> in place of <code>4x3</code> for the other shapes.</li>
           <li><span className="font-medium text-foreground">3. Or install the package.</span> <code>npm i @thesvg/flags</code>, then import a single flag from <code>@thesvg/flags/react/us</code> so only that flag is bundled.</li>
           <li><span className="font-medium text-foreground">4. Map a locale to a flag.</span> <code>getFlagForLocale(&quot;pt-BR&quot;)</code> returns Brazil for decoration. Always show the language name beside it.</li>
         </ol>
