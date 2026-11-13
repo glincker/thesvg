@@ -256,7 +256,7 @@ export function FlagsBrowser({ tiles, syncUrl = true }: Props) {
               ))}
             </ul>
           )}
-          <p className="mt-3 text-[11px] text-muted-foreground">Arrow keys move between flags, Enter opens details, S stars the focused flag.</p>
+          <p className="mt-3 text-[11px] text-muted-foreground">Arrow keys move between flags, Enter opens the flag page, S stars the focused flag. The eye button opens a quick view.</p>
         </>
       )}
 

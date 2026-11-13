@@ -7,6 +7,7 @@ import { categoryUrl } from "@/lib/categories";
 import { getFamilyMembers, getFamilySlugFor, pickFamilySiblings } from "@/lib/families";
 import type { Metadata } from "next";
 import { FlagFacts } from "@/components/flags/flag-facts";
+import { FlagPalette } from "@/components/flags/flag-palette";
 import { flagSeo, getFlagBySlug } from "@/lib/flag-seo";
 
 interface PageProps {
@@ -402,6 +403,7 @@ export default async function IconPage({ params }: PageProps) {
           versionCounterpartIsNewer={versionCounterpartIsNewer}
           lineageIcon={lineageIcon}
           badgeCounterpart={badgeCounterpart}
+          headerExtra={icon.collection === "flags" && getFlagBySlug(slug) ? <FlagPalette colors={getFlagBySlug(slug)!.colors} name={icon.title} /> : undefined}
         />
       </Suspense>
       {icon.collection === "flags" && getFlagBySlug(slug) ? <FlagFacts flag={getFlagBySlug(slug)!} /> : null}

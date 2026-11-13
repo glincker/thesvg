@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { FLAGS } from "../../../packages/flags/src/data/flags.generated";
-import { PaletteBar } from "./palette-bar";
-import { flagColors, type FlagEntry } from "@/lib/flag-seo";
+import type { FlagEntry } from "@/lib/flag-seo";
 
 const languageName = (code: string): string => {
   try {
@@ -15,7 +14,6 @@ const FILE = { rect: "default", square: "square", circle: "circle" } as const;
 
 /** Visible, crawlable facts and links for one flag page: the text and internal links a search engine needs. */
 export function FlagFacts({ flag }: { flag: FlagEntry }) {
-  const colors = flagColors(flag);
   const sameRegion = FLAGS.filter((f) => f.slug !== flag.slug && f.kind === flag.kind && f.continent === flag.continent).slice(0, 18);
   const facts: [string, string][] = [
     ["Name", flag.name],
@@ -43,20 +41,6 @@ export function FlagFacts({ flag }: { flag: FlagEntry }) {
           </div>
         ))}
       </dl>
-
-      {colors.length > 0 ? (
-        <>
-          <h3 className="mt-6 text-sm font-semibold">Colors</h3>
-          <PaletteBar colors={flag.colors} className="mt-2 h-2 w-56 max-w-full overflow-hidden rounded-full" />
-          <ul className="mt-2 flex flex-wrap gap-2">
-            {colors.map((c) => (
-              <li key={c} className="rounded-full border border-border px-2.5 py-1 text-xs">
-                <code>#{c}</code>
-              </li>
-            ))}
-          </ul>
-        </>
-      ) : null}
 
       <h3 className="mt-6 text-sm font-semibold">Use it</h3>
       <pre className="mt-2 max-w-2xl overflow-x-auto rounded-lg border border-border bg-muted/40 p-3 text-xs"><code>{`pnpm add @thesvg/flags

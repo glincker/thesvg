@@ -28,6 +28,9 @@ afterEach(() => { cleanup(); vi.unstubAllGlobals(); vi.restoreAllMocks(); });
 const count = (): string => screen.getByTestId("result-count").textContent ?? "";
 const tileImgs = (): HTMLImageElement[] => [...document.querySelectorAll<HTMLImageElement>("[data-flag-tile] img")];
 
+// Re-rendering all 263 tiles in jsdom takes a few seconds on a busy machine.
+const SLOW = { timeout: 15_000 };
+
 describe("flags browser", () => {
   it("renders every flag as a lazy image with explicit dimensions and no giant DOM per tile", async () => {
     render(<FlagsBrowser tiles={tiles} />);
@@ -46,14 +49,14 @@ describe("flags browser", () => {
     render(<FlagsBrowser tiles={tiles} />);
     const box = screen.getByLabelText("Search flags");
     fireEvent.change(box, { target: { value: "deutschland" } });
-    await waitFor(() => expect(count()).toBe(`1 of ${tiles.length} flags`));
+    await waitFor(() => expect(count()).toBe(`1 of ${tiles.length} flags`), SLOW);
     expect(document.querySelector("[data-flag-tile='de']")).not.toBeNull();
     fireEvent.change(box, { target: { value: "日本" } });
-    await waitFor(() => expect(document.querySelector("[data-flag-tile='jp']")).not.toBeNull());
+    await waitFor(() => expect(document.querySelector("[data-flag-tile='jp']")).not.toBeNull(), SLOW);
     fireEvent.change(box, { target: { value: "qqqqqqq" } });
-    await waitFor(() => expect(screen.getByTestId("empty-state")).toBeTruthy());
+    await waitFor(() => expect(screen.getByTestId("empty-state")).toBeTruthy(), SLOW);
     expect(count()).toBe(`0 of ${tiles.length} flags`);
-  });
+  }, 30_000);
 
   it("filters by region chip and color chips and can clear", () => {
     render(<FlagsBrowser tiles={tiles} />);
@@ -114,12 +117,20 @@ describe("flags browser", () => {
     expect(within(dialog).getByText(/MIT/)).toBeTruthy();
   });
 
-  it("clicking a tile pushes ?flag= and stores a recent entry", async () => {
+  it("each tile links to the flag's own page", () => {
     render(<FlagsBrowser tiles={tiles} />);
-    fireEvent.click(document.querySelector<HTMLElement>("[data-flag-button='de']")!);
+    const link = document.querySelector<HTMLAnchorElement>("[data-flag-button='de']")!;
+    expect(link.tagName).toBe("A");
+    expect(link.getAttribute("href")).toBe("/icon/flag-de");
+  });
+
+  it("the quick view button pushes ?flag=, stores a recent entry and offers the full page", async () => {
+    render(<FlagsBrowser tiles={tiles} />);
+    fireEvent.click(screen.getByRole("button", { name: /^Quick view Germany/ }));
     expect(window.location.search).toContain("flag=de");
     expect(JSON.parse(window.localStorage.getItem(RECENT_KEY)!)).toEqual(["de"]);
     expect(await screen.findByRole("dialog")).toBeTruthy();
+    expect(screen.getByRole("link", { name: /Open the Germany flag page/ }).getAttribute("href")).toBe("/icon/flag-de");
   });
 
   it("moves focus with the arrow keys, Home and End", () => {

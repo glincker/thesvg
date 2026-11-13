@@ -15,6 +15,7 @@ interface IconPageClientProps {
   versionCounterpartIsNewer: boolean;
   lineageIcon: IconEntry | null;
   badgeCounterpart: IconEntry | null;
+  headerExtra?: React.ReactNode;
 }
 
 /**
@@ -33,6 +34,7 @@ export function IconPageClient({
   versionCounterpartIsNewer,
   lineageIcon,
   badgeCounterpart,
+  headerExtra,
 }: IconPageClientProps) {
   return (
     <SidebarShell categoryCounts={categoryCounts}>
@@ -45,6 +47,7 @@ export function IconPageClient({
         versionCounterpartIsNewer={versionCounterpartIsNewer}
         lineageIcon={lineageIcon}
         badgeCounterpart={badgeCounterpart}
+        headerExtra={headerExtra}
       />
     </SidebarShell>
   );

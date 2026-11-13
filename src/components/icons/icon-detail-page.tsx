@@ -131,6 +131,8 @@ interface IconDetailPageProps {
   lineageIcon?: IconEntry | null;
   /** Brand <-> auth-badge counterpart, resolved server-side. */
   badgeCounterpart?: IconEntry | null;
+  /** Extra content under the title and slug (the flag palette on flag pages). */
+  headerExtra?: React.ReactNode;
 }
 
 export function IconDetailPage({
@@ -142,6 +144,7 @@ export function IconDetailPage({
   versionCounterpartIsNewer,
   lineageIcon = null,
   badgeCounterpart = null,
+  headerExtra,
 }: IconDetailPageProps) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -541,6 +544,7 @@ export function IconDetailPage({
               <p className="mt-0.5 font-mono text-xs text-muted-foreground">
                 {icon.slug}
               </p>
+              {headerExtra}
               <div className="mt-2 flex flex-wrap items-center gap-1.5">
                 {versionCounterpartSlug && versionCounterpartYear && (
                   <Link
