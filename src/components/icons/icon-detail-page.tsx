@@ -46,12 +46,15 @@ function PreviewCopyButton({
   svgContent,
   slug,
   activeVariant,
+  themeSrcs,
 }: {
   src: string;
   title: string;
   svgContent: string;
   slug: string;
   activeVariant: string;
+  /** Artwork made for each theme; when set, the preview shows the one that matches the current theme. */
+  themeSrcs?: { light: string; dark: string };
 }) {
   const [state, setState] = useState<"idle" | "copied" | "error">("idle");
   const recordCopy = useRecentsStore((s) => s.recordCopy);
@@ -90,11 +93,18 @@ function PreviewCopyButton({
       }
       className="group/preview relative flex items-center justify-center rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-foreground/40"
     >
-      <img
-        src={src}
-        alt={title}
-        className="h-40 w-40 object-contain drop-shadow-md transition-transform duration-300 group-hover/preview:scale-105"
-      />
+      {themeSrcs ? (
+        <>
+          <img src={themeSrcs.light} alt={title} className="h-40 w-40 object-contain drop-shadow-md transition-transform duration-300 group-hover/preview:scale-105 dark:hidden" />
+          <img src={themeSrcs.dark} alt={title} className="hidden h-40 w-40 object-contain drop-shadow-md transition-transform duration-300 group-hover/preview:scale-105 dark:block" />
+        </>
+      ) : (
+        <img
+          src={src}
+          alt={title}
+          className="h-40 w-40 object-contain drop-shadow-md transition-transform duration-300 group-hover/preview:scale-105"
+        />
+      )}
       <span
         className={cn(
           "pointer-events-none absolute -bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full px-2.5 py-1 text-[10px] font-medium shadow-md transition-opacity duration-200",
@@ -252,7 +262,11 @@ export function IconDetailPage({
   const primaryCategory = icon.categories[0] ?? null;
   // Near-black and near-white marks get a plate so they stay visible. The tile shows the default artwork, so the
   // tone applies whenever that variant is selected; the Light and Dark variants are made for their own surface.
-  const previewTone: IconTone = activeVariant === "default" ? ((iconTones as Record<string, IconTone>)[icon.slug] ?? "neutral") : "neutral";
+  // Icons that ship their own light and dark artwork show the one made for the current theme, so they need no plate.
+  const lightArt = icon.variants.light || icon.variants.default;
+  const darkArt = icon.variants.dark || icon.variants.default;
+  const themeSwap = activeVariant === "default" && Boolean(lightArt) && Boolean(darkArt) && lightArt !== darkArt;
+  const previewTone: IconTone = activeVariant === "default" && !themeSwap ? ((iconTones as Record<string, IconTone>)[icon.slug] ?? "neutral") : "neutral";
   const previewTint = useMemo(() => brandGlowColor(icon.hex), [icon.hex]);
 
   return (
@@ -315,6 +329,7 @@ export function IconDetailPage({
               svgContent={svgContent}
               slug={icon.slug}
               activeVariant={activeVariant}
+              themeSrcs={themeSwap ? { light: lightArt, dark: darkArt } : undefined}
             />
             {icon.hex && icon.hex !== "000000" && (
               <div className="absolute top-3 right-3 flex items-center gap-1.5 rounded-full border border-border/40 bg-background/70 px-2.5 py-1 backdrop-blur-sm">

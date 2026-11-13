@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Anchor, ArrowRight, Check, ChevronRight, Clock, Cloud, Copy, Flame, Package, ShieldCheck, Sparkles, Users, X, Zap } from "@/components/own-icons";
 import Link from "next/link";
 import posthog from "posthog-js";
@@ -382,6 +382,25 @@ export function HomeHero({
   }, []);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  // Off screen or in a hidden tab the banner stops rotating (no re-render of the page below) and its animations pause.
+  const heroRef = useRef<HTMLDivElement>(null);
+  const [heroVisible, setHeroVisible] = useState(true);
+  useEffect(() => {
+    const el = heroRef.current;
+    if (!el) return;
+    let inView = true;
+    const apply = (): void => setHeroVisible(inView && !document.hidden);
+    const io = new IntersectionObserver(([entry]) => {
+      inView = entry.isIntersecting;
+      apply();
+    }, { threshold: 0.1 });
+    io.observe(el);
+    document.addEventListener("visibilitychange", apply);
+    return () => {
+      io.disconnect();
+      document.removeEventListener("visibilitychange", apply);
+    };
+  }, []);
   const [selectedIcon, setSelectedIcon] = useState<IconEntry | null>(null);
   const [activeCollection, setActiveCollection] = useState<Collection>(defaultCollection ?? "brands");
 
@@ -424,12 +443,12 @@ export function HomeHero({
 
   // Auto-rotate carousel through collection slides
   useEffect(() => {
-    if (isPaused || collectionSlides.length <= 1) return;
+    if (isPaused || !heroVisible || collectionSlides.length <= 1) return;
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % collectionSlides.length);
     }, SLIDE_DURATION);
     return () => clearInterval(timer);
-  }, [isPaused, collectionSlides.length]);
+  }, [isPaused, heroVisible, collectionSlides.length]);
 
   const handleSelectIcon = useCallback((icon: IconEntry) => {
     setSelectedIcon(icon);
@@ -580,6 +599,20 @@ export function HomeHero({
     return out;
   }, [currentSlide, collectionSlides, fallbackSlide, iconsBySlug, icons]);
 
+  // Warm the next slide's first icons while the current one is showing, so the switch does not pop in image by image.
+  useEffect(() => {
+    if (collectionSlides.length <= 1 || !heroVisible) return;
+    const next = collectionSlides[(currentSlide + 1) % collectionSlides.length];
+    if (!next || next.flags || next.ui) return;
+    for (const slug of next.floatSlugs.slice(0, 20)) {
+      const entry = iconsBySlug.get(slug);
+      if (entry) {
+        const img = new Image();
+        img.src = entry.variants.light || entry.variants.default;
+      }
+    }
+  }, [currentSlide, collectionSlides, heroVisible, iconsBySlug]);
+
   const rowsMode = !slide.flags && !slide.ui && !slide.adopters && rowIcons.length > 0;
 
   // Predefined positions for floating icons (scattered, not grid). Timings
@@ -698,7 +731,9 @@ export function HomeHero({
         <div className="absolute -bottom-1 left-8 right-8 h-4 rounded-2xl bg-black/[0.03] blur-md dark:bg-black/20" />
 
         <div
-          className={`relative isolate overflow-hidden rounded-3xl border border-border/40 bg-gradient-to-br ${slide.gradient} px-5 pb-11 pt-6 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.08),0_2px_8px_-2px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.15)] transition-colors duration-700 sm:px-10 sm:pb-14 sm:pt-11 dark:border-white/[0.08] dark:shadow-[0_8px_30px_-6px_rgba(0,0,0,0.4),0_2px_8px_-2px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.05)]`}
+          ref={heroRef}
+          data-offscreen={!heroVisible}
+          className={`hero-root relative isolate overflow-hidden rounded-3xl border border-border/40 bg-gradient-to-br ${slide.gradient} px-5 pb-11 pt-6 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.08),0_2px_8px_-2px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.15)] transition-colors duration-700 sm:px-10 sm:pb-14 sm:pt-11 dark:border-white/[0.08] dark:shadow-[0_8px_30px_-6px_rgba(0,0,0,0.4),0_2px_8px_-2px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.05)]`}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
@@ -804,17 +839,17 @@ export function HomeHero({
               the two animations don't fight over the same CSS property. */}
           <div className="pointer-events-none absolute inset-0 hidden lg:block">
             {slide.flags && (
-              <div key={`flags-${currentSlide}`} className="animate-float-in absolute -right-6 top-1/2 -translate-y-1/2">
+              <div key={`flags-${currentSlide}`} className="hero-fade-in absolute -right-6 top-1/2 -translate-y-1/2">
                 <FlagsHeroVisual />
               </div>
             )}
             {slide.ui && (
-              <div key={`ui-${currentSlide}`} className="animate-float-in absolute right-10 top-1/2 -translate-y-1/2 xl:right-16">
+              <div key={`ui-${currentSlide}`} className="hero-fade-in absolute right-10 top-1/2 -translate-y-1/2 xl:right-16">
                 <UiHeroPreview />
               </div>
             )}
             {rowsMode && (
-              <div key={`rows-${currentSlide}`} className="animate-float-in absolute -right-6 top-1/2 -translate-y-1/2">
+              <div key={`rows-${currentSlide}`} className="hero-fade-in absolute -right-6 top-1/2 -translate-y-1/2">
                 <IconRowsVisual
                   icons={rowIcons}
                   tilt={currentSlide % 2 === 0 ? "left" : "right"}
