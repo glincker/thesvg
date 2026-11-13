@@ -1,4 +1,4 @@
-import { FLAGS } from "./data/flags.generated.js";
+import { FLAG_NAMES } from "./data/flag-names.generated.js";
 import type { FlagLocaleResult } from "./types.js";
 
 /**
@@ -34,11 +34,9 @@ export const LOCALE_FLAGS: Readonly<Record<string, string>> = {
   gd: "gb-sct",
 };
 
-const byCode = new Map(FLAGS.map((f) => [f.code, f]));
-
 function result(code: string): FlagLocaleResult | undefined {
-  const flag = byCode.get(code);
-  return flag ? { slug: flag.slug, code: flag.code, name: flag.name } : undefined;
+  const name = FLAG_NAMES[code];
+  return name ? { slug: `flag-${code}`, code, name } : undefined;
 }
 
 /** Scripts that pick a flag when no region is given (zh-Hant is written in Taiwan, zh-Hans in China). */

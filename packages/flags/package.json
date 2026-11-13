@@ -31,6 +31,11 @@
       "import": "./dist/esm/index.js",
       "require": "./dist/cjs/index.js"
     },
+    "./search": {
+      "types": "./dist/types/search.d.ts",
+      "import": "./dist/esm/search.js",
+      "require": "./dist/cjs/search.js"
+    },
     "./locale": {
       "types": "./dist/types/locale.d.ts",
       "import": "./dist/esm/locale.js",

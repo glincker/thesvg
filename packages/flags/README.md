@@ -41,8 +41,8 @@ Component props: `variant`, `size` (height in px, default 24), `width`, `height`
 ## Metadata, search and locales
 
 ```ts
-import { FLAGS, findFlags, getFlag } from "@thesvg/flags";
-import { getFlagForLocale } from "@thesvg/flags/locale";
+import { FLAGS, findFlags, getFlag } from "@thesvg/flags/search";
+import { getFlagForLocale } from "@thesvg/flags";
 
 findFlags("deutschland")[0].code; // "de"; also DEU, 276, holland, catalunya, pt-BR, emoji
 getFlag("flag-gb-eng")?.name;     // "England"
@@ -53,7 +53,17 @@ A flag represents a country, not a language. Show the native language name besid
 
 ## Bundle size
 
-The package is `sideEffects: false` and every flag is its own module, so a bundler ships only the flags you import. Most flags are 1 to 5 KB per shape. Bolivia, Spain, Montenegro, Mexico, Serbia and El Salvador are 55 to 180 KB in the 4x3 and square shapes because of their detailed coats of arms; their circle shapes are small. The root `@thesvg/flags` entry contains metadata for all flags (no SVG) and is a few tens of KB; use per-flag imports for artwork.
+The package is `sideEffects: false` and every flag is its own module. Minified browser bundles measured with esbuild (React external), enforced by `budget.json` and `tests/bundle.test.ts`:
+
+| You import | Bundle |
+| --- | --- |
+| one React component (`@thesvg/flags/react/us`) | about 3 KB |
+| the same component through the `@thesvg/flags/react` barrel | about 3 KB (the other 257 are dropped) |
+| one plain SVG string (`@thesvg/flags/flags/us`) | under 1 KB |
+| `getFlagForLocale` from `@thesvg/flags` | about 5 KB |
+| search and metadata for all flags (`@thesvg/flags/search`) | about 245 KB, load it only where you need search |
+
+Bolivia, Spain, Montenegro, Mexico, Serbia and El Salvador are 55 to 180 KB in the 4x3 and square shapes because of their detailed coats of arms; their circle shapes are small.
 
 ## Exclusions
 

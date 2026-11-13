@@ -1,7 +1,8 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 
-import { findFlags, getFlag, getFlagForLocale } from "../src/index.ts";
+import { findFlags, getFlag } from "../src/search.ts";
+import { getFlagForLocale } from "../src/locale.ts";
 
 const EXPECTED: Record<string, string> = {
   en: "us", "en-GB": "gb", es: "es", "es-MX": "mx", de: "de", fr: "fr", "pt-BR": "br", "pt-PT": "pt", ja: "jp",

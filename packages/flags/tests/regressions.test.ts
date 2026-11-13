@@ -8,7 +8,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 
 import { parse } from "../scripts/parse-svg.ts";
 import { FLAGS } from "../src/data/flags.generated.ts";
-import { findFlags } from "../src/index.ts";
+import { findFlags } from "../src/search.ts";
 import { getFlagForLocale } from "../src/locale.ts";
 import { deriveWidth, scopeIds } from "../src/react/create-flag.ts";
 
@@ -79,6 +79,6 @@ test("native and localized names are searchable", () => {
 });
 
 test("aliases are already normalized, so generator and package normalization agree", async () => {
-  const { squash } = await import("../src/index.ts");
+  const { squash } = await import("../src/search.ts");
   for (const f of FLAGS) for (const a of f.aliases) if (!/[\u{1F1E6}-\u{1F1FF}\u{1F3F4}#]|-/u.test(a)) assert.equal(squash(a), a, `${f.slug}: ${a}`);
 });

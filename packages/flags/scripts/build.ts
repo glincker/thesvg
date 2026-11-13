@@ -32,8 +32,8 @@ const tsc = (cfg: string[]): void => {
 };
 tsc(["-p", "tsconfig.esm.json"]);
 tsc(["-p", "tsconfig.cjs.json"]);
-writeFileSync(join(DIST, "cjs/package.json"), '{"type":"commonjs"}\n');
-writeFileSync(join(DIST, "esm/package.json"), '{"type":"module"}\n');
+writeFileSync(join(DIST, "cjs/package.json"), '{"type":"commonjs","sideEffects":false}\n');
+writeFileSync(join(DIST, "esm/package.json"), '{"type":"module","sideEffects":false}\n');
 
 for (const d of ["flags", "react"]) {
   mkdirSync(join(DIST, "esm", d), { recursive: true });
@@ -65,7 +65,7 @@ for (const f of FLAGS) {
     if (ids.length > 0) (sh as { ids?: string[] }).ids = ids;
   }
   const data = JSON.stringify(shapes);
-  writeFileSync(join(DIST, "esm/react", `${f.code}.js`), `import { createFlag } from "./create-flag.js";\nexport const ${name} = createFlag("${name}", ${data});\nexport default ${name};\n`);
+  writeFileSync(join(DIST, "esm/react", `${f.code}.js`), `import { createFlag } from "./create-flag.js";\nexport const ${name} = /* @__PURE__ */ createFlag("${name}", ${data});\nexport default ${name};\n`);
   writeFileSync(join(DIST, "cjs/react", `${f.code}.js`), `"use strict";\nconst { createFlag } = require("./create-flag.js");\nconst ${name} = createFlag("${name}", ${data});\nexports.${name} = ${name};\nexports.default = ${name};\n`);
   writeFileSync(join(DIST, "types/react", `${f.code}.d.ts`), `import type { FlagComponent } from "./create-flag.js";\nexport declare const ${name}: FlagComponent;\nexport default ${name};\n`);
 }
