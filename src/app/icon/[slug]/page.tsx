@@ -6,6 +6,8 @@ import { IconPageClient } from "@/components/icons/icon-page-client";
 import { categoryUrl } from "@/lib/categories";
 import { getFamilyMembers, getFamilySlugFor, pickFamilySiblings } from "@/lib/families";
 import type { Metadata } from "next";
+import { FlagFacts } from "@/components/flags/flag-facts";
+import { flagSeo, getFlagBySlug } from "@/lib/flag-seo";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -74,6 +76,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const icon = getIconBySlug(slug);
   if (!icon) return {};
+  const flag = icon.collection === "flags" ? getFlagBySlug(slug) : undefined;
 
   const variantCount = Object.values(icon.variants).filter(Boolean).length;
   const variantNames = Object.keys(icon.variants)
@@ -98,12 +101,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     `Use the ${icon.title} logo in React, Vue, or via jsDelivr CDN. Open-source brand icon library.` +
     collectionText;
 
-  const title = `${icon.title} SVG Icon - Free Download | Official Logo SVG | theSVG`;
+  const seo = flag ? flagSeo(flag) : null;
+  const title = seo?.title ?? `${icon.title} SVG Icon - Free Download | Official Logo SVG | theSVG`;
 
   return {
     title,
-    description,
-    keywords: [
+    description: seo?.description ?? description,
+    keywords: seo ? seo.keywords : [
       icon.title,
       icon.slug,
       ...icon.aliases,
@@ -125,7 +129,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     ],
     openGraph: {
       title,
-      description,
+      description: seo?.description ?? description,
       url: `https://thesvg.org/icon/${slug}`,
       type: "website",
       siteName: "theSVG",
@@ -133,7 +137,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     twitter: {
       card: "summary_large_image",
       title,
-      description,
+      description: seo?.description ?? description,
     },
     alternates: {
       canonical: `https://thesvg.org/icon/${slug}`,
@@ -400,6 +404,7 @@ export default async function IconPage({ params }: PageProps) {
           badgeCounterpart={badgeCounterpart}
         />
       </Suspense>
+      {icon.collection === "flags" && getFlagBySlug(slug) ? <FlagFacts flag={getFlagBySlug(slug)!} /> : null}
     </>
   );
 }

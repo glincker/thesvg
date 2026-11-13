@@ -62,6 +62,9 @@ export function CommandPalette() {
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+        // The header search bar owns Cmd+K whenever it is on screen; the palette is the fallback for pages without one.
+        const headerSearch = document.querySelector<HTMLInputElement>("input[data-global-search]");
+        if (headerSearch && headerSearch.offsetParent !== null) return;
         e.preventDefault();
         toggle();
       }

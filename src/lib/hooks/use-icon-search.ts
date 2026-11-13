@@ -20,12 +20,19 @@ interface UseIconSearchOptions {
    * firing analytics. 700ms matches the existing header behavior.
    */
   recordDelayMs?: number;
+  /** Return flags separately so they never push brand icons down the list. Off by default (the mobile sheet shows one list). */
+  splitFlags?: boolean;
+  /** How many flags to return when `splitFlags` is on. */
+  flagLimit?: number;
 }
 
 interface UseIconSearchResult {
   results: IconEntry[];
   /** Full match count before `limit` is applied, drives "View all N". */
   total: number;
+  /** Flag matches (only filled when `splitFlags` is on) and their full count. */
+  flags: IconEntry[];
+  flagTotal: number;
   isLoading: boolean;
   error: boolean;
 }
@@ -51,11 +58,13 @@ function gaSearch(query: string): void {
  * and observability without duplicating Fuse config.
  */
 export function useIconSearch(options: UseIconSearchOptions): UseIconSearchResult {
-  const { query, source, limit = 24, searchDelayMs = 150, recordDelayMs = 700 } = options;
+  const { query, source, limit = 24, searchDelayMs = 150, recordDelayMs = 700, splitFlags = false, flagLimit = 5 } = options;
   const recordSearch = useRecentsStore((s) => s.recordSearch);
 
   const [results, setResults] = useState<IconEntry[]>([]);
   const [total, setTotal] = useState(0);
+  const [flags, setFlags] = useState<IconEntry[]>([]);
+  const [flagTotal, setFlagTotal] = useState(0);
   // The query the current `results` belong to. Loading is derived from this
   // (see below) rather than an effect-set flag, so a searchable query reads
   // as loading on the very first render, before the effect runs, instead
@@ -78,11 +87,15 @@ export function useIconSearch(options: UseIconSearchOptions): UseIconSearchResul
   // could act on the previous query's results while isLoading is still true.
   const effectiveResults = isLoading ? [] : results;
   const effectiveTotal = isLoading ? 0 : total;
+  const effectiveFlags = isLoading ? [] : flags;
+  const effectiveFlagTotal = isLoading ? 0 : flagTotal;
 
   useEffect(() => {
     if (!hasQuery) {
       setResults([]);
       setTotal(0);
+      setFlags([]);
+      setFlagTotal(0);
       return;
     }
     let active = true;
@@ -94,8 +107,12 @@ export function useIconSearch(options: UseIconSearchOptions): UseIconSearchResul
         .then(([icons, { searchIcons }]) => {
           if (!active) return;
           const all = searchIcons(icons, trimmed);
-          setResults(all.slice(0, limit));
-          setTotal(all.length);
+          const flagHits = splitFlags ? all.filter((i) => i.collection === "flags") : [];
+          const main = splitFlags ? all.filter((i) => i.collection !== "flags") : all;
+          setResults(main.slice(0, limit));
+          setTotal(main.length);
+          setFlags(flagHits.slice(0, flagLimit));
+          setFlagTotal(flagHits.length);
           setResolvedQuery(trimmed);
           resolvedRef.current = { query: trimmed, total: all.length };
         })
@@ -111,7 +128,7 @@ export function useIconSearch(options: UseIconSearchOptions): UseIconSearchResul
       active = false;
       window.clearTimeout(id);
     };
-  }, [trimmed, hasQuery, limit, searchDelayMs]);
+  }, [trimmed, hasQuery, limit, searchDelayMs, splitFlags, flagLimit]);
 
   // Debounced recents + analytics recording. Mirrors `<Header>` so the
   // mobile sheet doesn't quietly skip writes. Attaches result_count when the
@@ -137,5 +154,5 @@ export function useIconSearch(options: UseIconSearchOptions): UseIconSearchResul
     return () => window.clearTimeout(id);
   }, [trimmed, hasQuery, recordSearch, source, recordDelayMs]);
 
-  return { results: effectiveResults, total: effectiveTotal, isLoading, error };
+  return { results: effectiveResults, total: effectiveTotal, flags: effectiveFlags, flagTotal: effectiveFlagTotal, isLoading, error };
 }

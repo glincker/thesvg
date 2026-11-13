@@ -8,6 +8,7 @@ import { UiGlyph } from "@/components/ui-glyph";
 import { LogoMorph, ModeSwitch } from "@/components/ui-icons/mode-switch";
 import { PackagesMenu } from "@/components/packages-menu";
 import { SearchGroups } from "@/components/search/search-groups";
+import { NavFlagsPill } from "@/components/nav-flags-pill";
 import { GLYPHS } from "@/lib/ui-icons/glyphs";
 import { rankTiered } from "@/lib/ui-icons/search";
 import { searchableOf } from "@/lib/ui-icons/searchable";
@@ -168,22 +169,26 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
   const {
     results: suggestions,
     total: totalMatches,
+    flags: flagHits,
+    flagTotal,
     isLoading: searchLoading,
     error: searchError,
-  } = useIconSearch({ query, source: "header", limit: pathname.startsWith("/ui") ? 4 : 6 });
+  } = useIconSearch({ query, source: "header", limit: pathname.startsWith("/ui") ? 4 : 7, splitFlags: true, flagLimit: 4 });
   const [recentViewedIcons, setRecentViewedIcons] = useState<IconEntry[]>([]);
   const hasQuery = query.trim().length >= 2;
   const docsMatches = useMemo(() => searchDocs(query), [query]);
   // The page lists every result, so on the UI pages the modal is a jump list of the best few. Elsewhere it shows a few more and links to all.
   const uiRanked = useMemo(() => (hasQuery ? rankTiered(query.trim().toLowerCase(), GLYPHS, searchableOf) : { best: [], related: [] }), [hasQuery, query]);
   const uiAll = useMemo(() => [...uiRanked.best, ...uiRanked.related], [uiRanked]);
-  const uiShown = (uiRanked.best.length > 0 ? uiRanked.best : uiAll).slice(0, pathname.startsWith("/ui") ? 4 : 6);
+  const uiShown = (uiRanked.best.length > 0 ? uiRanked.best : uiAll).slice(0, pathname.startsWith("/ui") ? 4 : 3);
   // One flat list in on-screen order (current section first) so the arrow keys walk both groups.
   const flat = useMemo(() => {
     const b = suggestions.map((icon) => ({ kind: "brand" as const, slug: icon.slug }));
     const u = uiShown.map((g) => ({ kind: "ui" as const, slug: g.slug }));
-    return pathname.startsWith("/ui") ? [...u, ...b] : [...b, ...u];
-  }, [suggestions, uiShown, pathname]);
+    // Flags always come last, so they never move brand icons down the arrow-key order.
+    const f = flagHits.map((icon) => ({ kind: "brand" as const, slug: icon.slug }));
+    return pathname.startsWith("/ui") ? [...u, ...b, ...f] : [...b, ...u, ...f];
+  }, [suggestions, uiShown, flagHits, pathname]);
   const showDropdown = focused;
 
   // Keep the dropdown mounted briefly after showDropdown flips false so it
@@ -356,6 +361,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
               const href = `/collection/${meta.id}`;
               const isActive = activeCollection === meta.id;
               const Icon = meta.icon;
+              if (meta.id === "flags") return <NavFlagsPill key={meta.id} active={isActive} label={meta.shortLabel} />;
               return (
                 <Link
                   key={meta.id}
@@ -469,6 +475,8 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                     primary={isUi ? "ui" : "brand"}
                     brands={suggestions}
                     brandTotal={totalMatches}
+                    flags={flagHits}
+                    flagTotal={flagTotal}
                     uiGlyphs={uiShown}
                     uiTotal={uiAll.length}
                     query={query}

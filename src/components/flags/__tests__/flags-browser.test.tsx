@@ -63,6 +63,8 @@ describe("flags browser", () => {
     expect(document.querySelector("[data-flag-tile='de']")).toBeNull();
     fireEvent.click(screen.getByRole("button", { name: "Clear filters" }));
     expect(count()).toBe(`${tiles.length} of ${tiles.length} flags`);
+    // The color filters live behind the Colors toggle.
+    fireEvent.click(screen.getByRole("button", { name: /^Colors/ }));
     fireEvent.click(screen.getByRole("button", { name: "green" }));
     fireEvent.click(screen.getByRole("button", { name: "orange" }));
     fireEvent.click(screen.getByRole("button", { name: "Any color" }));

@@ -32,11 +32,16 @@ function FlagTileImpl({ tile, variant, size, starred, tabIndex, onOpen, onToggle
   const detail = [tile.native && tile.native !== tile.name ? tile.native : null, tile.iso, tile.alpha3, tile.emoji].filter(Boolean).join(" ");
   return (
     <li className="group relative [content-visibility:auto] [contain-intrinsic-size:auto_132px]" data-flag-tile={tile.code}>
-      <button
-        type="button"
+      <a
+        href={`/icon/${tile.slug}`}
         tabIndex={tabIndex}
         data-flag-button={tile.code}
-        onClick={() => onOpen(tile.code)}
+        onClick={(e) => {
+          // A plain click opens the quick panel; modified clicks and crawlers follow the real page.
+          if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+          e.preventDefault();
+          onOpen(tile.code);
+        }}
         title={detail}
         aria-label={`${tile.name}${tile.iso ? `, ${tile.iso}` : ""}`}
         className="flex w-full flex-col items-center gap-2 rounded-xl border border-border/40 bg-card/30 p-3 pb-2 text-center outline-none transition-colors hover:bg-muted focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 motion-reduce:transition-none dark:border-white/[0.06] dark:bg-white/[0.02]"
@@ -47,7 +52,7 @@ function FlagTileImpl({ tile, variant, size, starred, tabIndex, onOpen, onToggle
         <span className="line-clamp-2 text-xs font-medium leading-tight">{tile.name}</span>
         <span className="text-[10px] text-muted-foreground">{tile.iso ?? tile.code.toUpperCase()}</span>
         <PaletteBar colors={tile.colors} className="h-1 w-full rounded-full" />
-      </button>
+      </a>
       <button
         type="button"
         tabIndex={-1}

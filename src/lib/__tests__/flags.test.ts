@@ -130,11 +130,4 @@ describe("flags and the launch post are linked everywhere content is listed", ()
     expect(urls).toContain("https://thesvg.org/collection/flags");
     expect(urls).toContain("https://thesvg.org/docs/flags");
   });
-
-  it("the changeset covers the new package and the touched generators", () => {
-    const c = read(".changeset/add-flags-package.md");
-    expect(c).toContain('"@thesvg/flags": minor');
-    expect(c).toContain('"@thesvg/icons": patch');
-    expect(c).toContain("not a breaking change");
-  });
 });

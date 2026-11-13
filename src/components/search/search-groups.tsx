@@ -17,6 +17,9 @@ interface Props {
   primary: "brand" | "ui";
   brands: IconEntry[];
   brandTotal: number;
+  /** Flag matches, shown as their own compact section below the right column. */
+  flags: IconEntry[];
+  flagTotal: number;
   uiGlyphs: Glyph[];
   uiTotal: number;
   query: string;
@@ -56,7 +59,9 @@ export function SearchGroups(p: Props) {
     offset += g.rows.length;
     return { ...g, start };
   });
-  const nothing = brandRows.length === 0 && uiRows.length === 0;
+  const flagsStart = brandRows.length + uiRows.length;
+  const flagRows = p.flags.map((icon, i) => ({ key: `f-${icon.slug}`, icon, idx: flagsStart + i }));
+  const nothing = brandRows.length === 0 && uiRows.length === 0 && flagRows.length === 0;
 
   if (nothing && p.loading) {
     return (
@@ -80,7 +85,7 @@ export function SearchGroups(p: Props) {
   }
 
   return (
-    <div className={cn("grid", brandRows.length > 0 && uiRows.length > 0 && "sm:grid-cols-[1.35fr_1fr]")}>
+    <div className={cn("grid", brandRows.length > 0 && (uiRows.length > 0 || flagRows.length > 0) && "sm:grid-cols-[1.35fr_1fr]")}>
       {placed.map((g, gi) =>
         g.rows.length === 0 ? null : (
           <div key={g.id} className={cn("min-w-0 px-2 py-1.5", gi > 0 && "border-t border-border/30 bg-muted/20 sm:border-l sm:border-t-0 dark:border-white/[0.05] dark:bg-white/[0.02]")}>
@@ -122,6 +127,30 @@ export function SearchGroups(p: Props) {
             )}
           </div>
         ),
+      )}
+      {flagRows.length > 0 && (
+        <div className={cn("min-w-0 border-t border-border/30 px-2 py-1.5 sm:border-t sm:border-l-0", brandRows.length > 0 && uiRows.length > 0 ? "sm:col-start-2 sm:row-start-2 sm:border-l" : "sm:border-l")}>
+          <div className="flex items-center justify-between px-2 py-1">
+            <p className="text-[0.75rem] font-medium uppercase tracking-wider text-muted-foreground/60">
+              Flags <span className="ml-1 text-muted-foreground/40">{p.flagTotal.toLocaleString()}</span>
+            </p>
+          </div>
+          {flagRows.map((r) => {
+            const active = r.idx === p.selectedIdx;
+            return (
+              <button key={r.key} id={`${p.optionId}-${r.idx}`} type="button" role="option" aria-selected={active} onMouseEnter={() => p.onHover(r.idx)} onClick={() => p.onPickBrand(r.icon.slug)} className={cn(rowClass(active), "py-1.5")}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={r.icon.variants.default} alt="" width={24} height={18} className="h-[18px] w-6 shrink-0 rounded-[2px] object-contain" />
+                <span className="min-w-0 flex-1 truncate text-sm font-medium">{r.icon.title}</span>
+              </button>
+            );
+          })}
+          {p.flagTotal > flagRows.length && (
+            <Link href={`/collection/flags?q=${encodeURIComponent(p.query)}`} onClick={p.onClose} className="flex items-center justify-center gap-1 rounded-lg px-2 py-2 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground">
+              View all {p.flagTotal.toLocaleString()} flags <UiGlyph name="arrow-right" className="h-3.5 w-3.5" />
+            </Link>
+          )}
+        </div>
       )}
     </div>
   );
