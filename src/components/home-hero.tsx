@@ -7,6 +7,7 @@ import posthog from "posthog-js";
 import { compareDateDesc } from "@/lib/icon-dates";
 import type { Collection, IconEntry } from "@/lib/icons";
 import { COLLECTIONS_META } from "@/lib/collections-meta";
+import { IconRowsVisual } from "@/components/home-icon-rows";
 import { FlagsHeroVisual } from "@/components/flags/flags-hero-visual";
 import { getIconsBySlugMap, loadIconsManifest } from "@/lib/icons-manifest";
 import { IconCard } from "@/components/icons/icon-card";
@@ -44,6 +45,17 @@ for (const m of [...MENTIONS].sort((a, b) => Number(!!b.featured) - Number(!!a.f
     ADOPTERS.push({ slug: m.logo, label: `${m.source}, opens ${m.title}`, href: m.url });
   }
 }
+
+// Tile surface per collection, so each banner picks up its own brand colour.
+const ROW_TILE: Record<string, string> = {
+  brands: "border-border/40 bg-background/70 dark:border-white/10 dark:bg-white/[0.06]",
+  aws: "border-[#ff9900]/25 bg-[#ff9900]/10 dark:border-[#ff9900]/20 dark:bg-[#ff9900]/[0.07]",
+  azure: "border-[#0078d4]/25 bg-[#0078d4]/10 dark:border-[#0078d4]/20 dark:bg-[#0078d4]/[0.08]",
+  gcp: "border-[#4285f4]/25 bg-[#4285f4]/10 dark:border-[#4285f4]/20 dark:bg-[#4285f4]/[0.08]",
+  k8s: "border-[#326ce5]/25 bg-[#326ce5]/10 dark:border-[#326ce5]/20 dark:bg-[#326ce5]/[0.08]",
+  community: "border-violet-400/25 bg-violet-400/10 dark:border-violet-400/20 dark:bg-violet-400/[0.07]",
+  "auth-badges": "border-emerald-400/25 bg-emerald-400/10 dark:border-emerald-400/20 dark:bg-emerald-400/[0.07]",
+};
 
 interface Slide {
   badge: string;
@@ -534,6 +546,22 @@ export function HomeHero({
     return result;
   }, [currentSlide, collectionSlides, fallbackSlide, iconsBySlug]);
 
+  // Collection slides show angled rows of up to 24 of their icons instead of a few scattered ones.
+  const rowIcons = useMemo(() => {
+    const activeSlide = collectionSlides.length > 0
+      ? collectionSlides[currentSlide % collectionSlides.length]
+      : fallbackSlide;
+    const out: IconEntry[] = [];
+    for (const slug of activeSlide.floatSlugs) {
+      const entry = iconsBySlug.get(slug);
+      if (entry) out.push(entry);
+      if (out.length >= 24) break;
+    }
+    return out;
+  }, [currentSlide, collectionSlides, fallbackSlide, iconsBySlug]);
+
+  const rowsMode = !slide.flags && !slide.ui && !slide.adopters && rowIcons.length > 0;
+
   // Predefined positions for floating icons (scattered, not grid). Timings
   // are baked in as Tailwind arbitrary-value classes (not inline styles)
   // since this is a small fixed set known at build time.
@@ -765,7 +793,17 @@ export function HomeHero({
                 <UiHeroPreview />
               </div>
             )}
-            {floatingIcons.map((icon, i) => {
+            {rowsMode && (
+              <div key={`rows-${currentSlide}`} className="animate-float-in absolute -right-6 top-1/2 -translate-y-1/2">
+                <IconRowsVisual
+                  icons={rowIcons}
+                  tilt={currentSlide % 2 === 0 ? "left" : "right"}
+                  tileClass={ROW_TILE[slide.collection] ?? ROW_TILE.brands}
+                  plateClass={logoPlateClass}
+                />
+              </div>
+            )}
+            {(rowsMode ? [] : floatingIcons).map((icon, i) => {
               const pos = (slide.adopters ? PROOF_POSITIONS : FLOAT_POSITIONS)[i];
               const adopter = slide.adopters?.find((a) => a.slug === icon.slug);
               const tile = (
