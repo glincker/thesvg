@@ -2,17 +2,17 @@
 
 import { useMemo, useState, useSyncExternalStore } from "react";
 import { Button } from "@/components/ui/button";
-import { getFlagForLocale } from "../../../packages/flags/src/locale";
+import { localeFlagCode } from "../../../packages/flags/src/locale-core";
 import type { FlagTile, FlagVariantKey } from "@/lib/flags-browser/model";
 import { copyText, reactImport } from "@/lib/flags-browser/snippets";
 import { flagSrc } from "./flag-tile";
 
 /** Best guess from navigator.languages: the first entry that maps to a flag we have. Local only, nothing is sent anywhere. */
 export function detectFlag(languages: readonly string[], tiles: readonly FlagTile[]): FlagTile | undefined {
+  const byCode = new Map(tiles.map((t) => [t.code, t]));
   for (const l of languages) {
-    const hit = getFlagForLocale(l);
-    const tile = hit && tiles.find((t) => t.code === hit.code);
-    if (tile) return tile;
+    const code = localeFlagCode(l, (c) => byCode.has(c));
+    if (code) return byCode.get(code);
   }
   return undefined;
 }

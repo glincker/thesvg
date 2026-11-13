@@ -25,6 +25,7 @@ const PRODUCT_LINKS: FooterLink[] = [
   { label: "Brand Icons", href: "/", glyph: "layout-grid" },
   { label: "UI Icons", href: "/ui", glyph: "shapes" },
   { label: "Categories", href: "/categories", glyph: "layers" },
+  { label: "Flags", href: "/collection/flags", glyph: "flag" },
   { label: "Docs", href: "/docs", glyph: "book-open" },
   { label: "Submit Icon", href: "/submit", glyph: "upload" },
   { label: "Blog", href: "/blog", glyph: "newspaper" },

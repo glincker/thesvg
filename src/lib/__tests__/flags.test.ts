@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { FLAGS } from "../../../packages/flags/src/data/flags.generated";
-import { LOCALE_FLAGS } from "../../../packages/flags/src/locale";
+import { LOCALE_FLAGS } from "../../../packages/flags/src/locale-core";
 import { getAllIcons, getCollectionCount, getIconsByCollection, roundDownToHundred } from "@/lib/icons";
 import { COLLECTION_IDS, COLLECTIONS_META } from "@/lib/collections-meta";
 import { searchIcons } from "@/lib/search";
@@ -75,5 +75,66 @@ describe("docs and counts do not drift from the metadata", () => {
     expect(read("public/llms-full.txt")).toContain("getFlagForLocale");
     expect(read("src/components/home-hero.tsx")).toContain(`${FLAGS.length} Country and Region Flags`);
     expect(read("public/llms.txt")).toContain(`${label(total).replace("+", "")}`.slice(0, 3));
+  });
+});
+
+describe("package sources the site imports", () => {
+  it("use no .js import specifiers, which the site bundler cannot resolve to .ts", () => {
+    const files = ["packages/flags/src/rank.ts", "packages/flags/src/locale-core.ts", "packages/flags/src/data/flags.generated.ts"];
+    for (const rel of files) {
+      const valueImports = read(rel).split("\n").filter((l) => /^\s*(import|export)\b.*from\s+["'][^"']+\.js["']/.test(l) && !/^\s*(import|export)\s+type\b/.test(l));
+      expect(valueImports, rel).toEqual([]);
+    }
+  });
+});
+
+describe("contributing docs and templates", () => {
+  it("exist and link to each other", () => {
+    expect(read("docs/flags-contributing.md")).toContain("THIRD_PARTY_NOTICES.md");
+    expect(read("CONTRIBUTING.md")).toContain("docs/flags-contributing.md");
+    expect(read(".github/ISSUE_TEMPLATE/flag_fix.yml")).toContain("Source and license");
+  });
+});
+
+describe("flags and the launch post are linked everywhere content is listed", () => {
+  const posts = JSON.parse(read("src/data/posts.json")) as { slug: string; title: string; body: string }[];
+  const post = posts.find((p) => p.slug === "country-flags");
+  const dashes = [String.fromCharCode(0x2013), String.fromCharCode(0x2014)];
+
+  it("the post exists with frontmatter fields and counts that match the metadata", () => {
+    expect(post).toBeTruthy();
+    expect(post!.title).toContain(`${FLAGS.length} flags`);
+    expect(post!.body).toContain(`There are ${FLAGS.length} of them`);
+    expect(post!.body).toContain(`${FLAGS.length * 3} SVG files`);
+    for (const needle of ["@thesvg/flags", "getFlagForLocale", "aria-hidden", "not a language", "THIRD_PARTY_NOTICES.md", "flag-icons", "circle-flags", 'loading="lazy"', "flag_fix.yml"]) expect(post!.body, needle).toContain(needle);
+    for (const d of dashes) expect((post!.body + post!.title).includes(d)).toBe(false);
+  });
+
+  it("footer, docs index, README, hero and llms files link to flags and the blog", () => {
+    expect(read("src/components/footer.tsx")).toContain('href: "/collection/flags"');
+    expect(read("src/components/footer.tsx")).toContain('href: "/blog"');
+    expect(read("src/app/docs/page.tsx")).toContain("flags:");
+    expect(read("src/lib/docs-nav.ts")).toContain('href: "/docs/flags"');
+    expect(read("README.md")).toContain("https://thesvg.org/blog/country-flags");
+    expect(read("README.md")).toContain("https://thesvg.org/collection/flags");
+    expect(read("src/components/home-hero.tsx")).toContain("New: Flags");
+    for (const rel of ["public/llms.txt", "public/llms-full.txt"]) expect(read(rel), rel).toContain("https://thesvg.org/blog/country-flags");
+  });
+
+  it("the feed and the sitemap list the post and the flags pages", async () => {
+    expect(read("public/feed.xml")).toContain('<guid isPermaLink="true">https://thesvg.org/blog/country-flags</guid>');
+    const sitemap = (await import("@/app/sitemap")).default;
+    const urls = (await sitemap()).map((e) => e.url);
+    expect(urls).toContain("https://thesvg.org/blog/country-flags");
+    expect(urls).toContain("https://thesvg.org/blog");
+    expect(urls).toContain("https://thesvg.org/collection/flags");
+    expect(urls).toContain("https://thesvg.org/docs/flags");
+  });
+
+  it("the changeset covers the new package and the touched generators", () => {
+    const c = read(".changeset/add-flags-package.md");
+    expect(c).toContain('"@thesvg/flags": minor');
+    expect(c).toContain('"@thesvg/icons": patch');
+    expect(c).toContain("not a breaking change");
   });
 });

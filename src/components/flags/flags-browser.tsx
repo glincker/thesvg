@@ -139,7 +139,7 @@ export function FlagsBrowser({ tiles, syncUrl = true }: Props) {
         ))}
       </div>
 
-      {state.view === "languages" ? <LanguagesMode variant={state.variant} /> : (
+      {state.view === "languages" ? <LanguagesMode variant={state.variant} tiles={tiles} /> : (
         <>
           <div className="mb-4 flex flex-col gap-3">
             <div className="relative">

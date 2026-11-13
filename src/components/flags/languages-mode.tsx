@@ -1,6 +1,7 @@
 "use client";
 
-import { LOCALE_FLAGS, getFlagForLocale } from "../../../packages/flags/src/locale";
+import { LOCALE_FLAGS, localeFlagCode } from "../../../packages/flags/src/locale-core";
+import type { FlagTile } from "@/lib/flags-browser/model";
 import type { FlagVariantKey } from "@/lib/flags-browser/model";
 import { flagSrc } from "./flag-tile";
 
@@ -16,7 +17,8 @@ export function nativeLanguageName(locale: string): string {
 const TAGS = Object.keys(LOCALE_FLAGS).map((k) => k.replace(/^([a-z]+)-([a-z]+)$/, (_, l: string, r: string) => `${l}-${r.toUpperCase()}`));
 
 /** Teaches the rule in the UI: the flag is decoration beside a native language name, never the only label. */
-export function LanguagesMode({ variant }: Readonly<{ variant: FlagVariantKey }>) {
+export function LanguagesMode({ variant, tiles }: Readonly<{ variant: FlagVariantKey; tiles: readonly FlagTile[] }>) {
+  const byCode = new Map(tiles.map((t) => [t.code, t]));
   return (
     <section aria-label="Flags for languages">
       <p className="mb-4 max-w-2xl text-sm text-muted-foreground">
@@ -24,7 +26,8 @@ export function LanguagesMode({ variant }: Readonly<{ variant: FlagVariantKey }>
       </p>
       <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3" data-testid="language-list">
         {TAGS.map((tag) => {
-          const hit = getFlagForLocale(tag);
+          const code = localeFlagCode(tag, (c) => byCode.has(c));
+          const hit = code ? byCode.get(code) : undefined;
           if (!hit) return null;
           return (
             <li key={tag} className="flex items-center gap-3 rounded-lg border border-border/40 p-3">

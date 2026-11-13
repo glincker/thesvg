@@ -127,6 +127,19 @@ Icons grouped by the company that owns them. Each family page lists every offici
 - CLI: npx @thesvg/cli add flag-de --variant circle
 - A flag is a country, not a language. Show the native language name beside it, mark the flag aria-hidden when decorative, and do not use flags as the only language selector. Flags are public symbols: see LEGAL and DISCLAIMER.
 
+## Blog
+
+- [Country flags in thesvg: 263 flags, three variants, one package](https://thesvg.org/blog/country-flags) (2026-11-12)
+- [Your logos folder is already out of date](https://thesvg.org/blog/logos-folder-out-of-date) (2026-11-02)
+- [theSVG 4.0 is here, with UI icons](https://thesvg.org/blog/introducing-ui-icons) (2026-10-26)
+- [Brand families: every product from a brand, in one place](https://thesvg.org/blog/brand-families) (2026-10-15)
+- [theAuth joins GLINR Studios: open-source auth for AI agents, now with Go](https://thesvg.org/blog/theauth-joins-glinr-studios) (2026-10-07)
+- [Browse Icons by Recently Added or Popular](https://thesvg.org/blog/recently-added-and-popular-icons) (2026-10-01)
+- [10 SVG Icon Performance Hacks Every Frontend Developer Should Know](https://thesvg.org/blog/svg-icon-performance-hacks-2026) (2026-09-13)
+- [A More Alive Icon Page: Brand Colors, Completeness, and Smoother Motion](https://thesvg.org/blog/icon-page-redesign-brand-color-completeness) (2026-09-08)
+
+Index: https://thesvg.org/blog. Feed: https://thesvg.org/feed.xml
+
 ## UI icons
 
 1189 interface icons drawn by theSVG, each in 7 looks (outline, glass, duotone, offset, fill, glass-outline, depth), all using currentColor. Browse: https://thesvg.org/ui. Separate from the brand icons above.

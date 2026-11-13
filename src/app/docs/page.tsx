@@ -34,6 +34,7 @@ export const metadata: Metadata = {
 };
 
 const CARD_DESCRIPTIONS: Record<string, string> = {
+  flags: "Country and region flags: shapes, sizes, accessibility, the locale helper, search and the browser.",
   recipes: "Concrete build patterns: tech-stack badges, icon pickers, accessible buttons, and more.",
   "best-practices": "Sizing, variant choice, CDN pinning, and dark mode done right.",
   tricks: "Small techniques: dynamic icons by slug, CSS-mask recoloring, preload hints.",

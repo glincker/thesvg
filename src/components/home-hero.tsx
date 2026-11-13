@@ -241,7 +241,7 @@ const ALL_SLIDES: Slide[] = [
     floatSlugs: POPULAR_K8S_SLUGS,
   },
   {
-    badge: "Flags",
+    badge: "New: Flags",
     badgeIcon: Package,
     title: "263 Country and Region Flags",
     description: "Every ISO 3166-1 country plus England, Scotland, Wales, Catalonia, the Canary Islands, the EU and the UN. Three shapes each: 4x3, square and circle.",

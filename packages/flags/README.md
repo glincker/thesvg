@@ -69,6 +69,10 @@ Bolivia, Spain, Montenegro, Mexico, Serbia and El Salvador are 55 to 180 KB in t
 
 Not included: retired ISO codes, exceptionally reserved codes, Northern Ireland (no current official flag), disputed or unrecognized entities beyond what ISO and Kosovo require, subdivision flags such as US or Indian states, language flags, and novelty or historical flags. Wikimedia Commons files were consulted only as a cross-check and nothing was copied.
 
+## Contributing
+
+Flags are generated from vetted sources and are open to community updates. See [docs/flags-contributing.md](../../docs/flags-contributing.md).
+
 ## License and attribution
 
 Package code: MIT. The SVG artwork is derived from [flag-icons](https://github.com/lipis/flag-icons) and [circle-flags](https://github.com/HatScripts/circle-flags), both MIT. Their notices are in [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md), which ships with the package. A flag is a public symbol of a state or organization; this package makes no claim about sovereignty. See LEGAL.md and DISCLAIMER.md in the repository.

@@ -212,3 +212,5 @@ const accent = `#${de.colors[0].hex}`; // use as a border or underline, and chec
 ## Flags are a separate package
 
 Flags are in the shared catalog (website, search, CLI, MCP, CDN) but not bundled into `@thesvg/icons` or the framework packages. Need only flags? Install `@thesvg/flags`. Need everything else? Use `@thesvg/icons` or your framework package.
+
+Missing or wrong a flag? See [Contributing flags](./flags-contributing.md): flags are open to community updates through the generator.

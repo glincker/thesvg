@@ -427,7 +427,7 @@ ${sourceBlocks}
 `);
 
 // Docs and READMEs: marker blocks are rewritten, never hand-edited.
-const localePath = join(ROOT, "packages/flags/src/locale.ts");
+const localePath = join(ROOT, "packages/flags/src/locale-core.ts");
 const localeRows = existsSync(localePath)
   ? (() => { const s = rd(localePath); const i = s.indexOf("LOCALE_FLAGS"); return [...s.slice(i, s.indexOf("};", i)).matchAll(/^\s*"?([\w-]+)"?:\s*"([\w-]+)",?$/gm)]; })()
   : [];

@@ -13,6 +13,10 @@
 <p align="center"><b>A HOME FOR EVERY BRAND.</b></p>
 
 <p align="center">
+  <a href="https://thesvg.org/collection/flags">Flags</a> · <a href="https://thesvg.org/blog/country-flags">New: country flags</a> · <a href="https://thesvg.org/blog">Blog</a> · <a href="https://thesvg.org/docs">Docs</a>
+</p>
+
+<p align="center">
   7,900+ brand logos, cloud icons and country flags. Search, copy and ship them as SVG, React, Vue, Svelte, CDN, CLI or MCP.<br />
   Free, open source, no gatekeeping.
 </p>
