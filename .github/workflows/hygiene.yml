@@ -25,10 +25,12 @@ permissions: {}
 jobs:
   welcome:
     name: Welcome first-time contributors
-    # GitHub classifies the author: owners, members, collaborators and earlier contributors are not greeted.
+    # Never greet automation (Dependabot, github-actions, release and refresh bots).
+    # GitHub also classifies the author: owners, members, collaborators and earlier contributors are not greeted.
     if: >-
       github.event_name == 'pull_request_target' &&
-      github.event.pull_request.user.login != 'dependabot[bot]' &&
+      github.event.pull_request.user.type != 'Bot' &&
+      !endsWith(github.event.pull_request.user.login, '[bot]') &&
       contains(fromJSON('["FIRST_TIME_CONTRIBUTOR","FIRST_TIMER"]'), github.event.pull_request.author_association)
     runs-on: ubuntu-latest
     permissions:
