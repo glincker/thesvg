@@ -31,7 +31,7 @@ function brandIcon(slug: string): ComponentType<{ className?: string }> {
  * Add a new collection by adding one entry here; every consumer (sidebar,
  * collection pages, hero carousel, header) picks it up automatically.
  */
-export const COLLECTION_IDS = ["brands", "aws", "azure", "gcp", "k8s", "community", "auth-badges"] as const;
+export const COLLECTION_IDS = ["brands", "aws", "azure", "gcp", "k8s", "community", "auth-badges", "flags"] as const;
 
 export type CollectionId = (typeof COLLECTION_IDS)[number];
 
@@ -211,6 +211,27 @@ export const COLLECTIONS_META: Record<CollectionId, CollectionMeta> = {
     ],
     heroLabel: "Auth Badges",
     heroDescription: "Circular service badges for 2FA and account security UIs",
+  },
+  flags: {
+    id: "flags",
+    label: "Country Flags",
+    shortLabel: "Flags",
+    icon: brandIcon("flag-un"),
+    color: "text-sky-500",
+    pageTitle: "Country and Region Flags - Free SVG Download",
+    pageDescription:
+      "Browse and download SVG flags for every ISO 3166-1 country plus regional flags such as England, Scotland, Wales, Catalonia, the Basque Country, the European Union and the United Nations. Three shapes each: 4x3, square and circle.",
+    pageKeywords: [
+      "country flags",
+      "flag SVG",
+      "ISO 3166 flags",
+      "circle flags",
+      "square flags",
+      "locale flags",
+      "language selector flags",
+    ],
+    heroLabel: "Country Flags",
+    heroDescription: "ISO country and region flags in 4x3, square and circle",
   },
 };
 

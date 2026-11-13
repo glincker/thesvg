@@ -58,6 +58,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/collection/azure`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/collection/gcp`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/collection/k8s`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/collection/flags`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
   ];
 
   const categorySlugs = new Set<string>();

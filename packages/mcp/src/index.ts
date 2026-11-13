@@ -116,11 +116,17 @@ function findIcon(slug: string): IconEntry | undefined {
 export function searchIcons(query: string, limit = 20): SearchResult[] {
   const fuse = getFuse();
   const results = fuse.search(query, { limit });
-  return results.map((r) => ({
-    slug: r.item.slug,
-    name: r.item.name,
-    variants: r.item.variants,
-    categories: r.item.categories,
+  const ordered = results.map((r) => r.item);
+  // Codes, numbers and emoji (DEU, 276, a flag emoji) are exact identifiers:
+  // fuzzy scoring buries them, so exact alias and slug hits go first.
+  const q = query.trim().toLowerCase();
+  const exact = q ? loadIndex().filter((i) => i.slug === q || i.aliases.some((a) => a.toLowerCase() === q)) : [];
+  const merged = [...exact, ...ordered.filter((i) => !exact.includes(i))].slice(0, limit);
+  return merged.map((item) => ({
+    slug: item.slug,
+    name: item.name,
+    variants: item.variants,
+    categories: item.categories,
   }));
 }
 

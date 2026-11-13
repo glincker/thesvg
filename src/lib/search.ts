@@ -25,6 +25,22 @@ export function getSearchIndex(icons: IconEntry[]): Fuse<IconEntry> {
   return fuseInstance;
 }
 
+/**
+ * Codes, numbers and emoji (DEU, 276, a flag emoji, pt-br) are exact
+ * identifiers. Fuzzy scoring buries or misses them, so an exact alias or
+ * slug hit is listed first, then the fuzzy results without duplicates.
+ */
+function withExactIdentifierFirst(icons: IconEntry[], fuzzy: IconEntry[], query: string): IconEntry[] {
+  const q = query.toLowerCase();
+  const exact: IconEntry[] = [];
+  for (const icon of icons) {
+    if (icon.slug === q || icon.aliases.some((a) => a.toLowerCase() === q)) exact.push(icon);
+  }
+  if (exact.length === 0) return fuzzy;
+  const seen = new Set(exact);
+  return [...exact, ...fuzzy.filter((i) => !seen.has(i))];
+}
+
 export function searchIcons(
   icons: IconEntry[],
   query: string
@@ -51,7 +67,7 @@ export function searchIcons(
     for (let i = 0; i < results.length; i++) {
       out[i] = results[i].item;
     }
-    return out;
+    return withExactIdentifierFirst(icons, out, trimmed);
   }
 
   // Score each icon by how many tokens it matches, then by combined Fuse

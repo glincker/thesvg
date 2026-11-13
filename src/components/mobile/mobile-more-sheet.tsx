@@ -82,6 +82,12 @@ const APP_SECTIONS: ReadonlyArray<LinkSection> = [
         description: "Kubernetes components",
         Icon: Cloud,
       },
+      {
+        href: "/collection/flags",
+        label: "Country Flags",
+        description: "ISO country and region flags",
+        Icon: Cloud,
+      },
     ],
   },
   {
