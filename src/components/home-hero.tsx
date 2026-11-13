@@ -32,6 +32,13 @@ const POPULAR_AWS_SLUGS = getPopularSlugs("aws");
 const POPULAR_AZURE_SLUGS = getPopularSlugs("azure");
 const POPULAR_GCP_SLUGS = getPopularSlugs("gcp");
 const POPULAR_K8S_SLUGS = getPopularSlugs("k8s");
+// Package managers, runtimes and languages lead the developer-facing slides, ahead of the generic popular set.
+const DEV_SLUGS = [
+  "npm", "pnpm", "yarn", "bun", "deno", "nodejs", "typescript", "javascript", "python", "go", "rust", "java",
+  "php", "ruby", "swift", "kotlin", "react", "vue", "svelte", "angular", "nextjs", "vite", "docker", "tailwindcss",
+  "webpack", "esbuild", "babel", "eslint", "prettier", "github", "jsdelivr", "unpkg",
+];
+const DEV_FLOAT_SLUGS = [...DEV_SLUGS, ...POPULAR_SLUGS.filter((s) => !DEV_SLUGS.includes(s))];
 const POPULAR_FLAG_SLUGS = getPopularSlugs("flags");
 const POPULAR_COMMUNITY_SLUGS = getPopularSlugs("community");
 const POPULAR_AUTH_BADGES_SLUGS = getPopularSlugs("auth-badges");
@@ -130,7 +137,7 @@ const ALL_SLIDES: Slide[] = [
     accent: "border-blue-200/50 bg-blue-50/80 text-blue-700 dark:border-blue-500/20 dark:bg-blue-500/10 dark:text-blue-400",
     blob: "bg-blue-400/10 dark:bg-blue-500/5",
     collection: "brands" as const,
-    floatSlugs: POPULAR_SLUGS,
+    floatSlugs: DEV_FLOAT_SLUGS,
   },
   {
     badge: "Copy & Ship",
@@ -143,7 +150,7 @@ const ALL_SLIDES: Slide[] = [
     accent: "border-emerald-200/50 bg-emerald-50/80 text-emerald-700 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-400",
     blob: "bg-emerald-400/10 dark:bg-emerald-500/5",
     collection: "brands" as const,
-    floatSlugs: POPULAR_SLUGS,
+    floatSlugs: DEV_FLOAT_SLUGS,
   },
   {
     badge: "AWS Architecture",
