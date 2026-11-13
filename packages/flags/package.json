@@ -1,6 +1,6 @@
 {
   "name": "@thesvg/flags",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Country and region flags as SVG and React components: every ISO 3166-1 country plus England, Scotland, Wales, Catalonia, the Basque Country, the EU and the UN, in 4x3, square and circle",
   "type": "module",
   "sideEffects": false,
