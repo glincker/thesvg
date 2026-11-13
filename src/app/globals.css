@@ -1524,7 +1524,11 @@ html {
   from { transform: translateX(-50%); }
   to { transform: translateX(0); }
 }
+.flags-scene {
+  contain: layout paint;
+}
 .flags-row {
+  will-change: transform;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -1535,7 +1539,8 @@ html {
 .flags-row[data-speed="c"] { animation-duration: 78s; }
 .flags-row[data-speed="d"] { animation-duration: 85s; }
 .flags-row[data-speed="e"] { animation-duration: 92s; }
-.flags-scene:hover .flags-row { animation-play-state: paused; }
+.flags-scene:hover .flags-row,
+.flags-scene[data-paused="true"] .flags-row { animation-play-state: paused; }
 @media (prefers-reduced-motion: reduce) {
   .flags-row { animation: none; }
 }
