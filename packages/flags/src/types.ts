@@ -30,6 +30,10 @@ export interface FlagMeta {
   flagOf: string[];
   /** Normalized search aliases: alternative names, codes, locale tags. */
   aliases: string[];
+  /** Palette in painted-area order: hex without #, share in percent. */
+  colors: { hex: string; share: number }[];
+  /** Color families (red, blue, gold and so on) with at least 5 percent share. */
+  colorNames: string[];
   /** Always default (4x3), square and circle. */
   variants: string[];
 }

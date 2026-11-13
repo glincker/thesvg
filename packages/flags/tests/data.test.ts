@@ -54,7 +54,8 @@ test("every flag has valid SVG in all three variants", () => {
       const svg = readFileSync(file, "utf8");
       assert.match(svg, /^<svg [^>]*xmlns="http:\/\/www\.w3\.org\/2000\/svg"/, `${f.slug}/${v} root`);
       assert.match(svg, /viewBox="[\d. -]+"/, `${f.slug}/${v} viewBox`);
-      assert.match(svg, /<title>[^<]+<\/title>/, `${f.slug}/${v} title`);
+      assert.doesNotMatch(svg, /<title|<desc|<metadata|<!--/i, `${f.slug}/${v} carries no title, description, metadata or comments`);
+      assert.doesNotMatch(svg, /flag-icons|circle-flags|lipis|hatscripts|copyright|licen[cs]e|\bMIT\b/i, `${f.slug}/${v} carries no credit text`);
       assert.doesNotMatch(svg, /<script|<image|<foreignObject|javascript:|\son\w+=|<\?xml|<!DOCTYPE/i, `${f.slug}/${v} unsafe`);
       assert.match(svg.trimEnd(), /<\/svg>$/);
       if (!(OVERSIZE.has(f.code) && v !== "circle")) assert.ok(Buffer.byteLength(svg) <= 50 * 1024, `${f.slug}/${v} size`);

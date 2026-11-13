@@ -67,6 +67,7 @@ jobs:
           cd packages/ui-vue && npm run build && cd ../..
           cd packages/ui-svelte && npm run build && cd ../..
           cd packages/ui-react-native && npm run build && cd ../..
+          cd packages/flags && npm run build && cd ../..
 
       - name: Publish to npm
         id: publish

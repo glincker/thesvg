@@ -11,8 +11,14 @@ const byCode = new Map(FLAGS.map((f) => [f.code, f]));
 const fold = (s: string): string =>
   s.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
 
-const squash = (s: string): string =>
-  fold(s).replace(/[^a-z0-9\s'.]/g, " ").replace(/['.]/g, "").replace(/\s+/g, " ").trim();
+const LATIN_ONLY = /^[\p{Script=Latin}\p{N}\s'.,()&\-\u2019]+$/u;
+
+/** Same normalization as the generator uses for aliases: NFKC, lowercase, Latin diacritics folded, scripts kept. */
+export const squash = (s: string): string => {
+  let t = s.normalize("NFKC").toLowerCase();
+  if (LATIN_ONLY.test(t)) t = t.normalize("NFKD").replace(/\p{M}/gu, "");
+  return t.replace(/[^\p{L}\p{N}\p{M}\s'.]/gu, " ").replace(/['.]/g, "").replace(/\s+/g, " ").trim();
+};
 
 /** Look a flag up by slug ("flag-us"), lowercase code ("us", "gb-eng") or ISO alpha-2/alpha-3. */
 export function getFlag(id: string): FlagMeta | undefined {
@@ -31,12 +37,17 @@ export function findFlags(query: string): FlagMeta[] {
   if (!raw) return [];
   const forms = [...new Set([raw, squash(query)].filter(Boolean))];
   const rank = (f: FlagMeta): number => {
-    const terms = [fold(f.name), f.slug, f.code, ...f.aliases];
+    const terms = [fold(f.name), squash(f.official), f.native ? squash(f.native) : "", f.slug, f.code, ...f.aliases].filter(Boolean);
     let best = 3;
     for (const q of forms) {
       if (terms.includes(q)) return 0;
       if (terms.some((t) => t.startsWith(q))) best = Math.min(best, 1);
-      else if (q.length >= 3 && terms.some((t) => t.includes(q))) best = Math.min(best, 2);
+      else if (q.length >= (/[^\x00-\x7f]/.test(q) ? 2 : 3) && terms.some((t) => t.includes(q))) best = Math.min(best, 2);
+    }
+    if (best === 3) {
+      // Multi-word queries such as "red white blue": every word must match a term.
+      const words = squash(query).split(" ").filter(Boolean);
+      if (words.length > 1 && words.every((w) => terms.some((t) => t === w || t.split(" ").includes(w)))) return 2;
     }
     return best;
   };

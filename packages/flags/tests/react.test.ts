@@ -5,11 +5,14 @@ import { dirname, join, resolve } from "node:path";
 import { test } from "node:test";
 import { fileURLToPath } from "node:url";
 import { createElement } from "react";
+
+import { FLAGS } from "../src/data/flags.generated.ts";
 import { renderToStaticMarkup } from "react-dom/server";
 
 const PKG = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const built = existsSync(join(PKG, "dist/esm/react/index.js"));
-const opts = { skip: built ? false : "run `pnpm build` in packages/flags first" };
+const opts = {};
+assert.ok(built, "dist is missing: run `pnpm build` in packages/flags (the test script does this)");
 const require = createRequire(import.meta.url);
 
 test("per-flag React component renders decorative by default", opts, async () => {
@@ -40,7 +43,7 @@ test("CommonJS build and plain SVG exports work", opts, async () => {
   for (const k of ["rect", "square", "circle"]) assert.match(mod[k], /^<svg /);
   assert.ok(existsSync(join(PKG, "dist/svg/1x1/de.svg")));
   const barrel = await import(join(PKG, "dist/esm/react/index.js"));
-  assert.equal(Object.keys(barrel).filter((k) => k.startsWith("Flag")).length, 258);
+  assert.equal(Object.keys(barrel).filter((k) => k.startsWith("Flag")).length, FLAGS.length);
 });
 
 test("every @thesvg/flags import in the docs resolves through the exports map", () => {

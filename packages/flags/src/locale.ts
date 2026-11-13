@@ -41,22 +41,48 @@ function result(code: string): FlagLocaleResult | undefined {
   return flag ? { slug: flag.slug, code: flag.code, name: flag.name } : undefined;
 }
 
+/** Scripts that pick a flag when no region is given (zh-Hant is written in Taiwan, zh-Hans in China). */
+const SCRIPT_FLAGS: Readonly<Record<string, string>> = { "zh-hant": "tw", "zh-hans": "cn" };
+
+interface ParsedLocale {
+  language: string;
+  script?: string;
+  region?: string;
+}
+
 /**
- * Resolve a BCP 47 locale to a flag. Order: exact mapping, then the region
- * subtag (fr-CA gives Canada), then the bare language mapping. Returns
- * undefined when nothing fits, so callers can fall back to text only.
+ * Parse language[-script][-region] and stop at the first singleton (u, t, x ...),
+ * so extension and private-use subtags never read as a region. Returns undefined for malformed tags.
+ */
+function parseLocale(locale: string): ParsedLocale | undefined {
+  const parts = locale.trim().replace(/_/g, "-").toLowerCase().split("-");
+  const language = parts[0];
+  if (!language || !/^[a-z]{2,3}$/.test(language)) return undefined;
+  const out: ParsedLocale = { language };
+  let i = 1;
+  if (parts[i] && /^[a-z]{4}$/.test(parts[i])) out.script = parts[i++];
+  if (parts[i] && (/^[a-z]{2}$/.test(parts[i]) || /^\d{3}$/.test(parts[i]))) out.region = parts[i];
+  return out;
+}
+
+/**
+ * Resolve a BCP 47 locale to a flag. Order: exact language-region mapping, then the
+ * region subtag (fr-CA gives Canada), then script, then the bare language mapping.
+ * Returns undefined when nothing fits, so callers can fall back to text only.
  */
 export function getFlagForLocale(locale: string): FlagLocaleResult | undefined {
-  const parts = locale.trim().replace(/_/g, "-").toLowerCase().split("-").filter(Boolean);
-  if (parts.length === 0) return undefined;
-  const [lang] = parts;
-  const exact = LOCALE_FLAGS[parts.slice(0, 2).join("-")];
-  if (parts.length > 1 && exact) return result(exact);
-  const region = parts.slice(1).find((p) => p.length === 2 && /^[a-z]{2}$/.test(p));
-  if (region) {
-    const hit = result(region);
+  const p = parseLocale(locale);
+  if (!p) return undefined;
+  if (p.region) {
+    const exact = LOCALE_FLAGS[`${p.language}-${p.region}`];
+    if (exact) return result(exact);
+    const hit = /^[a-z]{2}$/.test(p.region) ? result(p.region) : undefined;
     if (hit) return hit;
   }
-  const bare = LOCALE_FLAGS[lang];
+  if (p.script) {
+    const hit = SCRIPT_FLAGS[`${p.language}-${p.script}`];
+    if (hit) return result(hit);
+  }
+  const bare = LOCALE_FLAGS[p.language] ?? (p.language === "zh" ? "cn" : undefined);
   return bare ? result(bare) : undefined;
 }

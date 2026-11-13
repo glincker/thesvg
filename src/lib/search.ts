@@ -30,8 +30,12 @@ export function getSearchIndex(icons: IconEntry[]): Fuse<IconEntry> {
  * identifiers. Fuzzy scoring buries or misses them, so an exact alias or
  * slug hit is listed first, then the fuzzy results without duplicates.
  */
+/** Color words alias every flag that uses the color; they are filters, not identifiers, so they never jump the queue. */
+const COLOR_WORDS = new Set(["red", "orange", "yellow", "green", "blue", "purple", "pink", "brown", "black", "white", "gray", "gold", "tricolor", "tricolour"]);
+
 function withExactIdentifierFirst(icons: IconEntry[], fuzzy: IconEntry[], query: string): IconEntry[] {
   const q = query.toLowerCase();
+  if (COLOR_WORDS.has(q)) return fuzzy;
   const exact: IconEntry[] = [];
   for (const icon of icons) {
     if (icon.slug === q || icon.aliases.some((a) => a.toLowerCase() === q)) exact.push(icon);

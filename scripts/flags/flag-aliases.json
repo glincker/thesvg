@@ -76,7 +76,8 @@
     "russian federation",
     "russian",
     "rossiya",
-    "ussr successor"
+    "ussr successor",
+    "россия"
   ],
   "cn": [
     "china",
@@ -107,18 +108,25 @@
     "korea",
     "republic of korea",
     "korean",
-    "hanguk"
+    "hanguk",
+    "한국",
+    "남한",
+    "韓國"
   ],
   "kp": [
     "north korea",
     "dprk",
-    "democratic peoples republic of korea"
+    "democratic peoples republic of korea",
+    "북한",
+    "조선"
   ],
   "jp": [
     "japan",
     "japanese",
     "nippon",
-    "nihon"
+    "nihon",
+    "にほん",
+    "にっぽん"
   ],
   "es": [
     "spain",

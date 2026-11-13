@@ -67,8 +67,8 @@
   "scripts": {
     "generate": "node ../../scripts/flags/generate-flags.mjs",
     "build": "tsx scripts/build.ts",
-    "test": "tsx --test tests/*.test.ts",
-    "prepublishOnly": "npm run build"
+    "test": "tsx scripts/build.ts && tsx --test tests/*.test.ts",
+    "prepack": "npm run build"
   },
   "peerDependencies": {
     "react": ">=18"
@@ -79,11 +79,15 @@
     }
   },
   "devDependencies": {
+    "@resvg/resvg-js": "^2",
     "@types/node": "^22",
     "@types/react": "^19.3.0",
+    "cldr-core": "47",
+    "esbuild": "^0.25",
     "i18n-iso-countries": "^7.14.0",
     "react": "19.3.0",
     "react-dom": "19.3.0",
+    "svgo": "3.3.5",
     "tsx": "^4.23.15",
     "typescript": "^6.0.3"
   },

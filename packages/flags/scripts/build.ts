@@ -14,6 +14,7 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { FLAGS } from "../src/data/flags.generated.ts";
+import { parse } from "./parse-svg.ts";
 
 const PKG = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const ROOT = resolve(PKG, "../..");
@@ -24,13 +25,6 @@ const DIR_NAMES = { "4x3": "4x3", square: "1x1", circle: "circle" } as const;
 type Shape = keyof typeof VARIANT_FILES;
 
 const pascal = (code: string): string => "Flag" + code.split("-").map((p) => p[0].toUpperCase() + p.slice(1)).join("");
-
-function parse(svg: string): { viewBox: string; inner: string } {
-  const m = svg.match(/^<svg\b([^>]*)>([\s\S]*)<\/svg>\s*$/);
-  const vb = m?.[1].match(/viewBox="([^"]+)"/)?.[1];
-  if (!m || !vb) throw new Error("unparseable svg");
-  return { viewBox: vb, inner: m[2].replace(/<title>[\s\S]*?<\/title>/, "") };
-}
 
 rmSync(DIST, { recursive: true, force: true });
 const tsc = (cfg: string[]): void => {
@@ -66,6 +60,10 @@ for (const f of FLAGS) {
   writeFileSync(join(DIST, "cjs/flags", `${f.code}.js`), Object.entries(strings).map(([k, v]) => `exports.${k} = ${JSON.stringify(v)};`).join("\n") + "\n");
   writeFileSync(join(DIST, "types/flags", `${f.code}.d.ts`), "export declare const rect: string;\nexport declare const square: string;\nexport declare const circle: string;\n");
 
+  for (const sh of Object.values(shapes)) {
+    const ids = [...sh.inner.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]);
+    if (ids.length > 0) (sh as { ids?: string[] }).ids = ids;
+  }
   const data = JSON.stringify(shapes);
   writeFileSync(join(DIST, "esm/react", `${f.code}.js`), `import { createFlag } from "./create-flag.js";\nexport const ${name} = createFlag("${name}", ${data});\nexport default ${name};\n`);
   writeFileSync(join(DIST, "cjs/react", `${f.code}.js`), `"use strict";\nconst { createFlag } = require("./create-flag.js");\nconst ${name} = createFlag("${name}", ${data});\nexports.${name} = ${name};\nexports.default = ${name};\n`);
