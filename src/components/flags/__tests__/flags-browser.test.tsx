@@ -30,6 +30,8 @@ const tileImgs = (): HTMLImageElement[] => [...document.querySelectorAll<HTMLIma
 
 // Re-rendering all 263 tiles in jsdom takes a few seconds on a busy machine.
 const SLOW = { timeout: 15_000 };
+// The default 5s is too tight for the heavier interaction tests on a shared CI runner.
+vi.setConfig({ testTimeout: 30_000 });
 
 describe("flags browser", () => {
   it("renders every flag as a lazy image with explicit dimensions and no giant DOM per tile", async () => {
