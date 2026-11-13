@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { DriftScene } from "@/components/drift-scene";
 import flagCodes from "@/data/flag-codes.json";
 
 const ALL = flagCodes as [string, string][];
@@ -43,7 +44,7 @@ export function FlagsHeroVisual() {
   }, []);
 
   return (
-    <div className="flags-scene relative h-[19rem] w-[34rem] -rotate-[9deg] overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_16%,black_84%,transparent)] xl:w-[40rem]">
+    <DriftScene className="relative h-[19rem] w-[34rem] -rotate-[9deg] overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_16%,black_84%,transparent)] xl:w-[40rem]">
       <div className="flex h-full flex-col justify-center gap-3">
         {ROWS.map((row, r) => {
           const codes = pool.slice(r * PER_ROW, (r + 1) * PER_ROW);
@@ -74,6 +75,6 @@ export function FlagsHeroVisual() {
           );
         })}
       </div>
-    </div>
+    </DriftScene>
   );
 }

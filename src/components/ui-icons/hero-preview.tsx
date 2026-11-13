@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { DriftScene } from "@/components/drift-scene";
 import { type Glyph, GLYPH_BY_SLUG, POPULAR_SLUGS, styleFor } from "@/lib/ui-icons/glyphs";
 import { renderIcon, type Variant } from "@/lib/ui-icons/engine";
 
@@ -21,7 +22,7 @@ export function UiHeroPreview() {
   const glyphs = POPULAR_SLUGS.map((s) => GLYPH_BY_SLUG.get(s)).filter((g): g is Glyph => g !== undefined).slice(0, 40);
   if (glyphs.length === 0) return null;
   return (
-    <div className="flags-scene relative h-[19rem] w-[32rem] rotate-[8deg] overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_16%,black_84%,transparent)] xl:w-[38rem]">
+    <DriftScene className="relative h-[19rem] w-[32rem] rotate-[8deg] overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_16%,black_84%,transparent)] xl:w-[38rem]">
       <div className="flex h-full flex-col justify-center gap-3">
         {ROWS.map((row, r) => {
           const items = Array.from({ length: PER_ROW }, (_, i) => glyphs[(r * 3 + i * 4) % glyphs.length]);
@@ -51,6 +52,6 @@ export function UiHeroPreview() {
           );
         })}
       </div>
-    </div>
+    </DriftScene>
   );
 }

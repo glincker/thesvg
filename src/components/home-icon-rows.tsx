@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { DriftScene } from "@/components/drift-scene";
 import { cn } from "@/lib/utils";
 import type { IconEntry } from "@/lib/icons";
 
@@ -25,9 +26,9 @@ interface IconRowsVisualProps {
 export function IconRowsVisual({ icons, tilt, tileClass, plateClass }: IconRowsVisualProps) {
   if (icons.length === 0) return null;
   return (
-    <div
+    <DriftScene
       className={cn(
-        "flags-scene relative h-[20rem] w-[32rem] overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_16%,black_84%,transparent)] xl:w-[38rem]",
+        "relative h-[20rem] w-[32rem] overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_16%,black_84%,transparent)] xl:w-[38rem]",
         tilt === "left" ? "-rotate-[8deg]" : "rotate-[8deg]",
       )}
     >
@@ -64,6 +65,6 @@ export function IconRowsVisual({ icons, tilt, tileClass, plateClass }: IconRowsV
           );
         })}
       </div>
-    </div>
+    </DriftScene>
   );
 }
