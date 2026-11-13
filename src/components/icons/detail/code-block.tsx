@@ -160,7 +160,7 @@ export function CodeBlock({ svgContent, slug, title, activeVariant }: CodeBlockP
           {copied ? "Copied" : "Copy"}
         </button>
         <div className="bg-zinc-950">
-          <pre className="max-h-56 overflow-auto p-4 pr-16 font-mono text-[11px] leading-6 text-zinc-300">
+          <pre className="max-h-36 overflow-auto px-4 py-3 pr-16 font-mono text-[11px] leading-5 text-zinc-300">
             <code className="block whitespace-pre-wrap break-all">
               {renderCode}
             </code>

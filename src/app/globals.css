@@ -363,6 +363,11 @@ html {
   transform: translate(-50%, -50%);
   border-radius: 0.75rem;
 }
+/* Large tiles (icon detail page) carry a bigger plate; the extra selector beats the base size above. */
+.icon-preview-bg[data-size="lg"][data-tone]::before {
+  height: min(72%, 10rem);
+  border-radius: 1.25rem;
+}
 .dark .icon-preview-bg[data-tone="dark"]::before {
   background: oklch(0.74 0.006 260);
   box-shadow: 0 1px 2px oklch(0 0 0 / 0.35), inset 0 1px 0 oklch(1 0 0 / 0.18);

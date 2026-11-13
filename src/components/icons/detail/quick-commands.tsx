@@ -38,13 +38,13 @@ interface CodeRowProps {
 
 function CodeRow({ text, id, copied, onCopy }: CodeRowProps) {
   return (
-    <div className="flex items-center gap-2 rounded-lg border border-border/60 bg-background/60 px-3 py-2">
+    <div className="flex items-center gap-2 rounded-lg border border-border/60 bg-background/60 px-3 py-1">
       <code className="min-w-0 flex-1 truncate font-mono text-xs text-foreground">{text}</code>
       <button
         type="button"
         onClick={() => onCopy(text, id)}
         aria-label={`Copy ${id} command`}
-        className="shrink-0 rounded-md p-1.5 text-orange-500 outline-none transition-colors hover:bg-orange-500/10 focus-visible:ring-2 focus-visible:ring-ring"
+        className="shrink-0 rounded-md p-1 text-orange-500 outline-none transition-colors hover:bg-orange-500/10 focus-visible:ring-2 focus-visible:ring-ring"
       >
         {copied === id ? <Check className="h-3.5 w-3.5 text-green-500" /> : <Copy className="h-3.5 w-3.5" />}
       </button>
@@ -79,8 +79,21 @@ export function QuickCommands({ slug, activeVariant }: QuickCommandsProps) {
 
   return (
     <section aria-label="How to use this icon" className="rounded-xl border border-orange-500/25 bg-orange-500/[0.04] p-3 shadow-sm dark:border-orange-400/20">
-      <h2 className="mb-2 text-sm font-semibold">How to use</h2>
-      <div className="space-y-2">
+      <div className="mb-1.5 flex items-center justify-between gap-2">
+        <h2 className="text-sm font-semibold">How to use</h2>
+        {published ? (
+          <div role="radiogroup" aria-label="Package manager" className="inline-flex gap-0.5 text-xs">
+        {PACKAGE_MANAGERS.map((m) => (
+          <button key={m} type="button" role="radio" aria-checked={pm === m} onClick={() => choosePm(m)} className={cn("inline-flex items-center gap-1.5 rounded-md px-2 py-0.5 outline-none focus-visible:ring-2 focus-visible:ring-ring", pm === m ? "bg-orange-500/15 font-medium text-orange-500" : "text-muted-foreground hover:text-foreground")}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={`/icons/${m}/default.svg`} alt="" width={14} height={14} className="size-3.5 object-contain" />
+            {m}
+          </button>
+        ))}
+      </div>
+        ) : null}
+      </div>
+      <div className="space-y-1.5">
         <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center">
           <span className="flex w-20 shrink-0 items-center gap-1.5 text-xs font-medium text-muted-foreground">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -89,13 +102,6 @@ export function QuickCommands({ slug, activeVariant }: QuickCommandsProps) {
           </span>
           {published ? (
             <div className="flex min-w-0 flex-1 flex-col gap-1.5">
-              <div role="radiogroup" aria-label="Package manager" className="inline-flex gap-1 text-xs">
-                {PACKAGE_MANAGERS.map((m) => (
-                  <button key={m} type="button" role="radio" aria-checked={pm === m} onClick={() => choosePm(m)} className={cn("rounded-md px-2 py-0.5 outline-none focus-visible:ring-2 focus-visible:ring-ring", pm === m ? "bg-orange-500/15 font-medium text-orange-500" : "text-muted-foreground hover:text-foreground")}>
-                    {m}
-                  </button>
-                ))}
-              </div>
               <CodeRow text={installCommand(pm, pkg.name)} id="npm" copied={copied} onCopy={copy} />
               {pkg.importLine ? <CodeRow text={pkg.importLine} id="import" copied={copied} onCopy={copy} /> : null}
             </div>

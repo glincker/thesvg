@@ -34,6 +34,8 @@ import { IconLinksRow } from "@/components/icons/detail/icon-links-row";
 import { FamilyStrip } from "@/components/icons/detail/family-strip";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import { IconFeedback } from "@/components/icons/detail/icon-feedback";
+import iconTones from "@/data/icon-tones.json";
+import type { IconTone } from "@/lib/icon-tone";
 
 // The preview already invites interaction with hover:scale-105, so a click
 // must do something: copy the SVG markup with a visible confirmation. Kept as
@@ -248,6 +250,9 @@ export function IconDetailPage({
   }, [currentPath]);
 
   const primaryCategory = icon.categories[0] ?? null;
+  // Near-black and near-white marks get a plate so they stay visible; icons with their own light and dark variants already adapt.
+  const hasThemeVariants = Boolean(icon.variants.light && icon.variants.dark && icon.variants.light !== icon.variants.dark);
+  const previewTone: IconTone = hasThemeVariants ? "neutral" : ((iconTones as Record<string, IconTone>)[icon.slug] ?? "neutral");
   const previewTint = useMemo(() => brandGlowColor(icon.hex), [icon.hex]);
 
   return (
@@ -292,8 +297,10 @@ export function IconDetailPage({
               runtime from each icon's own hex, one of thousands of distinct
               values, so it cannot be expressed as a static utility class. */}
           <div
+            data-tone={previewTone}
+            data-size="lg"
             className={cn(
-              "icon-preview-bg relative flex items-center justify-center rounded-2xl p-16 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg",
+              "icon-preview-bg relative isolate flex items-center justify-center rounded-2xl p-16 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg",
               previewTint && "icon-preview-bg--tinted"
             )}
             style={
