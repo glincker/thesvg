@@ -108,6 +108,13 @@ export function FlagsBrowser({ tiles, syncUrl = true }: Props) {
     else if (e.key === "Home") next = 0;
     else if (e.key === "End") next = results.length - 1;
     else if (e.key.toLowerCase() === "s" && !e.metaKey && !e.ctrlKey) { toggleStar(code); e.preventDefault(); return; }
+    else if (!e.metaKey && !e.ctrlKey && !e.altKey && ["c", "d", "q"].includes(e.key.toLowerCase())) {
+      // Copy, download and quick view stay out of the tab order, so each has a key on the focused flag.
+      const label = { c: "Copy", d: "Download", q: "Quick view" }[e.key.toLowerCase() as "c" | "d" | "q"];
+      target.closest("li")?.querySelector<HTMLElement>(`[aria-label^="${label}"]`)?.click();
+      e.preventDefault();
+      return;
+    }
     else return;
     e.preventDefault();
     const dest = results[Math.min(results.length - 1, Math.max(0, next))];
@@ -256,7 +263,7 @@ export function FlagsBrowser({ tiles, syncUrl = true }: Props) {
               ))}
             </ul>
           )}
-          <p className="mt-3 text-[11px] text-muted-foreground">Arrow keys move between flags, Enter opens the flag page, S stars the focused flag. The eye button opens a quick view.</p>
+          <p className="mt-3 text-[11px] text-muted-foreground">Arrow keys move between flags, Enter opens the flag page, S stars the focused flag, C copies its SVG, D downloads it and Q opens a quick view.</p>
         </>
       )}
 

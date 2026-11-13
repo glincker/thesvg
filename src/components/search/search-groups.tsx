@@ -139,9 +139,10 @@ export function SearchGroups(p: Props) {
           </div>
     );
 
-  const two = brandRows.length > 0 && (uiRows.length > 0 || flagRows.length > 0);
   const second = placed[1];
   const hasRight = (second && second.rows.length > 0) || flagRows.length > 0;
+  // Two columns only when both sides have results; otherwise a lone group would sit beside an empty column.
+  const two = Boolean(placed[0] && placed[0].rows.length > 0) && hasRight;
   return (
     <div className={cn("grid", two && "sm:grid-cols-[1.35fr_1fr]")}>
       {renderGroup(placed[0], 0)}

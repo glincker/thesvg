@@ -191,10 +191,15 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
 
   const handleCategorySelect = useCallback(
     (category: string | null) => {
-      updateUrl({ category, favorites: null });
       setSidebarOpen(false);
+      // Custom content (the flags browser) ignores these filters, so go to the main grid where they apply.
+      if (children) {
+        router.push(category ? `/?category=${encodeURIComponent(category)}` : "/");
+        return;
+      }
+      updateUrl({ category, favorites: null });
     },
-    [updateUrl, setSidebarOpen]
+    [updateUrl, setSidebarOpen, children, router]
   );
 
   // Navigate to the home grid while keeping every other URL-backed filter
@@ -232,12 +237,16 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
   );
 
   const handleToggleFavorites = useCallback(() => {
+    setSidebarOpen(false);
+    if (children) {
+      router.push("/?favorites=true");
+      return;
+    }
     updateUrl({
       favorites: favoritesParam ? null : "true",
       category: null,
     });
-    setSidebarOpen(false);
-  }, [updateUrl, favoritesParam, setSidebarOpen]);
+  }, [updateUrl, favoritesParam, setSidebarOpen, children, router]);
 
   // Already debounced (400ms) by Sidebar itself before this fires.
   const handleCategorySearchChange = useCallback(

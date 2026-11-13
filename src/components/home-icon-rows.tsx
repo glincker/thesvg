@@ -44,7 +44,7 @@ export function IconRowsVisual({ icons, tilt, tileClass, plateClass }: IconRowsV
                       <Link
                         href={`/icon/${icon.slug}`}
                         prefetch={false}
-                        tabIndex={copy === 1 ? -1 : undefined}
+                        tabIndex={-1}
                         aria-label={icon.title}
                         className={cn("pointer-events-auto grid place-items-center rounded-2xl border shadow-lg shadow-black/10 backdrop-blur-sm transition-transform duration-200 hover:scale-110 focus-visible:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400", row.tile, tileClass, plateClass(icon.slug))}
                       >

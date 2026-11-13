@@ -56,7 +56,7 @@ export function FlagsHeroVisual() {
                       <Link
                         href={`/icon/flag-${code}`}
                         prefetch={false}
-                        tabIndex={copy === 1 ? -1 : undefined}
+                        tabIndex={-1}
                         aria-label={`${NAMES.get(code) ?? code} flag`}
                         className="pointer-events-auto block rounded-md ring-1 ring-white/10 transition-transform duration-200 hover:scale-110 focus-visible:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400"
                       >
