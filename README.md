@@ -24,6 +24,7 @@
 <p align="center">
   <a href="https://www.npmjs.com/package/thesvg"><img src="https://img.shields.io/npm/v/thesvg?style=flat-square&color=C2410C&label=npm" alt="npm" /></a>
   <a href="https://www.npmjs.com/package/thesvg"><img src="https://img.shields.io/npm/dm/thesvg?style=flat-square&color=C2410C&label=downloads" alt="downloads" /></a>
+  <a href="https://www.npmjs.com/package/@thesvg/flags"><img src="https://img.shields.io/npm/v/@thesvg/flags?style=flat-square&color=C2410C&label=flags" alt="@thesvg/flags" /></a>
   <a href="https://www.npmjs.com/package/@thesvg/mcp-server"><img src="https://img.shields.io/npm/v/@thesvg/mcp-server?style=flat-square&color=C2410C&label=MCP" alt="MCP server" /></a>
   <a href="https://www.jsdelivr.com/package/gh/glincker/thesvg"><img src="https://data.jsdelivr.com/v1/package/gh/glincker/thesvg/badge" alt="jsDelivr" /></a>
   <a href="https://github.com/glincker/thesvg/stargazers"><img src="https://img.shields.io/github/stars/glincker/thesvg?style=flat-square&label=stars" alt="stars" /></a>
@@ -224,6 +225,10 @@ import { getFlagForLocale } from "@thesvg/flags/locale";
 
 <FlagUs variant="circle" size={32} />
 ```
+
+No install needed for a plain image: `https://cdn.jsdelivr.net/npm/@thesvg/flags/dist/svg/4x3/us.svg` (use `1x1` or `circle` for the other shapes).
+
+On the site, every flag has its own page (`/icon/flag-us`) with its color palette, copy and download buttons, a how-to-use card (npm, CLI and CDN) and crawlable facts. The collection page filters by region, color or locale, and the header search lists flags in their own section so brand icons stay first.
 
 A flag is a country, not a language: show the native language name beside it. Guide: [docs/flags.md](./docs/flags.md).
 
