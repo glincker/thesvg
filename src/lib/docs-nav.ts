@@ -44,6 +44,7 @@ export const DOCS_NAV: DocsNavGroup[] = [
     items: [
       { href: "/docs/recipes", label: "Recipes", icon: { kind: "own", Icon: Wrench } },
       { href: "/docs/best-practices", label: "Best Practices", icon: { kind: "own", Icon: Lightbulb } },
+      { href: "/docs/flags", label: "Flags", icon: { kind: "brand", slug: "flag-un" } },
       { href: "/docs/tricks", label: "Tricks", icon: { kind: "own", Icon: Sparkles } },
       { href: "/docs/migration", label: "Migrating", icon: { kind: "own", Icon: ArrowLeftRight } },
     ],

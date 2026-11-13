@@ -16,6 +16,7 @@ import { readFileSync, writeFileSync, readdirSync, existsSync } from "fs";
 import { join } from "path";
 import { COLLECTIONS_LIST } from "../lib/collections-meta";
 import { currentOnly } from "../lib/family-current";
+import { LOCALE_FLAGS } from "../../packages/flags/src/locale-core";
 
 const ROOT = join(__dirname, "../..");
 const ICONS_JSON = join(ROOT, "src/data/icons.json");
@@ -54,6 +55,7 @@ const PACKAGE_ORDER = [
   "@thesvg/react-native",
   "@thesvg/vue",
   "@thesvg/svelte",
+  "@thesvg/flags",
 ];
 
 // Install/run command shown per package in the full reference table.
@@ -188,6 +190,49 @@ ${lines.join("\n")}
 const UI_ICONS_JSON = join(ROOT, "src/data/ui-icons.json");
 
 /** A short section on the UI icons, read from their own manifest so the brand index is never touched. */
+/** Flags section, derived from the flag entries so counts and rules never drift. */
+function flagsSection(icons: IconEntry[], detailed: boolean): string {
+  const flags = icons.filter((i) => i.collection === "flags");
+  if (flags.length === 0) return "";
+  const locales = Object.entries(LOCALE_FLAGS)
+    .map(([locale, code]) => `${locale} -> flag-${code}`)
+    .join(", ");
+  const base = `
+## Flags
+
+${flags.length} country and region flags: every ISO 3166-1 country plus England, Scotland, Wales, Catalonia, the Basque Country, Galicia, the Valencian Community, the Balearic Islands, the Canary Islands, Corsica, Occitania, the European Union and the United Nations. Category "Flags", collection "flags". Browse: https://thesvg.org/collection/flags
+
+- Slugs: flag-{code}, the lowercase ISO 3166-1 alpha-2 code (flag-us, flag-de) or the regional code (flag-gb-eng, flag-es-ct, flag-eu, flag-un)
+- Variants: default (4x3 rectangle), square (1x1), circle. File: https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/flag-us/circle.svg
+- Search aliases cover English and native names, official names, ISO alpha-2, alpha-3 and numeric codes, emoji, former names and locale tags (deutschland, DEU, 276, holland, england, catalunya, pt-BR)
+- Metadata: ISO alpha-2, alpha-3 and numeric codes, native name, emoji, region, languages, locale hints, and a color palette (colors: hex and share in percent in painted-area order, colorNames: red, blue, gold and so on). The catalog hex is the dominant non-white color. Search by color too (red white blue, #ed2939, tricolor).
+- Need only flags? Install @thesvg/flags (per-flag imports, React components, getFlagForLocale). Need everything else? Use @thesvg/icons or your framework package: flags are not bundled into them. The CDN paths and raw SVG URLs for flags stay valid.
+- CLI: npx @thesvg/cli add flag-de --variant circle
+- A flag is a country, not a language. Show the native language name beside it, mark the flag aria-hidden when decorative, and do not use flags as the only language selector. Flags are public symbols: see LEGAL and DISCLAIMER.
+`;
+  if (!detailed) return base;
+  return `${base}- Locale helper getFlagForLocale(locale) mapping: ${locales}. Resolution: exact locale, then region subtag, then language.
+- Guide: https://github.com/glincker/thesvg/blob/main/docs/flags.md
+`;
+}
+
+/** Blog posts from the same data the blog, sitemap and feed use, newest first, so a new post is listed without editing this file. */
+function blogSection(detailed: boolean): string {
+  const postsPath = join(DATA_DIR, "posts.json");
+  if (!existsSync(postsPath)) return "";
+  const posts = (JSON.parse(readFileSync(postsPath, "utf-8")) as { slug: string; title: string; excerpt: string; date: string }[])
+    .slice()
+    .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0))
+    .slice(0, detailed ? 50 : 8);
+  return `
+## Blog
+
+${posts.map((p) => `- [${p.title}](https://thesvg.org/blog/${p.slug}) (${p.date})${detailed ? `: ${p.excerpt}` : ""}`).join("\n")}
+
+Index: https://thesvg.org/blog. Feed: https://thesvg.org/feed.xml
+`;
+}
+
 function uiSection(): string {
   if (!existsSync(UI_ICONS_JSON)) return "";
   const m = JSON.parse(readFileSync(UI_ICONS_JSON, "utf-8")) as { looks: string[]; icons: { slug: string }[] };
@@ -251,7 +296,7 @@ function main() {
     categories,
   });
   const families = buildFamilies(icons);
-  writeFileSync(join(PUBLIC_DIR, "llms.txt"), llmsTxt + familiesSection(families, false) + uiSection());
+  writeFileSync(join(PUBLIC_DIR, "llms.txt"), llmsTxt + familiesSection(families, false) + flagsSection(icons, false) + blogSection(false) + uiSection());
   console.log(`  llms.txt: ${formattedIconCount} icons, ${categories.length} categories, ${packages.length} packages`);
 
   const llmsFullTxt = buildLlmsFullTxt({
@@ -263,7 +308,7 @@ function main() {
     formattedVariantCount,
     guidelinesCount,
   });
-  writeFileSync(join(PUBLIC_DIR, "llms-full.txt"), llmsFullTxt + familiesSection(families, true) + uiSection());
+  writeFileSync(join(PUBLIC_DIR, "llms-full.txt"), llmsFullTxt + familiesSection(families, true) + flagsSection(icons, true) + blogSection(true) + uiSection());
   console.log(
     `  llms-full.txt: ${formattedIconCount} icons, ${categories.length} categories, ${packages.length} packages`,
   );

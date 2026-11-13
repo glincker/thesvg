@@ -1,0 +1,6410 @@
+{
+  "sources": {
+    "flag-icons": {
+      "url": "https://github.com/lipis/flag-icons",
+      "commit": "ac7e0eb3259eb62aa6100c435607e2fe03896a97",
+      "version": "7.6.0",
+      "license": "MIT",
+      "holder": "Copyright (c) 2013 Panayiotis Lipiridis",
+      "accessed": "2026-11-13"
+    },
+    "circle-flags": {
+      "url": "https://github.com/HatScripts/circle-flags",
+      "commit": "379588b5da95482d6bbf10bd45644a35b0609ea6",
+      "version": "main",
+      "license": "MIT",
+      "holder": "Copyright (c) 2026 HatScripts",
+      "accessed": "2026-11-13"
+    },
+    "wikimedia-commons": {
+      "url": "https://commons.wikimedia.org",
+      "commit": null,
+      "version": "per file",
+      "license": "Public domain or CC0, per file",
+      "holder": "see the file list",
+      "accessed": "2026-11-13",
+      "files": [
+        {
+          "title": "Flag of Corsica.svg",
+          "author": "Patricia.fidi",
+          "license": "CC0",
+          "url": "https://commons.wikimedia.org/wiki/File:Flag_of_Corsica.svg"
+        },
+        {
+          "title": "Flag of Occitania (with star).svg",
+          "author": "Nimlar and others",
+          "license": "Public domain",
+          "url": "https://commons.wikimedia.org/wiki/File:Flag_of_Occitania_(with_star).svg"
+        },
+        {
+          "title": "Flag of the Balearic Islands.svg",
+          "author": "see file page",
+          "license": "CC0",
+          "url": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Balearic_Islands.svg"
+        },
+        {
+          "title": "Flag of the Land of Valencia (official).svg",
+          "author": "Mutxamel and others",
+          "license": "Public domain",
+          "url": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Land_of_Valencia_(official).svg"
+        }
+      ]
+    }
+  },
+  "excluded": [
+    [
+      "an, su, yu, cs, zz and other retired ISO codes",
+      "Historical states, not current ISO 3166-1 entries."
+    ],
+    [
+      "ac, cp, dg, ea, ic, ta, cq, fx",
+      "Exceptionally reserved or transitional codes, not assigned country flags."
+    ],
+    [
+      "gb-nir",
+      "No official current flag for Northern Ireland; the Ulster Banner is a contested symbol."
+    ],
+    [
+      "Disputed or unrecognized entities (Artsakh, Somaliland, Transnistria, Northern Cyprus, South Ossetia, Sealand, Donetsk and Luhansk, etc.)",
+      "Politically contested; not in the ISO list. Left out beyond what the ISO list and Kosovo (user-assigned code XK, widely used) require."
+    ],
+    [
+      "Historical, ethnic, LGBT, pirate, sports and novelty flags in the sources",
+      "Out of scope: a country and region flag category only."
+    ],
+    [
+      "Per-state and per-province subdivision flags (US states, Australian states, Indian states, etc.)",
+      "Out of scope for this release; may come later as a separate collection."
+    ],
+    [
+      "fr-bre (Brittany)",
+      "circle-flags has it, but the only rectangle source on Commons is CC BY-SA 4.0, which this catalog does not use; a circle-only flag would need a missing-variant path everywhere, so it is skipped for now."
+    ],
+    [
+      "Sardinia, Sicily and other Italian regions",
+      "circle-flags it-* files are not mapped confidently to regions yet."
+    ],
+    [
+      "Language flags in circle-flags/language",
+      "A flag represents a country, not a language."
+    ],
+    [
+      "Wikimedia Commons flag SVGs",
+      "Not bundled: per-file license review required; used only as a manual cross-check reference, nothing copied."
+    ]
+  ],
+  "files": [
+    {
+      "file": "public/icons/flag-ad/default.svg",
+      "slug": "flag-ad",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ad.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ad/square.svg",
+      "slug": "flag-ad",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ad.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ad/circle.svg",
+      "slug": "flag-ad",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ad.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ae/default.svg",
+      "slug": "flag-ae",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ae.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ae/square.svg",
+      "slug": "flag-ae",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ae.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ae/circle.svg",
+      "slug": "flag-ae",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ae.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-af/default.svg",
+      "slug": "flag-af",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/af.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-af/square.svg",
+      "slug": "flag-af",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/af.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-af/circle.svg",
+      "slug": "flag-af",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/af.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ag/default.svg",
+      "slug": "flag-ag",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ag.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ag/square.svg",
+      "slug": "flag-ag",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ag.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ag/circle.svg",
+      "slug": "flag-ag",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ag.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ai/default.svg",
+      "slug": "flag-ai",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ai.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ai/square.svg",
+      "slug": "flag-ai",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ai.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ai/circle.svg",
+      "slug": "flag-ai",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ai.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-al/default.svg",
+      "slug": "flag-al",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/al.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-al/square.svg",
+      "slug": "flag-al",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/al.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-al/circle.svg",
+      "slug": "flag-al",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/al.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-am/default.svg",
+      "slug": "flag-am",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/am.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-am/square.svg",
+      "slug": "flag-am",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/am.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-am/circle.svg",
+      "slug": "flag-am",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/am.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ao/default.svg",
+      "slug": "flag-ao",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ao.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ao/square.svg",
+      "slug": "flag-ao",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ao.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ao/circle.svg",
+      "slug": "flag-ao",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ao.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-aq/default.svg",
+      "slug": "flag-aq",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/aq.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-aq/square.svg",
+      "slug": "flag-aq",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/aq.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-aq/circle.svg",
+      "slug": "flag-aq",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/aq.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ar/default.svg",
+      "slug": "flag-ar",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ar.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ar/square.svg",
+      "slug": "flag-ar",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ar.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ar/circle.svg",
+      "slug": "flag-ar",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ar.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-as/default.svg",
+      "slug": "flag-as",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/as.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-as/square.svg",
+      "slug": "flag-as",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/as.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-as/circle.svg",
+      "slug": "flag-as",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/as.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-at/default.svg",
+      "slug": "flag-at",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/at.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-at/square.svg",
+      "slug": "flag-at",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/at.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-at/circle.svg",
+      "slug": "flag-at",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/at.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-au/default.svg",
+      "slug": "flag-au",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/au.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-au/square.svg",
+      "slug": "flag-au",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/au.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-au/circle.svg",
+      "slug": "flag-au",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/au.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-aw/default.svg",
+      "slug": "flag-aw",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/aw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-aw/square.svg",
+      "slug": "flag-aw",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/aw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-aw/circle.svg",
+      "slug": "flag-aw",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/aw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ax/default.svg",
+      "slug": "flag-ax",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ax.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ax/square.svg",
+      "slug": "flag-ax",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ax.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ax/circle.svg",
+      "slug": "flag-ax",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ax.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-az/default.svg",
+      "slug": "flag-az",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/az.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-az/square.svg",
+      "slug": "flag-az",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/az.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-az/circle.svg",
+      "slug": "flag-az",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/az.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ba/default.svg",
+      "slug": "flag-ba",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ba.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ba/square.svg",
+      "slug": "flag-ba",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ba.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ba/circle.svg",
+      "slug": "flag-ba",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ba.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bb/default.svg",
+      "slug": "flag-bb",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/bb.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bb/square.svg",
+      "slug": "flag-bb",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/bb.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bb/circle.svg",
+      "slug": "flag-bb",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/bb.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bd/default.svg",
+      "slug": "flag-bd",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/bd.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bd/square.svg",
+      "slug": "flag-bd",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/bd.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bd/circle.svg",
+      "slug": "flag-bd",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/bd.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-be/default.svg",
+      "slug": "flag-be",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/be.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-be/square.svg",
+      "slug": "flag-be",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/be.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-be/circle.svg",
+      "slug": "flag-be",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/be.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bf/default.svg",
+      "slug": "flag-bf",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/bf.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bf/square.svg",
+      "slug": "flag-bf",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/bf.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bf/circle.svg",
+      "slug": "flag-bf",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/bf.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bg/default.svg",
+      "slug": "flag-bg",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/bg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bg/square.svg",
+      "slug": "flag-bg",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/bg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bg/circle.svg",
+      "slug": "flag-bg",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/bg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bh/default.svg",
+      "slug": "flag-bh",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/bh.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bh/square.svg",
+      "slug": "flag-bh",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/bh.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bh/circle.svg",
+      "slug": "flag-bh",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/bh.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bi/default.svg",
+      "slug": "flag-bi",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/bi.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bi/square.svg",
+      "slug": "flag-bi",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/bi.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bi/circle.svg",
+      "slug": "flag-bi",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/bi.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bj/default.svg",
+      "slug": "flag-bj",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/bj.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bj/square.svg",
+      "slug": "flag-bj",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/bj.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bj/circle.svg",
+      "slug": "flag-bj",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/bj.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bl/default.svg",
+      "slug": "flag-bl",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/bl.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bl/square.svg",
+      "slug": "flag-bl",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/bl.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bl/circle.svg",
+      "slug": "flag-bl",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/bl.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bm/default.svg",
+      "slug": "flag-bm",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/bm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bm/square.svg",
+      "slug": "flag-bm",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/bm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bm/circle.svg",
+      "slug": "flag-bm",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/bm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bn/default.svg",
+      "slug": "flag-bn",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/bn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bn/square.svg",
+      "slug": "flag-bn",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/bn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bn/circle.svg",
+      "slug": "flag-bn",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/bn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bo/default.svg",
+      "slug": "flag-bo",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/bo.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bo/square.svg",
+      "slug": "flag-bo",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/bo.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bo/circle.svg",
+      "slug": "flag-bo",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/bo.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bq/default.svg",
+      "slug": "flag-bq",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/bq.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bq/square.svg",
+      "slug": "flag-bq",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/bq.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bq/circle.svg",
+      "slug": "flag-bq",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/bq.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-br/default.svg",
+      "slug": "flag-br",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/br.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-br/square.svg",
+      "slug": "flag-br",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/br.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-br/circle.svg",
+      "slug": "flag-br",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/br.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bs/default.svg",
+      "slug": "flag-bs",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/bs.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bs/square.svg",
+      "slug": "flag-bs",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/bs.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bs/circle.svg",
+      "slug": "flag-bs",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/bs.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bt/default.svg",
+      "slug": "flag-bt",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/bt.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bt/square.svg",
+      "slug": "flag-bt",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/bt.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bt/circle.svg",
+      "slug": "flag-bt",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/bt.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bv/default.svg",
+      "slug": "flag-bv",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/bv.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bv/square.svg",
+      "slug": "flag-bv",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/bv.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bv/circle.svg",
+      "slug": "flag-bv",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/bv.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bw/default.svg",
+      "slug": "flag-bw",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/bw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bw/square.svg",
+      "slug": "flag-bw",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/bw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bw/circle.svg",
+      "slug": "flag-bw",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/bw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-by/default.svg",
+      "slug": "flag-by",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/by.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-by/square.svg",
+      "slug": "flag-by",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/by.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-by/circle.svg",
+      "slug": "flag-by",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/by.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bz/default.svg",
+      "slug": "flag-bz",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/bz.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bz/square.svg",
+      "slug": "flag-bz",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/bz.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-bz/circle.svg",
+      "slug": "flag-bz",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/bz.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ca/default.svg",
+      "slug": "flag-ca",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ca.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ca/square.svg",
+      "slug": "flag-ca",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ca.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ca/circle.svg",
+      "slug": "flag-ca",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ca.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cc/default.svg",
+      "slug": "flag-cc",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/cc.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cc/square.svg",
+      "slug": "flag-cc",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/cc.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cc/circle.svg",
+      "slug": "flag-cc",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/cc.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cd/default.svg",
+      "slug": "flag-cd",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/cd.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cd/square.svg",
+      "slug": "flag-cd",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/cd.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cd/circle.svg",
+      "slug": "flag-cd",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/cd.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cf/default.svg",
+      "slug": "flag-cf",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/cf.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cf/square.svg",
+      "slug": "flag-cf",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/cf.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cf/circle.svg",
+      "slug": "flag-cf",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/cf.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cg/default.svg",
+      "slug": "flag-cg",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/cg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cg/square.svg",
+      "slug": "flag-cg",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/cg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cg/circle.svg",
+      "slug": "flag-cg",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/cg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ch/default.svg",
+      "slug": "flag-ch",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ch.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ch/square.svg",
+      "slug": "flag-ch",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ch.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ch/circle.svg",
+      "slug": "flag-ch",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ch.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ci/default.svg",
+      "slug": "flag-ci",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ci.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ci/square.svg",
+      "slug": "flag-ci",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ci.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ci/circle.svg",
+      "slug": "flag-ci",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ci.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ck/default.svg",
+      "slug": "flag-ck",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ck.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ck/square.svg",
+      "slug": "flag-ck",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ck.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ck/circle.svg",
+      "slug": "flag-ck",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ck.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cl/default.svg",
+      "slug": "flag-cl",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/cl.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cl/square.svg",
+      "slug": "flag-cl",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/cl.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cl/circle.svg",
+      "slug": "flag-cl",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/cl.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cm/default.svg",
+      "slug": "flag-cm",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/cm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cm/square.svg",
+      "slug": "flag-cm",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/cm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cm/circle.svg",
+      "slug": "flag-cm",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/cm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cn/default.svg",
+      "slug": "flag-cn",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/cn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cn/square.svg",
+      "slug": "flag-cn",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/cn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cn/circle.svg",
+      "slug": "flag-cn",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/cn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-co/default.svg",
+      "slug": "flag-co",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/co.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-co/square.svg",
+      "slug": "flag-co",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/co.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-co/circle.svg",
+      "slug": "flag-co",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/co.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cr/default.svg",
+      "slug": "flag-cr",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/cr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cr/square.svg",
+      "slug": "flag-cr",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/cr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cr/circle.svg",
+      "slug": "flag-cr",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/cr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cu/default.svg",
+      "slug": "flag-cu",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/cu.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cu/square.svg",
+      "slug": "flag-cu",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/cu.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cu/circle.svg",
+      "slug": "flag-cu",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/cu.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cv/default.svg",
+      "slug": "flag-cv",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/cv.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cv/square.svg",
+      "slug": "flag-cv",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/cv.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cv/circle.svg",
+      "slug": "flag-cv",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/cv.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cw/default.svg",
+      "slug": "flag-cw",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/cw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cw/square.svg",
+      "slug": "flag-cw",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/cw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cw/circle.svg",
+      "slug": "flag-cw",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/cw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cx/default.svg",
+      "slug": "flag-cx",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/cx.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cx/square.svg",
+      "slug": "flag-cx",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/cx.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cx/circle.svg",
+      "slug": "flag-cx",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/cx.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cy/default.svg",
+      "slug": "flag-cy",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/cy.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cy/square.svg",
+      "slug": "flag-cy",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/cy.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cy/circle.svg",
+      "slug": "flag-cy",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/cy.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cz/default.svg",
+      "slug": "flag-cz",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/cz.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cz/square.svg",
+      "slug": "flag-cz",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/cz.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-cz/circle.svg",
+      "slug": "flag-cz",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/cz.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-de/default.svg",
+      "slug": "flag-de",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/de.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-de/square.svg",
+      "slug": "flag-de",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/de.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-de/circle.svg",
+      "slug": "flag-de",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/de.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-dj/default.svg",
+      "slug": "flag-dj",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/dj.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-dj/square.svg",
+      "slug": "flag-dj",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/dj.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-dj/circle.svg",
+      "slug": "flag-dj",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/dj.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-dk/default.svg",
+      "slug": "flag-dk",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/dk.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-dk/square.svg",
+      "slug": "flag-dk",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/dk.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-dk/circle.svg",
+      "slug": "flag-dk",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/dk.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-dm/default.svg",
+      "slug": "flag-dm",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/dm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-dm/square.svg",
+      "slug": "flag-dm",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/dm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-dm/circle.svg",
+      "slug": "flag-dm",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/dm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-do/default.svg",
+      "slug": "flag-do",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/do.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-do/square.svg",
+      "slug": "flag-do",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/do.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-do/circle.svg",
+      "slug": "flag-do",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/do.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-dz/default.svg",
+      "slug": "flag-dz",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/dz.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-dz/square.svg",
+      "slug": "flag-dz",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/dz.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-dz/circle.svg",
+      "slug": "flag-dz",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/dz.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ec/default.svg",
+      "slug": "flag-ec",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ec.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ec/square.svg",
+      "slug": "flag-ec",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ec.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ec/circle.svg",
+      "slug": "flag-ec",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ec.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ee/default.svg",
+      "slug": "flag-ee",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ee.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ee/square.svg",
+      "slug": "flag-ee",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ee.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ee/circle.svg",
+      "slug": "flag-ee",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ee.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-eg/default.svg",
+      "slug": "flag-eg",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/eg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-eg/square.svg",
+      "slug": "flag-eg",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/eg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-eg/circle.svg",
+      "slug": "flag-eg",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/eg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-eh/default.svg",
+      "slug": "flag-eh",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/eh.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-eh/square.svg",
+      "slug": "flag-eh",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/eh.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-eh/circle.svg",
+      "slug": "flag-eh",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/eh.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-er/default.svg",
+      "slug": "flag-er",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/er.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-er/square.svg",
+      "slug": "flag-er",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/er.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-er/circle.svg",
+      "slug": "flag-er",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/er.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-es/default.svg",
+      "slug": "flag-es",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/es.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-es/square.svg",
+      "slug": "flag-es",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/es.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-es/circle.svg",
+      "slug": "flag-es",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/es.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-et/default.svg",
+      "slug": "flag-et",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/et.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-et/square.svg",
+      "slug": "flag-et",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/et.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-et/circle.svg",
+      "slug": "flag-et",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/et.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-fi/default.svg",
+      "slug": "flag-fi",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/fi.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-fi/square.svg",
+      "slug": "flag-fi",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/fi.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-fi/circle.svg",
+      "slug": "flag-fi",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/fi.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-fj/default.svg",
+      "slug": "flag-fj",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/fj.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-fj/square.svg",
+      "slug": "flag-fj",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/fj.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-fj/circle.svg",
+      "slug": "flag-fj",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/fj.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-fk/default.svg",
+      "slug": "flag-fk",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/fk.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-fk/square.svg",
+      "slug": "flag-fk",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/fk.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-fk/circle.svg",
+      "slug": "flag-fk",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/fk.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-fm/default.svg",
+      "slug": "flag-fm",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/fm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-fm/square.svg",
+      "slug": "flag-fm",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/fm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-fm/circle.svg",
+      "slug": "flag-fm",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/fm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-fo/default.svg",
+      "slug": "flag-fo",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/fo.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-fo/square.svg",
+      "slug": "flag-fo",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/fo.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-fo/circle.svg",
+      "slug": "flag-fo",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/fo.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-fr/default.svg",
+      "slug": "flag-fr",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/fr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-fr/square.svg",
+      "slug": "flag-fr",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/fr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-fr/circle.svg",
+      "slug": "flag-fr",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/fr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ga/default.svg",
+      "slug": "flag-ga",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ga.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ga/square.svg",
+      "slug": "flag-ga",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ga.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ga/circle.svg",
+      "slug": "flag-ga",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ga.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gb/default.svg",
+      "slug": "flag-gb",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/gb.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gb/square.svg",
+      "slug": "flag-gb",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/gb.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gb/circle.svg",
+      "slug": "flag-gb",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/gb.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gd/default.svg",
+      "slug": "flag-gd",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/gd.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gd/square.svg",
+      "slug": "flag-gd",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/gd.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gd/circle.svg",
+      "slug": "flag-gd",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/gd.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ge/default.svg",
+      "slug": "flag-ge",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ge.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ge/square.svg",
+      "slug": "flag-ge",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ge.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ge/circle.svg",
+      "slug": "flag-ge",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ge.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gf/default.svg",
+      "slug": "flag-gf",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/gf.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gf/square.svg",
+      "slug": "flag-gf",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/gf.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gf/circle.svg",
+      "slug": "flag-gf",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/gf.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gg/default.svg",
+      "slug": "flag-gg",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/gg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gg/square.svg",
+      "slug": "flag-gg",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/gg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gg/circle.svg",
+      "slug": "flag-gg",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/gg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gh/default.svg",
+      "slug": "flag-gh",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/gh.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gh/square.svg",
+      "slug": "flag-gh",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/gh.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gh/circle.svg",
+      "slug": "flag-gh",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/gh.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gi/default.svg",
+      "slug": "flag-gi",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/gi.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gi/square.svg",
+      "slug": "flag-gi",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/gi.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gi/circle.svg",
+      "slug": "flag-gi",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/gi.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gl/default.svg",
+      "slug": "flag-gl",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/gl.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gl/square.svg",
+      "slug": "flag-gl",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/gl.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gl/circle.svg",
+      "slug": "flag-gl",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/gl.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gm/default.svg",
+      "slug": "flag-gm",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/gm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gm/square.svg",
+      "slug": "flag-gm",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/gm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gm/circle.svg",
+      "slug": "flag-gm",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/gm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gn/default.svg",
+      "slug": "flag-gn",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/gn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gn/square.svg",
+      "slug": "flag-gn",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/gn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gn/circle.svg",
+      "slug": "flag-gn",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/gn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gp/default.svg",
+      "slug": "flag-gp",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/gp.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gp/square.svg",
+      "slug": "flag-gp",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/gp.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gp/circle.svg",
+      "slug": "flag-gp",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/gp.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gq/default.svg",
+      "slug": "flag-gq",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/gq.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gq/square.svg",
+      "slug": "flag-gq",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/gq.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gq/circle.svg",
+      "slug": "flag-gq",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/gq.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gr/default.svg",
+      "slug": "flag-gr",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/gr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gr/square.svg",
+      "slug": "flag-gr",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/gr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gr/circle.svg",
+      "slug": "flag-gr",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/gr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gs/default.svg",
+      "slug": "flag-gs",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/gs.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gs/square.svg",
+      "slug": "flag-gs",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/gs.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gs/circle.svg",
+      "slug": "flag-gs",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/gs.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gt/default.svg",
+      "slug": "flag-gt",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/gt.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gt/square.svg",
+      "slug": "flag-gt",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/gt.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gt/circle.svg",
+      "slug": "flag-gt",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/gt.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gu/default.svg",
+      "slug": "flag-gu",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/gu.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gu/square.svg",
+      "slug": "flag-gu",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/gu.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gu/circle.svg",
+      "slug": "flag-gu",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/gu.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gw/default.svg",
+      "slug": "flag-gw",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/gw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gw/square.svg",
+      "slug": "flag-gw",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/gw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gw/circle.svg",
+      "slug": "flag-gw",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/gw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gy/default.svg",
+      "slug": "flag-gy",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/gy.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gy/square.svg",
+      "slug": "flag-gy",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/gy.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gy/circle.svg",
+      "slug": "flag-gy",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/gy.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-hk/default.svg",
+      "slug": "flag-hk",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/hk.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-hk/square.svg",
+      "slug": "flag-hk",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/hk.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-hk/circle.svg",
+      "slug": "flag-hk",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/hk.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-hm/default.svg",
+      "slug": "flag-hm",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/hm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-hm/square.svg",
+      "slug": "flag-hm",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/hm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-hm/circle.svg",
+      "slug": "flag-hm",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/hm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-hn/default.svg",
+      "slug": "flag-hn",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/hn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-hn/square.svg",
+      "slug": "flag-hn",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/hn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-hn/circle.svg",
+      "slug": "flag-hn",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/hn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-hr/default.svg",
+      "slug": "flag-hr",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/hr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-hr/square.svg",
+      "slug": "flag-hr",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/hr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-hr/circle.svg",
+      "slug": "flag-hr",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/hr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ht/default.svg",
+      "slug": "flag-ht",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ht.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ht/square.svg",
+      "slug": "flag-ht",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ht.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ht/circle.svg",
+      "slug": "flag-ht",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ht.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-hu/default.svg",
+      "slug": "flag-hu",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/hu.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-hu/square.svg",
+      "slug": "flag-hu",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/hu.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-hu/circle.svg",
+      "slug": "flag-hu",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/hu.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-id/default.svg",
+      "slug": "flag-id",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/id.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-id/square.svg",
+      "slug": "flag-id",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/id.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-id/circle.svg",
+      "slug": "flag-id",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/id.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ie/default.svg",
+      "slug": "flag-ie",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ie.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ie/square.svg",
+      "slug": "flag-ie",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ie.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ie/circle.svg",
+      "slug": "flag-ie",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ie.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-il/default.svg",
+      "slug": "flag-il",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/il.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-il/square.svg",
+      "slug": "flag-il",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/il.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-il/circle.svg",
+      "slug": "flag-il",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/il.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-im/default.svg",
+      "slug": "flag-im",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/im.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-im/square.svg",
+      "slug": "flag-im",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/im.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-im/circle.svg",
+      "slug": "flag-im",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/im.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-in/default.svg",
+      "slug": "flag-in",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/in.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-in/square.svg",
+      "slug": "flag-in",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/in.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-in/circle.svg",
+      "slug": "flag-in",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/in.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-io/default.svg",
+      "slug": "flag-io",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/io.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-io/square.svg",
+      "slug": "flag-io",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/io.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-io/circle.svg",
+      "slug": "flag-io",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/io.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-iq/default.svg",
+      "slug": "flag-iq",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/iq.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-iq/square.svg",
+      "slug": "flag-iq",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/iq.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-iq/circle.svg",
+      "slug": "flag-iq",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/iq.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ir/default.svg",
+      "slug": "flag-ir",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ir.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ir/square.svg",
+      "slug": "flag-ir",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ir.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ir/circle.svg",
+      "slug": "flag-ir",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ir.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-is/default.svg",
+      "slug": "flag-is",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/is.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-is/square.svg",
+      "slug": "flag-is",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/is.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-is/circle.svg",
+      "slug": "flag-is",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/is.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-it/default.svg",
+      "slug": "flag-it",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/it.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-it/square.svg",
+      "slug": "flag-it",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/it.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-it/circle.svg",
+      "slug": "flag-it",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/it.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-je/default.svg",
+      "slug": "flag-je",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/je.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-je/square.svg",
+      "slug": "flag-je",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/je.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-je/circle.svg",
+      "slug": "flag-je",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/je.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-jm/default.svg",
+      "slug": "flag-jm",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/jm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-jm/square.svg",
+      "slug": "flag-jm",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/jm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-jm/circle.svg",
+      "slug": "flag-jm",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/jm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-jo/default.svg",
+      "slug": "flag-jo",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/jo.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-jo/square.svg",
+      "slug": "flag-jo",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/jo.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-jo/circle.svg",
+      "slug": "flag-jo",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/jo.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-jp/default.svg",
+      "slug": "flag-jp",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/jp.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-jp/square.svg",
+      "slug": "flag-jp",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/jp.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-jp/circle.svg",
+      "slug": "flag-jp",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/jp.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ke/default.svg",
+      "slug": "flag-ke",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ke.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ke/square.svg",
+      "slug": "flag-ke",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ke.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ke/circle.svg",
+      "slug": "flag-ke",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ke.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-kg/default.svg",
+      "slug": "flag-kg",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/kg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-kg/square.svg",
+      "slug": "flag-kg",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/kg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-kg/circle.svg",
+      "slug": "flag-kg",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/kg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-kh/default.svg",
+      "slug": "flag-kh",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/kh.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-kh/square.svg",
+      "slug": "flag-kh",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/kh.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-kh/circle.svg",
+      "slug": "flag-kh",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/kh.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ki/default.svg",
+      "slug": "flag-ki",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ki.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ki/square.svg",
+      "slug": "flag-ki",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ki.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ki/circle.svg",
+      "slug": "flag-ki",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ki.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-km/default.svg",
+      "slug": "flag-km",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/km.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-km/square.svg",
+      "slug": "flag-km",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/km.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-km/circle.svg",
+      "slug": "flag-km",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/km.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-kn/default.svg",
+      "slug": "flag-kn",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/kn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-kn/square.svg",
+      "slug": "flag-kn",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/kn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-kn/circle.svg",
+      "slug": "flag-kn",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/kn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-kp/default.svg",
+      "slug": "flag-kp",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/kp.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-kp/square.svg",
+      "slug": "flag-kp",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/kp.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-kp/circle.svg",
+      "slug": "flag-kp",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/kp.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-kr/default.svg",
+      "slug": "flag-kr",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/kr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-kr/square.svg",
+      "slug": "flag-kr",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/kr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-kr/circle.svg",
+      "slug": "flag-kr",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/kr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-kw/default.svg",
+      "slug": "flag-kw",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/kw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-kw/square.svg",
+      "slug": "flag-kw",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/kw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-kw/circle.svg",
+      "slug": "flag-kw",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/kw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ky/default.svg",
+      "slug": "flag-ky",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ky.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ky/square.svg",
+      "slug": "flag-ky",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ky.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ky/circle.svg",
+      "slug": "flag-ky",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ky.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-kz/default.svg",
+      "slug": "flag-kz",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/kz.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-kz/square.svg",
+      "slug": "flag-kz",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/kz.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-kz/circle.svg",
+      "slug": "flag-kz",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/kz.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-la/default.svg",
+      "slug": "flag-la",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/la.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-la/square.svg",
+      "slug": "flag-la",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/la.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-la/circle.svg",
+      "slug": "flag-la",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/la.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-lb/default.svg",
+      "slug": "flag-lb",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/lb.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-lb/square.svg",
+      "slug": "flag-lb",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/lb.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-lb/circle.svg",
+      "slug": "flag-lb",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/lb.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-lc/default.svg",
+      "slug": "flag-lc",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/lc.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-lc/square.svg",
+      "slug": "flag-lc",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/lc.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-lc/circle.svg",
+      "slug": "flag-lc",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/lc.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-li/default.svg",
+      "slug": "flag-li",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/li.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-li/square.svg",
+      "slug": "flag-li",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/li.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-li/circle.svg",
+      "slug": "flag-li",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/li.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-lk/default.svg",
+      "slug": "flag-lk",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/lk.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-lk/square.svg",
+      "slug": "flag-lk",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/lk.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-lk/circle.svg",
+      "slug": "flag-lk",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/lk.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-lr/default.svg",
+      "slug": "flag-lr",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/lr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-lr/square.svg",
+      "slug": "flag-lr",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/lr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-lr/circle.svg",
+      "slug": "flag-lr",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/lr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ls/default.svg",
+      "slug": "flag-ls",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ls.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ls/square.svg",
+      "slug": "flag-ls",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ls.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ls/circle.svg",
+      "slug": "flag-ls",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ls.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-lt/default.svg",
+      "slug": "flag-lt",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/lt.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-lt/square.svg",
+      "slug": "flag-lt",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/lt.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-lt/circle.svg",
+      "slug": "flag-lt",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/lt.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-lu/default.svg",
+      "slug": "flag-lu",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/lu.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-lu/square.svg",
+      "slug": "flag-lu",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/lu.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-lu/circle.svg",
+      "slug": "flag-lu",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/lu.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-lv/default.svg",
+      "slug": "flag-lv",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/lv.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-lv/square.svg",
+      "slug": "flag-lv",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/lv.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-lv/circle.svg",
+      "slug": "flag-lv",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/lv.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ly/default.svg",
+      "slug": "flag-ly",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ly.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ly/square.svg",
+      "slug": "flag-ly",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ly.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ly/circle.svg",
+      "slug": "flag-ly",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ly.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ma/default.svg",
+      "slug": "flag-ma",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ma.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ma/square.svg",
+      "slug": "flag-ma",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ma.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ma/circle.svg",
+      "slug": "flag-ma",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ma.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mc/default.svg",
+      "slug": "flag-mc",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/mc.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mc/square.svg",
+      "slug": "flag-mc",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/mc.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mc/circle.svg",
+      "slug": "flag-mc",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/mc.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-md/default.svg",
+      "slug": "flag-md",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/md.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-md/square.svg",
+      "slug": "flag-md",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/md.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-md/circle.svg",
+      "slug": "flag-md",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/md.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-me/default.svg",
+      "slug": "flag-me",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/me.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-me/square.svg",
+      "slug": "flag-me",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/me.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-me/circle.svg",
+      "slug": "flag-me",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/me.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mf/default.svg",
+      "slug": "flag-mf",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/mf.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mf/square.svg",
+      "slug": "flag-mf",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/mf.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mf/circle.svg",
+      "slug": "flag-mf",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/mf.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mg/default.svg",
+      "slug": "flag-mg",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/mg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mg/square.svg",
+      "slug": "flag-mg",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/mg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mg/circle.svg",
+      "slug": "flag-mg",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/mg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mh/default.svg",
+      "slug": "flag-mh",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/mh.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mh/square.svg",
+      "slug": "flag-mh",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/mh.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mh/circle.svg",
+      "slug": "flag-mh",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/mh.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mk/default.svg",
+      "slug": "flag-mk",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/mk.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mk/square.svg",
+      "slug": "flag-mk",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/mk.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mk/circle.svg",
+      "slug": "flag-mk",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/mk.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ml/default.svg",
+      "slug": "flag-ml",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ml.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ml/square.svg",
+      "slug": "flag-ml",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ml.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ml/circle.svg",
+      "slug": "flag-ml",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ml.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mm/default.svg",
+      "slug": "flag-mm",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/mm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mm/square.svg",
+      "slug": "flag-mm",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/mm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mm/circle.svg",
+      "slug": "flag-mm",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/mm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mn/default.svg",
+      "slug": "flag-mn",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/mn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mn/square.svg",
+      "slug": "flag-mn",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/mn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mn/circle.svg",
+      "slug": "flag-mn",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/mn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mo/default.svg",
+      "slug": "flag-mo",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/mo.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mo/square.svg",
+      "slug": "flag-mo",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/mo.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mo/circle.svg",
+      "slug": "flag-mo",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/mo.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mp/default.svg",
+      "slug": "flag-mp",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/mp.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mp/square.svg",
+      "slug": "flag-mp",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/mp.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mp/circle.svg",
+      "slug": "flag-mp",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/mp.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mq/default.svg",
+      "slug": "flag-mq",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/mq.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mq/square.svg",
+      "slug": "flag-mq",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/mq.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mq/circle.svg",
+      "slug": "flag-mq",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/mq.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mr/default.svg",
+      "slug": "flag-mr",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/mr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mr/square.svg",
+      "slug": "flag-mr",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/mr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mr/circle.svg",
+      "slug": "flag-mr",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/mr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ms/default.svg",
+      "slug": "flag-ms",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ms.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ms/square.svg",
+      "slug": "flag-ms",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ms.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ms/circle.svg",
+      "slug": "flag-ms",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ms.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mt/default.svg",
+      "slug": "flag-mt",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/mt.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mt/square.svg",
+      "slug": "flag-mt",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/mt.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mt/circle.svg",
+      "slug": "flag-mt",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/mt.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mu/default.svg",
+      "slug": "flag-mu",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/mu.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mu/square.svg",
+      "slug": "flag-mu",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/mu.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mu/circle.svg",
+      "slug": "flag-mu",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/mu.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mv/default.svg",
+      "slug": "flag-mv",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/mv.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mv/square.svg",
+      "slug": "flag-mv",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/mv.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mv/circle.svg",
+      "slug": "flag-mv",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/mv.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mw/default.svg",
+      "slug": "flag-mw",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/mw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mw/square.svg",
+      "slug": "flag-mw",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/mw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mw/circle.svg",
+      "slug": "flag-mw",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/mw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mx/default.svg",
+      "slug": "flag-mx",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/mx.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mx/square.svg",
+      "slug": "flag-mx",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/mx.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mx/circle.svg",
+      "slug": "flag-mx",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/mx.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-my/default.svg",
+      "slug": "flag-my",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/my.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-my/square.svg",
+      "slug": "flag-my",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/my.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-my/circle.svg",
+      "slug": "flag-my",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/my.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mz/default.svg",
+      "slug": "flag-mz",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/mz.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mz/square.svg",
+      "slug": "flag-mz",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/mz.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-mz/circle.svg",
+      "slug": "flag-mz",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/mz.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-na/default.svg",
+      "slug": "flag-na",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/na.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-na/square.svg",
+      "slug": "flag-na",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/na.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-na/circle.svg",
+      "slug": "flag-na",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/na.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-nc/default.svg",
+      "slug": "flag-nc",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/nc.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-nc/square.svg",
+      "slug": "flag-nc",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/nc.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-nc/circle.svg",
+      "slug": "flag-nc",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/nc.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ne/default.svg",
+      "slug": "flag-ne",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ne.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ne/square.svg",
+      "slug": "flag-ne",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ne.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ne/circle.svg",
+      "slug": "flag-ne",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ne.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-nf/default.svg",
+      "slug": "flag-nf",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/nf.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-nf/square.svg",
+      "slug": "flag-nf",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/nf.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-nf/circle.svg",
+      "slug": "flag-nf",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/nf.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ng/default.svg",
+      "slug": "flag-ng",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ng.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ng/square.svg",
+      "slug": "flag-ng",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ng.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ng/circle.svg",
+      "slug": "flag-ng",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ng.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ni/default.svg",
+      "slug": "flag-ni",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ni.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ni/square.svg",
+      "slug": "flag-ni",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ni.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ni/circle.svg",
+      "slug": "flag-ni",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ni.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-nl/default.svg",
+      "slug": "flag-nl",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/nl.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-nl/square.svg",
+      "slug": "flag-nl",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/nl.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-nl/circle.svg",
+      "slug": "flag-nl",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/nl.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-no/default.svg",
+      "slug": "flag-no",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/no.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-no/square.svg",
+      "slug": "flag-no",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/no.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-no/circle.svg",
+      "slug": "flag-no",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/no.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-np/default.svg",
+      "slug": "flag-np",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/np.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-np/square.svg",
+      "slug": "flag-np",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/np.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-np/circle.svg",
+      "slug": "flag-np",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/np.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-nr/default.svg",
+      "slug": "flag-nr",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/nr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-nr/square.svg",
+      "slug": "flag-nr",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/nr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-nr/circle.svg",
+      "slug": "flag-nr",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/nr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-nu/default.svg",
+      "slug": "flag-nu",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/nu.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-nu/square.svg",
+      "slug": "flag-nu",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/nu.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-nu/circle.svg",
+      "slug": "flag-nu",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/nu.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-nz/default.svg",
+      "slug": "flag-nz",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/nz.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-nz/square.svg",
+      "slug": "flag-nz",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/nz.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-nz/circle.svg",
+      "slug": "flag-nz",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/nz.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-om/default.svg",
+      "slug": "flag-om",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/om.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-om/square.svg",
+      "slug": "flag-om",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/om.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-om/circle.svg",
+      "slug": "flag-om",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/om.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pa/default.svg",
+      "slug": "flag-pa",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/pa.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pa/square.svg",
+      "slug": "flag-pa",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/pa.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pa/circle.svg",
+      "slug": "flag-pa",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/pa.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pe/default.svg",
+      "slug": "flag-pe",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/pe.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pe/square.svg",
+      "slug": "flag-pe",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/pe.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pe/circle.svg",
+      "slug": "flag-pe",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/pe.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pf/default.svg",
+      "slug": "flag-pf",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/pf.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pf/square.svg",
+      "slug": "flag-pf",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/pf.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pf/circle.svg",
+      "slug": "flag-pf",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/pf.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pg/default.svg",
+      "slug": "flag-pg",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/pg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pg/square.svg",
+      "slug": "flag-pg",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/pg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pg/circle.svg",
+      "slug": "flag-pg",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/pg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ph/default.svg",
+      "slug": "flag-ph",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ph.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ph/square.svg",
+      "slug": "flag-ph",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ph.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ph/circle.svg",
+      "slug": "flag-ph",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ph.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pk/default.svg",
+      "slug": "flag-pk",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/pk.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pk/square.svg",
+      "slug": "flag-pk",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/pk.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pk/circle.svg",
+      "slug": "flag-pk",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/pk.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pl/default.svg",
+      "slug": "flag-pl",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/pl.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pl/square.svg",
+      "slug": "flag-pl",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/pl.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pl/circle.svg",
+      "slug": "flag-pl",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/pl.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pm/default.svg",
+      "slug": "flag-pm",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/pm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pm/square.svg",
+      "slug": "flag-pm",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/pm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pm/circle.svg",
+      "slug": "flag-pm",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/pm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pn/default.svg",
+      "slug": "flag-pn",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/pn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pn/square.svg",
+      "slug": "flag-pn",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/pn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pn/circle.svg",
+      "slug": "flag-pn",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/pn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pr/default.svg",
+      "slug": "flag-pr",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/pr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pr/square.svg",
+      "slug": "flag-pr",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/pr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pr/circle.svg",
+      "slug": "flag-pr",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/pr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ps/default.svg",
+      "slug": "flag-ps",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ps.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ps/square.svg",
+      "slug": "flag-ps",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ps.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ps/circle.svg",
+      "slug": "flag-ps",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ps.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pt/default.svg",
+      "slug": "flag-pt",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/pt.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pt/square.svg",
+      "slug": "flag-pt",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/pt.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pt/circle.svg",
+      "slug": "flag-pt",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/pt.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pw/default.svg",
+      "slug": "flag-pw",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/pw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pw/square.svg",
+      "slug": "flag-pw",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/pw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-pw/circle.svg",
+      "slug": "flag-pw",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/pw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-py/default.svg",
+      "slug": "flag-py",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/py.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-py/square.svg",
+      "slug": "flag-py",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/py.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-py/circle.svg",
+      "slug": "flag-py",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/py.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-qa/default.svg",
+      "slug": "flag-qa",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/qa.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-qa/square.svg",
+      "slug": "flag-qa",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/qa.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-qa/circle.svg",
+      "slug": "flag-qa",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/qa.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-re/default.svg",
+      "slug": "flag-re",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/re.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-re/square.svg",
+      "slug": "flag-re",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/re.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-re/circle.svg",
+      "slug": "flag-re",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/re.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ro/default.svg",
+      "slug": "flag-ro",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ro.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ro/square.svg",
+      "slug": "flag-ro",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ro.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ro/circle.svg",
+      "slug": "flag-ro",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ro.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-rs/default.svg",
+      "slug": "flag-rs",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/rs.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-rs/square.svg",
+      "slug": "flag-rs",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/rs.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-rs/circle.svg",
+      "slug": "flag-rs",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/rs.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ru/default.svg",
+      "slug": "flag-ru",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ru.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ru/square.svg",
+      "slug": "flag-ru",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ru.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ru/circle.svg",
+      "slug": "flag-ru",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ru.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-rw/default.svg",
+      "slug": "flag-rw",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/rw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-rw/square.svg",
+      "slug": "flag-rw",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/rw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-rw/circle.svg",
+      "slug": "flag-rw",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/rw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sa/default.svg",
+      "slug": "flag-sa",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/sa.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sa/square.svg",
+      "slug": "flag-sa",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/sa.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sa/circle.svg",
+      "slug": "flag-sa",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/sa.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sb/default.svg",
+      "slug": "flag-sb",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/sb.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sb/square.svg",
+      "slug": "flag-sb",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/sb.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sb/circle.svg",
+      "slug": "flag-sb",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/sb.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sc/default.svg",
+      "slug": "flag-sc",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/sc.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sc/square.svg",
+      "slug": "flag-sc",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/sc.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sc/circle.svg",
+      "slug": "flag-sc",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/sc.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sd/default.svg",
+      "slug": "flag-sd",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/sd.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sd/square.svg",
+      "slug": "flag-sd",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/sd.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sd/circle.svg",
+      "slug": "flag-sd",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/sd.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-se/default.svg",
+      "slug": "flag-se",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/se.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-se/square.svg",
+      "slug": "flag-se",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/se.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-se/circle.svg",
+      "slug": "flag-se",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/se.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sg/default.svg",
+      "slug": "flag-sg",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/sg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sg/square.svg",
+      "slug": "flag-sg",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/sg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sg/circle.svg",
+      "slug": "flag-sg",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/sg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sh/default.svg",
+      "slug": "flag-sh",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/sh.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sh/square.svg",
+      "slug": "flag-sh",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/sh.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sh/circle.svg",
+      "slug": "flag-sh",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/sh.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-si/default.svg",
+      "slug": "flag-si",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/si.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-si/square.svg",
+      "slug": "flag-si",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/si.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-si/circle.svg",
+      "slug": "flag-si",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/si.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sj/default.svg",
+      "slug": "flag-sj",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/sj.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sj/square.svg",
+      "slug": "flag-sj",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/sj.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sj/circle.svg",
+      "slug": "flag-sj",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/sj.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sk/default.svg",
+      "slug": "flag-sk",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/sk.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sk/square.svg",
+      "slug": "flag-sk",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/sk.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sk/circle.svg",
+      "slug": "flag-sk",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/sk.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sl/default.svg",
+      "slug": "flag-sl",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/sl.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sl/square.svg",
+      "slug": "flag-sl",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/sl.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sl/circle.svg",
+      "slug": "flag-sl",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/sl.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sm/default.svg",
+      "slug": "flag-sm",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/sm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sm/square.svg",
+      "slug": "flag-sm",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/sm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sm/circle.svg",
+      "slug": "flag-sm",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/sm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sn/default.svg",
+      "slug": "flag-sn",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/sn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sn/square.svg",
+      "slug": "flag-sn",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/sn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sn/circle.svg",
+      "slug": "flag-sn",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/sn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-so/default.svg",
+      "slug": "flag-so",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/so.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-so/square.svg",
+      "slug": "flag-so",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/so.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-so/circle.svg",
+      "slug": "flag-so",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/so.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sr/default.svg",
+      "slug": "flag-sr",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/sr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sr/square.svg",
+      "slug": "flag-sr",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/sr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sr/circle.svg",
+      "slug": "flag-sr",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/sr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ss/default.svg",
+      "slug": "flag-ss",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ss.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ss/square.svg",
+      "slug": "flag-ss",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ss.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ss/circle.svg",
+      "slug": "flag-ss",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ss.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-st/default.svg",
+      "slug": "flag-st",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/st.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-st/square.svg",
+      "slug": "flag-st",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/st.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-st/circle.svg",
+      "slug": "flag-st",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/st.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sv/default.svg",
+      "slug": "flag-sv",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/sv.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sv/square.svg",
+      "slug": "flag-sv",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/sv.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sv/circle.svg",
+      "slug": "flag-sv",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/sv.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sx/default.svg",
+      "slug": "flag-sx",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/sx.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sx/square.svg",
+      "slug": "flag-sx",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/sx.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sx/circle.svg",
+      "slug": "flag-sx",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/sx.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sy/default.svg",
+      "slug": "flag-sy",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/sy.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sy/square.svg",
+      "slug": "flag-sy",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/sy.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sy/circle.svg",
+      "slug": "flag-sy",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/sy.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sz/default.svg",
+      "slug": "flag-sz",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/sz.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sz/square.svg",
+      "slug": "flag-sz",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/sz.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-sz/circle.svg",
+      "slug": "flag-sz",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/sz.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tc/default.svg",
+      "slug": "flag-tc",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/tc.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tc/square.svg",
+      "slug": "flag-tc",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/tc.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tc/circle.svg",
+      "slug": "flag-tc",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/tc.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-td/default.svg",
+      "slug": "flag-td",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/td.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-td/square.svg",
+      "slug": "flag-td",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/td.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-td/circle.svg",
+      "slug": "flag-td",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/td.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tf/default.svg",
+      "slug": "flag-tf",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/tf.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tf/square.svg",
+      "slug": "flag-tf",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/tf.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tf/circle.svg",
+      "slug": "flag-tf",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/tf.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tg/default.svg",
+      "slug": "flag-tg",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/tg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tg/square.svg",
+      "slug": "flag-tg",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/tg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tg/circle.svg",
+      "slug": "flag-tg",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/tg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-th/default.svg",
+      "slug": "flag-th",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/th.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-th/square.svg",
+      "slug": "flag-th",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/th.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-th/circle.svg",
+      "slug": "flag-th",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/th.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tj/default.svg",
+      "slug": "flag-tj",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/tj.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tj/square.svg",
+      "slug": "flag-tj",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/tj.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tj/circle.svg",
+      "slug": "flag-tj",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/tj.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tk/default.svg",
+      "slug": "flag-tk",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/tk.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tk/square.svg",
+      "slug": "flag-tk",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/tk.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tk/circle.svg",
+      "slug": "flag-tk",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/tk.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tl/default.svg",
+      "slug": "flag-tl",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/tl.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tl/square.svg",
+      "slug": "flag-tl",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/tl.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tl/circle.svg",
+      "slug": "flag-tl",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/tl.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tm/default.svg",
+      "slug": "flag-tm",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/tm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tm/square.svg",
+      "slug": "flag-tm",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/tm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tm/circle.svg",
+      "slug": "flag-tm",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/tm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tn/default.svg",
+      "slug": "flag-tn",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/tn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tn/square.svg",
+      "slug": "flag-tn",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/tn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tn/circle.svg",
+      "slug": "flag-tn",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/tn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-to/default.svg",
+      "slug": "flag-to",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/to.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-to/square.svg",
+      "slug": "flag-to",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/to.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-to/circle.svg",
+      "slug": "flag-to",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/to.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tr/default.svg",
+      "slug": "flag-tr",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/tr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tr/square.svg",
+      "slug": "flag-tr",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/tr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tr/circle.svg",
+      "slug": "flag-tr",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/tr.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tt/default.svg",
+      "slug": "flag-tt",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/tt.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tt/square.svg",
+      "slug": "flag-tt",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/tt.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tt/circle.svg",
+      "slug": "flag-tt",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/tt.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tv/default.svg",
+      "slug": "flag-tv",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/tv.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tv/square.svg",
+      "slug": "flag-tv",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/tv.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tv/circle.svg",
+      "slug": "flag-tv",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/tv.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tw/default.svg",
+      "slug": "flag-tw",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/tw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tw/square.svg",
+      "slug": "flag-tw",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/tw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tw/circle.svg",
+      "slug": "flag-tw",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/tw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tz/default.svg",
+      "slug": "flag-tz",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/tz.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tz/square.svg",
+      "slug": "flag-tz",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/tz.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-tz/circle.svg",
+      "slug": "flag-tz",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/tz.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ua/default.svg",
+      "slug": "flag-ua",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ua.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ua/square.svg",
+      "slug": "flag-ua",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ua.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ua/circle.svg",
+      "slug": "flag-ua",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ua.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ug/default.svg",
+      "slug": "flag-ug",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ug.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ug/square.svg",
+      "slug": "flag-ug",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ug.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ug/circle.svg",
+      "slug": "flag-ug",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ug.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-um/default.svg",
+      "slug": "flag-um",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/um.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-um/square.svg",
+      "slug": "flag-um",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/um.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-um/circle.svg",
+      "slug": "flag-um",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/um.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-us/default.svg",
+      "slug": "flag-us",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/us.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-us/square.svg",
+      "slug": "flag-us",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/us.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-us/circle.svg",
+      "slug": "flag-us",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/us.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-uy/default.svg",
+      "slug": "flag-uy",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/uy.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-uy/square.svg",
+      "slug": "flag-uy",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/uy.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-uy/circle.svg",
+      "slug": "flag-uy",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/uy.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-uz/default.svg",
+      "slug": "flag-uz",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/uz.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-uz/square.svg",
+      "slug": "flag-uz",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/uz.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-uz/circle.svg",
+      "slug": "flag-uz",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/uz.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-va/default.svg",
+      "slug": "flag-va",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/va.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-va/square.svg",
+      "slug": "flag-va",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/va.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-va/circle.svg",
+      "slug": "flag-va",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/va.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-vc/default.svg",
+      "slug": "flag-vc",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/vc.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-vc/square.svg",
+      "slug": "flag-vc",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/vc.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-vc/circle.svg",
+      "slug": "flag-vc",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/vc.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ve/default.svg",
+      "slug": "flag-ve",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ve.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ve/square.svg",
+      "slug": "flag-ve",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ve.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ve/circle.svg",
+      "slug": "flag-ve",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ve.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-vg/default.svg",
+      "slug": "flag-vg",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/vg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-vg/square.svg",
+      "slug": "flag-vg",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/vg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-vg/circle.svg",
+      "slug": "flag-vg",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/vg.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-vi/default.svg",
+      "slug": "flag-vi",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/vi.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-vi/square.svg",
+      "slug": "flag-vi",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/vi.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-vi/circle.svg",
+      "slug": "flag-vi",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/vi.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-vn/default.svg",
+      "slug": "flag-vn",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/vn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-vn/square.svg",
+      "slug": "flag-vn",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/vn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-vn/circle.svg",
+      "slug": "flag-vn",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/vn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-vu/default.svg",
+      "slug": "flag-vu",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/vu.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-vu/square.svg",
+      "slug": "flag-vu",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/vu.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-vu/circle.svg",
+      "slug": "flag-vu",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/vu.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-wf/default.svg",
+      "slug": "flag-wf",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/wf.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-wf/square.svg",
+      "slug": "flag-wf",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/wf.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-wf/circle.svg",
+      "slug": "flag-wf",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/wf.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ws/default.svg",
+      "slug": "flag-ws",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ws.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ws/square.svg",
+      "slug": "flag-ws",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ws.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ws/circle.svg",
+      "slug": "flag-ws",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ws.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-xk/default.svg",
+      "slug": "flag-xk",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/xk.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-xk/square.svg",
+      "slug": "flag-xk",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/xk.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-xk/circle.svg",
+      "slug": "flag-xk",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/xk.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ye/default.svg",
+      "slug": "flag-ye",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ye.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ye/square.svg",
+      "slug": "flag-ye",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ye.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-ye/circle.svg",
+      "slug": "flag-ye",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/ye.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-yt/default.svg",
+      "slug": "flag-yt",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/yt.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-yt/square.svg",
+      "slug": "flag-yt",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/yt.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-yt/circle.svg",
+      "slug": "flag-yt",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/yt.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-za/default.svg",
+      "slug": "flag-za",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/za.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-za/square.svg",
+      "slug": "flag-za",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/za.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-za/circle.svg",
+      "slug": "flag-za",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/za.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-zm/default.svg",
+      "slug": "flag-zm",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/zm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-zm/square.svg",
+      "slug": "flag-zm",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/zm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-zm/circle.svg",
+      "slug": "flag-zm",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/zm.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-zw/default.svg",
+      "slug": "flag-zw",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/zw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-zw/square.svg",
+      "slug": "flag-zw",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/zw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-zw/circle.svg",
+      "slug": "flag-zw",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/zw.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gb-eng/default.svg",
+      "slug": "flag-gb-eng",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/gb-eng.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gb-eng/square.svg",
+      "slug": "flag-gb-eng",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/gb-eng.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gb-eng/circle.svg",
+      "slug": "flag-gb-eng",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/gb-eng.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gb-sct/default.svg",
+      "slug": "flag-gb-sct",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/gb-sct.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gb-sct/square.svg",
+      "slug": "flag-gb-sct",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/gb-sct.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gb-sct/circle.svg",
+      "slug": "flag-gb-sct",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/gb-sct.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gb-wls/default.svg",
+      "slug": "flag-gb-wls",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/gb-wls.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gb-wls/square.svg",
+      "slug": "flag-gb-wls",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/gb-wls.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-gb-wls/circle.svg",
+      "slug": "flag-gb-wls",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/gb-wls.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-es-ct/default.svg",
+      "slug": "flag-es-ct",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/es-ct.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-es-ct/square.svg",
+      "slug": "flag-es-ct",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/es-ct.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-es-ct/circle.svg",
+      "slug": "flag-es-ct",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/es-ct.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-es-pv/default.svg",
+      "slug": "flag-es-pv",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/es-pv.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-es-pv/square.svg",
+      "slug": "flag-es-pv",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/es-pv.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-es-pv/circle.svg",
+      "slug": "flag-es-pv",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/es-pv.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-es-ga/default.svg",
+      "slug": "flag-es-ga",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/es-ga.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-es-ga/square.svg",
+      "slug": "flag-es-ga",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/es-ga.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-es-ga/circle.svg",
+      "slug": "flag-es-ga",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/es-ga.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-es-vc/default.svg",
+      "slug": "flag-es-vc",
+      "variant": "default",
+      "source": "wikimedia-commons",
+      "upstream": "Flag of the Land of Valencia (official).svg",
+      "license": "Public domain"
+    },
+    {
+      "file": "public/icons/flag-es-vc/square.svg",
+      "slug": "flag-es-vc",
+      "variant": "square",
+      "source": "wikimedia-commons",
+      "upstream": "Flag of the Land of Valencia (official).svg (center crop)",
+      "license": "Public domain"
+    },
+    {
+      "file": "public/icons/flag-es-vc/circle.svg",
+      "slug": "flag-es-vc",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/es-vc.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-es-ib/default.svg",
+      "slug": "flag-es-ib",
+      "variant": "default",
+      "source": "wikimedia-commons",
+      "upstream": "Flag of the Balearic Islands.svg",
+      "license": "CC0"
+    },
+    {
+      "file": "public/icons/flag-es-ib/square.svg",
+      "slug": "flag-es-ib",
+      "variant": "square",
+      "source": "wikimedia-commons",
+      "upstream": "Flag of the Balearic Islands.svg (center crop)",
+      "license": "CC0"
+    },
+    {
+      "file": "public/icons/flag-es-ib/circle.svg",
+      "slug": "flag-es-ib",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/es-ib.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-es-cn/default.svg",
+      "slug": "flag-es-cn",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/ic.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-es-cn/square.svg",
+      "slug": "flag-es-cn",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/ic.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-es-cn/circle.svg",
+      "slug": "flag-es-cn",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/es-cn.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-fr-cor/default.svg",
+      "slug": "flag-fr-cor",
+      "variant": "default",
+      "source": "wikimedia-commons",
+      "upstream": "Flag of Corsica.svg",
+      "license": "CC0"
+    },
+    {
+      "file": "public/icons/flag-fr-cor/square.svg",
+      "slug": "flag-fr-cor",
+      "variant": "square",
+      "source": "wikimedia-commons",
+      "upstream": "Flag of Corsica.svg (center crop)",
+      "license": "CC0"
+    },
+    {
+      "file": "public/icons/flag-fr-cor/circle.svg",
+      "slug": "flag-fr-cor",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/fr-20r.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-occitania/default.svg",
+      "slug": "flag-occitania",
+      "variant": "default",
+      "source": "wikimedia-commons",
+      "upstream": "Flag of Occitania (with star).svg",
+      "license": "Public domain"
+    },
+    {
+      "file": "public/icons/flag-occitania/square.svg",
+      "slug": "flag-occitania",
+      "variant": "square",
+      "source": "wikimedia-commons",
+      "upstream": "Flag of Occitania (with star).svg (center crop)",
+      "license": "Public domain"
+    },
+    {
+      "file": "public/icons/flag-occitania/circle.svg",
+      "slug": "flag-occitania",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/occitania.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-eu/default.svg",
+      "slug": "flag-eu",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/eu.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-eu/square.svg",
+      "slug": "flag-eu",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/eu.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-eu/circle.svg",
+      "slug": "flag-eu",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/eu.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-un/default.svg",
+      "slug": "flag-un",
+      "variant": "default",
+      "source": "flag-icons",
+      "upstream": "flags/4x3/un.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-un/square.svg",
+      "slug": "flag-un",
+      "variant": "square",
+      "source": "flag-icons",
+      "upstream": "flags/1x1/un.svg",
+      "license": "MIT"
+    },
+    {
+      "file": "public/icons/flag-un/circle.svg",
+      "slug": "flag-un",
+      "variant": "circle",
+      "source": "circle-flags",
+      "upstream": "flags/un.svg",
+      "license": "MIT"
+    }
+  ]
+}

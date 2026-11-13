@@ -5,8 +5,18 @@
     <link>https://thesvg.org/blog</link>
     <description>Announcements, releases, and updates from theSVG - the open SVG brand library</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://thesvg.org/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Country flags in thesvg: 263 flags, three variants, one package</title>
+      <link>https://thesvg.org/blog/country-flags</link>
+      <guid isPermaLink="true">https://thesvg.org/blog/country-flags</guid>
+      <description>Every ISO country plus regional flags like England, Catalonia and the EU, each as 4x3, square and circle SVG, in a separate @thesvg/flags package with a locale helper, color search and a browser built for finding the right one.</description>
+      <pubDate>Thu, 12 Nov 2026 00:00:00 GMT</pubDate>
+            <author>team@thesvg.org (theSVG Team)</author>
+      <category>release</category>
+      <category>launch</category>
+    </item>
     <item>
       <title>Your logos folder is already out of date</title>
       <link>https://thesvg.org/blog/logos-folder-out-of-date</link>

@@ -13,7 +13,11 @@
 <p align="center"><b>A HOME FOR EVERY BRAND.</b></p>
 
 <p align="center">
-  7,600+ brand logos and cloud icons. Search, copy and ship them as SVG, React, Vue, Svelte, CDN, CLI or MCP.<br />
+  <a href="https://thesvg.org/collection/flags">Flags</a> · <a href="https://thesvg.org/blog/country-flags">New: country flags</a> · <a href="https://thesvg.org/blog">Blog</a> · <a href="https://thesvg.org/docs">Docs</a>
+</p>
+
+<p align="center">
+  7,900+ brand logos, cloud icons and country flags. Search, copy and ship them as SVG, React, Vue, Svelte, CDN, CLI or MCP.<br />
   Free, open source, no gatekeeping.
 </p>
 
@@ -24,7 +28,7 @@
   <a href="https://www.jsdelivr.com/package/gh/glincker/thesvg"><img src="https://data.jsdelivr.com/v1/package/gh/glincker/thesvg/badge" alt="jsDelivr" /></a>
   <a href="https://github.com/glincker/thesvg/stargazers"><img src="https://img.shields.io/github/stars/glincker/thesvg?style=flat-square&label=stars" alt="stars" /></a>
   <a href="https://discord.gg/Ar5pcaZB99"><img src="https://img.shields.io/discord/829168897080557579?style=flat-square&logo=discord&logoColor=white&label=discord&color=5865F2" alt="Discord" /></a>
-  <a href="https://github.com/glincker/thesvg"><img src="https://img.shields.io/badge/icons-7%2C600%2B-C2410C?style=flat-square" alt="7,600+ icons" /></a>
+  <a href="https://github.com/glincker/thesvg"><img src="https://img.shields.io/badge/icons-7%2C900%2B-C2410C?style=flat-square" alt="7,900+ icons" /></a>
   <a href="https://github.com/glincker/thesvg/blob/main/LICENSE"><img src="https://img.shields.io/github/license/glincker/thesvg?style=flat-square" alt="license" /></a>
   <a href="https://www.figma.com/community/plugin/1612997159050367763"><img src="https://img.shields.io/badge/Figma-Plugin-F24E1E?style=flat-square&logo=figma&logoColor=white" alt="Figma" /></a>
   <a href="https://marketplace.visualstudio.com/items?itemName=glincker.thesvg"><img src="https://img.shields.io/badge/VS%20Code-Extension-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white" alt="VS Code" /></a>
@@ -109,7 +113,7 @@ theSVG does. It is one open catalog where every logo is **official, clean, compl
 
 ### Why we built it
 
-theSVG started with a pull request. We tried to add the logo of our own product, [AskVerdict](https://www.askverdict.ai), to an existing open source logo library, and it was declined as outside that project's scope, which is a fair call for a curated set. That made us want a catalog where any real brand, large or small, can be added through a simple review. theSVG now holds over 7,600 icons, sourced from official brand assets and checked before each one is merged.
+theSVG started with a pull request. We tried to add the logo of our own product, [AskVerdict](https://www.askverdict.ai), to an existing open source logo library, and it was declined as outside that project's scope, which is a fair call for a curated set. That made us want a catalog where any real brand, large or small, can be added through a simple review. theSVG now holds over 7,900 icons, sourced from official brand assets and checked before each one is merged.
 
 **A HOME FOR EVERY BRAND.**
 
@@ -130,8 +134,8 @@ If that is the logo library you wished existed, the single most useful thing you
 
 <table>
   <tr>
-    <td align="center" width="25%"><strong>7,600+</strong><br />icons</td>
-    <td align="center" width="25%"><strong>12,300+</strong><br />variants: color, mono, light, dark, wordmark</td>
+    <td align="center" width="25%"><strong><!-- flags:total-icons -->7,900+<!-- /flags:total-icons --></strong><br />icons</td>
+    <td align="center" width="25%"><strong><!-- flags:total-variants -->14,600+<!-- /flags:total-variants --></strong><br />variants: color, mono, light, dark, wordmark, flag shapes</td>
     <td align="center" width="25%"><strong>150+</strong><br />categories</td>
     <td align="center" width="25%"><strong>21</strong><br />brand families</td>
   </tr>
@@ -163,6 +167,7 @@ theSVG organizes icons into collections:
 | **Community** | 256 | Dev tools, databases, and frameworks sourced from the open-source community |
 | **Google Cloud** | 214 | Google Cloud Platform icons (2026-Q1) |
 | **Kubernetes** | 38 | Official Kubernetes/CNCF architecture icons |
+| **Flags** | <!-- flags:count -->263<!-- /flags:count --> | Country and region flags in 4x3, square and circle (category `Flags`, slugs `flag-us`, `flag-gb-eng`) |
 
 </details>
 
@@ -190,7 +195,7 @@ The full breakdown lives in [Collections, families and categories](./docs/collec
 
 ### Highlights
 
-- **7,600+ icons** across multiple collections
+- **<!-- flags:total-icons -->7,900+<!-- /flags:total-icons --> icons** across multiple collections
 - **4,800+ brand icons** across 150+ categories
 - **21 brand families** - every product from Amazon, Google, Microsoft and more, grouped by owner
 - **858 Auth Badge icons** - circular icon badges for 2FA/authenticator apps
@@ -198,11 +203,29 @@ The full breakdown lives in [Collections, families and categories](./docs/collec
 - **626 Azure Service icons** (2026-Q1)
 - **256 community-curated icons** - dev tools, databases, frameworks
 - **214 Google Cloud icons** (2026-Q1)
-- **12,300+ SVG variants** - color, mono, light, dark, wordmark
+- **<!-- flags:count -->263<!-- /flags:count --> country and region flags** - ISO 3166-1 plus England, Scotland, Wales, Catalonia and more, in 4x3, square and circle
+- **<!-- flags:total-variants -->14,600+<!-- /flags:total-variants --> SVG variants** - color, mono, light, dark, wordmark, flag shapes
 - **Tree-shakeable** - import one icon, ship only that icon
 - **TypeScript-first** - fully typed, dual ESM/CJS
 - **Framework-agnostic** - React, Vue, Svelte, plain HTML, or CDN
 - **AI-ready** - MCP server for Claude, Cursor, and Windsurf
+
+### Flags
+
+Browse at [thesvg.org/collection/flags](https://thesvg.org/collection/flags). Every ISO 3166-1 country plus England, Scotland, Wales, Catalonia, the Basque Country, Galicia, the Valencian Community, the Balearic Islands, the Canary Islands, Corsica, Occitania, the EU and the UN, in three shapes. Slugs are `flag-<code>` (`flag-us`, `flag-gb-eng`); variants are `default` (4x3), `square` and `circle`.
+
+```bash
+npm i @thesvg/flags
+```
+
+```tsx
+import { FlagUs } from "@thesvg/flags/react/us";
+import { getFlagForLocale } from "@thesvg/flags/locale";
+
+<FlagUs variant="circle" size={32} />
+```
+
+A flag is a country, not a language: show the native language name beside it. Guide: [docs/flags.md](./docs/flags.md).
 
 ### AWS Architecture Icons
 

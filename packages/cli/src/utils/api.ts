@@ -192,7 +192,7 @@ export async function fetchIconList(options?: {
   }
 
   if (options?.query) {
-    const q = options.query.toLowerCase();
+    const q = options.query.toLowerCase().replace(/^#/, "");
     const filtered: RegistryIcon[] = [];
     for (let i = 0; i < icons.length; i++) {
       const icon = icons[i];

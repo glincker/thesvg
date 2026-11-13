@@ -30,6 +30,7 @@ const POPULAR_AWS_SLUGS = getPopularSlugs("aws");
 const POPULAR_AZURE_SLUGS = getPopularSlugs("azure");
 const POPULAR_GCP_SLUGS = getPopularSlugs("gcp");
 const POPULAR_K8S_SLUGS = getPopularSlugs("k8s");
+const POPULAR_FLAG_SLUGS = getPopularSlugs("flags");
 const POPULAR_COMMUNITY_SLUGS = getPopularSlugs("community");
 const POPULAR_AUTH_BADGES_SLUGS = getPopularSlugs("auth-badges");
 
@@ -238,6 +239,19 @@ const ALL_SLIDES: Slide[] = [
     blob: "bg-[#326ce5]/10 dark:bg-[#326ce5]/5",
     collection: "k8s" as const,
     floatSlugs: POPULAR_K8S_SLUGS,
+  },
+  {
+    badge: "New: Flags",
+    badgeIcon: Package,
+    title: "263 Country and Region Flags",
+    description: "Every ISO 3166-1 country plus England, Scotland, Wales, Catalonia, the Canary Islands, the EU and the UN. Three shapes each: 4x3, square and circle.",
+    cta: { label: "Browse Flags", href: "#popular" },
+    ctaSecondary: { label: "All Categories", href: "#categories" },
+    gradient: "from-sky-50/50 via-background to-sky-50/30 dark:from-sky-950/20 dark:via-background dark:to-sky-950/10",
+    accent: "border-sky-200/50 bg-sky-50/80 text-sky-700 dark:border-sky-500/20 dark:bg-sky-500/10 dark:text-sky-400",
+    blob: "bg-sky-400/10 dark:bg-sky-500/5",
+    collection: "flags" as const,
+    floatSlugs: POPULAR_FLAG_SLUGS,
   },
   {
     badge: "Community",

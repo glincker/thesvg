@@ -23,6 +23,7 @@ import { fileURLToPath } from "node:url";
 
 import { primarySvg } from "../../icons/scripts/lib/variants.ts";
 import { makeReader, parseSvg, type SvgNode } from "./lib/svg-tree.ts";
+import { filterPackaged } from "../../icons/scripts/lib/catalog.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -201,7 +202,7 @@ function generateBarrel(entries: Array<{ slug: string; name: string }>, dts: boo
 // ---------------------------------------------------------------------------
 
 function main(): void {
-  const icons = JSON.parse(readFileSync(ICONS_JSON, "utf8")) as RawIcon[];
+  const icons = filterPackaged(JSON.parse(readFileSync(ICONS_JSON, "utf8")) as RawIcon[]);
   console.log(`Found ${icons.length} icons.`);
 
   rmSync(DIST, { recursive: true, force: true });

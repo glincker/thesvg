@@ -25,11 +25,32 @@ export function getSearchIndex(icons: IconEntry[]): Fuse<IconEntry> {
   return fuseInstance;
 }
 
+/**
+ * Codes, numbers and emoji (DEU, 276, a flag emoji, pt-br) are exact
+ * identifiers. Fuzzy scoring buries or misses them, so an exact alias or
+ * slug hit is listed first, then the fuzzy results without duplicates.
+ */
+/** Color words alias every flag that uses the color; they are filters, not identifiers, so they never jump the queue. */
+const COLOR_WORDS = new Set(["red", "orange", "yellow", "green", "blue", "purple", "pink", "brown", "black", "white", "gray", "gold", "tricolor", "tricolour"]);
+
+function withExactIdentifierFirst(icons: IconEntry[], fuzzy: IconEntry[], query: string): IconEntry[] {
+  const q = query.toLowerCase();
+  if (COLOR_WORDS.has(q)) return fuzzy;
+  const exact: IconEntry[] = [];
+  for (const icon of icons) {
+    if (icon.slug === q || icon.aliases.some((a) => a.toLowerCase() === q)) exact.push(icon);
+  }
+  if (exact.length === 0) return fuzzy;
+  const seen = new Set(exact);
+  return [...exact, ...fuzzy.filter((i) => !seen.has(i))];
+}
+
 export function searchIcons(
   icons: IconEntry[],
   query: string
 ): IconEntry[] {
-  const trimmed = query.trim();
+  // "#ed2939" and "ed2939" are the same color query; aliases store the bare hex.
+  const trimmed = query.trim().replace(/^#(?=[0-9a-f]{3,6}$)/i, "");
   if (!trimmed) return icons;
   const fuse = getSearchIndex(icons);
 
@@ -51,7 +72,7 @@ export function searchIcons(
     for (let i = 0; i < results.length; i++) {
       out[i] = results[i].item;
     }
-    return out;
+    return withExactIdentifierFirst(icons, out, trimmed);
   }
 
   // Score each icon by how many tokens it matches, then by combined Fuse

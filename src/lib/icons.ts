@@ -56,6 +56,9 @@ export interface IconEntry {
   collectionMeta?: {
     type?: string;
     parent?: string;
+    /** Flags: palette as "hex:share" entries (share in percent) and color families. */
+    colors?: string[];
+    colorNames?: string[];
   };
   supersedes?: string;
   supersededBy?: string;

@@ -17,7 +17,7 @@
  *     index.d.ts     Type barrel
  */
 
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -33,6 +33,7 @@ import {
 } from "./lib/codegen.ts";
 import { publicSvgReader } from "./lib/public-svg.ts";
 import { resolveSvgs } from "./lib/variants.ts";
+import { filterPackaged } from "./lib/catalog.ts";
 
 // ---------------------------------------------------------------------------
 // Paths
@@ -60,9 +61,11 @@ const readPublicSvg = publicSvgReader(join(REPO_ROOT, "public"));
 
 function main(): void {
   console.log("Reading icons.json…");
-  const rawIcons: RawIcon[] = JSON.parse(readFileSync(ICONS_JSON, "utf8")) as RawIcon[];
+  const rawIcons: RawIcon[] = filterPackaged(JSON.parse(readFileSync(ICONS_JSON, "utf8")) as RawIcon[]);
   console.log(`Found ${rawIcons.length} icons.`);
 
+  // A build from before the collection filter may have left flag files behind; start clean.
+  rmSync(DIST, { recursive: true, force: true });
   mkdirSync(DIST, { recursive: true });
 
   const processedSlugs: string[] = [];

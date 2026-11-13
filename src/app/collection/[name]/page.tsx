@@ -12,6 +12,9 @@ import {
 } from "@/lib/icons";
 import { COLLECTION_IDS, COLLECTIONS_META, isValidCollectionId } from "@/lib/collections-meta";
 import { HomeContent } from "@/components/home-content";
+import { FlagsBrowser } from "@/components/flags/flags-browser";
+import { getFlagTiles } from "@/lib/flags-tiles";
+import Link from "next/link";
 import { getJsDelivrUrl } from "@/components/icons/shared/icon-constants";
 
 // Cap the JSON-LD ItemList so collections with hundreds of icons don't
@@ -115,6 +118,23 @@ export default async function CollectionPage({ params }: PageProps) {
         })),
     },
   };
+
+  if (collectionName === "flags") {
+    // Flags get their own browser (region, color and locale filters); the rest of the catalog keeps the generic grid.
+    return (
+      <>
+        <JsonLd data={jsonLd} />
+        <main className="mx-auto w-full max-w-6xl px-4 py-8">
+          <h1 className="text-2xl font-bold">{meta.label}</h1>
+          <p className="mb-6 mt-1 max-w-2xl text-sm text-muted-foreground">
+            {collectionItemCount} country and region flags in three shapes. Install with <code>pnpm add @thesvg/flags</code>.{" "}
+            <Link href="/docs/flags" className="underline">Read the guide</Link>.
+          </p>
+          <FlagsBrowser tiles={getFlagTiles()} />
+        </main>
+      </>
+    );
+  }
 
   return (
     <>

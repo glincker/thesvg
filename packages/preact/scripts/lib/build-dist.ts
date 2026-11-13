@@ -27,6 +27,7 @@ import {
   type ParsedIcon,
   type RawIcon,
 } from "./svg-tree.ts";
+import { filterPackaged } from "../../../icons/scripts/lib/catalog.ts";
 
 export interface Flavor {
   /** npm name, used in file banners. */
@@ -64,7 +65,7 @@ export function buildDist(flavor: Flavor, scriptDir: string): void {
   const dist = join(pkgRoot, "dist");
   const read = makeReader(repoRoot);
 
-  const icons = JSON.parse(readFileSync(join(repoRoot, "src/data/icons.json"), "utf8")) as RawIcon[];
+  const icons = filterPackaged(JSON.parse(readFileSync(join(repoRoot, "src/data/icons.json"), "utf8")) as RawIcon[]);
   console.log(`Found ${icons.length} icons.`);
 
   // Wipe first so components for removed or renamed slugs never linger.

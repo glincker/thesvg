@@ -1,0 +1,8 @@
+{
+  "_note": "Maximum minified bytes of a browser bundle (react external) that imports exactly one thing. Raise on purpose, in review.",
+  "oneFlagComponent": 4096,
+  "oneFlagViaBarrel": 4096,
+  "rawSvgModule": 1024,
+  "localeHelper": 8192,
+  "searchSubpath": 300000
+}

@@ -7,6 +7,7 @@ import { createRequire } from "module";
 import { fileURLToPath } from "url";
 import path from "path";
 import { DEFAULT_LOOK } from "./ui.js";
+import { flagHintLines } from "./flag-hint.js";
 import { uiCategories, uiGet, uiLooks, uiSearch, uiUrl } from "./ui-tools.js";
 
 // --- Constants ---
@@ -32,6 +33,7 @@ interface RawIcon {
   dateAdded: string;
   collection: string;
   guidelines?: string;
+  collectionMeta?: { colors?: string[]; colorNames?: string[] };
 }
 
 interface IconEntry {
@@ -43,6 +45,9 @@ interface IconEntry {
   license: string;
   url?: string;
   aliases: string[];
+  /** Flags only: palette as "hex:share" entries and color families. */
+  colors?: string[];
+  colorNames?: string[];
 }
 
 interface SearchResult {
@@ -79,6 +84,7 @@ function loadIndex(): IconEntry[] {
     license: icon.license,
     url: icon.url,
     aliases: icon.aliases ?? [],
+    ...(icon.collectionMeta?.colors ? { colors: icon.collectionMeta.colors, colorNames: icon.collectionMeta.colorNames ?? [] } : {}),
   }));
 
   return indexCache;
@@ -114,13 +120,21 @@ function findIcon(slug: string): IconEntry | undefined {
 // --- Search ---
 
 export function searchIcons(query: string, limit = 20): SearchResult[] {
+  query = query.trim().replace(/^#(?=[0-9a-f]{3,6}$)/i, "");
   const fuse = getFuse();
   const results = fuse.search(query, { limit });
-  return results.map((r) => ({
-    slug: r.item.slug,
-    name: r.item.name,
-    variants: r.item.variants,
-    categories: r.item.categories,
+  const ordered = results.map((r) => r.item);
+  // Codes, numbers and emoji (DEU, 276, a flag emoji) are exact identifiers:
+  // fuzzy scoring buries them, so exact alias and slug hits go first.
+  const q = query.trim().toLowerCase();
+  const COLOR_WORDS = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "brown", "black", "white", "gray", "gold", "tricolor", "tricolour"];
+  const exact = q && !COLOR_WORDS.includes(q) ? loadIndex().filter((i) => i.slug === q || i.aliases.some((a) => a.toLowerCase() === q)) : [];
+  const merged = [...exact, ...ordered.filter((i) => !exact.includes(i))].slice(0, limit);
+  return merged.map((item) => ({
+    slug: item.slug,
+    name: item.name,
+    variants: item.variants,
+    categories: item.categories,
   }));
 }
 
@@ -194,7 +208,7 @@ server.tool(
       ];
 
       return {
-        content: [{ type: "text", text: lines.join("\n") }],
+        content: [{ type: "text", text: [...lines, ...flagHintLines(results.map((r) => r.slug))].join("\n") }],
       };
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);
@@ -277,6 +291,8 @@ server.tool(
           ? `**Categories**: ${icon.categories.join(", ")}`
           : null,
         `**Brand color**: #${icon.hex}`,
+        icon.colors ? `**Palette**: ${icon.colors.map((c) => c.replace(":", " (") + "%)").join(", ")}` : null,
+        icon.colorNames && icon.colorNames.length > 0 ? `**Color families**: ${icon.colorNames.join(", ")}` : null,
         `**Available variants**: ${icon.variants.join(", ")}`,
         icon.url ? `**Website**: ${icon.url}` : null,
         "",
@@ -286,7 +302,7 @@ server.tool(
       ].filter((line): line is string => line !== null);
 
       return {
-        content: [{ type: "text", text: lines.join("\n") }],
+        content: [{ type: "text", text: [...lines, ...flagHintLines([slug])].join("\n") }],
       };
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);
@@ -418,6 +434,7 @@ server.tool(
               "```markdown",
               `![${name}](${url})`,
               "```",
+              ...flagHintLines([slug]),
             ].join("\n"),
           },
         ],

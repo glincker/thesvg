@@ -144,6 +144,10 @@ Every icon is scored out of 100 when the set is built: grid fit (inside the live
 - The npm packages `@thesvg/ui-react`, `-vue`, `-svelte` and `-react-native` are built by one shared builder in `scripts/ui`. Do not copy a generator into a package.
 - Icons in site chrome use our own UI icons: `<UiGlyph name="arrow-right" />` from `@/components/ui-glyph`. Do not add Lucide or Phosphor imports. If an icon you need is missing, add it to a set file.
 
+## Flags
+
+Country and region flags are generated, not hand-edited. To add a missing flag or fix a wrong one, open a [missing or wrong flag issue](https://github.com/glincker/thesvg/issues/new?template=flag_fix.yml) with the source and its license, or send a PR that edits the source mapping in `scripts/flags/generate-flags.mjs` and reruns the generator. Accepted licenses are MIT, CC0, public domain with proof and Apache 2.0. The full guide, checklist and the rules about attribution (kept at package level, never inside the SVG files) are in [docs/flags-contributing.md](./docs/flags-contributing.md).
+
 ## Commit Convention
 
 We use [conventional commits](https://www.conventionalcommits.org/):

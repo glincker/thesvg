@@ -1,0 +1,44 @@
+name: Missing or wrong flag
+description: Report a missing, wrong or outdated country or region flag
+labels: ["flags"]
+title: "Flag: "
+
+body:
+  - type: input
+    id: flag
+    attributes:
+      label: Flag
+      description: Country or region, and the slug if it exists (for example flag-es-ct)
+      placeholder: e.g. Brittany, or flag-nl
+    validations:
+      required: true
+
+  - type: dropdown
+    id: problem
+    attributes:
+      label: What is wrong
+      options:
+        - Missing flag
+        - Wrong or outdated artwork
+        - Wrong name, alias or locale mapping
+        - Wrong color palette
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Source and license
+      description: |
+        Link to the SVG and to its license. Accepted: MIT, CC0, public domain (with proof, such as the
+        Wikimedia Commons file page), Apache 2.0. Not accepted: unclear license, traced or copyrighted
+        artwork, CC BY-SA. See docs/flags-contributing.md.
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: What should it look like, and what changed (a new official flag, a redesign, a rename)?

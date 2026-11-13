@@ -1,0 +1,4 @@
+{
+  "_note": "Collections that stay in the shared catalog (website, search, CLI, MCP, CDN) but are not built into the generic icon and component packages. Add the next specialty collection here, in one place.",
+  "excluded": ["flags"]
+}

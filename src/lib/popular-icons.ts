@@ -65,6 +65,11 @@ const POPULAR_AUTH_BADGES_SLUGS = [
   "steam-badge", "bitwarden-badge", "proton-badge",
 ];
 
+const POPULAR_FLAG_SLUGS = [
+  "flag-us", "flag-gb", "flag-de", "flag-fr", "flag-es", "flag-it",
+  "flag-jp", "flag-cn", "flag-in", "flag-br", "flag-gb-eng", "flag-es-ct",
+];
+
 const POPULAR_SLUGS_BY_COLLECTION: Record<CollectionId, string[]> = {
   brands: POPULAR_SLUGS,
   aws: POPULAR_AWS_SLUGS,
@@ -73,6 +78,7 @@ const POPULAR_SLUGS_BY_COLLECTION: Record<CollectionId, string[]> = {
   k8s: POPULAR_K8S_SLUGS,
   community: POPULAR_COMMUNITY_SLUGS,
   "auth-badges": POPULAR_AUTH_BADGES_SLUGS,
+  flags: POPULAR_FLAG_SLUGS,
 };
 
 export function getPopularSlugs(collection: CollectionId | null): string[] {

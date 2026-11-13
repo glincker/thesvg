@@ -7,7 +7,9 @@ import { fileURLToPath } from "node:url";
 const pkg = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const root = resolve(pkg, "../..");
 const dist = join(pkg, "dist");
-const registry = JSON.parse(readFileSync(join(root, "src/data/icons.json"), "utf8"));
+// Specialty collections (flags) ship in their own package; the list lives next to the other builders.
+const { excluded } = JSON.parse(readFileSync(join(root, "packages/icons/scripts/lib/excluded-collections.json"), "utf8"));
+const registry = JSON.parse(readFileSync(join(root, "src/data/icons.json"), "utf8")).filter((i) => !excluded.includes(i.collection));
 
 rmSync(dist, { recursive: true, force: true });
 const manifest = [];
