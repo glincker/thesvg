@@ -47,6 +47,10 @@ export function FlagPanel({ tile, similar, variant, onSelect, onClose }: Props) 
           <>
             <DialogHeader>
               <DialogTitle>{tile.name}</DialogTitle>
+              <a href={`/icon/${tile.slug}`} className="mt-1 inline-flex w-fit items-center gap-1 text-xs font-medium text-orange-500 underline-offset-2 hover:underline">
+                Open the {tile.name} flag page
+                <UiGlyph name="arrow-right" className="size-3" />
+              </a>
               <DialogDescription>
                 {[tile.native && tile.native !== tile.name ? tile.native : null, tile.iso, tile.alpha3, tile.numeric, tile.emoji].filter(Boolean).join(" · ")}
               </DialogDescription>
@@ -91,11 +95,10 @@ export function FlagPanel({ tile, similar, variant, onSelect, onClose }: Props) 
                   return (
                     <li key={c.hex}>
                       <button type="button" onClick={() => copy(d.hex, d.hex)} aria-label={`Copy ${d.hex}, ${c.share} percent of the flag`} className="flex w-full flex-col gap-1 rounded-lg border border-border/40 p-2 text-left text-[11px] outline-none hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring">
-                        <svg viewBox="0 0 100 28" className="h-7 w-full rounded" role="img" aria-label={`${d.hex} swatch`}>
+                        <svg viewBox="0 0 100 28" preserveAspectRatio="none" className="h-7 w-full rounded" role="img" aria-label={`${d.hex} swatch`}>
                           <rect width="100" height="28" fill={d.hex} />
-                          <text x="6" y="19" fontSize="12" fill={r.text}>{c.share}%</text>
                         </svg>
-                        <span className="font-mono">{d.hex}</span>
+                        <span className="flex items-baseline justify-between font-mono"><span>{d.hex}</span><span className="text-muted-foreground">{c.share}%</span></span>
                         <span className="text-muted-foreground">{d.rgb}</span>
                         <span className="text-muted-foreground">{d.hsl}</span>
                       </button>

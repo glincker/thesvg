@@ -7,6 +7,8 @@ import posthog from "posthog-js";
 import { compareDateDesc } from "@/lib/icon-dates";
 import type { Collection, IconEntry } from "@/lib/icons";
 import { COLLECTIONS_META } from "@/lib/collections-meta";
+import { IconRowsVisual } from "@/components/home-icon-rows";
+import { FlagsHeroVisual } from "@/components/flags/flags-hero-visual";
 import { getIconsBySlugMap, loadIconsManifest } from "@/lib/icons-manifest";
 import { IconCard } from "@/components/icons/icon-card";
 import { IconGrid } from "@/components/icons/icon-grid";
@@ -30,6 +32,13 @@ const POPULAR_AWS_SLUGS = getPopularSlugs("aws");
 const POPULAR_AZURE_SLUGS = getPopularSlugs("azure");
 const POPULAR_GCP_SLUGS = getPopularSlugs("gcp");
 const POPULAR_K8S_SLUGS = getPopularSlugs("k8s");
+// Package managers, runtimes and languages lead the developer-facing slides, ahead of the generic popular set.
+const DEV_SLUGS = [
+  "npm", "pnpm", "yarn", "bun", "deno", "nodejs", "typescript", "javascript", "python", "go", "rust", "java",
+  "php", "ruby", "swift", "kotlin", "react", "vue", "svelte", "angular", "nextjs", "vite", "docker", "tailwindcss",
+  "webpack", "esbuild", "babel", "eslint", "prettier", "github", "jsdelivr", "unpkg",
+];
+const DEV_FLOAT_SLUGS = [...DEV_SLUGS, ...POPULAR_SLUGS.filter((s) => !DEV_SLUGS.includes(s))];
 const POPULAR_FLAG_SLUGS = getPopularSlugs("flags");
 const POPULAR_COMMUNITY_SLUGS = getPopularSlugs("community");
 const POPULAR_AUTH_BADGES_SLUGS = getPopularSlugs("auth-badges");
@@ -43,6 +52,17 @@ for (const m of [...MENTIONS].sort((a, b) => Number(!!b.featured) - Number(!!a.f
     ADOPTERS.push({ slug: m.logo, label: `${m.source}, opens ${m.title}`, href: m.url });
   }
 }
+
+// Tile surface per collection, so each banner picks up its own brand colour.
+const ROW_TILE: Record<string, string> = {
+  brands: "border-border/40 bg-background/70 dark:border-white/10 dark:bg-white/[0.06]",
+  aws: "border-[#ff9900]/25 bg-[#ff9900]/10 dark:border-[#ff9900]/20 dark:bg-[#ff9900]/[0.07]",
+  azure: "border-[#0078d4]/25 bg-[#0078d4]/10 dark:border-[#0078d4]/20 dark:bg-[#0078d4]/[0.08]",
+  gcp: "border-[#4285f4]/25 bg-[#4285f4]/10 dark:border-[#4285f4]/20 dark:bg-[#4285f4]/[0.08]",
+  k8s: "border-[#326ce5]/25 bg-[#326ce5]/10 dark:border-[#326ce5]/20 dark:bg-[#326ce5]/[0.08]",
+  community: "border-violet-400/25 bg-violet-400/10 dark:border-violet-400/20 dark:bg-violet-400/[0.07]",
+  "auth-badges": "border-emerald-400/25 bg-emerald-400/10 dark:border-emerald-400/20 dark:bg-emerald-400/[0.07]",
+};
 
 interface Slide {
   badge: string;
@@ -59,28 +79,25 @@ interface Slide {
   collection: Collection;
   floatSlugs: string[];
   ui?: boolean;
+  /** Show the angled rows of flags on the right instead of scattered icons. */
+  flags?: boolean;
 }
 
-const PROOF_SLIDES: Slide[] = ADOPTERS.length
-  ? [
-      {
-        badge: "In the wild",
-        badgeIcon: Users,
-        title: "Used in real projects",
-        description: "Open source projects that pull their brand logos from thesvg.",
-        adopters: ADOPTERS,
-        cta: { label: "See all mentions", href: "/extensions/mentions" },
-        ctaSecondary: { label: "Browse Icons", href: "/" },
-        gradient: "from-violet-50/50 via-background to-violet-50/30 dark:from-violet-950/20 dark:via-background dark:to-violet-950/10",
-        accent: "border-violet-200/50 bg-violet-50/80 text-violet-700 dark:border-violet-500/20 dark:bg-violet-500/10 dark:text-violet-300",
-        blob: "bg-violet-400/10 dark:bg-violet-500/5",
-        collection: "brands" as const,
-        floatSlugs: ADOPTERS.map((a) => a.slug),
-      },
-    ]
-  : [];
-
 const ALL_SLIDES: Slide[] = [
+  {
+    badge: "New: Flags",
+    badgeIcon: Sparkles,
+    title: "Flags are here: 263 countries and regions",
+    description: "Every country plus England, Scotland, Catalonia and more. Three shapes each, one small package.",
+    cta: { label: "Browse flags", href: "/collection/flags" },
+    ctaSecondary: { label: "How to use", href: "/docs/flags" },
+    gradient: "from-sky-50/50 via-background to-orange-50/30 dark:from-sky-950/25 dark:via-background dark:to-orange-950/10",
+    accent: "border-sky-200/50 bg-sky-50/80 text-sky-700 dark:border-sky-500/20 dark:bg-sky-500/10 dark:text-sky-400",
+    blob: "bg-sky-400/10 dark:bg-sky-500/5",
+    collection: "brands" as const,
+    floatSlugs: [] as string[],
+    flags: true as const,
+  },
   {
     badge: "Open Source",
     badgeIcon: Sparkles,
@@ -95,7 +112,6 @@ const ALL_SLIDES: Slide[] = [
     collection: "brands" as const,
     floatSlugs: POPULAR_SLUGS,
   },
-  ...PROOF_SLIDES,
   {
     badge: "theSVG 4.0",
     badgeIcon: Sparkles,
@@ -121,7 +137,7 @@ const ALL_SLIDES: Slide[] = [
     accent: "border-blue-200/50 bg-blue-50/80 text-blue-700 dark:border-blue-500/20 dark:bg-blue-500/10 dark:text-blue-400",
     blob: "bg-blue-400/10 dark:bg-blue-500/5",
     collection: "brands" as const,
-    floatSlugs: POPULAR_SLUGS,
+    floatSlugs: DEV_FLOAT_SLUGS,
   },
   {
     badge: "Copy & Ship",
@@ -134,7 +150,7 @@ const ALL_SLIDES: Slide[] = [
     accent: "border-emerald-200/50 bg-emerald-50/80 text-emerald-700 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-400",
     blob: "bg-emerald-400/10 dark:bg-emerald-500/5",
     collection: "brands" as const,
-    floatSlugs: POPULAR_SLUGS,
+    floatSlugs: DEV_FLOAT_SLUGS,
   },
   {
     badge: "AWS Architecture",
@@ -246,12 +262,13 @@ const ALL_SLIDES: Slide[] = [
     title: "263 Country and Region Flags",
     description: "Every ISO 3166-1 country plus England, Scotland, Wales, Catalonia, the Canary Islands, the EU and the UN. Three shapes each: 4x3, square and circle.",
     cta: { label: "Browse Flags", href: "#popular" },
-    ctaSecondary: { label: "All Categories", href: "#categories" },
+    ctaSecondary: { label: "How to use", href: "/docs/flags" },
     gradient: "from-sky-50/50 via-background to-sky-50/30 dark:from-sky-950/20 dark:via-background dark:to-sky-950/10",
     accent: "border-sky-200/50 bg-sky-50/80 text-sky-700 dark:border-sky-500/20 dark:bg-sky-500/10 dark:text-sky-400",
     blob: "bg-sky-400/10 dark:bg-sky-500/5",
     collection: "flags" as const,
-    floatSlugs: POPULAR_FLAG_SLUGS,
+    floatSlugs: [] as string[],
+    flags: true as const,
   },
   {
     badge: "Community",
@@ -516,6 +533,26 @@ export function HomeHero({
     return result;
   }, [currentSlide, collectionSlides, fallbackSlide, iconsBySlug]);
 
+  // Collection slides show angled rows drawn from the whole collection (popular first), so the rows do not repeat.
+  const rowIcons = useMemo(() => {
+    const activeSlide = collectionSlides.length > 0
+      ? collectionSlides[currentSlide % collectionSlides.length]
+      : fallbackSlide;
+    const seen = new Set<string>();
+    const out: IconEntry[] = [];
+    for (const slug of activeSlide.floatSlugs) {
+      const entry = iconsBySlug.get(slug);
+      if (entry && !seen.has(slug)) { seen.add(slug); out.push(entry); }
+    }
+    for (const entry of icons) {
+      if (out.length >= 70) break;
+      if (entry.collection === activeSlide.collection && !seen.has(entry.slug)) { seen.add(entry.slug); out.push(entry); }
+    }
+    return out;
+  }, [currentSlide, collectionSlides, fallbackSlide, iconsBySlug, icons]);
+
+  const rowsMode = !slide.flags && !slide.ui && !slide.adopters && rowIcons.length > 0;
+
   // Predefined positions for floating icons (scattered, not grid). Timings
   // are baked in as Tailwind arbitrary-value classes (not inline styles)
   // since this is a small fixed set known at build time.
@@ -737,12 +774,27 @@ export function HomeHero({
               inner div holds the continuous float + resting dim opacity, so
               the two animations don't fight over the same CSS property. */}
           <div className="pointer-events-none absolute inset-0 hidden lg:block">
+            {slide.flags && (
+              <div key={`flags-${currentSlide}`} className="animate-float-in absolute -right-6 top-1/2 -translate-y-1/2">
+                <FlagsHeroVisual />
+              </div>
+            )}
             {slide.ui && (
               <div key={`ui-${currentSlide}`} className="animate-float-in absolute right-10 top-1/2 -translate-y-1/2 xl:right-16">
                 <UiHeroPreview />
               </div>
             )}
-            {floatingIcons.map((icon, i) => {
+            {rowsMode && (
+              <div key={`rows-${currentSlide}`} className="animate-float-in absolute -right-6 top-1/2 -translate-y-1/2">
+                <IconRowsVisual
+                  icons={rowIcons}
+                  tilt={currentSlide % 2 === 0 ? "left" : "right"}
+                  tileClass={ROW_TILE[slide.collection] ?? ROW_TILE.brands}
+                  plateClass={logoPlateClass}
+                />
+              </div>
+            )}
+            {(rowsMode ? [] : floatingIcons).map((icon, i) => {
               const pos = (slide.adopters ? PROOF_POSITIONS : FLOAT_POSITIONS)[i];
               const adopter = slide.adopters?.find((a) => a.slug === icon.slug);
               const tile = (

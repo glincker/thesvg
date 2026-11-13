@@ -6,6 +6,7 @@ import { Clock } from "@/components/own-icons";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import { getIconsBySlugMap, loadIconsManifest } from "@/lib/icons-manifest";
 import type { IconEntry } from "@/lib/icons";
+import iconTones from "@/data/icon-tones.json";
 
 interface MobileRecentsRowProps {
   /** Optional label shown above the row. Defaults to "Recent". */
@@ -79,7 +80,7 @@ export function MobileRecentsRow({
               className="flex w-16 flex-col items-center gap-1 rounded-xl border border-border/30 bg-card/60 p-2"
               aria-label={icon.title}
             >
-              <span className="icon-preview-bg flex h-10 w-10 items-center justify-center rounded-lg">
+              <span data-tone={(iconTones as Record<string, string>)[icon.slug] ?? "neutral"} className="icon-preview-bg relative isolate flex h-10 w-10 items-center justify-center rounded-lg">
                 <img
                   src={icon.variants.default}
                   alt=""

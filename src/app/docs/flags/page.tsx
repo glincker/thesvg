@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { DocsPageFooter } from "@/components/docs/docs-page-footer";
 import { DocsAskAi } from "@/components/docs/docs-ask-ai";
 import { getCollectionCount } from "@/lib/icons";
-import { FlagsBrowser } from "@/components/flags/flags-browser";
-import { getFlagTiles } from "@/lib/flags-tiles";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Flags",
@@ -71,12 +70,17 @@ export default function FlagsDocsPage() {
           </div>
         ))}
       </div>
-      <section aria-labelledby="flags-browse" className="mt-10">
-        <h2 id="flags-browse" className="mb-3 text-lg font-semibold">Try it</h2>
-        <p className="mb-4 text-xs text-muted-foreground">
-          Filter by region, color or locale, switch shape and size, and open a flag for copy-paste snippets. Your choices stay in this browser only. Arrow keys move between flags, Enter opens details, S stars one.
+      <section aria-labelledby="flags-usage" className="mt-10">
+        <h2 id="flags-usage" className="mb-3 text-lg font-semibold">Usage guide</h2>
+        <ol className="space-y-4 text-sm text-muted-foreground">
+          <li><span className="font-medium text-foreground">1. Pick a flag.</span> Search by name, ISO code, emoji or locale in <Link className="underline" href="/collection/flags">the flags collection</Link>. Each flag has its own page with copy and download buttons.</li>
+          <li><span className="font-medium text-foreground">2. Use it without installing.</span> Link the file from the CDN: <code>https://cdn.jsdelivr.net/npm/@thesvg/flags/dist/svg/4x3/us.svg</code>, or use <code>1x1</code> or <code>circle</code> in place of <code>4x3</code> for the other shapes.</li>
+          <li><span className="font-medium text-foreground">3. Or install the package.</span> <code>npm i @thesvg/flags</code>, then import a single flag from <code>@thesvg/flags/react/us</code> so only that flag is bundled.</li>
+          <li><span className="font-medium text-foreground">4. Map a locale to a flag.</span> <code>getFlagForLocale(&quot;pt-BR&quot;)</code> returns Brazil for decoration. Always show the language name beside it.</li>
+        </ol>
+        <p className="mt-4 text-xs text-muted-foreground">
+          Want to browse and try shapes, sizes and colors? <Link className="underline" href="/collection/flags">Open the flags browser</Link>.
         </p>
-        <FlagsBrowser tiles={getFlagTiles()} syncUrl={false} />
       </section>
       <section aria-labelledby="flags-credits" className="mt-10">
         <h2 id="flags-credits" className="mb-2 text-lg font-semibold">Credits and licenses</h2>

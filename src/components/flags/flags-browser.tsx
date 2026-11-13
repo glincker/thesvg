@@ -18,6 +18,9 @@ type Prefs = Pick<BrowserState, "variant" | "size" | "region" | "sort">;
 const chip = (active: boolean): string =>
   cn("rounded-full border px-3 py-1 text-xs outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring motion-reduce:transition-none", active ? "border-foreground bg-foreground text-background" : "border-border/60 hover:bg-muted");
 
+const seg = (active: boolean): string =>
+  cn("rounded-md px-2.5 py-1 text-xs outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring motion-reduce:transition-none", active ? "bg-foreground text-background" : "text-muted-foreground hover:text-foreground");
+
 interface Props {
   tiles: FlagTile[];
   /** Keep the URL in step with the filters. Off when embedded in a docs page. */
@@ -27,6 +30,7 @@ interface Props {
 export function FlagsBrowser({ tiles, syncUrl = true }: Props) {
   const [state, setState] = useState<BrowserState>(DEFAULT_STATE);
   const [ready, setReady] = useState(false);
+  const [colorsOpen, setColorsOpen] = useState(false);
   const [aliases, setAliases] = useState<Record<string, string[]> | null>(null);
   const [recent, setRecent] = useState<string[]>([]);
   const [starred, setStarred] = useState<string[]>([]);
@@ -104,6 +108,13 @@ export function FlagsBrowser({ tiles, syncUrl = true }: Props) {
     else if (e.key === "Home") next = 0;
     else if (e.key === "End") next = results.length - 1;
     else if (e.key.toLowerCase() === "s" && !e.metaKey && !e.ctrlKey) { toggleStar(code); e.preventDefault(); return; }
+    else if (!e.metaKey && !e.ctrlKey && !e.altKey && ["c", "d", "q"].includes(e.key.toLowerCase())) {
+      // Copy, download and quick view stay out of the tab order, so each has a key on the focused flag.
+      const label = { c: "Copy", d: "Download", q: "Quick view" }[e.key.toLowerCase() as "c" | "d" | "q"];
+      target.closest("li")?.querySelector<HTMLElement>(`[aria-label^="${label}"]`)?.click();
+      e.preventDefault();
+      return;
+    }
     else return;
     e.preventDefault();
     const dest = results[Math.min(results.length - 1, Math.max(0, next))];
@@ -132,6 +143,8 @@ export function FlagsBrowser({ tiles, syncUrl = true }: Props) {
     );
   };
 
+  const colorCount = state.colors.length + (state.near !== "" ? 1 : 0);
+  const colorsShown = colorsOpen || colorCount > 0;
   const filtersActive = state.q !== "" || state.region !== "all" || state.colors.length > 0 || state.near !== "";
 
   return (
@@ -149,57 +162,73 @@ export function FlagsBrowser({ tiles, syncUrl = true }: Props) {
       {state.view === "languages" ? <LanguagesMode variant={state.variant} tiles={tiles} /> : (
         <>
           <div className="mb-4 flex flex-col gap-3">
-            <div className="relative">
-              <UiGlyph name="search" className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
-              <Input
-                type="search"
-                value={state.q}
-                onFocus={loadAliases}
-                onChange={(e) => { loadAliases(); update({ q: e.target.value }); }}
-                placeholder="Search by name, native name, ISO code, emoji or locale"
-                aria-label="Search flags"
-                className="pl-9"
-              />
-            </div>
-
-            <div role="group" aria-label="Region" className="flex flex-wrap gap-2">
-              <button type="button" aria-pressed={state.region === "all"} onClick={() => update({ region: "all" }, "push")} className={chip(state.region === "all")}>All</button>
-              {REGIONS.map((r) => (
-                <button key={r.id} type="button" aria-pressed={state.region === r.id} onClick={() => update({ region: r.id }, "push")} className={chip(state.region === r.id)}>{r.label}</button>
-              ))}
-            </div>
-
-            <div role="group" aria-label="Color" className="flex flex-wrap items-center gap-2">
-              {COLOR_FAMILIES.map((c) => (
-                <button key={c} type="button" aria-pressed={state.colors.includes(c)} onClick={() => update({ colors: state.colors.includes(c) ? state.colors.filter((x) => x !== c) : [...state.colors, c] })} className={chip(state.colors.includes(c))}>{c}</button>
-              ))}
-              <button type="button" aria-pressed={state.mode === "and"} onClick={() => update({ mode: state.mode === "and" ? "or" : "and" })} className={chip(state.mode === "and")} title="Match all selected colors instead of any">
-                {state.mode === "and" ? "All colors" : "Any color"}
+            <div className="flex items-center gap-2">
+              <div className="relative min-w-0 flex-1">
+                <UiGlyph name="search" className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+                <Input
+                  type="search"
+                  value={state.q}
+                  onFocus={loadAliases}
+                  onChange={(e) => { loadAliases(); update({ q: e.target.value }); }}
+                  placeholder="Search by name, native name, ISO code, emoji or locale"
+                  aria-label="Search flags"
+                  className="pl-9"
+                />
+              </div>
+              <button
+                type="button"
+                aria-expanded={colorsShown}
+                aria-controls="flag-color-filters"
+                onClick={() => setColorsOpen((o) => !o)}
+                className={cn(seg(false), "flex h-9 shrink-0 items-center gap-1.5 rounded-lg border border-border px-3")}
+              >
+                Colors
+                {colorCount > 0 ? <span className="rounded-full bg-foreground px-1.5 text-[11px] leading-5 text-background">{colorCount}</span> : null}
               </button>
-              <label className="flex items-center gap-1 text-xs">
-                Near hex
-                <Input value={state.near} onChange={(e) => update({ near: isHex(e.target.value) ? e.target.value.replace(/^#/, "").toLowerCase() : e.target.value.slice(0, 7) })} placeholder="ed2939" aria-label="Contains a color near this hex" className="h-7 w-24 font-mono text-xs" />
-              </label>
-              <label className="flex items-center gap-1 text-xs">
-                Tolerance
-                <input type="range" min={5} max={120} value={state.tol} onChange={(e) => update({ tol: Number(e.target.value) })} aria-label="Color tolerance" className="w-24" />
-              </label>
             </div>
 
-            <div className="flex flex-wrap items-center gap-4 text-xs">
-              <div role="radiogroup" aria-label="Shape" className="flex gap-1">
+            {colorsShown ? (
+              <div id="flag-color-filters" role="group" aria-label="Color" className="flex flex-wrap items-center gap-2 rounded-xl border border-border/50 bg-card/30 p-3">
+                {COLOR_FAMILIES.map((c) => (
+                  <button key={c} type="button" aria-pressed={state.colors.includes(c)} onClick={() => update({ colors: state.colors.includes(c) ? state.colors.filter((x) => x !== c) : [...state.colors, c] })} className={chip(state.colors.includes(c))}>{c}</button>
+                ))}
+                <button type="button" aria-pressed={state.mode === "and"} onClick={() => update({ mode: state.mode === "and" ? "or" : "and" })} className={chip(state.mode === "and")} title="Match all selected colors, or any of them">
+                  {state.mode === "and" ? "All colors" : "Any color"}
+                </button>
+                <label className="flex items-center gap-1 text-xs">
+                  Near hex
+                  <Input value={state.near} onChange={(e) => update({ near: isHex(e.target.value) ? e.target.value.replace(/^#/, "").toLowerCase() : e.target.value.slice(0, 7) })} placeholder="ed2939" aria-label="Near hex color" className="h-8 w-24 text-xs" />
+                </label>
+                {state.near !== "" ? (
+                  <label className="flex items-center gap-1 text-xs">
+                    Tolerance
+                    <input type="range" min={5} max={120} value={state.tol} onChange={(e) => update({ tol: Number(e.target.value) })} aria-label="Color tolerance" className="w-24" />
+                  </label>
+                ) : null}
+              </div>
+            ) : null}
+
+            <div role="group" aria-label="Region" className="-mx-1 flex gap-1.5 overflow-x-auto px-1 pb-1">
+              <button type="button" aria-pressed={state.region === "all"} onClick={() => update({ region: "all" }, "push")} className={cn(chip(state.region === "all"), "shrink-0")}>All</button>
+              {REGIONS.map((r) => (
+                <button key={r.id} type="button" aria-pressed={state.region === r.id} onClick={() => update({ region: r.id }, "push")} className={cn(chip(state.region === r.id), "shrink-0")}>{r.label}</button>
+              ))}
+            </div>
+
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs">
+              <div role="radiogroup" aria-label="Shape" className="inline-flex rounded-lg border border-border bg-muted/30 p-0.5">
                 {(["4x3", "square", "circle"] as FlagVariantKey[]).map((v) => (
-                  <button key={v} type="button" role="radio" aria-checked={state.variant === v} onClick={() => update({ variant: v })} className={chip(state.variant === v)}>{v === "4x3" ? "4x3" : v === "square" ? "Square" : "Circle"}</button>
+                  <button key={v} type="button" role="radio" aria-checked={state.variant === v} onClick={() => update({ variant: v })} className={seg(state.variant === v)}>{v === "4x3" ? "4x3" : v === "square" ? "Square" : "Circle"}</button>
                 ))}
               </div>
-              <div role="radiogroup" aria-label="Size" className="flex gap-1">
-                {(Object.keys(FLAG_SIZES) as FlagSize[]).map((s) => (
-                  <button key={s} type="button" role="radio" aria-checked={state.size === s} onClick={() => update({ size: s })} className={chip(state.size === s)}>{s.toUpperCase()}</button>
+              <div role="radiogroup" aria-label="Size" className="inline-flex rounded-lg border border-border bg-muted/30 p-0.5">
+                {(Object.keys(FLAG_SIZES) as FlagSize[]).map((sz) => (
+                  <button key={sz} type="button" role="radio" aria-checked={state.size === sz} onClick={() => update({ size: sz })} className={seg(state.size === sz)}>{sz.toUpperCase()}</button>
                 ))}
               </div>
-              <label className="flex items-center gap-2">
+              <label className="flex items-center gap-2 text-muted-foreground">
                 Sort
-                <select value={state.sort} onChange={(e) => update({ sort: e.target.value as SortKey })} className="h-8 rounded-lg border border-border bg-background px-2 text-xs">
+                <select value={state.sort} onChange={(e) => update({ sort: e.target.value as SortKey })} className="h-8 rounded-lg border border-border bg-background px-2 text-xs text-foreground">
                   <option value="name">A to Z</option>
                   <option value="region">By region</option>
                   <option value="iso">By ISO code</option>
@@ -234,7 +263,7 @@ export function FlagsBrowser({ tiles, syncUrl = true }: Props) {
               ))}
             </ul>
           )}
-          <p className="mt-3 text-[11px] text-muted-foreground">Arrow keys move between flags, Enter opens details, S stars the focused flag.</p>
+          <p className="mt-3 text-[11px] text-muted-foreground">Arrow keys move between flags, Enter opens the flag page, S stars the focused flag, C copies its SVG, D downloads it and Q opens a quick view.</p>
         </>
       )}
 

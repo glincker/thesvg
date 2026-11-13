@@ -13,6 +13,9 @@
       <guid isPermaLink="true">https://thesvg.org/blog/country-flags</guid>
       <description>Every ISO country plus regional flags like England, Catalonia and the EU, each as 4x3, square and circle SVG, in a separate @thesvg/flags package with a locale helper, color search and a browser built for finding the right one.</description>
       <pubDate>Thu, 12 Nov 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://thesvg.org/blog/country-flags-cover.png" length="144360" type="image/png"/>
+      <media:content url="https://thesvg.org/blog/country-flags-cover.png" medium="image" type="image/png" width="1200" height="630"/>
+      <media:thumbnail url="https://thesvg.org/blog/country-flags-cover.png" width="1200" height="630"/>
             <author>team@thesvg.org (theSVG Team)</author>
       <category>release</category>
       <category>launch</category>

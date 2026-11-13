@@ -8,6 +8,7 @@ import { UiGlyph } from "@/components/ui-glyph";
 import { LogoMorph, ModeSwitch } from "@/components/ui-icons/mode-switch";
 import { PackagesMenu } from "@/components/packages-menu";
 import { SearchGroups } from "@/components/search/search-groups";
+import { NavFlagsPill } from "@/components/nav-flags-pill";
 import { GLYPHS } from "@/lib/ui-icons/glyphs";
 import { rankTiered } from "@/lib/ui-icons/search";
 import { searchableOf } from "@/lib/ui-icons/searchable";
@@ -168,22 +169,26 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
   const {
     results: suggestions,
     total: totalMatches,
+    flags: flagHits,
+    flagTotal,
     isLoading: searchLoading,
     error: searchError,
-  } = useIconSearch({ query, source: "header", limit: pathname.startsWith("/ui") ? 4 : 6 });
+  } = useIconSearch({ query, source: "header", limit: pathname.startsWith("/ui") ? 4 : 7, splitFlags: true, flagLimit: 4 });
   const [recentViewedIcons, setRecentViewedIcons] = useState<IconEntry[]>([]);
   const hasQuery = query.trim().length >= 2;
   const docsMatches = useMemo(() => searchDocs(query), [query]);
   // The page lists every result, so on the UI pages the modal is a jump list of the best few. Elsewhere it shows a few more and links to all.
   const uiRanked = useMemo(() => (hasQuery ? rankTiered(query.trim().toLowerCase(), GLYPHS, searchableOf) : { best: [], related: [] }), [hasQuery, query]);
   const uiAll = useMemo(() => [...uiRanked.best, ...uiRanked.related], [uiRanked]);
-  const uiShown = (uiRanked.best.length > 0 ? uiRanked.best : uiAll).slice(0, pathname.startsWith("/ui") ? 4 : 6);
+  const uiShown = (uiRanked.best.length > 0 ? uiRanked.best : uiAll).slice(0, pathname.startsWith("/ui") ? 4 : 3);
   // One flat list in on-screen order (current section first) so the arrow keys walk both groups.
   const flat = useMemo(() => {
     const b = suggestions.map((icon) => ({ kind: "brand" as const, slug: icon.slug }));
     const u = uiShown.map((g) => ({ kind: "ui" as const, slug: g.slug }));
-    return pathname.startsWith("/ui") ? [...u, ...b] : [...b, ...u];
-  }, [suggestions, uiShown, pathname]);
+    // Flags always come last, so they never move brand icons down the arrow-key order.
+    const f = flagHits.map((icon) => ({ kind: "brand" as const, slug: icon.slug }));
+    return pathname.startsWith("/ui") ? [...u, ...b, ...f] : [...b, ...u, ...f];
+  }, [suggestions, uiShown, flagHits, pathname]);
   const showDropdown = focused;
 
   // Keep the dropdown mounted briefly after showDropdown flips false so it
@@ -248,6 +253,14 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
 
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
+      // Cmd or Ctrl+K focuses this search box, the one the shortcut hint sits in; the palette is only the fallback.
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k" && inputRef.current && inputRef.current.offsetParent !== null) {
+        e.preventDefault();
+        inputRef.current.focus();
+        inputRef.current.select();
+        setFocused(true);
+        return;
+      }
       if (e.key === "Escape") {
         inputRef.current?.blur();
         setFocused(false);
@@ -356,6 +369,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
               const href = `/collection/${meta.id}`;
               const isActive = activeCollection === meta.id;
               const Icon = meta.icon;
+              if (meta.id === "flags") return <NavFlagsPill key={meta.id} active={isActive} label={meta.shortLabel} />;
               return (
                 <Link
                   key={meta.id}
@@ -412,6 +426,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
               <UiGlyph name="search" className="absolute top-1/2 left-3 h-4.5 w-4.5 -translate-y-1/2 text-muted-foreground" />
               <input
                 ref={inputRef}
+                data-global-search
                 type="text"
                 value={query}
                 onChange={(e) => handleSearchChange(e.target.value)}
@@ -469,6 +484,8 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                     primary={isUi ? "ui" : "brand"}
                     brands={suggestions}
                     brandTotal={totalMatches}
+                    flags={flagHits}
+                    flagTotal={flagTotal}
                     uiGlyphs={uiShown}
                     uiTotal={uiAll.length}
                     query={query}
@@ -482,11 +499,11 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                     onClose={() => setFocused(false)}
                   />
                   {docsMatches.length > 0 && (
-                    <div className="border-t border-border/30 px-2 py-1.5 dark:border-white/[0.04]">
-                      <p className="px-2 py-1 text-[10px] font-medium uppercase tracking-wider text-muted-foreground/50">
+                    <div className="mx-2 mb-2 mt-1 rounded-2xl border border-border/40 bg-muted/25 p-1.5 dark:border-white/[0.07] dark:bg-white/[0.025]">
+                      <p className="px-2 py-1 text-[0.75rem] font-medium uppercase tracking-wider text-muted-foreground/60">
                         Docs
                       </p>
-                      {docsMatches.map((entry) => (
+                      {docsMatches.slice(0, 3).map((entry) => (
                         <Link
                           key={entry.url}
                           href={entry.url}

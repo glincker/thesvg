@@ -34,6 +34,8 @@ import { IconLinksRow } from "@/components/icons/detail/icon-links-row";
 import { FamilyStrip } from "@/components/icons/detail/family-strip";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import { IconFeedback } from "@/components/icons/detail/icon-feedback";
+import iconTones from "@/data/icon-tones.json";
+import type { IconTone } from "@/lib/icon-tone";
 
 // The preview already invites interaction with hover:scale-105, so a click
 // must do something: copy the SVG markup with a visible confirmation. Kept as
@@ -131,6 +133,8 @@ interface IconDetailPageProps {
   lineageIcon?: IconEntry | null;
   /** Brand <-> auth-badge counterpart, resolved server-side. */
   badgeCounterpart?: IconEntry | null;
+  /** Extra content under the title and slug (the flag palette on flag pages). */
+  headerExtra?: React.ReactNode;
 }
 
 export function IconDetailPage({
@@ -142,6 +146,7 @@ export function IconDetailPage({
   versionCounterpartIsNewer,
   lineageIcon = null,
   badgeCounterpart = null,
+  headerExtra,
 }: IconDetailPageProps) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -245,6 +250,9 @@ export function IconDetailPage({
   }, [currentPath]);
 
   const primaryCategory = icon.categories[0] ?? null;
+  // Near-black and near-white marks get a plate so they stay visible. The tile shows the default artwork, so the
+  // tone applies whenever that variant is selected; the Light and Dark variants are made for their own surface.
+  const previewTone: IconTone = activeVariant === "default" ? ((iconTones as Record<string, IconTone>)[icon.slug] ?? "neutral") : "neutral";
   const previewTint = useMemo(() => brandGlowColor(icon.hex), [icon.hex]);
 
   return (
@@ -257,6 +265,7 @@ export function IconDetailPage({
       >
         <Link
           href="/"
+          aria-label="Home"
           className="flex items-center gap-1 transition-colors hover:text-foreground"
         >
           <Home className="h-3.5 w-3.5" />
@@ -288,8 +297,10 @@ export function IconDetailPage({
               runtime from each icon's own hex, one of thousands of distinct
               values, so it cannot be expressed as a static utility class. */}
           <div
+            data-tone={previewTone}
+            data-size="lg"
             className={cn(
-              "icon-preview-bg relative flex items-center justify-center rounded-2xl p-16 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg",
+              "icon-preview-bg relative isolate flex items-center justify-center rounded-2xl p-16 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg",
               previewTint && "icon-preview-bg--tinted"
             )}
             style={
@@ -541,6 +552,7 @@ export function IconDetailPage({
               <p className="mt-0.5 font-mono text-xs text-muted-foreground">
                 {icon.slug}
               </p>
+              {headerExtra}
               <div className="mt-2 flex flex-wrap items-center gap-1.5">
                 {versionCounterpartSlug && versionCounterpartYear && (
                   <Link
@@ -708,116 +720,81 @@ export function IconDetailPage({
         </div>
       </div>
 
-      {/* SEO content section - server-rendered unique text for Google */}
-      <section className="mt-10 rounded-xl border border-border/40 bg-card/30 p-6 dark:border-white/[0.04] dark:bg-white/[0.01]">
-        <h2 className="mb-3 text-sm font-semibold text-foreground">
-          About {icon.title} Icon
-        </h2>
-        <div className="space-y-2 text-xs leading-relaxed text-muted-foreground">
-          <p>
-            The {icon.title} SVG icon is available for free download on theSVG.
-            {variants.length > 1
-              ? ` This icon comes in ${variants.length} variants: ${variants.map(([name]) => (name === "default" ? "color" : name)).join(", ")}.`
-              : ""}
-            {icon.categories.length > 0
-              ? ` Categorized under ${icon.categories.join(", ")}.`
-              : ""}
-          </p>
-          <p>
-            Use this icon in your projects with React, Vue, Svelte, or plain
-            HTML. Available via npm (
-            <code className="rounded bg-muted px-1 py-0.5 font-mono text-[10px]">
-              @thesvg/react
-            </code>
-            ), CLI (
-            <code className="rounded bg-muted px-1 py-0.5 font-mono text-[10px]">
-              npx @thesvg/cli add {icon.slug}
-            </code>
-            ), or CDN (
-            <code className="rounded bg-muted px-1 py-0.5 font-mono text-[10px]">
-              cdn.jsdelivr.net/npm/@thesvg/icons/icons/{icon.slug}.svg
-            </code>
-            ).
-          </p>
-          {icon.collection !== "brands" && (
-            <p>
-              Part of the{" "}
-              {icon.collection === "aws"
-                ? "AWS Architecture"
-                : icon.collection === "azure"
-                  ? "Microsoft Azure"
-                  : icon.collection === "gcp"
-                    ? "Google Cloud Platform"
-                    : icon.collection}{" "}
-              icon collection on theSVG.
-              {icon.collectionMeta?.type === "service"
-                ? " This is a service-level icon used in architecture diagrams and documentation."
-                : ""}
-            </p>
-          )}
-          <p>
-            License: {icon.license}.{" "}
-            {icon.license === "Trademark"
-              ? "Provided for identification, editorial, and reference use. Do not modify the mark or imply endorsement. See the brand owner's guidelines before use."
-              : "Free for personal and commercial use."}
-            {icon.hex && icon.hex !== "000"
-              ? ` Brand color: #${icon.hex}.`
-              : ""}
-          </p>
-        </div>
-
-        {/* Quick usage reference - crawlable text */}
-        <details className="mt-4">
-          <summary className="cursor-pointer text-xs font-medium text-muted-foreground hover:text-foreground">
-            Quick usage reference
-          </summary>
-          <div className="mt-2 space-y-1.5 text-[11px] text-muted-foreground">
-            <p>
-              <strong>React:</strong>{" "}
-              <code className="rounded bg-muted px-1 py-0.5 font-mono">{`import { ${icon.title.replace(/[^a-zA-Z0-9]/g, "")}Icon } from "@thesvg/react"`}</code>
-            </p>
-            <p>
-              <strong>HTML:</strong>{" "}
-              <code className="rounded bg-muted px-1 py-0.5 font-mono">{`<img src="https://cdn.jsdelivr.net/npm/@thesvg/icons/icons/${icon.slug}.svg" alt="${icon.title}" />`}</code>
-            </p>
-            <p>
-              <strong>CLI:</strong>{" "}
-              <code className="rounded bg-muted px-1 py-0.5 font-mono">{`npx @thesvg/cli add ${icon.slug}`}</code>
-            </p>
+      {/* About: crawlable text, a compact facts list and a quiet trademark note, all in one card */}
+      <section className="mt-10 rounded-2xl border border-border/40 bg-card/30 dark:border-white/[0.06] dark:bg-white/[0.02]">
+        <div className="grid gap-6 p-5 sm:p-6 md:grid-cols-[minmax(0,1fr)_16rem]">
+          <div>
+            <h2 className="mb-2 text-sm font-semibold text-foreground">About {icon.title} Icon</h2>
+            <div className="space-y-2 text-sm leading-relaxed text-muted-foreground">
+              <p>
+                The {icon.title} SVG icon is free to download on theSVG.
+                {variants.length > 1
+                  ? ` It comes in ${variants.length} variants: ${variants.map(([name]) => (name === "default" ? "color" : name)).join(", ")}.`
+                  : ""}
+                {icon.categories.length > 0 ? ` Filed under ${icon.categories.join(", ")}.` : ""}
+              </p>
+              <p>
+                Use it with React, Vue, Svelte or plain HTML: npm (<code className="rounded bg-muted px-1 py-0.5 font-mono text-xs">@thesvg/react</code>), the CLI (<code className="rounded bg-muted px-1 py-0.5 font-mono text-xs">npx @thesvg/cli add {icon.slug}</code>) or the CDN.
+              </p>
+              {icon.collection !== "brands" && (
+                <p>
+                  Part of the{" "}
+                  {icon.collection === "aws"
+                    ? "AWS Architecture"
+                    : icon.collection === "azure"
+                      ? "Microsoft Azure"
+                      : icon.collection === "gcp"
+                        ? "Google Cloud Platform"
+                        : icon.collection}{" "}
+                  collection.
+                  {icon.collectionMeta?.type === "service" ? " A service-level icon for architecture diagrams and documentation." : ""}
+                </p>
+              )}
+            </div>
           </div>
-        </details>
-      </section>
-
-      {/* Trademark disclaimer */}
-      <p className="mt-8 text-center text-xs leading-relaxed text-muted-foreground">
-        &ldquo;{icon.title}&rdquo; is a trademark of its respective owner. This
-        icon is provided for identification purposes only.{" "}
-        {icon.url &&
-          (() => {
-            try {
-              const urlObj = new URL(icon.url);
-              if (urlObj.protocol !== "http:" && urlObj.protocol !== "https:") {
+          <dl className="grid h-fit grid-cols-[auto_1fr] gap-x-4 gap-y-2 rounded-xl border border-border/40 bg-background/40 p-4 text-xs dark:border-white/[0.06]">
+            <dt className="text-muted-foreground">License</dt>
+            <dd className="text-right font-medium text-foreground">{icon.license}</dd>
+            <dt className="text-muted-foreground">Variants</dt>
+            <dd className="text-right font-medium text-foreground">{variants.length}</dd>
+            {icon.hex && icon.hex !== "000" ? (
+              <>
+                <dt className="text-muted-foreground">Brand color</dt>
+                <dd className="flex items-center justify-end gap-1.5 font-mono font-medium text-foreground">
+                  <span className="size-3 rounded-full ring-1 ring-border/40" style={{ backgroundColor: `#${icon.hex}` }} />
+                  #{icon.hex}
+                </dd>
+              </>
+            ) : null}
+            <dt className="text-muted-foreground">Use</dt>
+            <dd className="text-right text-foreground">
+              {icon.license === "Trademark" ? "Identification and reference" : "Personal and commercial"}
+            </dd>
+          </dl>
+        </div>
+        <p className="border-t border-border/40 px-5 py-3 text-xs leading-relaxed text-muted-foreground dark:border-white/[0.06] sm:px-6">
+          &ldquo;{icon.title}&rdquo; is a trademark of its respective owner and is shown for identification only.
+          {icon.license === "Trademark" ? " Do not modify the mark or imply endorsement." : ""}{" "}
+          {icon.url &&
+            (() => {
+              try {
+                const urlObj = new URL(icon.url);
+                if (urlObj.protocol !== "http:" && urlObj.protocol !== "https:") return null;
+                return (
+                  <>
+                    Official brand assets:{" "}
+                    <a href={withUtm(urlObj.toString(), "icon_detail")} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-foreground">
+                      {urlObj.hostname.replace(/^www\./, "")}
+                    </a>
+                    .
+                  </>
+                );
+              } catch {
                 return null;
               }
-              return (
-                <>
-                  For official brand assets, visit{" "}
-                  <a
-                    href={withUtm(urlObj.toString(), "icon_detail")}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline underline-offset-2 hover:text-muted-foreground"
-                  >
-                    {urlObj.hostname.replace(/^www\./, "")}
-                  </a>
-                  .
-                </>
-              );
-            } catch {
-              return null;
-            }
-          })()}
-      </p>
+            })()}
+        </p>
+      </section>
     </div>
   );
 }

@@ -86,11 +86,21 @@ function escapeHtml(str: string): string {
 }
 
 function processInline(text: string): string {
-  return escapeHtml(text)
+  // Code spans are set aside first: their HTML carries bracketed class names that the link
+  // step below would otherwise match across ("[11px] ... [0.06]").
+  const codeSpans: string[] = [];
+  const held = escapeHtml(text).replace(/`(.+?)`/g, (_match, code: string) => {
+    codeSpans.push(`<code class="rounded bg-muted px-1.5 py-0.5 font-mono text-[11px] dark:bg-white/[0.06]">${code}</code>`);
+    return `\u0000${codeSpans.length - 1}\u0000`;
+  });
+  const html = held
     .replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold text-foreground">$1</strong>')
-    .replace(/`(.+?)`/g, (_match, code: string) => {
-      return `<code class="rounded bg-muted px-1.5 py-0.5 font-mono text-[11px] dark:bg-white/[0.06]">${code}</code>`;
-    })
+    // Same-site images only: a path starting with a single slash, never a full URL.
+    .replace(
+      /!\[(.*?)\]\((\/(?!\/)[^\s)]*)\)/g,
+      (_match, alt: string, src: string) =>
+        `<img src="${src}" alt="${alt}" width="32" height="32" loading="lazy" decoding="async" class="mr-2 inline-block size-8 align-middle" />`,
+    )
     .replace(
       /\[(.+?)\]\((.+?)\)/g,
       (_match, label: string, href: string) => {
@@ -131,6 +141,7 @@ function processInline(text: string): string {
         return `<a href="${taggedHref}" class="text-orange-500 underline underline-offset-2 hover:text-orange-400"${extraAttrs}>${label}</a>`;
       }
     );
+  return html.replace(/\u0000(\d+)\u0000/g, (_match, i: string) => codeSpans[Number(i)] ?? "");
 }
 
 function renderMarkdown(body: string): string {

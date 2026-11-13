@@ -161,9 +161,12 @@ export function getFormattedIconCount(): string {
   return roundDownToHundred(icons.length).toLocaleString("en-US");
 }
 
+/** Specialty collections that ship hundreds of entries on one date stay out of the main feed, or they would fill it. */
+const FEED_EXCLUDED_COLLECTIONS = new Set(["flags"]);
+
 export function getRecentlyAddedIcons(limit = 12): IconEntry[] {
   return icons
-    .filter((i) => i.dateAdded)
+    .filter((i) => i.dateAdded && !FEED_EXCLUDED_COLLECTIONS.has(i.collection))
     .sort((a, b) => compareDateDesc(a.dateAdded, b.dateAdded))
     .slice(0, limit);
 }

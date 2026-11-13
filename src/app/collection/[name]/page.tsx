@@ -124,14 +124,22 @@ export default async function CollectionPage({ params }: PageProps) {
     return (
       <>
         <JsonLd data={jsonLd} />
-        <main className="mx-auto w-full max-w-6xl px-4 py-8">
-          <h1 className="text-2xl font-bold">{meta.label}</h1>
-          <p className="mb-6 mt-1 max-w-2xl text-sm text-muted-foreground">
-            {collectionItemCount} country and region flags in three shapes. Install with <code>pnpm add @thesvg/flags</code>.{" "}
-            <Link href="/docs/flags" className="underline">Read the guide</Link>.
-          </p>
-          <FlagsBrowser tiles={getFlagTiles()} />
-        </main>
+        <BrowseSuspense>
+          <HomeContent
+            categoryCounts={categoryCounts}
+            count={iconCount}
+            recentIcons={recentIcons}
+            collections={collections}
+            defaultCollection={collectionName}
+          >
+            <h1 className="text-2xl font-bold">{meta.label}</h1>
+            <p className="mb-6 mt-1 max-w-2xl text-sm text-muted-foreground">
+              {collectionItemCount} country and region flags in three shapes. Install with <code>pnpm add @thesvg/flags</code>.{" "}
+              <Link href="/docs/flags" className="underline">Read the guide</Link>.
+            </p>
+            <FlagsBrowser tiles={getFlagTiles()} />
+          </HomeContent>
+        </BrowseSuspense>
       </>
     );
   }

@@ -1,6 +1,7 @@
 "use client";
 
 import { UiGlyph } from "@/components/ui-glyph";
+import iconTones from "@/data/icon-tones.json";
 import Link from "next/link";
 import type { IconEntry } from "@/lib/icons";
 import { type Glyph, styleFor } from "@/lib/ui-icons/glyphs";
@@ -8,6 +9,15 @@ import { renderIcon } from "@/lib/ui-icons/engine";
 import { cn } from "@/lib/ui-icons/utils";
 
 /** Static glyph for places outside the UI section, where the shared style state is not available. */
+// A mark that matches the surface (black on dark, white on light) gets a soft plate so it stays visible.
+const TONE_PLATE: Record<string, string> = {
+  dark: "dark:bg-white/90",
+  light: "bg-neutral-700 dark:bg-transparent",
+  "": "",
+};
+// Staggered entrance, capped so long lists do not feel slow.
+const ROW_DELAY = ["[animation-delay:0ms]", "[animation-delay:25ms]", "[animation-delay:50ms]", "[animation-delay:75ms]", "[animation-delay:100ms]", "[animation-delay:125ms]", "[animation-delay:150ms]"];
+
 function StaticGlyph({ glyph, size }: { glyph: Glyph; size: number }) {
   const svg = renderIcon(glyph.nodes, { variant: "outline", style: styleFor("outline"), size, idPrefix: `sg-${glyph.slug}` }).svg;
   return <span aria-hidden="true" className="shrink-0 text-foreground" dangerouslySetInnerHTML={{ __html: svg }} />;
@@ -17,6 +27,9 @@ interface Props {
   primary: "brand" | "ui";
   brands: IconEntry[];
   brandTotal: number;
+  /** Flag matches, shown as their own compact section below the right column. */
+  flags: IconEntry[];
+  flagTotal: number;
   uiGlyphs: Glyph[];
   uiTotal: number;
   query: string;
@@ -56,7 +69,9 @@ export function SearchGroups(p: Props) {
     offset += g.rows.length;
     return { ...g, start };
   });
-  const nothing = brandRows.length === 0 && uiRows.length === 0;
+  const flagsStart = brandRows.length + uiRows.length;
+  const flagRows = p.flags.map((icon, i) => ({ key: `f-${icon.slug}`, icon, idx: flagsStart + i }));
+  const nothing = brandRows.length === 0 && uiRows.length === 0 && flagRows.length === 0;
 
   if (nothing && p.loading) {
     return (
@@ -79,11 +94,10 @@ export function SearchGroups(p: Props) {
     );
   }
 
-  return (
-    <div className={cn("grid", brandRows.length > 0 && uiRows.length > 0 && "sm:grid-cols-[1.35fr_1fr]")}>
-      {placed.map((g, gi) =>
-        g.rows.length === 0 ? null : (
-          <div key={g.id} className={cn("min-w-0 px-2 py-1.5", gi > 0 && "border-t border-border/30 bg-muted/20 sm:border-l sm:border-t-0 dark:border-white/[0.05] dark:bg-white/[0.02]")}>
+  const renderGroup = (g: (typeof placed)[number], gi: number) =>
+    g.rows.length === 0 ? null : (
+
+          <div key={g.id} className="min-w-0 px-2 py-1.5">
             <div className="flex items-center justify-between px-2 py-1">
               <p className="text-[0.75rem] font-medium uppercase tracking-wider text-muted-foreground/60">
                 {g.title} <span className="ml-1 text-muted-foreground/40">{g.total.toLocaleString()}</span>
@@ -95,9 +109,11 @@ export function SearchGroups(p: Props) {
               const active = idx === p.selectedIdx;
               if (r.kind === "brand") {
                 return (
-                  <button key={r.key} id={`${p.optionId}-${idx}`} type="button" role="option" aria-selected={active} onMouseEnter={() => p.onHover(idx)} onClick={() => p.onPickBrand(r.icon.slug)} className={rowClass(active)}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={r.icon.variants.default} alt="" className="h-6 w-6 shrink-0 rounded object-contain transition-transform duration-150 group-hover:scale-110" />
+                  <button key={r.key} id={`${p.optionId}-${idx}`} type="button" role="option" aria-selected={active} onMouseEnter={() => p.onHover(idx)} onClick={() => p.onPickBrand(r.icon.slug)} className={cn(rowClass(active), "search-row-in", ROW_DELAY[Math.min(ri, ROW_DELAY.length - 1)])}>
+                    <span className={cn("grid size-7 shrink-0 place-items-center rounded-md transition-transform duration-150 group-hover:scale-110", TONE_PLATE[(iconTones as Record<string, string>)[r.icon.slug] ?? ""])}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={r.icon.variants.default} alt="" className="h-6 w-6 rounded object-contain" />
+                    </span>
                     <span className="min-w-0 flex-1">
                       <span className="block truncate text-sm font-medium">{r.icon.title}</span>
                       <span className="block truncate text-[0.75rem] text-muted-foreground">{r.icon.categories[0] || r.icon.slug}</span>
@@ -106,7 +122,7 @@ export function SearchGroups(p: Props) {
                 );
               }
               return (
-                <button key={r.key} id={`${p.optionId}-${idx}`} type="button" role="option" aria-selected={active} onMouseEnter={() => p.onHover(idx)} onClick={() => p.onPickUi(r.glyph.slug)} className={rowClass(active)}>
+                <button key={r.key} id={`${p.optionId}-${idx}`} type="button" role="option" aria-selected={active} onMouseEnter={() => p.onHover(idx)} onClick={() => p.onPickUi(r.glyph.slug)} className={cn(rowClass(active), "search-row-in", ROW_DELAY[Math.min(ri, ROW_DELAY.length - 1)])}>
                   <span className="grid size-6 shrink-0 place-items-center transition-transform duration-150 group-hover:scale-110"><StaticGlyph glyph={r.glyph} size={22} /></span>
                   <span className="min-w-0 flex-1">
                     <span className="block truncate text-sm font-medium">{r.glyph.slug}</span>
@@ -121,7 +137,43 @@ export function SearchGroups(p: Props) {
               </Link>
             )}
           </div>
-        ),
+    );
+
+  const second = placed[1];
+  const hasRight = (second && second.rows.length > 0) || flagRows.length > 0;
+  // Two columns only when both sides have results; otherwise a lone group would sit beside an empty column.
+  const two = Boolean(placed[0] && placed[0].rows.length > 0) && hasRight;
+  return (
+    <div className={cn("grid", two && "sm:grid-cols-[1.35fr_1fr]")}>
+      {renderGroup(placed[0], 0)}
+      {hasRight && (
+        <div className="flex min-w-0 flex-col border-t border-border/30 bg-muted/20 sm:border-l sm:border-t-0 dark:border-white/[0.05] dark:bg-white/[0.015]">
+          {second && second.rows.length > 0 ? renderGroup(second, 1) : null}
+      {flagRows.length > 0 && (
+        <div className="min-w-0 px-2 py-1.5">
+          <div className="flex items-center justify-between px-2 py-1">
+            <p className="text-[0.75rem] font-medium uppercase tracking-wider text-muted-foreground/60">
+              Flags <span className="ml-1 text-muted-foreground/40">{p.flagTotal.toLocaleString()}</span>
+            </p>
+          </div>
+          {flagRows.map((r) => {
+            const active = r.idx === p.selectedIdx;
+            return (
+              <button key={r.key} id={`${p.optionId}-${r.idx}`} type="button" role="option" aria-selected={active} onMouseEnter={() => p.onHover(r.idx)} onClick={() => p.onPickBrand(r.icon.slug)} className={cn(rowClass(active), "py-1.5")}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={r.icon.variants.default} alt="" width={24} height={18} className="h-[18px] w-6 shrink-0 rounded-[2px] object-contain" />
+                <span className="min-w-0 flex-1 truncate text-sm font-medium">{r.icon.title}</span>
+              </button>
+            );
+          })}
+          {p.flagTotal > flagRows.length && (
+            <Link href={`/collection/flags?q=${encodeURIComponent(p.query)}`} onClick={p.onClose} className="flex items-center justify-center gap-1 rounded-lg px-2 py-2 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground">
+              View all {p.flagTotal.toLocaleString()} flags <UiGlyph name="arrow-right" className="h-3.5 w-3.5" />
+            </Link>
+          )}
+        </div>
+      )}
+        </div>
       )}
     </div>
   );
