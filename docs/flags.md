@@ -175,3 +175,40 @@ The MCP `search_icons` and `get_icon` tools return the `default`, `square` and `
 ## Sources and licenses
 
 SVG drawings come from [flag-icons](https://github.com/lipis/flag-icons) (4x3 and square) and [circle-flags](https://github.com/HatScripts/circle-flags) (circle), both MIT. The exact commits, access dates and license texts are in [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md), and `packages/flags/src/data/licenses.json` maps every file to its upstream path. Everything here is produced by `scripts/flags/generate-flags.mjs`; do not edit generated files by hand.
+
+## Colors
+
+Every flag carries a palette extracted from its 4x3 artwork: up to <!-- flags:palette-max -->6<!-- /flags:palette-max --> colors in painted-area order, merged when within a small RGB distance.
+
+| Field | Where | Meaning |
+| --- | --- | --- |
+| `colors` | `@thesvg/flags/search` metadata | `[{ hex, share }]`, hex without `#`, share in percent. |
+| `colorNames` | same | Families with at least 5 percent share: red, orange, gold, yellow, green, blue, purple, pink, brown, black, white, gray. |
+| `hex` | `icons.json` | The dominant non-white color of the design. |
+| `collectionMeta.colors` | `icons.json` | Compact `"hex:share"` strings. |
+
+Family rule (HSL): lightness under 0.12 is black and over 0.93 is white; saturation under 0.12 is gray (or black or white at the extremes); then hue picks red (345 to 15, pink when very light), orange (15 to 38), gold (38 to 52, yellow when light), yellow (52 to 70), green (70 to 170), blue (170 to 255), purple (255 to 315) and pink (315 to 345); dark low-saturation oranges are brown. The rule lives in `scripts/flags/colors.mjs` and is tested.
+
+Search finds flags by color words and codes: `red white blue`, `ed2939`, `#ed2939`, `tricolor`. Example, tint a language picker row with the dominant color:
+
+```tsx
+import { findFlags } from "@thesvg/flags/search";
+
+const [de] = findFlags("de");
+const accent = `#${de.colors[0].hex}`; // use as a border or underline, and check contrast first
+```
+
+## The Flags browser
+
+`/collection/flags` and the try-it section of `/docs/flags` share one browser. Everything personal stays in your browser (localStorage, no network, no tracking).
+
+- Filter by region (Africa, Americas, Asia, Europe, Oceania, Antarctica, Regional, International), by color family (any or all), or by a color near a hex with a tolerance. Search uses the alias search described above and loads its alias file on first use.
+- Switch every tile between 4x3, square and circle, pick size S, M or L, and sort A to Z, by region, by ISO code or by color. The result count updates live and an empty state explains what to change.
+- The "Your flag" card guesses a flag from `navigator.languages`, on your device only, with one-click copy of the import and the SVG. Variant, size, region and sort are remembered, as are recently viewed and starred flags (caps `NEXT_PUBLIC_FLAGS_RECENT_MAX` and `NEXT_PUBLIC_FLAGS_STAR_MAX`).
+- "Flags for languages" lists the mapped locales with the native language name beside each flag, to show the country-not-language rule.
+- Click a flag for all three shapes, copy buttons (React import, install, img tag, slug, SVG), downloads, swatches with hex, rgb and hsl, the license note and flags from the same region.
+- Arrow keys, Home and End move between tiles, Enter opens details, S stars. Filters and the open flag live in the URL (`?q=`, `?region=`, `?variant=`, `?size=`, `?sort=`, `?colors=`, `?near=`, `?flag=`), so a view is shareable and the back button works.
+
+## Flags are a separate package
+
+Flags are in the shared catalog (website, search, CLI, MCP, CDN) but not bundled into `@thesvg/icons` or the framework packages. Need only flags? Install `@thesvg/flags`. Need everything else? Use `@thesvg/icons` or your framework package.

@@ -33,6 +33,7 @@ interface RawIcon {
   dateAdded: string;
   collection: string;
   guidelines?: string;
+  collectionMeta?: { colors?: string[]; colorNames?: string[] };
 }
 
 interface IconEntry {
@@ -44,6 +45,9 @@ interface IconEntry {
   license: string;
   url?: string;
   aliases: string[];
+  /** Flags only: palette as "hex:share" entries and color families. */
+  colors?: string[];
+  colorNames?: string[];
 }
 
 interface SearchResult {
@@ -80,6 +84,7 @@ function loadIndex(): IconEntry[] {
     license: icon.license,
     url: icon.url,
     aliases: icon.aliases ?? [],
+    ...(icon.collectionMeta?.colors ? { colors: icon.collectionMeta.colors, colorNames: icon.collectionMeta.colorNames ?? [] } : {}),
   }));
 
   return indexCache;
@@ -286,6 +291,8 @@ server.tool(
           ? `**Categories**: ${icon.categories.join(", ")}`
           : null,
         `**Brand color**: #${icon.hex}`,
+        icon.colors ? `**Palette**: ${icon.colors.map((c) => c.replace(":", " (") + "%)").join(", ")}` : null,
+        icon.colorNames && icon.colorNames.length > 0 ? `**Color families**: ${icon.colorNames.join(", ")}` : null,
         `**Available variants**: ${icon.variants.join(", ")}`,
         icon.url ? `**Website**: ${icon.url}` : null,
         "",

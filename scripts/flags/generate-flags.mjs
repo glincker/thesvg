@@ -29,6 +29,8 @@ import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { familyOf, hexOf } from "./colors.mjs";
+
 const here = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(here, "../..");
 const args = Object.fromEntries(process.argv.slice(2).reduce((a, v, i, all) => (v.startsWith("--") ? [...a, [v.slice(2), all[i + 1]]] : a), []));
@@ -140,31 +142,6 @@ const langsFor = (code) => {
 // ---------------------------------------------------------------------------
 // Colors: rasterize once at a small size, cluster, classify. Deterministic: sorted ties, no randomness.
 // ---------------------------------------------------------------------------
-const hexOf = (r, g, b) => [r, g, b].map((v) => v.toString(16).padStart(2, "0")).join("");
-const hslOf = (hex) => {
-  const [r, g, b] = [0, 2, 4].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255);
-  const mx = Math.max(r, g, b), mn = Math.min(r, g, b), l = (mx + mn) / 2, d = mx - mn;
-  if (d === 0) return [0, 0, l];
-  const s = d / (1 - Math.abs(2 * l - 1));
-  const h = mx === r ? ((g - b) / d + (g < b ? 6 : 0)) : mx === g ? (b - r) / d + 2 : (r - g) / d + 4;
-  return [h * 60, s, l];
-};
-/** Color family by HSL rule. Documented in docs/flags.md; keep in step with packages/flags/src/colors.ts. */
-const familyOf = (hex) => {
-  const [h, s, l] = hslOf(hex);
-  if (l < 0.12) return "black";
-  if (l > 0.93) return "white";
-  if (s < 0.12) return l < 0.3 ? "black" : l > 0.8 ? "white" : "gray";
-  if (h < 15 || h >= 345) return l > 0.75 ? "pink" : "red";
-  if (h < 45 && l < 0.35 && s > 0.3) return "brown";
-  if (h < 38) return "orange";
-  if (h < 52) return l < 0.62 ? "gold" : "yellow";
-  if (h < 70) return "yellow";
-  if (h < 170) return "green";
-  if (h < 255) return "blue";
-  if (h < 300) return "purple";
-  return "pink";
-};
 const palette = (svg) => {
   const img = new Resvg(svg, { fitTo: { mode: "width", value: 96 } }).render();
   const px = img.pixels;
@@ -387,6 +364,7 @@ const marks = {
   iso: String(have.size),
   extras: String(flags.length - have.size),
   files: String(licenses.length),
+  "palette-max": String(PALETTE_MAX),
   "total-icons": `${fmt(floor100(merged.length))}+`,
   "total-variants": `${fmt(floor100(merged.reduce((n, i) => n + Object.keys(i.variants).length, 0)))}+`,
   "locale-table": "\n| Locale | Flag |\n| --- | --- |\n" + localeRows.map(([, l, c]) => `| \`${l}\` | \`flag-${c}\` |`).join("\n") + "\n",
