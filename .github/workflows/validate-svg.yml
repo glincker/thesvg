@@ -68,6 +68,13 @@ jobs:
             echo "::group::$f"
             size=$(wc -c < "$f")
             echo "size: $size bytes"
+            # Exact exemptions, same list as EXEMPT.size in scripts/validate-icons.ts. Bolivia and Serbia carry
+            # detailed official coats of arms; the flag generator already compacts them as far as its pixel
+            # fidelity check allows (bo about 52 to 53 KB, rs about 61 KB). Do not add files here without review.
+            case "$f" in
+              public/icons/flag-bo/default.svg|public/icons/flag-bo/square.svg|public/icons/flag-rs/default.svg|public/icons/flag-rs/square.svg)
+                echo "size exemption: $f"; size=0 ;;
+            esac
             if [ "$size" -gt "$max_bytes" ]; then
               echo "::error file=$f::SVG is $size bytes (limit is $max_bytes)"
               fail=1

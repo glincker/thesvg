@@ -94,7 +94,8 @@ const EXTRAS = {
 
 // Flags whose official coat of arms is too detailed to fit the 50KB icon limit without visible loss.
 // Keep in sync with EXEMPT.size in scripts/validate-icons.ts (a test enforces it).
-const OVERSIZE_OK = new Set(["bo", "es", "me", "mx", "rs", "sv"]);
+const OVERSIZE_OK = new Set(["bo", "rs"]);
+const FIDELITY_MAX = env("FLAG_FIDELITY_MAX", 0.005); // mean absolute pixel difference at 256px, 0 to 1
 
 const EXCLUDED = [
   ["an, su, yu, cs, zz and other retired ISO codes", "Historical states, not current ISO 3166-1 entries."],
@@ -198,7 +199,23 @@ const problems = [];
 const prep = (svg) =>
   svg.replace(/<\?xml[^>]*>/g, "").replace(/<!DOCTYPE[^>]*>/g, "").trim()
     .replace(/<svg\b([^>]*)>/, (m, a) => `<svg${a.replace(/\s(width|height|id)="[^"]*"/g, "")}>`);
+const raster = (svg) => new Resvg(svg, { fitTo: { mode: "width", value: 256 }, background: "#ffffff" }).render().pixels;
+const pixelDiff = (a, b) => { const A = raster(a), B = raster(b); let t = 0; for (let i = 0; i < A.length; i++) t += Math.abs(A[i] - B[i]); return t / A.length / 255; };
+/** Stronger settings for files over the size limit: whole-unit path precision with transforms baked in, kept only if the render stays within FIDELITY_MAX. */
+const COMPACT = ["moveGroupAttrsToElems", { name: "convertPathData", params: { floatPrecision: 0, applyTransforms: true, transformPrecision: 4 } }, "mergePaths"];
+const sizeReport = [];
 const optimizeSvg = (svg, label) => {
+  const base = optimizeSvgOnce(svg, label);
+  if (Buffer.byteLength(base) <= LIMIT) return base;
+  const compact = optimize(base, { multipass: true, plugins: [{ name: "preset-default", params: { overrides: { removeViewBox: false, removeTitle: false } } }, ...COMPACT] }).data;
+  const out = optimize(compact, { multipass: true, ...svgoConfig }).data;
+  const d = pixelDiff(base, out);
+  sizeReport.push({ file: label, before: Buffer.byteLength(base), after: Buffer.byteLength(out), diff: Number(d.toFixed(5)) });
+  if (d > FIDELITY_MAX) { problems.push(`${label}: compaction changes the render by ${d.toFixed(4)} (max ${FIDELITY_MAX}); keeping the original`); return base; }
+  if (optimize(out, { multipass: true, ...svgoConfig }).data !== out) problems.push(`${label}: compacted output is not a fixpoint`);
+  return out;
+};
+const optimizeSvgOnce = (svg, label) => {
   const first = optimize(prep(svg), { multipass: true, plugins: [...svgoConfig.plugins, "removeTitle", "removeDesc", "removeMetadata", "removeComments", "removeDimensions"] }).data;
   const out = optimize(first, { multipass: true, ...svgoConfig }).data;
   if (optimize(out, { multipass: true, ...svgoConfig }).data !== out) problems.push(`${label}: svgo output is not a fixpoint`);
@@ -401,4 +418,4 @@ for (const [rel, content] of [...writes.entries()].sort(([a], [b]) => (a < b ? -
 if (args.report) writeFileSync(resolve(args.report), JSON.stringify([...new Set(changed)], null, 2) + "\n");
 
 const digest = createHash("sha256").update([...writes.entries()].map(([k, v]) => k + v).join("")).digest("hex").slice(0, 12);
-console.log(JSON.stringify({ flags: flags.length, iso: have.size, extras: flags.length - have.size, files: licenses.length, changedFlags: new Set(changed).size, digest }));
+console.log(JSON.stringify({ flags: flags.length, iso: have.size, extras: flags.length - have.size, files: licenses.length, changedFlags: new Set(changed).size, digest, oversize: sizeReport }));

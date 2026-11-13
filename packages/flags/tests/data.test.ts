@@ -15,7 +15,7 @@ const licenses = JSON.parse(readFileSync(join(ROOT, "packages/flags/src/data/lic
 };
 const VARIANTS = ["default", "square", "circle"] as const;
 // Mirrors EXEMPT.size in scripts/validate-icons.ts.
-const OVERSIZE = new Set(["bo", "es", "me", "mx", "rs", "sv"]);
+const OVERSIZE = new Set(["bo", "rs"]);
 
 test("every ISO 3166-1 alpha-2 code has a flag, plus Kosovo", () => {
   const have = new Set(FLAGS.map((f) => f.iso).filter(Boolean));
@@ -115,4 +115,13 @@ test("tricky flags: Switzerland and Vatican are square, Nepal is non-rectangular
   assert.equal(byCode.get("ps")?.name, "Palestinian Territories");
   assert.equal(byCode.get("eh")?.name, "Western Sahara");
   for (const c of ["np", "ch", "va", "qa", "es", "hk", "mo"]) assert.ok(byCode.has(c), c);
+});
+
+test("size exemptions match in the generator, validate-icons and validate-svg.yml, and every other file fits", () => {
+  const want = [...OVERSIZE].flatMap((c) => [`public/icons/flag-${c}/default.svg`, `public/icons/flag-${c}/square.svg`]).sort();
+  const grab = (text: string): string[] => [...new Set([...text.matchAll(/public\/icons\/flag-[a-z-]+\/(?:default|square)\.svg/g)].map((m) => m[0]))].sort();
+  assert.deepEqual(grab(readFileSync(join(ROOT, "scripts/validate-icons.ts"), "utf8")), want);
+  assert.deepEqual(grab(readFileSync(join(ROOT, ".github/workflows/validate-svg.yml"), "utf8")), want);
+  const generator = readFileSync(join(ROOT, "scripts/flags/generate-flags.mjs"), "utf8");
+  assert.match(generator, new RegExp(`OVERSIZE_OK = new Set\\(\\[${[...OVERSIZE].map((c) => `"${c}"`).join(", ")}\\]\\)`));
 });

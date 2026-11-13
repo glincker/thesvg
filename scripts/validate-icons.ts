@@ -20,7 +20,7 @@ const MAX_BYTES = 50 * 1024;
  * Files allowed to exceed MAX_BYTES. gnu-nano is a dense ASCII-art mark made of
  * thousands of 0.1 unit glyph shapes; rounding coordinates enough to fit the
  * limit visibly degrades it (RMSE 0.21 at precision 1, still 58KB at 2).
- * The flag-* files below carry detailed official coats of arms (bo, es, me, mx, rs, sv).
+ * The flag-* files below carry detailed official coats of arms (bo, rs). The generator already compacts them as far as the fidelity check allows.
  * The embedded PNGs in glincker/wordmark*.svg are the owner's own brand files.
  */
 const EXEMPT: Record<string, ReadonlyArray<string>> = {
@@ -28,16 +28,8 @@ const EXEMPT: Record<string, ReadonlyArray<string>> = {
     "public/icons/gnu-nano/default.svg",
     "public/icons/flag-bo/default.svg",
     "public/icons/flag-bo/square.svg",
-    "public/icons/flag-es/default.svg",
-    "public/icons/flag-es/square.svg",
-    "public/icons/flag-me/default.svg",
-    "public/icons/flag-me/square.svg",
-    "public/icons/flag-mx/default.svg",
-    "public/icons/flag-mx/square.svg",
     "public/icons/flag-rs/default.svg",
     "public/icons/flag-rs/square.svg",
-    "public/icons/flag-sv/default.svg",
-    "public/icons/flag-sv/square.svg",
   ],
   raster: [
     "public/icons/glincker/wordmark.svg",

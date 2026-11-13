@@ -2157,7 +2157,7 @@ export const FLAGS: readonly FlagMeta[] = [
       },
       {
         "hex": "ffe000",
-        "share": 28
+        "share": 29
       }
     ],
     "colorNames": [
@@ -11403,8 +11403,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "#d3ae3b",
       "cb5822",
       "#cb5822",
-      "c89133",
-      "#c89133"
+      "c68d32",
+      "#c68d32"
     ],
     "colors": [
       {
@@ -11420,7 +11420,7 @@ export const FLAGS: readonly FlagMeta[] = [
         "share": 6
       },
       {
-        "hex": "c89133",
+        "hex": "c68d32",
         "share": 4
       }
     ],
@@ -15273,8 +15273,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "#c6363c",
       "0c4076",
       "#0c4076",
-      "d5d5d4",
-      "#d5d5d4"
+      "e3e3e2",
+      "#e3e3e2"
     ],
     "colors": [
       {
@@ -15290,7 +15290,7 @@ export const FLAGS: readonly FlagMeta[] = [
         "share": 24
       },
       {
-        "hex": "d5d5d4",
+        "hex": "e3e3e2",
         "share": 2
       }
     ],
