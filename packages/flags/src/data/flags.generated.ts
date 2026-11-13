@@ -44,13 +44,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "yellow",
       "0018a8",
-      "#0018a8",
       "d0103a",
-      "#d0103a",
       "fedf00",
-      "#fedf00",
-      "b1956a",
-      "#b1956a"
+      "b1956a"
     ],
     "colors": [
       {
@@ -132,13 +128,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "white",
       "ff0000",
-      "#ff0000",
       "000001",
-      "#000001",
       "00732f",
-      "#00732f",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -219,11 +211,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "red",
       "000001",
-      "#000001",
       "009900",
-      "#009900",
       "bf0000",
-      "#bf0000",
       "tricolor",
       "tricolour"
     ],
@@ -298,15 +287,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "gold",
       "ce1126",
-      "#ce1126",
       "000001",
-      "#000001",
       "0072c6",
-      "#0072c6",
       "ffffff",
-      "#ffffff",
-      "fcd116",
-      "#fcd116"
+      "fcd116"
     ],
     "colors": [
       {
@@ -380,13 +364,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "012169",
-      "#012169",
       "c8102e",
-      "#c8102e",
       "ffffff",
-      "#ffffff",
-      "d54b62",
-      "#d54b62"
+      "d54b62"
     ],
     "colors": [
       {
@@ -457,11 +437,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "black",
       "ff0000",
-      "#ff0000",
       "000001",
-      "#000001",
-      "cf0001",
-      "#cf0001"
+      "cf0001"
     ],
     "colors": [
       {
@@ -528,11 +505,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "gold",
       "0033a0",
-      "#0033a0",
       "d90012",
-      "#d90012",
       "f2a800",
-      "#f2a800",
       "tricolor",
       "tricolour"
     ],
@@ -603,11 +577,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "black",
       "ff0000",
-      "#ff0000",
       "000001",
-      "#000001",
-      "ffec00",
-      "#ffec00"
+      "ffec00"
     ],
     "colors": [
       {
@@ -674,9 +645,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "white",
       "3a7dce",
-      "#3a7dce",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -739,9 +708,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "white",
       "74acdf",
-      "#74acdf",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -810,13 +777,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "red",
       "000066",
-      "#000066",
       "ffffff",
-      "#ffffff",
       "bd1021",
-      "#bd1021",
-      "5a3719",
-      "#5a3719"
+      "5a3719"
     ],
     "colors": [
       {
@@ -901,9 +864,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "c8102e",
-      "#c8102e",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -965,11 +926,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "red",
       "00008b",
-      "#00008b",
       "ffffff",
-      "#ffffff",
-      "ff0000",
-      "#ff0000"
+      "ff0000"
     ],
     "colors": [
       {
@@ -1034,9 +992,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "yellow",
       "3399cc",
-      "#3399cc",
-      "ffff00",
-      "#ffff00"
+      "ffff00"
     ],
     "colors": [
       {
@@ -1100,15 +1056,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "gold",
       "red",
       "0053a5",
-      "#0053a5",
       "ffce00",
-      "#ffce00",
       "d21034",
-      "#d21034",
       "f39e0d",
-      "#f39e0d",
-      "7f9053",
-      "#7f9053"
+      "7f9053"
     ],
     "colors": [
       {
@@ -1188,11 +1139,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "red",
       "00b9e4",
-      "#00b9e4",
       "3f9c35",
-      "#3f9c35",
       "ed2939",
-      "#ed2939",
       "tricolor",
       "tricolour"
     ],
@@ -1275,11 +1223,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "gold",
       "000099",
-      "#000099",
       "ffcc00",
-      "#ffcc00",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -1341,11 +1286,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "gold",
       "00267f",
-      "#00267f",
       "ffc726",
-      "#ffc726",
-      "000001",
-      "#000001"
+      "000001"
     ],
     "colors": [
       {
@@ -1411,9 +1353,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "red",
       "006a4e",
-      "#006a4e",
-      "f42a41",
-      "#f42a41"
+      "f42a41"
     ],
     "colors": [
       {
@@ -1487,11 +1427,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "gold",
       "000001",
-      "#000001",
       "f31830",
-      "#f31830",
       "ffd90c",
-      "#ffd90c",
       "tricolor",
       "tricolour"
     ],
@@ -1561,9 +1498,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "red",
       "35a100",
-      "#35a100",
-      "de0000",
-      "#de0000"
+      "de0000"
     ],
     "colors": [
       {
@@ -1630,11 +1565,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "00966e",
-      "#00966e",
       "d62612",
-      "#d62612",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -1702,9 +1634,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "ce1126",
-      "#ce1126",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -1769,11 +1699,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "green",
       "ffffff",
-      "#ffffff",
       "cf0921",
-      "#cf0921",
-      "18b637",
-      "#18b637"
+      "18b637"
     ],
     "colors": [
       {
@@ -1841,11 +1768,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "gold",
       "319400",
-      "#319400",
       "de2110",
-      "#de2110",
       "ffd600",
-      "#ffd600",
       "tricolor",
       "tricolour"
     ],
@@ -1912,11 +1836,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "000091",
-      "#000091",
       "e1000f",
-      "#e1000f",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -1984,11 +1905,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "blue",
       "cf142b",
-      "#cf142b",
       "ffffff",
-      "#ffffff",
-      "000066",
-      "#000066"
+      "000066"
     ],
     "colors": [
       {
@@ -2053,13 +1971,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "black",
       "red",
       "f7e017",
-      "#f7e017",
       "ffffff",
-      "#ffffff",
       "000001",
-      "#000001",
-      "cf1126",
-      "#cf1126"
+      "cf1126"
     ],
     "colors": [
       {
@@ -2138,11 +2052,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "yellow",
       "d52b1e",
-      "#d52b1e",
       "007934",
-      "#007934",
       "ffe000",
-      "#ffe000",
       "tricolor",
       "tricolour"
     ],
@@ -2219,11 +2130,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "21468b",
-      "#21468b",
       "ae1c28",
-      "#ae1c28",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -2299,11 +2207,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "yellow",
       "blue",
       "229e45",
-      "#229e45",
       "f8e509",
-      "#f8e509",
-      "2b49a3",
-      "#2b49a3"
+      "2b49a3"
     ],
     "colors": [
       {
@@ -2370,11 +2275,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "black",
       "yellow",
       "08ced6",
-      "#08ced6",
       "000001",
-      "#000001",
-      "ffe900",
-      "#ffe900"
+      "ffe900"
     ],
     "colors": [
       {
@@ -2441,11 +2343,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "orange",
       "white",
       "ffd520",
-      "#ffd520",
       "ff4e12",
-      "#ff4e12",
-      "e8e8e8",
-      "#e8e8e8"
+      "e8e8e8"
     ],
     "colors": [
       {
@@ -2518,15 +2417,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "white",
       "d72828",
-      "#d72828",
       "003897",
-      "#003897",
       "ffffff",
-      "#ffffff",
       "bfcde5",
-      "#bfcde5",
-      "e15d5d",
-      "#e15d5d"
+      "e15d5d"
     ],
     "colors": [
       {
@@ -2603,11 +2497,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "black",
       "white",
       "00cbff",
-      "#00cbff",
       "000001",
-      "#000001",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -2680,13 +2571,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "green",
       "ce1720",
-      "#ce1720",
       "007c30",
-      "#007c30",
       "ffffff",
-      "#ffffff",
-      "da5158",
-      "#da5158"
+      "da5158"
     ],
     "colors": [
       {
@@ -2756,15 +2643,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "red",
       "003f87",
-      "#003f87",
       "ffffff",
-      "#ffffff",
       "ce1126",
-      "#ce1126",
       "eeeeee",
-      "#eeeeee",
-      "33346f",
-      "#33346f"
+      "33346f"
     ],
     "colors": [
       {
@@ -2856,9 +2738,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "d52b1e",
-      "#d52b1e",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -2927,9 +2807,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "yellow",
       "008000",
-      "#008000",
-      "ffe000",
-      "#ffe000"
+      "ffe000"
     ],
     "colors": [
       {
@@ -3010,11 +2888,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "gold",
       "007fff",
-      "#007fff",
       "ce1021",
-      "#ce1021",
-      "f7d618",
-      "#f7d618"
+      "f7d618"
     ],
     "colors": [
       {
@@ -3091,15 +2966,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "blue",
       "ffff00",
-      "#ffff00",
       "009a00",
-      "#009a00",
       "ffffff",
-      "#ffffff",
       "ff0000",
-      "#ff0000",
-      "0000ff",
-      "#0000ff"
+      "0000ff"
     ],
     "colors": [
       {
@@ -3181,11 +3051,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "red",
       "ffff00",
-      "#ffff00",
       "00ca00",
-      "#00ca00",
       "ff0000",
-      "#ff0000",
       "tricolor",
       "tricolour"
     ],
@@ -3274,9 +3141,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "ff0000",
-      "#ff0000",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -3344,11 +3209,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "orange",
       "white",
       "009a44",
-      "#009a44",
       "ff8200",
-      "#ff8200",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -3422,11 +3284,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "000066",
-      "#000066",
       "c8102e",
-      "#c8102e",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -3493,11 +3352,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "blue",
       "d52b1e",
-      "#d52b1e",
       "ffffff",
-      "#ffffff",
-      "0039a6",
-      "#0039a6"
+      "0039a6"
     ],
     "colors": [
       {
@@ -3568,11 +3424,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "red",
       "fcd116",
-      "#fcd116",
       "007a5e",
-      "#007a5e",
       "ce1126",
-      "#ce1126",
       "tricolor",
       "tricolour"
     ],
@@ -3658,8 +3511,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "156",
       "🇨🇳",
       "red",
-      "ee1c25",
-      "#ee1c25"
+      "ee1c25"
     ],
     "colors": [
       {
@@ -3718,11 +3570,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "red",
       "ffe800",
-      "#ffe800",
       "00148e",
-      "#00148e",
-      "da0010",
-      "#da0010"
+      "da0010"
     ],
     "colors": [
       {
@@ -3788,15 +3637,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "0000b4",
-      "#0000b4",
       "d90000",
-      "#d90000",
       "ffffff",
-      "#ffffff",
       "bfbfec",
-      "#bfbfec",
       "f5bfbf",
-      "#f5bfbf",
       "tricolor",
       "tricolour"
     ],
@@ -3871,11 +3715,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "002a8f",
-      "#002a8f",
       "cb1515",
-      "#cb1515",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -3948,13 +3789,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "red",
       "081873",
-      "#081873",
       "ffffff",
-      "#ffffff",
       "de3929",
-      "#de3929",
-      "f6cdc9",
-      "#f6cdc9"
+      "f6cdc9"
     ],
     "colors": [
       {
@@ -4023,9 +3860,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "yellow",
       "002b7f",
-      "#002b7f",
-      "f9e814",
-      "#f9e814"
+      "f9e814"
     ],
     "colors": [
       {
@@ -4091,11 +3926,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "green",
       "0021ad",
-      "#0021ad",
       "1c8a42",
-      "#1c8a42",
-      "ffc639",
-      "#ffc639"
+      "ffc639"
     ],
     "colors": [
       {
@@ -4171,9 +4003,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "orange",
       "ffffff",
-      "#ffffff",
-      "d47600",
-      "#d47600"
+      "d47600"
     ],
     "colors": [
       {
@@ -4248,11 +4078,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "blue",
       "d7141a",
-      "#d7141a",
       "ffffff",
-      "#ffffff",
       "11457e",
-      "#11457e",
       "tricolor",
       "tricolour"
     ],
@@ -4335,11 +4162,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "gold",
       "000001",
-      "#000001",
       "ff0000",
-      "#ff0000",
       "ffcc00",
-      "#ffcc00",
       "tricolor",
       "tricolour"
     ],
@@ -4419,11 +4243,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "white",
       "00cc00",
-      "#00cc00",
       "6699ff",
-      "#6699ff",
       "fffefe",
-      "#fffefe",
       "tricolor",
       "tricolour"
     ],
@@ -4503,11 +4324,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "c8102e",
-      "#c8102e",
       "ffffff",
-      "#ffffff",
-      "d54c63",
-      "#d54c63"
+      "d54c63"
     ],
     "colors": [
       {
@@ -4574,15 +4392,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "gold",
       "108c00",
-      "#108c00",
       "e72910",
-      "#e72910",
       "000001",
-      "#000001",
       "ffffff",
-      "#ffffff",
-      "ffd600",
-      "#ffd600"
+      "ffd600"
     ],
     "colors": [
       {
@@ -4663,15 +4476,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "002d62",
-      "#002d62",
       "ce1126",
-      "#ce1126",
       "ffffff",
-      "#ffffff",
       "3f6189",
-      "#3f6189",
       "da4c5c",
-      "#da4c5c",
       "tricolor",
       "tricolour"
     ],
@@ -4756,11 +4564,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "red",
       "ffffff",
-      "#ffffff",
       "006233",
-      "#006233",
-      "d21034",
-      "#d21034"
+      "d21034"
     ],
     "colors": [
       {
@@ -4832,13 +4637,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "blue",
       "ffe800",
-      "#ffe800",
       "da0010",
-      "#da0010",
       "00148e",
-      "#00148e",
-      "984000",
-      "#984000"
+      "984000"
     ],
     "colors": [
       {
@@ -4916,11 +4717,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "white",
       "000001",
-      "#000001",
       "1791ff",
-      "#1791ff",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -5000,11 +4798,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "000001",
-      "#000001",
       "ce1126",
-      "#ce1126",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -5080,13 +4875,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "white",
       "c4111b",
-      "#c4111b",
       "000001",
-      "#000001",
       "007a3d",
-      "#007a3d",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -5166,13 +4957,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "yellow",
       "be0027",
-      "#be0027",
       "239e46",
-      "#239e46",
       "b4d7f4",
-      "#b4d7f4",
-      "f3e295",
-      "#f3e295"
+      "f3e295"
     ],
     "colors": [
       {
@@ -5265,9 +5052,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "gold",
       "aa151b",
-      "#aa151b",
-      "f1bf00",
-      "#f1bf00"
+      "f1bf00"
     ],
     "colors": [
       {
@@ -5326,9 +5111,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "yellow",
       "red",
       "fcdd09",
-      "#fcdd09",
-      "da121a",
-      "#da121a"
+      "da121a"
     ],
     "colors": [
       {
@@ -5382,11 +5165,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "blue",
       "ffffff",
-      "#ffffff",
       "0099cc",
-      "#0099cc",
-      "005bbf",
-      "#005bbf"
+      "005bbf"
     ],
     "colors": [
       {
@@ -5447,13 +5227,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "white",
       "d52b1e",
-      "#d52b1e",
       "009b48",
-      "#009b48",
       "ffffff",
-      "#ffffff",
-      "f4cac7",
-      "#f4cac7"
+      "f4cac7"
     ],
     "colors": [
       {
@@ -5533,13 +5309,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "gold",
       "blue",
       "298c08",
-      "#298c08",
       "ef2118",
-      "#ef2118",
       "ffc621",
-      "#ffc621",
       "006bc6",
-      "#006bc6",
       "tricolor",
       "tricolour"
     ],
@@ -5622,8 +5394,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "european",
       "eu",
       "blue",
-      "003399",
-      "#003399"
+      "003399"
     ],
     "colors": [
       {
@@ -5690,11 +5461,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "blue",
       "ffffff",
-      "#ffffff",
       "002f6c",
-      "#002f6c",
-      "3f6390",
-      "#3f6390"
+      "3f6390"
     ],
     "colors": [
       {
@@ -5770,13 +5538,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "68bfe5",
-      "#68bfe5",
       "c8102e",
-      "#c8102e",
       "ffffff",
-      "#ffffff",
-      "012169",
-      "#012169"
+      "012169"
     ],
     "colors": [
       {
@@ -5853,13 +5617,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "012169",
-      "#012169",
       "c8102e",
-      "#c8102e",
       "ffffff",
-      "#ffffff",
-      "0072c4",
-      "#0072c4"
+      "0072c4"
     ],
     "colors": [
       {
@@ -5935,9 +5695,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "🇫🇲",
       "blue",
       "6797d6",
-      "#6797d6",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -6003,11 +5761,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "blue",
       "ffffff",
-      "#ffffff",
       "d72828",
-      "#d72828",
-      "003897",
-      "#003897"
+      "003897"
     ],
     "colors": [
       {
@@ -6082,11 +5837,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "000091",
-      "#000091",
       "e1000f",
-      "#e1000f",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -6154,11 +5906,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "yellow",
       "006dbc",
-      "#006dbc",
       "36a100",
-      "#36a100",
       "ffe700",
-      "#ffe700",
       "tricolor",
       "tricolour"
     ],
@@ -6246,13 +5995,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "blue",
       "c8102e",
-      "#c8102e",
       "ffffff",
-      "#ffffff",
       "012169",
-      "#012169",
-      "f1c3ca",
-      "#f1c3ca"
+      "f1c3ca"
     ],
     "colors": [
       {
@@ -6314,11 +6059,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "red",
       "ffffff",
-      "#ffffff",
       "ce1124",
-      "#ce1124",
-      "da4c5a",
-      "#da4c5a"
+      "da4c5a"
     ],
     "colors": [
       {
@@ -6381,9 +6123,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "white",
       "0065bd",
-      "#0065bd",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -6440,13 +6180,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "red",
       "00ab39",
-      "#00ab39",
       "ffffff",
-      "#ffffff",
       "d21034",
-      "#d21034",
-      "ae0e2c",
-      "#ae0e2c"
+      "ae0e2c"
     ],
     "colors": [
       {
@@ -6515,11 +6251,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "gold",
       "green",
       "ce1126",
-      "#ce1126",
       "fcd116",
-      "#fcd116",
-      "007a5e",
-      "#007a5e"
+      "007a5e"
     ],
     "colors": [
       {
@@ -6593,11 +6326,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "pink",
       "ffffff",
-      "#ffffff",
       "ff0000",
-      "#ff0000",
-      "ffbfbf",
-      "#ffbfbf"
+      "ffbfbf"
     ],
     "colors": [
       {
@@ -6672,11 +6402,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "000091",
-      "#000091",
       "e1000f",
-      "#e1000f",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -6742,15 +6469,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "yellow",
       "ffffff",
-      "#ffffff",
       "e8112d",
-      "#e8112d",
       "f9dd16",
-      "#f9dd16",
       "f38896",
-      "#f38896",
-      "f07722",
-      "#f07722"
+      "f07722"
     ],
     "colors": [
       {
@@ -6832,13 +6554,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "gold",
       "006b3f",
-      "#006b3f",
       "ce1126",
-      "#ce1126",
       "fcd116",
-      "#fcd116",
       "000001",
-      "#000001",
       "tricolor",
       "tricolour"
     ],
@@ -6911,13 +6629,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "red",
       "ffffff",
-      "#ffffff",
       "da000c",
-      "#da000c",
       "890008",
-      "#890008",
-      "000001",
-      "#000001"
+      "000001"
     ],
     "colors": [
       {
@@ -6987,9 +6701,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "d00c33",
-      "#d00c33",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -7056,13 +6768,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "000099",
-      "#000099",
       "009900",
-      "#009900",
       "ff0000",
-      "#ff0000",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -7138,11 +6846,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "yellow",
       "009900",
-      "#009900",
       "ff0000",
-      "#ff0000",
       "ffff00",
-      "#ffff00",
       "tricolor",
       "tricolour"
     ],
@@ -7210,11 +6915,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "000091",
-      "#000091",
       "e1000f",
-      "#e1000f",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -7298,13 +7000,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "blue",
       "3e9a00",
-      "#3e9a00",
       "e32118",
-      "#e32118",
       "ffffff",
-      "#ffffff",
-      "0073ce",
-      "#0073ce"
+      "0073ce"
     ],
     "colors": [
       {
@@ -7382,9 +7080,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "white",
       "0d5eaf",
-      "#0d5eaf",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -7452,13 +7148,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "000066",
-      "#000066",
       "c8102e",
-      "#c8102e",
       "ffffff",
-      "#ffffff",
-      "012169",
-      "#012169"
+      "012169"
     ],
     "colors": [
       {
@@ -7530,9 +7222,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "white",
       "4997d0",
-      "#4997d0",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -7592,13 +7282,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "red",
       "3b5aa3",
-      "#3b5aa3",
       "be0027",
-      "#be0027",
       "cbe0e5",
-      "#cbe0e5",
-      "9d1746",
-      "#9d1746"
+      "9d1746"
     ],
     "colors": [
       {
@@ -7669,11 +7355,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "gold",
       "red",
       "009e49",
-      "#009e49",
       "fcd116",
-      "#fcd116",
       "ce1126",
-      "#ce1126",
       "tricolor",
       "tricolour"
     ],
@@ -7742,15 +7425,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "gold",
       "white",
       "399408",
-      "#399408",
       "de2110",
-      "#de2110",
       "ffde08",
-      "#ffde08",
       "ffffff",
-      "#ffffff",
-      "000001",
-      "#000001"
+      "000001"
     ],
     "colors": [
       {
@@ -7829,9 +7507,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "ec1b2e",
-      "#ec1b2e",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -7899,11 +7575,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "red",
       "00008b",
-      "#00008b",
       "ffffff",
-      "#ffffff",
-      "ff0000",
-      "#ff0000"
+      "ff0000"
     ],
     "colors": [
       {
@@ -7966,9 +7639,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "white",
       "18c3df",
-      "#18c3df",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -8044,11 +7715,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "white",
       "ff0000",
-      "#ff0000",
       "171796",
-      "#171796",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -8116,9 +7784,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "red",
       "00209f",
-      "#00209f",
-      "d21034",
-      "#d21034"
+      "d21034"
     ],
     "colors": [
       {
@@ -8185,11 +7851,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "388d00",
-      "#388d00",
       "d43516",
-      "#d43516",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -8262,9 +7925,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "e70011",
-      "#e70011",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -8334,11 +7995,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "orange",
       "white",
       "009a49",
-      "#009a49",
       "ff7900",
-      "#ff7900",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -8413,13 +8071,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "blue",
       "ffffff",
-      "#ffffff",
       "0038b8",
-      "#0038b8",
       "406aca",
-      "#406aca",
-      "bfcded",
-      "#bfcded"
+      "bfcded"
     ],
     "colors": [
       {
@@ -8494,9 +8148,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "🇮🇲",
       "red",
       "ba0000",
-      "#ba0000",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -8621,11 +8273,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "orange",
       "white",
       "128807",
-      "#128807",
       "ff9933",
-      "#ff9933",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -8699,17 +8348,11 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "red",
       "ffffff",
-      "#ffffff",
       "000063",
-      "#000063",
       "c8102e",
-      "#c8102e",
       "012169",
-      "#012169",
       "303080",
-      "#303080",
-      "cfcfe1",
-      "#cfcfe1"
+      "cfcfe1"
     ],
     "colors": [
       {
@@ -8796,11 +8439,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "000001",
-      "#000001",
       "ce1126",
-      "#ce1126",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -8872,15 +8512,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "green",
       "ffffff",
-      "#ffffff",
       "da0000",
-      "#da0000",
       "239f40",
-      "#239f40",
       "e34040",
-      "#e34040",
-      "ec8080",
-      "#ec8080"
+      "ec8080"
     ],
     "colors": [
       {
@@ -8957,11 +8592,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "003897",
-      "#003897",
       "d72828",
-      "#d72828",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -9040,11 +8672,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "009246",
-      "#009246",
       "ce2b37",
-      "#ce2b37",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -9108,9 +8737,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "red",
       "ffffff",
-      "#ffffff",
-      "cf142b",
-      "#cf142b"
+      "cf142b"
     ],
     "colors": [
       {
@@ -9175,11 +8802,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "gold",
       "000001",
-      "#000001",
       "009900",
-      "#009900",
       "ffcc00",
-      "#ffcc00",
       "tricolor",
       "tricolour"
     ],
@@ -9258,13 +8882,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "white",
       "ff0000",
-      "#ff0000",
       "000001",
-      "#000001",
       "009900",
-      "#009900",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -9341,9 +8961,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "red",
       "ffffff",
-      "#ffffff",
-      "bc002d",
-      "#bc002d"
+      "bc002d"
     ],
     "colors": [
       {
@@ -9408,15 +9026,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "000001",
-      "#000001",
       "006600",
-      "#006600",
       "bb0000",
-      "#bb0000",
       "ffffff",
-      "#ffffff",
-      "cc4040",
-      "#cc4040"
+      "cc4040"
     ],
     "colors": [
       {
@@ -9497,15 +9110,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "🇰🇬",
       "red",
       "ff0000",
-      "#ff0000",
       "ffff00",
-      "#ffff00",
       "ff4000",
-      "#ff4000",
       "ff8000",
-      "#ff8000",
-      "ffd000",
-      "#ffd000"
+      "ffd000"
     ],
     "colors": [
       {
@@ -9583,13 +9191,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "red",
       "032ea1",
-      "#032ea1",
       "e00025",
-      "#e00025",
       "cdcdcd",
-      "#cdcdcd",
-      "cbadb3",
-      "#cbadb3"
+      "cbadb3"
     ],
     "colors": [
       {
@@ -9661,13 +9265,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "yellow",
       "e73e2d",
-      "#e73e2d",
       "005989",
-      "#005989",
       "ffffff",
-      "#ffffff",
-      "fec74a",
-      "#fec74a"
+      "fec74a"
     ],
     "colors": [
       {
@@ -9754,15 +9354,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "red",
       "239e46",
-      "#239e46",
       "3b5aa3",
-      "#3b5aa3",
       "ffff00",
-      "#ffff00",
       "ffffff",
-      "#ffffff",
-      "be0027",
-      "#be0027"
+      "be0027"
     ],
     "colors": [
       {
@@ -9846,13 +9441,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "yellow",
       "000001",
-      "#000001",
       "c70000",
-      "#c70000",
       "35a100",
-      "#35a100",
-      "ffe900",
-      "#ffe900"
+      "ffe900"
     ],
     "colors": [
       {
@@ -9932,11 +9523,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "white",
       "c60000",
-      "#c60000",
       "3e5698",
-      "#3e5698",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -10017,13 +9605,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "black",
       "ffffff",
-      "#ffffff",
       "cd2e3a",
-      "#cd2e3a",
       "0047a0",
-      "#0047a0",
-      "000001",
-      "#000001"
+      "000001"
     ],
     "colors": [
       {
@@ -10096,13 +9680,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "black",
       "white",
       "00d941",
-      "#00d941",
       "f31830",
-      "#f31830",
       "000001",
-      "#000001",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -10179,13 +9759,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "000066",
-      "#000066",
       "c8102e",
-      "#c8102e",
       "ffffff",
-      "#ffffff",
-      "012169",
-      "#012169"
+      "012169"
     ],
     "colors": [
       {
@@ -10260,13 +9836,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "yellow",
       "00abc2",
-      "#00abc2",
       "ffec2d",
-      "#ffec2d",
       "c0dc52",
-      "#c0dc52",
-      "20b3af",
-      "#20b3af"
+      "20b3af"
     ],
     "colors": [
       {
@@ -10336,11 +9908,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "white",
       "ce1126",
-      "#ce1126",
       "002868",
-      "#002868",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -10417,11 +9986,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "green",
       "ee161f",
-      "#ee161f",
       "ffffff",
-      "#ffffff",
-      "00a850",
-      "#00a850"
+      "00a850"
     ],
     "colors": [
       {
@@ -10487,13 +10053,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "gold",
       "black",
       "65cfff",
-      "#65cfff",
       "ffce00",
-      "#ffce00",
       "000001",
-      "#000001",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -10563,9 +10125,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "blue",
       "ce1126",
-      "#ce1126",
-      "002b7f",
-      "#002b7f"
+      "002b7f"
     ],
     "colors": [
       {
@@ -10629,15 +10189,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "orange",
       "8d2029",
-      "#8d2029",
       "ffb700",
-      "#ffb700",
       "005641",
-      "#005641",
       "ff5b00",
-      "#ff5b00",
-      "c66b15",
-      "#c66b15"
+      "c66b15"
     ],
     "colors": [
       {
@@ -10711,15 +10266,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "blue",
       "cc0000",
-      "#cc0000",
       "ffffff",
-      "#ffffff",
       "000066",
-      "#000066",
       "d84040",
-      "#d84040",
-      "e58080",
-      "#e58080"
+      "e58080"
     ],
     "colors": [
       {
@@ -10795,13 +10345,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "green",
       "ffffff",
-      "#ffffff",
       "00209f",
-      "#00209f",
       "009543",
-      "#009543",
       "000000",
-      "#000000",
       "tricolor",
       "tricolour"
     ],
@@ -10883,11 +10429,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "gold",
       "006a44",
-      "#006a44",
       "c1272d",
-      "#c1272d",
       "fdb913",
-      "#fdb913",
       "tricolor",
       "tricolour"
     ],
@@ -10966,11 +10509,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "00a1de",
-      "#00a1de",
       "ed2939",
-      "#ed2939",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -11048,9 +10588,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "981e32",
-      "#981e32",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -11112,11 +10650,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "red",
       "000001",
-      "#000001",
       "239e46",
-      "#239e46",
-      "e70013",
-      "#e70013"
+      "e70013"
     ],
     "colors": [
       {
@@ -11194,8 +10729,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "504",
       "🇲🇦",
       "red",
-      "c1272d",
-      "#c1272d"
+      "c1272d"
     ],
     "colors": [
       {
@@ -11249,9 +10783,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "f31830",
-      "#f31830",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -11316,15 +10848,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "yellow",
       "de2110",
-      "#de2110",
       "00319c",
-      "#00319c",
       "ffde00",
-      "#ffde00",
       "a77b3b",
-      "#a77b3b",
-      "735529",
-      "#735529"
+      "735529"
     ],
     "colors": [
       {
@@ -11398,13 +10925,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "gold",
       "orange",
       "c40308",
-      "#c40308",
       "d3ae3b",
-      "#d3ae3b",
       "cb5822",
-      "#cb5822",
-      "c68d32",
-      "#c68d32"
+      "c68d32"
     ],
     "colors": [
       {
@@ -11477,11 +11000,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "000091",
-      "#000091",
       "e1000f",
-      "#e1000f",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -11554,11 +11074,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "007e3a",
-      "#007e3a",
       "fc3d32",
-      "#fc3d32",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -11635,11 +11152,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "orange",
       "3b5aa3",
-      "#3b5aa3",
       "ffffff",
-      "#ffffff",
-      "e2ae57",
-      "#e2ae57"
+      "e2ae57"
     ],
     "colors": [
       {
@@ -11717,11 +11231,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "yellow",
       "d20000",
-      "#d20000",
       "ffe600",
-      "#ffe600",
-      "da2c00",
-      "#da2c00"
+      "da2c00"
     ],
     "colors": [
       {
@@ -11787,11 +11298,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "yellow",
       "009a00",
-      "#009a00",
       "ff0000",
-      "#ff0000",
       "ffff00",
-      "#ffff00",
       "tricolor",
       "tricolour"
     ],
@@ -11864,13 +11372,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "white",
       "fecb00",
-      "#fecb00",
       "ea2839",
-      "#ea2839",
       "34b233",
-      "#34b233",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -11942,11 +11446,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "gold",
       "da2032",
-      "#da2032",
       "0066b3",
-      "#0066b3",
-      "ffd900",
-      "#ffd900"
+      "ffd900"
     ],
     "colors": [
       {
@@ -12017,9 +11518,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "white",
       "00785e",
-      "#00785e",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -12086,13 +11585,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "gray",
       "0071bc",
-      "#0071bc",
       "ffffff",
-      "#ffffff",
       "8c8a8c",
-      "#8c8a8c",
-      "d0d0d0",
-      "#d0d0d0"
+      "d0d0d0"
     ],
     "colors": [
       {
@@ -12162,11 +11657,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "black",
       "red",
       "00a650",
-      "#00a650",
       "231f1e",
-      "#231f1e",
-      "ef1923",
-      "#ef1923"
+      "ef1923"
     ],
     "colors": [
       {
@@ -12234,13 +11726,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "gold",
       "006233",
-      "#006233",
       "cd2a3e",
-      "#cd2a3e",
       "ffc400",
-      "#ffc400",
-      "99383c",
-      "#99383c"
+      "99383c"
     ],
     "colors": [
       {
@@ -12308,15 +11796,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "012169",
-      "#012169",
       "c8102e",
-      "#c8102e",
       "ffffff",
-      "#ffffff",
       "00a2bd",
-      "#00a2bd",
-      "a53d08",
-      "#a53d08"
+      "a53d08"
     ],
     "colors": [
       {
@@ -12394,11 +11877,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "cf142b",
-      "#cf142b",
       "ffffff",
-      "#ffffff",
-      "dcdcdc",
-      "#dcdcdc"
+      "dcdcdc"
     ],
     "colors": [
       {
@@ -12471,13 +11951,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "gold",
       "00a04d",
-      "#00a04d",
       "151f6d",
-      "#151f6d",
       "ee2737",
-      "#ee2737",
-      "ffcd00",
-      "#ffcd00"
+      "ffcd00"
     ],
     "colors": [
       {
@@ -12554,9 +12030,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "green",
       "d21034",
-      "#d21034",
-      "007e3a",
-      "#007e3a"
+      "007e3a"
     ],
     "colors": [
       {
@@ -12620,13 +12094,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "black",
       "f41408",
-      "#f41408",
       "21873b",
-      "#21873b",
       "000001",
-      "#000001",
-      "2e0403",
-      "#2e0403"
+      "2e0403"
     ],
     "colors": [
       {
@@ -12702,11 +12172,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "006847",
-      "#006847",
       "ce1126",
-      "#ce1126",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -12777,17 +12244,11 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "blue",
       "cc0000",
-      "#cc0000",
       "ffffff",
-      "#ffffff",
       "000066",
-      "#000066",
       "d83f3f",
-      "#d83f3f",
       "e57f7f",
-      "#e57f7f",
-      "ffcc00",
-      "#ffcc00"
+      "ffcc00"
     ],
     "colors": [
       {
@@ -12868,15 +12329,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "black",
       "ffca00",
-      "#ffca00",
       "009a00",
-      "#009a00",
       "ff0000",
-      "#ff0000",
       "000001",
-      "#000001",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -12958,13 +12414,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "white",
       "c70000",
-      "#c70000",
       "38a100",
-      "#38a100",
       "3662a2",
-      "#3662a2",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -13042,15 +12494,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "gold",
       "red",
       "0072ce",
-      "#0072ce",
       "009639",
-      "#009639",
       "fedb00",
-      "#fedb00",
       "e03c31",
-      "#e03c31",
-      "000001",
-      "#000001"
+      "000001"
     ],
     "colors": [
       {
@@ -13128,11 +12575,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "white",
       "e05206",
-      "#e05206",
       "0db02b",
-      "#0db02b",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -13204,11 +12648,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "white",
       "198200",
-      "#198200",
       "ffffff",
-      "#ffffff",
-      "4b903a",
-      "#4b903a"
+      "4b903a"
     ],
     "colors": [
       {
@@ -13274,9 +12715,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "white",
       "008753",
-      "#008753",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -13335,9 +12774,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "white",
       "0067c6",
-      "#0067c6",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -13418,11 +12855,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "21468b",
-      "#21468b",
       "ae1c28",
-      "#ae1c28",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -13504,13 +12938,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "white",
       "ed2939",
-      "#ed2939",
       "002664",
-      "#002664",
       "ffffff",
-      "#ffffff",
-      "7f92b1",
-      "#7f92b1"
+      "7f92b1"
     ],
     "colors": [
       {
@@ -13578,13 +13008,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "white",
       "ce0000",
-      "#ce0000",
       "000063",
-      "#000063",
       "ffffff",
-      "#ffffff",
-      "9b0019",
-      "#9b0019"
+      "9b0019"
     ],
     "colors": [
       {
@@ -13654,11 +13080,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "gold",
       "002170",
-      "#002170",
       "ffb20d",
-      "#ffb20d",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -13724,13 +13147,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "blue",
       "fedd00",
-      "#fedd00",
       "ffffff",
-      "#ffffff",
       "c8102e",
-      "#c8102e",
-      "012169",
-      "#012169"
+      "012169"
     ],
     "colors": [
       {
@@ -13812,11 +13231,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "00247d",
-      "#00247d",
       "c8102e",
-      "#c8102e",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -13882,11 +13298,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "white",
       "ef2d29",
-      "#ef2d29",
       "009025",
-      "#009025",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -13950,11 +13363,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "red",
       "ffffff",
-      "#ffffff",
       "0000ab",
-      "#0000ab",
-      "db0000",
-      "#db0000"
+      "db0000"
     ],
     "colors": [
       {
@@ -14021,9 +13431,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "d91023",
-      "#d91023",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -14091,11 +13499,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "de2010",
-      "#de2010",
       "ffffff",
-      "#ffffff",
-      "ef7d08",
-      "#ef7d08"
+      "ef7d08"
     ],
     "colors": [
       {
@@ -14172,11 +13577,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "gold",
       "000001",
-      "#000001",
       "ff0000",
-      "#ff0000",
-      "ffcc00",
-      "#ffcc00"
+      "ffcc00"
     ],
     "colors": [
       {
@@ -14273,13 +13675,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "0038a8",
-      "#0038a8",
       "ce1126",
-      "#ce1126",
       "ffffff",
-      "#ffffff",
-      "fcd116",
-      "#fcd116"
+      "fcd116"
     ],
     "colors": [
       {
@@ -14357,9 +13755,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "white",
       "0c590b",
-      "#0c590b",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -14436,9 +13832,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "dc143c",
-      "#dc143c",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -14505,11 +13899,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "000091",
-      "#000091",
       "e1000f",
-      "#e1000f",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -14580,13 +13971,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "00247d",
-      "#00247d",
       "c8102e",
-      "#c8102e",
       "ffffff",
-      "#ffffff",
-      "337321",
-      "#337321"
+      "337321"
     ],
     "colors": [
       {
@@ -14660,13 +14047,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "white",
       "ed0000",
-      "#ed0000",
       "0050f0",
-      "#0050f0",
       "ffffff",
-      "#ffffff",
-      "f67f7f",
-      "#f67f7f"
+      "f67f7f"
     ],
     "colors": [
       {
@@ -14747,13 +14130,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "000000",
-      "#000000",
       "009639",
-      "#009639",
       "ed2e38",
-      "#ed2e38",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -14828,11 +14207,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "green",
       "ff0000",
-      "#ff0000",
       "006600",
-      "#006600",
-      "d5d500",
-      "#d5d500"
+      "d5d500"
     ],
     "colors": [
       {
@@ -14898,9 +14274,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "yellow",
       "4aadd6",
-      "#4aadd6",
-      "ffde00",
-      "#ffde00"
+      "ffde00"
     ],
     "colors": [
       {
@@ -14964,11 +14338,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "0038a8",
-      "#0038a8",
       "d52b1e",
-      "#d52b1e",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -15035,9 +14406,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "pink",
       "white",
       "8d1b3d",
-      "#8d1b3d",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -15099,11 +14468,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "000091",
-      "#000091",
       "e1000f",
-      "#e1000f",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -15178,11 +14544,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "yellow",
       "00319c",
-      "#00319c",
       "de2110",
-      "#de2110",
       "ffde00",
-      "#ffde00",
       "tricolor",
       "tricolour"
     ],
@@ -15268,13 +14631,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "blue",
       "ffffff",
-      "#ffffff",
       "c6363c",
-      "#c6363c",
       "0c4076",
-      "#0c4076",
-      "e3e3e2",
-      "#e3e3e2"
+      "e3e3e2"
     ],
     "colors": [
       {
@@ -15409,11 +14768,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "0039a6",
-      "#0039a6",
       "d52b1e",
-      "#d52b1e",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -15486,11 +14842,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "gold",
       "00a1de",
-      "#00a1de",
       "20603d",
-      "#20603d",
-      "fad201",
-      "#fad201"
+      "fad201"
     ],
     "colors": [
       {
@@ -15560,15 +14913,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "🇸🇦",
       "green",
       "165d31",
-      "#165d31",
       "ffffff",
-      "#ffffff",
       "518665",
-      "#518665",
       "8bae98",
-      "#8bae98",
-      "c5d7cc",
-      "#c5d7cc"
+      "c5d7cc"
     ],
     "colors": [
       {
@@ -15649,13 +14997,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "gold",
       "0000d6",
-      "#0000d6",
       "006000",
-      "#006000",
       "ffcc00",
-      "#ffcc00",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -15734,15 +15078,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "yellow",
       "white",
       "d92223",
-      "#d92223",
       "003d88",
-      "#003d88",
       "007a39",
-      "#007a39",
       "fcd955",
-      "#fcd955",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -15825,13 +15164,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "white",
       "000001",
-      "#000001",
       "ff0000",
-      "#ff0000",
       "009a00",
-      "#009a00",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -15912,11 +15247,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "gold",
       "005293",
-      "#005293",
       "fecb00",
-      "#fecb00",
-      "3f706f",
-      "#3f706f"
+      "3f706f"
     ],
     "colors": [
       {
@@ -15990,9 +15322,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "red",
       "ffffff",
-      "#ffffff",
-      "df0000",
-      "#df0000"
+      "df0000"
     ],
     "colors": [
       {
@@ -16057,13 +15387,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "blue",
       "c8102e",
-      "#c8102e",
       "ffffff",
-      "#ffffff",
       "012169",
-      "#012169",
-      "f1c3ca",
-      "#f1c3ca"
+      "f1c3ca"
     ],
     "colors": [
       {
@@ -16149,11 +15475,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "0000bf",
-      "#0000bf",
       "d50000",
-      "#d50000",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -16230,13 +15553,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "white",
       "ef2b2d",
-      "#ef2b2d",
       "002868",
-      "#002868",
       "ffffff",
-      "#ffffff",
-      "7f93b3",
-      "#7f93b3"
+      "7f93b3"
     ],
     "colors": [
       {
@@ -16317,11 +15636,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "blue",
       "ee1c25",
-      "#ee1c25",
       "ffffff",
-      "#ffffff",
       "0b4ea2",
-      "#0b4ea2",
       "tricolor",
       "tricolour"
     ],
@@ -16398,11 +15714,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "white",
       "0000cd",
-      "#0000cd",
       "00cd00",
-      "#00cd00",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -16468,9 +15781,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "blue",
       "ffffff",
-      "#ffffff",
-      "19b6ef",
-      "#19b6ef"
+      "19b6ef"
     ],
     "colors": [
       {
@@ -16565,11 +15876,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "yellow",
       "0b7226",
-      "#0b7226",
       "bc0000",
-      "#bc0000",
       "ffff00",
-      "#ffff00",
       "tricolor",
       "tricolour"
     ],
@@ -16640,9 +15948,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "white",
       "40a6ff",
-      "#40a6ff",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -16705,17 +16011,11 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "377e3f",
-      "#377e3f",
       "b40a2d",
-      "#b40a2d",
       "ffffff",
-      "#ffffff",
       "ecc81d",
-      "#ecc81d",
       "9bbe9f",
-      "#9bbe9f",
-      "d98496",
-      "#d98496"
+      "d98496"
     ],
     "colors": [
       {
@@ -16804,15 +16104,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "0f47af",
-      "#0f47af",
       "078930",
-      "#078930",
       "000001",
-      "#000001",
       "da121a",
-      "#da121a",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -16893,15 +16188,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "gold",
       "red",
       "12ad2b",
-      "#12ad2b",
       "ffce00",
-      "#ffce00",
       "d21034",
-      "#d21034",
       "000001",
-      "#000001",
-      "88bd16",
-      "#88bd16"
+      "88bd16"
     ],
     "colors": [
       {
@@ -16973,9 +16263,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "white",
       "0f47af",
-      "#0f47af",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -17040,11 +16328,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "white",
       "ed2939",
-      "#ed2939",
       "002395",
-      "#002395",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -17119,13 +16404,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "white",
       "000000",
-      "#000000",
       "007a3d",
-      "#007a3d",
       "ffffff",
-      "#ffffff",
       "ce1126",
-      "#ce1126",
       "tricolor",
       "tricolour"
     ],
@@ -17205,17 +16486,11 @@ export const FLAGS: readonly FlagMeta[] = [
       "black",
       "white",
       "3e5eb9",
-      "#3e5eb9",
       "b10c0c",
-      "#b10c0c",
       "ffd900",
-      "#ffd900",
       "000000",
-      "#000000",
       "ffffff",
-      "#ffffff",
-      "9e9b5d",
-      "#9e9b5d"
+      "9e9b5d"
     ],
     "colors": [
       {
@@ -17302,13 +16577,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "gold",
       "002868",
-      "#002868",
       "c8102e",
-      "#c8102e",
       "ffffff",
-      "#ffffff",
-      "fcd116",
-      "#fcd116"
+      "fcd116"
     ],
     "colors": [
       {
@@ -17386,11 +16657,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "gold",
       "002664",
-      "#002664",
       "c60c30",
-      "#c60c30",
       "fecb00",
-      "#fecb00",
       "tricolor",
       "tricolour"
     ],
@@ -17464,11 +16732,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "red",
       "002395",
-      "#002395",
       "ffffff",
-      "#ffffff",
-      "ed2939",
-      "#ed2939"
+      "ed2939"
     ],
     "colors": [
       {
@@ -17532,13 +16797,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "yellow",
       "red",
       "118600",
-      "#118600",
       "ffe300",
-      "#ffe300",
       "d80000",
-      "#d80000",
-      "88b400",
-      "#88b400"
+      "88b400"
     ],
     "colors": [
       {
@@ -17615,13 +16876,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "white",
       "a51931",
-      "#a51931",
       "2d2a4a",
-      "#2d2a4a",
       "f4f5f8",
-      "#f4f5f8",
       "908fa1",
-      "#908fa1",
       "tricolor",
       "tricolour"
     ],
@@ -17699,11 +16956,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "red",
       "ffffff",
-      "#ffffff",
       "006600",
-      "#006600",
       "cc0000",
-      "#cc0000",
       "tricolor",
       "tricolour"
     ],
@@ -17770,9 +17024,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "gold",
       "00247d",
-      "#00247d",
-      "fed100",
-      "#fed100"
+      "fed100"
     ],
     "colors": [
       {
@@ -17838,11 +17090,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "black",
       "gold",
       "cb000f",
-      "#cb000f",
       "000001",
-      "#000001",
-      "f8c00c",
-      "#f8c00c"
+      "f8c00c"
     ],
     "colors": [
       {
@@ -17906,13 +17155,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "red",
       "00843d",
-      "#00843d",
       "d22630",
-      "#d22630",
       "b15e32",
-      "#b15e32",
-      "695537",
-      "#695537"
+      "695537"
     ],
     "colors": [
       {
@@ -17989,9 +17234,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "e70013",
-      "#e70013",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -18052,9 +17295,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "c10000",
-      "#c10000",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -18120,9 +17361,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "e30a17",
-      "#e30a17",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -18189,11 +17428,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "black",
       "white",
       "e00000",
-      "#e00000",
       "000001",
-      "#000001",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -18259,15 +17495,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "009fca",
-      "#009fca",
       "c8102e",
-      "#c8102e",
       "ffffff",
-      "#ffffff",
       "012169",
-      "#012169",
-      "fff40d",
-      "#fff40d"
+      "fff40d"
     ],
     "colors": [
       {
@@ -18352,11 +17583,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "blue",
       "ff0000",
-      "#ff0000",
       "000095",
-      "#000095",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -18428,13 +17656,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "yellow",
       "000001",
-      "#000001",
       "009900",
-      "#009900",
       "0099ff",
-      "#0099ff",
-      "ffff00",
-      "#ffff00"
+      "ffff00"
     ],
     "colors": [
       {
@@ -18510,9 +17734,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "gold",
       "0057b8",
-      "#0057b8",
-      "ffd700",
-      "#ffd700"
+      "ffd700"
     ],
     "colors": [
       {
@@ -18575,13 +17797,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "black",
       "red",
       "ffe700",
-      "#ffe700",
       "000001",
-      "#000001",
       "de3908",
-      "#de3908",
       "fffdff",
-      "#fffdff",
       "tricolor",
       "tricolour"
     ],
@@ -18658,15 +17876,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "blue",
       "bd3d44",
-      "#bd3d44",
       "ffffff",
-      "#ffffff",
       "192f5d",
-      "#192f5d",
       "de9ea2",
-      "#de9ea2",
       "cd6e73",
-      "#cd6e73",
       "tricolor",
       "tricolour"
     ],
@@ -18732,13 +17945,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "un",
       "blue",
       "4b92db",
-      "#4b92db",
       "78ade4",
-      "#78ade4",
       "ffffff",
-      "#ffffff",
-      "9ac2ea",
-      "#9ac2ea"
+      "9ac2ea"
     ],
     "colors": [
       {
@@ -18822,15 +18031,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "blue",
       "bd3d44",
-      "#bd3d44",
       "ffffff",
-      "#ffffff",
       "192f5d",
-      "#192f5d",
       "de9ea2",
-      "#de9ea2",
       "cd6e73",
-      "#cd6e73",
       "tricolor",
       "tricolour"
     ],
@@ -18905,9 +18109,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "blue",
       "ffffff",
-      "#ffffff",
-      "0038a8",
-      "#0038a8"
+      "0038a8"
     ],
     "colors": [
       {
@@ -18971,15 +18173,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "blue",
       "1eb53a",
-      "#1eb53a",
       "ffffff",
-      "#ffffff",
       "0099b5",
-      "#0099b5",
       "ce1126",
-      "#ce1126",
       "e68892",
-      "#e68892",
       "tricolor",
       "tricolour"
     ],
@@ -19066,9 +18263,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "yellow",
       "white",
       "ffe000",
-      "#ffe000",
-      "ffffff",
-      "#ffffff"
+      "ffffff"
     ],
     "colors": [
       {
@@ -19136,11 +18331,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "green",
       "blue",
       "f4f100",
-      "#f4f100",
       "199a00",
-      "#199a00",
-      "0058aa",
-      "#0058aa"
+      "0058aa"
     ],
     "colors": [
       {
@@ -19205,11 +18397,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "gold",
       "blue",
       "cf142b",
-      "#cf142b",
       "ffcc00",
-      "#ffcc00",
       "00247d",
-      "#00247d",
       "tricolor",
       "tricolour"
     ],
@@ -19284,15 +18473,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "green",
       "000066",
-      "#000066",
       "c8102e",
-      "#c8102e",
       "ffffff",
-      "#ffffff",
       "006129",
-      "#006129",
-      "012169",
-      "#012169"
+      "012169"
     ],
     "colors": [
       {
@@ -19372,15 +18556,10 @@ export const FLAGS: readonly FlagMeta[] = [
       "white",
       "gold",
       "ffffff",
-      "#ffffff",
       "d1a935",
-      "#d1a935",
       "f4c53d",
-      "#f4c53d",
       "e3e3e3",
-      "#e3e3e3",
-      "162667",
-      "#162667"
+      "162667"
     ],
     "colors": [
       {
@@ -19454,9 +18633,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "yellow",
       "da251d",
-      "#da251d",
-      "ffff00",
-      "#ffff00"
+      "ffff00"
     ],
     "colors": [
       {
@@ -19522,13 +18699,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "black",
       "gold",
       "009543",
-      "#009543",
       "d21034",
-      "#d21034",
       "000000",
-      "#000000",
-      "fdce12",
-      "#fdce12"
+      "fdce12"
     ],
     "colors": [
       {
@@ -19609,11 +18782,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "000091",
-      "#000091",
       "e1000f",
-      "#e1000f",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -19681,9 +18851,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "blue",
       "ce1126",
-      "#ce1126",
-      "002b7f",
-      "#002b7f"
+      "002b7f"
     ],
     "colors": [
       {
@@ -19750,9 +18918,7 @@ export const FLAGS: readonly FlagMeta[] = [
       "blue",
       "gold",
       "244aa5",
-      "#244aa5",
-      "d0a650",
-      "#d0a650"
+      "d0a650"
     ],
     "colors": [
       {
@@ -19814,11 +18980,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "000001",
-      "#000001",
       "f10600",
-      "#f10600",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -19887,11 +19050,8 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "white",
       "000091",
-      "#000091",
       "e1000f",
-      "#e1000f",
       "ffffff",
-      "#ffffff",
       "tricolor",
       "tricolour"
     ],
@@ -20000,17 +19160,11 @@ export const FLAGS: readonly FlagMeta[] = [
       "black",
       "gold",
       "007847",
-      "#007847",
       "e1392d",
-      "#e1392d",
       "000c8a",
-      "#000c8a",
       "ffffff",
-      "#ffffff",
       "000001",
-      "#000001",
-      "ffb915",
-      "#ffb915"
+      "ffb915"
     ],
     "colors": [
       {
@@ -20096,13 +19250,9 @@ export const FLAGS: readonly FlagMeta[] = [
       "black",
       "red",
       "198a00",
-      "#198a00",
       "ef7d00",
-      "#ef7d00",
       "000001",
-      "#000001",
-      "de2010",
-      "#de2010"
+      "de2010"
     ],
     "colors": [
       {
@@ -20182,17 +19332,11 @@ export const FLAGS: readonly FlagMeta[] = [
       "red",
       "black",
       "006400",
-      "#006400",
       "ffd200",
-      "#ffd200",
       "ffffff",
-      "#ffffff",
       "d40000",
-      "#d40000",
       "000001",
-      "#000001",
-      "bfb600",
-      "#bfb600"
+      "bfb600"
     ],
     "colors": [
       {

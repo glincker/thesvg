@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { DocsPageFooter } from "@/components/docs/docs-page-footer";
 import { DocsAskAi } from "@/components/docs/docs-ask-ai";
 import { getCollectionCount } from "@/lib/icons";
+import { FlagsBrowser } from "@/components/flags/flags-browser";
+import { getFlagTiles } from "@/lib/flags-tiles";
 
 export const metadata: Metadata = {
   title: "Flags",
@@ -69,6 +71,19 @@ export default function FlagsDocsPage() {
           </div>
         ))}
       </div>
+      <section aria-labelledby="flags-browse" className="mt-10">
+        <h2 id="flags-browse" className="mb-3 text-lg font-semibold">Try it</h2>
+        <p className="mb-4 text-xs text-muted-foreground">
+          Filter by region, color or locale, switch shape and size, and open a flag for copy-paste snippets. Your choices stay in this browser only. Arrow keys move between flags, Enter opens details, S stars one.
+        </p>
+        <FlagsBrowser tiles={getFlagTiles()} syncUrl={false} />
+      </section>
+      <section aria-labelledby="flags-credits" className="mt-10">
+        <h2 id="flags-credits" className="mb-2 text-lg font-semibold">Credits and licenses</h2>
+        <p className="max-w-2xl text-xs leading-relaxed text-muted-foreground">
+          The flag drawings come from flag-icons (4x3 and square) and circle-flags (circle), both MIT licensed. The files themselves carry no credit text; the full notices and the per-file source map are in THIRD_PARTY_NOTICES.md and packages/flags/src/data/licenses.json in the repository. A flag is a public symbol of a state or organization, and including one is not a statement about sovereignty.
+        </p>
+      </section>
       <p className="mt-6 text-xs text-muted-foreground">
         Full guide with props, locale table, Vue, Svelte and plain SVG examples:{" "}
         <a className="underline" href="https://github.com/glincker/thesvg/blob/main/docs/flags.md">docs/flags.md</a>.

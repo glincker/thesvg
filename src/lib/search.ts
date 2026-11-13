@@ -49,7 +49,8 @@ export function searchIcons(
   icons: IconEntry[],
   query: string
 ): IconEntry[] {
-  const trimmed = query.trim();
+  // "#ed2939" and "ed2939" are the same color query; aliases store the bare hex.
+  const trimmed = query.trim().replace(/^#(?=[0-9a-f]{3,6}$)/i, "");
   if (!trimmed) return icons;
   const fuse = getSearchIndex(icons);
 

@@ -115,6 +115,7 @@ function findIcon(slug: string): IconEntry | undefined {
 // --- Search ---
 
 export function searchIcons(query: string, limit = 20): SearchResult[] {
+  query = query.trim().replace(/^#(?=[0-9a-f]{3,6}$)/i, "");
   const fuse = getFuse();
   const results = fuse.search(query, { limit });
   const ordered = results.map((r) => r.item);
