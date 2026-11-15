@@ -5442,6 +5442,24 @@
     "collection": "auth-badges"
   },
   {
+    "slug": "apiko",
+    "title": "APIKO",
+    "aliases": [],
+    "hex": "5B5BD6",
+    "categories": [
+      "AI",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/apiko/default.svg",
+      "mono": "/icons/apiko/mono.svg"
+    },
+    "license": "brand-use",
+    "url": "https://apiko.app",
+    "dateAdded": "2026-11-15",
+    "collection": "brands"
+  },
+  {
     "slug": "apl",
     "title": "Apl",
     "aliases": [
