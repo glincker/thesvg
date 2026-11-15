@@ -220,16 +220,30 @@ export function Footer() {
               <p className="text-sm leading-relaxed text-muted-foreground">
                 The Open SVG Brand Library. No gatekeeping. Every brand deserves a place.
               </p>
-              <p className="text-xs text-muted-foreground/60">
-                A{" "}
+              <p className="flex flex-wrap items-center gap-x-1.5 text-xs text-muted-foreground/60">
+                A
                 <a
-                  href={withUtm("https://glincker.com", "footer")}
+                  href={withUtm("https://glinr.com/branding", "footer")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-medium text-muted-foreground/80 transition-colors hover:text-foreground"
+                  aria-label="GLINR Studios brand logo"
+                  className="inline-flex items-center opacity-80 transition-opacity hover:opacity-100"
                 >
-                  GLINCKER
-                </a>{" "}
+                  <img
+                    src="/icons/glincker/wordmark-dark.svg"
+                    alt="GLINR Studios"
+                    width={104}
+                    height={16}
+                    className="h-4 w-auto dark:hidden"
+                  />
+                  <img
+                    src="/icons/glincker/wordmark-light.svg"
+                    alt="GLINR Studios"
+                    width={104}
+                    height={16}
+                    className="hidden h-4 w-auto dark:block"
+                  />
+                </a>
                 project
               </p>
               <ul className="-ml-1.5 flex flex-wrap items-center gap-0.5" aria-label="theSVG on the web">

@@ -84516,11 +84516,12 @@
   },
   {
     "slug": "glincker",
-    "title": "GLINCKER",
+    "title": "GLINR Studios",
     "aliases": [
-      "glinr"
+      "glinr",
+      "glinr studios"
     ],
-    "hex": "6366F1",
+    "hex": "FF5A1F",
     "categories": [
       "Software",
       "Platform"
@@ -84535,9 +84536,36 @@
       "wordmarkDark": "/icons/glincker/wordmark-dark.svg"
     },
     "license": "MIT",
+    "url": "https://glinr.com/",
+    "dateAdded": "2026-11-14",
+    "collection": "brands",
+    "supersedes": "glincker-legacy"
+  },
+  {
+    "slug": "glincker-legacy",
+    "title": "GLINCKER (legacy)",
+    "aliases": [
+      "glinr legacy"
+    ],
+    "hex": "6366F1",
+    "categories": [
+      "Software",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/glincker-legacy/default.svg",
+      "mono": "/icons/glincker-legacy/mono.svg",
+      "light": "/icons/glincker-legacy/light.svg",
+      "dark": "/icons/glincker-legacy/dark.svg",
+      "wordmark": "/icons/glincker-legacy/wordmark.svg",
+      "wordmarkLight": "/icons/glincker-legacy/wordmark-light.svg",
+      "wordmarkDark": "/icons/glincker-legacy/wordmark-dark.svg"
+    },
+    "license": "MIT",
     "url": "https://glincker.com/",
     "dateAdded": "2026-03-09",
-    "collection": "brands"
+    "collection": "brands",
+    "supersededBy": "glincker"
   },
   {
     "slug": "glitch",
