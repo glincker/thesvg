@@ -75,6 +75,13 @@ jobs:
               public/icons/flag-bo/default.svg|public/icons/flag-bo/square.svg|public/icons/flag-rs/default.svg|public/icons/flag-rs/square.svg)
                 echo "size exemption: $f"; size=0 ;;
             esac
+            # Exact exemptions, same list as EXEMPT.raster in scripts/validate-icons.ts. The archived glincker
+            # wordmarks embed the owner's own brand PNGs and were moved here unchanged.
+            raster_ok=0
+            case "$f" in
+              public/icons/glincker-legacy/wordmark.svg|public/icons/glincker-legacy/wordmark-dark.svg|public/icons/glincker-legacy/wordmark-light.svg)
+                echo "raster exemption: $f"; raster_ok=1 ;;
+            esac
             if [ "$size" -gt "$max_bytes" ]; then
               echo "::error file=$f::SVG is $size bytes (limit is $max_bytes)"
               fail=1
@@ -102,7 +109,7 @@ jobs:
               echo "::error file=$f::contains inline event handler"
               fail=1
             fi
-            if grep -q 'data:image/' "$f"; then
+            if [ "$raster_ok" -eq 0 ] && grep -q 'data:image/' "$f"; then
               echo "::error file=$f::contains embedded raster (data:image)"
               fail=1
             fi

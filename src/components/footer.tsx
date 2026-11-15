@@ -230,14 +230,14 @@ export function Footer() {
                   className="inline-flex items-center opacity-80 transition-opacity hover:opacity-100"
                 >
                   <img
-                    src="/icons/glincker/wordmark-dark.svg"
+                    src="/icons/glinr/wordmark-dark.svg"
                     alt="GLINR Studios"
                     width={104}
                     height={16}
                     className="h-4 w-auto dark:hidden"
                   />
                   <img
-                    src="/icons/glincker/wordmark-light.svg"
+                    src="/icons/glinr/wordmark-light.svg"
                     alt="GLINR Studios"
                     width={104}
                     height={16}

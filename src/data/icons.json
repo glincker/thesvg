@@ -84515,37 +84515,10 @@
     "collection": "auth-badges"
   },
   {
-    "slug": "glincker",
-    "title": "GLINR Studios",
-    "aliases": [
-      "glinr",
-      "glinr studios"
-    ],
-    "hex": "FF5A1F",
-    "categories": [
-      "Software",
-      "Platform"
-    ],
-    "variants": {
-      "default": "/icons/glincker/default.svg",
-      "mono": "/icons/glincker/mono.svg",
-      "light": "/icons/glincker/light.svg",
-      "dark": "/icons/glincker/dark.svg",
-      "wordmark": "/icons/glincker/wordmark.svg",
-      "wordmarkLight": "/icons/glincker/wordmark-light.svg",
-      "wordmarkDark": "/icons/glincker/wordmark-dark.svg"
-    },
-    "license": "MIT",
-    "url": "https://glinr.com/",
-    "dateAdded": "2026-11-14",
-    "collection": "brands",
-    "supersedes": "glincker-legacy"
-  },
-  {
     "slug": "glincker-legacy",
     "title": "GLINCKER (legacy)",
     "aliases": [
-      "glinr legacy"
+      "glincker legacy"
     ],
     "hex": "6366F1",
     "categories": [
@@ -84565,7 +84538,34 @@
     "url": "https://glincker.com/",
     "dateAdded": "2026-03-09",
     "collection": "brands",
-    "supersededBy": "glincker"
+    "supersededBy": "glinr"
+  },
+  {
+    "slug": "glinr",
+    "title": "GLINR Studios",
+    "aliases": [
+      "glincker",
+      "glinr studios"
+    ],
+    "hex": "FF5A1F",
+    "categories": [
+      "Software",
+      "Platform"
+    ],
+    "variants": {
+      "default": "/icons/glinr/default.svg",
+      "mono": "/icons/glinr/mono.svg",
+      "light": "/icons/glinr/light.svg",
+      "dark": "/icons/glinr/dark.svg",
+      "wordmark": "/icons/glinr/wordmark.svg",
+      "wordmarkLight": "/icons/glinr/wordmark-light.svg",
+      "wordmarkDark": "/icons/glinr/wordmark-dark.svg"
+    },
+    "license": "MIT",
+    "url": "https://glinr.com/",
+    "dateAdded": "2026-11-14",
+    "collection": "brands",
+    "supersedes": "glincker-legacy"
   },
   {
     "slug": "glitch",
