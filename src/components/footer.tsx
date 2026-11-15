@@ -230,18 +230,18 @@ export function Footer() {
                   className="inline-flex items-center opacity-80 transition-opacity hover:opacity-100"
                 >
                   <img
-                    src="/icons/glinr/wordmark-dark.svg"
-                    alt="GLINR Studios"
-                    width={104}
-                    height={16}
-                    className="h-4 w-auto dark:hidden"
-                  />
-                  <img
                     src="/icons/glinr/wordmark-light.svg"
                     alt="GLINR Studios"
-                    width={104}
-                    height={16}
-                    className="hidden h-4 w-auto dark:block"
+                    width={130}
+                    height={20}
+                    className="h-5 w-auto dark:hidden"
+                  />
+                  <img
+                    src="/icons/glinr/wordmark-dark.svg"
+                    alt="GLINR Studios"
+                    width={130}
+                    height={20}
+                    className="hidden h-5 w-auto dark:block"
                   />
                 </a>
                 project
@@ -333,28 +333,28 @@ export function Footer() {
               </span>
               <div className="flex items-center gap-6">
                 <a
-                  href={withUtm("https://glincker.com", "footer")}
+                  href={withUtm("https://glinr.com", "footer")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 opacity-60 transition-opacity hover:opacity-100"
                 >
                   { }
                   <img
-                    src="/icons/glincker/light.svg"
-                    alt="GLINCKER"
+                    src="/icons/glinr/dark.svg"
+                    alt="GLINR Studios"
                     width={20}
                     height={20}
                     className="hidden dark:block"
                   />
                   { }
                   <img
-                    src="/icons/glincker/dark.svg"
-                    alt="GLINCKER"
+                    src="/icons/glinr/light.svg"
+                    alt="GLINR Studios"
                     width={20}
                     height={20}
                     className="block dark:hidden"
                   />
-                  <span className="text-xs text-muted-foreground">glincker.com</span>
+                  <span className="text-xs text-muted-foreground">glinr.com</span>
                 </a>
                 <span className="text-border/40">|</span>
                 <a
