@@ -1,5 +1,11 @@
 # @thesvg/vue
 
+## 4.0.10
+
+### Patch Changes
+
+- fix: glinr icon light and dark were reversed, footer partner logo was broken ([#1557](https://github.com/glincker/thesvg/issues/1557))
+
 ## 4.0.9
 
 ### Patch Changes
