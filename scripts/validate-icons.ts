@@ -21,7 +21,7 @@ const MAX_BYTES = 50 * 1024;
  * thousands of 0.1 unit glyph shapes; rounding coordinates enough to fit the
  * limit visibly degrades it (RMSE 0.21 at precision 1, still 58KB at 2).
  * The flag-* files below carry detailed official coats of arms (bo, rs). The generator already compacts them as far as the fidelity check allows.
- * The embedded PNGs in glincker/wordmark*.svg are the owner's own brand files.
+ * The embedded PNGs in glincker-legacy/wordmark*.svg are the owner's own brand files.
  */
 const EXEMPT: Record<string, ReadonlyArray<string>> = {
   size: [
@@ -32,9 +32,9 @@ const EXEMPT: Record<string, ReadonlyArray<string>> = {
     "public/icons/flag-rs/square.svg",
   ],
   raster: [
-    "public/icons/glincker/wordmark.svg",
-    "public/icons/glincker/wordmark-dark.svg",
-    "public/icons/glincker/wordmark-light.svg",
+    "public/icons/glincker-legacy/wordmark.svg",
+    "public/icons/glincker-legacy/wordmark-dark.svg",
+    "public/icons/glincker-legacy/wordmark-light.svg",
   ],
 };
 
