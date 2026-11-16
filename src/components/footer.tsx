@@ -1,7 +1,11 @@
 import { UiGlyph } from "@/components/ui-glyph";
 import { TheSVGMark } from "@/components/icons/the-svg-mark";
 import Link from "next/link";
-import { TRADEMARK_POLICY_URL } from "@/lib/constants";
+import {
+  TRADEMARK_POLICY_URL,
+  TRENDSHIFT_BADGE_SRC,
+  TRENDSHIFT_URL,
+} from "@/lib/constants";
 import { withUtm } from "@/lib/external-link";
 import {
   getIconCount,
@@ -198,6 +202,22 @@ export function Footer() {
             >
               <GithubMark className="h-4 w-4" />
               Star on GitHub
+            </a>
+            <a
+              href={TRENDSHIFT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={TRENDSHIFT_BADGE_SRC}
+                alt="glincker/thesvg | Trendshift"
+                width={250}
+                height={55}
+                loading="lazy"
+                className="h-[55px] w-[250px]"
+              />
             </a>
           </div>
         </div>
