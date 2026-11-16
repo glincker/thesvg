@@ -64,13 +64,7 @@
 </p>
 
 <p align="center">
-  <a href="https://thesvg.org">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" />
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image-light.png" />
-      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image-light.png" alt="theSVG, the open SVG brand library" width="720" />
-    </picture>
-  </a>
+  <a href="https://thesvg.org"><img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/demo/thesvg-demo.gif" alt="theSVG demo: search a brand logo, copy the SVG or add it with the CLI" width="720" /></a>
 </p>
 
 
