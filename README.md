@@ -22,19 +22,34 @@
 </p>
 
 <p align="center">
+  <code>npx @thesvg/cli add github</code>
+</p>
+
+<p align="center">
+  <a href="https://thesvg.org"><strong>Browse 7,900+ icons</strong></a> &nbsp;&bull;&nbsp;
+  <a href="https://github.com/glincker/thesvg"><strong>Star on GitHub</strong></a> if it saves you a logo hunt
+</p>
+
+<p align="center">
   <a href="https://trendshift.io/repositories/24396?utm_source=trendshift-badge&utm_medium=badge&utm_campaign=badge-trendshift-24396" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/24396/daily?language=TypeScript" alt="glincker/thesvg | Trendshift" width="250" height="55"/></a>
 </p>
 
 <p align="center">
   <a href="https://www.npmjs.com/package/thesvg"><img src="https://img.shields.io/npm/v/thesvg?style=flat-square&color=C2410C&label=npm" alt="npm" /></a>
   <a href="https://www.npmjs.com/package/thesvg"><img src="https://img.shields.io/npm/dm/thesvg?style=flat-square&color=C2410C&label=downloads" alt="downloads" /></a>
-  <a href="https://www.npmjs.com/package/@thesvg/flags"><img src="https://img.shields.io/npm/v/@thesvg/flags?style=flat-square&color=C2410C&label=flags" alt="@thesvg/flags" /></a>
-  <a href="https://www.npmjs.com/package/@thesvg/mcp-server"><img src="https://img.shields.io/npm/v/@thesvg/mcp-server?style=flat-square&color=C2410C&label=MCP" alt="MCP server" /></a>
   <a href="https://www.jsdelivr.com/package/gh/glincker/thesvg"><img src="https://data.jsdelivr.com/v1/package/gh/glincker/thesvg/badge" alt="jsDelivr" /></a>
   <a href="https://github.com/glincker/thesvg/stargazers"><img src="https://img.shields.io/github/stars/glincker/thesvg?style=flat-square&label=stars" alt="stars" /></a>
   <a href="https://discord.gg/Ar5pcaZB99"><img src="https://img.shields.io/discord/829168897080557579?style=flat-square&logo=discord&logoColor=white&label=discord&color=5865F2" alt="Discord" /></a>
   <a href="https://github.com/glincker/thesvg"><img src="https://img.shields.io/badge/icons-7%2C900%2B-C2410C?style=flat-square" alt="7,900+ icons" /></a>
   <a href="https://github.com/glincker/thesvg/blob/main/LICENSE"><img src="https://img.shields.io/github/license/glincker/thesvg?style=flat-square" alt="license" /></a>
+  <a href="https://www.npmjs.com/package/@thesvg/icons"><img src="https://img.shields.io/badge/provenance-verified-2EA44F?style=flat-square" alt="npm provenance verified" /></a>
+</p>
+
+<details align="center">
+<summary>More badges: integrations, packages and supply-chain checks</summary>
+<p align="center">
+  <a href="https://www.npmjs.com/package/@thesvg/flags"><img src="https://img.shields.io/npm/v/@thesvg/flags?style=flat-square&color=C2410C&label=flags" alt="@thesvg/flags" /></a>
+  <a href="https://www.npmjs.com/package/@thesvg/mcp-server"><img src="https://img.shields.io/npm/v/@thesvg/mcp-server?style=flat-square&color=C2410C&label=MCP" alt="MCP server" /></a>
   <a href="https://www.figma.com/community/plugin/1612997159050367763"><img src="https://img.shields.io/badge/Figma-Plugin-F24E1E?style=flat-square&logo=figma&logoColor=white" alt="Figma" /></a>
   <a href="https://marketplace.visualstudio.com/items?itemName=glincker.thesvg"><img src="https://img.shields.io/badge/VS%20Code-Extension-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white" alt="VS Code" /></a>
   <a href="https://www.raycast.com/thegdsks/thesvg"><img src="https://img.shields.io/badge/Raycast-Store-FF6363?style=flat-square&logo=raycast" alt="Raycast" /></a>
@@ -46,8 +61,8 @@
   <a href="https://github.com/glincker/homebrew-thesvg"><img src="https://img.shields.io/badge/Homebrew-thesvg-FBB040?style=flat-square&logo=homebrew&logoColor=white" alt="Homebrew" /></a>
   <a href="https://socket.dev/npm/package/@thesvg/icons"><img src="https://socket.dev/api/badge/npm/package/@thesvg/icons" alt="Socket score for @thesvg/icons" /></a>
   <a href="https://socket.dev/npm/package/thesvg"><img src="https://socket.dev/api/badge/npm/package/thesvg" alt="Socket score for thesvg" /></a>
-  <a href="https://www.npmjs.com/package/@thesvg/icons"><img src="https://img.shields.io/badge/provenance-verified-2EA44F?style=flat-square" alt="npm provenance verified" /></a>
 </p>
+</details>
 
 <p align="center">
   <a href="https://thesvg.org"><strong>Browse icons</strong></a> &nbsp;&bull;&nbsp;
@@ -637,41 +652,3 @@ If you are a brand owner and would like an icon updated or removed, please [open
 ## License
 
 [MIT](./LICENSE) for the codebase, tooling and the UI icons. Individual brand icons remain the intellectual property of their respective trademark holders.
-
-## Star History
-
-<a href="https://star-history.com/#glincker/thesvg&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date" width="600" />
- </picture>
-</a>
-
----
-
-<p align="center">
-  <a href="https://thesvg.org">thesvg.org</a> &nbsp;&bull;&nbsp;
-  <a href="./docs/install.md">Install</a> &nbsp;&bull;&nbsp;
-  <a href="./docs/extensions.md">Extensions</a> &nbsp;&bull;&nbsp;
-  <a href="https://github.com/glincker/thesvg/issues">Issues</a>
-</p>
-
-<p align="center"><sub>Built by GLINCKER. More from the team:</sub></p>
-
-<table align="center">
-  <tr>
-    <td align="center" width="33%">
-      <a href="https://github.com/glincker"><picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/glincker/light.svg" /><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/glincker/default.svg" height="40" alt="GLINCKER" /></picture><br /><b>GLINCKER</b></a><br />
-      <sub>Open source from the team behind theSVG</sub>
-    </td>
-    <td align="center" width="33%">
-      <a href="https://levelrail.com"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/levelrail/default.svg" height="40" alt="Levelrail" /><br /><b>Levelrail</b></a><br />
-      <sub>Self-hosted alternative to Vercel and Coolify. Git push, HTTPS, logs, rollback.</sub>
-    </td>
-    <td align="center" width="33%">
-      <a href="https://theauth.dev"><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/theauth/default.svg" height="40" alt="theAuth" /><br /><b>theAuth</b></a><br />
-      <sub>Auth for AI agents and humans. Agent identity, MCP OAuth 2.1, audit.</sub>
-    </td>
-  </tr>
-</table>
