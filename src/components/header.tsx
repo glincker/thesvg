@@ -363,7 +363,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
               links home to the all-brands view. Lower-traffic collections
               (community, auth-badges) move into the "More" dropdown instead
               of their own pills, so the row doesn't get crowded. */}
-          <nav className={cn("hidden items-center gap-0.5", isUi ? "" : "md:flex")} aria-label="Icon collections">
+          <nav className={cn("hidden items-center gap-0.5", isUi ? "" : "min-[2000px]:flex")} aria-label="Icon collections">
             {COLLECTIONS_LIST.filter(
               (meta) => !["brands", "community", "auth-badges"].includes(meta.id)
             ).map((meta) => {
@@ -421,7 +421,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
               with the historical `max-w-xl` centering. */}
           <form
             onSubmit={handleSearchSubmit}
-            className="relative order-last w-full basis-full sm:order-none sm:w-auto sm:flex-1 sm:basis-auto"
+            className="relative order-last w-full basis-full sm:order-none sm:w-auto sm:flex-1 sm:basis-auto lg:min-w-[260px]"
           >
             <div className="relative w-full sm:mx-auto sm:max-w-2xl">
               <UiGlyph name="search" className="absolute top-1/2 left-3 h-4.5 w-4.5 -translate-y-1/2 text-muted-foreground" />
@@ -689,7 +689,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                 rel="noopener noreferrer"
                 aria-label="View on Raycast"
                 title="Raycast extension"
-                className="hidden h-8 w-8 items-center justify-center rounded-lg border border-border/50 text-muted-foreground transition-all hover:border-[#FF6363]/30 hover:bg-[#FF6363]/5 hover:text-[#FF6363] lg:inline-flex dark:border-white/[0.06] dark:hover:border-[#FF6363]/30"
+                className="hidden h-8 w-8 items-center justify-center rounded-lg border border-border/50 text-muted-foreground transition-all hover:border-[#FF6363]/30 hover:bg-[#FF6363]/5 hover:text-[#FF6363] min-[1600px]:inline-flex dark:border-white/[0.06] dark:hover:border-[#FF6363]/30"
               >
                 <img
                   src="/icons/raycast/default.svg"
@@ -705,7 +705,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                 rel="noopener noreferrer"
                 aria-label={showFigmaBadge ? "Open the Figma plugin (new)" : "Open the Figma plugin"}
                 title={showFigmaBadge ? "Figma plugin - new" : "Figma plugin"}
-                className="relative hidden h-8 w-8 items-center justify-center rounded-lg border border-border/50 text-muted-foreground transition-all hover:border-[#F24E1E]/40 hover:bg-[#F24E1E]/5 hover:text-[#F24E1E] lg:inline-flex dark:border-white/[0.06] dark:hover:border-[#F24E1E]/40"
+                className="relative hidden h-8 w-8 items-center justify-center rounded-lg border border-border/50 text-muted-foreground transition-all hover:border-[#F24E1E]/40 hover:bg-[#F24E1E]/5 hover:text-[#F24E1E] min-[1600px]:inline-flex dark:border-white/[0.06] dark:hover:border-[#F24E1E]/40"
               >
                 <img
                   src="/icons/figma/default.svg"
@@ -730,7 +730,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                 rel="noopener noreferrer"
                 aria-label="Install the VS Code extension"
                 title="VS Code extension"
-                className="hidden h-8 w-8 items-center justify-center rounded-lg border border-border/50 text-muted-foreground transition-all hover:border-[#007ACC]/30 hover:bg-[#007ACC]/5 hover:text-[#007ACC] lg:inline-flex dark:border-white/[0.06] dark:hover:border-[#007ACC]/30"
+                className="hidden h-8 w-8 items-center justify-center rounded-lg border border-border/50 text-muted-foreground transition-all hover:border-[#007ACC]/30 hover:bg-[#007ACC]/5 hover:text-[#007ACC] min-[1600px]:inline-flex dark:border-white/[0.06] dark:hover:border-[#007ACC]/30"
               >
                 <img
                   src="/icons/visual-studio-code/default.svg"
