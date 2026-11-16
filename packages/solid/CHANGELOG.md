@@ -1,5 +1,11 @@
 # @thesvg/solid
 
+## 4.0.11
+
+### Patch Changes
+
+- feat: add trendshift badge to readmes and site footer ([#1559](https://github.com/glincker/thesvg/issues/1559))
+
 ## 4.0.10
 
 ### Patch Changes
