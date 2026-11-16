@@ -48,7 +48,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19.3.0",
     "eslint": "^9",
-    "eslint-config-next": "16.4.5",
+    "eslint-config-next": "16.4.6",
     "html-to-image": "^1.11.13",
     "jsdom": "^26.1.0",
     "playwright": "^1.65.0",
