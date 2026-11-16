@@ -1,5 +1,11 @@
 # @thesvg/astro
 
+## 4.0.12
+
+### Patch Changes
+
+- fix: flags banner last in the hero, refresh og images ([#1563](https://github.com/glincker/thesvg/issues/1563))
+
 ## 4.0.11
 
 ### Patch Changes

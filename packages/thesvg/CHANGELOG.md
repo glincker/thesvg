@@ -1,5 +1,13 @@
 # thesvg
 
+## 4.0.12
+
+### Patch Changes
+
+- fix: flags banner last in the hero, refresh og images ([#1563](https://github.com/glincker/thesvg/issues/1563))
+- Updated dependencies []:
+  - @thesvg/icons@4.0.12
+
 ## 4.0.11
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @thesvg/cli
 
+## 0.8.2
+
+### Patch Changes
+
+- fix: flags banner last in the hero, refresh og images ([#1563](https://github.com/glincker/thesvg/issues/1563))
+
 ## 0.8.1
 
 ### Patch Changes
