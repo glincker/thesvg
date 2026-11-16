@@ -64,8 +64,6 @@ const ROW_TILE: Record<string, string> = {
   "auth-badges": "border-emerald-400/25 bg-emerald-400/10 dark:border-emerald-400/20 dark:bg-emerald-400/[0.07]",
 };
 
-type HeroOrder = "flags-first" | "icons-first";
-const HERO_ORDER_KEY = "thesvg:hero-order";
 
 interface Slide {
   badge: string;
@@ -87,20 +85,6 @@ interface Slide {
 }
 
 const ALL_SLIDES: Slide[] = [
-  {
-    badge: "New: Flags",
-    badgeIcon: Sparkles,
-    title: "Flags are here: 263 countries and regions",
-    description: "Every country plus England, Scotland, Catalonia and more. Three shapes each, one small package.",
-    cta: { label: "Browse flags", href: "/collection/flags" },
-    ctaSecondary: { label: "How to use", href: "/docs/flags" },
-    gradient: "from-sky-50/50 via-background to-orange-50/30 dark:from-sky-950/25 dark:via-background dark:to-orange-950/10",
-    accent: "border-sky-200/50 bg-sky-50/80 text-sky-700 dark:border-sky-500/20 dark:bg-sky-500/10 dark:text-sky-400",
-    blob: "bg-sky-400/10 dark:bg-sky-500/5",
-    collection: "brands" as const,
-    floatSlugs: [] as string[],
-    flags: true as const,
-  },
   {
     badge: "Open Source",
     badgeIcon: Sparkles,
@@ -154,6 +138,20 @@ const ALL_SLIDES: Slide[] = [
     blob: "bg-emerald-400/10 dark:bg-emerald-500/5",
     collection: "brands" as const,
     floatSlugs: DEV_FLOAT_SLUGS,
+  },
+  {
+    badge: "New: Flags",
+    badgeIcon: Sparkles,
+    title: "Flags are here: 263 countries and regions",
+    description: "Every country plus England, Scotland, Catalonia and more. Three shapes each, one small package.",
+    cta: { label: "Browse flags", href: "/collection/flags" },
+    ctaSecondary: { label: "How to use", href: "/docs/flags" },
+    gradient: "from-sky-50/50 via-background to-orange-50/30 dark:from-sky-950/25 dark:via-background dark:to-orange-950/10",
+    accent: "border-sky-200/50 bg-sky-50/80 text-sky-700 dark:border-sky-500/20 dark:bg-sky-500/10 dark:text-sky-400",
+    blob: "bg-sky-400/10 dark:bg-sky-500/5",
+    collection: "brands" as const,
+    floatSlugs: [] as string[],
+    flags: true as const,
   },
   {
     badge: "AWS Architecture",
@@ -404,37 +402,11 @@ export function HomeHero({
   const [selectedIcon, setSelectedIcon] = useState<IconEntry | null>(null);
   const [activeCollection, setActiveCollection] = useState<Collection>(defaultCollection ?? "brands");
 
-  // Which of the first two banners leads is picked once per session, so it holds while a visitor browses and
-  // PostHog can compare clicks. Server and first paint use "flags-first".
-  const [heroOrder, setHeroOrder] = useState<HeroOrder>("flags-first");
-  useEffect(() => {
-    let order: HeroOrder | null = null;
-    try {
-      const saved = window.sessionStorage.getItem(HERO_ORDER_KEY);
-      if (saved === "flags-first" || saved === "icons-first") order = saved;
-    } catch {
-      /* storage blocked: fall through to a fresh pick */
-    }
-    if (!order) {
-      order = Math.random() < 0.5 ? "flags-first" : "icons-first";
-      try {
-        window.sessionStorage.setItem(HERO_ORDER_KEY, order);
-      } catch {
-        /* the pick just is not remembered */
-      }
-    }
-    posthog.register({ hero_first_slide: order });
-    setHeroOrder(order);
-  }, []);
-
   // Filter slides by active collection
-  const collectionSlides = useMemo(() => {
-    const slides = ALL_SLIDES.filter((s) => s.collection === activeCollection);
-    if (activeCollection === "brands" && heroOrder === "icons-first" && slides.length > 1) {
-      return [slides[1], slides[0], ...slides.slice(2)];
-    }
-    return slides;
-  }, [activeCollection, heroOrder]);
+  const collectionSlides = useMemo(
+    () => ALL_SLIDES.filter((s) => s.collection === activeCollection),
+    [activeCollection],
+  );
 
   // Reset slide when collection changes
   useEffect(() => {
