@@ -378,7 +378,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
               links home to the all-brands view. Lower-traffic collections
               (community, auth-badges) move into the "More" dropdown instead
               of their own pills, so the row doesn't get crowded. */}
-          <nav className={cn("hidden items-center gap-0.5", isUi ? "" : "min-[2000px]:flex")} aria-label="Icon collections">
+          <nav className={cn("hidden items-center gap-0.5", isUi ? "" : "md:flex")} aria-label="Icon collections">
             {COLLECTIONS_LIST.filter(
               (meta) => !["brands", "community", "auth-badges"].includes(meta.id)
             ).map((meta) => {
@@ -391,7 +391,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                   key={meta.id}
                   href={href}
                   className={cn(
-                    "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                    "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 max-[1999px]:hidden",
                     isActive
                       ? "bg-foreground text-background shadow-sm"
                       : "text-muted-foreground hover:bg-accent hover:text-foreground"
@@ -405,7 +405,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
             })}
 
             <DropdownMenu>
-              <DropdownMenuTrigger className="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-xs font-medium text-muted-foreground transition-all hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+              <DropdownMenuTrigger className="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-xs font-medium text-muted-foreground transition-all hover:bg-accent hover:text-foreground max-[1999px]:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
                 More
                 <UiGlyph name="chevron-down" className="h-3.5 w-3.5 opacity-60" />
               </DropdownMenuTrigger>
@@ -540,6 +540,8 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                     primary={isUi ? "ui" : "brand"}
                     brands={suggestions}
                     brandTotal={totalMatches}
+                    brandTitle={scope ? COLLECTIONS_META[scope as keyof typeof COLLECTIONS_META].heroLabel : undefined}
+                    scope={scope}
                     flags={flagHits}
                     flagTotal={flagTotal}
                     uiGlyphs={uiShown}
