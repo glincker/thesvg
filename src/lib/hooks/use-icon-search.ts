@@ -24,6 +24,8 @@ interface UseIconSearchOptions {
   splitFlags?: boolean;
   /** How many flags to return when `splitFlags` is on. */
   flagLimit?: number;
+  /** Only return icons from this collection (a `Collection` id). Null or undefined searches everything. */
+  collection?: string | null;
 }
 
 interface UseIconSearchResult {
@@ -58,7 +60,7 @@ function gaSearch(query: string): void {
  * and observability without duplicating Fuse config.
  */
 export function useIconSearch(options: UseIconSearchOptions): UseIconSearchResult {
-  const { query, source, limit = 24, searchDelayMs = 150, recordDelayMs = 700, splitFlags = false, flagLimit = 5 } = options;
+  const { query, source, limit = 24, searchDelayMs = 150, recordDelayMs = 700, splitFlags = false, flagLimit = 5, collection = null } = options;
   const recordSearch = useRecentsStore((s) => s.recordSearch);
 
   const [results, setResults] = useState<IconEntry[]>([]);
@@ -106,9 +108,12 @@ export function useIconSearch(options: UseIconSearchOptions): UseIconSearchResul
       Promise.all([loadIconsManifest(), import("@/lib/search")])
         .then(([icons, { searchIcons }]) => {
           if (!active) return;
-          const all = searchIcons(icons, trimmed);
-          const flagHits = splitFlags ? all.filter((i) => i.collection === "flags") : [];
-          const main = splitFlags ? all.filter((i) => i.collection !== "flags") : all;
+          const found = searchIcons(icons, trimmed);
+          const all = collection ? found.filter((i) => i.collection === collection) : found;
+          // Scoped to flags, the flags are the main list, so there is nothing to split off.
+          const split = splitFlags && collection !== "flags";
+          const flagHits = split ? all.filter((i) => i.collection === "flags") : [];
+          const main = split ? all.filter((i) => i.collection !== "flags") : all;
           setResults(main.slice(0, limit));
           setTotal(main.length);
           setFlags(flagHits.slice(0, flagLimit));
@@ -128,7 +133,7 @@ export function useIconSearch(options: UseIconSearchOptions): UseIconSearchResul
       active = false;
       window.clearTimeout(id);
     };
-  }, [trimmed, hasQuery, limit, searchDelayMs, splitFlags, flagLimit]);
+  }, [trimmed, hasQuery, limit, searchDelayMs, splitFlags, flagLimit, collection]);
 
   // Debounced recents + analytics recording. Mirrors `<Header>` so the
   // mobile sheet doesn't quietly skip writes. Attaches result_count when the
