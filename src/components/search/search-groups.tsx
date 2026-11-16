@@ -27,6 +27,10 @@ interface Props {
   primary: "brand" | "ui";
   brands: IconEntry[];
   brandTotal: number;
+  /** Heading for the brand group. Defaults to "Brand icons"; a collection scope renames it. */
+  brandTitle?: string;
+  /** Collection id the search is narrowed to, kept on the "View all" link. */
+  scope?: string | null;
   /** Flag matches, shown as their own compact section below the right column. */
   flags: IconEntry[];
   flagTotal: number;
@@ -51,17 +55,19 @@ const rowClass = (active: boolean) =>
 
 /** Results for both libraries. The one you are browsing leads on the left, the other sits beside it. */
 export function SearchGroups(p: Props) {
+  const brandTitle = p.brandTitle ?? "Brand icons";
+  const brandAll = `/?q=${encodeURIComponent(p.query)}${p.scope ? `&collection=${encodeURIComponent(p.scope)}` : ""}`;
   const brandRows = p.brands.map((icon, i) => ({ key: `b-${icon.slug}`, kind: "brand" as const, icon, i }));
   const uiRows = p.uiGlyphs.map((glyph, i) => ({ key: `u-${glyph.slug}`, kind: "ui" as const, glyph, i }));
   const groups =
     p.primary === "brand"
       ? [
-          { id: "brand" as const, title: "Brand icons", total: p.brandTotal, rows: brandRows, all: `/?q=${encodeURIComponent(p.query)}` },
+          { id: "brand" as const, title: brandTitle, total: p.brandTotal, rows: brandRows, all: brandAll },
           { id: "ui" as const, title: "UI icons", total: p.uiTotal, rows: uiRows, all: `/ui?q=${encodeURIComponent(p.query)}` },
         ]
       : [
           { id: "ui" as const, title: "UI icons", total: p.uiTotal, rows: uiRows, all: `/ui?q=${encodeURIComponent(p.query)}` },
-          { id: "brand" as const, title: "Brand icons", total: p.brandTotal, rows: brandRows, all: `/?q=${encodeURIComponent(p.query)}` },
+          { id: "brand" as const, title: brandTitle, total: p.brandTotal, rows: brandRows, all: brandAll },
         ];
   let offset = 0;
   const placed = groups.map((g) => {

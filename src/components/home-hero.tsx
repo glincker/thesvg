@@ -67,6 +67,13 @@ const ROW_TILE: Record<string, string> = {
 type HeroOrder = "flags-first" | "icons-first";
 const HERO_ORDER_KEY = "thesvg:hero-order";
 
+// Short names so the whole collection row fits next to the sidebar without scrolling.
+const TAB_LABELS: Partial<Record<Collection, string>> = {
+  aws: "AWS",
+  azure: "Azure",
+  flags: "Flags",
+};
+
 interface Slide {
   badge: string;
   badgeIcon: React.ComponentType<{ className?: string }>;
@@ -672,11 +679,13 @@ export function HomeHero({
     </button>
   );
 
+  const scopeLabel = activeCollection === "brands" ? null : COLLECTIONS_META[activeCollection]?.heroLabel ?? null;
+
   const recentSection = collectionRecentIcons.length > 0 && (
     <section key="recent">
       <div className="mb-4 flex items-center gap-2">
         <Clock className="h-3.5 w-3.5 text-muted-foreground" />
-        <h2 className="text-sm font-semibold text-foreground">Recently Added</h2>
+        <h2 className="text-sm font-semibold text-foreground">{scopeLabel ? `${scopeLabel} \u00b7 Recently Added` : "Recently Added"}</h2>
         <div className="h-px flex-1 bg-border/40 dark:bg-white/[0.04]" />
         {effectiveOrder === "recent" && orderSwitch}
         <Link
@@ -699,7 +708,7 @@ export function HomeHero({
     <section key="popular">
       <div className="mb-4 flex items-center gap-2">
         <h2 className="text-sm font-semibold text-foreground">
-          {activeCollection === "aws" ? "Popular AWS Services" : activeCollection === "azure" ? "Popular Azure Services" : activeCollection === "gcp" ? "Popular GCP Services" : "Popular"}
+          {activeCollection === "aws" ? "Popular AWS Services" : activeCollection === "azure" ? "Popular Azure Services" : activeCollection === "gcp" ? "Popular GCP Services" : scopeLabel ? `${scopeLabel} \u00b7 Popular` : "Popular"}
         </h2>
         <div className="h-px flex-1 bg-border/40 dark:bg-white/[0.04]" />
         {effectiveOrder === "popular" && orderSwitch}
@@ -1081,40 +1090,53 @@ export function HomeHero({
         </section>
       )}
 
-      {/* Collection tabs */}
+      {/* Collection switcher: one scrolling row so no tab ever wraps alone, and the
+          active tab is the strongest accent below the hero. */}
       {collections.length > 1 && (
-        <div className="flex flex-wrap items-center gap-1" role="tablist" aria-label="Icon collections">
-          {collections.map((col) => {
-            const meta = COLLECTIONS_META[col.name];
-            const Icon = meta?.icon;
-            const isActive = activeCollection === col.name;
-            return (
-              <button
-                key={col.name}
-                type="button"
-                role="tab"
-                aria-selected={isActive}
-                onClick={() => setActiveCollection(col.name)}
-                className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 sm:gap-2 sm:px-3 sm:py-1.5 sm:text-xs ${
-                  isActive
-                    ? "bg-foreground text-background shadow-sm"
-                    : "text-muted-foreground hover:bg-accent hover:text-foreground dark:hover:bg-white/[0.06]"
-                }`}
-              >
-                {Icon && (
-                  <Icon className={cn("h-3.5 w-3.5", isActive ? meta.color : "opacity-60")} />
-                )}
-                {meta?.heroLabel || col.name}
-                <span className={`rounded-full px-1.5 font-mono text-[9px] ${
-                  isActive
-                    ? "bg-background/20 text-background/70"
-                    : "bg-muted/60 text-muted-foreground dark:bg-white/[0.06]"
-                }`}>
-                  {col.count.toLocaleString()}
-                </span>
-              </button>
-            );
-          })}
+        <div className="relative">
+          <div
+            className="scrollbar-none flex snap-x items-center gap-0.5 overflow-x-auto rounded-2xl border border-border/50 bg-muted/30 p-1 pr-8 dark:border-white/[0.08] dark:bg-white/[0.03]"
+            role="tablist"
+            aria-label="Icon collections"
+          >
+            {collections.map((col) => {
+              const meta = COLLECTIONS_META[col.name];
+              const Icon = meta?.icon;
+              const isActive = activeCollection === col.name;
+              return (
+                <button
+                  key={col.name}
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  onClick={() => setActiveCollection(col.name)}
+                  className={cn(
+                    "inline-flex h-9 shrink-0 snap-start items-center gap-1.5 rounded-xl px-2.5 text-[13px] font-medium whitespace-nowrap transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                    isActive
+                      ? "bg-orange-500/15 text-foreground ring-1 ring-orange-500/40 dark:bg-orange-500/20"
+                      : "text-muted-foreground hover:bg-accent hover:text-foreground dark:hover:bg-white/[0.06]",
+                  )}
+                >
+                  {Icon && <Icon className={cn("h-4 w-4", isActive ? meta.color : "opacity-70")} />}
+                  {TAB_LABELS[col.name] ?? meta?.heroLabel ?? col.name}
+                  <span
+                    className={cn(
+                      "rounded-full px-1.5 py-0.5 font-mono text-[11px] leading-none",
+                      isActive
+                        ? "bg-orange-500/25 text-foreground/80"
+                        : "bg-muted/70 text-muted-foreground/80 dark:bg-white/[0.06]",
+                    )}
+                  >
+                    {col.count.toLocaleString()}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-y-0 right-0 w-10 rounded-r-2xl bg-gradient-to-l from-background to-transparent"
+          />
         </div>
       )}
 

@@ -30,7 +30,7 @@ import { useSidebarStore } from "@/lib/stores/sidebar-store";
 import { useSearchStore } from "@/lib/stores/search-store";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import type { Collection, IconEntry } from "@/lib/icons";
-import { COLLECTIONS_LIST } from "@/lib/collections-meta";
+import { COLLECTIONS_LIST, COLLECTIONS_META } from "@/lib/collections-meta";
 import { getIconsBySlugMap, loadIconsManifest } from "@/lib/icons-manifest";
 import { useIconSearch } from "@/lib/hooks/use-icon-search";
 import { searchDocs } from "@/lib/docs-search-index";
@@ -125,6 +125,19 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
   const activeCollection =
     searchParams.get("collection") ||
     (pathname.startsWith("/collection/") ? pathname.split("/")[2] : null);
+  // Only a known collection narrows the search; anything else in the URL is ignored.
+  const scope = activeCollection && activeCollection in COLLECTIONS_META ? activeCollection : null;
+
+  // Narrow (or widen) the search to one collection. Lives in the `collection` URL param, which the
+  // home grid already filters on, so the dropdown and the page always agree.
+  function changeScope(next: string | null) {
+    const params = new URLSearchParams(searchParams.toString());
+    if (next) params.set("collection", next);
+    else params.delete("collection");
+    if (query.trim()) params.set("q", query.trim());
+    const qs = params.toString();
+    router.push(qs ? `/?${qs}` : "/", { scroll: false });
+  }
 
   // Typewriter placeholder effect
   const [placeholderIdx, setPlaceholderIdx] = useState(0);
@@ -174,12 +187,14 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
     flagTotal,
     isLoading: searchLoading,
     error: searchError,
-  } = useIconSearch({ query, source: "header", limit: pathname.startsWith("/ui") ? 4 : 7, splitFlags: true, flagLimit: 4 });
+  } = useIconSearch({ query, source: "header", limit: pathname.startsWith("/ui") ? 4 : 7, splitFlags: true, flagLimit: 4, collection: scope });
   const [recentViewedIcons, setRecentViewedIcons] = useState<IconEntry[]>([]);
   const hasQuery = query.trim().length >= 2;
   const docsMatches = useMemo(() => searchDocs(query), [query]);
   // The page lists every result, so on the UI pages the modal is a jump list of the best few. Elsewhere it shows a few more and links to all.
-  const uiRanked = useMemo(() => (hasQuery ? rankTiered(query.trim().toLowerCase(), GLYPHS, searchableOf) : { best: [], related: [] }), [hasQuery, query]);
+  // UI glyphs are not part of any brand collection, so a collection scope hides them.
+  const uiActive = hasQuery && !scope;
+  const uiRanked = useMemo(() => (uiActive ? rankTiered(query.trim().toLowerCase(), GLYPHS, searchableOf) : { best: [], related: [] }), [uiActive, query]);
   const uiAll = useMemo(() => [...uiRanked.best, ...uiRanked.related], [uiRanked]);
   const uiShown = (uiRanked.best.length > 0 ? uiRanked.best : uiAll).slice(0, pathname.startsWith("/ui") ? 4 : 3);
   // One flat list in on-screen order (current section first) so the arrow keys walk both groups.
@@ -363,7 +378,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
               links home to the all-brands view. Lower-traffic collections
               (community, auth-badges) move into the "More" dropdown instead
               of their own pills, so the row doesn't get crowded. */}
-          <nav className={cn("hidden items-center gap-0.5", isUi ? "" : "min-[2000px]:flex")} aria-label="Icon collections">
+          <nav className={cn("hidden items-center gap-0.5", isUi ? "" : "md:flex")} aria-label="Icon collections">
             {COLLECTIONS_LIST.filter(
               (meta) => !["brands", "community", "auth-badges"].includes(meta.id)
             ).map((meta) => {
@@ -376,7 +391,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                   key={meta.id}
                   href={href}
                   className={cn(
-                    "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                    "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 max-[1999px]:hidden",
                     isActive
                       ? "bg-foreground text-background shadow-sm"
                       : "text-muted-foreground hover:bg-accent hover:text-foreground"
@@ -390,7 +405,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
             })}
 
             <DropdownMenu>
-              <DropdownMenuTrigger className="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-xs font-medium text-muted-foreground transition-all hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+              <DropdownMenuTrigger className="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-xs font-medium text-muted-foreground transition-all hover:bg-accent hover:text-foreground max-[1999px]:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
                 More
                 <UiGlyph name="chevron-down" className="h-3.5 w-3.5 opacity-60" />
               </DropdownMenuTrigger>
@@ -436,7 +451,10 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                 placeholder={dynamicPlaceholder}
                 /* text-base (16px) on mobile prevents iOS auto-zoom on
                    focus; sm+ keeps the historical 14px. */
-                className="h-11 w-full rounded-xl border border-border bg-muted/40 pr-12 pl-9 text-base shadow-sm outline-none transition-all placeholder:text-muted-foreground/50 focus:border-primary/40 focus:bg-background focus:shadow-[0_2px_12px_-2px_rgba(0,0,0,0.08)] focus:ring-1 focus:ring-ring/30 sm:h-9 sm:pr-16 sm:text-sm dark:border-white/[0.08] dark:bg-white/[0.04] dark:focus:border-white/[0.15] dark:focus:bg-white/[0.06] dark:focus:shadow-[0_2px_12px_-2px_rgba(0,0,0,0.3)]"
+                className={cn(
+                  "h-11 w-full rounded-xl border border-border bg-muted/40 pr-12 pl-9 text-base shadow-sm outline-none transition-all placeholder:text-muted-foreground/50 focus:border-primary/40 focus:bg-background focus:shadow-[0_2px_12px_-2px_rgba(0,0,0,0.08)] focus:ring-1 focus:ring-ring/30 sm:h-9 sm:pr-16 sm:text-sm dark:border-white/[0.08] dark:bg-white/[0.04] dark:focus:border-white/[0.15] dark:focus:bg-white/[0.06] dark:focus:shadow-[0_2px_12px_-2px_rgba(0,0,0,0.3)]",
+                  scope && "sm:pr-56",
+                )}
                 aria-label="Search icons"
                 role="combobox"
                 aria-expanded={showDropdown}
@@ -450,6 +468,17 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                 maxLength={100}
               />
               <div className="absolute top-1/2 right-2.5 flex -translate-y-1/2 items-center gap-1">
+                {scope && (
+                  <button
+                    type="button"
+                    onClick={() => changeScope(null)}
+                    className="hidden max-w-[11rem] items-center gap-1 rounded-lg bg-orange-500/15 px-2 py-1 text-[11px] font-medium text-foreground ring-1 ring-orange-500/40 transition-colors hover:bg-orange-500/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:inline-flex"
+                    aria-label={`Searching in ${COLLECTIONS_META[scope as keyof typeof COLLECTIONS_META].label}. Clear collection filter`}
+                  >
+                    <span className="truncate">in {COLLECTIONS_META[scope as keyof typeof COLLECTIONS_META].heroLabel}</span>
+                    <UiGlyph name="x" className="h-3 w-3 shrink-0" />
+                  </button>
+                )}
                 {query && (
                   <button
                     type="button"
@@ -479,12 +508,40 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                 }`}
                 role="listbox"
               >
+                <div
+                  role="presentation"
+                  className="flex flex-wrap items-center gap-1.5 border-b border-border/30 px-3 py-2.5 dark:border-white/[0.06]"
+                  onMouseDown={(e) => e.preventDefault()}
+                >
+                  <span className="mr-1 text-[11px] font-medium text-muted-foreground">Search in</span>
+                  {[{ id: null, label: "All" }, ...COLLECTIONS_LIST.map((m) => ({ id: m.id as string, label: m.heroLabel }))].map((chip) => {
+                    const on = (scope ?? null) === chip.id;
+                    return (
+                      <button
+                        key={chip.id ?? "all"}
+                        type="button"
+                        aria-pressed={on}
+                        onClick={() => changeScope(chip.id)}
+                        className={cn(
+                          "inline-flex h-7 items-center rounded-lg px-2.5 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                          on
+                            ? "bg-orange-500/15 text-foreground ring-1 ring-orange-500/40"
+                            : "text-muted-foreground hover:bg-accent hover:text-foreground dark:hover:bg-white/[0.06]",
+                        )}
+                      >
+                        {chip.label}
+                      </button>
+                    );
+                  })}
+                </div>
                 {hasQuery ? (
                   <>
                   <SearchGroups
                     primary={isUi ? "ui" : "brand"}
                     brands={suggestions}
                     brandTotal={totalMatches}
+                    brandTitle={scope ? COLLECTIONS_META[scope as keyof typeof COLLECTIONS_META].heroLabel : undefined}
+                    scope={scope}
                     flags={flagHits}
                     flagTotal={flagTotal}
                     uiGlyphs={uiShown}
