@@ -17,6 +17,10 @@
 </p>
 
 <p align="center">
+  <a href="https://trendshift.io/repositories/24396?utm_source=trendshift-badge&utm_medium=badge&utm_campaign=badge-trendshift-24396" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/24396/daily?language=TypeScript" alt="glincker/thesvg | Trendshift" width="250" height="55"/></a>
+</p>
+
+<p align="center">
   <a href="https://www.npmjs.com/package/@thesvg/icons"><img src="https://img.shields.io/npm/v/@thesvg/icons?color=F97316&label=npm" alt="npm version" /></a>
   <a href="https://www.npmjs.com/package/@thesvg/icons"><img src="https://img.shields.io/npm/dm/@thesvg/icons?color=F97316" alt="npm downloads" /></a>
   <a href="https://www.jsdelivr.com/package/npm/@thesvg/icons"><img src="https://data.jsdelivr.com/v1/package/npm/@thesvg/icons/badge" alt="jsDelivr" /></a>
