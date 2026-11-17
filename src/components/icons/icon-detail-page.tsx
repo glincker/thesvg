@@ -368,11 +368,11 @@ export function IconDetailPage({
           {/* Quick metadata */}
           <div className="rounded-xl border border-border/60 bg-card p-3 shadow-sm space-y-2.5">
             {icon.license && (
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+              <div className="flex items-start justify-between gap-3">
+                <span className="shrink-0 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
                   License
                 </span>
-                <span className="text-xs text-muted-foreground">
+                <span className="min-w-0 text-right text-xs text-muted-foreground [overflow-wrap:anywhere]">
                   {icon.license}
                 </span>
               </div>
