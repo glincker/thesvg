@@ -2,6 +2,7 @@
 
 import { uiMarkForBrand } from "@/lib/brand-ui-links";
 import { UiGlyph } from "@/components/ui-glyph";
+import { requiresUnmodifiedSvg } from "@/lib/license-terms.mjs";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 import posthog from "posthog-js";
@@ -160,6 +161,7 @@ export function IconDetailPage({
 }: IconDetailPageProps) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
+  const restricted = requiresUnmodifiedSvg(icon.license);
 
   // Read variant from URL param, fallback to "default"
   const variantParam = searchParams.get("variant");
@@ -783,14 +785,14 @@ export function IconDetailPage({
             ) : null}
             <dt className="text-muted-foreground">Use</dt>
             <dd className="text-right text-foreground">
-              {icon.license === "Trademark" ? "Identification and reference" : "Personal and commercial"}
+              {restricted ? "Brand identification only, unmodified" : icon.license === "Trademark" ? "Identification and reference" : "Personal and commercial"}
             </dd>
           </dl>
         </div>
         <p className="border-t border-border/40 px-5 py-3 text-xs leading-relaxed text-muted-foreground dark:border-white/[0.06] sm:px-6">
           {icon.collection === "flags"
             ? `The flag of ${icon.title} is a public symbol of its country or region. Showing it is not a statement about sovereignty or borders.`
-            : `\u201C${icon.title}\u201D is a trademark of its respective owner and is shown for identification only.${icon.license === "Trademark" ? " Do not modify the mark or imply endorsement." : ""}`}{" "}
+            : `\u201C${icon.title}\u201D is a trademark of its respective owner and is shown for identification only.${icon.license === "Trademark" || restricted ? " Do not modify the mark or imply endorsement." : ""}${restricted ? ` Use is limited to the owner\u2019s terms: ${icon.license}` : ""}`}{" "}
           {icon.url &&
             (() => {
               try {

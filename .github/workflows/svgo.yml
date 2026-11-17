@@ -77,7 +77,11 @@ jobs:
         env:
           CHANGED_FILES: ${{ steps.changed.outputs.files }}
         run: |
-          printf '%s\n' "$CHANGED_FILES" | xargs -d '\n' -r npx --yes svgo@3.3.5 --multipass
+          # Skip icons whose license forbids modification (src/lib/license-terms.mjs).
+          SAFE=$(printf "%s\n" "$CHANGED_FILES" | node scripts/svgo-protected.mjs)
+          if [ -n "$SAFE" ]; then
+            printf "%s\n" "$SAFE" | xargs -d "\n" -r npx --yes svgo@3.3.5 --multipass
+          fi
 
       - name: Commit optimized SVGs
         if: |
