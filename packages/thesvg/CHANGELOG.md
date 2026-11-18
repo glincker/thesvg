@@ -1,5 +1,12 @@
 # thesvg
 
+## 4.0.13
+
+### Patch Changes
+
+- Updated dependencies [[`bec352d`](https://github.com/glincker/thesvg/commit/bec352dd80ed68c597d57f3aa599b40eb9ecd4ee)]:
+  - @thesvg/icons@4.0.13
+
 ## 4.0.12
 
 ### Patch Changes
