@@ -1,5 +1,11 @@
 # @thesvg/icons
 
+## 4.0.13
+
+### Patch Changes
+
+- [#1573](https://github.com/glincker/thesvg/pull/1573) [`bec352d`](https://github.com/glincker/thesvg/commit/bec352dd80ed68c597d57f3aa599b40eb9ecd4ee) Thanks [@thegdsks](https://github.com/thegdsks)! - Ship the original SVGs for Influence, TablePort, AccountantOS, nodebo and brainrune-mark-deep, whose licenses forbid modification.
+
 ## 4.0.12
 
 ### Patch Changes
