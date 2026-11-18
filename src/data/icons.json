@@ -150704,6 +150704,28 @@
     "collection": "brands"
   },
   {
+    "slug": "ultanimus",
+    "title": "Ultanimus",
+    "aliases": [],
+    "hex": "6F4CF7",
+    "categories": [
+      "Analytics",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/ultanimus/default.svg",
+      "dark": "/icons/ultanimus/dark.svg",
+      "mono": "/icons/ultanimus/mono.svg",
+      "lockup": "/icons/ultanimus/lockup.svg",
+      "lockupDark": "/icons/ultanimus/lockup-dark.svg"
+    },
+    "license": "brand-use",
+    "url": "https://ultanimus.com/",
+    "guidelines": "https://ultanimus.com/brand",
+    "dateAdded": "2026-11-17",
+    "collection": "brands"
+  },
+  {
     "slug": "ultimaker-badge",
     "title": "Ultimaker",
     "aliases": [],
