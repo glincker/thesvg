@@ -58797,42 +58797,6 @@
     "collection": "brands"
   },
   {
-    "slug": "expressvpn",
-    "title": "ExpressVPN",
-    "aliases": [],
-    "hex": "DA3940",
-    "categories": [
-      "Software",
-      "Privacy"
-    ],
-    "variants": {
-      "default": "/icons/expressvpn/default.svg",
-      "mono": "/icons/expressvpn/mono.svg"
-    },
-    "license": "CC0-1.0",
-    "url": "https://www.expressvpn.com/press",
-    "guidelines": "https://www.expressvpn.com/press",
-    "dateAdded": "2026-03-07",
-    "collection": "brands"
-  },
-  {
-    "slug": "expressvpn-badge",
-    "title": "ExpressVPN",
-    "aliases": [],
-    "hex": "DA3940",
-    "categories": [
-      "Software",
-      "Privacy"
-    ],
-    "variants": {
-      "default": "/icons/expressvpn-badge/default.svg"
-    },
-    "license": "CC0-1.0",
-    "url": "https://www.expressvpn.com/press",
-    "dateAdded": "2026-09-12",
-    "collection": "auth-badges"
-  },
-  {
     "slug": "eyeem",
     "title": "EyeEm",
     "aliases": [],
