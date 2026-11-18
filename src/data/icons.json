@@ -45830,6 +45830,29 @@
     "family": "anthropic"
   },
   {
+    "slug": "claude-of-tanks",
+    "title": "Claude of Tanks",
+    "aliases": [
+      "cot",
+      "claudeoftanks"
+    ],
+    "hex": "F0A030",
+    "categories": [
+      "Gaming",
+      "Entertainment"
+    ],
+    "variants": {
+      "default": "/icons/claude-of-tanks/default.svg",
+      "mono": "/icons/claude-of-tanks/mono.svg",
+      "light": "/icons/claude-of-tanks/light.svg",
+      "dark": "/icons/claude-of-tanks/dark.svg"
+    },
+    "license": "Custom — Claude of Tanks wordmark, submitted by its author; reserved brand content, not licensed as a trademark",
+    "url": "https://cot.kevinliu.studio",
+    "dateAdded": "2026-11-18",
+    "collection": "brands"
+  },
+  {
     "slug": "cleanuparr",
     "title": "Cleanuparr",
     "aliases": [],
