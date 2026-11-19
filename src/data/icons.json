@@ -47695,7 +47695,7 @@
   },
   {
     "slug": "codex-openai",
-    "title": "Codex (OpenAI)",
+    "title": "Codex (OpenAI, old)",
     "aliases": [],
     "hex": "fff",
     "categories": [
@@ -59514,6 +59514,22 @@
     "license": "MIT",
     "url": "https://tryfastgpt.ai",
     "dateAdded": "2026-03-07",
+    "collection": "brands"
+  },
+  {
+    "slug": "fastieshop",
+    "title": "Fastieshop",
+    "aliases": [],
+    "hex": "EE453D",
+    "categories": [
+      "E-commerce"
+    ],
+    "variants": {
+      "default": "/icons/fastieshop/default.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.fastieshop.com/",
+    "dateAdded": "2026-11-19",
     "collection": "brands"
   },
   {
@@ -118889,15 +118905,16 @@
       "wordmarkLight": "/icons/openai/wordmark-light.svg",
       "wordmarkDark": "/icons/openai/wordmark-dark.svg"
     },
-    "license": "MIT",
+    "license": "brand-use",
     "url": "https://openai.com/",
     "guidelines": "https://openai.com/brand/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
+    "collection": "brands",
+    "supersedes": "openai-legacy"
   },
   {
     "slug": "openai-badge",
-    "title": "OpenAI",
+    "title": "OpenAI (badge)",
     "aliases": [],
     "hex": "000000",
     "categories": [
@@ -118914,7 +118931,7 @@
   },
   {
     "slug": "openai-chatgpt",
-    "title": "OpenAI (ChatGPT)",
+    "title": "OpenAI (ChatGPT, old)",
     "aliases": [],
     "hex": "000",
     "categories": [
@@ -118947,6 +118964,32 @@
     "url": "https://gym.openai.com",
     "dateAdded": "2026-03-07",
     "collection": "brands"
+  },
+  {
+    "slug": "openai-legacy",
+    "title": "OpenAI (legacy)",
+    "aliases": [
+      "openai legacy"
+    ],
+    "hex": "000000",
+    "categories": [
+      "AI",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/openai-legacy/default.svg",
+      "light": "/icons/openai-legacy/light.svg",
+      "dark": "/icons/openai-legacy/dark.svg",
+      "wordmark": "/icons/openai-legacy/wordmark.svg",
+      "wordmarkLight": "/icons/openai-legacy/wordmark-light.svg",
+      "wordmarkDark": "/icons/openai-legacy/wordmark-dark.svg"
+    },
+    "license": "MIT",
+    "url": "https://openai.com/",
+    "guidelines": "https://openai.com/brand/",
+    "dateAdded": "2026-03-07",
+    "collection": "brands",
+    "supersededBy": "openai"
   },
   {
     "slug": "openal",
