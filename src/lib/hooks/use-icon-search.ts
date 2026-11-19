@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import posthog from "posthog-js";
+import { capture } from "@/lib/analytics";
 import type { IconEntry } from "@/lib/icons";
 import { loadIconsManifest } from "@/lib/icons-manifest";
 import { useRecentsStore } from "@/lib/stores/recents-store";
@@ -153,7 +153,7 @@ export function useIconSearch(options: UseIconSearchOptions): UseIconSearchResul
       if (resolvedRef.current.query === trimmed) {
         props.result_count = resolvedRef.current.total;
       }
-      posthog.capture("icon_searched", props);
+      capture("icon_searched", props);
       gaSearch(trimmed);
     }, recordDelayMs);
     return () => window.clearTimeout(id);

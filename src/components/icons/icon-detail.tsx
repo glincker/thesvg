@@ -2,7 +2,7 @@
 
 import { UiGlyph } from "@/components/ui-glyph";
 import { useCallback, useEffect, useRef, useState } from "react";
-import posthog from "posthog-js";
+import { capture } from "@/lib/analytics";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -77,7 +77,7 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
     if (!icon || icon.slug === prevSlugRef.current) return;
     prevSlugRef.current = icon.slug;
     setActiveVariant("default");
-    posthog.capture("icon_viewed", {
+    capture("icon_viewed", {
       icon_slug: icon.slug,
       icon_title: icon.title,
       categories: icon.categories,
@@ -94,7 +94,7 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
       recordCopy(icon.slug, format);
       setCopiedFormat(format);
       setTimeout(() => setCopiedFormat(null), 1500);
-      posthog.capture("icon_format_copied", {
+      capture("icon_format_copied", {
         icon_slug: icon.slug,
         icon_title: icon.title,
         format,
@@ -129,7 +129,7 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
     } catch {
       window.open(variantPath, "_blank", "noopener,noreferrer");
     }
-    posthog.capture("icon_svg_downloaded", {
+    capture("icon_svg_downloaded", {
       icon_slug: icon.slug,
       icon_title: icon.title,
       variant: activeVariant,
@@ -191,7 +191,7 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
               type="button"
               onClick={() => {
                 toggleFavorite(icon.slug);
-                posthog.capture("icon_favorited", {
+                capture("icon_favorited", {
                   icon_slug: icon.slug,
                   icon_title: icon.title,
                   action: isFavorite ? "removed" : "added",
@@ -271,7 +271,7 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
                     onClick={() => {
                       setActiveVariant(key);
                       if (key !== activeVariant) {
-                        posthog.capture("icon_variant_switched", {
+                        capture("icon_variant_switched", {
                           icon_slug: icon.slug,
                           icon_title: icon.title,
                           from_variant: activeVariant,

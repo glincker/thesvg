@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Anchor, ArrowRight, Check, ChevronRight, Clock, Cloud, Copy, Flame, Package, ShieldCheck, Sparkles, Users, X, Zap } from "@/components/own-icons";
 import Link from "next/link";
-import posthog from "posthog-js";
+import { capture } from "@/lib/analytics";
 import { compareDateDesc } from "@/lib/icon-dates";
 import type { Collection, IconEntry } from "@/lib/icons";
 import { COLLECTIONS_META } from "@/lib/collections-meta";
@@ -339,7 +339,7 @@ function InstallBadge({
     try {
       await navigator.clipboard.writeText(command);
       setCopied(true);
-      posthog.capture("hero_install_command_copied", { command });
+      capture("hero_install_command_copied", { command });
       window.setTimeout(() => setCopied(false), 1600);
     } catch {
       /* clipboard blocked; user can still triple-click the text */
@@ -1022,7 +1022,7 @@ export function HomeHero({
                 key={entry.slug}
                 href={`/icon/${entry.slug}`}
                 onClick={() => {
-                  posthog.capture("recents_clicked", {
+                  capture("recents_clicked", {
                     kind: "viewed",
                     slug: entry.slug,
                     source: "home_rail",

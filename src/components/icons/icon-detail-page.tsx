@@ -5,7 +5,7 @@ import { UiGlyph } from "@/components/ui-glyph";
 import { requiresUnmodifiedSvg } from "@/lib/license-terms.mjs";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties } from "react";
-import posthog from "posthog-js";
+import { capture } from "@/lib/analytics";
 import Link from "next/link";
 import { useSearchParams, usePathname } from "next/navigation";
 import {
@@ -66,7 +66,7 @@ function PreviewCopyButton({
       await navigator.clipboard.writeText(svgContent);
       recordCopy(slug, "svg");
       setState("copied");
-      posthog.capture("icon_svg_copied", {
+      capture("icon_svg_copied", {
         slug,
         variant: activeVariant,
         source: "preview",
@@ -180,7 +180,7 @@ export function IconDetailPage({
   const handleVariantSelect = useCallback(
     (variant: string) => {
       setActiveVariant(variant);
-      posthog.capture("icon_variant_selected", {
+      capture("icon_variant_selected", {
         slug: icon.slug,
         variant,
         source: "detail_page",
@@ -222,7 +222,7 @@ export function IconDetailPage({
   useEffect(() => {
     if (tracked.current) return;
     tracked.current = true;
-    posthog.capture("icon_page_viewed", {
+    capture("icon_page_viewed", {
       slug: icon.slug,
       title: icon.title,
       collection: icon.collection,

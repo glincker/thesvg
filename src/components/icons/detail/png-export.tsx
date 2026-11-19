@@ -3,7 +3,7 @@
 import { useCallback, useState } from "react";
 import { Download, Image as ImageIcon } from "@/components/own-icons";
 import { Busy } from "@/components/skeletons";
-import posthog from "posthog-js";
+import { capture } from "@/lib/analytics";
 import { svgToPng, downloadPng } from "@/lib/svg-to-png";
 import { cn } from "@/lib/utils";
 
@@ -38,7 +38,7 @@ export function PngExport({ currentPath, svgContent, slug, activeVariant }: PngE
             ? `-${activeVariant.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase()}`
             : "";
         downloadPng(blob, `${slug}${variantSuffix}-${size}px`);
-        posthog.capture("icon_png_exported", {
+        capture("icon_png_exported", {
           icon_slug: slug,
           variant: activeVariant,
           size_px: size,

@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import posthog from "posthog-js";
+import { capture } from "@/lib/analytics";
 import { Check, CheckCircle, ClipboardCopy, ExternalLink, Palette, Upload, X, XCircle } from "@/components/own-icons";
 import { Github } from "@/components/own-icons";
 import { Button } from "@/components/ui/button";
@@ -503,7 +503,7 @@ export function SubmitForm({
         validation: result,
       });
 
-      posthog.capture("submit_svg_uploaded", {
+      capture("submit_svg_uploaded", {
         file_size_bytes: file.size,
         validation_passed: result.valid,
         failed_checks: result.checks.filter((c) => !c.passed).map((c) => c.name),
@@ -888,7 +888,7 @@ export function SubmitForm({
           tabIndex={canSubmit ? undefined : -1}
           onClick={() => {
             if (canSubmit) {
-              posthog.capture("submit_form_completed", {
+              capture("submit_form_completed", {
                 icon_name: form.iconName,
                 slug: form.slug,
                 categories: form.categories,

@@ -3,7 +3,7 @@
 import { useMemo, useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import posthog from "posthog-js";
+import { capture } from "@/lib/analytics";
 import { ArrowDownAZ, ArrowDownZA, ArrowUpDown, Clock, Flame, Grid3X3, LayoutGrid, X } from "@/components/own-icons";
 import { compareDateDesc } from "@/lib/icon-dates";
 import type { Collection, IconEntry } from "@/lib/icons";
@@ -226,7 +226,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
   const handleCollectionSelect = useCallback(
     (collection: Collection | null) => {
       setSidebarOpen(false);
-      posthog.capture("collection_switched", { collection: collection ?? "all" });
+      capture("collection_switched", { collection: collection ?? "all" });
       if (collection) {
         router.push(`/collection/${collection}`);
       } else {
