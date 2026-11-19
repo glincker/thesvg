@@ -140,7 +140,7 @@ If that is the logo library you wished existed, the single most useful thing you
 <table>
   <tr>
     <td align="center" width="25%"><strong><!-- flags:total-icons -->7,900+<!-- /flags:total-icons --></strong><br />icons</td>
-    <td align="center" width="25%"><strong><!-- flags:total-variants -->14,600+<!-- /flags:total-variants --></strong><br />variants: color, mono, light, dark, wordmark, flag shapes</td>
+    <td align="center" width="25%"><strong><!-- flags:total-variants -->14,700+<!-- /flags:total-variants --></strong><br />variants: color, mono, light, dark, wordmark, flag shapes</td>
     <td align="center" width="25%"><strong>150+</strong><br />categories</td>
     <td align="center" width="25%"><strong>21</strong><br />brand families</td>
   </tr>
@@ -209,7 +209,7 @@ The full breakdown lives in [Collections, families and categories](./docs/collec
 - **256 community-curated icons** - dev tools, databases, frameworks
 - **214 Google Cloud icons** (2026-Q1)
 - **<!-- flags:count -->263<!-- /flags:count --> country and region flags** - ISO 3166-1 plus England, Scotland, Wales, Catalonia and more, in 4x3, square and circle
-- **<!-- flags:total-variants -->14,600+<!-- /flags:total-variants --> SVG variants** - color, mono, light, dark, wordmark, flag shapes
+- **<!-- flags:total-variants -->14,700+<!-- /flags:total-variants --> SVG variants** - color, mono, light, dark, wordmark, flag shapes
 - **Tree-shakeable** - import one icon, ship only that icon
 - **TypeScript-first** - fully typed, dual ESM/CJS
 - **Framework-agnostic** - React, Vue, Svelte, plain HTML, or CDN
