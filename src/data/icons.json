@@ -83498,6 +83498,33 @@
     "collection": "brands"
   },
   {
+    "slug": "general-translation",
+    "title": "General Translation",
+    "aliases": [
+      "gt",
+      "generaltranslation"
+    ],
+    "hex": "070707",
+    "categories": [
+      "DevTool",
+      "AI"
+    ],
+    "variants": {
+      "default": "/icons/general-translation/default.svg",
+      "mono": "/icons/general-translation/mono.svg",
+      "light": "/icons/general-translation/light.svg",
+      "dark": "/icons/general-translation/dark.svg",
+      "wordmark": "/icons/general-translation/wordmark.svg",
+      "wordmarkLight": "/icons/general-translation/wordmark-light.svg",
+      "wordmarkDark": "/icons/general-translation/wordmark-dark.svg"
+    },
+    "license": "Custom — General Translation brand assets, submitted by its designer; trademark of General Translation",
+    "url": "https://generaltranslation.com",
+    "guidelines": "https://www.prototemplate.com/brand",
+    "dateAdded": "2026-11-18",
+    "collection": "brands"
+  },
+  {
     "slug": "genius",
     "title": "Genius",
     "aliases": [],
