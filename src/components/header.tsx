@@ -9,7 +9,7 @@ import { LogoMorph, ModeSwitch } from "@/components/ui-icons/mode-switch";
 import { PackagesMenu } from "@/components/packages-menu";
 import { SearchGroups } from "@/components/search/search-groups";
 import { NavFlagsPill } from "@/components/nav-flags-pill";
-import { GLYPHS } from "@/lib/ui-icons/glyphs";
+import type { Glyph } from "@/lib/ui-icons/glyphs";
 import { rankTiered } from "@/lib/ui-icons/search";
 import { searchableOf } from "@/lib/ui-icons/searchable";
 import { formatStarCount } from "@/lib/github-stars";
@@ -194,7 +194,15 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
   // The page lists every result, so on the UI pages the modal is a jump list of the best few. Elsewhere it shows a few more and links to all.
   // UI glyphs are not part of any brand collection, so a collection scope hides them.
   const uiActive = hasQuery && !scope;
-  const uiRanked = useMemo(() => (uiActive ? rankTiered(query.trim().toLowerCase(), GLYPHS, searchableOf) : { best: [], related: [] }), [uiActive, query]);
+  // The glyph registry is large, so it loads on the first search that needs it instead of with every page.
+  const [glyphs, setGlyphs] = useState<Glyph[] | null>(null);
+  useEffect(() => {
+    if (!uiActive || glyphs) return;
+    let live = true;
+    void import("@/lib/ui-icons/glyphs").then((m) => { if (live) setGlyphs(m.GLYPHS); });
+    return () => { live = false; };
+  }, [uiActive, glyphs]);
+  const uiRanked = useMemo(() => (uiActive && glyphs ? rankTiered(query.trim().toLowerCase(), glyphs, searchableOf) : { best: [], related: [] }), [uiActive, glyphs, query]);
   const uiAll = useMemo(() => [...uiRanked.best, ...uiRanked.related], [uiRanked]);
   const uiShown = (uiRanked.best.length > 0 ? uiRanked.best : uiAll).slice(0, pathname.startsWith("/ui") ? 4 : 3);
   // One flat list in on-screen order (current section first) so the arrow keys walk both groups.

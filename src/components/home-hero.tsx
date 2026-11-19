@@ -19,10 +19,13 @@ import { useCompactHeroStore } from "@/lib/stores/compact-hero-store";
 import { useHomePrefsStore } from "@/lib/stores/home-prefs-store";
 import { cn } from "@/lib/utils";
 import { withUtm } from "@/lib/external-link";
-import { UiHeroPreview } from "@/components/ui-icons/hero-preview";
+import dynamic from "next/dynamic";
 import { MENTIONS } from "@/lib/mentions";
 
 import { getPopularSlugs } from "@/lib/popular-icons";
+
+// Decorative and desktop-only, so its glyph data loads after the page instead of with it.
+const UiHeroPreview = dynamic(() => import("@/components/ui-icons/hero-preview").then((m) => m.UiHeroPreview), { ssr: false });
 
 // Local aliases so ALL_SLIDES below (byte-identical to before this file
 // started sharing the curated lists with home-content.tsx) doesn't need

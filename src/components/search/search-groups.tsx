@@ -4,7 +4,8 @@ import { UiGlyph } from "@/components/ui-glyph";
 import iconTones from "@/data/icon-tones.json";
 import Link from "next/link";
 import type { IconEntry } from "@/lib/icons";
-import { type Glyph, styleFor } from "@/lib/ui-icons/glyphs";
+import type { Glyph } from "@/lib/ui-icons/glyphs";
+import { styleFor } from "@/lib/ui-icons/style";
 import { renderIcon } from "@/lib/ui-icons/engine";
 import { cn } from "@/lib/ui-icons/utils";
 
