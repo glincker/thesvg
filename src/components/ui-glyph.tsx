@@ -1,7 +1,8 @@
 import { useId } from "react";
-import { renderIcon, type Variant } from "@/lib/ui-icons/engine";
+import { renderIcon, type IconNode, type Variant } from "@/lib/ui-icons/engine";
 import { CHROME_SCALE, chromeLook } from "@/lib/ui-icons/chrome-look";
-import { GLYPH_BY_SLUG, styleFor } from "@/lib/ui-icons/glyphs";
+import { CHROME_GLYPHS } from "@/lib/ui-icons/chrome-glyphs.generated";
+import { styleFor } from "@/lib/ui-icons/style";
 import { defaultColorOf } from "@/lib/ui-icons/default-color";
 import { scopeIds } from "@/lib/ui-icons/scope-ids";
 import { cn } from "@/lib/utils";
@@ -14,11 +15,12 @@ function markup(name: string, look: Variant, weight?: number): string | null {
   const key = `${name}:${look}:${weight ?? ""}`;
   const hit = cache.get(key);
   if (hit) return hit;
-  const glyph = GLYPH_BY_SLUG.get(name);
-  if (!glyph) return null;
+  // Only the glyphs the site names, not the whole registry, so the shared layout stays small. `pnpm ui:build` regenerates it.
+  const nodes = CHROME_GLYPHS[name] as IconNode[] | undefined;
+  if (!nodes) return null;
   // The size comes from the wrapper's class, so the fixed width and height go. The size-full class on the svg also keeps
   // buttons that force a size on bare svgs (our Button does) from shrinking it.
-  const svg = renderIcon(glyph.nodes, { variant: look, style: { ...styleFor(look), scale: styleFor(look).scale * CHROME_SCALE, ...(weight ? { strokeWidth: Math.round(styleFor(look).strokeWidth * (weight / STROKE_REFERENCE) * 100) / 100 } : null) }, size: 24, idPrefix: `g-${name}-${look}` }).svg.replace(/ width="24" height="24"/, "").replace(/^<svg /, '<svg class="size-full" ');
+  const svg = renderIcon(nodes, { variant: look, style: { ...styleFor(look), scale: styleFor(look).scale * CHROME_SCALE, ...(weight ? { strokeWidth: Math.round(styleFor(look).strokeWidth * (weight / STROKE_REFERENCE) * 100) / 100 } : null) }, size: 24, idPrefix: `g-${name}-${look}` }).svg.replace(/ width="24" height="24"/, "").replace(/^<svg /, '<svg class="size-full" ');
   cache.set(key, svg);
   return svg;
 }

@@ -2,7 +2,7 @@
 
 import { type IconNode, type StyleParams, type Variant, renderIcon } from "@/lib/ui-icons/engine";
 import { useId, useMemo } from "react";
-import { styleFor } from "@/lib/ui-icons/glyphs";
+import { styleFor } from "@/lib/ui-icons/style";
 import { useUi } from "./ui-state";
 
 /** Renders one glyph with the house style for the chosen variant. Color comes from currentColor. */
