@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import posthog from "posthog-js";
+import { capture } from "@/lib/analytics";
 import { ArrowUpRight, RotateCcw, ThumbsDown, ThumbsUp } from "@/components/own-icons";
 import { cn } from "@/lib/utils";
 import { withUtm } from "@/lib/external-link";
@@ -185,7 +185,7 @@ export function IconFeedback({ slug, title }: Readonly<{ slug: string; title: st
     if (typeof window !== "undefined") {
       window.localStorage.setItem(storageKey(slug), sentiment);
     }
-    posthog.capture("icon_feedback", { slug, sentiment, source: "detail_page" });
+    capture("icon_feedback", { slug, sentiment, source: "detail_page" });
     gaFeedback(slug, sentiment);
 
     if (sentiment === "down") {
@@ -224,7 +224,7 @@ export function IconFeedback({ slug, title }: Readonly<{ slug: string; title: st
 
   function pickReason(reason: Reason) {
     if (reasonPicked) return;
-    posthog.capture("icon_feedback_reason", { slug, reason, source: "detail_page" });
+    capture("icon_feedback_reason", { slug, reason, source: "detail_page" });
     gaFeedback(slug, "down", reason);
     setReasonPicked(reason);
     setPickingReason(false);
@@ -238,7 +238,7 @@ export function IconFeedback({ slug, title }: Readonly<{ slug: string; title: st
   // there's at least a record that the earlier vote was undone.
   function resetVote() {
     if (!voted) return;
-    posthog.capture("icon_feedback_reset", { slug, previous_sentiment: voted, source: "detail_page" });
+    capture("icon_feedback_reset", { slug, previous_sentiment: voted, source: "detail_page" });
     gaFeedbackReset(slug, voted);
     if (typeof window !== "undefined") {
       window.localStorage.removeItem(storageKey(slug));

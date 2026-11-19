@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import type { BottomSheetSnap } from "./bottom-sheet";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import posthog from "posthog-js";
+import { capture } from "@/lib/analytics";
 import { ArrowUpRight, Check, Copy, Download, Globe, Heart, Layers, Scale, Sparkles } from "@/components/own-icons";
 import { BottomSheet } from "./bottom-sheet";
 import { useMobileShellStore } from "@/lib/stores/mobile-shell-store";
@@ -93,7 +93,7 @@ export function MobileIconSheet() {
         const out = formatSvg(svg, key, icon.slug, "default");
         await navigator.clipboard.writeText(out);
         recordCopy(icon.slug, key);
-        posthog.capture("icon_copied", {
+        capture("icon_copied", {
           icon_slug: icon.slug,
           icon_title: icon.title,
           format: key,
@@ -123,7 +123,7 @@ export function MobileIconSheet() {
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
-      posthog.capture("icon_downloaded", {
+      capture("icon_downloaded", {
         icon_slug: icon.slug,
         icon_title: icon.title,
         variant: "default",

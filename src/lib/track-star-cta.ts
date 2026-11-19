@@ -1,6 +1,6 @@
 "use client";
 
-import posthog from "posthog-js";
+import { capture } from "@/lib/analytics";
 
 export type StarCtaSource = "header" | "star_prompt" | "footer" | "blog_page";
 export type StarCtaAction = "viewed" | "clicked";
@@ -27,5 +27,5 @@ export function trackStarCta(
       // Storage blocked: fall through and count the view.
     }
   }
-  posthog.capture("github_star_cta", { source, action, stars });
+  capture("github_star_cta", { source, action, stars });
 }

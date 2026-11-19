@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Check, Link2, SocialLinkedin, SocialReddit, SocialX } from "@/components/own-icons";
-import posthog from "posthog-js";
+import { capture } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 import { withUtm } from "@/lib/external-link";
 
@@ -57,11 +57,11 @@ export function ShareButtons({ url, title, tags, vertical = false }: ShareButton
     await navigator.clipboard.writeText(url);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
-    posthog.capture("blog_link_copied", { url });
+    capture("blog_link_copied", { url });
   };
 
   const handleShare = (platform: string) => {
-    posthog.capture("blog_post_shared", { platform, url });
+    capture("blog_post_shared", { platform, url });
   };
 
   if (vertical) {

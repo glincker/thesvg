@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import posthog from "posthog-js";
+import { capture } from "@/lib/analytics";
 import { ThumbsUp, ThumbsDown, Check } from "@/components/own-icons";
 import { DocsBrandIcon } from "@/components/docs/docs-nav-icon";
 
@@ -17,7 +17,7 @@ export function DocsPageFooter({ sourceFile, pageTitle }: Readonly<DocsPageFoote
 
   function handleFeedback(helpful: boolean) {
     if (feedback) return;
-    posthog.capture("docs_feedback", { page: pageTitle, helpful });
+    capture("docs_feedback", { page: pageTitle, helpful });
     setFeedback(helpful ? "helpful" : "not-helpful");
   }
 

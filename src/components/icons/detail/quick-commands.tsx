@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Check, Copy } from "@/components/own-icons";
-import posthog from "posthog-js";
+import { capture } from "@/lib/analytics";
 import { getJsDelivrUrl } from "@/components/icons/shared/icon-constants";
 import { cn } from "@/lib/utils";
 import {
@@ -97,7 +97,7 @@ export function QuickCommands({ slug, activeVariant }: QuickCommandsProps) {
     void navigator.clipboard.writeText(text);
     setCopied(key);
     window.setTimeout(() => setCopied(null), 1500);
-    posthog.capture("quick_command_copied", { icon_slug: slug, variant: activeVariant, command_type: key });
+    capture("quick_command_copied", { icon_slug: slug, variant: activeVariant, command_type: key });
   };
   const choosePm = (next: PackageManager): void => {
     setPm(next);

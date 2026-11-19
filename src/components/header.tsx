@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useId, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
-import posthog from "posthog-js";
+import { capture } from "@/lib/analytics";
 import { usePathname, useRouter } from "next/navigation";
 import { UiGlyph } from "@/components/ui-glyph";
 import { LogoMorph, ModeSwitch } from "@/components/ui-icons/mode-switch";
@@ -614,7 +614,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                                 type="button"
                                 onMouseDown={(e) => {
                                   e.preventDefault();
-                                  posthog.capture("recents_clicked", {
+                                  capture("recents_clicked", {
                                     kind: "viewed",
                                     slug: icon.slug,
                                     source: "header_dropdown",
@@ -646,7 +646,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                                 onMouseDown={(e) => {
                                   // mousedown so it fires before the input blur
                                   e.preventDefault();
-                                  posthog.capture("recents_clicked", {
+                                  capture("recents_clicked", {
                                     kind: "searched",
                                     query: r.query,
                                     source: "header_dropdown",

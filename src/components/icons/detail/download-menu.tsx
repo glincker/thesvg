@@ -2,7 +2,7 @@
 
 import { useCallback, useRef, useState } from "react";
 import { Check, ChevronDown, Clipboard, Download, FileCode, ImageIcon } from "@/components/own-icons";
-import posthog from "posthog-js";
+import { capture } from "@/lib/analytics";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -99,7 +99,7 @@ export function DownloadMenu({
       const text = svgContent ? svgContent : await fetchSvgText(currentPath);
       const blob = new Blob([text], { type: "image/svg+xml" });
       downloadBlob(blob, `${safeName(slug, activeVariant)}.svg`);
-      posthog.capture("icon_downloaded", {
+      capture("icon_downloaded", {
         icon_slug: slug,
         variant: activeVariant,
         file_type: "svg",
@@ -126,7 +126,7 @@ export function DownloadMenu({
           blob,
           `${safeName(slug, activeVariant)}-${size}px.${fmt?.ext ?? format}`,
         );
-        posthog.capture("icon_raster_exported", {
+        capture("icon_raster_exported", {
           icon_slug: slug,
           variant: activeVariant,
           format,

@@ -3,7 +3,7 @@
 import { useCallback, useState } from "react";
 import Link from "next/link";
 import { Check, Copy, Download, Hash } from "@/components/own-icons";
-import posthog from "posthog-js";
+import { capture } from "@/lib/analytics";
 import type { IconEntry } from "@/lib/icons";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import { cn } from "@/lib/utils";
@@ -37,7 +37,7 @@ export function Google2026Tile({ icon, delay, cleanTitle }: Props) {
         await navigator.clipboard.writeText(svg);
         showFlash("svg");
         recordCopy(icon.slug, "svg");
-        posthog.capture("icon_copied", {
+        capture("icon_copied", {
           icon_slug: icon.slug,
           icon_title: icon.title,
           format: "svg",
@@ -64,7 +64,7 @@ export function Google2026Tile({ icon, delay, cleanTitle }: Props) {
         await navigator.clipboard.writeText(color);
         showFlash("hex");
         recordCopy(icon.slug, "hex");
-        posthog.capture("icon_color_copied", {
+        capture("icon_color_copied", {
           icon_slug: icon.slug,
           hex: color,
           source: "g26_tile",
@@ -94,7 +94,7 @@ export function Google2026Tile({ icon, delay, cleanTitle }: Props) {
       } catch {
         window.open(src, "_blank", "noopener,noreferrer");
       }
-      posthog.capture("icon_downloaded", {
+      capture("icon_downloaded", {
         icon_slug: icon.slug,
         icon_title: icon.title,
         file_type: "svg",

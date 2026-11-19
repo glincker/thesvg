@@ -4,7 +4,7 @@ import { memo, useCallback, useRef, useState, type CSSProperties } from "react";
 import { Check, Copy, Download, Eye, Heart } from "@/components/own-icons";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import posthog from "posthog-js";
+import { capture } from "@/lib/analytics";
 import type { IconEntry } from "@/lib/icons";
 import { useFavoritesStore } from "@/lib/stores/favorites-store";
 import { useSettingsStore } from "@/lib/stores/settings-store";
@@ -75,7 +75,7 @@ export const IconCard = memo(function IconCard({
         setIsCopying(false);
       }
       recordCopy(icon.slug, defaultCopyFormat);
-      posthog.capture("icon_copied", {
+      capture("icon_copied", {
         icon_slug: icon.slug,
         icon_title: icon.title,
         format: defaultCopyFormat,
@@ -106,7 +106,7 @@ export const IconCard = memo(function IconCard({
       } finally {
         setIsDownloading(false);
       }
-      posthog.capture("icon_downloaded", {
+      capture("icon_downloaded", {
         icon_slug: icon.slug,
         icon_title: icon.title,
         variant: "default",
