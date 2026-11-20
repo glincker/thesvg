@@ -21,6 +21,8 @@
   Free, open source, no gatekeeping.
 </p>
 
+![thesvg — search 7,600+ brand logos and copy any one as SVG or React](https://raw.githubusercontent.com/yasirwhite/opendemo-media/main/glincker-thesvg/thesvg-demo.gif)
+
 <p align="center">
   <a href="https://trendshift.io/repositories/24396?utm_source=trendshift-badge&utm_medium=badge&utm_campaign=badge-trendshift-24396" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/24396/daily?language=TypeScript" alt="glincker/thesvg | Trendshift" width="250" height="55"/></a>
 </p>
