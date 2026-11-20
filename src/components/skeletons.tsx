@@ -48,7 +48,7 @@ export function HeaderSkeleton() {
       aria-hidden
       className="sticky top-[var(--banner-h,0px)] z-50 hidden w-full px-2 pt-2 pb-0 sm:px-3 sm:pt-2.5 lg:block"
     >
-      <div className="mx-auto flex h-12 max-w-[1800px] items-center gap-3 rounded-2xl border border-black/[0.06] bg-background/90 px-4 backdrop-blur-2xl dark:border-white/[0.08] dark:bg-black/60">
+      <div className="mx-auto flex h-12 max-w-[1800px] items-center gap-3 rounded-2xl border border-black/[0.06] bg-background/97 px-4 dark:border-white/[0.08] dark:bg-black/90">
         <TheSVGMark className="h-9 w-9 rounded-lg" />
         <Pulse className="h-4 w-16 bg-muted-foreground/15" />
         <Pulse className="h-8 flex-1 rounded-lg" />

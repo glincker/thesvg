@@ -76,7 +76,8 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
   const showFigmaBadge = useSyncExternalStore(
     () => () => {},
     () => Date.now() < FIGMA_BADGE_EXPIRES_AT,
-    () => true,
+    // Server renders it off so an expired badge never flashes in the static HTML.
+    () => false,
   );
   const toggleSidebar = useSidebarStore((s) => s.toggle);
   const query = useSearchStore((s) => s.query);
@@ -139,38 +140,40 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
     router.push(qs ? `/?${qs}` : "/", { scroll: false });
   }
 
-  // Typewriter placeholder effect
-  const [placeholderIdx, setPlaceholderIdx] = useState(0);
-  const [charIdx, setCharIdx] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-
+  // Typewriter placeholder. Writes straight to the input so each keystroke
+  // does not re-render the whole header (it ticks every 40-80ms).
+  const animatePlaceholder = !(query || focused || prefersReducedMotion || pathname.startsWith("/ui"));
   useEffect(() => {
-    if (query || focused || prefersReducedMotion) return;
-    const brand = PLACEHOLDER_BRANDS[placeholderIdx];
-    const timer = setTimeout(() => {
-      if (!isDeleting) {
-        if (charIdx < brand.length) {
-          setCharIdx(charIdx + 1);
-        } else {
-          setTimeout(() => setIsDeleting(true), 1500);
-        }
+    const input = inputRef.current;
+    if (!animatePlaceholder || !input) return;
+    let brandIdx = 0;
+    let chars = 0;
+    let deleting = false;
+    let timer: ReturnType<typeof setTimeout>;
+    const tick = () => {
+      const brand = PLACEHOLDER_BRANDS[brandIdx];
+      let delay = deleting ? 40 : 80;
+      if (!deleting && chars < brand.length) {
+        chars += 1;
+      } else if (!deleting) {
+        deleting = true;
+        delay = 1500;
+      } else if (chars > 0) {
+        chars -= 1;
       } else {
-        if (charIdx > 0) {
-          setCharIdx(charIdx - 1);
-        } else {
-          setIsDeleting(false);
-          setPlaceholderIdx((placeholderIdx + 1) % PLACEHOLDER_BRANDS.length);
-        }
+        deleting = false;
+        brandIdx = (brandIdx + 1) % PLACEHOLDER_BRANDS.length;
       }
-    }, isDeleting ? 40 : 80);
+      input.placeholder = `Search "${PLACEHOLDER_BRANDS[brandIdx].slice(0, chars)}"`;
+      timer = setTimeout(tick, delay);
+    };
+    timer = setTimeout(tick, 80);
     return () => clearTimeout(timer);
-  }, [charIdx, isDeleting, placeholderIdx, query, focused, prefersReducedMotion]);
+  }, [animatePlaceholder]);
 
   const dynamicPlaceholder = pathname.startsWith("/ui") ? "Search UI icons..." : query || focused
     ? "Search icons..."
-    : prefersReducedMotion
-      ? `Search "${PLACEHOLDER_BRANDS[0]}"`
-      : `Search "${PLACEHOLDER_BRANDS[placeholderIdx].slice(0, charIdx)}"`;
+    : `Search "${PLACEHOLDER_BRANDS[0]}"`;
 
   const isHome = pathname === "/";
   const isUi = pathname.startsWith("/ui");
@@ -354,7 +357,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
       className="sticky top-[var(--banner-h,0px)] z-50 hidden w-full px-2 pt-2 pb-0 sm:px-3 sm:pt-2.5 md:block"
       style={{ paddingTop: "max(0.5rem, env(safe-area-inset-top))" }}
     >
-      <div className="mx-auto max-w-[1800px] transform-gpu rounded-2xl border border-black/[0.06] bg-background/90 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08),0_0_0_1px_rgba(0,0,0,0.03)] backdrop-blur-2xl dark:border-white/[0.08] dark:bg-black/60 dark:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.05)]">
+      <div className="mx-auto max-w-[1800px] transform-gpu rounded-2xl border border-black/[0.06] bg-background/97 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08),0_0_0_1px_rgba(0,0,0,0.03)] dark:border-white/[0.08] dark:bg-black/90 dark:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.05)]">
         {/* On mobile (<sm) the row wraps and the search drops to a second
             row using `order-last`, so phones like Realme/iPhone SE get a
             true full-width input instead of being squeezed between Submit
