@@ -118,10 +118,10 @@
     "@types/node": "^22",
     "@types/react": "^19.3.0",
     "cldr-core": "47",
-    "esbuild": "^0.25",
+    "esbuild": "^0.28",
     "i18n-iso-countries": "^7.14.0",
-    "react": "19.3.0",
-    "react-dom": "19.3.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
     "svgo": "3.3.5",
     "tsx": "^4.23.15",
     "typescript": "^6.0.3"
