@@ -85261,7 +85261,10 @@
       "default": "/icons/godonateme/default.svg",
       "light": "/icons/godonateme/light.svg",
       "dark": "/icons/godonateme/dark.svg",
-      "mono": "/icons/godonateme/mono.svg"
+      "mono": "/icons/godonateme/mono.svg",
+      "wordmark": "/icons/godonateme/wordmark.svg",
+      "wordmarkLight": "/icons/godonateme/wordmark-light.svg",
+      "wordmarkDark": "/icons/godonateme/wordmark-dark.svg"
     },
     "license": "brand-use",
     "url": "https://godonate.me",
