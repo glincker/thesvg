@@ -1,5 +1,11 @@
 # @thesvg/icons
 
+## 4.0.14
+
+### Patch Changes
+
+- feat: add godonateme wordmark variants ([#1586](https://github.com/glincker/thesvg/issues/1586))
+
 ## 4.0.13
 
 ### Patch Changes
