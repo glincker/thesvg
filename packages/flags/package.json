@@ -117,7 +117,7 @@
     "@resvg/resvg-js": "^2",
     "@types/node": "^22",
     "@types/react": "^19.3.0",
-    "cldr-core": "47",
+    "cldr-core": "49",
     "esbuild": "^0.25",
     "i18n-iso-countries": "^7.14.0",
     "react": "19.3.0",
