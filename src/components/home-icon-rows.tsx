@@ -47,7 +47,7 @@ export function IconRowsVisual({ icons, tilt, tileClass, plateClass }: IconRowsV
                         prefetch={false}
                         tabIndex={-1}
                         aria-label={icon.title}
-                        className={cn("pointer-events-auto grid place-items-center rounded-2xl border shadow-lg shadow-black/10 backdrop-blur-sm transition-transform duration-200 hover:scale-110 focus-visible:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400", row.tile, tileClass, plateClass(icon.slug))}
+                        className={cn("pointer-events-auto grid place-items-center rounded-2xl border shadow-lg shadow-black/10 transition-transform duration-200 hover:scale-110 focus-visible:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400", row.tile, tileClass, plateClass(icon.slug))}
                       >
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img src={icon.variants.light || icon.variants.default} alt="" loading="lazy" decoding="async" className={cn(row.img, "object-contain dark:hidden")} />
