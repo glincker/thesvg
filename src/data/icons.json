@@ -48842,6 +48842,32 @@
     "collection": "brands"
   },
   {
+    "slug": "context7",
+    "title": "Context7",
+    "aliases": [
+      "context 7",
+      "upstash context7"
+    ],
+    "hex": "000000",
+    "categories": [
+      "AI",
+      "DevTool"
+    ],
+    "variants": {
+      "default": "/icons/context7/default.svg",
+      "color": "/icons/context7/color.svg",
+      "light": "/icons/context7/light.svg",
+      "dark": "/icons/context7/dark.svg",
+      "wordmark": "/icons/context7/wordmark.svg",
+      "wordmarkLight": "/icons/context7/wordmark-light.svg",
+      "wordmarkDark": "/icons/context7/wordmark-dark.svg"
+    },
+    "license": "CC0-1.0",
+    "url": "https://context7.com/",
+    "dateAdded": "2026-11-23",
+    "collection": "brands"
+  },
+  {
     "slug": "continente",
     "title": "Continente",
     "aliases": [],
@@ -151733,7 +151759,9 @@
     ],
     "variants": {
       "default": "/icons/upstash/default.svg",
-      "mono": "/icons/upstash/mono.svg"
+      "mono": "/icons/upstash/mono.svg",
+      "wordmarkLight": "/icons/upstash/wordmark-light.svg",
+      "wordmarkDark": "/icons/upstash/wordmark-dark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://upstash.com/",
