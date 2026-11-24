@@ -130250,6 +130250,23 @@
     "collection": "brands"
   },
   {
+    "slug": "ramp",
+    "title": "Ramp",
+    "aliases": [],
+    "hex": "1F1F1F",
+    "categories": [
+      "Finance"
+    ],
+    "variants": {
+      "default": "/icons/ramp/default.svg",
+      "mono": "/icons/ramp/mono.svg"
+    },
+    "license": "Trademark",
+    "url": "https://ramp.com",
+    "dateAdded": "2026-11-25",
+    "collection": "brands"
+  },
+  {
     "slug": "rancher",
     "title": "Rancher",
     "aliases": [],
