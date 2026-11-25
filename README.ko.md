@@ -3,12 +3,12 @@
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-lockup-dark.svg" />
       <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-lockup.svg" />
-      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-lockup.svg" alt="theSVG by GLINR Studios" height="44" />
+      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-lockup.svg" alt="theSVG by GLINR Studios" height="64" />
     </picture>
   </a>
 </p>
 
-<h2 align="center">오픈 SVG 브랜드 라이브러리</h2>
+<h3 align="center">오픈 SVG 브랜드 라이브러리</h3>
 
 <p align="center">7,900개 이상의 로고, 아이콘, 국기를 SVG, React, Vue, Svelte, CDN, CLI, MCP로. 무료 오픈 소스입니다.</p>
 
