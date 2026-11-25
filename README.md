@@ -3,38 +3,38 @@
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-wordmark-dark.svg" />
       <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-wordmark.svg" />
-      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-wordmark.svg" alt="theSVG" height="48" />
+      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-wordmark.svg" alt="theSVG" height="40" />
     </picture>
   </a>
 </p>
 
-<h3 align="center">The open SVG brand library</h3>
-
-<p align="center"><b>A HOME FOR EVERY BRAND.</b></p>
-
 <p align="center">
-  <a href="https://thesvg.org/collection/flags">Flags</a> · <a href="https://thesvg.org/blog/country-flags">New: country flags</a> · <a href="https://thesvg.org/blog">Blog</a> · <a href="https://thesvg.org/docs">Docs</a>
+  <b>The open SVG brand library</b><br />
+  7,900+ logos, icons and flags as SVG, React, Vue, Svelte, CDN, CLI or MCP. Free, open source.
 </p>
 
-<p align="center">
-  7,900+ brand logos, cloud icons and country flags. Search, copy and ship them as SVG, React, Vue, Svelte, CDN, CLI or MCP.<br />
-  Free, open source, no gatekeeping.
-</p>
+<p align="center"><sub><a href="https://thesvg.org"><b>Browse icons</b></a> · <a href="https://thesvg.org/docs">Docs</a> · <a href="https://thesvg.org/collection/flags">Flags</a> · <a href="#quick-start">Quick start</a> · <a href="#install">Install</a> · <a href="#extensions">Extensions</a> · <a href="#cdn">CDN</a> · <a href="#api">API</a> · <a href="#packages">Packages</a> · <a href="https://thesvg.org/compare">Compare</a> · <a href="#community">Community</a> · <a href="#contributing">Contribute</a></sub></p>
 
-<p align="center">
-  <a href="https://trendshift.io/repositories/24396?utm_source=trendshift-badge&utm_medium=badge&utm_campaign=badge-trendshift-24396" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/24396/daily?language=TypeScript" alt="glincker/thesvg | Trendshift" width="250" height="55"/></a>
-</p>
+<p align="center"><sub><b>English</b> · <a href="README.es.md">Español</a> · <a href="README.fr.md">Français</a> · <a href="README.de.md">Deutsch</a> · <a href="README.pt-BR.md">Português</a> · <a href="README.ja.md">日本語</a> · <a href="README.ko.md">한국어</a> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.ru.md">Русский</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.hi.md">हिन्दी</a></sub></p>
 
 <p align="center">
   <a href="https://www.npmjs.com/package/thesvg"><img src="https://img.shields.io/npm/v/thesvg?style=flat-square&color=C2410C&label=npm" alt="npm" /></a>
   <a href="https://www.npmjs.com/package/thesvg"><img src="https://img.shields.io/npm/dm/thesvg?style=flat-square&color=C2410C&label=downloads" alt="downloads" /></a>
-  <a href="https://www.npmjs.com/package/@thesvg/flags"><img src="https://img.shields.io/npm/v/@thesvg/flags?style=flat-square&color=C2410C&label=flags" alt="@thesvg/flags" /></a>
-  <a href="https://www.npmjs.com/package/@thesvg/mcp-server"><img src="https://img.shields.io/npm/v/@thesvg/mcp-server?style=flat-square&color=C2410C&label=MCP" alt="MCP server" /></a>
-  <a href="https://www.jsdelivr.com/package/gh/glincker/thesvg"><img src="https://data.jsdelivr.com/v1/package/gh/glincker/thesvg/badge" alt="jsDelivr" /></a>
   <a href="https://github.com/glincker/thesvg/stargazers"><img src="https://img.shields.io/github/stars/glincker/thesvg?style=flat-square&label=stars" alt="stars" /></a>
   <a href="https://discord.gg/Ar5pcaZB99"><img src="https://img.shields.io/discord/829168897080557579?style=flat-square&logo=discord&logoColor=white&label=discord&color=5865F2" alt="Discord" /></a>
   <a href="https://github.com/glincker/thesvg"><img src="https://img.shields.io/badge/icons-7%2C900%2B-C2410C?style=flat-square" alt="7,900+ icons" /></a>
   <a href="https://github.com/glincker/thesvg/blob/main/LICENSE"><img src="https://img.shields.io/github/license/glincker/thesvg?style=flat-square" alt="license" /></a>
+</p>
+
+<details>
+<summary><sub>More badges</sub></summary>
+<p align="center">
+  <a href="https://trendshift.io/repositories/24396?utm_source=trendshift-badge&utm_medium=badge&utm_campaign=badge-trendshift-24396" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/24396/daily?language=TypeScript" alt="glincker/thesvg | Trendshift" width="220" /></a>
+</p>
+<p align="center">
+  <a href="https://www.npmjs.com/package/@thesvg/flags"><img src="https://img.shields.io/npm/v/@thesvg/flags?style=flat-square&color=C2410C&label=flags" alt="@thesvg/flags" /></a>
+  <a href="https://www.npmjs.com/package/@thesvg/mcp-server"><img src="https://img.shields.io/npm/v/@thesvg/mcp-server?style=flat-square&color=C2410C&label=MCP" alt="MCP server" /></a>
+  <a href="https://www.jsdelivr.com/package/gh/glincker/thesvg"><img src="https://data.jsdelivr.com/v1/package/gh/glincker/thesvg/badge" alt="jsDelivr" /></a>
   <a href="https://www.figma.com/community/plugin/1612997159050367763"><img src="https://img.shields.io/badge/Figma-Plugin-F24E1E?style=flat-square&logo=figma&logoColor=white" alt="Figma" /></a>
   <a href="https://marketplace.visualstudio.com/items?itemName=glincker.thesvg"><img src="https://img.shields.io/badge/VS%20Code-Extension-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white" alt="VS Code" /></a>
   <a href="https://www.raycast.com/thegdsks/thesvg"><img src="https://img.shields.io/badge/Raycast-Store-FF6363?style=flat-square&logo=raycast" alt="Raycast" /></a>
@@ -48,20 +48,7 @@
   <a href="https://socket.dev/npm/package/thesvg"><img src="https://socket.dev/api/badge/npm/package/thesvg" alt="Socket score for thesvg" /></a>
   <a href="https://www.npmjs.com/package/@thesvg/icons"><img src="https://img.shields.io/badge/provenance-verified-2EA44F?style=flat-square" alt="npm provenance verified" /></a>
 </p>
-
-<p align="center">
-  <a href="https://thesvg.org"><strong>Browse icons</strong></a> &nbsp;&bull;&nbsp;
-  <a href="#quick-start">Quick start</a> &nbsp;&bull;&nbsp;
-  <a href="#install">Install</a> &nbsp;&bull;&nbsp;
-  <a href="#extensions">Extensions</a> &nbsp;&bull;&nbsp;
-  <a href="#cdn">CDN</a> &nbsp;&bull;&nbsp;
-  <a href="#api">API</a> &nbsp;&bull;&nbsp;
-  <a href="#packages">Packages</a> &nbsp;&bull;&nbsp;
-  <a href="https://thesvg.org/compare">Compare</a> &nbsp;&bull;&nbsp;
-  <a href="#community">Community</a> &nbsp;&bull;&nbsp;
-  <a href="#contributing">Contribute</a> &nbsp;&bull;&nbsp;
-  <a href="#contributors">Contributors</a>
-</p>
+</details>
 
 <p align="center">
   <a href="https://thesvg.org">
