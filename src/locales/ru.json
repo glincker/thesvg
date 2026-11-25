@@ -1,0 +1,62 @@
+{
+  "language": { "label": "Язык" },
+  "nav": {
+    "brandIcons": "Иконки брендов",
+    "uiIcons": "UI-иконки",
+    "categories": "Категории",
+    "flags": "Флаги",
+    "docs": "Документация",
+    "submitIcon": "Добавить иконку",
+    "blog": "Блог",
+    "cdnUsage": "Использование CDN",
+    "compare": "Сравнение"
+  },
+  "header": {
+    "home": "Главная theSVG",
+    "submitAria": "Предложить иконку",
+    "searchPlaceholder": "Поиск \"{{brand}}\"",
+    "searchIcons": "Поиск иконок",
+    "clearSearch": "Очистить поиск",
+    "searchIn": "Искать в",
+    "all": "Все",
+    "toggleMenu": "Открыть или закрыть меню",
+    "toggleTheme": "Сменить тему",
+    "star": "Звезда",
+    "docsGuides": "Документация и руководства",
+    "extensionsIntegrations": "Расширения и интеграции",
+    "blogUpdates": "Блог и новости",
+    "submitAnIcon": "Добавить иконку"
+  },
+  "footer": {
+    "headline": "Открытый код. Развивается сообществом.",
+    "tagline": "Бесплатные SVG-логотипы брендов для разработчиков, дизайнеров и команд. Используйте в любых проектах, указывать авторство не нужно.",
+    "stats": {
+      "brandIcons": "Иконки брендов",
+      "uiIcons": "UI-иконки",
+      "svgVariants": "SVG-варианты",
+      "collections": "Коллекции"
+    },
+    "submitAnIcon": "Добавить иконку",
+    "meetFounder": "Познакомьтесь с основателем",
+    "columns": {
+      "product": "Продукт",
+      "resources": "Ресурсы",
+      "community": "Сообщество",
+      "legal": "Правовая информация"
+    },
+    "links": {
+      "figmaPlugin": "Плагин Figma",
+      "vscodeExtension": "Расширение VS Code",
+      "raycastExtension": "Расширение Raycast",
+      "issues": "Задачи",
+      "discussions": "Обсуждения",
+      "mentions": "Упоминания",
+      "contributing": "Как помочь проекту",
+      "sponsor": "Поддержать",
+      "legal": "Правовая информация",
+      "privacy": "Конфиденциальность",
+      "trademarkPolicy": "Политика о товарных знаках",
+      "contact": "Контакты"
+    }
+  }
+}

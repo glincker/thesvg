@@ -1,0 +1,62 @@
+{
+  "language": { "label": "Language" },
+  "nav": {
+    "brandIcons": "Brand Icons",
+    "uiIcons": "UI Icons",
+    "categories": "Categories",
+    "flags": "Flags",
+    "docs": "Docs",
+    "submitIcon": "Submit Icon",
+    "blog": "Blog",
+    "cdnUsage": "CDN Usage",
+    "compare": "Compare"
+  },
+  "header": {
+    "home": "theSVG home",
+    "submitAria": "Submit an icon",
+    "searchPlaceholder": "Search \"{{brand}}\"",
+    "searchIcons": "Search icons",
+    "clearSearch": "Clear search",
+    "searchIn": "Search in",
+    "all": "All",
+    "toggleMenu": "Toggle menu",
+    "toggleTheme": "Toggle theme",
+    "star": "Star",
+    "docsGuides": "Docs & Guides",
+    "extensionsIntegrations": "Extensions & Integrations",
+    "blogUpdates": "Blog & Updates",
+    "submitAnIcon": "Submit an Icon"
+  },
+  "footer": {
+    "headline": "Open source. Community driven.",
+    "tagline": "Free brand SVGs for developers, designers, and teams. Use them in any project, no attribution required.",
+    "stats": {
+      "brandIcons": "Brand Icons",
+      "uiIcons": "UI Icons",
+      "svgVariants": "SVG Variants",
+      "collections": "Collections"
+    },
+    "submitAnIcon": "Submit an Icon",
+    "meetFounder": "Meet the founder",
+    "columns": {
+      "product": "Product",
+      "resources": "Resources",
+      "community": "Community",
+      "legal": "Legal"
+    },
+    "links": {
+      "figmaPlugin": "Figma Plugin",
+      "vscodeExtension": "VS Code Extension",
+      "raycastExtension": "Raycast Extension",
+      "issues": "Issues",
+      "discussions": "Discussions",
+      "mentions": "Mentions",
+      "contributing": "Contributing",
+      "sponsor": "Sponsor",
+      "legal": "Legal",
+      "privacy": "Privacy",
+      "trademarkPolicy": "Trademark Policy",
+      "contact": "Contact"
+    }
+  }
+}

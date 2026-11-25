@@ -1,0 +1,62 @@
+{
+  "language": { "label": "Idioma" },
+  "nav": {
+    "brandIcons": "Ícones de marcas",
+    "uiIcons": "Ícones de UI",
+    "categories": "Categorias",
+    "flags": "Bandeiras",
+    "docs": "Docs",
+    "submitIcon": "Enviar ícone",
+    "blog": "Blog",
+    "cdnUsage": "Uso do CDN",
+    "compare": "Comparar"
+  },
+  "header": {
+    "home": "Página inicial do theSVG",
+    "submitAria": "Enviar um ícone",
+    "searchPlaceholder": "Buscar \"{{brand}}\"",
+    "searchIcons": "Buscar ícones",
+    "clearSearch": "Limpar busca",
+    "searchIn": "Buscar em",
+    "all": "Todos",
+    "toggleMenu": "Alternar menu",
+    "toggleTheme": "Alternar tema",
+    "star": "Star",
+    "docsGuides": "Docs e guias",
+    "extensionsIntegrations": "Extensões e integrações",
+    "blogUpdates": "Blog e novidades",
+    "submitAnIcon": "Enviar um ícone"
+  },
+  "footer": {
+    "headline": "Código aberto. Feito pela comunidade.",
+    "tagline": "SVGs de marcas grátis para devs, designers e equipes. Use em qualquer projeto, sem precisar dar crédito.",
+    "stats": {
+      "brandIcons": "Ícones de marcas",
+      "uiIcons": "Ícones de UI",
+      "svgVariants": "Variantes SVG",
+      "collections": "Coleções"
+    },
+    "submitAnIcon": "Enviar um ícone",
+    "meetFounder": "Conheça o fundador",
+    "columns": {
+      "product": "Produto",
+      "resources": "Recursos",
+      "community": "Comunidade",
+      "legal": "Legal"
+    },
+    "links": {
+      "figmaPlugin": "Plugin do Figma",
+      "vscodeExtension": "Extensão do VS Code",
+      "raycastExtension": "Extensão do Raycast",
+      "issues": "Issues",
+      "discussions": "Discussões",
+      "mentions": "Menções",
+      "contributing": "Contribuir",
+      "sponsor": "Patrocinar",
+      "legal": "Legal",
+      "privacy": "Privacidade",
+      "trademarkPolicy": "Política de marcas",
+      "contact": "Contato"
+    }
+  }
+}

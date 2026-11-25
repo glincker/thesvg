@@ -1,0 +1,62 @@
+{
+  "language": { "label": "Dil" },
+  "nav": {
+    "brandIcons": "Marka İkonları",
+    "uiIcons": "UI İkonları",
+    "categories": "Kategoriler",
+    "flags": "Bayraklar",
+    "docs": "Dokümanlar",
+    "submitIcon": "İkon Gönder",
+    "blog": "Blog",
+    "cdnUsage": "CDN Kullanımı",
+    "compare": "Karşılaştır"
+  },
+  "header": {
+    "home": "theSVG ana sayfa",
+    "submitAria": "İkon gönder",
+    "searchPlaceholder": "\"{{brand}}\" ara",
+    "searchIcons": "İkon ara",
+    "clearSearch": "Aramayı temizle",
+    "searchIn": "Şurada ara",
+    "all": "Tümü",
+    "toggleMenu": "Menüyü aç/kapat",
+    "toggleTheme": "Temayı değiştir",
+    "star": "Yıldızla",
+    "docsGuides": "Dokümanlar ve Rehberler",
+    "extensionsIntegrations": "Eklentiler ve Entegrasyonlar",
+    "blogUpdates": "Blog ve Güncellemeler",
+    "submitAnIcon": "İkon Gönder"
+  },
+  "footer": {
+    "headline": "Açık kaynak. Topluluk odaklı.",
+    "tagline": "Geliştiriciler, tasarımcılar ve ekipler için ücretsiz marka SVG'leri. Her projede kullanın, atıf gerekmez.",
+    "stats": {
+      "brandIcons": "Marka İkonları",
+      "uiIcons": "UI İkonları",
+      "svgVariants": "SVG Varyantları",
+      "collections": "Koleksiyonlar"
+    },
+    "submitAnIcon": "İkon Gönder",
+    "meetFounder": "Kurucuyla tanışın",
+    "columns": {
+      "product": "Ürün",
+      "resources": "Kaynaklar",
+      "community": "Topluluk",
+      "legal": "Yasal"
+    },
+    "links": {
+      "figmaPlugin": "Figma Eklentisi",
+      "vscodeExtension": "VS Code Eklentisi",
+      "raycastExtension": "Raycast Eklentisi",
+      "issues": "Issue'lar",
+      "discussions": "Tartışmalar",
+      "mentions": "Bahsedenler",
+      "contributing": "Katkıda Bulunma",
+      "sponsor": "Sponsor Ol",
+      "legal": "Yasal",
+      "privacy": "Gizlilik",
+      "trademarkPolicy": "Ticari Marka Politikası",
+      "contact": "İletişim"
+    }
+  }
+}

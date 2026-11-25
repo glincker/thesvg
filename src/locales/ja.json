@@ -1,0 +1,62 @@
+{
+  "language": { "label": "言語" },
+  "nav": {
+    "brandIcons": "ブランドアイコン",
+    "uiIcons": "UI アイコン",
+    "categories": "カテゴリ",
+    "flags": "国旗",
+    "docs": "ドキュメント",
+    "submitIcon": "アイコンを投稿",
+    "blog": "ブログ",
+    "cdnUsage": "CDN の使い方",
+    "compare": "比較"
+  },
+  "header": {
+    "home": "theSVG ホーム",
+    "submitAria": "アイコンを投稿する",
+    "searchPlaceholder": "\"{{brand}}\" を検索",
+    "searchIcons": "アイコンを検索",
+    "clearSearch": "検索をクリア",
+    "searchIn": "検索対象",
+    "all": "すべて",
+    "toggleMenu": "メニューを切り替え",
+    "toggleTheme": "テーマを切り替え",
+    "star": "スター",
+    "docsGuides": "ドキュメントとガイド",
+    "extensionsIntegrations": "拡張機能と連携",
+    "blogUpdates": "ブログと更新情報",
+    "submitAnIcon": "アイコンを投稿"
+  },
+  "footer": {
+    "headline": "オープンソース。コミュニティ主導。",
+    "tagline": "開発者、デザイナー、チーム向けの無料のブランド SVG。表記不要で、どんなプロジェクトでも使えます。",
+    "stats": {
+      "brandIcons": "ブランドアイコン",
+      "uiIcons": "UI アイコン",
+      "svgVariants": "SVG バリアント",
+      "collections": "コレクション"
+    },
+    "submitAnIcon": "アイコンを投稿",
+    "meetFounder": "創設者を紹介",
+    "columns": {
+      "product": "プロダクト",
+      "resources": "リソース",
+      "community": "コミュニティ",
+      "legal": "法務"
+    },
+    "links": {
+      "figmaPlugin": "Figma プラグイン",
+      "vscodeExtension": "VS Code 拡張機能",
+      "raycastExtension": "Raycast 拡張機能",
+      "issues": "Issues",
+      "discussions": "ディスカッション",
+      "mentions": "掲載事例",
+      "contributing": "コントリビュート",
+      "sponsor": "スポンサー",
+      "legal": "法的情報",
+      "privacy": "プライバシー",
+      "trademarkPolicy": "商標ポリシー",
+      "contact": "お問い合わせ"
+    }
+  }
+}

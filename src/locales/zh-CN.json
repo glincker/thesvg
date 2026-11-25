@@ -1,0 +1,62 @@
+{
+  "language": { "label": "语言" },
+  "nav": {
+    "brandIcons": "品牌图标",
+    "uiIcons": "UI 图标",
+    "categories": "分类",
+    "flags": "国旗",
+    "docs": "文档",
+    "submitIcon": "提交图标",
+    "blog": "博客",
+    "cdnUsage": "CDN 用法",
+    "compare": "对比"
+  },
+  "header": {
+    "home": "theSVG 首页",
+    "submitAria": "提交图标",
+    "searchPlaceholder": "搜索 \"{{brand}}\"",
+    "searchIcons": "搜索图标",
+    "clearSearch": "清除搜索",
+    "searchIn": "搜索范围",
+    "all": "全部",
+    "toggleMenu": "切换菜单",
+    "toggleTheme": "切换主题",
+    "star": "点赞",
+    "docsGuides": "文档与指南",
+    "extensionsIntegrations": "扩展与集成",
+    "blogUpdates": "博客与动态",
+    "submitAnIcon": "提交图标"
+  },
+  "footer": {
+    "headline": "开源，社区驱动。",
+    "tagline": "为开发者、设计师和团队提供免费的品牌 SVG。可用于任何项目，无需署名。",
+    "stats": {
+      "brandIcons": "品牌图标",
+      "uiIcons": "UI 图标",
+      "svgVariants": "SVG 变体",
+      "collections": "图标集"
+    },
+    "submitAnIcon": "提交图标",
+    "meetFounder": "认识创始人",
+    "columns": {
+      "product": "产品",
+      "resources": "资源",
+      "community": "社区",
+      "legal": "法律"
+    },
+    "links": {
+      "figmaPlugin": "Figma 插件",
+      "vscodeExtension": "VS Code 扩展",
+      "raycastExtension": "Raycast 扩展",
+      "issues": "问题反馈",
+      "discussions": "讨论区",
+      "mentions": "媒体报道",
+      "contributing": "参与贡献",
+      "sponsor": "赞助",
+      "legal": "法律声明",
+      "privacy": "隐私",
+      "trademarkPolicy": "商标政策",
+      "contact": "联系我们"
+    }
+  }
+}

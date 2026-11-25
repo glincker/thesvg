@@ -7,6 +7,7 @@ import { TheSVGMark } from "@/components/icons/the-svg-mark";
 import { useTheme } from "next-themes";
 import { usePathname, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import { LanguageSwitcher } from "@/components/language-switcher";
 import { useSearchStore } from "@/lib/stores/search-store";
 
 export const MOBILE_FOCUS_SEARCH_EVENT = "thesvg:mobile-focus-search";
@@ -87,6 +88,7 @@ export function MobileTopBar() {
           )}
         </div>
 
+        <LanguageSwitcher />
         <Button
           variant="ghost"
           size="icon"
