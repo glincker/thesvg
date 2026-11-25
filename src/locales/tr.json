@@ -351,5 +351,264 @@
     "flagsPill": {
       "new": "Yeni"
     }
+  },
+  "home": {
+    "navigation": "Gezinme",
+    "failedToLoad": "Simgeler yüklenemedi",
+    "failedToLoadRefresh": "Simgeler yüklenemedi. Lütfen sayfayı yenileyip tekrar deneyin.",
+    "loading": "Yükleniyor...",
+    "favCount": "Favoriler: {{count}}",
+    "comfortableView": "Rahat görünüm",
+    "compactView": "Kompakt görünüm",
+    "sortBy": "{{label}} sıralaması",
+    "sort": {
+      "default": "Sırala",
+      "az": "A-Z",
+      "za": "Z-A",
+      "recent": "Son eklenen",
+      "popular": "Popüler"
+    },
+    "removeCollectionFilter": "Koleksiyon filtresini kaldır",
+    "removeCategoryFilter": "Kategori filtresini kaldır",
+    "removeFavoritesFilter": "Favori filtresini kaldır",
+    "removeSearchFilter": "Arama filtresini kaldır",
+    "favorites": "Favoriler",
+    "clearAll": "Tümünü temizle",
+    "clear": "Temizle",
+    "all": "Tümü",
+    "googleBanner": {
+      "badge": "Yeni",
+      "title": "Google’ın 2026 yenilemesi geldi",
+      "body": "Yeni gradyan kimliğiyle yeniden tasarlanan 13 ürün simgesi. Bunları barındıran ilk kütüphane.",
+      "cta": "2026 setini gör"
+    },
+    "copyCommand": "Komutu kopyala: {{command}}",
+    "ago": {
+      "now": "şimdi",
+      "minutes": "{{count}} dk önce",
+      "hours": "{{count}} sa önce",
+      "days": "{{count}} g önce",
+      "months": "{{count}} ay önce"
+    },
+    "goToSlide": "{{count}}. slayta git",
+    "dismissBanner": "Banner’ı kapat",
+    "dismiss": "Kapat",
+    "continue": "Devam et",
+    "whereYouLeftOff": "Kaldığın yer",
+    "viewAll": "Tümünü gör",
+    "expandContinue": "Devam bölümünü genişlet",
+    "collapseContinue": "Devam bölümünü daralt",
+    "expand": "Genişlet",
+    "collapse": "Daralt",
+    "clearViewed": "Son görüntülenenleri temizle",
+    "clearRecents": "Son kayıtları temizle",
+    "iconCollections": "Simge koleksiyonları",
+    "showingPopularFirst": "Önce Popüler gösteriliyor",
+    "showingRecentFirst": "Önce Son Eklenenler gösteriliyor",
+    "popular": "Popüler",
+    "recent": "Yeni",
+    "recentlyAdded": "Son Eklenenler",
+    "scopedRecentlyAdded": "{{scope}} · Son Eklenenler",
+    "scopedPopular": "{{scope}} · Popüler",
+    "popularAws": "Popüler AWS Hizmetleri",
+    "popularAzure": "Popüler Azure Hizmetleri",
+    "popularGcp": "Popüler GCP Hizmetleri",
+    "browseByCategory": "Kategoriye göre göz at",
+    "allIcons": "Tüm Simgeler",
+    "allCollectionIcons": "Tüm {{collection}} Simgeleri",
+    "attribution": {
+      "aws": "AWS Mimari Simgeleri CC-BY-ND 2.0 lisansı altında sunulmaktadır. Amazon Web Services ve ilgili tüm markalar Amazon.com, Inc. şirketinin ticari markalarıdır.",
+      "azure": "Microsoft Azure simgeleri MIT lisansı altında sunulmaktadır. Microsoft Azure ve ilgili tüm markalar Microsoft Corporation şirketinin ticari markalarıdır.",
+      "gcp": "Google Cloud simgeleri Apache 2.0 lisansı altında sunulmaktadır. Google Cloud ve ilgili tüm markalar Google LLC şirketinin ticari markalarıdır."
+    },
+    "google": {
+      "skip": "Simgelere atla",
+      "eyebrow": "Google · 2026 yenilemesi",
+      "titleLine1": "Workspace",
+      "titleLine2": "marka kiti",
+      "icons": "simge",
+      "gradientPerfect": "kusursuz gradyanlar",
+      "released": "yayımlandı",
+      "markAria": "Google Workspace işareti · ayrıntı sayfasını aç",
+      "open": "Aç",
+      "fullSet": "Tam set",
+      "countOf": "{{total}} simgeden {{shown}} tanesi",
+      "filterPlaceholder": "Filtrele (Gmail, Drive, mavi…)",
+      "filterAria": "Google 2026 simgelerini filtrele",
+      "clearFilter": "Filtreyi temizle",
+      "allGoogle": "Tüm Google simgeleri",
+      "filterByColor": "Marka rengine göre filtrele",
+      "noColorIcons": "Bu sette {{color}} simge yok",
+      "colorIcons": "{{color}} simgeler: {{count}}",
+      "colors": {
+        "red": "Kırmızı",
+        "yellow": "Sarı",
+        "green": "Yeşil",
+        "blue": "Mavi",
+        "purple": "Mor",
+        "neutral": "Nötr"
+      },
+      "gridAria": "Google 2026 marka simgeleri",
+      "noMatchBoth": "“{{query}}” ve {{colors}} ile eşleşen simge yok.",
+      "noMatchQuery": "“{{query}}” ile eşleşen simge yok.",
+      "noMatchColors": "{{colors}} ile eşleşen simge yok.",
+      "clearFilters": "Filtreleri temizle"
+    },
+    "tile": {
+      "svgIcon": "{{name}} SVG simgesi",
+      "quickActions": "Hızlı eylemler",
+      "copyMarkup": "{{name}} SVG kodunu kopyala",
+      "copySvg": "SVG’yi kopyala",
+      "downloadFile": "{{name}} SVG dosyasını indir",
+      "downloadSvg": "SVG indir",
+      "svgCopied": "SVG kopyalandı",
+      "colorCopied": "{{color}} kopyalandı",
+      "copyColor": "{{color}} rengini kopyala",
+      "copied": "Kopyalandı"
+    },
+    "recents": {
+      "allTime": "Tüm zamanlar",
+      "today": "Bugün",
+      "thisWeek": "Bu hafta",
+      "thisMonth": "Bu ay",
+      "justNow": "az önce",
+      "titleCopied": "{{name}} kopyalandı",
+      "copyFailed": "Kopyalanamadı",
+      "deviceOnly": "Etkinliğin yalnızca bu cihazda",
+      "title": "Son kullanılanlar",
+      "viewedLabel": "görüntülenen",
+      "copiedLabel": "kopyalanan",
+      "searchedLabel": "aranan",
+      "confirmClearAll": "Tüm son etkinlikler temizlensin mi?",
+      "clearEverything": "Her şeyi temizle",
+      "loading": "Son kayıtların yükleniyor",
+      "loadFailedTitle": "Son simgelerin yüklenemedi",
+      "loadFailedBody": "Görüntüleme ve kopyalama geçmişin kayıtlı, yalnızca bu sefer çözümlenemedi.",
+      "retry": "Tekrar dene",
+      "emptyTitle": "Henüz burada bir şey yok",
+      "emptyBody": "Birkaç simgeye göz at, tek dokunuşla yeniden kopyalamak ve hızlıca açmak için burada görünürler.",
+      "browseLibrary": "Kütüphaneye göz at",
+      "viewed": "Görüntülenenler",
+      "copySvg": "SVG’yi kopyala",
+      "copy": "Kopyala",
+      "download": "İndir",
+      "copied": "Kopyalananlar",
+      "copyAgain": "{{name}} öğesini yeniden kopyala",
+      "recopy": "Yeniden kopyala",
+      "searches": "Aramalar"
+    },
+    "slides": {
+      "open": {
+        "title": "{{count, number}}+ SVG simgesi. Ara. Kopyala. Yayınla.",
+        "description": "Marka simgelerini saniyeler içinde ara, kopyala ve yayınla. Ücretsiz, açık kaynak ve topluluk odaklı.",
+        "cta": "Başla",
+        "ctaSecondary": "Simge gönder",
+        "badge": "{{count, number}}+ simge"
+      },
+      "ui": {
+        "title": "UI simgeleri geldi, yedi farklı görünümle",
+        "description": "Tek bir ızgarada çizilmiş, anında yeniden biçimlendirilebilen arayüz simgeleri. Kopyalaması ücretsiz.",
+        "cta": "UI simgelerini keşfet",
+        "ctaSecondary": "Nasıl çalışır",
+        "badge": "theSVG 4.0"
+      },
+      "npm": {
+        "title": "Tek paket, her marka",
+        "description": "Tree-shaking destekli, tipli, çift ESM/CJS. Herhangi bir simgeyi sıfır yapılandırmayla içe aktar.",
+        "cta": "npm’de görüntüle",
+        "ctaSecondary": "Eklentiler"
+      },
+      "copy": {
+        "title": "SVG, JSX, CDN veya indirme",
+        "description": "İhtiyacın olan her format. Ham SVG’yi kopyala, CDN bağlantısı al veya dosyaları indir. Karanlık mod varyantları dahil.",
+        "cta": "Simgelere göz at",
+        "ctaSecondary": "Eklentiler",
+        "badge": "Kopyala ve yayınla"
+      },
+      "flagsNew": {
+        "title": "Bayraklar geldi: 263 ülke ve bölge",
+        "description": "Tüm ülkeler, ayrıca İngiltere, İskoçya, Katalonya ve daha fazlası. Her biri üç şekilde, tek bir küçük pakette.",
+        "cta": "Bayraklara göz at",
+        "ctaSecondary": "Nasıl kullanılır",
+        "badge": "Yeni: Bayraklar"
+      },
+      "aws": {
+        "title": "Diyagramların için tüm AWS simgeleri",
+        "description": "300’den fazla hizmet simgesi, 400’den fazla kaynak simgesi ve kategori simgeleri. Göz at, kopyala ve mimari diyagramlarda hemen kullan.",
+        "cta": "Hizmetlere göz at",
+        "ctaSecondary": "Tüm kategoriler",
+        "badge": "AWS Mimarisi"
+      },
+      "awsOfficial": {
+        "title": "Resmî AWS Mimari Simgeleri",
+        "description": "Resmî AWS simge setinden değiştirilmemiş SVG’ler. Üç ayda bir güncellenir. Hizmetler, kaynaklar, kategoriler ve gruplar.",
+        "cta": "Tümüne göz at",
+        "ctaSecondary": "Lisansı görüntüle",
+        "badge": "2026 1. Çeyrek sürümü"
+      },
+      "azure": {
+        "title": "626 Azure hizmet simgesi",
+        "description": "Mimari diyagramların için tüm Azure hizmet simgeleri. VM’ler, App Services, SQL, Cosmos DB ve daha fazlası. Kullanımı ücretsiz.",
+        "cta": "Hizmetlere göz at",
+        "ctaSecondary": "Tüm kategoriler",
+        "badge": "Microsoft Azure"
+      },
+      "azureOfficial": {
+        "title": "Resmî Azure Mimari Simgeleri",
+        "description": "Microsoft Azure hizmet simgelerinin 29 kategorisi. İşlem, ağ, veritabanları, yapay zekâ, güvenlik ve daha fazlası.",
+        "cta": "Tümüne göz at",
+        "ctaSecondary": "Lisansı görüntüle",
+        "badge": "2026 1. Çeyrek sürümü"
+      },
+      "gcp": {
+        "title": "214 GCP hizmet simgesi",
+        "description": "Mimari diyagramlar için Google Cloud Platform simgeleri. Compute Engine, BigQuery, Cloud Run, GKE ve tüm GCP hizmetleri.",
+        "cta": "Hizmetlere göz at",
+        "ctaSecondary": "Tüm kategoriler",
+        "badge": "Google Cloud"
+      },
+      "gcpOfficial": {
+        "title": "Resmî Google Cloud Simgeleri",
+        "description": "Apache 2.0 altında ücretsiz GCP simgeleri. İşlem, depolama, yapay zekâ, ağ ve daha fazlası olarak otomatik kategorilere ayrılır.",
+        "cta": "Tümüne göz at",
+        "ctaSecondary": "Lisansı görüntüle",
+        "badge": "Apache 2.0 Lisansı"
+      },
+      "k8s": {
+        "title": "38 resmî Kubernetes simgesi",
+        "description": "Pod’lar, Deployment’lar, Service’ler, Ingress, ConfigMap’ler ve daha fazlası. Mimari diyagramların için eksiksiz CNCF Kubernetes simge seti.",
+        "cta": "Simgelere göz at",
+        "ctaSecondary": "Tüm kaynaklar",
+        "badge": "Kubernetes"
+      },
+      "k8sOfficial": {
+        "title": "CNCF Kubernetes Mimari Simgeleri",
+        "description": "Kubernetes projesinden resmî simgeler. Apache 2.0 altında ücretsiz. Dokümanlarda, diyagramlarda ve sunumlarda kullan.",
+        "cta": "Tümüne göz at",
+        "ctaSecondary": "Lisansı görüntüle",
+        "badge": "Apache 2.0 Lisansı"
+      },
+      "flags": {
+        "title": "263 ülke ve bölge bayrağı",
+        "description": "Tüm ISO 3166-1 ülkeleri ve ayrıca İngiltere, İskoçya, Galler, Katalonya, Kanarya Adaları, AB ve BM. Her biri üç şekilde: 4x3, kare ve daire.",
+        "cta": "Bayraklara göz at",
+        "ctaSecondary": "Nasıl kullanılır",
+        "badge": "Yeni: Bayraklar"
+      },
+      "community": {
+        "title": "Topluluğun seçtiği 256 simge",
+        "description": "Açık kaynak topluluğundan gelen geliştirici araçları, veritabanları, framework’ler ve platformlar. Kullanımı ücretsiz, sürekli büyüyor.",
+        "cta": "Simgelere göz at",
+        "ctaSecondary": "Simge gönder",
+        "badge": "Topluluk"
+      },
+      "auth": {
+        "title": "858 kimlik doğrulama rozeti simgesi",
+        "description": "2FA kurulum ekranları ve hesap güvenliği arayüzleri için dairesel hizmet rozetleri. Borsalar, VPN’ler, barındırma, oyunlar ve daha fazlası.",
+        "cta": "Rozetlere göz at",
+        "ctaSecondary": "Tüm kategoriler",
+        "badge": "CC0, atıf gerekmez"
+      }
+    }
   }
 }

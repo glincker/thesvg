@@ -351,5 +351,264 @@
     "flagsPill": {
       "new": "新着"
     }
+  },
+  "home": {
+    "navigation": "ナビゲーション",
+    "failedToLoad": "アイコンを読み込めませんでした",
+    "failedToLoadRefresh": "アイコンを読み込めませんでした。ページを再読み込みしてもう一度お試しください。",
+    "loading": "読み込み中...",
+    "favCount": "お気に入り: {{count}}",
+    "comfortableView": "ゆったり表示",
+    "compactView": "コンパクト表示",
+    "sortBy": "{{label}}で並べ替え",
+    "sort": {
+      "default": "並べ替え",
+      "az": "A-Z",
+      "za": "Z-A",
+      "recent": "最近",
+      "popular": "人気"
+    },
+    "removeCollectionFilter": "コレクションの絞り込みを解除",
+    "removeCategoryFilter": "カテゴリの絞り込みを解除",
+    "removeFavoritesFilter": "お気に入りの絞り込みを解除",
+    "removeSearchFilter": "検索の絞り込みを解除",
+    "favorites": "お気に入り",
+    "clearAll": "すべてクリア",
+    "clear": "クリア",
+    "all": "すべて",
+    "googleBanner": {
+      "badge": "新着",
+      "title": "Google の 2026 年リフレッシュが登場",
+      "body": "新しいグラデーションのアイデンティティで刷新された 13 個のプロダクトアイコン。公開は当ライブラリが最初です。",
+      "cta": "2026 年版を見る"
+    },
+    "copyCommand": "コマンドをコピー: {{command}}",
+    "ago": {
+      "now": "たった今",
+      "minutes": "{{count}}分前",
+      "hours": "{{count}}時間前",
+      "days": "{{count}}日前",
+      "months": "{{count}}か月前"
+    },
+    "goToSlide": "スライド {{count}} へ移動",
+    "dismissBanner": "バナーを閉じる",
+    "dismiss": "閉じる",
+    "continue": "続きから",
+    "whereYouLeftOff": "前回の続き",
+    "viewAll": "すべて表示",
+    "expandContinue": "「続きから」を展開",
+    "collapseContinue": "「続きから」を折りたたむ",
+    "expand": "展開",
+    "collapse": "折りたたむ",
+    "clearViewed": "最近見たものをクリア",
+    "clearRecents": "履歴をクリア",
+    "iconCollections": "アイコンコレクション",
+    "showingPopularFirst": "人気を先に表示",
+    "showingRecentFirst": "最近追加を先に表示",
+    "popular": "人気",
+    "recent": "最近",
+    "recentlyAdded": "最近追加",
+    "scopedRecentlyAdded": "{{scope}} · 最近追加",
+    "scopedPopular": "{{scope}} · 人気",
+    "popularAws": "人気の AWS サービス",
+    "popularAzure": "人気の Azure サービス",
+    "popularGcp": "人気の GCP サービス",
+    "browseByCategory": "カテゴリから探す",
+    "allIcons": "すべてのアイコン",
+    "allCollectionIcons": "{{collection}} のすべてのアイコン",
+    "attribution": {
+      "aws": "AWS アーキテクチャアイコンは CC-BY-ND 2.0 のもとで提供されています。Amazon Web Services および関連するすべてのマークは Amazon.com, Inc. の商標です。",
+      "azure": "Microsoft Azure のアイコンは MIT ライセンスのもとで提供されています。Microsoft Azure および関連するすべてのマークは Microsoft Corporation の商標です。",
+      "gcp": "Google Cloud のアイコンは Apache 2.0 ライセンスのもとで提供されています。Google Cloud および関連するすべてのマークは Google LLC の商標です。"
+    },
+    "google": {
+      "skip": "アイコンへスキップ",
+      "eyebrow": "Google · 2026 年リフレッシュ",
+      "titleLine1": "Workspace の",
+      "titleLine2": "ブランドキット",
+      "icons": "アイコン",
+      "gradientPerfect": "グラデーションを忠実に再現",
+      "released": "公開",
+      "markAria": "Google Workspace のマーク · 詳細ページを開く",
+      "open": "開く",
+      "fullSet": "全アイコン",
+      "countOf": "{{total}} 個中 {{shown}} 個のアイコン",
+      "filterPlaceholder": "絞り込み (Gmail、Drive、青…)",
+      "filterAria": "Google 2026 のアイコンを絞り込む",
+      "clearFilter": "絞り込みをクリア",
+      "allGoogle": "Google のすべてのアイコン",
+      "filterByColor": "ブランドカラーで絞り込む",
+      "noColorIcons": "このセットに{{color}}のアイコンはありません",
+      "colorIcons": "{{color}}のアイコン: {{count}}",
+      "colors": {
+        "red": "赤",
+        "yellow": "黄",
+        "green": "緑",
+        "blue": "青",
+        "purple": "紫",
+        "neutral": "ニュートラル"
+      },
+      "gridAria": "Google 2026 のブランドアイコン",
+      "noMatchBoth": "「{{query}}」と{{colors}}に一致するアイコンはありません。",
+      "noMatchQuery": "「{{query}}」に一致するアイコンはありません。",
+      "noMatchColors": "{{colors}}に一致するアイコンはありません。",
+      "clearFilters": "絞り込みをクリア"
+    },
+    "tile": {
+      "svgIcon": "{{name}} の SVG アイコン",
+      "quickActions": "クイックアクション",
+      "copyMarkup": "{{name}} の SVG コードをコピー",
+      "copySvg": "SVG をコピー",
+      "downloadFile": "{{name}} の SVG ファイルをダウンロード",
+      "downloadSvg": "SVG をダウンロード",
+      "svgCopied": "SVG をコピーしました",
+      "colorCopied": "{{color}} をコピーしました",
+      "copyColor": "色 {{color}} をコピー",
+      "copied": "コピーしました"
+    },
+    "recents": {
+      "allTime": "すべての期間",
+      "today": "今日",
+      "thisWeek": "今週",
+      "thisMonth": "今月",
+      "justNow": "たった今",
+      "titleCopied": "{{name}} をコピーしました",
+      "copyFailed": "コピーに失敗しました",
+      "deviceOnly": "このデバイス上のアクティビティのみ",
+      "title": "最近の履歴",
+      "viewedLabel": "閲覧",
+      "copiedLabel": "コピー",
+      "searchedLabel": "検索",
+      "confirmClearAll": "最近のアクティビティをすべてクリアしますか？",
+      "clearEverything": "すべてクリア",
+      "loading": "履歴を読み込み中",
+      "loadFailedTitle": "最近のアイコンを読み込めませんでした",
+      "loadFailedBody": "閲覧とコピーの履歴は保存されていますが、今回は読み込めませんでした。",
+      "retry": "再試行",
+      "emptyTitle": "まだ何もありません",
+      "emptyBody": "アイコンを見ると、ここに表示され、ワンタップで再コピーや再表示ができます。",
+      "browseLibrary": "ライブラリを見る",
+      "viewed": "閲覧済み",
+      "copySvg": "SVG をコピー",
+      "copy": "コピー",
+      "download": "ダウンロード",
+      "copied": "コピー済み",
+      "copyAgain": "{{name}} を再度コピー",
+      "recopy": "再コピー",
+      "searches": "検索履歴"
+    },
+    "slides": {
+      "open": {
+        "title": "{{count, number}}+ 個の SVG アイコン。検索、コピー、出荷。",
+        "description": "ブランドアイコンを数秒で検索、コピー、出荷。無料でオープンソース、コミュニティ主導です。",
+        "cta": "はじめる",
+        "ctaSecondary": "アイコンを投稿",
+        "badge": "{{count, number}}+ アイコン"
+      },
+      "ui": {
+        "title": "UI アイコンが登場、7 種類のスタイルで",
+        "description": "1 つのグリッドで描かれたインターフェースアイコンを、その場でスタイル変更できます。コピーは無料です。",
+        "cta": "UI アイコンを見る",
+        "ctaSecondary": "仕組み",
+        "badge": "theSVG 4.0"
+      },
+      "npm": {
+        "title": "1 つのパッケージで、あらゆるブランドを",
+        "description": "ツリーシェイク対応、型付き、ESM/CJS 両対応。設定なしでどのアイコンもインポートできます。",
+        "cta": "npm で見る",
+        "ctaSecondary": "拡張機能"
+      },
+      "copy": {
+        "title": "SVG、JSX、CDN、またはダウンロード",
+        "description": "必要な形式をすべて用意。SVG をそのままコピーしたり、CDN リンクを取得したり、ファイルをダウンロードできます。ダークモード版も含まれます。",
+        "cta": "アイコンを見る",
+        "ctaSecondary": "拡張機能",
+        "badge": "コピーして出荷"
+      },
+      "flagsNew": {
+        "title": "国旗が登場: 263 の国と地域",
+        "description": "すべての国に加え、イングランド、スコットランド、カタルーニャなども。各 3 種類の形で、小さな 1 パッケージです。",
+        "cta": "国旗を見る",
+        "ctaSecondary": "使い方",
+        "badge": "新着: 国旗"
+      },
+      "aws": {
+        "title": "ダイアグラム用のすべての AWS アイコン",
+        "description": "300 以上のサービスアイコン、400 以上のリソースアイコン、カテゴリアイコン。探してコピーし、すぐにアーキテクチャ図で使えます。",
+        "cta": "サービスを見る",
+        "ctaSecondary": "すべてのカテゴリ",
+        "badge": "AWS アーキテクチャ"
+      },
+      "awsOfficial": {
+        "title": "公式 AWS アーキテクチャアイコン",
+        "description": "公式 AWS アイコンセットの SVG をそのまま収録。四半期ごとに更新。サービス、リソース、カテゴリ、グループを含みます。",
+        "cta": "すべて見る",
+        "ctaSecondary": "ライセンスを見る",
+        "badge": "2026 年第 1 四半期リリース"
+      },
+      "azure": {
+        "title": "626 個の Azure サービスアイコン",
+        "description": "アーキテクチャ図用のすべての Azure サービスアイコン。VM、App Services、SQL、Cosmos DB など。無料で使えます。",
+        "cta": "サービスを見る",
+        "ctaSecondary": "すべてのカテゴリ",
+        "badge": "Microsoft Azure"
+      },
+      "azureOfficial": {
+        "title": "公式 Azure アーキテクチャアイコン",
+        "description": "Microsoft Azure サービスアイコン 29 カテゴリ。コンピューティング、ネットワーク、データベース、AI、セキュリティなど。",
+        "cta": "すべて見る",
+        "ctaSecondary": "ライセンスを見る",
+        "badge": "2026 年第 1 四半期リリース"
+      },
+      "gcp": {
+        "title": "214 個の GCP サービスアイコン",
+        "description": "アーキテクチャ図用の Google Cloud Platform アイコン。Compute Engine、BigQuery、Cloud Run、GKE など、すべての GCP サービス。",
+        "cta": "サービスを見る",
+        "ctaSecondary": "すべてのカテゴリ",
+        "badge": "Google Cloud"
+      },
+      "gcpOfficial": {
+        "title": "公式 Google Cloud アイコン",
+        "description": "Apache 2.0 で提供される無料の GCP アイコン。コンピューティング、ストレージ、AI、ネットワークなどに自動で分類されます。",
+        "cta": "すべて見る",
+        "ctaSecondary": "ライセンスを見る",
+        "badge": "Apache 2.0 ライセンス"
+      },
+      "k8s": {
+        "title": "38 個の公式 Kubernetes アイコン",
+        "description": "Pod、Deployment、Service、Ingress、ConfigMap など。アーキテクチャ図に使える CNCF の Kubernetes アイコン一式です。",
+        "cta": "アイコンを見る",
+        "ctaSecondary": "すべてのリソース",
+        "badge": "Kubernetes"
+      },
+      "k8sOfficial": {
+        "title": "CNCF Kubernetes アーキテクチャアイコン",
+        "description": "Kubernetes プロジェクトの公式アイコン。Apache 2.0 で無料。ドキュメント、図、プレゼンに使えます。",
+        "cta": "すべて見る",
+        "ctaSecondary": "ライセンスを見る",
+        "badge": "Apache 2.0 ライセンス"
+      },
+      "flags": {
+        "title": "263 の国と地域の国旗",
+        "description": "ISO 3166-1 のすべての国に加え、イングランド、スコットランド、ウェールズ、カタルーニャ、カナリア諸島、EU、国連も。各 3 種類: 4x3、正方形、円形。",
+        "cta": "国旗を見る",
+        "ctaSecondary": "使い方",
+        "badge": "新着: 国旗"
+      },
+      "community": {
+        "title": "コミュニティが厳選した 256 個のアイコン",
+        "description": "オープンソースコミュニティから集まった開発ツール、データベース、フレームワーク、プラットフォーム。無料で使え、常に増え続けています。",
+        "cta": "アイコンを見る",
+        "ctaSecondary": "アイコンを投稿",
+        "badge": "コミュニティ"
+      },
+      "auth": {
+        "title": "858 個の認証バッジアイコン",
+        "description": "2FA 設定画面やアカウントセキュリティ UI 向けの円形サービスバッジ。取引所、VPN、ホスティング、ゲームなど。",
+        "cta": "バッジを見る",
+        "ctaSecondary": "すべてのカテゴリ",
+        "badge": "CC0、帰属表示不要"
+      }
+    }
   }
 }

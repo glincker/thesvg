@@ -351,5 +351,264 @@
     "flagsPill": {
       "new": "New"
     }
+  },
+  "home": {
+    "navigation": "Navigation",
+    "failedToLoad": "Failed to load icons",
+    "failedToLoadRefresh": "Failed to load icons. Please refresh and try again.",
+    "loading": "Loading...",
+    "favCount": "Favorites: {{count}}",
+    "comfortableView": "Comfortable view",
+    "compactView": "Compact view",
+    "sortBy": "Sort by {{label}}",
+    "sort": {
+      "default": "Sort",
+      "az": "A-Z",
+      "za": "Z-A",
+      "recent": "Recent",
+      "popular": "Popular"
+    },
+    "removeCollectionFilter": "Remove collection filter",
+    "removeCategoryFilter": "Remove category filter",
+    "removeFavoritesFilter": "Remove favorites filter",
+    "removeSearchFilter": "Remove search filter",
+    "favorites": "Favorites",
+    "clearAll": "Clear all",
+    "clear": "Clear",
+    "all": "All",
+    "googleBanner": {
+      "badge": "New",
+      "title": "Google’s 2026 refresh is here",
+      "body": "13 redesigned product icons with the new gradient identity. First library to host them.",
+      "cta": "View 2026 set"
+    },
+    "copyCommand": "Copy command: {{command}}",
+    "ago": {
+      "now": "now",
+      "minutes": "{{count}}m ago",
+      "hours": "{{count}}h ago",
+      "days": "{{count}}d ago",
+      "months": "{{count}}mo ago"
+    },
+    "goToSlide": "Go to slide {{count}}",
+    "dismissBanner": "Dismiss banner",
+    "dismiss": "Dismiss",
+    "continue": "Continue",
+    "whereYouLeftOff": "Where you left off",
+    "viewAll": "View all",
+    "expandContinue": "Expand continue section",
+    "collapseContinue": "Collapse continue section",
+    "expand": "Expand",
+    "collapse": "Collapse",
+    "clearViewed": "Clear recently viewed",
+    "clearRecents": "Clear recents",
+    "iconCollections": "Icon collections",
+    "showingPopularFirst": "Showing Popular first",
+    "showingRecentFirst": "Showing Recently Added first",
+    "popular": "Popular",
+    "recent": "Recent",
+    "recentlyAdded": "Recently Added",
+    "scopedRecentlyAdded": "{{scope}} · Recently Added",
+    "scopedPopular": "{{scope}} · Popular",
+    "popularAws": "Popular AWS Services",
+    "popularAzure": "Popular Azure Services",
+    "popularGcp": "Popular GCP Services",
+    "browseByCategory": "Browse by Category",
+    "allIcons": "All Icons",
+    "allCollectionIcons": "All {{collection}} Icons",
+    "attribution": {
+      "aws": "AWS Architecture Icons provided under CC-BY-ND 2.0. Amazon Web Services and all related marks are trademarks of Amazon.com, Inc.",
+      "azure": "Microsoft Azure icons provided under MIT license. Microsoft Azure and all related marks are trademarks of Microsoft Corporation.",
+      "gcp": "Google Cloud icons provided under Apache 2.0 license. Google Cloud and all related marks are trademarks of Google LLC."
+    },
+    "google": {
+      "skip": "Skip to icons",
+      "eyebrow": "Google · 2026 refresh",
+      "titleLine1": "The Workspace",
+      "titleLine2": "brand kit",
+      "icons": "icons",
+      "gradientPerfect": "gradient-perfect",
+      "released": "released",
+      "markAria": "Google Workspace mark · open detail page",
+      "open": "Open",
+      "fullSet": "The full set",
+      "countOf": "{{shown}} of {{total}} icons",
+      "filterPlaceholder": "Filter (Gmail, Drive, blue…)",
+      "filterAria": "Filter Google 2026 icons",
+      "clearFilter": "Clear filter",
+      "allGoogle": "All Google icons",
+      "filterByColor": "Filter by brand color",
+      "noColorIcons": "No {{color}} icons in this set",
+      "colorIcons": "{{color}} icons: {{count}}",
+      "colors": {
+        "red": "Red",
+        "yellow": "Yellow",
+        "green": "Green",
+        "blue": "Blue",
+        "purple": "Purple",
+        "neutral": "Neutral"
+      },
+      "gridAria": "Google 2026 brand icons",
+      "noMatchBoth": "No icons match “{{query}}” with {{colors}}.",
+      "noMatchQuery": "No icons match “{{query}}”.",
+      "noMatchColors": "No icons match {{colors}}.",
+      "clearFilters": "Clear filters"
+    },
+    "tile": {
+      "svgIcon": "{{name}} SVG icon",
+      "quickActions": "Quick actions",
+      "copyMarkup": "Copy {{name}} SVG markup",
+      "copySvg": "Copy SVG",
+      "downloadFile": "Download {{name}} SVG file",
+      "downloadSvg": "Download .svg",
+      "svgCopied": "SVG copied",
+      "colorCopied": "{{color}} copied",
+      "copyColor": "Copy color {{color}}",
+      "copied": "Copied"
+    },
+    "recents": {
+      "allTime": "All time",
+      "today": "Today",
+      "thisWeek": "This week",
+      "thisMonth": "This month",
+      "justNow": "just now",
+      "titleCopied": "{{name}} copied",
+      "copyFailed": "Copy failed",
+      "deviceOnly": "Your activity, on this device only",
+      "title": "Recents",
+      "viewedLabel": "viewed",
+      "copiedLabel": "copied",
+      "searchedLabel": "searched",
+      "confirmClearAll": "Clear all recent activity?",
+      "clearEverything": "Clear everything",
+      "loading": "Loading your recents",
+      "loadFailedTitle": "Couldn’t load your recent icons",
+      "loadFailedBody": "Your viewed and copied history is saved, it just couldn’t be resolved this time.",
+      "retry": "Retry",
+      "emptyTitle": "Nothing here yet",
+      "emptyBody": "Browse a few icons and they will land here for one-tap recopy and quick reopen.",
+      "browseLibrary": "Browse the library",
+      "viewed": "Viewed",
+      "copySvg": "Copy SVG",
+      "copy": "Copy",
+      "download": "Download",
+      "copied": "Copied",
+      "copyAgain": "Copy {{name}} again",
+      "recopy": "Recopy",
+      "searches": "Searches"
+    },
+    "slides": {
+      "open": {
+        "title": "{{count, number}}+ SVG Icons. Search. Copy. Ship.",
+        "description": "Search, copy, and ship brand icons in seconds. Free, open-source, and community-driven.",
+        "cta": "Get Started",
+        "ctaSecondary": "Submit an Icon",
+        "badge": "{{count, number}}+ icons"
+      },
+      "ui": {
+        "title": "UI icons are here, in seven looks",
+        "description": "Interface icons drawn on one grid and restyled live. Free to copy.",
+        "cta": "Explore UI icons",
+        "ctaSecondary": "How it works",
+        "badge": "theSVG 4.0"
+      },
+      "npm": {
+        "title": "One Package, Every Brand",
+        "description": "Tree-shakeable, typed, dual ESM/CJS. Import any icon with zero config.",
+        "cta": "View on npm",
+        "ctaSecondary": "Extensions"
+      },
+      "copy": {
+        "title": "SVG, JSX, CDN, or Download",
+        "description": "Every format you need. Copy raw SVG, grab a CDN link, or download files. Dark mode variants included.",
+        "cta": "Browse Icons",
+        "ctaSecondary": "Extensions",
+        "badge": "Copy & Ship"
+      },
+      "flagsNew": {
+        "title": "Flags are here: 263 countries and regions",
+        "description": "Every country plus England, Scotland, Catalonia and more. Three shapes each, one small package.",
+        "cta": "Browse flags",
+        "ctaSecondary": "How to use",
+        "badge": "New: Flags"
+      },
+      "aws": {
+        "title": "Every AWS Icon for Your Diagrams",
+        "description": "300+ service icons, 400+ resource icons, and category icons. Browse, copy, and use in architecture diagrams instantly.",
+        "cta": "Browse Services",
+        "ctaSecondary": "All Categories",
+        "badge": "AWS Architecture"
+      },
+      "awsOfficial": {
+        "title": "Official AWS Architecture Icons",
+        "description": "Unmodified SVGs from the official AWS icon set. Updated quarterly. Services, resources, categories, and groups.",
+        "cta": "Browse All",
+        "ctaSecondary": "View License",
+        "badge": "2026-Q1 Release"
+      },
+      "azure": {
+        "title": "626 Azure Service Icons",
+        "description": "Every Azure service icon for your architecture diagrams. VMs, App Services, SQL, Cosmos DB, and more. Free to use.",
+        "cta": "Browse Services",
+        "ctaSecondary": "All Categories",
+        "badge": "Microsoft Azure"
+      },
+      "azureOfficial": {
+        "title": "Official Azure Architecture Icons",
+        "description": "29 categories of Microsoft Azure service icons. Compute, Networking, Databases, AI, Security, and more.",
+        "cta": "Browse All",
+        "ctaSecondary": "View License",
+        "badge": "2026-Q1 Release"
+      },
+      "gcp": {
+        "title": "214 GCP Service Icons",
+        "description": "Google Cloud Platform icons for architecture diagrams. Compute Engine, BigQuery, Cloud Run, GKE, and all GCP services.",
+        "cta": "Browse Services",
+        "ctaSecondary": "All Categories",
+        "badge": "Google Cloud"
+      },
+      "gcpOfficial": {
+        "title": "Official Google Cloud Icons",
+        "description": "Free GCP icons under Apache 2.0. Auto-categorized into Compute, Storage, AI, Networking, and more.",
+        "cta": "Browse All",
+        "ctaSecondary": "View License",
+        "badge": "Apache 2.0 License"
+      },
+      "k8s": {
+        "title": "38 Official Kubernetes Icons",
+        "description": "Pods, Deployments, Services, Ingress, ConfigMaps, and more. The full CNCF Kubernetes icon set for your architecture diagrams.",
+        "cta": "Browse Icons",
+        "ctaSecondary": "All Resources",
+        "badge": "Kubernetes"
+      },
+      "k8sOfficial": {
+        "title": "CNCF Kubernetes Architecture Icons",
+        "description": "Official icons from the Kubernetes project. Free under Apache 2.0. Use in docs, diagrams, and presentations.",
+        "cta": "Browse All",
+        "ctaSecondary": "View License",
+        "badge": "Apache 2.0 License"
+      },
+      "flags": {
+        "title": "263 Country and Region Flags",
+        "description": "Every ISO 3166-1 country plus England, Scotland, Wales, Catalonia, the Canary Islands, the EU and the UN. Three shapes each: 4x3, square and circle.",
+        "cta": "Browse Flags",
+        "ctaSecondary": "How to use",
+        "badge": "New: Flags"
+      },
+      "community": {
+        "title": "256 Community-Curated Icons",
+        "description": "Dev tools, databases, frameworks, and platforms sourced from the open-source community. Free to use, always growing.",
+        "cta": "Browse Icons",
+        "ctaSecondary": "Submit an Icon",
+        "badge": "Community"
+      },
+      "auth": {
+        "title": "858 Auth Badge Icons",
+        "description": "Circular service badges for 2FA setup screens and account security UIs. Exchanges, VPNs, hosting, games, and more.",
+        "cta": "Browse Badges",
+        "ctaSecondary": "All Categories",
+        "badge": "CC0, No Attribution"
+      }
+    }
   }
 }

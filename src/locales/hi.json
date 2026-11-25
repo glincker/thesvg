@@ -351,5 +351,264 @@
     "flagsPill": {
       "new": "नया"
     }
+  },
+  "home": {
+    "navigation": "नेविगेशन",
+    "failedToLoad": "आइकन लोड नहीं हो सके",
+    "failedToLoadRefresh": "आइकन लोड नहीं हो सके। कृपया पेज रीफ़्रेश करके दोबारा कोशिश करें।",
+    "loading": "लोड हो रहा है...",
+    "favCount": "पसंदीदा: {{count}}",
+    "comfortableView": "आरामदायक दृश्य",
+    "compactView": "कॉम्पैक्ट दृश्य",
+    "sortBy": "{{label}} के अनुसार क्रमबद्ध करें",
+    "sort": {
+      "default": "क्रमबद्ध करें",
+      "az": "A-Z",
+      "za": "Z-A",
+      "recent": "हाल के",
+      "popular": "लोकप्रिय"
+    },
+    "removeCollectionFilter": "संग्रह फ़िल्टर हटाएँ",
+    "removeCategoryFilter": "श्रेणी फ़िल्टर हटाएँ",
+    "removeFavoritesFilter": "पसंदीदा फ़िल्टर हटाएँ",
+    "removeSearchFilter": "खोज फ़िल्टर हटाएँ",
+    "favorites": "पसंदीदा",
+    "clearAll": "सब साफ़ करें",
+    "clear": "साफ़ करें",
+    "all": "सभी",
+    "googleBanner": {
+      "badge": "नया",
+      "title": "Google का 2026 रीफ़्रेश आ गया है",
+      "body": "नई ग्रेडिएंट पहचान के साथ दोबारा डिज़ाइन किए गए 13 प्रोडक्ट आइकन। इन्हें होस्ट करने वाली पहली लाइब्रेरी।",
+      "cta": "2026 सेट देखें"
+    },
+    "copyCommand": "कमांड कॉपी करें: {{command}}",
+    "ago": {
+      "now": "अभी",
+      "minutes": "{{count}} मिनट पहले",
+      "hours": "{{count}} घंटे पहले",
+      "days": "{{count}} दिन पहले",
+      "months": "{{count}} महीने पहले"
+    },
+    "goToSlide": "स्लाइड {{count}} पर जाएँ",
+    "dismissBanner": "बैनर बंद करें",
+    "dismiss": "बंद करें",
+    "continue": "जारी रखें",
+    "whereYouLeftOff": "जहाँ आपने छोड़ा था",
+    "viewAll": "सभी देखें",
+    "expandContinue": "जारी रखें अनुभाग खोलें",
+    "collapseContinue": "जारी रखें अनुभाग समेटें",
+    "expand": "खोलें",
+    "collapse": "समेटें",
+    "clearViewed": "हाल में देखे गए साफ़ करें",
+    "clearRecents": "हाल का इतिहास साफ़ करें",
+    "iconCollections": "आइकन संग्रह",
+    "showingPopularFirst": "पहले लोकप्रिय दिखाए जा रहे हैं",
+    "showingRecentFirst": "पहले हाल में जोड़े गए दिखाए जा रहे हैं",
+    "popular": "लोकप्रिय",
+    "recent": "हाल के",
+    "recentlyAdded": "हाल में जोड़े गए",
+    "scopedRecentlyAdded": "{{scope}} · हाल में जोड़े गए",
+    "scopedPopular": "{{scope}} · लोकप्रिय",
+    "popularAws": "लोकप्रिय AWS सेवाएँ",
+    "popularAzure": "लोकप्रिय Azure सेवाएँ",
+    "popularGcp": "लोकप्रिय GCP सेवाएँ",
+    "browseByCategory": "श्रेणी के अनुसार ब्राउज़ करें",
+    "allIcons": "सभी आइकन",
+    "allCollectionIcons": "सभी {{collection}} आइकन",
+    "attribution": {
+      "aws": "AWS आर्किटेक्चर आइकन CC-BY-ND 2.0 के तहत उपलब्ध हैं। Amazon Web Services और सभी संबंधित चिह्न Amazon.com, Inc. के ट्रेडमार्क हैं।",
+      "azure": "Microsoft Azure आइकन MIT लाइसेंस के तहत उपलब्ध हैं। Microsoft Azure और सभी संबंधित चिह्न Microsoft Corporation के ट्रेडमार्क हैं।",
+      "gcp": "Google Cloud आइकन Apache 2.0 लाइसेंस के तहत उपलब्ध हैं। Google Cloud और सभी संबंधित चिह्न Google LLC के ट्रेडमार्क हैं।"
+    },
+    "google": {
+      "skip": "आइकन पर जाएँ",
+      "eyebrow": "Google · 2026 रीफ़्रेश",
+      "titleLine1": "Workspace",
+      "titleLine2": "ब्रांड किट",
+      "icons": "आइकन",
+      "gradientPerfect": "सटीक ग्रेडिएंट",
+      "released": "जारी",
+      "markAria": "Google Workspace चिह्न · विवरण पेज खोलें",
+      "open": "खोलें",
+      "fullSet": "पूरा सेट",
+      "countOf": "{{total}} में से {{shown}} आइकन",
+      "filterPlaceholder": "फ़िल्टर करें (Gmail, Drive, नीला…)",
+      "filterAria": "Google 2026 आइकन फ़िल्टर करें",
+      "clearFilter": "फ़िल्टर साफ़ करें",
+      "allGoogle": "सभी Google आइकन",
+      "filterByColor": "ब्रांड रंग से फ़िल्टर करें",
+      "noColorIcons": "इस सेट में {{color}} रंग के आइकन नहीं हैं",
+      "colorIcons": "{{color}} आइकन: {{count}}",
+      "colors": {
+        "red": "लाल",
+        "yellow": "पीला",
+        "green": "हरा",
+        "blue": "नीला",
+        "purple": "बैंगनी",
+        "neutral": "तटस्थ"
+      },
+      "gridAria": "Google 2026 ब्रांड आइकन",
+      "noMatchBoth": "“{{query}}” और {{colors}} से मेल खाने वाला कोई आइकन नहीं है।",
+      "noMatchQuery": "“{{query}}” से मेल खाने वाला कोई आइकन नहीं है।",
+      "noMatchColors": "{{colors}} से मेल खाने वाला कोई आइकन नहीं है।",
+      "clearFilters": "फ़िल्टर साफ़ करें"
+    },
+    "tile": {
+      "svgIcon": "{{name}} SVG आइकन",
+      "quickActions": "त्वरित क्रियाएँ",
+      "copyMarkup": "{{name}} का SVG कोड कॉपी करें",
+      "copySvg": "SVG कॉपी करें",
+      "downloadFile": "{{name}} की SVG फ़ाइल डाउनलोड करें",
+      "downloadSvg": ".svg डाउनलोड करें",
+      "svgCopied": "SVG कॉपी हो गया",
+      "colorCopied": "{{color}} कॉपी हो गया",
+      "copyColor": "रंग {{color}} कॉपी करें",
+      "copied": "कॉपी हो गया"
+    },
+    "recents": {
+      "allTime": "सभी समय",
+      "today": "आज",
+      "thisWeek": "इस सप्ताह",
+      "thisMonth": "इस महीने",
+      "justNow": "अभी-अभी",
+      "titleCopied": "{{name}} कॉपी हो गया",
+      "copyFailed": "कॉपी नहीं हो सका",
+      "deviceOnly": "आपकी गतिविधि, केवल इस डिवाइस पर",
+      "title": "हाल का इतिहास",
+      "viewedLabel": "देखे गए",
+      "copiedLabel": "कॉपी किए गए",
+      "searchedLabel": "खोजे गए",
+      "confirmClearAll": "सारी हाल की गतिविधि साफ़ करें?",
+      "clearEverything": "सब कुछ साफ़ करें",
+      "loading": "आपका हाल का इतिहास लोड हो रहा है",
+      "loadFailedTitle": "आपके हाल के आइकन लोड नहीं हो सके",
+      "loadFailedBody": "आपका देखा और कॉपी किया गया इतिहास सुरक्षित है, बस इस बार लोड नहीं हो सका।",
+      "retry": "फिर कोशिश करें",
+      "emptyTitle": "यहाँ अभी कुछ नहीं है",
+      "emptyBody": "कुछ आइकन ब्राउज़ करें, वे यहाँ दिखेंगे ताकि एक टैप में दोबारा कॉपी या खोल सकें।",
+      "browseLibrary": "लाइब्रेरी ब्राउज़ करें",
+      "viewed": "देखे गए",
+      "copySvg": "SVG कॉपी करें",
+      "copy": "कॉपी",
+      "download": "डाउनलोड",
+      "copied": "कॉपी किए गए",
+      "copyAgain": "{{name}} फिर से कॉपी करें",
+      "recopy": "दोबारा कॉपी",
+      "searches": "खोजें"
+    },
+    "slides": {
+      "open": {
+        "title": "{{count, number}}+ SVG आइकन। खोजें। कॉपी करें। शिप करें।",
+        "description": "ब्रांड आइकन को सेकंडों में खोजें, कॉपी करें और शिप करें। मुफ़्त, ओपन-सोर्स और समुदाय-संचालित।",
+        "cta": "शुरू करें",
+        "ctaSecondary": "आइकन सबमिट करें",
+        "badge": "{{count, number}}+ आइकन"
+      },
+      "ui": {
+        "title": "UI आइकन आ गए हैं, सात लुक में",
+        "description": "एक ही ग्रिड पर बने इंटरफ़ेस आइकन, जिनका स्टाइल लाइव बदला जा सकता है। कॉपी करना मुफ़्त है।",
+        "cta": "UI आइकन देखें",
+        "ctaSecondary": "यह कैसे काम करता है",
+        "badge": "theSVG 4.0"
+      },
+      "npm": {
+        "title": "एक पैकेज, हर ब्रांड",
+        "description": "ट्री-शेकेबल, टाइप्ड, ESM/CJS दोनों। बिना किसी कॉन्फ़िग के कोई भी आइकन इम्पोर्ट करें।",
+        "cta": "npm पर देखें",
+        "ctaSecondary": "एक्सटेंशन"
+      },
+      "copy": {
+        "title": "SVG, JSX, CDN या डाउनलोड",
+        "description": "आपको जो भी फ़ॉर्मेट चाहिए। सीधे SVG कॉपी करें, CDN लिंक लें या फ़ाइलें डाउनलोड करें। डार्क मोड वेरिएंट शामिल हैं।",
+        "cta": "आइकन ब्राउज़ करें",
+        "ctaSecondary": "एक्सटेंशन",
+        "badge": "कॉपी करें और शिप करें"
+      },
+      "flagsNew": {
+        "title": "झंडे आ गए हैं: 263 देश और क्षेत्र",
+        "description": "हर देश के साथ इंग्लैंड, स्कॉटलैंड, कैटालोनिया और बहुत कुछ। हर झंडे के तीन आकार, एक छोटा पैकेज।",
+        "cta": "झंडे ब्राउज़ करें",
+        "ctaSecondary": "कैसे इस्तेमाल करें",
+        "badge": "नया: झंडे"
+      },
+      "aws": {
+        "title": "आपके डायग्राम के लिए हर AWS आइकन",
+        "description": "300+ सर्विस आइकन, 400+ रिसोर्स आइकन और कैटेगरी आइकन। ब्राउज़ करें, कॉपी करें और आर्किटेक्चर डायग्राम में तुरंत इस्तेमाल करें।",
+        "cta": "सेवाएँ ब्राउज़ करें",
+        "ctaSecondary": "सभी श्रेणियाँ",
+        "badge": "AWS आर्किटेक्चर"
+      },
+      "awsOfficial": {
+        "title": "आधिकारिक AWS आर्किटेक्चर आइकन",
+        "description": "आधिकारिक AWS आइकन सेट के बिना बदले SVG। हर तिमाही अपडेट होते हैं। सर्विस, रिसोर्स, कैटेगरी और ग्रुप शामिल हैं।",
+        "cta": "सभी ब्राउज़ करें",
+        "ctaSecondary": "लाइसेंस देखें",
+        "badge": "2026-Q1 रिलीज़"
+      },
+      "azure": {
+        "title": "626 Azure सर्विस आइकन",
+        "description": "आपके आर्किटेक्चर डायग्राम के लिए हर Azure सर्विस आइकन। VM, App Services, SQL, Cosmos DB और बहुत कुछ। उपयोग मुफ़्त है।",
+        "cta": "सेवाएँ ब्राउज़ करें",
+        "ctaSecondary": "सभी श्रेणियाँ",
+        "badge": "Microsoft Azure"
+      },
+      "azureOfficial": {
+        "title": "आधिकारिक Azure आर्किटेक्चर आइकन",
+        "description": "Microsoft Azure सर्विस आइकन की 29 श्रेणियाँ। कंप्यूट, नेटवर्किंग, डेटाबेस, AI, सिक्योरिटी और बहुत कुछ।",
+        "cta": "सभी ब्राउज़ करें",
+        "ctaSecondary": "लाइसेंस देखें",
+        "badge": "2026-Q1 रिलीज़"
+      },
+      "gcp": {
+        "title": "214 GCP सर्विस आइकन",
+        "description": "आर्किटेक्चर डायग्राम के लिए Google Cloud Platform आइकन। Compute Engine, BigQuery, Cloud Run, GKE और सभी GCP सर्विस।",
+        "cta": "सेवाएँ ब्राउज़ करें",
+        "ctaSecondary": "सभी श्रेणियाँ",
+        "badge": "Google Cloud"
+      },
+      "gcpOfficial": {
+        "title": "आधिकारिक Google Cloud आइकन",
+        "description": "Apache 2.0 के तहत मुफ़्त GCP आइकन। कंप्यूट, स्टोरेज, AI, नेटवर्किंग और अन्य श्रेणियों में अपने-आप बँटे हुए।",
+        "cta": "सभी ब्राउज़ करें",
+        "ctaSecondary": "लाइसेंस देखें",
+        "badge": "Apache 2.0 लाइसेंस"
+      },
+      "k8s": {
+        "title": "38 आधिकारिक Kubernetes आइकन",
+        "description": "Pods, Deployments, Services, Ingress, ConfigMaps और बहुत कुछ। आपके आर्किटेक्चर डायग्राम के लिए पूरा CNCF Kubernetes आइकन सेट।",
+        "cta": "आइकन ब्राउज़ करें",
+        "ctaSecondary": "सभी संसाधन",
+        "badge": "Kubernetes"
+      },
+      "k8sOfficial": {
+        "title": "CNCF Kubernetes आर्किटेक्चर आइकन",
+        "description": "Kubernetes प्रोजेक्ट के आधिकारिक आइकन। Apache 2.0 के तहत मुफ़्त। डॉक्स, डायग्राम और प्रेज़ेंटेशन में इस्तेमाल करें।",
+        "cta": "सभी ब्राउज़ करें",
+        "ctaSecondary": "लाइसेंस देखें",
+        "badge": "Apache 2.0 लाइसेंस"
+      },
+      "flags": {
+        "title": "263 देशों और क्षेत्रों के झंडे",
+        "description": "सभी ISO 3166-1 देश, साथ में इंग्लैंड, स्कॉटलैंड, वेल्स, कैटालोनिया, कैनरी द्वीप, EU और UN। हर झंडे के तीन आकार: 4x3, चौकोर और गोल।",
+        "cta": "झंडे ब्राउज़ करें",
+        "ctaSecondary": "कैसे इस्तेमाल करें",
+        "badge": "नया: झंडे"
+      },
+      "community": {
+        "title": "समुदाय द्वारा चुने गए 256 आइकन",
+        "description": "ओपन-सोर्स समुदाय से आए डेव टूल, डेटाबेस, फ्रेमवर्क और प्लेटफ़ॉर्म। उपयोग मुफ़्त है और संग्रह बढ़ता रहता है।",
+        "cta": "आइकन ब्राउज़ करें",
+        "ctaSecondary": "आइकन सबमिट करें",
+        "badge": "समुदाय"
+      },
+      "auth": {
+        "title": "858 ऑथ बैज आइकन",
+        "description": "2FA सेटअप स्क्रीन और अकाउंट सिक्योरिटी UI के लिए गोल सर्विस बैज। एक्सचेंज, VPN, होस्टिंग, गेम और बहुत कुछ।",
+        "cta": "बैज ब्राउज़ करें",
+        "ctaSecondary": "सभी श्रेणियाँ",
+        "badge": "CC0, श्रेय आवश्यक नहीं"
+      }
+    }
   }
 }

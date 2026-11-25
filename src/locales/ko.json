@@ -351,5 +351,264 @@
     "flagsPill": {
       "new": "신규"
     }
+  },
+  "home": {
+    "navigation": "탐색",
+    "failedToLoad": "아이콘을 불러오지 못했습니다",
+    "failedToLoadRefresh": "아이콘을 불러오지 못했습니다. 새로고침 후 다시 시도해 주세요.",
+    "loading": "불러오는 중...",
+    "favCount": "즐겨찾기: {{count}}",
+    "comfortableView": "넓게 보기",
+    "compactView": "촘촘히 보기",
+    "sortBy": "{{label}} 순으로 정렬",
+    "sort": {
+      "default": "정렬",
+      "az": "A-Z",
+      "za": "Z-A",
+      "recent": "최근",
+      "popular": "인기"
+    },
+    "removeCollectionFilter": "컬렉션 필터 제거",
+    "removeCategoryFilter": "카테고리 필터 제거",
+    "removeFavoritesFilter": "즐겨찾기 필터 제거",
+    "removeSearchFilter": "검색 필터 제거",
+    "favorites": "즐겨찾기",
+    "clearAll": "모두 지우기",
+    "clear": "지우기",
+    "all": "전체",
+    "googleBanner": {
+      "badge": "신규",
+      "title": "Google 2026 리프레시가 도착했습니다",
+      "body": "새로운 그라데이션 아이덴티티로 다시 디자인된 제품 아이콘 13개. 가장 먼저 제공하는 라이브러리입니다.",
+      "cta": "2026 세트 보기"
+    },
+    "copyCommand": "명령어 복사: {{command}}",
+    "ago": {
+      "now": "방금",
+      "minutes": "{{count}}분 전",
+      "hours": "{{count}}시간 전",
+      "days": "{{count}}일 전",
+      "months": "{{count}}개월 전"
+    },
+    "goToSlide": "슬라이드 {{count}}(으)로 이동",
+    "dismissBanner": "배너 닫기",
+    "dismiss": "닫기",
+    "continue": "이어서 보기",
+    "whereYouLeftOff": "마지막으로 본 곳",
+    "viewAll": "모두 보기",
+    "expandContinue": "이어서 보기 섹션 펼치기",
+    "collapseContinue": "이어서 보기 섹션 접기",
+    "expand": "펼치기",
+    "collapse": "접기",
+    "clearViewed": "최근 본 항목 지우기",
+    "clearRecents": "최근 기록 지우기",
+    "iconCollections": "아이콘 컬렉션",
+    "showingPopularFirst": "인기 항목 먼저 표시",
+    "showingRecentFirst": "최근 추가 항목 먼저 표시",
+    "popular": "인기",
+    "recent": "최근",
+    "recentlyAdded": "최근 추가",
+    "scopedRecentlyAdded": "{{scope}} · 최근 추가",
+    "scopedPopular": "{{scope}} · 인기",
+    "popularAws": "인기 AWS 서비스",
+    "popularAzure": "인기 Azure 서비스",
+    "popularGcp": "인기 GCP 서비스",
+    "browseByCategory": "카테고리별로 둘러보기",
+    "allIcons": "모든 아이콘",
+    "allCollectionIcons": "{{collection}} 전체 아이콘",
+    "attribution": {
+      "aws": "AWS 아키텍처 아이콘은 CC-BY-ND 2.0 라이선스로 제공됩니다. Amazon Web Services 및 관련 마크는 Amazon.com, Inc.의 상표입니다.",
+      "azure": "Microsoft Azure 아이콘은 MIT 라이선스로 제공됩니다. Microsoft Azure 및 관련 마크는 Microsoft Corporation의 상표입니다.",
+      "gcp": "Google Cloud 아이콘은 Apache 2.0 라이선스로 제공됩니다. Google Cloud 및 관련 마크는 Google LLC의 상표입니다."
+    },
+    "google": {
+      "skip": "아이콘으로 건너뛰기",
+      "eyebrow": "Google · 2026 리프레시",
+      "titleLine1": "Workspace",
+      "titleLine2": "브랜드 키트",
+      "icons": "아이콘",
+      "gradientPerfect": "그라데이션 완벽 구현",
+      "released": "출시",
+      "markAria": "Google Workspace 마크 · 상세 페이지 열기",
+      "open": "열기",
+      "fullSet": "전체 세트",
+      "countOf": "아이콘 {{total}}개 중 {{shown}}개",
+      "filterPlaceholder": "필터 (Gmail, Drive, 파랑…)",
+      "filterAria": "Google 2026 아이콘 필터",
+      "clearFilter": "필터 지우기",
+      "allGoogle": "Google 전체 아이콘",
+      "filterByColor": "브랜드 색상으로 필터",
+      "noColorIcons": "이 세트에는 {{color}} 아이콘이 없습니다",
+      "colorIcons": "{{color}} 아이콘: {{count}}",
+      "colors": {
+        "red": "빨강",
+        "yellow": "노랑",
+        "green": "초록",
+        "blue": "파랑",
+        "purple": "보라",
+        "neutral": "중립"
+      },
+      "gridAria": "Google 2026 브랜드 아이콘",
+      "noMatchBoth": "“{{query}}” 및 {{colors}}에 해당하는 아이콘이 없습니다.",
+      "noMatchQuery": "“{{query}}”에 해당하는 아이콘이 없습니다.",
+      "noMatchColors": "{{colors}}에 해당하는 아이콘이 없습니다.",
+      "clearFilters": "필터 지우기"
+    },
+    "tile": {
+      "svgIcon": "{{name}} SVG 아이콘",
+      "quickActions": "빠른 작업",
+      "copyMarkup": "{{name}} SVG 코드 복사",
+      "copySvg": "SVG 복사",
+      "downloadFile": "{{name}} SVG 파일 다운로드",
+      "downloadSvg": "SVG 다운로드",
+      "svgCopied": "SVG 복사됨",
+      "colorCopied": "{{color}} 복사됨",
+      "copyColor": "색상 {{color}} 복사",
+      "copied": "복사됨"
+    },
+    "recents": {
+      "allTime": "전체 기간",
+      "today": "오늘",
+      "thisWeek": "이번 주",
+      "thisMonth": "이번 달",
+      "justNow": "방금",
+      "titleCopied": "{{name}} 복사됨",
+      "copyFailed": "복사하지 못했습니다",
+      "deviceOnly": "이 기기에만 저장되는 활동",
+      "title": "최근 기록",
+      "viewedLabel": "조회",
+      "copiedLabel": "복사",
+      "searchedLabel": "검색",
+      "confirmClearAll": "최근 활동을 모두 지울까요?",
+      "clearEverything": "모두 지우기",
+      "loading": "최근 기록을 불러오는 중",
+      "loadFailedTitle": "최근 아이콘을 불러오지 못했습니다",
+      "loadFailedBody": "조회 및 복사 기록은 저장되어 있지만 이번에는 불러오지 못했습니다.",
+      "retry": "다시 시도",
+      "emptyTitle": "아직 아무것도 없습니다",
+      "emptyBody": "아이콘을 몇 개 둘러보면 여기에 표시되어 한 번의 탭으로 다시 복사하거나 열 수 있습니다.",
+      "browseLibrary": "라이브러리 둘러보기",
+      "viewed": "조회함",
+      "copySvg": "SVG 복사",
+      "copy": "복사",
+      "download": "다운로드",
+      "copied": "복사함",
+      "copyAgain": "{{name}} 다시 복사",
+      "recopy": "다시 복사",
+      "searches": "검색 기록"
+    },
+    "slides": {
+      "open": {
+        "title": "{{count, number}}개 이상의 SVG 아이콘. 검색하고, 복사하고, 배포하세요.",
+        "description": "브랜드 아이콘을 몇 초 만에 검색하고 복사하고 배포하세요. 무료, 오픈 소스, 커뮤니티 기반입니다.",
+        "cta": "시작하기",
+        "ctaSecondary": "아이콘 제출",
+        "badge": "{{count, number}}개 이상의 아이콘"
+      },
+      "ui": {
+        "title": "UI 아이콘이 나왔습니다, 일곱 가지 스타일로",
+        "description": "하나의 그리드로 그린 인터페이스 아이콘을 실시간으로 스타일링할 수 있습니다. 자유롭게 복사하세요.",
+        "cta": "UI 아이콘 둘러보기",
+        "ctaSecondary": "작동 방식",
+        "badge": "theSVG 4.0"
+      },
+      "npm": {
+        "title": "패키지 하나로 모든 브랜드를",
+        "description": "트리 셰이킹 지원, 타입 포함, ESM/CJS 모두 지원. 설정 없이 어떤 아이콘이든 가져오세요.",
+        "cta": "npm에서 보기",
+        "ctaSecondary": "확장 프로그램"
+      },
+      "copy": {
+        "title": "SVG, JSX, CDN 또는 다운로드",
+        "description": "필요한 모든 형식을 제공합니다. SVG 원본을 복사하거나 CDN 링크를 받거나 파일을 다운로드하세요. 다크 모드 버전도 포함됩니다.",
+        "cta": "아이콘 둘러보기",
+        "ctaSecondary": "확장 프로그램",
+        "badge": "복사하고 배포"
+      },
+      "flagsNew": {
+        "title": "국기가 나왔습니다: 263개 국가 및 지역",
+        "description": "모든 국가와 잉글랜드, 스코틀랜드, 카탈루냐 등을 포함합니다. 각각 세 가지 모양, 작은 패키지 하나로 제공합니다.",
+        "cta": "국기 둘러보기",
+        "ctaSecondary": "사용 방법",
+        "badge": "신규: 국기"
+      },
+      "aws": {
+        "title": "다이어그램을 위한 모든 AWS 아이콘",
+        "description": "서비스 아이콘 300개 이상, 리소스 아이콘 400개 이상, 카테고리 아이콘을 제공합니다. 둘러보고 복사해 아키텍처 다이어그램에 바로 사용하세요.",
+        "cta": "서비스 둘러보기",
+        "ctaSecondary": "모든 카테고리",
+        "badge": "AWS 아키텍처"
+      },
+      "awsOfficial": {
+        "title": "공식 AWS 아키텍처 아이콘",
+        "description": "공식 AWS 아이콘 세트의 SVG를 수정 없이 제공합니다. 분기마다 업데이트됩니다. 서비스, 리소스, 카테고리, 그룹을 포함합니다.",
+        "cta": "전체 둘러보기",
+        "ctaSecondary": "라이선스 보기",
+        "badge": "2026년 1분기 릴리스"
+      },
+      "azure": {
+        "title": "Azure 서비스 아이콘 626개",
+        "description": "아키텍처 다이어그램을 위한 모든 Azure 서비스 아이콘. VM, App Services, SQL, Cosmos DB 등을 무료로 사용하세요.",
+        "cta": "서비스 둘러보기",
+        "ctaSecondary": "모든 카테고리",
+        "badge": "Microsoft Azure"
+      },
+      "azureOfficial": {
+        "title": "공식 Azure 아키텍처 아이콘",
+        "description": "Microsoft Azure 서비스 아이콘 29개 카테고리. 컴퓨팅, 네트워킹, 데이터베이스, AI, 보안 등.",
+        "cta": "전체 둘러보기",
+        "ctaSecondary": "라이선스 보기",
+        "badge": "2026년 1분기 릴리스"
+      },
+      "gcp": {
+        "title": "GCP 서비스 아이콘 214개",
+        "description": "아키텍처 다이어그램을 위한 Google Cloud Platform 아이콘. Compute Engine, BigQuery, Cloud Run, GKE 등 모든 GCP 서비스.",
+        "cta": "서비스 둘러보기",
+        "ctaSecondary": "모든 카테고리",
+        "badge": "Google Cloud"
+      },
+      "gcpOfficial": {
+        "title": "공식 Google Cloud 아이콘",
+        "description": "Apache 2.0 라이선스의 무료 GCP 아이콘. 컴퓨팅, 스토리지, AI, 네트워킹 등으로 자동 분류됩니다.",
+        "cta": "전체 둘러보기",
+        "ctaSecondary": "라이선스 보기",
+        "badge": "Apache 2.0 라이선스"
+      },
+      "k8s": {
+        "title": "공식 Kubernetes 아이콘 38개",
+        "description": "Pod, Deployment, Service, Ingress, ConfigMap 등. 아키텍처 다이어그램을 위한 CNCF Kubernetes 전체 아이콘 세트입니다.",
+        "cta": "아이콘 둘러보기",
+        "ctaSecondary": "모든 리소스",
+        "badge": "Kubernetes"
+      },
+      "k8sOfficial": {
+        "title": "CNCF Kubernetes 아키텍처 아이콘",
+        "description": "Kubernetes 프로젝트의 공식 아이콘입니다. Apache 2.0 라이선스로 무료이며 문서, 다이어그램, 프레젠테이션에 사용할 수 있습니다.",
+        "cta": "전체 둘러보기",
+        "ctaSecondary": "라이선스 보기",
+        "badge": "Apache 2.0 라이선스"
+      },
+      "flags": {
+        "title": "국가 및 지역 국기 263개",
+        "description": "ISO 3166-1의 모든 국가와 잉글랜드, 스코틀랜드, 웨일스, 카탈루냐, 카나리아 제도, EU, UN을 포함합니다. 각각 4x3, 정사각형, 원형의 세 가지 모양입니다.",
+        "cta": "국기 둘러보기",
+        "ctaSecondary": "사용 방법",
+        "badge": "신규: 국기"
+      },
+      "community": {
+        "title": "커뮤니티가 큐레이션한 아이콘 256개",
+        "description": "오픈 소스 커뮤니티에서 모은 개발 도구, 데이터베이스, 프레임워크, 플랫폼 아이콘입니다. 무료로 사용할 수 있고 계속 늘어납니다.",
+        "cta": "아이콘 둘러보기",
+        "ctaSecondary": "아이콘 제출",
+        "badge": "커뮤니티"
+      },
+      "auth": {
+        "title": "인증 배지 아이콘 858개",
+        "description": "2FA 설정 화면과 계정 보안 UI를 위한 원형 서비스 배지입니다. 거래소, VPN, 호스팅, 게임 등을 포함합니다.",
+        "cta": "배지 둘러보기",
+        "ctaSecondary": "모든 카테고리",
+        "badge": "CC0, 출처 표시 불필요"
+      }
+    }
   }
 }

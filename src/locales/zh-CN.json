@@ -351,5 +351,264 @@
     "flagsPill": {
       "new": "新"
     }
+  },
+  "home": {
+    "navigation": "导航",
+    "failedToLoad": "图标加载失败",
+    "failedToLoadRefresh": "图标加载失败，请刷新页面后重试。",
+    "loading": "加载中...",
+    "favCount": "收藏：{{count}}",
+    "comfortableView": "舒适视图",
+    "compactView": "紧凑视图",
+    "sortBy": "按{{label}}排序",
+    "sort": {
+      "default": "排序",
+      "az": "A-Z",
+      "za": "Z-A",
+      "recent": "最近",
+      "popular": "热门"
+    },
+    "removeCollectionFilter": "移除合集筛选",
+    "removeCategoryFilter": "移除分类筛选",
+    "removeFavoritesFilter": "移除收藏筛选",
+    "removeSearchFilter": "移除搜索筛选",
+    "favorites": "收藏",
+    "clearAll": "全部清除",
+    "clear": "清除",
+    "all": "全部",
+    "googleBanner": {
+      "badge": "新",
+      "title": "Google 2026 焕新来了",
+      "body": "13 个采用全新渐变风格重新设计的产品图标，我们是首个收录的图标库。",
+      "cta": "查看 2026 套件"
+    },
+    "copyCommand": "复制命令：{{command}}",
+    "ago": {
+      "now": "刚刚",
+      "minutes": "{{count}} 分钟前",
+      "hours": "{{count}} 小时前",
+      "days": "{{count}} 天前",
+      "months": "{{count}} 个月前"
+    },
+    "goToSlide": "转到第 {{count}} 张幻灯片",
+    "dismissBanner": "关闭横幅",
+    "dismiss": "关闭",
+    "continue": "继续浏览",
+    "whereYouLeftOff": "上次看到的位置",
+    "viewAll": "查看全部",
+    "expandContinue": "展开继续浏览区域",
+    "collapseContinue": "收起继续浏览区域",
+    "expand": "展开",
+    "collapse": "收起",
+    "clearViewed": "清除最近查看",
+    "clearRecents": "清除最近记录",
+    "iconCollections": "图标合集",
+    "showingPopularFirst": "优先显示热门",
+    "showingRecentFirst": "优先显示最近添加",
+    "popular": "热门",
+    "recent": "最近",
+    "recentlyAdded": "最近添加",
+    "scopedRecentlyAdded": "{{scope}} · 最近添加",
+    "scopedPopular": "{{scope}} · 热门",
+    "popularAws": "热门 AWS 服务",
+    "popularAzure": "热门 Azure 服务",
+    "popularGcp": "热门 GCP 服务",
+    "browseByCategory": "按分类浏览",
+    "allIcons": "全部图标",
+    "allCollectionIcons": "全部 {{collection}} 图标",
+    "attribution": {
+      "aws": "AWS 架构图标依据 CC-BY-ND 2.0 提供。Amazon Web Services 及所有相关标识均为 Amazon.com, Inc. 的商标。",
+      "azure": "Microsoft Azure 图标依据 MIT 许可证提供。Microsoft Azure 及所有相关标识均为 Microsoft Corporation 的商标。",
+      "gcp": "Google Cloud 图标依据 Apache 2.0 许可证提供。Google Cloud 及所有相关标识均为 Google LLC 的商标。"
+    },
+    "google": {
+      "skip": "跳到图标",
+      "eyebrow": "Google · 2026 焕新",
+      "titleLine1": "Workspace",
+      "titleLine2": "品牌套件",
+      "icons": "个图标",
+      "gradientPerfect": "渐变精准还原",
+      "released": "发布",
+      "markAria": "Google Workspace 标志 · 打开详情页",
+      "open": "打开",
+      "fullSet": "完整套件",
+      "countOf": "共 {{total}} 个图标，显示 {{shown}} 个",
+      "filterPlaceholder": "筛选（Gmail、Drive、蓝色…）",
+      "filterAria": "筛选 Google 2026 图标",
+      "clearFilter": "清除筛选",
+      "allGoogle": "全部 Google 图标",
+      "filterByColor": "按品牌颜色筛选",
+      "noColorIcons": "此套件中没有{{color}}图标",
+      "colorIcons": "{{color}}图标：{{count}}",
+      "colors": {
+        "red": "红色",
+        "yellow": "黄色",
+        "green": "绿色",
+        "blue": "蓝色",
+        "purple": "紫色",
+        "neutral": "中性色"
+      },
+      "gridAria": "Google 2026 品牌图标",
+      "noMatchBoth": "没有同时匹配“{{query}}”和{{colors}}的图标。",
+      "noMatchQuery": "没有匹配“{{query}}”的图标。",
+      "noMatchColors": "没有匹配{{colors}}的图标。",
+      "clearFilters": "清除筛选"
+    },
+    "tile": {
+      "svgIcon": "{{name}} SVG 图标",
+      "quickActions": "快捷操作",
+      "copyMarkup": "复制 {{name}} 的 SVG 代码",
+      "copySvg": "复制 SVG",
+      "downloadFile": "下载 {{name}} 的 SVG 文件",
+      "downloadSvg": "下载 SVG",
+      "svgCopied": "SVG 已复制",
+      "colorCopied": "{{color}} 已复制",
+      "copyColor": "复制颜色 {{color}}",
+      "copied": "已复制"
+    },
+    "recents": {
+      "allTime": "全部时间",
+      "today": "今天",
+      "thisWeek": "本周",
+      "thisMonth": "本月",
+      "justNow": "刚刚",
+      "titleCopied": "{{name}} 已复制",
+      "copyFailed": "复制失败",
+      "deviceOnly": "仅保存在此设备上的活动",
+      "title": "最近记录",
+      "viewedLabel": "已查看",
+      "copiedLabel": "已复制",
+      "searchedLabel": "已搜索",
+      "confirmClearAll": "清除所有最近活动吗？",
+      "clearEverything": "全部清除",
+      "loading": "正在加载最近记录",
+      "loadFailedTitle": "无法加载你的最近图标",
+      "loadFailedBody": "你的查看和复制记录已保存，只是这次未能解析。",
+      "retry": "重试",
+      "emptyTitle": "这里还没有内容",
+      "emptyBody": "浏览几个图标后，它们会出现在这里，一键即可再次复制或快速重新打开。",
+      "browseLibrary": "浏览图标库",
+      "viewed": "已查看",
+      "copySvg": "复制 SVG",
+      "copy": "复制",
+      "download": "下载",
+      "copied": "已复制",
+      "copyAgain": "再次复制 {{name}}",
+      "recopy": "再次复制",
+      "searches": "搜索记录"
+    },
+    "slides": {
+      "open": {
+        "title": "{{count, number}}+ 个 SVG 图标。搜索、复制、发布。",
+        "description": "几秒钟内搜索、复制并发布品牌图标。免费、开源，由社区驱动。",
+        "cta": "开始使用",
+        "ctaSecondary": "提交图标",
+        "badge": "{{count, number}}+ 个图标"
+      },
+      "ui": {
+        "title": "UI 图标来了，共七种风格",
+        "description": "基于同一网格绘制的界面图标，可实时切换风格。可免费复制。",
+        "cta": "探索 UI 图标",
+        "ctaSecondary": "工作原理",
+        "badge": "theSVG 4.0"
+      },
+      "npm": {
+        "title": "一个包，涵盖所有品牌",
+        "description": "支持 tree-shaking，自带类型，同时支持 ESM/CJS。零配置导入任意图标。",
+        "cta": "在 npm 查看",
+        "ctaSecondary": "扩展"
+      },
+      "copy": {
+        "title": "SVG、JSX、CDN 或下载",
+        "description": "所需格式一应俱全。复制原始 SVG、获取 CDN 链接或下载文件，并包含深色模式版本。",
+        "cta": "浏览图标",
+        "ctaSecondary": "扩展",
+        "badge": "复制并发布"
+      },
+      "flagsNew": {
+        "title": "旗帜来了：263 个国家和地区",
+        "description": "涵盖所有国家，以及英格兰、苏格兰、加泰罗尼亚等。每面旗帜三种形状，一个小巧的包。",
+        "cta": "浏览旗帜",
+        "ctaSecondary": "使用方法",
+        "badge": "新增：旗帜"
+      },
+      "aws": {
+        "title": "适用于架构图的全部 AWS 图标",
+        "description": "300+ 服务图标、400+ 资源图标以及分类图标。浏览、复制，即可用于架构图。",
+        "cta": "浏览服务",
+        "ctaSecondary": "全部分类",
+        "badge": "AWS 架构"
+      },
+      "awsOfficial": {
+        "title": "官方 AWS 架构图标",
+        "description": "官方 AWS 图标集中未经修改的 SVG，每季度更新，包含服务、资源、分类和分组。",
+        "cta": "浏览全部",
+        "ctaSecondary": "查看许可证",
+        "badge": "2026 年第一季度版本"
+      },
+      "azure": {
+        "title": "626 个 Azure 服务图标",
+        "description": "适用于架构图的全部 Azure 服务图标，包括虚拟机、App Services、SQL、Cosmos DB 等，可免费使用。",
+        "cta": "浏览服务",
+        "ctaSecondary": "全部分类",
+        "badge": "Microsoft Azure"
+      },
+      "azureOfficial": {
+        "title": "官方 Azure 架构图标",
+        "description": "Microsoft Azure 服务图标共 29 个分类：计算、网络、数据库、AI、安全等。",
+        "cta": "浏览全部",
+        "ctaSecondary": "查看许可证",
+        "badge": "2026 年第一季度版本"
+      },
+      "gcp": {
+        "title": "214 个 GCP 服务图标",
+        "description": "适用于架构图的 Google Cloud Platform 图标，涵盖 Compute Engine、BigQuery、Cloud Run、GKE 及所有 GCP 服务。",
+        "cta": "浏览服务",
+        "ctaSecondary": "全部分类",
+        "badge": "Google Cloud"
+      },
+      "gcpOfficial": {
+        "title": "官方 Google Cloud 图标",
+        "description": "Apache 2.0 许可的免费 GCP 图标，自动归类为计算、存储、AI、网络等。",
+        "cta": "浏览全部",
+        "ctaSecondary": "查看许可证",
+        "badge": "Apache 2.0 许可证"
+      },
+      "k8s": {
+        "title": "38 个官方 Kubernetes 图标",
+        "description": "Pod、Deployment、Service、Ingress、ConfigMap 等。适用于架构图的完整 CNCF Kubernetes 图标集。",
+        "cta": "浏览图标",
+        "ctaSecondary": "全部资源",
+        "badge": "Kubernetes"
+      },
+      "k8sOfficial": {
+        "title": "CNCF Kubernetes 架构图标",
+        "description": "来自 Kubernetes 项目的官方图标，基于 Apache 2.0 免费使用，可用于文档、图表和演示文稿。",
+        "cta": "浏览全部",
+        "ctaSecondary": "查看许可证",
+        "badge": "Apache 2.0 许可证"
+      },
+      "flags": {
+        "title": "263 个国家和地区旗帜",
+        "description": "涵盖 ISO 3166-1 的所有国家，以及英格兰、苏格兰、威尔士、加泰罗尼亚、加那利群岛、欧盟和联合国。每面旗帜三种形状：4x3、方形和圆形。",
+        "cta": "浏览旗帜",
+        "ctaSecondary": "使用方法",
+        "badge": "新增：旗帜"
+      },
+      "community": {
+        "title": "256 个社区精选图标",
+        "description": "来自开源社区的开发工具、数据库、框架和平台图标，免费使用，持续增加。",
+        "cta": "浏览图标",
+        "ctaSecondary": "提交图标",
+        "badge": "社区"
+      },
+      "auth": {
+        "title": "858 个身份验证徽章图标",
+        "description": "适用于 2FA 设置界面和账户安全界面的圆形服务徽章，涵盖交易所、VPN、托管、游戏等。",
+        "cta": "浏览徽章",
+        "ctaSecondary": "全部分类",
+        "badge": "CC0，无需署名"
+      }
+    }
   }
 }
