@@ -156541,6 +156541,25 @@
     "collection": "brands"
   },
   {
+    "slug": "wenitor",
+    "title": "Wenitor",
+    "aliases": [
+      "Wenitor AI"
+    ],
+    "hex": "000000",
+    "categories": [
+      "AI",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/wenitor/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://wenitor-software.oneapp.dev",
+    "dateAdded": "2026-11-25",
+    "collection": "brands"
+  },
+  {
     "slug": "wenxin",
     "title": "Wenxin (文心)",
     "aliases": [],
