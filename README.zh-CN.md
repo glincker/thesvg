@@ -642,7 +642,7 @@ AWS 架构图标按 [CC BY-ND 2.0](https://creativecommons.org/licenses/by-nd/2.
 <table align="center">
   <tr>
     <td align="center" width="33%">
-      <a href="https://glinr.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/glinr/dark.svg" /><img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/glinr/light.svg" height="40" alt="GLINR Studios" /></picture><br /><b>GLINR Studios</b></a><br />
+      <a href="https://glinr.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/glinr/wordmark-dark.svg" /><img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/glinr/wordmark-light.svg" height="30" alt="GLINR Studios" /></picture></a><br />
       <sub>来自 theSVG 背后团队的开源项目</sub>
     </td>
     <td align="center" width="33%">

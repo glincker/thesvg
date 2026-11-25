@@ -642,7 +642,7 @@ Se você é dono de uma marca e quer que um ícone seja atualizado ou removido, 
 <table align="center">
   <tr>
     <td align="center" width="33%">
-      <a href="https://glinr.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/glinr/dark.svg" /><img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/glinr/light.svg" height="40" alt="GLINR Studios" /></picture><br /><b>GLINR Studios</b></a><br />
+      <a href="https://glinr.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/glinr/wordmark-dark.svg" /><img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/glinr/wordmark-light.svg" height="30" alt="GLINR Studios" /></picture></a><br />
       <sub>Open source do time por trás do theSVG</sub>
     </td>
     <td align="center" width="33%">
