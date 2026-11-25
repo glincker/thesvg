@@ -29,6 +29,105 @@
     "blogUpdates": "Blog ve Güncellemeler",
     "submitAnIcon": "İkon Gönder"
   },
+  "mobile": {
+    "dock": {
+      "primary": "Ana menü",
+      "browse": "Gözat",
+      "favorites": "Favoriler",
+      "recents": "Son",
+      "submit": "Gönder",
+      "more": "Daha",
+      "favoritesCount": "{{n}} favori"
+    },
+    "recents": {
+      "label": "Son",
+      "aria": "Son görüntülenen simgeler",
+      "seeAll": "Tümünü gör"
+    },
+    "pwa": {
+      "installIos": "iPhone'a yükle",
+      "iosSteps": "{{share}} Paylaş'a dokunun, ardından {{add}} seçeneğini seçin.",
+      "iosAdd": "Ana Ekrana Ekle",
+      "iosAria": "thesvg'yi iOS'a yükle",
+      "installTitle": "thesvg'yi yükle",
+      "installDesc": "Tek dokunuşla bu cihaza uygulama olarak yükleyin.",
+      "install": "Yükle",
+      "dismiss": "Kapat"
+    },
+    "sheet": {
+      "close": "Kapat"
+    },
+    "action": {
+      "title": "İşlemler",
+      "copySvg": "SVG'yi kopyala",
+      "downloadSvg": "SVG'yi indir",
+      "openQuickView": "Hızlı görünümü aç",
+      "openFullPage": "Tam sayfayı aç"
+    },
+    "search": {
+      "placeholder": "Simge ara...",
+      "brands": "Markalar",
+      "searching": "Aranıyor...",
+      "results": "Sonuçlar · {{n}}",
+      "noMatch": "“{{query}}” ile eşleşen simge yok",
+      "recentSearches": "Son aramalar",
+      "try": "Deneyin"
+    },
+    "more": {
+      "tools": "Araçlar",
+      "learn": "Öğren",
+      "yourIcons": "Simgelerin",
+      "integrations": "Entegrasyonlar",
+      "families": "Marka aileleri",
+      "familiesDesc": "Amazon, Google, Microsoft ve daha fazlası",
+      "categoriesDesc": "Ürünün işlevine göre gözat",
+      "awsDesc": "Servis ve kaynak simgeleri",
+      "azureDesc": "Microsoft Azure simgeleri",
+      "gcpDesc": "GCP mimari simgeleri",
+      "k8sDesc": "Kubernetes bileşenleri",
+      "flags": "Ülke bayrakları",
+      "flagsDesc": "ISO ülke ve bölge bayrakları",
+      "viewer": "SVG görüntüleyici",
+      "viewerDesc": "Herhangi bir SVG'yi önizleyin, inceleyin, kopyalayın",
+      "extensions": "Eklentiler",
+      "extensionsDesc": "VS Code, Raycast, Figma, npm paketi",
+      "docs": "Dokümanlar ve kılavuzlar",
+      "docsDesc": "CDN, React, CLI, MCP ve daha fazlası",
+      "blogDesc": "Güncellemeler ve değişiklik günlüğü",
+      "compare": "Kütüphaneleri karşılaştır",
+      "recentsDesc": "Son görüntülenen ve kopyalanan",
+      "favoritesDesc": "Yıldızladığın simgeler",
+      "githubDesc": "Kaynak kod ve sorunlar",
+      "discordDesc": "Topluluğa katıl",
+      "npm": "npm paketi",
+      "npmDesc": "npm'de thesvg",
+      "raycast": "Raycast eklentisi",
+      "raycastDesc": "Simgeleri Raycast'ten arayın",
+      "figma": "Figma eklentisi",
+      "figmaDesc": "Simgeleri Figma dosyana ekle",
+      "vscode": "VS Code eklentisi",
+      "vscodeDesc": "VS Code'dan ara ve kopyala",
+      "tagline": "Açık SVG marka kütüphanesi"
+    },
+    "icon": {
+      "fallbackTitle": "Simge",
+      "previewAlt": "{{title}} simge önizlemesi",
+      "brandColor": "Marka rengi",
+      "removeFavorite": "{{title}} simgesini favorilerden kaldır",
+      "addFavorite": "{{title}} simgesini favorilere ekle",
+      "copied": "Kopyalandı",
+      "license": "Lisans",
+      "unknown": "Bilinmiyor",
+      "variants": "Varyantlar",
+      "collection": "Koleksiyon",
+      "slug": "Slug",
+      "openFullDetails": "Tüm ayrıntıları aç",
+      "openFullDetailsDesc": "PNG dışa aktarma, tüm varyantlar, ham SVG, kurulum örnekleri",
+      "skipPreview": "Bir dahaki sefere önizlemeyi atla",
+      "skipPreviewDesc": "Doğrudan ayrıntı sayfasına geç",
+      "loading": "Simge yükleniyor..."
+    }
+  },
   "footer": {
     "headline": "Açık kaynak. Topluluk odaklı.",
     "tagline": "Geliştiriciler, tasarımcılar ve ekipler için ücretsiz marka SVG'leri. Her projede kullanın, atıf gerekmez.",

@@ -11,14 +11,17 @@ import { useRecentsStore } from "@/lib/stores/recents-store";
 import { useIconSearch } from "@/lib/hooks/use-icon-search";
 import { searchDocs } from "@/lib/docs-search-index";
 import { cn } from "@/lib/utils";
+import { useT } from "@/i18n/use-t";
 
 interface ChipDef {
   href: string;
   label: string;
+  /** Translation key; omitted for brand and collection names. */
+  labelKey?: string;
 }
 
 const CHIPS: ReadonlyArray<ChipDef> = [
-  { href: "/", label: "Brands" },
+  { href: "/", label: "Brands", labelKey: "mobile.search.brands" },
   { href: "/collection/aws", label: "AWS" },
   { href: "/collection/gcp", label: "GCP" },
   { href: "/collection/azure", label: "Azure" },
@@ -33,6 +36,7 @@ const CHIPS: ReadonlyArray<ChipDef> = [
  * Reuses `useIconSearch` so ranking + analytics match the desktop combobox.
  */
 export function MobileSearchSheet() {
+  const { t } = useT();
   const router = useRouter();
   const sheet = useMobileShellStore((s) => s.sheet);
   const snap = useMobileShellStore((s) => s.searchSnap);
@@ -86,7 +90,7 @@ export function MobileSearchSheet() {
       onClose={closeSheet}
       snap={snap}
       onSnapChange={setSnap}
-      label="Search icons"
+      label={t("header.searchIcons")}
       allowOverscroll
       className="surface-glass-solid"
     >
@@ -99,17 +103,17 @@ export function MobileSearchSheet() {
             inputMode="search"
             value={localQuery}
             onChange={(e) => setLocalQuery(e.target.value)}
-            placeholder="Search icons..."
+            placeholder={t("mobile.search.placeholder")}
             /* 16px on mobile blocks iOS auto-zoom. */
             className="h-11 w-full rounded-xl border border-border bg-muted/40 pr-10 pl-9 text-base shadow-sm outline-none focus:border-primary/40 focus:bg-background focus:ring-1 focus:ring-ring/30 dark:border-white/[0.08] dark:bg-white/[0.04]"
-            aria-label="Search icons"
+            aria-label={t("header.searchIcons")}
             maxLength={100}
           />
           {localQuery && (
             <button
               type="button"
               onClick={() => setLocalQuery("")}
-              aria-label="Clear search"
+              aria-label={t("header.clearSearch")}
               className="absolute top-1/2 right-2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-md text-muted-foreground hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
               <X className="h-4 w-4" />
@@ -124,7 +128,7 @@ export function MobileSearchSheet() {
               onClick={() => closeSheet()}
               className="shrink-0 rounded-full border border-border/50 bg-card/60 px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-foreground/20 hover:bg-accent hover:text-foreground"
             >
-              {chip.label}
+              {chip.labelKey ? t(chip.labelKey) : chip.label}
             </Link>
           ))}
         </div>
@@ -134,7 +138,9 @@ export function MobileSearchSheet() {
         {hasQuery ? (
           <>
             <p className="px-2 pb-1 text-[10px] font-medium uppercase tracking-wider text-muted-foreground/60">
-              {isLoading ? "Searching..." : `Results · ${results.length}`}
+              {isLoading
+                ? t("mobile.search.searching")
+                : t("mobile.search.results", { n: results.length })}
             </p>
             <ul className="space-y-0.5">
               {results.map((icon) => (
@@ -162,14 +168,14 @@ export function MobileSearchSheet() {
               ))}
               {!isLoading && results.length === 0 && (
                 <li className="px-2 py-6 text-center text-sm text-muted-foreground">
-                  No icons match &ldquo;{localQuery.trim()}&rdquo;
+                  {t("mobile.search.noMatch", { query: localQuery.trim() })}
                 </li>
               )}
             </ul>
             {docsMatches.length > 0 && (
               <div className="mt-2 border-t border-border/30 px-2 pt-2 dark:border-white/[0.04]">
                 <p className="pb-1 text-[10px] font-medium uppercase tracking-wider text-muted-foreground/60">
-                  Docs
+                  {t("nav.docs")}
                 </p>
                 <ul className="space-y-0.5">
                   {docsMatches.map((entry) => (
@@ -195,7 +201,7 @@ export function MobileSearchSheet() {
             {recentSearches.length > 0 && (
               <div className="px-2 pb-2">
                 <p className="pb-1 text-[10px] font-medium uppercase tracking-wider text-muted-foreground/60">
-                  Recent searches
+                  {t("mobile.search.recentSearches")}
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   {recentSearches.slice(0, 8).map((r) => (
@@ -216,7 +222,7 @@ export function MobileSearchSheet() {
             )}
             <div className="px-2 pt-2">
               <p className="pb-1 text-[10px] font-medium uppercase tracking-wider text-muted-foreground/60">
-                Try
+                {t("mobile.search.try")}
               </p>
               <div className="flex flex-wrap gap-1.5">
                 {["stripe", "lambda", "react", "tailwind", "vercel"].map(
