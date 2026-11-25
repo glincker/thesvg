@@ -13,6 +13,7 @@ import {
 } from "@/lib/color-bucket";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import { cn } from "@/lib/utils";
+import { useT } from "@/i18n/use-t";
 
 interface Props {
   icons: IconEntry[];
@@ -25,6 +26,8 @@ function cleanTitle(t: string): string {
 }
 
 export function Google2026Landing({ icons }: Props) {
+  const { t } = useT();
+  const colorLabel = (id: ColorBucket): string => t(`home.google.colors.${id}`, { defaultValue: COLOR_BUCKETS_BY_ID.get(id)?.label ?? id });
   const hero = icons.find((i) => i.slug === HERO_SLUG);
   const heroIcons = useMemo(
     () => icons.filter((i) => i.slug !== HERO_SLUG),
@@ -106,6 +109,13 @@ export function Google2026Landing({ icons }: Props) {
   }
 
   const hasFilter = query.trim().length > 0 || activeColors.size > 0;
+  const trimmedQuery = query.trim();
+  const colorNames = [...activeColors].map(colorLabel).join(" + ");
+  const noMatchText = trimmedQuery && colorNames
+    ? t("home.google.noMatchBoth", { query: trimmedQuery, colors: colorNames })
+    : trimmedQuery
+      ? t("home.google.noMatchQuery", { query: trimmedQuery })
+      : t("home.google.noMatchColors", { colors: colorNames });
 
   useEffect(() => {
     const root = gridRef.current;
@@ -152,7 +162,7 @@ export function Google2026Landing({ icons }: Props) {
   return (
     <div className="g26-root">
       {/* Skip link for keyboard users */}
-      <a href="#g26-grid" className="g26-skip">Skip to icons</a>
+      <a href="#g26-grid" className="g26-skip">{t("home.google.skip")}</a>
 
       <section className="g26-hero" aria-labelledby="g26-title">
         <span className="g26-hero-drift" aria-hidden />
@@ -161,28 +171,28 @@ export function Google2026Landing({ icons }: Props) {
         <div className="g26-hero-left">
           <div className="g26-eyebrow">
             <span className="g26-eyebrow-dot" aria-hidden />
-            <span>Google · 2026 refresh</span>
+            <span>{t("home.google.eyebrow")}</span>
           </div>
 
           <h1 id="g26-title" className="g26-title">
-            <span className="g26-title-line">The Workspace</span>
-            <span className="g26-title-line g26-title-accent">brand kit</span>
+            <span className="g26-title-line">{t("home.google.titleLine1")}</span>
+            <span className="g26-title-line g26-title-accent">{t("home.google.titleLine2")}</span>
           </h1>
 
           <div className="g26-meta">
             <span className="g26-meta-item">
               <strong>{icons.length}</strong>
-              <span>icons</span>
+              <span>{t("home.google.icons")}</span>
             </span>
             <span className="g26-meta-divider" aria-hidden />
             <span className="g26-meta-item">
               <strong>SVG</strong>
-              <span>gradient-perfect</span>
+              <span>{t("home.google.gradientPerfect")}</span>
             </span>
             <span className="g26-meta-divider" aria-hidden />
             <span className="g26-meta-item">
               <strong>Q2 · 2026</strong>
-              <span>released</span>
+              <span>{t("home.google.released")}</span>
             </span>
           </div>
         </div>
@@ -191,7 +201,7 @@ export function Google2026Landing({ icons }: Props) {
           <Link
             href={`/icon/${hero.slug}`}
             className="g26-hero-mark"
-            aria-label="Google Workspace mark · open detail page"
+            aria-label={t("home.google.markAria")}
           >
             { }
             <img
@@ -201,7 +211,7 @@ export function Google2026Landing({ icons }: Props) {
               decoding="async"
             />
             <span className="g26-hero-mark-cta" aria-hidden>
-              Open <ArrowUpRight className="h-3.5 w-3.5" />
+              {t("home.google.open")} <ArrowUpRight className="h-3.5 w-3.5" />
             </span>
           </Link>
         ) : null}
@@ -213,9 +223,9 @@ export function Google2026Landing({ icons }: Props) {
       >
         <div className="g26-grid-header">
           <div className="g26-grid-header-text">
-            <h2 id="g26-grid-heading">The full set</h2>
+            <h2 id="g26-grid-heading">{t("home.google.fullSet")}</h2>
             <p className="g26-grid-count">
-              {filtered.length} of {heroIcons.length} icons
+              {t("home.google.countOf", { shown: filtered.length, total: heroIcons.length })}
             </p>
           </div>
 
@@ -225,10 +235,10 @@ export function Google2026Landing({ icons }: Props) {
               <input
                 ref={searchRef}
                 type="search"
-                placeholder="Filter (Gmail, Drive, blue…)"
+                placeholder={t("home.google.filterPlaceholder")}
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                aria-label="Filter Google 2026 icons"
+                aria-label={t("home.google.filterAria")}
                 className="g26-search-input"
               />
               {query ? (
@@ -236,7 +246,7 @@ export function Google2026Landing({ icons }: Props) {
                   type="button"
                   onClick={() => setQuery("")}
                   className="g26-search-clear"
-                  aria-label="Clear filter"
+                  aria-label={t("home.google.clearFilter")}
                 >
                   <X className="h-3.5 w-3.5" />
                 </button>
@@ -248,13 +258,13 @@ export function Google2026Landing({ icons }: Props) {
             </div>
 
             <Link href="/category/google" className="g26-grid-link">
-              <span>All Google icons</span>
+              <span>{t("home.google.allGoogle")}</span>
               <ArrowUpRight className="h-3.5 w-3.5" />
             </Link>
           </div>
         </div>
 
-        <div className="g26-chips" role="group" aria-label="Filter by brand color">
+        <div className="g26-chips" role="group" aria-label={t("home.google.filterByColor")}>
           {COLOR_BUCKETS.map((b) => {
             const count = bucketCounts.get(b.id) ?? 0;
             const active = activeColors.has(b.id);
@@ -268,8 +278,8 @@ export function Google2026Landing({ icons }: Props) {
                 className={cn("g26-chip", active && "is-active")}
                 title={
                   count === 0
-                    ? `No ${b.label.toLowerCase()} icons in this set`
-                    : `${count} ${b.label.toLowerCase()} icon${count === 1 ? "" : "s"}`
+                    ? t("home.google.noColorIcons", { color: colorLabel(b.id).toLowerCase() })
+                    : t("home.google.colorIcons", { count, color: colorLabel(b.id).toLowerCase() })
                 }
               >
                 <span
@@ -277,7 +287,7 @@ export function Google2026Landing({ icons }: Props) {
                   style={{ backgroundColor: b.hex }}
                   aria-hidden
                 />
-                <span>{b.label}</span>
+                <span>{colorLabel(b.id)}</span>
                 <span className="g26-chip-count" aria-hidden>
                   {count}
                 </span>
@@ -291,7 +301,7 @@ export function Google2026Landing({ icons }: Props) {
               className="g26-chip g26-chip-clear"
             >
               <X className="h-3.5 w-3.5" />
-              <span>Clear</span>
+              <span>{t("home.clear")}</span>
             </button>
           )}
         </div>
@@ -302,7 +312,7 @@ export function Google2026Landing({ icons }: Props) {
             ref={gridRef}
             className="g26-grid"
             role="list"
-            aria-label="Google 2026 brand icons"
+            aria-label={t("home.google.gridAria")}
           >
             {filtered.map((icon, idx) => (
               <Google2026Tile
@@ -316,22 +326,14 @@ export function Google2026Landing({ icons }: Props) {
         ) : (
           <div className="g26-empty" role="status">
             <p>
-              No icons match{" "}
-              {query.trim() ? <strong>&ldquo;{query}&rdquo;</strong> : null}
-              {query.trim() && activeColors.size > 0 ? " with " : null}
-              {activeColors.size > 0 ? (
-                <strong>
-                  {[...activeColors].map((c) => COLOR_BUCKETS_BY_ID.get(c)?.label).join(" + ")}
-                </strong>
-              ) : null}
-              .
+              {noMatchText}
             </p>
             <button
               type="button"
               onClick={clearAllFilters}
               className="g26-grid-link"
             >
-              Clear filters
+              {t("home.google.clearFilters")}
             </button>
           </div>
         )}

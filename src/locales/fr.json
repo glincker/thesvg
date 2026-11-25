@@ -58,5 +58,264 @@
       "trademarkPolicy": "Politique de marques",
       "contact": "Contact"
     }
+  },
+  "home": {
+    "navigation": "Navigation",
+    "failedToLoad": "Échec du chargement des icônes",
+    "failedToLoadRefresh": "Échec du chargement des icônes. Actualisez la page et réessayez.",
+    "loading": "Chargement...",
+    "favCount": "Favoris : {{count}}",
+    "comfortableView": "Vue confortable",
+    "compactView": "Vue compacte",
+    "sortBy": "Trier par {{label}}",
+    "sort": {
+      "default": "Trier",
+      "az": "A-Z",
+      "za": "Z-A",
+      "recent": "Récents",
+      "popular": "Populaires"
+    },
+    "removeCollectionFilter": "Retirer le filtre de collection",
+    "removeCategoryFilter": "Retirer le filtre de catégorie",
+    "removeFavoritesFilter": "Retirer le filtre des favoris",
+    "removeSearchFilter": "Retirer le filtre de recherche",
+    "favorites": "Favoris",
+    "clearAll": "Tout effacer",
+    "clear": "Effacer",
+    "all": "Tout",
+    "googleBanner": {
+      "badge": "Nouveau",
+      "title": "Le renouveau Google 2026 est là",
+      "body": "13 icônes de produits repensées avec la nouvelle identité en dégradé. Première bibliothèque à les proposer.",
+      "cta": "Voir la série 2026"
+    },
+    "copyCommand": "Copier la commande : {{command}}",
+    "ago": {
+      "now": "maintenant",
+      "minutes": "il y a {{count}} min",
+      "hours": "il y a {{count}} h",
+      "days": "il y a {{count}} j",
+      "months": "il y a {{count}} mois"
+    },
+    "goToSlide": "Aller à la diapositive {{count}}",
+    "dismissBanner": "Fermer la bannière",
+    "dismiss": "Fermer",
+    "continue": "Continuer",
+    "whereYouLeftOff": "Là où vous vous êtes arrêté",
+    "viewAll": "Tout voir",
+    "expandContinue": "Développer la section Continuer",
+    "collapseContinue": "Réduire la section Continuer",
+    "expand": "Développer",
+    "collapse": "Réduire",
+    "clearViewed": "Effacer les éléments récemment consultés",
+    "clearRecents": "Effacer les récents",
+    "iconCollections": "Collections d’icônes",
+    "showingPopularFirst": "Populaires en premier",
+    "showingRecentFirst": "Ajouts récents en premier",
+    "popular": "Populaires",
+    "recent": "Récents",
+    "recentlyAdded": "Ajoutés récemment",
+    "scopedRecentlyAdded": "{{scope}} · Ajoutés récemment",
+    "scopedPopular": "{{scope}} · Populaires",
+    "popularAws": "Services AWS populaires",
+    "popularAzure": "Services Azure populaires",
+    "popularGcp": "Services GCP populaires",
+    "browseByCategory": "Parcourir par catégorie",
+    "allIcons": "Toutes les icônes",
+    "allCollectionIcons": "Toutes les icônes {{collection}}",
+    "attribution": {
+      "aws": "Les icônes d’architecture AWS sont fournies sous licence CC-BY-ND 2.0. Amazon Web Services et toutes les marques associées sont des marques de commerce d’Amazon.com, Inc.",
+      "azure": "Les icônes Microsoft Azure sont fournies sous licence MIT. Microsoft Azure et toutes les marques associées sont des marques de commerce de Microsoft Corporation.",
+      "gcp": "Les icônes Google Cloud sont fournies sous licence Apache 2.0. Google Cloud et toutes les marques associées sont des marques de commerce de Google LLC."
+    },
+    "google": {
+      "skip": "Aller aux icônes",
+      "eyebrow": "Google · renouveau 2026",
+      "titleLine1": "Le kit de marque",
+      "titleLine2": "Workspace",
+      "icons": "icônes",
+      "gradientPerfect": "dégradés fidèles",
+      "released": "sorti",
+      "markAria": "Logo Google Workspace · ouvrir la page de détail",
+      "open": "Ouvrir",
+      "fullSet": "La série complète",
+      "countOf": "{{shown}} sur {{total}} icônes",
+      "filterPlaceholder": "Filtrer (Gmail, Drive, bleu…)",
+      "filterAria": "Filtrer les icônes Google 2026",
+      "clearFilter": "Effacer le filtre",
+      "allGoogle": "Toutes les icônes Google",
+      "filterByColor": "Filtrer par couleur de marque",
+      "noColorIcons": "Aucune icône {{color}} dans cette série",
+      "colorIcons": "Icônes {{color}} : {{count}}",
+      "colors": {
+        "red": "Rouge",
+        "yellow": "Jaune",
+        "green": "Vert",
+        "blue": "Bleu",
+        "purple": "Violet",
+        "neutral": "Neutre"
+      },
+      "gridAria": "Icônes de marque Google 2026",
+      "noMatchBoth": "Aucune icône ne correspond à « {{query}} » avec {{colors}}.",
+      "noMatchQuery": "Aucune icône ne correspond à « {{query}} ».",
+      "noMatchColors": "Aucune icône ne correspond à {{colors}}.",
+      "clearFilters": "Effacer les filtres"
+    },
+    "tile": {
+      "svgIcon": "Icône SVG {{name}}",
+      "quickActions": "Actions rapides",
+      "copyMarkup": "Copier le code SVG de {{name}}",
+      "copySvg": "Copier le SVG",
+      "downloadFile": "Télécharger le fichier SVG de {{name}}",
+      "downloadSvg": "Télécharger le .svg",
+      "svgCopied": "SVG copié",
+      "colorCopied": "{{color}} copié",
+      "copyColor": "Copier la couleur {{color}}",
+      "copied": "Copié"
+    },
+    "recents": {
+      "allTime": "Tout l’historique",
+      "today": "Aujourd’hui",
+      "thisWeek": "Cette semaine",
+      "thisMonth": "Ce mois-ci",
+      "justNow": "à l’instant",
+      "titleCopied": "{{name}} copié",
+      "copyFailed": "Échec de la copie",
+      "deviceOnly": "Votre activité, sur cet appareil uniquement",
+      "title": "Récents",
+      "viewedLabel": "consultés",
+      "copiedLabel": "copiés",
+      "searchedLabel": "recherches",
+      "confirmClearAll": "Effacer toute l’activité récente ?",
+      "clearEverything": "Tout effacer",
+      "loading": "Chargement de vos récents",
+      "loadFailedTitle": "Impossible de charger vos icônes récentes",
+      "loadFailedBody": "Votre historique de consultations et de copies est enregistré, mais n’a pas pu être résolu cette fois.",
+      "retry": "Réessayer",
+      "emptyTitle": "Rien pour l’instant",
+      "emptyBody": "Parcourez quelques icônes et elles apparaîtront ici pour une recopie ou une réouverture en un geste.",
+      "browseLibrary": "Parcourir la bibliothèque",
+      "viewed": "Consultés",
+      "copySvg": "Copier le SVG",
+      "copy": "Copier",
+      "download": "Télécharger",
+      "copied": "Copiés",
+      "copyAgain": "Copier {{name}} à nouveau",
+      "recopy": "Recopier",
+      "searches": "Recherches"
+    },
+    "slides": {
+      "open": {
+        "title": "{{count, number}}+ icônes SVG. Cherchez. Copiez. Livrez.",
+        "description": "Cherchez, copiez et livrez des icônes de marques en quelques secondes. Gratuit, open source et porté par la communauté.",
+        "cta": "Commencer",
+        "ctaSecondary": "Soumettre une icône",
+        "badge": "{{count, number}}+ icônes"
+      },
+      "ui": {
+        "title": "Les icônes d’interface arrivent, en sept styles",
+        "description": "Des icônes d’interface dessinées sur une même grille et restylées en direct. Libres à copier.",
+        "cta": "Découvrir les icônes d’interface",
+        "ctaSecondary": "Comment ça marche",
+        "badge": "theSVG 4.0"
+      },
+      "npm": {
+        "title": "Un seul paquet, toutes les marques",
+        "description": "Compatible tree-shaking, typé, ESM/CJS double. Importez n’importe quelle icône sans configuration.",
+        "cta": "Voir sur npm",
+        "ctaSecondary": "Extensions"
+      },
+      "copy": {
+        "title": "SVG, JSX, CDN ou téléchargement",
+        "description": "Tous les formats dont vous avez besoin. Copiez le SVG brut, prenez un lien CDN ou téléchargez les fichiers. Variantes pour le mode sombre incluses.",
+        "cta": "Parcourir les icônes",
+        "ctaSecondary": "Extensions",
+        "badge": "Copiez et livrez"
+      },
+      "flagsNew": {
+        "title": "Les drapeaux arrivent : 263 pays et régions",
+        "description": "Tous les pays, plus l’Angleterre, l’Écosse, la Catalogne et d’autres. Trois formes chacun, un petit paquet.",
+        "cta": "Parcourir les drapeaux",
+        "ctaSecondary": "Mode d’emploi",
+        "badge": "Nouveau : drapeaux"
+      },
+      "aws": {
+        "title": "Toutes les icônes AWS pour vos schémas",
+        "description": "Plus de 300 icônes de services, plus de 400 icônes de ressources et des icônes de catégories. Parcourez, copiez et utilisez-les aussitôt dans vos schémas d’architecture.",
+        "cta": "Parcourir les services",
+        "ctaSecondary": "Toutes les catégories",
+        "badge": "Architecture AWS"
+      },
+      "awsOfficial": {
+        "title": "Icônes d’architecture AWS officielles",
+        "description": "SVG non modifiés issus du jeu d’icônes officiel d’AWS. Mis à jour chaque trimestre. Services, ressources, catégories et groupes.",
+        "cta": "Tout parcourir",
+        "ctaSecondary": "Voir la licence",
+        "badge": "Version 2026-T1"
+      },
+      "azure": {
+        "title": "626 icônes de services Azure",
+        "description": "Toutes les icônes de services Azure pour vos schémas d’architecture. VM, App Services, SQL, Cosmos DB et plus. Libres d’utilisation.",
+        "cta": "Parcourir les services",
+        "ctaSecondary": "Toutes les catégories",
+        "badge": "Microsoft Azure"
+      },
+      "azureOfficial": {
+        "title": "Icônes d’architecture Azure officielles",
+        "description": "29 catégories d’icônes de services Microsoft Azure. Calcul, réseau, bases de données, IA, sécurité et plus.",
+        "cta": "Tout parcourir",
+        "ctaSecondary": "Voir la licence",
+        "badge": "Version 2026-T1"
+      },
+      "gcp": {
+        "title": "214 icônes de services GCP",
+        "description": "Icônes Google Cloud Platform pour vos schémas d’architecture. Compute Engine, BigQuery, Cloud Run, GKE et tous les services GCP.",
+        "cta": "Parcourir les services",
+        "ctaSecondary": "Toutes les catégories",
+        "badge": "Google Cloud"
+      },
+      "gcpOfficial": {
+        "title": "Icônes Google Cloud officielles",
+        "description": "Icônes GCP gratuites sous licence Apache 2.0. Classées automatiquement : calcul, stockage, IA, réseau et plus.",
+        "cta": "Tout parcourir",
+        "ctaSecondary": "Voir la licence",
+        "badge": "Licence Apache 2.0"
+      },
+      "k8s": {
+        "title": "38 icônes Kubernetes officielles",
+        "description": "Pods, Deployments, Services, Ingress, ConfigMaps et plus. Le jeu complet d’icônes Kubernetes de la CNCF pour vos schémas d’architecture.",
+        "cta": "Parcourir les icônes",
+        "ctaSecondary": "Toutes les ressources",
+        "badge": "Kubernetes"
+      },
+      "k8sOfficial": {
+        "title": "Icônes d’architecture Kubernetes de la CNCF",
+        "description": "Icônes officielles du projet Kubernetes. Gratuites sous licence Apache 2.0. À utiliser dans vos docs, schémas et présentations.",
+        "cta": "Tout parcourir",
+        "ctaSecondary": "Voir la licence",
+        "badge": "Licence Apache 2.0"
+      },
+      "flags": {
+        "title": "263 drapeaux de pays et de régions",
+        "description": "Tous les pays ISO 3166-1, plus l’Angleterre, l’Écosse, le pays de Galles, la Catalogne, les îles Canaries, l’UE et l’ONU. Trois formes chacun : 4x3, carré et rond.",
+        "cta": "Parcourir les drapeaux",
+        "ctaSecondary": "Mode d’emploi",
+        "badge": "Nouveau : drapeaux"
+      },
+      "community": {
+        "title": "256 icônes sélectionnées par la communauté",
+        "description": "Outils de développement, bases de données, frameworks et plateformes issus de la communauté open source. Libres d’utilisation et toujours plus nombreux.",
+        "cta": "Parcourir les icônes",
+        "ctaSecondary": "Soumettre une icône",
+        "badge": "Communauté"
+      },
+      "auth": {
+        "title": "858 icônes de badges d’authentification",
+        "description": "Badges de services circulaires pour les écrans de configuration 2FA et les interfaces de sécurité des comptes. Plateformes d’échange, VPN, hébergement, jeux et plus.",
+        "cta": "Parcourir les badges",
+        "ctaSecondary": "Toutes les catégories",
+        "badge": "CC0, sans attribution"
+      }
+    }
   }
 }

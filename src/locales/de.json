@@ -58,5 +58,264 @@
       "trademarkPolicy": "Markenrichtlinie",
       "contact": "Kontakt"
     }
+  },
+  "home": {
+    "navigation": "Navigation",
+    "failedToLoad": "Icons konnten nicht geladen werden",
+    "failedToLoadRefresh": "Icons konnten nicht geladen werden. Bitte lade die Seite neu und versuche es erneut.",
+    "loading": "Wird geladen...",
+    "favCount": "Favoriten: {{count}}",
+    "comfortableView": "Komfortansicht",
+    "compactView": "Kompaktansicht",
+    "sortBy": "Sortieren nach {{label}}",
+    "sort": {
+      "default": "Sortieren",
+      "az": "A-Z",
+      "za": "Z-A",
+      "recent": "Neueste",
+      "popular": "Beliebt"
+    },
+    "removeCollectionFilter": "Sammlungsfilter entfernen",
+    "removeCategoryFilter": "Kategoriefilter entfernen",
+    "removeFavoritesFilter": "Favoritenfilter entfernen",
+    "removeSearchFilter": "Suchfilter entfernen",
+    "favorites": "Favoriten",
+    "clearAll": "Alle löschen",
+    "clear": "Löschen",
+    "all": "Alle",
+    "googleBanner": {
+      "badge": "Neu",
+      "title": "Googles Redesign 2026 ist da",
+      "body": "13 neu gestaltete Produktsymbole mit der neuen Verlaufsidentität. Die erste Bibliothek, die sie anbietet.",
+      "cta": "2026er-Set ansehen"
+    },
+    "copyCommand": "Befehl kopieren: {{command}}",
+    "ago": {
+      "now": "jetzt",
+      "minutes": "vor {{count}} Min.",
+      "hours": "vor {{count}} Std.",
+      "days": "vor {{count}} T.",
+      "months": "vor {{count}} Mon."
+    },
+    "goToSlide": "Zu Folie {{count}}",
+    "dismissBanner": "Banner schließen",
+    "dismiss": "Schließen",
+    "continue": "Weiter",
+    "whereYouLeftOff": "Dort, wo du aufgehört hast",
+    "viewAll": "Alle ansehen",
+    "expandContinue": "Bereich „Weiter“ erweitern",
+    "collapseContinue": "Bereich „Weiter“ einklappen",
+    "expand": "Erweitern",
+    "collapse": "Einklappen",
+    "clearViewed": "Zuletzt angesehen löschen",
+    "clearRecents": "Verlauf löschen",
+    "iconCollections": "Icon-Sammlungen",
+    "showingPopularFirst": "Beliebte zuerst",
+    "showingRecentFirst": "Zuletzt hinzugefügt zuerst",
+    "popular": "Beliebt",
+    "recent": "Neu",
+    "recentlyAdded": "Kürzlich hinzugefügt",
+    "scopedRecentlyAdded": "{{scope}} · Kürzlich hinzugefügt",
+    "scopedPopular": "{{scope}} · Beliebt",
+    "popularAws": "Beliebte AWS-Services",
+    "popularAzure": "Beliebte Azure-Services",
+    "popularGcp": "Beliebte GCP-Services",
+    "browseByCategory": "Nach Kategorie stöbern",
+    "allIcons": "Alle Icons",
+    "allCollectionIcons": "Alle {{collection}}-Icons",
+    "attribution": {
+      "aws": "Die AWS-Architektursymbole werden unter CC-BY-ND 2.0 bereitgestellt. Amazon Web Services und alle zugehörigen Marken sind Marken von Amazon.com, Inc.",
+      "azure": "Die Microsoft-Azure-Symbole werden unter der MIT-Lizenz bereitgestellt. Microsoft Azure und alle zugehörigen Marken sind Marken der Microsoft Corporation.",
+      "gcp": "Die Google-Cloud-Symbole werden unter der Apache-2.0-Lizenz bereitgestellt. Google Cloud und alle zugehörigen Marken sind Marken von Google LLC."
+    },
+    "google": {
+      "skip": "Zu den Icons springen",
+      "eyebrow": "Google · Redesign 2026",
+      "titleLine1": "Das Workspace",
+      "titleLine2": "Markenkit",
+      "icons": "Icons",
+      "gradientPerfect": "verlaufsgetreu",
+      "released": "veröffentlicht",
+      "markAria": "Google-Workspace-Logo · Detailseite öffnen",
+      "open": "Öffnen",
+      "fullSet": "Das vollständige Set",
+      "countOf": "{{shown}} von {{total}} Icons",
+      "filterPlaceholder": "Filtern (Gmail, Drive, blau…)",
+      "filterAria": "Google-2026-Icons filtern",
+      "clearFilter": "Filter löschen",
+      "allGoogle": "Alle Google-Icons",
+      "filterByColor": "Nach Markenfarbe filtern",
+      "noColorIcons": "Keine Icons in {{color}} in diesem Set",
+      "colorIcons": "Icons in {{color}}: {{count}}",
+      "colors": {
+        "red": "Rot",
+        "yellow": "Gelb",
+        "green": "Grün",
+        "blue": "Blau",
+        "purple": "Lila",
+        "neutral": "Neutral"
+      },
+      "gridAria": "Google-2026-Markenicons",
+      "noMatchBoth": "Keine Icons passen zu „{{query}}“ mit {{colors}}.",
+      "noMatchQuery": "Keine Icons passen zu „{{query}}“.",
+      "noMatchColors": "Keine Icons passen zu {{colors}}.",
+      "clearFilters": "Filter löschen"
+    },
+    "tile": {
+      "svgIcon": "{{name}} SVG-Icon",
+      "quickActions": "Schnellaktionen",
+      "copyMarkup": "SVG-Code von {{name}} kopieren",
+      "copySvg": "SVG kopieren",
+      "downloadFile": "SVG-Datei von {{name}} herunterladen",
+      "downloadSvg": "SVG herunterladen",
+      "svgCopied": "SVG kopiert",
+      "colorCopied": "{{color}} kopiert",
+      "copyColor": "Farbe {{color}} kopieren",
+      "copied": "Kopiert"
+    },
+    "recents": {
+      "allTime": "Gesamt",
+      "today": "Heute",
+      "thisWeek": "Diese Woche",
+      "thisMonth": "Diesen Monat",
+      "justNow": "gerade eben",
+      "titleCopied": "{{name}} kopiert",
+      "copyFailed": "Kopieren fehlgeschlagen",
+      "deviceOnly": "Deine Aktivität, nur auf diesem Gerät",
+      "title": "Zuletzt verwendet",
+      "viewedLabel": "angesehen",
+      "copiedLabel": "kopiert",
+      "searchedLabel": "gesucht",
+      "confirmClearAll": "Gesamten Verlauf löschen?",
+      "clearEverything": "Alles löschen",
+      "loading": "Dein Verlauf wird geladen",
+      "loadFailedTitle": "Deine zuletzt verwendeten Icons konnten nicht geladen werden",
+      "loadFailedBody": "Dein Verlauf aus Ansichten und Kopien ist gespeichert, konnte diesmal aber nicht aufgelöst werden.",
+      "retry": "Erneut versuchen",
+      "emptyTitle": "Noch nichts hier",
+      "emptyBody": "Stöbere in ein paar Icons, dann erscheinen sie hier zum erneuten Kopieren und schnellen Öffnen.",
+      "browseLibrary": "Bibliothek durchstöbern",
+      "viewed": "Angesehen",
+      "copySvg": "SVG kopieren",
+      "copy": "Kopieren",
+      "download": "Herunterladen",
+      "copied": "Kopiert",
+      "copyAgain": "{{name}} erneut kopieren",
+      "recopy": "Erneut kopieren",
+      "searches": "Suchen"
+    },
+    "slides": {
+      "open": {
+        "title": "{{count, number}}+ SVG-Icons. Suchen. Kopieren. Ausliefern.",
+        "description": "Markenicons in Sekunden suchen, kopieren und ausliefern. Kostenlos, Open Source und von der Community getragen.",
+        "cta": "Loslegen",
+        "ctaSecondary": "Icon einreichen",
+        "badge": "{{count, number}}+ Icons"
+      },
+      "ui": {
+        "title": "UI-Icons sind da, in sieben Looks",
+        "description": "Interface-Icons auf einem Raster gezeichnet und live umstylbar. Frei kopierbar.",
+        "cta": "UI-Icons entdecken",
+        "ctaSecondary": "So funktioniert es",
+        "badge": "theSVG 4.0"
+      },
+      "npm": {
+        "title": "Ein Paket, jede Marke",
+        "description": "Tree-shakeable, typisiert, ESM/CJS. Jedes Icon ohne Konfiguration importieren.",
+        "cta": "Auf npm ansehen",
+        "ctaSecondary": "Erweiterungen"
+      },
+      "copy": {
+        "title": "SVG, JSX, CDN oder Download",
+        "description": "Alle Formate, die du brauchst. Roh-SVG kopieren, CDN-Link holen oder Dateien herunterladen. Dark-Mode-Varianten inklusive.",
+        "cta": "Icons durchsuchen",
+        "ctaSecondary": "Erweiterungen",
+        "badge": "Kopieren & ausliefern"
+      },
+      "flagsNew": {
+        "title": "Flaggen sind da: 263 Länder und Regionen",
+        "description": "Jedes Land plus England, Schottland, Katalonien und mehr. Je drei Formen, ein kleines Paket.",
+        "cta": "Flaggen durchsuchen",
+        "ctaSecondary": "So geht’s",
+        "badge": "Neu: Flaggen"
+      },
+      "aws": {
+        "title": "Jedes AWS-Icon für deine Diagramme",
+        "description": "Über 300 Service-Icons, über 400 Ressourcen-Icons und Kategorie-Icons. Durchsuchen, kopieren und sofort in Architekturdiagrammen verwenden.",
+        "cta": "Services durchsuchen",
+        "ctaSecondary": "Alle Kategorien",
+        "badge": "AWS-Architektur"
+      },
+      "awsOfficial": {
+        "title": "Offizielle AWS-Architektursymbole",
+        "description": "Unveränderte SVGs aus dem offiziellen AWS-Iconset. Vierteljährlich aktualisiert. Services, Ressourcen, Kategorien und Gruppen.",
+        "cta": "Alle durchsuchen",
+        "ctaSecondary": "Lizenz ansehen",
+        "badge": "Release 2026-Q1"
+      },
+      "azure": {
+        "title": "626 Azure-Service-Icons",
+        "description": "Jedes Azure-Service-Icon für deine Architekturdiagramme. VMs, App Services, SQL, Cosmos DB und mehr. Kostenlos nutzbar.",
+        "cta": "Services durchsuchen",
+        "ctaSecondary": "Alle Kategorien",
+        "badge": "Microsoft Azure"
+      },
+      "azureOfficial": {
+        "title": "Offizielle Azure-Architektursymbole",
+        "description": "29 Kategorien von Microsoft-Azure-Service-Icons. Compute, Netzwerk, Datenbanken, KI, Sicherheit und mehr.",
+        "cta": "Alle durchsuchen",
+        "ctaSecondary": "Lizenz ansehen",
+        "badge": "Release 2026-Q1"
+      },
+      "gcp": {
+        "title": "214 GCP-Service-Icons",
+        "description": "Google-Cloud-Platform-Icons für Architekturdiagramme. Compute Engine, BigQuery, Cloud Run, GKE und alle GCP-Services.",
+        "cta": "Services durchsuchen",
+        "ctaSecondary": "Alle Kategorien",
+        "badge": "Google Cloud"
+      },
+      "gcpOfficial": {
+        "title": "Offizielle Google-Cloud-Icons",
+        "description": "Kostenlose GCP-Icons unter Apache 2.0. Automatisch kategorisiert in Compute, Storage, KI, Netzwerk und mehr.",
+        "cta": "Alle durchsuchen",
+        "ctaSecondary": "Lizenz ansehen",
+        "badge": "Apache-2.0-Lizenz"
+      },
+      "k8s": {
+        "title": "38 offizielle Kubernetes-Icons",
+        "description": "Pods, Deployments, Services, Ingress, ConfigMaps und mehr. Das komplette CNCF-Kubernetes-Iconset für deine Architekturdiagramme.",
+        "cta": "Icons durchsuchen",
+        "ctaSecondary": "Alle Ressourcen",
+        "badge": "Kubernetes"
+      },
+      "k8sOfficial": {
+        "title": "CNCF-Kubernetes-Architektursymbole",
+        "description": "Offizielle Icons aus dem Kubernetes-Projekt. Kostenlos unter Apache 2.0. Für Doku, Diagramme und Präsentationen.",
+        "cta": "Alle durchsuchen",
+        "ctaSecondary": "Lizenz ansehen",
+        "badge": "Apache-2.0-Lizenz"
+      },
+      "flags": {
+        "title": "263 Länder- und Regionenflaggen",
+        "description": "Jedes Land nach ISO 3166-1 plus England, Schottland, Wales, Katalonien, die Kanaren, die EU und die UN. Je drei Formen: 4x3, quadratisch und rund.",
+        "cta": "Flaggen durchsuchen",
+        "ctaSecondary": "So geht’s",
+        "badge": "Neu: Flaggen"
+      },
+      "community": {
+        "title": "256 von der Community kuratierte Icons",
+        "description": "Entwicklertools, Datenbanken, Frameworks und Plattformen aus der Open-Source-Community. Kostenlos nutzbar und ständig wachsend.",
+        "cta": "Icons durchsuchen",
+        "ctaSecondary": "Icon einreichen",
+        "badge": "Community"
+      },
+      "auth": {
+        "title": "858 Auth-Badge-Icons",
+        "description": "Runde Service-Badges für 2FA-Einrichtungsbildschirme und Konto-Sicherheitsoberflächen. Börsen, VPNs, Hosting, Spiele und mehr.",
+        "cta": "Badges durchsuchen",
+        "ctaSecondary": "Alle Kategorien",
+        "badge": "CC0, keine Namensnennung"
+      }
+    }
   }
 }

@@ -21,16 +21,18 @@ import { useSearchStore } from "@/lib/stores/search-store";
 import { hasCategoryLanding, slugifyCategory } from "@/lib/categories";
 import { MobileRecentsRow } from "@/components/mobile/mobile-recents-row";
 import { cn } from "@/lib/utils";
+import { useT } from "@/i18n/use-t";
 import { IconGridSkeleton } from "@/components/skeletons";
 
 const SORT_OPTIONS = ["default", "recent", "popular", "az", "za"] as const;
 
-const SORT_META: Record<typeof SORT_OPTIONS[number], { icon: typeof ArrowUpDown; label: string }> = {
-  default: { icon: ArrowUpDown, label: "Sort" },
-  az: { icon: ArrowDownAZ, label: "A-Z" },
-  za: { icon: ArrowDownZA, label: "Z-A" },
-  recent: { icon: Clock, label: "Recent" },
-  popular: { icon: Flame, label: "Popular" },
+// labelKey resolves through useT so the sort label follows the active language.
+const SORT_META: Record<typeof SORT_OPTIONS[number], { icon: typeof ArrowUpDown; labelKey: string }> = {
+  default: { icon: ArrowUpDown, labelKey: "home.sort.default" },
+  az: { icon: ArrowDownAZ, labelKey: "home.sort.az" },
+  za: { icon: ArrowDownZA, labelKey: "home.sort.za" },
+  recent: { icon: Clock, labelKey: "home.sort.recent" },
+  popular: { icon: Flame, labelKey: "home.sort.popular" },
 };
 
 /**
@@ -87,6 +89,7 @@ interface HomeContentProps {
 }
 
 export function HomeContent({ categoryCounts, count, recentIcons, collections, defaultCollection, defaultCategory, defaultCategorySlug, children }: HomeContentProps) {
+  const { t } = useT();
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -115,7 +118,8 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
     }
   }, [searchParams, defaultCategory, router]);
   const sortParam = searchParams.get("sort");
-  const { icon: SortIcon, label: sortLabel } = SORT_META[(sortParam as typeof SORT_OPTIONS[number]) || "default"] ?? SORT_META.default;
+  const { icon: SortIcon, labelKey: sortLabelKey } = SORT_META[(sortParam as typeof SORT_OPTIONS[number]) || "default"] ?? SORT_META.default;
+  const sortLabel = t(sortLabelKey);
   const viewParam = (searchParams.get("view") || "comfortable") as "compact" | "comfortable";
   const favoritesParam = searchParams.get("favorites") === "true";
   const collectionParam = (searchParams.get("collection") || defaultCollection || null) as Collection | null;
@@ -408,7 +412,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
       {/* Mobile sidebar Sheet */}
       <Sheet open={sidebarOpen} onOpenChange={setSidebarOpen}>
         <SheetContent side="left" className="w-64 p-0">
-          <SheetTitle className="sr-only">Navigation</SheetTitle>
+          <SheetTitle className="sr-only">{t("home.navigation")}</SheetTitle>
           <Sidebar
             mobile
             categories={activeCategoryCounts}
@@ -461,11 +465,11 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                 {/* Count label */}
                 <p className="flex-1 text-sm text-muted-foreground">
                   {manifestError ? (
-                    <span className="text-destructive">Failed to load icons</span>
+                    <span className="text-destructive">{t("home.failedToLoad")}</span>
                   ) : !allIcons ? (
-                    <span className="animate-pulse">Loading...</span>
+                    <span className="animate-pulse">{t("home.loading")}</span>
                   ) : favoritesParam
-                    ? `${filtered.length} fav${filtered.length !== 1 ? "s" : ""}`
+                    ? t("home.favCount", { count: filtered.length })
                     : filtered.length === activeCount
                       ? `${activeCount.toLocaleString()}`
                       : `${filtered.length.toLocaleString()}/${activeCount.toLocaleString()}`}
@@ -480,7 +484,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                     type="button"
                     onClick={handleViewToggle}
                     className="flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                    aria-label={viewParam === "compact" ? "Comfortable view" : "Compact view"}
+                    aria-label={viewParam === "compact" ? t("home.comfortableView") : t("home.compactView")}
                   >
                     {viewParam === "compact" ? (
                       <Grid3X3 className="h-4 w-4" />
@@ -491,7 +495,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                   <button
                     type="button"
                     onClick={handleSortCycle}
-                    aria-label={`Sort by ${sortLabel.toLowerCase()}`}
+                    aria-label={t("home.sortBy", { label: sortLabel.toLowerCase() })}
                     className="flex h-8 items-center gap-1.5 rounded-lg px-2 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                   >
                     <SortIcon className="h-4 w-4" aria-hidden="true" />
@@ -509,7 +513,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                     type="button"
                     onClick={() => handleCollectionSelect(null)}
                     className="inline-flex items-center gap-1 rounded-full border border-orange-200/50 bg-orange-50/50 px-2.5 py-0.5 text-xs font-medium text-orange-600 transition-colors hover:bg-orange-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 dark:border-orange-500/20 dark:bg-orange-500/10 dark:text-orange-400"
-                    aria-label="Remove collection filter"
+                    aria-label={t("home.removeCollectionFilter")}
                   >
                     {collectionParam === "aws" ? "AWS" : collectionParam}
                     <X className="h-3.5 w-3.5" aria-hidden="true" />
@@ -520,7 +524,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                     type="button"
                     onClick={handleClearCategory}
                     className="inline-flex items-center gap-1 rounded-full border border-border/40 bg-accent/50 px-2.5 py-0.5 text-xs font-medium text-foreground transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 dark:border-white/[0.06] dark:bg-white/[0.06]"
-                    aria-label="Remove category filter"
+                    aria-label={t("home.removeCategoryFilter")}
                   >
                     {categoryParam}
                     <X className="h-3.5 w-3.5 text-muted-foreground" aria-hidden="true" />
@@ -531,9 +535,9 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                     type="button"
                     onClick={handleToggleFavorites}
                     className="inline-flex items-center gap-1 rounded-full border border-red-200/50 bg-red-50/50 px-2.5 py-0.5 text-xs font-medium text-red-600 transition-colors hover:bg-red-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-400"
-                    aria-label="Remove favorites filter"
+                    aria-label={t("home.removeFavoritesFilter")}
                   >
-                    Favorites
+                    {t("home.favorites")}
                     <X className="h-3.5 w-3.5" aria-hidden="true" />
                   </button>
                 )}
@@ -542,7 +546,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                     type="button"
                     onClick={() => setGlobalQuery("")}
                     className="inline-flex items-center gap-1 rounded-full border border-border/40 bg-accent/50 px-2.5 py-0.5 text-xs font-medium text-foreground transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 dark:border-white/[0.06] dark:bg-white/[0.06]"
-                    aria-label="Remove search filter"
+                    aria-label={t("home.removeSearchFilter")}
                   >
                     &ldquo;{query.trim()}&rdquo;
                     <X className="h-3.5 w-3.5 text-muted-foreground" aria-hidden="true" />
@@ -560,7 +564,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                   }}
                   className="rounded-sm text-[10px] text-muted-foreground/60 transition-colors hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >
-                  Clear all
+                  {t("home.clearAll")}
                 </button>
               </div>
             )}
@@ -574,19 +578,19 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
                 >
                   <div className="flex items-center gap-3">
                     <span className="rounded-full bg-gradient-to-r from-fuchsia-500/90 via-orange-500/90 to-amber-400/90 px-2 py-0.5 font-mono text-[10px] font-semibold uppercase leading-none tracking-wider text-white shadow-sm shadow-black/20">
-                      New
+                      {t("home.googleBanner.badge")}
                     </span>
                     <div>
                       <p className="text-sm font-semibold text-foreground">
-                        Google&rsquo;s 2026 refresh is here
+                        {t("home.googleBanner.title")}
                       </p>
                       <p className="text-xs text-muted-foreground">
-                        13 redesigned product icons with the new gradient identity. First library to host them.
+                        {t("home.googleBanner.body")}
                       </p>
                     </div>
                   </div>
                   <span className="hidden shrink-0 items-center gap-1 rounded-full bg-foreground px-3 py-1.5 text-xs font-medium text-background transition-opacity group-hover:opacity-90 sm:inline-flex">
-                    View 2026 set
+                    {t("home.googleBanner.cta")}
                     <ArrowDownAZ className="h-3.5 w-3.5 rotate-90" />
                   </span>
                 </Link>
@@ -597,7 +601,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
             <div className="mx-auto max-w-7xl px-3 py-2 sm:px-4">
               {manifestError ? (
                 <p className="py-24 text-center text-sm text-muted-foreground">
-                  Failed to load icons. Please refresh and try again.
+                  {t("home.failedToLoadRefresh")}
                 </p>
               ) : !allIcons ? (
                 <IconGridSkeleton count={24} className="py-4" />

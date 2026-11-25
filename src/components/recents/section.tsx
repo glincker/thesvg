@@ -1,4 +1,7 @@
+"use client";
+
 import { Clock } from "@/components/own-icons";
+import { useT } from "@/i18n/use-t";
 
 export interface SectionProps {
   title: string;
@@ -9,6 +12,7 @@ export interface SectionProps {
 }
 
 export function Section({ title, icon, count, onClear, children }: SectionProps) {
+  const { t } = useT();
   return (
     <section>
       <div className="mb-3 flex items-center gap-2">
@@ -26,7 +30,7 @@ export function Section({ title, icon, count, onClear, children }: SectionProps)
           className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] text-muted-foreground/60 transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           <Clock className="h-3.5 w-3.5" />
-          Clear
+          {t("home.clear")}
         </button>
       </div>
       {children}

@@ -21,6 +21,7 @@ import { cn } from "@/lib/utils";
 import { withUtm } from "@/lib/external-link";
 import dynamic from "next/dynamic";
 import { MENTIONS } from "@/lib/mentions";
+import { useT } from "@/i18n/use-t";
 
 import { getPopularSlugs } from "@/lib/popular-icons";
 
@@ -76,6 +77,8 @@ const TAB_LABELS: Partial<Record<Collection, string>> = {
 };
 
 interface Slide {
+  /** Key under home.slides in the locale files; the English strings below stay as the fallback. */
+  id: string;
   badge: string;
   badgeIcon: React.ComponentType<{ className?: string }>;
   title: string;
@@ -96,6 +99,7 @@ interface Slide {
 
 const ALL_SLIDES: Slide[] = [
   {
+    id: "open",
     badge: "Open Source",
     badgeIcon: Sparkles,
     title: "SVG Icons. Search. Copy. Ship.",
@@ -110,6 +114,7 @@ const ALL_SLIDES: Slide[] = [
     floatSlugs: POPULAR_SLUGS,
   },
   {
+    id: "ui",
     badge: "theSVG 4.0",
     badgeIcon: Sparkles,
     title: "UI icons are here, in seven looks",
@@ -124,6 +129,7 @@ const ALL_SLIDES: Slide[] = [
     ui: true as const,
   },
   {
+    id: "npm",
     badge: "npm install thesvg",
     badgeIcon: Package,
     title: "One Package, Every Brand",
@@ -137,6 +143,7 @@ const ALL_SLIDES: Slide[] = [
     floatSlugs: DEV_FLOAT_SLUGS,
   },
   {
+    id: "copy",
     badge: "Copy & Ship",
     badgeIcon: Zap,
     title: "SVG, JSX, CDN, or Download",
@@ -150,6 +157,7 @@ const ALL_SLIDES: Slide[] = [
     floatSlugs: DEV_FLOAT_SLUGS,
   },
   {
+    id: "flagsNew",
     badge: "New: Flags",
     badgeIcon: Sparkles,
     title: "Flags are here: 263 countries and regions",
@@ -164,6 +172,7 @@ const ALL_SLIDES: Slide[] = [
     flags: true as const,
   },
   {
+    id: "aws",
     badge: "AWS Architecture",
     badgeIcon: Cloud,
     title: "Every AWS Icon for Your Diagrams",
@@ -177,6 +186,7 @@ const ALL_SLIDES: Slide[] = [
     floatSlugs: POPULAR_AWS_SLUGS,
   },
   {
+    id: "awsOfficial",
     badge: "2026-Q1 Release",
     badgeIcon: Package,
     title: "Official AWS Architecture Icons",
@@ -190,6 +200,7 @@ const ALL_SLIDES: Slide[] = [
     floatSlugs: POPULAR_AWS_SLUGS,
   },
   {
+    id: "azure",
     badge: "Microsoft Azure",
     badgeIcon: Cloud,
     title: "626 Azure Service Icons",
@@ -203,6 +214,7 @@ const ALL_SLIDES: Slide[] = [
     floatSlugs: POPULAR_AZURE_SLUGS,
   },
   {
+    id: "azureOfficial",
     badge: "2026-Q1 Release",
     badgeIcon: Package,
     title: "Official Azure Architecture Icons",
@@ -216,6 +228,7 @@ const ALL_SLIDES: Slide[] = [
     floatSlugs: POPULAR_AZURE_SLUGS,
   },
   {
+    id: "gcp",
     badge: "Google Cloud",
     badgeIcon: Cloud,
     title: "214 GCP Service Icons",
@@ -229,6 +242,7 @@ const ALL_SLIDES: Slide[] = [
     floatSlugs: POPULAR_GCP_SLUGS,
   },
   {
+    id: "gcpOfficial",
     badge: "Apache 2.0 License",
     badgeIcon: Package,
     title: "Official Google Cloud Icons",
@@ -242,6 +256,7 @@ const ALL_SLIDES: Slide[] = [
     floatSlugs: POPULAR_GCP_SLUGS,
   },
   {
+    id: "k8s",
     badge: "Kubernetes",
     badgeIcon: Anchor,
     title: "38 Official Kubernetes Icons",
@@ -255,6 +270,7 @@ const ALL_SLIDES: Slide[] = [
     floatSlugs: POPULAR_K8S_SLUGS,
   },
   {
+    id: "k8sOfficial",
     badge: "Apache 2.0 License",
     badgeIcon: Package,
     title: "CNCF Kubernetes Architecture Icons",
@@ -268,6 +284,7 @@ const ALL_SLIDES: Slide[] = [
     floatSlugs: POPULAR_K8S_SLUGS,
   },
   {
+    id: "flags",
     badge: "New: Flags",
     badgeIcon: Package,
     title: "263 Country and Region Flags",
@@ -282,6 +299,7 @@ const ALL_SLIDES: Slide[] = [
     flags: true as const,
   },
   {
+    id: "community",
     badge: "Community",
     badgeIcon: Users,
     title: "256 Community-Curated Icons",
@@ -295,6 +313,7 @@ const ALL_SLIDES: Slide[] = [
     floatSlugs: POPULAR_COMMUNITY_SLUGS,
   },
   {
+    id: "auth",
     badge: "CC0, No Attribution",
     badgeIcon: ShieldCheck,
     title: "858 Auth Badge Icons",
@@ -329,6 +348,7 @@ function InstallBadge({
   accent: string;
   Icon: React.ComponentType<{ className?: string }>;
 }) {
+  const { t } = useT();
   const [copied, setCopied] = useState(false);
   const onCopy = useCallback(async () => {
     try {
@@ -344,7 +364,7 @@ function InstallBadge({
     <button
       type="button"
       onClick={onCopy}
-      aria-label={`Copy command: ${command}`}
+      aria-label={t("home.copyCommand", { command })}
       className={`group mb-3 inline-flex items-center gap-2 rounded-full border px-3 py-1.5 font-mono text-xs shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 ${accent}`}
     >
       <Icon className="h-3 w-3 shrink-0" />
@@ -368,6 +388,7 @@ export function HomeHero({
   onCategorySelect,
   onCollectionSelect,
 }: HomeHeroProps) {
+  const { t } = useT();
   // Lazy-load the full icons manifest for decorative elements (floating icons,
   // popular grids, category rows). The hero carousel content renders immediately;
   // icons appear progressively as the manifest loads.
@@ -472,14 +493,14 @@ export function HomeHero({
 
   function shortAgo(ts: number): string {
     const s = Math.max(0, Math.floor((now - ts) / 1000));
-    if (s < 60) return "now";
+    if (s < 60) return t("home.ago.now");
     const m = Math.floor(s / 60);
-    if (m < 60) return `${m}m`;
+    if (m < 60) return t("home.ago.minutes", { count: m });
     const h = Math.floor(m / 60);
-    if (h < 24) return `${h}h`;
+    if (h < 24) return t("home.ago.hours", { count: h });
     const d = Math.floor(h / 24);
-    if (d < 30) return `${d}d`;
-    return `${Math.floor(d / 30)}mo`;
+    if (d < 30) return t("home.ago.days", { count: d });
+    return t("home.ago.months", { count: Math.floor(d / 30) });
   }
 
   // Filter icons by active collection
@@ -528,6 +549,20 @@ export function HomeHero({
     ? collectionSlides[currentSlide % collectionSlides.length]
     : fallbackSlide;
   const BadgeIcon = slide.badgeIcon;
+  const countText = count.toLocaleString();
+  // English literals on each slide are the fallback when a key is missing.
+  const slideText = (sl: Slide) => {
+    const k = `home.slides.${sl.id}`;
+    const title = sl.dynamicCount ? `${countText}+ ${sl.title}` : sl.title;
+    return {
+      badge: sl.badge.startsWith("npm install") ? sl.badge : t(`${k}.badge`, { count, defaultValue: sl.badge === "Open Source" ? `${countText}+ icons` : sl.badge }),
+      title: t(`${k}.title`, { count, defaultValue: title }),
+      description: t(`${k}.description`, { defaultValue: sl.description }),
+      cta: t(`${k}.cta`, { defaultValue: sl.cta.label }),
+      ctaSecondary: t(`${k}.ctaSecondary`, { defaultValue: sl.ctaSecondary.label }),
+    };
+  };
+  const slideTx = slideText(slide);
   const proofLogos = (slide.adopters ?? []).flatMap((a) => {
     const icon = iconsBySlug.get(a.slug);
     return icon ? [{ a, icon }] : [];
@@ -538,6 +573,7 @@ export function HomeHero({
   // dots in the single-row layout, so there's nothing to advance.
   const compactSlide = collectionSlides.length > 0 ? collectionSlides[0] : fallbackSlide;
   const CompactIcon = compactSlide.badgeIcon;
+  const compactTx = slideText(compactSlide);
 
   // Pick up to 6 (8 on the proof slide) floating icons matching the current slide's collection
   const floatingIcons = useMemo(() => {
@@ -626,7 +662,7 @@ export function HomeHero({
       type="button"
       role="switch"
       aria-checked={effectiveOrder === "recent"}
-      aria-label={`Showing ${effectiveOrder === "popular" ? "Popular" : "Recently Added"} first`}
+      aria-label={effectiveOrder === "popular" ? t("home.showingPopularFirst") : t("home.showingRecentFirst")}
       onClick={() => setSectionOrder(effectiveOrder === "popular" ? "recent-first" : "popular-first")}
       className="relative inline-flex h-7 w-[132px] shrink-0 items-center rounded-full bg-muted/60 p-0.5 dark:bg-white/[0.06]"
     >
@@ -638,11 +674,11 @@ export function HomeHero({
       />
       <span className={cn("relative z-10 flex w-[64px] items-center justify-center gap-1 text-[10px] font-medium transition-colors", effectiveOrder === "popular" ? "text-background" : "text-muted-foreground")}>
         <Flame className="h-3.5 w-3.5" />
-        Popular
+        {t("home.popular")}
       </span>
       <span className={cn("relative z-10 flex w-[64px] items-center justify-center gap-1 text-[10px] font-medium transition-colors", effectiveOrder === "recent" ? "text-background" : "text-muted-foreground")}>
         <Clock className="h-3.5 w-3.5" />
-        Recent
+        {t("home.recent")}
       </span>
     </button>
   );
@@ -653,14 +689,14 @@ export function HomeHero({
     <section key="recent">
       <div className="mb-4 flex items-center gap-2">
         <Clock className="h-3.5 w-3.5 text-muted-foreground" />
-        <h2 className="text-sm font-semibold text-foreground">{scopeLabel ? `${scopeLabel} \u00b7 Recently Added` : "Recently Added"}</h2>
+        <h2 className="text-sm font-semibold text-foreground">{scopeLabel ? t("home.scopedRecentlyAdded", { scope: scopeLabel }) : t("home.recentlyAdded")}</h2>
         <div className="h-px flex-1 bg-border/40 dark:bg-white/[0.04]" />
         {effectiveOrder === "recent" && orderSwitch}
         <Link
           href="/?sort=recent"
           className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
         >
-          View all
+          {t("home.viewAll")}
           <ArrowRight className="h-3.5 w-3.5" />
         </Link>
       </div>
@@ -676,7 +712,7 @@ export function HomeHero({
     <section key="popular">
       <div className="mb-4 flex items-center gap-2">
         <h2 className="text-sm font-semibold text-foreground">
-          {activeCollection === "aws" ? "Popular AWS Services" : activeCollection === "azure" ? "Popular Azure Services" : activeCollection === "gcp" ? "Popular GCP Services" : scopeLabel ? `${scopeLabel} \u00b7 Popular` : "Popular"}
+          {activeCollection === "aws" ? t("home.popularAws") : activeCollection === "azure" ? t("home.popularAzure") : activeCollection === "gcp" ? t("home.popularGcp") : scopeLabel ? t("home.scopedPopular", { scope: scopeLabel }) : t("home.popular")}
         </h2>
         <div className="h-px flex-1 bg-border/40 dark:bg-white/[0.04]" />
         {effectiveOrder === "popular" && orderSwitch}
@@ -684,7 +720,7 @@ export function HomeHero({
           href="/?sort=popular"
           className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
         >
-          View all
+          {t("home.viewAll")}
           <ArrowRight className="h-3.5 w-3.5" />
         </Link>
       </div>
@@ -734,16 +770,14 @@ export function HomeHero({
               ) : (
                 <div className={`mb-2 inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-[11px] font-medium shadow-sm sm:mb-3 sm:px-3 sm:py-1 sm:text-xs ${slide.accent}`}>
                   <BadgeIcon className="h-3 w-3" />
-                  {slide.badge === "Open Source"
-                    ? `${count.toLocaleString()}+ icons`
-                    : slide.badge}
+                  {slideTx.badge}
                 </div>
               )}
               <h1 className="mb-1.5 text-lg font-bold tracking-tight sm:mb-2 sm:text-3xl">
-                {slide.dynamicCount ? `${count.toLocaleString()}+ ${slide.title}` : slide.title}
+                {slideTx.title}
               </h1>
               <p className="mb-4 max-w-lg text-[13px] leading-snug text-foreground/75 sm:mb-6 sm:text-base sm:leading-relaxed">
-                {slide.description}
+                {slideTx.description}
               </p>
               <div className="flex flex-wrap gap-2 sm:gap-3">
                 {slide.cta.href.startsWith("http") ? (
@@ -753,7 +787,7 @@ export function HomeHero({
                     rel="noopener noreferrer"
                     className="group/cta inline-flex items-center gap-2 rounded-xl bg-foreground min-h-[40px] px-4 py-2 text-xs font-medium text-background shadow-lg shadow-black/10 transition-all hover:-translate-y-0.5 hover:opacity-90 hover:shadow-xl sm:px-5 sm:py-2.5 sm:text-sm dark:shadow-black/30"
                   >
-                    {slide.cta.label}
+                    {slideTx.cta}
                     <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/cta:translate-x-0.5" />
                   </a>
                 ) : (
@@ -761,7 +795,7 @@ export function HomeHero({
                     href={slide.cta.href}
                     className="group/cta inline-flex items-center gap-2 rounded-xl bg-foreground min-h-[40px] px-4 py-2 text-xs font-medium text-background shadow-lg shadow-black/10 transition-all hover:-translate-y-0.5 hover:opacity-90 hover:shadow-xl sm:px-5 sm:py-2.5 sm:text-sm dark:shadow-black/30"
                   >
-                    {slide.cta.label}
+                    {slideTx.cta}
                     <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/cta:translate-x-0.5" />
                   </Link>
                 )}
@@ -772,14 +806,14 @@ export function HomeHero({
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-xl border border-border/60 bg-background/50 min-h-[40px] px-4 py-2 text-xs font-medium text-foreground shadow-sm backdrop-blur-sm transition-all hover:bg-background/80 hover:shadow-md sm:px-5 sm:py-2.5 sm:text-sm dark:border-white/[0.1] dark:bg-white/[0.05]"
                   >
-                    {slide.ctaSecondary.label}
+                    {slideTx.ctaSecondary}
                   </a>
                 ) : (
                   <Link
                     href={slide.ctaSecondary.href}
                     className="inline-flex items-center gap-2 rounded-xl border border-border/60 bg-background/50 min-h-[40px] px-4 py-2 text-xs font-medium text-foreground shadow-sm backdrop-blur-sm transition-all hover:bg-background/80 hover:shadow-md sm:px-5 sm:py-2.5 sm:text-sm dark:border-white/[0.1] dark:bg-white/[0.05]"
                   >
-                    {slide.ctaSecondary.label}
+                    {slideTx.ctaSecondary}
                   </Link>
                 )}
               </div>
@@ -888,7 +922,7 @@ export function HomeHero({
               type="button"
               onClick={() => setCurrentSlide(i)}
               className="group relative rounded-full before:absolute before:-inset-x-1 before:-inset-y-3 before:content-[''] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-              aria-label={`Go to slide ${i + 1}`}
+              aria-label={t("home.goToSlide", { count: i + 1 })}
             >
               <div
                 className={`h-1 rounded-full transition-[width,background-color,box-shadow] duration-300 ${
@@ -920,9 +954,7 @@ export function HomeHero({
             <CompactIcon className="h-4 w-4" />
           </span>
           <p className="min-w-0 flex-1 truncate text-sm font-semibold text-foreground">
-            {compactSlide.dynamicCount
-              ? `${count.toLocaleString()}+ ${compactSlide.title}`
-              : compactSlide.title}
+            {compactTx.title}
           </p>
           {compactSlide.cta.href.startsWith("http") ? (
             <a
@@ -931,7 +963,7 @@ export function HomeHero({
               rel="noopener noreferrer"
               className="inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-foreground px-3 py-1.5 text-xs font-medium text-background shadow-sm transition-opacity hover:opacity-90"
             >
-              {compactSlide.cta.label}
+              {compactTx.cta}
               <ArrowRight className="h-3.5 w-3.5" />
             </a>
           ) : (
@@ -939,15 +971,15 @@ export function HomeHero({
               href={compactSlide.cta.href}
               className="inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-foreground px-3 py-1.5 text-xs font-medium text-background shadow-sm transition-opacity hover:opacity-90"
             >
-              {compactSlide.cta.label}
+              {compactTx.cta}
               <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           )}
           <button
             type="button"
             onClick={dismissCompactHero}
-            aria-label="Dismiss banner"
-            title="Dismiss"
+            aria-label={t("home.dismissBanner")}
+            title={t("home.dismiss")}
             className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-muted-foreground/60 transition-colors hover:bg-foreground/10 hover:text-foreground"
           >
             <X className="h-4 w-4" />
@@ -964,10 +996,10 @@ export function HomeHero({
           <div className="mb-3 flex items-center justify-between gap-2">
             <div className="flex min-w-0 items-baseline gap-2.5">
               <h2 id="recents-rail-heading" className="text-[15px] font-semibold tracking-tight text-foreground">
-                Continue
+                {t("home.continue")}
               </h2>
               <span className="hidden truncate text-[11px] text-muted-foreground sm:inline">
-                Where you left off
+                {t("home.whereYouLeftOff")}
               </span>
               <span className="rounded-full bg-foreground/[0.06] px-1.5 py-px font-mono text-[10px] tabular-nums text-muted-foreground dark:bg-white/[0.06]">
                 {recentViewedIcons.length}
@@ -978,7 +1010,7 @@ export function HomeHero({
                 href="/recents"
                 className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
               >
-                View all
+                {t("home.viewAll")}
                 <ArrowRight className="h-3.5 w-3.5" />
               </Link>
               <button
@@ -987,8 +1019,8 @@ export function HomeHero({
                 aria-expanded={!continueCollapsed}
                 aria-controls="continue-rail"
                 className="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground/50 transition-colors hover:bg-accent hover:text-foreground"
-                aria-label={continueCollapsed ? "Expand continue section" : "Collapse continue section"}
-                title={continueCollapsed ? "Expand" : "Collapse"}
+                aria-label={continueCollapsed ? t("home.expandContinue") : t("home.collapseContinue")}
+                title={continueCollapsed ? t("home.expand") : t("home.collapse")}
               >
                 <ChevronRight className={cn("h-3.5 w-3.5 transition-transform duration-200", !continueCollapsed && "rotate-90")} />
               </button>
@@ -996,8 +1028,8 @@ export function HomeHero({
                 type="button"
                 onClick={() => clearViewed()}
                 className="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground/50 transition-colors hover:bg-destructive/10 hover:text-destructive"
-                aria-label="Clear recently viewed"
-                title="Clear recents"
+                aria-label={t("home.clearViewed")}
+                title={t("home.clearRecents")}
               >
                 <X className="h-3.5 w-3.5" />
               </button>
@@ -1049,7 +1081,7 @@ export function HomeHero({
                     {entry.title}
                   </span>
                   <span className="text-[10px] text-muted-foreground/70 tabular-nums">
-                    {shortAgo(ts)} ago
+                    {shortAgo(ts)}
                   </span>
                 </span>
               </Link>
@@ -1065,7 +1097,7 @@ export function HomeHero({
           <div
             className="scrollbar-none flex snap-x items-center gap-0.5 overflow-x-auto rounded-2xl border border-border/50 bg-muted/30 p-1 pr-8 dark:border-white/[0.08] dark:bg-white/[0.03]"
             role="tablist"
-            aria-label="Icon collections"
+            aria-label={t("home.iconCollections")}
           >
             {collections.map((col) => {
               const meta = COLLECTIONS_META[col.name];
@@ -1086,7 +1118,7 @@ export function HomeHero({
                   )}
                 >
                   {Icon && <Icon className={cn("h-4 w-4", isActive ? meta.color : "opacity-70")} />}
-                  {TAB_LABELS[col.name] ?? meta?.heroLabel ?? col.name}
+                  {col.name === "flags" ? t("nav.flags") : TAB_LABELS[col.name] ?? meta?.heroLabel ?? col.name}
                   <span
                     className={cn(
                       "rounded-full px-1.5 py-0.5 font-mono text-[11px] leading-none",
@@ -1127,7 +1159,7 @@ export function HomeHero({
       {/* Browse by category */}
       <section>
         <div className="mb-4 flex items-center gap-2">
-          <h2 className="text-sm font-semibold text-foreground">Browse by Category</h2>
+          <h2 className="text-sm font-semibold text-foreground">{t("home.browseByCategory")}</h2>
           <div className="h-px flex-1 bg-border/40 dark:bg-white/[0.04]" />
         </div>
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4">
@@ -1154,7 +1186,7 @@ export function HomeHero({
       <section>
         <div className="mb-4 flex items-center gap-2">
           <h2 className="text-sm font-semibold text-foreground">
-            {activeCollection === "brands" ? "All Icons" : `All ${COLLECTIONS_META[activeCollection]?.heroLabel ?? activeCollection} Icons`}
+            {activeCollection === "brands" ? t("home.allIcons") : t("home.allCollectionIcons", { collection: COLLECTIONS_META[activeCollection]?.heroLabel ?? activeCollection })}
           </h2>
           <span className="text-xs text-muted-foreground">{collectionIcons.length.toLocaleString()}</span>
           <div className="h-px flex-1 bg-border/40 dark:bg-white/[0.04]" />
@@ -1165,17 +1197,17 @@ export function HomeHero({
       {/* Cloud provider attributions */}
       {activeCollection === "aws" && (
         <p className="text-center text-[11px] text-muted-foreground/60">
-          AWS Architecture Icons provided under CC-BY-ND 2.0. Amazon Web Services and all related marks are trademarks of Amazon.com, Inc.
+          {t("home.attribution.aws")}
         </p>
       )}
       {activeCollection === "azure" && (
         <p className="text-center text-[11px] text-muted-foreground/60">
-          Microsoft Azure icons provided under MIT license. Microsoft Azure and all related marks are trademarks of Microsoft Corporation.
+          {t("home.attribution.azure")}
         </p>
       )}
       {activeCollection === "gcp" && (
         <p className="text-center text-[11px] text-muted-foreground/60">
-          Google Cloud icons provided under Apache 2.0 license. Google Cloud and all related marks are trademarks of Google LLC.
+          {t("home.attribution.gcp")}
         </p>
       )}
 
