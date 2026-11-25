@@ -1,5 +1,11 @@
 # @thesvg/preact
 
+## 4.0.16
+
+### Patch Changes
+
+- feat: add ramp icon ([#1603](https://github.com/glincker/thesvg/issues/1603))
+
 ## 4.0.14
 
 ### Patch Changes
