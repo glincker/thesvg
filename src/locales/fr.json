@@ -1403,6 +1403,8 @@
       "dark": "Sombre",
       "default": "Par défaut",
       "light": "Clair",
+      "lockup": "Lockup",
+      "lockupDark": "Lockup sombre",
       "mono": "Mono",
       "suffix": "Variante {{name}}",
       "wordmark": "Logotype",

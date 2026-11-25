@@ -55,6 +55,8 @@ interface RawIconVariants {
   wordmark?: string;
   wordmarkLight?: string;
   wordmarkDark?: string;
+  lockup?: string;
+  lockupDark?: string;
   color?: string;
   [key: string]: string | undefined;
 }

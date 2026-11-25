@@ -1403,6 +1403,8 @@
       "dark": "Dunkel",
       "default": "Standard",
       "light": "Hell",
+      "lockup": "Lockup",
+      "lockupDark": "Lockup dunkel",
       "mono": "Mono",
       "suffix": "Variante {{name}}",
       "wordmark": "Wortmarke",

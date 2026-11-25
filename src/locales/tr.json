@@ -1403,6 +1403,8 @@
       "dark": "Koyu",
       "default": "Varsayılan",
       "light": "Açık",
+      "lockup": "Lockup",
+      "lockupDark": "Lockup koyu",
       "mono": "Mono",
       "suffix": "{{name}} varyantı",
       "wordmark": "Yazı logosu",

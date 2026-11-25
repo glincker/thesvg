@@ -387,6 +387,8 @@ Each icon can have up to 7 variants:
 - \`wordmark\` - Full text logo
 - \`wordmarkLight\` - White text logo
 - \`wordmarkDark\` - Dark text logo
+- \`lockup\` - Logo lockup for light backgrounds
+- \`lockupDark\` - Logo lockup for dark backgrounds
 
 ## CDN Usage
 
@@ -528,6 +530,8 @@ interface IconEntry {
     wordmark?: string;     // full logo with text
     wordmarkLight?: string;
     wordmarkDark?: string;
+    lockup?: string;
+    lockupDark?: string;
   };
   license: string;         // e.g. "CC0-1.0", "MIT", "Fair Use"
   url?: string;            // brand website
@@ -628,6 +632,8 @@ import { Github } from "@thesvg/react";
 | Wordmark | \`wordmark\` | Full logo with brand text |
 | Wordmark Light | \`wordmarkLight\` | Wordmark for light backgrounds |
 | Wordmark Dark | \`wordmarkDark\` | Wordmark for dark backgrounds |
+| Lockup | \`lockup\` | Logo lockup for light backgrounds |
+| Lockup Dark | \`lockupDark\` | Logo lockup for dark backgrounds |
 
 Not every icon has all variants. \`default\` is always present.
 

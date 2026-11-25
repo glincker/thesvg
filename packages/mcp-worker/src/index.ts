@@ -212,7 +212,7 @@ function createServer(): McpServer {
     {
       title: "List icon variants",
       description:
-        "List all available variants for a specific brand icon. Variants may include: default, mono, light, dark, wordmark, wordmarkLight, wordmarkDark, color.",
+        "List all available variants for a specific brand icon. Variants may include: default, mono, light, dark, wordmark, wordmarkLight, wordmarkDark, lockup, lockupDark, color.",
       inputSchema: z.object({
         slug: z
           .string()

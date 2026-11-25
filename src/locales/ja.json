@@ -1403,6 +1403,8 @@
       "dark": "ダーク",
       "default": "デフォルト",
       "light": "ライト",
+      "lockup": "ロックアップ",
+      "lockupDark": "ロックアップ(ダーク)",
       "mono": "モノ",
       "suffix": "{{name}} バリアント",
       "wordmark": "ワードマーク",

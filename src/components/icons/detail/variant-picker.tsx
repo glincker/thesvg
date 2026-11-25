@@ -16,9 +16,11 @@ function getPreviewBg(variantKey: string): string {
   switch (variantKey) {
     case "light":
     case "wordmarkLight":
+    case "lockup":
       return "bg-zinc-100";
     case "dark":
     case "wordmarkDark":
+    case "lockupDark":
       return "bg-zinc-800";
     default:
       return "icon-preview-bg";
