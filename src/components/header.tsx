@@ -392,14 +392,13 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                   href={withUtm("https://glinr.com", "header")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-[10.5px] leading-none text-muted-foreground transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
+                  className="flex items-center gap-1.5 text-[10.5px] leading-none text-muted-foreground transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
                 >
                   by
                   { }
-                  <img src="/icons/glinr/dark.svg" alt="" width={11} height={11} className="hidden size-[11px] dark:block" />
+                  <img src="/icons/glinr/wordmark-dark.svg" alt="GLINR Studios" width={91} height={14} className="hidden h-3.5 w-auto dark:block" />
                   { }
-                  <img src="/icons/glinr/light.svg" alt="" width={11} height={11} className="block size-[11px] dark:hidden" />
-                  <span className="font-medium">GLINR Studios</span>
+                  <img src="/icons/glinr/wordmark-light.svg" alt="GLINR Studios" width={91} height={14} className="block h-3.5 w-auto dark:hidden" />
                 </a>
               </div>
             </div>
