@@ -8,12 +8,15 @@
   </a>
 </p>
 
+<h2 align="center">La bibliothèque ouverte de logos de marques en SVG</h2>
+
+<p align="center">Plus de 7 900 logos, icônes et drapeaux en SVG, React, Vue, Svelte, CDN, CLI ou MCP. Gratuit et open source.</p>
+
 <p align="center">
-  <b>La bibliothèque ouverte de logos de marques en SVG</b><br />
-  Plus de 7 900 logos, icônes et drapeaux en SVG, React, Vue, Svelte, CDN, CLI ou MCP. Gratuit et open source.
+  <a href="https://trendshift.io/repositories/24396?utm_source=trendshift-badge&utm_medium=badge&utm_campaign=badge-trendshift-24396" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/24396/daily?language=TypeScript" alt="glincker/thesvg | Trendshift" width="200" /></a>
 </p>
 
-<p align="center"><sub><a href="https://thesvg.org"><b>Parcourir les icônes</b></a> · <a href="https://thesvg.org/docs">Docs</a> · <a href="https://thesvg.org/collection/flags">Drapeaux</a> · <a href="#démarrage-rapide">Démarrage rapide</a> · <a href="#installation">Installer</a> · <a href="#extensions">Extensions</a> · <a href="#cdn">CDN</a> · <a href="#api">API</a> · <a href="#paquets">Paquets</a> · <a href="https://thesvg.org/compare">Comparer</a> · <a href="#communauté">Communauté</a> · <a href="#contribuer">Contribuer</a></sub></p>
+<p align="center"><sub><a href="https://thesvg.org"><b>Parcourir les icônes</b></a> · <a href="https://thesvg.org/docs">Docs</a> · <a href="https://thesvg.org/collection/flags">Drapeaux</a> · <a href="https://thesvg.org/blog/country-flags">Nouveau : drapeaux</a> · <a href="#démarrage-rapide">Démarrage rapide</a> · <a href="#installation">Installer</a> · <a href="#extensions">Extensions</a> · <a href="#cdn">CDN</a> · <a href="#api">API</a> · <a href="#paquets">Paquets</a> · <a href="https://thesvg.org/compare">Comparer</a> · <a href="#communauté">Communauté</a> · <a href="#contribuer">Contribuer</a></sub></p>
 
 <p align="center"><sub><a href="README.md">English</a> · <a href="README.es.md">Español</a> · <b>Français</b> · <a href="README.de.md">Deutsch</a> · <a href="README.pt-BR.md">Português</a> · <a href="README.ja.md">日本語</a> · <a href="README.ko.md">한국어</a> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.ru.md">Русский</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.hi.md">हिन्दी</a></sub></p>
 
@@ -26,11 +29,18 @@
   <a href="https://github.com/glincker/thesvg/blob/main/LICENSE"><img src="https://img.shields.io/github/license/glincker/thesvg?style=flat-square" alt="license" /></a>
 </p>
 
-<details>
-<summary><sub>Plus de badges</sub></summary>
+
 <p align="center">
-  <a href="https://trendshift.io/repositories/24396?utm_source=trendshift-badge&utm_medium=badge&utm_campaign=badge-trendshift-24396" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/24396/daily?language=TypeScript" alt="glincker/thesvg | Trendshift" width="220" /></a>
+  <a href="https://thesvg.org">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" />
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image-light.png" />
+      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image-light.png" alt="theSVG, the open SVG brand library" width="720" />
+    </picture>
+  </a>
 </p>
+
+<!-- badges:start -->
 <p align="center">
   <a href="https://www.npmjs.com/package/@thesvg/flags"><img src="https://img.shields.io/npm/v/@thesvg/flags?style=flat-square&color=C2410C&label=flags" alt="@thesvg/flags" /></a>
   <a href="https://www.npmjs.com/package/@thesvg/mcp-server"><img src="https://img.shields.io/npm/v/@thesvg/mcp-server?style=flat-square&color=C2410C&label=MCP" alt="MCP server" /></a>
@@ -48,18 +58,7 @@
   <a href="https://socket.dev/npm/package/thesvg"><img src="https://socket.dev/api/badge/npm/package/thesvg" alt="Socket score for thesvg" /></a>
   <a href="https://www.npmjs.com/package/@thesvg/icons"><img src="https://img.shields.io/badge/provenance-verified-2EA44F?style=flat-square" alt="npm provenance verified" /></a>
 </p>
-</details>
-
-<p align="center">
-  <a href="https://thesvg.org">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" />
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image-light.png" />
-      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image-light.png" alt="theSVG, the open SVG brand library" width="720" />
-    </picture>
-  </a>
-</p>
-
+<!-- badges:end -->
 
 <p align="center">
   <sub>Chaque logo ci-dessous est servi directement par theSVG.</sub>

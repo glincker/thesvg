@@ -8,12 +8,15 @@
   </a>
 </p>
 
+<h2 align="center">오픈 SVG 브랜드 라이브러리</h2>
+
+<p align="center">7,900개 이상의 로고, 아이콘, 국기를 SVG, React, Vue, Svelte, CDN, CLI, MCP로. 무료 오픈 소스입니다.</p>
+
 <p align="center">
-  <b>오픈 SVG 브랜드 라이브러리</b><br />
-  7,900개 이상의 로고, 아이콘, 국기를 SVG, React, Vue, Svelte, CDN, CLI, MCP로. 무료 오픈 소스입니다.
+  <a href="https://trendshift.io/repositories/24396?utm_source=trendshift-badge&utm_medium=badge&utm_campaign=badge-trendshift-24396" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/24396/daily?language=TypeScript" alt="glincker/thesvg | Trendshift" width="200" /></a>
 </p>
 
-<p align="center"><sub><a href="https://thesvg.org"><b>아이콘 둘러보기</b></a> · <a href="https://thesvg.org/docs">문서</a> · <a href="https://thesvg.org/collection/flags">국기</a> · <a href="#빠른-시작">빠른 시작</a> · <a href="#설치">설치</a> · <a href="#확장-프로그램">확장 프로그램</a> · <a href="#cdn">CDN</a> · <a href="#api">API</a> · <a href="#패키지">패키지</a> · <a href="https://thesvg.org/compare">비교</a> · <a href="#커뮤니티">커뮤니티</a> · <a href="#기여하기">기여하기</a></sub></p>
+<p align="center"><sub><a href="https://thesvg.org"><b>아이콘 둘러보기</b></a> · <a href="https://thesvg.org/docs">문서</a> · <a href="https://thesvg.org/collection/flags">국기</a> · <a href="https://thesvg.org/blog/country-flags">신규: 국기</a> · <a href="#빠른-시작">빠른 시작</a> · <a href="#설치">설치</a> · <a href="#확장-프로그램">확장 프로그램</a> · <a href="#cdn">CDN</a> · <a href="#api">API</a> · <a href="#패키지">패키지</a> · <a href="https://thesvg.org/compare">비교</a> · <a href="#커뮤니티">커뮤니티</a> · <a href="#기여하기">기여하기</a></sub></p>
 
 <p align="center"><sub><a href="README.md">English</a> · <a href="README.es.md">Español</a> · <a href="README.fr.md">Français</a> · <a href="README.de.md">Deutsch</a> · <a href="README.pt-BR.md">Português</a> · <a href="README.ja.md">日本語</a> · <b>한국어</b> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.ru.md">Русский</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.hi.md">हिन्दी</a></sub></p>
 
@@ -26,11 +29,18 @@
   <a href="https://github.com/glincker/thesvg/blob/main/LICENSE"><img src="https://img.shields.io/github/license/glincker/thesvg?style=flat-square" alt="license" /></a>
 </p>
 
-<details>
-<summary><sub>더 많은 배지</sub></summary>
+
 <p align="center">
-  <a href="https://trendshift.io/repositories/24396?utm_source=trendshift-badge&utm_medium=badge&utm_campaign=badge-trendshift-24396" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/24396/daily?language=TypeScript" alt="glincker/thesvg | Trendshift" width="220" /></a>
+  <a href="https://thesvg.org">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" />
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image-light.png" />
+      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image-light.png" alt="theSVG, 오픈 SVG 브랜드 라이브러리" width="720" />
+    </picture>
+  </a>
 </p>
+
+<!-- badges:start -->
 <p align="center">
   <a href="https://www.npmjs.com/package/@thesvg/flags"><img src="https://img.shields.io/npm/v/@thesvg/flags?style=flat-square&color=C2410C&label=flags" alt="@thesvg/flags" /></a>
   <a href="https://www.npmjs.com/package/@thesvg/mcp-server"><img src="https://img.shields.io/npm/v/@thesvg/mcp-server?style=flat-square&color=C2410C&label=MCP" alt="MCP server" /></a>
@@ -48,18 +58,7 @@
   <a href="https://socket.dev/npm/package/thesvg"><img src="https://socket.dev/api/badge/npm/package/thesvg" alt="Socket score for thesvg" /></a>
   <a href="https://www.npmjs.com/package/@thesvg/icons"><img src="https://img.shields.io/badge/provenance-verified-2EA44F?style=flat-square" alt="npm provenance verified" /></a>
 </p>
-</details>
-
-<p align="center">
-  <a href="https://thesvg.org">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" />
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image-light.png" />
-      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image-light.png" alt="theSVG, 오픈 SVG 브랜드 라이브러리" width="720" />
-    </picture>
-  </a>
-</p>
-
+<!-- badges:end -->
 
 <p align="center">
   <sub>아래 로고는 모두 theSVG에서 바로 제공됩니다.</sub>

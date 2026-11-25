@@ -8,12 +8,15 @@
   </a>
 </p>
 
+<h2 align="center">オープンな SVG ブランドライブラリ</h2>
+
+<p align="center">7,900 以上のロゴ、アイコン、国旗を SVG、React、Vue、Svelte、CDN、CLI、MCP で。無料のオープンソースです。</p>
+
 <p align="center">
-  <b>オープンな SVG ブランドライブラリ</b><br />
-  7,900 以上のロゴ、アイコン、国旗を SVG、React、Vue、Svelte、CDN、CLI、MCP で。無料のオープンソースです。
+  <a href="https://trendshift.io/repositories/24396?utm_source=trendshift-badge&utm_medium=badge&utm_campaign=badge-trendshift-24396" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/24396/daily?language=TypeScript" alt="glincker/thesvg | Trendshift" width="200" /></a>
 </p>
 
-<p align="center"><sub><a href="https://thesvg.org"><b>アイコンを探す</b></a> · <a href="https://thesvg.org/docs">ドキュメント</a> · <a href="https://thesvg.org/collection/flags">国旗</a> · <a href="#クイックスタート">クイックスタート</a> · <a href="#インストール">インストール</a> · <a href="#拡張機能">拡張機能</a> · <a href="#cdn">CDN</a> · <a href="#api">API</a> · <a href="#パッケージ">パッケージ</a> · <a href="https://thesvg.org/compare">比較</a> · <a href="#コミュニティ">コミュニティ</a> · <a href="#コントリビューション">貢献する</a></sub></p>
+<p align="center"><sub><a href="https://thesvg.org"><b>アイコンを探す</b></a> · <a href="https://thesvg.org/docs">ドキュメント</a> · <a href="https://thesvg.org/collection/flags">国旗</a> · <a href="https://thesvg.org/blog/country-flags">新機能: 国旗</a> · <a href="#クイックスタート">クイックスタート</a> · <a href="#インストール">インストール</a> · <a href="#拡張機能">拡張機能</a> · <a href="#cdn">CDN</a> · <a href="#api">API</a> · <a href="#パッケージ">パッケージ</a> · <a href="https://thesvg.org/compare">比較</a> · <a href="#コミュニティ">コミュニティ</a> · <a href="#コントリビューション">貢献する</a></sub></p>
 
 <p align="center"><sub><a href="README.md">English</a> · <a href="README.es.md">Español</a> · <a href="README.fr.md">Français</a> · <a href="README.de.md">Deutsch</a> · <a href="README.pt-BR.md">Português</a> · <b>日本語</b> · <a href="README.ko.md">한국어</a> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.ru.md">Русский</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.hi.md">हिन्दी</a></sub></p>
 
@@ -26,11 +29,18 @@
   <a href="https://github.com/glincker/thesvg/blob/main/LICENSE"><img src="https://img.shields.io/github/license/glincker/thesvg?style=flat-square" alt="license" /></a>
 </p>
 
-<details>
-<summary><sub>その他のバッジ</sub></summary>
+
 <p align="center">
-  <a href="https://trendshift.io/repositories/24396?utm_source=trendshift-badge&utm_medium=badge&utm_campaign=badge-trendshift-24396" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/24396/daily?language=TypeScript" alt="glincker/thesvg | Trendshift" width="220" /></a>
+  <a href="https://thesvg.org">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" />
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image-light.png" />
+      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image-light.png" alt="theSVG、オープンな SVG ブランドライブラリ" width="720" />
+    </picture>
+  </a>
 </p>
+
+<!-- badges:start -->
 <p align="center">
   <a href="https://www.npmjs.com/package/@thesvg/flags"><img src="https://img.shields.io/npm/v/@thesvg/flags?style=flat-square&color=C2410C&label=flags" alt="@thesvg/flags" /></a>
   <a href="https://www.npmjs.com/package/@thesvg/mcp-server"><img src="https://img.shields.io/npm/v/@thesvg/mcp-server?style=flat-square&color=C2410C&label=MCP" alt="MCP server" /></a>
@@ -48,18 +58,7 @@
   <a href="https://socket.dev/npm/package/thesvg"><img src="https://socket.dev/api/badge/npm/package/thesvg" alt="Socket score for thesvg" /></a>
   <a href="https://www.npmjs.com/package/@thesvg/icons"><img src="https://img.shields.io/badge/provenance-verified-2EA44F?style=flat-square" alt="npm provenance verified" /></a>
 </p>
-</details>
-
-<p align="center">
-  <a href="https://thesvg.org">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" />
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image-light.png" />
-      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image-light.png" alt="theSVG、オープンな SVG ブランドライブラリ" width="720" />
-    </picture>
-  </a>
-</p>
-
+<!-- badges:end -->
 
 <p align="center">
   <sub>下のロゴはすべて theSVG から直接配信されています。</sub>

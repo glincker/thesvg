@@ -8,12 +8,15 @@
   </a>
 </p>
 
+<h2 align="center">ओपन SVG ब्रांड लाइब्रेरी</h2>
+
+<p align="center">7,900 से अधिक लोगो, आइकन और झंडे SVG, React, Vue, Svelte, CDN, CLI या MCP में। मुफ़्त और ओपन सोर्स।</p>
+
 <p align="center">
-  <b>ओपन SVG ब्रांड लाइब्रेरी</b><br />
-  7,900 से अधिक लोगो, आइकन और झंडे SVG, React, Vue, Svelte, CDN, CLI या MCP में। मुफ़्त और ओपन सोर्स।
+  <a href="https://trendshift.io/repositories/24396?utm_source=trendshift-badge&utm_medium=badge&utm_campaign=badge-trendshift-24396" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/24396/daily?language=TypeScript" alt="glincker/thesvg | Trendshift" width="200" /></a>
 </p>
 
-<p align="center"><sub><a href="https://thesvg.org"><b>आइकन देखें</b></a> · <a href="https://thesvg.org/docs">डॉक्स</a> · <a href="https://thesvg.org/collection/flags">झंडे</a> · <a href="#त्वरित-शुरुआत">क्विक स्टार्ट</a> · <a href="#इंस्टॉल-करें">इंस्टॉल</a> · <a href="#एक्सटेंशन">एक्सटेंशन</a> · <a href="#cdn">CDN</a> · <a href="#api">API</a> · <a href="#पैकेज">पैकेज</a> · <a href="https://thesvg.org/compare">तुलना</a> · <a href="#समुदाय">समुदाय</a> · <a href="#योगदान-करें">योगदान दें</a></sub></p>
+<p align="center"><sub><a href="https://thesvg.org"><b>आइकन देखें</b></a> · <a href="https://thesvg.org/docs">डॉक्स</a> · <a href="https://thesvg.org/collection/flags">झंडे</a> · <a href="https://thesvg.org/blog/country-flags">नया: झंडे</a> · <a href="#त्वरित-शुरुआत">क्विक स्टार्ट</a> · <a href="#इंस्टॉल-करें">इंस्टॉल</a> · <a href="#एक्सटेंशन">एक्सटेंशन</a> · <a href="#cdn">CDN</a> · <a href="#api">API</a> · <a href="#पैकेज">पैकेज</a> · <a href="https://thesvg.org/compare">तुलना</a> · <a href="#समुदाय">समुदाय</a> · <a href="#योगदान-करें">योगदान दें</a></sub></p>
 
 <p align="center"><sub><a href="README.md">English</a> · <a href="README.es.md">Español</a> · <a href="README.fr.md">Français</a> · <a href="README.de.md">Deutsch</a> · <a href="README.pt-BR.md">Português</a> · <a href="README.ja.md">日本語</a> · <a href="README.ko.md">한국어</a> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.ru.md">Русский</a> · <a href="README.tr.md">Türkçe</a> · <b>हिन्दी</b></sub></p>
 
@@ -26,11 +29,18 @@
   <a href="https://github.com/glincker/thesvg/blob/main/LICENSE"><img src="https://img.shields.io/github/license/glincker/thesvg?style=flat-square" alt="license" /></a>
 </p>
 
-<details>
-<summary><sub>और बैज</sub></summary>
+
 <p align="center">
-  <a href="https://trendshift.io/repositories/24396?utm_source=trendshift-badge&utm_medium=badge&utm_campaign=badge-trendshift-24396" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/24396/daily?language=TypeScript" alt="glincker/thesvg | Trendshift" width="220" /></a>
+  <a href="https://thesvg.org">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" />
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image-light.png" />
+      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image-light.png" alt="theSVG, ओपन SVG ब्रांड लाइब्रेरी" width="720" />
+    </picture>
+  </a>
 </p>
+
+<!-- badges:start -->
 <p align="center">
   <a href="https://www.npmjs.com/package/@thesvg/flags"><img src="https://img.shields.io/npm/v/@thesvg/flags?style=flat-square&color=C2410C&label=flags" alt="@thesvg/flags" /></a>
   <a href="https://www.npmjs.com/package/@thesvg/mcp-server"><img src="https://img.shields.io/npm/v/@thesvg/mcp-server?style=flat-square&color=C2410C&label=MCP" alt="MCP server" /></a>
@@ -48,18 +58,7 @@
   <a href="https://socket.dev/npm/package/thesvg"><img src="https://socket.dev/api/badge/npm/package/thesvg" alt="Socket score for thesvg" /></a>
   <a href="https://www.npmjs.com/package/@thesvg/icons"><img src="https://img.shields.io/badge/provenance-verified-2EA44F?style=flat-square" alt="npm provenance verified" /></a>
 </p>
-</details>
-
-<p align="center">
-  <a href="https://thesvg.org">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image.png" />
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image-light.png" />
-      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/og-image-light.png" alt="theSVG, ओपन SVG ब्रांड लाइब्रेरी" width="720" />
-    </picture>
-  </a>
-</p>
-
+<!-- badges:end -->
 
 <p align="center">
   <sub>नीचे दिया हर लोगो सीधे theSVG से परोसा जा रहा है।</sub>
