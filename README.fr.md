@@ -627,7 +627,7 @@ Si vous êtes propriétaire d'une marque et souhaitez qu'une icône soit mise à
 ---
 
 <!-- footer-tagline:start -->
-<p align="center"><b>La bibliothèque ouverte de logos de marques en SVG</b><br />Plus de 7 900 logos, icônes et drapeaux en SVG, React, Vue, Svelte, CDN, CLI ou MCP. Gratuit et open source.</p>
+<p align="center"><b>La bibliothèque ouverte de logos de marques en SVG</b><br />Les logos appartiennent à leurs propriétaires. theSVG est le catalogue unique des icônes réellement utilisées, des plus populaires aux plus courantes, pour ne plus avoir à chercher ailleurs. Il ne cesse de s'enrichir.</p>
 <!-- footer-tagline:end -->
 
 <p align="center">

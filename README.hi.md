@@ -627,7 +627,7 @@ AWS Architecture Icons [CC BY-ND 2.0](https://creativecommons.org/licenses/by-nd
 ---
 
 <!-- footer-tagline:start -->
-<p align="center"><b>ओपन SVG ब्रांड लाइब्रेरी</b><br />7,900 से अधिक लोगो, आइकन और झंडे SVG, React, Vue, Svelte, CDN, CLI या MCP में। मुफ़्त और ओपन सोर्स।</p>
+<p align="center"><b>ओपन SVG ब्रांड लाइब्रेरी</b><br />लोगो अपने-अपने मालिकों के हैं। theSVG एक ही जगह का कैटलॉग है, जिसमें सबसे लोकप्रिय से लेकर रोज़ इस्तेमाल होने वाले आइकन तक वह सब है जिसकी वाकई ज़रूरत पड़ती है, इसलिए दूसरी साइटों पर ढूँढने की ज़रूरत नहीं। कैटलॉग लगातार बढ़ रहा है।</p>
 <!-- footer-tagline:end -->
 
 <p align="center">

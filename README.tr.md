@@ -627,7 +627,7 @@ Kod tabanı, araçlar ve UI ikonları için [MIT](./LICENSE). Tek tek marka ikon
 ---
 
 <!-- footer-tagline:start -->
-<p align="center"><b>Açık SVG marka kütüphanesi</b><br />7.900'den fazla logo, simge ve bayrak: SVG, React, Vue, Svelte, CDN, CLI veya MCP olarak. Ücretsiz ve açık kaynak.</p>
+<p align="center"><b>Açık SVG marka kütüphanesi</b><br />Logolar sahiplerine aittir. theSVG, en popülerinden günlük kullanılanına kadar gerçekten ihtiyaç duyulan simgelerin tek durak kataloğudur; başka sitelerde aramanıza gerek kalmaz. Katalog büyümeye devam ediyor.</p>
 <!-- footer-tagline:end -->
 
 <p align="center">

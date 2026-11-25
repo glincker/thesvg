@@ -627,7 +627,7 @@ Wenn du Markeninhaber bist und ein Icon aktualisiert oder entfernt haben möchte
 ---
 
 <!-- footer-tagline:start -->
-<p align="center"><b>Die offene SVG-Markenbibliothek</b><br />Über 7.900 Logos, Icons und Flaggen als SVG, React, Vue, Svelte, CDN, CLI oder MCP. Kostenlos und Open Source.</p>
+<p align="center"><b>Die offene SVG-Markenbibliothek</b><br />Die Logos gehören ihren Eigentümern. theSVG ist der zentrale Katalog für die Icons, die wirklich gebraucht werden, von den beliebtesten bis zu den alltäglichen, damit du nicht mehr auf anderen Seiten suchen musst. Er wächst stetig.</p>
 <!-- footer-tagline:end -->
 
 <p align="center">

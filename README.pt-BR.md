@@ -627,7 +627,7 @@ Se você é dono de uma marca e quer que um ícone seja atualizado ou removido, 
 ---
 
 <!-- footer-tagline:start -->
-<p align="center"><b>A biblioteca aberta de marcas em SVG</b><br />Mais de 7.900 logos, ícones e bandeiras em SVG, React, Vue, Svelte, CDN, CLI ou MCP. Grátis e de código aberto.</p>
+<p align="center"><b>A biblioteca aberta de marcas em SVG</b><br />Os logos pertencem aos seus proprietários. O theSVG é o catálogo único dos ícones que realmente se usam, dos mais populares aos do dia a dia, para você não precisar procurar em outros sites. Ele continua crescendo.</p>
 <!-- footer-tagline:end -->
 
 <p align="center">

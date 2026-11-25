@@ -627,7 +627,7 @@ AWS 架构图标按 [CC BY-ND 2.0](https://creativecommons.org/licenses/by-nd/2.
 ---
 
 <!-- footer-tagline:start -->
-<p align="center"><b>开放的 SVG 品牌图标库</b><br />7,900 多个标志、图标和国旗，支持 SVG、React、Vue、Svelte、CDN、CLI 和 MCP。免费开源。</p>
+<p align="center"><b>开放的 SVG 品牌图标库</b><br />标志的权利归各自所有者。theSVG 是一站式目录，收录最常用、最热门的图标，不必再到处寻找。目录仍在持续增长。</p>
 <!-- footer-tagline:end -->
 
 <p align="center">

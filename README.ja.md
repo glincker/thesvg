@@ -627,7 +627,7 @@ AWS Architecture Icons は [CC BY-ND 2.0](https://creativecommons.org/licenses/b
 ---
 
 <!-- footer-tagline:start -->
-<p align="center"><b>オープンな SVG ブランドライブラリ</b><br />7,900 以上のロゴ、アイコン、国旗を SVG、React、Vue、Svelte、CDN、CLI、MCP で。無料のオープンソースです。</p>
+<p align="center"><b>オープンな SVG ブランドライブラリ</b><br />ロゴの権利は各権利者に帰属します。theSVG は、よく使われる人気のアイコンから日常的なものまでそろう、ワンストップのカタログです。他のサイトを探し回る必要はもうありません。カタログは今も増え続けています。</p>
 <!-- footer-tagline:end -->
 
 <p align="center">

@@ -627,7 +627,7 @@ If you are a brand owner and would like an icon updated or removed, please [open
 ---
 
 <!-- footer-tagline:start -->
-<p align="center"><b>The open SVG brand library</b><br />7,900+ logos, icons and flags as SVG, React, Vue, Svelte, CDN, CLI or MCP. Free, open source.</p>
+<p align="center"><b>The open SVG brand library</b><br />Logos belong to their owners. theSVG is the one stop catalog for the icons developers actually use, from the most popular to the everyday ones, so you never have to hunt across other sites. It keeps growing.</p>
 <!-- footer-tagline:end -->
 
 <p align="center">
