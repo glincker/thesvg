@@ -1,0 +1,62 @@
+{
+  "language": { "label": "भाषा" },
+  "nav": {
+    "brandIcons": "ब्रांड आइकन",
+    "uiIcons": "UI आइकन",
+    "categories": "श्रेणियाँ",
+    "flags": "झंडे",
+    "docs": "दस्तावेज़",
+    "submitIcon": "आइकन सबमिट करें",
+    "blog": "ब्लॉग",
+    "cdnUsage": "CDN उपयोग",
+    "compare": "तुलना करें"
+  },
+  "header": {
+    "home": "theSVG होम",
+    "submitAria": "आइकन सबमिट करें",
+    "searchPlaceholder": "\"{{brand}}\" खोजें",
+    "searchIcons": "आइकन खोजें",
+    "clearSearch": "खोज साफ़ करें",
+    "searchIn": "इसमें खोजें",
+    "all": "सभी",
+    "toggleMenu": "मेनू खोलें/बंद करें",
+    "toggleTheme": "थीम बदलें",
+    "star": "स्टार",
+    "docsGuides": "दस्तावेज़ और गाइड",
+    "extensionsIntegrations": "एक्सटेंशन और इंटीग्रेशन",
+    "blogUpdates": "ब्लॉग और अपडेट",
+    "submitAnIcon": "आइकन सबमिट करें"
+  },
+  "footer": {
+    "headline": "ओपन सोर्स। समुदाय द्वारा संचालित।",
+    "tagline": "डेवलपर, डिज़ाइनर और टीमों के लिए मुफ़्त ब्रांड SVG। किसी भी प्रोजेक्ट में इस्तेमाल करें, श्रेय देना ज़रूरी नहीं।",
+    "stats": {
+      "brandIcons": "ब्रांड आइकन",
+      "uiIcons": "UI आइकन",
+      "svgVariants": "SVG वेरिएंट",
+      "collections": "संग्रह"
+    },
+    "submitAnIcon": "आइकन सबमिट करें",
+    "meetFounder": "संस्थापक से मिलें",
+    "columns": {
+      "product": "प्रोडक्ट",
+      "resources": "संसाधन",
+      "community": "समुदाय",
+      "legal": "कानूनी"
+    },
+    "links": {
+      "figmaPlugin": "Figma प्लगइन",
+      "vscodeExtension": "VS Code एक्सटेंशन",
+      "raycastExtension": "Raycast एक्सटेंशन",
+      "issues": "इश्यू",
+      "discussions": "चर्चाएँ",
+      "mentions": "उल्लेख",
+      "contributing": "योगदान",
+      "sponsor": "स्पॉन्सर",
+      "legal": "कानूनी",
+      "privacy": "गोपनीयता",
+      "trademarkPolicy": "ट्रेडमार्क नीति",
+      "contact": "संपर्क"
+    }
+  }
+}

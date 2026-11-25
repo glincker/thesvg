@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useId, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
+import { LanguageSwitcher } from "@/components/language-switcher";
 import { capture } from "@/lib/analytics";
 import { usePathname, useRouter } from "next/navigation";
 import { UiGlyph } from "@/components/ui-glyph";
@@ -40,13 +42,14 @@ import { withUtm } from "@/lib/external-link";
 const PLACEHOLDER_BRANDS = ["GitHub", "Stripe", "Figma", "Docker", "AWS Lambda", "Azure Functions", "BigQuery", "Vercel", "React", "Tailwind CSS"];
 
 function SubmitButton() {
+  const { t } = useTranslation();
   return (
-    <Link href="/submit" className="group/submit relative" aria-label="Submit an icon">
+    <Link href="/submit" className="group/submit relative" aria-label={t("header.submitAria")}>
       <span className="relative inline-flex h-9 items-center gap-1.5 overflow-hidden rounded-lg bg-gradient-to-b from-orange-400 to-orange-600 px-3 text-xs font-semibold text-white shadow-[0_1px_3px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all duration-200 hover:from-orange-400 hover:to-orange-500 hover:shadow-[0_3px_12px_rgba(249,115,22,0.4),inset_0_1px_0_rgba(255,255,255,0.25)] active:scale-[0.97] active:shadow-[0_0px_1px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(0,0,0,0.1)] sm:h-8 sm:px-3.5">
         {/* Shimmer */}
         <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-700 group-hover/submit:translate-x-full" />
         <UiGlyph name="plus" className="relative h-5 w-5 transition-transform duration-200 group-hover/submit:rotate-90 sm:h-4 sm:w-4" />
-        <span className="relative hidden sm:inline">Submit Icon</span>
+        <span className="relative hidden sm:inline">{t("nav.submitIcon")}</span>
       </span>
     </Link>
   );
@@ -66,6 +69,7 @@ interface HeaderProps {
 }
 
 export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
+  const { t } = useTranslation();
   const stars = useGithubStars(githubStars);
   useEffect(() => {
     trackStarCta("header", "viewed", stars);
@@ -164,16 +168,16 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
         deleting = false;
         brandIdx = (brandIdx + 1) % PLACEHOLDER_BRANDS.length;
       }
-      input.placeholder = `Search "${PLACEHOLDER_BRANDS[brandIdx].slice(0, chars)}"`;
+      input.placeholder = t("header.searchPlaceholder", { brand: PLACEHOLDER_BRANDS[brandIdx].slice(0, chars) });
       timer = setTimeout(tick, delay);
     };
     timer = setTimeout(tick, 80);
     return () => clearTimeout(timer);
-  }, [animatePlaceholder]);
+  }, [animatePlaceholder, t]);
 
   const dynamicPlaceholder = pathname.startsWith("/ui") ? "Search UI icons..." : query || focused
     ? "Search icons..."
-    : `Search "${PLACEHOLDER_BRANDS[0]}"`;
+    : t("header.searchPlaceholder", { brand: PLACEHOLDER_BRANDS[0] });
 
   const isHome = pathname === "/";
   const isUi = pathname.startsWith("/ui");
@@ -371,12 +375,12 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
               size="icon"
               className="h-11 w-11 md:hidden"
               onClick={toggleSidebar}
-              aria-label="Toggle menu"
+              aria-label={t("header.toggleMenu")}
             >
               <UiGlyph name="menu" className="h-6 w-6" />
             </Button>
 
-            <Link href="/" className="group/logo flex items-center gap-1.5 text-foreground" aria-label="theSVG home">
+            <Link href="/" className="group/logo flex items-center gap-1.5 text-foreground" aria-label={t("header.home")}>
               <LogoMorph mode={isUi ? "ui" : "brand"} className="h-9 w-9 rounded-lg transition-transform duration-200 group-hover/logo:scale-105" />
               <span className="hidden text-[15px] font-bold tracking-tight text-foreground sm:inline">
                 the<span className="text-orange-500">SVG</span>
@@ -466,7 +470,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                   "h-11 w-full rounded-xl border border-border bg-muted/40 pr-12 pl-9 text-base shadow-sm outline-none transition-all placeholder:text-muted-foreground/50 focus:border-primary/40 focus:bg-background focus:shadow-[0_2px_12px_-2px_rgba(0,0,0,0.08)] focus:ring-1 focus:ring-ring/30 sm:h-9 sm:pr-16 sm:text-sm dark:border-white/[0.08] dark:bg-white/[0.04] dark:focus:border-white/[0.15] dark:focus:bg-white/[0.06] dark:focus:shadow-[0_2px_12px_-2px_rgba(0,0,0,0.3)]",
                   scope && "sm:pr-56",
                 )}
-                aria-label="Search icons"
+                aria-label={t("header.searchIcons")}
                 role="combobox"
                 aria-expanded={showDropdown}
                 aria-controls={listboxId}
@@ -495,7 +499,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                     type="button"
                     onClick={() => { setQuery(""); setFocused(false); }}
                     className="flex h-5 w-5 items-center justify-center rounded text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                    aria-label="Clear search"
+                    aria-label={t("header.clearSearch")}
                   >
                     <UiGlyph name="x" className="h-3.5 w-3.5" />
                   </button>
@@ -524,8 +528,8 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                   className="flex flex-wrap items-center gap-1.5 border-b border-border/30 px-3 py-2.5 dark:border-white/[0.06]"
                   onMouseDown={(e) => e.preventDefault()}
                 >
-                  <span className="mr-1 text-[11px] font-medium text-muted-foreground">Search in</span>
-                  {[{ id: null, label: "All" }, ...COLLECTIONS_LIST.map((m) => ({ id: m.id as string, label: m.heroLabel }))].map((chip) => {
+                  <span className="mr-1 text-[11px] font-medium text-muted-foreground">{t("header.searchIn")}</span>
+                  {[{ id: null, label: t("header.all") }, ...COLLECTIONS_LIST.map((m) => ({ id: m.id as string, label: m.heroLabel }))].map((chip) => {
                     const on = (scope ?? null) === chip.id;
                     return (
                       <button
@@ -694,10 +698,10 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                       Pages
                     </p>
                     {[
-                      { href: "/docs", icon: "book-open", label: "Docs & Guides" },
-                      { href: "/extensions", icon: "package", label: "Extensions & Integrations" },
-                      { href: "/blog", icon: "file-text", label: "Blog & Updates" },
-                      { href: "/submit", icon: "sparkles", label: "Submit an Icon" },
+                      { href: "/docs", icon: "book-open", label: t("header.docsGuides") },
+                      { href: "/extensions", icon: "package", label: t("header.extensionsIntegrations") },
+                      { href: "/blog", icon: "file-text", label: t("header.blogUpdates") },
+                      { href: "/submit", icon: "sparkles", label: t("header.submitAnIcon") },
                     ].map((item) => (
                       <Link
                         key={item.href}
@@ -825,7 +829,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                     height={16}
                     className="h-4 w-4 dark:invert"
                   />
-                  <span className="hidden lg:inline">Star</span>
+                  <span className="hidden lg:inline">{t("header.star")}</span>
                 </span>
                 {stars !== null && (
                   <span className="hidden h-full items-center gap-1 border-l border-amber-500/30 bg-amber-500/[0.14] px-2 tabular-nums text-amber-700 sm:inline-flex dark:border-amber-400/25 dark:bg-amber-400/[0.12] dark:text-amber-300">
@@ -835,12 +839,13 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
                 )}
               </a>
               <DisplayMenu />
+              <LanguageSwitcher />
               <Button
                 variant="ghost"
                 size="icon"
                 className="h-9 w-9 sm:h-8 sm:w-8"
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                aria-label="Toggle theme"
+                aria-label={t("header.toggleTheme")}
               >
                 <UiGlyph name="sun" look="glass" className="h-6 w-6 scale-100 rotate-0 text-foreground transition-transform dark:scale-0 dark:-rotate-90" />
                 <UiGlyph name="moon" look="glass" className="absolute h-6 w-6 scale-0 rotate-90 text-foreground transition-transform dark:scale-100 dark:rotate-0" />

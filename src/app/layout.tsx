@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import { I18nProvider } from "@/i18n/provider";
 import { Header } from "@/components/header";
 import { fetchRepoStars } from "@/lib/github-stars";
 import { Footer } from "@/components/footer";
@@ -168,6 +169,7 @@ export default async function RootLayout({
           storageKey="thesvg-theme"
           disableTransitionOnChange
         >
+          <I18nProvider>
           <TooltipProvider delay={300}>
           <StoreHydration />
           <InterfaceSizeSync />
@@ -199,6 +201,7 @@ export default async function RootLayout({
           <CommandPalette />
           <StarPrompt />
           </TooltipProvider>
+          </I18nProvider>
         </ThemeProvider>
       </body>
     </html>

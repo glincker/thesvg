@@ -13,10 +13,13 @@ import {
   getCollections,
 } from "@/lib/icons";
 import { AnimatedCounter } from "@/components/footer-counter";
+import { T } from "@/components/t";
 import uiManifest from "@/data/ui-icons.json";
 
 interface FooterLink {
   label: string;
+  /** Key in the locale files; the English label is the fallback. */
+  i18n?: string;
   href: string;
   external?: boolean;
   /** UI glyph shown before the label. */
@@ -26,39 +29,39 @@ interface FooterLink {
 }
 
 const PRODUCT_LINKS: FooterLink[] = [
-  { label: "Brand Icons", href: "/", glyph: "layout-grid" },
-  { label: "UI Icons", href: "/ui", glyph: "shapes" },
-  { label: "Categories", href: "/categories", glyph: "layers" },
-  { label: "Flags", href: "/collection/flags", glyph: "flag" },
-  { label: "Docs", href: "/docs", glyph: "book-open" },
-  { label: "Submit Icon", href: "/submit", glyph: "upload" },
-  { label: "Blog", href: "/blog", glyph: "newspaper" },
+  { label: "Brand Icons", i18n: "nav.brandIcons", href: "/", glyph: "layout-grid" },
+  { label: "UI Icons", i18n: "nav.uiIcons", href: "/ui", glyph: "shapes" },
+  { label: "Categories", i18n: "nav.categories", href: "/categories", glyph: "layers" },
+  { label: "Flags", i18n: "nav.flags", href: "/collection/flags", glyph: "flag" },
+  { label: "Docs", i18n: "nav.docs", href: "/docs", glyph: "book-open" },
+  { label: "Submit Icon", i18n: "nav.submitIcon", href: "/submit", glyph: "upload" },
+  { label: "Blog", i18n: "nav.blog", href: "/blog", glyph: "newspaper" },
 ];
 
 const RESOURCE_LINKS: FooterLink[] = [
-  { label: "Figma Plugin", href: "https://www.figma.com/community/plugin/1612997159050367763", external: true, brand: "figma" },
-  { label: "VS Code Extension", href: "https://marketplace.visualstudio.com/items?itemName=glincker.thesvg", external: true, brand: "visual-studio-code" },
-  { label: "Raycast Extension", href: "https://www.raycast.com/thegdsks/thesvg", external: true, brand: "raycast" },
+  { label: "Figma Plugin", i18n: "footer.links.figmaPlugin", href: "https://www.figma.com/community/plugin/1612997159050367763", external: true, brand: "figma" },
+  { label: "VS Code Extension", i18n: "footer.links.vscodeExtension", href: "https://marketplace.visualstudio.com/items?itemName=glincker.thesvg", external: true, brand: "visual-studio-code" },
+  { label: "Raycast Extension", i18n: "footer.links.raycastExtension", href: "https://www.raycast.com/thegdsks/thesvg", external: true, brand: "raycast" },
   { label: "npm Packages", href: "/packages", brand: "npm" },
-  { label: "CDN Usage", href: "/extensions", glyph: "cloud" },
-  { label: "Compare", href: "/compare", glyph: "git-compare" },
+  { label: "CDN Usage", i18n: "nav.cdnUsage", href: "/extensions", glyph: "cloud" },
+  { label: "Compare", i18n: "nav.compare", href: "/compare", glyph: "git-compare" },
 ];
 
 const COMMUNITY_LINKS: FooterLink[] = [
   { label: "GitHub", href: "https://github.com/GLINCKER/thesvg", external: true, glyph: "git-branch" },
-  { label: "Issues", href: "https://github.com/GLINCKER/thesvg/issues", external: true, glyph: "circle-alert" },
-  { label: "Discussions", href: "https://github.com/GLINCKER/thesvg/discussions", external: true, glyph: "messages-square" },
+  { label: "Issues", i18n: "footer.links.issues", href: "https://github.com/GLINCKER/thesvg/issues", external: true, glyph: "circle-alert" },
+  { label: "Discussions", i18n: "footer.links.discussions", href: "https://github.com/GLINCKER/thesvg/discussions", external: true, glyph: "messages-square" },
   { label: "Discord", href: "https://discord.gg/Ar5pcaZB99", external: true, brand: "discord" },
-  { label: "Mentions", href: "/extensions/mentions", glyph: "megaphone" },
-  { label: "Contributing", href: "https://github.com/GLINCKER/thesvg/blob/main/CONTRIBUTING.md", external: true, glyph: "git-pull-request" },
-  { label: "Sponsor", href: "https://github.com/sponsors/glincker", external: true, glyph: "heart" },
+  { label: "Mentions", i18n: "footer.links.mentions", href: "/extensions/mentions", glyph: "megaphone" },
+  { label: "Contributing", i18n: "footer.links.contributing", href: "https://github.com/GLINCKER/thesvg/blob/main/CONTRIBUTING.md", external: true, glyph: "git-pull-request" },
+  { label: "Sponsor", i18n: "footer.links.sponsor", href: "https://github.com/sponsors/glincker", external: true, glyph: "heart" },
 ];
 
 const LEGAL_LINKS: FooterLink[] = [
-  { label: "Legal", href: "/legal", glyph: "scale" },
-  { label: "Privacy", href: "/privacy", glyph: "lock" },
-  { label: "Trademark Policy", href: TRADEMARK_POLICY_URL, external: true, glyph: "badge-check" },
-  { label: "Contact", href: "/contact", glyph: "mail" },
+  { label: "Legal", i18n: "footer.links.legal", href: "/legal", glyph: "scale" },
+  { label: "Privacy", i18n: "footer.links.privacy", href: "/privacy", glyph: "lock" },
+  { label: "Trademark Policy", i18n: "footer.links.trademarkPolicy", href: TRADEMARK_POLICY_URL, external: true, glyph: "badge-check" },
+  { label: "Contact", i18n: "footer.links.contact", href: "/contact", glyph: "mail" },
 ];
 
 const SOCIALS = [
@@ -85,7 +88,7 @@ function FooterLinkItem({ link }: { link: FooterLink }) {
     return (
       <a href={withUtm(link.href, "footer")} target="_blank" rel="noopener noreferrer" className={cls}>
         <LinkIcon link={link} />
-        {link.label}
+        {link.i18n ? <T k={link.i18n} fallback={link.label} /> : link.label}
         <UiGlyph name="arrow-up-right" className="size-3 opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100" />
       </a>
     );
@@ -94,16 +97,16 @@ function FooterLinkItem({ link }: { link: FooterLink }) {
   return (
     <Link href={link.href} className={cls}>
       <LinkIcon link={link} />
-      {link.label}
+      {link.i18n ? <T k={link.i18n} fallback={link.label} /> : link.label}
     </Link>
   );
 }
 
-function FooterColumn({ title, links }: { title: string; links: FooterLink[] }) {
+function FooterColumn({ title, titleKey, links }: { title: string; titleKey: string; links: FooterLink[] }) {
   return (
     <div className="flex flex-col gap-3">
       <h3 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground/80">
-        {title}
+        <T k={titleKey} fallback={title} />
       </h3>
       <ul className="flex flex-col gap-2.5">
         {links.map((link) => (
@@ -123,7 +126,7 @@ function StatItem({
 }: {
   icon: React.ReactNode;
   value: number;
-  label: string;
+  label: React.ReactNode;
 }) {
   return (
     <div className="flex items-center gap-3">
@@ -157,33 +160,32 @@ export function Footer() {
           <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
             <div>
               <h2 className="text-lg font-semibold text-foreground">
-                Open source. Community driven.
+                <T k="footer.headline" fallback="Open source. Community driven." />
               </h2>
               <p className="mt-1 max-w-md text-sm text-muted-foreground">
-                Free brand SVGs for developers, designers, and teams.
-                Use them in any project, no attribution required.
+                <T k="footer.tagline" fallback="Free brand SVGs for developers, designers, and teams. Use them in any project, no attribution required." />
               </p>
             </div>
             <div className="flex flex-wrap gap-x-8 gap-y-4">
               <StatItem
                 icon={<UiGlyph name="layers" className="size-5 text-orange-500" />}
                 value={iconCount}
-                label="Brand Icons"
+                label={<T k="footer.stats.brandIcons" fallback="Brand Icons" />}
               />
               <StatItem
                 icon={<UiGlyph name="shapes" className="size-5 text-orange-500" />}
                 value={uiIconCount}
-                label="UI Icons"
+                label={<T k="footer.stats.uiIcons" fallback="UI Icons" />}
               />
               <StatItem
                 icon={<UiGlyph name="package" className="size-5 text-orange-500" />}
                 value={variantCount}
-                label="SVG Variants"
+                label={<T k="footer.stats.svgVariants" fallback="SVG Variants" />}
               />
               <StatItem
                 icon={<UiGlyph name="download" className="size-5 text-orange-500" />}
                 value={collectionCount}
-                label="Collections"
+                label={<T k="footer.stats.collections" fallback="Collections" />}
               />
             </div>
           </div>
@@ -192,7 +194,7 @@ export function Footer() {
               href="/submit"
               className="inline-flex items-center rounded-lg bg-foreground px-4 py-2 text-sm font-medium text-background transition-opacity hover:opacity-90"
             >
-              Submit an Icon
+              <T k="footer.submitAnIcon" fallback="Submit an Icon" />
             </Link>
             <a
               href={withUtm("https://github.com/GLINCKER/thesvg", "footer")}
@@ -314,10 +316,10 @@ export function Footer() {
             </div>
 
             {/* Link columns */}
-            <FooterColumn title="Product" links={PRODUCT_LINKS} />
-            <FooterColumn title="Resources" links={RESOURCE_LINKS} />
+            <FooterColumn title="Product" titleKey="footer.columns.product" links={PRODUCT_LINKS} />
+            <FooterColumn title="Resources" titleKey="footer.columns.resources" links={RESOURCE_LINKS} />
             <div className="flex flex-col gap-3">
-              <FooterColumn title="Community" links={COMMUNITY_LINKS} />
+              <FooterColumn title="Community" titleKey="footer.columns.community" links={COMMUNITY_LINKS} />
               <a
                 href={withUtm("https://thegdsks.com", "footer")}
                 target="_blank"
@@ -327,11 +329,11 @@ export function Footer() {
                 <span className="flex h-5 w-5 items-center justify-center rounded-full bg-orange-500/15">
                   <UiGlyph name="heart" className="size-3 text-orange-500" />
                 </span>
-                Meet the founder
+                <T k="footer.meetFounder" fallback="Meet the founder" />
                 <UiGlyph name="arrow-up-right" className="size-3 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
               </a>
             </div>
-            <FooterColumn title="Legal" links={LEGAL_LINKS} />
+            <FooterColumn title="Legal" titleKey="footer.columns.legal" links={LEGAL_LINKS} />
           </div>
 
           {/* GLINR Studios section */}

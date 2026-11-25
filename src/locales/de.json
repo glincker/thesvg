@@ -1,0 +1,62 @@
+{
+  "language": { "label": "Sprache" },
+  "nav": {
+    "brandIcons": "Marken-Icons",
+    "uiIcons": "UI-Icons",
+    "categories": "Kategorien",
+    "flags": "Flaggen",
+    "docs": "Doku",
+    "submitIcon": "Icon einreichen",
+    "blog": "Blog",
+    "cdnUsage": "CDN-Nutzung",
+    "compare": "Vergleichen"
+  },
+  "header": {
+    "home": "theSVG Startseite",
+    "submitAria": "Ein Icon einreichen",
+    "searchPlaceholder": "Suche nach \"{{brand}}\"",
+    "searchIcons": "Icons suchen",
+    "clearSearch": "Suche löschen",
+    "searchIn": "Suchen in",
+    "all": "Alle",
+    "toggleMenu": "Menü umschalten",
+    "toggleTheme": "Design umschalten",
+    "star": "Star",
+    "docsGuides": "Doku & Anleitungen",
+    "extensionsIntegrations": "Erweiterungen & Integrationen",
+    "blogUpdates": "Blog & Neuigkeiten",
+    "submitAnIcon": "Icon einreichen"
+  },
+  "footer": {
+    "headline": "Open Source. Von der Community getragen.",
+    "tagline": "Kostenlose Marken-SVGs für Entwickler, Designer und Teams. In jedem Projekt nutzbar, ohne Namensnennung.",
+    "stats": {
+      "brandIcons": "Marken-Icons",
+      "uiIcons": "UI-Icons",
+      "svgVariants": "SVG-Varianten",
+      "collections": "Sammlungen"
+    },
+    "submitAnIcon": "Icon einreichen",
+    "meetFounder": "Den Gründer kennenlernen",
+    "columns": {
+      "product": "Produkt",
+      "resources": "Ressourcen",
+      "community": "Community",
+      "legal": "Rechtliches"
+    },
+    "links": {
+      "figmaPlugin": "Figma-Plugin",
+      "vscodeExtension": "VS Code-Erweiterung",
+      "raycastExtension": "Raycast-Erweiterung",
+      "issues": "Issues",
+      "discussions": "Diskussionen",
+      "mentions": "Erwähnungen",
+      "contributing": "Mitwirken",
+      "sponsor": "Sponsor",
+      "legal": "Rechtliches",
+      "privacy": "Datenschutz",
+      "trademarkPolicy": "Markenrichtlinie",
+      "contact": "Kontakt"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "language": { "label": "Langue" },
+  "nav": {
+    "brandIcons": "Icônes de marques",
+    "uiIcons": "Icônes d'interface",
+    "categories": "Catégories",
+    "flags": "Drapeaux",
+    "docs": "Documentation",
+    "submitIcon": "Soumettre une icône",
+    "blog": "Blog",
+    "cdnUsage": "Utilisation du CDN",
+    "compare": "Comparer"
+  },
+  "header": {
+    "home": "Accueil theSVG",
+    "submitAria": "Soumettre une icône",
+    "searchPlaceholder": "Rechercher \"{{brand}}\"",
+    "searchIcons": "Rechercher des icônes",
+    "clearSearch": "Effacer la recherche",
+    "searchIn": "Rechercher dans",
+    "all": "Tout",
+    "toggleMenu": "Afficher ou masquer le menu",
+    "toggleTheme": "Changer de thème",
+    "star": "Étoile",
+    "docsGuides": "Documentation et guides",
+    "extensionsIntegrations": "Extensions et intégrations",
+    "blogUpdates": "Blog et actualités",
+    "submitAnIcon": "Soumettre une icône"
+  },
+  "footer": {
+    "headline": "Open source. Porté par la communauté.",
+    "tagline": "Des SVG de marques gratuits pour les développeurs, designers et équipes. Utilisez-les dans n'importe quel projet, sans attribution.",
+    "stats": {
+      "brandIcons": "Icônes de marques",
+      "uiIcons": "Icônes d'interface",
+      "svgVariants": "Variantes SVG",
+      "collections": "Collections"
+    },
+    "submitAnIcon": "Soumettre une icône",
+    "meetFounder": "Rencontrer le fondateur",
+    "columns": {
+      "product": "Produit",
+      "resources": "Ressources",
+      "community": "Communauté",
+      "legal": "Mentions légales"
+    },
+    "links": {
+      "figmaPlugin": "Plugin Figma",
+      "vscodeExtension": "Extension VS Code",
+      "raycastExtension": "Extension Raycast",
+      "issues": "Tickets",
+      "discussions": "Discussions",
+      "mentions": "Mentions",
+      "contributing": "Contribuer",
+      "sponsor": "Parrainer",
+      "legal": "Mentions légales",
+      "privacy": "Confidentialité",
+      "trademarkPolicy": "Politique de marques",
+      "contact": "Contact"
+    }
+  }
+}

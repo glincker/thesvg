@@ -1,0 +1,62 @@
+{
+  "language": { "label": "언어" },
+  "nav": {
+    "brandIcons": "브랜드 아이콘",
+    "uiIcons": "UI 아이콘",
+    "categories": "카테고리",
+    "flags": "국기",
+    "docs": "문서",
+    "submitIcon": "아이콘 제출",
+    "blog": "블로그",
+    "cdnUsage": "CDN 사용법",
+    "compare": "비교"
+  },
+  "header": {
+    "home": "theSVG 홈",
+    "submitAria": "아이콘 제출하기",
+    "searchPlaceholder": "\"{{brand}}\" 검색",
+    "searchIcons": "아이콘 검색",
+    "clearSearch": "검색어 지우기",
+    "searchIn": "검색 범위",
+    "all": "전체",
+    "toggleMenu": "메뉴 열기/닫기",
+    "toggleTheme": "테마 전환",
+    "star": "스타",
+    "docsGuides": "문서 및 가이드",
+    "extensionsIntegrations": "확장 프로그램 및 연동",
+    "blogUpdates": "블로그 및 소식",
+    "submitAnIcon": "아이콘 제출"
+  },
+  "footer": {
+    "headline": "오픈 소스. 커뮤니티가 만듭니다.",
+    "tagline": "개발자, 디자이너, 팀을 위한 무료 브랜드 SVG. 출처 표기 없이 어떤 프로젝트에서든 사용하세요.",
+    "stats": {
+      "brandIcons": "브랜드 아이콘",
+      "uiIcons": "UI 아이콘",
+      "svgVariants": "SVG 변형",
+      "collections": "컬렉션"
+    },
+    "submitAnIcon": "아이콘 제출",
+    "meetFounder": "창립자 소개",
+    "columns": {
+      "product": "제품",
+      "resources": "리소스",
+      "community": "커뮤니티",
+      "legal": "법적 고지"
+    },
+    "links": {
+      "figmaPlugin": "Figma 플러그인",
+      "vscodeExtension": "VS Code 확장 프로그램",
+      "raycastExtension": "Raycast 확장 프로그램",
+      "issues": "이슈",
+      "discussions": "토론",
+      "mentions": "언급",
+      "contributing": "기여하기",
+      "sponsor": "후원",
+      "legal": "법적 고지",
+      "privacy": "개인정보 처리방침",
+      "trademarkPolicy": "상표 정책",
+      "contact": "문의"
+    }
+  }
+}
