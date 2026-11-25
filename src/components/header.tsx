@@ -755,7 +755,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
           {/* Right: actions. On mobile we keep only Submit + GitHub +
               theme toggle so the top row stays slim and the search row
               below can claim the full width. */}
-          <div className="ml-auto flex shrink-0 items-center gap-0.5 sm:ml-0 sm:gap-1">
+          <div className="ml-auto flex shrink-0 items-center gap-0.5 rounded-xl border bg-background/50 px-1.5 py-1 sm:ml-0 sm:gap-1">
             <Link
               href="/docs"
               className={cn(
@@ -769,7 +769,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
 
             <SubmitButton />
 
-            <div className="ml-1 flex items-center gap-0.5 sm:gap-1">
+            <div className="ml-1 flex items-center gap-0.5 border-l border-border/60 pl-2 sm:gap-1">
               <PackagesMenu lead={isUi ? "ui" : isFlags ? "flags" : "brand"} />
               <a
                 href={withUtm("https://www.raycast.com/thegdsks/thesvg", "header")}
