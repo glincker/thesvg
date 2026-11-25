@@ -6,7 +6,7 @@ import { useSearchStore } from "@/lib/stores/search-store";
 import { usePathname, useRouter } from "next/navigation";
 import { createContext, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { type CopyTarget, isCopyTarget } from "@/lib/ui-icons/copy-target";
-import { VARIANTS } from "@/lib/ui-icons/glyphs";
+import { VARIANTS } from "@/lib/ui-icons/style";
 
 export interface UiState {
   variant: Variant;

@@ -1,6 +1,6 @@
 {
   "name": "@thesvg/solid",
-  "version": "4.0.12",
+  "version": "4.0.16",
   "description": "Typed Solid SVG components for all 7,600+ brand icons from thesvg.org",
   "type": "module",
   "sideEffects": false,
@@ -57,7 +57,7 @@
     "solid-js": ">=1.8"
   },
   "devDependencies": {
-    "solid-js": "^1.9.18",
+    "solid-js": "^1.9.19",
     "tsx": "^4.23.15",
     "typescript": "^6.0.3"
   },

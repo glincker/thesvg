@@ -2,7 +2,7 @@
 
 import { UiGlyph } from "@/components/ui-glyph";
 import { useRef } from "react";
-import posthog from "posthog-js";
+import { capture } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 interface CategoryPillsProps {
@@ -29,7 +29,7 @@ export function CategoryPills({
           aria-pressed={!selected}
           onClick={() => {
             onSelect(null);
-            posthog.capture("category_filtered", { category: null, action: "cleared" });
+            capture("category_filtered", { category: null, action: "cleared" });
           }}
           className={cn(
             "group relative flex shrink-0 items-center gap-1.5 overflow-hidden rounded-full border px-3 py-1 text-xs font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
@@ -54,7 +54,7 @@ export function CategoryPills({
               onClick={() => {
                 const next = active ? null : cat;
                 onSelect(next);
-                posthog.capture("category_filtered", { category: cat, action: next === null ? "deselected" : "selected" });
+                capture("category_filtered", { category: cat, action: next === null ? "deselected" : "selected" });
               }}
               className={cn(
                 "relative shrink-0 overflow-hidden rounded-full border px-3 py-1 text-xs font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",

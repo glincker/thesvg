@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useSyncExternalStore } from "react";
 import { Search, X } from "@/components/own-icons";
-import posthog from "posthog-js";
+import { capture } from "@/lib/analytics";
 
 interface SearchBarProps {
   value: string;
@@ -52,7 +52,7 @@ export function SearchBar({
           if (searchTimerRef.current) clearTimeout(searchTimerRef.current);
           if (next.trim()) {
             searchTimerRef.current = setTimeout(() => {
-              posthog.capture("icon_searched", { query: next.trim(), query_length: next.trim().length });
+              capture("icon_searched", { query: next.trim(), query_length: next.trim().length });
             }, 800);
           }
         }}

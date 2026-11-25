@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import posthog from "posthog-js";
+import { capture } from "@/lib/analytics";
 import { useMemo, useState, useEffect, useCallback } from "react";
 import {
   Activity,
@@ -173,7 +173,7 @@ export function RecentsPage() {
         }
         recordCopy(entry.slug, "svg");
         setFlash(`${entry.title} copied`);
-        posthog.capture("recents_recopy", {
+        capture("recents_recopy", {
           slug: entry.slug,
           format,
           source: "recents_page",
@@ -331,7 +331,7 @@ export function RecentsPage() {
                       <Link
                         href={`/icon/${entry.slug}`}
                         onClick={() =>
-                          posthog.capture("recents_clicked", {
+                          capture("recents_clicked", {
                             kind: "viewed",
                             slug: entry.slug,
                             source: "recents_page",
@@ -472,7 +472,7 @@ export function RecentsPage() {
                       key={r.query}
                       href={`/?q=${encodeURIComponent(r.query)}`}
                       onClick={() =>
-                        posthog.capture("recents_clicked", {
+                        capture("recents_clicked", {
                           kind: "searched",
                           query: r.query,
                           source: "recents_page",

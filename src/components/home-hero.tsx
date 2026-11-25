@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Anchor, ArrowRight, Check, ChevronRight, Clock, Cloud, Copy, Flame, Package, ShieldCheck, Sparkles, Users, X, Zap } from "@/components/own-icons";
 import Link from "next/link";
-import posthog from "posthog-js";
+import { capture } from "@/lib/analytics";
 import { compareDateDesc } from "@/lib/icon-dates";
 import type { Collection, IconEntry } from "@/lib/icons";
 import { COLLECTIONS_META } from "@/lib/collections-meta";
@@ -19,10 +19,13 @@ import { useCompactHeroStore } from "@/lib/stores/compact-hero-store";
 import { useHomePrefsStore } from "@/lib/stores/home-prefs-store";
 import { cn } from "@/lib/utils";
 import { withUtm } from "@/lib/external-link";
-import { UiHeroPreview } from "@/components/ui-icons/hero-preview";
+import dynamic from "next/dynamic";
 import { MENTIONS } from "@/lib/mentions";
 
 import { getPopularSlugs } from "@/lib/popular-icons";
+
+// Decorative and desktop-only, so its glyph data loads after the page instead of with it.
+const UiHeroPreview = dynamic(() => import("@/components/ui-icons/hero-preview").then((m) => m.UiHeroPreview), { ssr: false });
 
 // Local aliases so ALL_SLIDES below (byte-identical to before this file
 // started sharing the curated lists with home-content.tsx) doesn't need
@@ -306,11 +309,6 @@ const ALL_SLIDES: Slide[] = [
   },
 ];
 
-// Kept as a static Tailwind arbitrary-value class (`[animation-duration:6000ms]`)
-// on the progress-dot fill below rather than an inline style; if this changes,
-// update that class to match.
-const SLIDE_DURATION = 6000;
-
 interface HomeHeroProps {
   categoryCounts: { name: string; count: number }[];
   count: number;
@@ -336,7 +334,7 @@ function InstallBadge({
     try {
       await navigator.clipboard.writeText(command);
       setCopied(true);
-      posthog.capture("hero_install_command_copied", { command });
+      capture("hero_install_command_copied", { command });
       window.setTimeout(() => setCopied(false), 1600);
     } catch {
       /* clipboard blocked; user can still triple-click the text */
@@ -420,14 +418,12 @@ export function HomeHero({
     setCurrentSlide(0);
   }, [activeCollection]);
 
-  // Auto-rotate carousel through collection slides
-  useEffect(() => {
-    if (isPaused || !heroVisible || collectionSlides.length <= 1) return;
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % collectionSlides.length);
-    }, SLIDE_DURATION);
-    return () => clearInterval(timer);
-  }, [isPaused, heroVisible, collectionSlides.length]);
+  // The progress fill's own animation drives rotation (see its onAnimationEnd),
+  // so the bar and the slide can never drift apart. Pausing or going off screen
+  // freezes the animation, which freezes the rotation with it.
+  const advanceSlide = useCallback(() => {
+    if (collectionSlides.length > 1) setCurrentSlide((prev) => (prev + 1) % collectionSlides.length);
+  }, [collectionSlides.length]);
 
   const handleSelectIcon = useCallback((icon: IconEntry) => {
     setSelectedIcon(icon);
@@ -843,7 +839,7 @@ export function HomeHero({
               const pos = (slide.adopters ? PROOF_POSITIONS : FLOAT_POSITIONS)[i];
               const adopter = slide.adopters?.find((a) => a.slug === icon.slug);
               const tile = (
-                <div className={cn(pos.size, "rounded-xl border border-border/40 bg-background/70 p-1.5 shadow-lg shadow-black/5 backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.06] dark:shadow-black/20", logoPlateClass(icon.slug))}>
+                <div className={cn(pos.size, "rounded-xl border border-border/40 bg-background/70 p-1.5 shadow-lg shadow-black/5 dark:border-white/10 dark:bg-white/[0.06] dark:shadow-black/20", logoPlateClass(icon.slug))}>
                   <img src={icon.variants.light || icon.variants.default} alt="" className={cn("h-full w-full object-contain dark:hidden", logoImgClass(icon.slug))} />
                   <img src={icon.variants.dark || icon.variants.default} alt="" className={cn("hidden h-full w-full object-contain dark:block", logoImgClass(icon.slug))} />
                 </div>
@@ -874,7 +870,7 @@ export function HomeHero({
                   className={`animate-float-in absolute ${pos.position} ${pos.entranceDelay}`}
                 >
                 <div className={`animate-float ${pos.opacity} ${pos.floatTiming}`}>
-                  <div className={`${pos.size} rounded-xl border border-white/10 ${slide.collection === "aws" ? "bg-[#ff9900]/10 dark:bg-[#ff9900]/5" : slide.collection === "azure" ? "bg-[#0078d4]/10 dark:bg-[#0078d4]/5" : slide.collection === "gcp" ? "bg-[#4285f4]/10 dark:bg-[#4285f4]/5" : "bg-background/30"} p-1.5 shadow-lg shadow-black/5 backdrop-blur-sm dark:border-white/5 dark:shadow-black/20`}>
+                  <div className={`${pos.size} rounded-xl border border-white/10 ${slide.collection === "aws" ? "bg-[#ff9900]/10 dark:bg-[#ff9900]/5" : slide.collection === "azure" ? "bg-[#0078d4]/10 dark:bg-[#0078d4]/5" : slide.collection === "gcp" ? "bg-[#4285f4]/10 dark:bg-[#4285f4]/5" : "bg-background/30"} p-1.5 shadow-lg shadow-black/5 dark:border-white/5 dark:shadow-black/20`}>
                     <img src={icon.variants.light || icon.variants.default} alt="" className="h-full w-full object-contain dark:hidden" />
                     <img src={icon.variants.dark || icon.variants.default} alt="" className="hidden h-full w-full object-contain dark:block" />
                   </div>
@@ -895,7 +891,7 @@ export function HomeHero({
               aria-label={`Go to slide ${i + 1}`}
             >
               <div
-                className={`h-1 rounded-full transition-all duration-300 ${
+                className={`h-1 rounded-full transition-[width,background-color,box-shadow] duration-300 ${
                   i === currentSlide
                     ? "w-10 bg-foreground/50 shadow-[0_0_6px_rgba(255,255,255,0.3)]"
                     : "w-2 bg-foreground/15 hover:bg-foreground/25"
@@ -903,7 +899,7 @@ export function HomeHero({
               />
               {/* Active glow fill */}
               {i === currentSlide && !isPaused && (
-                <div className="animate-progress absolute inset-y-0 left-0 rounded-full bg-foreground/70 shadow-[0_0_8px_rgba(255,255,255,0.4)] [animation-duration:6000ms] [animation-name:progress] [animation-timing-function:linear]" />
+                <div onAnimationEnd={advanceSlide} className="animate-progress absolute inset-y-0 left-0 w-full origin-left rounded-full bg-foreground/70 shadow-[0_0_8px_rgba(255,255,255,0.4)] [animation-duration:6000ms] [animation-name:progress] [animation-timing-function:linear]" />
               )}
             </button>
           ))}
@@ -1019,7 +1015,7 @@ export function HomeHero({
                 key={entry.slug}
                 href={`/icon/${entry.slug}`}
                 onClick={() => {
-                  posthog.capture("recents_clicked", {
+                  capture("recents_clicked", {
                     kind: "viewed",
                     slug: entry.slug,
                     source: "home_rail",

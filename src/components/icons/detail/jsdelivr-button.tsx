@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { Check } from "@/components/own-icons";
-import posthog from "posthog-js";
+import { capture } from "@/lib/analytics";
 import { getJsDelivrUrl } from "@/components/icons/shared/icon-constants";
 import { cn } from "@/lib/utils";
 
@@ -19,7 +19,7 @@ export function JsDelivrButton({ slug, activeVariant }: JsDelivrButtonProps) {
     navigator.clipboard.writeText(url);
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
-    posthog.capture("jsdelivr_url_copied", {
+    capture("jsdelivr_url_copied", {
       icon_slug: slug,
       variant: activeVariant,
     });

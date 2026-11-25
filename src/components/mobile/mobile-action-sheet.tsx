@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import posthog from "posthog-js";
+import { capture } from "@/lib/analytics";
 import { Copy, Download, ExternalLink } from "@/components/own-icons";
 import { BottomSheet } from "./bottom-sheet";
 import { useMobileShellStore } from "@/lib/stores/mobile-shell-store";
@@ -49,7 +49,7 @@ export function MobileActionSheet() {
       const svg = await res.text();
       await navigator.clipboard.writeText(svg);
       recordCopy(icon.slug, "svg");
-      posthog.capture("icon_copied", {
+      capture("icon_copied", {
         icon_slug: icon.slug,
         icon_title: icon.title,
         format: "svg",

@@ -1,6 +1,7 @@
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
+import { CHROME_GLYPHS } from "../chrome-glyphs.generated";
 import { GLYPH_BY_SLUG, VARIANTS } from "../glyphs";
 
 const SRC = join(__dirname, "../../..");
@@ -26,6 +27,7 @@ describe("<UiGlyph> icon names", () => {
       const code = readFileSync(file, "utf8");
       for (const m of code.matchAll(/<UiGlyph\b[^>]*?\bname="([a-z0-9-]+)"/g)) {
         if (!GLYPH_BY_SLUG.has(m[1])) missing.push(`${file.replace(SRC, "src")}: ${m[1]}`);
+        if (!(m[1] in CHROME_GLYPHS)) missing.push(`${file.replace(SRC, "src")}: ${m[1]} is not in the chrome set, run pnpm ui:build`);
       }
       for (const m of code.matchAll(/<UiGlyph\b[^>]*?\blook="([a-z]+)"/g)) {
         if (!(VARIANTS as readonly string[]).includes(m[1])) missing.push(`${file.replace(SRC, "src")}: look ${m[1]}`);

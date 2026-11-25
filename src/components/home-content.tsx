@@ -3,7 +3,7 @@
 import { useMemo, useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import posthog from "posthog-js";
+import { capture } from "@/lib/analytics";
 import { ArrowDownAZ, ArrowDownZA, ArrowUpDown, Clock, Flame, Grid3X3, LayoutGrid, X } from "@/components/own-icons";
 import { compareDateDesc } from "@/lib/icon-dates";
 import type { Collection, IconEntry } from "@/lib/icons";
@@ -226,7 +226,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
   const handleCollectionSelect = useCallback(
     (collection: Collection | null) => {
       setSidebarOpen(false);
-      posthog.capture("collection_switched", { collection: collection ?? "all" });
+      capture("collection_switched", { collection: collection ?? "all" });
       if (collection) {
         router.push(`/collection/${collection}`);
       } else {
@@ -456,7 +456,7 @@ export function HomeContent({ categoryCounts, count, recentIcons, collections, d
             {/* Sticky toolbar - count + controls. Header is taller on
                 mobile because the search occupies its own row, so the
                 sticky offset bumps up at <sm. */}
-            <div className="sticky top-12 z-20 border-b border-border/30 bg-background/95 backdrop-blur-xl lg:top-[3.75rem]">
+            <div className="sticky top-12 z-20 border-b border-border/30 bg-background/98 lg:top-[3.75rem]">
               <div className="mx-auto flex max-w-7xl items-center gap-1.5 px-3 py-1.5 sm:gap-2 sm:px-4">
                 {/* Count label */}
                 <p className="flex-1 text-sm text-muted-foreground">

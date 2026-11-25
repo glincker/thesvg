@@ -1,5 +1,23 @@
 # @thesvg/solid
 
+## 4.0.16
+
+### Patch Changes
+
+- feat: add ramp icon ([#1603](https://github.com/glincker/thesvg/issues/1603))
+
+## 4.0.15
+
+### Patch Changes
+
+- chore(deps): apply patch and minor bumps from stale dependabot PRs ([#1589](https://github.com/glincker/thesvg/issues/1589))
+
+## 4.0.14
+
+### Patch Changes
+
+- feat: add godonateme wordmark variants ([#1586](https://github.com/glincker/thesvg/issues/1586))
+
 ## 4.0.12
 
 ### Patch Changes

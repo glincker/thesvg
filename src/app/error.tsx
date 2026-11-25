@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import posthog from "posthog-js";
+import { capture, captureException } from "@/lib/analytics";
 import { AlertTriangle, RefreshCw } from "@/components/own-icons";
 import { Button } from "@/components/ui/button";
 
@@ -15,7 +15,7 @@ export default function Error({
 }) {
   useEffect(() => {
     console.error("[thesvg] Unhandled error:", error);
-    posthog.captureException(error, { digest: error.digest });
+    captureException(error, { digest: error.digest });
   }, [error]);
 
   return (
