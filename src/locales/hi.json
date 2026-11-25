@@ -58,5 +58,287 @@
       "trademarkPolicy": "ट्रेडमार्क नीति",
       "contact": "संपर्क"
     }
+  },
+  "icon": {
+    "about": {
+      "brandColor": "ब्रांड रंग",
+      "collection": "{{name}} संग्रह का हिस्सा।",
+      "colorName": "रंगीन",
+      "filed": "श्रेणियाँ: {{categories}}।",
+      "flagNote": "{{title}} का ध्वज उसके देश या क्षेत्र का सार्वजनिक प्रतीक है। इसे दिखाना संप्रभुता या सीमाओं पर कोई रुख नहीं है।",
+      "free": "{{title}} SVG आइकन theSVG पर मुफ़्त डाउनलोड के लिए उपलब्ध है।",
+      "heading": "{{title}} आइकन के बारे में",
+      "noModify": "चिह्न में बदलाव न करें और न ही समर्थन का आभास दें।",
+      "officialAssets": "आधिकारिक ब्रांड सामग्री:",
+      "restricted": "उपयोग स्वामी की शर्तों तक सीमित है: {{license}}",
+      "serviceNote": "आर्किटेक्चर डायग्राम और दस्तावेज़ों के लिए सेवा-स्तर का आइकन।",
+      "trademark": "“{{title}}” अपने संबंधित स्वामी का ट्रेडमार्क है और केवल पहचान के लिए दिखाया गया है।",
+      "use": "इसे React, Vue, Svelte या सादे HTML के साथ npm, CLI या CDN से इस्तेमाल करें:",
+      "useLabel": "उपयोग",
+      "usePersonal": "व्यक्तिगत और व्यावसायिक",
+      "useRestricted": "केवल ब्रांड पहचान, बिना बदलाव के",
+      "useTrademark": "पहचान और संदर्भ",
+      "variantsLine": "इसके {{count}} वेरिएंट हैं: {{names}}।"
+    },
+    "card": {
+      "copiedAria": "{{title}} {{format}} कॉपी हो गया",
+      "copiedToast": "{{format}} कॉपी हो गया!",
+      "copyAria": "{{title}} {{format}} कॉपी करें",
+      "downloadSvg": "SVG डाउनलोड करें",
+      "favAdd": "{{title}} को पसंदीदा में जोड़ें",
+      "favRemove": "{{title}} को पसंदीदा से हटाएँ",
+      "quickPreview": "त्वरित प्रीव्यू",
+      "quickPreviewAria": "{{title}} का त्वरित प्रीव्यू",
+      "view": "{{title}} आइकन का विवरण देखें"
+    },
+    "common": {
+      "beta": "बीटा",
+      "copied": "कॉपी हो गया",
+      "copy": "कॉपी करें",
+      "download": "डाउनलोड"
+    },
+    "contribute": {
+      "issue": "Issue से अनुरोध करें",
+      "missingBetter": "क्या बेहतर संस्करण नहीं है?",
+      "missingBetterGuidelines": "क्या बेहतर संस्करण या दिशानिर्देश लिंक नहीं है?",
+      "missingVariant": "क्या कोई वेरिएंट नहीं है?",
+      "missingVariantGuidelines": "क्या कोई वेरिएंट या दिशानिर्देश लिंक नहीं है?",
+      "note": "समुदाय के सुधार अगले बिल्ड में आते हैं",
+      "pr": "PR सबमिट करें"
+    },
+    "detail": {
+      "addFavorite": "पसंदीदा में जोड़ें",
+      "alsoAvailableAs": "इस रूप में भी उपलब्ध",
+      "alsoKnownAs": "अन्य नाम",
+      "alsoUiIcon": "UI आइकन के रूप में भी",
+      "authBadge": "ऑथ बैज",
+      "brandGuidelines": "ब्रांड दिशानिर्देश",
+      "brandLogo": "ब्रांड लोगो",
+      "breadcrumb": "ब्रेडक्रम्ब",
+      "categories": "श्रेणियाँ",
+      "category": "श्रेणी",
+      "compareOriginal": "मूल से तुलना करें",
+      "currentVersion": "वर्तमान संस्करण",
+      "familyOf": "{{title}} परिवार",
+      "glassMark": "इंटरफ़ेस के लिए ग्लास मार्क",
+      "home": "होम",
+      "license": "लाइसेंस",
+      "partOf": "{{title}} का हिस्सा",
+      "partOfGoogle": "Google 2026 का हिस्सा",
+      "previousVersion": "पिछला संस्करण",
+      "refresh": "{{year}} का नया रूप देखें",
+      "relatedIn": "{{category}} में संबंधित",
+      "removeFavorite": "पसंदीदा से हटाएँ",
+      "variants": "वेरिएंट",
+      "viewAll": "सभी देखें"
+    },
+    "download": {
+      "aria": "{{title}} SVG डाउनलोड करें",
+      "copyLabel": "कॉपी",
+      "dataUri": "डेटा URI",
+      "done": "हो गया",
+      "downloadLabel": "डाउनलोड",
+      "errCopy": "कॉपी नहीं हो सका। कृपया फिर कोशिश करें।",
+      "errExport": "{{format}} एक्सपोर्ट विफल रहा। कृपया फिर कोशिश करें।",
+      "export": "{{title}} एक्सपोर्ट करें",
+      "more": "और डाउनलोड फ़ॉर्मैट",
+      "raster": "रैस्टर",
+      "vector": "वेक्टर"
+    },
+    "family": {
+      "allCategory": "{{category}} में सब",
+      "allFamilies": "सभी परिवार",
+      "allIcons": "{{title}} के सभी आइकन",
+      "allLogos": "{{title}} के सभी लोगो",
+      "badge": "{{title}} · ब्रांड परिवार",
+      "brandFamilies": "ब्रांड परिवार",
+      "flagshipProducts": "प्रमुख उत्पाद",
+      "flagships": "प्रमुख",
+      "fullSet": "पूरा सेट",
+      "iconsCount": "{{count}} आइकन",
+      "indexIntro": "स्वामी के अनुसार समूहित आधिकारिक लोगो: Amazon, Google या Microsoft की पूरी श्रृंखला एक जगह, हर वेरिएंट के साथ। {{count}} परिवार।",
+      "indexTitle": "जिन ब्रांड के साथ आप बनाते हैं, उनके हर उत्पाद",
+      "jump": "किसी समूह पर जाएँ",
+      "logosCount": "{{count}} लोगो",
+      "mainLogo": "{{title}} का मुख्य लोगो",
+      "moreFamilies": "और ब्रांड परिवार",
+      "moreFrom": "{{title}} से और",
+      "nVariants": "{{count}} वेरिएंट",
+      "oneVariant": "1 वेरिएंट",
+      "open": "खोलें",
+      "showMore": "{{count}} और दिखाएँ",
+      "statCategories": "श्रेणियाँ",
+      "statLogos": "लोगो",
+      "statVariants": "वेरिएंट",
+      "submitMissing": "छूटा हुआ {{title}} लोगो सबमिट करें",
+      "viewAllN": "सभी {{count}} देखें"
+    },
+    "feedback": {
+      "helpful": "काम का लगा?",
+      "no": "यह आइकन काम का नहीं है",
+      "reason": {
+        "missingVariant": "वेरिएंट नहीं है",
+        "other": "अन्य",
+        "outdated": "पुराना लोगो",
+        "wrongColors": "गलत रंग"
+      },
+      "reset": "अपनी प्रतिक्रिया रीसेट करें",
+      "review": "खुशी है कि काम आया, एक रिव्यू देंगे?",
+      "thanks": "धन्यवाद!",
+      "thanksIssue": "धन्यवाद, एक issue खोला गया",
+      "whatsWrong": "इसमें क्या गलत है?",
+      "yes": "यह आइकन काम का है"
+    },
+    "glow": {
+      "hint": "बैकग्राउंड ग्लो चालू या बंद करें",
+      "off": "ग्लो बंद",
+      "on": "ग्लो चालू",
+      "turnOff": "बैकग्राउंड ग्लो बंद करें",
+      "turnOn": "बैकग्राउंड ग्लो चालू करें"
+    },
+    "grid": {
+      "none": "कोई आइकन नहीं मिला",
+      "submit": "यह आइकन सबमिट करें",
+      "tryDifferent": "कोई दूसरा खोज शब्द या श्रेणी आज़माएँ"
+    },
+    "import": {
+      "loading": "आइकन लाइब्रेरी लोड हो रही है...",
+      "placeholder": "लाइब्रेरी से इंपोर्ट करें, जैसे 'gmail 2026', 'github'...",
+      "try": "आज़माएँ"
+    },
+    "inspector": {
+      "aria": "{{title}} को ज़ूम करके जाँचें",
+      "background": "{{name}} बैकग्राउंड",
+      "description": "मानक आइकन डिज़ाइन ग्रिड के हिसाब से किनारों और वक्रों को जाँचने के लिए ज़ूम करें। यह बड़ा किया गया वेक्टर आर्टवर्क है, रैस्टर क्रॉप नहीं, इसलिए हर आकार में साफ़ रहता है।",
+      "grid": "ग्रिड",
+      "title": "{{title}} पिक्सेल इंस्पेक्टर",
+      "transparent": "पारदर्शी",
+      "zoomIn": "ज़ूम इन",
+      "zoomOut": "ज़ूम आउट"
+    },
+    "jsdelivr": {
+      "title": "jsDelivr CDN URL कॉपी करें"
+    },
+    "links": {
+      "official": "आधिकारिक लिंक"
+    },
+    "modal": {
+      "cliCommand": "CLI कमांड",
+      "copiedStatus": "{{what}} कॉपी हो गया",
+      "guidelines": "दिशानिर्देश",
+      "viewFull": "पूरा विवरण देखें"
+    },
+    "newBadge": {
+      "refresh": "{{year}} का नया रूप"
+    },
+    "openIn": {
+      "aria": "SVG को एडिटर में खोलें",
+      "copyFor": "{{app}} के लिए कॉपी करें",
+      "couldNot": "खोला नहीं जा सका।",
+      "downloadFor": "{{app}} के लिए डाउनलोड करें",
+      "hint": {
+        "codepen": "नए pen में खुलता है, HTML पहले से भरा हुआ",
+        "figma": "क्लिपबोर्ड में कॉपी करें, फिर Figma कैनवास में पेस्ट करें",
+        "filagram": "पार्टनर व्यूअर में एडिट, ऑप्टिमाइज़ या कन्वर्ट करें",
+        "illustrator": ".svg डाउनलोड करें, फिर फ़ाइल → Illustrator या Photoshop में खोलें",
+        "jsfiddle": "नए fiddle में खुलता है, HTML पहले से भरा हुआ",
+        "sketch": "क्लिपबोर्ड में कॉपी करें, फिर Sketch आर्टबोर्ड में पेस्ट करें"
+      },
+      "inspect": "SVG व्यूअर में जाँचें",
+      "open": "इसमें खोलें",
+      "opened": "नए टैब में खुल गया।",
+      "targets": "{{count}} लक्ष्य"
+    },
+    "png": {
+      "error": "इस SVG को PNG में नहीं बदला जा सका। कोई दूसरा वेरिएंट आज़माएँ।",
+      "title": "PNG एक्सपोर्ट करें"
+    },
+    "preview": {
+      "ariaCopied": "SVG मार्कअप कॉपी हो गया",
+      "ariaCopy": "{{title}} का SVG मार्कअप कॉपी करें",
+      "copied": "कॉपी हो गया!",
+      "copy": "SVG कॉपी करने के लिए क्लिक करें",
+      "failed": "कॉपी नहीं हो सका"
+    },
+    "quality": {
+      "footnote": "यह बताता है कि इस आइकन की सामग्री कितनी पूरी है, ब्रांड या कलाकृति पर कोई राय नहीं। नीचे दिए योगदान लिंक से कमियाँ भरने में मदद करें।",
+      "hint": {
+        "licenseMissing": "लाइसेंस नहीं बताया गया",
+        "linked": "लिंक है",
+        "meta": "श्रेणियाँ: {{count}}",
+        "metaAliases": "उपनाम, श्रेणियाँ: {{count}}",
+        "noGuidelines": "दिशानिर्देश लिंक नहीं",
+        "onlyDefault": "केवल डिफ़ॉल्ट वेरिएंट",
+        "variantsCount": "{{count}} वेरिएंट"
+      },
+      "row": {
+        "guidelines": "दिशानिर्देश",
+        "license": "लाइसेंस",
+        "metadata": "मेटाडेटा",
+        "variants": "वेरिएंट"
+      },
+      "title": "पूर्णता"
+    },
+    "quick": {
+      "copyCommand": "{{name}} कमांड कॉपी करें",
+      "label": "इस आइकन का उपयोग कैसे करें",
+      "notOnNpm": "{{name}} अभी npm पर नहीं है। CLI या CDN का उपयोग करें।",
+      "packageManager": "पैकेज मैनेजर",
+      "title": "उपयोग कैसे करें"
+    },
+    "variant": {
+      "dark": "डार्क",
+      "default": "डिफ़ॉल्ट",
+      "light": "लाइट",
+      "mono": "मोनो",
+      "suffix": "{{name}} वेरिएंट",
+      "wordmark": "वर्डमार्क",
+      "wordmarkDark": "वर्डमार्क डार्क",
+      "wordmarkLight": "वर्डमार्क लाइट"
+    },
+    "viewer": {
+      "addSvg": "फ़ाइल की जानकारी देखने के लिए SVG जोड़ें।",
+      "bgChecker": "चेकर बैकग्राउंड",
+      "bgDark": "डार्क बैकग्राउंड",
+      "bgLight": "लाइट बैकग्राउंड",
+      "cannotRender": "रेंडर नहीं हो सका, ऊपर SVG सिंटैक्स जाँचें।",
+      "chars": "वर्ण",
+      "clear": "साफ़ करें",
+      "copySvg": "SVG कॉपी करें",
+      "downloadSvg": ".svg डाउनलोड करें",
+      "elements": "एलिमेंट",
+      "empty": "खाली",
+      "errAutoload": "वह आइकन अपने आप लोड नहीं हो सका।",
+      "errClipboard": "क्लिपबोर्ड में लिखना विफल रहा।",
+      "errNoIcon": "लाइब्रेरी में slug \"{{slug}}\" वाला कोई आइकन नहीं है।",
+      "errNotSvg": "यह मान्य SVG फ़ाइल नहीं लगती।",
+      "errRead": "वह फ़ाइल पढ़ी नहीं जा सकी।",
+      "errTooLarge": "फ़ाइल 2 MB से बड़ी है। कृपया छोटा SVG इस्तेमाल करें।",
+      "fileInfo": "फ़ाइल जानकारी",
+      "format": "फ़ॉर्मैट करें",
+      "formatHint": "फ़ॉर्मैट",
+      "gradients": "ग्रेडिएंट",
+      "height": "ऊँचाई",
+      "indent": "इंडेंट",
+      "invalid": "अमान्य",
+      "lines": "पं.",
+      "loading": "लाइब्रेरी से {{slug}} लोड हो रहा है...",
+      "masks": "मास्क/क्लिप",
+      "minify": "छोटा करें",
+      "no": "नहीं",
+      "openInEditor": "एडिटर में खोलें",
+      "pageIntro": "SVG पेस्ट करें, ड्रॉप करें या इंपोर्ट करें। XML को फ़ॉर्मैट करें, किसी भी बैकग्राउंड पर प्रीव्यू देखें, viewBox और माप जाँचें, और अपने पसंदीदा एडिटर में खोलें। सब कुछ आपके ब्राउज़र में चलता है। कुछ भी अपलोड नहीं होता।",
+      "pageTitle": "SVG व्यूअर",
+      "partnerText": "एडिट, ऑप्टिमाइज़ या PNG, JPG, PDF, WebP में बदलना है? भारी काम के लिए Filagram के पास टूल हैं।",
+      "pasteHint": "प्रीव्यू के लिए SVG पेस्ट करें, ड्रॉप करें या इंपोर्ट करें",
+      "poweredBy": "Filagram द्वारा संचालित",
+      "preview": "प्रीव्यू",
+      "size": "आकार",
+      "upload": "अपलोड",
+      "valid": "मान्य svg",
+      "visit": "Filagram पर जाएँ",
+      "width": "चौड़ाई",
+      "yes": "हाँ"
+    }
   }
 }

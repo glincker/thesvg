@@ -10,6 +10,7 @@ import {
 } from "@/components/own-icons";
 import { Codepen } from "@/components/own-icons";
 import { cn } from "@/lib/utils";
+import { useDeepLinkText } from "@/components/icons/shared/use-deep-link-text";
 import {
   DEEP_LINK_TARGETS,
   type DeepLinkTarget,
@@ -73,6 +74,7 @@ function ActionRow({
   toast: string | null;
   onClick: (t: DeepLinkTarget) => void;
 }) {
+  const text = useDeepLinkText();
   return (
     <button
       type="button"
@@ -83,10 +85,10 @@ function ActionRow({
         <TargetIcon id={target.id} />
         <span>
           <span className="block font-medium text-foreground">
-            {target.label}
+            {text.label(target)}
           </span>
           <span className="block text-[10px] text-muted-foreground/70">
-            {toast ?? target.hint}
+            {toast ?? text.hint(target)}
           </span>
         </span>
       </span>
@@ -109,13 +111,14 @@ export function DeepLinkActions({
   layout = "stack",
   className,
 }: DeepLinkActionsProps) {
+  const text = useDeepLinkText();
   const [toasts, setToasts] = useState<Record<string, string>>({});
 
   const handleClick = useCallback(
     async (target: DeepLinkTarget) => {
       const result = await openDeepLink(target, svg, title);
       if (result.ok) {
-        const msg = result.message ?? "Opened in new tab.";
+        const msg = result.message ?? text.opened;
         setToasts((prev) => ({ ...prev, [target.id]: msg }));
         setTimeout(() => {
           setToasts((prev) => {
@@ -127,7 +130,7 @@ export function DeepLinkActions({
       } else {
         setToasts((prev) => ({
           ...prev,
-          [target.id]: result.message ?? "Could not open.",
+          [target.id]: result.message ?? text.couldNot,
         }));
         setTimeout(() => {
           setToasts((prev) => {
@@ -138,7 +141,7 @@ export function DeepLinkActions({
         }, 3000);
       }
     },
-    [svg, title],
+    [svg, title, text.opened, text.couldNot],
   );
 
   return (

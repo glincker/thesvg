@@ -58,5 +58,287 @@
       "trademarkPolicy": "商标政策",
       "contact": "联系我们"
     }
+  },
+  "icon": {
+    "about": {
+      "brandColor": "品牌色",
+      "collection": "属于 {{name}} 合集。",
+      "colorName": "彩色",
+      "filed": "归类于 {{categories}}。",
+      "flagNote": "{{title}} 的旗帜是其国家或地区的公共象征。展示它并不代表对主权或边界的任何立场。",
+      "free": "{{title}} 的 SVG 图标可在 theSVG 免费下载。",
+      "heading": "关于 {{title}} 图标",
+      "noModify": "请勿修改标志，也不要暗示官方认可。",
+      "officialAssets": "官方品牌资源：",
+      "restricted": "使用仅限于权利人的条款：{{license}}",
+      "serviceNote": "适用于架构图和文档的服务级图标。",
+      "trademark": "“{{title}}”是其各自所有者的商标，此处仅用于识别。",
+      "use": "可通过 npm、CLI 或 CDN 用于 React、Vue、Svelte 或纯 HTML：",
+      "useLabel": "用途",
+      "usePersonal": "个人和商业",
+      "useRestricted": "仅限品牌识别，不得修改",
+      "useTrademark": "识别与引用",
+      "variantsLine": "共有 {{count}} 种变体：{{names}}。"
+    },
+    "card": {
+      "copiedAria": "已复制 {{title}} 的 {{format}}",
+      "copiedToast": "已复制 {{format}}！",
+      "copyAria": "复制 {{title}} 的 {{format}}",
+      "downloadSvg": "下载 SVG",
+      "favAdd": "将 {{title}} 加入收藏",
+      "favRemove": "将 {{title}} 移出收藏",
+      "quickPreview": "快速预览",
+      "quickPreviewAria": "快速预览 {{title}}",
+      "view": "查看 {{title}} 图标详情"
+    },
+    "common": {
+      "beta": "测试版",
+      "copied": "已复制",
+      "copy": "复制",
+      "download": "下载"
+    },
+    "contribute": {
+      "issue": "通过 Issue 提交请求",
+      "missingBetter": "缺少更好的版本？",
+      "missingBetterGuidelines": "缺少更好的版本或规范链接？",
+      "missingVariant": "缺少某个变体？",
+      "missingVariantGuidelines": "缺少某个变体或规范链接？",
+      "note": "社区修复将在下次构建中发布",
+      "pr": "提交 PR"
+    },
+    "detail": {
+      "addFavorite": "加入收藏",
+      "alsoAvailableAs": "也提供",
+      "alsoKnownAs": "别名",
+      "alsoUiIcon": "也有 UI 图标版本",
+      "authBadge": "认证徽章",
+      "brandGuidelines": "品牌规范",
+      "brandLogo": "品牌标志",
+      "breadcrumb": "面包屑导航",
+      "categories": "分类",
+      "category": "分类",
+      "compareOriginal": "与原版对比",
+      "currentVersion": "当前版本",
+      "familyOf": "{{title}} 系列",
+      "glassMark": "界面用玻璃质感标志",
+      "home": "首页",
+      "license": "许可证",
+      "partOf": "属于 {{title}}",
+      "partOfGoogle": "属于 Google 2026",
+      "previousVersion": "旧版本",
+      "refresh": "查看 {{year}} 年新版",
+      "relatedIn": "{{category}} 相关图标",
+      "removeFavorite": "取消收藏",
+      "variants": "变体",
+      "viewAll": "查看全部"
+    },
+    "download": {
+      "aria": "下载 {{title}} 的 SVG",
+      "copyLabel": "复制",
+      "dataUri": "Data URI",
+      "done": "完成",
+      "downloadLabel": "下载",
+      "errCopy": "复制失败，请重试。",
+      "errExport": "导出 {{format}} 失败，请重试。",
+      "export": "导出 {{title}}",
+      "more": "更多下载格式",
+      "raster": "位图",
+      "vector": "矢量"
+    },
+    "family": {
+      "allCategory": "{{category}} 全部",
+      "allFamilies": "全部系列",
+      "allIcons": "{{title}} 的全部图标",
+      "allLogos": "{{title}} 的全部标志",
+      "badge": "{{title}} · 品牌系列",
+      "brandFamilies": "品牌系列",
+      "flagshipProducts": "旗舰产品",
+      "flagships": "旗舰",
+      "fullSet": "完整合集",
+      "iconsCount": "{{count}} 个图标",
+      "indexIntro": "官方标志按所属公司分组：Amazon、Google 或 Microsoft 的全部产品线集中在一处，包含所有变体。共 {{count}} 个系列。",
+      "indexTitle": "你常用品牌的每一款产品",
+      "jump": "跳转到分组",
+      "logosCount": "{{count}} 个标志",
+      "mainLogo": "{{title}} 主标志",
+      "moreFamilies": "更多品牌系列",
+      "moreFrom": "{{title}} 的更多内容",
+      "nVariants": "{{count}} 种变体",
+      "oneVariant": "1 种变体",
+      "open": "打开",
+      "showMore": "再显示 {{count}} 个",
+      "statCategories": "分类",
+      "statLogos": "标志",
+      "statVariants": "变体",
+      "submitMissing": "提交缺失的 {{title}} 标志",
+      "viewAllN": "查看全部 {{count}} 个"
+    },
+    "feedback": {
+      "helpful": "有帮助吗？",
+      "no": "这个图标没有帮助",
+      "reason": {
+        "missingVariant": "缺少变体",
+        "other": "其他",
+        "outdated": "标志已过时",
+        "wrongColors": "颜色不对"
+      },
+      "reset": "重置你的反馈",
+      "review": "很高兴能帮到你，留个评价？",
+      "thanks": "谢谢！",
+      "thanksIssue": "谢谢，已打开 Issue",
+      "whatsWrong": "哪里不对？",
+      "yes": "这个图标有帮助"
+    },
+    "glow": {
+      "hint": "开关背景光晕",
+      "off": "光晕已关闭",
+      "on": "光晕已开启",
+      "turnOff": "关闭背景光晕",
+      "turnOn": "开启背景光晕"
+    },
+    "grid": {
+      "none": "未找到图标",
+      "submit": "提交这个图标",
+      "tryDifferent": "试试其他搜索词或分类"
+    },
+    "import": {
+      "loading": "正在加载图标库...",
+      "placeholder": "从图标库导入，例如 'gmail 2026'、'github'...",
+      "try": "试试"
+    },
+    "inspector": {
+      "aria": "放大查看 {{title}}",
+      "background": "{{name}}背景",
+      "description": "放大后可对照标准图标设计网格检查边缘和曲线。这是放大的矢量图稿，不是位图裁剪，因此在任何尺寸下都保持清晰。",
+      "grid": "网格",
+      "title": "{{title}} 像素检查器",
+      "transparent": "透明",
+      "zoomIn": "放大",
+      "zoomOut": "缩小"
+    },
+    "jsdelivr": {
+      "title": "复制 jsDelivr CDN 链接"
+    },
+    "links": {
+      "official": "官方链接"
+    },
+    "modal": {
+      "cliCommand": "CLI 命令",
+      "copiedStatus": "已复制{{what}}",
+      "guidelines": "规范",
+      "viewFull": "查看完整详情"
+    },
+    "newBadge": {
+      "refresh": "{{year}} 年新版"
+    },
+    "openIn": {
+      "aria": "在编辑器中打开 SVG",
+      "copyFor": "复制到 {{app}}",
+      "couldNot": "无法打开。",
+      "downloadFor": "下载用于 {{app}}",
+      "hint": {
+        "codepen": "在新 Pen 中打开，HTML 已预填",
+        "figma": "复制到剪贴板，然后粘贴到 Figma 画布",
+        "filagram": "在合作方查看器中编辑、优化或转换",
+        "illustrator": "下载 .svg，然后在 Illustrator 或 Photoshop 中通过文件 → 打开",
+        "jsfiddle": "在新 Fiddle 中打开，HTML 已预填",
+        "sketch": "复制到剪贴板，然后粘贴到 Sketch 画板"
+      },
+      "inspect": "在 SVG 查看器中检查",
+      "open": "打开方式",
+      "opened": "已在新标签页中打开。",
+      "targets": "{{count}} 个目标"
+    },
+    "png": {
+      "error": "无法将此 SVG 转换为 PNG。请尝试其他变体。",
+      "title": "导出 PNG"
+    },
+    "preview": {
+      "ariaCopied": "已复制 SVG 代码",
+      "ariaCopy": "复制 {{title}} 的 SVG 代码",
+      "copied": "已复制！",
+      "copy": "点击复制 SVG",
+      "failed": "复制失败"
+    },
+    "quality": {
+      "footnote": "表示该图标的素材有多完整，并非对品牌或图稿本身的评价。欢迎通过下方的贡献链接帮助补全缺失内容。",
+      "hint": {
+        "licenseMissing": "未注明许可证",
+        "linked": "已有链接",
+        "meta": "分类：{{count}}",
+        "metaAliases": "有别名，分类：{{count}}",
+        "noGuidelines": "没有规范链接",
+        "onlyDefault": "仅有默认变体",
+        "variantsCount": "{{count}} 种变体"
+      },
+      "row": {
+        "guidelines": "规范",
+        "license": "许可证",
+        "metadata": "元数据",
+        "variants": "变体"
+      },
+      "title": "完整度"
+    },
+    "quick": {
+      "copyCommand": "复制 {{name}} 命令",
+      "label": "如何使用此图标",
+      "notOnNpm": "{{name}} 尚未发布到 npm。请使用 CLI 或 CDN。",
+      "packageManager": "包管理器",
+      "title": "使用方法"
+    },
+    "variant": {
+      "dark": "深色",
+      "default": "默认",
+      "light": "浅色",
+      "mono": "单色",
+      "suffix": "{{name}}变体",
+      "wordmark": "文字标",
+      "wordmarkDark": "文字标深色",
+      "wordmarkLight": "文字标浅色"
+    },
+    "viewer": {
+      "addSvg": "添加 SVG 后可查看文件信息。",
+      "bgChecker": "棋盘格背景",
+      "bgDark": "深色背景",
+      "bgLight": "浅色背景",
+      "cannotRender": "无法渲染，请检查上方的 SVG 语法。",
+      "chars": "字符",
+      "clear": "清空",
+      "copySvg": "复制 SVG",
+      "downloadSvg": "下载 .svg",
+      "elements": "元素数",
+      "empty": "空",
+      "errAutoload": "无法自动加载该图标。",
+      "errClipboard": "写入剪贴板失败。",
+      "errNoIcon": "库中没有 slug 为 \"{{slug}}\" 的图标。",
+      "errNotSvg": "这看起来不是有效的 SVG 文件。",
+      "errRead": "无法读取该文件。",
+      "errTooLarge": "文件超过 2 MB，请使用更小的 SVG。",
+      "fileInfo": "文件信息",
+      "format": "格式化",
+      "formatHint": "格式化",
+      "gradients": "渐变",
+      "height": "高度",
+      "indent": "缩进",
+      "invalid": "无效",
+      "lines": "行",
+      "loading": "正在从库中加载 {{slug}}...",
+      "masks": "蒙版/裁剪",
+      "minify": "压缩",
+      "no": "否",
+      "openInEditor": "在编辑器中打开",
+      "pageIntro": "粘贴、拖入或导入 SVG。可格式化 XML、在任意背景上预览、检查 viewBox 和尺寸，并在你喜欢的编辑器中打开。一切都在浏览器中运行，不会上传任何内容。",
+      "pageTitle": "SVG 查看器",
+      "partnerText": "需要编辑、优化，或转换为 PNG、JPG、PDF 或 WebP？Filagram 提供更强大的工具。",
+      "pasteHint": "粘贴、拖入或导入 SVG 以预览",
+      "poweredBy": "由 Filagram 提供支持",
+      "preview": "预览",
+      "size": "大小",
+      "upload": "上传",
+      "valid": "有效的 svg",
+      "visit": "访问 Filagram",
+      "width": "宽度",
+      "yes": "是"
+    }
   }
 }

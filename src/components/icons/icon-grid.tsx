@@ -7,6 +7,7 @@ import { Search } from "@/components/own-icons";
 import { IconCard } from "./icon-card";
 import { IconDetail } from "./icon-detail";
 import { cn } from "@/lib/utils";
+import { useT } from "@/i18n/use-t";
 
 type ViewMode = "compact" | "comfortable";
 
@@ -74,6 +75,7 @@ const ROW_HEIGHT_ESTIMATE: Record<ViewMode, number> = {
 };
 
 export function IconGrid({ icons, view = "comfortable" }: IconGridProps) {
+  const { t } = useT();
   const [selectedIcon, setSelectedIcon] = useState<IconEntry | null>(null);
   const parentRef = useRef<HTMLDivElement>(null);
   const columns = useColumnCount(view);
@@ -132,13 +134,13 @@ export function IconGrid({ icons, view = "comfortable" }: IconGridProps) {
         <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-muted/50 dark:bg-white/[0.04]">
           <Search className="h-7 w-7 text-muted-foreground/50" />
         </div>
-        <p className="text-base font-medium text-foreground">No icons found</p>
-        <p className="mt-1 text-sm text-muted-foreground">Try a different search term or category</p>
+        <p className="text-base font-medium text-foreground">{t("icon.grid.none")}</p>
+        <p className="mt-1 text-sm text-muted-foreground">{t("icon.grid.tryDifferent")}</p>
         <a
           href="/submit"
           className="mt-4 inline-flex items-center gap-1.5 rounded-lg bg-orange-500/10 px-4 py-2 text-sm font-medium text-orange-600 transition-colors hover:bg-orange-500/20 dark:text-orange-400"
         >
-          Submit this icon
+          {t("icon.grid.submit")}
         </a>
       </div>
     );

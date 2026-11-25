@@ -4,6 +4,7 @@ import { UiGlyph } from "@/components/ui-glyph";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { brandGlowColor } from "@/lib/brand-glow-color";
 import { cn } from "@/lib/utils";
+import { useT } from "@/i18n/use-t";
 
 const STORAGE_KEY = "thesvg-brand-glow-enabled";
 const HINT_SEEN_KEY = "thesvg-brand-glow-hint-seen";
@@ -15,6 +16,7 @@ const FADE_DISTANCE_PX = 480;
 const PARALLAX_FACTOR = 0.25;
 
 export function BrandGlow({ hex }: { hex?: string }) {
+  const { t } = useT();
   const [ready, setReady] = useState(false);
   const [enabled, setEnabled] = useState(true);
   const [showHint, setShowHint] = useState(false);
@@ -90,7 +92,7 @@ export function BrandGlow({ hex }: { hex?: string }) {
       // storage blocked
     }
     setEnabled(next);
-    setFlash(next ? "Glow on" : "Glow off");
+    setFlash(next ? t("icon.glow.on") : t("icon.glow.off"));
     if (flashTimerRef.current) clearTimeout(flashTimerRef.current);
     flashTimerRef.current = setTimeout(() => setFlash(null), 1400);
   }
@@ -103,7 +105,7 @@ export function BrandGlow({ hex }: { hex?: string }) {
   const glowColor = realColor ?? "#F97316";
   const glowOpacityClass = realColor ? "opacity-[0.14] dark:opacity-[0.4]" : "opacity-[0.08] dark:opacity-[0.22]";
 
-  const tooltipText = flash ?? (showHint ? "Toggle the background glow" : null);
+  const tooltipText = flash ?? (showHint ? t("icon.glow.hint") : null);
 
   return (
     <>
@@ -140,9 +142,9 @@ export function BrandGlow({ hex }: { hex?: string }) {
           <button
             type="button"
             onClick={toggle}
-            aria-label={enabled ? "Turn off background glow" : "Turn on background glow"}
+            aria-label={enabled ? t("icon.glow.turnOff") : t("icon.glow.turnOn")}
             aria-pressed={enabled}
-            title={enabled ? "Turn off background glow" : "Turn on background glow"}
+            title={enabled ? t("icon.glow.turnOff") : t("icon.glow.turnOn")}
             className="relative flex h-8 w-8 items-center justify-center rounded-full border border-border/60 bg-card/90 text-muted-foreground shadow-sm backdrop-blur-sm transition-colors hover:text-foreground"
           >
             <span className="inline-flex" style={enabled ? { color: glowColor } : undefined}>

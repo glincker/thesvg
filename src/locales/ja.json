@@ -58,5 +58,287 @@
       "trademarkPolicy": "商標ポリシー",
       "contact": "お問い合わせ"
     }
+  },
+  "icon": {
+    "about": {
+      "brandColor": "ブランドカラー",
+      "collection": "{{name}} コレクションの一部です。",
+      "colorName": "カラー",
+      "filed": "分類: {{categories}}。",
+      "flagNote": "{{title}} の国旗は、その国や地域の公的なシンボルです。掲載は主権や国境に関する立場を示すものではありません。",
+      "free": "{{title}} の SVG アイコンは theSVG で無料でダウンロードできます。",
+      "heading": "{{title}} アイコンについて",
+      "noModify": "マークを改変したり、公認を示唆したりしないでください。",
+      "officialAssets": "公式ブランド素材:",
+      "restricted": "使用は権利者の条件に限られます: {{license}}",
+      "serviceNote": "アーキテクチャ図やドキュメント向けのサービスアイコンです。",
+      "trademark": "「{{title}}」はそれぞれの権利者の商標であり、識別の目的でのみ表示しています。",
+      "use": "React、Vue、Svelte、または素の HTML で、npm、CLI、CDN から使えます:",
+      "useLabel": "用途",
+      "usePersonal": "個人利用・商用利用",
+      "useRestricted": "ブランドの識別のみ、改変不可",
+      "useTrademark": "識別と参照",
+      "variantsLine": "{{count}} 種類のバリアントがあります: {{names}}。"
+    },
+    "card": {
+      "copiedAria": "{{title}} の {{format}} をコピーしました",
+      "copiedToast": "{{format}} をコピーしました",
+      "copyAria": "{{title}} の {{format}} をコピー",
+      "downloadSvg": "SVG をダウンロード",
+      "favAdd": "{{title}} をお気に入りに追加",
+      "favRemove": "{{title}} をお気に入りから削除",
+      "quickPreview": "クイックプレビュー",
+      "quickPreviewAria": "{{title}} のクイックプレビュー",
+      "view": "{{title}} アイコンの詳細を見る"
+    },
+    "common": {
+      "beta": "ベータ",
+      "copied": "コピーしました",
+      "copy": "コピー",
+      "download": "ダウンロード"
+    },
+    "contribute": {
+      "issue": "Issue でリクエスト",
+      "missingBetter": "より良いバージョンがありませんか?",
+      "missingBetterGuidelines": "より良いバージョンやガイドラインのリンクがありませんか?",
+      "missingVariant": "バリアントがありませんか?",
+      "missingVariantGuidelines": "バリアントやガイドラインのリンクがありませんか?",
+      "note": "コミュニティの修正は次のビルドで反映されます",
+      "pr": "PR を送る"
+    },
+    "detail": {
+      "addFavorite": "お気に入りに追加",
+      "alsoAvailableAs": "こちらもあります",
+      "alsoKnownAs": "別名",
+      "alsoUiIcon": "UI アイコンとしても提供",
+      "authBadge": "認証バッジ",
+      "brandGuidelines": "ブランドガイドライン",
+      "brandLogo": "ブランドロゴ",
+      "breadcrumb": "パンくずリスト",
+      "categories": "カテゴリ",
+      "category": "カテゴリ",
+      "compareOriginal": "オリジナルと比較",
+      "currentVersion": "現行バージョン",
+      "familyOf": "{{title}} ファミリー",
+      "glassMark": "インターフェース向けガラスマーク",
+      "home": "ホーム",
+      "license": "ライセンス",
+      "partOf": "{{title}} の一部",
+      "partOfGoogle": "Google 2026 の一部",
+      "previousVersion": "旧バージョン",
+      "refresh": "{{year}} 年のリニューアル版を見る",
+      "relatedIn": "{{category}} の関連アイコン",
+      "removeFavorite": "お気に入りから削除",
+      "variants": "バリアント",
+      "viewAll": "すべて表示"
+    },
+    "download": {
+      "aria": "{{title}} の SVG をダウンロード",
+      "copyLabel": "コピー",
+      "dataUri": "データ URI",
+      "done": "完了",
+      "downloadLabel": "ダウンロード",
+      "errCopy": "コピーに失敗しました。もう一度お試しください。",
+      "errExport": "{{format}} の書き出しに失敗しました。もう一度お試しください。",
+      "export": "{{title}} を書き出す",
+      "more": "その他のダウンロード形式",
+      "raster": "ラスター",
+      "vector": "ベクター"
+    },
+    "family": {
+      "allCategory": "{{category}} のすべて",
+      "allFamilies": "すべてのファミリー",
+      "allIcons": "{{title}} のすべてのアイコン",
+      "allLogos": "{{title}} のすべてのロゴ",
+      "badge": "{{title}} · ブランドファミリー",
+      "brandFamilies": "ブランドファミリー",
+      "flagshipProducts": "主力製品",
+      "flagships": "主力",
+      "fullSet": "フルセット",
+      "iconsCount": "{{count}} 個のアイコン",
+      "indexIntro": "所有者ごとにまとめた公式ロゴです。Amazon、Google、Microsoft の全ラインナップをバリアントごとに一か所で。{{count}} ファミリー。",
+      "indexTitle": "いつも使うブランドの全プロダクト",
+      "jump": "グループへ移動",
+      "logosCount": "{{count}} 個のロゴ",
+      "mainLogo": "{{title}} のメインロゴ",
+      "moreFamilies": "ほかのブランドファミリー",
+      "moreFrom": "{{title}} のその他",
+      "nVariants": "{{count}} 種類のバリアント",
+      "oneVariant": "1 種類のバリアント",
+      "open": "開く",
+      "showMore": "さらに {{count}} 件を表示",
+      "statCategories": "カテゴリ",
+      "statLogos": "ロゴ",
+      "statVariants": "バリアント",
+      "submitMissing": "足りない {{title}} のロゴを投稿",
+      "viewAllN": "全 {{count}} 件を見る"
+    },
+    "feedback": {
+      "helpful": "役に立ちましたか?",
+      "no": "このアイコンは役に立たない",
+      "reason": {
+        "missingVariant": "バリアントが足りない",
+        "other": "その他",
+        "outdated": "ロゴが古い",
+        "wrongColors": "色が違う"
+      },
+      "reset": "フィードバックをリセット",
+      "review": "お役に立てて何よりです。レビューを書きませんか?",
+      "thanks": "ありがとうございます",
+      "thanksIssue": "ありがとうございます。Issue を開きました",
+      "whatsWrong": "何が問題ですか?",
+      "yes": "このアイコンは役に立つ"
+    },
+    "glow": {
+      "hint": "背景のグローを切り替え",
+      "off": "グローをオフにしました",
+      "on": "グローをオンにしました",
+      "turnOff": "背景のグローをオフにする",
+      "turnOn": "背景のグローをオンにする"
+    },
+    "grid": {
+      "none": "アイコンが見つかりません",
+      "submit": "このアイコンを投稿",
+      "tryDifferent": "別の検索語またはカテゴリをお試しください"
+    },
+    "import": {
+      "loading": "アイコンライブラリを読み込み中...",
+      "placeholder": "ライブラリから読み込み、例: 'gmail 2026'、'github'...",
+      "try": "試す"
+    },
+    "inspector": {
+      "aria": "{{title}} を拡大して確認",
+      "background": "{{name}}の背景",
+      "description": "標準のアイコンデザイングリッドに合わせて、エッジやカーブを拡大して確認できます。ラスターの切り抜きではなくベクターをそのまま拡大しているため、どのサイズでも鮮明です。",
+      "grid": "グリッド",
+      "title": "{{title}} のピクセルインスペクター",
+      "transparent": "透明",
+      "zoomIn": "拡大",
+      "zoomOut": "縮小"
+    },
+    "jsdelivr": {
+      "title": "jsDelivr CDN の URL をコピー"
+    },
+    "links": {
+      "official": "公式リンク"
+    },
+    "modal": {
+      "cliCommand": "CLI コマンド",
+      "copiedStatus": "{{what}} をコピーしました",
+      "guidelines": "ガイドライン",
+      "viewFull": "詳細をすべて見る"
+    },
+    "newBadge": {
+      "refresh": "{{year}} 年リニューアル"
+    },
+    "openIn": {
+      "aria": "SVG をエディターで開く",
+      "copyFor": "{{app}} 用にコピー",
+      "couldNot": "開けませんでした。",
+      "downloadFor": "{{app}} 用にダウンロード",
+      "hint": {
+        "codepen": "新しい Pen で開き、HTML を入力済みにします",
+        "figma": "クリップボードにコピーして、Figma のキャンバスに貼り付け",
+        "filagram": "パートナーのビューアーで編集、最適化、変換",
+        "illustrator": ".svg をダウンロードし、ファイル → Illustrator または Photoshop で開く",
+        "jsfiddle": "新しい Fiddle で開き、HTML を入力済みにします",
+        "sketch": "クリップボードにコピーして、Sketch のアートボードに貼り付け"
+      },
+      "inspect": "SVG ビューアーで確認",
+      "open": "開く",
+      "opened": "新しいタブで開きました。",
+      "targets": "{{count}} 件の連携先"
+    },
+    "png": {
+      "error": "この SVG を PNG に変換できませんでした。別のバリアントをお試しください。",
+      "title": "PNG を書き出し"
+    },
+    "preview": {
+      "ariaCopied": "SVG マークアップをコピーしました",
+      "ariaCopy": "{{title}} の SVG マークアップをコピー",
+      "copied": "コピーしました",
+      "copy": "クリックして SVG をコピー",
+      "failed": "コピーできませんでした"
+    },
+    "quality": {
+      "footnote": "このアイコンの素材がどれだけそろっているかを示すもので、ブランドやアートワークの評価ではありません。下の貢献リンクから不足分の補完にご協力ください。",
+      "hint": {
+        "licenseMissing": "ライセンス未指定",
+        "linked": "リンクあり",
+        "meta": "カテゴリ: {{count}}",
+        "metaAliases": "別名あり、カテゴリ: {{count}}",
+        "noGuidelines": "ガイドラインのリンクなし",
+        "onlyDefault": "デフォルトのバリアントのみ",
+        "variantsCount": "{{count}} 種類のバリアント"
+      },
+      "row": {
+        "guidelines": "ガイドライン",
+        "license": "ライセンス",
+        "metadata": "メタデータ",
+        "variants": "バリアント"
+      },
+      "title": "充実度"
+    },
+    "quick": {
+      "copyCommand": "{{name}} のコマンドをコピー",
+      "label": "このアイコンの使い方",
+      "notOnNpm": "{{name}} はまだ npm にありません。CLI または CDN をご利用ください。",
+      "packageManager": "パッケージマネージャー",
+      "title": "使い方"
+    },
+    "variant": {
+      "dark": "ダーク",
+      "default": "デフォルト",
+      "light": "ライト",
+      "mono": "モノ",
+      "suffix": "{{name}} バリアント",
+      "wordmark": "ワードマーク",
+      "wordmarkDark": "ワードマーク(ダーク)",
+      "wordmarkLight": "ワードマーク(ライト)"
+    },
+    "viewer": {
+      "addSvg": "SVG を追加するとファイル情報が表示されます。",
+      "bgChecker": "市松模様の背景",
+      "bgDark": "ダークの背景",
+      "bgLight": "ライトの背景",
+      "cannotRender": "描画できません。上の SVG の構文を確認してください。",
+      "chars": "文字",
+      "clear": "クリア",
+      "copySvg": "SVG をコピー",
+      "downloadSvg": ".svg をダウンロード",
+      "elements": "要素数",
+      "empty": "空",
+      "errAutoload": "そのアイコンを自動で読み込めませんでした。",
+      "errClipboard": "クリップボードへの書き込みに失敗しました。",
+      "errNoIcon": "ライブラリにスラッグ \"{{slug}}\" のアイコンはありません。",
+      "errNotSvg": "有効な SVG ファイルではないようです。",
+      "errRead": "ファイルを読み込めませんでした。",
+      "errTooLarge": "ファイルが 2 MB を超えています。より小さい SVG を使ってください。",
+      "fileInfo": "ファイル情報",
+      "format": "整形",
+      "formatHint": "整形",
+      "gradients": "グラデーション",
+      "height": "高さ",
+      "indent": "インデント",
+      "invalid": "無効",
+      "lines": "行",
+      "loading": "ライブラリから {{slug}} を読み込み中...",
+      "masks": "マスク/クリップ",
+      "minify": "圧縮",
+      "no": "いいえ",
+      "openInEditor": "エディターで開く",
+      "pageIntro": "SVG を貼り付け、ドロップ、またはインポートしてください。XML の整形、任意の背景でのプレビュー、viewBox と寸法の確認、お好みのエディターで開くことができます。すべてブラウザー内で処理され、アップロードは行われません。",
+      "pageTitle": "SVG ビューアー",
+      "partnerText": "編集、最適化、PNG・JPG・PDF・WebP への変換が必要ですか?本格的なツールは Filagram にあります。",
+      "pasteHint": "SVG を貼り付け、ドロップ、またはインポートするとプレビューできます",
+      "poweredBy": "Powered by Filagram",
+      "preview": "プレビュー",
+      "size": "サイズ",
+      "upload": "アップロード",
+      "valid": "有効な svg",
+      "visit": "Filagram を開く",
+      "width": "幅",
+      "yes": "はい"
+    }
   }
 }

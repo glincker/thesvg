@@ -5,6 +5,7 @@ import { Check, Copy } from "@/components/own-icons";
 import { capture } from "@/lib/analytics";
 import { getJsDelivrUrl } from "@/components/icons/shared/icon-constants";
 import { cn } from "@/lib/utils";
+import { useT } from "@/i18n/use-t";
 import {
   PACKAGE_MANAGERS,
   type PackageManager,
@@ -68,13 +69,14 @@ interface CodeRowProps {
 }
 
 function CodeRow({ text, id, copied, onCopy }: CodeRowProps) {
+  const { t } = useT();
   return (
     <div className="flex items-center gap-2 rounded-lg border border-border/60 bg-background/60 px-3 py-1">
       <code className="min-w-0 flex-1 truncate font-mono text-xs text-foreground"><Highlighted text={text} /></code>
       <button
         type="button"
         onClick={() => onCopy(text, id)}
-        aria-label={`Copy ${id} command`}
+        aria-label={t("icon.quick.copyCommand", { name: id })}
         className="shrink-0 rounded-md p-1 text-orange-500 outline-none transition-colors hover:bg-orange-500/10 focus-visible:ring-2 focus-visible:ring-ring"
       >
         {copied === id ? <Check className="h-3.5 w-3.5 text-green-500" /> : <Copy className="h-3.5 w-3.5" />}
@@ -85,11 +87,14 @@ function CodeRow({ text, id, copied, onCopy }: CodeRowProps) {
 
 /** How to use this icon: install the package, run the CLI, or link the CDN, all visible at once. */
 export function QuickCommands({ slug, activeVariant }: QuickCommandsProps) {
+  const { t } = useT();
   const pkg = packageForSlug(slug);
   const published = isPackagePublished(pkg.name);
   const [pm, setPm] = useState<PackageManager>(() => (typeof window === "undefined" ? "npm" : readPm()));
   const [copied, setCopied] = useState<string | null>(null);
 
+  // The package name is a code span inside the sentence, so split around it.
+  const notOnNpm = t("icon.quick.notOnNpm", { name: pkg.name }).split(pkg.name);
   const cdnUrl = getJsDelivrUrl(slug, activeVariant);
   const cliCommand = `npx @thesvg/cli add ${slug}`;
 
@@ -109,11 +114,11 @@ export function QuickCommands({ slug, activeVariant }: QuickCommandsProps) {
   };
 
   return (
-    <section aria-label="How to use this icon" className="rounded-xl border border-orange-500/25 bg-orange-500/[0.04] p-3 shadow-sm dark:border-orange-400/20">
+    <section aria-label={t("icon.quick.label")} className="rounded-xl border border-orange-500/25 bg-orange-500/[0.04] p-3 shadow-sm dark:border-orange-400/20">
       <div className="mb-1.5 flex items-center justify-between gap-2">
-        <h2 className="text-sm font-semibold">How to use</h2>
+        <h2 className="text-sm font-semibold">{t("icon.quick.title")}</h2>
         {published ? (
-          <div role="radiogroup" aria-label="Package manager" className="inline-flex gap-0.5 text-xs">
+          <div role="radiogroup" aria-label={t("icon.quick.packageManager")} className="inline-flex gap-0.5 text-xs">
         {PACKAGE_MANAGERS.map((m) => (
           <button key={m} type="button" role="radio" aria-checked={pm === m} onClick={() => choosePm(m)} className={cn("inline-flex items-center gap-1.5 rounded-md px-2 py-0.5 outline-none focus-visible:ring-2 focus-visible:ring-ring", pm === m ? "bg-orange-500/15 font-medium text-orange-500" : "text-muted-foreground hover:text-foreground")}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -137,7 +142,7 @@ export function QuickCommands({ slug, activeVariant }: QuickCommandsProps) {
               {pkg.importLine ? <CodeRow text={pkg.importLine} id="import" copied={copied} onCopy={copy} /> : null}
             </div>
           ) : (
-            <p className="text-xs text-muted-foreground"><code className="font-mono">{pkg.name}</code> is not on npm yet. Use the CLI or CDN.</p>
+            <p className="text-xs text-muted-foreground">{notOnNpm[0]}<code className="font-mono">{pkg.name}</code>{notOnNpm[1]}</p>
           )}
         </div>
         <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center">

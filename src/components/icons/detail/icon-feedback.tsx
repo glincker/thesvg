@@ -6,6 +6,7 @@ import { ArrowUpRight, RotateCcw, ThumbsDown, ThumbsUp } from "@/components/own-
 import { cn } from "@/lib/utils";
 import { withUtm } from "@/lib/external-link";
 import { usePrefersReducedMotion } from "@/lib/hooks/use-media-query";
+import { useT } from "@/i18n/use-t";
 
 // Presentation-only timing for the label/pill fade sequence below. Kept in
 // sync with the `duration-200` Tailwind class used on both elements so the
@@ -18,6 +19,13 @@ type Tally = { up: number; down: number };
 
 const REASONS = ["Outdated logo", "Wrong colors", "Missing variant", "Other"] as const;
 type Reason = (typeof REASONS)[number];
+// The issue body stays English for maintainers; only the button text is translated.
+const REASON_KEYS: Record<Reason, string> = {
+  "Outdated logo": "outdated",
+  "Wrong colors": "wrongColors",
+  "Missing variant": "missingVariant",
+  Other: "other",
+};
 
 const REVIEW_PROMPTED_KEY = "thesvg-review-prompted";
 const PRODUCT_HUNT_REVIEW_URL =
@@ -88,6 +96,7 @@ function buildFeedbackIssueUrl(slug: string, title: string, reason: Reason): str
  * link, the positive-sentiment equivalent.
  */
 export function IconFeedback({ slug, title }: Readonly<{ slug: string; title: string }>) {
+  const { t } = useT();
   const prefersReducedMotion = usePrefersReducedMotion();
 
   const [voted, setVoted] = useState<Sentiment | null>(null);
@@ -101,10 +110,12 @@ export function IconFeedback({ slug, title }: Readonly<{ slug: string; title: st
   // status label shows and whether it's faded in or out; `pillVisible`
   // does the same for the review-prompt pill once it mounts. None of this
   // feeds back into the capture logic - it only decides when things fade.
-  const [displayedLabel, setDisplayedLabel] = useState("Helpful?");
+  const [displayedLabel, setDisplayedLabel] = useState("");
   const [labelVisible, setLabelVisible] = useState(true);
   const [pillVisible, setPillVisible] = useState(false);
 
+  // An empty label means the resting state, so it follows the locale instead of freezing one language.
+  const restingLabel = t("icon.feedback.helpful");
   const timersRef = useRef<Array<ReturnType<typeof setTimeout>>>([]);
 
   useEffect(() => {
@@ -150,8 +161,9 @@ export function IconFeedback({ slug, title }: Readonly<{ slug: string; title: st
     // Restoring a prior vote on load is not a fresh interaction - show the
     // resting label immediately, no "arrival" fade for state that already
     // existed before this render.
-    setDisplayedLabel(stored ? "Thanks!" : "Helpful?");
+    setDisplayedLabel(stored ? t("icon.feedback.thanks") : "");
     setLabelVisible(true);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- t only changes with the locale, which the label already follows
   }, [slug]);
 
   // Best-effort read of the last cron-generated stats snapshot. The file
@@ -190,7 +202,7 @@ export function IconFeedback({ slug, title }: Readonly<{ slug: string; title: st
 
     if (sentiment === "down") {
       setPickingReason(true);
-      showLabel("Thanks!");
+      showLabel(t("icon.feedback.thanks"));
       return;
     }
 
@@ -200,7 +212,7 @@ export function IconFeedback({ slug, title }: Readonly<{ slug: string; title: st
       window.localStorage.setItem(REVIEW_PROMPTED_KEY, "1");
     }
 
-    showLabel("Thanks!");
+    showLabel(t("icon.feedback.thanks"));
 
     if (!reviewPromptPending) return;
 
@@ -229,7 +241,7 @@ export function IconFeedback({ slug, title }: Readonly<{ slug: string; title: st
     setReasonPicked(reason);
     setPickingReason(false);
     window.open(withUtm(buildFeedbackIssueUrl(slug, title, reason), "icon_feedback"), "_blank", "noopener,noreferrer");
-    showLabel("Thanks - opened an issue");
+    showLabel(t("icon.feedback.thanksIssue"));
   }
 
   // Reset doesn't (and can't, without a backend) retract the original
@@ -247,7 +259,7 @@ export function IconFeedback({ slug, title }: Readonly<{ slug: string; title: st
     setVoted(null);
     setReasonPicked(null);
     setPickingReason(false);
-    setDisplayedLabel("Helpful?");
+    setDisplayedLabel("");
     setLabelVisible(true);
     setPillVisible(false);
   }
@@ -262,7 +274,7 @@ export function IconFeedback({ slug, title }: Readonly<{ slug: string; title: st
       {pickingReason && (
         <div className="animate-fade-in-up surface-glass flex w-[min(200px,calc(100vw-2rem))] flex-col gap-1 rounded-2xl border border-border p-2 shadow-[0_16px_40px_-12px_rgba(0,0,0,0.5)] dark:border-white/[0.14]">
           <p className="px-1.5 pt-1 text-[11px] font-medium text-muted-foreground">
-            What&apos;s wrong with it?
+            {t("icon.feedback.whatsWrong")}
           </p>
           {REASONS.map((reason) => (
             <button
@@ -271,7 +283,7 @@ export function IconFeedback({ slug, title }: Readonly<{ slug: string; title: st
               onClick={() => pickReason(reason)}
               className="rounded-lg px-2 py-1.5 text-left text-xs text-foreground transition-colors hover:bg-accent"
             >
-              {reason}
+              {t(`icon.feedback.reason.${REASON_KEYS[reason]}`)}
             </button>
           ))}
         </div>
@@ -289,7 +301,7 @@ export function IconFeedback({ slug, title }: Readonly<{ slug: string; title: st
             pillVisible ? "opacity-100" : "opacity-0",
           )}
         >
-          Glad it helped - leave a review?
+          {t("icon.feedback.review")}
           <ArrowUpRight className="h-3.5 w-3.5 opacity-60" />
         </a>
       )}
@@ -302,14 +314,14 @@ export function IconFeedback({ slug, title }: Readonly<{ slug: string; title: st
             labelVisible ? "opacity-100" : "opacity-0",
           )}
         >
-          {displayedLabel}
+          {displayedLabel || restingLabel}
         </span>
         {voted !== null && !pickingReason && (
           <button
             type="button"
             onClick={resetVote}
-            aria-label="Reset your feedback"
-            title="Reset your feedback"
+            aria-label={t("icon.feedback.reset")}
+            title={t("icon.feedback.reset")}
             className="flex h-6 w-6 items-center justify-center rounded-full text-muted-foreground/70 transition-colors hover:bg-accent hover:text-foreground"
           >
             <RotateCcw className="h-3.5 w-3.5" />
@@ -320,7 +332,7 @@ export function IconFeedback({ slug, title }: Readonly<{ slug: string; title: st
             type="button"
             onClick={() => vote("up")}
             disabled={voted !== null}
-            aria-label="This icon is helpful"
+            aria-label={t("icon.feedback.yes")}
             aria-pressed={voted === "up"}
             className={cn(
               "flex h-8 w-8 items-center justify-center rounded-full border border-border/50 text-muted-foreground transition-colors",
@@ -340,7 +352,7 @@ export function IconFeedback({ slug, title }: Readonly<{ slug: string; title: st
             type="button"
             onClick={() => vote("down")}
             disabled={voted !== null}
-            aria-label="This icon is not helpful"
+            aria-label={t("icon.feedback.no")}
             aria-pressed={voted === "down"}
             className={cn(
               "flex h-8 w-8 items-center justify-center rounded-full border border-border/50 text-muted-foreground transition-colors",
