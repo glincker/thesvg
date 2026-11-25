@@ -3,6 +3,8 @@ import { Mail, MessageSquare, Shield } from "@/components/own-icons";
 import { Github } from "@/components/own-icons";
 import { TRADEMARK_POLICY_URL } from "@/lib/constants";
 import { withUtm } from "@/lib/external-link";
+import { T } from "@/components/t";
+import { RichT } from "./rich-t";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -35,6 +37,7 @@ export const metadata: Metadata = {
 
 const CONTACT_CHANNELS = [
   {
+    id: "email",
     icon: Mail,
     title: "Email",
     description: "For trademark requests, DMCA notices, or general inquiries.",
@@ -43,6 +46,7 @@ const CONTACT_CHANNELS = [
     note: "We respond within 48 hours",
   },
   {
+    id: "issues",
     icon: Github,
     title: "GitHub Issues",
     description: "Report bugs, request features, or submit icon corrections.",
@@ -51,6 +55,7 @@ const CONTACT_CHANNELS = [
     note: "Best for technical issues",
   },
   {
+    id: "discussions",
     icon: MessageSquare,
     title: "GitHub Discussions",
     description: "Ask questions, share ideas, or connect with the community.",
@@ -59,6 +64,7 @@ const CONTACT_CHANNELS = [
     note: "Best for general questions",
   },
   {
+    id: "trademark",
     icon: Shield,
     title: "Trademark Request",
     description:
@@ -74,10 +80,9 @@ export default function ContactPage() {
     <div className="md:pl-58">
       <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
         <div className="mb-10">
-          <h1 className="mb-2 text-2xl font-bold tracking-tight">Contact</h1>
+          <h1 className="mb-2 text-2xl font-bold tracking-tight"><T k="pages.contact.title" fallback="Contact" /></h1>
           <p className="text-sm leading-relaxed text-muted-foreground">
-            Have a question, found a bug, or need to report a trademark issue?
-            Reach out through any of the channels below.
+            <T k="pages.contact.intro" fallback="Have a question, found a bug, or need to report a trademark issue? Reach out through any of the channels below." />
           </p>
         </div>
 
@@ -100,18 +105,18 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h2 className="text-sm font-semibold text-foreground">
-                    {channel.title}
+                    <T k={`pages.contact.${channel.id}.title`} fallback={channel.title} />
                   </h2>
                   <p className="text-[11px] text-muted-foreground/60">
-                    {channel.note}
+                    <T k={`pages.contact.${channel.id}.note`} fallback={channel.note} />
                   </p>
                 </div>
               </div>
               <p className="text-xs leading-relaxed text-muted-foreground">
-                {channel.description}
+                <T k={`pages.contact.${channel.id}.description`} fallback={channel.description} />
               </p>
               <span className="mt-auto text-xs font-medium text-foreground/70 transition-colors group-hover:text-foreground">
-                {channel.action} &rarr;
+                {channel.id === "email" ? channel.action : <T k={`pages.contact.${channel.id}.action`} fallback={channel.action} />} &rarr;
               </span>
             </a>
           ))}
@@ -119,33 +124,36 @@ export default function ContactPage() {
 
         <div className="mt-10 rounded-xl border border-border/30 bg-muted/20 p-5 dark:border-white/[0.04] dark:bg-white/[0.01]">
           <h3 className="mb-2 text-sm font-semibold text-foreground">
-            Trademark Policy
+            <T k="pages.contact.policy.title" fallback="Trademark Policy" />
           </h3>
           <p className="mb-3 text-xs leading-relaxed text-muted-foreground">
-            All brand logos and trademarks on thesvg.org are the property of
-            their respective owners. Icons are provided for identification and
-            development purposes only. We are not affiliated with or endorsed by
-            any listed brand.
+            <T k="pages.contact.policy.p1" fallback="All brand logos and trademarks on thesvg.org are the property of their respective owners. Icons are provided for identification and development purposes only. We are not affiliated with or endorsed by any listed brand." />
           </p>
           <p className="text-xs leading-relaxed text-muted-foreground">
-            If you are a brand owner and would like your icon removed or updated,
-            please{" "}
-            <a
-              href="mailto:support@glinr.com"
-              className="font-medium text-foreground underline underline-offset-2"
-            >
-              email us
-            </a>{" "}
-            or read our full{" "}
-            <a
-              href={withUtm(TRADEMARK_POLICY_URL, "contact_page")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-foreground underline underline-offset-2"
-            >
-              Trademark Policy
-            </a>
-            . Removal requests are honored within 24 hours.
+            <RichT
+              k="pages.contact.policy.p2"
+              fallback="If you are a brand owner and would like your icon removed or updated, please {{email}} or read our full {{policy}}. Removal requests are honored within 24 hours."
+              slots={{
+                email: (
+                  <a
+                    href="mailto:support@glinr.com"
+                    className="font-medium text-foreground underline underline-offset-2"
+                  >
+                    <T k="pages.contact.policy.emailLink" fallback="email us" />
+                  </a>
+                ),
+                policy: (
+                  <a
+                    href={withUtm(TRADEMARK_POLICY_URL, "contact_page")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-foreground underline underline-offset-2"
+                  >
+                    <T k="pages.contact.policy.policyLink" fallback="Trademark Policy" />
+                  </a>
+                ),
+              }}
+            />
           </p>
         </div>
       </div>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { capture, captureException } from "@/lib/analytics";
 import { AlertTriangle, RefreshCw } from "@/components/own-icons";
 import { Button } from "@/components/ui/button";
+import { useT } from "@/i18n/use-t";
 
 export default function Error({
   error,
@@ -13,6 +14,8 @@ export default function Error({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  const { t } = useT();
+
   useEffect(() => {
     console.error("[thesvg] Unhandled error:", error);
     captureException(error, { digest: error.digest });
@@ -24,18 +27,18 @@ export default function Error({
         <AlertTriangle className="h-8 w-8 text-destructive" />
       </div>
       <div className="space-y-2">
-        <h2 className="text-xl font-semibold">Something went wrong</h2>
+        <h2 className="text-xl font-semibold">{t("pages.error.title", { defaultValue: "Something went wrong" })}</h2>
         <p className="max-w-md text-sm text-muted-foreground">
-          An unexpected error occurred. Try refreshing the page or go back to the home page.
+          {t("pages.error.body", { defaultValue: "An unexpected error occurred. Try refreshing the page or go back to the home page." })}
         </p>
       </div>
       <div className="flex gap-3">
         <Button onClick={reset} variant="outline" className="gap-2">
           <RefreshCw className="h-4 w-4" />
-          Try again
+          {t("pages.error.retry", { defaultValue: "Try again" })}
         </Button>
         <Link href="/">
-          <Button>Go home</Button>
+          <Button>{t("pages.error.home", { defaultValue: "Go home" })}</Button>
         </Link>
       </div>
     </div>

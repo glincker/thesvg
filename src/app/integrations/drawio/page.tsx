@@ -5,6 +5,7 @@ import { getCategoryCounts } from "@/lib/icons";
 import { DRAWIO_LIBRARIES, type DrawioLibraryDef } from "@/lib/drawio-libraries";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 import libraryCounts from "@/data/drawio-library-counts.json";
+import { T } from "@/components/t";
 
 export const metadata: Metadata = {
   title: "draw.io / diagrams.net Shape Libraries - Free Brand Icons",
@@ -33,7 +34,7 @@ const IMPORT_STEPS = [
   "In the dialog that opens, scroll down and choose \"Open Library from Device...\".",
   "Pick the downloaded .xml file for the category you want.",
   "The icons appear as a new panel in the left sidebar, ready to drag onto the canvas.",
-];
+] as const;
 
 function DrawioLibraryCard({ lib, count }: { lib: DrawioLibraryDef; count: number }) {
   return (
@@ -43,13 +44,13 @@ function DrawioLibraryCard({ lib, count }: { lib: DrawioLibraryDef; count: numbe
           <FolderTree className="h-5 w-5" />
         </div>
         <span className="text-[11px] text-muted-foreground">
-          {count} {count === 1 ? "icon" : "icons"}
+          <T k="pages.integrations.iconCount" fallback="{{count}} icons" values={{ count: String(count) }} />
         </span>
       </div>
 
       <h3 className="mb-1.5 text-sm font-semibold">{lib.label}</h3>
       <p className="mb-5 flex-1 text-[13px] leading-relaxed text-muted-foreground">
-        {lib.label} brand and tool logos, ready to drag onto your diagram.
+        <T k="pages.integrations.drawio.cardBlurb" fallback="{{label}} brand and tool logos, ready to drag onto your diagram." values={{ label: lib.label }} />
       </p>
 
       <a
@@ -58,7 +59,7 @@ function DrawioLibraryCard({ lib, count }: { lib: DrawioLibraryDef; count: numbe
         className="group/link inline-flex w-fit items-center gap-1.5 text-xs font-medium text-foreground/70 transition-colors hover:text-foreground"
       >
         <Download className="h-3.5 w-3.5 opacity-50 transition-opacity group-hover/link:opacity-100" />
-        Download .xml
+        <T k="pages.integrations.drawio.download" fallback="Download .xml" />
       </a>
     </div>
   );
@@ -85,10 +86,10 @@ export default function DrawioIntegrationPage() {
             </div>
             <div>
               <h1 className="mb-1 text-2xl font-bold sm:text-3xl">
-                draw.io / diagrams.net Shape Libraries
+                <T k="pages.integrations.drawio.title" fallback="draw.io / diagrams.net Shape Libraries" />
               </h1>
               <p className="text-muted-foreground">
-                Brand and dev-tool icons, ready to drop into your diagrams.
+                <T k="pages.integrations.drawio.subtitle" fallback="Brand and dev-tool icons, ready to drop into your diagrams." />
               </p>
             </div>
           </div>
@@ -109,7 +110,7 @@ export default function DrawioIntegrationPage() {
                 <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-muted/80 text-foreground/80">
                   <ListChecks className="h-5 w-5" />
                 </div>
-                <h2 className="text-lg font-semibold">How to import a library</h2>
+                <h2 className="text-lg font-semibold"><T k="pages.integrations.drawio.howTitle" fallback="How to import a library" /></h2>
               </div>
               <ol className="ml-[38px] space-y-2 text-sm text-muted-foreground">
                 {IMPORT_STEPS.map((step, i) => (
@@ -117,7 +118,7 @@ export default function DrawioIntegrationPage() {
                     <span className="shrink-0 font-mono text-xs text-foreground/50">
                       {i + 1}.
                     </span>
-                    <span>{step}</span>
+                    <span><T k={`pages.integrations.drawio.step${i + 1}`} fallback={step} /></span>
                   </li>
                 ))}
               </ol>
@@ -126,7 +127,7 @@ export default function DrawioIntegrationPage() {
 
           {/* Libraries grid */}
           <section>
-            <h2 className="mb-5 text-base font-semibold">{DRAWIO_LIBRARIES.length} category libraries</h2>
+            <h2 className="mb-5 text-base font-semibold"><T k="pages.integrations.drawio.libraries" fallback="{{count}} category libraries" values={{ count: String(DRAWIO_LIBRARIES.length) }} /></h2>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {DRAWIO_LIBRARIES.map((lib) => (
                 <DrawioLibraryCard

@@ -21,6 +21,7 @@ import { getCategoryCounts, getFormattedIconCount, getIconCount } from "@/lib/ic
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 import { withUtm } from "@/lib/external-link";
 import { JsonLd } from "@/components/json-ld";
+import { T } from "@/components/t";
 
 const count = getFormattedIconCount();
 
@@ -148,11 +149,13 @@ interface FeatureRow {
 
 const FEATURES: {
   category: string;
+  id: string;
   icon: React.ElementType;
   items: FeatureRow[];
 }[] = [
   {
     category: "Brand Icon Coverage",
+    id: "coverage",
     icon: Layers,
     items: [
       { feature: "Brand logo icons", thesvg: "yes", simpleicons: "yes", svgl: "yes", lucide: "no", fontawesome: "partial", iconify: "partial", devicon: "partial", note: "Lucide: UI only | FA: ~500 brands | Iconify: aggregated | Devicon: tech only" },
@@ -168,6 +171,7 @@ const FEATURES: {
   },
   {
     category: "Developer Tooling",
+    id: "tooling",
     icon: Terminal,
     items: [
       { feature: "npm package", thesvg: "yes", simpleicons: "yes", svgl: "no", lucide: "yes", fontawesome: "yes", iconify: "yes", devicon: "yes" },
@@ -184,6 +188,7 @@ const FEATURES: {
   },
   {
     category: "Ecosystem & Plugins",
+    id: "ecosystem",
     icon: Package,
     items: [
       { feature: "Figma plugin", thesvg: "yes", simpleicons: "yes", svgl: "yes", lucide: "yes", fontawesome: "yes", iconify: "yes", devicon: "no" },
@@ -196,6 +201,7 @@ const FEATURES: {
   },
   {
     category: "Governance & Quality",
+    id: "governance",
     icon: FileText,
     items: [
       { feature: "Open source", thesvg: "yes", simpleicons: "yes", svgl: "yes", lucide: "yes", fontawesome: "partial", iconify: "yes", devicon: "yes", note: "Font Awesome: free tier is open source, Pro is proprietary" },
@@ -256,14 +262,13 @@ export default function ComparePage() {
           <div className="mb-10">
             <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-orange-200/50 bg-orange-50/80 px-3 py-1 text-xs font-medium text-orange-600 dark:border-orange-500/20 dark:bg-orange-500/10 dark:text-orange-400">
               <Palette className="h-3.5 w-3.5" />
-              Honest comparison
+              <T k="pages.compare.badge" fallback="Honest comparison" />
             </div>
             <h1 className="mb-2 text-2xl font-bold sm:text-3xl">
-              Compare Brand Icon Libraries
+              <T k="pages.compare.title" fallback="Compare Brand Icon Libraries" />
             </h1>
             <p className="max-w-3xl text-muted-foreground">
-              Seven popular icon libraries compared across features, tooling, and ecosystem.
-              We built this to be fair - every library has strengths. Pick what fits your project.
+              <T k="pages.compare.intro" fallback="Seven popular icon libraries compared across features, tooling, and ecosystem. We built this to be fair, every library has strengths. Pick what fits your project." />
             </p>
           </div>
 
@@ -274,10 +279,10 @@ export default function ComparePage() {
               <div>
                 <div className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
                   <TrendingUp className="h-3.5 w-3.5" />
-                  2026 milestone
+                  <T k="pages.compare.milestone.badge" fallback="2026 milestone" />
                 </div>
                 <h2 className="text-lg font-bold tracking-tight sm:text-xl">
-                  {iconCount.toLocaleString()} brand icons in three months
+                  <T k="pages.compare.milestone.title" fallback="{{count}} brand icons in three months" values={{ count: iconCount.toLocaleString() }} />
                 </h2>
                 <p className="mt-1.5 max-w-2xl text-xs leading-relaxed text-muted-foreground sm:text-sm">
                   thesvg launched March 2026 and crossed 6,500 curated brand SVGs by August. The largest open brand SVG library available today, by count and by feature coverage.
@@ -288,7 +293,7 @@ export default function ComparePage() {
                 className="inline-flex shrink-0 items-center gap-1.5 self-start rounded-lg border border-emerald-500/30 bg-background/60 px-3.5 py-2 text-xs font-medium text-emerald-600 transition-colors hover:bg-emerald-500/10 dark:text-emerald-400 sm:self-center"
               >
                 <Sparkles className="h-3.5 w-3.5" />
-                Read the milestone post
+                <T k="pages.compare.milestone.cta" fallback="Read the milestone post" />
                 <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </div>
@@ -332,14 +337,14 @@ export default function ComparePage() {
                 >
                   <div className="flex items-center gap-2.5 border-b border-border/30 bg-muted/20 px-5 py-3.5 dark:border-white/[0.04] dark:bg-white/[0.02]">
                     <Icon className="h-4 w-4 text-muted-foreground" />
-                    <h2 className="text-sm font-semibold">{section.category}</h2>
+                    <h2 className="text-sm font-semibold"><T k={`pages.compare.sections.${section.id}`} fallback={section.category} /></h2>
                   </div>
                   <div className="overflow-x-auto">
                     <table className="w-full text-sm">
                       <thead>
                         <tr className="border-b border-border/20 dark:border-white/[0.04]">
                           <th className="sticky left-0 z-10 bg-background px-4 py-3 text-left text-xs font-medium text-muted-foreground">
-                            Feature
+                            <T k="pages.compare.table.feature" fallback="Feature" />
                           </th>
                           {COLUMNS.map((col) => (
                             <th
@@ -390,7 +395,7 @@ export default function ComparePage() {
 
           {/* When to use what */}
           <div className="mt-12 space-y-6">
-            <h2 className="text-lg font-semibold">When to use what</h2>
+            <h2 className="text-lg font-semibold"><T k="pages.compare.when" fallback="When to use what" /></h2>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               <div className="rounded-xl border border-orange-500/20 bg-gradient-to-br from-orange-50/20 to-background p-4 dark:from-orange-500/5">
                 <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold">
@@ -433,7 +438,7 @@ export default function ComparePage() {
 
           {/* FAQ */}
           <div className="mt-12 space-y-4">
-            <h2 className="text-lg font-semibold">Frequently asked</h2>
+            <h2 className="text-lg font-semibold"><T k="pages.compare.faq" fallback="Frequently asked" /></h2>
             <div className="space-y-3">
               {COMPARE_FAQ.map((item) => (
                 <div
@@ -449,7 +454,7 @@ export default function ComparePage() {
 
           {/* Transparency note */}
           <div className="mt-10 rounded-xl border border-border/40 bg-muted/10 p-5 dark:border-white/[0.06] dark:bg-white/[0.02]">
-            <h3 className="mb-1.5 text-sm font-semibold">A note on fairness</h3>
+            <h3 className="mb-1.5 text-sm font-semibold"><T k="pages.compare.note" fallback="A note on fairness" /></h3>
             <p className="text-xs leading-relaxed text-muted-foreground">
               This comparison is maintained by the theSVG team. We respect every library listed here
               and built this to help developers make informed choices. Simple Icons has years of
@@ -474,14 +479,14 @@ export default function ComparePage() {
               href="/"
               className="inline-flex items-center gap-2 rounded-lg bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
             >
-              Browse {iconCount.toLocaleString()} icons
+              <T k="pages.compare.browse" fallback="Browse {{count}} icons" values={{ count: iconCount.toLocaleString() }} />
               <ArrowRight className="h-3.5 w-3.5" />
             </Link>
             <Link
               href="/extensions"
               className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-accent dark:border-white/[0.08]"
             >
-              Extensions
+              <T k="pages.common.extensions" fallback="Extensions" />
             </Link>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Fragment, Suspense } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Github } from "@/components/own-icons";
 import type { Metadata } from "next";
@@ -7,6 +7,7 @@ import { SidebarShell } from "@/components/layout/sidebar-shell";
 import { MENTIONS, type Mention } from "@/lib/mentions";
 import { cn } from "@/lib/utils";
 import { logoPlateClass } from "@/lib/logo-surface";
+import { T } from "@/components/t";
 
 export const metadata: Metadata = {
   title: "Mentioned on - Where thesvg is listed",
@@ -92,7 +93,7 @@ const secondaryLink =
 function MentionCard({ mention }: { mention: Mention }) {
   const large = !!mention.featured;
   const link = describeLink(mention.url);
-  const evidenceLabel = mention.evidenceUrl?.includes("/pull/") ? "PR" : "Commit";
+  const isPr = !!mention.evidenceUrl?.includes("/pull/");
   const identity = (
     <>
       <LogoTile mention={mention} large={large} />
@@ -135,7 +136,7 @@ function MentionCard({ mention }: { mention: Mention }) {
             className="rounded-xl after:absolute after:inset-0 after:rounded-xl focus-visible:outline-none focus-visible:after:ring-2 focus-visible:after:ring-ring focus-visible:after:ring-offset-2 focus-visible:after:ring-offset-background"
           >
             {mention.title}
-            <span className="sr-only"> (opens in a new tab)</span>
+            <span className="sr-only"> <T k="pages.common.opensInNewTab" fallback="(opens in a new tab)" /></span>
           </a>
         </h3>
         <p className="mt-2 flex-1 text-sm text-muted-foreground">{mention.description}</p>
@@ -152,9 +153,9 @@ function MentionCard({ mention }: { mention: Mention }) {
               rel="noopener noreferrer"
               className={cn(secondaryLink, "inline-flex shrink-0 items-center gap-1 font-medium transition-colors hover:text-foreground")}
             >
-              {evidenceLabel}
+              {isPr ? <T k="pages.mentions.evidence.pr" fallback="PR" /> : <T k="pages.mentions.evidence.commit" fallback="Commit" />}
               <ArrowUpRight className="h-3.5 w-3.5" />
-              <span className="sr-only"> that added thesvg (opens in a new tab)</span>
+              <span className="sr-only"> <T k="pages.mentions.evidence.sr" fallback="that added thesvg (opens in a new tab)" /></span>
             </a>
           ) : (
             <ArrowUpRight
@@ -172,17 +173,15 @@ export default function MentionsPage() {
   const categoryCounts = getCategoryCounts();
   const sections = GROUPS.map((g) => ({
     ...g,
+    id: g.kind as string,
     items: MENTIONS.filter((m) => m.kind === g.kind).sort(byPriority),
   }));
   const untagged = MENTIONS.filter((m) => !m.kind).sort(byPriority);
   if (untagged.length) {
-    sections.push({ kind: "editorial", label: "More mentions", blurb: "", items: untagged });
+    sections.push({ kind: "editorial", id: "more", label: "More mentions", blurb: "", items: untagged });
   }
   const visible = sections.filter((s) => s.items.length > 0);
-  const summary = visible
-    .filter((s) => s.label !== "More mentions")
-    .map((s) => `${s.items.length} ${s.label.toLowerCase()}`)
-    .join(", ");
+  const summarized = visible.filter((s) => s.id !== "more");
 
   return (
     <Suspense>
@@ -190,26 +189,38 @@ export default function MentionsPage() {
         <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12">
           {/* Header */}
           <div className="mb-10">
-            <h1 className="mb-2 text-2xl font-bold sm:text-3xl">Mentioned on</h1>
+            <h1 className="mb-2 text-2xl font-bold sm:text-3xl"><T k="pages.mentions.title" fallback="Mentioned on" /></h1>
             <p className="max-w-2xl text-muted-foreground">
-              Projects that use thesvg, lists that include it and pages that write about it.
+              <T k="pages.mentions.intro" fallback="Projects that use thesvg, lists that include it and pages that write about it." />
             </p>
             <p className="mt-3 text-xs text-muted-foreground">
-              <span className="font-medium text-foreground">{MENTIONS.length} mentions</span>
-              {summary ? <span>{`: ${summary}`}</span> : null}
+              <span className="font-medium text-foreground">
+                <T k="pages.mentions.total" fallback="{{count}} mentions" values={{ count: String(MENTIONS.length) }} />
+              </span>
+              {summarized.length ? (
+                <span>
+                  {": "}
+                  {summarized.map((s, i) => (
+                    <Fragment key={s.id}>
+                      {i > 0 ? ", " : null}
+                      <T k={`pages.mentions.summary.${s.id}`} fallback="{{count}}" values={{ count: String(s.items.length) }} />
+                    </Fragment>
+                  ))}
+                </span>
+              ) : null}
             </p>
           </div>
 
           {/* Groups */}
           <div className="space-y-12">
             {visible.map((section) => (
-              <section key={section.label} aria-labelledby={`m-${section.label.replace(/\s+/g, "-").toLowerCase()}`}>
+              <section key={section.id} aria-labelledby={`m-${section.id}`}>
                 <div className="mb-4 flex items-center gap-2">
                   <h2
-                    id={`m-${section.label.replace(/\s+/g, "-").toLowerCase()}`}
+                    id={`m-${section.id}`}
                     className="text-sm font-semibold text-foreground"
                   >
-                    {section.label}
+                    <T k={`pages.mentions.groups.${section.id}.label`} fallback={section.label} />
                   </h2>
                   <span className="rounded-full bg-muted/60 px-2 py-0.5 font-mono text-[10px] text-muted-foreground dark:bg-white/[0.04]">
                     {section.items.length}
@@ -217,7 +228,9 @@ export default function MentionsPage() {
                   <div className="h-px flex-1 bg-border/40 dark:bg-white/[0.04]" />
                 </div>
                 {section.blurb ? (
-                  <p className="mb-4 text-sm text-muted-foreground">{section.blurb}</p>
+                  <p className="mb-4 text-sm text-muted-foreground">
+                    <T k={`pages.mentions.groups.${section.id}.blurb`} fallback={section.blurb} />
+                  </p>
                 ) : null}
                 <ul className="grid grid-flow-dense gap-3 md:grid-cols-2 xl:grid-cols-3">
                   {section.items.map((mention) => (
@@ -232,9 +245,9 @@ export default function MentionsPage() {
           <div className="mt-14 overflow-hidden rounded-xl border border-border/40 bg-gradient-to-br from-card/50 to-muted/20 dark:border-white/[0.06] dark:from-white/[0.03] dark:to-white/[0.01]">
             <div className="flex flex-col gap-5 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
               <div>
-                <h2 className="mb-1 text-lg font-semibold">Know a page that mentions thesvg?</h2>
+                <h2 className="mb-1 text-lg font-semibold"><T k="pages.mentions.invite.title" fallback="Know a page that mentions thesvg?" /></h2>
                 <p className="max-w-xl text-sm text-muted-foreground">
-                  Open an issue with the link and we will add it here.
+                  <T k="pages.mentions.invite.body" fallback="Open an issue with the link and we will add it here." />
                 </p>
               </div>
               <div className="flex flex-wrap gap-3">
@@ -245,13 +258,13 @@ export default function MentionsPage() {
                   className="inline-flex items-center gap-2 rounded-lg bg-foreground px-4 py-2 text-sm font-medium text-background transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
                   <Github className="h-4 w-4" />
-                  Open an issue
+                  <T k="pages.mentions.invite.cta" fallback="Open an issue" />
                 </a>
                 <Link
                   href="/extensions"
                   className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
-                  Extensions
+                  <T k="pages.common.extensions" fallback="Extensions" />
                 </Link>
               </div>
             </div>
