@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { Moon, Search, Sun, X } from "@/components/own-icons";
 import { TheSVGMark } from "@/components/icons/the-svg-mark";
+import { BrandLockup } from "@/components/brand-lockup";
 import { useTheme } from "next-themes";
 import { usePathname, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -50,16 +51,13 @@ export function MobileTopBar() {
       }}
     >
       <div className="flex h-12 items-center gap-2 px-2">
-        <Link
-          href="/"
-          aria-label={t("header.home")}
-          className="flex shrink-0 items-center gap-1.5 text-foreground [filter:drop-shadow(0_1px_2px_rgba(0,0,0,0.2))] dark:[filter:drop-shadow(0_1px_3px_rgba(0,0,0,0.5))]"
-        >
-          <TheSVGMark className="h-7 w-7 rounded-md" />
-          <span className="text-[14px] font-bold tracking-tight text-foreground">
-            the<span className="text-orange-500">SVG</span>
-          </span>
-        </Link>
+        <BrandLockup
+          size="sm"
+          homeLabel={t("header.home")}
+          utmSource="mobile"
+          className="shrink-0 [filter:drop-shadow(0_1px_2px_rgba(0,0,0,0.2))] dark:[filter:drop-shadow(0_1px_3px_rgba(0,0,0,0.5))]"
+          mark={<TheSVGMark className="h-8 w-8 rounded-md" />}
+        />
 
         <div className="relative min-w-0 flex-1">
           <Search className="pointer-events-none absolute top-1/2 left-2.5 h-3.5 w-3.5 -translate-y-1/2 text-muted-foreground/70" />
