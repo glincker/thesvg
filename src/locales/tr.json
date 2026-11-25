@@ -1,5 +1,7 @@
 {
-  "language": { "label": "Dil" },
+  "language": {
+    "label": "Dil"
+  },
   "nav": {
     "brandIcons": "Marka İkonları",
     "uiIcons": "UI İkonları",
@@ -57,6 +59,351 @@
       "privacy": "Gizlilik",
       "trademarkPolicy": "Ticari Marka Politikası",
       "contact": "İletişim"
+    }
+  },
+  "docs": {
+    "ui": {
+      "navLabel": "Dokümantasyon gezintisi",
+      "onThisPage": "Bu sayfada",
+      "askAi": "Yapay zekaya sor",
+      "openIn": "{{name}} içinde aç",
+      "copy": "Kopyala",
+      "copied": "Kopyalandı",
+      "copyFailed": "Kopyalanamadı",
+      "copyLinkTo": "{{title}} bağlantısını kopyala",
+      "editOnGithub": "Bu sayfayı GitHub'da düzenle",
+      "thanks": "Geri bildiriminiz için teşekkürler",
+      "wasHelpful": "Bu sayfa işinize yaradı mı?",
+      "helpfulYes": "Evet, bu sayfa işime yaradı",
+      "helpfulNo": "Hayır, bu sayfa işime yaramadı",
+      "docsBadge": "Dokümanlar",
+      "source": "Kaynak",
+      "relatedQuestions": "İlgili sorular",
+      "seeAllFaq": "Tüm SSS'yi gör"
+    },
+    "nav": {
+      "groups": {
+        "getting-started": "Başlarken",
+        "frameworks-tools": "Framework'ler ve araçlar",
+        "guides": "Kılavuzlar",
+        "reference": "Referans"
+      },
+      "items": {
+        "overview": "Genel bakış",
+        "cdn": "CDN / HTML",
+        "react": "React",
+        "vue": "Vue",
+        "svelte": "Svelte",
+        "react-native": "React Native",
+        "cli": "CLI",
+        "api": "REST API",
+        "mcp": "Yapay zeka asistanları (MCP)",
+        "recipes": "Tarifler",
+        "best-practices": "En iyi uygulamalar",
+        "flags": "Bayraklar",
+        "tricks": "İpuçları",
+        "migration": "Geçiş",
+        "faq": "SSS"
+      }
+    },
+    "home": {
+      "heading": "Dokümanlar ve kılavuzlar",
+      "intro": "{{total}}+ marka ikonunu kullanmak için her şey: framework kılavuzları, gerçek dünya tarifleri, en iyi uygulamalar, ipuçları, geçiş kılavuzları ve SSS.",
+      "gettingStartedTitle": "Başlarken",
+      "gettingStartedBody": "Ne inşa ettiğinize uyan kılavuzu seçin. React, Vue veya Svelte'te bilinen birkaç ikon: eşleşen paketi kullanın. Sınırı belli olmayan veya büyük bir küme (bir seçici, bir dizin sayfası): bunun yerine CDN kılavuzunu kullanın, kaç ikon gösterirseniz gösterin paket maliyeti sıfırdır. İkonları kendi deponuza almak: CLI'yı kullanın. Bir yapay zeka asistanı bağlamak: MCP kılavuzuna bakın.",
+      "cards": {
+        "flags": "Ülke ve bölge bayrakları: şekiller, boyutlar, erişilebilirlik, yerel ayar yardımcısı, arama ve tarayıcı.",
+        "recipes": "Somut yapım kalıpları: teknoloji yığını rozetleri, ikon seçiciler, erişilebilir düğmeler ve daha fazlası.",
+        "best-practices": "Boyutlandırma, varyant seçimi, CDN sürüm sabitleme ve karanlık mod, doğru şekilde.",
+        "tricks": "Küçük teknikler: slug ile dinamik ikonlar, CSS maskesiyle yeniden renklendirme, ön yükleme ipuçları.",
+        "migration": "Simple Icons veya svgl'den geçiş ya da theSVG, Iconify ve Lucide arasında seçim yapma.",
+        "faq": "Lisanslama, eksik varyantlar, istek sınırları ve diğer sık sorulan sorular."
+      }
+    },
+    "guides": {
+      "cdn": {
+        "label": "CDN / düz HTML",
+        "summary": "Kurulum yok, derleme adımı yok. Bir <img> etiketini CDN adresine yönlendirin. Hiç JavaScript olmadan çalışır."
+      },
+      "react": {
+        "label": "React",
+        "summary": "Tür tanımlı, tree-shaking destekli bileşenler. Varsayılan olarak Server Component olarak çalışır, \"use client\" gerekmez."
+      },
+      "vue": {
+        "label": "Vue",
+        "summary": "Tür tanımlı Vue 3 render fonksiyonu bileşenleri. SFC derleyicisi gerekmez."
+      },
+      "svelte": {
+        "label": "Svelte",
+        "summary": "Svelte 4 ve 5 için tür tanımlı bileşenler. Yalnızca tarayıcıya özgü API içermeyen düz işaretleme olduğundan, SvelteKit SSR sırasında ve istemcide aynı şekilde oluşturulur: onMount koruması veya yalnızca istemci sarmalayıcısı gerekmez."
+      },
+      "react-native": {
+        "label": "React Native",
+        "summary": "react-native-svg ile oluşturulur. Expo Go'da config plugin ve yerel kurulum olmadan çalışır."
+      },
+      "cli": {
+        "label": "CLI (deponuza kopyalayın)",
+        "summary": "İkon dosyalarını shadcn tarzında doğrudan projenize kopyalar. Kurulacak çalışma zamanı bağımlılığı yoktur."
+      },
+      "api": {
+        "label": "REST API",
+        "summary": "Statik, CDN önbellekli JSON. Kimlik doğrulama yok, dinamik arama uç noktası yok: manifesti bir kez alın ve istemcide filtreleyin."
+      },
+      "mcp": {
+        "label": "Yapay zeka asistanları (MCP)",
+        "summary": "Yapay zeka asistanlarına ikonları doğrudan arama ve getirme araçları sunan yerel bir MCP sunucusu (stdio). Aynı mcpServers JSON bloğu, MCP uyumlu herhangi bir istemcinin (Claude Desktop, Claude Code, Cursor, Windsurf) yapılandırma dosyasında çalışır: bu dosyanın nerede olduğunu istemcinizin dokümanlarından öğrenin."
+      }
+    },
+    "snippets": {
+      "basic-usage": "Temel kullanım",
+      "automatic-dark-mode-no-js": "Otomatik karanlık mod (JS olmadan)",
+      "install": "Kurulum",
+      "usage": "Kullanım",
+      "variants": "Varyantlar",
+      "individual-import-smallest-bundle": "Tek tek içe aktarma (en küçük paket)",
+      "nuxt-3-explicit-import-no-auto-import-config-needed": "Nuxt 3 (açık içe aktarma, otomatik içe aktarma yapılandırması gerekmez)",
+      "expo-router-screen": "Expo Router ekranı",
+      "add-one-icon": "Bir ikon ekle",
+      "add-several-as-typed-jsx": "Birkaçını tür tanımlı JSX olarak ekle",
+      "search-the-catalog": "Kataloğu ara",
+      "in-a-dockerfile-ci-build-step": "Bir Dockerfile / CI derleme adımında",
+      "full-icon-manifest": "Tam ikon manifesti",
+      "categories-with-counts": "Sayılarla kategoriler",
+      "direct-svg": "Doğrudan SVG",
+      "jsdelivr-mirror-recommended-for-high-traffic": "jsDelivr yansıması (yüksek trafik için önerilir)",
+      "mcp-config-claude-desktop-cursor-etc": "MCP yapılandırması (Claude Desktop, Cursor vb.)",
+      "dynamic-icon": "Dinamik ikon",
+      "onerror-fallback": "onError ile yedek",
+      "css-mask-recolor": "CSS maskesiyle yeniden renklendirme",
+      "bulk-add": "Toplu ekleme",
+      "preload-hint": "Ön yükleme ipucu",
+      "client-side-filter": "İstemci tarafı filtre",
+      "html-jsx": "HTML / JSX",
+      "markdown-readme": "Markdown (README)",
+      "react": "React",
+      "option-a-skip-optimization-for-this-image": "Seçenek A: bu görsel için iyileştirmeyi atla",
+      "option-b-allow-svgs-from-the-icon-domain": "Seçenek B: ikon alan adından gelen SVG'lere izin ver",
+      "package-json-script": "package.json betiği",
+      "dockerfile": "Dockerfile",
+      "before-after": "Önce / sonra"
+    },
+    "bestPractices": {
+      "intro": "Boyutlandırma, varyant seçimi, CDN sürüm sabitleme ve karanlık mod, doğru şekilde.",
+      "cdn-vs-components": {
+        "title": "Izgaralar için CDN <img>, bilinen bir küme için bileşenler",
+        "body": "Yüzlerce ya da binlerce ikon mu gösteriyorsunuz (bir seçici, bir dizin)? CDN <img> URL kalıbını kullanın: kaç tane gösterirseniz gösterin paket maliyeti sıfırdır. @thesvg/react, @thesvg/vue veya @thesvg/svelte adlandırılmış içe aktarmalarını, kaynağınızda doğrudan başvurduğunuz küçük ve sabit bir ikon kümesi için ayırın; tree-shaking yalnızca kullandıklarınızı bırakır."
+      },
+      "set-dimensions": {
+        "title": "Her zaman width ve height belirleyin",
+        "body": "Bir <img>, yüklenene kadar kendine ait bir boyuta sahip değildir; bu yüzden açık width/height (veya ayrılmış bir aspect-ratio) olmayan ikon, sayfa yüklenirken yerleşim kaymasına yol açar. Boyutu yalnızca CSS sınıflarıyla belirlenen ikonlarda bile her ikonda ikisini de belirleyin."
+      },
+      "recolor-mono": {
+        "title": "Yeniden renklendirmeyi CSS filtreleriyle değil, mono varyantıyla yapın",
+        "body": "Bir ikonun rastgele bir metin rengine uymasını mı istiyorsunuz? CSS filter: invert() gibi hilelerin yerine, mono varyantını satır içi bir bileşenle kullanın (currentColor değerini devralır): filtreler kayıplıdır ve rastgele onaltılık renk değerlerine karşılık gelmez."
+      },
+      "pin-jsdelivr": {
+        "title": "jsDelivr yansımasını @main'e değil, bir sürüme sabitleyin",
+        "body": "cdn.jsdelivr.net/gh/glincker/thesvg@main/... sürekli değişen main dalını izler. Üretimde yayımlanmış bir git etiketine sabitleyin (örn. @{{ref}}, güncel sürüm); böylece yukarı akıştaki bir yeniden adlandırma ya da kaldırma, uygulamanızın gösterdiğini sessizce değiştirmez."
+      },
+      "picture-dark-mode": {
+        "title": "Karanlık mod için JS değil, <picture> kullanın",
+        "body": "Hem açık hem koyu varyantı olan ikonlar, <picture> aracılığıyla yalnızca CSS medya sorgusuyla geçiş yapabilir: tema algılama JavaScript'i yok, hidrasyon sırasında yanlış varyantın yanıp sönmesi yok."
+      },
+      "high-traffic": {
+        "title": "Yoğun trafikli uygulamalar: yansıma kullanın, büyük ölçekte doğrudan bağlantı vermeyin",
+        "body": "thesvg.org'un /icons/* yolu CDN önbellekli ve büyük ölçekte ücretsizdir; ancak çok yüksek hacimli üretim uygulamaları yine de jsDelivr yansımasını tercih etmeli veya depoyu klonlayarak kendi sunucusunda barındırmalıdır; böylece sizin tarafınızdaki bir trafik artışı hiçbir zaman thesvg.org'un çalışma süresine bağlı olmaz."
+      }
+    },
+    "tricks": {
+      "intro": "Bilmeye değer küçük teknikler.",
+      "dynamic-slug": {
+        "title": "Herhangi bir ikonu içe aktarmadan, slug ile oluşturun",
+        "body": "İkon yalnızca çalışma zamanında biliniyorsa (bir kullanıcının bağlı entegrasyonları, bir CMS alanı), olası her bileşeni içe aktarmaya çalışmayın. CDN adresini doğrudan slug'dan oluşturun: 6.500'den fazla ikonun hepsi için çalışır, toplu içe aktarma ve paketleyici maliyeti yoktur."
+      },
+      "fallback-slug": {
+        "title": "Bilinmeyen bir slug için zarifçe yedeğe geçin",
+        "body": "Bir slug katalogda olmayabilirse (örn. kullanıcı girdisinden geldiyse), kırık görsel göstermek yerine yükleme hatasında yedek bir ikona geçin."
+      },
+      "css-mask": {
+        "title": "<img> etiketli bir ikonu CSS maskesiyle yeniden renklendirin",
+        "body": "Bir <img> etiketi, satır içi SVG bileşeni gibi currentColor değerini devralamaz. Yine de yalnızca CSS ile yeniden renklendirmek için onu arka plan görseli yerine maske olarak kullanın."
+      },
+      "bulk-add": {
+        "title": "Tek komutla bir grup ikonu projeye alın",
+        "body": "Tek bir çağrıyla birkaç ikonu doğrudan deponuza ekleyin: hava boşluklu CI için ya da ikonları çalışma zamanında almak yerine kendi kod tabanınıza eklemeyi tercih ettiğinizde işe yarar."
+      },
+      "preload": {
+        "title": "Yanıp sönmeyi önlemek için ana logoyu önceden yükleyin",
+        "body": "Sayfa yüklenir yüklenmez görünen bir marka ikonu (ana logo, ekranın üst kısmındaki bir entegrasyon rozeti), bir ön yükleme ipucundan yararlanır: tarayıcı <img> etiketini yerleşim sırasında keşfetmeyi beklemek yerine, ihtiyaç duyulmadan önce getirir."
+      },
+      "client-search": {
+        "title": "Paket olmadan kataloğu istemci tarafında arayın",
+        "body": "Kendi ikon seçicinizi mi yapıyorsunuz? Manifesti bir kez alın, sonra bellekte filtreleyin: arama paketi yok, tuş vuruşu başına ağ isteği yok."
+      }
+    },
+    "recipes": {
+      "intro": "Somut yapım kalıpları, her biri gerçek bir kullanım senaryosunu hedefler.",
+      "tech-stack-badges": {
+        "title": "Bir \"şununla yapıldı\" teknoloji yığını rozet sırası",
+        "description": "En yaygın kullanım: bir açılış sayfasında veya README'de bir ürünün neyle yapıldığını söyleyen logo sırası. Düz CDN <img> etiketleri, kurulum yok."
+      },
+      "icon-picker": {
+        "title": "Aranabilir bir ikon seçici combobox",
+        "description": "Manifesti bağlanırken bir kez alın, her tuş vuruşunda istemcide filtreleyin ve eşleşmeleri CDN adresiyle gösterin. Arama kütüphanesi yok, tuş vuruşu başına istek yok."
+      },
+      "nextjs-image": {
+        "title": "İkonları Next.js'in <Image> bileşeniyle kullanma",
+        "description": "Next'in yerleşik görsel iyileştiricisi varsayılan olarak SVG'leri rasterize etmez. Ya bir görseli iyileştirmeden çıkarın ya da ikon alan adı için SVG'lere izin verin: düz bir <img> etiketi çoğu ikon kullanımında daha basittir ve tüm bunları atlar."
+      },
+      "accessible-icon-button": {
+        "title": "Erişilebilir, yalnızca ikonlu bir düğme",
+        "description": "Görünür etiketi olmayan bir ikonun erişilebilir adı başka yolla verilmelidir: aria-label ile role ya da görsel olarak gizli metin; böylece ekran okuyucular doğru şekilde okur."
+      },
+      "logo-strip-fallback": {
+        "title": "Yedekli bir entegrasyon/iş ortağı logo şeridi",
+        "description": "Bir slug'ın katalogda olmayabileceği (yazım hatası, yeniden adlandırılmış marka, henüz eklenmemiş) kullanıcı bağlantılı veya üçüncü taraf entegrasyonlar dizini. Kırık görsel göstermek yerine yedeğe geçin."
+      },
+      "cli-in-ci": {
+        "title": "İkonları çalışma zamanı yerine CI/derleme zamanında projeye alma",
+        "description": "Hava boşluklu derlemeler için ya da ikonların istek anında alınmak yerine bir derleme çıktısına dahil edilmesini istediğinizde, CLI'yı bir derleme adımı olarak çalıştırın."
+      }
+    },
+    "migration": {
+      "title": "Diğer kütüphanelerden geçiş",
+      "intro": "Özellik özellik tam karşılaştırma [/compare](/compare) sayfasında. Burada kısa ve pratik sürümü var.",
+      "from-simple-icons": {
+        "title": "Simple Icons'tan geçiş",
+        "summary": "Simple Icons yalnızca tek renklidir (tek renk, açık/koyu/wordmark varyantı yok); yılların topluluk güveni ve geniş araç desteği vardır. Çoğu marka slug'ı doğrudan taşınır; asıl değişiklik bir varyant seçmektir.",
+        "p1": "react-icons'un Si önekli bileşenlerini (SiGithub, SiVercel) kullanan React uygulamaları, @thesvg/react içindeki eşdeğer adlandırılmış dışa aktarmaya (Github, Vercel) geçer.",
+        "p2": "Simple Icons marka başına tek bir işaret sunar. theSVG'nin default varyantı en yakın karşılıktır; Simple Icons'ın her zaman verdiği tek renkli davranışı özellikle istiyorsanız mono varyantını açıkça kullanın.",
+        "p3": "Bir slug henüz theSVG kataloğunda yoksa, eşdeğerlik varsaymak yerine /submit üzerinden isteyin: kapsam markaya göre değişir."
+      },
+      "from-svgl": {
+        "title": "svgl'den geçiş",
+        "summary": "svgl, renkli ve wordmark varyantları olan, SvelteKit tabanlı bir marka SVG tarayıcısıdır ancak npm paketi yoktur: SVG kaynağını elle kopyalarsınız. Bir Svelte projesinin dışındaysanız ya da kurulabilir bir paket istiyorsanız, theSVG aynı alanı kapsar ve ayrıca CLI, REST API ve framework paketleri sunar.",
+        "p1": "Kopyala-yapıştır SVG kaynağı bir CDN adresine ya da paket içe aktarmasına dönüşür: bir logo yukarı akışta güncellendiğinde elle yeniden kopyalamak yok.",
+        "p2": "svgl'nin varyant modeli (renk + wordmark), theSVG'nin default + wordmark varyantına karşılık gelir; theSVG ayrıca mevcut olduğunda mono, light ve dark varyantlarını sunar.",
+        "p3": "Svelte'te kalıyorsanız: elle kopyalanmış işaretlemeyi @thesvg/svelte bileşenleriyle değiştirin (yukarıdaki Svelte kılavuzuna bakın); tür desteği ve gelecekteki güncellemeler kendiliğinden gelir."
+      },
+      "theSVG-vs-iconify-lucide": {
+        "title": "theSVG, Iconify ve Lucide: doğru olanı seçmek",
+        "summary": "Bunlar farklı sorunları çözer ve çoğu proje birden fazlasını kullanır. Özellik özellik tam matris /compare sayfasında; kısa özet:",
+        "p1": "Marka logoları (GitHub, Stripe, AWS, entegrasyon listeniz): theSVG, çoklu varyant destekli, en büyük markaya odaklı koleksiyon.",
+        "p2": "Genel arayüz ikonları (oklar, menüler, ayarlar, ayraçlar): Lucide, markaya odaklı değildir, arayüz öğeleri için tasarlanmıştır.",
+        "p3": "Birbiriyle ilgisiz birçok ikon kümesi için, marka ve arayüz dahil tek bir API gerekiyorsa ve daha büyük bir toplayıcı sorun değilse: Iconify.",
+        "p4": "Tipik bir uygulama marka logoları için theSVG'yi, arayüz için Lucide'i bir arada kullanır: thesvg.org'un kendisi de böyle yapar."
+      }
+    },
+    "faq": {
+      "intro": "theSVG hakkında sık sorulan sorular.",
+      "licensed": {
+        "q": "Bu logolar her marka tarafından resmen lisanslanmış mı?",
+        "a": "Hayır. İkonlar, tanımlama amacıyla nominatif adil kullanım kapsamında sunulur: marka işaretleri ilgili ticari marka sahiplerinin mülkiyetinde kalır. Bir logoyu kullanmak onay veya ortaklık anlamına gelmez. Ayrıntılar için /legal sayfasına ve deponun TRADEMARK.md dosyasına bakın."
+      },
+      "commercial": {
+        "q": "Bu ikonları ticari olarak kullanabilir miyim?",
+        "a": "Evet, tanımlama amacıyla (örn. \"X ile entegre çalışıyoruz\", bir teknoloji yığını rozeti, bir ödeme yöntemi listesi): bu standart nominatif adil kullanımdır. Var olmayan bir ortaklığı veya onayı ima edecek şekilde bir işaret kullanmayın. Şüphede kalırsanız, mümkün olduğunda ikon başına bağlantısı verilen markanın kendi yönergelerine bakın."
+      },
+      "missing-variant": {
+        "q": "Bir ikonda dark, light veya wordmark varyantı yok. Neden?",
+        "a": "Her marka 7 varyantın hepsini sunmaz. Yalnızca default varyantının bulunması garantidir; geri kalanı ikon eklendiğinde temiz bir kaynak çizimin mevcut olup olmadığına bağlıdır. Eksik bir varyant için temiz bir kaynağınız varsa, gönderin."
+      },
+      "request-brand": {
+        "q": "Yeni bir marka nasıl talep eder ya da güncelliğini yitirmiş bir logoyu nasıl bildiririm?",
+        "a": "/submit üzerinden bir ikon talebi veya ikon güncelleme başvurusu açın. Yapıştırılan SVG kaynağı 50KB'ın altında olmalı, geçerli bir viewBox içermeli, <script> etiketi veya gömülü raster görsel barındırmamalıdır: başvuru formu ve sınıflandırma botu bir sorun olursa sizi uyarır."
+      },
+      "rate-limit": {
+        "q": "API'de bir istek sınırı var mı?",
+        "a": "/api/registry.json ve /api/categories.json, veritabanı destekli bir uç nokta değil, statik ve CDN önbellekli dosyalardır; bu yüzden bugün fiilen bir istek sınırı yoktur. Çok yüksek istek hacimleri için jsDelivr yansımasını tercih edin. Gerçek zamanlı arama ve webhook'ları olan, erişimi kontrollü ayrı bir API, api.thesvg.org adresinde yol haritasındadır."
+      },
+      "ai-assistants": {
+        "q": "Yapay zeka asistanları theSVG'yi doğrudan kullanabilir mi?",
+        "a": "Evet, @thesvg/mcp-server ile: Claude Desktop, Claude Code veya Cursor'un MCP yapılandırmasına eklediğiniz yerel bir MCP sunucusudur (yukarıdaki yapay zeka asistanları kılavuzuna bakın). Site ile aynı verilere dayanan arama, getirme ve kategori listeleme araçları sunar."
+      },
+      "which-package": {
+        "q": "Aslında hangi paketi kurmalıyım?",
+        "a": "React, Vue veya Svelte uygulamasında bilinen birkaç ikon: uygun framework paketini kullanın; tree-shaking destekli ve tür tanımlıdır. Sınırı belli olmayan veya büyük bir küme (bir seçici, bir dizin): bunun yerine CDN <img> kalıbını kullanın; sayıdan bağımsız olarak paket maliyeti yoktur. İkonların kendi deponuzda olmasını istiyorsanız: CLI'yı kullanın."
+      },
+      "broken-image": {
+        "q": "İkonum kırık görsel / 404 gösteriyor. Sorun ne?",
+        "a": "Neredeyse her zaman slug uyuşmazlığıdır: URL yolu /api/registry.json içindeki tam slug'ı kullanır; bu her zaman markanın görünen adı değildir (boşluklar, noktalar ve büyük/küçük harf normalleştirilir). Slug'ı marka adından tahmin etmek yerine sitede arayın veya tam slug için kayıt defterine bakın."
+      },
+      "nextjs-image": {
+        "q": "theSVG, Next.js'in <Image> bileşeniyle çalışır mı?",
+        "a": "Kutudan çıktığı gibi değil. Next'in yerleşik görsel iyileştiricisi varsayılan olarak SVG'leri rasterize etmez; bu yüzden <Image> için ilgili görselde unoptimized özelliği ya da next.config içinde alan adına dangerouslyAllowSVG ayarı gerekir. Çoğu ikon kullanımında düz bir <img> etiketi (veya bir framework paketi bileşeni) daha basittir ve iyileştiriciyi tamamen devre dışı bırakır."
+      },
+      "typescript-slugs": {
+        "q": "Her ikon slug'ını listeleyen bir TypeScript türü var mı?",
+        "a": "Tüm slug'ların dışa aktarılmış bir birleşim türü yoktur: her ikon kendi adlandırılmış dışa aktarmasıdır (Github, Figma, ...), bu yüzden var olmayan bir ikonu içe aktarmak, derleme sırasında bir dize sabiti türü hatası değil, modül bulunamadı hatası verir. Slug'lara veri olarak ihtiyacınız varsa (örn. bir API yanıtından), registry.json içindeki slug alanı düz bir dizedir."
+      },
+      "vs-alternatives": {
+        "q": "theSVG, Simple Icons, svgl veya Iconify'dan nasıl farklıdır?",
+        "a": "theSVG'de daha fazla marka ikonu, alternatiflerin hiçbirinin kapsamadığı bulut sağlayıcı ikonları (AWS, Azure, GCP), ikon başına en fazla 7 varyant (color, mono, light, dark, wordmark) ve daha geniş bir araç zinciri (framework paketleri, CLI, REST API, yapay zeka ajanları için MCP sunucusu) var. Simple Icons yalnızca tek renklidir; svgl Svelte odaklıdır ve npm paketi yoktur; Iconify 150'den fazla ikon kümesini toplar ancak markaya odaklı değildir. Yan yana tam karşılaştırma /compare sayfasında."
+      },
+      "ssr": {
+        "q": "Framework paketleri sunucu tarafı oluşturmayı (SSR) destekliyor mu?",
+        "a": "Evet. Her framework paketi (@thesvg/react, @thesvg/vue, @thesvg/svelte), yalnızca tarayıcıya özgü API içermeyen düz işaretleme üretir; bu yüzden varsayılan olarak SSR için güvenlidir: yalnızca istemci sarmalayıcısı ya da hidrasyon koruması gerekmez. Özellikle @thesvg/react bileşenleri, \"use client\" yönergesi olmadan React Server Components olarak çalışır."
+      },
+      "self-host": {
+        "q": "theSVG'yi belirtmeden ikonları kendim barındırabilir miyim?",
+        "a": "Kod tabanı ve araçlar MIT lisanslıdır; bu yüzden kendi sunucunuzda barındırmak için yasal olarak atıf gerekmez. Dosyaları nerede barındırdığınızdan bağımsız olarak marka işaretlerinin kendisi ticari marka sahiplerinin mülkiyetinde kalır: /legal sayfasına bakın. Geri bağlantı verilmesi takdir edilir ama zorunlu değildir."
+      },
+      "dark-mode-differs": {
+        "q": "Aynı ikon karanlık modda neden farklı görünüyor?",
+        "a": "Her yerde default varyantını gösteriyorsanız bu beklenen bir durumdur: sabit bir marka rengidir, temaya duyarlı değildir. Sayfa temasına uyum sağlayan bir varyant için light/dark varyantlarını bir <picture> öğesiyle kullanın (yukarıdaki En iyi uygulamalara bakın) ya da mono varyantını satır içi bir bileşenle kullanın; böylece currentColor değerini devralır."
+      }
+    },
+    "flags": {
+      "intro": "Üç şekilde {{total}} ülke ve bölge bayrağı. `npm i @thesvg/flags` ile kurun ([npm'de](https://www.npmjs.com/package/@thesvg/flags)).",
+      "usageTitle": "Kullanım kılavuzu",
+      "browse": "Şekilleri, boyutları ve renkleri gezip denemek mi istiyorsunuz? [Bayrak tarayıcısını açın](/collection/flags).",
+      "creditsTitle": "Katkılar ve lisanslar",
+      "creditsBody": "Bayrak çizimleri flag-icons (4x3 ve kare) ile circle-flags (daire) projelerinden gelir; ikisi de MIT lisanslıdır. Dosyaların kendisi atıf metni taşımaz; tam bildirimler ve dosya bazında kaynak haritası, depodaki THIRD_PARTY_NOTICES.md ve packages/flags/src/data/licenses.json dosyalarındadır. Bayrak, bir devletin veya kuruluşun kamusal sembolüdür ve bir bayrağı dahil etmek egemenlik konusunda bir tutum anlamına gelmez.",
+      "fullGuide": "Props, yerel ayar tablosu, Vue, Svelte ve düz SVG örnekleri içeren tam kılavuz: [docs/flags.md](https://github.com/glincker/thesvg/blob/main/docs/flags.md).",
+      "sections": {
+        "naming": {
+          "title": "Adlandırma",
+          "body": "Slug'lar flag- artı küçük harfli ISO 3166-1 alpha-2 kodu (flag-us, flag-de) veya bölge kodudur (flag-gb-eng, flag-es-ct, flag-eu, flag-un). Varyantlar: default 4x3 dikdörtgendir, square 1x1'dir ve circle. Kategori Flags'tir."
+        },
+        "search": {
+          "title": "Arama",
+          "body": "Bayraklar İngilizce ve yerel adlarla, resmi adlarla, ISO alpha-2, alpha-3 ve sayısal kodlarla, emoji, eski adlar ve yerel ayar etiketleriyle bulunur. deutschland, DEU, 276, holland, england, catalunya veya pt-BR deneyin."
+        },
+        "shape": {
+          "title": "Şekil seçimi",
+          "body": "Gerçek oranlar işe yaradığında 4x3, sabit kare alanlar için square, kompakt seçiciler ve çipler için circle kullanın. Circle geniş bayrakların kenarlarını keser; bu yüzden adı yanında metin olarak tutun."
+        },
+        "accessibility": {
+          "title": "Erişilebilirlik",
+          "body": "Dekoratif bayraklar aria-hidden olur ve anlamı görünür metin taşır. title yalnızca bayrak tek başına durduğunda verin; bu, erişilebilir adı olan role=img olarak oluşturulur."
+        },
+        "language": {
+          "title": "Bayrak bir ülkedir, dil değildir",
+          "body": "Bayrağın yanında dilin kendi adını gösterin ve bayrakları tek dil seçici olarak kullanmayın. getFlagForLocale, bir yerel ayarı süsleme amaçlı geleneksel bir bayrakla eşleştirir."
+        },
+        "legal": {
+          "title": "Yasal",
+          "body": "Bayrak, bir devletin veya kuruluşun kamusal sembolüdür. Bir bayrağı dahil etmek egemenlik veya sınırlar konusunda bir tutum anlamına gelmez. Yasal bildirime ve sorumluluk reddine bakın."
+        }
+      },
+      "steps": {
+        "pick": {
+          "head": "1. Bir bayrak seçin.",
+          "body": "[Bayrak koleksiyonunda](/collection/flags) ada, ISO koduna, emojiye veya yerel ayara göre arayın. Her bayrağın kopyalama ve indirme düğmeleri olan kendi sayfası vardır."
+        },
+        "cdn": {
+          "head": "2. Kurmadan kullanın.",
+          "body": "Dosyayı CDN'den bağlayın: `https://cdn.jsdelivr.net/npm/@thesvg/flags/dist/svg/4x3/us.svg`; diğer şekiller için `4x3` yerine `1x1` veya `circle` kullanın."
+        },
+        "install": {
+          "head": "3. Ya da paketi kurun.",
+          "body": "`npm i @thesvg/flags` ([npm sayfası](https://www.npmjs.com/package/@thesvg/flags)), ardından yalnızca o bayrağın pakete girmesi için `@thesvg/flags/react/us` yolundan tek bir bayrak içe aktarın."
+        },
+        "locale": {
+          "head": "4. Bir yerel ayarı bir bayrakla eşleştirin.",
+          "body": "`getFlagForLocale(\"pt-BR\")` süsleme amacıyla Brezilya'yı döndürür. Yanında her zaman dil adını gösterin."
+        }
+      }
     }
   }
 }

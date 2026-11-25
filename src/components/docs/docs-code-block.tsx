@@ -4,6 +4,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Check, Copy, X } from "@/components/own-icons";
 import { colorizeSnippet } from "@/components/icons/shared/syntax-highlight";
 import type { DocsSnippet } from "@/lib/docs-content";
+import { docsSnippetKey } from "@/lib/docs-nav";
+import { useT } from "@/i18n/use-t";
 
 type CopyStatus = "idle" | "copied" | "failed";
 
@@ -13,14 +15,15 @@ const STATUS_BUTTON_CLASS: Record<CopyStatus, string> = {
   idle: "bg-orange-500/15 text-orange-500 hover:bg-orange-500/25 hover:text-orange-400",
 };
 
-const STATUS_LABEL: Record<CopyStatus, string> = {
-  copied: "Copied",
-  failed: "Couldn't copy",
-  idle: "Copy",
+const STATUS_LABEL: Record<CopyStatus, { key: string; fallback: string }> = {
+  copied: { key: "docs.ui.copied", fallback: "Copied" },
+  failed: { key: "docs.ui.copyFailed", fallback: "Couldn't copy" },
+  idle: { key: "docs.ui.copy", fallback: "Copy" },
 };
 
 export function DocsCodeBlock({ snippet }: Readonly<{ snippet: DocsSnippet }>) {
   const [status, setStatus] = useState<CopyStatus>("idle");
+  const { t } = useT();
   const resetTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => () => {
@@ -41,7 +44,7 @@ export function DocsCodeBlock({ snippet }: Readonly<{ snippet: DocsSnippet }>) {
   return (
     <div className="overflow-hidden rounded-xl border border-border bg-card/30 shadow-sm">
       <div className="flex items-center justify-between border-b border-border/50 px-4 py-2.5">
-        <span className="text-[11px] font-medium text-muted-foreground">{snippet.label}</span>
+        <span className="text-[11px] font-medium text-muted-foreground">{t(docsSnippetKey(snippet.label), { defaultValue: snippet.label })}</span>
         <button
           type="button"
           onClick={handleCopy}
@@ -50,7 +53,7 @@ export function DocsCodeBlock({ snippet }: Readonly<{ snippet: DocsSnippet }>) {
           {status === "copied" && <Check className="h-3.5 w-3.5" />}
           {status === "failed" && <X className="h-3.5 w-3.5" />}
           {status === "idle" && <Copy className="h-3.5 w-3.5" />}
-          {STATUS_LABEL[status]}
+          {t(STATUS_LABEL[status].key, { defaultValue: STATUS_LABEL[status].fallback })}
         </button>
       </div>
       <div className="bg-zinc-950">

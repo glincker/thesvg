@@ -1,5 +1,7 @@
 {
-  "language": { "label": "语言" },
+  "language": {
+    "label": "语言"
+  },
   "nav": {
     "brandIcons": "品牌图标",
     "uiIcons": "UI 图标",
@@ -57,6 +59,351 @@
       "privacy": "隐私",
       "trademarkPolicy": "商标政策",
       "contact": "联系我们"
+    }
+  },
+  "docs": {
+    "ui": {
+      "navLabel": "文档导航",
+      "onThisPage": "本页内容",
+      "askAi": "询问 AI",
+      "openIn": "在 {{name}} 中打开",
+      "copy": "复制",
+      "copied": "已复制",
+      "copyFailed": "无法复制",
+      "copyLinkTo": "复制指向 {{title}} 的链接",
+      "editOnGithub": "在 GitHub 上编辑此页",
+      "thanks": "感谢你的反馈",
+      "wasHelpful": "这个页面对你有帮助吗?",
+      "helpfulYes": "是,这个页面有帮助",
+      "helpfulNo": "否,这个页面没有帮助",
+      "docsBadge": "文档",
+      "source": "源码",
+      "relatedQuestions": "相关问题",
+      "seeAllFaq": "查看全部常见问题"
+    },
+    "nav": {
+      "groups": {
+        "getting-started": "快速开始",
+        "frameworks-tools": "框架与工具",
+        "guides": "指南",
+        "reference": "参考"
+      },
+      "items": {
+        "overview": "概览",
+        "cdn": "CDN / HTML",
+        "react": "React",
+        "vue": "Vue",
+        "svelte": "Svelte",
+        "react-native": "React Native",
+        "cli": "CLI",
+        "api": "REST API",
+        "mcp": "AI 助手 (MCP)",
+        "recipes": "实用配方",
+        "best-practices": "最佳实践",
+        "flags": "旗帜",
+        "tricks": "小技巧",
+        "migration": "迁移",
+        "faq": "常见问题"
+      }
+    },
+    "home": {
+      "heading": "文档与指南",
+      "intro": "使用 {{total}} 多个品牌图标所需的一切:框架指南、真实场景配方、最佳实践、小技巧、迁移指南和常见问题。",
+      "gettingStartedTitle": "快速开始",
+      "gettingStartedBody": "选择与你的构建方式相符的指南。在 React、Vue 或 Svelte 中使用少量已知图标:使用对应的包。图标集合不固定或数量很大(选择器、目录页):改用 CDN 指南,无论展示多少图标,打包体积成本都为零。想把图标放进自己的仓库:使用 CLI。想接入 AI 助手:请看 MCP 指南。",
+      "cards": {
+        "flags": "国家和地区旗帜:形状、尺寸、无障碍、区域设置辅助函数、搜索和浏览器。",
+        "recipes": "具体的构建模式:技术栈徽章、图标选择器、无障碍按钮等。",
+        "best-practices": "尺寸设置、变体选择、CDN 版本固定和深色模式的正确做法。",
+        "tricks": "小技巧:按 slug 动态加载图标、用 CSS 蒙版改色、预加载提示。",
+        "migration": "从 Simple Icons 或 svgl 迁移,或在 theSVG、Iconify 和 Lucide 之间做选择。",
+        "faq": "授权、缺失的变体、速率限制以及其他常见问题。"
+      }
+    },
+    "guides": {
+      "cdn": {
+        "label": "CDN / 纯 HTML",
+        "summary": "无需安装,无需构建步骤。让 <img> 标签指向 CDN 地址即可。无需任何 JavaScript。"
+      },
+      "react": {
+        "label": "React",
+        "summary": "带类型、支持 tree-shaking 的组件。默认可作为服务端组件使用,无需 \"use client\"。"
+      },
+      "vue": {
+        "label": "Vue",
+        "summary": "带类型的 Vue 3 渲染函数组件。无需 SFC 编译器。"
+      },
+      "svelte": {
+        "label": "Svelte",
+        "summary": "适用于 Svelte 4 和 5 的带类型组件。纯标记,不使用仅限浏览器的 API,因此在 SvelteKit SSR 和客户端中渲染结果一致,无需 onMount 守卫或仅客户端包装器。"
+      },
+      "react-native": {
+        "label": "React Native",
+        "summary": "通过 react-native-svg 渲染。可在 Expo Go 中使用,无需 config plugin,也无需原生配置。"
+      },
+      "cli": {
+        "label": "CLI(复制到你的仓库)",
+        "summary": "像 shadcn 一样把图标文件直接复制到你的项目中。无需安装运行时依赖。"
+      },
+      "api": {
+        "label": "REST API",
+        "summary": "静态的 CDN 缓存 JSON。无需认证,没有动态搜索接口:只需获取一次清单,然后在客户端过滤。"
+      },
+      "mcp": {
+        "label": "AI 助手 (MCP)",
+        "summary": "一个本地 MCP 服务器(stdio),为 AI 助手提供直接搜索和获取图标的工具。同一段 mcpServers JSON 配置适用于任何兼容 MCP 的客户端的配置文件(Claude Desktop、Claude Code、Cursor、Windsurf),配置文件的位置请查看你所用客户端的文档。"
+      }
+    },
+    "snippets": {
+      "basic-usage": "基本用法",
+      "automatic-dark-mode-no-js": "自动深色模式(无需 JS)",
+      "install": "安装",
+      "usage": "用法",
+      "variants": "变体",
+      "individual-import-smallest-bundle": "单个导入(打包体积最小)",
+      "nuxt-3-explicit-import-no-auto-import-config-needed": "Nuxt 3(显式导入,无需配置自动导入)",
+      "expo-router-screen": "Expo Router 页面",
+      "add-one-icon": "添加一个图标",
+      "add-several-as-typed-jsx": "添加多个,生成带类型的 JSX",
+      "search-the-catalog": "搜索图标库",
+      "in-a-dockerfile-ci-build-step": "在 Dockerfile / CI 构建步骤中",
+      "full-icon-manifest": "完整图标清单",
+      "categories-with-counts": "带数量的分类",
+      "direct-svg": "直接获取 SVG",
+      "jsdelivr-mirror-recommended-for-high-traffic": "jsDelivr 镜像(高流量场景推荐)",
+      "mcp-config-claude-desktop-cursor-etc": "MCP 配置(Claude Desktop、Cursor 等)",
+      "dynamic-icon": "动态图标",
+      "onerror-fallback": "onError 降级处理",
+      "css-mask-recolor": "CSS 蒙版改色",
+      "bulk-add": "批量添加",
+      "preload-hint": "预加载提示",
+      "client-side-filter": "客户端过滤",
+      "html-jsx": "HTML / JSX",
+      "markdown-readme": "Markdown(README)",
+      "react": "React",
+      "option-a-skip-optimization-for-this-image": "方案 A:对这张图片跳过优化",
+      "option-b-allow-svgs-from-the-icon-domain": "方案 B:允许来自图标域名的 SVG",
+      "package-json-script": "package.json 脚本",
+      "dockerfile": "Dockerfile",
+      "before-after": "迁移前 / 迁移后"
+    },
+    "bestPractices": {
+      "intro": "尺寸设置、变体选择、CDN 版本固定和深色模式的正确做法。",
+      "cdn-vs-components": {
+        "title": "网格用 CDN 的 <img>,已知的固定集合用组件",
+        "body": "要渲染数百上千个图标(选择器、目录)?使用 CDN 的 <img> URL 模式:无论展示多少个,打包体积成本都为零。@thesvg/react、@thesvg/vue 或 @thesvg/svelte 的具名导入留给在源码中直接引用的少量固定图标,tree-shaking 只会保留你用到的部分。"
+      },
+      "set-dimensions": {
+        "title": "始终设置 width 和 height",
+        "body": "<img> 在加载完成前没有固有尺寸,因此没有显式 width/height(或预留 aspect-ratio)的图标会在页面加载时造成布局偏移。即使图标仅靠 CSS 类设置尺寸,也请为每个图标同时设置两者。"
+      },
+      "recolor-mono": {
+        "title": "用 mono 变体改色,不要用 CSS 滤镜",
+        "body": "想让图标匹配任意文字颜色?请把 mono 变体与内联组件一起使用(它会继承 currentColor),而不是用 CSS 的 filter: invert() 之类的技巧:滤镜会损失画质,也无法对应任意十六进制颜色。"
+      },
+      "pin-jsdelivr": {
+        "title": "把 jsDelivr 镜像固定到某个发布版本,而不是 @main",
+        "body": "cdn.jsdelivr.net/gh/glincker/thesvg@main/... 跟随不断变化的 main 分支。生产环境请固定到已发布的 git 标签(例如 @{{ref}},即当前版本),这样上游的重命名或删除不会悄悄改变你的应用渲染的内容。"
+      },
+      "picture-dark-mode": {
+        "title": "深色模式用 <picture>,而不是 JS",
+        "body": "同时有浅色和深色变体的图标,可以通过 <picture> 仅用 CSS 媒体查询切换:无需检测主题的 JavaScript,也不会在水合时闪现错误的变体。"
+      },
+      "high-traffic": {
+        "title": "高流量应用:使用镜像,不要大规模盗链",
+        "body": "thesvg.org 的 /icons/* 由 CDN 缓存,大规模使用也免费,但请求量非常大的生产应用仍应优先使用 jsDelivr 镜像,或克隆仓库自行托管,这样你这边的流量高峰就不会依赖 thesvg.org 自身的可用性。"
+      }
+    },
+    "tricks": {
+      "intro": "值得了解的小技巧。",
+      "dynamic-slug": {
+        "title": "按 slug 渲染任意图标,无需导入",
+        "body": "当图标只在运行时才知道(用户已连接的集成、CMS 字段)时,不要试图导入所有可能的组件。直接用 slug 拼出 CDN 地址即可,对 6,500 多个图标中的任意一个都适用,无需批量导入,也没有打包器成本。"
+      },
+      "fallback-slug": {
+        "title": "对未知 slug 优雅降级",
+        "body": "如果某个 slug 可能不在图标库中(例如来自用户输入),请在加载出错时换成备用图标,而不是显示破损的图片。"
+      },
+      "css-mask": {
+        "title": "用 CSS 蒙版给 <img> 标签图标改色",
+        "body": "<img> 标签无法像内联 SVG 组件那样继承 currentColor。若仍想只用 CSS 改色,请把它作为蒙版使用,而不是背景图。"
+      },
+      "bulk-add": {
+        "title": "一条命令批量引入图标",
+        "body": "一次调用即可把多个图标直接添加到你的仓库,适合离线 CI,或者你更想把图标提交到自己的代码库而不是在运行时获取。"
+      },
+      "preload": {
+        "title": "预加载首屏 Logo,避免闪烁",
+        "body": "页面一加载就可见的品牌图标(首屏 Logo、首屏的集成徽章)适合加上预加载提示,让浏览器在需要之前就先获取,而不是等到布局时才发现 <img> 标签。"
+      },
+      "client-search": {
+        "title": "无需任何包,在客户端搜索图标库",
+        "body": "在构建自己的图标选择器?只需获取一次清单,然后在内存中过滤:无需搜索包,也不用每次按键都发网络请求。"
+      }
+    },
+    "recipes": {
+      "intro": "具体的构建模式,每个都针对一个真实的使用场景。",
+      "tech-stack-badges": {
+        "title": "一行“built with”技术栈徽章",
+        "description": "最常见的用途:在落地页或 README 中放一排 Logo,说明产品是用什么构建的。使用普通的 CDN <img> 标签,无需安装。"
+      },
+      "icon-picker": {
+        "title": "可搜索的图标选择器组合框",
+        "description": "挂载时获取一次清单,每次按键在客户端过滤,并用 CDN 地址渲染匹配项。无需搜索库,每次按键也没有请求。"
+      },
+      "nextjs-image": {
+        "title": "在 Next.js 的 <Image> 组件中使用图标",
+        "description": "Next 内置的图片优化器默认不会栅格化 SVG。你可以让某张图片跳过优化,或者为图标域名允许 SVG:对大多数图标场景,直接用 <img> 标签更简单,还能完全跳过这一步。"
+      },
+      "accessible-icon-button": {
+        "title": "无障碍的纯图标按钮",
+        "description": "没有可见文字标签的图标需要用其他方式提供无障碍名称:aria-label 加 role,或视觉隐藏的文本,这样屏幕阅读器才能正确朗读。"
+      },
+      "logo-strip-fallback": {
+        "title": "带降级方案的集成/合作伙伴 Logo 条",
+        "description": "由用户连接或第三方集成组成的目录,其中的 slug 可能不在图标库中(拼写错误、品牌更名、尚未收录)。请使用降级方案,而不是显示破损的图片。"
+      },
+      "cli-in-ci": {
+        "title": "在 CI/构建时而非运行时引入图标",
+        "description": "对于离线构建,或希望图标随构建产物一起提供而不是在请求时获取的情况,可把 CLI 作为构建步骤运行。"
+      }
+    },
+    "migration": {
+      "title": "从其他库迁移",
+      "intro": "完整的逐项功能对比见 [/compare](/compare)。这里是简短实用的版本。",
+      "from-simple-icons": {
+        "title": "从 Simple Icons 迁移",
+        "summary": "Simple Icons 仅有单色(单一颜色,没有浅色/深色/文字标志变体),拥有多年的社区信任和广泛的工具支持。大多数品牌 slug 可以直接沿用,主要变化是选择变体。",
+        "p1": "使用 react-icons 中带 Si 前缀组件(SiGithub、SiVercel)的 React 应用,改用 @thesvg/react 中对应的具名导出(Github、Vercel)。",
+        "p2": "Simple Icons 每个品牌只提供一个标志。theSVG 的 default 变体是最接近的对应项;如果你确实想要 Simple Icons 一贯的单色效果,请明确使用 mono。",
+        "p3": "如果某个 slug 在 theSVG 的图标库中还不存在,请在 /submit 提出申请,而不要假定两边完全一致:各品牌的覆盖情况不同。"
+      },
+      "from-svgl": {
+        "title": "从 svgl 迁移",
+        "summary": "svgl 是基于 SvelteKit 的品牌 SVG 浏览器,有彩色和文字标志变体,但没有 npm 包,需要手动复制 SVG 源码。如果你不在 Svelte 项目中,或者想要可安装的包,theSVG 覆盖同样的范围,还额外提供 CLI、REST API 和框架包。",
+        "p1": "复制粘贴的 SVG 源码变成 CDN 地址或包导入,上游 Logo 更新时不再需要手动重新复制。",
+        "p2": "svgl 的变体模型(彩色 + 文字标志)对应 theSVG 的 default + wordmark;theSVG 还在可用时提供 mono、light 和 dark。",
+        "p3": "如果继续使用 Svelte:把手动复制的标记换成 @thesvg/svelte 组件(见上面的 Svelte 指南),即可轻松获得类型支持和后续更新。"
+      },
+      "theSVG-vs-iconify-lucide": {
+        "title": "theSVG、Iconify 与 Lucide:如何选择",
+        "summary": "它们解决的是不同的问题,大多数项目最终会同时用到多个。完整的逐项功能对比表在 /compare,简要结论如下:",
+        "p1": "品牌 Logo(GitHub、Stripe、AWS、你的集成列表):theSVG,规模最大、专注品牌的图标集,支持多种变体。",
+        "p2": "通用界面图标(箭头、菜单、设置、折角箭头):Lucide,不专注于品牌,为界面设计。",
+        "p3": "需要用一套 API 覆盖许多互不相关的图标集(品牌和界面都包含),且不介意更庞大的聚合器:Iconify。",
+        "p4": "典型的应用会用 theSVG 提供品牌 Logo、用 Lucide 提供界面图标,thesvg.org 本身就是这样做的。"
+      }
+    },
+    "faq": {
+      "intro": "关于 theSVG 的常见问题。",
+      "licensed": {
+        "q": "这些 Logo 是否经过各品牌的官方授权?",
+        "a": "没有。这些图标依据指示性合理使用原则提供,仅用于识别目的,品牌标志仍归各自的商标所有者所有。使用某个 Logo 并不意味着获得认可或建立合作。详情请见 /legal 和仓库中的 TRADEMARK.md。"
+      },
+      "commercial": {
+        "q": "我可以将这些图标用于商业用途吗?",
+        "a": "可以,用于识别目的(例如“我们集成了 X”、技术栈徽章、支付方式列表),这属于标准的指示性合理使用。不要以暗示并不存在的合作或认可的方式使用某个标志。如有疑问,请查看品牌自己的使用规范,可用时会在每个图标上提供链接。"
+      },
+      "missing-variant": {
+        "q": "某个图标缺少 dark、light 或 wordmark 变体,为什么?",
+        "a": "并非每个品牌都提供全部 7 种变体。只有 default 一定存在,其余取决于添加图标时是否有干净的源素材。如果你有缺失变体的干净源文件,欢迎提交。"
+      },
+      "request-brand": {
+        "q": "如何申请新品牌或报告过时的 Logo?",
+        "a": "在 /submit 提交图标申请或图标更新。粘贴的 SVG 源码需小于 50KB,具有有效的 viewBox,且不含 <script> 标签或内嵌位图:提交表单和分流机器人会告诉你哪里有问题。"
+      },
+      "rate-limit": {
+        "q": "API 有速率限制吗?",
+        "a": "/api/registry.json 和 /api/categories.json 是静态的 CDN 缓存文件,而不是由数据库支撑的接口,所以目前实际上没有速率限制。请求量非常大时,请优先使用 jsDelivr 镜像。路线图中另有一个带访问控制、支持实时搜索和 webhook 的 API,地址是 api.thesvg.org。"
+      },
+      "ai-assistants": {
+        "q": "AI 助手可以直接使用 theSVG 吗?",
+        "a": "可以,通过 @thesvg/mcp-server:这是一个本地 MCP 服务器,添加到 Claude Desktop、Claude Code 或 Cursor 的 MCP 配置中即可(见上面的 AI 助手指南)。它提供搜索、获取和列出分类的工具,数据与网站相同。"
+      },
+      "which-package": {
+        "q": "我到底应该安装哪个包?",
+        "a": "在 React、Vue 或 Svelte 应用中使用少量已知图标:使用对应的框架包,它支持 tree-shaking 并带类型。图标集合不固定或数量很大(选择器、目录):改用 CDN 的 <img> 模式,无论数量多少都没有打包成本。想把图标放进自己的仓库:使用 CLI。"
+      },
+      "broken-image": {
+        "q": "我的图标显示为破损图片或 404,怎么回事?",
+        "a": "几乎总是 slug 不匹配:URL 路径使用的是 /api/registry.json 中的准确 slug,它不一定等于品牌的显示名称(空格、点和大小写都会被规范化)。请在网站上搜索或查看注册表获取准确的 slug,不要根据品牌名称猜测。"
+      },
+      "nextjs-image": {
+        "q": "theSVG 能与 Next.js 的 <Image> 组件一起使用吗?",
+        "a": "不能开箱即用。Next 内置的图片优化器默认不会栅格化 SVG,所以 <Image> 需要为该图片设置 unoptimized 属性,或在 next.config 中为该域名设置 dangerouslyAllowSVG。对大多数图标场景,直接用 <img> 标签(或框架包组件)更简单,也能完全绕开优化器。"
+      },
+      "typescript-slugs": {
+        "q": "有列出所有图标 slug 的 TypeScript 类型吗?",
+        "a": "没有导出包含全部 slug 的联合类型:每个图标都是各自的具名导出(Github、Figma 等),所以导入不存在的图标会在构建时报模块未找到错误,而不是字符串字面量类型错误。如果你需要把 slug 当作数据(例如来自 API 响应),registry.json 的 slug 字段是普通字符串。"
+      },
+      "vs-alternatives": {
+        "q": "theSVG 与 Simple Icons、svgl 或 Iconify 有何不同?",
+        "a": "theSVG 的品牌图标更多,还有其他方案都没有覆盖的云服务商图标(AWS、Azure、GCP),每个图标最多 7 种变体(color、mono、light、dark、wordmark),工具链也更完整(框架包、CLI、REST API、面向 AI 智能体的 MCP 服务器)。Simple Icons 仅有单色;svgl 以 Svelte 为主且没有 npm 包;Iconify 聚合了 150 多个图标集,但并不专注于品牌。完整对比见 /compare。"
+      },
+      "ssr": {
+        "q": "框架包支持服务端渲染(SSR)吗?",
+        "a": "支持。所有框架包(@thesvg/react、@thesvg/vue、@thesvg/svelte)都渲染不含仅限浏览器 API 的纯标记,因此默认对 SSR 安全,无需仅客户端包装器或水合守卫。尤其是 @thesvg/react 组件,可作为 React 服务端组件使用,无需 \"use client\" 指令。"
+      },
+      "self-host": {
+        "q": "我可以自行托管这些图标而不注明 theSVG 吗?",
+        "a": "代码库和工具采用 MIT 许可,因此自行托管在法律上无需署名。无论你把文件托管在哪里,品牌标志本身仍归其商标所有者所有,请见 /legal。欢迎附上回链,但不是必需的。"
+      },
+      "dark-mode-differs": {
+        "q": "为什么同一个图标在深色模式下看起来不一样?",
+        "a": "如果你到处渲染的是 default 变体,这是正常现象:它是固定的品牌色,不会跟随主题。想要随页面主题变化的变体,请配合 <picture> 元素使用 light/dark(见上面的最佳实践),或者用内联组件搭配 mono 变体,让它继承 currentColor。"
+      }
+    },
+    "flags": {
+      "intro": "三种形状的 {{total}} 面国家和地区旗帜。使用 `npm i @thesvg/flags` 安装([在 npm 上查看](https://www.npmjs.com/package/@thesvg/flags))。",
+      "usageTitle": "使用指南",
+      "browse": "想浏览并试用不同的形状、尺寸和颜色?[打开旗帜浏览器](/collection/flags)。",
+      "creditsTitle": "致谢与许可",
+      "creditsBody": "旗帜图案来自 flag-icons(4x3 和方形)与 circle-flags(圆形),均为 MIT 许可。文件本身不带署名文字;完整声明和逐文件的来源对照表位于仓库中的 THIRD_PARTY_NOTICES.md 和 packages/flags/src/data/licenses.json。旗帜是国家或组织的公共象征,收录它并不代表对主权问题表态。",
+      "fullGuide": "包含属性、区域设置表、Vue、Svelte 和纯 SVG 示例的完整指南:[docs/flags.md](https://github.com/glincker/thesvg/blob/main/docs/flags.md)。",
+      "sections": {
+        "naming": {
+          "title": "命名",
+          "body": "slug 为 flag- 加小写的 ISO 3166-1 alpha-2 代码(flag-us、flag-de)或地区代码(flag-gb-eng、flag-es-ct、flag-eu、flag-un)。变体:default 为 4x3 矩形,square 为 1x1,另有 circle。分类为 Flags。"
+        },
+        "search": {
+          "title": "搜索",
+          "body": "可以通过英文名和本地名称、正式名称、ISO alpha-2、alpha-3 和数字代码、emoji、旧称以及区域设置标签找到旗帜。试试 deutschland、DEU、276、holland、england、catalunya 或 pt-BR。"
+        },
+        "shape": {
+          "title": "选择形状",
+          "body": "需要真实比例时用 4x3,固定的方形位置用 square,紧凑的选择器和标签用 circle。circle 会裁掉宽幅旗帜的边缘,所以请在旁边用文字保留名称。"
+        },
+        "accessibility": {
+          "title": "无障碍",
+          "body": "装饰性旗帜使用 aria-hidden,含义由可见文字承载。仅当旗帜单独出现时才提供 title,这会渲染为带无障碍名称的 role=img。"
+        },
+        "language": {
+          "title": "旗帜代表国家,而不是语言",
+          "body": "在旗帜旁显示该语言的本地名称,不要把旗帜当作唯一的语言选择方式。getFlagForLocale 会把区域设置映射到一面惯用的旗帜,仅作装饰。"
+        },
+        "legal": {
+          "title": "法律声明",
+          "body": "旗帜是国家或组织的公共象征。收录旗帜并不代表对主权或边界表态。请参阅法律声明和免责声明。"
+        }
+      },
+      "steps": {
+        "pick": {
+          "head": "1. 选一面旗帜。",
+          "body": "在[旗帜合集](/collection/flags)中按名称、ISO 代码、emoji 或区域设置搜索。每面旗帜都有自己的页面,带有复制和下载按钮。"
+        },
+        "cdn": {
+          "head": "2. 无需安装直接使用。",
+          "body": "从 CDN 链接文件:`https://cdn.jsdelivr.net/npm/@thesvg/flags/dist/svg/4x3/us.svg`,其他形状把 `4x3` 换成 `1x1` 或 `circle`。"
+        },
+        "install": {
+          "head": "3. 或者安装包。",
+          "body": "`npm i @thesvg/flags`([npm 页面](https://www.npmjs.com/package/@thesvg/flags)),然后从 `@thesvg/flags/react/us` 导入单面旗帜,这样只会打包这一面。"
+        },
+        "locale": {
+          "head": "4. 把区域设置映射为旗帜。",
+          "body": "`getFlagForLocale(\"pt-BR\")` 会返回巴西,仅作装饰。请始终在旁边显示语言名称。"
+        }
+      }
     }
   }
 }
