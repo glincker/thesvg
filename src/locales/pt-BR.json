@@ -11,6 +11,233 @@
     "cdnUsage": "Uso do CDN",
     "compare": "Comparar"
   },
+  "uikit": {
+    "breadcrumb": "Trilha de navegação",
+    "look": {
+      "outline": "Contorno",
+      "duotone": "Duotone",
+      "offset": "Deslocado",
+      "fill": "Preenchido",
+      "glass": "Vidro",
+      "glassOutline": "Contorno vidro",
+      "depth": "Profundidade"
+    },
+    "copy": {
+      "name": "Nome"
+    },
+    "copyHint": {
+      "svg": "O desenho, no seu estilo",
+      "name": "O nome do ícone",
+      "cli": "O comando que o adiciona",
+      "import": "Importação e uso de {{pkg}}",
+      "url": "Um link para o SVG no CDN"
+    },
+    "hero": {
+      "title": "Um esqueleto, todos os estilos",
+      "show": "Mostrar introdução",
+      "hide": "Ocultar introdução",
+      "badge": "Novo na 4.0: ícones de interface",
+      "intro": "Desenhados em uma grade e reestilizados ao vivo. Contorno, duotone, preenchido, vidro e contorno vidro, todos personalizáveis com currentColor.",
+      "browse": "Explorar ícones"
+    },
+    "nav": {
+      "allIcons": "Todos os ícones",
+      "favorites": "Favoritos",
+      "extensions": "Extensões",
+      "whatIsNew": "Novidades",
+      "categories": "Categorias",
+      "new": "Novos",
+      "allCategories": "Todas as categorias",
+      "expandSidebar": "Expandir barra lateral",
+      "collapseSidebar": "Recolher barra lateral",
+      "navigation": "Navegação"
+    },
+    "mode": {
+      "iconType": "Tipo de ícone"
+    },
+    "browse": {
+      "all": "Todos",
+      "allUi": "Todos os ícones de interface",
+      "popular": "Populares",
+      "popularHint": "Os que você vai usar primeiro",
+      "bestMatches": "Melhores resultados",
+      "related": "Relacionados",
+      "relatedHint": "mesma família, sinônimos e grafias próximas",
+      "noMatch": "Nenhum ícone encontrado.",
+      "didYouMean": "Você quis dizer",
+      "didYouMeanEnd": "?",
+      "tryAnother": "Tente outra palavra ou limpe o filtro.",
+      "loadingMore": "Carregando mais ícones",
+      "thatIsAll": "Isso é tudo: {{count}}"
+    },
+    "card": {
+      "addFavorite": "Adicionar aos favoritos",
+      "removeFavorite": "Remover dos favoritos",
+      "backlog": "Backlog",
+      "draft": "Rascunho",
+      "clickToCopy": "Clique para copiar {{what}}",
+      "copied": "Copiado",
+      "copiedWhat": "{{what}} copiado",
+      "copyWhat": "Copiar {{what}}",
+      "downloadSvg": "Baixar SVG",
+      "quickPreview": "Pré-visualização rápida",
+      "openFull": "Abrir página completa"
+    },
+    "category": {
+      "count": "{{count}} ícones",
+      "countNew": "{{count}} ícones, {{fresh}} novos",
+      "allIn": "Todos os ícones de {{name}}",
+      "others": "Outras categorias",
+      "browseBy": "Explorar por categoria",
+      "intro": "{{count}} ícones de interface em {{categories}} categorias. Cada um é desenhado na mesma grade e vem em todos os estilos."
+    },
+    "changelog": {
+      "intro": "{{count}} ícones de interface lançados até agora, com mais chegando em pequenos lotes.",
+      "upcoming": "Apenas prévia: {{drops}} lotes a mais estão agendados, {{icons}} ícones."
+    },
+    "quality": {
+      "title": "Qualidade de design",
+      "footnote": "Pontuado na geração do conjunto: encaixe na grade, renderização limpa em cada estilo, peso em relação ao resto do conjunto e metadados completos."
+    },
+    "code": {
+      "form": "Forma do código",
+      "source": "Código-fonte",
+      "package": "Pacote",
+      "customNote": "O estilo personalizado só vale para o código-fonte copiado.",
+      "copy": "Copiar"
+    },
+    "color": {
+      "custom": "Cor personalizada",
+      "pick": "Escolha uma cor",
+      "satBright": "Saturação e brilho",
+      "hue": "Matiz",
+      "hex": "Cor hexadecimal",
+      "eyedropper": "Escolher uma cor da tela",
+      "recent": "Recentes",
+      "use": "Usar {{hex}}"
+    },
+    "ctx": {
+      "rest": "Repouso",
+      "hover": "Hover",
+      "active": "Ativo",
+      "interactive": "Interativo",
+      "sameAsRest": "igual ao repouso",
+      "showState": "Mostrar estado",
+      "pressed": "Pressionado",
+      "action": "Ação",
+      "secondary": "Secundário",
+      "iconButton": "Botão de ícone",
+      "tab": {
+        "overview": "Visão geral",
+        "activity": "Atividade",
+        "settings": "Configurações"
+      },
+      "placeholder": "Digite para focar este campo",
+      "notificationsOn": "Notificações ativadas",
+      "notificationsOff": "Notificações desativadas",
+      "toggleChip": "Alternar chip {{n}}"
+    },
+    "detail": {
+      "iconColour": "Cor do ícone",
+      "fit": "Ajustar",
+      "fitLower": "ajustado",
+      "realSize": "Voltar ao tamanho real",
+      "zoomFit": "Ampliar para ajustar",
+      "previewSize": "Tamanho da pré-visualização",
+      "grid": "Grade",
+      "anchors": "Âncoras",
+      "lightCanvas": "Alternar tela clara",
+      "looks": "Estilos",
+      "lineOnly": "Este glifo é apenas de linha, então preenchido, vidro e profundidade usam um contorno mais grosso. Contorno, duotone, deslocado e contorno vidro o desenham por completo.",
+      "allLooks": "Todos os estilos desenham este glifo por completo.",
+      "gridValue": "24 por 24",
+      "category": "Categoria",
+      "color": "Cor",
+      "noTags": "Ainda sem tags",
+      "subtitle": "{{slug}} · ícone de interface de {{category}}",
+      "rasterPicked": "O raster usa a cor escolhida.",
+      "rasterBlack": "O raster usa quase preto. Escolha uma cor acima para mudar.",
+      "officialLogo": "Logo oficial da marca e variantes",
+      "looksHint": "escolha um e tudo abaixo acompanha",
+      "inContext": "Em contexto",
+      "inContextHint": "hover, foco, clique e alternância funcionam",
+      "opticalSizes": "Tamanhos ópticos",
+      "moreIn": "Mais em {{category}}",
+      "aboutTitle": "Sobre o ícone {{title}}",
+      "aboutBody": "O ícone {{title}} é um ícone de interface de {{category}} desenhado em uma grade de 24 por 24 e disponível em {{count}} estilos: {{looks}}. Ele usa currentColor, então assume a cor do texto ao redor, e cada estilo pode ser copiado como SVG, React, Vue, Svelte, HTML ou máscara CSS."
+    },
+    "docs": {
+      "quickStart": "Início rápido",
+      "props": "Props",
+      "prop": "Prop",
+      "type": "Tipo",
+      "whatItDoes": "O que faz",
+      "looks": "Os estilos e quando usá-los",
+      "states": "Estados",
+      "color": "Cor e temas",
+      "sizes": "Tamanhos",
+      "a11y": "Acessibilidade",
+      "drops": "Como o conjunto cresce"
+    },
+    "ext": {
+      "title": "Ícones de interface: extensões e pacotes",
+      "intro": "Use os ícones de interface em tudo o que você constrói, desenha e publica. Os ícones de marca têm a própria página.",
+      "buildOwn": "Crie o seu",
+      "buildOwnText": "Todos os arquivos de ícones, o manifesto e um arquivo JSON por estilo (todos os ícones daquele estilo, de slug para SVG) são abertos e sem autenticação. Crie um plugin ou fluxo de trabalho e abra um PR para listá-lo aqui.",
+      "viewGithub": "Ver no GitHub",
+      "cdnDocs": "Documentação do CDN"
+    },
+    "style": {
+      "button": "Estilo",
+      "hint": "Deixe os ícones com a sua cara: espessura, cantos, cor",
+      "quick": "Estilos rápidos",
+      "quickHint": "Clique em Estilo para ver todos os controles",
+      "dialog": "Estilo dos ícones",
+      "presets": "Estilos predefinidos",
+      "savedTitle": "Seu estilo salvo",
+      "live": "Seu estilo, ao vivo",
+      "preset": {
+        "house": "Padrão",
+        "crisp": "Nítido",
+        "soft": "Suave",
+        "bold": "Grosso",
+        "hairline": "Linha fina",
+        "float": "Flutuante",
+        "mine": "Meu"
+      },
+      "resetNamed": "Redefinir {{label}}",
+      "backTo": "Voltar para {{value}}",
+      "weight": "Espessura",
+      "scale": "Escala",
+      "shadow": "Sombra",
+      "corners": "Cantos",
+      "corner": {
+        "sharp": "Reto",
+        "chamfer": "Chanfro",
+        "round": "Arredondado"
+      },
+      "cut": "Corte",
+      "cutEnds": "Pontas cortadas",
+      "plainEnds": "pontas lisas",
+      "weightChip": "espessura {{value}}",
+      "colour": "Cor",
+      "colourAccent": "Cor, o destaque prevalece",
+      "iconColours": "Cores dos ícones",
+      "colorMode": {
+        "natural": "Natural",
+        "mono": "Mono"
+      },
+      "noAccent": "Sem destaque",
+      "none": "nenhum",
+      "accentNamed": "Destaque {{hex}}",
+      "clickCopies": "Clique copia",
+      "clickToCopy": "Clique em um ícone para copiá-lo",
+      "whatCopied": "O que é copiado",
+      "saved": "Salvo",
+      "saveMine": "Salvar como meu",
+      "reset": "Redefinir"
+    }
+  },
   "header": {
     "home": "Página inicial do theSVG",
     "submitAria": "Enviar um ícone",

@@ -11,6 +11,233 @@
     "cdnUsage": "CDN-Nutzung",
     "compare": "Vergleichen"
   },
+  "uikit": {
+    "breadcrumb": "Brotkrumen-Navigation",
+    "look": {
+      "outline": "Kontur",
+      "duotone": "Duotone",
+      "offset": "Versetzt",
+      "fill": "Gefüllt",
+      "glass": "Glas",
+      "glassOutline": "Glaskontur",
+      "depth": "Tiefe"
+    },
+    "copy": {
+      "name": "Name"
+    },
+    "copyHint": {
+      "svg": "Die Zeichnung in deinem Stil",
+      "name": "Der Icon-Name",
+      "cli": "Der Befehl, der es hinzufügt",
+      "import": "Import und Nutzung für {{pkg}}",
+      "url": "Ein Link zum SVG im CDN"
+    },
+    "hero": {
+      "title": "Ein Grundgerüst, jeder Look",
+      "show": "Intro anzeigen",
+      "hide": "Intro ausblenden",
+      "badge": "Neu in 4.0: UI-Icons",
+      "intro": "Auf einem Raster gezeichnet, live umgestaltet. Kontur, Duotone, Füllung, Glas und Glaskontur, alle per currentColor anpassbar.",
+      "browse": "Icons durchsuchen"
+    },
+    "nav": {
+      "allIcons": "Alle Icons",
+      "favorites": "Favoriten",
+      "extensions": "Erweiterungen",
+      "whatIsNew": "Neuigkeiten",
+      "categories": "Kategorien",
+      "new": "Neu",
+      "allCategories": "Alle Kategorien",
+      "expandSidebar": "Seitenleiste erweitern",
+      "collapseSidebar": "Seitenleiste einklappen",
+      "navigation": "Navigation"
+    },
+    "mode": {
+      "iconType": "Icon-Typ"
+    },
+    "browse": {
+      "all": "Alle",
+      "allUi": "Alle UI-Icons",
+      "popular": "Beliebt",
+      "popularHint": "Die, nach denen du zuerst greifst",
+      "bestMatches": "Beste Treffer",
+      "related": "Verwandt",
+      "relatedHint": "gleiche Familie, Synonyme und ähnliche Schreibweisen",
+      "noMatch": "Keine Icons gefunden.",
+      "didYouMean": "Meintest du",
+      "didYouMeanEnd": "?",
+      "tryAnother": "Versuche ein anderes Wort oder entferne den Filter.",
+      "loadingMore": "Weitere Icons werden geladen",
+      "thatIsAll": "Das waren alle {{count}}"
+    },
+    "card": {
+      "addFavorite": "Zu Favoriten hinzufügen",
+      "removeFavorite": "Aus Favoriten entfernen",
+      "backlog": "Backlog",
+      "draft": "Entwurf",
+      "clickToCopy": "Klicken, um {{what}} zu kopieren",
+      "copied": "Kopiert",
+      "copiedWhat": "{{what}} kopiert",
+      "copyWhat": "{{what}} kopieren",
+      "downloadSvg": "SVG herunterladen",
+      "quickPreview": "Schnellvorschau",
+      "openFull": "Ganze Seite öffnen"
+    },
+    "category": {
+      "count": "{{count}} Icons",
+      "countNew": "{{count}} Icons, {{fresh}} neu",
+      "allIn": "Alle Icons in {{name}}",
+      "others": "Weitere Kategorien",
+      "browseBy": "Nach Kategorie durchsuchen",
+      "intro": "{{count}} UI-Icons in {{categories}} Kategorien. Jedes ist auf demselben Raster gezeichnet und in jedem Look verfügbar."
+    },
+    "changelog": {
+      "intro": "Bisher {{count}} UI-Icons veröffentlicht, weitere folgen in kleinen Schüben.",
+      "upcoming": "Nur Vorschau: {{drops}} weitere Schübe sind geplant, {{icons}} Icons."
+    },
+    "quality": {
+      "title": "Gestaltungsqualität",
+      "footnote": "Wird beim Erstellen des Sets bewertet: Rasterpassung, saubere Darstellung in jedem Look, Strichstärke im Vergleich zum Rest des Sets und vollständige Metadaten."
+    },
+    "code": {
+      "form": "Codeform",
+      "source": "Quelltext",
+      "package": "Paket",
+      "customNote": "Der eigene Stil gilt nur für den kopierten Quelltext.",
+      "copy": "Kopieren"
+    },
+    "color": {
+      "custom": "Eigene Farbe",
+      "pick": "Farbe wählen",
+      "satBright": "Sättigung und Helligkeit",
+      "hue": "Farbton",
+      "hex": "Hex-Farbe",
+      "eyedropper": "Farbe vom Bildschirm aufnehmen",
+      "recent": "Zuletzt",
+      "use": "{{hex}} verwenden"
+    },
+    "ctx": {
+      "rest": "Ruhe",
+      "hover": "Hover",
+      "active": "Aktiv",
+      "interactive": "Interaktiv",
+      "sameAsRest": "wie Ruhe",
+      "showState": "Zustand anzeigen",
+      "pressed": "Gedrückt",
+      "action": "Aktion",
+      "secondary": "Sekundär",
+      "iconButton": "Icon-Schaltfläche",
+      "tab": {
+        "overview": "Übersicht",
+        "activity": "Aktivität",
+        "settings": "Einstellungen"
+      },
+      "placeholder": "Tippen, um dieses Feld zu fokussieren",
+      "notificationsOn": "Benachrichtigungen an",
+      "notificationsOff": "Benachrichtigungen aus",
+      "toggleChip": "Chip {{n}} umschalten"
+    },
+    "detail": {
+      "iconColour": "Icon-Farbe",
+      "fit": "Anpassen",
+      "fitLower": "angepasst",
+      "realSize": "Zurück zur echten Größe",
+      "zoomFit": "Auf Fenster zoomen",
+      "previewSize": "Vorschaugröße",
+      "grid": "Raster",
+      "anchors": "Ankerpunkte",
+      "lightCanvas": "Helle Fläche umschalten",
+      "looks": "Looks",
+      "lineOnly": "Dieses Glyph besteht nur aus Linien, daher nutzen Füllung, Glas und Tiefe eine kräftigere Kontur. Kontur, Duotone, Versetzt und Glaskontur zeichnen es vollständig.",
+      "allLooks": "Jeder Look zeichnet dieses Glyph vollständig.",
+      "gridValue": "24 mal 24",
+      "category": "Kategorie",
+      "color": "Farbe",
+      "noTags": "Noch keine Tags",
+      "subtitle": "{{slug}} · {{category}}-UI-Icon",
+      "rasterPicked": "Raster nutzt deine gewählte Farbe.",
+      "rasterBlack": "Raster nutzt fast Schwarz. Wähle oben eine Farbe, um das zu ändern.",
+      "officialLogo": "Offizielles Markenlogo und Varianten",
+      "looksHint": "wähle einen, alles darunter folgt",
+      "inContext": "Im Kontext",
+      "inContextHint": "Hover, Fokus, Drücken und Umschalten funktionieren",
+      "opticalSizes": "Optische Größen",
+      "moreIn": "Mehr in {{category}}",
+      "aboutTitle": "Über das Icon {{title}}",
+      "aboutBody": "Das Icon {{title}} ist ein UI-Icon der Kategorie {{category}}, gezeichnet auf einem 24-mal-24-Raster und in {{count}} Looks verfügbar: {{looks}}. Es nutzt currentColor und übernimmt so die umgebende Textfarbe, und jeder Look lässt sich als SVG, React, Vue, Svelte, HTML oder CSS-Maske kopieren."
+    },
+    "docs": {
+      "quickStart": "Schnellstart",
+      "props": "Props",
+      "prop": "Prop",
+      "type": "Typ",
+      "whatItDoes": "Was sie bewirkt",
+      "looks": "Die Looks und wann man sie nutzt",
+      "states": "Zustände",
+      "color": "Farbe und Theming",
+      "sizes": "Größen",
+      "a11y": "Barrierefreiheit",
+      "drops": "Wie das Set wächst"
+    },
+    "ext": {
+      "title": "UI-Icons: Erweiterungen und Pakete",
+      "intro": "Nutze die UI-Icons überall, wo du baust, gestaltest und auslieferst. Die Markenicons haben eine eigene Seite.",
+      "buildOwn": "Baue dein eigenes",
+      "buildOwnText": "Jede Icon-Datei, das Manifest und eine JSON-Datei pro Look (alle Icons dieses Looks, Slug zu SVG) sind offen und ohne Anmeldung zugänglich. Baue ein Plugin oder einen Workflow und öffne einen PR, um ihn hier aufzulisten.",
+      "viewGithub": "Auf GitHub ansehen",
+      "cdnDocs": "CDN-Dokumentation"
+    },
+    "style": {
+      "button": "Stil",
+      "hint": "Mach die Icons zu deinen: Stärke, Ecken, Farbe",
+      "quick": "Schnellstile",
+      "quickHint": "Klicke auf Stil für alle Einstellungen",
+      "dialog": "Icon-Stil",
+      "presets": "Stil-Vorlagen",
+      "savedTitle": "Dein gespeicherter Stil",
+      "live": "Dein Stil, live",
+      "preset": {
+        "house": "Standard",
+        "crisp": "Scharf",
+        "soft": "Weich",
+        "bold": "Fett",
+        "hairline": "Haarlinie",
+        "float": "Schwebend",
+        "mine": "Meiner"
+      },
+      "resetNamed": "{{label}} zurücksetzen",
+      "backTo": "Zurück auf {{value}}",
+      "weight": "Stärke",
+      "scale": "Skalierung",
+      "shadow": "Schatten",
+      "corners": "Ecken",
+      "corner": {
+        "sharp": "Spitz",
+        "chamfer": "Fase",
+        "round": "Rund"
+      },
+      "cut": "Schnitt",
+      "cutEnds": "Geschnittene Enden",
+      "plainEnds": "glatte Enden",
+      "weightChip": "Stärke {{value}}",
+      "colour": "Farbe",
+      "colourAccent": "Farbe, Akzent hat Vorrang",
+      "iconColours": "Icon-Farben",
+      "colorMode": {
+        "natural": "Natürlich",
+        "mono": "Mono"
+      },
+      "noAccent": "Kein Akzent",
+      "none": "keiner",
+      "accentNamed": "Akzent {{hex}}",
+      "clickCopies": "Klick kopiert",
+      "clickToCopy": "Klicke auf ein Icon, um es zu kopieren",
+      "whatCopied": "Was kopiert wird",
+      "saved": "Gespeichert",
+      "saveMine": "Als meinen speichern",
+      "reset": "Zurücksetzen"
+    }
+  },
   "header": {
     "home": "theSVG Startseite",
     "submitAria": "Ein Icon einreichen",

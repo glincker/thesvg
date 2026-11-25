@@ -11,6 +11,233 @@
     "cdnUsage": "CDN Usage",
     "compare": "Compare"
   },
+  "uikit": {
+    "breadcrumb": "Breadcrumb",
+    "look": {
+      "outline": "Outline",
+      "duotone": "Duotone",
+      "offset": "Offset",
+      "fill": "Fill",
+      "glass": "Glass",
+      "glassOutline": "Glass outline",
+      "depth": "Depth"
+    },
+    "copy": {
+      "name": "Name"
+    },
+    "copyHint": {
+      "svg": "The drawing, in your style",
+      "name": "The icon name",
+      "cli": "The command that adds it",
+      "import": "Import and usage for {{pkg}}",
+      "url": "A link to the SVG on the CDN"
+    },
+    "hero": {
+      "title": "One skeleton, every look",
+      "show": "Show intro",
+      "hide": "Hide intro",
+      "badge": "New in 4.0: UI icons",
+      "intro": "Drawn on a grid, restyled live. Outline, duotone, fill, glass and glass outline, all themeable with currentColor.",
+      "browse": "Browse icons"
+    },
+    "nav": {
+      "allIcons": "All icons",
+      "favorites": "Favorites",
+      "extensions": "Extensions",
+      "whatIsNew": "What is new",
+      "categories": "Categories",
+      "new": "New",
+      "allCategories": "All categories",
+      "expandSidebar": "Expand sidebar",
+      "collapseSidebar": "Collapse sidebar",
+      "navigation": "Navigation"
+    },
+    "mode": {
+      "iconType": "Icon type"
+    },
+    "browse": {
+      "all": "All",
+      "allUi": "All UI icons",
+      "popular": "Popular",
+      "popularHint": "The ones you will reach for first",
+      "bestMatches": "Best matches",
+      "related": "Related",
+      "relatedHint": "same family, synonyms and close spellings",
+      "noMatch": "No icons match.",
+      "didYouMean": "Did you mean",
+      "didYouMeanEnd": "?",
+      "tryAnother": "Try another word or clear the filter.",
+      "loadingMore": "Loading more icons",
+      "thatIsAll": "That is all {{count}}"
+    },
+    "card": {
+      "addFavorite": "Add favorite",
+      "removeFavorite": "Remove favorite",
+      "backlog": "Backlog",
+      "draft": "Draft",
+      "clickToCopy": "Click to copy {{what}}",
+      "copied": "Copied",
+      "copiedWhat": "Copied {{what}}",
+      "copyWhat": "Copy {{what}}",
+      "downloadSvg": "Download SVG",
+      "quickPreview": "Quick preview",
+      "openFull": "Open full page"
+    },
+    "category": {
+      "count": "{{count}} icons",
+      "countNew": "{{count}} icons, {{fresh}} new",
+      "allIn": "All {{name}} icons",
+      "others": "Other categories",
+      "browseBy": "Browse by category",
+      "intro": "{{count}} UI icons in {{categories}} categories. Each one is drawn on the same grid and comes in every look."
+    },
+    "changelog": {
+      "intro": "{{count}} UI icons released so far, with more added in small drops.",
+      "upcoming": "Preview only: {{drops}} more drops are scheduled, {{icons}} icons."
+    },
+    "quality": {
+      "title": "Craft quality",
+      "footnote": "Scored when the set is built: grid fit, clean rendering in every look, weight against the rest of the set, and complete metadata."
+    },
+    "code": {
+      "form": "Code form",
+      "source": "Source",
+      "package": "Package",
+      "customNote": "Custom style only applies to the copied source.",
+      "copy": "Copy"
+    },
+    "color": {
+      "custom": "Custom color",
+      "pick": "Pick a color",
+      "satBright": "Saturation and brightness",
+      "hue": "Hue",
+      "hex": "Hex color",
+      "eyedropper": "Pick a color from the screen",
+      "recent": "Recent",
+      "use": "Use {{hex}}"
+    },
+    "ctx": {
+      "rest": "Rest",
+      "hover": "Hover",
+      "active": "Active",
+      "interactive": "Interactive",
+      "sameAsRest": "same as rest",
+      "showState": "Show state",
+      "pressed": "Pressed",
+      "action": "Action",
+      "secondary": "Secondary",
+      "iconButton": "Icon button",
+      "tab": {
+        "overview": "Overview",
+        "activity": "Activity",
+        "settings": "Settings"
+      },
+      "placeholder": "Type to focus this field",
+      "notificationsOn": "Notifications on",
+      "notificationsOff": "Notifications off",
+      "toggleChip": "Toggle chip {{n}}"
+    },
+    "detail": {
+      "iconColour": "Icon colour",
+      "fit": "Fit",
+      "fitLower": "fit",
+      "realSize": "Back to real size",
+      "zoomFit": "Zoom to fit",
+      "previewSize": "Preview size",
+      "grid": "Grid",
+      "anchors": "Anchors",
+      "lightCanvas": "Toggle light canvas",
+      "looks": "Looks",
+      "lineOnly": "This is a line-only glyph, so fill, glass and depth use a heavier outline. Outline, duotone, offset and glass outline draw it fully.",
+      "allLooks": "Every look draws this glyph fully.",
+      "gridValue": "24 by 24",
+      "category": "Category",
+      "color": "Color",
+      "noTags": "No tags yet",
+      "subtitle": "{{slug}} · {{category}} UI icon",
+      "rasterPicked": "Raster uses your picked color.",
+      "rasterBlack": "Raster uses near black. Pick a color above to change it.",
+      "officialLogo": "Official brand logo and variants",
+      "looksHint": "pick one, everything below follows",
+      "inContext": "In context",
+      "inContextHint": "hover, focus, press and toggle all work",
+      "opticalSizes": "Optical sizes",
+      "moreIn": "More in {{category}}",
+      "aboutTitle": "About the {{title}} icon",
+      "aboutBody": "The {{title}} icon is a {{category}} UI icon drawn on a 24 by 24 grid and available in {{count}} looks: {{looks}}. It uses currentColor, so it takes the text color around it, and every look can be copied as SVG, React, Vue, Svelte, HTML or a CSS mask."
+    },
+    "docs": {
+      "quickStart": "Quick start",
+      "props": "Props",
+      "prop": "Prop",
+      "type": "Type",
+      "whatItDoes": "What it does",
+      "looks": "The looks and when to use them",
+      "states": "States",
+      "color": "Color and theming",
+      "sizes": "Sizes",
+      "a11y": "Accessibility",
+      "drops": "How the set grows"
+    },
+    "ext": {
+      "title": "UI icons: extensions and packages",
+      "intro": "Use the UI icons everywhere you build, design and ship. The brand icons have their own page.",
+      "buildOwn": "Build your own",
+      "buildOwnText": "Every icon file, the manifest and one JSON file per look (every icon in that look, slug to SVG) are open with no auth. Build a plugin or workflow, then open a PR to list it here.",
+      "viewGithub": "View on GitHub",
+      "cdnDocs": "CDN docs"
+    },
+    "style": {
+      "button": "Style",
+      "hint": "Make the icons yours: weight, corners, colour",
+      "quick": "Quick styles",
+      "quickHint": "Click Style for every control",
+      "dialog": "Icon style",
+      "presets": "Style presets",
+      "savedTitle": "Your saved style",
+      "live": "Your style, live",
+      "preset": {
+        "house": "House",
+        "crisp": "Crisp",
+        "soft": "Soft",
+        "bold": "Bold",
+        "hairline": "Hairline",
+        "float": "Float",
+        "mine": "Mine"
+      },
+      "resetNamed": "Reset {{label}}",
+      "backTo": "Back to {{value}}",
+      "weight": "Weight",
+      "scale": "Scale",
+      "shadow": "Shadow",
+      "corners": "Corners",
+      "corner": {
+        "sharp": "Sharp",
+        "chamfer": "Chamfer",
+        "round": "Round"
+      },
+      "cut": "Cut",
+      "cutEnds": "Cut ends",
+      "plainEnds": "plain ends",
+      "weightChip": "weight {{value}}",
+      "colour": "Colour",
+      "colourAccent": "Colour, accent overrides",
+      "iconColours": "Icon colours",
+      "colorMode": {
+        "natural": "Natural",
+        "mono": "Mono"
+      },
+      "noAccent": "No accent",
+      "none": "none",
+      "accentNamed": "Accent {{hex}}",
+      "clickCopies": "Click copies",
+      "clickToCopy": "Click an icon to copy it",
+      "whatCopied": "What gets copied",
+      "saved": "Saved",
+      "saveMine": "Save as mine",
+      "reset": "Reset"
+    }
+  },
   "header": {
     "home": "theSVG home",
     "submitAria": "Submit an icon",

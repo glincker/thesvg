@@ -11,6 +11,233 @@
     "cdnUsage": "CDN の使い方",
     "compare": "比較"
   },
+  "uikit": {
+    "breadcrumb": "パンくずリスト",
+    "look": {
+      "outline": "アウトライン",
+      "duotone": "デュオトーン",
+      "offset": "オフセット",
+      "fill": "塗りつぶし",
+      "glass": "ガラス",
+      "glassOutline": "ガラスアウトライン",
+      "depth": "デプス"
+    },
+    "copy": {
+      "name": "名前"
+    },
+    "copyHint": {
+      "svg": "あなたのスタイルの描画",
+      "name": "アイコン名",
+      "cli": "追加するコマンド",
+      "import": "{{pkg}} のインポートと使い方",
+      "url": "CDN 上の SVG へのリンク"
+    },
+    "hero": {
+      "title": "ひとつの骨格、あらゆるスタイル",
+      "show": "紹介を表示",
+      "hide": "紹介を非表示",
+      "badge": "4.0 の新機能: UI アイコン",
+      "intro": "グリッド上で描かれ、その場でスタイルを変更できます。アウトライン、デュオトーン、塗りつぶし、ガラス、ガラスアウトラインのすべてが currentColor でテーマ化できます。",
+      "browse": "アイコンを見る"
+    },
+    "nav": {
+      "allIcons": "すべてのアイコン",
+      "favorites": "お気に入り",
+      "extensions": "拡張機能",
+      "whatIsNew": "新着情報",
+      "categories": "カテゴリ",
+      "new": "新規",
+      "allCategories": "すべてのカテゴリ",
+      "expandSidebar": "サイドバーを開く",
+      "collapseSidebar": "サイドバーを閉じる",
+      "navigation": "ナビゲーション"
+    },
+    "mode": {
+      "iconType": "アイコンの種類"
+    },
+    "browse": {
+      "all": "すべて",
+      "allUi": "すべての UI アイコン",
+      "popular": "人気",
+      "popularHint": "最初に手に取るアイコン",
+      "bestMatches": "最適な一致",
+      "related": "関連",
+      "relatedHint": "同じ系統、類義語、近い綴り",
+      "noMatch": "一致するアイコンがありません。",
+      "didYouMean": "もしかして",
+      "didYouMeanEnd": "？",
+      "tryAnother": "別の言葉を試すか、フィルターを解除してください。",
+      "loadingMore": "アイコンをさらに読み込み中",
+      "thatIsAll": "以上すべて {{count}} 件です"
+    },
+    "card": {
+      "addFavorite": "お気に入りに追加",
+      "removeFavorite": "お気に入りから削除",
+      "backlog": "バックログ",
+      "draft": "下書き",
+      "clickToCopy": "クリックで {{what}} をコピー",
+      "copied": "コピーしました",
+      "copiedWhat": "{{what}} をコピーしました",
+      "copyWhat": "{{what}} をコピー",
+      "downloadSvg": "SVG をダウンロード",
+      "quickPreview": "クイックプレビュー",
+      "openFull": "ページ全体を開く"
+    },
+    "category": {
+      "count": "{{count}} 個のアイコン",
+      "countNew": "{{count}} 個のアイコン（新規 {{fresh}} 個）",
+      "allIn": "{{name}} のすべてのアイコン",
+      "others": "ほかのカテゴリ",
+      "browseBy": "カテゴリから探す",
+      "intro": "{{categories}} カテゴリに {{count}} 個の UI アイコン。すべて同じグリッドで描かれ、あらゆるスタイルで使えます。"
+    },
+    "changelog": {
+      "intro": "これまでに {{count}} 個の UI アイコンを公開しました。今後も少しずつ追加されます。",
+      "upcoming": "プレビューのみ: さらに {{drops}} 回の追加が予定されており、{{icons}} 個のアイコンです。"
+    },
+    "quality": {
+      "title": "制作品質",
+      "footnote": "セットのビルド時に採点されます。グリッドへの適合、各スタイルでのきれいな描画、セット全体との太さのバランス、メタデータの完全さが対象です。"
+    },
+    "code": {
+      "form": "コードの形式",
+      "source": "ソース",
+      "package": "パッケージ",
+      "customNote": "カスタムスタイルはコピーしたソースにのみ適用されます。",
+      "copy": "コピー"
+    },
+    "color": {
+      "custom": "カスタムカラー",
+      "pick": "色を選択",
+      "satBright": "彩度と明度",
+      "hue": "色相",
+      "hex": "16 進カラー",
+      "eyedropper": "画面から色を選択",
+      "recent": "最近",
+      "use": "{{hex}} を使う"
+    },
+    "ctx": {
+      "rest": "通常",
+      "hover": "ホバー",
+      "active": "アクティブ",
+      "interactive": "インタラクティブ",
+      "sameAsRest": "通常と同じ",
+      "showState": "状態を表示",
+      "pressed": "押下中",
+      "action": "アクション",
+      "secondary": "セカンダリ",
+      "iconButton": "アイコンボタン",
+      "tab": {
+        "overview": "概要",
+        "activity": "アクティビティ",
+        "settings": "設定"
+      },
+      "placeholder": "入力してこの欄にフォーカス",
+      "notificationsOn": "通知オン",
+      "notificationsOff": "通知オフ",
+      "toggleChip": "チップ {{n}} を切り替え"
+    },
+    "detail": {
+      "iconColour": "アイコンの色",
+      "fit": "全体",
+      "fitLower": "全体",
+      "realSize": "実寸に戻す",
+      "zoomFit": "全体に合わせて拡大",
+      "previewSize": "プレビューサイズ",
+      "grid": "グリッド",
+      "anchors": "アンカー",
+      "lightCanvas": "明るいキャンバスを切り替え",
+      "looks": "スタイル",
+      "lineOnly": "これは線のみのグリフなので、塗りつぶし、ガラス、デプスでは太めのアウトラインになります。アウトライン、デュオトーン、オフセット、ガラスアウトラインでは完全に描画されます。",
+      "allLooks": "どのスタイルでもこのグリフを完全に描画できます。",
+      "gridValue": "24 × 24",
+      "category": "カテゴリ",
+      "color": "カラー",
+      "noTags": "タグはまだありません",
+      "subtitle": "{{slug}} · {{category}} の UI アイコン",
+      "rasterPicked": "ラスター画像には選択した色が使われます。",
+      "rasterBlack": "ラスター画像はほぼ黒になります。上で色を選ぶと変更できます。",
+      "officialLogo": "公式ブランドロゴとバリエーション",
+      "looksHint": "選ぶと下のすべてが連動します",
+      "inContext": "実際の使用例",
+      "inContextHint": "ホバー、フォーカス、押下、切り替えがすべて動作します",
+      "opticalSizes": "光学サイズ",
+      "moreIn": "{{category}} のほかのアイコン",
+      "aboutTitle": "{{title}} アイコンについて",
+      "aboutBody": "{{title}} アイコンは 24 × 24 のグリッドで描かれた {{category}} の UI アイコンで、{{count}} 種類のスタイル（{{looks}}）で利用できます。currentColor を使うため周囲のテキスト色に追従し、どのスタイルも SVG、React、Vue、Svelte、HTML、CSS マスクとしてコピーできます。"
+    },
+    "docs": {
+      "quickStart": "クイックスタート",
+      "props": "Props",
+      "prop": "Prop",
+      "type": "型",
+      "whatItDoes": "役割",
+      "looks": "スタイルと使いどころ",
+      "states": "状態",
+      "color": "色とテーマ",
+      "sizes": "サイズ",
+      "a11y": "アクセシビリティ",
+      "drops": "セットの拡大の仕方"
+    },
+    "ext": {
+      "title": "UI アイコン: 拡張機能とパッケージ",
+      "intro": "UI アイコンは、開発、デザイン、リリースのあらゆる場面で使えます。ブランドアイコンは専用のページがあります。",
+      "buildOwn": "自分で作る",
+      "buildOwnText": "すべてのアイコンファイル、マニフェスト、スタイルごとの JSON ファイル（そのスタイルの全アイコン、スラッグから SVG への対応）は認証なしで公開されています。プラグインやワークフローを作って、PR でここに掲載してください。",
+      "viewGithub": "GitHub で見る",
+      "cdnDocs": "CDN ドキュメント"
+    },
+    "style": {
+      "button": "スタイル",
+      "hint": "アイコンを自分好みに: 太さ、角、色",
+      "quick": "クイックスタイル",
+      "quickHint": "「スタイル」をクリックすると全設定を表示",
+      "dialog": "アイコンのスタイル",
+      "presets": "スタイルのプリセット",
+      "savedTitle": "保存したスタイル",
+      "live": "あなたのスタイル（ライブ）",
+      "preset": {
+        "house": "標準",
+        "crisp": "シャープ",
+        "soft": "ソフト",
+        "bold": "ボールド",
+        "hairline": "ヘアライン",
+        "float": "フロート",
+        "mine": "マイスタイル"
+      },
+      "resetNamed": "{{label}} をリセット",
+      "backTo": "{{value}} に戻す",
+      "weight": "太さ",
+      "scale": "スケール",
+      "shadow": "シャドウ",
+      "corners": "角",
+      "corner": {
+        "sharp": "シャープ",
+        "chamfer": "面取り",
+        "round": "丸"
+      },
+      "cut": "カット",
+      "cutEnds": "端をカット",
+      "plainEnds": "通常の端",
+      "weightChip": "太さ {{value}}",
+      "colour": "カラー",
+      "colourAccent": "カラー（アクセントが優先）",
+      "iconColours": "アイコンの色",
+      "colorMode": {
+        "natural": "ナチュラル",
+        "mono": "モノ"
+      },
+      "noAccent": "アクセントなし",
+      "none": "なし",
+      "accentNamed": "アクセント {{hex}}",
+      "clickCopies": "クリックでコピー",
+      "clickToCopy": "アイコンをクリックしてコピー",
+      "whatCopied": "コピーする内容",
+      "saved": "保存済み",
+      "saveMine": "マイスタイルとして保存",
+      "reset": "リセット"
+    }
+  },
   "header": {
     "home": "theSVG ホーム",
     "submitAria": "アイコンを投稿する",

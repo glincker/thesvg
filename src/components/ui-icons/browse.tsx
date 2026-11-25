@@ -8,6 +8,7 @@ import { POPULAR } from "@/lib/ui-icons/popular";
 import { cn } from "@/lib/ui-icons/utils";
 import { CategoryBanner } from "./category-banner";
 import { Hero } from "./hero";
+import { useT } from "@/i18n/use-t";
 import { IconCard } from "./icon-card";
 import { StyleBar } from "./lab";
 import { useUi } from "./ui-state";
@@ -31,6 +32,7 @@ const POPULAR_SHOWN = 14;
 
 export function Browse() {
   const ui = useUi();
+  const { t } = useT();
   const [shown, setShown] = useState(PAGE);
   // Category counts follow the selected set, so the pills never promise more than the grid shows.
   const categories = useMemo(() => {
@@ -90,7 +92,7 @@ export function Browse() {
               ui.category === c.name && "bg-foreground text-background hover:text-background",
             )}
           >
-            {c.name}
+            {c.name === "All" ? t("uikit.browse.all") : c.name}
             {c.name === "All" && <span className={cn("rounded-full bg-foreground/10 px-1.5 text-[0.75rem]", ui.category === c.name && "bg-background/20")}>{c.count}</span>}
           </button>
         ))}
@@ -98,10 +100,10 @@ export function Browse() {
       <StyleBar />
       </div>
       {popular.length > 0 && (
-        <section aria-label="Popular">
+        <section aria-label={t("uikit.browse.popular")}>
           <div className="mb-2 flex items-baseline gap-2">
-            <h2 className="text-sm font-semibold">Popular</h2>
-            <span className="text-xs text-muted-foreground">The ones you will reach for first</span>
+            <h2 className="text-sm font-semibold">{t("uikit.browse.popular")}</h2>
+            <span className="text-xs text-muted-foreground">{t("uikit.browse.popularHint")}</span>
           </div>
           <div className="grid grid-cols-[repeat(auto-fill,minmax(148px,1fr))] gap-3">
             {popular.map((g) => (
@@ -114,7 +116,7 @@ export function Browse() {
         <>
           <div className="flex flex-wrap items-center justify-between gap-3">
             <h2 className="text-sm font-semibold">
-              Best matches<span className="ml-2 font-normal text-muted-foreground">{bestCount}</span>
+              {t("uikit.browse.bestMatches")}<span className="ml-2 font-normal text-muted-foreground">{bestCount}</span>
             </h2>
           </div>
           <div className="grid grid-cols-[repeat(auto-fill,minmax(148px,1fr))] gap-3">
@@ -125,8 +127,8 @@ export function Browse() {
           {list.length > bestCount && shown > bestCount && (
             <>
               <h2 className="mt-2 text-sm font-semibold">
-                Related<span className="ml-2 font-normal text-muted-foreground">{list.length - bestCount}</span>
-                <span className="ml-2 text-xs font-normal text-muted-foreground">same family, synonyms and close spellings</span>
+                {t("uikit.browse.related")}<span className="ml-2 font-normal text-muted-foreground">{list.length - bestCount}</span>
+                <span className="ml-2 text-xs font-normal text-muted-foreground">{t("uikit.browse.relatedHint")}</span>
               </h2>
               <div className="grid grid-cols-[repeat(auto-fill,minmax(148px,1fr))] gap-3">
                 {rest.slice(bestCount, shown).map((g) => (
@@ -140,7 +142,7 @@ export function Browse() {
         <>
           <div className="flex flex-wrap items-center justify-between gap-3">
             <h2 className="text-sm font-semibold">
-              {ui.onlyFavorites ? "Favorites" : ui.category === "All" ? "All UI icons" : ui.category}
+              {ui.onlyFavorites ? t("uikit.nav.favorites") : ui.category === "All" ? t("uikit.browse.allUi") : ui.category}
               <span className="ml-2 font-normal text-muted-foreground">{list.length}</span>
             </h2>
           </div>
@@ -153,24 +155,24 @@ export function Browse() {
       )}
       {list.length === 0 && (
         <p className="py-16 text-center text-sm text-muted-foreground">
-          No icons match.{" "}
+          {t("uikit.browse.noMatch")}{" "}
           {suggestion ? (
             <>
-              Did you mean{" "}
+              {t("uikit.browse.didYouMean")}{" "}
               <button type="button" onClick={() => ui.setQuery(suggestion)} className="font-medium text-foreground underline underline-offset-2">
                 {suggestion}
               </button>
-              ?
+              {t("uikit.browse.didYouMeanEnd")}
             </>
           ) : (
-            "Try another word or clear the filter."
+            t("uikit.browse.tryAnother")
           )}
         </p>
       )}
       {rest.length > shown ? (
-        <div ref={sentinel} role="status" aria-label="Loading more icons"><Skeletons /></div>
+        <div ref={sentinel} role="status" aria-label={t("uikit.browse.loadingMore")}><Skeletons /></div>
       ) : (
-        rest.length > PAGE && <p className="py-6 text-center text-xs text-muted-foreground">That is all {list.length}</p>
+        rest.length > PAGE && <p className="py-6 text-center text-xs text-muted-foreground">{t("uikit.browse.thatIsAll", { count: list.length })}</p>
       )}
     </div>
   );

@@ -11,6 +11,233 @@
     "cdnUsage": "Utilisation du CDN",
     "compare": "Comparer"
   },
+  "uikit": {
+    "breadcrumb": "Fil d'Ariane",
+    "look": {
+      "outline": "Contour",
+      "duotone": "Duotone",
+      "offset": "Décalé",
+      "fill": "Plein",
+      "glass": "Verre",
+      "glassOutline": "Contour verre",
+      "depth": "Profondeur"
+    },
+    "copy": {
+      "name": "Nom"
+    },
+    "copyHint": {
+      "svg": "Le dessin, dans votre style",
+      "name": "Le nom de l'icône",
+      "cli": "La commande qui l'ajoute",
+      "import": "Import et utilisation de {{pkg}}",
+      "url": "Un lien vers le SVG sur le CDN"
+    },
+    "hero": {
+      "title": "Un seul squelette, tous les styles",
+      "show": "Afficher l'intro",
+      "hide": "Masquer l'intro",
+      "badge": "Nouveau en 4.0 : icônes d'interface",
+      "intro": "Dessinées sur une grille, restylées en direct. Contour, duotone, plein, verre et contour verre, tous thémables avec currentColor.",
+      "browse": "Parcourir les icônes"
+    },
+    "nav": {
+      "allIcons": "Toutes les icônes",
+      "favorites": "Favoris",
+      "extensions": "Extensions",
+      "whatIsNew": "Nouveautés",
+      "categories": "Catégories",
+      "new": "Nouveau",
+      "allCategories": "Toutes les catégories",
+      "expandSidebar": "Développer la barre latérale",
+      "collapseSidebar": "Réduire la barre latérale",
+      "navigation": "Navigation"
+    },
+    "mode": {
+      "iconType": "Type d'icône"
+    },
+    "browse": {
+      "all": "Tous",
+      "allUi": "Toutes les icônes d'interface",
+      "popular": "Populaires",
+      "popularHint": "Ceux que vous choisirez en premier",
+      "bestMatches": "Meilleures correspondances",
+      "related": "Associés",
+      "relatedHint": "même famille, synonymes et orthographes proches",
+      "noMatch": "Aucune icône ne correspond.",
+      "didYouMean": "Vouliez-vous dire",
+      "didYouMeanEnd": " ?",
+      "tryAnother": "Essayez un autre mot ou effacez le filtre.",
+      "loadingMore": "Chargement d'autres icônes",
+      "thatIsAll": "C'est tout : {{count}}"
+    },
+    "card": {
+      "addFavorite": "Ajouter aux favoris",
+      "removeFavorite": "Retirer des favoris",
+      "backlog": "À venir",
+      "draft": "Brouillon",
+      "clickToCopy": "Cliquer pour copier {{what}}",
+      "copied": "Copié",
+      "copiedWhat": "{{what}} copié",
+      "copyWhat": "Copier {{what}}",
+      "downloadSvg": "Télécharger le SVG",
+      "quickPreview": "Aperçu rapide",
+      "openFull": "Ouvrir la page complète"
+    },
+    "category": {
+      "count": "{{count}} icônes",
+      "countNew": "{{count}} icônes, dont {{fresh}} nouvelles",
+      "allIn": "Toutes les icônes {{name}}",
+      "others": "Autres catégories",
+      "browseBy": "Parcourir par catégorie",
+      "intro": "{{count}} icônes d'interface dans {{categories}} catégories. Chacune est dessinée sur la même grille et existe dans tous les styles."
+    },
+    "changelog": {
+      "intro": "{{count}} icônes d'interface publiées à ce jour, et d'autres arrivent par petites vagues.",
+      "upcoming": "Aperçu uniquement : {{drops}} autres vagues sont prévues, soit {{icons}} icônes."
+    },
+    "quality": {
+      "title": "Qualité de conception",
+      "footnote": "Évaluée à la construction du jeu : alignement sur la grille, rendu net dans chaque style, épaisseur par rapport au reste du jeu et métadonnées complètes."
+    },
+    "code": {
+      "form": "Forme du code",
+      "source": "Source",
+      "package": "Paquet",
+      "customNote": "Le style personnalisé ne s'applique qu'à la source copiée.",
+      "copy": "Copier"
+    },
+    "color": {
+      "custom": "Couleur personnalisée",
+      "pick": "Choisir une couleur",
+      "satBright": "Saturation et luminosité",
+      "hue": "Teinte",
+      "hex": "Couleur hexadécimale",
+      "eyedropper": "Choisir une couleur à l'écran",
+      "recent": "Récents",
+      "use": "Utiliser {{hex}}"
+    },
+    "ctx": {
+      "rest": "Repos",
+      "hover": "Survol",
+      "active": "Actif",
+      "interactive": "Interactif",
+      "sameAsRest": "comme au repos",
+      "showState": "Afficher l'état",
+      "pressed": "Appuyé",
+      "action": "Action",
+      "secondary": "Secondaire",
+      "iconButton": "Bouton d'icône",
+      "tab": {
+        "overview": "Aperçu",
+        "activity": "Activité",
+        "settings": "Réglages"
+      },
+      "placeholder": "Saisissez pour activer ce champ",
+      "notificationsOn": "Notifications activées",
+      "notificationsOff": "Notifications désactivées",
+      "toggleChip": "Basculer la puce {{n}}"
+    },
+    "detail": {
+      "iconColour": "Couleur de l'icône",
+      "fit": "Ajuster",
+      "fitLower": "ajusté",
+      "realSize": "Revenir à la taille réelle",
+      "zoomFit": "Zoomer pour ajuster",
+      "previewSize": "Taille de l'aperçu",
+      "grid": "Grille",
+      "anchors": "Ancres",
+      "lightCanvas": "Basculer le fond clair",
+      "looks": "Styles",
+      "lineOnly": "Ce glyphe est uniquement au trait : plein, verre et profondeur utilisent donc un contour plus épais. Contour, duotone, décalé et contour verre le dessinent entièrement.",
+      "allLooks": "Chaque style dessine ce glyphe entièrement.",
+      "gridValue": "24 par 24",
+      "category": "Catégorie",
+      "color": "Couleur",
+      "noTags": "Pas encore de tags",
+      "subtitle": "{{slug}} · icône d'interface {{category}}",
+      "rasterPicked": "Le raster utilise la couleur choisie.",
+      "rasterBlack": "Le raster utilise un noir proche. Choisissez une couleur ci-dessus pour la changer.",
+      "officialLogo": "Logo officiel de la marque et variantes",
+      "looksHint": "choisissez-en un, tout ce qui suit s'adapte",
+      "inContext": "En contexte",
+      "inContextHint": "survol, focus, appui et bascule fonctionnent",
+      "opticalSizes": "Tailles optiques",
+      "moreIn": "Plus dans {{category}}",
+      "aboutTitle": "À propos de l'icône {{title}}",
+      "aboutBody": "L'icône {{title}} est une icône d'interface de type {{category}}, dessinée sur une grille de 24 par 24 et disponible en {{count}} styles : {{looks}}. Elle utilise currentColor et reprend donc la couleur du texte environnant, et chaque style peut être copié en SVG, React, Vue, Svelte, HTML ou masque CSS."
+    },
+    "docs": {
+      "quickStart": "Démarrage rapide",
+      "props": "Props",
+      "prop": "Prop",
+      "type": "Type",
+      "whatItDoes": "Ce qu'elle fait",
+      "looks": "Les styles et quand les utiliser",
+      "states": "États",
+      "color": "Couleur et thèmes",
+      "sizes": "Tailles",
+      "a11y": "Accessibilité",
+      "drops": "Comment le jeu s'agrandit"
+    },
+    "ext": {
+      "title": "Icônes d'interface : extensions et paquets",
+      "intro": "Utilisez les icônes d'interface partout où vous concevez, développez et livrez. Les icônes de marque ont leur propre page.",
+      "buildOwn": "Créez le vôtre",
+      "buildOwnText": "Chaque fichier d'icône, le manifeste et un fichier JSON par style (toutes les icônes de ce style, du slug au SVG) sont ouverts, sans authentification. Créez un plugin ou un workflow, puis ouvrez une PR pour le lister ici.",
+      "viewGithub": "Voir sur GitHub",
+      "cdnDocs": "Documentation du CDN"
+    },
+    "style": {
+      "button": "Style",
+      "hint": "Personnalisez les icônes : épaisseur, coins, couleur",
+      "quick": "Styles rapides",
+      "quickHint": "Cliquez sur Style pour tous les réglages",
+      "dialog": "Style des icônes",
+      "presets": "Styles prédéfinis",
+      "savedTitle": "Votre style enregistré",
+      "live": "Votre style, en direct",
+      "preset": {
+        "house": "Maison",
+        "crisp": "Net",
+        "soft": "Doux",
+        "bold": "Gras",
+        "hairline": "Filet",
+        "float": "Flottant",
+        "mine": "Le mien"
+      },
+      "resetNamed": "Réinitialiser {{label}}",
+      "backTo": "Revenir à {{value}}",
+      "weight": "Épaisseur",
+      "scale": "Échelle",
+      "shadow": "Ombre",
+      "corners": "Coins",
+      "corner": {
+        "sharp": "Vive",
+        "chamfer": "Chanfrein",
+        "round": "Arrondie"
+      },
+      "cut": "Coupe",
+      "cutEnds": "Extrémités coupées",
+      "plainEnds": "extrémités simples",
+      "weightChip": "épaisseur {{value}}",
+      "colour": "Couleur",
+      "colourAccent": "Couleur, l'accent prime",
+      "iconColours": "Couleurs des icônes",
+      "colorMode": {
+        "natural": "Naturel",
+        "mono": "Mono"
+      },
+      "noAccent": "Sans accent",
+      "none": "aucun",
+      "accentNamed": "Accent {{hex}}",
+      "clickCopies": "Un clic copie",
+      "clickToCopy": "Cliquez sur une icône pour la copier",
+      "whatCopied": "Ce qui est copié",
+      "saved": "Enregistré",
+      "saveMine": "Enregistrer comme mien",
+      "reset": "Réinitialiser"
+    }
+  },
   "header": {
     "home": "Accueil theSVG",
     "submitAria": "Soumettre une icône",

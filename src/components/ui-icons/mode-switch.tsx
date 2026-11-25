@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { cn } from "@/lib/ui-icons/utils";
+import { useT } from "@/i18n/use-t";
 import { TheSVGMark, UiMark } from "./marks";
 
 export type Mode = "brand" | "ui";
@@ -12,6 +13,7 @@ export type Mode = "brand" | "ui";
  */
 export function ModeSwitch({ mode, onChange, className }: { mode: Mode; onChange?: (m: Mode) => void; className?: string }) {
   const [busy, setBusy] = useState(false);
+  const { t } = useT();
   const pick = (m: Mode) => {
     if (m === mode || busy) return;
     setBusy(true);
@@ -36,7 +38,7 @@ export function ModeSwitch({ mode, onChange, className }: { mode: Mode; onChange
     </button>
   );
   return (
-    <div role="tablist" aria-label="Icon type" className={cn("relative grid grid-cols-2 rounded-xl border bg-background/50 p-0.5", className)}>
+    <div role="tablist" aria-label={t("uikit.mode.iconType")} className={cn("relative grid grid-cols-2 rounded-xl border bg-background/50 p-0.5", className)}>
       <span
         aria-hidden="true"
         className={cn(
@@ -44,8 +46,8 @@ export function ModeSwitch({ mode, onChange, className }: { mode: Mode; onChange
           mode === "ui" && "translate-x-full",
         )}
       />
-      {seg("brand", "Brand icons", <TheSVGMark className="size-4" />)}
-      {seg("ui", "UI icons", <UiMark className="size-4" />)}
+      {seg("brand", t("nav.brandIcons"), <TheSVGMark className="size-4" />)}
+      {seg("ui", t("nav.uiIcons"), <UiMark className="size-4" />)}
     </div>
   );
 }

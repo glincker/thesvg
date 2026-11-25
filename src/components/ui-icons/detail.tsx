@@ -16,6 +16,7 @@ import { Glyph, svgText } from "./glyph";
 import { InContext } from "./in-context";
 import { StyleBar } from "./lab";
 import { UiQualityCard } from "./quality-card";
+import { useLabels } from "./labels";
 import { useUi } from "./ui-state";
 
 const SIZES = [16, 20, 24, 32, 48] as const;
@@ -45,6 +46,7 @@ function Section(props: { title: string; aside?: React.ReactNode; children: Reac
 /** The preview card. It leans towards the pointer, and the glyph floats above the card. */
 function Preview(props: { glyph: GlyphData }) {
   const ui = useUi();
+  const { t, look } = useLabels();
   const id = useId().replace(/:/g, "");
   const card = useRef<HTMLDivElement>(null);
   const [grid, setGrid] = useState(false);
@@ -109,7 +111,7 @@ function Preview(props: { glyph: GlyphData }) {
           )}
           <button
             type="button"
-            aria-label={ui.favorites.includes(props.glyph.slug) ? "Remove favorite" : "Add favorite"}
+            aria-label={ui.favorites.includes(props.glyph.slug) ? t("uikit.card.removeFavorite") : t("uikit.card.addFavorite")}
             onClick={() => ui.toggleFavorite(props.glyph.slug)}
             className="glass absolute left-3 top-3 grid size-8 place-items-center rounded-full text-muted-foreground transition-colors hover:text-foreground [transform:translateZ(30px)]"
           >
@@ -121,7 +123,7 @@ function Preview(props: { glyph: GlyphData }) {
               {ui.accent || "currentColor"}
             </span>
           ) : (
-            <span role="radiogroup" aria-label="Icon colour" className="glass absolute right-3 top-3 inline-flex items-center gap-0.5 rounded-full p-0.5 text-[0.75rem] [transform:translateZ(30px)]">
+            <span role="radiogroup" aria-label={t("uikit.detail.iconColour")} className="glass absolute right-3 top-3 inline-flex items-center gap-0.5 rounded-full p-0.5 text-[0.75rem] [transform:translateZ(30px)]">
               {([["mono", "currentColor", ""], ["natural", naturalName, natural]] as const).map(([mode, label, cls]) => (
                 <button
                   key={mode}
@@ -137,10 +139,10 @@ function Preview(props: { glyph: GlyphData }) {
               ))}
             </span>
           )}
-          <span className="glass absolute bottom-3 left-3 rounded-full px-2.5 py-1 text-[0.75rem] capitalize text-foreground [transform:translateZ(30px)]">{ui.variant} · {fit ? "fit" : `${px}px`}</span>
+          <span className="glass absolute bottom-3 left-3 rounded-full px-2.5 py-1 text-[0.75rem] capitalize text-foreground [transform:translateZ(30px)]">{look(ui.variant)} · {fit ? t("uikit.detail.fitLower") : `${px}px`}</span>
           <button
             type="button"
-            aria-label={zoom === "fit" ? "Back to real size" : "Zoom to fit"}
+            aria-label={zoom === "fit" ? t("uikit.detail.realSize") : t("uikit.detail.zoomFit")}
             onClick={() => { setZoom(zoom === "fit" ? 96 : "fit"); setGrid(false); setAnchors(false); }}
             className="glass absolute bottom-3 right-3 grid size-8 place-items-center rounded-full text-orange-500 transition-colors hover:text-orange-400 [transform:translateZ(30px)]"
           >
@@ -148,20 +150,20 @@ function Preview(props: { glyph: GlyphData }) {
           </button>
         </div>
       </div>
-      <div className="flex items-center gap-1 rounded-xl border bg-background/40 p-0.5" role="group" aria-label="Preview size">
+      <div className="flex items-center gap-1 rounded-xl border bg-background/40 p-0.5" role="group" aria-label={t("uikit.detail.previewSize")}>
         {ZOOMS.map((z) => (
           <button key={z} type="button" onClick={() => { setZoom(z); setGrid(false); setAnchors(false); }} className={cn("h-7 flex-1 rounded-lg text-xs capitalize text-muted-foreground transition-colors hover:text-foreground", !grid && !anchors && zoom === z && "bg-foreground text-background hover:text-background")}>
-            {z === "fit" ? "Fit" : z}
+            {z === "fit" ? t("uikit.detail.fit") : z}
           </button>
         ))}
       </div>
       <div className="flex gap-1.5">
-        {([[grid, setGrid, "Grid", "layout-grid"], [anchors, setAnchors, "Anchors", "waypoint"]] as const).map(([on, set, label, icon]) => (
-          <button key={label} type="button" onClick={() => set(!on)} className={cn("inline-flex h-8 flex-1 items-center justify-center gap-1.5 rounded-xl border text-xs text-muted-foreground transition-colors hover:text-foreground", on && "border-orange-500/40 text-orange-400")}>
-            <UiGlyph name={icon} className="size-4" /> {label}
+        {([[grid, setGrid, "grid", "layout-grid"], [anchors, setAnchors, "anchors", "waypoint"]] as const).map(([on, set, key, icon]) => (
+          <button key={key} type="button" onClick={() => set(!on)} className={cn("inline-flex h-8 flex-1 items-center justify-center gap-1.5 rounded-xl border text-xs text-muted-foreground transition-colors hover:text-foreground", on && "border-orange-500/40 text-orange-400")}>
+            <UiGlyph name={icon} className="size-4" /> {t(`uikit.detail.${key}`)}
           </button>
         ))}
-        <button type="button" aria-label="Toggle light canvas" onClick={() => setLight(!light)} className="grid h-8 w-9 place-items-center rounded-xl border text-muted-foreground transition-colors hover:text-foreground">
+        <button type="button" aria-label={t("uikit.detail.lightCanvas")} onClick={() => setLight(!light)} className="grid h-8 w-9 place-items-center rounded-xl border text-muted-foreground transition-colors hover:text-foreground">
           {light ? <UiGlyph name="moon" className="size-4" /> : <UiGlyph name="sun" className="size-4" />}
         </button>
       </div>
@@ -171,6 +173,7 @@ function Preview(props: { glyph: GlyphData }) {
 
 function LookPicker(props: { glyph: GlyphData }) {
   const ui = useUi();
+  const { look } = useLabels();
   const wrap = useRef<HTMLDivElement>(null);
   const tiles = useRef<Record<string, HTMLButtonElement | null>>({});
   const [box, setBox] = useState<{ x: number; y: number; w: number; h: number } | null>(null);
@@ -209,7 +212,7 @@ function LookPicker(props: { glyph: GlyphData }) {
           <span className="relative grid aspect-square w-full place-items-center rounded-xl bg-gradient-to-b from-foreground/[0.07] to-transparent">
             <Glyph nodes={props.glyph.nodes} variant={v} size={30} accent={ui.accent} className={cn("text-foreground transition-transform duration-300 group-hover/tile:scale-110", ui.variant === v && "scale-110")} />
           </span>
-          <span className={cn("relative text-[0.75rem] capitalize", ui.variant === v ? "font-medium text-foreground" : "text-muted-foreground")}>{v}</span>
+          <span className={cn("relative text-[0.75rem] capitalize", ui.variant === v ? "font-medium text-foreground" : "text-muted-foreground")}>{look(v)}</span>
         </button>
       ))}
     </div>
@@ -218,21 +221,22 @@ function LookPicker(props: { glyph: GlyphData }) {
 
 /** Like the completeness card on a brand page: which looks this glyph draws fully, and where it falls back. */
 function Coverage({ glyph }: { glyph: GlyphData }) {
+  const { t } = useLabels();
   const [open, setOpen] = useState(false);
   const lineOnly = useMemo(() => renderIcon(glyph.nodes, { variant: "fill" }).meta.fallback, [glyph.nodes]);
   const full = lineOnly ? 4 : VARIANTS.length;
   return (
     <div className="glass rounded-2xl">
       <button type="button" onClick={() => setOpen(!open)} aria-expanded={open} className="flex w-full items-center gap-2 px-4 py-3 text-left text-xs">
-        <span className="font-medium">Looks</span>
+        <span className="font-medium">{t("uikit.detail.looks")}</span>
         <span className="ml-auto text-muted-foreground">{full}/{VARIANTS.length}</span>
         <UiGlyph name="chevron-down" className={cn("size-3.5 text-muted-foreground transition-transform", open && "rotate-180")} />
       </button>
       {open && (
         <p className="border-t px-4 py-3 text-[0.75rem] leading-relaxed text-muted-foreground">
           {lineOnly
-            ? "This is a line-only glyph, so fill, glass and depth use a heavier outline. Outline, duotone, offset and glass outline draw it fully."
-            : "Every look draws this glyph fully."}
+            ? t("uikit.detail.lineOnly")
+            : t("uikit.detail.allLooks")}
         </p>
       )}
     </div>
@@ -240,12 +244,13 @@ function Coverage({ glyph }: { glyph: GlyphData }) {
 }
 
 function CommandRow(props: { tag: string; text: string }) {
+  const { t } = useLabels();
   const [done, copy] = useCopy();
   return (
     <div className="glass flex min-w-0 items-center gap-3 rounded-xl px-3 py-2">
       <span className="shrink-0 rounded-md bg-orange-500/10 px-1.5 py-0.5 text-[0.75rem] font-semibold text-orange-400">{props.tag}</span>
       <code className="min-w-0 flex-1 truncate font-mono text-[0.75rem] text-muted-foreground">{props.text}</code>
-      <button type="button" aria-label={`Copy ${props.tag}`} onClick={() => copy(props.tag, props.text)} className="text-muted-foreground transition-colors hover:text-foreground">
+      <button type="button" aria-label={t("uikit.card.copyWhat", { what: props.tag })} onClick={() => copy(props.tag, props.text)} className="text-muted-foreground transition-colors hover:text-foreground">
         {done === props.tag ? <UiGlyph name="check" className="size-4 text-emerald-400" /> : <UiGlyph name="copy" className="size-4" />}
       </button>
     </div>
@@ -254,6 +259,7 @@ function CommandRow(props: { tag: string; text: string }) {
 
 export function Detail({ glyph }: { glyph: GlyphData }) {
   const ui = useUi();
+  const { t, look, locale } = useLabels();
   const [done, copy] = useCopy();
   const { setSample, setNaturalInk } = ui;
   const { resolvedTheme } = useTheme();
@@ -274,8 +280,8 @@ export function Detail({ glyph }: { glyph: GlyphData }) {
 
   return (
     <div className="relative mx-auto flex w-full max-w-[1240px] flex-col gap-6">
-      <nav className="flex items-center gap-1.5 text-xs text-muted-foreground" aria-label="Breadcrumb">
-        <Link href="/ui" className="hover:text-foreground">UI icons</Link>
+      <nav className="flex items-center gap-1.5 text-xs text-muted-foreground" aria-label={t("uikit.breadcrumb")}>
+        <Link href="/ui" className="hover:text-foreground">{t("nav.uiIcons")}</Link>
         <UiGlyph name="chevron-right" className="size-3.5" />
         <button type="button" onClick={() => ui.runOnList(() => { ui.setCategory(glyph.category); ui.setSet("all"); ui.setQuery(""); })} className="hover:text-foreground">{glyph.category}</button>
         <UiGlyph name="chevron-right" className="size-3.5" />
@@ -289,16 +295,16 @@ export function Detail({ glyph }: { glyph: GlyphData }) {
           </div>
           <div className="flex min-w-0 flex-col gap-3">
             <dl className="glass grid grid-cols-2 gap-y-2.5 rounded-2xl p-4 text-xs">
-              <dt className="text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground">Grid</dt><dd className="text-right">24 by 24</dd>
-              <dt className="text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground">Looks</dt><dd className="text-right">{VARIANTS.length}</dd>
-              <dt className="text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground">Category</dt><dd className="text-right">{glyph.category}</dd>
-              <dt className="text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground">Color</dt><dd className="text-right">{ui.accent || (ui.colorMode === "natural" && defaultColorName(glyph.slug)) || "currentColor"}</dd>
+              <dt className="text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground">{t("uikit.detail.grid")}</dt><dd className="text-right">{t("uikit.detail.gridValue")}</dd>
+              <dt className="text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground">{t("uikit.detail.looks")}</dt><dd className="text-right">{VARIANTS.length}</dd>
+              <dt className="text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground">{t("uikit.detail.category")}</dt><dd className="text-right">{glyph.category}</dd>
+              <dt className="text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground">{t("uikit.detail.color")}</dt><dd className="text-right">{ui.accent || (ui.colorMode === "natural" && defaultColorName(glyph.slug)) || "currentColor"}</dd>
             </dl>
             <Coverage glyph={glyph} />
             <UiQualityCard glyph={glyph} />
             <div className="glass flex flex-wrap gap-1.5 rounded-2xl p-4">
               {glyph.tags.slice(0, 8).map((t) => <span key={t} className="rounded-full border px-2.5 py-0.5 text-[0.75rem] text-muted-foreground">{t}</span>)}
-              {glyph.tags.length === 0 && <span className="text-xs text-muted-foreground">No tags yet</span>}
+              {glyph.tags.length === 0 && <span className="text-xs text-muted-foreground">{t("uikit.detail.noTags")}</span>}
             </div>
           </div>
         </aside>
@@ -307,17 +313,17 @@ export function Detail({ glyph }: { glyph: GlyphData }) {
           <header className="flex flex-wrap items-start justify-between gap-3">
             <div>
               <h1 className="text-2xl font-bold capitalize tracking-tight">{title}</h1>
-              <p className="mt-0.5 text-xs text-muted-foreground">{glyph.slug} · {glyph.category} UI icon</p>
+              <p className="mt-0.5 text-xs text-muted-foreground">{t("uikit.detail.subtitle", { slug: glyph.slug, category: glyph.category })}</p>
             </div>
             <div className="flex flex-wrap items-center gap-2">
               <button type="button" onClick={() => copy("svg", svg)} className="inline-flex h-9 items-center gap-1.5 rounded-lg border px-3 text-[0.8125rem] text-muted-foreground transition-colors hover:text-foreground">
-                {done === "svg" ? <UiGlyph name="check" className="size-4 text-emerald-400" /> : <UiGlyph name="copy" className="size-4" />} {done === "svg" ? "Copied" : "Copy SVG"}
+                {done === "svg" ? <UiGlyph name="check" className="size-4 text-emerald-400" /> : <UiGlyph name="copy" className="size-4" />} {done === "svg" ? t("uikit.card.copied") : t("uikit.card.copyWhat", { what: "SVG" })}
               </button>
               <OpenInEditorMenu svg={svg} title={title} slug={glyph.slug} />
               <DownloadMenu
                 svgContent={svg}
                 rasterSvg={svg.replace(/currentColor/g, tint)}
-                rasterNote={ui.accent ? "Raster uses your picked color." : "Raster uses near black. Pick a color above to change it."}
+                rasterNote={ui.accent ? t("uikit.detail.rasterPicked") : t("uikit.detail.rasterBlack")}
                 currentPath=""
                 slug={glyph.slug}
                 title={title}
@@ -327,13 +333,13 @@ export function Detail({ glyph }: { glyph: GlyphData }) {
             {brandForUiMark(glyph.slug) && (
               <Link href={`/icon/${brandForUiMark(glyph.slug)}`} className="mt-3 inline-flex items-center gap-2 rounded-lg border px-3 py-2 text-[0.8125rem] text-muted-foreground transition-colors hover:border-orange-500/50 hover:text-foreground">
                 <img src={`/icons/${brandForUiMark(glyph.slug)}/default.svg`} alt="" width={20} height={20} className="size-5 object-contain" />
-                Official brand logo and variants
+                {t("uikit.detail.officialLogo")}
                 <UiGlyph name="arrow-up-right" className="size-4 text-orange-500" />
               </Link>
             )}
           </header>
 
-          <Section title="Looks" aside={<span className="flex items-center gap-3"><span className="hidden lg:inline">pick one, everything below follows</span><StyleBar /></span>}>
+          <Section title={t("uikit.detail.looks")} aside={<span className="flex items-center gap-3"><span className="hidden lg:inline">{t("uikit.detail.looksHint")}</span><StyleBar /></span>}>
             <LookPicker glyph={glyph} />
           </Section>
 
@@ -346,11 +352,11 @@ export function Detail({ glyph }: { glyph: GlyphData }) {
 
           <CodeBlock svg={svg} slug={glyph.slug} look={ui.variant} customized={Object.keys(ui.lab).length > 0} />
 
-          <Section title="In context" aside="hover, focus, press and toggle all work">
+          <Section title={t("uikit.detail.inContext")} aside={t("uikit.detail.inContextHint")}>
             <InContext glyph={glyph} />
           </Section>
 
-          <Section title="Optical sizes">
+          <Section title={t("uikit.detail.opticalSizes")}>
             <div className="flex items-end gap-6 rounded-2xl border bg-card/60 p-5">
               {SIZES.map((s) => (
                 <div key={s} className="flex flex-col items-center gap-2">
@@ -362,7 +368,7 @@ export function Detail({ glyph }: { glyph: GlyphData }) {
           </Section>
 
           {related.length > 0 && (
-            <Section title={`More in ${glyph.category}`}>
+            <Section title={t("uikit.detail.moreIn", { category: glyph.category })}>
               <div className="grid grid-cols-5 gap-2 sm:grid-cols-10">
                 {related.map((g) => (
                   <Link key={g.slug} href={`/ui/${g.slug}`} title={g.slug} className="flex flex-col items-center gap-1.5 rounded-2xl border bg-card/60 p-2.5 transition-colors hover:border-foreground/25">
@@ -375,9 +381,9 @@ export function Detail({ glyph }: { glyph: GlyphData }) {
           )}
 
           <section className="rounded-2xl border bg-card/40 p-5 text-sm leading-relaxed text-muted-foreground">
-            <h2 className="mb-2 text-sm font-semibold text-foreground">About the {title} icon</h2>
+            <h2 className="mb-2 text-sm font-semibold text-foreground">{t("uikit.detail.aboutTitle", { title })}</h2>
             <p>
-              The {title} icon is a {glyph.category.toLowerCase()} UI icon drawn on a 24 by 24 grid and available in {VARIANTS.length} looks: outline, glass, duotone, offset, fill, glass outline and depth. It uses currentColor, so it takes the text color around it, and every look can be copied as SVG, React, Vue, Svelte, HTML or a CSS mask.
+              {t("uikit.detail.aboutBody", { title, category: glyph.category.toLowerCase(), count: VARIANTS.length, looks: new Intl.ListFormat(locale, { type: "conjunction" }).format((["outline", "glass", "duotone", "offset", "fill", "glass-outline", "depth"] as const).map(look)) })}
             </p>
           </section>
         </div>
