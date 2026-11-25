@@ -1171,5 +1171,287 @@
         "needsMore": "SVG 파일을 업로드하고 아이콘 이름을 입력하고 라이선스를 선택하면 제출할 수 있습니다."
       }
     }
+  },
+  "icon": {
+    "about": {
+      "brandColor": "브랜드 색상",
+      "collection": "{{name}} 컬렉션에 속합니다.",
+      "colorName": "컬러",
+      "filed": "분류: {{categories}}.",
+      "flagNote": "{{title}}의 국기는 해당 국가나 지역의 공적인 상징입니다. 이를 표시하는 것은 주권이나 국경에 대한 입장을 나타내지 않습니다.",
+      "free": "{{title}} SVG 아이콘은 theSVG에서 무료로 다운로드할 수 있습니다.",
+      "heading": "{{title}} 아이콘 소개",
+      "noModify": "마크를 수정하거나 보증을 암시하지 마세요.",
+      "officialAssets": "공식 브랜드 자료:",
+      "restricted": "사용은 권리자의 약관 범위로 제한됩니다: {{license}}",
+      "serviceNote": "아키텍처 다이어그램과 문서에 쓰는 서비스 아이콘입니다.",
+      "trademark": "\"{{title}}\"은(는) 각 소유자의 상표이며 식별 목적으로만 표시됩니다.",
+      "use": "React, Vue, Svelte 또는 순수 HTML에서 npm, CLI, CDN으로 사용하세요:",
+      "useLabel": "사용",
+      "usePersonal": "개인 및 상업적 사용",
+      "useRestricted": "브랜드 식별용만, 수정 금지",
+      "useTrademark": "식별 및 참조",
+      "variantsLine": "{{count}}가지 변형이 있습니다: {{names}}."
+    },
+    "card": {
+      "copiedAria": "{{title}} {{format}} 복사됨",
+      "copiedToast": "{{format}} 복사됨!",
+      "copyAria": "{{title}} {{format}} 복사",
+      "downloadSvg": "SVG 다운로드",
+      "favAdd": "{{title}} 즐겨찾기에 추가",
+      "favRemove": "{{title}} 즐겨찾기에서 제거",
+      "quickPreview": "빠른 미리보기",
+      "quickPreviewAria": "{{title}} 빠른 미리보기",
+      "view": "{{title}} 아이콘 상세 보기"
+    },
+    "common": {
+      "beta": "베타",
+      "copied": "복사됨",
+      "copy": "복사",
+      "download": "다운로드"
+    },
+    "contribute": {
+      "issue": "이슈로 요청",
+      "missingBetter": "더 나은 버전이 없나요?",
+      "missingBetterGuidelines": "더 나은 버전이나 가이드라인 링크가 없나요?",
+      "missingVariant": "변형이 없나요?",
+      "missingVariantGuidelines": "변형이나 가이드라인 링크가 없나요?",
+      "note": "커뮤니티 수정 사항은 다음 빌드에 반영됩니다",
+      "pr": "PR 제출"
+    },
+    "detail": {
+      "addFavorite": "즐겨찾기에 추가",
+      "alsoAvailableAs": "다른 형태로도 제공",
+      "alsoKnownAs": "다른 이름",
+      "alsoUiIcon": "UI 아이콘으로도 제공",
+      "authBadge": "인증 배지",
+      "brandGuidelines": "브랜드 가이드라인",
+      "brandLogo": "브랜드 로고",
+      "breadcrumb": "이동 경로",
+      "categories": "카테고리",
+      "category": "카테고리",
+      "compareOriginal": "원본과 비교",
+      "currentVersion": "현재 버전",
+      "familyOf": "{{title}} 패밀리",
+      "glassMark": "인터페이스용 글래스 마크",
+      "home": "홈",
+      "license": "라이선스",
+      "partOf": "{{title}}의 일부",
+      "partOfGoogle": "Google 2026의 일부",
+      "previousVersion": "이전 버전",
+      "refresh": "{{year}}년 리뉴얼 보기",
+      "relatedIn": "{{category}} 관련 아이콘",
+      "removeFavorite": "즐겨찾기에서 제거",
+      "variants": "변형",
+      "viewAll": "모두 보기"
+    },
+    "download": {
+      "aria": "{{title}} SVG 다운로드",
+      "copyLabel": "복사",
+      "dataUri": "데이터 URI",
+      "done": "완료",
+      "downloadLabel": "다운로드",
+      "errCopy": "복사하지 못했습니다. 다시 시도해 주세요.",
+      "errExport": "{{format}} 내보내기에 실패했습니다. 다시 시도해 주세요.",
+      "export": "{{title}} 내보내기",
+      "more": "다른 다운로드 형식",
+      "raster": "래스터",
+      "vector": "벡터"
+    },
+    "family": {
+      "allCategory": "{{category}} 전체",
+      "allFamilies": "모든 패밀리",
+      "allIcons": "{{title}} 아이콘 전체",
+      "allLogos": "{{title}} 로고 전체",
+      "badge": "{{title}} · 브랜드 패밀리",
+      "brandFamilies": "브랜드 패밀리",
+      "flagshipProducts": "대표 제품",
+      "flagships": "대표",
+      "fullSet": "전체 세트",
+      "iconsCount": "아이콘 {{count}}개",
+      "indexIntro": "소유 기업별로 묶은 공식 로고입니다. Amazon, Google, Microsoft의 전체 라인업을 모든 변형과 함께 한곳에서 확인하세요. 패밀리 {{count}}개.",
+      "indexTitle": "함께 만드는 브랜드의 모든 제품",
+      "jump": "그룹으로 이동",
+      "logosCount": "로고 {{count}}개",
+      "mainLogo": "{{title}} 메인 로고",
+      "moreFamilies": "더 많은 브랜드 패밀리",
+      "moreFrom": "{{title}}의 다른 항목",
+      "nVariants": "변형 {{count}}개",
+      "oneVariant": "변형 1개",
+      "open": "열기",
+      "showMore": "{{count}}개 더 보기",
+      "statCategories": "카테고리",
+      "statLogos": "로고",
+      "statVariants": "변형",
+      "submitMissing": "빠진 {{title}} 로고 제출",
+      "viewAllN": "{{count}}개 모두 보기"
+    },
+    "feedback": {
+      "helpful": "도움이 되었나요?",
+      "no": "이 아이콘은 도움이 되지 않았어요",
+      "reason": {
+        "missingVariant": "변형 누락",
+        "other": "기타",
+        "outdated": "오래된 로고",
+        "wrongColors": "잘못된 색상"
+      },
+      "reset": "피드백 초기화",
+      "review": "도움이 되었다니 기쁩니다. 리뷰를 남겨 주실래요?",
+      "thanks": "감사합니다!",
+      "thanksIssue": "감사합니다, 이슈를 열었어요",
+      "whatsWrong": "어떤 점이 문제인가요?",
+      "yes": "이 아이콘은 도움이 되었어요"
+    },
+    "glow": {
+      "hint": "배경 글로우 켜기/끄기",
+      "off": "글로우 꺼짐",
+      "on": "글로우 켜짐",
+      "turnOff": "배경 글로우 끄기",
+      "turnOn": "배경 글로우 켜기"
+    },
+    "grid": {
+      "none": "아이콘을 찾을 수 없습니다",
+      "submit": "이 아이콘 제출",
+      "tryDifferent": "다른 검색어나 카테고리를 시도해 보세요"
+    },
+    "import": {
+      "loading": "아이콘 라이브러리 불러오는 중...",
+      "placeholder": "라이브러리에서 가져오기, 예: 'gmail 2026', 'github'...",
+      "try": "예시"
+    },
+    "inspector": {
+      "aria": "{{title}} 확대해서 살펴보기",
+      "background": "{{name}} 배경",
+      "description": "표준 아이콘 디자인 그리드에 맞춰 가장자리와 곡선을 확대해서 확인하세요. 래스터를 잘라낸 것이 아니라 벡터 원본을 확대한 것이라 어떤 크기에서도 선명합니다.",
+      "grid": "그리드",
+      "title": "{{title}} 픽셀 검사기",
+      "transparent": "투명",
+      "zoomIn": "확대",
+      "zoomOut": "축소"
+    },
+    "jsdelivr": {
+      "title": "jsDelivr CDN URL 복사"
+    },
+    "links": {
+      "official": "공식 링크"
+    },
+    "modal": {
+      "cliCommand": "CLI 명령어",
+      "copiedStatus": "{{what}} 복사됨",
+      "guidelines": "가이드라인",
+      "viewFull": "전체 상세 보기"
+    },
+    "newBadge": {
+      "refresh": "{{year}}년 리뉴얼"
+    },
+    "openIn": {
+      "aria": "SVG를 편집기에서 열기",
+      "copyFor": "{{app}}용으로 복사",
+      "couldNot": "열 수 없습니다.",
+      "downloadFor": "{{app}}용으로 다운로드",
+      "hint": {
+        "codepen": "HTML이 채워진 새 펜으로 열기",
+        "figma": "클립보드에 복사한 뒤 Figma 캔버스에 붙여넣기",
+        "filagram": "파트너 뷰어에서 편집, 최적화 또는 변환",
+        "illustrator": ".svg를 다운로드한 뒤 파일 → Illustrator 또는 Photoshop에서 열기",
+        "jsfiddle": "HTML이 채워진 새 피들로 열기",
+        "sketch": "클립보드에 복사한 뒤 Sketch 아트보드에 붙여넣기"
+      },
+      "inspect": "SVG 뷰어에서 확인",
+      "open": "열기",
+      "opened": "새 탭에서 열었습니다.",
+      "targets": "대상 {{count}}개"
+    },
+    "png": {
+      "error": "이 SVG를 PNG로 변환하지 못했습니다. 다른 변형을 시도해 보세요.",
+      "title": "PNG 내보내기"
+    },
+    "preview": {
+      "ariaCopied": "SVG 마크업 복사됨",
+      "ariaCopy": "{{title}} SVG 마크업 복사",
+      "copied": "복사됨!",
+      "copy": "클릭하여 SVG 복사",
+      "failed": "복사하지 못했습니다"
+    },
+    "quality": {
+      "footnote": "이 아이콘의 자료가 얼마나 갖춰졌는지를 보여 주는 것이며, 브랜드나 아트워크에 대한 평가가 아닙니다. 아래 기여 링크로 빈틈을 채우는 데 도움을 주세요.",
+      "hint": {
+        "licenseMissing": "라이선스 미지정",
+        "linked": "링크됨",
+        "meta": "카테고리: {{count}}",
+        "metaAliases": "별칭 있음, 카테고리: {{count}}",
+        "noGuidelines": "가이드라인 링크 없음",
+        "onlyDefault": "기본 변형만 있음",
+        "variantsCount": "변형 {{count}}개"
+      },
+      "row": {
+        "guidelines": "가이드라인",
+        "license": "라이선스",
+        "metadata": "메타데이터",
+        "variants": "변형"
+      },
+      "title": "완성도"
+    },
+    "quick": {
+      "copyCommand": "{{name}} 명령어 복사",
+      "label": "이 아이콘 사용 방법",
+      "notOnNpm": "{{name}}은(는) 아직 npm에 없습니다. CLI 또는 CDN을 사용하세요.",
+      "packageManager": "패키지 관리자",
+      "title": "사용 방법"
+    },
+    "variant": {
+      "dark": "다크",
+      "default": "기본",
+      "light": "라이트",
+      "mono": "모노",
+      "suffix": "{{name}} 변형",
+      "wordmark": "워드마크",
+      "wordmarkDark": "워드마크 다크",
+      "wordmarkLight": "워드마크 라이트"
+    },
+    "viewer": {
+      "addSvg": "SVG를 추가하면 파일 정보가 표시됩니다.",
+      "bgChecker": "체크무늬 배경",
+      "bgDark": "어두운 배경",
+      "bgLight": "밝은 배경",
+      "cannotRender": "렌더링할 수 없습니다. 위의 SVG 구문을 확인하세요.",
+      "chars": "자",
+      "clear": "지우기",
+      "copySvg": "SVG 복사",
+      "downloadSvg": ".svg 다운로드",
+      "elements": "요소",
+      "empty": "비어 있음",
+      "errAutoload": "해당 아이콘을 자동으로 불러오지 못했습니다.",
+      "errClipboard": "클립보드에 쓰지 못했습니다.",
+      "errNoIcon": "라이브러리에 슬러그 \"{{slug}}\" 아이콘이 없습니다.",
+      "errNotSvg": "올바른 SVG 파일이 아닌 것 같습니다.",
+      "errRead": "파일을 읽지 못했습니다.",
+      "errTooLarge": "파일이 2MB를 초과합니다. 더 작은 SVG를 사용하세요.",
+      "fileInfo": "파일 정보",
+      "format": "정렬",
+      "formatHint": "정렬",
+      "gradients": "그라디언트",
+      "height": "높이",
+      "indent": "들여쓰기",
+      "invalid": "유효하지 않음",
+      "lines": "줄",
+      "loading": "라이브러리에서 {{slug}} 불러오는 중...",
+      "masks": "마스크/클립",
+      "minify": "압축",
+      "no": "아니요",
+      "openInEditor": "편집기에서 열기",
+      "pageIntro": "SVG를 붙여넣거나 드롭하거나 가져오세요. XML 정렬, 원하는 배경에서 미리보기, viewBox와 크기 확인, 선호하는 편집기에서 열기까지 할 수 있습니다. 모든 작업은 브라우저에서 처리되며 아무것도 업로드되지 않습니다.",
+      "pageTitle": "SVG 뷰어",
+      "partnerText": "편집, 최적화 또는 PNG, JPG, PDF, WebP 변환이 필요하신가요? 무거운 작업은 Filagram이 맡아 줍니다.",
+      "pasteHint": "SVG를 붙여넣거나 드롭하거나 가져와 미리보기",
+      "poweredBy": "Powered by Filagram",
+      "preview": "미리보기",
+      "size": "크기",
+      "upload": "업로드",
+      "valid": "유효한 svg",
+      "visit": "Filagram 방문",
+      "width": "너비",
+      "yes": "예"
+    }
   }
 }

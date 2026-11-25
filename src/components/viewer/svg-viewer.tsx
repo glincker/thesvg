@@ -26,6 +26,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
+  DEEP_LINK_TARGETS,
   computeSvgMetrics,
   formatBytes,
   formatSvg,
@@ -37,10 +38,12 @@ import { DeepLinkActions } from "@/components/viewer/deep-link-actions";
 import { QuickImport } from "@/components/viewer/quick-import";
 import { withUtm } from "@/lib/external-link";
 import { Busy } from "@/components/skeletons";
+import { useT } from "@/i18n/use-t";
 
 type PreviewBg = "checker" | "light" | "dark";
 
 export function SvgViewer() {
+  const { t } = useT();
   const searchParams = useSearchParams();
   const fromSlug = searchParams.get("from");
 
@@ -49,7 +52,8 @@ export function SvgViewer() {
   const [previewBg, setPreviewBg] = useState<PreviewBg>("checker");
   const [copied, setCopied] = useState(false);
   const [dragOver, setDragOver] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  // Stored as a key so the message follows the locale if it changes after it appears.
+  const [error, setError] = useState<{ key: string; values?: Record<string, string> } | null>(null);
   const [autoloading, setAutoloading] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -72,7 +76,7 @@ export function SvgViewer() {
         if (!icon) {
           if (!cancelled) {
             setAutoloading(null);
-            setError(`No icon with slug "${fromSlug}" in the library.`);
+            setError({ key: "icon.viewer.errNoIcon", values: { slug: fromSlug } });
           }
           return;
         }
@@ -84,7 +88,7 @@ export function SvgViewer() {
         setTitle(icon.title);
         setError(null);
       } catch {
-        if (!cancelled) setError("Could not auto-load that icon.");
+        if (!cancelled) setError({ key: "icon.viewer.errAutoload" });
       } finally {
         if (!cancelled) setAutoloading(null);
       }
@@ -93,6 +97,9 @@ export function SvgViewer() {
       cancelled = true;
     };
   }, [fromSlug]);
+
+  // The slug is a code span inside the sentence, so split around it.
+  const loadingText = t("icon.viewer.loading", { slug: autoloading ?? "" }).split(autoloading ?? "\u0000");
 
   const metrics = useMemo(() => computeSvgMetrics(source), [source]);
   const hasContent = source.trim().length > 0;
@@ -126,13 +133,13 @@ export function SvgViewer() {
     const file = files[0];
     if (!file) return;
     if (file.size > 1024 * 1024 * 2) {
-      setError("File is larger than 2 MB. Please use a smaller SVG.");
+      setError({ key: "icon.viewer.errTooLarge" });
       return;
     }
     try {
       const text = await file.text();
       if (!isLikelySvg(text)) {
-        setError("That does not look like a valid SVG file.");
+        setError({ key: "icon.viewer.errNotSvg" });
         return;
       }
       setError(null);
@@ -140,7 +147,7 @@ export function SvgViewer() {
       const cleanName = file.name.replace(/\.svg$/i, "");
       setTitle(cleanName || "uploaded.svg");
     } catch {
-      setError("Could not read that file.");
+      setError({ key: "icon.viewer.errRead" });
     }
   }, []);
 
@@ -168,7 +175,7 @@ export function SvgViewer() {
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
     } catch {
-      setError("Clipboard write failed.");
+      setError({ key: "icon.viewer.errClipboard" });
     }
   }, [source]);
 
@@ -262,7 +269,7 @@ export function SvgViewer() {
                   className="inline-flex h-6 items-center gap-1 rounded-md px-2 text-[10px] font-medium text-neutral-400 transition-colors hover:bg-white/[0.06] hover:text-neutral-100"
                 >
                   <Upload className="h-3.5 w-3.5" />
-                  Upload
+                  {t("icon.viewer.upload")}
                 </button>
                 <button
                   type="button"
@@ -271,7 +278,7 @@ export function SvgViewer() {
                   className="inline-flex h-6 items-center gap-1 rounded-md px-2 text-[10px] font-medium text-neutral-400 transition-colors hover:bg-white/[0.06] hover:text-neutral-100 disabled:cursor-not-allowed disabled:opacity-40"
                 >
                   <Braces className="h-3.5 w-3.5" />
-                  Format
+                  {t("icon.viewer.format")}
                 </button>
                 <button
                   type="button"
@@ -280,7 +287,7 @@ export function SvgViewer() {
                   className="inline-flex h-6 items-center gap-1 rounded-md px-2 text-[10px] font-medium text-neutral-400 transition-colors hover:bg-white/[0.06] hover:text-neutral-100 disabled:cursor-not-allowed disabled:opacity-40"
                 >
                   <Minimize2 className="h-3.5 w-3.5" />
-                  Minify
+                  {t("icon.viewer.minify")}
                 </button>
                 {hasContent && (
                   <button
@@ -289,7 +296,7 @@ export function SvgViewer() {
                     className="inline-flex h-6 items-center gap-1 rounded-md px-2 text-[10px] font-medium text-neutral-400 transition-colors hover:bg-white/[0.06] hover:text-rose-300"
                   >
                     <Trash2 className="h-3.5 w-3.5" />
-                    Clear
+                    {t("icon.viewer.clear")}
                   </button>
                 )}
               </div>
@@ -342,10 +349,10 @@ export function SvgViewer() {
             <div className="flex items-center justify-between gap-3 border-t border-white/[0.06] bg-white/[0.02] px-3 py-1.5 font-mono text-[10px] text-neutral-500">
               <div className="flex items-center gap-3">
                 <span>
-                  <span className="text-neutral-300">{lineCount}</span> ln
+                  <span className="text-neutral-300">{lineCount}</span> {t("icon.viewer.lines")}
                 </span>
                 <span>
-                  <span className="text-neutral-300">{source.length.toLocaleString()}</span> ch
+                  <span className="text-neutral-300">{source.length.toLocaleString()}</span> {t("icon.viewer.chars")}
                 </span>
                 <span
                   className={cn(
@@ -358,19 +365,19 @@ export function SvgViewer() {
                   )}
                 >
                   <span className="h-1.5 w-1.5 rounded-full bg-current" />
-                  {isValid ? "valid svg" : hasContent ? "invalid" : "empty"}
+                  {isValid ? t("icon.viewer.valid") : hasContent ? t("icon.viewer.invalid") : t("icon.viewer.empty")}
                 </span>
               </div>
               <div className="hidden items-center gap-2 sm:flex">
                 <kbd className="rounded border border-white/10 bg-white/[0.04] px-1 py-0.5 text-[9px]">
                   Tab
                 </kbd>
-                <span>indent</span>
+                <span>{t("icon.viewer.indent")}</span>
                 <span className="text-neutral-700">·</span>
                 <kbd className="rounded border border-white/10 bg-white/[0.04] px-1 py-0.5 text-[9px]">
                   ⌘S
                 </kbd>
-                <span>format</span>
+                <span>{t("icon.viewer.formatHint")}</span>
               </div>
             </div>
           </div>
@@ -378,13 +385,14 @@ export function SvgViewer() {
           {autoloading && (
             <p className="flex items-center gap-2 rounded-lg border border-border/40 bg-card/30 px-3 py-2 text-xs text-muted-foreground">
               <Busy className="h-3 w-3" />
-              Loading <span className="font-mono">{autoloading}</span> from
-              library...
+              {loadingText[0]}
+              <span className="font-mono">{autoloading}</span>
+              {loadingText[1]}
             </p>
           )}
           {error && (
             <p className="rounded-lg border border-destructive/30 bg-destructive/10 px-3 py-2 text-xs text-destructive">
-              {error}
+              {t(error.key, error.values)}
             </p>
           )}
 
@@ -392,13 +400,13 @@ export function SvgViewer() {
           <div className="overflow-hidden rounded-2xl border border-border/60 bg-card/30">
             <div className="flex items-center justify-between border-b border-border/40 px-3 py-2">
               <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
-                Preview
+                {t("icon.viewer.preview")}
               </p>
               <div className="flex items-center gap-0.5">
                 <button
                   type="button"
                   onClick={() => setPreviewBg("checker")}
-                  aria-label="Checker background"
+                  aria-label={t("icon.viewer.bgChecker")}
                   aria-pressed={previewBg === "checker"}
                   className={cn(
                     "flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-accent",
@@ -410,7 +418,7 @@ export function SvgViewer() {
                 <button
                   type="button"
                   onClick={() => setPreviewBg("light")}
-                  aria-label="Light background"
+                  aria-label={t("icon.viewer.bgLight")}
                   aria-pressed={previewBg === "light"}
                   className={cn(
                     "flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-accent",
@@ -422,7 +430,7 @@ export function SvgViewer() {
                 <button
                   type="button"
                   onClick={() => setPreviewBg("dark")}
-                  aria-label="Dark background"
+                  aria-label={t("icon.viewer.bgDark")}
                   aria-pressed={previewBg === "dark"}
                   className={cn(
                     "flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-accent",
@@ -446,9 +454,7 @@ export function SvgViewer() {
                 />
               ) : (
                 <p className="text-center text-xs text-muted-foreground/60">
-                  {hasContent
-                    ? "Cannot render — check the SVG syntax above."
-                    : "Paste, drop, or import an SVG to preview"}
+                  {hasContent ? t("icon.viewer.cannotRender") : t("icon.viewer.pasteHint")}
                 </p>
               )}
             </div>
@@ -459,30 +465,30 @@ export function SvgViewer() {
         <aside className="flex flex-col gap-4 lg:sticky lg:top-20 lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto lg:pr-1">
           <div className="rounded-2xl border border-border/60 bg-card/30 p-4">
             <p className="mb-3 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
-              File info
+              {t("icon.viewer.fileInfo")}
             </p>
             {metrics ? (
               <dl className="space-y-2 text-xs">
-                <Row label="Size" value={formatBytes(metrics.bytes)} />
-                <Row label="ViewBox" value={metrics.viewBox ?? "—"} mono />
-                <Row label="Width" value={metrics.width ?? "—"} mono />
-                <Row label="Height" value={metrics.height ?? "—"} mono />
+                <Row label={t("icon.viewer.size")} value={formatBytes(metrics.bytes)} />
+                <Row label="ViewBox" value={metrics.viewBox ?? "-"} mono />
+                <Row label={t("icon.viewer.width")} value={metrics.width ?? "-"} mono />
+                <Row label={t("icon.viewer.height")} value={metrics.height ?? "-"} mono />
                 <Row
-                  label="Elements"
+                  label={t("icon.viewer.elements")}
                   value={metrics.elementCount.toLocaleString()}
                 />
                 <Row
-                  label="Gradients"
-                  value={metrics.hasGradients ? "Yes" : "No"}
+                  label={t("icon.viewer.gradients")}
+                  value={metrics.hasGradients ? t("icon.viewer.yes") : t("icon.viewer.no")}
                 />
                 <Row
-                  label="Masks/Clips"
-                  value={metrics.hasMasks ? "Yes" : "No"}
+                  label={t("icon.viewer.masks")}
+                  value={metrics.hasMasks ? t("icon.viewer.yes") : t("icon.viewer.no")}
                 />
               </dl>
             ) : (
               <p className="text-xs text-muted-foreground/60">
-                Add an SVG to see file info.
+                {t("icon.viewer.addSvg")}
               </p>
             )}
           </div>
@@ -499,7 +505,7 @@ export function SvgViewer() {
               ) : (
                 <Copy className="h-4 w-4" />
               )}
-              {copied ? "Copied" : "Copy SVG"}
+              {copied ? t("icon.common.copied") : t("icon.viewer.copySvg")}
             </Button>
             <Button
               type="button"
@@ -509,16 +515,16 @@ export function SvgViewer() {
               className="justify-start gap-2"
             >
               <Download className="h-4 w-4" />
-              Download .svg
+              {t("icon.viewer.downloadSvg")}
             </Button>
           </div>
 
           {/* Deep links */}
           <div className="rounded-2xl border border-border/60 bg-card/30 p-4">
             <p className="mb-3 flex items-center justify-between text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
-              Open in editor
+              {t("icon.viewer.openInEditor")}
               <span className="font-mono text-[9px] normal-case text-muted-foreground/60">
-                6 targets
+                {t("icon.openIn.targets", { count: DEEP_LINK_TARGETS.length })}
               </span>
             </p>
             <DeepLinkActions svg={source} title={title} />
@@ -540,14 +546,13 @@ export function SvgViewer() {
             </div>
             <div className="flex-1">
               <p className="text-xs font-semibold text-foreground">
-                Powered by Filagram
+                {t("icon.viewer.poweredBy")}
               </p>
               <p className="mt-1 text-[11px] leading-relaxed text-muted-foreground">
-                Need to edit, optimize, or convert to PNG, JPG, PDF, or WebP?
-                Filagram has the heavy-lift tooling.
+                {t("icon.viewer.partnerText")}
               </p>
               <span className="mt-2 inline-flex items-center gap-1 text-[11px] font-medium text-foreground/80 transition-colors group-hover:text-foreground">
-                Visit Filagram
+                {t("icon.viewer.visit")}
                 <ArrowUpRight className="h-3.5 w-3.5" />
               </span>
             </div>

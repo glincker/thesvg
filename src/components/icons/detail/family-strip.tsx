@@ -1,8 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowUpRight } from "@/components/own-icons";
 import type { IconEntry } from "@/lib/icons";
 import { cn } from "@/lib/utils";
 import { logoImgClass, logoPlateClass } from "@/lib/logo-surface";
+import { useT } from "@/i18n/use-t";
 
 interface FamilyStripProps {
   familySlug: string;
@@ -30,12 +33,13 @@ export function FamilyStrip({
   prominent = false,
   className,
 }: FamilyStripProps) {
+  const { t } = useT();
   if (members.length === 0) return null;
   const shown = members.slice(0, SHOWN);
 
   return (
     <section
-      aria-label={`More from ${familyTitle}`}
+      aria-label={t("icon.family.moreFrom", { title: familyTitle })}
       className={cn(
         "rounded-xl border border-border bg-card p-3 shadow-sm",
         prominent && "p-4",
@@ -44,13 +48,13 @@ export function FamilyStrip({
     >
       <div className="mb-2.5 flex items-center justify-between">
         <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-          More from {familyTitle}
+          {t("icon.family.moreFrom", { title: familyTitle })}
         </p>
         <Link
           href={`/family/${familySlug}`}
           className="flex items-center gap-1 text-[11px] font-medium text-muted-foreground transition-colors hover:text-foreground"
         >
-          View all {total}
+          {t("icon.family.viewAllN", { count: total })}
           <ArrowUpRight className="h-3.5 w-3.5" />
         </Link>
       </div>

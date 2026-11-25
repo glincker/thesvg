@@ -34,6 +34,7 @@ import { withUtm } from "@/lib/external-link";
 import { IconLinksRow } from "@/components/icons/detail/icon-links-row";
 import { FamilyStrip } from "@/components/icons/detail/family-strip";
 import { useRecentsStore } from "@/lib/stores/recents-store";
+import { useT } from "@/i18n/use-t";
 import { IconFeedback } from "@/components/icons/detail/icon-feedback";
 import iconTones from "@/data/icon-tones.json";
 import type { IconTone } from "@/lib/icon-tone";
@@ -57,6 +58,7 @@ function PreviewCopyButton({
   /** Artwork made for each theme; when set, the preview shows the one that matches the current theme. */
   themeSrcs?: { light: string; dark: string };
 }) {
+  const { t } = useT();
   const [state, setState] = useState<"idle" | "copied" | "error">("idle");
   const recordCopy = useRecentsStore((s) => s.recordCopy);
 
@@ -79,10 +81,10 @@ function PreviewCopyButton({
 
   const label =
     state === "copied"
-      ? "Copied!"
+      ? t("icon.preview.copied")
       : state === "error"
-        ? "Couldn't copy"
-        : "Click to copy SVG";
+        ? t("icon.preview.failed")
+        : t("icon.preview.copy");
 
   return (
     <button
@@ -90,7 +92,7 @@ function PreviewCopyButton({
       onClick={handleCopy}
       disabled={!svgContent}
       aria-label={
-        state === "copied" ? "Copied SVG markup" : `Copy ${title} SVG markup`
+        state === "copied" ? t("icon.preview.ariaCopied") : t("icon.preview.ariaCopy", { title })
       }
       className="group/preview relative flex items-center justify-center rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-foreground/40"
     >
@@ -159,6 +161,7 @@ export function IconDetailPage({
   badgeCounterpart = null,
   headerExtra,
 }: IconDetailPageProps) {
+  const { t } = useT();
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const restricted = requiresUnmodifiedSvg(icon.license);
@@ -276,16 +279,16 @@ export function IconDetailPage({
       <BrandGlow hex={icon.hex} />
       {/* Breadcrumb */}
       <nav
-        aria-label="Breadcrumb"
+        aria-label={t("icon.detail.breadcrumb")}
         className="mb-6 flex min-w-0 items-center gap-2 text-sm text-muted-foreground"
       >
         <Link
           href="/"
-          aria-label="Home"
+          aria-label={t("icon.detail.home")}
           className="flex items-center gap-1 transition-colors hover:text-foreground"
         >
           <Home className="h-3.5 w-3.5" />
-          <span className="hidden sm:inline">Home</span>
+          <span className="hidden sm:inline">{t("icon.detail.home")}</span>
         </Link>
         {primaryCategory && (
           <>
@@ -354,7 +357,7 @@ export function IconDetailPage({
                   : "text-muted-foreground hover:text-red-500",
               )}
               aria-label={
-                isFavorite ? "Remove from favorites" : "Add to favorites"
+                isFavorite ? t("icon.detail.removeFavorite") : t("icon.detail.addFavorite")
               }
             >
               <Heart className={cn("h-4 w-4", isFavorite && "fill-current")} />
@@ -370,7 +373,7 @@ export function IconDetailPage({
             {icon.license && (
               <div className="flex items-start justify-between gap-3">
                 <span className="shrink-0 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
-                  License
+                  {t("icon.detail.license")}
                 </span>
                 <span className="min-w-0 text-right text-xs text-muted-foreground [overflow-wrap:anywhere]">
                   {icon.license}
@@ -380,7 +383,7 @@ export function IconDetailPage({
             {variants.length > 1 && (
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
-                  Variants
+                  {t("icon.detail.variants")}
                 </span>
                 <span className="text-xs text-muted-foreground">
                   {variants.length}
@@ -390,7 +393,7 @@ export function IconDetailPage({
             {icon.categories.length > 0 && (
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
-                  Category
+                  {t("icon.detail.category")}
                 </span>
                 <span className="text-xs text-muted-foreground">
                   {icon.categories[0]}
@@ -403,7 +406,7 @@ export function IconDetailPage({
           {icon.categories.length > 0 && (
             <div className="rounded-xl border border-border/60 bg-card p-3 shadow-sm">
               <p className="mb-2 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
-                Categories
+                {t("icon.detail.categories")}
               </p>
               <div className="flex flex-wrap gap-1.5">
                 {icon.categories.map((cat) => (
@@ -427,7 +430,7 @@ export function IconDetailPage({
           {icon.aliases.length > 0 && (
             <div className="rounded-xl border border-border/60 bg-card p-3 shadow-sm">
               <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
-                Also known as
+                {t("icon.detail.alsoKnownAs")}
               </p>
               <p className="text-xs text-muted-foreground">
                 {icon.aliases.join(", ")}
@@ -452,7 +455,7 @@ export function IconDetailPage({
                 </span>
                 <span className="min-w-0 flex-1">
                   <span className="block text-[10px] font-semibold uppercase tracking-wider text-orange-600 dark:text-orange-400">
-                    {isOlder ? "Current version" : "Previous version"}
+                    {isOlder ? t("icon.detail.currentVersion") : t("icon.detail.previousVersion")}
                   </span>
                   <span className="block truncate text-sm font-medium text-foreground">
                     {lineageIcon.title}
@@ -480,10 +483,10 @@ export function IconDetailPage({
                 </span>
                 <span className="min-w-0 flex-1">
                   <span className="block text-[10px] font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
-                    {isBadge ? "Brand logo" : "Also available as"}
+                    {isBadge ? t("icon.detail.brandLogo") : t("icon.detail.alsoAvailableAs")}
                   </span>
                   <span className="block truncate text-sm font-medium text-foreground">
-                    {isBadge ? badgeCounterpart.title : "Auth Badge"}
+                    {isBadge ? badgeCounterpart.title : t("icon.detail.authBadge")}
                   </span>
                 </span>
                 <ArrowUpRight className="h-4 w-4 shrink-0 text-emerald-600 transition-transform group-hover/badge-link:translate-x-0.5 group-hover/badge-link:-translate-y-0.5 dark:text-emerald-400" />
@@ -500,8 +503,8 @@ export function IconDetailPage({
                 <UiGlyph name={uiMarkForBrand(icon.slug) ?? ""} className="size-6" />
               </span>
               <span className="min-w-0 flex-1">
-                <span className="block text-[10px] font-semibold uppercase tracking-wider text-orange-600 dark:text-orange-400">Also as a UI icon</span>
-                <span className="block truncate text-sm font-medium text-foreground">Glass mark for interfaces</span>
+                <span className="block text-[10px] font-semibold uppercase tracking-wider text-orange-600 dark:text-orange-400">{t("icon.detail.alsoUiIcon")}</span>
+                <span className="block truncate text-sm font-medium text-foreground">{t("icon.detail.glassMark")}</span>
               </span>
               <ArrowUpRight className="h-4 w-4 shrink-0 text-orange-600 dark:text-orange-400" />
             </Link>
@@ -540,7 +543,7 @@ export function IconDetailPage({
                 className="flex items-center gap-2 rounded-lg border border-violet-500/25 bg-violet-500/[0.06] px-3 py-2 text-xs text-violet-600 shadow-sm transition-colors hover:bg-violet-500/[0.12] dark:text-violet-400"
               >
                 <UiGlyph name="book-open-text" look="fill" className="h-3.5 w-3.5 opacity-80" />
-                <span className="flex-1 truncate">Brand guidelines</span>
+                <span className="flex-1 truncate">{t("icon.detail.brandGuidelines")}</span>
                 <ArrowUpRight className="h-3.5 w-3.5 opacity-50" />
               </a>
             )}
@@ -582,13 +585,13 @@ export function IconDetailPage({
                         <span className="rounded-full bg-gradient-to-r from-fuchsia-500/90 via-orange-500/90 to-amber-400/90 px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase leading-none tracking-wider text-white">
                           {versionCounterpartYear}
                         </span>
-                        <span>See the {versionCounterpartYear} refresh</span>
+                        <span>{t("icon.detail.refresh", { year: versionCounterpartYear })}</span>
                         <ArrowUpRight className="h-3.5 w-3.5 opacity-50" />
                       </>
                     ) : (
                       <>
                         <ArrowUpRight className="h-3.5 w-3.5 rotate-180 opacity-50" />
-                        <span>Compare with original</span>
+                        <span>{t("icon.detail.compareOriginal")}</span>
                       </>
                     )}
                   </Link>
@@ -606,8 +609,8 @@ export function IconDetailPage({
                     />
                     <span>
                       {icon.slug === family.slug
-                        ? `${family.title} family`
-                        : `Part of ${family.title}`}
+                        ? t("icon.detail.familyOf", { title: family.title })
+                        : t("icon.detail.partOf", { title: family.title })}
                     </span>
                     <ArrowUpRight className="h-3.5 w-3.5 opacity-50" />
                   </Link>
@@ -622,7 +625,7 @@ export function IconDetailPage({
                       className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-[#4285f4] via-[#34a853] to-[#ea4335]"
                       aria-hidden
                     />
-                    <span>Part of Google 2026</span>
+                    <span>{t("icon.detail.partOfGoogle")}</span>
                     <ArrowUpRight className="h-3.5 w-3.5 opacity-50" />
                   </Link>
                 )}
@@ -701,13 +704,13 @@ export function IconDetailPage({
             <div>
               <div className="mb-3 flex items-center justify-between">
                 <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                  Related in {primaryCategory}
+                  {t("icon.detail.relatedIn", { category: primaryCategory })}
                 </p>
                 <Link
                   href={categoryUrl(primaryCategory)}
                   className="flex items-center gap-1 text-[11px] font-medium text-muted-foreground transition-colors hover:text-foreground"
                 >
-                  View all
+                  {t("icon.detail.viewAll")}
                   <ArrowUpRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
@@ -741,58 +744,61 @@ export function IconDetailPage({
       <section className="mt-10 rounded-2xl border border-border/40 bg-card/30 dark:border-white/[0.06] dark:bg-white/[0.02]">
         <div className="grid gap-6 p-5 sm:p-6 md:grid-cols-[minmax(0,1fr)_16rem]">
           <div>
-            <h2 className="mb-2 text-sm font-semibold text-foreground">About {icon.title} Icon</h2>
+            <h2 className="mb-2 text-sm font-semibold text-foreground">{t("icon.about.heading", { title: icon.title })}</h2>
             <div className="space-y-2 text-sm leading-relaxed text-muted-foreground">
               <p>
-                The {icon.title} SVG icon is free to download on theSVG.
+                {t("icon.about.free", { title: icon.title })}
                 {variants.length > 1
-                  ? ` It comes in ${variants.length} variants: ${variants.map(([name]) => (name === "default" ? "color" : name)).join(", ")}.`
+                  ? ` ${t("icon.about.variantsLine", { count: variants.length, names: variants.map(([name]) => (name === "default" ? t("icon.about.colorName") : t(`icon.variant.${name}`, { defaultValue: name }))).join(", ") })}`
                   : ""}
-                {icon.categories.length > 0 ? ` Filed under ${icon.categories.join(", ")}.` : ""}
+                {icon.categories.length > 0 ? ` ${t("icon.about.filed", { categories: icon.categories.join(", ") })}` : ""}
               </p>
               <p>
-                Use it with React, Vue, Svelte or plain HTML: npm (<code className="rounded bg-muted px-1 py-0.5 font-mono text-xs">@thesvg/react</code>), the CLI (<code className="rounded bg-muted px-1 py-0.5 font-mono text-xs">npx @thesvg/cli add {icon.slug}</code>) or the CDN.
+                {t("icon.about.use")}{" "}
+                <code className="rounded bg-muted px-1 py-0.5 font-mono text-xs">@thesvg/react</code>{" "}
+                <code className="rounded bg-muted px-1 py-0.5 font-mono text-xs">npx @thesvg/cli add {icon.slug}</code>
               </p>
               {icon.collection !== "brands" && (
                 <p>
-                  Part of the{" "}
-                  {icon.collection === "aws"
-                    ? "AWS Architecture"
-                    : icon.collection === "azure"
-                      ? "Microsoft Azure"
-                      : icon.collection === "gcp"
-                        ? "Google Cloud Platform"
-                        : icon.collection}{" "}
-                  collection.
-                  {icon.collectionMeta?.type === "service" ? " A service-level icon for architecture diagrams and documentation." : ""}
+                  {t("icon.about.collection", {
+                    name:
+                      icon.collection === "aws"
+                        ? "AWS Architecture"
+                        : icon.collection === "azure"
+                          ? "Microsoft Azure"
+                          : icon.collection === "gcp"
+                            ? "Google Cloud Platform"
+                            : icon.collection,
+                  })}
+                  {icon.collectionMeta?.type === "service" ? ` ${t("icon.about.serviceNote")}` : ""}
                 </p>
               )}
             </div>
           </div>
           <dl className="grid h-fit grid-cols-[auto_1fr] gap-x-4 gap-y-2 rounded-xl border border-border/40 bg-background/40 p-4 text-xs dark:border-white/[0.06]">
-            <dt className="text-muted-foreground">License</dt>
+            <dt className="text-muted-foreground">{t("icon.detail.license")}</dt>
             <dd className="text-right font-medium text-foreground">{icon.license}</dd>
-            <dt className="text-muted-foreground">Variants</dt>
+            <dt className="text-muted-foreground">{t("icon.detail.variants")}</dt>
             <dd className="text-right font-medium text-foreground">{variants.length}</dd>
             {icon.hex && icon.hex !== "000" ? (
               <>
-                <dt className="text-muted-foreground">Brand color</dt>
+                <dt className="text-muted-foreground">{t("icon.about.brandColor")}</dt>
                 <dd className="flex items-center justify-end gap-1.5 font-mono font-medium text-foreground">
                   <span className="size-3 rounded-full ring-1 ring-border/40" style={{ backgroundColor: `#${icon.hex}` }} />
                   #{icon.hex}
                 </dd>
               </>
             ) : null}
-            <dt className="text-muted-foreground">Use</dt>
+            <dt className="text-muted-foreground">{t("icon.about.useLabel")}</dt>
             <dd className="text-right text-foreground">
-              {restricted ? "Brand identification only, unmodified" : icon.license === "Trademark" ? "Identification and reference" : "Personal and commercial"}
+              {restricted ? t("icon.about.useRestricted") : icon.license === "Trademark" ? t("icon.about.useTrademark") : t("icon.about.usePersonal")}
             </dd>
           </dl>
         </div>
         <p className="border-t border-border/40 px-5 py-3 text-xs leading-relaxed text-muted-foreground dark:border-white/[0.06] sm:px-6">
           {icon.collection === "flags"
-            ? `The flag of ${icon.title} is a public symbol of its country or region. Showing it is not a statement about sovereignty or borders.`
-            : `\u201C${icon.title}\u201D is a trademark of its respective owner and is shown for identification only.${icon.license === "Trademark" || restricted ? " Do not modify the mark or imply endorsement." : ""}${restricted ? ` Use is limited to the owner\u2019s terms: ${icon.license}` : ""}`}{" "}
+            ? t("icon.about.flagNote", { title: icon.title })
+            : `${t("icon.about.trademark", { title: icon.title })}${icon.license === "Trademark" || restricted ? ` ${t("icon.about.noModify")}` : ""}${restricted ? ` ${t("icon.about.restricted", { license: icon.license })}` : ""}`}{" "}
           {icon.url &&
             (() => {
               try {
@@ -800,7 +806,7 @@ export function IconDetailPage({
                 if (urlObj.protocol !== "http:" && urlObj.protocol !== "https:") return null;
                 return (
                   <>
-                    Official brand assets:{" "}
+                    {t("icon.about.officialAssets")}{" "}
                     <a href={withUtm(urlObj.toString(), "icon_detail")} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-foreground">
                       {urlObj.hostname.replace(/^www\./, "")}
                     </a>

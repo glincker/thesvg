@@ -5,6 +5,7 @@ import { Check } from "@/components/own-icons";
 import { capture } from "@/lib/analytics";
 import { getJsDelivrUrl } from "@/components/icons/shared/icon-constants";
 import { cn } from "@/lib/utils";
+import { useT } from "@/i18n/use-t";
 
 interface JsDelivrButtonProps {
   slug: string;
@@ -12,6 +13,7 @@ interface JsDelivrButtonProps {
 }
 
 export function JsDelivrButton({ slug, activeVariant }: JsDelivrButtonProps) {
+  const { t } = useT();
   const [copied, setCopied] = useState(false);
 
   const handleCopy = useCallback(() => {
@@ -29,7 +31,7 @@ export function JsDelivrButton({ slug, activeVariant }: JsDelivrButtonProps) {
     <button
       type="button"
       onClick={handleCopy}
-      title="Copy jsDelivr CDN URL"
+      title={t("icon.jsdelivr.title")}
       className={cn(
         "flex h-9 shrink-0 items-center gap-1.5 rounded-lg border px-3 text-xs font-medium transition-all duration-150",
         copied
@@ -46,7 +48,7 @@ export function JsDelivrButton({ slug, activeVariant }: JsDelivrButtonProps) {
           className="h-4 w-4"
         />
       )}
-      <span className="hidden sm:inline">{copied ? "Copied" : "jsDelivr"}</span>
+      <span className="hidden sm:inline">{copied ? t("icon.common.copied") : "jsDelivr"}</span>
     </button>
   );
 }

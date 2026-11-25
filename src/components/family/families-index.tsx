@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { ArrowUpRight } from "@/components/own-icons";
 import type { OtherFamily } from "@/lib/families";
+import { useT } from "@/i18n/use-t";
 
 export interface FamilyIndexItem extends OtherFamily {
   tagline: string;
@@ -13,18 +16,18 @@ function accentStyle(a: string, b: string): CSSProperties {
 
 /** Grid of every brand family, each tinted with its own accent colors. */
 export function FamiliesIndex({ families }: { families: FamilyIndexItem[] }) {
+  const { t } = useT();
   return (
     <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6">
       <header className="max-w-2xl">
         <p className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
-          Brand families
+          {t("icon.family.brandFamilies")}
         </p>
         <h1 className="mt-2 text-4xl font-semibold tracking-tight sm:text-5xl">
-          Every product from the brands you build with
+          {t("icon.family.indexTitle")}
         </h1>
         <p className="mt-3 text-sm text-muted-foreground">
-          Official logos grouped by owner: the whole Amazon, Google or Microsoft
-          line in one place, with every variant. {families.length} families.
+          {t("icon.family.indexIntro", { count: families.length })}
         </p>
       </header>
 
@@ -56,7 +59,7 @@ export function FamiliesIndex({ families }: { families: FamilyIndexItem[] }) {
                   <span className="block truncate text-xs text-muted-foreground">{f.tagline}</span>
                 </span>
                 <span className="flex shrink-0 items-center gap-1 rounded-full border border-border/60 bg-background/70 px-2.5 py-1 text-[11px] font-medium text-muted-foreground">
-                  {f.count} logos
+                  {t("icon.family.logosCount", { count: f.count })}
                   <ArrowUpRight className="h-3.5 w-3.5 opacity-60" />
                 </span>
               </span>

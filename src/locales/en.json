@@ -1171,5 +1171,287 @@
         "needsMore": "Upload an SVG file, enter an icon name, and pick a license to enable submission."
       }
     }
+  },
+  "icon": {
+    "about": {
+      "brandColor": "Brand color",
+      "collection": "Part of the {{name}} collection.",
+      "colorName": "color",
+      "filed": "Filed under {{categories}}.",
+      "flagNote": "The flag of {{title}} is a public symbol of its country or region. Showing it is not a statement about sovereignty or borders.",
+      "free": "The {{title}} SVG icon is free to download on theSVG.",
+      "heading": "About {{title}} Icon",
+      "noModify": "Do not modify the mark or imply endorsement.",
+      "officialAssets": "Official brand assets:",
+      "restricted": "Use is limited to the owner’s terms: {{license}}",
+      "serviceNote": "A service-level icon for architecture diagrams and documentation.",
+      "trademark": "“{{title}}” is a trademark of its respective owner and is shown for identification only.",
+      "use": "Use it with React, Vue, Svelte or plain HTML through npm, the CLI or the CDN:",
+      "useLabel": "Use",
+      "usePersonal": "Personal and commercial",
+      "useRestricted": "Brand identification only, unmodified",
+      "useTrademark": "Identification and reference",
+      "variantsLine": "It comes in {{count}} variants: {{names}}."
+    },
+    "card": {
+      "copiedAria": "{{title}} {{format}} copied",
+      "copiedToast": "{{format}} copied!",
+      "copyAria": "Copy {{title}} {{format}}",
+      "downloadSvg": "Download SVG",
+      "favAdd": "Add {{title}} to favorites",
+      "favRemove": "Remove {{title}} from favorites",
+      "quickPreview": "Quick preview",
+      "quickPreviewAria": "Quick preview {{title}}",
+      "view": "View {{title}} icon details"
+    },
+    "common": {
+      "beta": "Beta",
+      "copied": "Copied",
+      "copy": "Copy",
+      "download": "Download"
+    },
+    "contribute": {
+      "issue": "Request via Issue",
+      "missingBetter": "Missing a better version?",
+      "missingBetterGuidelines": "Missing a better version or a guidelines link?",
+      "missingVariant": "Missing a variant?",
+      "missingVariantGuidelines": "Missing a variant or a guidelines link?",
+      "note": "Community fixes ship in the next build",
+      "pr": "Submit a PR"
+    },
+    "detail": {
+      "addFavorite": "Add to favorites",
+      "alsoAvailableAs": "Also available as",
+      "alsoKnownAs": "Also known as",
+      "alsoUiIcon": "Also as a UI icon",
+      "authBadge": "Auth Badge",
+      "brandGuidelines": "Brand guidelines",
+      "brandLogo": "Brand logo",
+      "breadcrumb": "Breadcrumb",
+      "categories": "Categories",
+      "category": "Category",
+      "compareOriginal": "Compare with original",
+      "currentVersion": "Current version",
+      "familyOf": "{{title}} family",
+      "glassMark": "Glass mark for interfaces",
+      "home": "Home",
+      "license": "License",
+      "partOf": "Part of {{title}}",
+      "partOfGoogle": "Part of Google 2026",
+      "previousVersion": "Previous version",
+      "refresh": "See the {{year}} refresh",
+      "relatedIn": "Related in {{category}}",
+      "removeFavorite": "Remove from favorites",
+      "variants": "Variants",
+      "viewAll": "View all"
+    },
+    "download": {
+      "aria": "Download {{title}} SVG",
+      "copyLabel": "copy",
+      "dataUri": "Data URI",
+      "done": "Done",
+      "downloadLabel": "download",
+      "errCopy": "Copy failed. Please try again.",
+      "errExport": "{{format}} export failed. Please try again.",
+      "export": "Export {{title}}",
+      "more": "More download formats",
+      "raster": "Raster",
+      "vector": "Vector"
+    },
+    "family": {
+      "allCategory": "All {{category}}",
+      "allFamilies": "All families",
+      "allIcons": "All {{title}} icons",
+      "allLogos": "All {{title}} logos",
+      "badge": "{{title}} · Brand family",
+      "brandFamilies": "Brand families",
+      "flagshipProducts": "Flagship products",
+      "flagships": "Flagships",
+      "fullSet": "The full set",
+      "iconsCount": "{{count}} icons",
+      "indexIntro": "Official logos grouped by owner: the whole Amazon, Google or Microsoft line in one place, with every variant. {{count}} families.",
+      "indexTitle": "Every product from the brands you build with",
+      "jump": "Jump to a group",
+      "logosCount": "{{count}} logos",
+      "mainLogo": "{{title}} main logo",
+      "moreFamilies": "More brand families",
+      "moreFrom": "More from {{title}}",
+      "nVariants": "{{count}} variants",
+      "oneVariant": "1 variant",
+      "open": "Open",
+      "showMore": "Show {{count}} more",
+      "statCategories": "categories",
+      "statLogos": "logos",
+      "statVariants": "variants",
+      "submitMissing": "Submit a missing {{title}} logo",
+      "viewAllN": "View all {{count}}"
+    },
+    "feedback": {
+      "helpful": "Helpful?",
+      "no": "This icon is not helpful",
+      "reason": {
+        "missingVariant": "Missing variant",
+        "other": "Other",
+        "outdated": "Outdated logo",
+        "wrongColors": "Wrong colors"
+      },
+      "reset": "Reset your feedback",
+      "review": "Glad it helped, leave a review?",
+      "thanks": "Thanks!",
+      "thanksIssue": "Thanks, opened an issue",
+      "whatsWrong": "What’s wrong with it?",
+      "yes": "This icon is helpful"
+    },
+    "glow": {
+      "hint": "Toggle the background glow",
+      "off": "Glow off",
+      "on": "Glow on",
+      "turnOff": "Turn off background glow",
+      "turnOn": "Turn on background glow"
+    },
+    "grid": {
+      "none": "No icons found",
+      "submit": "Submit this icon",
+      "tryDifferent": "Try a different search term or category"
+    },
+    "import": {
+      "loading": "Loading icon library...",
+      "placeholder": "Import from library, try 'gmail 2026', 'github'...",
+      "try": "Try"
+    },
+    "inspector": {
+      "aria": "Inspect {{title}} zoomed in",
+      "background": "{{name}} background",
+      "description": "Zoom in to check edges and curves against the standard icon design grid. This is the vector artwork scaled up, not a raster crop, so it stays crisp at every size.",
+      "grid": "Grid",
+      "title": "{{title}} pixel inspector",
+      "transparent": "Transparent",
+      "zoomIn": "Zoom in",
+      "zoomOut": "Zoom out"
+    },
+    "jsdelivr": {
+      "title": "Copy jsDelivr CDN URL"
+    },
+    "links": {
+      "official": "Official links"
+    },
+    "modal": {
+      "cliCommand": "CLI command",
+      "copiedStatus": "{{what}} copied",
+      "guidelines": "Guidelines",
+      "viewFull": "View full details"
+    },
+    "newBadge": {
+      "refresh": "{{year}} refresh"
+    },
+    "openIn": {
+      "aria": "Open SVG in editor",
+      "copyFor": "Copy for {{app}}",
+      "couldNot": "Could not open.",
+      "downloadFor": "Download for {{app}}",
+      "hint": {
+        "codepen": "Open in a new pen, HTML pre-filled",
+        "figma": "Copy to clipboard, then paste into a Figma canvas",
+        "filagram": "Edit, optimize, or convert in the partner viewer",
+        "illustrator": "Download .svg, then File → Open in Illustrator or Photoshop",
+        "jsfiddle": "Open in a new fiddle, HTML pre-filled",
+        "sketch": "Copy to clipboard, then paste into a Sketch artboard"
+      },
+      "inspect": "Inspect in SVG Viewer",
+      "open": "Open in",
+      "opened": "Opened in new tab.",
+      "targets": "{{count}} targets"
+    },
+    "png": {
+      "error": "Could not convert this SVG to PNG. Try another variant.",
+      "title": "Export PNG"
+    },
+    "preview": {
+      "ariaCopied": "Copied SVG markup",
+      "ariaCopy": "Copy {{title}} SVG markup",
+      "copied": "Copied!",
+      "copy": "Click to copy SVG",
+      "failed": "Couldn't copy"
+    },
+    "quality": {
+      "footnote": "How complete this icon's assets are, not a judgment of the brand or the artwork itself. Help close the gaps via the contribution links below.",
+      "hint": {
+        "licenseMissing": "License not specified",
+        "linked": "Linked",
+        "meta": "Categories: {{count}}",
+        "metaAliases": "Aliases, categories: {{count}}",
+        "noGuidelines": "No guidelines link",
+        "onlyDefault": "Only the default variant",
+        "variantsCount": "{{count}} variants"
+      },
+      "row": {
+        "guidelines": "Guidelines",
+        "license": "License",
+        "metadata": "Metadata",
+        "variants": "Variants"
+      },
+      "title": "Completeness"
+    },
+    "quick": {
+      "copyCommand": "Copy {{name}} command",
+      "label": "How to use this icon",
+      "notOnNpm": "{{name}} is not on npm yet. Use the CLI or CDN.",
+      "packageManager": "Package manager",
+      "title": "How to use"
+    },
+    "variant": {
+      "dark": "Dark",
+      "default": "Default",
+      "light": "Light",
+      "mono": "Mono",
+      "suffix": "{{name}} variant",
+      "wordmark": "Wordmark",
+      "wordmarkDark": "WM Dark",
+      "wordmarkLight": "WM Light"
+    },
+    "viewer": {
+      "addSvg": "Add an SVG to see file info.",
+      "bgChecker": "Checker background",
+      "bgDark": "Dark background",
+      "bgLight": "Light background",
+      "cannotRender": "Cannot render, check the SVG syntax above.",
+      "chars": "ch",
+      "clear": "Clear",
+      "copySvg": "Copy SVG",
+      "downloadSvg": "Download .svg",
+      "elements": "Elements",
+      "empty": "empty",
+      "errAutoload": "Could not auto-load that icon.",
+      "errClipboard": "Clipboard write failed.",
+      "errNoIcon": "No icon with slug \"{{slug}}\" in the library.",
+      "errNotSvg": "That does not look like a valid SVG file.",
+      "errRead": "Could not read that file.",
+      "errTooLarge": "File is larger than 2 MB. Please use a smaller SVG.",
+      "fileInfo": "File info",
+      "format": "Format",
+      "formatHint": "format",
+      "gradients": "Gradients",
+      "height": "Height",
+      "indent": "indent",
+      "invalid": "invalid",
+      "lines": "ln",
+      "loading": "Loading {{slug}} from library...",
+      "masks": "Masks/Clips",
+      "minify": "Minify",
+      "no": "No",
+      "openInEditor": "Open in editor",
+      "pageIntro": "Paste, drop, or import an SVG. Format the XML, preview on any background, inspect viewBox and dimensions, and open in your favorite editor. Everything runs in your browser. Nothing is uploaded.",
+      "pageTitle": "SVG Viewer",
+      "partnerText": "Need to edit, optimize, or convert to PNG, JPG, PDF, or WebP? Filagram has the heavy-lift tooling.",
+      "pasteHint": "Paste, drop, or import an SVG to preview",
+      "poweredBy": "Powered by Filagram",
+      "preview": "Preview",
+      "size": "Size",
+      "upload": "Upload",
+      "valid": "valid svg",
+      "visit": "Visit Filagram",
+      "width": "Width",
+      "yes": "Yes"
+    }
   }
 }

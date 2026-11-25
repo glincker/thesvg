@@ -1171,5 +1171,287 @@
         "needsMore": "Göndermeyi etkinleştirmek için bir SVG dosyası yükleyin, simge adını girin ve bir lisans seçin."
       }
     }
+  },
+  "icon": {
+    "about": {
+      "brandColor": "Marka rengi",
+      "collection": "{{name}} koleksiyonunun parçasıdır.",
+      "colorName": "renkli",
+      "filed": "Kategoriler: {{categories}}.",
+      "flagNote": "{{title}} bayrağı, ülkesinin veya bölgesinin kamusal bir simgesidir. Gösterilmesi egemenlik ya da sınırlar hakkında bir görüş bildirmez.",
+      "free": "{{title}} SVG ikonu theSVG'de ücretsiz indirilebilir.",
+      "heading": "{{title}} ikonu hakkında",
+      "noModify": "Markayı değiştirmeyin ve onay aldığınızı ima etmeyin.",
+      "officialAssets": "Resmi marka varlıkları:",
+      "restricted": "Kullanım, sahibinin koşullarıyla sınırlıdır: {{license}}",
+      "serviceNote": "Mimari diyagramlar ve dokümantasyon için bir hizmet ikonu.",
+      "trademark": "“{{title}}”, ilgili sahibinin ticari markasıdır ve yalnızca tanımlama amacıyla gösterilir.",
+      "use": "React, Vue, Svelte veya düz HTML ile npm, CLI ya da CDN üzerinden kullanın:",
+      "useLabel": "Kullanım",
+      "usePersonal": "Kişisel ve ticari",
+      "useRestricted": "Yalnızca marka tanımlama, değiştirilmeden",
+      "useTrademark": "Tanımlama ve atıf",
+      "variantsLine": "{{count}} varyantı var: {{names}}."
+    },
+    "card": {
+      "copiedAria": "{{title}} {{format}} kopyalandı",
+      "copiedToast": "{{format}} kopyalandı!",
+      "copyAria": "{{title}} {{format}} kopyala",
+      "downloadSvg": "SVG indir",
+      "favAdd": "{{title}} ikonunu favorilere ekle",
+      "favRemove": "{{title}} ikonunu favorilerden kaldır",
+      "quickPreview": "Hızlı önizleme",
+      "quickPreviewAria": "{{title}} hızlı önizleme",
+      "view": "{{title}} ikon ayrıntılarını gör"
+    },
+    "common": {
+      "beta": "Beta",
+      "copied": "Kopyalandı",
+      "copy": "Kopyala",
+      "download": "İndir"
+    },
+    "contribute": {
+      "issue": "Issue ile iste",
+      "missingBetter": "Daha iyi bir sürüm mü eksik?",
+      "missingBetterGuidelines": "Daha iyi bir sürüm veya yönergeler bağlantısı mı eksik?",
+      "missingVariant": "Bir varyant mı eksik?",
+      "missingVariantGuidelines": "Bir varyant veya yönergeler bağlantısı mı eksik?",
+      "note": "Topluluk düzeltmeleri bir sonraki derlemede yayınlanır",
+      "pr": "PR gönder"
+    },
+    "detail": {
+      "addFavorite": "Favorilere ekle",
+      "alsoAvailableAs": "Şu olarak da mevcut",
+      "alsoKnownAs": "Diğer adları",
+      "alsoUiIcon": "Arayüz ikonu olarak da",
+      "authBadge": "Kimlik doğrulama rozeti",
+      "brandGuidelines": "Marka yönergeleri",
+      "brandLogo": "Marka logosu",
+      "breadcrumb": "Gezinti yolu",
+      "categories": "Kategoriler",
+      "category": "Kategori",
+      "compareOriginal": "Orijinaliyle karşılaştır",
+      "currentVersion": "Güncel sürüm",
+      "familyOf": "{{title}} ailesi",
+      "glassMark": "Arayüzler için cam işaret",
+      "home": "Ana sayfa",
+      "license": "Lisans",
+      "partOf": "{{title}} ailesinden",
+      "partOfGoogle": "Google 2026'nın parçası",
+      "previousVersion": "Önceki sürüm",
+      "refresh": "{{year}} yenilemesini gör",
+      "relatedIn": "{{category}} kategorisinden benzerler",
+      "removeFavorite": "Favorilerden kaldır",
+      "variants": "Varyantlar",
+      "viewAll": "Tümünü gör"
+    },
+    "download": {
+      "aria": "{{title}} SVG'sini indir",
+      "copyLabel": "kopyala",
+      "dataUri": "Data URI",
+      "done": "Tamam",
+      "downloadLabel": "indir",
+      "errCopy": "Kopyalanamadı. Lütfen tekrar deneyin.",
+      "errExport": "{{format}} dışa aktarımı başarısız oldu. Lütfen tekrar deneyin.",
+      "export": "{{title}} dışa aktar",
+      "more": "Diğer indirme biçimleri",
+      "raster": "Raster",
+      "vector": "Vektör"
+    },
+    "family": {
+      "allCategory": "{{category}} kategorisinin tümü",
+      "allFamilies": "Tüm aileler",
+      "allIcons": "Tüm {{title}} ikonları",
+      "allLogos": "Tüm {{title}} logoları",
+      "badge": "{{title}} · Marka ailesi",
+      "brandFamilies": "Marka aileleri",
+      "flagshipProducts": "Amiral gemisi ürünler",
+      "flagships": "Öne çıkanlar",
+      "fullSet": "Tam set",
+      "iconsCount": "{{count}} ikon",
+      "indexIntro": "Sahibine göre gruplanmış resmi logolar: Amazon, Google veya Microsoft'un tüm ürün yelpazesi, her varyantıyla tek yerde. {{count}} aile.",
+      "indexTitle": "Birlikte geliştirdiğiniz markaların her ürünü",
+      "jump": "Bir gruba git",
+      "logosCount": "{{count}} logo",
+      "mainLogo": "{{title}} ana logosu",
+      "moreFamilies": "Diğer marka aileleri",
+      "moreFrom": "{{title}} ailesinden daha fazlası",
+      "nVariants": "{{count}} varyant",
+      "oneVariant": "1 varyant",
+      "open": "Aç",
+      "showMore": "{{count}} tane daha göster",
+      "statCategories": "kategori",
+      "statLogos": "logo",
+      "statVariants": "varyant",
+      "submitMissing": "Eksik bir {{title}} logosu gönder",
+      "viewAllN": "{{count}} ikonun tümünü gör"
+    },
+    "feedback": {
+      "helpful": "Yararlı mı?",
+      "no": "Bu ikon yararlı değil",
+      "reason": {
+        "missingVariant": "Varyant eksik",
+        "other": "Diğer",
+        "outdated": "Eski logo",
+        "wrongColors": "Yanlış renkler"
+      },
+      "reset": "Geri bildirimini sıfırla",
+      "review": "Yardımcı olmasına sevindik, yorum bırakır mısın?",
+      "thanks": "Teşekkürler!",
+      "thanksIssue": "Teşekkürler, bir issue açıldı",
+      "whatsWrong": "Sorun nedir?",
+      "yes": "Bu ikon yararlı"
+    },
+    "glow": {
+      "hint": "Arka plan parıltısını aç veya kapat",
+      "off": "Parıltı kapalı",
+      "on": "Parıltı açık",
+      "turnOff": "Arka plan parıltısını kapat",
+      "turnOn": "Arka plan parıltısını aç"
+    },
+    "grid": {
+      "none": "İkon bulunamadı",
+      "submit": "Bu ikonu gönder",
+      "tryDifferent": "Farklı bir arama terimi veya kategori deneyin"
+    },
+    "import": {
+      "loading": "İkon kitaplığı yükleniyor...",
+      "placeholder": "Kitaplıktan içe aktar, örneğin 'gmail 2026', 'github'...",
+      "try": "Dene"
+    },
+    "inspector": {
+      "aria": "{{title}} ikonunu yakından incele",
+      "background": "{{name}} arka plan",
+      "description": "Kenarları ve eğrileri standart ikon tasarım ızgarasına göre kontrol etmek için yakınlaştırın. Bu, raster kırpma değil büyütülmüş vektör çizimdir, bu yüzden her boyutta net kalır.",
+      "grid": "Izgara",
+      "title": "{{title}} piksel denetleyicisi",
+      "transparent": "Şeffaf",
+      "zoomIn": "Yakınlaştır",
+      "zoomOut": "Uzaklaştır"
+    },
+    "jsdelivr": {
+      "title": "jsDelivr CDN URL'sini kopyala"
+    },
+    "links": {
+      "official": "Resmi bağlantılar"
+    },
+    "modal": {
+      "cliCommand": "CLI komutu",
+      "copiedStatus": "{{what}} kopyalandı",
+      "guidelines": "Yönergeler",
+      "viewFull": "Tüm ayrıntıları gör"
+    },
+    "newBadge": {
+      "refresh": "{{year}} yenilemesi"
+    },
+    "openIn": {
+      "aria": "SVG'yi düzenleyicide aç",
+      "copyFor": "{{app}} için kopyala",
+      "couldNot": "Açılamadı.",
+      "downloadFor": "{{app}} için indir",
+      "hint": {
+        "codepen": "HTML hazır olarak yeni bir pen'de açılır",
+        "figma": "Panoya kopyalayın, sonra bir Figma tuvaline yapıştırın",
+        "filagram": "Ortak görüntüleyicide düzenleyin, optimize edin veya dönüştürün",
+        "illustrator": ".svg dosyasını indirin, sonra Dosya → Illustrator veya Photoshop ile aç",
+        "jsfiddle": "HTML hazır olarak yeni bir fiddle'da açılır",
+        "sketch": "Panoya kopyalayın, sonra bir Sketch çalışma tahtasına yapıştırın"
+      },
+      "inspect": "SVG Görüntüleyici'de incele",
+      "open": "Şununla aç",
+      "opened": "Yeni sekmede açıldı.",
+      "targets": "{{count}} hedef"
+    },
+    "png": {
+      "error": "Bu SVG PNG'ye dönüştürülemedi. Başka bir varyant deneyin.",
+      "title": "PNG olarak dışa aktar"
+    },
+    "preview": {
+      "ariaCopied": "SVG kodu kopyalandı",
+      "ariaCopy": "{{title}} SVG kodunu kopyala",
+      "copied": "Kopyalandı!",
+      "copy": "SVG'yi kopyalamak için tıklayın",
+      "failed": "Kopyalanamadı"
+    },
+    "quality": {
+      "footnote": "Bu ikonun varlıklarının ne kadar eksiksiz olduğunu gösterir, markaya veya çizimin kendisine dair bir yargı değildir. Aşağıdaki katkı bağlantılarıyla eksikleri kapatmaya yardım edin.",
+      "hint": {
+        "licenseMissing": "Lisans belirtilmemiş",
+        "linked": "Bağlantı var",
+        "meta": "Kategori: {{count}}",
+        "metaAliases": "Takma adlar, kategori: {{count}}",
+        "noGuidelines": "Yönerge bağlantısı yok",
+        "onlyDefault": "Yalnızca varsayılan varyant",
+        "variantsCount": "{{count}} varyant"
+      },
+      "row": {
+        "guidelines": "Yönergeler",
+        "license": "Lisans",
+        "metadata": "Meta veri",
+        "variants": "Varyantlar"
+      },
+      "title": "Eksiksizlik"
+    },
+    "quick": {
+      "copyCommand": "{{name}} komutunu kopyala",
+      "label": "Bu ikon nasıl kullanılır",
+      "notOnNpm": "{{name}} henüz npm'de değil. CLI veya CDN kullanın.",
+      "packageManager": "Paket yöneticisi",
+      "title": "Nasıl kullanılır"
+    },
+    "variant": {
+      "dark": "Koyu",
+      "default": "Varsayılan",
+      "light": "Açık",
+      "mono": "Mono",
+      "suffix": "{{name}} varyantı",
+      "wordmark": "Yazı logosu",
+      "wordmarkDark": "Yazı logosu koyu",
+      "wordmarkLight": "Yazı logosu açık"
+    },
+    "viewer": {
+      "addSvg": "Dosya bilgisini görmek için bir SVG ekleyin.",
+      "bgChecker": "Dama arka plan",
+      "bgDark": "Koyu arka plan",
+      "bgLight": "Açık arka plan",
+      "cannotRender": "Oluşturulamıyor, yukarıdaki SVG sözdizimini kontrol edin.",
+      "chars": "krk.",
+      "clear": "Temizle",
+      "copySvg": "SVG'yi kopyala",
+      "downloadSvg": ".svg indir",
+      "elements": "Öğeler",
+      "empty": "boş",
+      "errAutoload": "Bu ikon otomatik yüklenemedi.",
+      "errClipboard": "Panoya yazılamadı.",
+      "errNoIcon": "Kitaplıkta \"{{slug}}\" slug'lı bir ikon yok.",
+      "errNotSvg": "Bu geçerli bir SVG dosyasına benzemiyor.",
+      "errRead": "Dosya okunamadı.",
+      "errTooLarge": "Dosya 2 MB'tan büyük. Lütfen daha küçük bir SVG kullanın.",
+      "fileInfo": "Dosya bilgisi",
+      "format": "Biçimlendir",
+      "formatHint": "biçimlendir",
+      "gradients": "Gradyanlar",
+      "height": "Yükseklik",
+      "indent": "girinti",
+      "invalid": "geçersiz",
+      "lines": "sat.",
+      "loading": "{{slug}} kitaplıktan yükleniyor...",
+      "masks": "Maskeler/Kırpmalar",
+      "minify": "Küçült",
+      "no": "Hayır",
+      "openInEditor": "Düzenleyicide aç",
+      "pageIntro": "Bir SVG yapıştırın, bırakın veya içe aktarın. XML'i biçimlendirin, istediğiniz arka planda önizleyin, viewBox ve boyutları inceleyin ve favori düzenleyicinizde açın. Her şey tarayıcınızda çalışır. Hiçbir şey yüklenmez.",
+      "pageTitle": "SVG Görüntüleyici",
+      "partnerText": "Düzenlemek, optimize etmek veya PNG, JPG, PDF ya da WebP'ye dönüştürmek mi istiyorsunuz? Ağır işler için Filagram'ın araçları var.",
+      "pasteHint": "Önizlemek için bir SVG yapıştırın, bırakın veya içe aktarın",
+      "poweredBy": "Filagram desteğiyle",
+      "preview": "Önizleme",
+      "size": "Boyut",
+      "upload": "Yükle",
+      "valid": "geçerli svg",
+      "visit": "Filagram'ı ziyaret et",
+      "width": "Genişlik",
+      "yes": "Evet"
+    }
   }
 }

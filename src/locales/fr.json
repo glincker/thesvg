@@ -1171,5 +1171,287 @@
         "needsMore": "Téléversez un fichier SVG, saisissez un nom d'icône et choisissez une licence pour activer la soumission."
       }
     }
+  },
+  "icon": {
+    "about": {
+      "brandColor": "Couleur de la marque",
+      "collection": "Fait partie de la collection {{name}}.",
+      "colorName": "couleur",
+      "filed": "Classé dans {{categories}}.",
+      "flagNote": "Le drapeau de {{title}} est un symbole public de son pays ou de sa région. L’afficher ne constitue pas une prise de position sur la souveraineté ou les frontières.",
+      "free": "L’icône SVG {{title}} est gratuite à télécharger sur theSVG.",
+      "heading": "À propos de l’icône {{title}}",
+      "noModify": "Ne modifiez pas la marque et n’impliquez aucun parrainage.",
+      "officialAssets": "Ressources officielles de la marque :",
+      "restricted": "L’utilisation est limitée aux conditions du propriétaire : {{license}}",
+      "serviceNote": "Une icône de service pour les schémas d’architecture et la documentation.",
+      "trademark": "« {{title}} » est une marque de son propriétaire respectif et n’est affichée qu’à des fins d’identification.",
+      "use": "Utilisez-la avec React, Vue, Svelte ou du HTML pur via npm, la CLI ou le CDN :",
+      "useLabel": "Usage",
+      "usePersonal": "Personnel et commercial",
+      "useRestricted": "Identification de la marque uniquement, sans modification",
+      "useTrademark": "Identification et référence",
+      "variantsLine": "Elle existe en {{count}} variantes : {{names}}."
+    },
+    "card": {
+      "copiedAria": "{{title}} {{format}} copié",
+      "copiedToast": "{{format}} copié !",
+      "copyAria": "Copier {{title}} {{format}}",
+      "downloadSvg": "Télécharger le SVG",
+      "favAdd": "Ajouter {{title}} aux favoris",
+      "favRemove": "Retirer {{title}} des favoris",
+      "quickPreview": "Aperçu rapide",
+      "quickPreviewAria": "Aperçu rapide de {{title}}",
+      "view": "Voir les détails de l’icône {{title}}"
+    },
+    "common": {
+      "beta": "Bêta",
+      "copied": "Copié",
+      "copy": "Copier",
+      "download": "Télécharger"
+    },
+    "contribute": {
+      "issue": "Demander via une issue",
+      "missingBetter": "Il manque une meilleure version ?",
+      "missingBetterGuidelines": "Il manque une meilleure version ou un lien vers les consignes ?",
+      "missingVariant": "Il manque une variante ?",
+      "missingVariantGuidelines": "Il manque une variante ou un lien vers les consignes ?",
+      "note": "Les corrections de la communauté sortent au prochain build",
+      "pr": "Proposer une PR"
+    },
+    "detail": {
+      "addFavorite": "Ajouter aux favoris",
+      "alsoAvailableAs": "Aussi disponible en",
+      "alsoKnownAs": "Aussi connu sous le nom de",
+      "alsoUiIcon": "Aussi en icône d’interface",
+      "authBadge": "Badge d’authentification",
+      "brandGuidelines": "Charte de la marque",
+      "brandLogo": "Logo de la marque",
+      "breadcrumb": "Fil d’Ariane",
+      "categories": "Catégories",
+      "category": "Catégorie",
+      "compareOriginal": "Comparer avec l’original",
+      "currentVersion": "Version actuelle",
+      "familyOf": "Famille {{title}}",
+      "glassMark": "Marque en verre pour interfaces",
+      "home": "Accueil",
+      "license": "Licence",
+      "partOf": "Fait partie de {{title}}",
+      "partOfGoogle": "Fait partie de Google 2026",
+      "previousVersion": "Version précédente",
+      "refresh": "Voir la refonte {{year}}",
+      "relatedIn": "Dans la même catégorie, {{category}}",
+      "removeFavorite": "Retirer des favoris",
+      "variants": "Variantes",
+      "viewAll": "Tout voir"
+    },
+    "download": {
+      "aria": "Télécharger le SVG de {{title}}",
+      "copyLabel": "copier",
+      "dataUri": "URI de données",
+      "done": "Terminé",
+      "downloadLabel": "télécharger",
+      "errCopy": "Échec de la copie. Veuillez réessayer.",
+      "errExport": "Échec de l’export en {{format}}. Veuillez réessayer.",
+      "export": "Exporter {{title}}",
+      "more": "Autres formats de téléchargement",
+      "raster": "Raster",
+      "vector": "Vectoriel"
+    },
+    "family": {
+      "allCategory": "Tout dans {{category}}",
+      "allFamilies": "Toutes les familles",
+      "allIcons": "Toutes les icônes {{title}}",
+      "allLogos": "Tous les logos {{title}}",
+      "badge": "{{title}} · Famille de marque",
+      "brandFamilies": "Familles de marques",
+      "flagshipProducts": "Produits phares",
+      "flagships": "Produits phares",
+      "fullSet": "L’ensemble complet",
+      "iconsCount": "{{count}} icônes",
+      "indexIntro": "Des logos officiels regroupés par propriétaire : toute la gamme Amazon, Google ou Microsoft au même endroit, avec chaque variante. {{count}} familles.",
+      "indexTitle": "Tous les produits des marques avec lesquelles vous créez",
+      "jump": "Aller à un groupe",
+      "logosCount": "{{count}} logos",
+      "mainLogo": "Logo principal de {{title}}",
+      "moreFamilies": "Plus de familles de marques",
+      "moreFrom": "Plus de {{title}}",
+      "nVariants": "{{count}} variantes",
+      "oneVariant": "1 variante",
+      "open": "Ouvrir",
+      "showMore": "Afficher {{count}} de plus",
+      "statCategories": "catégories",
+      "statLogos": "logos",
+      "statVariants": "variantes",
+      "submitMissing": "Soumettre un logo {{title}} manquant",
+      "viewAllN": "Voir les {{count}}"
+    },
+    "feedback": {
+      "helpful": "Utile ?",
+      "no": "Cette icône n’est pas utile",
+      "reason": {
+        "missingVariant": "Variante manquante",
+        "other": "Autre",
+        "outdated": "Logo obsolète",
+        "wrongColors": "Mauvaises couleurs"
+      },
+      "reset": "Réinitialiser votre avis",
+      "review": "Content que ça aide, laisser un avis ?",
+      "thanks": "Merci !",
+      "thanksIssue": "Merci, une issue a été ouverte",
+      "whatsWrong": "Qu’est-ce qui ne va pas ?",
+      "yes": "Cette icône est utile"
+    },
+    "glow": {
+      "hint": "Activer ou désactiver la lueur d’arrière-plan",
+      "off": "Lueur désactivée",
+      "on": "Lueur activée",
+      "turnOff": "Désactiver la lueur d’arrière-plan",
+      "turnOn": "Activer la lueur d’arrière-plan"
+    },
+    "grid": {
+      "none": "Aucune icône trouvée",
+      "submit": "Soumettre cette icône",
+      "tryDifferent": "Essayez un autre terme de recherche ou une autre catégorie"
+    },
+    "import": {
+      "loading": "Chargement de la bibliothèque d’icônes...",
+      "placeholder": "Importer depuis la bibliothèque, essayez 'gmail 2026', 'github'...",
+      "try": "Essayez"
+    },
+    "inspector": {
+      "aria": "Inspecter {{title}} en zoom",
+      "background": "Fond {{name}}",
+      "description": "Zoomez pour vérifier les bords et les courbes sur la grille standard de conception d’icônes. C’est l’illustration vectorielle agrandie, pas un recadrage raster, donc elle reste nette à toutes les tailles.",
+      "grid": "Grille",
+      "title": "Inspecteur de pixels de {{title}}",
+      "transparent": "Transparent",
+      "zoomIn": "Zoom avant",
+      "zoomOut": "Zoom arrière"
+    },
+    "jsdelivr": {
+      "title": "Copier l’URL CDN jsDelivr"
+    },
+    "links": {
+      "official": "Liens officiels"
+    },
+    "modal": {
+      "cliCommand": "Commande CLI",
+      "copiedStatus": "{{what}} copié",
+      "guidelines": "Charte",
+      "viewFull": "Voir tous les détails"
+    },
+    "newBadge": {
+      "refresh": "Refonte {{year}}"
+    },
+    "openIn": {
+      "aria": "Ouvrir le SVG dans un éditeur",
+      "copyFor": "Copier pour {{app}}",
+      "couldNot": "Impossible d’ouvrir.",
+      "downloadFor": "Télécharger pour {{app}}",
+      "hint": {
+        "codepen": "S’ouvre dans un nouveau pen, HTML prérempli",
+        "figma": "Copiez dans le presse-papiers, puis collez dans un canevas Figma",
+        "filagram": "Modifiez, optimisez ou convertissez dans la visionneuse partenaire",
+        "illustrator": "Téléchargez le .svg, puis Fichier → Ouvrir dans Illustrator ou Photoshop",
+        "jsfiddle": "S’ouvre dans un nouveau fiddle, HTML prérempli",
+        "sketch": "Copiez dans le presse-papiers, puis collez dans un plan de travail Sketch"
+      },
+      "inspect": "Inspecter dans la visionneuse SVG",
+      "open": "Ouvrir dans",
+      "opened": "Ouvert dans un nouvel onglet.",
+      "targets": "{{count}} destinations"
+    },
+    "png": {
+      "error": "Impossible de convertir ce SVG en PNG. Essayez une autre variante.",
+      "title": "Exporter en PNG"
+    },
+    "preview": {
+      "ariaCopied": "Code SVG copié",
+      "ariaCopy": "Copier le code SVG de {{title}}",
+      "copied": "Copié !",
+      "copy": "Cliquer pour copier le SVG",
+      "failed": "Copie impossible"
+    },
+    "quality": {
+      "footnote": "Indique à quel point les ressources de cette icône sont complètes, sans jugement sur la marque ni sur le dessin. Aidez à combler les manques via les liens de contribution ci-dessous.",
+      "hint": {
+        "licenseMissing": "Licence non précisée",
+        "linked": "Lien présent",
+        "meta": "Catégories : {{count}}",
+        "metaAliases": "Alias, catégories : {{count}}",
+        "noGuidelines": "Aucun lien vers la charte",
+        "onlyDefault": "Variante par défaut uniquement",
+        "variantsCount": "{{count}} variantes"
+      },
+      "row": {
+        "guidelines": "Charte",
+        "license": "Licence",
+        "metadata": "Métadonnées",
+        "variants": "Variantes"
+      },
+      "title": "Complétude"
+    },
+    "quick": {
+      "copyCommand": "Copier la commande {{name}}",
+      "label": "Comment utiliser cette icône",
+      "notOnNpm": "{{name}} n’est pas encore sur npm. Utilisez la CLI ou le CDN.",
+      "packageManager": "Gestionnaire de paquets",
+      "title": "Utilisation"
+    },
+    "variant": {
+      "dark": "Sombre",
+      "default": "Par défaut",
+      "light": "Clair",
+      "mono": "Mono",
+      "suffix": "Variante {{name}}",
+      "wordmark": "Logotype",
+      "wordmarkDark": "Logotype sombre",
+      "wordmarkLight": "Logotype clair"
+    },
+    "viewer": {
+      "addSvg": "Ajoutez un SVG pour voir les infos du fichier.",
+      "bgChecker": "Fond en damier",
+      "bgDark": "Fond sombre",
+      "bgLight": "Fond clair",
+      "cannotRender": "Affichage impossible, vérifiez la syntaxe du SVG ci-dessus.",
+      "chars": "car.",
+      "clear": "Effacer",
+      "copySvg": "Copier le SVG",
+      "downloadSvg": "Télécharger le .svg",
+      "elements": "Éléments",
+      "empty": "vide",
+      "errAutoload": "Impossible de charger cette icône automatiquement.",
+      "errClipboard": "Échec de l’écriture dans le presse-papiers.",
+      "errNoIcon": "Aucune icône avec le slug \"{{slug}}\" dans la bibliothèque.",
+      "errNotSvg": "Ce fichier ne ressemble pas à un SVG valide.",
+      "errRead": "Impossible de lire ce fichier.",
+      "errTooLarge": "Le fichier dépasse 2 Mo. Utilisez un SVG plus petit.",
+      "fileInfo": "Infos du fichier",
+      "format": "Formater",
+      "formatHint": "formater",
+      "gradients": "Dégradés",
+      "height": "Hauteur",
+      "indent": "indenter",
+      "invalid": "invalide",
+      "lines": "l.",
+      "loading": "Chargement de {{slug}} depuis la bibliothèque...",
+      "masks": "Masques/Détourages",
+      "minify": "Minifier",
+      "no": "Non",
+      "openInEditor": "Ouvrir dans un éditeur",
+      "pageIntro": "Collez, déposez ou importez un SVG. Formatez le XML, prévisualisez sur n’importe quel fond, inspectez le viewBox et les dimensions, puis ouvrez-le dans votre éditeur préféré. Tout s’exécute dans votre navigateur. Rien n’est envoyé.",
+      "pageTitle": "Visionneuse SVG",
+      "partnerText": "Besoin de modifier, optimiser ou convertir en PNG, JPG, PDF ou WebP ? Filagram a les outils pour le gros du travail.",
+      "pasteHint": "Collez, déposez ou importez un SVG pour l’afficher",
+      "poweredBy": "Propulsé par Filagram",
+      "preview": "Aperçu",
+      "size": "Taille",
+      "upload": "Téléverser",
+      "valid": "svg valide",
+      "visit": "Visiter Filagram",
+      "width": "Largeur",
+      "yes": "Oui"
+    }
   }
 }
