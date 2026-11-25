@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useSyncExternalStore } from "react";
+import { useT } from "@/i18n/use-t";
 import { cn } from "@/lib/utils";
 
 const SEEN_KEY = "thesvg:flags-nav-seen";
@@ -21,6 +22,7 @@ const readSeen = (): boolean => {
 
 /** The Flags tab: three overlapping round flags and a "New" badge until the page has been opened once. */
 export function NavFlagsPill({ active, label }: Readonly<{ active: boolean; label: string }>) {
+  const { t } = useT();
   const seen = useSyncExternalStore(subscribe, readSeen, () => true);
   const markSeen = (): void => {
     try {
@@ -55,7 +57,7 @@ export function NavFlagsPill({ active, label }: Readonly<{ active: boolean; labe
         ))}
       </span>
       {label}
-      {!seen && !active ? <span className="rounded-full bg-orange-500 px-1.5 py-px text-[0.625rem] font-semibold uppercase leading-none tracking-wide text-white">New</span> : null}
+      {!seen && !active ? <span className="rounded-full bg-orange-500 px-1.5 py-px text-[0.625rem] font-semibold uppercase leading-none tracking-wide text-white">{t("chrome.flagsPill.new")}</span> : null}
     </Link>
   );
 }

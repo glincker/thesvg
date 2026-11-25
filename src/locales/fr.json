@@ -1,5 +1,7 @@
 {
-  "language": { "label": "Langue" },
+  "language": {
+    "label": "Langue"
+  },
   "nav": {
     "brandIcons": "Icônes de marques",
     "uiIcons": "Icônes d'interface",
@@ -97,5 +99,158 @@
     "navigation": "Navigation",
     "jumpToLetterGroup": "Aller à une catégorie par lettre",
     "jumpTo": "Aller à {{letter}}"
+  },
+  "chrome": {
+    "display": {
+      "aria": "Paramètres d'affichage. Format de copie {{format}}",
+      "title": "Paramètres d'affichage (copie en {{format}})",
+      "copyFormat": "Format de copie par défaut",
+      "copyFormatHint": "Utilisé lorsque vous cliquez sur le bouton de copie d'une carte d'icône",
+      "fmt": {
+        "svg": "Balisage SVG brut",
+        "jsx": "Composant React",
+        "vue": "Composant monofichier Vue",
+        "cdn": "Lien CDN jsDelivr",
+        "dataUri": "URI de données Base64"
+      },
+      "preview": "Arrière-plan de l'aperçu",
+      "previewHint": "Jugez un logo sur la surface où il sera placé",
+      "bg": {
+        "auto": "Auto",
+        "autoDesc": "S'adapte à chaque logo pour que les marques sombres et claires restent visibles",
+        "light": "Clair",
+        "lightDesc": "Toujours une tuile claire",
+        "dark": "Sombre",
+        "darkDesc": "Toujours une tuile sombre",
+        "checker": "Damier",
+        "checkerDesc": "Montre les zones transparentes"
+      },
+      "size": "Taille de l'interface",
+      "sizeHint": "Agrandit le texte, les icônes et les commandes, sans zoomer la page",
+      "sz": {
+        "default": "Par défaut",
+        "defaultDesc": "La taille standard",
+        "large": "Grand",
+        "largeDesc": "Un cran au-dessus, environ 112 %",
+        "larger": "Plus grand",
+        "largerDesc": "Deux crans au-dessus, 125 %"
+      }
+    },
+    "packages": {
+      "aria": "Paquets npm",
+      "openTitle": "Ouvrir sur npm",
+      "copyAria": "Copier la commande d'installation de {{name}}",
+      "openAria": "Ouvrir {{name}} sur npm",
+      "copiedStatus": "Commande d'installation de {{name}} copiée",
+      "all": "Tous les paquets et commandes d'installation",
+      "group": {
+        "brand": "Icônes de marques",
+        "ui": "Icônes d'interface",
+        "flags": "Drapeaux",
+        "tools": "Outils"
+      },
+      "label": {
+        "everything": "Tout en un",
+        "rawData": "Données SVG brutes",
+        "plainJs": "JavaScript pur",
+        "cdnFiles": "Fichiers SVG bruts pour CDN",
+        "rawManifest": "Fichiers bruts et manifeste",
+        "flags": "Drapeaux de pays et de régions",
+        "cli": "Ligne de commande",
+        "mcp": "Serveur MCP"
+      }
+    },
+    "palette": {
+      "title": "Palette de commandes",
+      "description": "Cherchez des icônes, accédez à une catégorie ou lancez une action rapide",
+      "placeholder": "Rechercher icônes, catégories, actions...",
+      "empty": "Aucun résultat.",
+      "icons": "Icônes",
+      "recent": "Récents",
+      "categories": "Catégories",
+      "quickActions": "Actions rapides",
+      "action": {
+        "submit": "Soumettre une icône",
+        "docs": "Lire la documentation",
+        "integrations": "Parcourir les intégrations",
+        "copySvg": "Copier {{title}} en SVG",
+        "copyJsx": "Copier {{title}} en JSX"
+      },
+      "copied": "{{title}} copié en {{format}}",
+      "copyFailed": "Copie impossible. Réessayez.",
+      "navigate": "naviguer",
+      "select": "sélectionner",
+      "close": "fermer"
+    },
+    "search": {
+      "placeholder": "Rechercher des icônes...",
+      "aria": "Rechercher des icônes",
+      "clear": "Effacer la recherche",
+      "brandIcons": "Icônes de marques",
+      "uiIcons": "Icônes d'interface",
+      "flags": "Drapeaux",
+      "thisSection": "Cette section",
+      "viewAll": "Voir les {{total}}",
+      "viewAllFlags": "Voir les {{total}} drapeaux",
+      "searching": "Recherche…",
+      "failed": "Impossible de charger la recherche. Vérifiez votre connexion et réessayez.",
+      "noMatch": "Aucune icône ne correspond à « {{query}} »",
+      "submitThis": "Soumettre cette icône"
+    },
+    "help": {
+      "aria": "Aide et astuces",
+      "close": "Fermer",
+      "badge": "Premiers pas",
+      "title": "Astuces rapides",
+      "subtitle": "Tout ce que vous pouvez faire avec theSVG",
+      "tip": {
+        "click": {
+          "title": "Cliquez sur une icône",
+          "desc": "Ouvrez la page de détail avec extraits de code, variantes et options d'export"
+        },
+        "copy": {
+          "title": "Copie rapide",
+          "desc": "Appuyez sur le bouton de copie d'une carte pour obtenir le SVG aussitôt"
+        },
+        "download": {
+          "title": "Téléchargement et export",
+          "desc": "Téléchargez le SVG ou exportez en PNG de 32 à 512 px depuis la page de détail"
+        },
+        "search": {
+          "title": "Tout rechercher",
+          "desc": "Appuyez sur Cmd+K pour chercher parmi {{total}} icônes"
+        },
+        "fav": {
+          "title": "Enregistrez vos favoris",
+          "desc": "Ajoutez un cœur pour enregistrer une icône. Retrouvez-les à tout moment dans la barre latérale"
+        },
+        "use": {
+          "title": "Utilisez-le partout",
+          "desc": "npm, React, Vue, CLI, CDN ou serveur MCP pour assistants IA"
+        }
+      },
+      "escHint": "Appuyez sur {{key}} pour fermer",
+      "gotIt": "Compris"
+    },
+    "hint": {
+      "title": "Cliquez sur une icône pour les détails",
+      "desc": "Copiez le code, téléchargez, exportez en PNG et plus"
+    },
+    "star": {
+      "title": "thesvg vous est utile ?",
+      "withStars": "{{stars}} développeurs l'ont mis en favori. Une étoile aide les autres à le découvrir.",
+      "noStars": "Une étoile GitHub aide d'autres développeurs à le découvrir. Il est gratuit et open source.",
+      "cta": "Mettre une étoile sur GitHub"
+    },
+    "post": {
+      "label": "Nouvel article",
+      "read": "Lire"
+    },
+    "common": {
+      "dismiss": "Ignorer"
+    },
+    "flagsPill": {
+      "new": "Nouveau"
+    }
   }
 }

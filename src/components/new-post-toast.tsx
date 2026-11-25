@@ -3,6 +3,7 @@
 import { UiGlyph } from "@/components/ui-glyph";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useT } from "@/i18n/use-t";
 
 interface LatestPost {
   slug: string;
@@ -15,6 +16,7 @@ const SHOW_DELAY_MS = 1500;
 const AUTO_DISMISS_MS = 8000;
 
 export function NewPostToast({ post }: { post: LatestPost | undefined }) {
+  const { t } = useT();
   const [visible, setVisible] = useState(false);
   const [dismissed, setDismissed] = useState(false);
 
@@ -61,7 +63,7 @@ export function NewPostToast({ post }: { post: LatestPost | undefined }) {
         <UiGlyph name="newspaper" className="h-4 w-4 text-orange-500" />
       </div>
       <div className="min-w-0 flex-1 space-y-1">
-        <p className="text-xs font-medium text-muted-foreground">New post</p>
+        <p className="text-xs font-medium text-muted-foreground">{t("chrome.post.label")}</p>
         <p className="line-clamp-2 text-sm font-medium leading-snug text-foreground">
           {post.title}
         </p>
@@ -70,12 +72,12 @@ export function NewPostToast({ post }: { post: LatestPost | undefined }) {
           onClick={dismiss}
           className="inline-block text-xs font-medium text-orange-500 transition-opacity hover:opacity-70"
         >
-          Read
+          {t("chrome.post.read")}
         </Link>
       </div>
       <button
         onClick={dismiss}
-        aria-label="Dismiss"
+        aria-label={t("chrome.common.dismiss")}
         className="shrink-0 rounded-full p-1 text-muted-foreground transition-colors hover:bg-foreground/[0.06] dark:hover:bg-white/[0.06]"
       >
         <UiGlyph name="x" className="h-3.5 w-3.5" />
