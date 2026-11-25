@@ -6,6 +6,7 @@ import { Busy } from "@/components/skeletons";
 import { capture } from "@/lib/analytics";
 import { svgToPng, downloadPng } from "@/lib/svg-to-png";
 import { cn } from "@/lib/utils";
+import { useT } from "@/i18n/use-t";
 
 interface PngExportProps {
   currentPath: string;
@@ -23,6 +24,7 @@ const PNG_SIZES = [
 ];
 
 export function PngExport({ currentPath, svgContent, slug, activeVariant }: PngExportProps) {
+  const { t } = useT();
   const [exportingSize, setExportingSize] = useState<number | null>(null);
   const [exportError, setExportError] = useState<string | null>(null);
 
@@ -44,13 +46,13 @@ export function PngExport({ currentPath, svgContent, slug, activeVariant }: PngE
           size_px: size,
         });
       } catch {
-        setExportError("Could not convert this SVG to PNG. Try another variant.");
+        setExportError(t("icon.png.error"));
         setTimeout(() => setExportError(null), 3000);
       } finally {
         setExportingSize(null);
       }
     },
-    [currentPath, svgContent, activeVariant, slug, exportingSize]
+    [currentPath, svgContent, activeVariant, slug, exportingSize, t]
   );
 
   return (
@@ -58,7 +60,7 @@ export function PngExport({ currentPath, svgContent, slug, activeVariant }: PngE
       <div className="mb-3 flex items-center gap-2">
         <ImageIcon className="h-3.5 w-3.5 text-orange-500/70" aria-hidden="true" />
         <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-          Export PNG
+          {t("icon.png.title")}
         </p>
       </div>
       <div className="grid grid-cols-5 gap-2">

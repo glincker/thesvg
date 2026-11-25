@@ -7,10 +7,11 @@ import { Clock, Compass, Heart, MoreHorizontal, Plus } from "@/components/own-ic
 import { useMobileShellStore } from "@/lib/stores/mobile-shell-store";
 import { useFavoritesStore } from "@/lib/stores/favorites-store";
 import { cn } from "@/lib/utils";
+import { useT } from "@/i18n/use-t";
 
 interface TabDef {
   key: "browse" | "favorites" | "recents" | "submit" | "more";
-  label: string;
+  labelKey: string;
   href?: string;
   Icon: typeof Heart;
   isActive: (pathname: string, search: string, sheet: string) => boolean;
@@ -19,7 +20,7 @@ interface TabDef {
 const TABS: ReadonlyArray<TabDef> = [
   {
     key: "browse",
-    label: "Browse",
+    labelKey: "mobile.dock.browse",
     href: "/",
     Icon: Compass,
     isActive: (p, search, s) =>
@@ -29,7 +30,7 @@ const TABS: ReadonlyArray<TabDef> = [
   },
   {
     key: "favorites",
-    label: "Favorites",
+    labelKey: "mobile.dock.favorites",
     href: "/?favorites=true",
     Icon: Heart,
     isActive: (_p, search, s) =>
@@ -37,27 +38,28 @@ const TABS: ReadonlyArray<TabDef> = [
   },
   {
     key: "recents",
-    label: "Recents",
+    labelKey: "mobile.dock.recents",
     href: "/recents",
     Icon: Clock,
     isActive: (p, _search, s) => s !== "more" && p.startsWith("/recents"),
   },
   {
     key: "submit",
-    label: "Submit",
+    labelKey: "mobile.dock.submit",
     href: "/submit",
     Icon: Plus,
     isActive: (p, _search, s) => s !== "more" && p.startsWith("/submit"),
   },
   {
     key: "more",
-    label: "More",
+    labelKey: "mobile.dock.more",
     Icon: MoreHorizontal,
     isActive: (_p, _search, s) => s === "more",
   },
 ];
 
 export function MobileBottomDock() {
+  const { t } = useT();
   const pathname = usePathname();
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -83,7 +85,7 @@ export function MobileBottomDock() {
 
   return (
     <nav
-      aria-label="Primary"
+      aria-label={t("mobile.dock.primary")}
       className="surface-glass fixed inset-x-3 z-40 mx-auto max-w-md rounded-[24px] border border-border/40 shadow-[0_12px_36px_-12px_rgba(0,0,0,0.55),0_2px_8px_-2px_rgba(0,0,0,0.35)] md:hidden dark:border-white/[0.08]"
       style={{
         bottom: "max(12px, calc(var(--safe-bottom) + 12px))",
@@ -118,12 +120,12 @@ export function MobileBottomDock() {
                 aria-hidden="true"
               />
               <span className="text-[10px] font-medium leading-none">
-                {tab.label}
+                {t(tab.labelKey)}
               </span>
               {badge !== null && (
                 <span
                   className="absolute top-0.5 right-2 inline-flex h-4 min-w-[16px] items-center justify-center rounded-full bg-orange-500 px-1 font-mono text-[9px] font-bold text-white shadow-sm"
-                  aria-label={`${badge} favorites`}
+                  aria-label={t("mobile.dock.favoritesCount", { n: badge })}
                 >
                   {badge > 99 ? "99+" : badge}
                 </span>
@@ -141,7 +143,7 @@ export function MobileBottomDock() {
               <li key={tab.key} className="flex-1">
                 <button
                   type="button"
-                  aria-label="More"
+                  aria-label={t("mobile.dock.more")}
                   aria-pressed={active}
                   onClick={(e) => {
                     onTap(e);

@@ -6,10 +6,12 @@ import { DOMAINS, type Glyph as GlyphData } from "@/lib/ui-icons/glyphs";
 import { cn } from "@/lib/ui-icons/utils";
 import { SCATTER_OFFSET, THEMES, TONES, domainGlyphs } from "./category-theme";
 import { Glyph } from "./glyph";
+import { useT } from "@/i18n/use-t";
 import { useUi } from "./ui-state";
 
 export function CategoryBanner({ category }: { category: string }) {
   const ui = useUi();
+  const { t } = useT();
   const domain = DOMAINS.find((d) => d.label === category);
   const theme = domain ? THEMES[domain.id] : undefined;
   const { items, total, fresh } = useMemo(() => {
@@ -66,7 +68,7 @@ export function CategoryBanner({ category }: { category: string }) {
       <div className="relative grid items-center gap-6 xl:grid-cols-[minmax(0,24rem)_1fr]">
         <div>
           <span className={cn("inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium", tone.chip)}>
-            <UiGlyph name={theme.icon} className="size-4" /> {total} icons{fresh > 0 ? `, ${fresh} new` : ""}
+            <UiGlyph name={theme.icon} className="size-4" /> {fresh > 0 ? t("uikit.category.countNew", { count: total, fresh }) : t("uikit.category.count", { count: total })}
           </span>
           <h1 className="mt-3 text-balance text-2xl font-bold tracking-tight md:text-3xl">{domain.label}</h1>
           <p className="mt-2 text-sm text-muted-foreground">{theme.tagline}</p>

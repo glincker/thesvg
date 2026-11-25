@@ -1,8 +1,11 @@
+"use client";
+
 import { BookOpen } from "@/components/own-icons";
 import { withUtm } from "@/lib/external-link";
 import { getIconLinks } from "@/lib/icon-links";
 import type { IconLinks } from "@/lib/icon-links";
 import { cn } from "@/lib/utils";
+import { useT } from "@/i18n/use-t";
 
 interface IconLinksRowProps {
   links: IconLinks | undefined;
@@ -16,12 +19,13 @@ interface IconLinksRowProps {
  * shows the library working, with a generic glyph for docs.
  */
 export function IconLinksRow({ links, source, className }: IconLinksRowProps) {
+  const { t } = useT();
   const resolved = getIconLinks(links);
   if (resolved.length === 0) return null;
 
   return (
     <ul
-      aria-label="Official links"
+      aria-label={t("icon.links.official")}
       className={cn("flex flex-wrap gap-1.5", className)}
     >
       {resolved.map((link) => (

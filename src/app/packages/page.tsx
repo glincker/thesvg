@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { UiGlyph } from "@/components/ui-glyph";
 import { GROUP_TITLES, PACKAGES, installCommand, npmUrl } from "@/lib/packages-list";
+import { T } from "@/components/t";
 
 export const metadata: Metadata = {
   title: "Packages",
@@ -25,13 +26,13 @@ export default function PackagesPage() {
   }));
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6">
-      <h1 className="text-3xl font-bold tracking-tight">Packages</h1>
+      <h1 className="text-3xl font-bold tracking-tight"><T k="pages.packages.title" fallback="Packages" /></h1>
       <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-        Everything theSVG publishes to npm, in one place. Brand icons, UI icons and flags are separate packages, so adding one never makes the other heavier. Every package is tree-shakeable and versions move together within each group.
+        <T k="pages.packages.intro" fallback="Everything theSVG publishes to npm, in one place. Brand icons, UI icons and flags are separate packages, so adding one never makes the other heavier. Every package is tree-shakeable and versions move together within each group." />
       </p>
       {groups.map((g) => (
         <section key={g.id} className="mt-8">
-          <h2 className="mb-3 text-sm font-semibold">{GROUP_TITLES[g.id]}</h2>
+          <h2 className="mb-3 text-sm font-semibold"><T k={`pages.packages.groups.${g.id}`} fallback={GROUP_TITLES[g.id]} /></h2>
           <div className="grid gap-2 sm:grid-cols-2">
             {g.items.map((p) => (
               <div key={p.name} className="flex flex-col gap-2 rounded-2xl border bg-card/50 p-4">

@@ -2,16 +2,20 @@
 
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { useT } from "@/i18n/use-t";
 
 export interface DocsTocItem {
   id: string;
   label: string;
+  /** Locale key for the label; the anchor id stays English. */
+  labelKey?: string;
 }
 
 /** "On this page" right-rail TOC. Plain <a href="#id"> anchors (works with
  * zero JS); the IntersectionObserver only adds an active-heading highlight. */
 export function DocsToc({ items }: Readonly<{ items: DocsTocItem[] }>) {
   const [active, setActive] = useState<string>(items[0]?.id ?? "");
+  const { t } = useT();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -38,11 +42,11 @@ export function DocsToc({ items }: Readonly<{ items: DocsTocItem[] }>) {
 
   return (
     <nav
-      aria-label="On this page"
+      aria-label={t("docs.ui.onThisPage", { defaultValue: "On this page" })}
       className="sticky top-20 hidden h-fit w-48 shrink-0 xl:block"
     >
       <p className="mb-2 px-2 text-[10px] font-semibold tracking-widest text-muted-foreground/60 uppercase">
-        On this page
+        {t("docs.ui.onThisPage", { defaultValue: "On this page" })}
       </p>
       <div className="flex flex-col gap-0.5 border-l border-border/40 dark:border-white/[0.06]">
         {items.map((item) => (
@@ -56,7 +60,7 @@ export function DocsToc({ items }: Readonly<{ items: DocsTocItem[] }>) {
                 : "border-transparent text-muted-foreground hover:text-foreground"
             )}
           >
-            {item.label}
+            {item.labelKey ? t(item.labelKey, { defaultValue: item.label }) : item.label}
           </a>
         ))}
       </div>

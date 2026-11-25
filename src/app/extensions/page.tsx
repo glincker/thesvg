@@ -18,7 +18,9 @@ import type { Metadata } from "next";
 import { getCategoryCounts, getFormattedIconCount } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 import { withUtm } from "@/lib/external-link";
-import { CategorySection, type Category } from "@/components/extensions/cards";
+import type { Category } from "@/components/extensions/cards";
+import { T } from "@/components/t";
+import { ExtensionsCategories } from "./extensions-categories";
 
 const iconCount = getFormattedIconCount();
 
@@ -400,45 +402,24 @@ export default function ExtensionsPage() {
           {/* Header */}
           <div className="mb-8">
             <h1 className="mb-2 text-2xl font-bold sm:text-3xl">
-              Extensions & Integrations
+              <T k="pages.extensions.title" fallback="Extensions & Integrations" />
             </h1>
             <p className="text-muted-foreground">
-              Use theSVG icons everywhere you build, design, and ship.
+              <T k="pages.extensions.subtitle" fallback="Use theSVG icons everywhere you build, design, and ship." />
             </p>
             <Link
               href="/extensions/mentions"
               className="group mt-4 inline-flex items-center gap-2 rounded-full border border-border/40 bg-card/30 py-1 pl-1 pr-3 text-xs font-medium text-muted-foreground transition-colors hover:border-border/70 hover:text-foreground dark:border-white/[0.06] dark:bg-white/[0.02] dark:hover:border-white/[0.1]"
             >
               <span className="rounded-full bg-orange-500/10 px-2 py-0.5 text-orange-500">
-                New
+                <T k="pages.extensions.newBadge" fallback="New" />
               </span>
-              See where thesvg is mentioned
+              <T k="pages.extensions.mentionsLink" fallback="See where thesvg is mentioned" />
               <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </div>
 
-          {/* Quick nav */}
-          <nav
-            aria-label="Jump to category"
-            className="mb-12 flex flex-wrap gap-2"
-          >
-            {CATEGORIES.map((category) => (
-              <a
-                key={category.id}
-                href={`#${category.id}`}
-                className="inline-flex items-center gap-1.5 rounded-full border border-border/40 bg-card/30 px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-border/70 hover:text-foreground dark:border-white/[0.06] dark:bg-white/[0.02] dark:hover:border-white/[0.1]"
-              >
-                {category.label}
-              </a>
-            ))}
-          </nav>
-
-          {/* Categories */}
-          <div className="space-y-14">
-            {CATEGORIES.map((category) => (
-              <CategorySection key={category.id} category={category} />
-            ))}
-          </div>
+          <ExtensionsCategories categories={CATEGORIES} />
 
           {/* Build Your Own CTA */}
           <div className="mt-16 overflow-hidden rounded-xl border border-border/40 bg-gradient-to-br from-card/50 to-muted/20 dark:border-white/[0.06] dark:from-white/[0.03] dark:to-white/[0.01]">
@@ -447,12 +428,11 @@ export default function ExtensionsPage() {
                 <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-orange-500/10 text-orange-500">
                   <Zap className="h-5 w-5" />
                 </div>
-                <h2 className="text-lg font-semibold">Build your own</h2>
+                <h2 className="text-lg font-semibold"><T k="pages.extensions.build.title" fallback="Build your own" /></h2>
               </div>
 
               <p className="mb-6 max-w-2xl text-sm text-muted-foreground">
-                The API and CDN are fully open with no auth required. Build a plugin, extension, or
-                workflow, then open a PR to list it here.
+                <T k="pages.extensions.build.body" fallback="The API and CDN are fully open with no auth required. Build a plugin, extension, or workflow, then open a PR to list it here." />
               </p>
 
               {/* CDN endpoints */}
@@ -480,7 +460,7 @@ export default function ExtensionsPage() {
                   className="inline-flex items-center gap-2 rounded-lg bg-foreground px-4 py-2 text-sm font-medium text-background transition-opacity hover:opacity-90"
                 >
                   <Github className="h-4 w-4" />
-                  View on GitHub
+                  <T k="pages.extensions.build.github" fallback="View on GitHub" />
                 </a>
                 <a
                   href={withUtm("https://www.jsdelivr.com/package/gh/glincker/thesvg", "extensions_page")}
@@ -489,7 +469,7 @@ export default function ExtensionsPage() {
                   className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
                 >
                   <Code className="h-4 w-4" />
-                  CDN Docs
+                  <T k="pages.extensions.build.cdn" fallback="CDN Docs" />
                 </a>
               </div>
             </div>

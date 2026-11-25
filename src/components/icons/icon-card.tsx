@@ -17,6 +17,7 @@ import { cn } from "@/lib/utils";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { NewBadge } from "@/components/icons/new-badge";
 import { Busy } from "@/components/skeletons";
+import { useT } from "@/i18n/use-t";
 
 interface IconCardProps {
   icon: IconEntry;
@@ -35,6 +36,7 @@ export const IconCard = memo(function IconCard({
   compact = false,
   entranceDelay,
 }: IconCardProps) {
+  const { t } = useT();
   const [copied, setCopied] = useState(false);
   const [isCopying, setIsCopying] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
@@ -133,6 +135,7 @@ export const IconCard = memo(function IconCard({
   );
 
   const primaryCategory = icon.categories[0];
+  const formatLabel = FORMAT_LABELS.get(defaultCopyFormat) || defaultCopyFormat.toUpperCase();
 
   // Theme-aware variant: `light` is for light backgrounds, `dark` for dark backgrounds
   const lightSrc = icon.variants.light || icon.variants.default;
@@ -172,7 +175,7 @@ export const IconCard = memo(function IconCard({
         <button
           type="button"
           onClick={handleFavorite}
-          aria-label={isFavorite ? `Remove ${icon.title} from favorites` : `Add ${icon.title} to favorites`}
+          aria-label={isFavorite ? t("icon.card.favRemove", { title: icon.title }) : t("icon.card.favAdd", { title: icon.title })}
           aria-pressed={isFavorite}
           className={cn(
             "absolute top-1.5 right-1.5 z-10 flex h-5 w-5 items-center justify-center rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
@@ -228,7 +231,7 @@ export const IconCard = memo(function IconCard({
       <button
         type="button"
         onClick={handleFavorite}
-        aria-label={isFavorite ? `Remove ${icon.title} from favorites` : `Add ${icon.title} to favorites`}
+        aria-label={isFavorite ? t("icon.card.favRemove", { title: icon.title }) : t("icon.card.favAdd", { title: icon.title })}
         aria-pressed={isFavorite}
         className={cn(
           "absolute top-2.5 right-2.5 z-10 flex h-7 w-7 items-center justify-center rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
@@ -249,7 +252,7 @@ export const IconCard = memo(function IconCard({
       >
         {copied && (
           <span className="animate-fade-in-up rounded-lg bg-foreground/90 px-3 py-1.5 text-xs font-medium text-background shadow-lg backdrop-blur-sm">
-            {FORMAT_LABELS.get(defaultCopyFormat) || defaultCopyFormat.toUpperCase()} copied!
+            {t("icon.card.copiedToast", { format: formatLabel })}
           </span>
         )}
       </div>
@@ -261,7 +264,7 @@ export const IconCard = memo(function IconCard({
         onMouseEnter={handleHoverPrefetch}
         onTouchStart={handleHoverPrefetch}
         className="flex w-full flex-1 flex-col items-center rounded-t-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-        aria-label={`View ${icon.title} icon details`}
+        aria-label={t("icon.card.view", { title: icon.title })}
       >
         <div
           className="icon-preview-bg relative flex w-full flex-1 items-center justify-center rounded-t-xl px-4 py-5 sm:px-5 sm:py-6"
@@ -314,7 +317,7 @@ export const IconCard = memo(function IconCard({
           type="button"
           onClick={handleCopy}
           disabled={isCopying}
-          aria-label={copied ? `${icon.title} ${FORMAT_LABELS.get(defaultCopyFormat) || defaultCopyFormat.toUpperCase()} copied` : `Copy ${icon.title} ${FORMAT_LABELS.get(defaultCopyFormat) || defaultCopyFormat.toUpperCase()}`}
+          aria-label={copied ? t("icon.card.copiedAria", { title: icon.title, format: formatLabel }) : t("icon.card.copyAria", { title: icon.title, format: formatLabel })}
           className="flex h-7 flex-1 items-center justify-center gap-1 rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50"
         >
           {isCopying ? (
@@ -324,7 +327,7 @@ export const IconCard = memo(function IconCard({
           ) : (
             <Copy className="h-3.5 w-3.5" />
           )}
-          <span className="hidden text-[11px] font-medium sm:inline">Copy</span>
+          <span className="hidden text-[11px] font-medium sm:inline">{t("icon.common.copy")}</span>
         </button>
         <Tooltip>
           <TooltipTrigger
@@ -333,7 +336,7 @@ export const IconCard = memo(function IconCard({
                 type="button"
                 onClick={handleDownload}
                 disabled={isDownloading}
-                aria-label={`Download ${icon.title} SVG`}
+                aria-label={t("icon.download.aria", { title: icon.title })}
                 className="flex h-7 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50"
               />
             }
@@ -344,7 +347,7 @@ export const IconCard = memo(function IconCard({
               <Download className="h-3.5 w-3.5" />
             )}
           </TooltipTrigger>
-          <TooltipContent>Download SVG</TooltipContent>
+          <TooltipContent>{t("icon.card.downloadSvg")}</TooltipContent>
         </Tooltip>
         <Tooltip>
           <TooltipTrigger
@@ -352,14 +355,14 @@ export const IconCard = memo(function IconCard({
               <button
                 type="button"
                 onClick={handlePreview}
-                aria-label={`Quick preview ${icon.title}`}
+                aria-label={t("icon.card.quickPreviewAria", { title: icon.title })}
                 className="flex h-7 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               />
             }
           >
             <Eye className="h-3.5 w-3.5" />
           </TooltipTrigger>
-          <TooltipContent>Quick preview</TooltipContent>
+          <TooltipContent>{t("icon.card.quickPreview")}</TooltipContent>
         </Tooltip>
       </div>
     </article>

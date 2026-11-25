@@ -4,6 +4,7 @@ import { CategorySection, type Category } from "@/components/extensions/cards";
 import { withUtm } from "@/lib/external-link";
 import { Github } from "@/components/own-icons";
 import { GLYPHS } from "@/lib/ui-icons/glyphs";
+import { T } from "@/components/t";
 
 const COUNT = GLYPHS.length;
 
@@ -72,8 +73,8 @@ export default function UiExtensionsPage() {
   return (
     <div className="mx-auto max-w-6xl py-2">
       <div className="mb-8">
-        <h1 className="mb-2 text-2xl font-bold sm:text-3xl">UI icons: extensions and packages</h1>
-        <p className="text-muted-foreground">Use the UI icons everywhere you build, design and ship. The brand icons have their own page.</p>
+        <h1 className="mb-2 text-2xl font-bold sm:text-3xl"><T k="uikit.ext.title" fallback="UI icons: extensions and packages" /></h1>
+        <p className="text-muted-foreground"><T k="uikit.ext.intro" fallback="Use the UI icons everywhere you build, design and ship. The brand icons have their own page." /></p>
       </div>
 
       <nav aria-label="Jump to category" className="mb-12 flex flex-wrap gap-2">
@@ -96,10 +97,10 @@ export default function UiExtensionsPage() {
             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-orange-500/10 text-orange-500">
               <UiGlyph name="zap" className="h-6 w-6" />
             </div>
-            <h2 className="text-lg font-semibold">Build your own</h2>
+            <h2 className="text-lg font-semibold"><T k="uikit.ext.buildOwn" fallback="Build your own" /></h2>
           </div>
           <p className="mb-6 max-w-2xl text-sm text-muted-foreground">
-            Every icon file, the manifest and one JSON file per look (every icon in that look, slug to SVG) are open with no auth. Build a plugin or workflow, then open a PR to list it here.
+            <T k="uikit.ext.buildOwnText" fallback="Every icon file, the manifest and one JSON file per look (every icon in that look, slug to SVG) are open with no auth. Build a plugin or workflow, then open a PR to list it here." />
           </p>
           <div className="mb-6 space-y-1.5 rounded-lg border border-border/40 bg-background/50 p-4 font-mono text-xs">
             <div className="flex gap-3">
@@ -118,11 +119,11 @@ export default function UiExtensionsPage() {
           <div className="flex flex-wrap gap-3">
             <a href={withUtm("https://github.com/GLINCKER/thesvg", "ui_extensions_page")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg bg-foreground px-4 py-2 text-sm font-medium text-background transition-opacity hover:opacity-90">
               <Github className="h-4 w-4" />
-              View on GitHub
+              <T k="uikit.ext.viewGithub" fallback="View on GitHub" />
             </a>
             <a href={withUtm("https://www.jsdelivr.com/package/gh/glincker/thesvg", "ui_extensions_page")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent">
               <UiGlyph name="code" className="h-5 w-5" />
-              CDN docs
+              <T k="uikit.ext.cdnDocs" fallback="CDN docs" />
             </a>
           </div>
         </div>

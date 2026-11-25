@@ -4,6 +4,7 @@ import { JsonLd } from "@/components/json-ld";
 import { FaqList } from "@/components/docs/faq-list";
 import { DocsPageFooter } from "@/components/docs/docs-page-footer";
 import { DocsAskAi } from "@/components/docs/docs-ask-ai";
+import { T } from "@/components/t";
 
 export const metadata: Metadata = {
   title: "FAQ",
@@ -27,11 +28,13 @@ export default function FaqPage() {
     <article className="max-w-3xl">
       <JsonLd data={faqJsonLd} />
       <div className="mb-2 flex flex-wrap items-center justify-between gap-3">
-        <h1 className="text-2xl font-bold">FAQ</h1>
+        <h1 className="text-2xl font-bold">
+          <T k="docs.nav.items.faq" fallback="FAQ" />
+        </h1>
         <DocsAskAi pageTitle="FAQ" />
       </div>
       <p className="mb-8 max-w-2xl text-sm text-muted-foreground">
-        Common questions about theSVG.
+        <T k="docs.faq.intro" fallback="Common questions about theSVG." />
       </p>
       <FaqList items={FAQ_ITEMS} />
       <DocsPageFooter sourceFile="src/lib/docs-content.ts" pageTitle="FAQ" />

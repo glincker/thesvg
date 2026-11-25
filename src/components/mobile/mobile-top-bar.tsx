@@ -9,10 +9,12 @@ import { usePathname, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { useSearchStore } from "@/lib/stores/search-store";
+import { useT } from "@/i18n/use-t";
 
 export const MOBILE_FOCUS_SEARCH_EVENT = "thesvg:mobile-focus-search";
 
 export function MobileTopBar() {
+  const { t } = useT();
   const { theme, setTheme } = useTheme();
   const query = useSearchStore((s) => s.query);
   const setQuery = useSearchStore((s) => s.setQuery);
@@ -50,7 +52,7 @@ export function MobileTopBar() {
       <div className="flex h-12 items-center gap-2 px-2">
         <Link
           href="/"
-          aria-label="thesvg home"
+          aria-label={t("header.home")}
           className="flex shrink-0 items-center gap-1.5 text-foreground [filter:drop-shadow(0_1px_2px_rgba(0,0,0,0.2))] dark:[filter:drop-shadow(0_1px_3px_rgba(0,0,0,0.5))]"
         >
           <TheSVGMark className="h-7 w-7 rounded-md" />
@@ -67,8 +69,8 @@ export function MobileTopBar() {
             inputMode="search"
             value={query}
             onChange={(e) => onChange(e.target.value)}
-            placeholder="Search icons"
-            aria-label="Search icons"
+            placeholder={t("header.searchIcons")}
+            aria-label={t("header.searchIcons")}
             maxLength={100}
             /* text-base on mobile blocks iOS auto-zoom on focus.
                Stronger 1px border so the input reads as an input, not
@@ -80,7 +82,7 @@ export function MobileTopBar() {
             <button
               type="button"
               onClick={() => onChange("")}
-              aria-label="Clear search"
+              aria-label={t("header.clearSearch")}
               className="absolute top-1/2 right-1 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
               <X className="h-4 w-4" />
@@ -94,7 +96,7 @@ export function MobileTopBar() {
           size="icon"
           className="h-9 w-9 shrink-0"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          aria-label="Toggle theme"
+          aria-label={t("header.toggleTheme")}
         >
           <Sun className="h-4 w-4 scale-100 rotate-0 transition-transform dark:scale-0 dark:-rotate-90" />
           <Moon className="absolute h-4 w-4 scale-0 rotate-90 transition-transform dark:scale-100 dark:rotate-0" />

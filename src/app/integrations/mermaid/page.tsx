@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getCategoryCounts } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
+import { T } from "@/components/t";
+import { RichT } from "@/app/contact/rich-t";
 
 export const metadata: Metadata = {
   title: "Mermaid Brand Icons - Architecture Diagrams with Real Logos",
@@ -55,11 +57,13 @@ const PACKS = [
   {
     prefix: "thesvg",
     npm: "@iconify-json/thesvg",
+    key: "packMono",
     description: "Monochrome icons that follow currentColor. Best for themed diagrams.",
   },
   {
     prefix: "thesvg-color",
     npm: "@iconify-json/thesvg-color",
+    key: "packColor",
     description: "Full-color brand icons. Best when logos should keep their brand colors.",
   },
 ];
@@ -84,9 +88,9 @@ export default function MermaidIntegrationPage() {
               <Network className="h-6 w-6" />
             </div>
             <div>
-              <h1 className="mb-1 text-2xl font-bold sm:text-3xl">Mermaid Brand Icons</h1>
+              <h1 className="mb-1 text-2xl font-bold sm:text-3xl"><T k="pages.integrations.mermaid.title" fallback="Mermaid Brand Icons" /></h1>
               <p className="text-muted-foreground">
-                Real logos in your architecture diagrams, no image hosting needed.
+                <T k="pages.integrations.mermaid.subtitle" fallback="Real logos in your architecture diagrams, no image hosting needed." />
               </p>
             </div>
           </div>
@@ -98,7 +102,7 @@ export default function MermaidIntegrationPage() {
           </p>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-base font-semibold">Icon packs</h2>
+            <h2 className="mb-4 text-base font-semibold"><T k="pages.integrations.mermaid.packs" fallback="Icon packs" /></h2>
             <div className="grid gap-3 sm:grid-cols-2">
               {PACKS.map((pack) => (
                 <div
@@ -107,7 +111,7 @@ export default function MermaidIntegrationPage() {
                 >
                   <h3 className="mb-1 font-mono text-sm font-semibold">{pack.prefix}</h3>
                   <p className="mb-3 text-[13px] leading-relaxed text-muted-foreground">
-                    {pack.description}
+                    <T k={`pages.integrations.mermaid.${pack.key}`} fallback={pack.description} />
                   </p>
                   <code className="text-xs text-foreground/70">npm i {pack.npm}</code>
                 </div>
@@ -116,21 +120,27 @@ export default function MermaidIntegrationPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-base font-semibold">1. Register the packs</h2>
+            <h2 className="mb-4 text-base font-semibold"><T k="pages.integrations.mermaid.step1" fallback="1. Register the packs" /></h2>
             <CodeBlock code={REGISTER_SNIPPET} />
           </section>
 
           <section className="mb-10">
-            <h2 className="mb-4 text-base font-semibold">2. Use icons in a diagram</h2>
+            <h2 className="mb-4 text-base font-semibold"><T k="pages.integrations.mermaid.step2" fallback="2. Use icons in a diagram" /></h2>
             <CodeBlock code={DIAGRAM_SNIPPET} />
           </section>
 
           <p className="text-sm text-muted-foreground">
-            Icon names match the slugs on theSVG. Search the{" "}
-            <Link href="/" className="underline underline-offset-4 hover:text-foreground">
-              library
-            </Link>{" "}
-            to find the one you need.
+            <RichT
+              k="pages.integrations.mermaid.footer"
+              fallback="Icon names match the slugs on theSVG. Search the {{library}} to find the one you need."
+              slots={{
+                library: (
+                  <Link href="/" className="underline underline-offset-4 hover:text-foreground">
+                    <T k="pages.integrations.mermaid.libraryLink" fallback="library" />
+                  </Link>
+                ),
+              }}
+            />
           </p>
         </div>
       </SidebarShell>

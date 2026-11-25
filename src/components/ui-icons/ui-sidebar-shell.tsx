@@ -5,6 +5,7 @@ import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { isSidebarToggleShortcut, isTypingTarget } from "@/lib/sidebar-shortcut";
 import { useSidebarStore } from "@/lib/stores/sidebar-store";
 import { cn } from "@/lib/utils";
+import { T } from "@/components/t";
 import { CollapseToggle } from "./collapse-toggle";
 import { SidebarNav } from "./shell";
 
@@ -41,7 +42,7 @@ export function UiSidebarShell({ children }: { children: React.ReactNode }) {
       </aside>
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetContent side="left" className="w-64 gap-1 overflow-y-auto p-2">
-          <SheetTitle className="sr-only">Navigation</SheetTitle>
+          <SheetTitle className="sr-only"><T k="uikit.nav.navigation" /></SheetTitle>
           <SidebarNav onNavigate={() => setOpen(false)} />
         </SheetContent>
       </Sheet>

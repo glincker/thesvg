@@ -21,6 +21,8 @@ import {
 } from "@/lib/svg-utils";
 import Link from "next/link";
 import { Busy } from "@/components/skeletons";
+import { useT } from "@/i18n/use-t";
+import { useDeepLinkText } from "@/components/icons/shared/use-deep-link-text";
 
 interface OpenInEditorMenuProps {
   svg: string;
@@ -81,6 +83,8 @@ export function OpenInEditorMenu({
   slug,
   srcUrl,
 }: OpenInEditorMenuProps) {
+  const { t } = useT();
+  const text = useDeepLinkText();
   const [busy, setBusy] = useState<string | null>(null);
   const [toast, setToast] = useState<{ id: string; msg: string } | null>(null);
 
@@ -91,15 +95,15 @@ export function OpenInEditorMenu({
       const result = await openDeepLink(target, svg, title, { srcUrl });
       setBusy(null);
       if (result.ok) {
-        const msg = result.message ?? "Opened in new tab.";
+        const msg = result.message ?? text.opened;
         setToast({ id: target.id, msg });
         setTimeout(() => setToast(null), 2400);
       } else {
-        setToast({ id: target.id, msg: result.message ?? "Could not open." });
+        setToast({ id: target.id, msg: result.message ?? text.couldNot });
         setTimeout(() => setToast(null), 3000);
       }
     },
-    [busy, svg, title, srcUrl],
+    [busy, svg, title, srcUrl, text.opened, text.couldNot],
   );
 
   return (
@@ -110,11 +114,11 @@ export function OpenInEditorMenu({
             type="button"
             size="sm"
             variant="outline"
-            aria-label="Open SVG in editor"
+            aria-label={t("icon.openIn.aria")}
             className="h-9 gap-1.5"
           >
             <Pencil className="h-3.5 w-3.5" />
-            <span className="hidden sm:inline">Open in</span>
+            <span className="hidden sm:inline">{t("icon.openIn.open")}</span>
             <ChevronDown className="h-3.5 w-3.5 opacity-60" />
           </Button>
         }
@@ -126,9 +130,9 @@ export function OpenInEditorMenu({
       >
         <DropdownMenuGroup>
           <DropdownMenuLabel className="flex items-center justify-between">
-            <span>Open SVG in editor</span>
+            <span>{t("icon.openIn.aria")}</span>
             <span className="font-mono text-[10px] text-muted-foreground">
-              {DEEP_LINK_TARGETS.length} targets
+              {t("icon.openIn.targets", { count: DEEP_LINK_TARGETS.length })}
             </span>
           </DropdownMenuLabel>
         </DropdownMenuGroup>
@@ -158,7 +162,7 @@ export function OpenInEditorMenu({
                 </span>
                 <span className="flex flex-1 flex-col gap-0.5">
                   <span className="text-xs font-medium text-foreground">
-                    {target.label}
+                    {text.label(target)}
                   </span>
                   <span
                     className={cn(
@@ -168,7 +172,7 @@ export function OpenInEditorMenu({
                         : "text-muted-foreground/70",
                     )}
                   >
-                    {isToast ? toast.msg : target.hint}
+                    {isToast ? toast.msg : text.hint(target)}
                   </span>
                 </span>
                 <KindIcon kind={target.kind} />
@@ -186,7 +190,7 @@ export function OpenInEditorMenu({
                 className="items-center gap-2.5 py-2 text-xs text-muted-foreground hover:text-foreground"
               >
                 <ExternalLink className="h-3.5 w-3.5" />
-                <span className="flex-1">Inspect in SVG Viewer</span>
+                <span className="flex-1">{t("icon.openIn.inspect")}</span>
                 <ArrowUpRight className="h-3.5 w-3.5 opacity-40" />
               </Link>
             }

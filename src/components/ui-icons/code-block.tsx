@@ -6,6 +6,7 @@ import type { Variant } from "@/lib/ui-icons/engine";
 import { COPY_TABS, PACKAGE_TABS, SOURCE_TABS, USE_TABS, codeFor, installCommand, packageCode, type PackageTab, type SnippetTab, type SourceTab } from "@/lib/ui-icons/snippets";
 import { colorizeCode } from "@/lib/ui-icons/syntax";
 import { cn } from "@/lib/ui-icons/utils";
+import { useT } from "@/i18n/use-t";
 
 const LABELS: Record<SnippetTab, string> = { react: "React", vue: "Vue", svelte: "Svelte", native: "React Native", js: "JS / CDN", html: "HTML", css: "CSS mask", svg: "SVG", uri: "Data URI" };
 const LOGOS: Partial<Record<SnippetTab, string>> = { react: "react", vue: "vue", svelte: "svelte", native: "react", js: "javascript", html: "html5", css: "css" };
@@ -15,6 +16,7 @@ const hasSource = (t: SnippetTab): t is SourceTab & (typeof SOURCE_TABS)[number]
 
 /** Same structure as the brand icon page: usage tabs, a divider, copy formats, a dark code surface. */
 export function CodeBlock(props: { svg: string; slug: string; look: Variant; customized: boolean }) {
+  const { t } = useT();
   const [tab, setTab] = useState<SnippetTab>("react");
   const [source, setSource] = useState(false);
   // Package usage is the default. Custom weight, corners or scale only exist in the copied source, so that view is one click away.
@@ -61,7 +63,7 @@ export function CodeBlock(props: { svg: string; slug: string; look: Variant; cus
       {isPackageTab(tab) && (
         <div className="flex flex-wrap items-center gap-2 border-b px-4 py-2 text-[0.75rem]">
           {hasSource(tab) && (
-            <div className="flex gap-1" role="group" aria-label="Code form">
+            <div className="flex gap-1" role="group" aria-label={t("uikit.code.form")}>
               {([false, true] as const).map((src) => (
                 <button
                   key={String(src)}
@@ -70,13 +72,13 @@ export function CodeBlock(props: { svg: string; slug: string; look: Variant; cus
                   onClick={() => setSource(src)}
                   className={cn("rounded-md px-2 py-0.5 font-medium transition-colors", source === src ? "bg-foreground text-background" : "text-muted-foreground hover:text-foreground")}
                 >
-                  {src ? "Source" : "Package"}
+                  {src ? t("uikit.code.source") : t("uikit.code.package")}
                 </button>
               ))}
             </div>
           )}
           {!showSource && <code className="rounded-md bg-muted px-2 py-0.5 font-mono text-muted-foreground">{installCommand(tab)}</code>}
-          {props.customized && !showSource && <span className="text-amber-400">Custom style only applies to the copied source.</span>}
+          {props.customized && !showSource && <span className="text-amber-400">{t("uikit.code.customNote")}</span>}
         </div>
       )}
       <div className="relative">
@@ -89,7 +91,7 @@ export function CodeBlock(props: { svg: string; slug: string; look: Variant; cus
           )}
         >
           {copied ? <UiGlyph name="check" className="size-3.5" /> : <UiGlyph name="copy" className="size-3.5" />}
-          {copied ? "Copied" : "Copy"}
+          {copied ? t("uikit.card.copied") : t("uikit.code.copy")}
         </button>
         <div className="bg-zinc-950">
           <pre className="max-h-64 overflow-auto p-4 pr-16 font-mono text-[0.75rem] leading-6 text-zinc-300">

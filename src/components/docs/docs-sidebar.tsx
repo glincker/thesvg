@@ -2,16 +2,18 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { DOCS_NAV } from "@/lib/docs-nav";
+import { DOCS_NAV, docsNavGroupKey, docsNavItemKey } from "@/lib/docs-nav";
+import { useT } from "@/i18n/use-t";
 import { DocsBrandIcon } from "@/components/docs/docs-nav-icon";
 import { cn } from "@/lib/utils";
 
 export function DocsSidebar() {
   const pathname = usePathname();
+  const { t } = useT();
 
   return (
     <nav
-      aria-label="Docs navigation"
+      aria-label={t("docs.ui.navLabel", { defaultValue: "Docs navigation" })}
       // Precise offset clears the desktop header, which switches on at the
       // same md: breakpoint (see fix/tablet-foldable-breakpoint) - keep
       // these in sync if that breakpoint ever changes again.
@@ -21,7 +23,7 @@ export function DocsSidebar() {
         {DOCS_NAV.map((group) => (
           <div key={group.title}>
             <p className="mb-1.5 px-2 text-[10px] font-semibold tracking-widest text-muted-foreground/60 uppercase">
-              {group.title}
+              {t(docsNavGroupKey(group.title), { defaultValue: group.title })}
             </p>
             <div className="flex flex-col gap-0.5">
               {group.items.map((item) => {
@@ -42,7 +44,7 @@ export function DocsSidebar() {
                     ) : (
                       <item.icon.Icon className="h-4 w-4 shrink-0 opacity-80" aria-hidden="true" />
                     )}
-                    <span className="truncate">{item.label}</span>
+                    <span className="truncate">{t(docsNavItemKey(item.href), { defaultValue: item.label })}</span>
                   </Link>
                 );
               })}

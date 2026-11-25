@@ -1,9 +1,9 @@
 <p align="center">
   <a href="https://thesvg.org">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-wordmark-dark.svg" />
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-wordmark.svg" />
-      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-wordmark.svg" alt="theSVG" height="40" />
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-lockup-dark.svg" />
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-lockup.svg" />
+      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-lockup.svg" alt="theSVG by GLINR Studios" height="50" />
     </picture>
   </a>
 </p>
@@ -531,7 +531,7 @@ https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/{slug}/{variant}.s
 
 ## 커뮤니티
 
-질문, 아이콘 요청, 만든 것을 자랑하고 싶다면 공식 GLINR Discord에 참여하세요. theSVG와 모든 GLINCKER 오픈 소스 프로젝트의 공간입니다. theSVG 전용 포럼이 있고, 새 릴리스는 자동으로 올라옵니다.
+질문, 아이콘 요청, 만든 것을 자랑하고 싶다면 공식 GLINR Discord에 참여하세요. theSVG와 모든 GLINR Studios 오픈 소스 프로젝트의 공간입니다. theSVG 전용 포럼이 있고, 새 릴리스는 자동으로 올라옵니다.
 
 <a href="https://discord.gg/Ar5pcaZB99"><img src="https://discord.com/api/guilds/829168897080557579/widget.png?style=banner2" alt="GLINR Discord 참여하기" /></a>
 
@@ -586,7 +586,7 @@ pnpm dev     # http://localhost:3333
 새 아이콘, 리브랜딩, 릴리스가 매주 추가됩니다. 소식을 놓치지 않으려면:
 
 - 저장소에 **Star를 누르고 Watch**하세요. *Watch, Custom, Releases*를 사용하면 새 버전이 나올 때마다 알림을 받을 수 있습니다.
-- GitHub에서 **[GLINCKER](https://github.com/glincker)를 팔로우**하면 우리가 만드는 다른 프로젝트도 볼 수 있습니다.
+- GitHub에서 **[GLINR Studios](https://github.com/glincker)를 팔로우**하면 우리가 만드는 다른 프로젝트도 볼 수 있습니다.
 - **[Discord](https://discord.gg/Ar5pcaZB99)에 참여**해서 아이콘을 요청하고 릴리스 소식을 바로 받아 보세요.
 - **[thesvg.org](https://thesvg.org)를 둘러보며** 최근에 추가된 것을 확인하세요.
 
@@ -637,12 +637,12 @@ AWS Architecture Icons는 [CC BY-ND 2.0](https://creativecommons.org/licenses/by
   <a href="https://github.com/glincker/thesvg/issues">이슈</a>
 </p>
 
-<p align="center"><sub>GLINCKER가 만들었습니다. 팀의 다른 프로젝트:</sub></p>
+<p align="center"><sub>GLINR Studios가 만들었습니다. 팀의 다른 프로젝트:</sub></p>
 
 <table align="center">
   <tr>
     <td align="center" width="33%">
-      <a href="https://github.com/glincker"><picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/glincker/light.svg" /><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/glincker/default.svg" height="40" alt="GLINCKER" /></picture><br /><b>GLINCKER</b></a><br />
+      <a href="https://glinr.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/glinr/wordmark-dark.svg" /><img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/glinr/wordmark-light.svg" height="30" alt="GLINR Studios" /></picture></a><br />
       <sub>theSVG를 만든 팀의 오픈 소스</sub>
     </td>
     <td align="center" width="33%">

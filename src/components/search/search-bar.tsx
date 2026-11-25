@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useSyncExternalStore } from "react";
 import { Search, X } from "@/components/own-icons";
+import { useT } from "@/i18n/use-t";
 import { capture } from "@/lib/analytics";
 
 interface SearchBarProps {
@@ -15,6 +16,7 @@ export function SearchBar({
   value,
   onChange,
 }: SearchBarProps) {
+  const { t } = useT();
   const inputRef = useRef<HTMLInputElement>(null);
   const isMac = useSyncExternalStore(
     () => () => {},
@@ -56,9 +58,9 @@ export function SearchBar({
             }, 800);
           }
         }}
-        placeholder="Search icons..."
+        placeholder={t("chrome.search.placeholder")}
         className="h-9 w-full rounded-lg border border-border/60 bg-card/60 pr-20 pl-9 text-sm backdrop-blur-sm outline-none transition-all placeholder:text-muted-foreground/50 focus:border-ring focus:bg-card focus:ring-1 focus:ring-ring"
-        aria-label="Search icons"
+        aria-label={t("chrome.search.aria")}
       />
       <div className="absolute top-1/2 right-2.5 flex -translate-y-1/2 items-center gap-1.5">
         {value && (
@@ -66,7 +68,7 @@ export function SearchBar({
             type="button"
             onClick={() => onChange("")}
             className="flex h-5 w-5 items-center justify-center rounded text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-            aria-label="Clear search"
+            aria-label={t("chrome.search.clear")}
           >
             <X className="h-3.5 w-3.5" aria-hidden="true" />
           </button>

@@ -24,16 +24,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SidebarNavItem } from "@/components/layout/sidebar-nav-item";
 import { ICON_SIZE } from "@/lib/chrome-sizes";
+import { useT } from "@/i18n/use-t";
 import { cn } from "@/lib/utils";
 
 const EXTENSION_CATEGORIES = [
-  { id: "npm", label: "Libraries & SDKs", icon: Package },
-  { id: "editors", label: "Editor Extensions", icon: Code },
-  { id: "design", label: "Design Tools", icon: Palette },
-  { id: "developer", label: "Developer Tools", icon: Terminal },
-  { id: "ai", label: "AI & Automation", icon: Bot },
-  { id: "integrations", label: "Integrations", icon: Blocks },
-  { id: "frameworks", label: "Framework Components", icon: Code2 },
+  { id: "npm", labelKey: "sidebar.extLibraries", icon: Package },
+  { id: "editors", labelKey: "sidebar.extEditors", icon: Code },
+  { id: "design", labelKey: "sidebar.extDesign", icon: Palette },
+  { id: "developer", labelKey: "sidebar.extDeveloper", icon: Terminal },
+  { id: "ai", labelKey: "sidebar.extAi", icon: Bot },
+  { id: "integrations", labelKey: "sidebar.extIntegrations", icon: Blocks },
+  { id: "frameworks", labelKey: "sidebar.extFrameworks", icon: Code2 },
 ];
 
 interface SidebarNavProps {
@@ -54,6 +55,7 @@ export function SidebarNav({
   showFavorites,
   onToggleFavorites,
 }: SidebarNavProps) {
+  const { t } = useT();
   const pathname = usePathname();
   const isExtensionsPage = pathname === "/extensions";
   const [extensionsExpanded, setExtensionsExpanded] = useState(isExtensionsPage);
@@ -62,14 +64,16 @@ export function SidebarNav({
   const isAllIconsActive = !showFavorites && pathname === "/";
 
   const favoritesLabel =
-    favoriteCount > 0 ? `Favorites (${favoriteCount})` : "Favorites";
+    favoriteCount > 0
+      ? t("sidebar.favoritesWithCount", { count: favoriteCount })
+      : t("sidebar.favorites");
 
   return (
     <nav className="flex shrink-0 flex-col gap-0.5 p-3">
       <SidebarNavItem
         collapsed={collapsed}
         icon={Grid2X2}
-        label="All Icons"
+        label={t("sidebar.allIcons")}
         href="/"
         active={isAllIconsActive}
       />
@@ -77,7 +81,7 @@ export function SidebarNav({
       <SidebarNavItem
         collapsed={collapsed}
         icon={Shapes}
-        label="Categories"
+        label={t("sidebar.categories")}
         href="/categories"
         active={pathname === "/categories"}
       />
@@ -112,7 +116,7 @@ export function SidebarNav({
                 isFavoritesActive && "fill-red-500 text-red-500",
               )}
             />
-            <span className="flex-1 text-left">Favorites</span>
+            <span className="flex-1 text-left">{t("sidebar.favorites")}</span>
             {favoriteCount > 0 && (
               <span className="rounded-full bg-red-500/10 px-1.5 font-mono text-[10px] font-semibold text-red-500 dark:bg-red-500/15">
                 {favoriteCount}
@@ -140,8 +144,8 @@ export function SidebarNav({
                   }
                 } catch { /* malformed localStorage value, nothing to share */ }
               }}
-              title="Share Favorites"
-              aria-label="Copy a shareable link to your favorites"
+              title={t("sidebar.shareFavorites")}
+              aria-label={t("sidebar.shareFavoritesAria")}
               className="absolute top-1/2 right-3 flex h-5 w-5 -translate-y-1/2 items-center justify-center rounded-md text-muted-foreground/70 hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
               {favoritesShareCopied ? (
@@ -159,7 +163,7 @@ export function SidebarNav({
         <SidebarNavItem
           collapsed
           icon={Blocks}
-          label="Extensions"
+          label={t("sidebar.extensions")}
           href="/extensions"
           active={isExtensionsPage}
         />
@@ -177,7 +181,7 @@ export function SidebarNav({
             )}
           >
             <Blocks className={cn(ICON_SIZE.sidebar, "shrink-0 text-muted-foreground transition-all duration-200 group-hover:scale-110 group-hover:text-orange-500", isExtensionsPage && "text-orange-500")} />
-            <span className="flex-1 text-left">Extensions</span>
+            <span className="flex-1 text-left">{t("sidebar.extensions")}</span>
             <ChevronRight
               className={cn(
                 "h-3.5 w-3.5 shrink-0 text-muted-foreground/50 transition-transform duration-200",
@@ -202,7 +206,7 @@ export function SidebarNav({
                   className="flex items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-xs text-muted-foreground transition-all duration-200 hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >
                   <Icon className="h-4 w-4 shrink-0 opacity-60" />
-                  <span className="truncate">{ext.label}</span>
+                  <span className="truncate">{t(ext.labelKey)}</span>
                 </Link>
               );
             })}
@@ -213,12 +217,12 @@ export function SidebarNav({
       <SidebarNavItem
         collapsed={collapsed}
         icon={Eye}
-        label="Viewer"
+        label={t("sidebar.viewer")}
         href="/viewer"
         active={pathname === "/viewer"}
         trailing={
           <span className="rounded-full bg-muted/60 px-1.5 font-mono text-[9px] uppercase text-muted-foreground/70 dark:bg-white/[0.06]">
-            New
+            {t("sidebar.new")}
           </span>
         }
       />
@@ -226,7 +230,7 @@ export function SidebarNav({
       <SidebarNavItem
         collapsed={collapsed}
         icon={BookOpen}
-        label="Docs"
+        label={t("sidebar.docs")}
         href="/docs"
         active={pathname.startsWith("/docs")}
       />
@@ -234,7 +238,7 @@ export function SidebarNav({
       <SidebarNavItem
         collapsed={collapsed}
         icon={FileText}
-        label="Blog"
+        label={t("sidebar.blog")}
         href="/blog"
         active={pathname.startsWith("/blog")}
       />
@@ -243,7 +247,7 @@ export function SidebarNav({
       <SidebarNavItem
         collapsed={collapsed}
         icon={Plus}
-        label="Submit Icon"
+        label={t("sidebar.submitIcon")}
         href="/submit"
         iconClassName="group-hover:rotate-90"
         className={cn(

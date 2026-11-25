@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { Sparkles, ChevronDown } from "@/components/own-icons";
 import { cn } from "@/lib/utils";
 import { DocsBrandIcon } from "@/components/docs/docs-nav-icon";
+import { useT } from "@/i18n/use-t";
 
 interface AiTarget {
   label: string;
@@ -24,6 +25,7 @@ const AI_TARGETS: AiTarget[] = [
 
 export function DocsAskAi({ pageTitle }: Readonly<{ pageTitle: string }>) {
   const [open, setOpen] = useState(false);
+  const { t } = useT();
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -47,7 +49,7 @@ export function DocsAskAi({ pageTitle }: Readonly<{ pageTitle: string }>) {
         className="inline-flex items-center gap-1.5 rounded-lg border border-border/50 px-2.5 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-orange-500/30 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 dark:border-white/[0.08]"
       >
         <Sparkles className="h-3.5 w-3.5" />
-        Ask AI
+        {t("docs.ui.askAi", { defaultValue: "Ask AI" })}
         <ChevronDown className={cn("h-3 w-3 transition-transform", open && "rotate-180")} />
       </button>
       {open && (
@@ -62,7 +64,7 @@ export function DocsAskAi({ pageTitle }: Readonly<{ pageTitle: string }>) {
               className="flex items-center gap-2 px-3 py-2 text-xs text-muted-foreground hover:bg-accent hover:text-accent-foreground"
             >
               <DocsBrandIcon slug={target.iconSlug} className="h-3.5 w-3.5 shrink-0" />
-              Open in {target.label}
+              {t("docs.ui.openIn", { defaultValue: "Open in {{name}}", name: target.label })}
             </a>
           ))}
         </div>

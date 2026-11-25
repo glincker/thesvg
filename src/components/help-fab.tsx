@@ -1,49 +1,56 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { useT } from "@/i18n/use-t";
 import { X, MousePointerClick, Copy, Download, Search, Heart, Keyboard, Sparkles } from "@/components/own-icons";
 
-function getTips(iconCount: string) {
+function getTips(iconCount: string, t: (key: string, options?: Record<string, string>) => string) {
   return [
     {
+      id: "click",
       icon: MousePointerClick,
-      title: "Click any icon",
-      description: "Open the detail page with code snippets, variants, and export options",
+      title: t("chrome.help.tip.click.title"),
+      description: t("chrome.help.tip.click.desc"),
       gradient: "from-violet-500 to-purple-600",
       glow: "shadow-violet-500/25",
     },
     {
+      id: "copy",
       icon: Copy,
-      title: "Quick copy",
-      description: "Hit the copy button on any card to grab the SVG instantly",
+      title: t("chrome.help.tip.copy.title"),
+      description: t("chrome.help.tip.copy.desc"),
       gradient: "from-blue-500 to-cyan-500",
       glow: "shadow-blue-500/25",
     },
     {
+      id: "download",
       icon: Download,
-      title: "Download & export",
-      description: "Download SVG or export as PNG at 32-512px from the detail page",
+      title: t("chrome.help.tip.download.title"),
+      description: t("chrome.help.tip.download.desc"),
       gradient: "from-emerald-500 to-teal-500",
       glow: "shadow-emerald-500/25",
     },
     {
+      id: "search",
       icon: Search,
-      title: "Search everything",
-      description: `Press Cmd+K to search across ${iconCount} icons`,
+      title: t("chrome.help.tip.search.title"),
+      description: t("chrome.help.tip.search.desc", { total: iconCount }),
       gradient: "from-orange-500 to-amber-500",
       glow: "shadow-orange-500/25",
     },
     {
+      id: "fav",
       icon: Heart,
-      title: "Save favorites",
-      description: "Heart icons to save them. Access from the sidebar anytime",
+      title: t("chrome.help.tip.fav.title"),
+      description: t("chrome.help.tip.fav.desc"),
       gradient: "from-rose-500 to-pink-500",
       glow: "shadow-rose-500/25",
     },
     {
+      id: "use",
       icon: Keyboard,
-      title: "Use anywhere",
-      description: "npm, React, Vue, CLI, CDN, or MCP server for AI assistants",
+      title: t("chrome.help.tip.use.title"),
+      description: t("chrome.help.tip.use.desc"),
       gradient: "from-indigo-500 to-blue-600",
       glow: "shadow-indigo-500/25",
     },
@@ -51,7 +58,10 @@ function getTips(iconCount: string) {
 }
 
 export function HelpFab({ iconCount }: { iconCount: string }) {
-  const TIPS = getTips(iconCount);
+  const { t } = useT();
+  const TIPS = getTips(iconCount, t);
+  // The key cap sits inside the sentence, so split around a marker to keep word order per language.
+  const escHint = t("chrome.help.escHint", { key: "\u0000" }).split("\u0000");
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [closing, setClosing] = useState(false);
@@ -102,7 +112,7 @@ export function HelpFab({ iconCount }: { iconCount: string }) {
         <button
           onClick={handleOpen}
           className="group relative flex h-10 w-10 items-center justify-center rounded-full border border-border/60 bg-card/90 text-muted-foreground shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-orange-500/40 hover:text-orange-500 hover:shadow-xl hover:shadow-orange-500/10 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/50 focus-visible:ring-offset-2 dark:border-white/10 dark:bg-white/5"
-          aria-label="Help and tips"
+          aria-label={t("chrome.help.aria")}
           aria-haspopup="dialog"
           aria-expanded={open}
         >
@@ -155,7 +165,7 @@ export function HelpFab({ iconCount }: { iconCount: string }) {
               <button
                 onClick={handleClose}
                 className="absolute top-4 right-4 rounded-xl p-2 text-zinc-500 transition-all duration-200 hover:bg-white/10 hover:text-zinc-300 hover:rotate-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
-                aria-label="Close"
+                aria-label={t("chrome.help.close")}
               >
                 <X className="h-4 w-4" aria-hidden="true" />
               </button>
@@ -164,17 +174,17 @@ export function HelpFab({ iconCount }: { iconCount: string }) {
               <div className="mb-6">
                 <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-orange-500/20 bg-orange-500/10 px-3 py-1 text-xs font-medium text-orange-400 shadow-lg shadow-orange-500/5">
                   <Sparkles className="h-3.5 w-3.5" />
-                  Getting Started
+                  {t("chrome.help.badge")}
                 </div>
-                <h2 id="help-modal-title" className="text-xl font-bold tracking-tight text-white">Quick Tips</h2>
-                <p className="mt-1 text-sm text-zinc-400">Everything you can do with theSVG</p>
+                <h2 id="help-modal-title" className="text-xl font-bold tracking-tight text-white">{t("chrome.help.title")}</h2>
+                <p className="mt-1 text-sm text-zinc-400">{t("chrome.help.subtitle")}</p>
               </div>
 
               {/* Tips - scrollable on mobile */}
               <div ref={scrollRef} className="grid max-h-[50vh] gap-2 overflow-y-auto pr-1 sm:max-h-none sm:gap-2.5">
                 {TIPS.map((tip, index) => (
                   <div
-                    key={tip.title}
+                    key={tip.id}
                     className={`group flex items-start gap-3.5 rounded-2xl border border-white/[0.05] bg-white/[0.02] p-3.5 transition-all duration-300 hover:border-white/[0.12] hover:bg-white/[0.06] hover:shadow-lg hover:shadow-black/20 ${
                       visibleTips.includes(index)
                         ? "translate-x-0 opacity-100"
@@ -199,7 +209,7 @@ export function HelpFab({ iconCount }: { iconCount: string }) {
               {/* Footer */}
               <div className="flex items-center justify-between">
                 <p className="text-[10px] text-zinc-600">
-                  Press <kbd className="rounded-md border border-zinc-700/80 bg-zinc-800/80 px-1.5 py-0.5 font-mono text-[9px] text-zinc-400 shadow-sm">Esc</kbd> to close
+                  {escHint[0]}<kbd className="rounded-md border border-zinc-700/80 bg-zinc-800/80 px-1.5 py-0.5 font-mono text-[9px] text-zinc-400 shadow-sm">Esc</kbd>{escHint[1]}
                 </p>
                 <button
                   onClick={handleClose}
@@ -207,7 +217,7 @@ export function HelpFab({ iconCount }: { iconCount: string }) {
                 >
                   {/* Shimmer effect */}
                   <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-                  <span className="relative">Got it</span>
+                  <span className="relative">{t("chrome.help.gotIt")}</span>
                 </button>
               </div>
             </div>

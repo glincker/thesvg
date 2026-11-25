@@ -17,6 +17,7 @@ import {
   svgToRaster,
 } from "@/lib/svg-to-png";
 import { Busy } from "@/components/skeletons";
+import { useT } from "@/i18n/use-t";
 
 interface DownloadMenuProps {
   svgContent: string;
@@ -54,6 +55,7 @@ export function DownloadMenu({
   rasterSvg,
   rasterNote,
 }: DownloadMenuProps) {
+  const { t } = useT();
   // Tracked per action so one in-flight (or stalled) export never disables the
   // other half of the split button or any unrelated menu item. Combined with
   // the timeout in svgToRaster, a failed export always clears its own key.
@@ -135,12 +137,12 @@ export function DownloadMenu({
         });
         flashDone();
       } catch {
-        flashError(`${format.toUpperCase()} export failed. Please try again.`);
+        flashError(t("icon.download.errExport", { format: format.toUpperCase() }));
       } finally {
         endBusy(key);
       }
     },
-    [busy, rasterSvg, svgContent, currentPath, slug, activeVariant, flashDone, flashError, startBusy, endBusy],
+    [busy, rasterSvg, svgContent, currentPath, slug, activeVariant, flashDone, flashError, startBusy, endBusy, t],
   );
 
   const handleCopyDataUri = useCallback(async () => {
@@ -152,11 +154,11 @@ export function DownloadMenu({
       await navigator.clipboard.writeText(uri);
       flashDone();
     } catch {
-      flashError("Copy failed. Please try again.");
+      flashError(t("icon.download.errCopy"));
     } finally {
       endBusy("uri");
     }
-  }, [busy, svgContent, currentPath, flashDone, flashError, startBusy, endBusy]);
+  }, [busy, svgContent, currentPath, flashDone, flashError, startBusy, endBusy, t]);
 
   return (
     <div className="inline-flex items-stretch">
@@ -165,7 +167,7 @@ export function DownloadMenu({
         size="sm"
         onClick={handleSvgDownload}
         disabled={busy.has("svg")}
-        aria-label={`Download ${title} SVG`}
+        aria-label={t("icon.download.aria", { title })}
         className={cn(
           "h-9 rounded-r-none border-r border-background/20 px-3 transition-all duration-300",
           done && "bg-emerald-600 hover:bg-emerald-600",
@@ -178,7 +180,7 @@ export function DownloadMenu({
         ) : (
           <Download className="mr-1.5 h-4 w-4" />
         )}
-        {done ? "Done" : "Download"}
+        {done ? t("icon.download.done") : t("icon.common.download")}
       </Button>
       <DropdownMenu>
         <DropdownMenuTrigger
@@ -186,7 +188,7 @@ export function DownloadMenu({
             <Button
               type="button"
               size="sm"
-              aria-label="More download formats"
+              aria-label={t("icon.download.more")}
               className="h-9 rounded-l-none px-2"
             >
               <ChevronDown className="h-4 w-4" />
@@ -201,7 +203,7 @@ export function DownloadMenu({
           {/* Header */}
           <div className="border-b border-border/40 px-3 py-2">
             <p className="flex items-center justify-between text-[11px] font-semibold text-foreground">
-              Export {title}
+              {t("icon.download.export", { title })}
               <span className="rounded-full bg-muted/60 px-1.5 py-0.5 font-mono text-[9px] uppercase tracking-wider text-muted-foreground dark:bg-white/[0.06]">
                 {activeVariant}
               </span>
@@ -221,7 +223,7 @@ export function DownloadMenu({
           <div className="border-b border-border/40 p-2">
             <p className="mb-1.5 flex items-center gap-1.5 px-1 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/70">
               <FileCode className="h-3.5 w-3.5" />
-              Vector
+              {t("icon.download.vector")}
             </p>
             <div className="grid grid-cols-2 gap-1.5">
               <button
@@ -244,7 +246,7 @@ export function DownloadMenu({
                   </span>
                 </span>
                 <span className="font-mono text-[10px] text-muted-foreground/70">
-                  download
+                  {t("icon.download.downloadLabel")}
                 </span>
               </button>
               <button
@@ -263,11 +265,11 @@ export function DownloadMenu({
                     <Clipboard className="h-3.5 w-3.5 text-muted-foreground transition-colors group-hover:text-foreground" />
                   )}
                   <span className="text-xs font-semibold text-foreground">
-                    Data URI
+                    {t("icon.download.dataUri")}
                   </span>
                 </span>
                 <span className="font-mono text-[10px] text-muted-foreground/70">
-                  copy
+                  {t("icon.download.copyLabel")}
                 </span>
               </button>
             </div>
@@ -278,7 +280,7 @@ export function DownloadMenu({
             <div className="mb-2 flex items-center justify-between px-1">
               <p className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/70">
                 <ImageIcon className="h-3.5 w-3.5" />
-                Raster
+                {t("icon.download.raster")}
               </p>
               <div className="flex items-center gap-0.5 rounded-md border border-border/40 bg-muted/40 p-0.5 dark:bg-white/[0.03]">
                 {RASTER_FORMATS.map((fmt) => (
