@@ -50876,6 +50876,26 @@
     "collection": "community"
   },
   {
+    "slug": "customtkinter",
+    "title": "CustomTkinter",
+    "aliases": [
+      "Customtkinter"
+    ],
+    "hex": "0095FF",
+    "categories": [
+      "Framework",
+      "Library",
+      "UI Library"
+    ],
+    "variants": {
+      "default": "/icons/customtkinter/default.svg"
+    },
+    "license": "MIT",
+    "url": "https://customtkinter.tomschimansky.com",
+    "dateAdded": "2026-11-25",
+    "collection": "brands"
+  },
+  {
     "slug": "cuttly-badge",
     "title": "Cuttly",
     "aliases": [],
