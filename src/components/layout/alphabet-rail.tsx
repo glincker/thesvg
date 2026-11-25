@@ -2,6 +2,7 @@
 
 import { useCallback, useRef, useState } from "react";
 import { ALPHABET } from "@/lib/category-index";
+import { useT } from "@/i18n/use-t";
 import { cn } from "@/lib/utils";
 
 interface AlphabetRailProps {
@@ -17,6 +18,7 @@ interface AlphabetRailProps {
  * dimmed but stay in place so the alphabet still reads as complete.
  */
 export function AlphabetRail({ availableLetters, onJump, className }: AlphabetRailProps) {
+  const { t } = useT();
   const railRef = useRef<HTMLDivElement>(null);
   const [activeLetter, setActiveLetter] = useState<string | null>(null);
   const [dragging, setDragging] = useState(false);
@@ -62,7 +64,7 @@ export function AlphabetRail({ availableLetters, onJump, className }: AlphabetRa
     <div
       ref={railRef}
       role="group"
-      aria-label="Jump to a category by letter"
+      aria-label={t("sidebar.jumpToLetterGroup")}
       className={cn(
         "relative flex touch-none flex-col items-center justify-between gap-px px-0.5 py-1.5 select-none",
         className,
@@ -100,7 +102,7 @@ export function AlphabetRail({ availableLetters, onJump, className }: AlphabetRa
             key={letter}
             type="button"
             tabIndex={available ? 0 : -1}
-            aria-label={available ? `Jump to ${letter}` : undefined}
+            aria-label={available ? t("sidebar.jumpTo", { letter }) : undefined}
             aria-hidden={!available}
             disabled={!available}
             onClick={() => {

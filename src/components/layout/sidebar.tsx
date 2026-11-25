@@ -34,6 +34,7 @@ import { SidebarNav } from "@/components/layout/sidebar-nav";
 import { SidebarCollapseToggle } from "@/components/layout/sidebar-collapse-toggle";
 
 import { ICON_SIZE } from "@/lib/chrome-sizes";
+import { useT } from "@/i18n/use-t";
 import { cn } from "@/lib/utils";
 
 const CATEGORY_SEARCH_DEBOUNCE_MS = 400;
@@ -136,6 +137,7 @@ export function Sidebar({
   collapsed = false,
   onToggleCollapsed,
 }: SidebarProps) {
+  const { t } = useT();
   const pathname = usePathname();
   const isRail = !mobile && collapsed;
   // Shortcut sections (Collections, Families, Featured) behave as an
@@ -263,7 +265,7 @@ export function Sidebar({
                     aria-controls="collections-menu"
                     className="flex w-full items-center justify-between rounded-lg px-1 pt-3 pb-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground/70 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                   >
-                    Collections
+                    {t("sidebar.collections")}
                     <ChevronRight
                       className={cn(
                         "h-4 w-4 shrink-0 transition-transform duration-200",
@@ -331,10 +333,10 @@ export function Sidebar({
                     className="flex w-full items-center justify-between rounded-lg px-1 pt-3 pb-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground/70 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                   >
                     <span className="flex items-center gap-2">
-                      Families
+                      {t("sidebar.families")}
                       {familiesNew && (
                         <span className="rounded-full bg-gradient-to-r from-fuchsia-500/90 via-orange-500/90 to-amber-400/90 px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase leading-none tracking-wider text-white shadow-sm shadow-black/20">
-                          NEW
+                          {t("sidebar.new")}
                         </span>
                       )}
                     </span>
@@ -363,7 +365,7 @@ export function Sidebar({
                             "bg-accent/60 text-accent-foreground font-medium",
                         )}
                       >
-                        <span>All families</span>
+                        <span>{t("sidebar.allFamilies")}</span>
                         <ChevronRight className="h-4 w-4" aria-hidden />
                       </Link>
                       {(familiesData as SidebarFamily[]).map((family) => {
@@ -403,7 +405,7 @@ export function Sidebar({
                   aria-controls="featured-menu"
                   className="flex w-full items-center justify-between rounded-lg px-1 pt-3 pb-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground/70 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >
-                  Featured
+                  {t("sidebar.featured")}
                   <ChevronRight
                     className={cn(
                       "h-4 w-4 shrink-0 transition-transform duration-200",
@@ -433,7 +435,7 @@ export function Sidebar({
                       <span className="truncate">Google 2026</span>
                     </span>
                     <span className="ml-2 shrink-0 rounded-full bg-gradient-to-r from-fuchsia-500/90 via-orange-500/90 to-amber-400/90 px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase leading-none tracking-wider text-white shadow-sm shadow-black/20">
-                      NEW
+                      {t("sidebar.new")}
                     </span>
                   </Link>
                   <Link
@@ -444,7 +446,7 @@ export function Sidebar({
                   >
                     <span className="flex items-center gap-3 truncate">
                       <Clock className="h-5 w-5 shrink-0 text-muted-foreground transition-colors group-hover:text-orange-500" />
-                      <span className="truncate">Recently Added</span>
+                      <span className="truncate">{t("sidebar.recentlyAdded")}</span>
                     </span>
                   </Link>
                   <Link
@@ -455,7 +457,7 @@ export function Sidebar({
                   >
                     <span className="flex items-center gap-3 truncate">
                       <Flame className="h-5 w-5 shrink-0 text-muted-foreground transition-colors group-hover:text-orange-500" />
-                      <span className="truncate">Popular</span>
+                      <span className="truncate">{t("sidebar.popular")}</span>
                     </span>
                   </Link>
                 </div>
@@ -468,7 +470,7 @@ export function Sidebar({
                 <div className="mt-2 h-px bg-gradient-to-r from-transparent via-border/60 to-transparent dark:via-white/[0.06]" />
                 <div className="flex items-baseline justify-between px-1 pt-3 pb-1.5">
                   <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/70">
-                    Categories
+                    {t("sidebar.categories")}
                   </p>
                   {categorySearch && (
                     <span className="font-mono text-[10px] text-muted-foreground/40">
@@ -483,15 +485,15 @@ export function Sidebar({
                     value={categorySearch}
                     onChange={(e) => setCategorySearch(e.target.value)}
                     onFocus={() => setOpenSection(null)}
-                    placeholder="Search categories"
-                    aria-label="Search categories"
+                    placeholder={t("sidebar.searchCategories")}
+                    aria-label={t("sidebar.searchCategories")}
                     className="w-full rounded-lg border border-border/50 bg-muted/30 py-1.5 pr-7 pl-8 text-xs text-foreground placeholder:text-muted-foreground/50 outline-none transition-shadow duration-200 focus:border-foreground/30 focus:bg-background focus:shadow-[0_0_0_3px_rgba(0,0,0,0.05)] dark:border-white/[0.06] dark:bg-white/[0.02] dark:focus:border-white/20 dark:focus:shadow-[0_0_0_3px_rgba(255,255,255,0.06)]"
                   />
                   {categorySearch && (
                     <button
                       type="button"
                       onClick={() => setCategorySearch("")}
-                      aria-label="Clear category search"
+                      aria-label={t("sidebar.clearCategorySearch")}
                       className="absolute right-2 flex h-4 w-4 items-center justify-center rounded-full text-muted-foreground/50 transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                     >
                       <X className="h-3.5 w-3.5" aria-hidden="true" />
@@ -501,8 +503,10 @@ export function Sidebar({
                 {categorySearch && (
                   <p role="status" aria-live="polite" className="sr-only">
                     {filteredCategories.length === 0
-                      ? `No categories match ${categorySearch}`
-                      : `${filteredCategories.length} ${filteredCategories.length === 1 ? "category" : "categories"} found`}
+                      ? t("sidebar.noCategoriesMatchStatus", { query: categorySearch })
+                      : filteredCategories.length === 1
+                        ? t("sidebar.categoryFoundOne")
+                        : t("sidebar.categoriesFound", { count: filteredCategories.length })}
                   </p>
                 )}
                 <div className="flex items-start">
@@ -511,14 +515,14 @@ export function Sidebar({
                       <div className="flex flex-col items-center gap-2 px-2 py-6 text-center">
                         <Search className="h-4 w-4 text-muted-foreground/30" />
                         <p className="text-[12px] text-muted-foreground/50">
-                          No categories match &ldquo;{categorySearch}&rdquo;
+                          {t("sidebar.noCategoriesMatch", { query: categorySearch })}
                         </p>
                         <button
                           type="button"
                           onClick={() => setCategorySearch("")}
                           className="text-[11px] font-medium text-orange-600 hover:underline dark:text-orange-400"
                         >
-                          Clear search
+                          {t("sidebar.clearSearch")}
                         </button>
                       </div>
                     )}
