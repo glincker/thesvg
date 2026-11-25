@@ -3,12 +3,14 @@
 import { useEffect, useRef } from "react";
 import type { FaqItem } from "@/lib/docs-content";
 import { slugifyHeading } from "@/lib/docs-nav";
+import { useT } from "@/i18n/use-t";
 
 /** Each question gets a stable #id so a link can point straight at it. If
  * the page loads with that hash, auto-expand and scroll to the matching
  * <details> instead of leaving it collapsed and invisible. */
 export function FaqList({ items }: Readonly<{ items: FaqItem[] }>) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const { t } = useT();
 
   useEffect(() => {
     const hash = window.location.hash.slice(1);
@@ -33,13 +35,13 @@ export function FaqList({ items }: Readonly<{ items: FaqItem[] }>) {
         >
           <summary className="cursor-pointer list-none text-sm font-medium marker:content-none">
             <span className="flex items-center justify-between gap-3">
-              {item.question}
+              {t(`docs.faq.${item.id}.q`, { defaultValue: item.question })}
               <span aria-hidden="true" className="text-muted-foreground transition-transform group-open:rotate-45">
                 +
               </span>
             </span>
           </summary>
-          <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{item.answer}</p>
+          <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{t(`docs.faq.${item.id}.a`, { defaultValue: item.answer })}</p>
         </details>
       ))}
     </div>

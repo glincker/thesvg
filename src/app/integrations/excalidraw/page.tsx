@@ -6,6 +6,7 @@ import { getCategoryCounts } from "@/lib/icons";
 import { EXCALIDRAW_LIBRARIES } from "@/lib/excalidraw-libraries";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 import libraryCounts from "@/data/excalidraw-library-counts.json";
+import { T } from "@/components/t";
 
 export const metadata: Metadata = {
   title: "Excalidraw Shape Libraries - Brand & Dev Tool Icons",
@@ -34,7 +35,7 @@ const IMPORT_STEPS = [
   'Click the "..." menu at the top of the library panel and choose "Open".',
   "Select the downloaded .excalidrawlib file.",
   "The icons are added to your personal library, ready to drag onto the canvas.",
-];
+] as const;
 
 function LibraryCard({ label, slug, count }: { label: string; slug: string; count: number }) {
   return (
@@ -44,14 +45,14 @@ function LibraryCard({ label, slug, count }: { label: string; slug: string; coun
       </div>
       <h3 className="mb-1.5 text-sm font-semibold">{label}</h3>
       <p className="mb-5 flex-1 text-[13px] leading-relaxed text-muted-foreground">
-        {count.toLocaleString("en-US")} icons
+        <T k="pages.integrations.iconCount" fallback="{{count}} icons" values={{ count: count.toLocaleString("en-US") }} />
       </p>
       <a
         href={`/integrations/excalidraw/${slug}.excalidrawlib`}
         download
         className="group/link inline-flex w-fit items-center gap-1.5 text-xs font-medium text-foreground/70 transition-colors hover:text-foreground"
       >
-        Download
+        <T k="pages.integrations.excalidraw.download" fallback="Download" />
         <Download className="h-3.5 w-3.5 opacity-50 transition-opacity group-hover/link:opacity-100" />
       </a>
     </div>
@@ -69,10 +70,9 @@ export default function ExcalidrawIntegrationPage() {
         <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12">
           {/* Header */}
           <div className="mb-8">
-            <h1 className="mb-2 text-2xl font-bold sm:text-3xl">Excalidraw Shape Libraries</h1>
+            <h1 className="mb-2 text-2xl font-bold sm:text-3xl"><T k="pages.integrations.excalidraw.title" fallback="Excalidraw Shape Libraries" /></h1>
             <p className="max-w-2xl text-muted-foreground">
-              Downloadable custom Excalidraw libraries of brand and developer tool icons,
-              grouped by category, for architecture and product diagrams.
+              <T k="pages.integrations.excalidraw.intro" fallback="Downloadable custom Excalidraw libraries of brand and developer tool icons, grouped by category, for architecture and product diagrams." />
             </p>
           </div>
 
@@ -83,7 +83,7 @@ export default function ExcalidrawIntegrationPage() {
                 <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-orange-500/10 text-orange-500">
                   <MousePointerClick className="h-5 w-5" />
                 </div>
-                <h2 className="text-lg font-semibold">How to import</h2>
+                <h2 className="text-lg font-semibold"><T k="pages.integrations.excalidraw.howTitle" fallback="How to import" /></h2>
               </div>
               <ol className="space-y-2.5 text-sm text-muted-foreground">
                 {IMPORT_STEPS.map((step, i) => (
@@ -91,7 +91,7 @@ export default function ExcalidrawIntegrationPage() {
                     <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-muted/80 text-[11px] font-medium text-foreground/80">
                       {i + 1}
                     </span>
-                    <span className="leading-relaxed">{step}</span>
+                    <span className="leading-relaxed"><T k={`pages.integrations.excalidraw.step${i + 1}`} fallback={step} /></span>
                   </li>
                 ))}
               </ol>
@@ -101,10 +101,10 @@ export default function ExcalidrawIntegrationPage() {
           {/* Libraries grid */}
           <div className="mb-4">
             <h2 className="text-base font-semibold">
-              {EXCALIDRAW_LIBRARIES.length} libraries
+              <T k="pages.integrations.excalidraw.libraries" fallback="{{count}} libraries" values={{ count: String(EXCALIDRAW_LIBRARIES.length) }} />
             </h2>
             <p className="text-sm text-muted-foreground">
-              Each file is a self-contained .excalidrawlib you can load independently.
+              <T k="pages.integrations.excalidraw.librariesNote" fallback="Each file is a self-contained .excalidrawlib you can load independently." />
             </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

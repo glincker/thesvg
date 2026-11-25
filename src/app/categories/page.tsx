@@ -10,6 +10,7 @@ import {
 } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 import { categoryUrl } from "@/lib/categories";
+import { T } from "@/components/t";
 
 const count = getFormattedIconCount();
 
@@ -110,13 +111,13 @@ export default function CategoriesPage() {
           <div className="mb-8">
             <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-border/40 bg-muted/50 px-3 py-1 text-xs font-medium text-muted-foreground dark:border-white/[0.08] dark:bg-white/[0.04]">
               <Shapes className="h-3.5 w-3.5" />
-              {totalCategories} categories
+              <T k="pages.categories.badge" fallback="{{count}} categories" values={{ count: String(totalCategories) }} />
             </div>
             <h1 className="mb-2 text-2xl font-bold tracking-tight sm:text-3xl">
-              All Categories
+              <T k="pages.categories.title" fallback="All Categories" />
             </h1>
             <p className="max-w-lg text-sm text-muted-foreground sm:text-base">
-              Browse all icon categories across brand and AWS architecture collections.
+              <T k="pages.categories.intro" fallback="Browse all icon categories across brand and AWS architecture collections." />
             </p>
           </div>
 
@@ -125,7 +126,7 @@ export default function CategoriesPage() {
             <section className="mb-10">
               <div className="mb-4 flex items-center gap-2">
                 <h2 className="text-sm font-semibold text-foreground">
-                  Brand Icon Categories
+                  <T k="pages.categories.brand" fallback="Brand Icon Categories" />
                 </h2>
                 <span className="text-xs text-muted-foreground">
                   {brandCategories.length}
@@ -151,7 +152,7 @@ export default function CategoriesPage() {
             <section>
               <div className="mb-4 flex items-center gap-2">
                 <h2 className="text-sm font-semibold text-foreground">
-                  AWS Architecture Categories
+                  <T k="pages.categories.aws" fallback="AWS Architecture Categories" />
                 </h2>
                 <span className="text-xs text-muted-foreground">
                   {awsCategories.length}

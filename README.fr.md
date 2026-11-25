@@ -1,9 +1,9 @@
 <p align="center">
   <a href="https://thesvg.org">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-wordmark-dark.svg" />
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-wordmark.svg" />
-      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-wordmark.svg" alt="theSVG" height="40" />
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-lockup-dark.svg" />
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-lockup.svg" />
+      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-lockup.svg" alt="theSVG by GLINR Studios" height="50" />
     </picture>
   </a>
 </p>
@@ -531,7 +531,7 @@ Les icônes sont organisées en plus de 150 catégories :
 
 ## Communauté
 
-Des questions, des demandes d'icônes, ou envie de montrer ce que vous avez construit ? Rejoignez le Discord officiel de GLINR, la maison de theSVG et de tous les autres projets open source de GLINCKER. theSVG y a son propre forum, et les nouvelles versions y sont publiées automatiquement.
+Des questions, des demandes d'icônes, ou envie de montrer ce que vous avez construit ? Rejoignez le Discord officiel de GLINR, la maison de theSVG et de tous les autres projets open source de GLINR Studios. theSVG y a son propre forum, et les nouvelles versions y sont publiées automatiquement.
 
 <a href="https://discord.gg/Ar5pcaZB99"><img src="https://discord.com/api/guilds/829168897080557579/widget.png?style=banner2" alt="Join the GLINR Discord" /></a>
 
@@ -586,7 +586,7 @@ Questions et demandes d'icônes sont les bienvenues sur le [Discord](https://dis
 De nouvelles icônes, des rebrandings et des versions arrivent chaque semaine. Pour ne rien rater :
 
 - **Mettez une étoile et suivez** le dépôt. Utilisez *Watch, Custom, Releases* pour être prévenu de chaque nouvelle version.
-- **Suivez [GLINCKER](https://github.com/glincker)** sur GitHub pour le reste de ce que nous construisons.
+- **Suivez [GLINR Studios](https://github.com/glincker)** sur GitHub pour le reste de ce que nous construisons.
 - **Rejoignez le [Discord](https://discord.gg/Ar5pcaZB99)** pour demander des icônes et voir les versions dès leur sortie.
 - **Parcourez [thesvg.org](https://thesvg.org)** pour voir ce qui a été ajouté récemment.
 
@@ -637,12 +637,12 @@ Si vous êtes propriétaire d'une marque et souhaitez qu'une icône soit mise à
   <a href="https://github.com/glincker/thesvg/issues">Tickets</a>
 </p>
 
-<p align="center"><sub>Créé par GLINCKER. Plus de projets de l'équipe :</sub></p>
+<p align="center"><sub>Créé par GLINR Studios. Plus de projets de l'équipe :</sub></p>
 
 <table align="center">
   <tr>
     <td align="center" width="33%">
-      <a href="https://github.com/glincker"><picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/glincker/light.svg" /><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/glincker/default.svg" height="40" alt="GLINCKER" /></picture><br /><b>GLINCKER</b></a><br />
+      <a href="https://glinr.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/glinr/wordmark-dark.svg" /><img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/glinr/wordmark-light.svg" height="30" alt="GLINR Studios" /></picture></a><br />
       <sub>Open source par l'équipe derrière theSVG</sub>
     </td>
     <td align="center" width="33%">

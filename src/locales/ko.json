@@ -1,5 +1,7 @@
 {
-  "language": { "label": "언어" },
+  "language": {
+    "label": "언어"
+  },
   "nav": {
     "brandIcons": "브랜드 아이콘",
     "uiIcons": "UI 아이콘",
@@ -10,6 +12,233 @@
     "blog": "블로그",
     "cdnUsage": "CDN 사용법",
     "compare": "비교"
+  },
+  "uikit": {
+    "breadcrumb": "탐색 경로",
+    "look": {
+      "outline": "아웃라인",
+      "duotone": "듀오톤",
+      "offset": "오프셋",
+      "fill": "채움",
+      "glass": "글래스",
+      "glassOutline": "글래스 아웃라인",
+      "depth": "깊이"
+    },
+    "copy": {
+      "name": "이름"
+    },
+    "copyHint": {
+      "svg": "내 스타일이 적용된 그림",
+      "name": "아이콘 이름",
+      "cli": "추가하는 명령어",
+      "import": "{{pkg}} 가져오기 및 사용법",
+      "url": "CDN의 SVG 링크"
+    },
+    "hero": {
+      "title": "하나의 뼈대, 모든 스타일",
+      "show": "소개 보기",
+      "hide": "소개 숨기기",
+      "badge": "4.0 신규: UI 아이콘",
+      "intro": "그리드 위에 그려지고 실시간으로 스타일이 바뀝니다. 아웃라인, 듀오톤, 채움, 글래스, 글래스 아웃라인 모두 currentColor로 테마를 적용할 수 있습니다.",
+      "browse": "아이콘 둘러보기"
+    },
+    "nav": {
+      "allIcons": "모든 아이콘",
+      "favorites": "즐겨찾기",
+      "extensions": "확장 프로그램",
+      "whatIsNew": "새로운 소식",
+      "categories": "카테고리",
+      "new": "신규",
+      "allCategories": "모든 카테고리",
+      "expandSidebar": "사이드바 펼치기",
+      "collapseSidebar": "사이드바 접기",
+      "navigation": "탐색"
+    },
+    "mode": {
+      "iconType": "아이콘 유형"
+    },
+    "browse": {
+      "all": "전체",
+      "allUi": "모든 UI 아이콘",
+      "popular": "인기",
+      "popularHint": "가장 먼저 찾게 될 아이콘",
+      "bestMatches": "가장 일치하는 항목",
+      "related": "관련",
+      "relatedHint": "같은 계열, 동의어, 비슷한 철자",
+      "noMatch": "일치하는 아이콘이 없습니다.",
+      "didYouMean": "혹시",
+      "didYouMeanEnd": "?",
+      "tryAnother": "다른 단어를 입력하거나 필터를 지워 보세요.",
+      "loadingMore": "아이콘을 더 불러오는 중",
+      "thatIsAll": "총 {{count}}개가 전부입니다"
+    },
+    "card": {
+      "addFavorite": "즐겨찾기에 추가",
+      "removeFavorite": "즐겨찾기에서 삭제",
+      "backlog": "백로그",
+      "draft": "초안",
+      "clickToCopy": "클릭하여 {{what}} 복사",
+      "copied": "복사됨",
+      "copiedWhat": "{{what}} 복사됨",
+      "copyWhat": "{{what}} 복사",
+      "downloadSvg": "SVG 다운로드",
+      "quickPreview": "빠른 미리보기",
+      "openFull": "전체 페이지 열기"
+    },
+    "category": {
+      "count": "아이콘 {{count}}개",
+      "countNew": "아이콘 {{count}}개, 신규 {{fresh}}개",
+      "allIn": "{{name}} 아이콘 전체",
+      "others": "다른 카테고리",
+      "browseBy": "카테고리별로 둘러보기",
+      "intro": "{{categories}}개 카테고리에 UI 아이콘 {{count}}개. 모두 같은 그리드로 그려졌고 모든 스타일로 제공됩니다."
+    },
+    "changelog": {
+      "intro": "지금까지 UI 아이콘 {{count}}개를 공개했으며, 앞으로도 조금씩 추가됩니다.",
+      "upcoming": "미리보기 전용: {{drops}}번의 추가가 예정되어 있으며 아이콘 {{icons}}개입니다."
+    },
+    "quality": {
+      "title": "제작 품질",
+      "footnote": "세트를 빌드할 때 점수가 매겨집니다. 그리드 적합도, 모든 스타일에서의 깔끔한 렌더링, 세트 전체와의 굵기 균형, 완전한 메타데이터를 평가합니다."
+    },
+    "code": {
+      "form": "코드 형태",
+      "source": "소스",
+      "package": "패키지",
+      "customNote": "사용자 지정 스타일은 복사한 소스에만 적용됩니다.",
+      "copy": "복사"
+    },
+    "color": {
+      "custom": "사용자 지정 색상",
+      "pick": "색상 선택",
+      "satBright": "채도와 밝기",
+      "hue": "색조",
+      "hex": "16진수 색상",
+      "eyedropper": "화면에서 색상 선택",
+      "recent": "최근",
+      "use": "{{hex}} 사용"
+    },
+    "ctx": {
+      "rest": "기본",
+      "hover": "호버",
+      "active": "활성",
+      "interactive": "인터랙티브",
+      "sameAsRest": "기본과 동일",
+      "showState": "상태 보기",
+      "pressed": "눌림",
+      "action": "동작",
+      "secondary": "보조",
+      "iconButton": "아이콘 버튼",
+      "tab": {
+        "overview": "개요",
+        "activity": "활동",
+        "settings": "설정"
+      },
+      "placeholder": "입력하여 이 필드에 포커스",
+      "notificationsOn": "알림 켜짐",
+      "notificationsOff": "알림 꺼짐",
+      "toggleChip": "칩 {{n}} 전환"
+    },
+    "detail": {
+      "iconColour": "아이콘 색상",
+      "fit": "맞춤",
+      "fitLower": "맞춤",
+      "realSize": "실제 크기로 돌아가기",
+      "zoomFit": "맞춤 확대",
+      "previewSize": "미리보기 크기",
+      "grid": "그리드",
+      "anchors": "앵커",
+      "lightCanvas": "밝은 캔버스 전환",
+      "looks": "스타일",
+      "lineOnly": "선으로만 이루어진 글리프라서 채움, 글래스, 깊이에서는 더 굵은 아웃라인을 사용합니다. 아웃라인, 듀오톤, 오프셋, 글래스 아웃라인에서는 완전하게 그려집니다.",
+      "allLooks": "모든 스타일에서 이 글리프를 완전하게 그립니다.",
+      "gridValue": "24 × 24",
+      "category": "카테고리",
+      "color": "색상",
+      "noTags": "아직 태그가 없습니다",
+      "subtitle": "{{slug}} · {{category}} UI 아이콘",
+      "rasterPicked": "래스터는 선택한 색상을 사용합니다.",
+      "rasterBlack": "래스터는 거의 검정색을 사용합니다. 위에서 색상을 선택하면 바꿀 수 있습니다.",
+      "officialLogo": "공식 브랜드 로고와 변형",
+      "looksHint": "하나를 고르면 아래 모든 것이 따라갑니다",
+      "inContext": "사용 예시",
+      "inContextHint": "호버, 포커스, 누름, 전환이 모두 동작합니다",
+      "opticalSizes": "광학 크기",
+      "moreIn": "{{category}}의 다른 아이콘",
+      "aboutTitle": "{{title}} 아이콘 소개",
+      "aboutBody": "{{title}} 아이콘은 24 × 24 그리드로 그려진 {{category}} UI 아이콘이며 {{count}}가지 스타일({{looks}})로 제공됩니다. currentColor를 사용하므로 주변 텍스트 색상을 따르며, 모든 스타일을 SVG, React, Vue, Svelte, HTML 또는 CSS 마스크로 복사할 수 있습니다."
+    },
+    "docs": {
+      "quickStart": "빠른 시작",
+      "props": "Props",
+      "prop": "Prop",
+      "type": "타입",
+      "whatItDoes": "기능",
+      "looks": "스타일과 사용 시점",
+      "states": "상태",
+      "color": "색상과 테마",
+      "sizes": "크기",
+      "a11y": "접근성",
+      "drops": "세트가 늘어나는 방식"
+    },
+    "ext": {
+      "title": "UI 아이콘: 확장 프로그램과 패키지",
+      "intro": "UI 아이콘을 개발, 디자인, 배포 어디서나 사용하세요. 브랜드 아이콘은 별도 페이지가 있습니다.",
+      "buildOwn": "직접 만들기",
+      "buildOwnText": "모든 아이콘 파일, 매니페스트, 스타일별 JSON 파일(해당 스타일의 모든 아이콘, 슬러그에서 SVG로)은 인증 없이 공개되어 있습니다. 플러그인이나 워크플로를 만든 뒤 PR을 열어 여기에 등록하세요.",
+      "viewGithub": "GitHub에서 보기",
+      "cdnDocs": "CDN 문서"
+    },
+    "style": {
+      "button": "스타일",
+      "hint": "아이콘을 내 스타일로: 굵기, 모서리, 색상",
+      "quick": "빠른 스타일",
+      "quickHint": "스타일을 클릭하면 모든 설정이 나타납니다",
+      "dialog": "아이콘 스타일",
+      "presets": "스타일 프리셋",
+      "savedTitle": "저장한 스타일",
+      "live": "내 스타일 실시간 보기",
+      "preset": {
+        "house": "기본",
+        "crisp": "선명",
+        "soft": "부드러움",
+        "bold": "굵게",
+        "hairline": "헤어라인",
+        "float": "플로트",
+        "mine": "내 스타일"
+      },
+      "resetNamed": "{{label}} 초기화",
+      "backTo": "{{value}}(으)로 되돌리기",
+      "weight": "굵기",
+      "scale": "크기 비율",
+      "shadow": "그림자",
+      "corners": "모서리",
+      "corner": {
+        "sharp": "각진",
+        "chamfer": "모따기",
+        "round": "둥근"
+      },
+      "cut": "절단",
+      "cutEnds": "끝 자르기",
+      "plainEnds": "기본 끝",
+      "weightChip": "굵기 {{value}}",
+      "colour": "색상",
+      "colourAccent": "색상, 강조색이 우선",
+      "iconColours": "아이콘 색상",
+      "colorMode": {
+        "natural": "원색",
+        "mono": "모노"
+      },
+      "noAccent": "강조색 없음",
+      "none": "없음",
+      "accentNamed": "강조색 {{hex}}",
+      "clickCopies": "클릭하여 복사",
+      "clickToCopy": "아이콘을 클릭해 복사",
+      "whatCopied": "복사되는 내용",
+      "saved": "저장됨",
+      "saveMine": "내 스타일로 저장",
+      "reset": "초기화"
+    }
   },
   "header": {
     "home": "theSVG 홈",
@@ -26,6 +255,105 @@
     "extensionsIntegrations": "확장 프로그램 및 연동",
     "blogUpdates": "블로그 및 소식",
     "submitAnIcon": "아이콘 제출"
+  },
+  "mobile": {
+    "dock": {
+      "primary": "기본",
+      "browse": "둘러보기",
+      "favorites": "즐겨찾기",
+      "recents": "최근",
+      "submit": "제출",
+      "more": "더보기",
+      "favoritesCount": "즐겨찾기 {{n}}개"
+    },
+    "recents": {
+      "label": "최근",
+      "aria": "최근 본 아이콘",
+      "seeAll": "모두 보기"
+    },
+    "pwa": {
+      "installIos": "iPhone에 설치",
+      "iosSteps": "{{share}} 공유를 탭한 다음 {{add}}를 선택하세요.",
+      "iosAdd": "홈 화면에 추가",
+      "iosAria": "iOS에 thesvg 설치",
+      "installTitle": "thesvg 설치",
+      "installDesc": "한 번 탭하면 이 기기에 앱으로 설치됩니다.",
+      "install": "설치",
+      "dismiss": "닫기"
+    },
+    "sheet": {
+      "close": "닫기"
+    },
+    "action": {
+      "title": "작업",
+      "copySvg": "SVG 복사",
+      "downloadSvg": "SVG 다운로드",
+      "openQuickView": "빠른 보기 열기",
+      "openFullPage": "전체 페이지 열기"
+    },
+    "search": {
+      "placeholder": "아이콘 검색...",
+      "brands": "브랜드",
+      "searching": "검색 중...",
+      "results": "결과 · {{n}}",
+      "noMatch": "“{{query}}”와 일치하는 아이콘이 없습니다",
+      "recentSearches": "최근 검색",
+      "try": "검색해 보기"
+    },
+    "more": {
+      "tools": "도구",
+      "learn": "배우기",
+      "yourIcons": "내 아이콘",
+      "integrations": "통합",
+      "families": "브랜드 패밀리",
+      "familiesDesc": "Amazon, Google, Microsoft 등",
+      "categoriesDesc": "제품 기능별로 둘러보기",
+      "awsDesc": "서비스 및 리소스 아이콘",
+      "azureDesc": "Microsoft Azure 아이콘",
+      "gcpDesc": "GCP 아키텍처 아이콘",
+      "k8sDesc": "Kubernetes 구성 요소",
+      "flags": "국기",
+      "flagsDesc": "ISO 국가 및 지역 국기",
+      "viewer": "SVG 뷰어",
+      "viewerDesc": "SVG를 미리보고 검사하고 복사하세요",
+      "extensions": "확장 프로그램",
+      "extensionsDesc": "VS Code, Raycast, Figma, npm 패키지",
+      "docs": "문서 및 가이드",
+      "docsDesc": "CDN, React, CLI, MCP 등",
+      "blogDesc": "소식 및 변경 내역",
+      "compare": "라이브러리 비교",
+      "recentsDesc": "최근 보거나 복사한 항목",
+      "favoritesDesc": "즐겨찾기한 아이콘",
+      "githubDesc": "소스 및 이슈",
+      "discordDesc": "커뮤니티 참여하기",
+      "npm": "npm 패키지",
+      "npmDesc": "npm의 thesvg",
+      "raycast": "Raycast 확장 프로그램",
+      "raycastDesc": "Raycast에서 아이콘 검색",
+      "figma": "Figma 플러그인",
+      "figmaDesc": "아이콘을 Figma 파일에 바로 추가",
+      "vscode": "VS Code 확장 프로그램",
+      "vscodeDesc": "VS Code에서 검색하고 복사",
+      "tagline": "오픈 브랜드 SVG 라이브러리"
+    },
+    "icon": {
+      "fallbackTitle": "아이콘",
+      "previewAlt": "{{title}} 아이콘 미리보기",
+      "brandColor": "브랜드 색상",
+      "removeFavorite": "{{title}} 즐겨찾기에서 제거",
+      "addFavorite": "{{title}} 즐겨찾기에 추가",
+      "copied": "복사됨",
+      "license": "라이선스",
+      "unknown": "알 수 없음",
+      "variants": "변형",
+      "collection": "컬렉션",
+      "slug": "슬러그",
+      "openFullDetails": "전체 상세 열기",
+      "openFullDetailsDesc": "PNG 내보내기, 모든 변형, 원본 SVG, 설치 스니펫",
+      "skipPreview": "다음부터 미리보기 건너뛰기",
+      "skipPreviewDesc": "상세 페이지로 바로 이동",
+      "loading": "아이콘 불러오는 중..."
+    }
   },
   "footer": {
     "headline": "오픈 소스. 커뮤니티가 만듭니다.",
@@ -57,6 +385,1418 @@
       "privacy": "개인정보 처리방침",
       "trademarkPolicy": "상표 정책",
       "contact": "문의"
+    }
+  },
+  "sidebar": {
+    "allIcons": "모든 아이콘",
+    "categories": "카테고리",
+    "favorites": "즐겨찾기",
+    "favoritesWithCount": "즐겨찾기 ({{count}})",
+    "shareFavorites": "즐겨찾기 공유",
+    "shareFavoritesAria": "즐겨찾기 공유 링크 복사",
+    "extensions": "확장 프로그램",
+    "extLibraries": "라이브러리 및 SDK",
+    "extEditors": "에디터 확장",
+    "extDesign": "디자인 도구",
+    "extDeveloper": "개발자 도구",
+    "extAi": "AI 및 자동화",
+    "extIntegrations": "통합",
+    "extFrameworks": "프레임워크 컴포넌트",
+    "viewer": "뷰어",
+    "new": "새로 만든",
+    "docs": "문서",
+    "blog": "블로그",
+    "submitIcon": "아이콘 제출",
+    "collections": "컬렉션",
+    "families": "패밀리",
+    "featured": "추천",
+    "allFamilies": "모든 패밀리",
+    "recentlyAdded": "최근 추가",
+    "popular": "인기",
+    "searchCategories": "카테고리 검색",
+    "clearCategorySearch": "카테고리 검색 지우기",
+    "clearSearch": "검색 지우기",
+    "noCategoriesMatch": "“{{query}}”와(과) 일치하는 카테고리가 없습니다",
+    "noCategoriesMatchStatus": "{{query}}와(과) 일치하는 카테고리가 없습니다",
+    "categoryFoundOne": "카테고리 1개 찾음",
+    "categoriesFound": "카테고리 {{count}}개 찾음",
+    "expandSidebar": "사이드바 펼치기 ({{shortcut}})",
+    "collapseSidebar": "사이드바 접기 ({{shortcut}})",
+    "navigation": "탐색",
+    "jumpToLetterGroup": "글자로 카테고리 이동",
+    "jumpTo": "{{letter}}(으)로 이동"
+  },
+  "chrome": {
+    "display": {
+      "aria": "화면 설정. 복사 형식 {{format}}",
+      "title": "화면 설정 ({{format}}(으)로 복사)",
+      "copyFormat": "기본 복사 형식",
+      "copyFormatHint": "아이콘 카드의 복사 버튼을 누를 때 사용됩니다",
+      "fmt": {
+        "svg": "원본 SVG 마크업",
+        "jsx": "React 컴포넌트",
+        "vue": "Vue 단일 파일 컴포넌트",
+        "cdn": "jsDelivr CDN 링크",
+        "dataUri": "Base64 데이터 URI"
+      },
+      "preview": "미리보기 배경",
+      "previewHint": "로고가 놓일 배경에서 확인해 보세요",
+      "bg": {
+        "auto": "자동",
+        "autoDesc": "로고에 맞춰 어두운 마크와 밝은 마크가 모두 보이도록 조정합니다",
+        "light": "라이트",
+        "lightDesc": "항상 밝은 타일",
+        "dark": "다크",
+        "darkDesc": "항상 어두운 타일",
+        "checker": "체크무늬",
+        "checkerDesc": "투명한 영역을 보여 줍니다"
+      },
+      "size": "인터페이스 크기",
+      "sizeHint": "페이지를 확대하는 대신 텍스트, 아이콘, 컨트롤을 키웁니다",
+      "sz": {
+        "default": "기본",
+        "defaultDesc": "표준 크기",
+        "large": "크게",
+        "largeDesc": "한 단계 위, 약 112%",
+        "larger": "더 크게",
+        "largerDesc": "두 단계 위, 125%"
+      }
+    },
+    "packages": {
+      "aria": "npm 패키지",
+      "openTitle": "npm에서 열기",
+      "copyAria": "{{name}} 설치 명령어 복사",
+      "openAria": "npm에서 {{name}} 열기",
+      "copiedStatus": "{{name}} 설치 명령어를 복사했습니다",
+      "all": "모든 패키지와 설치 명령어",
+      "group": {
+        "brand": "브랜드 아이콘",
+        "ui": "UI 아이콘",
+        "flags": "국기",
+        "tools": "도구"
+      },
+      "label": {
+        "everything": "모두 하나로",
+        "rawData": "원본 SVG 데이터",
+        "plainJs": "순수 JavaScript",
+        "cdnFiles": "CDN용 원본 SVG 파일",
+        "rawManifest": "원본 파일과 매니페스트",
+        "flags": "국가 및 지역 국기",
+        "cli": "명령줄",
+        "mcp": "MCP 서버"
+      }
+    },
+    "palette": {
+      "title": "명령 팔레트",
+      "description": "아이콘 검색, 카테고리 이동, 빠른 작업 실행",
+      "placeholder": "아이콘, 카테고리, 작업 검색...",
+      "empty": "결과가 없습니다.",
+      "icons": "아이콘",
+      "recent": "최근",
+      "categories": "카테고리",
+      "quickActions": "빠른 작업",
+      "action": {
+        "submit": "아이콘 제출",
+        "docs": "문서 읽기",
+        "integrations": "통합 둘러보기",
+        "copySvg": "{{title}}을(를) SVG로 복사",
+        "copyJsx": "{{title}}을(를) JSX로 복사"
+      },
+      "copied": "{{title}}을(를) {{format}}(으)로 복사했습니다",
+      "copyFailed": "복사하지 못했습니다. 다시 시도하세요.",
+      "navigate": "이동",
+      "select": "선택",
+      "close": "닫기"
+    },
+    "search": {
+      "placeholder": "아이콘 검색...",
+      "aria": "아이콘 검색",
+      "clear": "검색 지우기",
+      "brandIcons": "브랜드 아이콘",
+      "uiIcons": "UI 아이콘",
+      "flags": "국기",
+      "thisSection": "현재 섹션",
+      "viewAll": "{{total}}개 모두 보기",
+      "viewAllFlags": "국기 {{total}}개 모두 보기",
+      "searching": "검색 중…",
+      "failed": "검색을 불러오지 못했습니다. 연결을 확인하고 다시 시도하세요.",
+      "noMatch": "“{{query}}”와 일치하는 아이콘이 없습니다",
+      "submitThis": "이 아이콘 제출"
+    },
+    "help": {
+      "aria": "도움말과 팁",
+      "close": "닫기",
+      "badge": "시작하기",
+      "title": "빠른 팁",
+      "subtitle": "theSVG로 할 수 있는 모든 것",
+      "tip": {
+        "click": {
+          "title": "아이콘 클릭",
+          "desc": "코드 스니펫, 변형, 내보내기 옵션이 있는 상세 페이지를 엽니다"
+        },
+        "copy": {
+          "title": "빠른 복사",
+          "desc": "카드의 복사 버튼을 누르면 SVG를 바로 가져올 수 있습니다"
+        },
+        "download": {
+          "title": "다운로드 및 내보내기",
+          "desc": "상세 페이지에서 SVG를 다운로드하거나 32~512px PNG로 내보낼 수 있습니다"
+        },
+        "search": {
+          "title": "모두 검색",
+          "desc": "Cmd+K를 눌러 {{total}}개 아이콘에서 검색하세요"
+        },
+        "fav": {
+          "title": "즐겨찾기 저장",
+          "desc": "하트를 눌러 아이콘을 저장하세요. 사이드바에서 언제든 열 수 있습니다"
+        },
+        "use": {
+          "title": "어디서나 사용",
+          "desc": "npm, React, Vue, CLI, CDN, AI 어시스턴트용 MCP 서버"
+        }
+      },
+      "escHint": "{{key}} 키를 눌러 닫기",
+      "gotIt": "확인"
+    },
+    "hint": {
+      "title": "아이콘을 클릭하면 상세 정보를 볼 수 있어요",
+      "desc": "코드 복사, 다운로드, PNG 내보내기 등"
+    },
+    "star": {
+      "title": "thesvg가 유용한가요?",
+      "withStars": "개발자 {{stars}}명이 스타를 눌렀습니다. 스타는 다른 사람들이 발견하는 데 도움이 됩니다.",
+      "noStars": "GitHub 스타는 다른 개발자들이 발견하는 데 도움이 됩니다. 무료 오픈 소스입니다.",
+      "cta": "GitHub에서 스타 누르기"
+    },
+    "post": {
+      "label": "새 글",
+      "read": "읽기"
+    },
+    "common": {
+      "dismiss": "닫기"
+    },
+    "flagsPill": {
+      "new": "신규"
+    }
+  },
+  "home": {
+    "navigation": "탐색",
+    "failedToLoad": "아이콘을 불러오지 못했습니다",
+    "failedToLoadRefresh": "아이콘을 불러오지 못했습니다. 새로고침 후 다시 시도해 주세요.",
+    "loading": "불러오는 중...",
+    "favCount": "즐겨찾기: {{count}}",
+    "comfortableView": "넓게 보기",
+    "compactView": "촘촘히 보기",
+    "sortBy": "{{label}} 순으로 정렬",
+    "sort": {
+      "default": "정렬",
+      "az": "A-Z",
+      "za": "Z-A",
+      "recent": "최근",
+      "popular": "인기"
+    },
+    "removeCollectionFilter": "컬렉션 필터 제거",
+    "removeCategoryFilter": "카테고리 필터 제거",
+    "removeFavoritesFilter": "즐겨찾기 필터 제거",
+    "removeSearchFilter": "검색 필터 제거",
+    "favorites": "즐겨찾기",
+    "clearAll": "모두 지우기",
+    "clear": "지우기",
+    "all": "전체",
+    "googleBanner": {
+      "badge": "신규",
+      "title": "Google 2026 리프레시가 도착했습니다",
+      "body": "새로운 그라데이션 아이덴티티로 다시 디자인된 제품 아이콘 13개. 가장 먼저 제공하는 라이브러리입니다.",
+      "cta": "2026 세트 보기"
+    },
+    "copyCommand": "명령어 복사: {{command}}",
+    "ago": {
+      "now": "방금",
+      "minutes": "{{count}}분 전",
+      "hours": "{{count}}시간 전",
+      "days": "{{count}}일 전",
+      "months": "{{count}}개월 전"
+    },
+    "goToSlide": "슬라이드 {{count}}(으)로 이동",
+    "dismissBanner": "배너 닫기",
+    "dismiss": "닫기",
+    "continue": "이어서 보기",
+    "whereYouLeftOff": "마지막으로 본 곳",
+    "viewAll": "모두 보기",
+    "expandContinue": "이어서 보기 섹션 펼치기",
+    "collapseContinue": "이어서 보기 섹션 접기",
+    "expand": "펼치기",
+    "collapse": "접기",
+    "clearViewed": "최근 본 항목 지우기",
+    "clearRecents": "최근 기록 지우기",
+    "iconCollections": "아이콘 컬렉션",
+    "showingPopularFirst": "인기 항목 먼저 표시",
+    "showingRecentFirst": "최근 추가 항목 먼저 표시",
+    "popular": "인기",
+    "recent": "최근",
+    "recentlyAdded": "최근 추가",
+    "scopedRecentlyAdded": "{{scope}} · 최근 추가",
+    "scopedPopular": "{{scope}} · 인기",
+    "popularAws": "인기 AWS 서비스",
+    "popularAzure": "인기 Azure 서비스",
+    "popularGcp": "인기 GCP 서비스",
+    "browseByCategory": "카테고리별로 둘러보기",
+    "allIcons": "모든 아이콘",
+    "allCollectionIcons": "{{collection}} 전체 아이콘",
+    "attribution": {
+      "aws": "AWS 아키텍처 아이콘은 CC-BY-ND 2.0 라이선스로 제공됩니다. Amazon Web Services 및 관련 마크는 Amazon.com, Inc.의 상표입니다.",
+      "azure": "Microsoft Azure 아이콘은 MIT 라이선스로 제공됩니다. Microsoft Azure 및 관련 마크는 Microsoft Corporation의 상표입니다.",
+      "gcp": "Google Cloud 아이콘은 Apache 2.0 라이선스로 제공됩니다. Google Cloud 및 관련 마크는 Google LLC의 상표입니다."
+    },
+    "google": {
+      "skip": "아이콘으로 건너뛰기",
+      "eyebrow": "Google · 2026 리프레시",
+      "titleLine1": "Workspace",
+      "titleLine2": "브랜드 키트",
+      "icons": "아이콘",
+      "gradientPerfect": "그라데이션 완벽 구현",
+      "released": "출시",
+      "markAria": "Google Workspace 마크 · 상세 페이지 열기",
+      "open": "열기",
+      "fullSet": "전체 세트",
+      "countOf": "아이콘 {{total}}개 중 {{shown}}개",
+      "filterPlaceholder": "필터 (Gmail, Drive, 파랑…)",
+      "filterAria": "Google 2026 아이콘 필터",
+      "clearFilter": "필터 지우기",
+      "allGoogle": "Google 전체 아이콘",
+      "filterByColor": "브랜드 색상으로 필터",
+      "noColorIcons": "이 세트에는 {{color}} 아이콘이 없습니다",
+      "colorIcons": "{{color}} 아이콘: {{count}}",
+      "colors": {
+        "red": "빨강",
+        "yellow": "노랑",
+        "green": "초록",
+        "blue": "파랑",
+        "purple": "보라",
+        "neutral": "중립"
+      },
+      "gridAria": "Google 2026 브랜드 아이콘",
+      "noMatchBoth": "“{{query}}” 및 {{colors}}에 해당하는 아이콘이 없습니다.",
+      "noMatchQuery": "“{{query}}”에 해당하는 아이콘이 없습니다.",
+      "noMatchColors": "{{colors}}에 해당하는 아이콘이 없습니다.",
+      "clearFilters": "필터 지우기"
+    },
+    "tile": {
+      "svgIcon": "{{name}} SVG 아이콘",
+      "quickActions": "빠른 작업",
+      "copyMarkup": "{{name}} SVG 코드 복사",
+      "copySvg": "SVG 복사",
+      "downloadFile": "{{name}} SVG 파일 다운로드",
+      "downloadSvg": "SVG 다운로드",
+      "svgCopied": "SVG 복사됨",
+      "colorCopied": "{{color}} 복사됨",
+      "copyColor": "색상 {{color}} 복사",
+      "copied": "복사됨"
+    },
+    "recents": {
+      "allTime": "전체 기간",
+      "today": "오늘",
+      "thisWeek": "이번 주",
+      "thisMonth": "이번 달",
+      "justNow": "방금",
+      "titleCopied": "{{name}} 복사됨",
+      "copyFailed": "복사하지 못했습니다",
+      "deviceOnly": "이 기기에만 저장되는 활동",
+      "title": "최근 기록",
+      "viewedLabel": "조회",
+      "copiedLabel": "복사",
+      "searchedLabel": "검색",
+      "confirmClearAll": "최근 활동을 모두 지울까요?",
+      "clearEverything": "모두 지우기",
+      "loading": "최근 기록을 불러오는 중",
+      "loadFailedTitle": "최근 아이콘을 불러오지 못했습니다",
+      "loadFailedBody": "조회 및 복사 기록은 저장되어 있지만 이번에는 불러오지 못했습니다.",
+      "retry": "다시 시도",
+      "emptyTitle": "아직 아무것도 없습니다",
+      "emptyBody": "아이콘을 몇 개 둘러보면 여기에 표시되어 한 번의 탭으로 다시 복사하거나 열 수 있습니다.",
+      "browseLibrary": "라이브러리 둘러보기",
+      "viewed": "조회함",
+      "copySvg": "SVG 복사",
+      "copy": "복사",
+      "download": "다운로드",
+      "copied": "복사함",
+      "copyAgain": "{{name}} 다시 복사",
+      "recopy": "다시 복사",
+      "searches": "검색 기록"
+    },
+    "slides": {
+      "open": {
+        "title": "{{count, number}}개 이상의 SVG 아이콘. 검색하고, 복사하고, 배포하세요.",
+        "description": "브랜드 아이콘을 몇 초 만에 검색하고 복사하고 배포하세요. 무료, 오픈 소스, 커뮤니티 기반입니다.",
+        "cta": "시작하기",
+        "ctaSecondary": "아이콘 제출",
+        "badge": "{{count, number}}개 이상의 아이콘"
+      },
+      "ui": {
+        "title": "UI 아이콘이 나왔습니다, 일곱 가지 스타일로",
+        "description": "하나의 그리드로 그린 인터페이스 아이콘을 실시간으로 스타일링할 수 있습니다. 자유롭게 복사하세요.",
+        "cta": "UI 아이콘 둘러보기",
+        "ctaSecondary": "작동 방식",
+        "badge": "theSVG 4.0"
+      },
+      "npm": {
+        "title": "패키지 하나로 모든 브랜드를",
+        "description": "트리 셰이킹 지원, 타입 포함, ESM/CJS 모두 지원. 설정 없이 어떤 아이콘이든 가져오세요.",
+        "cta": "npm에서 보기",
+        "ctaSecondary": "확장 프로그램"
+      },
+      "copy": {
+        "title": "SVG, JSX, CDN 또는 다운로드",
+        "description": "필요한 모든 형식을 제공합니다. SVG 원본을 복사하거나 CDN 링크를 받거나 파일을 다운로드하세요. 다크 모드 버전도 포함됩니다.",
+        "cta": "아이콘 둘러보기",
+        "ctaSecondary": "확장 프로그램",
+        "badge": "복사하고 배포"
+      },
+      "flagsNew": {
+        "title": "국기가 나왔습니다: 263개 국가 및 지역",
+        "description": "모든 국가와 잉글랜드, 스코틀랜드, 카탈루냐 등을 포함합니다. 각각 세 가지 모양, 작은 패키지 하나로 제공합니다.",
+        "cta": "국기 둘러보기",
+        "ctaSecondary": "사용 방법",
+        "badge": "신규: 국기"
+      },
+      "aws": {
+        "title": "다이어그램을 위한 모든 AWS 아이콘",
+        "description": "서비스 아이콘 300개 이상, 리소스 아이콘 400개 이상, 카테고리 아이콘을 제공합니다. 둘러보고 복사해 아키텍처 다이어그램에 바로 사용하세요.",
+        "cta": "서비스 둘러보기",
+        "ctaSecondary": "모든 카테고리",
+        "badge": "AWS 아키텍처"
+      },
+      "awsOfficial": {
+        "title": "공식 AWS 아키텍처 아이콘",
+        "description": "공식 AWS 아이콘 세트의 SVG를 수정 없이 제공합니다. 분기마다 업데이트됩니다. 서비스, 리소스, 카테고리, 그룹을 포함합니다.",
+        "cta": "전체 둘러보기",
+        "ctaSecondary": "라이선스 보기",
+        "badge": "2026년 1분기 릴리스"
+      },
+      "azure": {
+        "title": "Azure 서비스 아이콘 626개",
+        "description": "아키텍처 다이어그램을 위한 모든 Azure 서비스 아이콘. VM, App Services, SQL, Cosmos DB 등을 무료로 사용하세요.",
+        "cta": "서비스 둘러보기",
+        "ctaSecondary": "모든 카테고리",
+        "badge": "Microsoft Azure"
+      },
+      "azureOfficial": {
+        "title": "공식 Azure 아키텍처 아이콘",
+        "description": "Microsoft Azure 서비스 아이콘 29개 카테고리. 컴퓨팅, 네트워킹, 데이터베이스, AI, 보안 등.",
+        "cta": "전체 둘러보기",
+        "ctaSecondary": "라이선스 보기",
+        "badge": "2026년 1분기 릴리스"
+      },
+      "gcp": {
+        "title": "GCP 서비스 아이콘 214개",
+        "description": "아키텍처 다이어그램을 위한 Google Cloud Platform 아이콘. Compute Engine, BigQuery, Cloud Run, GKE 등 모든 GCP 서비스.",
+        "cta": "서비스 둘러보기",
+        "ctaSecondary": "모든 카테고리",
+        "badge": "Google Cloud"
+      },
+      "gcpOfficial": {
+        "title": "공식 Google Cloud 아이콘",
+        "description": "Apache 2.0 라이선스의 무료 GCP 아이콘. 컴퓨팅, 스토리지, AI, 네트워킹 등으로 자동 분류됩니다.",
+        "cta": "전체 둘러보기",
+        "ctaSecondary": "라이선스 보기",
+        "badge": "Apache 2.0 라이선스"
+      },
+      "k8s": {
+        "title": "공식 Kubernetes 아이콘 38개",
+        "description": "Pod, Deployment, Service, Ingress, ConfigMap 등. 아키텍처 다이어그램을 위한 CNCF Kubernetes 전체 아이콘 세트입니다.",
+        "cta": "아이콘 둘러보기",
+        "ctaSecondary": "모든 리소스",
+        "badge": "Kubernetes"
+      },
+      "k8sOfficial": {
+        "title": "CNCF Kubernetes 아키텍처 아이콘",
+        "description": "Kubernetes 프로젝트의 공식 아이콘입니다. Apache 2.0 라이선스로 무료이며 문서, 다이어그램, 프레젠테이션에 사용할 수 있습니다.",
+        "cta": "전체 둘러보기",
+        "ctaSecondary": "라이선스 보기",
+        "badge": "Apache 2.0 라이선스"
+      },
+      "flags": {
+        "title": "국가 및 지역 국기 263개",
+        "description": "ISO 3166-1의 모든 국가와 잉글랜드, 스코틀랜드, 웨일스, 카탈루냐, 카나리아 제도, EU, UN을 포함합니다. 각각 4x3, 정사각형, 원형의 세 가지 모양입니다.",
+        "cta": "국기 둘러보기",
+        "ctaSecondary": "사용 방법",
+        "badge": "신규: 국기"
+      },
+      "community": {
+        "title": "커뮤니티가 큐레이션한 아이콘 256개",
+        "description": "오픈 소스 커뮤니티에서 모은 개발 도구, 데이터베이스, 프레임워크, 플랫폼 아이콘입니다. 무료로 사용할 수 있고 계속 늘어납니다.",
+        "cta": "아이콘 둘러보기",
+        "ctaSecondary": "아이콘 제출",
+        "badge": "커뮤니티"
+      },
+      "auth": {
+        "title": "인증 배지 아이콘 858개",
+        "description": "2FA 설정 화면과 계정 보안 UI를 위한 원형 서비스 배지입니다. 거래소, VPN, 호스팅, 게임 등을 포함합니다.",
+        "cta": "배지 둘러보기",
+        "ctaSecondary": "모든 카테고리",
+        "badge": "CC0, 출처 표시 불필요"
+      }
+    }
+  },
+  "pages": {
+    "common": {
+      "extensions": "확장 프로그램",
+      "opensInNewTab": "(새 탭에서 열림)"
+    },
+    "notFound": {
+      "title": "아이콘을 찾을 수 없음",
+      "body": "이 아이콘은 이동되었거나 이름이 바뀌었거나 아직 존재하지 않을 수 있습니다.",
+      "count": "브랜드, AWS, Azure, GCP를 합쳐 {{count}}개 이상의 아이콘이 있습니다. 필요한 것을 검색해 보세요.",
+      "browse": "아이콘 둘러보기",
+      "aws": "AWS 아이콘",
+      "azure": "Azure 아이콘",
+      "gcp": "GCP 아이콘",
+      "back": "홈으로 돌아가기"
+    },
+    "error": {
+      "title": "문제가 발생했습니다",
+      "body": "예기치 않은 오류가 발생했습니다. 페이지를 새로고침하거나 홈으로 돌아가세요.",
+      "retry": "다시 시도",
+      "home": "홈으로"
+    },
+    "categories": {
+      "badge": "카테고리 {{count}}개",
+      "title": "모든 카테고리",
+      "intro": "브랜드 및 AWS 아키텍처 컬렉션의 모든 아이콘 카테고리를 둘러보세요.",
+      "brand": "브랜드 아이콘 카테고리",
+      "aws": "AWS 아키텍처 카테고리"
+    },
+    "packages": {
+      "title": "패키지",
+      "intro": "theSVG가 npm에 게시하는 모든 것을 한곳에 모았습니다. 브랜드 아이콘, UI 아이콘, 국기는 별도 패키지라서 하나를 추가해도 다른 것이 무거워지지 않습니다. 모든 패키지는 트리 셰이킹을 지원하며 버전은 그룹 안에서 함께 올라갑니다.",
+      "groups": {
+        "brand": "브랜드 아이콘",
+        "ui": "UI 아이콘",
+        "flags": "국기",
+        "tools": "도구"
+      }
+    },
+    "contact": {
+      "title": "문의하기",
+      "intro": "질문이 있거나 버그를 발견했거나 상표 문제를 알려야 하나요? 아래 채널 중 편한 곳으로 연락해 주세요.",
+      "email": {
+        "title": "이메일",
+        "description": "상표 요청, DMCA 통지 또는 일반 문의용입니다.",
+        "note": "48시간 이내에 답변드립니다"
+      },
+      "issues": {
+        "description": "버그를 신고하거나 기능을 요청하거나 아이콘 수정을 제출하세요.",
+        "action": "이슈 열기",
+        "note": "기술적인 문제에 적합",
+        "title": "GitHub Issues"
+      },
+      "discussions": {
+        "description": "질문하고 아이디어를 공유하며 커뮤니티와 소통하세요.",
+        "action": "토론 시작하기",
+        "note": "일반적인 질문에 적합",
+        "title": "GitHub Discussions"
+      },
+      "trademark": {
+        "title": "상표 요청",
+        "description": "브랜드 소유자이신가요? 아이콘 삭제나 업데이트를 요청하거나 사용 지침을 추가하세요.",
+        "action": "요청 제출",
+        "note": "삭제 요청은 24시간 이내에 처리됩니다"
+      },
+      "policy": {
+        "title": "상표 정책",
+        "p1": "thesvg.org의 모든 브랜드 로고와 상표는 각 소유자의 자산입니다. 아이콘은 식별 및 개발 목적으로만 제공됩니다. 목록에 있는 어떤 브랜드와도 제휴하거나 승인받은 관계가 아닙니다.",
+        "p2": "브랜드 소유자이고 아이콘을 삭제하거나 업데이트하고 싶다면 {{email}} 또는 전체 {{policy}}을(를) 확인하세요. 삭제 요청은 24시간 이내에 처리됩니다.",
+        "emailLink": "이메일을 보내 주시고",
+        "policyLink": "상표 정책"
+      }
+    },
+    "compare": {
+      "badge": "솔직한 비교",
+      "title": "브랜드 아이콘 라이브러리 비교",
+      "intro": "인기 있는 아이콘 라이브러리 7개를 기능, 도구, 생태계 측면에서 비교했습니다. 공정하게 만들었으며 모든 라이브러리에는 강점이 있습니다. 프로젝트에 맞는 것을 고르세요.",
+      "milestone": {
+        "badge": "2026년 이정표",
+        "title": "3개월 만에 브랜드 아이콘 {{count}}개",
+        "cta": "이정표 글 읽기"
+      },
+      "table": {
+        "feature": "기능"
+      },
+      "sections": {
+        "coverage": "브랜드 아이콘 범위",
+        "tooling": "개발자 도구",
+        "ecosystem": "생태계 및 플러그인",
+        "governance": "거버넌스 및 품질"
+      },
+      "when": "언제 무엇을 쓸까",
+      "faq": "자주 묻는 질문",
+      "note": "공정성에 대한 안내",
+      "browse": "아이콘 {{count}}개 둘러보기"
+    },
+    "extensions": {
+      "title": "확장 프로그램 및 연동",
+      "subtitle": "만들고, 디자인하고, 배포하는 모든 곳에서 theSVG 아이콘을 사용하세요.",
+      "newBadge": "신규",
+      "mentionsLink": "thesvg가 언급된 곳 보기",
+      "jump": "카테고리로 이동",
+      "build": {
+        "title": "직접 만들기",
+        "body": "API와 CDN은 인증 없이 완전히 공개되어 있습니다. 플러그인, 확장 프로그램 또는 워크플로를 만들고 PR을 열면 여기에 등록됩니다.",
+        "github": "GitHub에서 보기",
+        "cdn": "CDN 문서"
+      },
+      "cat": {
+        "npm": {
+          "label": "라이브러리 및 SDK",
+          "description": "프로젝트에 브랜드 아이콘을 설치하고 가져옵니다"
+        },
+        "editors": {
+          "label": "에디터 확장 프로그램",
+          "description": "에디터를 벗어나지 않고 아이콘을 검색하고 삽입합니다"
+        },
+        "design": {
+          "label": "디자인 도구",
+          "description": "브랜드 아이콘을 디자인에 끌어다 놓으세요"
+        },
+        "developer": {
+          "label": "개발자 도구",
+          "description": "프로그래밍 방식 접근을 위한 CLI, CDN, API"
+        },
+        "ai": {
+          "label": "AI 및 자동화",
+          "description": "AI 에이전트와 런처가 브랜드 아이콘에 접근하게 하세요"
+        },
+        "integrations": {
+          "label": "연동",
+          "description": "노코드 및 크리에이티브 도구에서 theSVG를 사용하세요"
+        },
+        "frameworks": {
+          "label": "프레임워크 컴포넌트",
+          "description": "원하는 프레임워크를 위한 네이티브 컴포넌트"
+        },
+        "mobile-native": {
+          "label": "모바일 및 네이티브",
+          "description": "iOS, Android, 크로스 플랫폼 앱에 아이콘을 담아 배포하세요"
+        }
+      },
+      "cta": {
+        "install": "설치",
+        "buildThis": "직접 만들기",
+        "docs": "문서",
+        "browseLibraries": "라이브러리 둘러보기",
+        "browseSets": "세트 둘러보기",
+        "comingSoon": "곧 출시",
+        "viewSkills": "skills.sh에서 보기",
+        "viewSource": "소스 보기",
+        "trackProgress": "진행 상황 보기"
+      }
+    },
+    "mentions": {
+      "title": "언급된 곳",
+      "intro": "thesvg를 사용하는 프로젝트, 이를 포함한 목록, 이에 대해 쓴 글입니다.",
+      "total": "언급 {{count}}건",
+      "groups": {
+        "code": {
+          "label": "코드에서 사용",
+          "blurb": "thesvg 아이콘을 가져오거나, 의존하거나, 포함하는 프로젝트입니다."
+        },
+        "list": {
+          "label": "큐레이션 목록에 등재",
+          "blurb": "thesvg를 가리키는 디렉터리와 awesome 목록입니다."
+        },
+        "editorial": {
+          "label": "소개 글",
+          "blurb": "리뷰와 글입니다."
+        },
+        "more": {
+          "label": "기타 언급"
+        }
+      },
+      "summary": {
+        "code": "코드에서 사용 {{count}}건",
+        "list": "큐레이션 목록 {{count}}건",
+        "editorial": "소개 글 {{count}}건"
+      },
+      "evidence": {
+        "pr": "PR",
+        "commit": "커밋",
+        "sr": "thesvg를 추가한 항목(새 탭에서 열림)"
+      },
+      "invite": {
+        "title": "thesvg를 언급한 페이지를 알고 계신가요?",
+        "body": "링크와 함께 이슈를 열어 주시면 여기에 추가하겠습니다.",
+        "cta": "이슈 열기"
+      }
+    },
+    "integrations": {
+      "drawio": {
+        "title": "draw.io / diagrams.net 도형 라이브러리",
+        "subtitle": "브랜드 및 개발 도구 아이콘을 다이어그램에 바로 넣을 수 있습니다.",
+        "howTitle": "라이브러리 가져오는 방법",
+        "step1": "작업 중인 다이어그램을 draw.io(또는 diagrams.net)로 엽니다.",
+        "step2": "왼쪽 Shapes 패널 하단에서 격자 아이콘 \"More Shapes\"를 클릭합니다.",
+        "step3": "열린 대화상자에서 아래로 스크롤하여 \"Open Library from Device...\"를 선택합니다.",
+        "step4": "원하는 카테고리의 다운로드한 .xml 파일을 선택합니다.",
+        "step5": "아이콘이 왼쪽 사이드바에 새 패널로 나타나며 캔버스로 끌어다 놓을 수 있습니다.",
+        "libraries": "카테고리별 라이브러리 {{count}}개",
+        "cardBlurb": "{{label}} 브랜드 및 도구 로고를 다이어그램에 바로 끌어다 놓을 수 있습니다.",
+        "download": "xml 다운로드"
+      },
+      "iconCount": "아이콘 {{count}}개",
+      "excalidraw": {
+        "title": "Excalidraw 도형 라이브러리",
+        "intro": "브랜드 및 개발자 도구 아이콘을 카테고리별로 묶은 다운로드형 Excalidraw 라이브러리로, 아키텍처 및 제품 다이어그램에 사용할 수 있습니다.",
+        "howTitle": "가져오는 방법",
+        "step1": "Excalidraw를 열고 도구 모음 오른쪽의 도형 라이브러리 패널을 펼칩니다.",
+        "step2": "라이브러리 패널 상단의 \"...\" 메뉴를 클릭하고 \"Open\"을 선택합니다.",
+        "step3": "다운로드한 .excalidrawlib 파일을 선택합니다.",
+        "step4": "아이콘이 개인 라이브러리에 추가되며 캔버스로 끌어다 놓을 수 있습니다.",
+        "libraries": "라이브러리 {{count}}개",
+        "librariesNote": "각 파일은 독립적인 .excalidrawlib이며 따로 불러올 수 있습니다.",
+        "download": "다운로드"
+      },
+      "mermaid": {
+        "title": "Mermaid 브랜드 아이콘",
+        "subtitle": "아키텍처 다이어그램에 실제 로고를 넣으세요. 이미지 호스팅이 필요 없습니다.",
+        "packs": "아이콘 팩",
+        "packMono": "currentColor를 따르는 단색 아이콘입니다. 테마가 적용된 다이어그램에 적합합니다.",
+        "packColor": "풀 컬러 브랜드 아이콘입니다. 로고가 브랜드 색상을 유지해야 할 때 적합합니다.",
+        "step1": "1. 팩 등록하기",
+        "step2": "2. 다이어그램에서 아이콘 사용하기",
+        "footer": "아이콘 이름은 theSVG의 슬러그와 같습니다. 필요한 아이콘은 {{library}}에서 검색하세요.",
+        "libraryLink": "라이브러리"
+      }
+    },
+    "submit": {
+      "badge": "아이콘 {{count}}개 이상, 계속 늘어나는 중",
+      "title": "아이콘 제출",
+      "intro": "모든 브랜드는 자리를 가질 자격이 있습니다. 진입 장벽은 없습니다. SVG를 놓고 세부 정보를 입력한 뒤 GitHub으로 바로 제출하세요.",
+      "how": "진행 방법",
+      "steps": {
+        "fork": {
+          "title": "저장소 포크",
+          "description": "github.com/GLINCKER/thesvg를 포크하고 로컬에 클론합니다."
+        },
+        "add": {
+          "title": "SVG 추가",
+          "description": "파일을 올바른 이름으로 public/icons/{slug}/에 넣습니다."
+        },
+        "json": {
+          "title": "icons.json 업데이트",
+          "description": "src/data/icons.json에 항목을 추가합니다."
+        },
+        "pr": {
+          "title": "PR 열기",
+          "description": "pnpm validate를 실행한 뒤 풀 리퀘스트를 엽니다."
+        }
+      },
+      "requirements": {
+        "title": "SVG 요구 사항",
+        "valid": "유효한 SVG/XML 마크업",
+        "size": "파일 크기 50KB 미만",
+        "scripts": "내장 스크립트나 외부 참조 없음",
+        "viewBox": "viewBox 속성이 있음",
+        "gradients": "그라디언트와 다색 SVG 환영",
+        "rights": "아이콘을 재배포할 권리가 있음"
+      },
+      "viewRepo": "저장소 보기",
+      "openIssues": "열린 이슈",
+      "schemaTitle": "아이콘 항목 스키마",
+      "quickTitle": "빠른 제출",
+      "quickDescription": "SVG를 놓아 검증하고 GitHub으로 제출하세요",
+      "form": {
+        "validation": {
+          "pass": "모든 검사 통과",
+          "fail": "일부 검사 실패"
+        },
+        "preview": {
+          "title": "미리보기",
+          "light": "라이트",
+          "dark": "다크"
+        },
+        "license": {
+          "label": "라이선스",
+          "helpOpen": "고르는 걸 도와주세요",
+          "helpHide": "숨기기",
+          "guide": "라이선스 가이드",
+          "pick": "해당하는 옵션을 고르세요:",
+          "own": {
+            "title": "직접 그렸습니다",
+            "hint": "→ CC0 1.0"
+          },
+          "oss": {
+            "title": "MIT / Apache / BSD 오픈 소스 프로젝트의 로고",
+            "hint": "→ 프로젝트의 라이선스를 따름"
+          },
+          "ccby": {
+            "title": "CC BY로 명시적으로 공개된 브랜드 키트",
+            "hint": "→ CC BY 4.0 (또는 CC BY-SA / CC BY-ND)"
+          },
+          "other": {
+            "title": "회사 브랜드 마크, 사용자 정의 라이선스 또는 잘 모름",
+            "hint": "→ 기타 / 사용자 정의 (저희가 확인합니다)"
+          },
+          "select": "라이선스 선택…",
+          "otherLabel": "라이선스 설명",
+          "otherPlaceholder": "예: Acme Brand Guidelines v2 (비상업적 사용만 허용)",
+          "otherEmpty": "기타를 선택하면 간단한 설명이 필요합니다.",
+          "otherTooLong": "설명은 {{max}}자 이내로 작성해 주세요.",
+          "autoLabel": "이슈에 {{label}} 라벨이 자동으로 붙어 병합 전에 메인테이너가 검토합니다."
+        },
+        "categories": {
+          "label": "카테고리",
+          "placeholder": "사용자 정의 카테고리 추가...",
+          "add": "추가"
+        },
+        "file": {
+          "label": "SVG 파일",
+          "aria": "SVG 파일 업로드",
+          "dropActive": "여기에 SVG를 놓으세요",
+          "drop": "SVG를 끌어다 놓으세요",
+          "hint": "또는 클릭해서 찾아보기 (.svg 파일만, 최대 50KB)",
+          "remove": "파일 제거"
+        },
+        "details": "아이콘 상세 정보",
+        "name": "아이콘 이름",
+        "namePlaceholder": "예: Vercel",
+        "slug": "슬러그 (kebab-case)",
+        "slugPlaceholder": "예: vercel",
+        "website": "웹사이트 URL",
+        "guidelines": "브랜드 가이드라인 URL",
+        "hex": "브랜드 16진수 색상",
+        "hexPreview": "색상 미리보기: #{{hex}}",
+        "submit": "GitHub으로 제출",
+        "copied": "복사됨",
+        "copy": "제출 내용 복사",
+        "needsMore": "SVG 파일을 업로드하고 아이콘 이름을 입력하고 라이선스를 선택하면 제출할 수 있습니다."
+      }
+    }
+  },
+  "icon": {
+    "about": {
+      "brandColor": "브랜드 색상",
+      "collection": "{{name}} 컬렉션에 속합니다.",
+      "colorName": "컬러",
+      "filed": "분류: {{categories}}.",
+      "flagNote": "{{title}}의 국기는 해당 국가나 지역의 공적인 상징입니다. 이를 표시하는 것은 주권이나 국경에 대한 입장을 나타내지 않습니다.",
+      "free": "{{title}} SVG 아이콘은 theSVG에서 무료로 다운로드할 수 있습니다.",
+      "heading": "{{title}} 아이콘 소개",
+      "noModify": "마크를 수정하거나 보증을 암시하지 마세요.",
+      "officialAssets": "공식 브랜드 자료:",
+      "restricted": "사용은 권리자의 약관 범위로 제한됩니다: {{license}}",
+      "serviceNote": "아키텍처 다이어그램과 문서에 쓰는 서비스 아이콘입니다.",
+      "trademark": "\"{{title}}\"은(는) 각 소유자의 상표이며 식별 목적으로만 표시됩니다.",
+      "use": "React, Vue, Svelte 또는 순수 HTML에서 npm, CLI, CDN으로 사용하세요:",
+      "useLabel": "사용",
+      "usePersonal": "개인 및 상업적 사용",
+      "useRestricted": "브랜드 식별용만, 수정 금지",
+      "useTrademark": "식별 및 참조",
+      "variantsLine": "{{count}}가지 변형이 있습니다: {{names}}."
+    },
+    "card": {
+      "copiedAria": "{{title}} {{format}} 복사됨",
+      "copiedToast": "{{format}} 복사됨!",
+      "copyAria": "{{title}} {{format}} 복사",
+      "downloadSvg": "SVG 다운로드",
+      "favAdd": "{{title}} 즐겨찾기에 추가",
+      "favRemove": "{{title}} 즐겨찾기에서 제거",
+      "quickPreview": "빠른 미리보기",
+      "quickPreviewAria": "{{title}} 빠른 미리보기",
+      "view": "{{title}} 아이콘 상세 보기"
+    },
+    "common": {
+      "beta": "베타",
+      "copied": "복사됨",
+      "copy": "복사",
+      "download": "다운로드"
+    },
+    "contribute": {
+      "issue": "이슈로 요청",
+      "missingBetter": "더 나은 버전이 없나요?",
+      "missingBetterGuidelines": "더 나은 버전이나 가이드라인 링크가 없나요?",
+      "missingVariant": "변형이 없나요?",
+      "missingVariantGuidelines": "변형이나 가이드라인 링크가 없나요?",
+      "note": "커뮤니티 수정 사항은 다음 빌드에 반영됩니다",
+      "pr": "PR 제출"
+    },
+    "detail": {
+      "addFavorite": "즐겨찾기에 추가",
+      "alsoAvailableAs": "다른 형태로도 제공",
+      "alsoKnownAs": "다른 이름",
+      "alsoUiIcon": "UI 아이콘으로도 제공",
+      "authBadge": "인증 배지",
+      "brandGuidelines": "브랜드 가이드라인",
+      "brandLogo": "브랜드 로고",
+      "breadcrumb": "이동 경로",
+      "categories": "카테고리",
+      "category": "카테고리",
+      "compareOriginal": "원본과 비교",
+      "currentVersion": "현재 버전",
+      "familyOf": "{{title}} 패밀리",
+      "glassMark": "인터페이스용 글래스 마크",
+      "home": "홈",
+      "license": "라이선스",
+      "partOf": "{{title}}의 일부",
+      "partOfGoogle": "Google 2026의 일부",
+      "previousVersion": "이전 버전",
+      "refresh": "{{year}}년 리뉴얼 보기",
+      "relatedIn": "{{category}} 관련 아이콘",
+      "removeFavorite": "즐겨찾기에서 제거",
+      "variants": "변형",
+      "viewAll": "모두 보기"
+    },
+    "download": {
+      "aria": "{{title}} SVG 다운로드",
+      "copyLabel": "복사",
+      "dataUri": "데이터 URI",
+      "done": "완료",
+      "downloadLabel": "다운로드",
+      "errCopy": "복사하지 못했습니다. 다시 시도해 주세요.",
+      "errExport": "{{format}} 내보내기에 실패했습니다. 다시 시도해 주세요.",
+      "export": "{{title}} 내보내기",
+      "more": "다른 다운로드 형식",
+      "raster": "래스터",
+      "vector": "벡터"
+    },
+    "family": {
+      "allCategory": "{{category}} 전체",
+      "allFamilies": "모든 패밀리",
+      "allIcons": "{{title}} 아이콘 전체",
+      "allLogos": "{{title}} 로고 전체",
+      "badge": "{{title}} · 브랜드 패밀리",
+      "brandFamilies": "브랜드 패밀리",
+      "flagshipProducts": "대표 제품",
+      "flagships": "대표",
+      "fullSet": "전체 세트",
+      "iconsCount": "아이콘 {{count}}개",
+      "indexIntro": "소유 기업별로 묶은 공식 로고입니다. Amazon, Google, Microsoft의 전체 라인업을 모든 변형과 함께 한곳에서 확인하세요. 패밀리 {{count}}개.",
+      "indexTitle": "함께 만드는 브랜드의 모든 제품",
+      "jump": "그룹으로 이동",
+      "logosCount": "로고 {{count}}개",
+      "mainLogo": "{{title}} 메인 로고",
+      "moreFamilies": "더 많은 브랜드 패밀리",
+      "moreFrom": "{{title}}의 다른 항목",
+      "nVariants": "변형 {{count}}개",
+      "oneVariant": "변형 1개",
+      "open": "열기",
+      "showMore": "{{count}}개 더 보기",
+      "statCategories": "카테고리",
+      "statLogos": "로고",
+      "statVariants": "변형",
+      "submitMissing": "빠진 {{title}} 로고 제출",
+      "viewAllN": "{{count}}개 모두 보기"
+    },
+    "feedback": {
+      "helpful": "도움이 되었나요?",
+      "no": "이 아이콘은 도움이 되지 않았어요",
+      "reason": {
+        "missingVariant": "변형 누락",
+        "other": "기타",
+        "outdated": "오래된 로고",
+        "wrongColors": "잘못된 색상"
+      },
+      "reset": "피드백 초기화",
+      "review": "도움이 되었다니 기쁩니다. 리뷰를 남겨 주실래요?",
+      "thanks": "감사합니다!",
+      "thanksIssue": "감사합니다, 이슈를 열었어요",
+      "whatsWrong": "어떤 점이 문제인가요?",
+      "yes": "이 아이콘은 도움이 되었어요"
+    },
+    "glow": {
+      "hint": "배경 글로우 켜기/끄기",
+      "off": "글로우 꺼짐",
+      "on": "글로우 켜짐",
+      "turnOff": "배경 글로우 끄기",
+      "turnOn": "배경 글로우 켜기"
+    },
+    "grid": {
+      "none": "아이콘을 찾을 수 없습니다",
+      "submit": "이 아이콘 제출",
+      "tryDifferent": "다른 검색어나 카테고리를 시도해 보세요"
+    },
+    "import": {
+      "loading": "아이콘 라이브러리 불러오는 중...",
+      "placeholder": "라이브러리에서 가져오기, 예: 'gmail 2026', 'github'...",
+      "try": "예시"
+    },
+    "inspector": {
+      "aria": "{{title}} 확대해서 살펴보기",
+      "background": "{{name}} 배경",
+      "description": "표준 아이콘 디자인 그리드에 맞춰 가장자리와 곡선을 확대해서 확인하세요. 래스터를 잘라낸 것이 아니라 벡터 원본을 확대한 것이라 어떤 크기에서도 선명합니다.",
+      "grid": "그리드",
+      "title": "{{title}} 픽셀 검사기",
+      "transparent": "투명",
+      "zoomIn": "확대",
+      "zoomOut": "축소"
+    },
+    "jsdelivr": {
+      "title": "jsDelivr CDN URL 복사"
+    },
+    "links": {
+      "official": "공식 링크"
+    },
+    "modal": {
+      "cliCommand": "CLI 명령어",
+      "copiedStatus": "{{what}} 복사됨",
+      "guidelines": "가이드라인",
+      "viewFull": "전체 상세 보기"
+    },
+    "newBadge": {
+      "refresh": "{{year}}년 리뉴얼"
+    },
+    "openIn": {
+      "aria": "SVG를 편집기에서 열기",
+      "copyFor": "{{app}}용으로 복사",
+      "couldNot": "열 수 없습니다.",
+      "downloadFor": "{{app}}용으로 다운로드",
+      "hint": {
+        "codepen": "HTML이 채워진 새 펜으로 열기",
+        "figma": "클립보드에 복사한 뒤 Figma 캔버스에 붙여넣기",
+        "filagram": "파트너 뷰어에서 편집, 최적화 또는 변환",
+        "illustrator": ".svg를 다운로드한 뒤 파일 → Illustrator 또는 Photoshop에서 열기",
+        "jsfiddle": "HTML이 채워진 새 피들로 열기",
+        "sketch": "클립보드에 복사한 뒤 Sketch 아트보드에 붙여넣기"
+      },
+      "inspect": "SVG 뷰어에서 확인",
+      "open": "열기",
+      "opened": "새 탭에서 열었습니다.",
+      "targets": "대상 {{count}}개"
+    },
+    "png": {
+      "error": "이 SVG를 PNG로 변환하지 못했습니다. 다른 변형을 시도해 보세요.",
+      "title": "PNG 내보내기"
+    },
+    "preview": {
+      "ariaCopied": "SVG 마크업 복사됨",
+      "ariaCopy": "{{title}} SVG 마크업 복사",
+      "copied": "복사됨!",
+      "copy": "클릭하여 SVG 복사",
+      "failed": "복사하지 못했습니다"
+    },
+    "quality": {
+      "footnote": "이 아이콘의 자료가 얼마나 갖춰졌는지를 보여 주는 것이며, 브랜드나 아트워크에 대한 평가가 아닙니다. 아래 기여 링크로 빈틈을 채우는 데 도움을 주세요.",
+      "hint": {
+        "licenseMissing": "라이선스 미지정",
+        "linked": "링크됨",
+        "meta": "카테고리: {{count}}",
+        "metaAliases": "별칭 있음, 카테고리: {{count}}",
+        "noGuidelines": "가이드라인 링크 없음",
+        "onlyDefault": "기본 변형만 있음",
+        "variantsCount": "변형 {{count}}개"
+      },
+      "row": {
+        "guidelines": "가이드라인",
+        "license": "라이선스",
+        "metadata": "메타데이터",
+        "variants": "변형"
+      },
+      "title": "완성도"
+    },
+    "quick": {
+      "copyCommand": "{{name}} 명령어 복사",
+      "label": "이 아이콘 사용 방법",
+      "notOnNpm": "{{name}}은(는) 아직 npm에 없습니다. CLI 또는 CDN을 사용하세요.",
+      "packageManager": "패키지 관리자",
+      "title": "사용 방법"
+    },
+    "variant": {
+      "dark": "다크",
+      "default": "기본",
+      "light": "라이트",
+      "mono": "모노",
+      "suffix": "{{name}} 변형",
+      "wordmark": "워드마크",
+      "wordmarkDark": "워드마크 다크",
+      "wordmarkLight": "워드마크 라이트"
+    },
+    "viewer": {
+      "addSvg": "SVG를 추가하면 파일 정보가 표시됩니다.",
+      "bgChecker": "체크무늬 배경",
+      "bgDark": "어두운 배경",
+      "bgLight": "밝은 배경",
+      "cannotRender": "렌더링할 수 없습니다. 위의 SVG 구문을 확인하세요.",
+      "chars": "자",
+      "clear": "지우기",
+      "copySvg": "SVG 복사",
+      "downloadSvg": ".svg 다운로드",
+      "elements": "요소",
+      "empty": "비어 있음",
+      "errAutoload": "해당 아이콘을 자동으로 불러오지 못했습니다.",
+      "errClipboard": "클립보드에 쓰지 못했습니다.",
+      "errNoIcon": "라이브러리에 슬러그 \"{{slug}}\" 아이콘이 없습니다.",
+      "errNotSvg": "올바른 SVG 파일이 아닌 것 같습니다.",
+      "errRead": "파일을 읽지 못했습니다.",
+      "errTooLarge": "파일이 2MB를 초과합니다. 더 작은 SVG를 사용하세요.",
+      "fileInfo": "파일 정보",
+      "format": "정렬",
+      "formatHint": "정렬",
+      "gradients": "그라디언트",
+      "height": "높이",
+      "indent": "들여쓰기",
+      "invalid": "유효하지 않음",
+      "lines": "줄",
+      "loading": "라이브러리에서 {{slug}} 불러오는 중...",
+      "masks": "마스크/클립",
+      "minify": "압축",
+      "no": "아니요",
+      "openInEditor": "편집기에서 열기",
+      "pageIntro": "SVG를 붙여넣거나 드롭하거나 가져오세요. XML 정렬, 원하는 배경에서 미리보기, viewBox와 크기 확인, 선호하는 편집기에서 열기까지 할 수 있습니다. 모든 작업은 브라우저에서 처리되며 아무것도 업로드되지 않습니다.",
+      "pageTitle": "SVG 뷰어",
+      "partnerText": "편집, 최적화 또는 PNG, JPG, PDF, WebP 변환이 필요하신가요? 무거운 작업은 Filagram이 맡아 줍니다.",
+      "pasteHint": "SVG를 붙여넣거나 드롭하거나 가져와 미리보기",
+      "poweredBy": "Powered by Filagram",
+      "preview": "미리보기",
+      "size": "크기",
+      "upload": "업로드",
+      "valid": "유효한 svg",
+      "visit": "Filagram 방문",
+      "width": "너비",
+      "yes": "예"
+    }
+  },
+  "docs": {
+    "ui": {
+      "navLabel": "문서 탐색",
+      "onThisPage": "이 페이지에서",
+      "askAi": "AI에게 질문",
+      "openIn": "{{name}}에서 열기",
+      "copy": "복사",
+      "copied": "복사됨",
+      "copyFailed": "복사하지 못했습니다",
+      "copyLinkTo": "{{title}} 링크 복사",
+      "editOnGithub": "GitHub에서 이 페이지 편집",
+      "thanks": "피드백 감사합니다",
+      "wasHelpful": "이 페이지가 도움이 되었나요?",
+      "helpfulYes": "예, 도움이 되었습니다",
+      "helpfulNo": "아니요, 도움이 되지 않았습니다",
+      "docsBadge": "문서",
+      "source": "소스",
+      "relatedQuestions": "관련 질문",
+      "seeAllFaq": "FAQ 전체 보기"
+    },
+    "nav": {
+      "groups": {
+        "getting-started": "시작하기",
+        "frameworks-tools": "프레임워크 및 도구",
+        "guides": "가이드",
+        "reference": "레퍼런스"
+      },
+      "items": {
+        "overview": "개요",
+        "cdn": "CDN / HTML",
+        "react": "React",
+        "vue": "Vue",
+        "svelte": "Svelte",
+        "react-native": "React Native",
+        "cli": "CLI",
+        "api": "REST API",
+        "mcp": "AI 어시스턴트 (MCP)",
+        "recipes": "레시피",
+        "best-practices": "모범 사례",
+        "flags": "국기",
+        "tricks": "팁",
+        "migration": "마이그레이션",
+        "faq": "FAQ"
+      }
+    },
+    "home": {
+      "heading": "문서 및 가이드",
+      "intro": "{{total}}개 이상의 브랜드 아이콘을 사용하는 데 필요한 모든 것: 프레임워크 가이드, 실전 레시피, 모범 사례, 팁, 마이그레이션 가이드, FAQ.",
+      "gettingStartedTitle": "시작하기",
+      "gettingStartedBody": "만들려는 것에 맞는 가이드를 고르세요. React, Vue, Svelte에서 알려진 소수의 아이콘을 쓴다면 해당 패키지를 사용하세요. 개수가 정해지지 않았거나 많은 경우(선택기, 디렉터리 페이지)에는 CDN 가이드를 사용하세요. 아이콘을 몇 개 보여 주든 번들 비용이 0입니다. 아이콘을 자신의 저장소에 넣으려면 CLI를 사용하세요. AI 어시스턴트를 연결하려면 MCP 가이드를 참고하세요.",
+      "cards": {
+        "flags": "국가 및 지역 국기: 모양, 크기, 접근성, 로케일 도우미, 검색, 브라우저.",
+        "recipes": "구체적인 구현 패턴: 기술 스택 배지, 아이콘 선택기, 접근성 있는 버튼 등.",
+        "best-practices": "크기 지정, 변형 선택, CDN 버전 고정, 다크 모드를 올바르게 처리하는 방법.",
+        "tricks": "작은 기법: 슬러그로 동적 아이콘 사용, CSS 마스크로 색 바꾸기, 프리로드 힌트.",
+        "migration": "Simple Icons나 svgl에서 옮기는 방법, 그리고 theSVG, Iconify, Lucide 중 고르는 방법.",
+        "faq": "라이선스, 누락된 변형, 요청 제한 등 자주 묻는 질문."
+      }
+    },
+    "guides": {
+      "cdn": {
+        "label": "CDN / 순수 HTML",
+        "summary": "설치도 빌드 단계도 필요 없습니다. <img> 태그가 CDN URL을 가리키게 하면 됩니다. JavaScript 없이 동작합니다."
+      },
+      "react": {
+        "label": "React",
+        "summary": "타입이 지정되고 트리 셰이킹이 가능한 컴포넌트. 기본적으로 서버 컴포넌트로 동작하며 \"use client\"가 필요 없습니다."
+      },
+      "vue": {
+        "label": "Vue",
+        "summary": "타입이 지정된 Vue 3 렌더 함수 컴포넌트. SFC 컴파일러가 필요 없습니다."
+      },
+      "svelte": {
+        "label": "Svelte",
+        "summary": "Svelte 4와 5용 타입 지정 컴포넌트. 브라우저 전용 API를 쓰지 않는 순수 마크업이므로 SvelteKit SSR과 클라이언트에서 똑같이 렌더링되며, onMount 가드나 클라이언트 전용 래퍼가 필요 없습니다."
+      },
+      "react-native": {
+        "label": "React Native",
+        "summary": "react-native-svg로 렌더링합니다. Expo Go에서 config plugin이나 네이티브 설정 없이 동작합니다."
+      },
+      "cli": {
+        "label": "CLI (내 저장소에 가져오기)",
+        "summary": "shadcn처럼 아이콘 파일을 프로젝트에 바로 복사합니다. 설치할 런타임 의존성이 없습니다."
+      },
+      "api": {
+        "label": "REST API",
+        "summary": "CDN에 캐시된 정적 JSON. 인증이 없고 동적 검색 엔드포인트도 없으므로, 매니페스트를 한 번 가져와 클라이언트에서 필터링하세요."
+      },
+      "mcp": {
+        "label": "AI 어시스턴트 (MCP)",
+        "summary": "AI 어시스턴트가 아이콘을 직접 검색하고 가져오는 도구를 제공하는 로컬 MCP 서버(stdio)입니다. 같은 mcpServers JSON 블록이 MCP를 지원하는 모든 클라이언트(Claude Desktop, Claude Code, Cursor, Windsurf)의 설정 파일에서 동작합니다. 설정 파일의 위치는 사용 중인 클라이언트의 문서를 확인하세요."
+      }
+    },
+    "snippets": {
+      "basic-usage": "기본 사용법",
+      "automatic-dark-mode-no-js": "자동 다크 모드 (JS 없음)",
+      "install": "설치",
+      "usage": "사용법",
+      "variants": "변형",
+      "individual-import-smallest-bundle": "개별 임포트 (가장 작은 번들)",
+      "nuxt-3-explicit-import-no-auto-import-config-needed": "Nuxt 3 (명시적 임포트, 자동 임포트 설정 불필요)",
+      "expo-router-screen": "Expo Router 화면",
+      "add-one-icon": "아이콘 하나 추가",
+      "add-several-as-typed-jsx": "여러 개 추가 (타입이 지정된 JSX로)",
+      "search-the-catalog": "카탈로그 검색",
+      "in-a-dockerfile-ci-build-step": "Dockerfile / CI 빌드 단계에서",
+      "full-icon-manifest": "전체 아이콘 매니페스트",
+      "categories-with-counts": "개수가 포함된 카테고리",
+      "direct-svg": "SVG 직접 가져오기",
+      "jsdelivr-mirror-recommended-for-high-traffic": "jsDelivr 미러 (트래픽이 많을 때 권장)",
+      "mcp-config-claude-desktop-cursor-etc": "MCP 설정 (Claude Desktop, Cursor 등)",
+      "dynamic-icon": "동적 아이콘",
+      "onerror-fallback": "onError 대체 처리",
+      "css-mask-recolor": "CSS 마스크로 색 바꾸기",
+      "bulk-add": "일괄 추가",
+      "preload-hint": "프리로드 힌트",
+      "client-side-filter": "클라이언트 측 필터",
+      "html-jsx": "HTML / JSX",
+      "markdown-readme": "Markdown (README)",
+      "react": "React",
+      "option-a-skip-optimization-for-this-image": "옵션 A: 이 이미지의 최적화 건너뛰기",
+      "option-b-allow-svgs-from-the-icon-domain": "옵션 B: 아이콘 도메인의 SVG 허용하기",
+      "package-json-script": "package.json 스크립트",
+      "dockerfile": "Dockerfile",
+      "before-after": "이전 / 이후"
+    },
+    "bestPractices": {
+      "intro": "크기 지정, 변형 선택, CDN 버전 고정, 다크 모드를 올바르게 처리하는 방법.",
+      "cdn-vs-components": {
+        "title": "격자에는 CDN <img>, 정해진 집합에는 컴포넌트",
+        "body": "수백, 수천 개의 아이콘(선택기, 디렉터리)을 렌더링하나요? CDN <img> URL 패턴을 사용하세요. 몇 개를 보여 주든 번들 비용이 0입니다. @thesvg/react, @thesvg/vue, @thesvg/svelte의 이름 있는 임포트는 소스에서 직접 참조하는 작고 고정된 아이콘 집합에만 쓰세요. 트리 셰이킹으로 사용하는 것만 남습니다."
+      },
+      "set-dimensions": {
+        "title": "항상 width와 height를 지정하세요",
+        "body": "<img>는 로드되기 전에는 고유 크기가 없으므로, width/height(또는 확보된 aspect-ratio)가 없는 아이콘은 페이지가 로드되는 동안 레이아웃 이동을 일으킵니다. CSS 클래스로만 크기를 정하는 아이콘이라도 모든 아이콘에 둘 다 지정하세요."
+      },
+      "recolor-mono": {
+        "title": "색 변경은 CSS 필터가 아니라 mono 변형으로",
+        "body": "아이콘을 임의의 텍스트 색에 맞추고 싶나요? CSS filter: invert() 같은 꼼수 대신, 인라인 컴포넌트와 mono 변형을 사용하세요(currentColor를 상속합니다). 필터는 품질이 떨어지고 임의의 16진수 색에 대응하지 못합니다."
+      },
+      "pin-jsdelivr": {
+        "title": "jsDelivr 미러는 @main이 아니라 릴리스에 고정하세요",
+        "body": "cdn.jsdelivr.net/gh/glincker/thesvg@main/...은 계속 바뀌는 main 브랜치를 따라갑니다. 프로덕션에서는 배포된 git 태그(예: @{{ref}}, 현재 릴리스)에 고정해, 업스트림의 이름 변경이나 삭제로 앱의 렌더링 결과가 조용히 바뀌지 않게 하세요."
+      },
+      "picture-dark-mode": {
+        "title": "다크 모드에는 JS가 아니라 <picture>를 사용하세요",
+        "body": "라이트와 다크 변형이 모두 있는 아이콘은 <picture>를 통해 순수 CSS 미디어 쿼리만으로 전환할 수 있습니다. 테마 감지용 JavaScript도, 하이드레이션 시 잘못된 변형이 잠깐 보이는 깜빡임도 없습니다."
+      },
+      "high-traffic": {
+        "title": "트래픽이 많은 앱: 대규모에서는 핫링크하지 말고 미러를 쓰세요",
+        "body": "thesvg.org의 /icons/*는 CDN에 캐시되어 대규모에서도 무료지만, 요청량이 매우 많은 프로덕션 앱은 jsDelivr 미러를 쓰거나 저장소를 클론해 직접 호스팅하는 편이 좋습니다. 그러면 내 쪽의 트래픽 급증이 thesvg.org 자체의 가동 상태에 좌우되지 않습니다."
+      }
+    },
+    "tricks": {
+      "intro": "알아 두면 좋은 작은 기법.",
+      "dynamic-slug": {
+        "title": "가져오지 않고 슬러그만으로 아이콘 렌더링하기",
+        "body": "아이콘이 실행 시점에야 정해지는 경우(사용자가 연결한 서비스, CMS 필드 등)에는 가능한 모든 컴포넌트를 임포트하려 하지 마세요. 슬러그로 CDN URL을 직접 만드세요. 6,500개 이상의 어떤 아이콘에도 통하며, 일괄 임포트도 번들러 비용도 없습니다."
+      },
+      "fallback-slug": {
+        "title": "알 수 없는 슬러그는 매끄럽게 대체하기",
+        "body": "슬러그가 카탈로그에 없을 수 있다면(예: 사용자 입력에서 온 경우), 깨진 이미지를 보여 주는 대신 로드 오류 시 대체 아이콘으로 바꾸세요."
+      },
+      "css-mask": {
+        "title": "<img> 태그 아이콘을 CSS 마스크로 색 바꾸기",
+        "body": "<img> 태그는 인라인 SVG 컴포넌트처럼 currentColor를 상속할 수 없습니다. 그래도 순수 CSS로 색을 바꾸고 싶다면 배경 이미지 대신 마스크로 사용하세요."
+      },
+      "bulk-add": {
+        "title": "한 번의 명령으로 아이콘 여러 개 가져오기",
+        "body": "한 번의 호출로 여러 아이콘을 저장소에 바로 추가합니다. 폐쇄망 CI에서, 또는 아이콘을 실행 시점에 가져오는 대신 자신의 코드베이스에 포함하고 싶을 때 유용합니다."
+      },
+      "preload": {
+        "title": "히어로 로고를 미리 불러와 깜빡임 방지하기",
+        "body": "페이지가 로드되자마자 보이는 브랜드 아이콘(히어로 로고, 첫 화면의 연동 배지 등)은 프리로드 힌트의 도움을 받습니다. 브라우저가 레이아웃 중에 <img> 태그를 발견할 때까지 기다리지 않고, 필요해지기 전에 미리 가져옵니다."
+      },
+      "client-search": {
+        "title": "패키지 없이 클라이언트에서 카탈로그 검색하기",
+        "body": "직접 아이콘 선택기를 만드나요? 매니페스트를 한 번 가져와 메모리에서 필터링하세요. 검색 패키지도, 키 입력마다 네트워크 요청도 필요 없습니다."
+      }
+    },
+    "recipes": {
+      "intro": "구체적인 구현 패턴. 각각 실제 사용 사례를 겨냥합니다.",
+      "tech-stack-badges": {
+        "title": "\"built with\" 기술 스택 배지 줄",
+        "description": "가장 흔한 사용 사례: 랜딩 페이지나 README에서 제품이 무엇으로 만들어졌는지 보여 주는 로고 줄입니다. 설치 없이 일반적인 CDN <img> 태그만 사용합니다."
+      },
+      "icon-picker": {
+        "title": "검색 가능한 아이콘 선택기 콤보박스",
+        "description": "마운트 시 매니페스트를 한 번 가져오고, 키 입력마다 클라이언트에서 필터링하며, 일치한 항목을 CDN URL로 렌더링합니다. 검색 라이브러리도, 키 입력별 요청도 없습니다."
+      },
+      "nextjs-image": {
+        "title": "Next.js의 <Image> 컴포넌트로 아이콘 사용하기",
+        "description": "Next의 내장 이미지 최적화 도구는 기본적으로 SVG를 래스터화하지 않습니다. 이미지 하나의 최적화를 끄거나, 아이콘 도메인의 SVG를 허용하세요. 대부분의 아이콘 용도에서는 일반 <img> 태그가 더 간단하고 이 과정을 아예 건너뜁니다."
+      },
+      "accessible-icon-button": {
+        "title": "접근성 있는 아이콘 전용 버튼",
+        "description": "눈에 보이는 레이블이 없는 아이콘에는 다른 방법으로 접근 가능한 이름이 필요합니다. aria-label과 role, 또는 시각적으로 숨긴 텍스트를 사용하면 스크린 리더가 올바르게 읽어 줍니다."
+      },
+      "logo-strip-fallback": {
+        "title": "대체 처리가 포함된 연동/파트너 로고 줄",
+        "description": "사용자가 연결했거나 서드파티인 연동 디렉터리에서는 슬러그가 카탈로그에 없을 수 있습니다(오타, 브랜드 이름 변경, 아직 추가되지 않음). 깨진 이미지를 보여 주는 대신 대체 이미지를 쓰세요."
+      },
+      "cli-in-ci": {
+        "title": "실행 시점이 아닌 CI/빌드 시점에 아이콘 가져오기",
+        "description": "폐쇄망 빌드이거나, 요청 시점에 가져오지 않고 빌드 산출물에 아이콘을 포함하고 싶다면 CLI를 빌드 단계로 실행하세요."
+      }
+    },
+    "migration": {
+      "title": "다른 라이브러리에서 마이그레이션하기",
+      "intro": "기능별 전체 비교는 [/compare](/compare)에 있습니다. 여기서는 짧고 실용적인 버전을 다룹니다.",
+      "from-simple-icons": {
+        "title": "Simple Icons에서 마이그레이션하기",
+        "summary": "Simple Icons는 단색 전용(단일 색상, 라이트/다크/워드마크 변형 없음)이며, 오랜 커뮤니티의 신뢰와 폭넓은 도구 지원이 있습니다. 대부분의 브랜드 슬러그는 그대로 옮길 수 있고, 주요 변경점은 변형을 고르는 것입니다.",
+        "p1": "react-icons의 Si 접두사 컴포넌트(SiGithub, SiVercel)를 쓰는 React 앱은 @thesvg/react의 동등한 이름 있는 익스포트(Github, Vercel)로 바꿉니다.",
+        "p2": "Simple Icons는 브랜드마다 마크 하나를 제공합니다. theSVG의 default 변형이 가장 가까운 대응입니다. Simple Icons가 항상 주는 단색 동작이 꼭 필요하다면 mono를 명시적으로 사용하세요.",
+        "p3": "슬러그가 아직 theSVG 카탈로그에 없다면 동등할 것이라 가정하지 말고 /submit에서 요청하세요. 브랜드마다 지원 범위가 다릅니다."
+      },
+      "from-svgl": {
+        "title": "svgl에서 마이그레이션하기",
+        "summary": "svgl은 컬러와 워드마크 변형이 있는 SvelteKit 기반 브랜드 SVG 브라우저이지만 npm 패키지가 없어 SVG 소스를 직접 복사해야 합니다. Svelte 프로젝트가 아니거나 설치 가능한 패키지를 원한다면, theSVG가 같은 영역을 다루면서 CLI, REST API, 프레임워크 패키지까지 제공합니다.",
+        "p1": "복사해 붙여 넣던 SVG 소스가 CDN URL이나 패키지 임포트로 바뀌어, 업스트림에서 로고가 갱신될 때 직접 다시 복사할 필요가 없습니다.",
+        "p2": "svgl의 변형 모델(컬러 + 워드마크)은 theSVG의 default + wordmark에 대응합니다. theSVG는 가능한 경우 mono, light, dark도 추가로 제공합니다.",
+        "p3": "Svelte를 계속 쓴다면: 직접 복사한 마크업을 @thesvg/svelte 컴포넌트로 바꾸세요(위의 Svelte 가이드 참고). 타입 지원과 이후 업데이트를 별다른 노력 없이 얻습니다."
+      },
+      "theSVG-vs-iconify-lucide": {
+        "title": "theSVG, Iconify, Lucide: 알맞은 것 고르기",
+        "summary": "세 가지는 서로 다른 문제를 해결하며, 대부분의 프로젝트가 둘 이상을 함께 씁니다. 기능별 전체 비교표는 /compare에 있고, 요약하면 다음과 같습니다.",
+        "p1": "브랜드 로고(GitHub, Stripe, AWS, 연동 목록): theSVG. 여러 변형을 지원하는 가장 큰 브랜드 중심 컬렉션입니다.",
+        "p2": "일반 UI 아이콘(화살표, 메뉴, 설정, 쉐브론): Lucide. 브랜드 중심이 아니며 인터페이스용으로 설계되었습니다.",
+        "p3": "브랜드와 UI를 모두 포함해 서로 관련 없는 여러 아이콘 세트를 하나의 API로 쓰고 싶고, 더 큰 통합 서비스도 괜찮다면: Iconify.",
+        "p4": "일반적인 앱은 브랜드 로고에는 theSVG, UI에는 Lucide를 함께 씁니다. thesvg.org 자체도 그렇게 합니다."
+      }
+    },
+    "faq": {
+      "intro": "theSVG에 대해 자주 묻는 질문.",
+      "licensed": {
+        "q": "이 로고들은 각 브랜드에서 공식적으로 라이선스를 받은 것인가요?",
+        "a": "아니요. 아이콘은 식별 목적의 지칭적 공정 이용에 따라 제공되며, 브랜드 마크는 각 상표권자의 자산으로 남습니다. 로고를 사용한다고 해서 보증이나 제휴를 뜻하지는 않습니다. 자세한 내용은 /legal과 저장소의 TRADEMARK.md를 참고하세요."
+      },
+      "commercial": {
+        "q": "이 아이콘을 상업적으로 사용할 수 있나요?",
+        "a": "네, 식별 목적이라면 가능합니다(예: \"X와 연동됩니다\", 기술 스택 배지, 결제 수단 목록). 이는 일반적인 지칭적 공정 이용입니다. 실제로는 없는 제휴나 보증을 암시하는 방식으로 마크를 사용하지 마세요. 확실하지 않다면 브랜드 자체의 가이드라인을 확인하세요. 가능한 경우 아이콘별로 링크되어 있습니다."
+      },
+      "missing-variant": {
+        "q": "아이콘에 dark, light, wordmark 변형이 없습니다. 왜 그런가요?",
+        "a": "모든 브랜드가 7가지 변형을 전부 제공하는 것은 아닙니다. 항상 있는 것은 default뿐이고, 나머지는 아이콘을 추가할 당시 깨끗한 원본 소스가 있었는지에 따라 달라집니다. 누락된 변형의 깨끗한 원본이 있다면 제출해 주세요."
+      },
+      "request-brand": {
+        "q": "새 브랜드를 요청하거나 오래된 로고를 신고하려면 어떻게 하나요?",
+        "a": "/submit에서 아이콘 요청 또는 아이콘 업데이트 제출을 만드세요. 붙여 넣는 SVG 소스는 50KB 미만이어야 하고, 유효한 viewBox가 있어야 하며, <script> 태그나 포함된 래스터 이미지가 없어야 합니다. 문제가 있으면 제출 양식과 분류 봇이 알려 줍니다."
+      },
+      "rate-limit": {
+        "q": "API에 요청 제한이 있나요?",
+        "a": "/api/registry.json과 /api/categories.json은 데이터베이스 기반 엔드포인트가 아니라 CDN에 캐시된 정적 파일이므로, 현재는 사실상 요청 제한이 없습니다. 요청량이 매우 많다면 jsDelivr 미러를 사용하세요. 실시간 검색과 웹훅을 갖춘 별도의 접근 제한 API가 api.thesvg.org로 로드맵에 있습니다."
+      },
+      "ai-assistants": {
+        "q": "AI 어시스턴트가 theSVG를 직접 사용할 수 있나요?",
+        "a": "네, @thesvg/mcp-server를 통해 가능합니다. Claude Desktop, Claude Code, Cursor의 MCP 설정에 추가하는 로컬 MCP 서버입니다(위의 AI 어시스턴트 가이드 참고). 사이트와 같은 데이터를 기반으로 검색, 가져오기, 카테고리 목록 도구를 제공합니다."
+      },
+      "which-package": {
+        "q": "실제로 어떤 패키지를 설치해야 하나요?",
+        "a": "React, Vue, Svelte 앱에서 알려진 소수의 아이콘을 쓴다면 해당 프레임워크 패키지를 사용하세요. 트리 셰이킹이 되고 타입도 지정되어 있습니다. 개수가 정해지지 않았거나 많은 경우(선택기, 디렉터리)에는 대신 CDN <img> 패턴을 쓰세요. 개수와 상관없이 번들 비용이 없습니다. 아이콘을 자신의 저장소에 넣고 싶다면 CLI를 사용하세요."
+      },
+      "broken-image": {
+        "q": "아이콘이 깨진 이미지 또는 404로 보입니다. 무엇이 문제인가요?",
+        "a": "거의 항상 슬러그 불일치입니다. URL 경로에는 /api/registry.json의 정확한 슬러그를 쓰는데, 이는 브랜드 표시 이름과 항상 같지는 않습니다(공백, 점, 대소문자는 정규화됩니다). 브랜드 이름으로 추측하지 말고 사이트에서 검색하거나 레지스트리에서 정확한 슬러그를 확인하세요."
+      },
+      "nextjs-image": {
+        "q": "theSVG는 Next.js의 <Image> 컴포넌트와 함께 동작하나요?",
+        "a": "기본 설정으로는 아닙니다. Next의 내장 이미지 최적화 도구는 기본적으로 SVG를 래스터화하지 않으므로, <Image>에는 해당 이미지에 unoptimized 속성을 주거나 next.config에서 도메인에 dangerouslyAllowSVG를 설정해야 합니다. 대부분의 아이콘 용도에서는 일반 <img> 태그(또는 프레임워크 패키지 컴포넌트)가 더 간단하고 최적화 도구를 완전히 피할 수 있습니다."
+      },
+      "typescript-slugs": {
+        "q": "모든 아이콘 슬러그를 나열하는 TypeScript 타입이 있나요?",
+        "a": "모든 슬러그의 유니온 타입은 내보내지 않습니다. 각 아이콘은 이름 있는 개별 익스포트(Github, Figma 등)이므로, 존재하지 않는 아이콘을 임포트하면 문자열 리터럴 타입 오류가 아니라 빌드 시 모듈을 찾을 수 없다는 오류가 납니다. 슬러그를 데이터로 써야 한다면(예: API 응답에서) registry.json의 slug 필드는 일반 문자열입니다."
+      },
+      "vs-alternatives": {
+        "q": "theSVG는 Simple Icons, svgl, Iconify와 어떻게 다른가요?",
+        "a": "theSVG는 브랜드 아이콘이 더 많고, 다른 대안이 다루지 않는 클라우드 제공업체(AWS, Azure, GCP) 아이콘이 있으며, 아이콘마다 최대 7가지 변형(color, mono, light, dark, wordmark)과 더 폭넓은 도구(프레임워크 패키지, CLI, REST API, AI 에이전트용 MCP 서버)를 갖추고 있습니다. Simple Icons는 단색 전용이고, svgl은 Svelte 중심이며 npm 패키지가 없고, Iconify는 150개 이상의 아이콘 세트를 모으지만 브랜드 중심은 아닙니다. 자세한 비교는 /compare에 있습니다."
+      },
+      "ssr": {
+        "q": "프레임워크 패키지는 서버 사이드 렌더링(SSR)을 지원하나요?",
+        "a": "네. 모든 프레임워크 패키지(@thesvg/react, @thesvg/vue, @thesvg/svelte)는 브라우저 전용 API가 없는 순수 마크업을 렌더링하므로 기본적으로 SSR에 안전하며, 클라이언트 전용 래퍼나 하이드레이션 가드가 필요 없습니다. 특히 @thesvg/react 컴포넌트는 \"use client\" 지시어 없이 React 서버 컴포넌트로 동작합니다."
+      },
+      "self-host": {
+        "q": "theSVG를 표기하지 않고 아이콘을 직접 호스팅해도 되나요?",
+        "a": "코드베이스와 도구는 MIT 라이선스이므로, 직접 호스팅할 때 법적으로 출처 표기가 필요하지 않습니다. 브랜드 마크 자체는 파일을 어디에 호스팅하든 상표권자의 자산으로 남습니다. /legal을 참고하세요. 링크를 걸어 주시면 고맙지만 필수는 아닙니다."
+      },
+      "dark-mode-differs": {
+        "q": "같은 아이콘이 다크 모드에서 다르게 보이는 이유는 무엇인가요?",
+        "a": "어디서나 default 변형을 렌더링하고 있다면 정상입니다. 고정된 브랜드 색이라 테마에 반응하지 않습니다. 페이지 테마에 맞춰 바뀌는 변형이 필요하면 <picture> 요소와 함께 light/dark를 사용하거나(위의 모범 사례 참고), 인라인 컴포넌트와 mono 변형을 써서 currentColor를 상속하게 하세요."
+      }
+    },
+    "flags": {
+      "intro": "세 가지 모양의 국가 및 지역 국기 {{total}}개. `npm i @thesvg/flags`로 설치합니다([npm에서 보기](https://www.npmjs.com/package/@thesvg/flags)).",
+      "usageTitle": "사용 가이드",
+      "browse": "모양, 크기, 색을 둘러보고 써 보고 싶나요? [국기 브라우저 열기](/collection/flags).",
+      "creditsTitle": "출처 및 라이선스",
+      "creditsBody": "국기 도안은 flag-icons(4x3 및 정사각형)와 circle-flags(원형)에서 가져왔으며, 둘 다 MIT 라이선스입니다. 파일 자체에는 출처 표기 텍스트가 없습니다. 전체 고지와 파일별 출처 맵은 저장소의 THIRD_PARTY_NOTICES.md와 packages/flags/src/data/licenses.json에 있습니다. 국기는 국가나 조직의 공적인 상징이며, 포함했다고 해서 주권에 대한 입장을 나타내는 것은 아닙니다.",
+      "fullGuide": "props, 로케일 표, Vue, Svelte, 순수 SVG 예제를 포함한 전체 가이드: [docs/flags.md](https://github.com/glincker/thesvg/blob/main/docs/flags.md).",
+      "sections": {
+        "naming": {
+          "title": "이름 규칙",
+          "body": "슬러그는 flag-에 소문자 ISO 3166-1 alpha-2 코드(flag-us, flag-de) 또는 지역 코드(flag-gb-eng, flag-es-ct, flag-eu, flag-un)를 붙인 형태입니다. 변형: default는 4x3 직사각형, square는 1x1, 그리고 circle입니다. 카테고리는 Flags입니다."
+        },
+        "search": {
+          "title": "검색",
+          "body": "국기는 영어 및 현지어 이름, 공식 이름, ISO alpha-2, alpha-3, 숫자 코드, 이모지, 예전 이름, 로케일 태그로 찾을 수 있습니다. deutschland, DEU, 276, holland, england, catalunya, pt-BR 등을 입력해 보세요."
+        },
+        "shape": {
+          "title": "모양 고르기",
+          "body": "실제 비율이 중요한 곳에는 4x3, 고정된 정사각형 칸에는 square, 간결한 선택기와 칩에는 circle을 쓰세요. circle은 가로로 긴 국기의 가장자리를 잘라내므로 옆에 이름을 텍스트로 함께 두세요."
+        },
+        "accessibility": {
+          "title": "접근성",
+          "body": "장식용 국기는 aria-hidden으로 두고 의미는 보이는 텍스트가 전달합니다. 국기가 단독으로 쓰일 때만 title을 제공하세요. 접근 가능한 이름이 있는 role=img로 렌더링됩니다."
+        },
+        "language": {
+          "title": "국기는 국가이지 언어가 아닙니다",
+          "body": "국기 옆에 해당 언어의 고유 이름을 표시하고, 국기만으로 언어 선택기를 만들지 마세요. getFlagForLocale은 로케일을 장식용으로 쓰는 관례적인 국기에 대응시킵니다."
+        },
+        "legal": {
+          "title": "법적 고지",
+          "body": "국기는 국가나 조직의 공적인 상징입니다. 포함했다고 해서 주권이나 국경에 대한 입장을 나타내는 것은 아닙니다. 법적 고지와 면책 조항을 참고하세요."
+        }
+      },
+      "steps": {
+        "pick": {
+          "head": "1. 국기를 고릅니다.",
+          "body": "[국기 컬렉션](/collection/flags)에서 이름, ISO 코드, 이모지, 로케일로 검색하세요. 각 국기에는 복사 및 다운로드 버튼이 있는 전용 페이지가 있습니다."
+        },
+        "cdn": {
+          "head": "2. 설치 없이 사용합니다.",
+          "body": "CDN에서 파일을 링크하세요: `https://cdn.jsdelivr.net/npm/@thesvg/flags/dist/svg/4x3/us.svg`. 다른 모양은 `4x3` 대신 `1x1` 또는 `circle`을 사용하세요."
+        },
+        "install": {
+          "head": "3. 또는 패키지를 설치합니다.",
+          "body": "`npm i @thesvg/flags`([npm 페이지](https://www.npmjs.com/package/@thesvg/flags))를 실행한 뒤, `@thesvg/flags/react/us`에서 국기 하나만 임포트하면 그 국기만 번들에 포함됩니다."
+        },
+        "locale": {
+          "head": "4. 로케일을 국기에 대응시킵니다.",
+          "body": "`getFlagForLocale(\"pt-BR\")`은 장식용으로 브라질을 반환합니다. 옆에는 항상 언어 이름을 표시하세요."
+        }
+      }
     }
   }
 }

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Search, Home, ArrowLeft } from "@/components/own-icons";
 import { getFormattedIconCount } from "@/lib/icons";
+import { T } from "@/components/t";
 
 export default function NotFound() {
   const count = getFormattedIconCount();
@@ -47,29 +48,29 @@ export default function NotFound() {
 
       {/* Text */}
       <h1 className="mb-2 text-4xl font-bold tracking-tight">
-        <span className="text-orange-500">404</span> - Icon Not Found
+        <span className="text-orange-500">404</span> - <T k="pages.notFound.title" fallback="Icon Not Found" />
       </h1>
       <p className="mb-2 max-w-md text-sm text-muted-foreground">
-        This icon might have been moved, renamed, or doesn&apos;t exist yet.
+        <T k="pages.notFound.body" fallback="This icon might have been moved, renamed, or doesn't exist yet." />
       </p>
       <p className="mb-8 max-w-md text-xs text-muted-foreground/60">
-        We have {count}+ icons across brands, AWS, Azure, and GCP. Try searching for what you need.
+        <T k="pages.notFound.count" fallback="We have {{count}}+ icons across brands, AWS, Azure, and GCP. Try searching for what you need." values={{ count }} />
       </p>
 
       {/* Actions */}
       <div className="flex flex-wrap items-center justify-center gap-3">
         <Link href="/" className="inline-flex items-center gap-1.5 rounded-lg bg-foreground px-4 py-2 text-sm font-medium text-background transition-opacity hover:opacity-90">
           <Home className="h-4 w-4" />
-          Browse Icons
+          <T k="pages.notFound.browse" fallback="Browse Icons" />
         </Link>
         <Link href="/collection/aws" className="inline-flex items-center rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent dark:border-white/[0.08]">
-          AWS Icons
+          <T k="pages.notFound.aws" fallback="AWS Icons" />
         </Link>
         <Link href="/collection/azure" className="inline-flex items-center rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent dark:border-white/[0.08]">
-          Azure Icons
+          <T k="pages.notFound.azure" fallback="Azure Icons" />
         </Link>
         <Link href="/collection/gcp" className="inline-flex items-center rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent dark:border-white/[0.08]">
-          GCP Icons
+          <T k="pages.notFound.gcp" fallback="GCP Icons" />
         </Link>
       </div>
 
@@ -79,7 +80,7 @@ export default function NotFound() {
         className="mt-6 inline-flex items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
       >
         <ArrowLeft className="h-3.5 w-3.5" />
-        Back to home
+        <T k="pages.notFound.back" fallback="Back to home" />
       </Link>
     </div>
   );

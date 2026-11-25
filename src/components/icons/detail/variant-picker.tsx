@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { VARIANT_LABELS } from "@/components/icons/shared/icon-constants";
+import { useT } from "@/i18n/use-t";
 import { cn } from "@/lib/utils";
 
 interface VariantPickerProps {
@@ -31,6 +31,7 @@ export function VariantPicker({
   onSelect,
   slug,
 }: VariantPickerProps) {
+  const { t } = useT();
   const containerRef = useRef<HTMLDivElement>(null);
   const buttonRefs = useRef<Map<string, HTMLButtonElement>>(new Map());
   const [indicator, setIndicator] = useState<{ x: number; y: number; w: number; h: number } | null>(null);
@@ -64,7 +65,7 @@ export function VariantPicker({
   return (
     <div>
       <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-        Variants
+        {t("icon.detail.variants")}
       </p>
       <div ref={containerRef} className="relative flex flex-wrap gap-2">
         {indicator && (
@@ -102,7 +103,7 @@ export function VariantPicker({
             >
               <img
                 src={path || `/icons/${slug}/default.svg`}
-                alt={`${VARIANT_LABELS[key] || key} variant`}
+                alt={t("icon.variant.suffix", { name: t(`icon.variant.${key}`, { defaultValue: key }) })}
                 className="h-8 w-8 object-contain"
               />
             </div>
@@ -114,7 +115,7 @@ export function VariantPicker({
                   : "text-muted-foreground"
               )}
             >
-              {VARIANT_LABELS[key] || key}
+              {t(`icon.variant.${key}`, { defaultValue: key })}
             </span>
           </button>
         ))}

@@ -7,9 +7,10 @@ import { ColorPicker } from "./color-picker";
 import { Glyph } from "./glyph";
 import { cn } from "@/lib/ui-icons/utils";
 import { renderIcon, type IconNode, type StyleParams, type Variant } from "@/lib/ui-icons/engine";
-import { COPY_HINT, COPY_LABEL, COPY_TARGETS } from "@/lib/ui-icons/copy-target";
+import { COPY_TARGETS } from "@/lib/ui-icons/copy-target";
 import { defaultColorOf } from "@/lib/ui-icons/default-color";
 import { GLYPH_BY_SLUG, styleFor } from "@/lib/ui-icons/glyphs";
+import { useLabels } from "./labels";
 import { useUi } from "./ui-state";
 
 const SWATCHES = ["f5c542", "fb923c", "fb7185", "a78bfa", "38bdf8", "34d399"] as const;
@@ -27,15 +28,15 @@ const CHIP_ICON = "shield-check";
 type Lab = Partial<StyleParams>;
 interface Mine { lab: Lab; accent: string }
 
-interface Preset { id: string; label: string; lab: Lab }
+interface Preset { id: string; lab: Lab }
 // Each preset is a complete shape choice, so applying one replaces the current tweaks instead of piling onto them.
 const PRESETS: Preset[] = [
-  { id: "house", label: "House", lab: {} },
-  { id: "crisp", label: "Crisp", lab: { strokeWidth: 1.25, corner: "sharp", radius: 0, cutTerminals: true, shadow: 0 } },
-  { id: "soft", label: "Soft", lab: { strokeWidth: 1.75, corner: "round", radius: 3.5, cutTerminals: false } },
-  { id: "bold", label: "Bold", lab: { strokeWidth: 2.4, corner: "chamfer", radius: 2, cutTerminals: true } },
-  { id: "hairline", label: "Hairline", lab: { strokeWidth: 1, corner: "round", radius: 3, cutTerminals: false } },
-  { id: "float", label: "Float", lab: { strokeWidth: 1.75, corner: "round", radius: 3.5, shadow: 0.35 } },
+  { id: "house", lab: {} },
+  { id: "crisp", lab: { strokeWidth: 1.25, corner: "sharp", radius: 0, cutTerminals: true, shadow: 0 } },
+  { id: "soft", lab: { strokeWidth: 1.75, corner: "round", radius: 3.5, cutTerminals: false } },
+  { id: "bold", lab: { strokeWidth: 2.4, corner: "chamfer", radius: 2, cutTerminals: true } },
+  { id: "hairline", lab: { strokeWidth: 1, corner: "round", radius: 3, cutTerminals: false } },
+  { id: "float", lab: { strokeWidth: 1.75, corner: "round", radius: 3.5, shadow: 0.35 } },
 ];
 
 function readMine(): Mine | null {
@@ -88,6 +89,7 @@ function MiniGlyph({ nodes, variant, lab, size }: { nodes: IconNode[]; variant: 
 }
 
 function Range(props: { label: string; value: number; base: number; min: number; max: number; step: number; onChange: (v: number) => void }) {
+  const { t } = useLabels();
   const moved = !same(props.value, props.base);
   return (
     <label className="flex min-w-0 flex-col gap-1.5">
@@ -97,8 +99,8 @@ function Range(props: { label: string; value: number; base: number; min: number;
           {moved && (
             <button
               type="button"
-              aria-label={`Reset ${props.label}`}
-              title={`Back to ${props.base}`}
+              aria-label={t("uikit.style.resetNamed", { label: props.label })}
+              title={t("uikit.style.backTo", { value: props.base })}
               onClick={(e) => { e.preventDefault(); props.onChange(props.base); }}
               className="grid size-4 place-items-center rounded text-orange-500 transition-colors hover:bg-orange-500/10"
             >
@@ -121,7 +123,7 @@ function Range(props: { label: string; value: number; base: number; min: number;
   );
 }
 
-function Segmented<T extends string>(props: { label: string; value: T; options: readonly T[]; onChange: (v: T) => void }) {
+function Segmented<T extends string>(props: { label: string; value: T; options: readonly T[]; format?: (o: T) => string; onChange: (v: T) => void }) {
   return (
     <div role="radiogroup" aria-label={props.label} className="flex gap-0.5 rounded-lg border bg-muted/30 p-0.5">
       {props.options.map((o) => (
@@ -133,7 +135,7 @@ function Segmented<T extends string>(props: { label: string; value: T; options: 
           onClick={() => props.onChange(o)}
           className={cn("h-6 flex-1 rounded-md px-2.5 text-[0.75rem] capitalize text-muted-foreground transition-colors hover:text-foreground", props.value === o && "bg-foreground text-background hover:text-background")}
         >
-          {o}
+          {props.format ? props.format(o) : o}
         </button>
       ))}
     </div>
@@ -152,9 +154,10 @@ function Cell({ label, children }: { label: string; children: React.ReactNode })
 /** Six icons drawn with the style you are building, so every slider has an immediate, visible effect. */
 function PreviewStrip() {
   const ui = useUi();
+  const { t } = useLabels();
   const items = PREVIEW.map((slug) => GLYPH_BY_SLUG.get(slug)).filter((g) => g !== undefined);
   return (
-    <div aria-label="Your style, live" className="flex items-center gap-1 rounded-lg border bg-gradient-to-r from-orange-500/[0.08] to-violet-500/[0.06] px-2 py-1">
+    <div aria-label={t("uikit.style.live")} className="flex items-center gap-1 rounded-lg border bg-gradient-to-r from-orange-500/[0.08] to-violet-500/[0.06] px-2 py-1">
       {items.map((g) => (
         <span key={g.slug} className={ui.colorMode === "natural" && !ui.accent ? defaultColorOf(g.slug) || "text-foreground" : "text-foreground"}>
           <Glyph nodes={g.nodes} variant={ui.variant} size={22} accent={ui.accent} />
@@ -166,13 +169,14 @@ function PreviewStrip() {
 
 function Presets({ mine, onApplyMine }: { mine: Mine | null; onApplyMine: () => void }) {
   const ui = useUi();
+  const { t } = useLabels();
   const now = useEffective();
   const touched = Object.keys(ui.lab).length > 0;
   const g = GLYPH_BY_SLUG.get(CHIP_ICON);
   if (!g) return null;
   const chip = "group inline-flex h-8 items-center gap-1.5 rounded-lg border px-2 text-[0.75rem] text-muted-foreground transition-colors hover:border-orange-500/40 hover:text-foreground";
   return (
-    <div role="radiogroup" aria-label="Style presets" className="flex flex-wrap gap-1.5">
+    <div role="radiogroup" aria-label={t("uikit.style.presets")} className="flex flex-wrap gap-1.5">
       {PRESETS.map((p) => {
         const active = matches(p.lab, now, touched);
         return (
@@ -185,14 +189,14 @@ function Presets({ mine, onApplyMine }: { mine: Mine | null; onApplyMine: () => 
             className={cn(chip, active && "border-orange-500/60 bg-orange-500/10 text-foreground")}
           >
             <MiniGlyph nodes={g.nodes} variant={ui.variant} lab={p.lab} size={18} />
-            {p.label}
+            {t(`uikit.style.preset.${p.id}`)}
           </button>
         );
       })}
       {mine && (
-        <button type="button" onClick={onApplyMine} className={cn(chip, "border-dashed")} title="Your saved style">
+        <button type="button" onClick={onApplyMine} className={cn(chip, "border-dashed")} title={t("uikit.style.savedTitle")}>
           <MiniGlyph nodes={g.nodes} variant={ui.variant} lab={mine.lab} size={18} />
-          Mine
+          {t("uikit.style.preset.mine")}
         </button>
       )}
     </div>
@@ -202,12 +206,13 @@ function Presets({ mine, onApplyMine }: { mine: Mine | null; onApplyMine: () => 
 /** What the style currently is, in words, so the collapsed bar says something useful. */
 function useSummary(): { chips: string[]; changes: number } {
   const ui = useUi();
+  const { t } = useLabels();
   const now = useEffective();
   const touched = Object.keys(ui.lab).length > 0;
   const preset = PRESETS.find((p) => Object.keys(p.lab).length > 0 && matches(p.lab, now, touched));
   const changes = Object.keys(ui.lab).length + (ui.accent ? 1 : 0) + (ui.colorMode === "mono" ? 1 : 0);
   return {
-    chips: [preset?.label ?? `weight ${now.weight}`, ...(preset ? [] : [now.corner, now.cut ? "cut ends" : "plain ends"]), ...(ui.colorMode === "mono" ? ["mono"] : [])],
+    chips: [preset ? t(`uikit.style.preset.${preset.id}`) : t("uikit.style.weightChip", { value: now.weight }), ...(preset ? [] : [t(`uikit.style.corner.${now.corner}`), now.cut ? t("uikit.style.cutEnds") : t("uikit.style.plainEnds")]), ...(ui.colorMode === "mono" ? [t("uikit.style.colorMode.mono")] : [])],
     changes,
   };
 }
@@ -215,6 +220,7 @@ function useSummary(): { chips: string[]; changes: number } {
 /** Desktop and tablet: one quiet row that stays under the header while you scroll. Phones: a floating button and a bottom sheet. */
 export function StyleBar({ className }: { className?: string }) {
   const ui = useUi();
+  const { t } = useLabels();
   const [open, setOpen] = useState(false);
   const wrap = useRef<HTMLDivElement>(null);
   // Half open: hovering or focusing the button shows the presets, a click opens everything.
@@ -295,7 +301,7 @@ export function StyleBar({ className }: { className?: string }) {
               ) : null;
             })}
           </span>
-          Style
+          {t("uikit.style.button")}
           <span className="hidden items-center gap-1.5 text-muted-foreground lg:flex">
             {chips.map((c) => <span key={c} className="capitalize">{c}</span>)}
             {ui.accent && <AccentDot hex={ui.accent} />}
@@ -305,22 +311,22 @@ export function StyleBar({ className }: { className?: string }) {
         </button>
         {hint && !open && !peek && (
           <span role="status" className="pointer-events-none absolute right-2 top-full z-40 mt-2 animate-in fade-in slide-in-from-top-1 whitespace-nowrap rounded-lg bg-orange-500 px-2.5 py-1 text-[0.75rem] font-medium text-white shadow-lg duration-300">
-            Make the icons yours: weight, corners, colour
+            {t("uikit.style.hint")}
           </span>
         )}
         {peek && !open && (
           <div className="absolute right-0 top-full z-40 w-max max-w-[min(34rem,calc(100vw-3rem))] pt-2 animate-in fade-in slide-in-from-top-1 duration-150">
             <div className="rounded-xl border bg-background/90 p-2 opacity-95 shadow-xl backdrop-blur-xl">
               <div className="mb-1.5 flex items-center justify-between gap-6 px-1 text-[0.75rem] text-muted-foreground">
-                <span>Quick styles</span>
-                <span>Click Style for every control</span>
+                <span>{t("uikit.style.quick")}</span>
+                <span>{t("uikit.style.quickHint")}</span>
               </div>
               <Presets mine={mine} onApplyMine={applyMine} />
             </div>
           </div>
         )}
         {open && (
-          <div role="dialog" aria-label="Icon style" className="absolute right-0 top-full z-50 w-[min(60rem,calc(100vw-3rem))] pt-2 animate-in fade-in slide-in-from-top-1 duration-150">
+          <div role="dialog" aria-label={t("uikit.style.dialog")} className="absolute right-0 top-full z-50 w-[min(60rem,calc(100vw-3rem))] pt-2 animate-in fade-in slide-in-from-top-1 duration-150">
             <StyleLab className="bg-background shadow-2xl ring-1 ring-black/5 dark:ring-white/10" />
           </div>
         )}
@@ -340,6 +346,7 @@ function AccentDot({ hex }: { hex: string }) {
 
 /** Phones only: a button that floats above the bottom dock and opens the controls in a sheet, so style is one tap away at any scroll position. */
 export function StylePill() {
+  const { t } = useLabels();
   const [open, setOpen] = useState(false);
   const { changes } = useSummary();
   return (
@@ -349,10 +356,10 @@ export function StylePill() {
         onClick={() => setOpen(true)}
         className="glass fixed bottom-24 right-4 z-40 inline-flex h-10 items-center gap-2 rounded-full bg-background/90 px-4 text-xs font-medium shadow-lg backdrop-blur-xl md:hidden"
       >
-        <UiGlyph name="sliders-horizontal" className="size-4" /> Style
+        <UiGlyph name="sliders-horizontal" className="size-4" /> {t("uikit.style.button")}
         {changes > 0 && <span className="size-1.5 rounded-full bg-orange-500" />}
       </button>
-      <BottomSheet open={open} onClose={() => setOpen(false)} fixedSnap="half" label="Icon style">
+      <BottomSheet open={open} onClose={() => setOpen(false)} fixedSnap="half" label={t("uikit.style.dialog")}>
         <div className="px-4 pb-8">
           <StyleLab stacked className="border-0 bg-transparent p-0" />
         </div>
@@ -364,6 +371,7 @@ export function StylePill() {
 /** The style lab on the page: every control re-draws all icons on screen live. */
 export function StyleLab(props: { className?: string; stacked?: boolean }) {
   const ui = useUi();
+  const { t, copyLabel, copyHint } = useLabels();
   const now = useEffective();
   const { changes } = useSummary();
   const [mine, setMine] = useState<Mine | null>(null);
@@ -392,31 +400,31 @@ export function StyleLab(props: { className?: string; stacked?: boolean }) {
         <PreviewStrip />
       </div>
       <div className={cn("grid items-start gap-x-5 gap-y-3", props.stacked ? "grid-cols-1" : "sm:grid-cols-3 xl:grid-cols-[repeat(3,minmax(0,1fr))_auto_auto]")}>
-        <Range label="Weight" value={now.weight} base={now.base.strokeWidth} min={0.75} max={3} step={0.05} onChange={(v) => ui.setLab({ strokeWidth: r2(v) })} />
-        <Range label="Scale" value={now.scale} base={now.base.scale} min={0.7} max={1.1} step={0.02} onChange={(v) => ui.setLab({ scale: r2(v) })} />
-        <Range label="Shadow" value={now.shadow} base={now.base.shadow} min={0} max={0.6} step={0.05} onChange={(v) => ui.setLab({ shadow: r2(v) })} />
-        <Cell label="Corners">
+        <Range label={t("uikit.style.weight")} value={now.weight} base={now.base.strokeWidth} min={0.75} max={3} step={0.05} onChange={(v) => ui.setLab({ strokeWidth: r2(v) })} />
+        <Range label={t("uikit.style.scale")} value={now.scale} base={now.base.scale} min={0.7} max={1.1} step={0.02} onChange={(v) => ui.setLab({ scale: r2(v) })} />
+        <Range label={t("uikit.style.shadow")} value={now.shadow} base={now.base.shadow} min={0} max={0.6} step={0.05} onChange={(v) => ui.setLab({ shadow: r2(v) })} />
+        <Cell label={t("uikit.style.corners")}>
           <div className="flex items-center gap-2">
-            <Segmented label="Corners" value={now.corner} options={CORNERS} onChange={(c) => ui.setLab({ corner: c, radius: c === "round" ? 3.5 : c === "sharp" ? 0 : 1.5 })} />
+            <Segmented label={t("uikit.style.corners")} value={now.corner} options={CORNERS} format={(c) => t(`uikit.style.corner.${c}`)} onChange={(c) => ui.setLab({ corner: c, radius: c === "round" ? 3.5 : c === "sharp" ? 0 : 1.5 })} />
             <button
               type="button"
               role="switch"
               aria-checked={now.cut}
-              aria-label="Cut ends"
-              title="Cut ends"
+              aria-label={t("uikit.style.cutEnds")}
+              title={t("uikit.style.cutEnds")}
               onClick={() => ui.setLab({ cutTerminals: !now.cut })}
               className={cn("inline-flex h-7 shrink-0 items-center gap-1.5 rounded-lg border px-2 text-[0.75rem] transition-colors", now.cut ? "border-orange-500/50 bg-orange-500/10 text-foreground" : "text-muted-foreground")}
             >
-              Cut
+              {t("uikit.style.cut")}
             </button>
           </div>
         </Cell>
-        <Cell label={ui.accent ? "Colour, accent overrides" : "Colour"}>
+        <Cell label={ui.accent ? t("uikit.style.colourAccent") : t("uikit.style.colour")}>
           <div className="flex h-7 flex-wrap items-center gap-1.5">
-            <Segmented label="Icon colours" value={ui.colorMode} options={["natural", "mono"] as const} onChange={ui.setColorMode} />
-            <button type="button" aria-label="No accent" onClick={() => ui.setAccent("")} className={cn("h-5 rounded-full border px-2 text-[0.75rem] text-muted-foreground", ui.accent === "" && "border-foreground text-foreground")}>none</button>
+            <Segmented label={t("uikit.style.iconColours")} value={ui.colorMode} options={["natural", "mono"] as const} format={(m) => t(`uikit.style.colorMode.${m}`)} onChange={ui.setColorMode} />
+            <button type="button" aria-label={t("uikit.style.noAccent")} onClick={() => ui.setAccent("")} className={cn("h-5 rounded-full border px-2 text-[0.75rem] text-muted-foreground", ui.accent === "" && "border-foreground text-foreground")}>{t("uikit.style.none")}</button>
             {SWATCHES.map((hex) => (
-              <button key={hex} type="button" aria-label={`Accent #${hex}`} onClick={() => ui.setAccent(`#${hex}`)} className={cn("size-4 rounded-full border-2 transition-transform hover:scale-110", SWATCH_BG[hex], ui.accent === `#${hex}` ? "border-foreground" : "border-transparent")} />
+              <button key={hex} type="button" aria-label={t("uikit.style.accentNamed", { hex: `#${hex}` })} onClick={() => ui.setAccent(`#${hex}`)} className={cn("size-4 rounded-full border-2 transition-transform hover:scale-110", SWATCH_BG[hex], ui.accent === `#${hex}` ? "border-foreground" : "border-transparent")} />
             ))}
             <ColorPicker value={ui.accent} onChange={ui.setAccent} active={ui.accent !== "" && !SWATCHES.some((h) => `#${h}` === ui.accent)} />
           </div>
@@ -424,39 +432,39 @@ export function StyleLab(props: { className?: string; stacked?: boolean }) {
       </div>
       <div className="flex flex-wrap items-center gap-x-3 gap-y-2 border-t pt-2 text-[0.75rem] text-muted-foreground">
         <span className="inline-flex items-center gap-2">
-          Click copies
+          {t("uikit.style.clickCopies")}
           <button
             type="button"
             role="switch"
             aria-checked={ui.clickToCopy}
-            aria-label="Click an icon to copy it"
+            aria-label={t("uikit.style.clickToCopy")}
             onClick={() => ui.setClickToCopy(!ui.clickToCopy)}
             className={cn("relative h-5 w-9 rounded-full border transition-colors", ui.clickToCopy ? "border-orange-500/50 bg-orange-500/20" : "bg-muted/30")}
           >
             <span className={cn("absolute top-0.5 size-3.5 rounded-full bg-foreground transition-all", ui.clickToCopy ? "left-[1.15rem]" : "left-0.5 bg-muted-foreground")} />
           </button>
         </span>
-        <span role="radiogroup" aria-label="What gets copied" className="flex flex-wrap gap-1">
-          {COPY_TARGETS.map((t) => (
+        <span role="radiogroup" aria-label={t("uikit.style.whatCopied")} className="flex flex-wrap gap-1">
+          {COPY_TARGETS.map((c) => (
             <button
-              key={t}
+              key={c}
               type="button"
               role="radio"
-              aria-checked={ui.copyTarget === t}
-              title={COPY_HINT[t]}
-              onClick={() => ui.setCopyTarget(t)}
-              className={cn("h-6 rounded-md border px-2 transition-colors hover:text-foreground", ui.copyTarget === t && "border-orange-500/60 bg-orange-500/10 text-foreground")}
+              aria-checked={ui.copyTarget === c}
+              title={copyHint(c)}
+              onClick={() => ui.setCopyTarget(c)}
+              className={cn("h-6 rounded-md border px-2 transition-colors hover:text-foreground", ui.copyTarget === c && "border-orange-500/60 bg-orange-500/10 text-foreground")}
             >
-              {COPY_LABEL[t]}
+              {copyLabel(c)}
             </button>
           ))}
         </span>
         <span className="ml-auto flex items-center gap-1.5">
           <button type="button" onClick={save} disabled={changes === 0 || isMine} className="inline-flex h-7 items-center gap-1.5 rounded-lg border px-2.5 transition-colors hover:text-foreground disabled:opacity-40">
-            <UiGlyph name="bookmark" className="size-3.5" /> {isMine ? "Saved" : "Save as mine"}
+            <UiGlyph name="bookmark" className="size-3.5" /> {isMine ? t("uikit.style.saved") : t("uikit.style.saveMine")}
           </button>
           <button type="button" onClick={() => { ui.resetLab(); ui.setAccent(""); ui.setColorMode("natural"); }} disabled={changes === 0} className="inline-flex h-7 items-center gap-1.5 rounded-lg border px-2.5 transition-colors hover:text-foreground disabled:opacity-40">
-            <UiGlyph name="rotate-ccw" className="size-3.5" /> Reset
+            <UiGlyph name="rotate-ccw" className="size-3.5" /> {t("uikit.style.reset")}
           </button>
         </span>
       </div>

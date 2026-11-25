@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { loadIconsManifest } from "@/lib/icons-manifest";
 import type { IconEntry } from "@/lib/icons";
 import { Busy } from "@/components/skeletons";
+import { useT } from "@/i18n/use-t";
 
 interface QuickImportProps {
   /** Receives raw SVG XML string and the icon's title (for export filename / pen title). */
@@ -25,6 +26,7 @@ const STARTER_SLUGS = [
 ];
 
 export function QuickImport({ onImport, className }: QuickImportProps) {
+  const { t } = useT();
   const [icons, setIcons] = useState<IconEntry[] | null>(null);
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
@@ -165,8 +167,8 @@ export function QuickImport({ onImport, className }: QuickImportProps) {
             onKeyDown={handleKeyDown}
             placeholder={
               icons === null
-                ? "Loading icon library..."
-                : "Import from library — try 'gmail 2026', 'github'..."
+                ? t("icon.import.loading")
+                : t("icon.import.placeholder")
             }
             disabled={icons === null}
             className="flex-1 bg-transparent text-xs text-foreground outline-none placeholder:text-muted-foreground/50 disabled:cursor-wait"
@@ -220,7 +222,7 @@ export function QuickImport({ onImport, className }: QuickImportProps) {
         <div className="flex flex-wrap items-center gap-1.5">
           <span className="flex items-center gap-1 text-[10px] uppercase tracking-wider text-muted-foreground/60">
             <Sparkles className="h-3.5 w-3.5" />
-            Try
+            {t("icon.import.try")}
           </span>
           {starterIcons.map((icon) => (
             <button

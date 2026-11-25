@@ -4,6 +4,7 @@ import { UiGlyph } from "@/components/ui-glyph";
 import { useRef } from "react";
 import { capture } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
+import { useT } from "@/i18n/use-t";
 
 interface CategoryPillsProps {
   categories: string[];
@@ -16,6 +17,7 @@ export function CategoryPills({
   selected,
   onSelect,
 }: CategoryPillsProps) {
+  const { t } = useT();
   const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -42,7 +44,7 @@ export function CategoryPills({
             <span className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/25 to-transparent" />
           )}
           <UiGlyph name="layout-grid" look={!selected ? "fill" : undefined} className="relative h-3 w-3" />
-          <span className="relative">All</span>
+          <span className="relative">{t("home.all")}</span>
         </button>
         {categories.map((cat) => {
           const active = selected === cat;

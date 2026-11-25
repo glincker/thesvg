@@ -7,6 +7,7 @@ import { formatSvg } from "@/lib/copy-formats";
 import { generateSnippet, type SnippetFormat } from "@/lib/code-snippets";
 import { colorizeSvgCode, colorizeSnippet } from "@/components/icons/shared/syntax-highlight";
 import { cn } from "@/lib/utils";
+import { useT } from "@/i18n/use-t";
 
 interface CodeBlockProps {
   svgContent: string;
@@ -47,6 +48,7 @@ function formatSvgCode(raw: string): string {
 }
 
 export function CodeBlock({ svgContent, slug, title, activeVariant }: CodeBlockProps) {
+  const { t } = useT();
   const [activeTab, setActiveTab] = useState<TabValue>("svg");
   const [copied, setCopied] = useState(false);
 
@@ -83,8 +85,8 @@ export function CodeBlock({ svgContent, slug, title, activeVariant }: CodeBlockP
 
   if (!svgContent) return null;
 
-  const useTabs = TABS.filter((t) => t.group === "use");
-  const copyTabs = TABS.filter((t) => t.group === "copy");
+  const useTabs = TABS.filter((tab) => tab.group === "use");
+  const copyTabs = TABS.filter((tab) => tab.group === "copy");
 
   return (
     <div className="overflow-hidden rounded-xl border border-border bg-card/30 shadow-sm">
@@ -157,7 +159,7 @@ export function CodeBlock({ svgContent, slug, title, activeVariant }: CodeBlockP
           )}
         >
           {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
-          {copied ? "Copied" : "Copy"}
+          {copied ? t("icon.common.copied") : t("icon.common.copy")}
         </button>
         <div className="bg-zinc-950">
           <pre className="max-h-36 overflow-auto px-4 py-3 pr-16 font-mono text-[11px] leading-5 text-zinc-300">

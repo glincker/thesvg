@@ -3,6 +3,7 @@ import { RECIPES } from "@/lib/docs-recipes";
 import { DocsCodeBlock } from "@/components/docs/docs-code-block";
 import { DocsHeading } from "@/components/docs/docs-heading";
 import { DocsListPage } from "@/components/docs/docs-list-page";
+import { T } from "@/components/t";
 
 export const metadata: Metadata = {
   title: "Recipes",
@@ -12,25 +13,26 @@ export const metadata: Metadata = {
 };
 
 export default function RecipesPage() {
-  const tocItems = RECIPES.map((r) => ({ id: r.id, label: r.title }));
+  const tocItems = RECIPES.map((r) => ({ id: r.id, label: r.title, labelKey: `docs.recipes.${r.id}.title` }));
 
   return (
     <DocsListPage
       title="Recipes"
+      titleKey="docs.nav.items.recipes"
       tocItems={tocItems}
       sourceFile="src/lib/docs-recipes.ts"
       intro={
         <p className="mb-8 max-w-2xl text-sm text-muted-foreground">
-          Concrete build patterns, each targeting a specific real-world use case.
+          <T k="docs.recipes.intro" fallback="Concrete build patterns, each targeting a specific real-world use case." />
         </p>
       }
     >
       <div className="space-y-10">
         {RECIPES.map((recipe) => (
           <section key={recipe.id} className="scroll-mt-24">
-            <DocsHeading id={recipe.id}>{recipe.title}</DocsHeading>
+            <DocsHeading id={recipe.id} k={`docs.recipes.${recipe.id}.title`}>{recipe.title}</DocsHeading>
             <p className="mb-3 max-w-2xl text-xs leading-relaxed text-muted-foreground">
-              {recipe.description}
+              <T k={`docs.recipes.${recipe.id}.description`} fallback={recipe.description} />
             </p>
             <div className="space-y-3">
               {recipe.snippets.map((snippet) => (

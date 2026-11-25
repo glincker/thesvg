@@ -2,6 +2,7 @@
 
 import { useSyncExternalStore } from "react";
 import { UiGlyph } from "@/components/ui-glyph";
+import { useT } from "@/i18n/use-t";
 
 const subscribe = () => () => {};
 const getIsMac = () => /Mac|iPhone|iPad/.test(navigator.platform);
@@ -10,7 +11,8 @@ const getServerIsMac = () => false;
 /** Edge strip on the sidebar: the whole strip is the click target, the round button is a hint that shows on hover. */
 export function CollapseToggle({ collapsed, onToggle }: Readonly<{ collapsed: boolean; onToggle: () => void }>) {
   const isMac = useSyncExternalStore(subscribe, getIsMac, getServerIsMac);
-  const label = `${collapsed ? "Expand sidebar" : "Collapse sidebar"} (${isMac ? "⌘\\" : "Ctrl+\\"})`;
+  const { t } = useT();
+  const label = `${collapsed ? t("uikit.nav.expandSidebar") : t("uikit.nav.collapseSidebar")} (${isMac ? "⌘\\" : "Ctrl+\\"})`;
   return (
     <button
       type="button"

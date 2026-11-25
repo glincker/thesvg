@@ -380,12 +380,28 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
               <UiGlyph name="menu" className="h-6 w-6" />
             </Button>
 
-            <Link href="/" className="group/logo flex items-center gap-1.5 text-foreground" aria-label={t("header.home")}>
-              <LogoMorph mode={isUi ? "ui" : "brand"} className="h-9 w-9 rounded-lg transition-transform duration-200 group-hover/logo:scale-105" />
-              <span className="hidden text-[15px] font-bold tracking-tight text-foreground sm:inline">
-                the<span className="text-orange-500">SVG</span>
-              </span>
-            </Link>
+            <div className="group/logo flex items-center gap-2">
+              <Link href="/" className="text-foreground" aria-label={t("header.home")}>
+                <LogoMorph mode={isUi ? "ui" : "brand"} className="h-9 w-9 rounded-lg transition-transform duration-200 group-hover/logo:scale-105" />
+              </Link>
+              <div className="hidden flex-col gap-1 sm:flex">
+                <Link href="/" tabIndex={-1} aria-hidden="true" className="text-[20px] leading-none font-extrabold tracking-tight text-foreground">
+                  the<span className="text-orange-500">SVG</span>
+                </Link>
+                <a
+                  href={withUtm("https://glinr.com", "header")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-[9px] leading-none text-muted-foreground transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
+                >
+                  by
+                  { }
+                  <img src="/icons/glinr/wordmark-dark.svg" alt="GLINR Studios" width={72} height={11} className="hidden h-[11px] w-auto dark:block" />
+                  { }
+                  <img src="/icons/glinr/wordmark-light.svg" alt="GLINR Studios" width={72} height={11} className="block h-[11px] w-auto dark:hidden" />
+                </a>
+              </div>
+            </div>
             <ModeSwitch mode={isUi ? "ui" : "brand"} className="ml-1 hidden sm:grid" onChange={(m) => router.push(m === "ui" ? "/ui" : "/")} />
           </div>
 

@@ -87,12 +87,12 @@ function buildSections(
     }
     const out = buckets.filter((b) => b.icons.length > 0);
     if (rest.length > 0) {
-      out.push({ title: `More from ${familyTitle}`, category: null, icons: rest });
+      out.push({ title: `More from ${familyTitle}`, kind: "more", category: null, icons: rest });
     }
     return out;
   }
   if (icons.length < MIN_SECTION_SIZE * 3) {
-    return [{ title: `All ${familyTitle} logos`, category: null, icons }];
+    return [{ title: `All ${familyTitle} logos`, kind: "all", category: null, icons }];
   }
   const groups = new Map<string, IconEntry[]>();
   for (const icon of icons) {
@@ -113,7 +113,7 @@ function buildSections(
   big.sort((a, b) => b.icons.length - a.icons.length || a.title.localeCompare(b.title));
   if (rest.length > 0) {
     rest.sort((a, b) => a.title.localeCompare(b.title));
-    big.push({ title: `More from ${familyTitle}`, category: null, icons: rest });
+    big.push({ title: `More from ${familyTitle}`, kind: "more", category: null, icons: rest });
   }
   return big;
 }

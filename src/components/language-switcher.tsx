@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuLabel,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
@@ -38,7 +39,9 @@ export function LanguageSwitcher() {
         <Flag slug={current.flag} />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-52">
-        <DropdownMenuLabel>{t("language.label")}</DropdownMenuLabel>
+        <DropdownMenuGroup>
+          <DropdownMenuLabel>{t("language.label")}</DropdownMenuLabel>
+        </DropdownMenuGroup>
         <DropdownMenuRadioGroup value={current.code} onValueChange={(v) => void setLocale(v as LocaleCode)}>
           {LOCALES.map((l) => (
             <DropdownMenuRadioItem key={l.code} value={l.code} className="gap-2">

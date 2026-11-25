@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import type { Collection } from "@/lib/icons";
 import { isSidebarToggleShortcut, isTypingTarget } from "@/lib/sidebar-shortcut";
 import { categoryUrl } from "@/lib/categories";
+import { useT } from "@/i18n/use-t";
 import { cn } from "@/lib/utils";
 
 const SIDEBAR_STORAGE_KEY = "thesvg-sidebar";
@@ -21,6 +22,7 @@ interface SidebarShellProps {
 }
 
 export function SidebarShell({ children, categoryCounts, collections = [] }: SidebarShellProps) {
+  const { t } = useT();
   const router = useRouter();
   const sidebarOpen = useSidebarStore((s) => s.open);
   const setSidebarOpen = useSidebarStore((s) => s.setOpen);
@@ -98,7 +100,7 @@ export function SidebarShell({ children, categoryCounts, collections = [] }: Sid
 
       <Sheet open={sidebarOpen} onOpenChange={setSidebarOpen}>
         <SheetContent side="left" className="w-64 p-0">
-          <SheetTitle className="sr-only">Navigation</SheetTitle>
+          <SheetTitle className="sr-only">{t("sidebar.navigation")}</SheetTitle>
           <Sidebar
             mobile
             categories={categoryCounts}
