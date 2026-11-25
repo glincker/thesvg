@@ -1,5 +1,11 @@
 # @thesvg/static
 
+## 4.0.17
+
+### Patch Changes
+
+- feat: brand lockup in the navbar, mobile bar and footer, plus the thesvg lockup variant ([#1612](https://github.com/glincker/thesvg/issues/1612))
+
 ## 4.0.16
 
 ### Patch Changes

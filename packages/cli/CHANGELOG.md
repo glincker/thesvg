@@ -1,5 +1,11 @@
 # @thesvg/cli
 
+## 0.8.3
+
+### Patch Changes
+
+- feat: brand lockup in the navbar, mobile bar and footer, plus the thesvg lockup variant ([#1612](https://github.com/glincker/thesvg/issues/1612))
+
 ## 0.8.2
 
 ### Patch Changes
