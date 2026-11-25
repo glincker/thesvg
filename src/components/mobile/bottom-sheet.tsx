@@ -11,6 +11,7 @@ import {
 import { createPortal } from "react-dom";
 import { X } from "@/components/own-icons";
 import { cn } from "@/lib/utils";
+import { useT } from "@/i18n/use-t";
 
 export type BottomSheetSnap = "peek" | "half" | "full";
 
@@ -44,6 +45,7 @@ export function BottomSheet({
   className,
   allowOverscroll = false,
 }: BottomSheetProps) {
+  const { t } = useT();
   const labelId = useId();
   const [mounted, setMounted] = useState(false);
   const [dragOffset, setDragOffset] = useState(0);
@@ -140,7 +142,7 @@ export function BottomSheet({
     >
       <button
         type="button"
-        aria-label="Close"
+        aria-label={t("mobile.sheet.close")}
         onClick={onClose}
         className="absolute inset-0 bg-black/40"
       />
@@ -177,7 +179,7 @@ export function BottomSheet({
           <button
             type="button"
             onClick={onClose}
-            aria-label="Close"
+            aria-label={t("mobile.sheet.close")}
             className="flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             <X className="h-4 w-4" />

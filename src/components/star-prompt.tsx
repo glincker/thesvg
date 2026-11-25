@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Star, X } from "@/components/own-icons";
+import { useT } from "@/i18n/use-t";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import { withUtm } from "@/lib/external-link";
 import { formatStarCount } from "@/lib/github-stars";
@@ -33,6 +34,7 @@ function markHandled(): void {
 }
 
 export function StarPrompt() {
+  const { t } = useT();
   const copied = useRecentsStore((s) => s.copied);
   const [visible, setVisible] = useState(false);
   // Survives a failed storage write so closing never re-triggers the prompt.
@@ -69,11 +71,11 @@ export function StarPrompt() {
           <Star className="h-5 w-5" aria-hidden="true" />
         </div>
         <div className="min-w-0 flex-1">
-          <p className="text-sm font-semibold text-foreground">Finding thesvg useful?</p>
+          <p className="text-sm font-semibold text-foreground">{t("chrome.star.title")}</p>
           <p className="mt-0.5 text-xs text-muted-foreground">
             {stars !== null
-              ? `${formatStarCount(stars)} developers have starred it. A star helps others discover it.`
-              : "A GitHub star helps other developers discover it. It is free and open source."}
+              ? t("chrome.star.withStars", { stars: formatStarCount(stars) })
+              : t("chrome.star.noStars")}
           </p>
           <a
             href={withUtm(STAR_PROMPT_REPO_URL, "star_prompt")}
@@ -86,13 +88,13 @@ export function StarPrompt() {
             className="mt-3 inline-flex h-8 items-center gap-1.5 rounded-lg bg-foreground px-3 text-xs font-medium text-background transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             <Star className="h-3.5 w-3.5" aria-hidden="true" />
-            Star on GitHub
+            {t("chrome.star.cta")}
           </a>
         </div>
         <button
           type="button"
           onClick={close}
-          aria-label="Dismiss"
+          aria-label={t("chrome.common.dismiss")}
           className="shrink-0 rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
           <X className="h-4 w-4" aria-hidden="true" />

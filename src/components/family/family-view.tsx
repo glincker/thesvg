@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { ArrowUpRight, BookOpen, LayoutGrid, Plus } from "@/components/own-icons";
@@ -9,9 +11,12 @@ import { iconTone } from "@/lib/icon-tone";
 import type { IconTone } from "@/lib/icon-tone";
 import iconTones from "@/data/icon-tones.json";
 import { cn } from "@/lib/utils";
+import { useT } from "@/i18n/use-t";
 
 export interface FamilySection {
+  /** English title, also the anchor id. Generated titles carry a kind so the label can be translated. */
   title: string;
+  kind?: "more" | "all" | "flagship";
   /** Category to link to, or null for curated or catch-all sections. */
   category: string | null;
   icons: IconEntry[];
@@ -170,15 +175,16 @@ function Hero({
   | "variantCount"
   | "extra"
 >) {
+  const { t } = useT();
   const siteHost = hostOf(parent.url);
   const githubHref =
     parent.links?.github && hostOf(parent.links.github)?.endsWith("github.com")
       ? parent.links.github
       : null;
   const stats = [
-    { value: total, label: "logos" },
-    { value: categoryCount, label: "categories" },
-    { value: variantCount, label: "variants" },
+    { value: total, label: t("icon.family.statLogos") },
+    { value: categoryCount, label: t("icon.family.statCategories") },
+    { value: variantCount, label: t("icon.family.statVariants") },
   ];
   return (
     <header
@@ -199,7 +205,7 @@ function Hero({
               className="h-1.5 w-1.5 rounded-full bg-[var(--fam-a)]"
               aria-hidden
             />
-            {parent.title} · Brand family
+            {t("icon.family.badge", { title: parent.title })}
           </span>
           <h1
             style={enter(2)}
@@ -224,7 +230,7 @@ function Hero({
             <div className="flex flex-wrap gap-2">
               <Link href={`/icon/${parent.slug}`} className={PILL}>
                 <Logo icon={parent} chip={false} className="h-4 w-4" />
-                {parent.title} main logo
+                {t("icon.family.mainLogo", { title: parent.title })}
                 <ArrowUpRight className="h-3.5 w-3.5 opacity-50" />
               </Link>
               {extra && (
@@ -289,17 +295,17 @@ function Hero({
                   className={PILL_QUIET}
                 >
                   <BookOpen className="h-4 w-4" aria-hidden />
-                  Brand guidelines
+                  {t("icon.detail.brandGuidelines")}
                   <ArrowUpRight className="h-3.5 w-3.5 opacity-50" />
                 </a>
               )}
               <Link href="/families" className={PILL_QUIET}>
                 <LayoutGrid className="h-4 w-4" aria-hidden />
-                All families
+                {t("icon.family.allFamilies")}
               </Link>
               <Link href="/submit" className={PILL_QUIET}>
                 <Plus className="h-4 w-4" aria-hidden />
-                Submit a missing {parent.title} logo
+                {t("icon.family.submitMissing", { title: parent.title })}
               </Link>
             </div>
           </div>
@@ -311,12 +317,12 @@ function Hero({
             className="animate-fade-in-up rounded-3xl border border-border/60 bg-background/70 p-4 shadow-xl backdrop-blur sm:p-5"
           >
             <div className="mb-4 flex items-center justify-between text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
-              <span>Flagships</span>
+              <span>{t("icon.family.flagships")}</span>
               <Link
                 href={`/icon/${parent.slug}`}
                 className="inline-flex items-center gap-1 hover:text-foreground"
               >
-                Open <ArrowUpRight className="h-3.5 w-3.5" />
+                {t("icon.family.open")} <ArrowUpRight className="h-3.5 w-3.5" />
               </Link>
             </div>
             <ul className="grid grid-cols-4 gap-2 sm:gap-3">
@@ -348,6 +354,7 @@ function Hero({
 }
 
 function Tile({ icon, index }: { icon: IconEntry; index: number }) {
+  const { t } = useT();
   return (
     <li style={enter(index, 120, 30, 16)} className="animate-fade-in-up">
       <Link
@@ -365,8 +372,8 @@ function Tile({ icon, index }: { icon: IconEntry; index: number }) {
               {icon.title}
             </span>
             <span className="block truncate text-[11px] text-muted-foreground">
-              {icon.categories[0]} · {variantTotal(icon)}{" "}
-              {variantTotal(icon) === 1 ? "variant" : "variants"}
+              {icon.categories[0]} ·{" "}
+              {variantTotal(icon) === 1 ? t("icon.family.oneVariant") : t("icon.family.nVariants", { count: variantTotal(icon) })}
             </span>
           </span>
           <span
@@ -399,6 +406,7 @@ function TileGrid({
 }
 
 function MoreFamilies({ others }: { others: OtherFamily[] }) {
+  const { t } = useT();
   if (others.length === 0) return null;
   return (
     <section aria-labelledby="more-families" className="mt-16">
@@ -406,7 +414,7 @@ function MoreFamilies({ others }: { others: OtherFamily[] }) {
         id="more-families"
         className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground"
       >
-        More brand families
+        {t("icon.family.moreFamilies")}
       </h2>
       <ul className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {others.map((f) => (
@@ -424,7 +432,7 @@ function MoreFamilies({ others }: { others: OtherFamily[] }) {
                   {f.title}
                 </span>
                 <span className="block text-[11px] text-muted-foreground">
-                  {f.count} logos
+                  {t("icon.family.logosCount", { count: f.count })}
                 </span>
               </span>
               <span className="relative flex items-center">
@@ -451,6 +459,7 @@ function MoreFamilies({ others }: { others: OtherFamily[] }) {
 }
 
 export function FamilyView(props: FamilyViewProps) {
+  const { t } = useT();
   const { parent, sections, others, featured } = props;
   // Featured products lead the full set so the page opens on what people
   // look for first; the rest follow in their groups.
@@ -468,9 +477,17 @@ export function FamilyView(props: FamilyViewProps) {
     .filter((s) => s.icons.length > 0);
   const lead: FamilySection | null =
     featured.length > 0
-      ? { title: "Flagship products", category: null, icons: featured }
+      ? { title: "Flagship products", kind: "flagship", category: null, icons: featured }
       : null;
   const all = lead ? [lead, ...grouped] : grouped;
+  const sectionLabel = (s: FamilySection): string =>
+    s.kind === "flagship"
+      ? t("icon.family.flagshipProducts")
+      : s.kind === "more"
+        ? t("icon.family.moreFrom", { title: parent.title })
+        : s.kind === "all"
+          ? t("icon.family.allLogos", { title: parent.title })
+          : s.title;
 
   return (
     <div className="mx-auto w-full max-w-7xl px-3 py-5 sm:px-6 sm:py-8">
@@ -478,23 +495,23 @@ export function FamilyView(props: FamilyViewProps) {
 
       <div className="mt-8 flex flex-wrap items-end justify-between gap-3 sm:mt-10">
         <h2 className="text-xl font-semibold tracking-tight text-foreground/80">
-          The full set
+          {t("icon.family.fullSet")}
           <span className="ml-3 text-sm font-normal text-muted-foreground">
-            {props.total} icons
+            {t("icon.family.iconsCount", { count: props.total })}
           </span>
         </h2>
         <Link
           href={`/icon/${parent.slug}`}
           className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-card px-3 py-2 text-xs font-semibold shadow-sm transition-colors hover:bg-accent"
         >
-          All {parent.title} icons
+          {t("icon.family.allIcons", { title: parent.title })}
           <ArrowUpRight className="h-3.5 w-3.5 opacity-50" />
         </Link>
       </div>
 
       {all.length > 1 && (
         <nav
-          aria-label="Jump to a group"
+          aria-label={t("icon.family.jump")}
           style={enter(8)}
           className="animate-fade-in-up mt-5 flex flex-wrap gap-2"
         >
@@ -508,7 +525,7 @@ export function FamilyView(props: FamilyViewProps) {
                 className="h-2 w-2 rounded-full bg-[var(--fam-a)]"
                 aria-hidden
               />
-              {s.title}
+              {sectionLabel(s)}
               <span className="font-mono text-[10px] opacity-60">
                 {s.icons.length}
               </span>
@@ -533,7 +550,7 @@ export function FamilyView(props: FamilyViewProps) {
                 id={`${slugId(section.title)}-h`}
                 className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground"
               >
-                {section.title}
+                {sectionLabel(section)}
                 <span className="ml-2 text-xs font-normal text-muted-foreground">
                   {section.icons.length}
                 </span>
@@ -543,7 +560,7 @@ export function FamilyView(props: FamilyViewProps) {
                   href={categoryUrl(section.category)}
                   className="flex items-center gap-1 text-[11px] font-medium text-muted-foreground transition-colors hover:text-foreground"
                 >
-                  All {section.category}
+                  {t("icon.family.allCategory", { category: section.category })}
                   <ArrowUpRight className="h-3.5 w-3.5" />
                 </Link>
               )}
@@ -558,7 +575,7 @@ export function FamilyView(props: FamilyViewProps) {
             {section.icons.length > COLLAPSE_ABOVE && (
               <details className="group/more mt-2">
                 <summary className="ml-1 inline-flex cursor-pointer list-none items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground shadow-sm transition-colors hover:bg-accent hover:text-foreground group-open/more:hidden [&::-webkit-details-marker]:hidden">
-                  Show {section.icons.length - VISIBLE_TILES} more
+                  {t("icon.family.showMore", { count: section.icons.length - VISIBLE_TILES })}
                 </summary>
                 <TileGrid icons={section.icons.slice(VISIBLE_TILES)} />
               </details>

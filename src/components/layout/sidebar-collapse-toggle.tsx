@@ -2,6 +2,7 @@
 
 import { useSyncExternalStore } from "react";
 import { PanelLeftClose, PanelLeftOpen } from "@/components/own-icons";
+import { useT } from "@/i18n/use-t";
 import { cn } from "@/lib/utils";
 
 interface SidebarCollapseToggleProps {
@@ -16,9 +17,10 @@ const getServerIsMac = () => false;
 /** Full-height edge strip (shadcn SidebarRail pattern) - the icon is a
  * decorative hint, the whole strip is the actual click target. */
 export function SidebarCollapseToggle({ collapsed, onToggle }: Readonly<SidebarCollapseToggleProps>) {
+  const { t } = useT();
   const isMac = useSyncExternalStore(subscribe, getIsMac, getServerIsMac);
   const shortcut = isMac ? "\u2318\\" : "Ctrl+\\";
-  const label = `${collapsed ? "Expand sidebar" : "Collapse sidebar"} (${shortcut})`;
+  const label = t(collapsed ? "sidebar.expandSidebar" : "sidebar.collapseSidebar", { shortcut });
 
   return (
     <button

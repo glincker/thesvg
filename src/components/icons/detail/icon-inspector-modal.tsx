@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import { useT } from "@/i18n/use-t";
 
 interface IconInspectorModalProps {
   title: string;
@@ -89,6 +90,7 @@ function IconDesignGrid({ className }: { className?: string }) {
 }
 
 export function IconInspectorModal({ title, src }: IconInspectorModalProps) {
+  const { t } = useT();
   const [zoomStep, setZoomStep] = useState(2);
   const [background, setBackground] = useState<Background>("checker");
   const [showGrid, setShowGrid] = useState(false);
@@ -106,7 +108,7 @@ export function IconInspectorModal({ title, src }: IconInspectorModalProps) {
           <button
             type="button"
             className="absolute right-3 bottom-3 flex h-9 w-9 items-center justify-center rounded-full bg-orange-500/10 text-orange-500 shadow-sm ring-1 ring-orange-500/20 backdrop-blur-sm transition-all hover:scale-105 hover:bg-orange-500/20"
-            aria-label={`Inspect ${title} zoomed in`}
+            aria-label={t("icon.inspector.aria", { title })}
           />
         }
       >
@@ -116,18 +118,16 @@ export function IconInspectorModal({ title, src }: IconInspectorModalProps) {
       <DialogContent className="flex max-h-[85vh] w-full max-w-[calc(100%-2rem)] flex-col gap-4 overflow-y-auto sm:max-w-2xl">
         <DialogHeader>
           <div className="flex items-center gap-2">
-            <DialogTitle>{title} - pixel inspector</DialogTitle>
+            <DialogTitle>{t("icon.inspector.title", { title })}</DialogTitle>
             <Badge
               variant="outline"
               className="h-4 border-orange-500/40 bg-orange-500/10 px-1.5 text-[10px] text-orange-500"
             >
-              Beta
+              {t("icon.common.beta")}
             </Badge>
           </div>
           <DialogDescription>
-            Zoom in to check edges and curves against the standard icon
-            design grid. This is the vector artwork scaled up, not a raster
-            crop, so it stays crisp at every size.
+            {t("icon.inspector.description")}
           </DialogDescription>
         </DialogHeader>
 
@@ -171,9 +171,9 @@ export function IconInspectorModal({ title, src }: IconInspectorModalProps) {
           <div className="flex items-center gap-1 rounded-lg border border-border/60 bg-muted/30 p-1">
             {(
               [
-                { value: "checker" as const, icon: "grid-2x2", label: "Transparent" },
-                { value: "light" as const, icon: "sun", label: "Light" },
-                { value: "dark" as const, icon: "moon", label: "Dark" },
+                { value: "checker" as const, icon: "grid-2x2", label: t("icon.inspector.transparent") },
+                { value: "light" as const, icon: "sun", label: t("icon.variant.light") },
+                { value: "dark" as const, icon: "moon", label: t("icon.variant.dark") },
               ]
             ).map(({ value, icon, label }) => (
               <button
@@ -181,7 +181,7 @@ export function IconInspectorModal({ title, src }: IconInspectorModalProps) {
                 type="button"
                 onClick={() => setBackground(value)}
                 aria-pressed={background === value}
-                aria-label={`${label} background`}
+                aria-label={t("icon.inspector.background", { name: label })}
                 className={cn(
                   "flex h-7 w-7 items-center justify-center rounded-md transition-colors",
                   background === value
@@ -208,7 +208,7 @@ export function IconInspectorModal({ title, src }: IconInspectorModalProps) {
               )}
             >
               <UiGlyph name="layout-grid" className="h-3.5 w-3.5" />
-              Grid
+              {t("icon.inspector.grid")}
             </button>
 
             {/* Zoom stepper */}
@@ -217,7 +217,7 @@ export function IconInspectorModal({ title, src }: IconInspectorModalProps) {
                 type="button"
                 onClick={() => setZoomStep((prev) => Math.max(prev - 1, 0))}
                 disabled={zoomStep === 0}
-                aria-label="Zoom out"
+                aria-label={t("icon.inspector.zoomOut")}
                 className="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors hover:text-foreground disabled:opacity-30"
               >
                 <UiGlyph name="minus" className="h-4 w-4" />
@@ -231,7 +231,7 @@ export function IconInspectorModal({ title, src }: IconInspectorModalProps) {
                   setZoomStep((prev) => Math.min(prev + 1, ZOOM_LEVELS.length - 1))
                 }
                 disabled={zoomStep === ZOOM_LEVELS.length - 1}
-                aria-label="Zoom in"
+                aria-label={t("icon.inspector.zoomIn")}
                 className="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors hover:text-foreground disabled:opacity-30"
               >
                 <UiGlyph name="plus" className="h-4 w-4" />

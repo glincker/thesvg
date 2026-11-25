@@ -14,6 +14,7 @@ import { getAllCategories, getCategoryCounts, getIconCount } from "@/lib/icons";
 import { SidebarShell } from "@/components/layout/sidebar-shell";
 import { SubmitForm } from "@/components/submit/submit-form";
 import { withUtm } from "@/lib/external-link";
+import { T } from "@/components/t";
 
 export const metadata: Metadata = {
   title: "Submit an Icon - Add Your Brand SVG",
@@ -45,12 +46,11 @@ export default function SubmitPage() {
                 <div className="relative z-10">
                   <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-orange-200/50 bg-orange-50/80 px-3 py-1 text-xs font-medium text-orange-600 dark:border-orange-500/20 dark:bg-orange-500/10 dark:text-orange-400">
                     <Zap className="h-3.5 w-3.5" />
-                    {iconCount.toLocaleString()}+ icons and growing
+                    <T k="pages.submit.badge" fallback="{{count}}+ icons and growing" values={{ count: iconCount.toLocaleString() }} />
                   </div>
-                  <h1 className="mb-2 text-2xl font-bold sm:text-3xl">Submit an Icon</h1>
+                  <h1 className="mb-2 text-2xl font-bold sm:text-3xl"><T k="pages.submit.title" fallback="Submit an Icon" /></h1>
                   <p className="max-w-lg text-muted-foreground">
-                    Every brand deserves a place. No gatekeeping. Drop your SVG, fill in the details,
-                    and submit directly via GitHub.
+                    <T k="pages.submit.intro" fallback="Every brand deserves a place. No gatekeeping. Drop your SVG, fill in the details, and submit directly via GitHub." />
                   </p>
                 </div>
                 {/* Decorative blob */}
@@ -59,11 +59,12 @@ export default function SubmitPage() {
 
               {/* Quick steps - horizontal */}
               <div>
-                <h2 className="mb-4 text-sm font-semibold text-foreground">How it works</h2>
+                <h2 className="mb-4 text-sm font-semibold text-foreground"><T k="pages.submit.how" fallback="How it works" /></h2>
                 <div className="grid gap-3 sm:grid-cols-2">
                   <Step
                     number={1}
                     icon={<GitBranch className="h-4 w-4" />}
+                    id="fork"
                     title="Fork the repo"
                     description="Fork github.com/GLINCKER/thesvg and clone locally."
                     accent="from-blue-500/10 to-blue-500/5 dark:from-blue-500/10 dark:to-blue-500/5"
@@ -72,6 +73,7 @@ export default function SubmitPage() {
                   <Step
                     number={2}
                     icon={<Upload className="h-4 w-4" />}
+                    id="add"
                     title="Add your SVGs"
                     description="Place files in public/icons/{slug}/ with proper naming."
                     accent="from-emerald-500/10 to-emerald-500/5 dark:from-emerald-500/10 dark:to-emerald-500/5"
@@ -80,6 +82,7 @@ export default function SubmitPage() {
                   <Step
                     number={3}
                     icon={<FileCode className="h-4 w-4" />}
+                    id="json"
                     title="Update icons.json"
                     description="Add your entry to src/data/icons.json."
                     accent="from-purple-500/10 to-purple-500/5 dark:from-purple-500/10 dark:to-purple-500/5"
@@ -88,6 +91,7 @@ export default function SubmitPage() {
                   <Step
                     number={4}
                     icon={<GitPullRequest className="h-4 w-4" />}
+                    id="pr"
                     title="Open a PR"
                     description="Run pnpm validate, then open a pull request."
                     accent="from-orange-500/10 to-orange-500/5 dark:from-orange-500/10 dark:to-orange-500/5"
@@ -98,19 +102,19 @@ export default function SubmitPage() {
 
               {/* SVG Requirements */}
               <div className="rounded-xl border border-border/40 bg-card/50 p-5 dark:border-white/[0.06] dark:bg-white/[0.02]">
-                <h2 className="mb-3 text-sm font-semibold">SVG Requirements</h2>
+                <h2 className="mb-3 text-sm font-semibold"><T k="pages.submit.requirements.title" fallback="SVG Requirements" /></h2>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   {[
-                    "Valid SVG/XML markup",
-                    "Under 50KB file size",
-                    "No embedded scripts or external references",
-                    "viewBox attribute present",
-                    "Gradients and multi-color SVGs welcome",
-                    "You have the right to redistribute the icon",
-                  ].map((req) => (
-                    <li key={req} className="flex items-start gap-2">
+                    ["valid", "Valid SVG/XML markup"],
+                    ["size", "Under 50KB file size"],
+                    ["scripts", "No embedded scripts or external references"],
+                    ["viewBox", "viewBox attribute present"],
+                    ["gradients", "Gradients and multi-color SVGs welcome"],
+                    ["rights", "You have the right to redistribute the icon"],
+                  ].map(([id, req]) => (
+                    <li key={id} className="flex items-start gap-2">
                       <CheckCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-green-500" />
-                      {req}
+                      <T k={`pages.submit.requirements.${id}`} fallback={req} />
                     </li>
                   ))}
                 </ul>
@@ -125,7 +129,7 @@ export default function SubmitPage() {
                   className="inline-flex items-center gap-2 rounded-lg border border-border/40 bg-card/50 px-4 py-2.5 text-sm font-medium text-foreground transition-all hover:border-border hover:bg-card hover:shadow-md dark:border-white/[0.06] dark:hover:border-white/[0.1]"
                 >
                   <Github className="h-4 w-4" />
-                  View Repository
+                  <T k="pages.submit.viewRepo" fallback="View Repository" />
                   <ArrowUpRight className="h-3.5 w-3.5 opacity-50" />
                 </a>
                 <a
@@ -135,7 +139,7 @@ export default function SubmitPage() {
                   className="inline-flex items-center gap-2 rounded-lg border border-border/40 bg-card/50 px-4 py-2.5 text-sm font-medium text-foreground transition-all hover:border-border hover:bg-card hover:shadow-md dark:border-white/[0.06] dark:hover:border-white/[0.1]"
                 >
                   <GitPullRequest className="h-4 w-4" />
-                  Open Issues
+                  <T k="pages.submit.openIssues" fallback="Open Issues" />
                   <ArrowUpRight className="h-3.5 w-3.5 opacity-50" />
                 </a>
               </div>
@@ -143,7 +147,7 @@ export default function SubmitPage() {
               {/* Schema example */}
               <div className="rounded-xl border border-border/40 bg-card/50 dark:border-white/[0.06] dark:bg-white/[0.02]">
                 <div className="border-b border-border/30 px-5 py-3 dark:border-white/[0.04]">
-                  <h2 className="text-sm font-semibold">Icon Entry Schema</h2>
+                  <h2 className="text-sm font-semibold"><T k="pages.submit.schemaTitle" fallback="Icon Entry Schema" /></h2>
                 </div>
                 <pre className="overflow-auto px-5 py-4 font-mono text-xs leading-relaxed text-foreground/80">
                   <code>{`{
@@ -168,9 +172,9 @@ export default function SubmitPage() {
             <div className="lg:sticky lg:top-20 lg:self-start">
               <div className="rounded-2xl border border-border/40 bg-gradient-to-b from-card/80 to-card/40 shadow-xl shadow-black/[0.03] dark:border-white/[0.08] dark:from-white/[0.04] dark:to-white/[0.02] dark:shadow-black/30">
                 <div className="border-b border-border/30 px-5 py-4 dark:border-white/[0.04]">
-                  <h2 className="text-base font-semibold">Quick Submit</h2>
+                  <h2 className="text-base font-semibold"><T k="pages.submit.quickTitle" fallback="Quick Submit" /></h2>
                   <p className="mt-0.5 text-xs text-muted-foreground">
-                    Drop your SVG to validate and submit via GitHub
+                    <T k="pages.submit.quickDescription" fallback="Drop your SVG to validate and submit via GitHub" />
                   </p>
                 </div>
                 <div className="p-5">
@@ -186,6 +190,7 @@ export default function SubmitPage() {
 }
 
 function Step({
+  id,
   number,
   icon,
   title,
@@ -193,6 +198,7 @@ function Step({
   accent,
   iconColor,
 }: {
+  id: string;
   number: number;
   icon: React.ReactNode;
   title: string;
@@ -207,9 +213,11 @@ function Step({
       </div>
       <div className="min-w-0 flex-1">
         <h3 className="text-sm font-medium">
-          <span className="text-muted-foreground/60">#{number}</span> {title}
+          <span className="text-muted-foreground/60">#{number}</span> <T k={`pages.submit.steps.${id}.title`} fallback={title} />
         </h3>
-        <p className="mt-0.5 text-xs break-words text-muted-foreground">{description}</p>
+        <p className="mt-0.5 text-xs break-words text-muted-foreground">
+          <T k={`pages.submit.steps.${id}.description`} fallback={description} />
+        </p>
       </div>
     </div>
   );

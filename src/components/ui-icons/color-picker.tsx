@@ -3,6 +3,7 @@
 import { UiGlyph } from "@/components/ui-glyph";
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/ui-icons/utils";
+import { useT } from "@/i18n/use-t";
 
 interface Hsv { h: number; s: number; v: number }
 interface EyeDropperLike { open: () => Promise<{ sRGBHex: string }> }
@@ -59,6 +60,7 @@ function useVars(ref: React.RefObject<HTMLElement | null>, vars: Record<string, 
 
 /** A custom color picker: saturation and brightness area, hue slider, hex field, eyedropper where supported, recent colors. */
 export function ColorPicker({ value, onChange, active }: { value: string; onChange: (hex: string) => void; active: boolean }) {
+  const { t } = useT();
   const [open, setOpen] = useState(false);
   const [above, setAbove] = useState(false);
   const [hsv, setHsvState] = useState<Hsv>(() => hexToHsv(value));
@@ -140,7 +142,7 @@ export function ColorPicker({ value, onChange, active }: { value: string; onChan
       <button
         ref={trigger}
         type="button"
-        aria-label="Custom color"
+        aria-label={t("uikit.color.custom")}
         aria-expanded={open}
         onClick={() => {
           if (!open) {
@@ -155,12 +157,12 @@ export function ColorPicker({ value, onChange, active }: { value: string; onChan
         className={cn("size-4 rounded-full border-2 bg-[conic-gradient(from_0deg,#f43f5e,#f59e0b,#84cc16,#06b6d4,#6366f1,#d946ef,#f43f5e)]", active ? "border-foreground bg-none bg-[var(--cur)]" : "border-transparent")}
       />
       {open && (
-        <div ref={pop} role="dialog" aria-label="Pick a color" className={cn("absolute right-0 z-50 w-[232px] rounded-2xl border bg-popover p-3 shadow-2xl", above ? "bottom-full mb-2" : "top-full mt-2")}>
+        <div ref={pop} role="dialog" aria-label={t("uikit.color.pick")} className={cn("absolute right-0 z-50 w-[232px] rounded-2xl border bg-popover p-3 shadow-2xl", above ? "bottom-full mb-2" : "top-full mt-2")}>
           <div
             ref={area}
             role="slider"
             tabIndex={0}
-            aria-label="Saturation and brightness"
+            aria-label={t("uikit.color.satBright")}
             aria-valuetext={`saturation ${hsv.s} percent, brightness ${hsv.v} percent`}
             aria-valuenow={hsv.s}
             aria-valuemin={0}
@@ -175,7 +177,7 @@ export function ColorPicker({ value, onChange, active }: { value: string; onChan
             ref={hue}
             role="slider"
             tabIndex={0}
-            aria-label="Hue"
+            aria-label={t("uikit.color.hue")}
             aria-valuenow={hsv.h}
             aria-valuemin={0}
             aria-valuemax={360}
@@ -188,7 +190,7 @@ export function ColorPicker({ value, onChange, active }: { value: string; onChan
           <div className="mt-3 flex items-center gap-2">
             <span className="size-7 shrink-0 rounded-lg border bg-[var(--cur)]" aria-hidden="true" />
             <input
-              aria-label="Hex color"
+              aria-label={t("uikit.color.hex")}
               value={hexText}
               spellCheck={false}
               onChange={(e) => {
@@ -200,14 +202,14 @@ export function ColorPicker({ value, onChange, active }: { value: string; onChan
               className="h-7 min-w-0 flex-1 rounded-lg border bg-transparent px-2 font-mono text-xs outline-none focus-visible:ring-2 focus-visible:ring-orange-500/60"
             />
             {canPipette && (
-              <button type="button" aria-label="Pick a color from the screen" onClick={pipette} className="grid size-7 shrink-0 place-items-center rounded-lg border text-muted-foreground transition-colors hover:text-foreground">
+              <button type="button" aria-label={t("uikit.color.eyedropper")} onClick={pipette} className="grid size-7 shrink-0 place-items-center rounded-lg border text-muted-foreground transition-colors hover:text-foreground">
                 <UiGlyph name="target" className="size-4" />
               </button>
             )}
           </div>
           {recent.length > 0 && (
             <div className="mt-3">
-              <p className="mb-1.5 text-[0.75rem] text-muted-foreground">Recent</p>
+              <p className="mb-1.5 text-[0.75rem] text-muted-foreground">{t("uikit.color.recent")}</p>
               <div className="flex gap-1.5">
                 {recent.map((c) => (
                   <RecentDot key={c} hex={c} onPick={() => { apply(hexToHsv(c)); }} />
@@ -224,5 +226,6 @@ export function ColorPicker({ value, onChange, active }: { value: string; onChan
 function RecentDot({ hex, onPick }: { hex: string; onPick: () => void }) {
   const ref = useRef<HTMLButtonElement>(null);
   useVars(ref, { "--cur": hex });
-  return <button ref={ref} type="button" aria-label={`Use ${hex}`} onClick={onPick} className="size-5 rounded-full border bg-[var(--cur)]" />;
+  const { t } = useT();
+  return <button ref={ref} type="button" aria-label={t("uikit.color.use", { hex })} onClick={onPick} className="size-5 rounded-full border bg-[var(--cur)]" />;
 }

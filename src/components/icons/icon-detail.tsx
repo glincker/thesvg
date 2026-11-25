@@ -26,9 +26,10 @@ import { formatSvg } from "@/lib/copy-formats";
 import { useFavoritesStore } from "@/lib/stores/favorites-store";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import { cn } from "@/lib/utils";
-import { VARIANT_LABELS, FORMAT_BUTTONS, FORMAT_LABELS } from "@/components/icons/shared/icon-constants";
+import { FORMAT_BUTTONS, FORMAT_LABELS } from "@/components/icons/shared/icon-constants";
 import { withUtm } from "@/lib/external-link";
 import { IconLinksRow } from "@/components/icons/detail/icon-links-row";
+import { useT } from "@/i18n/use-t";
 
 interface IconDetailProps {
   icon: IconEntry | null;
@@ -44,6 +45,7 @@ const FORMAT_ICONS: Record<string, React.ReactNode> = {
 };
 
 export function IconDetail({ icon, onClose }: IconDetailProps) {
+  const { t } = useT();
   const [activeVariant, setActiveVariant] = useState("default");
   const recordCopy = useRecentsStore((s) => s.recordCopy);
   const [copiedFormat, setCopiedFormat] = useState<string | null>(null);
@@ -205,7 +207,7 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
                   : "text-muted-foreground hover:text-red-500"
               )}
               aria-label={
-                isFavorite ? "Remove from favorites" : "Add to favorites"
+                isFavorite ? t("icon.detail.removeFavorite") : t("icon.detail.addFavorite")
               }
               aria-pressed={isFavorite}
             >
@@ -231,13 +233,13 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
                         type="button"
                         onClick={handleDownload}
                         className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-                        aria-label="Download SVG"
+                        aria-label={t("icon.card.downloadSvg")}
                       />
                     }
                   >
                     <Download className="h-3.5 w-3.5" />
                   </TooltipTrigger>
-                  <TooltipContent>Download SVG</TooltipContent>
+                  <TooltipContent>{t("icon.card.downloadSvg")}</TooltipContent>
                 </Tooltip>
               </div>
               {icon.categories.length > 0 && (
@@ -286,7 +288,7 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
                         : "bg-muted text-muted-foreground hover:bg-accent hover:text-accent-foreground"
                     )}
                   >
-                    {VARIANT_LABELS[key] || key}
+                    {t(`icon.variant.${key}`, { defaultValue: key })}
                   </button>
                 ))}
               </div>
@@ -369,7 +371,7 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
                     className="inline-flex items-center gap-1.5 rounded-lg border border-violet-500/25 bg-violet-500/[0.06] px-2.5 py-1.5 text-[11px] text-violet-600 transition-colors hover:bg-violet-500/[0.12] dark:text-violet-400"
                   >
                     <UiGlyph name="book-open-text" look="fill" className="h-3 w-3 opacity-70" />
-                    Guidelines
+                    {t("icon.modal.guidelines")}
                     <ArrowUpRight className="h-2.5 w-2.5 opacity-40" />
                   </a>
                 )}
@@ -382,7 +384,7 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
           <div className="border-t border-border/30 p-3 sm:p-4">
             <div className="sr-only" role="status" aria-live="polite">
               {copiedFormat
-                ? `${copiedFormat === "cli" ? "CLI command" : FORMAT_LABELS.get(copiedFormat)} copied`
+                ? t("icon.modal.copiedStatus", { what: copiedFormat === "cli" ? t("icon.modal.cliCommand") : FORMAT_LABELS.get(copiedFormat) })
                 : ""}
             </div>
             <Link
@@ -391,7 +393,7 @@ export function IconDetail({ icon, onClose }: IconDetailProps) {
               onClick={onClose}
               className="group/cta flex w-full items-center justify-center gap-2 rounded-xl bg-foreground py-2.5 text-sm font-semibold text-background transition-all hover:opacity-90 active:scale-[0.99]"
             >
-              View full details
+              {t("icon.modal.viewFull")}
               <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover/cta:translate-x-0.5" />
             </Link>
           </div>

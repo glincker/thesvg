@@ -1,5 +1,7 @@
 {
-  "language": { "label": "Idioma" },
+  "language": {
+    "label": "Idioma"
+  },
   "nav": {
     "brandIcons": "Iconos de marcas",
     "uiIcons": "Iconos de interfaz",
@@ -10,6 +12,233 @@
     "blog": "Blog",
     "cdnUsage": "Uso del CDN",
     "compare": "Comparar"
+  },
+  "uikit": {
+    "breadcrumb": "Ruta de navegación",
+    "look": {
+      "outline": "Contorno",
+      "duotone": "Duotono",
+      "offset": "Desplazado",
+      "fill": "Relleno",
+      "glass": "Cristal",
+      "glassOutline": "Contorno cristal",
+      "depth": "Profundidad"
+    },
+    "copy": {
+      "name": "Nombre"
+    },
+    "copyHint": {
+      "svg": "El dibujo, con tu estilo",
+      "name": "El nombre del icono",
+      "cli": "El comando que lo añade",
+      "import": "Importación y uso de {{pkg}}",
+      "url": "Un enlace al SVG en el CDN"
+    },
+    "hero": {
+      "title": "Un solo esqueleto, todos los estilos",
+      "show": "Mostrar introducción",
+      "hide": "Ocultar introducción",
+      "badge": "Novedad en 4.0: iconos de interfaz",
+      "intro": "Dibujados sobre una cuadrícula y con estilo en vivo. Contorno, duotono, relleno, cristal y contorno cristal, todos adaptables con currentColor.",
+      "browse": "Explorar iconos"
+    },
+    "nav": {
+      "allIcons": "Todos los iconos",
+      "favorites": "Favoritos",
+      "extensions": "Extensiones",
+      "whatIsNew": "Novedades",
+      "categories": "Categorías",
+      "new": "Nuevos",
+      "allCategories": "Todas las categorías",
+      "expandSidebar": "Expandir barra lateral",
+      "collapseSidebar": "Contraer barra lateral",
+      "navigation": "Navegación"
+    },
+    "mode": {
+      "iconType": "Tipo de icono"
+    },
+    "browse": {
+      "all": "Todos",
+      "allUi": "Todos los iconos de interfaz",
+      "popular": "Populares",
+      "popularHint": "Los que usarás primero",
+      "bestMatches": "Mejores coincidencias",
+      "related": "Relacionados",
+      "relatedHint": "misma familia, sinónimos y escrituras parecidas",
+      "noMatch": "Ningún icono coincide.",
+      "didYouMean": "¿Querías decir",
+      "didYouMeanEnd": "?",
+      "tryAnother": "Prueba otra palabra o quita el filtro.",
+      "loadingMore": "Cargando más iconos",
+      "thatIsAll": "Eso es todo: {{count}}"
+    },
+    "card": {
+      "addFavorite": "Añadir a favoritos",
+      "removeFavorite": "Quitar de favoritos",
+      "backlog": "Pendiente",
+      "draft": "Borrador",
+      "clickToCopy": "Clic para copiar {{what}}",
+      "copied": "Copiado",
+      "copiedWhat": "{{what}} copiado",
+      "copyWhat": "Copiar {{what}}",
+      "downloadSvg": "Descargar SVG",
+      "quickPreview": "Vista rápida",
+      "openFull": "Abrir página completa"
+    },
+    "category": {
+      "count": "{{count}} iconos",
+      "countNew": "{{count}} iconos, {{fresh}} nuevos",
+      "allIn": "Todos los iconos de {{name}}",
+      "others": "Otras categorías",
+      "browseBy": "Explorar por categoría",
+      "intro": "{{count}} iconos de interfaz en {{categories}} categorías. Cada uno está dibujado en la misma cuadrícula y viene en todos los estilos."
+    },
+    "changelog": {
+      "intro": "{{count}} iconos de interfaz publicados hasta ahora, con más en pequeñas entregas.",
+      "upcoming": "Solo vista previa: hay {{drops}} entregas más programadas, {{icons}} iconos."
+    },
+    "quality": {
+      "title": "Calidad de diseño",
+      "footnote": "Se puntúa al construir el conjunto: ajuste a la cuadrícula, render limpio en cada estilo, peso respecto al resto del conjunto y metadatos completos."
+    },
+    "code": {
+      "form": "Forma del código",
+      "source": "Código fuente",
+      "package": "Paquete",
+      "customNote": "El estilo personalizado solo se aplica al código fuente copiado.",
+      "copy": "Copiar"
+    },
+    "color": {
+      "custom": "Color personalizado",
+      "pick": "Elige un color",
+      "satBright": "Saturación y brillo",
+      "hue": "Tono",
+      "hex": "Color hexadecimal",
+      "eyedropper": "Elegir un color de la pantalla",
+      "recent": "Recientes",
+      "use": "Usar {{hex}}"
+    },
+    "ctx": {
+      "rest": "Reposo",
+      "hover": "Hover",
+      "active": "Activo",
+      "interactive": "Interactivo",
+      "sameAsRest": "igual que reposo",
+      "showState": "Mostrar estado",
+      "pressed": "Pulsado",
+      "action": "Acción",
+      "secondary": "Secundario",
+      "iconButton": "Botón de icono",
+      "tab": {
+        "overview": "Resumen",
+        "activity": "Actividad",
+        "settings": "Ajustes"
+      },
+      "placeholder": "Escribe para enfocar este campo",
+      "notificationsOn": "Notificaciones activadas",
+      "notificationsOff": "Notificaciones desactivadas",
+      "toggleChip": "Alternar chip {{n}}"
+    },
+    "detail": {
+      "iconColour": "Color del icono",
+      "fit": "Ajustar",
+      "fitLower": "ajustado",
+      "realSize": "Volver al tamaño real",
+      "zoomFit": "Ampliar para ajustar",
+      "previewSize": "Tamaño de vista previa",
+      "grid": "Cuadrícula",
+      "anchors": "Anclas",
+      "lightCanvas": "Alternar lienzo claro",
+      "looks": "Estilos",
+      "lineOnly": "Este glifo es solo de línea, así que relleno, cristal y profundidad usan un contorno más grueso. Contorno, duotono, desplazado y contorno cristal lo dibujan por completo.",
+      "allLooks": "Todos los estilos dibujan este glifo por completo.",
+      "gridValue": "24 por 24",
+      "category": "Categoría",
+      "color": "Color",
+      "noTags": "Aún sin etiquetas",
+      "subtitle": "{{slug}} · icono de interfaz de {{category}}",
+      "rasterPicked": "El ráster usa el color que elegiste.",
+      "rasterBlack": "El ráster usa casi negro. Elige un color arriba para cambiarlo.",
+      "officialLogo": "Logo oficial de la marca y variantes",
+      "looksHint": "elige uno y todo lo de abajo lo sigue",
+      "inContext": "En contexto",
+      "inContextHint": "hover, foco, pulsación y alternancia funcionan",
+      "opticalSizes": "Tamaños ópticos",
+      "moreIn": "Más en {{category}}",
+      "aboutTitle": "Sobre el icono {{title}}",
+      "aboutBody": "El icono {{title}} es un icono de interfaz de {{category}} dibujado en una cuadrícula de 24 por 24 y disponible en {{count}} estilos: {{looks}}. Usa currentColor, así que toma el color del texto que lo rodea, y cada estilo se puede copiar como SVG, React, Vue, Svelte, HTML o máscara CSS."
+    },
+    "docs": {
+      "quickStart": "Inicio rápido",
+      "props": "Propiedades",
+      "prop": "Propiedad",
+      "type": "Tipo",
+      "whatItDoes": "Qué hace",
+      "looks": "Los estilos y cuándo usarlos",
+      "states": "Estados",
+      "color": "Color y temas",
+      "sizes": "Tamaños",
+      "a11y": "Accesibilidad",
+      "drops": "Cómo crece el conjunto"
+    },
+    "ext": {
+      "title": "Iconos de interfaz: extensiones y paquetes",
+      "intro": "Usa los iconos de interfaz en todo lo que construyes, diseñas y publicas. Los iconos de marca tienen su propia página.",
+      "buildOwn": "Crea el tuyo",
+      "buildOwnText": "Todos los archivos de iconos, el manifiesto y un archivo JSON por estilo (cada icono de ese estilo, de slug a SVG) están abiertos y sin autenticación. Crea un plugin o flujo de trabajo y abre un PR para listarlo aquí.",
+      "viewGithub": "Ver en GitHub",
+      "cdnDocs": "Documentación del CDN"
+    },
+    "style": {
+      "button": "Estilo",
+      "hint": "Haz los iconos tuyos: grosor, esquinas, color",
+      "quick": "Estilos rápidos",
+      "quickHint": "Haz clic en Estilo para ver todos los controles",
+      "dialog": "Estilo de iconos",
+      "presets": "Estilos predefinidos",
+      "savedTitle": "Tu estilo guardado",
+      "live": "Tu estilo, en vivo",
+      "preset": {
+        "house": "Casa",
+        "crisp": "Nítido",
+        "soft": "Suave",
+        "bold": "Grueso",
+        "hairline": "Línea fina",
+        "float": "Flotante",
+        "mine": "Mío"
+      },
+      "resetNamed": "Restablecer {{label}}",
+      "backTo": "Volver a {{value}}",
+      "weight": "Grosor",
+      "scale": "Escala",
+      "shadow": "Sombra",
+      "corners": "Esquinas",
+      "corner": {
+        "sharp": "Afilada",
+        "chamfer": "Biselada",
+        "round": "Redonda"
+      },
+      "cut": "Corte",
+      "cutEnds": "Extremos cortados",
+      "plainEnds": "extremos lisos",
+      "weightChip": "grosor {{value}}",
+      "colour": "Color",
+      "colourAccent": "Color, el acento prevalece",
+      "iconColours": "Colores de iconos",
+      "colorMode": {
+        "natural": "Natural",
+        "mono": "Mono"
+      },
+      "noAccent": "Sin acento",
+      "none": "ninguno",
+      "accentNamed": "Acento {{hex}}",
+      "clickCopies": "Clic para copiar",
+      "clickToCopy": "Haz clic en un icono para copiarlo",
+      "whatCopied": "Qué se copia",
+      "saved": "Guardado",
+      "saveMine": "Guardar como mío",
+      "reset": "Restablecer"
+    }
   },
   "header": {
     "home": "Inicio de theSVG",
@@ -26,6 +255,105 @@
     "extensionsIntegrations": "Extensiones e integraciones",
     "blogUpdates": "Blog y novedades",
     "submitAnIcon": "Enviar un icono"
+  },
+  "mobile": {
+    "dock": {
+      "primary": "Principal",
+      "browse": "Explorar",
+      "favorites": "Favoritos",
+      "recents": "Recientes",
+      "submit": "Enviar",
+      "more": "Más",
+      "favoritesCount": "{{n}} favoritos"
+    },
+    "recents": {
+      "label": "Recientes",
+      "aria": "Iconos vistos recientemente",
+      "seeAll": "Ver todo"
+    },
+    "pwa": {
+      "installIos": "Instalar en iPhone",
+      "iosSteps": "Toca {{share}} Compartir y luego {{add}}.",
+      "iosAdd": "Añadir a pantalla de inicio",
+      "iosAria": "Instalar thesvg en iOS",
+      "installTitle": "Instalar thesvg",
+      "installDesc": "Un toque para instalarlo como app en este dispositivo.",
+      "install": "Instalar",
+      "dismiss": "Descartar"
+    },
+    "sheet": {
+      "close": "Cerrar"
+    },
+    "action": {
+      "title": "Acciones",
+      "copySvg": "Copiar SVG",
+      "downloadSvg": "Descargar SVG",
+      "openQuickView": "Abrir vista rápida",
+      "openFullPage": "Abrir página completa"
+    },
+    "search": {
+      "placeholder": "Buscar iconos...",
+      "brands": "Marcas",
+      "searching": "Buscando...",
+      "results": "Resultados · {{n}}",
+      "noMatch": "Ningún icono coincide con “{{query}}”",
+      "recentSearches": "Búsquedas recientes",
+      "try": "Prueba"
+    },
+    "more": {
+      "tools": "Herramientas",
+      "learn": "Aprender",
+      "yourIcons": "Tus iconos",
+      "integrations": "Integraciones",
+      "families": "Familias de marcas",
+      "familiesDesc": "Amazon, Google, Microsoft y más",
+      "categoriesDesc": "Explora por lo que hace un producto",
+      "awsDesc": "Iconos de servicios y recursos",
+      "azureDesc": "Iconos de Microsoft Azure",
+      "gcpDesc": "Iconos de arquitectura de GCP",
+      "k8sDesc": "Componentes de Kubernetes",
+      "flags": "Banderas de países",
+      "flagsDesc": "Banderas ISO de países y regiones",
+      "viewer": "Visor de SVG",
+      "viewerDesc": "Previsualiza, inspecciona y copia cualquier SVG",
+      "extensions": "Extensiones",
+      "extensionsDesc": "VS Code, Raycast, Figma, paquete npm",
+      "docs": "Docs y guías",
+      "docsDesc": "CDN, React, CLI, MCP y más",
+      "blogDesc": "Novedades y registro de cambios",
+      "compare": "Comparar bibliotecas",
+      "recentsDesc": "Vistos y copiados recientemente",
+      "favoritesDesc": "Iconos que marcaste con estrella",
+      "githubDesc": "Código e incidencias",
+      "discordDesc": "Únete a la comunidad",
+      "npm": "Paquete npm",
+      "npmDesc": "thesvg en npm",
+      "raycast": "Extensión de Raycast",
+      "raycastDesc": "Busca iconos desde Raycast",
+      "figma": "Plugin de Figma",
+      "figmaDesc": "Añade iconos a tu archivo de Figma",
+      "vscode": "Extensión de VS Code",
+      "vscodeDesc": "Busca y copia desde VS Code",
+      "tagline": "La biblioteca abierta de SVG de marcas"
+    },
+    "icon": {
+      "fallbackTitle": "Icono",
+      "previewAlt": "Vista previa del icono de {{title}}",
+      "brandColor": "Color de marca",
+      "removeFavorite": "Quitar {{title}} de favoritos",
+      "addFavorite": "Añadir {{title}} a favoritos",
+      "copied": "Copiado",
+      "license": "Licencia",
+      "unknown": "Desconocida",
+      "variants": "Variantes",
+      "collection": "Colección",
+      "slug": "Slug",
+      "openFullDetails": "Abrir todos los detalles",
+      "openFullDetailsDesc": "Exportar PNG, todas las variantes, SVG sin procesar, snippets de instalación",
+      "skipPreview": "Omitir la vista previa la próxima vez",
+      "skipPreviewDesc": "Ir directo a la página de detalle",
+      "loading": "Cargando icono..."
+    }
   },
   "footer": {
     "headline": "Código abierto. Impulsado por la comunidad.",
@@ -57,6 +385,1418 @@
       "privacy": "Privacidad",
       "trademarkPolicy": "Política de marcas",
       "contact": "Contacto"
+    }
+  },
+  "sidebar": {
+    "allIcons": "Todos los iconos",
+    "categories": "Categorías",
+    "favorites": "Favoritos",
+    "favoritesWithCount": "Favoritos ({{count}})",
+    "shareFavorites": "Compartir favoritos",
+    "shareFavoritesAria": "Copiar un enlace para compartir tus favoritos",
+    "extensions": "Extensiones",
+    "extLibraries": "Bibliotecas y SDK",
+    "extEditors": "Extensiones de editor",
+    "extDesign": "Herramientas de diseño",
+    "extDeveloper": "Herramientas para desarrolladores",
+    "extAi": "IA y automatización",
+    "extIntegrations": "Integraciones",
+    "extFrameworks": "Componentes de framework",
+    "viewer": "Visor",
+    "new": "Nuevo",
+    "docs": "Documentación",
+    "blog": "Blog",
+    "submitIcon": "Enviar icono",
+    "collections": "Colecciones",
+    "families": "Familias",
+    "featured": "Destacados",
+    "allFamilies": "Todas las familias",
+    "recentlyAdded": "Añadidos recientemente",
+    "popular": "Populares",
+    "searchCategories": "Buscar categorías",
+    "clearCategorySearch": "Borrar búsqueda de categorías",
+    "clearSearch": "Borrar búsqueda",
+    "noCategoriesMatch": "Ninguna categoría coincide con «{{query}}»",
+    "noCategoriesMatchStatus": "Ninguna categoría coincide con {{query}}",
+    "categoryFoundOne": "1 categoría encontrada",
+    "categoriesFound": "{{count}} categorías encontradas",
+    "expandSidebar": "Expandir barra lateral ({{shortcut}})",
+    "collapseSidebar": "Contraer barra lateral ({{shortcut}})",
+    "navigation": "Navegación",
+    "jumpToLetterGroup": "Ir a una categoría por letra",
+    "jumpTo": "Ir a {{letter}}"
+  },
+  "chrome": {
+    "display": {
+      "aria": "Ajustes de visualización. Formato de copia {{format}}",
+      "title": "Ajustes de visualización (copia como {{format}})",
+      "copyFormat": "Formato de copia predeterminado",
+      "copyFormatHint": "Se usa al pulsar el botón de copiar en cualquier tarjeta de icono",
+      "fmt": {
+        "svg": "Código SVG sin procesar",
+        "jsx": "Componente de React",
+        "vue": "Componente de archivo único de Vue",
+        "cdn": "Enlace CDN de jsDelivr",
+        "dataUri": "URI de datos Base64"
+      },
+      "preview": "Fondo de la vista previa",
+      "previewHint": "Evalúa un logo sobre la superficie donde irá",
+      "bg": {
+        "auto": "Automático",
+        "autoDesc": "Se adapta a cada logo para que las marcas oscuras y claras se vean",
+        "light": "Claro",
+        "lightDesc": "Siempre un mosaico claro",
+        "dark": "Oscuro",
+        "darkDesc": "Siempre un mosaico oscuro",
+        "checker": "Cuadrícula",
+        "checkerDesc": "Muestra las zonas transparentes"
+      },
+      "size": "Tamaño de la interfaz",
+      "sizeHint": "Agranda texto, iconos y controles, en lugar de ampliar la página",
+      "sz": {
+        "default": "Predeterminado",
+        "defaultDesc": "El tamaño estándar",
+        "large": "Grande",
+        "largeDesc": "Un paso más, cerca del 112 %",
+        "larger": "Más grande",
+        "largerDesc": "Dos pasos más, 125 %"
+      }
+    },
+    "packages": {
+      "aria": "Paquetes de npm",
+      "openTitle": "Abrir en npm",
+      "copyAria": "Copiar el comando de instalación de {{name}}",
+      "openAria": "Abrir {{name}} en npm",
+      "copiedStatus": "Comando de instalación de {{name}} copiado",
+      "all": "Todos los paquetes y comandos de instalación",
+      "group": {
+        "brand": "Iconos de marcas",
+        "ui": "Iconos de interfaz",
+        "flags": "Banderas",
+        "tools": "Herramientas"
+      },
+      "label": {
+        "everything": "Todo en uno",
+        "rawData": "Datos SVG sin procesar",
+        "plainJs": "JavaScript puro",
+        "cdnFiles": "Archivos SVG sin procesar para CDN",
+        "rawManifest": "Archivos sin procesar y manifiesto",
+        "flags": "Banderas de países y regiones",
+        "cli": "Línea de comandos",
+        "mcp": "Servidor MCP"
+      }
+    },
+    "palette": {
+      "title": "Paleta de comandos",
+      "description": "Busca iconos, ve a una categoría o ejecuta una acción rápida",
+      "placeholder": "Buscar iconos, categorías, acciones...",
+      "empty": "No se encontraron resultados.",
+      "icons": "Iconos",
+      "recent": "Recientes",
+      "categories": "Categorías",
+      "quickActions": "Acciones rápidas",
+      "action": {
+        "submit": "Enviar un icono",
+        "docs": "Leer la documentación",
+        "integrations": "Explorar integraciones",
+        "copySvg": "Copiar {{title}} como SVG",
+        "copyJsx": "Copiar {{title}} como JSX"
+      },
+      "copied": "{{title}} copiado como {{format}}",
+      "copyFailed": "No se pudo copiar. Inténtalo de nuevo.",
+      "navigate": "navegar",
+      "select": "seleccionar",
+      "close": "cerrar"
+    },
+    "search": {
+      "placeholder": "Buscar iconos...",
+      "aria": "Buscar iconos",
+      "clear": "Borrar búsqueda",
+      "brandIcons": "Iconos de marcas",
+      "uiIcons": "Iconos de interfaz",
+      "flags": "Banderas",
+      "thisSection": "Esta sección",
+      "viewAll": "Ver los {{total}}",
+      "viewAllFlags": "Ver las {{total}} banderas",
+      "searching": "Buscando…",
+      "failed": "No se pudo cargar la búsqueda. Revisa tu conexión e inténtalo de nuevo.",
+      "noMatch": "Ningún icono coincide con «{{query}}»",
+      "submitThis": "Enviar este icono"
+    },
+    "help": {
+      "aria": "Ayuda y consejos",
+      "close": "Cerrar",
+      "badge": "Primeros pasos",
+      "title": "Consejos rápidos",
+      "subtitle": "Todo lo que puedes hacer con theSVG",
+      "tip": {
+        "click": {
+          "title": "Haz clic en un icono",
+          "desc": "Abre la página de detalle con fragmentos de código, variantes y opciones de exportación"
+        },
+        "copy": {
+          "title": "Copia rápida",
+          "desc": "Pulsa el botón de copiar en cualquier tarjeta para obtener el SVG al instante"
+        },
+        "download": {
+          "title": "Descarga y exportación",
+          "desc": "Descarga el SVG o exporta a PNG de 32 a 512 px desde la página de detalle"
+        },
+        "search": {
+          "title": "Busca en todo",
+          "desc": "Pulsa Cmd+K para buscar entre {{total}} iconos"
+        },
+        "fav": {
+          "title": "Guarda favoritos",
+          "desc": "Marca iconos con el corazón para guardarlos. Accede desde la barra lateral cuando quieras"
+        },
+        "use": {
+          "title": "Úsalo donde quieras",
+          "desc": "npm, React, Vue, CLI, CDN o servidor MCP para asistentes de IA"
+        }
+      },
+      "escHint": "Pulsa {{key}} para cerrar",
+      "gotIt": "Entendido"
+    },
+    "hint": {
+      "title": "Haz clic en un icono para ver los detalles",
+      "desc": "Copia código, descarga, exporta PNG y más"
+    },
+    "star": {
+      "title": "¿Te resulta útil thesvg?",
+      "withStars": "{{stars}} desarrolladores le han dado una estrella. Una estrella ayuda a que otros lo descubran.",
+      "noStars": "Una estrella en GitHub ayuda a otros desarrolladores a descubrirlo. Es gratuito y de código abierto.",
+      "cta": "Dar una estrella en GitHub"
+    },
+    "post": {
+      "label": "Nueva entrada",
+      "read": "Leer"
+    },
+    "common": {
+      "dismiss": "Descartar"
+    },
+    "flagsPill": {
+      "new": "Nuevo"
+    }
+  },
+  "home": {
+    "navigation": "Navegación",
+    "failedToLoad": "No se pudieron cargar los iconos",
+    "failedToLoadRefresh": "No se pudieron cargar los iconos. Actualiza la página e inténtalo de nuevo.",
+    "loading": "Cargando...",
+    "favCount": "Favoritos: {{count}}",
+    "comfortableView": "Vista cómoda",
+    "compactView": "Vista compacta",
+    "sortBy": "Ordenar por {{label}}",
+    "sort": {
+      "default": "Ordenar",
+      "az": "A-Z",
+      "za": "Z-A",
+      "recent": "Recientes",
+      "popular": "Populares"
+    },
+    "removeCollectionFilter": "Quitar filtro de colección",
+    "removeCategoryFilter": "Quitar filtro de categoría",
+    "removeFavoritesFilter": "Quitar filtro de favoritos",
+    "removeSearchFilter": "Quitar filtro de búsqueda",
+    "favorites": "Favoritos",
+    "clearAll": "Borrar todo",
+    "clear": "Borrar",
+    "all": "Todo",
+    "googleBanner": {
+      "badge": "Nuevo",
+      "title": "Ya llega el rediseño de Google 2026",
+      "body": "13 iconos de producto rediseñados con la nueva identidad de degradados. La primera biblioteca en alojarlos.",
+      "cta": "Ver el conjunto de 2026"
+    },
+    "copyCommand": "Copiar comando: {{command}}",
+    "ago": {
+      "now": "ahora",
+      "minutes": "hace {{count}} min",
+      "hours": "hace {{count}} h",
+      "days": "hace {{count}} d",
+      "months": "hace {{count}} m"
+    },
+    "goToSlide": "Ir a la diapositiva {{count}}",
+    "dismissBanner": "Cerrar banner",
+    "dismiss": "Cerrar",
+    "continue": "Continuar",
+    "whereYouLeftOff": "Donde lo dejaste",
+    "viewAll": "Ver todo",
+    "expandContinue": "Expandir la sección Continuar",
+    "collapseContinue": "Contraer la sección Continuar",
+    "expand": "Expandir",
+    "collapse": "Contraer",
+    "clearViewed": "Borrar vistos recientemente",
+    "clearRecents": "Borrar recientes",
+    "iconCollections": "Colecciones de iconos",
+    "showingPopularFirst": "Mostrando primero Populares",
+    "showingRecentFirst": "Mostrando primero Añadidos recientemente",
+    "popular": "Populares",
+    "recent": "Recientes",
+    "recentlyAdded": "Añadidos recientemente",
+    "scopedRecentlyAdded": "{{scope}} · Añadidos recientemente",
+    "scopedPopular": "{{scope}} · Populares",
+    "popularAws": "Servicios de AWS populares",
+    "popularAzure": "Servicios de Azure populares",
+    "popularGcp": "Servicios de GCP populares",
+    "browseByCategory": "Explorar por categoría",
+    "allIcons": "Todos los iconos",
+    "allCollectionIcons": "Todos los iconos de {{collection}}",
+    "attribution": {
+      "aws": "Los iconos de arquitectura de AWS se ofrecen bajo CC-BY-ND 2.0. Amazon Web Services y todas las marcas relacionadas son marcas comerciales de Amazon.com, Inc.",
+      "azure": "Los iconos de Microsoft Azure se ofrecen bajo licencia MIT. Microsoft Azure y todas las marcas relacionadas son marcas comerciales de Microsoft Corporation.",
+      "gcp": "Los iconos de Google Cloud se ofrecen bajo licencia Apache 2.0. Google Cloud y todas las marcas relacionadas son marcas comerciales de Google LLC."
+    },
+    "google": {
+      "skip": "Saltar a los iconos",
+      "eyebrow": "Google · rediseño 2026",
+      "titleLine1": "El kit de marca",
+      "titleLine2": "de Workspace",
+      "icons": "iconos",
+      "gradientPerfect": "degradados perfectos",
+      "released": "lanzado",
+      "markAria": "Marca de Google Workspace · abrir página de detalle",
+      "open": "Abrir",
+      "fullSet": "El conjunto completo",
+      "countOf": "{{shown}} de {{total}} iconos",
+      "filterPlaceholder": "Filtrar (Gmail, Drive, azul…)",
+      "filterAria": "Filtrar iconos de Google 2026",
+      "clearFilter": "Borrar filtro",
+      "allGoogle": "Todos los iconos de Google",
+      "filterByColor": "Filtrar por color de marca",
+      "noColorIcons": "No hay iconos de color {{color}} en este conjunto",
+      "colorIcons": "Iconos de color {{color}}: {{count}}",
+      "colors": {
+        "red": "Rojo",
+        "yellow": "Amarillo",
+        "green": "Verde",
+        "blue": "Azul",
+        "purple": "Morado",
+        "neutral": "Neutro"
+      },
+      "gridAria": "Iconos de marca de Google 2026",
+      "noMatchBoth": "Ningún icono coincide con «{{query}}» en {{colors}}.",
+      "noMatchQuery": "Ningún icono coincide con «{{query}}».",
+      "noMatchColors": "Ningún icono coincide con {{colors}}.",
+      "clearFilters": "Borrar filtros"
+    },
+    "tile": {
+      "svgIcon": "Icono SVG de {{name}}",
+      "quickActions": "Acciones rápidas",
+      "copyMarkup": "Copiar el código SVG de {{name}}",
+      "copySvg": "Copiar SVG",
+      "downloadFile": "Descargar el archivo SVG de {{name}}",
+      "downloadSvg": "Descargar .svg",
+      "svgCopied": "SVG copiado",
+      "colorCopied": "{{color}} copiado",
+      "copyColor": "Copiar el color {{color}}",
+      "copied": "Copiado"
+    },
+    "recents": {
+      "allTime": "Todo el tiempo",
+      "today": "Hoy",
+      "thisWeek": "Esta semana",
+      "thisMonth": "Este mes",
+      "justNow": "justo ahora",
+      "titleCopied": "{{name}} copiado",
+      "copyFailed": "Error al copiar",
+      "deviceOnly": "Tu actividad, solo en este dispositivo",
+      "title": "Recientes",
+      "viewedLabel": "vistos",
+      "copiedLabel": "copiados",
+      "searchedLabel": "búsquedas",
+      "confirmClearAll": "¿Borrar toda la actividad reciente?",
+      "clearEverything": "Borrar todo",
+      "loading": "Cargando tus recientes",
+      "loadFailedTitle": "No se pudieron cargar tus iconos recientes",
+      "loadFailedBody": "Tu historial de vistos y copiados está guardado, pero esta vez no se pudo resolver.",
+      "retry": "Reintentar",
+      "emptyTitle": "Aún no hay nada",
+      "emptyBody": "Explora algunos iconos y aparecerán aquí para copiarlos de nuevo o reabrirlos con un toque.",
+      "browseLibrary": "Explorar la biblioteca",
+      "viewed": "Vistos",
+      "copySvg": "Copiar SVG",
+      "copy": "Copiar",
+      "download": "Descargar",
+      "copied": "Copiados",
+      "copyAgain": "Copiar {{name}} de nuevo",
+      "recopy": "Copiar de nuevo",
+      "searches": "Búsquedas"
+    },
+    "slides": {
+      "open": {
+        "title": "{{count, number}}+ iconos SVG. Busca. Copia. Publica.",
+        "description": "Busca, copia y publica iconos de marcas en segundos. Gratis, de código abierto y hecho por la comunidad.",
+        "cta": "Empezar",
+        "ctaSecondary": "Enviar un icono",
+        "badge": "{{count, number}}+ iconos"
+      },
+      "ui": {
+        "title": "Llegan los iconos de interfaz, en siete estilos",
+        "description": "Iconos de interfaz dibujados en una misma cuadrícula y con estilo editable en vivo. Gratis para copiar.",
+        "cta": "Explorar iconos de interfaz",
+        "ctaSecondary": "Cómo funciona",
+        "badge": "theSVG 4.0"
+      },
+      "npm": {
+        "title": "Un paquete, todas las marcas",
+        "description": "Compatible con tree-shaking, tipado y con ESM/CJS dual. Importa cualquier icono sin configuración.",
+        "cta": "Ver en npm",
+        "ctaSecondary": "Extensiones"
+      },
+      "copy": {
+        "title": "SVG, JSX, CDN o descarga",
+        "description": "Todos los formatos que necesitas. Copia el SVG en bruto, toma un enlace de CDN o descarga archivos. Incluye variantes para modo oscuro.",
+        "cta": "Explorar iconos",
+        "ctaSecondary": "Extensiones",
+        "badge": "Copia y publica"
+      },
+      "flagsNew": {
+        "title": "Llegan las banderas: 263 países y regiones",
+        "description": "Todos los países, además de Inglaterra, Escocia, Cataluña y más. Tres formas cada una, en un paquete pequeño.",
+        "cta": "Explorar banderas",
+        "ctaSecondary": "Cómo usarlo",
+        "badge": "Nuevo: banderas"
+      },
+      "aws": {
+        "title": "Todos los iconos de AWS para tus diagramas",
+        "description": "Más de 300 iconos de servicios, más de 400 de recursos y iconos de categorías. Explora, copia y usa al instante en diagramas de arquitectura.",
+        "cta": "Explorar servicios",
+        "ctaSecondary": "Todas las categorías",
+        "badge": "Arquitectura de AWS"
+      },
+      "awsOfficial": {
+        "title": "Iconos oficiales de arquitectura de AWS",
+        "description": "SVG sin modificar del conjunto oficial de iconos de AWS. Se actualiza cada trimestre. Servicios, recursos, categorías y grupos.",
+        "cta": "Explorar todo",
+        "ctaSecondary": "Ver licencia",
+        "badge": "Versión 2026-Q1"
+      },
+      "azure": {
+        "title": "626 iconos de servicios de Azure",
+        "description": "Todos los iconos de servicios de Azure para tus diagramas de arquitectura. VM, App Services, SQL, Cosmos DB y más. De uso gratuito.",
+        "cta": "Explorar servicios",
+        "ctaSecondary": "Todas las categorías",
+        "badge": "Microsoft Azure"
+      },
+      "azureOfficial": {
+        "title": "Iconos oficiales de arquitectura de Azure",
+        "description": "29 categorías de iconos de servicios de Microsoft Azure. Cómputo, redes, bases de datos, IA, seguridad y más.",
+        "cta": "Explorar todo",
+        "ctaSecondary": "Ver licencia",
+        "badge": "Versión 2026-Q1"
+      },
+      "gcp": {
+        "title": "214 iconos de servicios de GCP",
+        "description": "Iconos de Google Cloud Platform para diagramas de arquitectura. Compute Engine, BigQuery, Cloud Run, GKE y todos los servicios de GCP.",
+        "cta": "Explorar servicios",
+        "ctaSecondary": "Todas las categorías",
+        "badge": "Google Cloud"
+      },
+      "gcpOfficial": {
+        "title": "Iconos oficiales de Google Cloud",
+        "description": "Iconos de GCP gratuitos bajo Apache 2.0. Clasificados automáticamente en cómputo, almacenamiento, IA, redes y más.",
+        "cta": "Explorar todo",
+        "ctaSecondary": "Ver licencia",
+        "badge": "Licencia Apache 2.0"
+      },
+      "k8s": {
+        "title": "38 iconos oficiales de Kubernetes",
+        "description": "Pods, Deployments, Services, Ingress, ConfigMaps y más. El conjunto completo de iconos de Kubernetes de la CNCF para tus diagramas de arquitectura.",
+        "cta": "Explorar iconos",
+        "ctaSecondary": "Todos los recursos",
+        "badge": "Kubernetes"
+      },
+      "k8sOfficial": {
+        "title": "Iconos de arquitectura de Kubernetes de la CNCF",
+        "description": "Iconos oficiales del proyecto Kubernetes. Gratuitos bajo Apache 2.0. Úsalos en documentación, diagramas y presentaciones.",
+        "cta": "Explorar todo",
+        "ctaSecondary": "Ver licencia",
+        "badge": "Licencia Apache 2.0"
+      },
+      "flags": {
+        "title": "263 banderas de países y regiones",
+        "description": "Todos los países ISO 3166-1, además de Inglaterra, Escocia, Gales, Cataluña, las islas Canarias, la UE y la ONU. Tres formas cada una: 4x3, cuadrada y circular.",
+        "cta": "Explorar banderas",
+        "ctaSecondary": "Cómo usarlo",
+        "badge": "Nuevo: banderas"
+      },
+      "community": {
+        "title": "256 iconos seleccionados por la comunidad",
+        "description": "Herramientas de desarrollo, bases de datos, frameworks y plataformas aportados por la comunidad de código abierto. De uso gratuito y en constante crecimiento.",
+        "cta": "Explorar iconos",
+        "ctaSecondary": "Enviar un icono",
+        "badge": "Comunidad"
+      },
+      "auth": {
+        "title": "858 iconos de insignias de autenticación",
+        "description": "Insignias circulares de servicios para pantallas de configuración de 2FA e interfaces de seguridad de cuentas. Exchanges, VPN, hosting, juegos y más.",
+        "cta": "Explorar insignias",
+        "ctaSecondary": "Todas las categorías",
+        "badge": "CC0, sin atribución"
+      }
+    }
+  },
+  "pages": {
+    "common": {
+      "extensions": "Extensiones",
+      "opensInNewTab": "(se abre en una pestaña nueva)"
+    },
+    "notFound": {
+      "title": "Icono no encontrado",
+      "body": "Puede que este icono se haya movido, renombrado o que aún no exista.",
+      "count": "Tenemos más de {{count}} iconos de marcas, AWS, Azure y GCP. Prueba a buscar lo que necesitas.",
+      "browse": "Explorar iconos",
+      "aws": "Iconos de AWS",
+      "azure": "Iconos de Azure",
+      "gcp": "Iconos de GCP",
+      "back": "Volver al inicio"
+    },
+    "error": {
+      "title": "Algo salió mal",
+      "body": "Ocurrió un error inesperado. Intenta recargar la página o vuelve al inicio.",
+      "retry": "Intentar de nuevo",
+      "home": "Ir al inicio"
+    },
+    "categories": {
+      "badge": "{{count}} categorías",
+      "title": "Todas las categorías",
+      "intro": "Explora todas las categorías de iconos de las colecciones de marcas y de arquitectura de AWS.",
+      "brand": "Categorías de iconos de marcas",
+      "aws": "Categorías de arquitectura de AWS"
+    },
+    "packages": {
+      "title": "Paquetes",
+      "intro": "Todo lo que theSVG publica en npm, en un solo lugar. Los iconos de marcas, los iconos de interfaz y las banderas son paquetes independientes, así que añadir uno nunca hace más pesado a otro. Todos los paquetes admiten tree-shaking y las versiones avanzan juntas dentro de cada grupo.",
+      "groups": {
+        "brand": "Iconos de marcas",
+        "ui": "Iconos de interfaz",
+        "flags": "Banderas",
+        "tools": "Herramientas"
+      }
+    },
+    "contact": {
+      "title": "Contacto",
+      "intro": "¿Tienes una pregunta, encontraste un error o necesitas informar de un problema de marca registrada? Escríbenos por cualquiera de los canales siguientes.",
+      "email": {
+        "title": "Correo electrónico",
+        "description": "Para solicitudes de marca registrada, avisos DMCA o consultas generales.",
+        "note": "Respondemos en 48 horas"
+      },
+      "issues": {
+        "description": "Informa de errores, solicita funciones o envía correcciones de iconos.",
+        "action": "Abrir un issue",
+        "note": "Ideal para problemas técnicos",
+        "title": "GitHub Issues"
+      },
+      "discussions": {
+        "description": "Haz preguntas, comparte ideas o conecta con la comunidad.",
+        "action": "Iniciar una discusión",
+        "note": "Ideal para preguntas generales",
+        "title": "GitHub Discussions"
+      },
+      "trademark": {
+        "title": "Solicitud de marca registrada",
+        "description": "¿Eres el titular de la marca? Solicita retirar o actualizar un icono, o añade pautas de uso.",
+        "action": "Enviar una solicitud",
+        "note": "Las solicitudes de retirada se atienden en 24 horas"
+      },
+      "policy": {
+        "title": "Política de marcas registradas",
+        "p1": "Todos los logotipos y marcas registradas de thesvg.org pertenecen a sus respectivos propietarios. Los iconos se ofrecen solo con fines de identificación y desarrollo. No estamos afiliados a ninguna de las marcas incluidas ni contamos con su respaldo.",
+        "p2": "Si eres el titular de una marca y quieres que retiremos o actualicemos tu icono, {{email}} o lee nuestra {{policy}} completa. Las solicitudes de retirada se atienden en 24 horas.",
+        "emailLink": "escríbenos",
+        "policyLink": "Política de marcas registradas"
+      }
+    },
+    "compare": {
+      "badge": "Comparación honesta",
+      "title": "Compara bibliotecas de iconos de marcas",
+      "intro": "Siete bibliotecas de iconos populares comparadas en funciones, herramientas y ecosistema. Lo hicimos con imparcialidad: cada biblioteca tiene puntos fuertes. Elige la que encaje con tu proyecto.",
+      "milestone": {
+        "badge": "Hito de 2026",
+        "title": "{{count}} iconos de marcas en tres meses",
+        "cta": "Leer la publicación del hito"
+      },
+      "table": {
+        "feature": "Función"
+      },
+      "sections": {
+        "coverage": "Cobertura de iconos de marcas",
+        "tooling": "Herramientas para desarrolladores",
+        "ecosystem": "Ecosistema y plugins",
+        "governance": "Gobernanza y calidad"
+      },
+      "when": "Cuándo usar cada una",
+      "faq": "Preguntas frecuentes",
+      "note": "Una nota sobre la imparcialidad",
+      "browse": "Explorar {{count}} iconos"
+    },
+    "extensions": {
+      "title": "Extensiones e integraciones",
+      "subtitle": "Usa los iconos de theSVG en todo lo que construyes, diseñas y publicas.",
+      "newBadge": "Nuevo",
+      "mentionsLink": "Mira dónde se menciona thesvg",
+      "jump": "Ir a la categoría",
+      "build": {
+        "title": "Crea la tuya",
+        "body": "La API y el CDN son totalmente abiertos y no requieren autenticación. Crea un plugin, una extensión o un flujo de trabajo y abre un PR para que aparezca aquí.",
+        "github": "Ver en GitHub",
+        "cdn": "Documentación del CDN"
+      },
+      "cat": {
+        "npm": {
+          "label": "Bibliotecas y SDK",
+          "description": "Instala e importa iconos de marcas en tu proyecto"
+        },
+        "editors": {
+          "label": "Extensiones de editor",
+          "description": "Busca e inserta iconos sin salir del editor"
+        },
+        "design": {
+          "label": "Herramientas de diseño",
+          "description": "Arrastra y suelta iconos de marcas en tus diseños"
+        },
+        "developer": {
+          "label": "Herramientas para desarrolladores",
+          "description": "CLI, CDN y API para acceso programático"
+        },
+        "ai": {
+          "label": "IA y automatización",
+          "description": "Permite que agentes de IA y lanzadores accedan a los iconos de marcas"
+        },
+        "integrations": {
+          "label": "Integraciones",
+          "description": "Usa theSVG en herramientas creativas y sin código"
+        },
+        "frameworks": {
+          "label": "Componentes para frameworks",
+          "description": "Componentes nativos para el framework que prefieras"
+        },
+        "mobile-native": {
+          "label": "Móvil y nativo",
+          "description": "Incluye iconos en apps de iOS, Android y multiplataforma"
+        }
+      },
+      "cta": {
+        "install": "Instalar",
+        "buildThis": "Crear esto",
+        "docs": "Documentación",
+        "browseLibraries": "Explorar bibliotecas",
+        "browseSets": "Explorar conjuntos",
+        "comingSoon": "Próximamente",
+        "viewSkills": "Ver en skills.sh",
+        "viewSource": "Ver código fuente",
+        "trackProgress": "Seguir el progreso"
+      }
+    },
+    "mentions": {
+      "title": "Mencionado en",
+      "intro": "Proyectos que usan thesvg, listas que lo incluyen y páginas que escriben sobre él.",
+      "total": "{{count}} menciones",
+      "groups": {
+        "code": {
+          "label": "Usado en código",
+          "blurb": "Proyectos que obtienen, dependen de o incluyen iconos de thesvg."
+        },
+        "list": {
+          "label": "En listas seleccionadas",
+          "blurb": "Directorios y listas awesome que enlazan a thesvg."
+        },
+        "editorial": {
+          "label": "Artículos sobre thesvg",
+          "blurb": "Reseñas y artículos."
+        },
+        "more": {
+          "label": "Más menciones"
+        }
+      },
+      "summary": {
+        "code": "{{count}} usados en código",
+        "list": "{{count}} en listas seleccionadas",
+        "editorial": "{{count}} artículos"
+      },
+      "evidence": {
+        "pr": "PR",
+        "commit": "Commit",
+        "sr": "que añadió thesvg (se abre en una pestaña nueva)"
+      },
+      "invite": {
+        "title": "¿Conoces una página que mencione thesvg?",
+        "body": "Abre un issue con el enlace y lo añadiremos aquí.",
+        "cta": "Abrir un issue"
+      }
+    },
+    "integrations": {
+      "drawio": {
+        "title": "Bibliotecas de formas para draw.io / diagrams.net",
+        "subtitle": "Iconos de marcas y herramientas de desarrollo, listos para tus diagramas.",
+        "howTitle": "Cómo importar una biblioteca",
+        "step1": "Abre draw.io (o diagrams.net) con el diagrama en el que trabajas.",
+        "step2": "En la parte inferior del panel Shapes de la izquierda, haz clic en el icono de cuadrícula \"More Shapes\".",
+        "step3": "En el cuadro que se abre, desplázate hacia abajo y elige \"Open Library from Device...\".",
+        "step4": "Elige el archivo .xml descargado de la categoría que quieras.",
+        "step5": "Los iconos aparecen como un panel nuevo en la barra lateral izquierda, listos para arrastrar al lienzo.",
+        "libraries": "{{count}} bibliotecas por categoría",
+        "cardBlurb": "Logotipos de marcas y herramientas de {{label}}, listos para arrastrar a tu diagrama.",
+        "download": "Descargar .xml"
+      },
+      "iconCount": "{{count}} iconos",
+      "excalidraw": {
+        "title": "Bibliotecas de formas para Excalidraw",
+        "intro": "Bibliotecas personalizadas de Excalidraw descargables con iconos de marcas y herramientas de desarrollo, agrupadas por categoría, para diagramas de arquitectura y de producto.",
+        "howTitle": "Cómo importar",
+        "step1": "Abre Excalidraw y despliega el panel de la biblioteca de formas en el lado derecho de la barra de herramientas.",
+        "step2": "Haz clic en el menú \"...\" de la parte superior del panel de la biblioteca y elige \"Open\".",
+        "step3": "Selecciona el archivo .excalidrawlib descargado.",
+        "step4": "Los iconos se añaden a tu biblioteca personal, listos para arrastrar al lienzo.",
+        "libraries": "{{count}} bibliotecas",
+        "librariesNote": "Cada archivo es un .excalidrawlib independiente que puedes cargar por separado.",
+        "download": "Descargar"
+      },
+      "mermaid": {
+        "title": "Iconos de marcas para Mermaid",
+        "subtitle": "Logotipos reales en tus diagramas de arquitectura, sin necesidad de alojar imágenes.",
+        "packs": "Paquetes de iconos",
+        "packMono": "Iconos monocromos que siguen currentColor. Ideales para diagramas con tema.",
+        "packColor": "Iconos de marcas a todo color. Ideales cuando los logotipos deben conservar sus colores.",
+        "step1": "1. Registra los paquetes",
+        "step2": "2. Usa los iconos en un diagrama",
+        "footer": "Los nombres de los iconos coinciden con los slugs de theSVG. Busca en la {{library}} el que necesites.",
+        "libraryLink": "biblioteca"
+      }
+    },
+    "submit": {
+      "badge": "Más de {{count}} iconos y creciendo",
+      "title": "Envía un icono",
+      "intro": "Cada marca merece un lugar. Sin filtros. Suelta tu SVG, completa los datos y envíalo directamente por GitHub.",
+      "how": "Cómo funciona",
+      "steps": {
+        "fork": {
+          "title": "Haz un fork del repositorio",
+          "description": "Haz un fork de github.com/GLINCKER/thesvg y clónalo en local."
+        },
+        "add": {
+          "title": "Añade tus SVG",
+          "description": "Coloca los archivos en public/icons/{slug}/ con el nombre correcto."
+        },
+        "json": {
+          "title": "Actualiza icons.json",
+          "description": "Añade tu entrada a src/data/icons.json."
+        },
+        "pr": {
+          "title": "Abre un PR",
+          "description": "Ejecuta pnpm validate y luego abre un pull request."
+        }
+      },
+      "requirements": {
+        "title": "Requisitos del SVG",
+        "valid": "Marcado SVG/XML válido",
+        "size": "Menos de 50 KB de tamaño",
+        "scripts": "Sin scripts incrustados ni referencias externas",
+        "viewBox": "Atributo viewBox presente",
+        "gradients": "Se aceptan degradados y SVG multicolor",
+        "rights": "Tienes derecho a redistribuir el icono"
+      },
+      "viewRepo": "Ver repositorio",
+      "openIssues": "Issues abiertos",
+      "schemaTitle": "Esquema de entrada de icono",
+      "quickTitle": "Envío rápido",
+      "quickDescription": "Suelta tu SVG para validarlo y enviarlo por GitHub",
+      "form": {
+        "validation": {
+          "pass": "Todas las comprobaciones superadas",
+          "fail": "Algunas comprobaciones fallaron"
+        },
+        "preview": {
+          "title": "Vista previa",
+          "light": "Claro",
+          "dark": "Oscuro"
+        },
+        "license": {
+          "label": "Licencia",
+          "helpOpen": "Ayúdame a elegir",
+          "helpHide": "Ocultar",
+          "guide": "Guía de licencias",
+          "pick": "Elige la opción que corresponda:",
+          "own": {
+            "title": "Lo dibujé yo mismo",
+            "hint": "→ CC0 1.0"
+          },
+          "oss": {
+            "title": "Logotipo de un proyecto de código abierto MIT / Apache / BSD",
+            "hint": "→ usa la licencia del proyecto"
+          },
+          "ccby": {
+            "title": "Kit de marca publicado explícitamente como CC BY",
+            "hint": "→ CC BY 4.0 (o CC BY-SA / CC BY-ND)"
+          },
+          "other": {
+            "title": "Marca de empresa, licencia personalizada o no estoy seguro",
+            "hint": "→ Otra / personalizada (lo verificaremos)"
+          },
+          "select": "Selecciona una licencia…",
+          "otherLabel": "Describe la licencia",
+          "otherPlaceholder": "p. ej. Acme Brand Guidelines v2: solo uso no comercial",
+          "otherEmpty": "Se requiere una breve descripción al elegir Otra.",
+          "otherTooLong": "Mantén la descripción por debajo de {{max}} caracteres.",
+          "autoLabel": "Tu issue se etiquetará automáticamente como {{label}} para que un mantenedor lo revise antes de fusionarlo."
+        },
+        "categories": {
+          "label": "Categorías",
+          "placeholder": "Añadir categoría personalizada...",
+          "add": "Añadir"
+        },
+        "file": {
+          "label": "Archivo SVG",
+          "aria": "Subir archivo SVG",
+          "dropActive": "Suelta tu SVG aquí",
+          "drop": "Arrastra y suelta tu SVG",
+          "hint": "o haz clic para buscar, solo archivos .svg, máx. 50 KB",
+          "remove": "Quitar archivo"
+        },
+        "details": "Detalles del icono",
+        "name": "Nombre del icono",
+        "namePlaceholder": "p. ej. Vercel",
+        "slug": "Slug (kebab-case)",
+        "slugPlaceholder": "p. ej. vercel",
+        "website": "URL del sitio web",
+        "guidelines": "URL de las pautas de marca",
+        "hex": "Color hexadecimal de la marca",
+        "hexPreview": "Vista previa del color: #{{hex}}",
+        "submit": "Enviar por GitHub",
+        "copied": "¡Copiado!",
+        "copy": "Copiar envío",
+        "needsMore": "Sube un archivo SVG, escribe un nombre de icono y elige una licencia para habilitar el envío."
+      }
+    }
+  },
+  "icon": {
+    "about": {
+      "brandColor": "Color de marca",
+      "collection": "Parte de la colección {{name}}.",
+      "colorName": "color",
+      "filed": "Clasificado en {{categories}}.",
+      "flagNote": "La bandera de {{title}} es un símbolo público de su país o región. Mostrarla no implica una postura sobre soberanía o fronteras.",
+      "free": "El icono SVG de {{title}} se puede descargar gratis en theSVG.",
+      "heading": "Acerca del icono de {{title}}",
+      "noModify": "No modifiques la marca ni sugieras respaldo.",
+      "officialAssets": "Recursos oficiales de la marca:",
+      "restricted": "El uso se limita a los términos del titular: {{license}}",
+      "serviceNote": "Un icono de servicio para diagramas de arquitectura y documentación.",
+      "trademark": "«{{title}}» es una marca registrada de su respectivo titular y se muestra solo con fines de identificación.",
+      "use": "Úsalo con React, Vue, Svelte o HTML puro mediante npm, la CLI o el CDN:",
+      "useLabel": "Uso",
+      "usePersonal": "Personal y comercial",
+      "useRestricted": "Solo identificación de marca, sin modificar",
+      "useTrademark": "Identificación y referencia",
+      "variantsLine": "Incluye {{count}} variantes: {{names}}."
+    },
+    "card": {
+      "copiedAria": "{{title}} {{format}} copiado",
+      "copiedToast": "¡{{format}} copiado!",
+      "copyAria": "Copiar {{title}} {{format}}",
+      "downloadSvg": "Descargar SVG",
+      "favAdd": "Añadir {{title}} a favoritos",
+      "favRemove": "Quitar {{title}} de favoritos",
+      "quickPreview": "Vista rápida",
+      "quickPreviewAria": "Vista rápida de {{title}}",
+      "view": "Ver detalles del icono {{title}}"
+    },
+    "common": {
+      "beta": "Beta",
+      "copied": "Copiado",
+      "copy": "Copiar",
+      "download": "Descargar"
+    },
+    "contribute": {
+      "issue": "Solicitar con un issue",
+      "missingBetter": "¿Falta una versión mejor?",
+      "missingBetterGuidelines": "¿Falta una versión mejor o un enlace a las pautas?",
+      "missingVariant": "¿Falta una variante?",
+      "missingVariantGuidelines": "¿Falta una variante o un enlace a las pautas?",
+      "note": "Las mejoras de la comunidad llegan en la próxima versión",
+      "pr": "Enviar un PR"
+    },
+    "detail": {
+      "addFavorite": "Añadir a favoritos",
+      "alsoAvailableAs": "También disponible como",
+      "alsoKnownAs": "También conocido como",
+      "alsoUiIcon": "También como icono de UI",
+      "authBadge": "Insignia de autenticación",
+      "brandGuidelines": "Pautas de marca",
+      "brandLogo": "Logo de marca",
+      "breadcrumb": "Ruta de navegación",
+      "categories": "Categorías",
+      "category": "Categoría",
+      "compareOriginal": "Comparar con el original",
+      "currentVersion": "Versión actual",
+      "familyOf": "Familia {{title}}",
+      "glassMark": "Marca de cristal para interfaces",
+      "home": "Inicio",
+      "license": "Licencia",
+      "partOf": "Parte de {{title}}",
+      "partOfGoogle": "Parte de Google 2026",
+      "previousVersion": "Versión anterior",
+      "refresh": "Ver el rediseño de {{year}}",
+      "relatedIn": "Relacionados en {{category}}",
+      "removeFavorite": "Quitar de favoritos",
+      "variants": "Variantes",
+      "viewAll": "Ver todo"
+    },
+    "download": {
+      "aria": "Descargar SVG de {{title}}",
+      "copyLabel": "copiar",
+      "dataUri": "URI de datos",
+      "done": "Listo",
+      "downloadLabel": "descargar",
+      "errCopy": "No se pudo copiar. Inténtalo de nuevo.",
+      "errExport": "Falló la exportación a {{format}}. Inténtalo de nuevo.",
+      "export": "Exportar {{title}}",
+      "more": "Más formatos de descarga",
+      "raster": "Ráster",
+      "vector": "Vectorial"
+    },
+    "family": {
+      "allCategory": "Todo en {{category}}",
+      "allFamilies": "Todas las familias",
+      "allIcons": "Todos los iconos de {{title}}",
+      "allLogos": "Todos los logos de {{title}}",
+      "badge": "{{title}} · Familia de marca",
+      "brandFamilies": "Familias de marcas",
+      "flagshipProducts": "Productos estrella",
+      "flagships": "Destacados",
+      "fullSet": "El conjunto completo",
+      "iconsCount": "{{count}} iconos",
+      "indexIntro": "Logos oficiales agrupados por propietario: toda la línea de Amazon, Google o Microsoft en un solo lugar, con todas sus variantes. {{count}} familias.",
+      "indexTitle": "Todos los productos de las marcas con las que creas",
+      "jump": "Ir a un grupo",
+      "logosCount": "{{count}} logos",
+      "mainLogo": "Logo principal de {{title}}",
+      "moreFamilies": "Más familias de marcas",
+      "moreFrom": "Más de {{title}}",
+      "nVariants": "{{count}} variantes",
+      "oneVariant": "1 variante",
+      "open": "Abrir",
+      "showMore": "Mostrar {{count}} más",
+      "statCategories": "categorías",
+      "statLogos": "logos",
+      "statVariants": "variantes",
+      "submitMissing": "Enviar un logo de {{title}} que falta",
+      "viewAllN": "Ver los {{count}}"
+    },
+    "feedback": {
+      "helpful": "¿Te sirvió?",
+      "no": "Este icono no me sirvió",
+      "reason": {
+        "missingVariant": "Falta una variante",
+        "other": "Otro",
+        "outdated": "Logo desactualizado",
+        "wrongColors": "Colores incorrectos"
+      },
+      "reset": "Restablecer tu opinión",
+      "review": "¿Te ayudó? Deja una reseña",
+      "thanks": "¡Gracias!",
+      "thanksIssue": "Gracias, se abrió un issue",
+      "whatsWrong": "¿Qué le pasa?",
+      "yes": "Este icono me sirvió"
+    },
+    "glow": {
+      "hint": "Activar o desactivar el brillo de fondo",
+      "off": "Brillo desactivado",
+      "on": "Brillo activado",
+      "turnOff": "Desactivar el brillo de fondo",
+      "turnOn": "Activar el brillo de fondo"
+    },
+    "grid": {
+      "none": "No se encontraron iconos",
+      "submit": "Enviar este icono",
+      "tryDifferent": "Prueba con otro término de búsqueda o categoría"
+    },
+    "import": {
+      "loading": "Cargando la biblioteca de iconos...",
+      "placeholder": "Importar de la biblioteca, prueba 'gmail 2026', 'github'...",
+      "try": "Prueba"
+    },
+    "inspector": {
+      "aria": "Inspeccionar {{title}} ampliado",
+      "background": "Fondo {{name}}",
+      "description": "Amplía para revisar bordes y curvas con la cuadrícula estándar de diseño de iconos. Es el arte vectorial escalado, no un recorte ráster, así que se ve nítido a cualquier tamaño.",
+      "grid": "Cuadrícula",
+      "title": "Inspector de píxeles de {{title}}",
+      "transparent": "Transparente",
+      "zoomIn": "Acercar",
+      "zoomOut": "Alejar"
+    },
+    "jsdelivr": {
+      "title": "Copiar URL del CDN de jsDelivr"
+    },
+    "links": {
+      "official": "Enlaces oficiales"
+    },
+    "modal": {
+      "cliCommand": "Comando de la CLI",
+      "copiedStatus": "{{what}} copiado",
+      "guidelines": "Pautas",
+      "viewFull": "Ver todos los detalles"
+    },
+    "newBadge": {
+      "refresh": "Rediseño de {{year}}"
+    },
+    "openIn": {
+      "aria": "Abrir el SVG en un editor",
+      "copyFor": "Copiar para {{app}}",
+      "couldNot": "No se pudo abrir.",
+      "downloadFor": "Descargar para {{app}}",
+      "hint": {
+        "codepen": "Se abre en un pen nuevo con el HTML cargado",
+        "figma": "Copia al portapapeles y pega en un lienzo de Figma",
+        "filagram": "Edita, optimiza o convierte en el visor asociado",
+        "illustrator": "Descarga el .svg y luego Archivo → Abrir en Illustrator o Photoshop",
+        "jsfiddle": "Se abre en un fiddle nuevo con el HTML cargado",
+        "sketch": "Copia al portapapeles y pega en una mesa de trabajo de Sketch"
+      },
+      "inspect": "Inspeccionar en el visor de SVG",
+      "open": "Abrir en",
+      "opened": "Abierto en una pestaña nueva.",
+      "targets": "{{count}} destinos"
+    },
+    "png": {
+      "error": "No se pudo convertir este SVG a PNG. Prueba con otra variante.",
+      "title": "Exportar PNG"
+    },
+    "preview": {
+      "ariaCopied": "Código SVG copiado",
+      "ariaCopy": "Copiar el código SVG de {{title}}",
+      "copied": "¡Copiado!",
+      "copy": "Clic para copiar el SVG",
+      "failed": "No se pudo copiar"
+    },
+    "quality": {
+      "footnote": "Indica qué tan completos están los recursos de este icono, no es un juicio sobre la marca ni sobre el diseño. Ayuda a cubrir lo que falta con los enlaces de contribución de abajo.",
+      "hint": {
+        "licenseMissing": "Licencia sin especificar",
+        "linked": "Enlazadas",
+        "meta": "Categorías: {{count}}",
+        "metaAliases": "Alias, categorías: {{count}}",
+        "noGuidelines": "Sin enlace a pautas",
+        "onlyDefault": "Solo la variante predeterminada",
+        "variantsCount": "{{count}} variantes"
+      },
+      "row": {
+        "guidelines": "Pautas",
+        "license": "Licencia",
+        "metadata": "Metadatos",
+        "variants": "Variantes"
+      },
+      "title": "Completitud"
+    },
+    "quick": {
+      "copyCommand": "Copiar comando de {{name}}",
+      "label": "Cómo usar este icono",
+      "notOnNpm": "{{name}} aún no está en npm. Usa la CLI o el CDN.",
+      "packageManager": "Gestor de paquetes",
+      "title": "Cómo usarlo"
+    },
+    "variant": {
+      "dark": "Oscuro",
+      "default": "Predeterminada",
+      "light": "Claro",
+      "mono": "Mono",
+      "suffix": "Variante {{name}}",
+      "wordmark": "Logotipo",
+      "wordmarkDark": "Logotipo oscuro",
+      "wordmarkLight": "Logotipo claro"
+    },
+    "viewer": {
+      "addSvg": "Añade un SVG para ver su información.",
+      "bgChecker": "Fondo de cuadros",
+      "bgDark": "Fondo oscuro",
+      "bgLight": "Fondo claro",
+      "cannotRender": "No se puede renderizar, revisa la sintaxis del SVG de arriba.",
+      "chars": "car.",
+      "clear": "Borrar",
+      "copySvg": "Copiar SVG",
+      "downloadSvg": "Descargar .svg",
+      "elements": "Elementos",
+      "empty": "vacío",
+      "errAutoload": "No se pudo cargar ese icono automáticamente.",
+      "errClipboard": "No se pudo escribir en el portapapeles.",
+      "errNoIcon": "No hay ningún icono con el slug \"{{slug}}\" en la biblioteca.",
+      "errNotSvg": "Ese archivo no parece un SVG válido.",
+      "errRead": "No se pudo leer ese archivo.",
+      "errTooLarge": "El archivo supera los 2 MB. Usa un SVG más pequeño.",
+      "fileInfo": "Información del archivo",
+      "format": "Formatear",
+      "formatHint": "formatear",
+      "gradients": "Degradados",
+      "height": "Alto",
+      "indent": "sangría",
+      "invalid": "no válido",
+      "lines": "ln",
+      "loading": "Cargando {{slug}} desde la biblioteca...",
+      "masks": "Máscaras/Recortes",
+      "minify": "Minificar",
+      "no": "No",
+      "openInEditor": "Abrir en un editor",
+      "pageIntro": "Pega, suelta o importa un SVG. Da formato al XML, previsualiza sobre cualquier fondo, revisa el viewBox y las dimensiones, y ábrelo en tu editor favorito. Todo se ejecuta en tu navegador. No se sube nada.",
+      "pageTitle": "Visor de SVG",
+      "partnerText": "¿Necesitas editar, optimizar o convertir a PNG, JPG, PDF o WebP? Filagram tiene las herramientas pesadas.",
+      "pasteHint": "Pega, suelta o importa un SVG para previsualizarlo",
+      "poweredBy": "Con tecnología de Filagram",
+      "preview": "Vista previa",
+      "size": "Tamaño",
+      "upload": "Subir",
+      "valid": "svg válido",
+      "visit": "Visitar Filagram",
+      "width": "Ancho",
+      "yes": "Sí"
+    }
+  },
+  "docs": {
+    "ui": {
+      "navLabel": "Navegación de la documentación",
+      "onThisPage": "En esta página",
+      "askAi": "Preguntar a la IA",
+      "openIn": "Abrir en {{name}}",
+      "copy": "Copiar",
+      "copied": "Copiado",
+      "copyFailed": "No se pudo copiar",
+      "copyLinkTo": "Copiar enlace a {{title}}",
+      "editOnGithub": "Editar esta página en GitHub",
+      "thanks": "Gracias por tus comentarios",
+      "wasHelpful": "¿Te resultó útil esta página?",
+      "helpfulYes": "Sí, esta página fue útil",
+      "helpfulNo": "No, esta página no fue útil",
+      "docsBadge": "Documentación",
+      "source": "Código fuente",
+      "relatedQuestions": "Preguntas relacionadas",
+      "seeAllFaq": "Ver todas las preguntas frecuentes"
+    },
+    "nav": {
+      "groups": {
+        "getting-started": "Primeros pasos",
+        "frameworks-tools": "Frameworks y herramientas",
+        "guides": "Guías",
+        "reference": "Referencia"
+      },
+      "items": {
+        "overview": "Resumen",
+        "cdn": "CDN / HTML",
+        "react": "React",
+        "vue": "Vue",
+        "svelte": "Svelte",
+        "react-native": "React Native",
+        "cli": "CLI",
+        "api": "API REST",
+        "mcp": "Asistentes de IA (MCP)",
+        "recipes": "Recetas",
+        "best-practices": "Buenas prácticas",
+        "flags": "Banderas",
+        "tricks": "Trucos",
+        "migration": "Migración",
+        "faq": "Preguntas frecuentes"
+      }
+    },
+    "home": {
+      "heading": "Documentación y guías",
+      "intro": "Todo lo necesario para usar más de {{total}} iconos de marcas: guías por framework, recetas reales, buenas prácticas, trucos, guías de migración y preguntas frecuentes.",
+      "gettingStartedTitle": "Primeros pasos",
+      "gettingStartedBody": "Elige la guía que encaje con lo que estás construyendo. Unos pocos iconos conocidos en React, Vue o Svelte: usa el paquete correspondiente. Un conjunto abierto o grande (un selector, una página de directorio): usa la guía de CDN, que no añade nada al bundle sin importar cuántos iconos muestres. Si quieres guardar los iconos en tu propio repositorio: usa la CLI. Para conectar un asistente de IA: consulta la guía de MCP.",
+      "cards": {
+        "flags": "Banderas de países y regiones: formas, tamaños, accesibilidad, el ayudante de configuración regional, la búsqueda y el explorador.",
+        "recipes": "Patrones de construcción concretos: insignias de stack tecnológico, selectores de iconos, botones accesibles y más.",
+        "best-practices": "Tamaño, elección de variante, fijación de versión del CDN y modo oscuro bien hechos.",
+        "tricks": "Pequeñas técnicas: iconos dinámicos por slug, recoloreado con máscara CSS, indicaciones de precarga.",
+        "migration": "Cómo migrar desde Simple Icons o svgl, o elegir entre theSVG, Iconify y Lucide.",
+        "faq": "Licencias, variantes que faltan, límites de uso y otras preguntas habituales."
+      }
+    },
+    "guides": {
+      "cdn": {
+        "label": "CDN / HTML simple",
+        "summary": "Sin instalación ni paso de compilación. Apunta una etiqueta <img> a una URL del CDN. Funciona sin nada de JavaScript."
+      },
+      "react": {
+        "label": "React",
+        "summary": "Componentes tipados y compatibles con tree-shaking. Funcionan como Server Components por defecto, sin necesidad de \"use client\"."
+      },
+      "vue": {
+        "label": "Vue",
+        "summary": "Componentes tipados de Vue 3 basados en funciones de render. No requiere compilador de SFC."
+      },
+      "svelte": {
+        "label": "Svelte",
+        "summary": "Componentes tipados para Svelte 4 y 5. Es marcado simple sin APIs exclusivas del navegador, así que se renderiza igual durante el SSR de SvelteKit y en el cliente: no hace falta un guard con onMount ni un envoltorio solo para cliente."
+      },
+      "react-native": {
+        "label": "React Native",
+        "summary": "Se renderiza mediante react-native-svg. Funciona en Expo Go sin plugin de configuración ni preparación nativa."
+      },
+      "cli": {
+        "label": "CLI (copiar a tu repositorio)",
+        "summary": "Copia los archivos de iconos directamente en tu proyecto, al estilo shadcn. Sin dependencias en tiempo de ejecución que instalar."
+      },
+      "api": {
+        "label": "API REST",
+        "summary": "JSON estático y en caché del CDN. Sin autenticación ni endpoint de búsqueda dinámica: descarga el manifiesto una vez y filtra en el cliente."
+      },
+      "mcp": {
+        "label": "Asistentes de IA (MCP)",
+        "summary": "Un servidor MCP local (stdio) que da a los asistentes de IA herramientas para buscar y obtener iconos directamente. El mismo bloque JSON de mcpServers funciona en el archivo de configuración de cualquier cliente compatible con MCP (Claude Desktop, Claude Code, Cursor, Windsurf): consulta la documentación de tu cliente para saber dónde está ese archivo."
+      }
+    },
+    "snippets": {
+      "basic-usage": "Uso básico",
+      "automatic-dark-mode-no-js": "Modo oscuro automático (sin JS)",
+      "install": "Instalar",
+      "usage": "Uso",
+      "variants": "Variantes",
+      "individual-import-smallest-bundle": "Importación individual (bundle más pequeño)",
+      "nuxt-3-explicit-import-no-auto-import-config-needed": "Nuxt 3 (importación explícita, sin configurar la autoimportación)",
+      "expo-router-screen": "Pantalla de Expo Router",
+      "add-one-icon": "Añadir un icono",
+      "add-several-as-typed-jsx": "Añadir varios, como JSX tipado",
+      "search-the-catalog": "Buscar en el catálogo",
+      "in-a-dockerfile-ci-build-step": "En un Dockerfile / paso de compilación de CI",
+      "full-icon-manifest": "Manifiesto completo de iconos",
+      "categories-with-counts": "Categorías con recuentos",
+      "direct-svg": "SVG directo",
+      "jsdelivr-mirror-recommended-for-high-traffic": "Espejo de jsDelivr (recomendado para mucho tráfico)",
+      "mcp-config-claude-desktop-cursor-etc": "Configuración de MCP (Claude Desktop, Cursor, etc.)",
+      "dynamic-icon": "Icono dinámico",
+      "onerror-fallback": "Alternativa con onError",
+      "css-mask-recolor": "Recoloreado con máscara CSS",
+      "bulk-add": "Añadir en lote",
+      "preload-hint": "Indicación de precarga",
+      "client-side-filter": "Filtro en el cliente",
+      "html-jsx": "HTML / JSX",
+      "markdown-readme": "Markdown (README)",
+      "react": "React",
+      "option-a-skip-optimization-for-this-image": "Opción A: omitir la optimización para esta imagen",
+      "option-b-allow-svgs-from-the-icon-domain": "Opción B: permitir SVG del dominio de los iconos",
+      "package-json-script": "Script de package.json",
+      "dockerfile": "Dockerfile",
+      "before-after": "Antes / después"
+    },
+    "bestPractices": {
+      "intro": "Tamaño, elección de variante, fijación de versión del CDN y modo oscuro, bien hechos.",
+      "cdn-vs-components": {
+        "title": "<img> del CDN para cuadrículas, componentes para un conjunto conocido",
+        "body": "¿Vas a mostrar cientos o miles de iconos (un selector, un directorio)? Usa el patrón de URL <img> del CDN: no añade nada al bundle sin importar cuántos muestres. Reserva las importaciones con nombre de @thesvg/react, @thesvg/vue o @thesvg/svelte para un conjunto pequeño y fijo de iconos referenciados directamente en tu código, donde el tree-shaking conserva solo lo que usas."
+      },
+      "set-dimensions": {
+        "title": "Define siempre width y height",
+        "body": "Una <img> no tiene tamaño intrínseco hasta que se carga, así que un icono sin width/height explícitos (o un aspect-ratio reservado) provoca saltos de diseño mientras carga la página. Define ambos en cada icono, incluso en los que se dimensionan solo con clases CSS."
+      },
+      "recolor-mono": {
+        "title": "Recolorea con la variante mono, no con filtros CSS",
+        "body": "¿Necesitas que un icono coincida con un color de texto arbitrario? Usa la variante mono con un componente en línea (hereda currentColor) en lugar de trucos como filter: invert() de CSS: los filtros pierden calidad y no se ajustan a valores hex arbitrarios."
+      },
+      "pin-jsdelivr": {
+        "title": "Fija el espejo de jsDelivr a una versión, no a @main",
+        "body": "cdn.jsdelivr.net/gh/glincker/thesvg@main/... sigue la rama main, que cambia constantemente. Fija una etiqueta de git publicada (p. ej. @{{ref}}, la versión actual) en producción para que un cambio de nombre o una eliminación upstream no altere en silencio lo que muestra tu aplicación."
+      },
+      "picture-dark-mode": {
+        "title": "Usa <picture> para el modo oscuro, no JS",
+        "body": "Los iconos con variantes clara y oscura pueden cambiar con una simple media query de CSS mediante <picture>: sin JavaScript de detección de tema y sin parpadeo de la variante equivocada durante la hidratación."
+      },
+      "high-traffic": {
+        "title": "Apps de mucho tráfico: usa un espejo, no enlaces directos a gran escala",
+        "body": "El /icons/* de thesvg.org está en caché del CDN y es gratuito a gran escala, pero las aplicaciones de producción con un volumen muy alto deberían preferir el espejo de jsDelivr, o alojarlo por su cuenta clonando el repositorio, para que un pico de tráfico en tu lado nunca dependa de la disponibilidad de thesvg.org."
+      }
+    },
+    "tricks": {
+      "intro": "Pequeñas técnicas que conviene conocer.",
+      "dynamic-slug": {
+        "title": "Renderiza cualquier icono por slug, sin importarlo",
+        "body": "Cuando el icono solo se conoce en tiempo de ejecución (las integraciones conectadas de un usuario, un campo de un CMS), no intentes importar todos los componentes posibles. Construye la URL del CDN directamente a partir del slug: funciona con cualquiera de los más de 6.500 iconos, sin importación masiva y sin coste para el bundler."
+      },
+      "fallback-slug": {
+        "title": "Recurre a una alternativa si el slug es desconocido",
+        "body": "Si un slug puede no existir en el catálogo (por ejemplo, porque viene de una entrada del usuario), cambia a un icono de reserva cuando falle la carga en lugar de mostrar una imagen rota."
+      },
+      "css-mask": {
+        "title": "Recolorea un icono de etiqueta <img> con una máscara CSS",
+        "body": "Una etiqueta <img> no puede heredar currentColor como un componente SVG en línea. Para recolorearla igualmente solo con CSS, úsala como máscara en lugar de como imagen de fondo."
+      },
+      "bulk-add": {
+        "title": "Copia un lote de iconos con un solo comando",
+        "body": "Añade varios iconos directamente a tu repositorio en una sola llamada: útil para CI sin conexión, o cuando prefieres incluir los iconos en tu propio código en lugar de descargarlos en tiempo de ejecución."
+      },
+      "preload": {
+        "title": "Precarga un logotipo principal para evitar un parpadeo",
+        "body": "Un icono de marca visible nada más cargar la página (un logotipo principal, una insignia de integración en la parte superior) se beneficia de una indicación de precarga: el navegador lo descarga antes de necesitarlo, en lugar de esperar a descubrir la etiqueta <img> durante el diseño."
+      },
+      "client-search": {
+        "title": "Busca en el catálogo desde el cliente sin ningún paquete",
+        "body": "¿Estás creando un selector de iconos propio? Descarga el manifiesto una vez y fíltralo en memoria: sin paquete de búsqueda y sin una petición de red por cada pulsación de tecla."
+      }
+    },
+    "recipes": {
+      "intro": "Patrones de construcción concretos, cada uno orientado a un caso de uso real.",
+      "tech-stack-badges": {
+        "title": "Una fila de insignias de stack tecnológico \"hecho con\"",
+        "description": "El caso de uso más habitual: una fila de logotipos en una landing page o un README que indica con qué está hecho un producto. Etiquetas <img> normales del CDN, sin instalar nada."
+      },
+      "icon-picker": {
+        "title": "Un combobox buscable de selección de iconos",
+        "description": "Descarga el manifiesto una vez al montar, filtra en el cliente con cada pulsación y renderiza las coincidencias con la URL del CDN. Sin librería de búsqueda y sin peticiones por pulsación."
+      },
+      "nextjs-image": {
+        "title": "Usar iconos con el componente <Image> de Next.js",
+        "description": "El optimizador de imágenes integrado de Next no rasteriza SVG por defecto. Puedes excluir una imagen de la optimización o permitir SVG para el dominio de los iconos: una etiqueta <img> normal es más sencilla en la mayoría de los casos y se salta todo esto."
+      },
+      "accessible-icon-button": {
+        "title": "Un botón accesible solo con icono",
+        "description": "Un icono sin etiqueta visible necesita un nombre accesible de otra forma: aria-label más role, o texto oculto visualmente, para que los lectores de pantalla lo anuncien correctamente."
+      },
+      "logo-strip-fallback": {
+        "title": "Una tira de logotipos de integraciones o socios con alternativa",
+        "description": "Un directorio de integraciones conectadas por el usuario o de terceros donde un slug puede no existir en el catálogo (errata, marca renombrada, aún no añadida). Usa una alternativa en lugar de mostrar una imagen rota."
+      },
+      "cli-in-ci": {
+        "title": "Copiar los iconos en tiempo de CI o compilación en lugar de en ejecución",
+        "description": "Para compilaciones sin conexión, o cuando quieres los iconos incluidos en un artefacto de compilación en lugar de descargarlos al atender cada petición, ejecuta la CLI como un paso de la compilación."
+      }
+    },
+    "migration": {
+      "title": "Migrar desde otras librerías",
+      "intro": "La comparación completa, función por función, está en [/compare](/compare). Esta es la versión corta y práctica.",
+      "from-simple-icons": {
+        "title": "Migrar desde Simple Icons",
+        "summary": "Simple Icons es solo monocromo (un color, sin variantes clara/oscura/wordmark) y cuenta con años de confianza de la comunidad y amplio soporte de herramientas. La mayoría de los slugs de marcas se mantienen tal cual; el cambio principal es elegir una variante.",
+        "p1": "Las apps de React que usan los componentes con prefijo Si de react-icons (SiGithub, SiVercel) pasan a la exportación con nombre equivalente de @thesvg/react (Github, Vercel).",
+        "p2": "Simple Icons ofrece una sola marca por marca comercial. La variante default de theSVG es el equivalente más cercano; usa mono de forma explícita si quieres específicamente el comportamiento monocolor que siempre te da Simple Icons.",
+        "p3": "Si un slug aún no existe en el catálogo de theSVG, solicítalo en /submit en lugar de dar por hecha la equivalencia: la cobertura varía según la marca."
+      },
+      "from-svgl": {
+        "title": "Migrar desde svgl",
+        "summary": "svgl es un explorador de SVG de marcas basado en SvelteKit, con variantes de color y wordmark, pero sin paquete npm: copias el código SVG a mano. Si no trabajas en un proyecto Svelte, o quieres un paquete instalable, theSVG cubre lo mismo y además ofrece CLI, API REST y paquetes para frameworks.",
+        "p1": "El código SVG copiado y pegado se convierte en una URL del CDN o una importación de paquete: se acabó volver a copiarlo a mano cuando un logotipo cambia upstream.",
+        "p2": "El modelo de variantes de svgl (color + wordmark) se corresponde con default + wordmark de theSVG; además, theSVG ofrece mono, light y dark cuando están disponibles.",
+        "p3": "Si te quedas en Svelte: cambia el marcado copiado a mano por componentes de @thesvg/svelte (consulta la guía de Svelte más arriba) para obtener tipado y futuras actualizaciones sin esfuerzo."
+      },
+      "theSVG-vs-iconify-lucide": {
+        "title": "theSVG frente a Iconify frente a Lucide: cómo elegir",
+        "summary": "Resuelven problemas distintos y la mayoría de los proyectos acaban usando más de uno. La matriz completa, función por función, está en /compare; la versión corta:",
+        "p1": "Logotipos de marcas (GitHub, Stripe, AWS, tu lista de integraciones): theSVG, la mayor colección centrada en marcas, con soporte multivariante.",
+        "p2": "Iconos de interfaz genéricos (flechas, menús, ajustes, chevrones): Lucide, no está centrado en marcas y está pensado para la interfaz.",
+        "p3": "Si necesitas una sola API para muchos conjuntos de iconos sin relación entre sí, de marcas y de interfaz, y no te importa un agregador más grande: Iconify.",
+        "p4": "Una aplicación típica combina theSVG para los logotipos de marcas con Lucide para la interfaz: es lo que hace el propio thesvg.org."
+      }
+    },
+    "faq": {
+      "intro": "Preguntas habituales sobre theSVG.",
+      "licensed": {
+        "q": "¿Están estos logotipos licenciados oficialmente por cada marca?",
+        "a": "No. Los iconos se ofrecen bajo uso legítimo nominativo con fines de identificación: las marcas siguen siendo propiedad de sus respectivos titulares. Usar un logotipo no implica respaldo ni asociación. Consulta /legal y el archivo TRADEMARK.md del repositorio para más detalles."
+      },
+      "commercial": {
+        "q": "¿Puedo usar estos iconos con fines comerciales?",
+        "a": "Sí, con fines de identificación (por ejemplo, \"nos integramos con X\", una insignia de stack tecnológico, una lista de métodos de pago): es el uso legítimo nominativo habitual. No uses una marca de forma que sugiera una asociación o un respaldo que no existe. En caso de duda, consulta las directrices de la propia marca, enlazadas en cada icono cuando están disponibles."
+      },
+      "missing-variant": {
+        "q": "A un icono le falta una variante dark, light o wordmark. ¿Por qué?",
+        "a": "No todas las marcas ofrecen las 7 variantes. default es la única garantizada; el resto depende del material de origen limpio disponible cuando se añadió el icono. Si tienes un origen limpio para una variante que falta, envíalo."
+      },
+      "request-brand": {
+        "q": "¿Cómo solicito una marca nueva o informo de un logotipo desactualizado?",
+        "a": "Abre una solicitud de icono o de actualización de icono en /submit. El código SVG pegado debe pesar menos de 50 KB, tener un viewBox válido y no contener etiquetas <script> ni imágenes rasterizadas incrustadas: el formulario de envío y el bot de triaje te avisarán si algo falla."
+      },
+      "rate-limit": {
+        "q": "¿Hay un límite de uso en la API?",
+        "a": "/api/registry.json y /api/categories.json son archivos estáticos en caché del CDN, no un endpoint respaldado por una base de datos, así que hoy en la práctica no hay límite de uso. Para volúmenes de peticiones muy altos, prefiere el espejo de jsDelivr. En la hoja de ruta hay una API aparte con acceso controlado, búsqueda en tiempo real y webhooks en api.thesvg.org."
+      },
+      "ai-assistants": {
+        "q": "¿Pueden los asistentes de IA usar theSVG directamente?",
+        "a": "Sí, mediante @thesvg/mcp-server: un servidor MCP local que añades a la configuración MCP de Claude Desktop, Claude Code o Cursor (consulta la guía de asistentes de IA más arriba). Expone herramientas de búsqueda, obtención y listado de categorías respaldadas por los mismos datos que el sitio."
+      },
+      "which-package": {
+        "q": "¿Qué paquete debería instalar realmente?",
+        "a": "Unos pocos iconos conocidos en una app de React, Vue o Svelte: usa el paquete de framework correspondiente, que admite tree-shaking y está tipado. Un conjunto abierto o grande (un selector, un directorio): usa el patrón <img> del CDN, sin coste de bundle sin importar la cantidad. Si quieres los iconos dentro de tu propio repositorio: usa la CLI."
+      },
+      "broken-image": {
+        "q": "Mi icono muestra una imagen rota o un 404. ¿Qué pasa?",
+        "a": "Casi siempre es un slug que no coincide: la ruta de la URL usa el slug exacto de /api/registry.json, que no siempre es el nombre visible de la marca (los espacios, los puntos y las mayúsculas se normalizan). Busca en el sitio o consulta el registro para obtener el slug exacto en lugar de adivinarlo a partir del nombre de la marca."
+      },
+      "nextjs-image": {
+        "q": "¿Funciona theSVG con el componente <Image> de Next.js?",
+        "a": "No directamente. El optimizador de imágenes integrado de Next no rasteriza SVG por defecto, así que <Image> necesita la propiedad unoptimized para esa imagen, o dangerouslyAllowSVG configurado para el dominio en next.config. En la mayoría de los casos, una etiqueta <img> normal (o un componente de un paquete de framework) es más sencilla y evita por completo el optimizador."
+      },
+      "typescript-slugs": {
+        "q": "¿Hay un tipo de TypeScript que liste todos los slugs de iconos?",
+        "a": "No se exporta un tipo unión con todos los slugs: cada icono es su propia exportación con nombre (Github, Figma, ...), así que importar un icono que no existe produce un error de módulo no encontrado en la compilación, no un error de tipo literal. Si necesitas los slugs como datos (por ejemplo, de una respuesta de API), el campo slug de registry.json es una cadena normal."
+      },
+      "vs-alternatives": {
+        "q": "¿En qué se diferencia theSVG de Simple Icons, svgl o Iconify?",
+        "a": "theSVG tiene más iconos de marcas, además de iconos de proveedores de nube (AWS, Azure, GCP) que ninguna de las alternativas cubre, hasta 7 variantes por icono (color, mono, light, dark, wordmark) y un conjunto de herramientas más amplio (paquetes para frameworks, CLI, API REST, servidor MCP para agentes de IA). Simple Icons es solo monocromo; svgl está orientado a Svelte y no tiene paquete npm; Iconify agrega más de 150 conjuntos de iconos pero no se centra en marcas. Comparación completa, lado a lado, en /compare."
+      },
+      "ssr": {
+        "q": "¿Admiten los paquetes de framework el renderizado en el servidor (SSR)?",
+        "a": "Sí. Todos los paquetes de framework (@thesvg/react, @thesvg/vue, @thesvg/svelte) renderizan marcado simple sin APIs exclusivas del navegador, así que son compatibles con SSR por defecto: no necesitan un envoltorio solo para cliente ni un guard de hidratación. Los componentes de @thesvg/react, en concreto, funcionan como React Server Components sin la directiva \"use client\"."
+      },
+      "self-host": {
+        "q": "¿Puedo alojar los iconos por mi cuenta sin dar crédito a theSVG?",
+        "a": "El código y las herramientas tienen licencia MIT, así que legalmente no se exige atribución para alojarlos tú mismo. Las marcas siguen siendo propiedad de sus titulares sin importar dónde alojes los archivos: consulta /legal. Un enlace de vuelta se agradece, pero no es obligatorio."
+      },
+      "dark-mode-differs": {
+        "q": "¿Por qué el mismo icono se ve distinto en modo oscuro?",
+        "a": "Si renderizas la variante default en todas partes, es lo esperado: es un color de marca fijo, no se adapta al tema. Para una variante que se adapte al tema de la página, usa light/dark con un elemento <picture> (consulta Buenas prácticas más arriba), o la variante mono con un componente en línea para que herede currentColor."
+      }
+    },
+    "flags": {
+      "intro": "{{total}} banderas de países y regiones en tres formas. Instala con `npm i @thesvg/flags` ([en npm](https://www.npmjs.com/package/@thesvg/flags)).",
+      "usageTitle": "Guía de uso",
+      "browse": "¿Quieres explorar y probar formas, tamaños y colores? [Abre el explorador de banderas](/collection/flags).",
+      "creditsTitle": "Créditos y licencias",
+      "creditsBody": "Los dibujos de las banderas proceden de flag-icons (4x3 y cuadrada) y circle-flags (circular), ambos con licencia MIT. Los archivos en sí no incluyen texto de créditos; los avisos completos y el mapa de origen por archivo están en THIRD_PARTY_NOTICES.md y packages/flags/src/data/licenses.json del repositorio. Una bandera es un símbolo público de un Estado u organización, e incluirla no es una postura sobre soberanía.",
+      "fullGuide": "Guía completa con propiedades, tabla de configuraciones regionales y ejemplos de Vue, Svelte y SVG simple: [docs/flags.md](https://github.com/glincker/thesvg/blob/main/docs/flags.md).",
+      "sections": {
+        "naming": {
+          "title": "Nombres",
+          "body": "Los slugs son flag- más el código ISO 3166-1 alfa-2 en minúsculas (flag-us, flag-de) o el código regional (flag-gb-eng, flag-es-ct, flag-eu, flag-un). Variantes: default es el rectángulo 4x3, square es 1x1 y circle. La categoría es Flags."
+        },
+        "search": {
+          "title": "Búsqueda",
+          "body": "Las banderas se encuentran por nombres en inglés y nativos, nombres oficiales, códigos ISO alfa-2, alfa-3 y numéricos, emoji, nombres anteriores y etiquetas de configuración regional. Prueba deutschland, DEU, 276, holland, england, catalunya o pt-BR."
+        },
+        "shape": {
+          "title": "Elegir una forma",
+          "body": "Usa 4x3 cuando importen las proporciones reales, square para huecos cuadrados fijos y circle para selectores y chips compactos. El círculo recorta los bordes de las banderas anchas, así que deja el nombre en texto junto a ella."
+        },
+        "accessibility": {
+          "title": "Accesibilidad",
+          "body": "Las banderas decorativas llevan aria-hidden y el texto visible transmite el significado. Añade un title solo cuando la bandera aparezca sola, lo que genera role=img con un nombre accesible."
+        },
+        "language": {
+          "title": "Una bandera es un país, no un idioma",
+          "body": "Muestra el nombre del idioma en su propia lengua junto a la bandera y no uses banderas como único selector de idioma. getFlagForLocale asigna una configuración regional a una bandera convencional como elemento decorativo."
+        },
+        "legal": {
+          "title": "Aviso legal",
+          "body": "Una bandera es un símbolo público de un Estado u organización. Incluirla no es una postura sobre soberanía ni fronteras. Consulta el aviso legal y el descargo de responsabilidad."
+        }
+      },
+      "steps": {
+        "pick": {
+          "head": "1. Elige una bandera.",
+          "body": "Busca por nombre, código ISO, emoji o configuración regional en [la colección de banderas](/collection/flags). Cada bandera tiene su propia página con botones para copiar y descargar."
+        },
+        "cdn": {
+          "head": "2. Úsala sin instalar nada.",
+          "body": "Enlaza el archivo desde el CDN: `https://cdn.jsdelivr.net/npm/@thesvg/flags/dist/svg/4x3/us.svg`, o usa `1x1` o `circle` en lugar de `4x3` para las otras formas."
+        },
+        "install": {
+          "head": "3. O instala el paquete.",
+          "body": "`npm i @thesvg/flags` ([página de npm](https://www.npmjs.com/package/@thesvg/flags)), y luego importa una sola bandera desde `@thesvg/flags/react/us` para que solo esa bandera entre en el bundle."
+        },
+        "locale": {
+          "head": "4. Asocia una configuración regional con una bandera.",
+          "body": "`getFlagForLocale(\"pt-BR\")` devuelve Brasil como elemento decorativo. Muestra siempre el nombre del idioma junto a ella."
+        }
+      }
     }
   }
 }

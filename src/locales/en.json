@@ -1,5 +1,7 @@
 {
-  "language": { "label": "Language" },
+  "language": {
+    "label": "Language"
+  },
   "nav": {
     "brandIcons": "Brand Icons",
     "uiIcons": "UI Icons",
@@ -10,6 +12,233 @@
     "blog": "Blog",
     "cdnUsage": "CDN Usage",
     "compare": "Compare"
+  },
+  "uikit": {
+    "breadcrumb": "Breadcrumb",
+    "look": {
+      "outline": "Outline",
+      "duotone": "Duotone",
+      "offset": "Offset",
+      "fill": "Fill",
+      "glass": "Glass",
+      "glassOutline": "Glass outline",
+      "depth": "Depth"
+    },
+    "copy": {
+      "name": "Name"
+    },
+    "copyHint": {
+      "svg": "The drawing, in your style",
+      "name": "The icon name",
+      "cli": "The command that adds it",
+      "import": "Import and usage for {{pkg}}",
+      "url": "A link to the SVG on the CDN"
+    },
+    "hero": {
+      "title": "One skeleton, every look",
+      "show": "Show intro",
+      "hide": "Hide intro",
+      "badge": "New in 4.0: UI icons",
+      "intro": "Drawn on a grid, restyled live. Outline, duotone, fill, glass and glass outline, all themeable with currentColor.",
+      "browse": "Browse icons"
+    },
+    "nav": {
+      "allIcons": "All icons",
+      "favorites": "Favorites",
+      "extensions": "Extensions",
+      "whatIsNew": "What is new",
+      "categories": "Categories",
+      "new": "New",
+      "allCategories": "All categories",
+      "expandSidebar": "Expand sidebar",
+      "collapseSidebar": "Collapse sidebar",
+      "navigation": "Navigation"
+    },
+    "mode": {
+      "iconType": "Icon type"
+    },
+    "browse": {
+      "all": "All",
+      "allUi": "All UI icons",
+      "popular": "Popular",
+      "popularHint": "The ones you will reach for first",
+      "bestMatches": "Best matches",
+      "related": "Related",
+      "relatedHint": "same family, synonyms and close spellings",
+      "noMatch": "No icons match.",
+      "didYouMean": "Did you mean",
+      "didYouMeanEnd": "?",
+      "tryAnother": "Try another word or clear the filter.",
+      "loadingMore": "Loading more icons",
+      "thatIsAll": "That is all {{count}}"
+    },
+    "card": {
+      "addFavorite": "Add favorite",
+      "removeFavorite": "Remove favorite",
+      "backlog": "Backlog",
+      "draft": "Draft",
+      "clickToCopy": "Click to copy {{what}}",
+      "copied": "Copied",
+      "copiedWhat": "Copied {{what}}",
+      "copyWhat": "Copy {{what}}",
+      "downloadSvg": "Download SVG",
+      "quickPreview": "Quick preview",
+      "openFull": "Open full page"
+    },
+    "category": {
+      "count": "{{count}} icons",
+      "countNew": "{{count}} icons, {{fresh}} new",
+      "allIn": "All {{name}} icons",
+      "others": "Other categories",
+      "browseBy": "Browse by category",
+      "intro": "{{count}} UI icons in {{categories}} categories. Each one is drawn on the same grid and comes in every look."
+    },
+    "changelog": {
+      "intro": "{{count}} UI icons released so far, with more added in small drops.",
+      "upcoming": "Preview only: {{drops}} more drops are scheduled, {{icons}} icons."
+    },
+    "quality": {
+      "title": "Craft quality",
+      "footnote": "Scored when the set is built: grid fit, clean rendering in every look, weight against the rest of the set, and complete metadata."
+    },
+    "code": {
+      "form": "Code form",
+      "source": "Source",
+      "package": "Package",
+      "customNote": "Custom style only applies to the copied source.",
+      "copy": "Copy"
+    },
+    "color": {
+      "custom": "Custom color",
+      "pick": "Pick a color",
+      "satBright": "Saturation and brightness",
+      "hue": "Hue",
+      "hex": "Hex color",
+      "eyedropper": "Pick a color from the screen",
+      "recent": "Recent",
+      "use": "Use {{hex}}"
+    },
+    "ctx": {
+      "rest": "Rest",
+      "hover": "Hover",
+      "active": "Active",
+      "interactive": "Interactive",
+      "sameAsRest": "same as rest",
+      "showState": "Show state",
+      "pressed": "Pressed",
+      "action": "Action",
+      "secondary": "Secondary",
+      "iconButton": "Icon button",
+      "tab": {
+        "overview": "Overview",
+        "activity": "Activity",
+        "settings": "Settings"
+      },
+      "placeholder": "Type to focus this field",
+      "notificationsOn": "Notifications on",
+      "notificationsOff": "Notifications off",
+      "toggleChip": "Toggle chip {{n}}"
+    },
+    "detail": {
+      "iconColour": "Icon colour",
+      "fit": "Fit",
+      "fitLower": "fit",
+      "realSize": "Back to real size",
+      "zoomFit": "Zoom to fit",
+      "previewSize": "Preview size",
+      "grid": "Grid",
+      "anchors": "Anchors",
+      "lightCanvas": "Toggle light canvas",
+      "looks": "Looks",
+      "lineOnly": "This is a line-only glyph, so fill, glass and depth use a heavier outline. Outline, duotone, offset and glass outline draw it fully.",
+      "allLooks": "Every look draws this glyph fully.",
+      "gridValue": "24 by 24",
+      "category": "Category",
+      "color": "Color",
+      "noTags": "No tags yet",
+      "subtitle": "{{slug}} · {{category}} UI icon",
+      "rasterPicked": "Raster uses your picked color.",
+      "rasterBlack": "Raster uses near black. Pick a color above to change it.",
+      "officialLogo": "Official brand logo and variants",
+      "looksHint": "pick one, everything below follows",
+      "inContext": "In context",
+      "inContextHint": "hover, focus, press and toggle all work",
+      "opticalSizes": "Optical sizes",
+      "moreIn": "More in {{category}}",
+      "aboutTitle": "About the {{title}} icon",
+      "aboutBody": "The {{title}} icon is a {{category}} UI icon drawn on a 24 by 24 grid and available in {{count}} looks: {{looks}}. It uses currentColor, so it takes the text color around it, and every look can be copied as SVG, React, Vue, Svelte, HTML or a CSS mask."
+    },
+    "docs": {
+      "quickStart": "Quick start",
+      "props": "Props",
+      "prop": "Prop",
+      "type": "Type",
+      "whatItDoes": "What it does",
+      "looks": "The looks and when to use them",
+      "states": "States",
+      "color": "Color and theming",
+      "sizes": "Sizes",
+      "a11y": "Accessibility",
+      "drops": "How the set grows"
+    },
+    "ext": {
+      "title": "UI icons: extensions and packages",
+      "intro": "Use the UI icons everywhere you build, design and ship. The brand icons have their own page.",
+      "buildOwn": "Build your own",
+      "buildOwnText": "Every icon file, the manifest and one JSON file per look (every icon in that look, slug to SVG) are open with no auth. Build a plugin or workflow, then open a PR to list it here.",
+      "viewGithub": "View on GitHub",
+      "cdnDocs": "CDN docs"
+    },
+    "style": {
+      "button": "Style",
+      "hint": "Make the icons yours: weight, corners, colour",
+      "quick": "Quick styles",
+      "quickHint": "Click Style for every control",
+      "dialog": "Icon style",
+      "presets": "Style presets",
+      "savedTitle": "Your saved style",
+      "live": "Your style, live",
+      "preset": {
+        "house": "House",
+        "crisp": "Crisp",
+        "soft": "Soft",
+        "bold": "Bold",
+        "hairline": "Hairline",
+        "float": "Float",
+        "mine": "Mine"
+      },
+      "resetNamed": "Reset {{label}}",
+      "backTo": "Back to {{value}}",
+      "weight": "Weight",
+      "scale": "Scale",
+      "shadow": "Shadow",
+      "corners": "Corners",
+      "corner": {
+        "sharp": "Sharp",
+        "chamfer": "Chamfer",
+        "round": "Round"
+      },
+      "cut": "Cut",
+      "cutEnds": "Cut ends",
+      "plainEnds": "plain ends",
+      "weightChip": "weight {{value}}",
+      "colour": "Colour",
+      "colourAccent": "Colour, accent overrides",
+      "iconColours": "Icon colours",
+      "colorMode": {
+        "natural": "Natural",
+        "mono": "Mono"
+      },
+      "noAccent": "No accent",
+      "none": "none",
+      "accentNamed": "Accent {{hex}}",
+      "clickCopies": "Click copies",
+      "clickToCopy": "Click an icon to copy it",
+      "whatCopied": "What gets copied",
+      "saved": "Saved",
+      "saveMine": "Save as mine",
+      "reset": "Reset"
+    }
   },
   "header": {
     "home": "theSVG home",
@@ -26,6 +255,105 @@
     "extensionsIntegrations": "Extensions & Integrations",
     "blogUpdates": "Blog & Updates",
     "submitAnIcon": "Submit an Icon"
+  },
+  "mobile": {
+    "dock": {
+      "primary": "Primary",
+      "browse": "Browse",
+      "favorites": "Favorites",
+      "recents": "Recents",
+      "submit": "Submit",
+      "more": "More",
+      "favoritesCount": "{{n}} favorites"
+    },
+    "recents": {
+      "label": "Recent",
+      "aria": "Recently viewed icons",
+      "seeAll": "See all"
+    },
+    "pwa": {
+      "installIos": "Install on iPhone",
+      "iosSteps": "Tap {{share}} Share, then {{add}}.",
+      "iosAdd": "Add to Home Screen",
+      "iosAria": "Install thesvg on iOS",
+      "installTitle": "Install thesvg",
+      "installDesc": "One tap to install as an app on this device.",
+      "install": "Install",
+      "dismiss": "Dismiss"
+    },
+    "sheet": {
+      "close": "Close"
+    },
+    "action": {
+      "title": "Actions",
+      "copySvg": "Copy SVG",
+      "downloadSvg": "Download SVG",
+      "openQuickView": "Open quick view",
+      "openFullPage": "Open full page"
+    },
+    "search": {
+      "placeholder": "Search icons...",
+      "brands": "Brands",
+      "searching": "Searching...",
+      "results": "Results · {{n}}",
+      "noMatch": "No icons match “{{query}}”",
+      "recentSearches": "Recent searches",
+      "try": "Try"
+    },
+    "more": {
+      "tools": "Tools",
+      "learn": "Learn",
+      "yourIcons": "Your icons",
+      "integrations": "Integrations",
+      "families": "Brand families",
+      "familiesDesc": "Amazon, Google, Microsoft and more",
+      "categoriesDesc": "Browse by what a product does",
+      "awsDesc": "Service and resource icons",
+      "azureDesc": "Microsoft Azure icons",
+      "gcpDesc": "GCP architecture icons",
+      "k8sDesc": "Kubernetes components",
+      "flags": "Country Flags",
+      "flagsDesc": "ISO country and region flags",
+      "viewer": "SVG viewer",
+      "viewerDesc": "Preview, inspect and copy any SVG",
+      "extensions": "Extensions",
+      "extensionsDesc": "VS Code, Raycast, Figma, npm package",
+      "docs": "Docs and guides",
+      "docsDesc": "CDN, React, CLI, MCP and more",
+      "blogDesc": "Updates and changelog",
+      "compare": "Compare libraries",
+      "recentsDesc": "Recently viewed and copied",
+      "favoritesDesc": "Icons you have starred",
+      "githubDesc": "Source and issues",
+      "discordDesc": "Join the community",
+      "npm": "npm package",
+      "npmDesc": "thesvg on npm",
+      "raycast": "Raycast extension",
+      "raycastDesc": "Search icons from Raycast",
+      "figma": "Figma plugin",
+      "figmaDesc": "Drop icons into your Figma file",
+      "vscode": "VS Code extension",
+      "vscodeDesc": "Search and copy from VS Code",
+      "tagline": "The Open SVG Brand Library"
+    },
+    "icon": {
+      "fallbackTitle": "Icon",
+      "previewAlt": "{{title}} icon preview",
+      "brandColor": "Brand color",
+      "removeFavorite": "Remove {{title}} from favorites",
+      "addFavorite": "Add {{title}} to favorites",
+      "copied": "Copied",
+      "license": "License",
+      "unknown": "Unknown",
+      "variants": "Variants",
+      "collection": "Collection",
+      "slug": "Slug",
+      "openFullDetails": "Open full details",
+      "openFullDetailsDesc": "PNG export, every variant, raw SVG, install snippets",
+      "skipPreview": "Skip preview next time",
+      "skipPreviewDesc": "Jump straight to the detail page",
+      "loading": "Loading icon..."
+    }
   },
   "footer": {
     "headline": "Open source. Community driven.",
@@ -57,6 +385,1418 @@
       "privacy": "Privacy",
       "trademarkPolicy": "Trademark Policy",
       "contact": "Contact"
+    }
+  },
+  "sidebar": {
+    "allIcons": "All Icons",
+    "categories": "Categories",
+    "favorites": "Favorites",
+    "favoritesWithCount": "Favorites ({{count}})",
+    "shareFavorites": "Share Favorites",
+    "shareFavoritesAria": "Copy a shareable link to your favorites",
+    "extensions": "Extensions",
+    "extLibraries": "Libraries & SDKs",
+    "extEditors": "Editor Extensions",
+    "extDesign": "Design Tools",
+    "extDeveloper": "Developer Tools",
+    "extAi": "AI & Automation",
+    "extIntegrations": "Integrations",
+    "extFrameworks": "Framework Components",
+    "viewer": "Viewer",
+    "new": "New",
+    "docs": "Docs",
+    "blog": "Blog",
+    "submitIcon": "Submit Icon",
+    "collections": "Collections",
+    "families": "Families",
+    "featured": "Featured",
+    "allFamilies": "All families",
+    "recentlyAdded": "Recently Added",
+    "popular": "Popular",
+    "searchCategories": "Search categories",
+    "clearCategorySearch": "Clear category search",
+    "clearSearch": "Clear search",
+    "noCategoriesMatch": "No categories match “{{query}}”",
+    "noCategoriesMatchStatus": "No categories match {{query}}",
+    "categoryFoundOne": "1 category found",
+    "categoriesFound": "{{count}} categories found",
+    "expandSidebar": "Expand sidebar ({{shortcut}})",
+    "collapseSidebar": "Collapse sidebar ({{shortcut}})",
+    "navigation": "Navigation",
+    "jumpToLetterGroup": "Jump to a category by letter",
+    "jumpTo": "Jump to {{letter}}"
+  },
+  "chrome": {
+    "display": {
+      "aria": "Display settings. Copy format {{format}}",
+      "title": "Display settings (copies as {{format}})",
+      "copyFormat": "Default copy format",
+      "copyFormatHint": "Used when you click the copy button on any icon card",
+      "fmt": {
+        "svg": "Raw SVG markup",
+        "jsx": "React component",
+        "vue": "Vue single-file component",
+        "cdn": "jsDelivr CDN link",
+        "dataUri": "Base64 data URI"
+      },
+      "preview": "Preview background",
+      "previewHint": "Judge a logo on the surface it will sit on",
+      "bg": {
+        "auto": "Auto",
+        "autoDesc": "Adapts to each logo so dark and light marks stay visible",
+        "light": "Light",
+        "lightDesc": "Always a light tile",
+        "dark": "Dark",
+        "darkDesc": "Always a dark tile",
+        "checker": "Checkerboard",
+        "checkerDesc": "Shows transparent areas"
+      },
+      "size": "Interface size",
+      "sizeHint": "Make text, icons and controls bigger, instead of zooming the page",
+      "sz": {
+        "default": "Default",
+        "defaultDesc": "The standard size",
+        "large": "Large",
+        "largeDesc": "One step up, about 112%",
+        "larger": "Larger",
+        "largerDesc": "Two steps up, 125%"
+      }
+    },
+    "packages": {
+      "aria": "npm packages",
+      "openTitle": "Open on npm",
+      "copyAria": "Copy install command for {{name}}",
+      "openAria": "Open {{name}} on npm",
+      "copiedStatus": "Copied install command for {{name}}",
+      "all": "All packages and install commands",
+      "group": {
+        "brand": "Brand icons",
+        "ui": "UI icons",
+        "flags": "Flags",
+        "tools": "Tools"
+      },
+      "label": {
+        "everything": "Everything in one",
+        "rawData": "Raw SVG data",
+        "plainJs": "Plain JavaScript",
+        "cdnFiles": "Raw SVG files for CDN",
+        "rawManifest": "Raw files and manifest",
+        "flags": "Country and region flags",
+        "cli": "Command line",
+        "mcp": "MCP server"
+      }
+    },
+    "palette": {
+      "title": "Command palette",
+      "description": "Search icons, jump to a category, or run a quick action",
+      "placeholder": "Search icons, categories, actions...",
+      "empty": "No results found.",
+      "icons": "Icons",
+      "recent": "Recent",
+      "categories": "Categories",
+      "quickActions": "Quick actions",
+      "action": {
+        "submit": "Submit an icon",
+        "docs": "Read the docs",
+        "integrations": "Browse integrations",
+        "copySvg": "Copy {{title}} as SVG",
+        "copyJsx": "Copy {{title}} as JSX"
+      },
+      "copied": "Copied {{title}} as {{format}}",
+      "copyFailed": "Could not copy. Try again.",
+      "navigate": "navigate",
+      "select": "select",
+      "close": "close"
+    },
+    "search": {
+      "placeholder": "Search icons...",
+      "aria": "Search icons",
+      "clear": "Clear search",
+      "brandIcons": "Brand icons",
+      "uiIcons": "UI icons",
+      "flags": "Flags",
+      "thisSection": "This section",
+      "viewAll": "View all {{total}}",
+      "viewAllFlags": "View all {{total}} flags",
+      "searching": "Searching…",
+      "failed": "Search failed to load. Check your connection and try again.",
+      "noMatch": "No icons match “{{query}}”",
+      "submitThis": "Submit this icon"
+    },
+    "help": {
+      "aria": "Help and tips",
+      "close": "Close",
+      "badge": "Getting Started",
+      "title": "Quick Tips",
+      "subtitle": "Everything you can do with theSVG",
+      "tip": {
+        "click": {
+          "title": "Click any icon",
+          "desc": "Open the detail page with code snippets, variants, and export options"
+        },
+        "copy": {
+          "title": "Quick copy",
+          "desc": "Hit the copy button on any card to grab the SVG instantly"
+        },
+        "download": {
+          "title": "Download & export",
+          "desc": "Download SVG or export as PNG at 32-512px from the detail page"
+        },
+        "search": {
+          "title": "Search everything",
+          "desc": "Press Cmd+K to search across {{total}} icons"
+        },
+        "fav": {
+          "title": "Save favorites",
+          "desc": "Heart icons to save them. Access from the sidebar anytime"
+        },
+        "use": {
+          "title": "Use anywhere",
+          "desc": "npm, React, Vue, CLI, CDN, or MCP server for AI assistants"
+        }
+      },
+      "escHint": "Press {{key}} to close",
+      "gotIt": "Got it"
+    },
+    "hint": {
+      "title": "Click any icon for details",
+      "desc": "Copy code, download, export PNG, and more"
+    },
+    "star": {
+      "title": "Finding thesvg useful?",
+      "withStars": "{{stars}} developers have starred it. A star helps others discover it.",
+      "noStars": "A GitHub star helps other developers discover it. It is free and open source.",
+      "cta": "Star on GitHub"
+    },
+    "post": {
+      "label": "New post",
+      "read": "Read"
+    },
+    "common": {
+      "dismiss": "Dismiss"
+    },
+    "flagsPill": {
+      "new": "New"
+    }
+  },
+  "home": {
+    "navigation": "Navigation",
+    "failedToLoad": "Failed to load icons",
+    "failedToLoadRefresh": "Failed to load icons. Please refresh and try again.",
+    "loading": "Loading...",
+    "favCount": "Favorites: {{count}}",
+    "comfortableView": "Comfortable view",
+    "compactView": "Compact view",
+    "sortBy": "Sort by {{label}}",
+    "sort": {
+      "default": "Sort",
+      "az": "A-Z",
+      "za": "Z-A",
+      "recent": "Recent",
+      "popular": "Popular"
+    },
+    "removeCollectionFilter": "Remove collection filter",
+    "removeCategoryFilter": "Remove category filter",
+    "removeFavoritesFilter": "Remove favorites filter",
+    "removeSearchFilter": "Remove search filter",
+    "favorites": "Favorites",
+    "clearAll": "Clear all",
+    "clear": "Clear",
+    "all": "All",
+    "googleBanner": {
+      "badge": "New",
+      "title": "Google’s 2026 refresh is here",
+      "body": "13 redesigned product icons with the new gradient identity. First library to host them.",
+      "cta": "View 2026 set"
+    },
+    "copyCommand": "Copy command: {{command}}",
+    "ago": {
+      "now": "now",
+      "minutes": "{{count}}m ago",
+      "hours": "{{count}}h ago",
+      "days": "{{count}}d ago",
+      "months": "{{count}}mo ago"
+    },
+    "goToSlide": "Go to slide {{count}}",
+    "dismissBanner": "Dismiss banner",
+    "dismiss": "Dismiss",
+    "continue": "Continue",
+    "whereYouLeftOff": "Where you left off",
+    "viewAll": "View all",
+    "expandContinue": "Expand continue section",
+    "collapseContinue": "Collapse continue section",
+    "expand": "Expand",
+    "collapse": "Collapse",
+    "clearViewed": "Clear recently viewed",
+    "clearRecents": "Clear recents",
+    "iconCollections": "Icon collections",
+    "showingPopularFirst": "Showing Popular first",
+    "showingRecentFirst": "Showing Recently Added first",
+    "popular": "Popular",
+    "recent": "Recent",
+    "recentlyAdded": "Recently Added",
+    "scopedRecentlyAdded": "{{scope}} · Recently Added",
+    "scopedPopular": "{{scope}} · Popular",
+    "popularAws": "Popular AWS Services",
+    "popularAzure": "Popular Azure Services",
+    "popularGcp": "Popular GCP Services",
+    "browseByCategory": "Browse by Category",
+    "allIcons": "All Icons",
+    "allCollectionIcons": "All {{collection}} Icons",
+    "attribution": {
+      "aws": "AWS Architecture Icons provided under CC-BY-ND 2.0. Amazon Web Services and all related marks are trademarks of Amazon.com, Inc.",
+      "azure": "Microsoft Azure icons provided under MIT license. Microsoft Azure and all related marks are trademarks of Microsoft Corporation.",
+      "gcp": "Google Cloud icons provided under Apache 2.0 license. Google Cloud and all related marks are trademarks of Google LLC."
+    },
+    "google": {
+      "skip": "Skip to icons",
+      "eyebrow": "Google · 2026 refresh",
+      "titleLine1": "The Workspace",
+      "titleLine2": "brand kit",
+      "icons": "icons",
+      "gradientPerfect": "gradient-perfect",
+      "released": "released",
+      "markAria": "Google Workspace mark · open detail page",
+      "open": "Open",
+      "fullSet": "The full set",
+      "countOf": "{{shown}} of {{total}} icons",
+      "filterPlaceholder": "Filter (Gmail, Drive, blue…)",
+      "filterAria": "Filter Google 2026 icons",
+      "clearFilter": "Clear filter",
+      "allGoogle": "All Google icons",
+      "filterByColor": "Filter by brand color",
+      "noColorIcons": "No {{color}} icons in this set",
+      "colorIcons": "{{color}} icons: {{count}}",
+      "colors": {
+        "red": "Red",
+        "yellow": "Yellow",
+        "green": "Green",
+        "blue": "Blue",
+        "purple": "Purple",
+        "neutral": "Neutral"
+      },
+      "gridAria": "Google 2026 brand icons",
+      "noMatchBoth": "No icons match “{{query}}” with {{colors}}.",
+      "noMatchQuery": "No icons match “{{query}}”.",
+      "noMatchColors": "No icons match {{colors}}.",
+      "clearFilters": "Clear filters"
+    },
+    "tile": {
+      "svgIcon": "{{name}} SVG icon",
+      "quickActions": "Quick actions",
+      "copyMarkup": "Copy {{name}} SVG markup",
+      "copySvg": "Copy SVG",
+      "downloadFile": "Download {{name}} SVG file",
+      "downloadSvg": "Download .svg",
+      "svgCopied": "SVG copied",
+      "colorCopied": "{{color}} copied",
+      "copyColor": "Copy color {{color}}",
+      "copied": "Copied"
+    },
+    "recents": {
+      "allTime": "All time",
+      "today": "Today",
+      "thisWeek": "This week",
+      "thisMonth": "This month",
+      "justNow": "just now",
+      "titleCopied": "{{name}} copied",
+      "copyFailed": "Copy failed",
+      "deviceOnly": "Your activity, on this device only",
+      "title": "Recents",
+      "viewedLabel": "viewed",
+      "copiedLabel": "copied",
+      "searchedLabel": "searched",
+      "confirmClearAll": "Clear all recent activity?",
+      "clearEverything": "Clear everything",
+      "loading": "Loading your recents",
+      "loadFailedTitle": "Couldn’t load your recent icons",
+      "loadFailedBody": "Your viewed and copied history is saved, it just couldn’t be resolved this time.",
+      "retry": "Retry",
+      "emptyTitle": "Nothing here yet",
+      "emptyBody": "Browse a few icons and they will land here for one-tap recopy and quick reopen.",
+      "browseLibrary": "Browse the library",
+      "viewed": "Viewed",
+      "copySvg": "Copy SVG",
+      "copy": "Copy",
+      "download": "Download",
+      "copied": "Copied",
+      "copyAgain": "Copy {{name}} again",
+      "recopy": "Recopy",
+      "searches": "Searches"
+    },
+    "slides": {
+      "open": {
+        "title": "{{count, number}}+ SVG Icons. Search. Copy. Ship.",
+        "description": "Search, copy, and ship brand icons in seconds. Free, open-source, and community-driven.",
+        "cta": "Get Started",
+        "ctaSecondary": "Submit an Icon",
+        "badge": "{{count, number}}+ icons"
+      },
+      "ui": {
+        "title": "UI icons are here, in seven looks",
+        "description": "Interface icons drawn on one grid and restyled live. Free to copy.",
+        "cta": "Explore UI icons",
+        "ctaSecondary": "How it works",
+        "badge": "theSVG 4.0"
+      },
+      "npm": {
+        "title": "One Package, Every Brand",
+        "description": "Tree-shakeable, typed, dual ESM/CJS. Import any icon with zero config.",
+        "cta": "View on npm",
+        "ctaSecondary": "Extensions"
+      },
+      "copy": {
+        "title": "SVG, JSX, CDN, or Download",
+        "description": "Every format you need. Copy raw SVG, grab a CDN link, or download files. Dark mode variants included.",
+        "cta": "Browse Icons",
+        "ctaSecondary": "Extensions",
+        "badge": "Copy & Ship"
+      },
+      "flagsNew": {
+        "title": "Flags are here: 263 countries and regions",
+        "description": "Every country plus England, Scotland, Catalonia and more. Three shapes each, one small package.",
+        "cta": "Browse flags",
+        "ctaSecondary": "How to use",
+        "badge": "New: Flags"
+      },
+      "aws": {
+        "title": "Every AWS Icon for Your Diagrams",
+        "description": "300+ service icons, 400+ resource icons, and category icons. Browse, copy, and use in architecture diagrams instantly.",
+        "cta": "Browse Services",
+        "ctaSecondary": "All Categories",
+        "badge": "AWS Architecture"
+      },
+      "awsOfficial": {
+        "title": "Official AWS Architecture Icons",
+        "description": "Unmodified SVGs from the official AWS icon set. Updated quarterly. Services, resources, categories, and groups.",
+        "cta": "Browse All",
+        "ctaSecondary": "View License",
+        "badge": "2026-Q1 Release"
+      },
+      "azure": {
+        "title": "626 Azure Service Icons",
+        "description": "Every Azure service icon for your architecture diagrams. VMs, App Services, SQL, Cosmos DB, and more. Free to use.",
+        "cta": "Browse Services",
+        "ctaSecondary": "All Categories",
+        "badge": "Microsoft Azure"
+      },
+      "azureOfficial": {
+        "title": "Official Azure Architecture Icons",
+        "description": "29 categories of Microsoft Azure service icons. Compute, Networking, Databases, AI, Security, and more.",
+        "cta": "Browse All",
+        "ctaSecondary": "View License",
+        "badge": "2026-Q1 Release"
+      },
+      "gcp": {
+        "title": "214 GCP Service Icons",
+        "description": "Google Cloud Platform icons for architecture diagrams. Compute Engine, BigQuery, Cloud Run, GKE, and all GCP services.",
+        "cta": "Browse Services",
+        "ctaSecondary": "All Categories",
+        "badge": "Google Cloud"
+      },
+      "gcpOfficial": {
+        "title": "Official Google Cloud Icons",
+        "description": "Free GCP icons under Apache 2.0. Auto-categorized into Compute, Storage, AI, Networking, and more.",
+        "cta": "Browse All",
+        "ctaSecondary": "View License",
+        "badge": "Apache 2.0 License"
+      },
+      "k8s": {
+        "title": "38 Official Kubernetes Icons",
+        "description": "Pods, Deployments, Services, Ingress, ConfigMaps, and more. The full CNCF Kubernetes icon set for your architecture diagrams.",
+        "cta": "Browse Icons",
+        "ctaSecondary": "All Resources",
+        "badge": "Kubernetes"
+      },
+      "k8sOfficial": {
+        "title": "CNCF Kubernetes Architecture Icons",
+        "description": "Official icons from the Kubernetes project. Free under Apache 2.0. Use in docs, diagrams, and presentations.",
+        "cta": "Browse All",
+        "ctaSecondary": "View License",
+        "badge": "Apache 2.0 License"
+      },
+      "flags": {
+        "title": "263 Country and Region Flags",
+        "description": "Every ISO 3166-1 country plus England, Scotland, Wales, Catalonia, the Canary Islands, the EU and the UN. Three shapes each: 4x3, square and circle.",
+        "cta": "Browse Flags",
+        "ctaSecondary": "How to use",
+        "badge": "New: Flags"
+      },
+      "community": {
+        "title": "256 Community-Curated Icons",
+        "description": "Dev tools, databases, frameworks, and platforms sourced from the open-source community. Free to use, always growing.",
+        "cta": "Browse Icons",
+        "ctaSecondary": "Submit an Icon",
+        "badge": "Community"
+      },
+      "auth": {
+        "title": "858 Auth Badge Icons",
+        "description": "Circular service badges for 2FA setup screens and account security UIs. Exchanges, VPNs, hosting, games, and more.",
+        "cta": "Browse Badges",
+        "ctaSecondary": "All Categories",
+        "badge": "CC0, No Attribution"
+      }
+    }
+  },
+  "pages": {
+    "common": {
+      "extensions": "Extensions",
+      "opensInNewTab": "(opens in a new tab)"
+    },
+    "notFound": {
+      "title": "Icon Not Found",
+      "body": "This icon might have been moved, renamed, or doesn't exist yet.",
+      "count": "We have {{count}}+ icons across brands, AWS, Azure, and GCP. Try searching for what you need.",
+      "browse": "Browse Icons",
+      "aws": "AWS Icons",
+      "azure": "Azure Icons",
+      "gcp": "GCP Icons",
+      "back": "Back to home"
+    },
+    "error": {
+      "title": "Something went wrong",
+      "body": "An unexpected error occurred. Try refreshing the page or go back to the home page.",
+      "retry": "Try again",
+      "home": "Go home"
+    },
+    "categories": {
+      "badge": "{{count}} categories",
+      "title": "All Categories",
+      "intro": "Browse all icon categories across brand and AWS architecture collections.",
+      "brand": "Brand Icon Categories",
+      "aws": "AWS Architecture Categories"
+    },
+    "packages": {
+      "title": "Packages",
+      "intro": "Everything theSVG publishes to npm, in one place. Brand icons, UI icons and flags are separate packages, so adding one never makes the other heavier. Every package is tree-shakeable and versions move together within each group.",
+      "groups": {
+        "brand": "Brand icons",
+        "ui": "UI icons",
+        "flags": "Flags",
+        "tools": "Tools"
+      }
+    },
+    "contact": {
+      "title": "Contact",
+      "intro": "Have a question, found a bug, or need to report a trademark issue? Reach out through any of the channels below.",
+      "email": {
+        "title": "Email",
+        "description": "For trademark requests, DMCA notices, or general inquiries.",
+        "note": "We respond within 48 hours"
+      },
+      "issues": {
+        "description": "Report bugs, request features, or submit icon corrections.",
+        "action": "Open an issue",
+        "note": "Best for technical issues",
+        "title": "GitHub Issues"
+      },
+      "discussions": {
+        "description": "Ask questions, share ideas, or connect with the community.",
+        "action": "Start a discussion",
+        "note": "Best for general questions",
+        "title": "GitHub Discussions"
+      },
+      "trademark": {
+        "title": "Trademark Request",
+        "description": "Brand owner? Request icon removal, updates, or add usage guidelines.",
+        "action": "File a request",
+        "note": "Removal requests honored within 24 hours"
+      },
+      "policy": {
+        "title": "Trademark Policy",
+        "p1": "All brand logos and trademarks on thesvg.org are the property of their respective owners. Icons are provided for identification and development purposes only. We are not affiliated with or endorsed by any listed brand.",
+        "p2": "If you are a brand owner and would like your icon removed or updated, please {{email}} or read our full {{policy}}. Removal requests are honored within 24 hours.",
+        "emailLink": "email us",
+        "policyLink": "Trademark Policy"
+      }
+    },
+    "compare": {
+      "badge": "Honest comparison",
+      "title": "Compare Brand Icon Libraries",
+      "intro": "Seven popular icon libraries compared across features, tooling, and ecosystem. We built this to be fair, every library has strengths. Pick what fits your project.",
+      "milestone": {
+        "badge": "2026 milestone",
+        "title": "{{count}} brand icons in three months",
+        "cta": "Read the milestone post"
+      },
+      "table": {
+        "feature": "Feature"
+      },
+      "sections": {
+        "coverage": "Brand Icon Coverage",
+        "tooling": "Developer Tooling",
+        "ecosystem": "Ecosystem & Plugins",
+        "governance": "Governance & Quality"
+      },
+      "when": "When to use what",
+      "faq": "Frequently asked",
+      "note": "A note on fairness",
+      "browse": "Browse {{count}} icons"
+    },
+    "extensions": {
+      "title": "Extensions & Integrations",
+      "subtitle": "Use theSVG icons everywhere you build, design, and ship.",
+      "newBadge": "New",
+      "mentionsLink": "See where thesvg is mentioned",
+      "jump": "Jump to category",
+      "build": {
+        "title": "Build your own",
+        "body": "The API and CDN are fully open with no auth required. Build a plugin, extension, or workflow, then open a PR to list it here.",
+        "github": "View on GitHub",
+        "cdn": "CDN Docs"
+      },
+      "cat": {
+        "npm": {
+          "label": "Libraries & SDKs",
+          "description": "Install and import brand icons in your project"
+        },
+        "editors": {
+          "label": "Editor Extensions",
+          "description": "Search and insert icons without leaving your editor"
+        },
+        "design": {
+          "label": "Design Tools",
+          "description": "Drag and drop brand icons into your designs"
+        },
+        "developer": {
+          "label": "Developer Tools",
+          "description": "CLI, CDN, and API for programmatic access"
+        },
+        "ai": {
+          "label": "AI & Automation",
+          "description": "Let AI agents and launchers access brand icons"
+        },
+        "integrations": {
+          "label": "Integrations",
+          "description": "Use theSVG in no-code and creative tools"
+        },
+        "frameworks": {
+          "label": "Framework Components",
+          "description": "Native components for your framework of choice"
+        },
+        "mobile-native": {
+          "label": "Mobile & Native",
+          "description": "Ship icons in iOS, Android, and cross-platform apps"
+        }
+      },
+      "cta": {
+        "install": "Install",
+        "buildThis": "Build this",
+        "docs": "Docs",
+        "browseLibraries": "Browse libraries",
+        "browseSets": "Browse sets",
+        "comingSoon": "Coming Soon",
+        "viewSkills": "View on skills.sh",
+        "viewSource": "View source",
+        "trackProgress": "Track progress"
+      }
+    },
+    "mentions": {
+      "title": "Mentioned on",
+      "intro": "Projects that use thesvg, lists that include it and pages that write about it.",
+      "total": "{{count}} mentions",
+      "groups": {
+        "code": {
+          "label": "Used in code",
+          "blurb": "Projects that fetch, depend on or vendor thesvg icons."
+        },
+        "list": {
+          "label": "Listed in curated lists",
+          "blurb": "Directories and awesome lists that point to thesvg."
+        },
+        "editorial": {
+          "label": "Written about",
+          "blurb": "Reviews and articles."
+        },
+        "more": {
+          "label": "More mentions"
+        }
+      },
+      "summary": {
+        "code": "{{count}} used in code",
+        "list": "{{count}} listed in curated lists",
+        "editorial": "{{count}} written about"
+      },
+      "evidence": {
+        "pr": "PR",
+        "commit": "Commit",
+        "sr": "that added thesvg (opens in a new tab)"
+      },
+      "invite": {
+        "title": "Know a page that mentions thesvg?",
+        "body": "Open an issue with the link and we will add it here.",
+        "cta": "Open an issue"
+      }
+    },
+    "integrations": {
+      "drawio": {
+        "title": "draw.io / diagrams.net Shape Libraries",
+        "subtitle": "Brand and dev-tool icons, ready to drop into your diagrams.",
+        "howTitle": "How to import a library",
+        "step1": "Open draw.io (or diagrams.net) with a diagram you're working on.",
+        "step2": "At the bottom of the left-hand Shapes panel, click the grid icon labeled \"More Shapes\".",
+        "step3": "In the dialog that opens, scroll down and choose \"Open Library from Device...\".",
+        "step4": "Pick the downloaded .xml file for the category you want.",
+        "step5": "The icons appear as a new panel in the left sidebar, ready to drag onto the canvas.",
+        "libraries": "{{count}} category libraries",
+        "cardBlurb": "{{label}} brand and tool logos, ready to drag onto your diagram.",
+        "download": "Download .xml"
+      },
+      "iconCount": "{{count}} icons",
+      "excalidraw": {
+        "title": "Excalidraw Shape Libraries",
+        "intro": "Downloadable custom Excalidraw libraries of brand and developer tool icons, grouped by category, for architecture and product diagrams.",
+        "howTitle": "How to import",
+        "step1": "Open Excalidraw and expand the shape library panel on the right side of the toolbar.",
+        "step2": "Click the \"...\" menu at the top of the library panel and choose \"Open\".",
+        "step3": "Select the downloaded .excalidrawlib file.",
+        "step4": "The icons are added to your personal library, ready to drag onto the canvas.",
+        "libraries": "{{count}} libraries",
+        "librariesNote": "Each file is a self-contained .excalidrawlib you can load independently.",
+        "download": "Download"
+      },
+      "mermaid": {
+        "title": "Mermaid Brand Icons",
+        "subtitle": "Real logos in your architecture diagrams, no image hosting needed.",
+        "packs": "Icon packs",
+        "packMono": "Monochrome icons that follow currentColor. Best for themed diagrams.",
+        "packColor": "Full-color brand icons. Best when logos should keep their brand colors.",
+        "step1": "1. Register the packs",
+        "step2": "2. Use icons in a diagram",
+        "footer": "Icon names match the slugs on theSVG. Search the {{library}} to find the one you need.",
+        "libraryLink": "library"
+      }
+    },
+    "submit": {
+      "badge": "{{count}}+ icons and growing",
+      "title": "Submit an Icon",
+      "intro": "Every brand deserves a place. No gatekeeping. Drop your SVG, fill in the details, and submit directly via GitHub.",
+      "how": "How it works",
+      "steps": {
+        "fork": {
+          "title": "Fork the repo",
+          "description": "Fork github.com/GLINCKER/thesvg and clone locally."
+        },
+        "add": {
+          "title": "Add your SVGs",
+          "description": "Place files in public/icons/{slug}/ with proper naming."
+        },
+        "json": {
+          "title": "Update icons.json",
+          "description": "Add your entry to src/data/icons.json."
+        },
+        "pr": {
+          "title": "Open a PR",
+          "description": "Run pnpm validate, then open a pull request."
+        }
+      },
+      "requirements": {
+        "title": "SVG Requirements",
+        "valid": "Valid SVG/XML markup",
+        "size": "Under 50KB file size",
+        "scripts": "No embedded scripts or external references",
+        "viewBox": "viewBox attribute present",
+        "gradients": "Gradients and multi-color SVGs welcome",
+        "rights": "You have the right to redistribute the icon"
+      },
+      "viewRepo": "View Repository",
+      "openIssues": "Open Issues",
+      "schemaTitle": "Icon Entry Schema",
+      "quickTitle": "Quick Submit",
+      "quickDescription": "Drop your SVG to validate and submit via GitHub",
+      "form": {
+        "validation": {
+          "pass": "All checks passed",
+          "fail": "Some checks failed"
+        },
+        "preview": {
+          "title": "Preview",
+          "light": "Light",
+          "dark": "Dark"
+        },
+        "license": {
+          "label": "License",
+          "helpOpen": "Help me pick",
+          "helpHide": "Hide",
+          "guide": "Licensing guide",
+          "pick": "Pick the option that fits:",
+          "own": {
+            "title": "I drew it myself",
+            "hint": "→ CC0 1.0"
+          },
+          "oss": {
+            "title": "Logo of an MIT / Apache / BSD open-source project",
+            "hint": "→ match the project's license"
+          },
+          "ccby": {
+            "title": "Brand kit explicitly published as CC BY",
+            "hint": "→ CC BY 4.0 (or CC BY-SA / CC BY-ND)"
+          },
+          "other": {
+            "title": "Company brand mark, custom license, or unsure",
+            "hint": "→ Other / custom (we'll verify)"
+          },
+          "select": "Select a license…",
+          "otherLabel": "Describe the license",
+          "otherPlaceholder": "e.g. Acme Brand Guidelines v2: non-commercial use only",
+          "otherEmpty": "A short description is required when picking Other.",
+          "otherTooLong": "Keep the description under {{max}} characters.",
+          "autoLabel": "Your issue will be auto-labeled {{label}} so a maintainer reviews it before merge."
+        },
+        "categories": {
+          "label": "Categories",
+          "placeholder": "Add custom category...",
+          "add": "Add"
+        },
+        "file": {
+          "label": "SVG File",
+          "aria": "Upload SVG file",
+          "dropActive": "Drop your SVG here",
+          "drop": "Drag & drop your SVG",
+          "hint": "or click to browse, .svg files only, max 50KB",
+          "remove": "Remove file"
+        },
+        "details": "Icon Details",
+        "name": "Icon name",
+        "namePlaceholder": "e.g. Vercel",
+        "slug": "Slug (kebab-case)",
+        "slugPlaceholder": "e.g. vercel",
+        "website": "Website URL",
+        "guidelines": "Brand guidelines URL",
+        "hex": "Brand hex color",
+        "hexPreview": "Color preview: #{{hex}}",
+        "submit": "Submit via GitHub",
+        "copied": "Copied!",
+        "copy": "Copy Submission",
+        "needsMore": "Upload an SVG file, enter an icon name, and pick a license to enable submission."
+      }
+    }
+  },
+  "icon": {
+    "about": {
+      "brandColor": "Brand color",
+      "collection": "Part of the {{name}} collection.",
+      "colorName": "color",
+      "filed": "Filed under {{categories}}.",
+      "flagNote": "The flag of {{title}} is a public symbol of its country or region. Showing it is not a statement about sovereignty or borders.",
+      "free": "The {{title}} SVG icon is free to download on theSVG.",
+      "heading": "About {{title}} Icon",
+      "noModify": "Do not modify the mark or imply endorsement.",
+      "officialAssets": "Official brand assets:",
+      "restricted": "Use is limited to the owner’s terms: {{license}}",
+      "serviceNote": "A service-level icon for architecture diagrams and documentation.",
+      "trademark": "“{{title}}” is a trademark of its respective owner and is shown for identification only.",
+      "use": "Use it with React, Vue, Svelte or plain HTML through npm, the CLI or the CDN:",
+      "useLabel": "Use",
+      "usePersonal": "Personal and commercial",
+      "useRestricted": "Brand identification only, unmodified",
+      "useTrademark": "Identification and reference",
+      "variantsLine": "It comes in {{count}} variants: {{names}}."
+    },
+    "card": {
+      "copiedAria": "{{title}} {{format}} copied",
+      "copiedToast": "{{format}} copied!",
+      "copyAria": "Copy {{title}} {{format}}",
+      "downloadSvg": "Download SVG",
+      "favAdd": "Add {{title}} to favorites",
+      "favRemove": "Remove {{title}} from favorites",
+      "quickPreview": "Quick preview",
+      "quickPreviewAria": "Quick preview {{title}}",
+      "view": "View {{title}} icon details"
+    },
+    "common": {
+      "beta": "Beta",
+      "copied": "Copied",
+      "copy": "Copy",
+      "download": "Download"
+    },
+    "contribute": {
+      "issue": "Request via Issue",
+      "missingBetter": "Missing a better version?",
+      "missingBetterGuidelines": "Missing a better version or a guidelines link?",
+      "missingVariant": "Missing a variant?",
+      "missingVariantGuidelines": "Missing a variant or a guidelines link?",
+      "note": "Community fixes ship in the next build",
+      "pr": "Submit a PR"
+    },
+    "detail": {
+      "addFavorite": "Add to favorites",
+      "alsoAvailableAs": "Also available as",
+      "alsoKnownAs": "Also known as",
+      "alsoUiIcon": "Also as a UI icon",
+      "authBadge": "Auth Badge",
+      "brandGuidelines": "Brand guidelines",
+      "brandLogo": "Brand logo",
+      "breadcrumb": "Breadcrumb",
+      "categories": "Categories",
+      "category": "Category",
+      "compareOriginal": "Compare with original",
+      "currentVersion": "Current version",
+      "familyOf": "{{title}} family",
+      "glassMark": "Glass mark for interfaces",
+      "home": "Home",
+      "license": "License",
+      "partOf": "Part of {{title}}",
+      "partOfGoogle": "Part of Google 2026",
+      "previousVersion": "Previous version",
+      "refresh": "See the {{year}} refresh",
+      "relatedIn": "Related in {{category}}",
+      "removeFavorite": "Remove from favorites",
+      "variants": "Variants",
+      "viewAll": "View all"
+    },
+    "download": {
+      "aria": "Download {{title}} SVG",
+      "copyLabel": "copy",
+      "dataUri": "Data URI",
+      "done": "Done",
+      "downloadLabel": "download",
+      "errCopy": "Copy failed. Please try again.",
+      "errExport": "{{format}} export failed. Please try again.",
+      "export": "Export {{title}}",
+      "more": "More download formats",
+      "raster": "Raster",
+      "vector": "Vector"
+    },
+    "family": {
+      "allCategory": "All {{category}}",
+      "allFamilies": "All families",
+      "allIcons": "All {{title}} icons",
+      "allLogos": "All {{title}} logos",
+      "badge": "{{title}} · Brand family",
+      "brandFamilies": "Brand families",
+      "flagshipProducts": "Flagship products",
+      "flagships": "Flagships",
+      "fullSet": "The full set",
+      "iconsCount": "{{count}} icons",
+      "indexIntro": "Official logos grouped by owner: the whole Amazon, Google or Microsoft line in one place, with every variant. {{count}} families.",
+      "indexTitle": "Every product from the brands you build with",
+      "jump": "Jump to a group",
+      "logosCount": "{{count}} logos",
+      "mainLogo": "{{title}} main logo",
+      "moreFamilies": "More brand families",
+      "moreFrom": "More from {{title}}",
+      "nVariants": "{{count}} variants",
+      "oneVariant": "1 variant",
+      "open": "Open",
+      "showMore": "Show {{count}} more",
+      "statCategories": "categories",
+      "statLogos": "logos",
+      "statVariants": "variants",
+      "submitMissing": "Submit a missing {{title}} logo",
+      "viewAllN": "View all {{count}}"
+    },
+    "feedback": {
+      "helpful": "Helpful?",
+      "no": "This icon is not helpful",
+      "reason": {
+        "missingVariant": "Missing variant",
+        "other": "Other",
+        "outdated": "Outdated logo",
+        "wrongColors": "Wrong colors"
+      },
+      "reset": "Reset your feedback",
+      "review": "Glad it helped, leave a review?",
+      "thanks": "Thanks!",
+      "thanksIssue": "Thanks, opened an issue",
+      "whatsWrong": "What’s wrong with it?",
+      "yes": "This icon is helpful"
+    },
+    "glow": {
+      "hint": "Toggle the background glow",
+      "off": "Glow off",
+      "on": "Glow on",
+      "turnOff": "Turn off background glow",
+      "turnOn": "Turn on background glow"
+    },
+    "grid": {
+      "none": "No icons found",
+      "submit": "Submit this icon",
+      "tryDifferent": "Try a different search term or category"
+    },
+    "import": {
+      "loading": "Loading icon library...",
+      "placeholder": "Import from library, try 'gmail 2026', 'github'...",
+      "try": "Try"
+    },
+    "inspector": {
+      "aria": "Inspect {{title}} zoomed in",
+      "background": "{{name}} background",
+      "description": "Zoom in to check edges and curves against the standard icon design grid. This is the vector artwork scaled up, not a raster crop, so it stays crisp at every size.",
+      "grid": "Grid",
+      "title": "{{title}} pixel inspector",
+      "transparent": "Transparent",
+      "zoomIn": "Zoom in",
+      "zoomOut": "Zoom out"
+    },
+    "jsdelivr": {
+      "title": "Copy jsDelivr CDN URL"
+    },
+    "links": {
+      "official": "Official links"
+    },
+    "modal": {
+      "cliCommand": "CLI command",
+      "copiedStatus": "{{what}} copied",
+      "guidelines": "Guidelines",
+      "viewFull": "View full details"
+    },
+    "newBadge": {
+      "refresh": "{{year}} refresh"
+    },
+    "openIn": {
+      "aria": "Open SVG in editor",
+      "copyFor": "Copy for {{app}}",
+      "couldNot": "Could not open.",
+      "downloadFor": "Download for {{app}}",
+      "hint": {
+        "codepen": "Open in a new pen, HTML pre-filled",
+        "figma": "Copy to clipboard, then paste into a Figma canvas",
+        "filagram": "Edit, optimize, or convert in the partner viewer",
+        "illustrator": "Download .svg, then File → Open in Illustrator or Photoshop",
+        "jsfiddle": "Open in a new fiddle, HTML pre-filled",
+        "sketch": "Copy to clipboard, then paste into a Sketch artboard"
+      },
+      "inspect": "Inspect in SVG Viewer",
+      "open": "Open in",
+      "opened": "Opened in new tab.",
+      "targets": "{{count}} targets"
+    },
+    "png": {
+      "error": "Could not convert this SVG to PNG. Try another variant.",
+      "title": "Export PNG"
+    },
+    "preview": {
+      "ariaCopied": "Copied SVG markup",
+      "ariaCopy": "Copy {{title}} SVG markup",
+      "copied": "Copied!",
+      "copy": "Click to copy SVG",
+      "failed": "Couldn't copy"
+    },
+    "quality": {
+      "footnote": "How complete this icon's assets are, not a judgment of the brand or the artwork itself. Help close the gaps via the contribution links below.",
+      "hint": {
+        "licenseMissing": "License not specified",
+        "linked": "Linked",
+        "meta": "Categories: {{count}}",
+        "metaAliases": "Aliases, categories: {{count}}",
+        "noGuidelines": "No guidelines link",
+        "onlyDefault": "Only the default variant",
+        "variantsCount": "{{count}} variants"
+      },
+      "row": {
+        "guidelines": "Guidelines",
+        "license": "License",
+        "metadata": "Metadata",
+        "variants": "Variants"
+      },
+      "title": "Completeness"
+    },
+    "quick": {
+      "copyCommand": "Copy {{name}} command",
+      "label": "How to use this icon",
+      "notOnNpm": "{{name}} is not on npm yet. Use the CLI or CDN.",
+      "packageManager": "Package manager",
+      "title": "How to use"
+    },
+    "variant": {
+      "dark": "Dark",
+      "default": "Default",
+      "light": "Light",
+      "mono": "Mono",
+      "suffix": "{{name}} variant",
+      "wordmark": "Wordmark",
+      "wordmarkDark": "WM Dark",
+      "wordmarkLight": "WM Light"
+    },
+    "viewer": {
+      "addSvg": "Add an SVG to see file info.",
+      "bgChecker": "Checker background",
+      "bgDark": "Dark background",
+      "bgLight": "Light background",
+      "cannotRender": "Cannot render, check the SVG syntax above.",
+      "chars": "ch",
+      "clear": "Clear",
+      "copySvg": "Copy SVG",
+      "downloadSvg": "Download .svg",
+      "elements": "Elements",
+      "empty": "empty",
+      "errAutoload": "Could not auto-load that icon.",
+      "errClipboard": "Clipboard write failed.",
+      "errNoIcon": "No icon with slug \"{{slug}}\" in the library.",
+      "errNotSvg": "That does not look like a valid SVG file.",
+      "errRead": "Could not read that file.",
+      "errTooLarge": "File is larger than 2 MB. Please use a smaller SVG.",
+      "fileInfo": "File info",
+      "format": "Format",
+      "formatHint": "format",
+      "gradients": "Gradients",
+      "height": "Height",
+      "indent": "indent",
+      "invalid": "invalid",
+      "lines": "ln",
+      "loading": "Loading {{slug}} from library...",
+      "masks": "Masks/Clips",
+      "minify": "Minify",
+      "no": "No",
+      "openInEditor": "Open in editor",
+      "pageIntro": "Paste, drop, or import an SVG. Format the XML, preview on any background, inspect viewBox and dimensions, and open in your favorite editor. Everything runs in your browser. Nothing is uploaded.",
+      "pageTitle": "SVG Viewer",
+      "partnerText": "Need to edit, optimize, or convert to PNG, JPG, PDF, or WebP? Filagram has the heavy-lift tooling.",
+      "pasteHint": "Paste, drop, or import an SVG to preview",
+      "poweredBy": "Powered by Filagram",
+      "preview": "Preview",
+      "size": "Size",
+      "upload": "Upload",
+      "valid": "valid svg",
+      "visit": "Visit Filagram",
+      "width": "Width",
+      "yes": "Yes"
+    }
+  },
+  "docs": {
+    "ui": {
+      "navLabel": "Docs navigation",
+      "onThisPage": "On this page",
+      "askAi": "Ask AI",
+      "openIn": "Open in {{name}}",
+      "copy": "Copy",
+      "copied": "Copied",
+      "copyFailed": "Couldn't copy",
+      "copyLinkTo": "Copy link to {{title}}",
+      "editOnGithub": "Edit this page on GitHub",
+      "thanks": "Thanks for the feedback",
+      "wasHelpful": "Was this page helpful?",
+      "helpfulYes": "Yes, this page was helpful",
+      "helpfulNo": "No, this page was not helpful",
+      "docsBadge": "Docs",
+      "source": "Source",
+      "relatedQuestions": "Related questions",
+      "seeAllFaq": "See all FAQ"
+    },
+    "nav": {
+      "groups": {
+        "getting-started": "Getting Started",
+        "frameworks-tools": "Frameworks & Tools",
+        "guides": "Guides",
+        "reference": "Reference"
+      },
+      "items": {
+        "overview": "Overview",
+        "cdn": "CDN / HTML",
+        "react": "React",
+        "vue": "Vue",
+        "svelte": "Svelte",
+        "react-native": "React Native",
+        "cli": "CLI",
+        "api": "REST API",
+        "mcp": "AI Assistants (MCP)",
+        "recipes": "Recipes",
+        "best-practices": "Best Practices",
+        "flags": "Flags",
+        "tricks": "Tricks",
+        "migration": "Migrating",
+        "faq": "FAQ"
+      }
+    },
+    "home": {
+      "heading": "Docs & Guides",
+      "intro": "Everything for using {{total}}+ brand icons: framework guides, real-world recipes, best practices, tricks, migration guides, and FAQ.",
+      "gettingStartedTitle": "Getting started",
+      "gettingStartedBody": "Pick the guide that matches how you're building. A handful of known icons in React, Vue, or Svelte: use the matching package. An open-ended or large set (a picker, a directory page): use the CDN guide instead, it has zero bundle cost regardless of how many icons you show. Checking icons into your own repo: use the CLI. Wiring up an AI assistant: see the MCP guide.",
+      "cards": {
+        "flags": "Country and region flags: shapes, sizes, accessibility, the locale helper, search and the browser.",
+        "recipes": "Concrete build patterns: tech-stack badges, icon pickers, accessible buttons, and more.",
+        "best-practices": "Sizing, variant choice, CDN pinning, and dark mode done right.",
+        "tricks": "Small techniques: dynamic icons by slug, CSS-mask recoloring, preload hints.",
+        "migration": "Moving from Simple Icons, svgl, or deciding between theSVG, Iconify, and Lucide.",
+        "faq": "Licensing, missing variants, rate limits, and other common questions."
+      }
+    },
+    "guides": {
+      "cdn": {
+        "label": "CDN / Plain HTML",
+        "summary": "No install, no build step. Point an <img> tag at a CDN URL. Works with zero JavaScript."
+      },
+      "react": {
+        "label": "React",
+        "summary": "Typed, tree-shakeable components. Works as a Server Component by default, no \"use client\" needed."
+      },
+      "vue": {
+        "label": "Vue",
+        "summary": "Typed Vue 3 render-function components. No SFC compiler required."
+      },
+      "svelte": {
+        "label": "Svelte",
+        "summary": "Typed components for Svelte 4 and 5. Plain markup with no browser-only APIs, so it renders identically during SvelteKit SSR and in the client - no onMount guard or client-only wrapper needed."
+      },
+      "react-native": {
+        "label": "React Native",
+        "summary": "Renders via react-native-svg. Works in Expo Go with no config plugin and no native setup."
+      },
+      "cli": {
+        "label": "CLI (vendor into your repo)",
+        "summary": "Copies icon files straight into your project, shadcn-style. No runtime dependency to install."
+      },
+      "api": {
+        "label": "REST API",
+        "summary": "Static, CDN-cached JSON. No auth, no dynamic search endpoint - fetch the manifest once and filter client-side."
+      },
+      "mcp": {
+        "label": "AI Assistants (MCP)",
+        "summary": "A local MCP server (stdio) that gives AI assistants tools to search and fetch icons directly. The same mcpServers JSON block works in any MCP-compatible client's config file (Claude Desktop, Claude Code, Cursor, Windsurf) - check your client's docs for where that config file lives."
+      }
+    },
+    "snippets": {
+      "basic-usage": "Basic usage",
+      "automatic-dark-mode-no-js": "Automatic dark mode (no JS)",
+      "install": "Install",
+      "usage": "Usage",
+      "variants": "Variants",
+      "individual-import-smallest-bundle": "Individual import (smallest bundle)",
+      "nuxt-3-explicit-import-no-auto-import-config-needed": "Nuxt 3 (explicit import, no auto-import config needed)",
+      "expo-router-screen": "Expo Router screen",
+      "add-one-icon": "Add one icon",
+      "add-several-as-typed-jsx": "Add several, as typed JSX",
+      "search-the-catalog": "Search the catalog",
+      "in-a-dockerfile-ci-build-step": "In a Dockerfile / CI build step",
+      "full-icon-manifest": "Full icon manifest",
+      "categories-with-counts": "Categories with counts",
+      "direct-svg": "Direct SVG",
+      "jsdelivr-mirror-recommended-for-high-traffic": "jsDelivr mirror (recommended for high traffic)",
+      "mcp-config-claude-desktop-cursor-etc": "MCP config (Claude Desktop, Cursor, etc.)",
+      "dynamic-icon": "Dynamic icon",
+      "onerror-fallback": "onError fallback",
+      "css-mask-recolor": "CSS mask recolor",
+      "bulk-add": "Bulk add",
+      "preload-hint": "Preload hint",
+      "client-side-filter": "Client-side filter",
+      "html-jsx": "HTML / JSX",
+      "markdown-readme": "Markdown (README)",
+      "react": "React",
+      "option-a-skip-optimization-for-this-image": "Option A: skip optimization for this image",
+      "option-b-allow-svgs-from-the-icon-domain": "Option B: allow SVGs from the icon domain",
+      "package-json-script": "package.json script",
+      "dockerfile": "Dockerfile",
+      "before-after": "Before / after"
+    },
+    "bestPractices": {
+      "intro": "Sizing, variant choice, CDN pinning, and dark mode, done right.",
+      "cdn-vs-components": {
+        "title": "CDN <img> for grids, components for a known set",
+        "body": "Rendering hundreds or thousands of icons (a picker, a directory)? Use the CDN <img> URL pattern - zero bundle cost no matter how many you show. Reserve @thesvg/react, @thesvg/vue, or @thesvg/svelte named imports for a small, fixed set of icons referenced directly in your source, where tree-shaking keeps only what you use."
+      },
+      "set-dimensions": {
+        "title": "Always set width and height",
+        "body": "An <img> has no intrinsic size until it loads, so an icon without explicit width/height (or a reserved aspect-ratio) causes layout shift as the page loads. Set both on every icon, even ones sized purely with CSS classes."
+      },
+      "recolor-mono": {
+        "title": "Recolor via the mono variant, not CSS filters",
+        "body": "Need an icon to match an arbitrary text color? Use the mono variant with an inline component (it inherits currentColor) rather than CSS filter: invert() tricks - filters are lossy and don't map to arbitrary hex values."
+      },
+      "pin-jsdelivr": {
+        "title": "Pin the jsDelivr mirror to a release, not @main",
+        "body": "cdn.jsdelivr.net/gh/glincker/thesvg@main/... tracks the moving main branch. Pin to a released git tag (e.g. @{{ref}}, the current release) in production so an upstream rename or removal can't silently change what your app renders."
+      },
+      "picture-dark-mode": {
+        "title": "Use <picture> for dark mode, not JS",
+        "body": "Icons with both light and dark variants can switch with a pure CSS media query via <picture> - no theme-detection JavaScript, no hydration flash of the wrong variant."
+      },
+      "high-traffic": {
+        "title": "High-traffic apps: mirror, don't hotlink at scale",
+        "body": "thesvg.org's /icons/* is CDN-cached and free at scale, but very high-volume production apps should still prefer the jsDelivr mirror, or self-host by cloning the repo, so a traffic spike on your end never depends on thesvg.org's own uptime."
+      }
+    },
+    "tricks": {
+      "intro": "Small techniques worth knowing.",
+      "dynamic-slug": {
+        "title": "Render any icon by slug, without importing it",
+        "body": "When the icon is only known at runtime (a user's connected integrations, a CMS field), don't try to import every possible component. Build the CDN URL from the slug directly - it works for any of the 6,500+ icons with no barrel import and no bundler cost."
+      },
+      "fallback-slug": {
+        "title": "Fall back gracefully for an unknown slug",
+        "body": "If a slug might not exist in the catalog (e.g. it came from user input), swap to a fallback icon on load error instead of showing a broken image."
+      },
+      "css-mask": {
+        "title": "Recolor an <img>-tag icon with a CSS mask",
+        "body": "An <img> tag can't inherit currentColor the way an inline SVG component can. To recolor one with pure CSS anyway, use it as a mask instead of a background image."
+      },
+      "bulk-add": {
+        "title": "Vendor a batch of icons in one command",
+        "body": "Add several icons straight into your repo in a single call - useful for air-gapped CI, or when you'd rather check icons into your own codebase than fetch them at runtime."
+      },
+      "preload": {
+        "title": "Preload a hero logo to avoid a flash",
+        "body": "A brand icon that's visible immediately on page load (a hero logo, an above-the-fold integration badge) benefits from a preload hint so the browser fetches it before it's needed, instead of waiting for the <img> tag to be discovered during layout."
+      },
+      "client-search": {
+        "title": "Search the catalog client-side without a package",
+        "body": "Building a custom icon picker? Fetch the manifest once, then filter it in memory - no search package, no per-keystroke network request."
+      }
+    },
+    "recipes": {
+      "intro": "Concrete build patterns, each targeting a specific real-world use case.",
+      "tech-stack-badges": {
+        "title": "A \"built with\" tech-stack badge row",
+        "description": "The most common use case: a row of logos on a landing page or README saying what a product is built with. Plain CDN <img> tags, no install."
+      },
+      "icon-picker": {
+        "title": "A searchable icon picker combobox",
+        "description": "Fetch the manifest once on mount, filter client-side per keystroke, render matches with the CDN URL. No search library, no per-keystroke request."
+      },
+      "nextjs-image": {
+        "title": "Using icons with Next.js's <Image> component",
+        "description": "Next's built-in image optimizer doesn't rasterize SVGs by default. Either opt an image out of optimization, or allow SVGs for the icon domain - a plain <img> tag is simpler for most icon use cases and skips this entirely."
+      },
+      "accessible-icon-button": {
+        "title": "An accessible icon-only button",
+        "description": "An icon with no visible label needs an accessible name some other way - aria-label plus role, or visually-hidden text so screen readers announce it correctly."
+      },
+      "logo-strip-fallback": {
+        "title": "An integrations/partners logo strip with fallback",
+        "description": "A directory of user-connected or third-party integrations where a slug might not exist in the catalog (typo, renamed brand, not yet added). Fall back instead of showing a broken image."
+      },
+      "cli-in-ci": {
+        "title": "Vendoring icons at CI/build time instead of runtime",
+        "description": "For air-gapped builds or when you want icons checked into a build artifact rather than fetched at request time, run the CLI as a build step."
+      }
+    },
+    "migration": {
+      "title": "Migrating from other libraries",
+      "intro": "Full feature-by-feature comparison lives on [/compare](/compare). These are the short, practical version.",
+      "from-simple-icons": {
+        "title": "Migrating from Simple Icons",
+        "summary": "Simple Icons is mono-only (single color, no light/dark/wordmark variants) with years of community trust and broad tooling support. Most brand slugs carry over directly; the main change is picking a variant.",
+        "p1": "React apps using react-icons' Si-prefixed components (SiGithub, SiVercel) swap to the equivalent @thesvg/react named export (Github, Vercel).",
+        "p2": "Simple Icons ships one mark per brand. theSVG's default variant is the closest equivalent; use mono explicitly if you specifically want the single-color behavior Simple Icons always gives you.",
+        "p3": "If a slug doesn't exist yet in theSVG's catalog, request it at /submit rather than assuming parity - coverage differs per brand."
+      },
+      "from-svgl": {
+        "title": "Migrating from svgl",
+        "summary": "svgl is a SvelteKit-based browser for brand SVGs with color and wordmark variants, but no npm package - you copy SVG source by hand. If you're outside a Svelte project, or you want an installable package, theSVG covers the same ground plus CLI, REST API, and framework packages.",
+        "p1": "Copy-pasted SVG source becomes a CDN URL or a package import - no more manually re-copying when a logo updates upstream.",
+        "p2": "svgl's variant model (color + wordmark) maps to theSVG's default + wordmark; theSVG additionally has mono, light, and dark where available.",
+        "p3": "Staying in Svelte: swap manually-copied markup for @thesvg/svelte components (see the Svelte guide above) to get typing and future updates for free."
+      },
+      "theSVG-vs-iconify-lucide": {
+        "title": "theSVG vs. Iconify vs. Lucide: picking the right one",
+        "summary": "These solve different problems and most projects end up using more than one. Full feature-by-feature matrix is on /compare; the short version:",
+        "p1": "Brand logos (GitHub, Stripe, AWS, your integrations list): theSVG - the largest brand-focused collection with multi-variant support.",
+        "p2": "Generic UI icons (arrows, menus, settings, chevrons): Lucide - not brand-focused, designed for interface chrome.",
+        "p3": "Need one API across many unrelated icon sets, brand and UI both, and don't mind a larger aggregator: Iconify.",
+        "p4": "A typical app pairs theSVG for brand logos with Lucide for UI chrome - that's what thesvg.org itself does."
+      }
+    },
+    "faq": {
+      "intro": "Common questions about theSVG.",
+      "licensed": {
+        "q": "Are these logos officially licensed by each brand?",
+        "a": "No. Icons are provided under nominative fair use for identification purposes - brand marks remain the property of their respective trademark holders. Using a logo doesn't imply endorsement or partnership. See /legal and the repository's TRADEMARK.md for details."
+      },
+      "commercial": {
+        "q": "Can I use these icons commercially?",
+        "a": "Yes, for identification purposes (e.g. \"we integrate with X\", a tech-stack badge, a payment-method list) - that's standard nominative fair use. Don't use a mark in a way that implies a partnership or endorsement that doesn't exist. When in doubt, check the brand's own guidelines, linked per-icon where available."
+      },
+      "missing-variant": {
+        "q": "An icon is missing a dark, light, or wordmark variant. Why?",
+        "a": "Not every brand ships all 7 variants. default is the only one guaranteed present; the rest depend on what clean source art was available when the icon was added. If you have a clean source for a missing variant, submit it."
+      },
+      "request-brand": {
+        "q": "How do I request a new brand or report an outdated logo?",
+        "a": "Open an icon-request or icon-update submission at /submit. Pasted SVG source needs to be under 50KB, have a valid viewBox, and contain no <script> tags or embedded raster images - the submission form and triage bot will tell you if something's off."
+      },
+      "rate-limit": {
+        "q": "Is there a rate limit on the API?",
+        "a": "/api/registry.json and /api/categories.json are static, CDN-cached files rather than a database-backed endpoint, so there's effectively no rate limit today. For very high request volumes, prefer the jsDelivr mirror. A separate gated API with real-time search and webhooks is on the roadmap at api.thesvg.org."
+      },
+      "ai-assistants": {
+        "q": "Can AI assistants use theSVG directly?",
+        "a": "Yes, via @thesvg/mcp-server - a local MCP server you add to Claude Desktop's, Claude Code's, or Cursor's MCP config (see the AI Assistants guide above). It exposes search, fetch, and category-listing tools backed by the same data as the site."
+      },
+      "which-package": {
+        "q": "Which package should I actually install?",
+        "a": "A handful of known icons in a React, Vue, or Svelte app: use the matching framework package - it's tree-shaken and typed. An open-ended or large set (a picker, a directory): use the CDN <img> pattern instead, no bundle cost regardless of count. Want icons checked into your own repo: use the CLI."
+      },
+      "broken-image": {
+        "q": "My icon is showing a broken image / 404. What's wrong?",
+        "a": "Almost always a slug mismatch - the URL path uses the exact slug from /api/registry.json, which isn't always the brand's display name (spaces, dots, and casing are normalized). Search the site or check the registry for the exact slug rather than guessing one from the brand name."
+      },
+      "nextjs-image": {
+        "q": "Does theSVG work with Next.js's <Image> component?",
+        "a": "Not out of the box. Next's built-in image optimizer doesn't rasterize SVGs by default, so <Image> either needs the unoptimized prop for that image, or dangerouslyAllowSVG set on the domain in next.config. For most icon use cases a plain <img> tag (or a framework package component) is simpler and avoids the optimizer entirely."
+      },
+      "typescript-slugs": {
+        "q": "Is there a TypeScript type listing every icon slug?",
+        "a": "No exported union type of all slugs - each icon is its own named export (Github, Figma, ...), so importing an icon that doesn't exist is a module-not-found error at build time, not a string-literal type error. If you need slugs as data (e.g. from an API response), registry.json's slug field is a plain string."
+      },
+      "vs-alternatives": {
+        "q": "How is theSVG different from Simple Icons, svgl, or Iconify?",
+        "a": "theSVG has more brand icons, plus cloud provider icons (AWS, Azure, GCP) none of the alternatives cover, up to 7 variants per icon (color, mono, light, dark, wordmark), and a wider toolchain (framework packages, CLI, REST API, MCP server for AI agents). Simple Icons is mono-only; svgl is Svelte-focused with no npm package; Iconify aggregates 150+ icon sets but isn't brand-focused. Full side-by-side comparison at /compare."
+      },
+      "ssr": {
+        "q": "Do the framework packages support server-side rendering (SSR)?",
+        "a": "Yes. Every framework package (@thesvg/react, @thesvg/vue, @thesvg/svelte) renders plain markup with no browser-only APIs, so they're SSR-safe by default - no client-only wrapper or hydration guard needed. @thesvg/react components specifically work as React Server Components with no \"use client\" directive."
+      },
+      "self-host": {
+        "q": "Can I self-host the icons without crediting theSVG?",
+        "a": "The codebase and tooling are MIT-licensed, so no attribution is legally required to self-host. The brand marks themselves stay the property of their trademark holders regardless of where you host the files - see /legal. A link back is appreciated but not required."
+      },
+      "dark-mode-differs": {
+        "q": "Why does the same icon look different in dark mode?",
+        "a": "If you're rendering the default variant everywhere, that's expected - it's a fixed brand color, not theme-aware. For a variant that adapts to the page theme, use light/dark with a <picture> element (see Best practices above), or the mono variant with an inline component so it inherits currentColor."
+      }
+    },
+    "flags": {
+      "intro": "{{total}} country and region flags in three shapes. Install with `npm i @thesvg/flags` ([on npm](https://www.npmjs.com/package/@thesvg/flags)).",
+      "usageTitle": "Usage guide",
+      "browse": "Want to browse and try shapes, sizes and colors? [Open the flags browser](/collection/flags).",
+      "creditsTitle": "Credits and licenses",
+      "creditsBody": "The flag drawings come from flag-icons (4x3 and square) and circle-flags (circle), both MIT licensed. The files themselves carry no credit text; the full notices and the per-file source map are in THIRD_PARTY_NOTICES.md and packages/flags/src/data/licenses.json in the repository. A flag is a public symbol of a state or organization, and including one is not a statement about sovereignty.",
+      "fullGuide": "Full guide with props, locale table, Vue, Svelte and plain SVG examples: [docs/flags.md](https://github.com/glincker/thesvg/blob/main/docs/flags.md).",
+      "sections": {
+        "naming": {
+          "title": "Naming",
+          "body": "Slugs are flag- plus the lowercase ISO 3166-1 alpha-2 code (flag-us, flag-de) or the regional code (flag-gb-eng, flag-es-ct, flag-eu, flag-un). Variants: default is the 4x3 rectangle, square is 1x1, and circle. The category is Flags."
+        },
+        "search": {
+          "title": "Search",
+          "body": "Flags are found by English and native names, official names, ISO alpha-2, alpha-3 and numeric codes, emoji, former names and locale tags. Try deutschland, DEU, 276, holland, england, catalunya or pt-BR."
+        },
+        "shape": {
+          "title": "Choosing a shape",
+          "body": "Use 4x3 where true proportions help, square for fixed square slots, and circle for compact pickers and chips. Circle crops the edges of wide flags, so keep the name in text beside it."
+        },
+        "accessibility": {
+          "title": "Accessibility",
+          "body": "Decorative flags are aria-hidden and the visible text carries the meaning. Provide a title only when the flag stands alone, which renders role=img with an accessible name."
+        },
+        "language": {
+          "title": "A flag is a country, not a language",
+          "body": "Show the native language name beside the flag and do not use flags as the only language selector. getFlagForLocale maps a locale to a conventional flag for decoration."
+        },
+        "legal": {
+          "title": "Legal",
+          "body": "A flag is a public symbol of a state or organization. Including one is not a statement about sovereignty or borders. See the legal notice and disclaimer."
+        }
+      },
+      "steps": {
+        "pick": {
+          "head": "1. Pick a flag.",
+          "body": "Search by name, ISO code, emoji or locale in [the flags collection](/collection/flags). Each flag has its own page with copy and download buttons."
+        },
+        "cdn": {
+          "head": "2. Use it without installing.",
+          "body": "Link the file from the CDN: `https://cdn.jsdelivr.net/npm/@thesvg/flags/dist/svg/4x3/us.svg`, or use `1x1` or `circle` in place of `4x3` for the other shapes."
+        },
+        "install": {
+          "head": "3. Or install the package.",
+          "body": "`npm i @thesvg/flags` ([npm page](https://www.npmjs.com/package/@thesvg/flags)), then import a single flag from `@thesvg/flags/react/us` so only that flag is bundled."
+        },
+        "locale": {
+          "head": "4. Map a locale to a flag.",
+          "body": "`getFlagForLocale(\"pt-BR\")` returns Brazil for decoration. Always show the language name beside it."
+        }
+      }
     }
   }
 }

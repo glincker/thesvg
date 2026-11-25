@@ -6,6 +6,7 @@ import { capture } from "@/lib/analytics";
 import { Copy, Download, ExternalLink } from "@/components/own-icons";
 import { BottomSheet } from "./bottom-sheet";
 import { useMobileShellStore } from "@/lib/stores/mobile-shell-store";
+import { useT } from "@/i18n/use-t";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import { getIconBySlugFromManifest, loadIconsManifest } from "@/lib/icons-manifest";
 import type { IconEntry } from "@/lib/icons";
@@ -17,6 +18,7 @@ import type { IconEntry } from "@/lib/icons";
  * navigating away from the grid.
  */
 export function MobileActionSheet() {
+  const { t } = useT();
   const router = useRouter();
   const sheet = useMobileShellStore((s) => s.sheet);
   const slug = useMobileShellStore((s) => s.actionSlug);
@@ -97,7 +99,7 @@ export function MobileActionSheet() {
       open={open}
       onClose={closeSheet}
       fixedSnap="peek"
-      label={icon?.title ?? "Actions"}
+      label={icon?.title ?? t("mobile.action.title")}
     >
       <div className="px-4 pb-4">
         <ul className="divide-y divide-border/40">
@@ -111,7 +113,7 @@ export function MobileActionSheet() {
                 <Copy className="h-4 w-4" />
               </span>
               <span className="text-sm font-medium text-foreground">
-                Copy SVG
+                {t("mobile.action.copySvg")}
               </span>
             </button>
           </li>
@@ -125,7 +127,7 @@ export function MobileActionSheet() {
                 <Download className="h-4 w-4" />
               </span>
               <span className="text-sm font-medium text-foreground">
-                Download SVG
+                {t("mobile.action.downloadSvg")}
               </span>
             </button>
           </li>
@@ -139,7 +141,7 @@ export function MobileActionSheet() {
                 <ExternalLink className="h-4 w-4" />
               </span>
               <span className="text-sm font-medium text-foreground">
-                Open quick view
+                {t("mobile.action.openQuickView")}
               </span>
             </button>
           </li>
@@ -153,7 +155,7 @@ export function MobileActionSheet() {
                 <ExternalLink className="h-4 w-4" />
               </span>
               <span className="text-sm font-medium text-foreground">
-                Open full page
+                {t("mobile.action.openFullPage")}
               </span>
             </button>
           </li>

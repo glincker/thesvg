@@ -21,27 +21,28 @@ import { logoImgClass, logoPlateClass } from "@/lib/logo-surface";
 import { StatCard } from "./stat-card";
 import { Section } from "./section";
 import { IconGridSkeleton } from "@/components/skeletons";
+import { useT } from "@/i18n/use-t";
 
 type TimeWindow = "all" | "today" | "week" | "month";
 
-const WINDOWS: { id: TimeWindow; label: string; ms: number | null }[] = [
-  { id: "all", label: "All time", ms: null },
-  { id: "today", label: "Today", ms: 24 * 60 * 60 * 1000 },
-  { id: "week", label: "This week", ms: 7 * 24 * 60 * 60 * 1000 },
-  { id: "month", label: "This month", ms: 30 * 24 * 60 * 60 * 1000 },
+const WINDOWS: { id: TimeWindow; labelKey: string; ms: number | null }[] = [
+  { id: "all", labelKey: "home.recents.allTime", ms: null },
+  { id: "today", labelKey: "home.recents.today", ms: 24 * 60 * 60 * 1000 },
+  { id: "week", labelKey: "home.recents.thisWeek", ms: 7 * 24 * 60 * 60 * 1000 },
+  { id: "month", labelKey: "home.recents.thisMonth", ms: 30 * 24 * 60 * 60 * 1000 },
 ];
 
-function timeAgo(ts: number): string {
+function timeAgo(ts: number, t: (key: string, options?: { count: number }) => string): string {
   const seconds = Math.max(0, Math.floor((Date.now() - ts) / 1000));
-  if (seconds < 60) return "just now";
+  if (seconds < 60) return t("home.recents.justNow");
   const mins = Math.floor(seconds / 60);
-  if (mins < 60) return `${mins}m`;
+  if (mins < 60) return t("home.ago.minutes", { count: mins });
   const hrs = Math.floor(mins / 60);
-  if (hrs < 24) return `${hrs}h`;
+  if (hrs < 24) return t("home.ago.hours", { count: hrs });
   const days = Math.floor(hrs / 24);
-  if (days < 30) return `${days}d`;
+  if (days < 30) return t("home.ago.days", { count: days });
   const months = Math.floor(days / 30);
-  return `${months}mo`;
+  return t("home.ago.months", { count: months });
 }
 
 function getWindowCutoff(win: TimeWindow): number | null {
@@ -51,6 +52,7 @@ function getWindowCutoff(win: TimeWindow): number | null {
 }
 
 export function RecentsPage() {
+  const { t } = useT();
   const viewed = useRecentsStore((s) => s.viewed);
   const copied = useRecentsStore((s) => s.copied);
   const searched = useRecentsStore((s) => s.searched);
@@ -99,8 +101,8 @@ export function RecentsPage() {
   // Fade copy-confirmation pill.
   useEffect(() => {
     if (!flash) return;
-    const t = window.setTimeout(() => setFlash(null), 1400);
-    return () => window.clearTimeout(t);
+    const timer = window.setTimeout(() => setFlash(null), 1400);
+    return () => window.clearTimeout(timer);
   }, [flash]);
 
   // Computed once per render cycle and shared by the viewed/copied/searched
@@ -172,17 +174,17 @@ export function RecentsPage() {
           );
         }
         recordCopy(entry.slug, "svg");
-        setFlash(`${entry.title} copied`);
+        setFlash(t("home.recents.titleCopied", { name: entry.title }));
         capture("recents_recopy", {
           slug: entry.slug,
           format,
           source: "recents_page",
         });
       } catch {
-        setFlash("Copy failed");
+        setFlash(t("home.recents.copyFailed"));
       }
     },
-    [recordCopy],
+    [recordCopy, t],
   );
 
   return (
@@ -204,10 +206,10 @@ export function RecentsPage() {
       <header className="mb-6">
         <div className="mb-1 flex items-center gap-2 text-xs text-muted-foreground">
           <Activity className="h-3.5 w-3.5" />
-          <span>Your activity, on this device only</span>
+          <span>{t("home.recents.deviceOnly")}</span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Recents
+          {t("home.recents.title")}
         </h1>
 
         {hydrated && (
@@ -215,19 +217,19 @@ export function RecentsPage() {
             <StatCard
               icon={<Eye className="h-4 w-4" />}
               count={viewed.length}
-              label="viewed"
+              label={t("home.recents.viewedLabel")}
               active={viewedIcons.length > 0}
             />
             <StatCard
               icon={<Copy className="h-4 w-4" />}
               count={copied.length}
-              label="copied"
+              label={t("home.recents.copiedLabel")}
               active={copiedIcons.length > 0}
             />
             <StatCard
               icon={<Search className="h-4 w-4" />}
               count={searched.length}
-              label="searched"
+              label={t("home.recents.searchedLabel")}
               active={filteredSearches.length > 0}
             />
           </div>
@@ -247,25 +249,25 @@ export function RecentsPage() {
                     : "border-border/50 bg-card/40 text-muted-foreground hover:border-foreground/20 hover:text-foreground dark:border-white/[0.06] dark:bg-white/[0.02]"
                 }`}
               >
-                {w.label}
+                {t(w.labelKey)}
               </button>
             ))}
             <button
               type="button"
               onClick={() => {
-                if (window.confirm("Clear all recent activity?")) clearAll();
+                if (window.confirm(t("home.recents.confirmClearAll"))) clearAll();
               }}
               className="ml-auto inline-flex items-center gap-1.5 rounded-full border border-border/50 px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:border-destructive/40 hover:bg-destructive/10 hover:text-destructive focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-destructive focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:border-white/[0.06]"
             >
               <Trash2 className="h-3.5 w-3.5" />
-              Clear everything
+              {t("home.recents.clearEverything")}
             </button>
           </div>
         )}
       </header>
 
       {(!hydrated || resolving) && (
-        <div role="status" aria-label="Loading your recents">
+        <div role="status" aria-label={t("home.recents.loading")}>
           <IconGridSkeleton count={12} className="py-4" />
         </div>
       )}
@@ -273,18 +275,17 @@ export function RecentsPage() {
       {manifestFailed && (
         <div className="relative overflow-hidden rounded-3xl border border-dashed border-border/60 bg-gradient-to-br from-card/40 to-card/10 px-6 py-20 text-center dark:border-white/[0.08]">
           <h2 className="text-lg font-semibold text-foreground">
-            Couldn&apos;t load your recent icons
+            {t("home.recents.loadFailedTitle")}
           </h2>
           <p className="mx-auto mt-1 max-w-sm text-sm text-muted-foreground">
-            Your viewed and copied history is saved, it just couldn&apos;t be
-            resolved this time.
+            {t("home.recents.loadFailedBody")}
           </p>
           <button
             type="button"
             onClick={() => setReloadToken((t) => t + 1)}
             className="mt-6 inline-flex items-center gap-1.5 rounded-xl bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-all hover:scale-[1.02] hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-95"
           >
-            Retry
+            {t("home.recents.retry")}
           </button>
         </div>
       )}
@@ -296,17 +297,16 @@ export function RecentsPage() {
             <Sparkles className="h-6 w-6 text-orange-500" />
           </div>
           <h2 className="text-lg font-semibold text-foreground">
-            Nothing here yet
+            {t("home.recents.emptyTitle")}
           </h2>
           <p className="mx-auto mt-1 max-w-sm text-sm text-muted-foreground">
-            Browse a few icons and they will land here for one-tap recopy and
-            quick reopen.
+            {t("home.recents.emptyBody")}
           </p>
           <Link
             href="/"
             className="mt-6 inline-flex items-center gap-1.5 rounded-xl bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-all hover:scale-[1.02] hover:opacity-90 active:scale-95"
           >
-            Browse the library
+            {t("home.recents.browseLibrary")}
           </Link>
         </div>
       )}
@@ -317,7 +317,7 @@ export function RecentsPage() {
           <div className="space-y-6">
             {viewedIcons.length > 0 && (
               <Section
-                title="Viewed"
+                title={t("home.recents.viewed")}
                 icon={<Eye className="h-3.5 w-3.5" />}
                 count={viewedIcons.length}
                 onClear={clearViewed}
@@ -360,7 +360,7 @@ export function RecentsPage() {
                             {entry.title}
                           </p>
                           <p className="text-[11px] text-muted-foreground/70">
-                            {timeAgo(ts)} ago
+                            {timeAgo(ts, t)}
                           </p>
                         </div>
                       </Link>
@@ -371,19 +371,19 @@ export function RecentsPage() {
                             e.preventDefault();
                             handleCopyAgain(entry, "svg");
                           }}
-                          aria-label="Copy SVG"
-                          title="Copy SVG"
+                          aria-label={t("home.recents.copySvg")}
+                          title={t("home.recents.copySvg")}
                           className="flex h-7 flex-1 items-center justify-center gap-1 rounded-lg bg-foreground/95 text-[11px] font-medium text-background backdrop-blur-sm transition-transform active:scale-95"
                         >
                           <Copy className="h-3.5 w-3.5" />
-                          Copy
+                          {t("home.recents.copy")}
                         </button>
                         <a
                           href={entry.variants.default}
                           download={`${entry.slug}.svg`}
                           onClick={(e) => e.stopPropagation()}
-                          aria-label="Download"
-                          title="Download"
+                          aria-label={t("home.recents.download")}
+                          title={t("home.recents.download")}
                           className="flex h-7 w-7 items-center justify-center rounded-lg bg-card/95 text-foreground backdrop-blur-sm transition-transform hover:bg-accent active:scale-95"
                         >
                           <Download className="h-3.5 w-3.5" />
@@ -400,7 +400,7 @@ export function RecentsPage() {
           <aside className="space-y-6">
             {copiedIcons.length > 0 && (
               <Section
-                title="Copied"
+                title={t("home.recents.copied")}
                 icon={<Copy className="h-3.5 w-3.5" />}
                 count={copiedIcons.length}
                 onClear={clearCopied}
@@ -439,18 +439,18 @@ export function RecentsPage() {
                                 {format}
                               </span>
                               {count > 1 && <span> · {count}&times;</span>}
-                              <span> · {timeAgo(ts)} ago</span>
+                              <span> · {timeAgo(ts, t)}</span>
                             </p>
                           </div>
                         </Link>
                         <button
                           type="button"
                           onClick={() => handleCopyAgain(entry, "svg")}
-                          aria-label={`Copy ${entry.title} again`}
+                          aria-label={t("home.recents.copyAgain", { name: entry.title })}
                           className="flex h-7 shrink-0 items-center gap-1 rounded-lg bg-foreground/90 px-2.5 text-[11px] font-medium text-background opacity-0 transition-all group-hover:opacity-100 active:scale-95"
                         >
                           <Copy className="h-3.5 w-3.5" />
-                          Recopy
+                          {t("home.recents.recopy")}
                         </button>
                       </div>
                     </li>
@@ -461,7 +461,7 @@ export function RecentsPage() {
 
             {filteredSearches.length > 0 && (
               <Section
-                title="Searches"
+                title={t("home.recents.searches")}
                 icon={<Search className="h-3.5 w-3.5" />}
                 count={filteredSearches.length}
                 onClear={clearSearched}
@@ -483,7 +483,7 @@ export function RecentsPage() {
                       <Search className="h-3.5 w-3.5 text-muted-foreground transition-colors group-hover:text-foreground" />
                       <span className="text-foreground">{r.query}</span>
                       <span className="text-[10px] text-muted-foreground/60">
-                        {timeAgo(r.ts)}
+                        {timeAgo(r.ts, t)}
                       </span>
                     </Link>
                   ))}

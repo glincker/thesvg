@@ -7,6 +7,7 @@ import { capture } from "@/lib/analytics";
 import type { IconEntry } from "@/lib/icons";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import { cn } from "@/lib/utils";
+import { useT } from "@/i18n/use-t";
 
 interface Props {
   icon: IconEntry;
@@ -17,6 +18,7 @@ interface Props {
 type Flash = null | "svg" | "hex";
 
 export function Google2026Tile({ icon, delay, cleanTitle }: Props) {
+  const { t } = useT();
   const [flash, setFlash] = useState<Flash>(null);
   const recordCopy = useRecentsStore((s) => s.recordCopy);
   const color = `#${icon.hex || "5F6368"}`;
@@ -115,7 +117,7 @@ export function Google2026Tile({ icon, delay, cleanTitle }: Props) {
           "--g26-tile-delay": `${delay}ms`,
         } as React.CSSProperties
       }
-      aria-label={`${cleanTitle(icon.title)} SVG icon`}
+      aria-label={t("home.tile.svgIcon", { name: cleanTitle(icon.title) })}
     >
       <span className="g26-tile-halo" aria-hidden />
 
@@ -129,13 +131,13 @@ export function Google2026Tile({ icon, delay, cleanTitle }: Props) {
           className="g26-tile-img"
         />
 
-        <span className="g26-tile-actions" role="group" aria-label="Quick actions">
+        <span className="g26-tile-actions" role="group" aria-label={t("home.tile.quickActions")}>
           <button
             type="button"
             onClick={copySvg}
             className="g26-action"
-            aria-label={`Copy ${icon.title} SVG markup`}
-            title="Copy SVG"
+            aria-label={t("home.tile.copyMarkup", { name: icon.title })}
+            title={t("home.tile.copySvg")}
           >
             {flash === "svg" ? (
               <Check className="h-3.5 w-3.5" />
@@ -147,8 +149,8 @@ export function Google2026Tile({ icon, delay, cleanTitle }: Props) {
             type="button"
             onClick={downloadSvg}
             className="g26-action"
-            aria-label={`Download ${icon.title} SVG file`}
-            title="Download .svg"
+            aria-label={t("home.tile.downloadFile", { name: icon.title })}
+            title={t("home.tile.downloadSvg")}
           >
             <Download className="h-3.5 w-3.5" />
           </button>
@@ -156,7 +158,7 @@ export function Google2026Tile({ icon, delay, cleanTitle }: Props) {
 
         {flash && (
           <span className="g26-tile-flash" role="status">
-            {flash === "svg" ? "SVG copied" : `${color} copied`}
+            {flash === "svg" ? t("home.tile.svgCopied") : t("home.tile.colorCopied", { color })}
           </span>
         )}
       </span>
@@ -167,7 +169,7 @@ export function Google2026Tile({ icon, delay, cleanTitle }: Props) {
           type="button"
           onClick={copyHex}
           className="g26-tile-swatch-btn"
-          aria-label={`Copy color ${color}`}
+          aria-label={t("home.tile.copyColor", { color })}
         >
           <span
             className="g26-tile-swatch"
@@ -178,7 +180,7 @@ export function Google2026Tile({ icon, delay, cleanTitle }: Props) {
             {flash === "hex" ? (
               <>
                 <Check className="h-3.5 w-3.5" />
-                Copied
+                {t("home.tile.copied")}
               </>
             ) : (
               <>

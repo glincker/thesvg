@@ -1,4 +1,7 @@
+"use client";
+
 import { cn } from "@/lib/utils";
+import { useT } from "@/i18n/use-t";
 
 interface NewBadgeProps {
   slug: string;
@@ -11,6 +14,7 @@ interface NewBadgeProps {
  * (e.g. `-2027`) will be picked up automatically.
  */
 export function NewBadge({ slug, className }: NewBadgeProps) {
+  const { t } = useT();
   const match = /-(\d{4})$/.exec(slug);
   if (!match) return null;
   const year = match[1];
@@ -20,7 +24,7 @@ export function NewBadge({ slug, className }: NewBadgeProps) {
         "pointer-events-none rounded-full bg-gradient-to-r from-fuchsia-500/90 via-orange-500/90 to-amber-400/90 px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase leading-none tracking-wider text-white shadow-sm shadow-black/20",
         className,
       )}
-      aria-label={`${year} refresh`}
+      aria-label={t("icon.newBadge.refresh", { year })}
     >
       {year}
     </span>
