@@ -36,7 +36,7 @@ export function LanguageSwitcher() {
       >
         <Flag slug={current.flag} className="h-4 w-5 rounded-[3px] object-cover" />
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-[24rem] max-w-[calc(100vw-1.5rem)] rounded-2xl p-2 shadow-xl">
+      <DropdownMenuContent align="end" sideOffset={12} className="w-[24rem] max-w-[calc(100vw-1.5rem)] rounded-2xl p-2 shadow-xl">
         <h3 className="px-2.5 pt-1.5 pb-2 text-[10px] font-semibold tracking-widest text-muted-foreground/80 uppercase">
           {t("language.label")}
         </h3>

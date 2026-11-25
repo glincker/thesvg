@@ -88,7 +88,7 @@ export function DisplayMenu() {
       >
         <SlidersHorizontal className="h-4 w-4" />
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-[22rem] max-w-[calc(100vw-1.5rem)] rounded-2xl p-2 shadow-xl">
+      <DropdownMenuContent align="end" sideOffset={12} className="w-[22rem] max-w-[calc(100vw-1.5rem)] rounded-2xl p-2 shadow-xl">
         <Section
           title={t("chrome.display.copyFormat")}
           caption={`${activeFormat.label}: ${t(`chrome.display.fmt.${dataUriKey(activeFormat.value)}`, { defaultValue: activeFormat.description })}`}
