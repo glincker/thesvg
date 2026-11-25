@@ -58,5 +58,158 @@
       "trademarkPolicy": "商標ポリシー",
       "contact": "お問い合わせ"
     }
+  },
+  "chrome": {
+    "display": {
+      "aria": "表示設定。コピー形式 {{format}}",
+      "title": "表示設定({{format}} でコピー)",
+      "copyFormat": "既定のコピー形式",
+      "copyFormatHint": "アイコンカードのコピーボタンを押したときに使われます",
+      "fmt": {
+        "svg": "生の SVG マークアップ",
+        "jsx": "React コンポーネント",
+        "vue": "Vue 単一ファイルコンポーネント",
+        "cdn": "jsDelivr CDN リンク",
+        "dataUri": "Base64 データ URI"
+      },
+      "preview": "プレビューの背景",
+      "previewHint": "ロゴを実際に置く背景で確認できます",
+      "bg": {
+        "auto": "自動",
+        "autoDesc": "ロゴごとに調整し、暗い・明るいマークを見やすく保ちます",
+        "light": "ライト",
+        "lightDesc": "常に明るいタイル",
+        "dark": "ダーク",
+        "darkDesc": "常に暗いタイル",
+        "checker": "市松模様",
+        "checkerDesc": "透明な部分を表示します"
+      },
+      "size": "インターフェースのサイズ",
+      "sizeHint": "ページ全体をズームせず、文字・アイコン・操作部品を大きくします",
+      "sz": {
+        "default": "標準",
+        "defaultDesc": "標準のサイズ",
+        "large": "大",
+        "largeDesc": "1 段階大きく、約 112%",
+        "larger": "さらに大",
+        "largerDesc": "2 段階大きく、125%"
+      }
+    },
+    "packages": {
+      "aria": "npm パッケージ",
+      "openTitle": "npm で開く",
+      "copyAria": "{{name}} のインストールコマンドをコピー",
+      "openAria": "{{name}} を npm で開く",
+      "copiedStatus": "{{name}} のインストールコマンドをコピーしました",
+      "all": "すべてのパッケージとインストールコマンド",
+      "group": {
+        "brand": "ブランドアイコン",
+        "ui": "UI アイコン",
+        "flags": "国旗",
+        "tools": "ツール"
+      },
+      "label": {
+        "everything": "すべてをひとつに",
+        "rawData": "生の SVG データ",
+        "plainJs": "素の JavaScript",
+        "cdnFiles": "CDN 用の生の SVG ファイル",
+        "rawManifest": "生ファイルとマニフェスト",
+        "flags": "国と地域の旗",
+        "cli": "コマンドライン",
+        "mcp": "MCP サーバー"
+      }
+    },
+    "palette": {
+      "title": "コマンドパレット",
+      "description": "アイコンの検索、カテゴリへの移動、クイックアクションの実行ができます",
+      "placeholder": "アイコン、カテゴリ、アクションを検索...",
+      "empty": "結果が見つかりません。",
+      "icons": "アイコン",
+      "recent": "最近",
+      "categories": "カテゴリ",
+      "quickActions": "クイックアクション",
+      "action": {
+        "submit": "アイコンを投稿",
+        "docs": "ドキュメントを読む",
+        "integrations": "連携を見る",
+        "copySvg": "{{title}} を SVG としてコピー",
+        "copyJsx": "{{title}} を JSX としてコピー"
+      },
+      "copied": "{{title}} を {{format}} としてコピーしました",
+      "copyFailed": "コピーできませんでした。もう一度お試しください。",
+      "navigate": "移動",
+      "select": "選択",
+      "close": "閉じる"
+    },
+    "search": {
+      "placeholder": "アイコンを検索...",
+      "aria": "アイコンを検索",
+      "clear": "検索をクリア",
+      "brandIcons": "ブランドアイコン",
+      "uiIcons": "UI アイコン",
+      "flags": "国旗",
+      "thisSection": "このセクション",
+      "viewAll": "{{total}} 件をすべて表示",
+      "viewAllFlags": "{{total}} 件の国旗をすべて表示",
+      "searching": "検索中…",
+      "failed": "検索を読み込めませんでした。接続を確認して、もう一度お試しください。",
+      "noMatch": "「{{query}}」に一致するアイコンはありません",
+      "submitThis": "このアイコンを投稿"
+    },
+    "help": {
+      "aria": "ヘルプとヒント",
+      "close": "閉じる",
+      "badge": "はじめに",
+      "title": "クイックヒント",
+      "subtitle": "theSVG でできることのすべて",
+      "tip": {
+        "click": {
+          "title": "アイコンをクリック",
+          "desc": "コードスニペット、バリアント、書き出しオプションのある詳細ページを開きます"
+        },
+        "copy": {
+          "title": "クイックコピー",
+          "desc": "カードのコピーボタンを押すだけで SVG をすぐ取得できます"
+        },
+        "download": {
+          "title": "ダウンロードと書き出し",
+          "desc": "詳細ページから SVG をダウンロード、または 32〜512px の PNG で書き出せます"
+        },
+        "search": {
+          "title": "すべてを検索",
+          "desc": "Cmd+K で {{total}} 個のアイコンを横断検索できます"
+        },
+        "fav": {
+          "title": "お気に入りに保存",
+          "desc": "ハートを付けて保存。サイドバーからいつでも開けます"
+        },
+        "use": {
+          "title": "どこでも使える",
+          "desc": "npm、React、Vue、CLI、CDN、AI アシスタント向け MCP サーバー"
+        }
+      },
+      "escHint": "{{key}} で閉じる",
+      "gotIt": "了解"
+    },
+    "hint": {
+      "title": "アイコンをクリックして詳細を表示",
+      "desc": "コードのコピー、ダウンロード、PNG 書き出しなど"
+    },
+    "star": {
+      "title": "thesvg は役に立っていますか?",
+      "withStars": "{{stars}} 人の開発者がスターを付けています。スターは他の人が見つける助けになります。",
+      "noStars": "GitHub のスターは他の開発者が見つける助けになります。無料のオープンソースです。",
+      "cta": "GitHub でスターを付ける"
+    },
+    "post": {
+      "label": "新着記事",
+      "read": "読む"
+    },
+    "common": {
+      "dismiss": "閉じる"
+    },
+    "flagsPill": {
+      "new": "新着"
+    }
   }
 }

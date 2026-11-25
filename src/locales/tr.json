@@ -58,5 +58,158 @@
       "trademarkPolicy": "Ticari Marka Politikası",
       "contact": "İletişim"
     }
+  },
+  "chrome": {
+    "display": {
+      "aria": "Görünüm ayarları. Kopyalama biçimi {{format}}",
+      "title": "Görünüm ayarları ({{format}} olarak kopyalar)",
+      "copyFormat": "Varsayılan kopyalama biçimi",
+      "copyFormatHint": "Herhangi bir simge kartındaki kopyala düğmesine tıkladığınızda kullanılır",
+      "fmt": {
+        "svg": "Ham SVG işaretlemesi",
+        "jsx": "React bileşeni",
+        "vue": "Vue tek dosya bileşeni",
+        "cdn": "jsDelivr CDN bağlantısı",
+        "dataUri": "Base64 veri URI'si"
+      },
+      "preview": "Önizleme arka planı",
+      "previewHint": "Bir logoyu duracağı yüzeyde değerlendirin",
+      "bg": {
+        "auto": "Otomatik",
+        "autoDesc": "Koyu ve açık işaretlerin görünür kalması için her logoya uyum sağlar",
+        "light": "Açık",
+        "lightDesc": "Her zaman açık bir kutucuk",
+        "dark": "Koyu",
+        "darkDesc": "Her zaman koyu bir kutucuk",
+        "checker": "Dama tahtası",
+        "checkerDesc": "Saydam alanları gösterir"
+      },
+      "size": "Arayüz boyutu",
+      "sizeHint": "Sayfayı yakınlaştırmak yerine metni, simgeleri ve denetimleri büyütür",
+      "sz": {
+        "default": "Varsayılan",
+        "defaultDesc": "Standart boyut",
+        "large": "Büyük",
+        "largeDesc": "Bir adım büyük, yaklaşık %112",
+        "larger": "Daha büyük",
+        "largerDesc": "İki adım büyük, %125"
+      }
+    },
+    "packages": {
+      "aria": "npm paketleri",
+      "openTitle": "npm'de aç",
+      "copyAria": "{{name}} kurulum komutunu kopyala",
+      "openAria": "{{name}} paketini npm'de aç",
+      "copiedStatus": "{{name}} kurulum komutu kopyalandı",
+      "all": "Tüm paketler ve kurulum komutları",
+      "group": {
+        "brand": "Marka simgeleri",
+        "ui": "Arayüz simgeleri",
+        "flags": "Bayraklar",
+        "tools": "Araçlar"
+      },
+      "label": {
+        "everything": "Hepsi bir arada",
+        "rawData": "Ham SVG verisi",
+        "plainJs": "Düz JavaScript",
+        "cdnFiles": "CDN için ham SVG dosyaları",
+        "rawManifest": "Ham dosyalar ve manifest",
+        "flags": "Ülke ve bölge bayrakları",
+        "cli": "Komut satırı",
+        "mcp": "MCP sunucusu"
+      }
+    },
+    "palette": {
+      "title": "Komut paleti",
+      "description": "Simge arayın, bir kategoriye geçin veya hızlı bir eylem çalıştırın",
+      "placeholder": "Simge, kategori, eylem ara...",
+      "empty": "Sonuç bulunamadı.",
+      "icons": "Simgeler",
+      "recent": "Son kullanılanlar",
+      "categories": "Kategoriler",
+      "quickActions": "Hızlı eylemler",
+      "action": {
+        "submit": "Simge gönder",
+        "docs": "Belgeleri oku",
+        "integrations": "Entegrasyonlara göz at",
+        "copySvg": "{{title}} simgesini SVG olarak kopyala",
+        "copyJsx": "{{title}} simgesini JSX olarak kopyala"
+      },
+      "copied": "{{title}} {{format}} olarak kopyalandı",
+      "copyFailed": "Kopyalanamadı. Tekrar deneyin.",
+      "navigate": "gezin",
+      "select": "seç",
+      "close": "kapat"
+    },
+    "search": {
+      "placeholder": "Simge ara...",
+      "aria": "Simge ara",
+      "clear": "Aramayı temizle",
+      "brandIcons": "Marka simgeleri",
+      "uiIcons": "Arayüz simgeleri",
+      "flags": "Bayraklar",
+      "thisSection": "Bu bölüm",
+      "viewAll": "{{total}} sonucun tümünü gör",
+      "viewAllFlags": "{{total}} bayrağın tümünü gör",
+      "searching": "Aranıyor…",
+      "failed": "Arama yüklenemedi. Bağlantınızı kontrol edip tekrar deneyin.",
+      "noMatch": "“{{query}}” ile eşleşen simge yok",
+      "submitThis": "Bu simgeyi gönder"
+    },
+    "help": {
+      "aria": "Yardım ve ipuçları",
+      "close": "Kapat",
+      "badge": "Başlarken",
+      "title": "Hızlı ipuçları",
+      "subtitle": "theSVG ile yapabileceğiniz her şey",
+      "tip": {
+        "click": {
+          "title": "Herhangi bir simgeye tıklayın",
+          "desc": "Kod parçaları, varyantlar ve dışa aktarma seçenekleriyle ayrıntı sayfasını açar"
+        },
+        "copy": {
+          "title": "Hızlı kopyalama",
+          "desc": "SVG'yi anında almak için herhangi bir kartın kopyala düğmesine basın"
+        },
+        "download": {
+          "title": "İndir ve dışa aktar",
+          "desc": "Ayrıntı sayfasından SVG indirin veya 32-512px PNG olarak dışa aktarın"
+        },
+        "search": {
+          "title": "Her şeyi arayın",
+          "desc": "{{total}} simge arasında aramak için Cmd+K'ya basın"
+        },
+        "fav": {
+          "title": "Favorileri kaydedin",
+          "desc": "Kaydetmek için simgeleri kalple işaretleyin. Kenar çubuğundan her zaman erişin"
+        },
+        "use": {
+          "title": "Her yerde kullanın",
+          "desc": "npm, React, Vue, CLI, CDN veya yapay zekâ asistanları için MCP sunucusu"
+        }
+      },
+      "escHint": "Kapatmak için {{key}} tuşuna basın",
+      "gotIt": "Anladım"
+    },
+    "hint": {
+      "title": "Ayrıntılar için herhangi bir simgeye tıklayın",
+      "desc": "Kodu kopyalayın, indirin, PNG olarak dışa aktarın ve daha fazlası"
+    },
+    "star": {
+      "title": "thesvg işinize yarıyor mu?",
+      "withStars": "{{stars}} geliştirici yıldız verdi. Bir yıldız başkalarının keşfetmesine yardımcı olur.",
+      "noStars": "Bir GitHub yıldızı diğer geliştiricilerin keşfetmesine yardımcı olur. Ücretsiz ve açık kaynaklıdır.",
+      "cta": "GitHub'da yıldızla"
+    },
+    "post": {
+      "label": "Yeni yazı",
+      "read": "Oku"
+    },
+    "common": {
+      "dismiss": "Kapat"
+    },
+    "flagsPill": {
+      "new": "Yeni"
+    }
   }
 }

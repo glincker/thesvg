@@ -58,5 +58,158 @@
       "trademarkPolicy": "商标政策",
       "contact": "联系我们"
     }
+  },
+  "chrome": {
+    "display": {
+      "aria": "显示设置。复制格式 {{format}}",
+      "title": "显示设置(以 {{format}} 复制)",
+      "copyFormat": "默认复制格式",
+      "copyFormatHint": "点击任意图标卡片上的复制按钮时使用",
+      "fmt": {
+        "svg": "原始 SVG 标记",
+        "jsx": "React 组件",
+        "vue": "Vue 单文件组件",
+        "cdn": "jsDelivr CDN 链接",
+        "dataUri": "Base64 数据 URI"
+      },
+      "preview": "预览背景",
+      "previewHint": "在实际使用的背景上查看徽标效果",
+      "bg": {
+        "auto": "自动",
+        "autoDesc": "随每个徽标自动调整,深色和浅色标志都清晰可见",
+        "light": "浅色",
+        "lightDesc": "始终使用浅色底块",
+        "dark": "深色",
+        "darkDesc": "始终使用深色底块",
+        "checker": "棋盘格",
+        "checkerDesc": "显示透明区域"
+      },
+      "size": "界面大小",
+      "sizeHint": "放大文字、图标和控件,而不是缩放整个页面",
+      "sz": {
+        "default": "默认",
+        "defaultDesc": "标准大小",
+        "large": "大",
+        "largeDesc": "放大一级,约 112%",
+        "larger": "更大",
+        "largerDesc": "放大两级,125%"
+      }
+    },
+    "packages": {
+      "aria": "npm 包",
+      "openTitle": "在 npm 上打开",
+      "copyAria": "复制 {{name}} 的安装命令",
+      "openAria": "在 npm 上打开 {{name}}",
+      "copiedStatus": "已复制 {{name}} 的安装命令",
+      "all": "所有包和安装命令",
+      "group": {
+        "brand": "品牌图标",
+        "ui": "UI 图标",
+        "flags": "旗帜",
+        "tools": "工具"
+      },
+      "label": {
+        "everything": "全部合一",
+        "rawData": "原始 SVG 数据",
+        "plainJs": "原生 JavaScript",
+        "cdnFiles": "用于 CDN 的原始 SVG 文件",
+        "rawManifest": "原始文件和清单",
+        "flags": "国家和地区旗帜",
+        "cli": "命令行",
+        "mcp": "MCP 服务器"
+      }
+    },
+    "palette": {
+      "title": "命令面板",
+      "description": "搜索图标、跳转分类或执行快捷操作",
+      "placeholder": "搜索图标、分类、操作...",
+      "empty": "未找到结果。",
+      "icons": "图标",
+      "recent": "最近",
+      "categories": "分类",
+      "quickActions": "快捷操作",
+      "action": {
+        "submit": "提交图标",
+        "docs": "阅读文档",
+        "integrations": "浏览集成",
+        "copySvg": "将 {{title}} 复制为 SVG",
+        "copyJsx": "将 {{title}} 复制为 JSX"
+      },
+      "copied": "已将 {{title}} 复制为 {{format}}",
+      "copyFailed": "复制失败,请重试。",
+      "navigate": "导航",
+      "select": "选择",
+      "close": "关闭"
+    },
+    "search": {
+      "placeholder": "搜索图标...",
+      "aria": "搜索图标",
+      "clear": "清除搜索",
+      "brandIcons": "品牌图标",
+      "uiIcons": "UI 图标",
+      "flags": "旗帜",
+      "thisSection": "当前板块",
+      "viewAll": "查看全部 {{total}} 个",
+      "viewAllFlags": "查看全部 {{total}} 面旗帜",
+      "searching": "搜索中…",
+      "failed": "搜索加载失败。请检查网络连接后重试。",
+      "noMatch": "没有与“{{query}}”匹配的图标",
+      "submitThis": "提交此图标"
+    },
+    "help": {
+      "aria": "帮助与提示",
+      "close": "关闭",
+      "badge": "快速入门",
+      "title": "快速提示",
+      "subtitle": "theSVG 的全部玩法",
+      "tip": {
+        "click": {
+          "title": "点击任意图标",
+          "desc": "打开详情页,查看代码片段、变体和导出选项"
+        },
+        "copy": {
+          "title": "快速复制",
+          "desc": "点击任意卡片上的复制按钮,即可立即获取 SVG"
+        },
+        "download": {
+          "title": "下载与导出",
+          "desc": "在详情页下载 SVG,或导出 32 至 512px 的 PNG"
+        },
+        "search": {
+          "title": "搜索一切",
+          "desc": "按 Cmd+K 在 {{total}} 个图标中搜索"
+        },
+        "fav": {
+          "title": "收藏图标",
+          "desc": "点击爱心即可收藏,随时可从侧边栏访问"
+        },
+        "use": {
+          "title": "随处可用",
+          "desc": "npm、React、Vue、CLI、CDN,以及面向 AI 助手的 MCP 服务器"
+        }
+      },
+      "escHint": "按 {{key}} 关闭",
+      "gotIt": "知道了"
+    },
+    "hint": {
+      "title": "点击任意图标查看详情",
+      "desc": "复制代码、下载、导出 PNG 等"
+    },
+    "star": {
+      "title": "觉得 thesvg 有用吗?",
+      "withStars": "已有 {{stars}} 位开发者加星。一颗星能帮助更多人发现它。",
+      "noStars": "GitHub 上的一颗星能帮助其他开发者发现它。它免费且开源。",
+      "cta": "在 GitHub 上加星"
+    },
+    "post": {
+      "label": "新文章",
+      "read": "阅读"
+    },
+    "common": {
+      "dismiss": "关闭"
+    },
+    "flagsPill": {
+      "new": "新"
+    }
   }
 }

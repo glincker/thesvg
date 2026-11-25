@@ -19,6 +19,7 @@ import { formatSvg } from "@/lib/copy-formats";
 import { useIconSearch } from "@/lib/hooks/use-icon-search";
 import { useCommandPaletteStore } from "@/lib/stores/command-palette-store";
 import { useRecentsStore } from "@/lib/stores/recents-store";
+import { useT } from "@/i18n/use-t";
 import { categoryUrl } from "@/lib/categories";
 import {
   PALETTE_ICON_LIMIT,
@@ -45,6 +46,7 @@ function actionIcon(action: PaletteAction) {
 }
 
 export function CommandPalette() {
+  const { t } = useT();
   const router = useRouter();
   const pathname = usePathname();
   const open = useCommandPaletteStore((s) => s.open);
@@ -129,6 +131,20 @@ export function CommandPalette() {
     [lastCopied, query],
   );
 
+  // Action labels are built in lib in English; ids map to locale keys here.
+  const actionLabel = (action: PaletteAction): string => {
+    const keys: Record<string, string> = {
+      submit: "submit",
+      docs: "docs",
+      integrations: "integrations",
+      "copy-svg": "copySvg",
+      "copy-jsx": "copyJsx",
+    };
+    const key = keys[action.id];
+    if (!key) return action.label;
+    return t(`chrome.palette.action.${key}`, { title: lastCopied?.title ?? "" });
+  };
+
   const goTo = useCallback(
     (href: string) => {
       handleOpenChange(false);
@@ -151,33 +167,33 @@ export function CommandPalette() {
         const svg = await res.text();
         await navigator.clipboard.writeText(formatSvg(svg, action.format, icon.slug, "default"));
         recordCopy(icon.slug, action.format);
-        setNotice(`Copied ${icon.title} as ${action.format.toUpperCase()}`);
+        setNotice(t("chrome.palette.copied", { title: icon.title, format: action.format.toUpperCase() }));
       } catch {
-        setNotice("Could not copy. Try again.");
+        setNotice(t("chrome.palette.copyFailed"));
       }
     },
-    [bySlug, goTo, recordCopy],
+    [bySlug, goTo, recordCopy, t],
   );
 
   return (
     <CommandDialog
       open={open}
       onOpenChange={handleOpenChange}
-      title="Command palette"
-      description="Search icons, jump to a category, or run a quick action"
+      title={t("chrome.palette.title")}
+      description={t("chrome.palette.description")}
       className="motion-reduce:animate-none motion-reduce:transition-none sm:max-w-lg"
     >
       <Command shouldFilter={false} className="rounded-none! bg-transparent p-0">
         <CommandInput
           value={query}
           onValueChange={setQuery}
-          placeholder="Search icons, categories, actions..."
+          placeholder={t("chrome.palette.placeholder")}
         />
         <CommandList className="max-h-80">
-          {!iconsLoading && <CommandEmpty>No results found.</CommandEmpty>}
+          {!iconsLoading && <CommandEmpty>{t("chrome.palette.empty")}</CommandEmpty>}
 
           {isSearching && iconResults.length > 0 && (
-            <CommandGroup heading="Icons">
+            <CommandGroup heading={t("chrome.palette.icons")}>
               {iconResults.map((icon) => (
                 <CommandItem
                   key={icon.slug}
@@ -195,7 +211,7 @@ export function CommandPalette() {
           )}
 
           {!isSearching && (recentIcons.length > 0 || recentQueries.length > 0) && (
-            <CommandGroup heading="Recent">
+            <CommandGroup heading={t("chrome.palette.recent")}>
               {recentIcons.map((icon) => (
                 <CommandItem
                   key={`recent-${icon.slug}`}
@@ -222,7 +238,7 @@ export function CommandPalette() {
           {matchedCategories.length > 0 && (
             <>
               <CommandSeparator />
-              <CommandGroup heading="Categories">
+              <CommandGroup heading={t("chrome.palette.categories")}>
                 {matchedCategories.map((category) => (
                   <CommandItem
                     key={category.name}
@@ -241,7 +257,7 @@ export function CommandPalette() {
           {actions.length > 0 && (
             <>
               <CommandSeparator />
-              <CommandGroup heading="Quick actions">
+              <CommandGroup heading={t("chrome.palette.quickActions")}>
                 {actions.map((action) => (
                   <CommandItem
                     key={action.id}
@@ -249,7 +265,7 @@ export function CommandPalette() {
                     onSelect={() => void runAction(action)}
                   >
                     {actionIcon(action)}
-                    <span className="truncate">{action.label}</span>
+                    <span className="truncate">{actionLabel(action)}</span>
                   </CommandItem>
                 ))}
               </CommandGroup>
@@ -260,13 +276,13 @@ export function CommandPalette() {
           <span aria-live="polite">{notice}</span>
           <span className="hidden gap-3 sm:flex">
             <span>
-              <kbd className="font-mono">&uarr;&darr;</kbd> navigate
+              <kbd className="font-mono">&uarr;&darr;</kbd> {t("chrome.palette.navigate")}
             </span>
             <span>
-              <kbd className="font-mono">&crarr;</kbd> select
+              <kbd className="font-mono">&crarr;</kbd> {t("chrome.palette.select")}
             </span>
             <span>
-              <kbd className="font-mono">esc</kbd> close
+              <kbd className="font-mono">esc</kbd> {t("chrome.palette.close")}
             </span>
           </span>
         </div>

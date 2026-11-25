@@ -58,5 +58,158 @@
       "trademarkPolicy": "Política de marcas",
       "contact": "Contato"
     }
+  },
+  "chrome": {
+    "display": {
+      "aria": "Configurações de exibição. Formato de cópia {{format}}",
+      "title": "Configurações de exibição (copia como {{format}})",
+      "copyFormat": "Formato de cópia padrão",
+      "copyFormatHint": "Usado ao clicar no botão de copiar em qualquer cartão de ícone",
+      "fmt": {
+        "svg": "Marcação SVG bruta",
+        "jsx": "Componente React",
+        "vue": "Componente de arquivo único do Vue",
+        "cdn": "Link CDN do jsDelivr",
+        "dataUri": "URI de dados Base64"
+      },
+      "preview": "Fundo da pré-visualização",
+      "previewHint": "Avalie um logo na superfície em que ele ficará",
+      "bg": {
+        "auto": "Automático",
+        "autoDesc": "Adapta-se a cada logo para que marcas escuras e claras fiquem visíveis",
+        "light": "Claro",
+        "lightDesc": "Sempre um bloco claro",
+        "dark": "Escuro",
+        "darkDesc": "Sempre um bloco escuro",
+        "checker": "Xadrez",
+        "checkerDesc": "Mostra as áreas transparentes"
+      },
+      "size": "Tamanho da interface",
+      "sizeHint": "Aumenta texto, ícones e controles, em vez de dar zoom na página",
+      "sz": {
+        "default": "Padrão",
+        "defaultDesc": "O tamanho padrão",
+        "large": "Grande",
+        "largeDesc": "Um passo acima, cerca de 112%",
+        "larger": "Maior",
+        "largerDesc": "Dois passos acima, 125%"
+      }
+    },
+    "packages": {
+      "aria": "Pacotes npm",
+      "openTitle": "Abrir no npm",
+      "copyAria": "Copiar o comando de instalação de {{name}}",
+      "openAria": "Abrir {{name}} no npm",
+      "copiedStatus": "Comando de instalação de {{name}} copiado",
+      "all": "Todos os pacotes e comandos de instalação",
+      "group": {
+        "brand": "Ícones de marcas",
+        "ui": "Ícones de interface",
+        "flags": "Bandeiras",
+        "tools": "Ferramentas"
+      },
+      "label": {
+        "everything": "Tudo em um",
+        "rawData": "Dados SVG brutos",
+        "plainJs": "JavaScript puro",
+        "cdnFiles": "Arquivos SVG brutos para CDN",
+        "rawManifest": "Arquivos brutos e manifesto",
+        "flags": "Bandeiras de países e regiões",
+        "cli": "Linha de comando",
+        "mcp": "Servidor MCP"
+      }
+    },
+    "palette": {
+      "title": "Paleta de comandos",
+      "description": "Busque ícones, vá a uma categoria ou execute uma ação rápida",
+      "placeholder": "Buscar ícones, categorias, ações...",
+      "empty": "Nenhum resultado encontrado.",
+      "icons": "Ícones",
+      "recent": "Recentes",
+      "categories": "Categorias",
+      "quickActions": "Ações rápidas",
+      "action": {
+        "submit": "Enviar um ícone",
+        "docs": "Ler a documentação",
+        "integrations": "Explorar integrações",
+        "copySvg": "Copiar {{title}} como SVG",
+        "copyJsx": "Copiar {{title}} como JSX"
+      },
+      "copied": "{{title}} copiado como {{format}}",
+      "copyFailed": "Não foi possível copiar. Tente novamente.",
+      "navigate": "navegar",
+      "select": "selecionar",
+      "close": "fechar"
+    },
+    "search": {
+      "placeholder": "Buscar ícones...",
+      "aria": "Buscar ícones",
+      "clear": "Limpar busca",
+      "brandIcons": "Ícones de marcas",
+      "uiIcons": "Ícones de interface",
+      "flags": "Bandeiras",
+      "thisSection": "Esta seção",
+      "viewAll": "Ver todos os {{total}}",
+      "viewAllFlags": "Ver todas as {{total}} bandeiras",
+      "searching": "Buscando…",
+      "failed": "Falha ao carregar a busca. Verifique sua conexão e tente novamente.",
+      "noMatch": "Nenhum ícone corresponde a “{{query}}”",
+      "submitThis": "Enviar este ícone"
+    },
+    "help": {
+      "aria": "Ajuda e dicas",
+      "close": "Fechar",
+      "badge": "Primeiros passos",
+      "title": "Dicas rápidas",
+      "subtitle": "Tudo o que você pode fazer com o theSVG",
+      "tip": {
+        "click": {
+          "title": "Clique em um ícone",
+          "desc": "Abre a página de detalhes com trechos de código, variantes e opções de exportação"
+        },
+        "copy": {
+          "title": "Cópia rápida",
+          "desc": "Clique no botão de copiar de qualquer cartão para pegar o SVG na hora"
+        },
+        "download": {
+          "title": "Download e exportação",
+          "desc": "Baixe o SVG ou exporte como PNG de 32 a 512 px na página de detalhes"
+        },
+        "search": {
+          "title": "Pesquise tudo",
+          "desc": "Pressione Cmd+K para pesquisar entre {{total}} ícones"
+        },
+        "fav": {
+          "title": "Salve favoritos",
+          "desc": "Dê um coração aos ícones para salvá-los. Acesse pela barra lateral quando quiser"
+        },
+        "use": {
+          "title": "Use em qualquer lugar",
+          "desc": "npm, React, Vue, CLI, CDN ou servidor MCP para assistentes de IA"
+        }
+      },
+      "escHint": "Pressione {{key}} para fechar",
+      "gotIt": "Entendi"
+    },
+    "hint": {
+      "title": "Clique em um ícone para ver detalhes",
+      "desc": "Copie código, baixe, exporte PNG e mais"
+    },
+    "star": {
+      "title": "Está achando o thesvg útil?",
+      "withStars": "{{stars}} desenvolvedores deram uma estrela. Uma estrela ajuda outros a descobri-lo.",
+      "noStars": "Uma estrela no GitHub ajuda outros desenvolvedores a descobri-lo. É gratuito e de código aberto.",
+      "cta": "Dar uma estrela no GitHub"
+    },
+    "post": {
+      "label": "Novo post",
+      "read": "Ler"
+    },
+    "common": {
+      "dismiss": "Dispensar"
+    },
+    "flagsPill": {
+      "new": "Novo"
+    }
   }
 }

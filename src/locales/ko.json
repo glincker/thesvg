@@ -58,5 +58,158 @@
       "trademarkPolicy": "상표 정책",
       "contact": "문의"
     }
+  },
+  "chrome": {
+    "display": {
+      "aria": "화면 설정. 복사 형식 {{format}}",
+      "title": "화면 설정 ({{format}}(으)로 복사)",
+      "copyFormat": "기본 복사 형식",
+      "copyFormatHint": "아이콘 카드의 복사 버튼을 누를 때 사용됩니다",
+      "fmt": {
+        "svg": "원본 SVG 마크업",
+        "jsx": "React 컴포넌트",
+        "vue": "Vue 단일 파일 컴포넌트",
+        "cdn": "jsDelivr CDN 링크",
+        "dataUri": "Base64 데이터 URI"
+      },
+      "preview": "미리보기 배경",
+      "previewHint": "로고가 놓일 배경에서 확인해 보세요",
+      "bg": {
+        "auto": "자동",
+        "autoDesc": "로고에 맞춰 어두운 마크와 밝은 마크가 모두 보이도록 조정합니다",
+        "light": "라이트",
+        "lightDesc": "항상 밝은 타일",
+        "dark": "다크",
+        "darkDesc": "항상 어두운 타일",
+        "checker": "체크무늬",
+        "checkerDesc": "투명한 영역을 보여 줍니다"
+      },
+      "size": "인터페이스 크기",
+      "sizeHint": "페이지를 확대하는 대신 텍스트, 아이콘, 컨트롤을 키웁니다",
+      "sz": {
+        "default": "기본",
+        "defaultDesc": "표준 크기",
+        "large": "크게",
+        "largeDesc": "한 단계 위, 약 112%",
+        "larger": "더 크게",
+        "largerDesc": "두 단계 위, 125%"
+      }
+    },
+    "packages": {
+      "aria": "npm 패키지",
+      "openTitle": "npm에서 열기",
+      "copyAria": "{{name}} 설치 명령어 복사",
+      "openAria": "npm에서 {{name}} 열기",
+      "copiedStatus": "{{name}} 설치 명령어를 복사했습니다",
+      "all": "모든 패키지와 설치 명령어",
+      "group": {
+        "brand": "브랜드 아이콘",
+        "ui": "UI 아이콘",
+        "flags": "국기",
+        "tools": "도구"
+      },
+      "label": {
+        "everything": "모두 하나로",
+        "rawData": "원본 SVG 데이터",
+        "plainJs": "순수 JavaScript",
+        "cdnFiles": "CDN용 원본 SVG 파일",
+        "rawManifest": "원본 파일과 매니페스트",
+        "flags": "국가 및 지역 국기",
+        "cli": "명령줄",
+        "mcp": "MCP 서버"
+      }
+    },
+    "palette": {
+      "title": "명령 팔레트",
+      "description": "아이콘 검색, 카테고리 이동, 빠른 작업 실행",
+      "placeholder": "아이콘, 카테고리, 작업 검색...",
+      "empty": "결과가 없습니다.",
+      "icons": "아이콘",
+      "recent": "최근",
+      "categories": "카테고리",
+      "quickActions": "빠른 작업",
+      "action": {
+        "submit": "아이콘 제출",
+        "docs": "문서 읽기",
+        "integrations": "통합 둘러보기",
+        "copySvg": "{{title}}을(를) SVG로 복사",
+        "copyJsx": "{{title}}을(를) JSX로 복사"
+      },
+      "copied": "{{title}}을(를) {{format}}(으)로 복사했습니다",
+      "copyFailed": "복사하지 못했습니다. 다시 시도하세요.",
+      "navigate": "이동",
+      "select": "선택",
+      "close": "닫기"
+    },
+    "search": {
+      "placeholder": "아이콘 검색...",
+      "aria": "아이콘 검색",
+      "clear": "검색 지우기",
+      "brandIcons": "브랜드 아이콘",
+      "uiIcons": "UI 아이콘",
+      "flags": "국기",
+      "thisSection": "현재 섹션",
+      "viewAll": "{{total}}개 모두 보기",
+      "viewAllFlags": "국기 {{total}}개 모두 보기",
+      "searching": "검색 중…",
+      "failed": "검색을 불러오지 못했습니다. 연결을 확인하고 다시 시도하세요.",
+      "noMatch": "“{{query}}”와 일치하는 아이콘이 없습니다",
+      "submitThis": "이 아이콘 제출"
+    },
+    "help": {
+      "aria": "도움말과 팁",
+      "close": "닫기",
+      "badge": "시작하기",
+      "title": "빠른 팁",
+      "subtitle": "theSVG로 할 수 있는 모든 것",
+      "tip": {
+        "click": {
+          "title": "아이콘 클릭",
+          "desc": "코드 스니펫, 변형, 내보내기 옵션이 있는 상세 페이지를 엽니다"
+        },
+        "copy": {
+          "title": "빠른 복사",
+          "desc": "카드의 복사 버튼을 누르면 SVG를 바로 가져올 수 있습니다"
+        },
+        "download": {
+          "title": "다운로드 및 내보내기",
+          "desc": "상세 페이지에서 SVG를 다운로드하거나 32~512px PNG로 내보낼 수 있습니다"
+        },
+        "search": {
+          "title": "모두 검색",
+          "desc": "Cmd+K를 눌러 {{total}}개 아이콘에서 검색하세요"
+        },
+        "fav": {
+          "title": "즐겨찾기 저장",
+          "desc": "하트를 눌러 아이콘을 저장하세요. 사이드바에서 언제든 열 수 있습니다"
+        },
+        "use": {
+          "title": "어디서나 사용",
+          "desc": "npm, React, Vue, CLI, CDN, AI 어시스턴트용 MCP 서버"
+        }
+      },
+      "escHint": "{{key}} 키를 눌러 닫기",
+      "gotIt": "확인"
+    },
+    "hint": {
+      "title": "아이콘을 클릭하면 상세 정보를 볼 수 있어요",
+      "desc": "코드 복사, 다운로드, PNG 내보내기 등"
+    },
+    "star": {
+      "title": "thesvg가 유용한가요?",
+      "withStars": "개발자 {{stars}}명이 스타를 눌렀습니다. 스타는 다른 사람들이 발견하는 데 도움이 됩니다.",
+      "noStars": "GitHub 스타는 다른 개발자들이 발견하는 데 도움이 됩니다. 무료 오픈 소스입니다.",
+      "cta": "GitHub에서 스타 누르기"
+    },
+    "post": {
+      "label": "새 글",
+      "read": "읽기"
+    },
+    "common": {
+      "dismiss": "닫기"
+    },
+    "flagsPill": {
+      "new": "신규"
+    }
   }
 }

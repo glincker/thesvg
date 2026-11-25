@@ -7,6 +7,7 @@ import type { IconEntry } from "@/lib/icons";
 import type { Glyph } from "@/lib/ui-icons/glyphs";
 import { styleFor } from "@/lib/ui-icons/style";
 import { renderIcon } from "@/lib/ui-icons/engine";
+import { useT } from "@/i18n/use-t";
 import { cn } from "@/lib/ui-icons/utils";
 
 /** Static glyph for places outside the UI section, where the shared style state is not available. */
@@ -56,7 +57,9 @@ const rowClass = (active: boolean) =>
 
 /** Results for both libraries. The one you are browsing leads on the left, the other sits beside it. */
 export function SearchGroups(p: Props) {
-  const brandTitle = p.brandTitle ?? "Brand icons";
+  const { t } = useT();
+  const brandTitle = p.brandTitle ?? t("chrome.search.brandIcons");
+  const uiTitle = t("chrome.search.uiIcons");
   const brandAll = `/?q=${encodeURIComponent(p.query)}${p.scope ? `&collection=${encodeURIComponent(p.scope)}` : ""}`;
   const brandRows = p.brands.map((icon, i) => ({ key: `b-${icon.slug}`, kind: "brand" as const, icon, i }));
   const uiRows = p.uiGlyphs.map((glyph, i) => ({ key: `u-${glyph.slug}`, kind: "ui" as const, glyph, i }));
@@ -64,10 +67,10 @@ export function SearchGroups(p: Props) {
     p.primary === "brand"
       ? [
           { id: "brand" as const, title: brandTitle, total: p.brandTotal, rows: brandRows, all: brandAll },
-          { id: "ui" as const, title: "UI icons", total: p.uiTotal, rows: uiRows, all: `/ui?q=${encodeURIComponent(p.query)}` },
+          { id: "ui" as const, title: uiTitle, total: p.uiTotal, rows: uiRows, all: `/ui?q=${encodeURIComponent(p.query)}` },
         ]
       : [
-          { id: "ui" as const, title: "UI icons", total: p.uiTotal, rows: uiRows, all: `/ui?q=${encodeURIComponent(p.query)}` },
+          { id: "ui" as const, title: uiTitle, total: p.uiTotal, rows: uiRows, all: `/ui?q=${encodeURIComponent(p.query)}` },
           { id: "brand" as const, title: brandTitle, total: p.brandTotal, rows: brandRows, all: brandAll },
         ];
   let offset = 0;
@@ -84,19 +87,19 @@ export function SearchGroups(p: Props) {
     return (
       <div className="flex flex-col items-center gap-2 px-4 py-8 text-center">
         <UiGlyph name="search" className="h-6 w-6 animate-pulse text-muted-foreground/30" />
-        <p className="text-sm text-muted-foreground">Searching&hellip;</p>
+        <p className="text-sm text-muted-foreground">{t("chrome.search.searching")}</p>
       </div>
     );
   }
   if (nothing && p.error) {
-    return <p className="px-4 py-8 text-center text-sm text-muted-foreground">Search failed to load. Check your connection and try again.</p>;
+    return <p className="px-4 py-8 text-center text-sm text-muted-foreground">{t("chrome.search.failed")}</p>;
   }
   if (nothing) {
     return (
       <div className="flex flex-col items-center gap-2 px-4 py-8 text-center">
         <UiGlyph name="search" className="h-6 w-6 text-muted-foreground/30" />
-        <p className="text-sm text-muted-foreground">No icons match &ldquo;{p.query.trim()}&rdquo;</p>
-        <Link href="/submit" onClick={p.onClose} className="text-xs font-medium text-orange-600 hover:underline dark:text-orange-400">Submit this icon</Link>
+        <p className="text-sm text-muted-foreground">{t("chrome.search.noMatch", { query: p.query.trim() })}</p>
+        <Link href="/submit" onClick={p.onClose} className="text-xs font-medium text-orange-600 hover:underline dark:text-orange-400">{t("chrome.search.submitThis")}</Link>
       </div>
     );
   }
@@ -109,7 +112,7 @@ export function SearchGroups(p: Props) {
               <p className="text-[0.75rem] font-medium uppercase tracking-wider text-muted-foreground/60">
                 {g.title} <span className="ml-1 text-muted-foreground/40">{g.total.toLocaleString()}</span>
               </p>
-              {gi === 0 && <span className="rounded-full bg-orange-500/10 px-1.5 py-px text-[0.6875rem] font-medium text-orange-500">This section</span>}
+              {gi === 0 && <span className="rounded-full bg-orange-500/10 px-1.5 py-px text-[0.6875rem] font-medium text-orange-500">{t("chrome.search.thisSection")}</span>}
             </div>
             {g.rows.map((r, ri) => {
               const idx = g.start + ri;
@@ -140,7 +143,7 @@ export function SearchGroups(p: Props) {
             })}
             {g.total > g.rows.length && (
               <Link href={g.all} onClick={p.onClose} className="flex items-center justify-center gap-1 rounded-lg px-2 py-2 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent/50 hover:text-foreground">
-                View all {g.total.toLocaleString()} <UiGlyph name="arrow-right" className="h-3.5 w-3.5" />
+                {t("chrome.search.viewAll", { total: g.total.toLocaleString() })} <UiGlyph name="arrow-right" className="h-3.5 w-3.5" />
               </Link>
             )}
           </div>
@@ -160,7 +163,7 @@ export function SearchGroups(p: Props) {
         <div className="min-w-0 px-2 py-1.5">
           <div className="flex items-center justify-between px-2 py-1">
             <p className="text-[0.75rem] font-medium uppercase tracking-wider text-muted-foreground/60">
-              Flags <span className="ml-1 text-muted-foreground/40">{p.flagTotal.toLocaleString()}</span>
+              {t("chrome.search.flags")} <span className="ml-1 text-muted-foreground/40">{p.flagTotal.toLocaleString()}</span>
             </p>
           </div>
           {flagRows.map((r) => {
@@ -175,7 +178,7 @@ export function SearchGroups(p: Props) {
           })}
           {p.flagTotal > flagRows.length && (
             <Link href={`/collection/flags?q=${encodeURIComponent(p.query)}`} onClick={p.onClose} className="flex items-center justify-center gap-1 rounded-lg px-2 py-2 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground">
-              View all {p.flagTotal.toLocaleString()} flags <UiGlyph name="arrow-right" className="h-3.5 w-3.5" />
+              {t("chrome.search.viewAllFlags", { total: p.flagTotal.toLocaleString() })} <UiGlyph name="arrow-right" className="h-3.5 w-3.5" />
             </Link>
           )}
         </div>

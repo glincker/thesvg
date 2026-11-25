@@ -1,11 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useT } from "@/i18n/use-t";
 import { X, MousePointerClick } from "@/components/own-icons";
 
 const STORAGE_KEY = "thesvg-hint-dismissed";
 
 export function OnboardingHint() {
+  const { t } = useT();
   const [visible, setVisible] = useState(false);
   const [entering, setEntering] = useState(false);
 
@@ -55,14 +57,14 @@ export function OnboardingHint() {
         </div>
 
         <div className="min-w-0">
-          <p className="text-sm font-semibold text-orange-50">Click any icon for details</p>
-          <p className="text-xs text-orange-200/70">Copy code, download, export PNG, and more</p>
+          <p className="text-sm font-semibold text-orange-50">{t("chrome.hint.title")}</p>
+          <p className="text-xs text-orange-200/70">{t("chrome.hint.desc")}</p>
         </div>
 
         <button
           onClick={dismiss}
           className="ml-2 shrink-0 rounded-md p-1.5 text-orange-300/60 transition-colors hover:bg-orange-500/20 hover:text-orange-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/50"
-          aria-label="Dismiss"
+          aria-label={t("chrome.common.dismiss")}
         >
           <X className="h-4 w-4" />
         </button>

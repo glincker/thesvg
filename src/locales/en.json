@@ -58,5 +58,158 @@
       "trademarkPolicy": "Trademark Policy",
       "contact": "Contact"
     }
+  },
+  "chrome": {
+    "display": {
+      "aria": "Display settings. Copy format {{format}}",
+      "title": "Display settings (copies as {{format}})",
+      "copyFormat": "Default copy format",
+      "copyFormatHint": "Used when you click the copy button on any icon card",
+      "fmt": {
+        "svg": "Raw SVG markup",
+        "jsx": "React component",
+        "vue": "Vue single-file component",
+        "cdn": "jsDelivr CDN link",
+        "dataUri": "Base64 data URI"
+      },
+      "preview": "Preview background",
+      "previewHint": "Judge a logo on the surface it will sit on",
+      "bg": {
+        "auto": "Auto",
+        "autoDesc": "Adapts to each logo so dark and light marks stay visible",
+        "light": "Light",
+        "lightDesc": "Always a light tile",
+        "dark": "Dark",
+        "darkDesc": "Always a dark tile",
+        "checker": "Checkerboard",
+        "checkerDesc": "Shows transparent areas"
+      },
+      "size": "Interface size",
+      "sizeHint": "Make text, icons and controls bigger, instead of zooming the page",
+      "sz": {
+        "default": "Default",
+        "defaultDesc": "The standard size",
+        "large": "Large",
+        "largeDesc": "One step up, about 112%",
+        "larger": "Larger",
+        "largerDesc": "Two steps up, 125%"
+      }
+    },
+    "packages": {
+      "aria": "npm packages",
+      "openTitle": "Open on npm",
+      "copyAria": "Copy install command for {{name}}",
+      "openAria": "Open {{name}} on npm",
+      "copiedStatus": "Copied install command for {{name}}",
+      "all": "All packages and install commands",
+      "group": {
+        "brand": "Brand icons",
+        "ui": "UI icons",
+        "flags": "Flags",
+        "tools": "Tools"
+      },
+      "label": {
+        "everything": "Everything in one",
+        "rawData": "Raw SVG data",
+        "plainJs": "Plain JavaScript",
+        "cdnFiles": "Raw SVG files for CDN",
+        "rawManifest": "Raw files and manifest",
+        "flags": "Country and region flags",
+        "cli": "Command line",
+        "mcp": "MCP server"
+      }
+    },
+    "palette": {
+      "title": "Command palette",
+      "description": "Search icons, jump to a category, or run a quick action",
+      "placeholder": "Search icons, categories, actions...",
+      "empty": "No results found.",
+      "icons": "Icons",
+      "recent": "Recent",
+      "categories": "Categories",
+      "quickActions": "Quick actions",
+      "action": {
+        "submit": "Submit an icon",
+        "docs": "Read the docs",
+        "integrations": "Browse integrations",
+        "copySvg": "Copy {{title}} as SVG",
+        "copyJsx": "Copy {{title}} as JSX"
+      },
+      "copied": "Copied {{title}} as {{format}}",
+      "copyFailed": "Could not copy. Try again.",
+      "navigate": "navigate",
+      "select": "select",
+      "close": "close"
+    },
+    "search": {
+      "placeholder": "Search icons...",
+      "aria": "Search icons",
+      "clear": "Clear search",
+      "brandIcons": "Brand icons",
+      "uiIcons": "UI icons",
+      "flags": "Flags",
+      "thisSection": "This section",
+      "viewAll": "View all {{total}}",
+      "viewAllFlags": "View all {{total}} flags",
+      "searching": "Searching…",
+      "failed": "Search failed to load. Check your connection and try again.",
+      "noMatch": "No icons match “{{query}}”",
+      "submitThis": "Submit this icon"
+    },
+    "help": {
+      "aria": "Help and tips",
+      "close": "Close",
+      "badge": "Getting Started",
+      "title": "Quick Tips",
+      "subtitle": "Everything you can do with theSVG",
+      "tip": {
+        "click": {
+          "title": "Click any icon",
+          "desc": "Open the detail page with code snippets, variants, and export options"
+        },
+        "copy": {
+          "title": "Quick copy",
+          "desc": "Hit the copy button on any card to grab the SVG instantly"
+        },
+        "download": {
+          "title": "Download & export",
+          "desc": "Download SVG or export as PNG at 32-512px from the detail page"
+        },
+        "search": {
+          "title": "Search everything",
+          "desc": "Press Cmd+K to search across {{total}} icons"
+        },
+        "fav": {
+          "title": "Save favorites",
+          "desc": "Heart icons to save them. Access from the sidebar anytime"
+        },
+        "use": {
+          "title": "Use anywhere",
+          "desc": "npm, React, Vue, CLI, CDN, or MCP server for AI assistants"
+        }
+      },
+      "escHint": "Press {{key}} to close",
+      "gotIt": "Got it"
+    },
+    "hint": {
+      "title": "Click any icon for details",
+      "desc": "Copy code, download, export PNG, and more"
+    },
+    "star": {
+      "title": "Finding thesvg useful?",
+      "withStars": "{{stars}} developers have starred it. A star helps others discover it.",
+      "noStars": "A GitHub star helps other developers discover it. It is free and open source.",
+      "cta": "Star on GitHub"
+    },
+    "post": {
+      "label": "New post",
+      "read": "Read"
+    },
+    "common": {
+      "dismiss": "Dismiss"
+    },
+    "flagsPill": {
+      "new": "New"
+    }
   }
 }
