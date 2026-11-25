@@ -1,50 +1,23 @@
 "use client";
 
 import Link from "next/link";
-import { useSyncExternalStore } from "react";
-import { useT } from "@/i18n/use-t";
 import { cn } from "@/lib/utils";
 
-const SEEN_KEY = "thesvg:flags-nav-seen";
 const SAMPLE = ["us", "br", "jp"] as const;
 
-const subscribe = (cb: () => void): (() => void) => {
-  window.addEventListener("storage", cb);
-  return () => window.removeEventListener("storage", cb);
-};
-const readSeen = (): boolean => {
-  try {
-    return window.localStorage.getItem(SEEN_KEY) === "1";
-  } catch {
-    return true;
-  }
-};
-
-/** The Flags tab: three overlapping round flags and a "New" badge until the page has been opened once. */
+/** The Flags tab: a button with three overlapping round flags. */
 export function NavFlagsPill({ active, label }: Readonly<{ active: boolean; label: string }>) {
-  const { t } = useT();
-  const seen = useSyncExternalStore(subscribe, readSeen, () => true);
-  const markSeen = (): void => {
-    try {
-      window.localStorage.setItem(SEEN_KEY, "1");
-      window.dispatchEvent(new Event("storage"));
-    } catch {
-      /* storage unavailable: the badge simply stays */
-    }
-  };
   return (
     <Link
       href="/collection/flags"
-      onClick={markSeen}
       aria-current={active ? "page" : undefined}
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-        active ? "bg-foreground text-background shadow-sm" : "text-muted-foreground hover:bg-accent hover:text-foreground",
+        "inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring active:scale-[0.97]",
+        active ? "border-transparent bg-foreground text-background shadow-sm" : "border-border bg-background text-foreground shadow-sm hover:border-orange-500/40 hover:bg-accent hover:shadow-md",
       )}
     >
       <span aria-hidden="true" className="flex items-center pr-0.5">
         {SAMPLE.map((code, i) => (
-          // eslint-disable-next-line @next/next/no-img-element
           <img
             key={code}
             src={`/icons/flag-${code}/circle.svg`}
@@ -57,7 +30,6 @@ export function NavFlagsPill({ active, label }: Readonly<{ active: boolean; labe
         ))}
       </span>
       {label}
-      {!seen && !active ? <span className="ml-0.5 rounded-full bg-orange-500 px-1.5 py-px text-[0.5625rem] font-semibold uppercase leading-none tracking-wide text-white">{t("chrome.flagsPill.new")}</span> : null}
     </Link>
   );
 }
