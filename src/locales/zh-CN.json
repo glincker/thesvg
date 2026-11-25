@@ -1,5 +1,7 @@
 {
-  "language": { "label": "语言" },
+  "language": {
+    "label": "语言"
+  },
   "nav": {
     "brandIcons": "品牌图标",
     "uiIcons": "UI 图标",
@@ -57,6 +59,340 @@
       "privacy": "隐私",
       "trademarkPolicy": "商标政策",
       "contact": "联系我们"
+    }
+  },
+  "pages": {
+    "common": {
+      "extensions": "扩展",
+      "opensInNewTab": "(在新标签页中打开)"
+    },
+    "notFound": {
+      "title": "未找到图标",
+      "body": "该图标可能已被移动、重命名，或尚不存在。",
+      "count": "我们提供 {{count}}+ 个图标，涵盖品牌、AWS、Azure 和 GCP。试试搜索你需要的内容。",
+      "browse": "浏览图标",
+      "aws": "AWS 图标",
+      "azure": "Azure 图标",
+      "gcp": "GCP 图标",
+      "back": "返回首页"
+    },
+    "error": {
+      "title": "出了点问题",
+      "body": "发生了意外错误。请刷新页面或返回首页。",
+      "retry": "重试",
+      "home": "返回首页"
+    },
+    "categories": {
+      "badge": "{{count}} 个分类",
+      "title": "所有分类",
+      "intro": "浏览品牌和 AWS 架构图标集中的所有图标分类。",
+      "brand": "品牌图标分类",
+      "aws": "AWS 架构分类"
+    },
+    "packages": {
+      "title": "软件包",
+      "intro": "theSVG 发布到 npm 的所有内容都在这里。品牌图标、UI 图标和旗帜是各自独立的包，添加其中一个不会让其他包变大。每个包都支持 tree-shaking,各组内的版本同步更新。",
+      "groups": {
+        "brand": "品牌图标",
+        "ui": "UI 图标",
+        "flags": "旗帜",
+        "tools": "工具"
+      }
+    },
+    "contact": {
+      "title": "联系我们",
+      "intro": "有问题、发现了 bug,或需要反馈商标问题？请通过以下任一渠道联系我们。",
+      "email": {
+        "title": "电子邮件",
+        "description": "用于商标请求、DMCA 通知或一般咨询。",
+        "note": "我们会在 48 小时内回复"
+      },
+      "issues": {
+        "description": "报告 bug、请求新功能或提交图标修正。",
+        "action": "提交 issue",
+        "note": "最适合技术问题",
+        "title": "GitHub Issues"
+      },
+      "discussions": {
+        "description": "提问、分享想法，或与社区交流。",
+        "action": "发起讨论",
+        "note": "最适合一般问题",
+        "title": "GitHub Discussions"
+      },
+      "trademark": {
+        "title": "商标请求",
+        "description": "品牌所有者？可请求移除或更新图标，或补充使用规范。",
+        "action": "提交请求",
+        "note": "移除请求将在 24 小时内处理"
+      },
+      "policy": {
+        "title": "商标政策",
+        "p1": "thesvg.org 上的所有品牌标志和商标均归其各自所有者所有。图标仅用于识别和开发目的。我们与所列任何品牌均无关联，也未获其认可。",
+        "p2": "如果您是品牌所有者，希望移除或更新您的图标，请{{email}}或阅读完整的{{policy}}。移除请求将在 24 小时内处理。",
+        "emailLink": "给我们发邮件",
+        "policyLink": "商标政策"
+      }
+    },
+    "compare": {
+      "badge": "坦诚对比",
+      "title": "品牌图标库对比",
+      "intro": "对七个热门图标库的功能、工具和生态进行了对比。我们力求公平，每个库都有自己的长处。请选择适合你项目的那一个。",
+      "milestone": {
+        "badge": "2026 里程碑",
+        "title": "三个月 {{count}} 个品牌图标",
+        "cta": "阅读里程碑文章"
+      },
+      "table": {
+        "feature": "功能"
+      },
+      "sections": {
+        "coverage": "品牌图标覆盖范围",
+        "tooling": "开发者工具",
+        "ecosystem": "生态与插件",
+        "governance": "治理与质量"
+      },
+      "when": "如何选择",
+      "faq": "常见问题",
+      "note": "关于公平性的说明",
+      "browse": "浏览 {{count}} 个图标"
+    },
+    "extensions": {
+      "title": "扩展与集成",
+      "subtitle": "在你构建、设计和发布的每个环节使用 theSVG 图标。",
+      "newBadge": "新",
+      "mentionsLink": "查看提到 thesvg 的地方",
+      "jump": "跳转到分类",
+      "build": {
+        "title": "自己动手构建",
+        "body": "API 和 CDN 完全开放，无需认证。构建插件、扩展或工作流，然后提交 PR 即可列在这里。",
+        "github": "在 GitHub 上查看",
+        "cdn": "CDN 文档"
+      },
+      "cat": {
+        "npm": {
+          "label": "库与 SDK",
+          "description": "在项目中安装并导入品牌图标"
+        },
+        "editors": {
+          "label": "编辑器扩展",
+          "description": "无需离开编辑器即可搜索并插入图标"
+        },
+        "design": {
+          "label": "设计工具",
+          "description": "将品牌图标拖放到你的设计中"
+        },
+        "developer": {
+          "label": "开发者工具",
+          "description": "用于程序化访问的 CLI、CDN 和 API"
+        },
+        "ai": {
+          "label": "AI 与自动化",
+          "description": "让 AI 智能体和启动器访问品牌图标"
+        },
+        "integrations": {
+          "label": "集成",
+          "description": "在无代码和创意工具中使用 theSVG"
+        },
+        "frameworks": {
+          "label": "框架组件",
+          "description": "适用于你所选框架的原生组件"
+        },
+        "mobile-native": {
+          "label": "移动端与原生",
+          "description": "在 iOS、Android 和跨平台应用中使用图标"
+        }
+      },
+      "cta": {
+        "install": "安装",
+        "buildThis": "参与构建",
+        "docs": "文档",
+        "browseLibraries": "浏览库",
+        "browseSets": "浏览图标集",
+        "comingSoon": "即将推出",
+        "viewSkills": "在 skills.sh 上查看",
+        "viewSource": "查看源码",
+        "trackProgress": "跟踪进度"
+      }
+    },
+    "mentions": {
+      "title": "被提及于",
+      "intro": "使用 thesvg 的项目、收录它的列表，以及介绍它的文章。",
+      "total": "{{count}} 处提及",
+      "groups": {
+        "code": {
+          "label": "在代码中使用",
+          "blurb": "获取、依赖或内置 thesvg 图标的项目。"
+        },
+        "list": {
+          "label": "被精选列表收录",
+          "blurb": "链接到 thesvg 的目录和 awesome 列表。"
+        },
+        "editorial": {
+          "label": "相关文章",
+          "blurb": "评测与文章。"
+        },
+        "more": {
+          "label": "更多提及"
+        }
+      },
+      "summary": {
+        "code": "{{count}} 处用于代码",
+        "list": "{{count}} 处被精选列表收录",
+        "editorial": "{{count}} 篇文章"
+      },
+      "evidence": {
+        "pr": "PR",
+        "commit": "提交",
+        "sr": "添加了 thesvg 的变更(在新标签页中打开)"
+      },
+      "invite": {
+        "title": "知道哪个页面提到了 thesvg 吗？",
+        "body": "请附上链接提交 issue,我们会将其添加到这里。",
+        "cta": "提交 issue"
+      }
+    },
+    "integrations": {
+      "drawio": {
+        "title": "draw.io / diagrams.net 形状库",
+        "subtitle": "品牌和开发工具图标，可直接放入你的图表。",
+        "howTitle": "如何导入库",
+        "step1": "在 draw.io(或 diagrams.net)中打开你正在编辑的图表。",
+        "step2": "在左侧 Shapes 面板底部，点击标有 \"More Shapes\" 的网格图标。",
+        "step3": "在弹出的对话框中向下滚动，选择 \"Open Library from Device...\"。",
+        "step4": "选择你所需分类下载的 .xml 文件。",
+        "step5": "图标会作为新面板出现在左侧边栏，可直接拖到画布上。",
+        "libraries": "{{count}} 个分类库",
+        "cardBlurb": "{{label}} 品牌和工具标志，可直接拖入你的图表。",
+        "download": "下载 .xml"
+      },
+      "iconCount": "{{count}} 个图标",
+      "excalidraw": {
+        "title": "Excalidraw 形状库",
+        "intro": "可下载的 Excalidraw 自定义库，按分类整理品牌和开发者工具图标，适用于架构图和产品图。",
+        "howTitle": "如何导入",
+        "step1": "打开 Excalidraw,展开工具栏右侧的形状库面板。",
+        "step2": "点击库面板顶部的 \"...\" 菜单，选择 \"Open\"。",
+        "step3": "选择下载的 .excalidrawlib 文件。",
+        "step4": "图标会添加到你的个人库，可直接拖到画布上。",
+        "libraries": "{{count}} 个库",
+        "librariesNote": "每个文件都是独立的 .excalidrawlib,可单独加载。",
+        "download": "下载"
+      },
+      "mermaid": {
+        "title": "Mermaid 品牌图标",
+        "subtitle": "在架构图中使用真实的标志，无需托管图片。",
+        "packs": "图标包",
+        "packMono": "遵循 currentColor 的单色图标，最适合带主题的图表。",
+        "packColor": "全彩品牌图标，适合需要保留品牌色的标志。",
+        "step1": "1. 注册图标包",
+        "step2": "2. 在图表中使用图标",
+        "footer": "图标名称与 theSVG 上的 slug 一致。请在{{library}}中搜索你需要的图标。",
+        "libraryLink": "图标库"
+      }
+    },
+    "submit": {
+      "badge": "{{count}}+ 个图标，持续增加",
+      "title": "提交图标",
+      "intro": "每个品牌都值得拥有一席之地，没有门槛。拖入你的 SVG,填写详情，直接通过 GitHub 提交。",
+      "how": "如何操作",
+      "steps": {
+        "fork": {
+          "title": "Fork 仓库",
+          "description": "Fork github.com/GLINCKER/thesvg 并克隆到本地。"
+        },
+        "add": {
+          "title": "添加你的 SVG",
+          "description": "按正确的命名将文件放入 public/icons/{slug}/。"
+        },
+        "json": {
+          "title": "更新 icons.json",
+          "description": "将你的条目添加到 src/data/icons.json。"
+        },
+        "pr": {
+          "title": "提交 PR",
+          "description": "运行 pnpm validate,然后提交 pull request。"
+        }
+      },
+      "requirements": {
+        "title": "SVG 要求",
+        "valid": "有效的 SVG/XML 标记",
+        "size": "文件大小不超过 50KB",
+        "scripts": "不含内嵌脚本或外部引用",
+        "viewBox": "包含 viewBox 属性",
+        "gradients": "欢迎使用渐变和多色 SVG",
+        "rights": "你有权再分发该图标"
+      },
+      "viewRepo": "查看仓库",
+      "openIssues": "未关闭的 Issue",
+      "schemaTitle": "图标条目结构",
+      "quickTitle": "快速提交",
+      "quickDescription": "拖入 SVG 即可验证，并通过 GitHub 提交",
+      "form": {
+        "validation": {
+          "pass": "所有检查均已通过",
+          "fail": "部分检查未通过"
+        },
+        "preview": {
+          "title": "预览",
+          "light": "浅色",
+          "dark": "深色"
+        },
+        "license": {
+          "label": "许可证",
+          "helpOpen": "帮我选择",
+          "helpHide": "隐藏",
+          "guide": "许可指南",
+          "pick": "请选择合适的选项:",
+          "own": {
+            "title": "我自己绘制的",
+            "hint": "→ CC0 1.0"
+          },
+          "oss": {
+            "title": "MIT / Apache / BSD 开源项目的标志",
+            "hint": "→ 与项目许可证保持一致"
+          },
+          "ccby": {
+            "title": "明确以 CC BY 发布的品牌素材包",
+            "hint": "→ CC BY 4.0(或 CC BY-SA / CC BY-ND)"
+          },
+          "other": {
+            "title": "公司品牌标志、自定义许可证或不确定",
+            "hint": "→ 其他 / 自定义(我们会核实)"
+          },
+          "select": "选择许可证…",
+          "otherLabel": "描述该许可证",
+          "otherPlaceholder": "例如:Acme Brand Guidelines v2,仅限非商业用途",
+          "otherEmpty": "选择“其他”时必须填写简短说明。",
+          "otherTooLong": "说明请控制在 {{max}} 个字符以内。",
+          "autoLabel": "你的 issue 会被自动标记为 {{label}},以便维护者在合并前审核。"
+        },
+        "categories": {
+          "label": "分类",
+          "placeholder": "添加自定义分类...",
+          "add": "添加"
+        },
+        "file": {
+          "label": "SVG 文件",
+          "aria": "上传 SVG 文件",
+          "dropActive": "将 SVG 拖放到此处",
+          "drop": "拖放你的 SVG",
+          "hint": "或点击浏览，仅限 .svg 文件，最大 50KB",
+          "remove": "移除文件"
+        },
+        "details": "图标详情",
+        "name": "图标名称",
+        "namePlaceholder": "例如:Vercel",
+        "slug": "Slug(kebab-case)",
+        "slugPlaceholder": "例如:vercel",
+        "website": "网站 URL",
+        "guidelines": "品牌规范 URL",
+        "hex": "品牌十六进制颜色",
+        "hexPreview": "颜色预览:#{{hex}}",
+        "submit": "通过 GitHub 提交",
+        "copied": "已复制",
+        "copy": "复制提交内容",
+        "needsMore": "上传 SVG 文件、填写图标名称并选择许可证后即可提交。"
+      }
     }
   }
 }

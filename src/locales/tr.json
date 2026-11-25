@@ -1,5 +1,7 @@
 {
-  "language": { "label": "Dil" },
+  "language": {
+    "label": "Dil"
+  },
   "nav": {
     "brandIcons": "Marka İkonları",
     "uiIcons": "UI İkonları",
@@ -57,6 +59,340 @@
       "privacy": "Gizlilik",
       "trademarkPolicy": "Ticari Marka Politikası",
       "contact": "İletişim"
+    }
+  },
+  "pages": {
+    "common": {
+      "extensions": "Eklentiler",
+      "opensInNewTab": "(yeni sekmede açılır)"
+    },
+    "notFound": {
+      "title": "Simge bulunamadı",
+      "body": "Bu simge taşınmış, yeniden adlandırılmış veya henüz mevcut olmayabilir.",
+      "count": "Markalar, AWS, Azure ve GCP için {{count}}+ simgemiz var. İhtiyacınız olanı aramayı deneyin.",
+      "browse": "Simgelere göz at",
+      "aws": "AWS simgeleri",
+      "azure": "Azure simgeleri",
+      "gcp": "GCP simgeleri",
+      "back": "Ana sayfaya dön"
+    },
+    "error": {
+      "title": "Bir şeyler ters gitti",
+      "body": "Beklenmeyen bir hata oluştu. Sayfayı yenilemeyi veya ana sayfaya dönmeyi deneyin.",
+      "retry": "Tekrar dene",
+      "home": "Ana sayfaya git"
+    },
+    "categories": {
+      "badge": "{{count}} kategori",
+      "title": "Tüm kategoriler",
+      "intro": "Marka ve AWS mimari koleksiyonlarındaki tüm simge kategorilerine göz atın.",
+      "brand": "Marka simgesi kategorileri",
+      "aws": "AWS mimari kategorileri"
+    },
+    "packages": {
+      "title": "Paketler",
+      "intro": "theSVG'nin npm'de yayımladığı her şey tek yerde. Marka simgeleri, arayüz simgeleri ve bayraklar ayrı paketlerdir; biri eklenince diğeri hiç ağırlaşmaz. Her paket tree-shaking destekler ve sürümler her grup içinde birlikte ilerler.",
+      "groups": {
+        "brand": "Marka simgeleri",
+        "ui": "Arayüz simgeleri",
+        "flags": "Bayraklar",
+        "tools": "Araçlar"
+      }
+    },
+    "contact": {
+      "title": "İletişim",
+      "intro": "Bir sorunuz mu var, hata mı buldunuz ya da bir marka sorunu mu bildirmeniz gerekiyor? Aşağıdaki kanallardan birinden ulaşın.",
+      "email": {
+        "title": "E-posta",
+        "description": "Marka talepleri, DMCA bildirimleri veya genel sorular için.",
+        "note": "48 saat içinde yanıt veriyoruz"
+      },
+      "issues": {
+        "description": "Hataları bildirin, özellik isteyin veya simge düzeltmeleri gönderin.",
+        "action": "Issue aç",
+        "note": "Teknik sorunlar için en uygunu",
+        "title": "GitHub Issues"
+      },
+      "discussions": {
+        "description": "Soru sorun, fikir paylaşın veya toplulukla bağlantı kurun.",
+        "action": "Tartışma başlat",
+        "note": "Genel sorular için en uygunu",
+        "title": "GitHub Discussions"
+      },
+      "trademark": {
+        "title": "Marka talebi",
+        "description": "Marka sahibi misiniz? Simgenin kaldırılmasını veya güncellenmesini isteyin ya da kullanım yönergeleri ekleyin.",
+        "action": "Talep gönder",
+        "note": "Kaldırma talepleri 24 saat içinde karşılanır"
+      },
+      "policy": {
+        "title": "Marka politikası",
+        "p1": "thesvg.org üzerindeki tüm marka logoları ve ticari markalar ilgili sahiplerine aittir. Simgeler yalnızca tanımlama ve geliştirme amacıyla sunulur. Listelenen hiçbir markayla bağlantımız yoktur ve bu markalarca onaylanmış değiliz.",
+        "p2": "Bir marka sahibiyseniz ve simgenizin kaldırılmasını veya güncellenmesini istiyorsanız {{email}} veya tam {{policy}} metnimizi okuyun. Kaldırma talepleri 24 saat içinde karşılanır.",
+        "emailLink": "bize e-posta gönderin",
+        "policyLink": "Marka Politikası"
+      }
+    },
+    "compare": {
+      "badge": "Dürüst karşılaştırma",
+      "title": "Marka simgesi kütüphanelerini karşılaştırın",
+      "intro": "Yedi popüler simge kütüphanesi özellikler, araçlar ve ekosistem açısından karşılaştırıldı. Adil olmaya çalıştık, her kütüphanenin güçlü yanları var. Projenize uygun olanı seçin.",
+      "milestone": {
+        "badge": "2026 dönüm noktası",
+        "title": "Üç ayda {{count}} marka simgesi",
+        "cta": "Dönüm noktası yazısını oku"
+      },
+      "table": {
+        "feature": "Özellik"
+      },
+      "sections": {
+        "coverage": "Marka simgesi kapsamı",
+        "tooling": "Geliştirici araçları",
+        "ecosystem": "Ekosistem ve eklentiler",
+        "governance": "Yönetişim ve kalite"
+      },
+      "when": "Hangisi ne zaman",
+      "faq": "Sık sorulanlar",
+      "note": "Adillik üzerine bir not",
+      "browse": "{{count}} simgeye göz at"
+    },
+    "extensions": {
+      "title": "Eklentiler ve entegrasyonlar",
+      "subtitle": "theSVG simgelerini geliştirdiğiniz, tasarladığınız ve yayınladığınız her yerde kullanın.",
+      "newBadge": "Yeni",
+      "mentionsLink": "thesvg'nin nerelerde anıldığını gör",
+      "jump": "Kategoriye git",
+      "build": {
+        "title": "Kendinizinkini geliştirin",
+        "body": "API ve CDN tamamen açıktır, kimlik doğrulama gerekmez. Bir eklenti, uzantı veya iş akışı geliştirin, sonra buraya eklenmesi için PR açın.",
+        "github": "GitHub'da görüntüle",
+        "cdn": "CDN belgeleri"
+      },
+      "cat": {
+        "npm": {
+          "label": "Kütüphaneler ve SDK'lar",
+          "description": "Marka simgelerini projenize yükleyin ve içe aktarın"
+        },
+        "editors": {
+          "label": "Düzenleyici eklentileri",
+          "description": "Düzenleyiciden çıkmadan simge arayın ve ekleyin"
+        },
+        "design": {
+          "label": "Tasarım araçları",
+          "description": "Marka simgelerini tasarımlarınıza sürükleyip bırakın"
+        },
+        "developer": {
+          "label": "Geliştirici araçları",
+          "description": "Programatik erişim için CLI, CDN ve API"
+        },
+        "ai": {
+          "label": "Yapay zekâ ve otomasyon",
+          "description": "Yapay zekâ ajanları ve başlatıcılar marka simgelerine erişebilsin"
+        },
+        "integrations": {
+          "label": "Entegrasyonlar",
+          "description": "theSVG'yi kodsuz ve yaratıcı araçlarda kullanın"
+        },
+        "frameworks": {
+          "label": "Framework bileşenleri",
+          "description": "Seçtiğiniz framework için yerel bileşenler"
+        },
+        "mobile-native": {
+          "label": "Mobil ve yerel",
+          "description": "Simgeleri iOS, Android ve çapraz platform uygulamalarında kullanın"
+        }
+      },
+      "cta": {
+        "install": "Yükle",
+        "buildThis": "Bunu geliştir",
+        "docs": "Belgeler",
+        "browseLibraries": "Kütüphanelere göz at",
+        "browseSets": "Setlere göz at",
+        "comingSoon": "Yakında",
+        "viewSkills": "skills.sh'de görüntüle",
+        "viewSource": "Kaynağı görüntüle",
+        "trackProgress": "İlerlemeyi takip et"
+      }
+    },
+    "mentions": {
+      "title": "Anıldığı yerler",
+      "intro": "thesvg kullanan projeler, onu içeren listeler ve hakkında yazan sayfalar.",
+      "total": "{{count}} anma",
+      "groups": {
+        "code": {
+          "label": "Kodda kullanılıyor",
+          "blurb": "thesvg simgelerini çeken, bunlara bağımlı olan veya paketine dahil eden projeler."
+        },
+        "list": {
+          "label": "Seçilmiş listelerde",
+          "blurb": "thesvg'ye bağlantı veren dizinler ve awesome listeleri."
+        },
+        "editorial": {
+          "label": "Hakkında yazılanlar",
+          "blurb": "İncelemeler ve makaleler."
+        },
+        "more": {
+          "label": "Diğer anmalar"
+        }
+      },
+      "summary": {
+        "code": "{{count}} kodda kullanılıyor",
+        "list": "{{count}} seçilmiş listelerde",
+        "editorial": "{{count}} yazı"
+      },
+      "evidence": {
+        "pr": "PR",
+        "commit": "Commit",
+        "sr": "thesvg'yi ekleyen (yeni sekmede açılır)"
+      },
+      "invite": {
+        "title": "thesvg'den bahseden bir sayfa biliyor musunuz?",
+        "body": "Bağlantıyla bir issue açın, buraya ekleyelim.",
+        "cta": "Issue aç"
+      }
+    },
+    "integrations": {
+      "drawio": {
+        "title": "draw.io / diagrams.net şekil kütüphaneleri",
+        "subtitle": "Marka ve geliştirici aracı simgeleri, diyagramlarınıza eklenmeye hazır.",
+        "howTitle": "Kütüphane nasıl içe aktarılır",
+        "step1": "Üzerinde çalıştığınız diyagramı draw.io (veya diagrams.net) ile açın.",
+        "step2": "Soldaki Shapes panelinin altında \"More Shapes\" yazan ızgara simgesine tıklayın.",
+        "step3": "Açılan pencerede aşağı kaydırın ve \"Open Library from Device...\" seçeneğini seçin.",
+        "step4": "İstediğiniz kategori için indirdiğiniz .xml dosyasını seçin.",
+        "step5": "Simgeler sol kenar çubuğunda yeni bir panel olarak görünür ve tuvale sürüklenmeye hazırdır.",
+        "libraries": "{{count}} kategori kütüphanesi",
+        "cardBlurb": "{{label}} marka ve araç logoları, diyagramınıza sürüklenmeye hazır.",
+        "download": "xml indir"
+      },
+      "iconCount": "{{count}} simge",
+      "excalidraw": {
+        "title": "Excalidraw şekil kütüphaneleri",
+        "intro": "Mimari ve ürün diyagramları için, kategoriye göre gruplanmış marka ve geliştirici aracı simgeleri içeren indirilebilir Excalidraw kütüphaneleri.",
+        "howTitle": "Nasıl içe aktarılır",
+        "step1": "Excalidraw'ı açın ve araç çubuğunun sağındaki şekil kütüphanesi panelini genişletin.",
+        "step2": "Kütüphane panelinin üstündeki \"...\" menüsüne tıklayın ve \"Open\" seçeneğini seçin.",
+        "step3": "İndirdiğiniz .excalidrawlib dosyasını seçin.",
+        "step4": "Simgeler kişisel kütüphanenize eklenir ve tuvale sürüklenmeye hazırdır.",
+        "libraries": "{{count}} kütüphane",
+        "librariesNote": "Her dosya bağımsız bir .excalidrawlib'dir ve ayrı ayrı yüklenebilir.",
+        "download": "İndir"
+      },
+      "mermaid": {
+        "title": "Mermaid marka simgeleri",
+        "subtitle": "Mimari diyagramlarınızda gerçek logolar, görsel barındırmaya gerek yok.",
+        "packs": "Simge paketleri",
+        "packMono": "currentColor'ı izleyen tek renkli simgeler. Temalı diyagramlar için en iyisi.",
+        "packColor": "Tam renkli marka simgeleri. Logoların marka renklerini koruması gerektiğinde en iyisi.",
+        "step1": "1. Paketleri kaydedin",
+        "step2": "2. Simgeleri diyagramda kullanın",
+        "footer": "Simge adları theSVG'deki slug'larla eşleşir. İhtiyacınız olanı bulmak için {{library}} içinde arayın.",
+        "libraryLink": "kütüphane"
+      }
+    },
+    "submit": {
+      "badge": "{{count}}+ simge ve büyüyor",
+      "title": "Simge gönder",
+      "intro": "Her markanın bir yeri olmayı hak eder. Kapı bekçiliği yok. SVG'nizi bırakın, ayrıntıları doldurun ve doğrudan GitHub üzerinden gönderin.",
+      "how": "Nasıl çalışır",
+      "steps": {
+        "fork": {
+          "title": "Depoyu fork'layın",
+          "description": "github.com/GLINCKER/thesvg'yi fork'layın ve yerel olarak klonlayın."
+        },
+        "add": {
+          "title": "SVG'lerinizi ekleyin",
+          "description": "Dosyaları doğru adlandırmayla public/icons/{slug}/ içine koyun."
+        },
+        "json": {
+          "title": "icons.json'ı güncelleyin",
+          "description": "Girdinizi src/data/icons.json dosyasına ekleyin."
+        },
+        "pr": {
+          "title": "PR açın",
+          "description": "pnpm validate çalıştırın, ardından bir pull request açın."
+        }
+      },
+      "requirements": {
+        "title": "SVG gereksinimleri",
+        "valid": "Geçerli SVG/XML işaretlemesi",
+        "size": "Dosya boyutu 50KB'ın altında",
+        "scripts": "Gömülü betik veya harici başvuru yok",
+        "viewBox": "viewBox özniteliği mevcut",
+        "gradients": "Gradyanlar ve çok renkli SVG'ler kabul edilir",
+        "rights": "Simgeyi yeniden dağıtma hakkınız var"
+      },
+      "viewRepo": "Depoyu görüntüle",
+      "openIssues": "Açık issue'lar",
+      "schemaTitle": "Simge girdisi şeması",
+      "quickTitle": "Hızlı gönderim",
+      "quickDescription": "Doğrulamak ve GitHub üzerinden göndermek için SVG'nizi bırakın",
+      "form": {
+        "validation": {
+          "pass": "Tüm kontroller geçti",
+          "fail": "Bazı kontroller başarısız"
+        },
+        "preview": {
+          "title": "Önizleme",
+          "light": "Açık",
+          "dark": "Koyu"
+        },
+        "license": {
+          "label": "Lisans",
+          "helpOpen": "Seçmeme yardım et",
+          "helpHide": "Gizle",
+          "guide": "Lisanslama kılavuzu",
+          "pick": "Uygun seçeneği seçin:",
+          "own": {
+            "title": "Kendim çizdim",
+            "hint": "→ CC0 1.0"
+          },
+          "oss": {
+            "title": "MIT / Apache / BSD lisanslı açık kaynak projesinin logosu",
+            "hint": "→ projenin lisansıyla eşleştirin"
+          },
+          "ccby": {
+            "title": "Açıkça CC BY olarak yayımlanmış marka kiti",
+            "hint": "→ CC BY 4.0 (veya CC BY-SA / CC BY-ND)"
+          },
+          "other": {
+            "title": "Şirket marka işareti, özel lisans veya emin değilim",
+            "hint": "→ Diğer / özel (biz doğrularız)"
+          },
+          "select": "Lisans seçin…",
+          "otherLabel": "Lisansı açıklayın",
+          "otherPlaceholder": "örn. Acme Brand Guidelines v2: yalnızca ticari olmayan kullanım",
+          "otherEmpty": "Diğer seçildiğinde kısa bir açıklama gereklidir.",
+          "otherTooLong": "Açıklamayı {{max}} karakterin altında tutun.",
+          "autoLabel": "Issue'nuz otomatik olarak {{label}} etiketini alır, böylece bir bakımcı birleştirmeden önce inceler."
+        },
+        "categories": {
+          "label": "Kategoriler",
+          "placeholder": "Özel kategori ekle...",
+          "add": "Ekle"
+        },
+        "file": {
+          "label": "SVG dosyası",
+          "aria": "SVG dosyası yükle",
+          "dropActive": "SVG'nizi buraya bırakın",
+          "drop": "SVG'nizi sürükleyip bırakın",
+          "hint": "veya göz atmak için tıklayın, yalnızca .svg dosyaları, en fazla 50KB",
+          "remove": "Dosyayı kaldır"
+        },
+        "details": "Simge ayrıntıları",
+        "name": "Simge adı",
+        "namePlaceholder": "örn. Vercel",
+        "slug": "Slug (kebab-case)",
+        "slugPlaceholder": "örn. vercel",
+        "website": "Web sitesi URL'si",
+        "guidelines": "Marka yönergeleri URL'si",
+        "hex": "Marka hex rengi",
+        "hexPreview": "Renk önizlemesi: #{{hex}}",
+        "submit": "GitHub üzerinden gönder",
+        "copied": "Kopyalandı!",
+        "copy": "Gönderimi kopyala",
+        "needsMore": "Göndermeyi etkinleştirmek için bir SVG dosyası yükleyin, simge adını girin ve bir lisans seçin."
+      }
     }
   }
 }

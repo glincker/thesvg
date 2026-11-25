@@ -1,5 +1,7 @@
 {
-  "language": { "label": "Idioma" },
+  "language": {
+    "label": "Idioma"
+  },
   "nav": {
     "brandIcons": "Ícones de marcas",
     "uiIcons": "Ícones de UI",
@@ -57,6 +59,340 @@
       "privacy": "Privacidade",
       "trademarkPolicy": "Política de marcas",
       "contact": "Contato"
+    }
+  },
+  "pages": {
+    "common": {
+      "extensions": "Extensões",
+      "opensInNewTab": "(abre em uma nova aba)"
+    },
+    "notFound": {
+      "title": "Ícone não encontrado",
+      "body": "Este ícone pode ter sido movido, renomeado ou ainda não existir.",
+      "count": "Temos mais de {{count}} ícones de marcas, AWS, Azure e GCP. Tente pesquisar o que você precisa.",
+      "browse": "Explorar ícones",
+      "aws": "Ícones da AWS",
+      "azure": "Ícones do Azure",
+      "gcp": "Ícones do GCP",
+      "back": "Voltar ao início"
+    },
+    "error": {
+      "title": "Algo deu errado",
+      "body": "Ocorreu um erro inesperado. Tente atualizar a página ou volte ao início.",
+      "retry": "Tentar novamente",
+      "home": "Ir para o início"
+    },
+    "categories": {
+      "badge": "{{count}} categorias",
+      "title": "Todas as categorias",
+      "intro": "Explore todas as categorias de ícones das coleções de marcas e de arquitetura da AWS.",
+      "brand": "Categorias de ícones de marcas",
+      "aws": "Categorias de arquitetura da AWS"
+    },
+    "packages": {
+      "title": "Pacotes",
+      "intro": "Tudo o que o theSVG publica no npm, em um só lugar. Ícones de marcas, ícones de interface e bandeiras são pacotes separados, então adicionar um nunca deixa o outro mais pesado. Todos os pacotes suportam tree-shaking e as versões avançam juntas dentro de cada grupo.",
+      "groups": {
+        "brand": "Ícones de marcas",
+        "ui": "Ícones de interface",
+        "flags": "Bandeiras",
+        "tools": "Ferramentas"
+      }
+    },
+    "contact": {
+      "title": "Contato",
+      "intro": "Tem uma dúvida, encontrou um bug ou precisa relatar um problema de marca registrada? Fale com a gente por qualquer um dos canais abaixo.",
+      "email": {
+        "title": "E-mail",
+        "description": "Para pedidos de marca registrada, avisos DMCA ou dúvidas gerais.",
+        "note": "Respondemos em até 48 horas"
+      },
+      "issues": {
+        "description": "Relate bugs, peça recursos ou envie correções de ícones.",
+        "action": "Abrir uma issue",
+        "note": "Ideal para problemas técnicos",
+        "title": "GitHub Issues"
+      },
+      "discussions": {
+        "description": "Faça perguntas, compartilhe ideias ou converse com a comunidade.",
+        "action": "Iniciar uma discussão",
+        "note": "Ideal para dúvidas gerais",
+        "title": "GitHub Discussions"
+      },
+      "trademark": {
+        "title": "Pedido de marca registrada",
+        "description": "É dono da marca? Peça a remoção ou atualização de um ícone, ou adicione diretrizes de uso.",
+        "action": "Enviar um pedido",
+        "note": "Pedidos de remoção atendidos em até 24 horas"
+      },
+      "policy": {
+        "title": "Política de marcas registradas",
+        "p1": "Todos os logotipos e marcas registradas em thesvg.org pertencem aos respectivos proprietários. Os ícones são fornecidos apenas para identificação e desenvolvimento. Não somos afiliados nem endossados por nenhuma das marcas listadas.",
+        "p2": "Se você é dono de uma marca e quer que seu ícone seja removido ou atualizado, {{email}} ou leia nossa {{policy}} completa. Pedidos de remoção são atendidos em até 24 horas.",
+        "emailLink": "escreva para nós",
+        "policyLink": "Política de marcas registradas"
+      }
+    },
+    "compare": {
+      "badge": "Comparação honesta",
+      "title": "Compare bibliotecas de ícones de marcas",
+      "intro": "Sete bibliotecas de ícones populares comparadas em recursos, ferramentas e ecossistema. Fizemos isso de forma justa: toda biblioteca tem seus pontos fortes. Escolha a que combina com seu projeto.",
+      "milestone": {
+        "badge": "Marco de 2026",
+        "title": "{{count}} ícones de marcas em três meses",
+        "cta": "Ler o post do marco"
+      },
+      "table": {
+        "feature": "Recurso"
+      },
+      "sections": {
+        "coverage": "Cobertura de ícones de marcas",
+        "tooling": "Ferramentas para desenvolvedores",
+        "ecosystem": "Ecossistema e plugins",
+        "governance": "Governança e qualidade"
+      },
+      "when": "Quando usar cada uma",
+      "faq": "Perguntas frequentes",
+      "note": "Uma nota sobre imparcialidade",
+      "browse": "Explorar {{count}} ícones"
+    },
+    "extensions": {
+      "title": "Extensões e integrações",
+      "subtitle": "Use os ícones do theSVG em tudo o que você constrói, desenha e publica.",
+      "newBadge": "Novo",
+      "mentionsLink": "Veja onde o thesvg é mencionado",
+      "jump": "Ir para a categoria",
+      "build": {
+        "title": "Crie o seu",
+        "body": "A API e o CDN são totalmente abertos e não exigem autenticação. Crie um plugin, uma extensão ou um fluxo de trabalho e abra um PR para listá-lo aqui.",
+        "github": "Ver no GitHub",
+        "cdn": "Documentação do CDN"
+      },
+      "cat": {
+        "npm": {
+          "label": "Bibliotecas e SDKs",
+          "description": "Instale e importe ícones de marcas no seu projeto"
+        },
+        "editors": {
+          "label": "Extensões de editor",
+          "description": "Pesquise e insira ícones sem sair do editor"
+        },
+        "design": {
+          "label": "Ferramentas de design",
+          "description": "Arraste e solte ícones de marcas nos seus designs"
+        },
+        "developer": {
+          "label": "Ferramentas para desenvolvedores",
+          "description": "CLI, CDN e API para acesso programático"
+        },
+        "ai": {
+          "label": "IA e automação",
+          "description": "Deixe agentes de IA e launchers acessarem os ícones de marcas"
+        },
+        "integrations": {
+          "label": "Integrações",
+          "description": "Use o theSVG em ferramentas no-code e criativas"
+        },
+        "frameworks": {
+          "label": "Componentes de frameworks",
+          "description": "Componentes nativos para o framework de sua escolha"
+        },
+        "mobile-native": {
+          "label": "Mobile e nativo",
+          "description": "Entregue ícones em apps iOS, Android e multiplataforma"
+        }
+      },
+      "cta": {
+        "install": "Instalar",
+        "buildThis": "Criar isto",
+        "docs": "Documentação",
+        "browseLibraries": "Explorar bibliotecas",
+        "browseSets": "Explorar conjuntos",
+        "comingSoon": "Em breve",
+        "viewSkills": "Ver no skills.sh",
+        "viewSource": "Ver código-fonte",
+        "trackProgress": "Acompanhar o progresso"
+      }
+    },
+    "mentions": {
+      "title": "Mencionado em",
+      "intro": "Projetos que usam o thesvg, listas que o incluem e páginas que escrevem sobre ele.",
+      "total": "{{count}} menções",
+      "groups": {
+        "code": {
+          "label": "Usado em código",
+          "blurb": "Projetos que buscam, dependem de ou incluem ícones do thesvg."
+        },
+        "list": {
+          "label": "Em listas selecionadas",
+          "blurb": "Diretórios e listas awesome que apontam para o thesvg."
+        },
+        "editorial": {
+          "label": "Escrito sobre",
+          "blurb": "Resenhas e artigos."
+        },
+        "more": {
+          "label": "Mais menções"
+        }
+      },
+      "summary": {
+        "code": "{{count}} usados em código",
+        "list": "{{count}} em listas selecionadas",
+        "editorial": "{{count}} escritos sobre"
+      },
+      "evidence": {
+        "pr": "PR",
+        "commit": "Commit",
+        "sr": "que adicionou o thesvg (abre em uma nova aba)"
+      },
+      "invite": {
+        "title": "Conhece uma página que menciona o thesvg?",
+        "body": "Abra uma issue com o link e nós o adicionaremos aqui.",
+        "cta": "Abrir uma issue"
+      }
+    },
+    "integrations": {
+      "drawio": {
+        "title": "Bibliotecas de formas para draw.io / diagrams.net",
+        "subtitle": "Ícones de marcas e ferramentas de desenvolvimento, prontos para seus diagramas.",
+        "howTitle": "Como importar uma biblioteca",
+        "step1": "Abra o draw.io (ou diagrams.net) com o diagrama em que você está trabalhando.",
+        "step2": "Na parte inferior do painel Shapes à esquerda, clique no ícone de grade \"More Shapes\".",
+        "step3": "Na caixa que se abre, role para baixo e escolha \"Open Library from Device...\".",
+        "step4": "Escolha o arquivo .xml baixado da categoria que você quer.",
+        "step5": "Os ícones aparecem como um novo painel na barra lateral esquerda, prontos para arrastar para a tela.",
+        "libraries": "{{count}} bibliotecas por categoria",
+        "cardBlurb": "Logotipos de marcas e ferramentas de {{label}}, prontos para arrastar ao seu diagrama.",
+        "download": "Baixar .xml"
+      },
+      "iconCount": "{{count}} ícones",
+      "excalidraw": {
+        "title": "Bibliotecas de formas para Excalidraw",
+        "intro": "Bibliotecas personalizadas do Excalidraw para baixar, com ícones de marcas e ferramentas de desenvolvimento agrupados por categoria, para diagramas de arquitetura e de produto.",
+        "howTitle": "Como importar",
+        "step1": "Abra o Excalidraw e expanda o painel da biblioteca de formas no lado direito da barra de ferramentas.",
+        "step2": "Clique no menu \"...\" no topo do painel da biblioteca e escolha \"Open\".",
+        "step3": "Selecione o arquivo .excalidrawlib baixado.",
+        "step4": "Os ícones são adicionados à sua biblioteca pessoal, prontos para arrastar para a tela.",
+        "libraries": "{{count}} bibliotecas",
+        "librariesNote": "Cada arquivo é um .excalidrawlib independente que você pode carregar separadamente.",
+        "download": "Baixar"
+      },
+      "mermaid": {
+        "title": "Ícones de marcas para Mermaid",
+        "subtitle": "Logotipos reais nos seus diagramas de arquitetura, sem precisar hospedar imagens.",
+        "packs": "Pacotes de ícones",
+        "packMono": "Ícones monocromáticos que seguem currentColor. Ótimos para diagramas com tema.",
+        "packColor": "Ícones de marcas coloridos. Ótimos quando os logotipos devem manter as cores da marca.",
+        "step1": "1. Registre os pacotes",
+        "step2": "2. Use os ícones em um diagrama",
+        "footer": "Os nomes dos ícones correspondem aos slugs do theSVG. Pesquise na {{library}} para achar o que precisa.",
+        "libraryLink": "biblioteca"
+      }
+    },
+    "submit": {
+      "badge": "Mais de {{count}} ícones e crescendo",
+      "title": "Envie um ícone",
+      "intro": "Toda marca merece um lugar. Sem barreiras. Solte seu SVG, preencha os detalhes e envie direto pelo GitHub.",
+      "how": "Como funciona",
+      "steps": {
+        "fork": {
+          "title": "Faça um fork do repositório",
+          "description": "Faça um fork de github.com/GLINCKER/thesvg e clone localmente."
+        },
+        "add": {
+          "title": "Adicione seus SVGs",
+          "description": "Coloque os arquivos em public/icons/{slug}/ com a nomenclatura correta."
+        },
+        "json": {
+          "title": "Atualize o icons.json",
+          "description": "Adicione sua entrada em src/data/icons.json."
+        },
+        "pr": {
+          "title": "Abra um PR",
+          "description": "Execute pnpm validate e depois abra um pull request."
+        }
+      },
+      "requirements": {
+        "title": "Requisitos do SVG",
+        "valid": "Marcação SVG/XML válida",
+        "size": "Arquivo com menos de 50 KB",
+        "scripts": "Sem scripts embutidos nem referências externas",
+        "viewBox": "Atributo viewBox presente",
+        "gradients": "Gradientes e SVGs multicoloridos são bem-vindos",
+        "rights": "Você tem o direito de redistribuir o ícone"
+      },
+      "viewRepo": "Ver repositório",
+      "openIssues": "Issues abertas",
+      "schemaTitle": "Esquema da entrada de ícone",
+      "quickTitle": "Envio rápido",
+      "quickDescription": "Solte seu SVG para validar e enviar pelo GitHub",
+      "form": {
+        "validation": {
+          "pass": "Todas as verificações passaram",
+          "fail": "Algumas verificações falharam"
+        },
+        "preview": {
+          "title": "Pré-visualização",
+          "light": "Claro",
+          "dark": "Escuro"
+        },
+        "license": {
+          "label": "Licença",
+          "helpOpen": "Me ajude a escolher",
+          "helpHide": "Ocultar",
+          "guide": "Guia de licenciamento",
+          "pick": "Escolha a opção que se aplica:",
+          "own": {
+            "title": "Eu mesmo desenhei",
+            "hint": "→ CC0 1.0"
+          },
+          "oss": {
+            "title": "Logotipo de um projeto de código aberto MIT / Apache / BSD",
+            "hint": "→ use a licença do projeto"
+          },
+          "ccby": {
+            "title": "Kit de marca publicado explicitamente como CC BY",
+            "hint": "→ CC BY 4.0 (ou CC BY-SA / CC BY-ND)"
+          },
+          "other": {
+            "title": "Marca de empresa, licença personalizada ou não tenho certeza",
+            "hint": "→ Outra / personalizada (vamos verificar)"
+          },
+          "select": "Selecione uma licença…",
+          "otherLabel": "Descreva a licença",
+          "otherPlaceholder": "ex.: Acme Brand Guidelines v2: apenas uso não comercial",
+          "otherEmpty": "Uma breve descrição é obrigatória ao escolher Outra.",
+          "otherTooLong": "Mantenha a descrição abaixo de {{max}} caracteres.",
+          "autoLabel": "Sua issue receberá automaticamente o rótulo {{label}} para que um mantenedor a revise antes do merge."
+        },
+        "categories": {
+          "label": "Categorias",
+          "placeholder": "Adicionar categoria personalizada...",
+          "add": "Adicionar"
+        },
+        "file": {
+          "label": "Arquivo SVG",
+          "aria": "Enviar arquivo SVG",
+          "dropActive": "Solte seu SVG aqui",
+          "drop": "Arraste e solte seu SVG",
+          "hint": "ou clique para procurar, apenas arquivos .svg, máx. 50 KB",
+          "remove": "Remover arquivo"
+        },
+        "details": "Detalhes do ícone",
+        "name": "Nome do ícone",
+        "namePlaceholder": "ex.: Vercel",
+        "slug": "Slug (kebab-case)",
+        "slugPlaceholder": "ex.: vercel",
+        "website": "URL do site",
+        "guidelines": "URL das diretrizes da marca",
+        "hex": "Cor hexadecimal da marca",
+        "hexPreview": "Pré-visualização da cor: #{{hex}}",
+        "submit": "Enviar pelo GitHub",
+        "copied": "Copiado!",
+        "copy": "Copiar envio",
+        "needsMore": "Envie um arquivo SVG, informe o nome do ícone e escolha uma licença para habilitar o envio."
+      }
     }
   }
 }

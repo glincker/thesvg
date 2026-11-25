@@ -1,5 +1,7 @@
 {
-  "language": { "label": "Language" },
+  "language": {
+    "label": "Language"
+  },
   "nav": {
     "brandIcons": "Brand Icons",
     "uiIcons": "UI Icons",
@@ -57,6 +59,340 @@
       "privacy": "Privacy",
       "trademarkPolicy": "Trademark Policy",
       "contact": "Contact"
+    }
+  },
+  "pages": {
+    "common": {
+      "extensions": "Extensions",
+      "opensInNewTab": "(opens in a new tab)"
+    },
+    "notFound": {
+      "title": "Icon Not Found",
+      "body": "This icon might have been moved, renamed, or doesn't exist yet.",
+      "count": "We have {{count}}+ icons across brands, AWS, Azure, and GCP. Try searching for what you need.",
+      "browse": "Browse Icons",
+      "aws": "AWS Icons",
+      "azure": "Azure Icons",
+      "gcp": "GCP Icons",
+      "back": "Back to home"
+    },
+    "error": {
+      "title": "Something went wrong",
+      "body": "An unexpected error occurred. Try refreshing the page or go back to the home page.",
+      "retry": "Try again",
+      "home": "Go home"
+    },
+    "categories": {
+      "badge": "{{count}} categories",
+      "title": "All Categories",
+      "intro": "Browse all icon categories across brand and AWS architecture collections.",
+      "brand": "Brand Icon Categories",
+      "aws": "AWS Architecture Categories"
+    },
+    "packages": {
+      "title": "Packages",
+      "intro": "Everything theSVG publishes to npm, in one place. Brand icons, UI icons and flags are separate packages, so adding one never makes the other heavier. Every package is tree-shakeable and versions move together within each group.",
+      "groups": {
+        "brand": "Brand icons",
+        "ui": "UI icons",
+        "flags": "Flags",
+        "tools": "Tools"
+      }
+    },
+    "contact": {
+      "title": "Contact",
+      "intro": "Have a question, found a bug, or need to report a trademark issue? Reach out through any of the channels below.",
+      "email": {
+        "title": "Email",
+        "description": "For trademark requests, DMCA notices, or general inquiries.",
+        "note": "We respond within 48 hours"
+      },
+      "issues": {
+        "description": "Report bugs, request features, or submit icon corrections.",
+        "action": "Open an issue",
+        "note": "Best for technical issues",
+        "title": "GitHub Issues"
+      },
+      "discussions": {
+        "description": "Ask questions, share ideas, or connect with the community.",
+        "action": "Start a discussion",
+        "note": "Best for general questions",
+        "title": "GitHub Discussions"
+      },
+      "trademark": {
+        "title": "Trademark Request",
+        "description": "Brand owner? Request icon removal, updates, or add usage guidelines.",
+        "action": "File a request",
+        "note": "Removal requests honored within 24 hours"
+      },
+      "policy": {
+        "title": "Trademark Policy",
+        "p1": "All brand logos and trademarks on thesvg.org are the property of their respective owners. Icons are provided for identification and development purposes only. We are not affiliated with or endorsed by any listed brand.",
+        "p2": "If you are a brand owner and would like your icon removed or updated, please {{email}} or read our full {{policy}}. Removal requests are honored within 24 hours.",
+        "emailLink": "email us",
+        "policyLink": "Trademark Policy"
+      }
+    },
+    "compare": {
+      "badge": "Honest comparison",
+      "title": "Compare Brand Icon Libraries",
+      "intro": "Seven popular icon libraries compared across features, tooling, and ecosystem. We built this to be fair, every library has strengths. Pick what fits your project.",
+      "milestone": {
+        "badge": "2026 milestone",
+        "title": "{{count}} brand icons in three months",
+        "cta": "Read the milestone post"
+      },
+      "table": {
+        "feature": "Feature"
+      },
+      "sections": {
+        "coverage": "Brand Icon Coverage",
+        "tooling": "Developer Tooling",
+        "ecosystem": "Ecosystem & Plugins",
+        "governance": "Governance & Quality"
+      },
+      "when": "When to use what",
+      "faq": "Frequently asked",
+      "note": "A note on fairness",
+      "browse": "Browse {{count}} icons"
+    },
+    "extensions": {
+      "title": "Extensions & Integrations",
+      "subtitle": "Use theSVG icons everywhere you build, design, and ship.",
+      "newBadge": "New",
+      "mentionsLink": "See where thesvg is mentioned",
+      "jump": "Jump to category",
+      "build": {
+        "title": "Build your own",
+        "body": "The API and CDN are fully open with no auth required. Build a plugin, extension, or workflow, then open a PR to list it here.",
+        "github": "View on GitHub",
+        "cdn": "CDN Docs"
+      },
+      "cat": {
+        "npm": {
+          "label": "Libraries & SDKs",
+          "description": "Install and import brand icons in your project"
+        },
+        "editors": {
+          "label": "Editor Extensions",
+          "description": "Search and insert icons without leaving your editor"
+        },
+        "design": {
+          "label": "Design Tools",
+          "description": "Drag and drop brand icons into your designs"
+        },
+        "developer": {
+          "label": "Developer Tools",
+          "description": "CLI, CDN, and API for programmatic access"
+        },
+        "ai": {
+          "label": "AI & Automation",
+          "description": "Let AI agents and launchers access brand icons"
+        },
+        "integrations": {
+          "label": "Integrations",
+          "description": "Use theSVG in no-code and creative tools"
+        },
+        "frameworks": {
+          "label": "Framework Components",
+          "description": "Native components for your framework of choice"
+        },
+        "mobile-native": {
+          "label": "Mobile & Native",
+          "description": "Ship icons in iOS, Android, and cross-platform apps"
+        }
+      },
+      "cta": {
+        "install": "Install",
+        "buildThis": "Build this",
+        "docs": "Docs",
+        "browseLibraries": "Browse libraries",
+        "browseSets": "Browse sets",
+        "comingSoon": "Coming Soon",
+        "viewSkills": "View on skills.sh",
+        "viewSource": "View source",
+        "trackProgress": "Track progress"
+      }
+    },
+    "mentions": {
+      "title": "Mentioned on",
+      "intro": "Projects that use thesvg, lists that include it and pages that write about it.",
+      "total": "{{count}} mentions",
+      "groups": {
+        "code": {
+          "label": "Used in code",
+          "blurb": "Projects that fetch, depend on or vendor thesvg icons."
+        },
+        "list": {
+          "label": "Listed in curated lists",
+          "blurb": "Directories and awesome lists that point to thesvg."
+        },
+        "editorial": {
+          "label": "Written about",
+          "blurb": "Reviews and articles."
+        },
+        "more": {
+          "label": "More mentions"
+        }
+      },
+      "summary": {
+        "code": "{{count}} used in code",
+        "list": "{{count}} listed in curated lists",
+        "editorial": "{{count}} written about"
+      },
+      "evidence": {
+        "pr": "PR",
+        "commit": "Commit",
+        "sr": "that added thesvg (opens in a new tab)"
+      },
+      "invite": {
+        "title": "Know a page that mentions thesvg?",
+        "body": "Open an issue with the link and we will add it here.",
+        "cta": "Open an issue"
+      }
+    },
+    "integrations": {
+      "drawio": {
+        "title": "draw.io / diagrams.net Shape Libraries",
+        "subtitle": "Brand and dev-tool icons, ready to drop into your diagrams.",
+        "howTitle": "How to import a library",
+        "step1": "Open draw.io (or diagrams.net) with a diagram you're working on.",
+        "step2": "At the bottom of the left-hand Shapes panel, click the grid icon labeled \"More Shapes\".",
+        "step3": "In the dialog that opens, scroll down and choose \"Open Library from Device...\".",
+        "step4": "Pick the downloaded .xml file for the category you want.",
+        "step5": "The icons appear as a new panel in the left sidebar, ready to drag onto the canvas.",
+        "libraries": "{{count}} category libraries",
+        "cardBlurb": "{{label}} brand and tool logos, ready to drag onto your diagram.",
+        "download": "Download .xml"
+      },
+      "iconCount": "{{count}} icons",
+      "excalidraw": {
+        "title": "Excalidraw Shape Libraries",
+        "intro": "Downloadable custom Excalidraw libraries of brand and developer tool icons, grouped by category, for architecture and product diagrams.",
+        "howTitle": "How to import",
+        "step1": "Open Excalidraw and expand the shape library panel on the right side of the toolbar.",
+        "step2": "Click the \"...\" menu at the top of the library panel and choose \"Open\".",
+        "step3": "Select the downloaded .excalidrawlib file.",
+        "step4": "The icons are added to your personal library, ready to drag onto the canvas.",
+        "libraries": "{{count}} libraries",
+        "librariesNote": "Each file is a self-contained .excalidrawlib you can load independently.",
+        "download": "Download"
+      },
+      "mermaid": {
+        "title": "Mermaid Brand Icons",
+        "subtitle": "Real logos in your architecture diagrams, no image hosting needed.",
+        "packs": "Icon packs",
+        "packMono": "Monochrome icons that follow currentColor. Best for themed diagrams.",
+        "packColor": "Full-color brand icons. Best when logos should keep their brand colors.",
+        "step1": "1. Register the packs",
+        "step2": "2. Use icons in a diagram",
+        "footer": "Icon names match the slugs on theSVG. Search the {{library}} to find the one you need.",
+        "libraryLink": "library"
+      }
+    },
+    "submit": {
+      "badge": "{{count}}+ icons and growing",
+      "title": "Submit an Icon",
+      "intro": "Every brand deserves a place. No gatekeeping. Drop your SVG, fill in the details, and submit directly via GitHub.",
+      "how": "How it works",
+      "steps": {
+        "fork": {
+          "title": "Fork the repo",
+          "description": "Fork github.com/GLINCKER/thesvg and clone locally."
+        },
+        "add": {
+          "title": "Add your SVGs",
+          "description": "Place files in public/icons/{slug}/ with proper naming."
+        },
+        "json": {
+          "title": "Update icons.json",
+          "description": "Add your entry to src/data/icons.json."
+        },
+        "pr": {
+          "title": "Open a PR",
+          "description": "Run pnpm validate, then open a pull request."
+        }
+      },
+      "requirements": {
+        "title": "SVG Requirements",
+        "valid": "Valid SVG/XML markup",
+        "size": "Under 50KB file size",
+        "scripts": "No embedded scripts or external references",
+        "viewBox": "viewBox attribute present",
+        "gradients": "Gradients and multi-color SVGs welcome",
+        "rights": "You have the right to redistribute the icon"
+      },
+      "viewRepo": "View Repository",
+      "openIssues": "Open Issues",
+      "schemaTitle": "Icon Entry Schema",
+      "quickTitle": "Quick Submit",
+      "quickDescription": "Drop your SVG to validate and submit via GitHub",
+      "form": {
+        "validation": {
+          "pass": "All checks passed",
+          "fail": "Some checks failed"
+        },
+        "preview": {
+          "title": "Preview",
+          "light": "Light",
+          "dark": "Dark"
+        },
+        "license": {
+          "label": "License",
+          "helpOpen": "Help me pick",
+          "helpHide": "Hide",
+          "guide": "Licensing guide",
+          "pick": "Pick the option that fits:",
+          "own": {
+            "title": "I drew it myself",
+            "hint": "→ CC0 1.0"
+          },
+          "oss": {
+            "title": "Logo of an MIT / Apache / BSD open-source project",
+            "hint": "→ match the project's license"
+          },
+          "ccby": {
+            "title": "Brand kit explicitly published as CC BY",
+            "hint": "→ CC BY 4.0 (or CC BY-SA / CC BY-ND)"
+          },
+          "other": {
+            "title": "Company brand mark, custom license, or unsure",
+            "hint": "→ Other / custom (we'll verify)"
+          },
+          "select": "Select a license…",
+          "otherLabel": "Describe the license",
+          "otherPlaceholder": "e.g. Acme Brand Guidelines v2: non-commercial use only",
+          "otherEmpty": "A short description is required when picking Other.",
+          "otherTooLong": "Keep the description under {{max}} characters.",
+          "autoLabel": "Your issue will be auto-labeled {{label}} so a maintainer reviews it before merge."
+        },
+        "categories": {
+          "label": "Categories",
+          "placeholder": "Add custom category...",
+          "add": "Add"
+        },
+        "file": {
+          "label": "SVG File",
+          "aria": "Upload SVG file",
+          "dropActive": "Drop your SVG here",
+          "drop": "Drag & drop your SVG",
+          "hint": "or click to browse, .svg files only, max 50KB",
+          "remove": "Remove file"
+        },
+        "details": "Icon Details",
+        "name": "Icon name",
+        "namePlaceholder": "e.g. Vercel",
+        "slug": "Slug (kebab-case)",
+        "slugPlaceholder": "e.g. vercel",
+        "website": "Website URL",
+        "guidelines": "Brand guidelines URL",
+        "hex": "Brand hex color",
+        "hexPreview": "Color preview: #{{hex}}",
+        "submit": "Submit via GitHub",
+        "copied": "Copied!",
+        "copy": "Copy Submission",
+        "needsMore": "Upload an SVG file, enter an icon name, and pick a license to enable submission."
+      }
     }
   }
 }

@@ -1,5 +1,7 @@
 {
-  "language": { "label": "言語" },
+  "language": {
+    "label": "言語"
+  },
   "nav": {
     "brandIcons": "ブランドアイコン",
     "uiIcons": "UI アイコン",
@@ -57,6 +59,340 @@
       "privacy": "プライバシー",
       "trademarkPolicy": "商標ポリシー",
       "contact": "お問い合わせ"
+    }
+  },
+  "pages": {
+    "common": {
+      "extensions": "拡張機能",
+      "opensInNewTab": "(新しいタブで開きます)"
+    },
+    "notFound": {
+      "title": "アイコンが見つかりません",
+      "body": "このアイコンは移動または名前変更されたか、まだ存在しない可能性があります。",
+      "count": "ブランド、AWS、Azure、GCP を合わせて {{count}} 以上のアイコンがあります。必要なものを検索してみてください。",
+      "browse": "アイコンを見る",
+      "aws": "AWS アイコン",
+      "azure": "Azure アイコン",
+      "gcp": "GCP アイコン",
+      "back": "ホームに戻る"
+    },
+    "error": {
+      "title": "問題が発生しました",
+      "body": "予期しないエラーが発生しました。ページを再読み込みするか、ホームに戻ってください。",
+      "retry": "もう一度試す",
+      "home": "ホームへ"
+    },
+    "categories": {
+      "badge": "{{count}} カテゴリ",
+      "title": "すべてのカテゴリ",
+      "intro": "ブランドと AWS アーキテクチャのコレクション全体からアイコンのカテゴリを閲覧できます。",
+      "brand": "ブランドアイコンのカテゴリ",
+      "aws": "AWS アーキテクチャのカテゴリ"
+    },
+    "packages": {
+      "title": "パッケージ",
+      "intro": "theSVG が npm に公開しているものをすべて一か所にまとめました。ブランドアイコン、UI アイコン、国旗は別パッケージなので、一つを追加しても他が重くなることはありません。すべてのパッケージはツリーシェイク対応で、バージョンはグループごとに揃って更新されます。",
+      "groups": {
+        "brand": "ブランドアイコン",
+        "ui": "UI アイコン",
+        "flags": "国旗",
+        "tools": "ツール"
+      }
+    },
+    "contact": {
+      "title": "お問い合わせ",
+      "intro": "質問、不具合の報告、商標に関する連絡はありますか？以下のいずれかの方法でご連絡ください。",
+      "email": {
+        "title": "メール",
+        "description": "商標に関する依頼、DMCA 通知、一般的なお問い合わせ用です。",
+        "note": "48 時間以内に返信します"
+      },
+      "issues": {
+        "description": "不具合の報告、機能のリクエスト、アイコンの修正提案ができます。",
+        "action": "Issue を作成",
+        "note": "技術的な問題に最適",
+        "title": "GitHub Issues"
+      },
+      "discussions": {
+        "description": "質問したり、アイデアを共有したり、コミュニティと交流できます。",
+        "action": "ディスカッションを始める",
+        "note": "一般的な質問に最適",
+        "title": "GitHub Discussions"
+      },
+      "trademark": {
+        "title": "商標に関する依頼",
+        "description": "ブランドの権利者の方は、アイコンの削除や更新、使用ガイドラインの追加を依頼できます。",
+        "action": "依頼を送る",
+        "note": "削除依頼は 24 時間以内に対応します"
+      },
+      "policy": {
+        "title": "商標ポリシー",
+        "p1": "thesvg.org 上のすべてのブランドロゴと商標は、それぞれの所有者に帰属します。アイコンは識別および開発の目的でのみ提供されます。掲載されているブランドとの提携や承認関係はありません。",
+        "p2": "ブランドの権利者でアイコンの削除や更新をご希望の場合は、{{email}}か、{{policy}}の全文をご覧ください。削除依頼は 24 時間以内に対応します。",
+        "emailLink": "メールを送る",
+        "policyLink": "商標ポリシー"
+      }
+    },
+    "compare": {
+      "badge": "正直な比較",
+      "title": "ブランドアイコンライブラリの比較",
+      "intro": "人気のアイコンライブラリ 7 つを、機能、ツール、エコシステムの観点で比較しました。公平であることを目指しています。どのライブラリにも強みがあります。プロジェクトに合うものを選んでください。",
+      "milestone": {
+        "badge": "2026 年のマイルストーン",
+        "title": "3 か月でブランドアイコン {{count}} 個",
+        "cta": "マイルストーンの記事を読む"
+      },
+      "table": {
+        "feature": "機能"
+      },
+      "sections": {
+        "coverage": "ブランドアイコンの網羅性",
+        "tooling": "開発者向けツール",
+        "ecosystem": "エコシステムとプラグイン",
+        "governance": "ガバナンスと品質"
+      },
+      "when": "どれをいつ使うか",
+      "faq": "よくある質問",
+      "note": "公平性について",
+      "browse": "{{count}} 個のアイコンを見る"
+    },
+    "extensions": {
+      "title": "拡張機能と連携",
+      "subtitle": "開発、デザイン、リリースのあらゆる場面で theSVG のアイコンを使えます。",
+      "newBadge": "新着",
+      "mentionsLink": "thesvg が紹介されている場所を見る",
+      "jump": "カテゴリへ移動",
+      "build": {
+        "title": "自分で作る",
+        "body": "API と CDN は認証不要で完全に公開されています。プラグイン、拡張機能、ワークフローを作って、PR を送ればここに掲載されます。",
+        "github": "GitHub で見る",
+        "cdn": "CDN のドキュメント"
+      },
+      "cat": {
+        "npm": {
+          "label": "ライブラリと SDK",
+          "description": "プロジェクトにブランドアイコンをインストールして読み込みます"
+        },
+        "editors": {
+          "label": "エディタ拡張機能",
+          "description": "エディタを離れずにアイコンを検索して挿入できます"
+        },
+        "design": {
+          "label": "デザインツール",
+          "description": "ブランドアイコンをデザインにドラッグ&ドロップできます"
+        },
+        "developer": {
+          "label": "開発者ツール",
+          "description": "プログラムからアクセスするための CLI、CDN、API"
+        },
+        "ai": {
+          "label": "AI と自動化",
+          "description": "AI エージェントやランチャーからブランドアイコンを利用できます"
+        },
+        "integrations": {
+          "label": "連携",
+          "description": "ノーコードやクリエイティブ系のツールで theSVG を使えます"
+        },
+        "frameworks": {
+          "label": "フレームワーク用コンポーネント",
+          "description": "お使いのフレームワーク向けのネイティブコンポーネント"
+        },
+        "mobile-native": {
+          "label": "モバイルとネイティブ",
+          "description": "iOS、Android、クロスプラットフォームのアプリにアイコンを組み込めます"
+        }
+      },
+      "cta": {
+        "install": "インストール",
+        "buildThis": "作ってみる",
+        "docs": "ドキュメント",
+        "browseLibraries": "ライブラリを見る",
+        "browseSets": "セットを見る",
+        "comingSoon": "近日公開",
+        "viewSkills": "skills.sh で見る",
+        "viewSource": "ソースを見る",
+        "trackProgress": "進捗を見る"
+      }
+    },
+    "mentions": {
+      "title": "掲載されている場所",
+      "intro": "thesvg を使っているプロジェクト、掲載しているリスト、紹介している記事です。",
+      "total": "{{count}} 件の掲載",
+      "groups": {
+        "code": {
+          "label": "コードで使用",
+          "blurb": "thesvg のアイコンを取得、依存、または同梱しているプロジェクトです。"
+        },
+        "list": {
+          "label": "厳選リストに掲載",
+          "blurb": "thesvg へリンクしているディレクトリや awesome リストです。"
+        },
+        "editorial": {
+          "label": "紹介記事",
+          "blurb": "レビューや記事です。"
+        },
+        "more": {
+          "label": "その他の掲載"
+        }
+      },
+      "summary": {
+        "code": "コードで使用 {{count}} 件",
+        "list": "厳選リストに掲載 {{count}} 件",
+        "editorial": "紹介記事 {{count}} 件"
+      },
+      "evidence": {
+        "pr": "PR",
+        "commit": "コミット",
+        "sr": "thesvg を追加したもの(新しいタブで開きます)"
+      },
+      "invite": {
+        "title": "thesvg を紹介しているページをご存じですか？",
+        "body": "リンクを添えて Issue を作成していただければ、ここに追加します。",
+        "cta": "Issue を作成"
+      }
+    },
+    "integrations": {
+      "drawio": {
+        "title": "draw.io / diagrams.net 用シェイプライブラリ",
+        "subtitle": "ブランドや開発ツールのアイコンを、そのまま図に追加できます。",
+        "howTitle": "ライブラリのインポート方法",
+        "step1": "作業中の図を draw.io(または diagrams.net)で開きます。",
+        "step2": "左側の Shapes パネル下部にある、グリッドアイコン \"More Shapes\" をクリックします。",
+        "step3": "開いたダイアログを下にスクロールし、\"Open Library from Device...\" を選びます。",
+        "step4": "目的のカテゴリのダウンロード済み .xml ファイルを選びます。",
+        "step5": "アイコンが左サイドバーに新しいパネルとして表示され、キャンバスへドラッグできます。",
+        "libraries": "{{count}} 個のカテゴリ別ライブラリ",
+        "cardBlurb": "{{label}} のブランドやツールのロゴを、そのまま図にドラッグできます。",
+        "download": "xml をダウンロード"
+      },
+      "iconCount": "{{count}} 個のアイコン",
+      "excalidraw": {
+        "title": "Excalidraw 用シェイプライブラリ",
+        "intro": "ブランドや開発ツールのアイコンをカテゴリ別にまとめた、ダウンロード可能な Excalidraw 用ライブラリです。アーキテクチャ図やプロダクト図に使えます。",
+        "howTitle": "インポート方法",
+        "step1": "Excalidraw を開き、ツールバー右側のシェイプライブラリのパネルを展開します。",
+        "step2": "ライブラリパネル上部の \"...\" メニューをクリックし、\"Open\" を選びます。",
+        "step3": "ダウンロードした .excalidrawlib ファイルを選択します。",
+        "step4": "アイコンが個人用ライブラリに追加され、キャンバスにドラッグできます。",
+        "libraries": "{{count}} 個のライブラリ",
+        "librariesNote": "各ファイルは独立した .excalidrawlib で、個別に読み込めます。",
+        "download": "ダウンロード"
+      },
+      "mermaid": {
+        "title": "Mermaid 用ブランドアイコン",
+        "subtitle": "アーキテクチャ図に本物のロゴを。画像のホスティングは不要です。",
+        "packs": "アイコンパック",
+        "packMono": "currentColor に従うモノクロアイコン。テーマ付きの図に最適です。",
+        "packColor": "フルカラーのブランドアイコン。ロゴのブランドカラーを保ちたいときに最適です。",
+        "step1": "1. パックを登録する",
+        "step2": "2. 図でアイコンを使う",
+        "footer": "アイコン名は theSVG のスラッグと同じです。必要なものは{{library}}で検索してください。",
+        "libraryLink": "ライブラリ"
+      }
+    },
+    "submit": {
+      "badge": "{{count}} 以上のアイコン、さらに増加中",
+      "title": "アイコンを投稿",
+      "intro": "どのブランドにも居場所があります。審査の壁はありません。SVG をドロップして詳細を入力し、GitHub から直接投稿してください。",
+      "how": "進め方",
+      "steps": {
+        "fork": {
+          "title": "リポジトリをフォーク",
+          "description": "github.com/GLINCKER/thesvg をフォークし、ローカルにクローンします。"
+        },
+        "add": {
+          "title": "SVG を追加",
+          "description": "ファイルを正しい名前で public/icons/{slug}/ に置きます。"
+        },
+        "json": {
+          "title": "icons.json を更新",
+          "description": "src/data/icons.json にエントリを追加します。"
+        },
+        "pr": {
+          "title": "PR を作成",
+          "description": "pnpm validate を実行してから、プルリクエストを作成します。"
+        }
+      },
+      "requirements": {
+        "title": "SVG の要件",
+        "valid": "有効な SVG/XML マークアップ",
+        "size": "ファイルサイズは 50KB 未満",
+        "scripts": "埋め込みスクリプトや外部参照を含まない",
+        "viewBox": "viewBox 属性がある",
+        "gradients": "グラデーションや多色の SVG も歓迎",
+        "rights": "アイコンを再配布する権利がある"
+      },
+      "viewRepo": "リポジトリを見る",
+      "openIssues": "オープンな Issue",
+      "schemaTitle": "アイコンエントリのスキーマ",
+      "quickTitle": "クイック投稿",
+      "quickDescription": "SVG をドロップして検証し、GitHub から投稿します",
+      "form": {
+        "validation": {
+          "pass": "すべてのチェックに合格",
+          "fail": "一部のチェックに失敗"
+        },
+        "preview": {
+          "title": "プレビュー",
+          "light": "ライト",
+          "dark": "ダーク"
+        },
+        "license": {
+          "label": "ライセンス",
+          "helpOpen": "選び方を見る",
+          "helpHide": "隠す",
+          "guide": "ライセンスガイド",
+          "pick": "当てはまるものを選んでください:",
+          "own": {
+            "title": "自分で描いた",
+            "hint": "→ CC0 1.0"
+          },
+          "oss": {
+            "title": "MIT / Apache / BSD のオープンソースプロジェクトのロゴ",
+            "hint": "→ プロジェクトのライセンスに合わせる"
+          },
+          "ccby": {
+            "title": "CC BY として明示的に公開されているブランドキット",
+            "hint": "→ CC BY 4.0(または CC BY-SA / CC BY-ND)"
+          },
+          "other": {
+            "title": "企業のブランドマーク、独自ライセンス、または不明",
+            "hint": "→ その他 / 独自(こちらで確認します)"
+          },
+          "select": "ライセンスを選択…",
+          "otherLabel": "ライセンスの説明",
+          "otherPlaceholder": "例: Acme Brand Guidelines v2(非商用のみ)",
+          "otherEmpty": "「その他」を選んだ場合は短い説明が必要です。",
+          "otherTooLong": "説明は {{max}} 文字以内にしてください。",
+          "autoLabel": "Issue には自動で {{label}} ラベルが付き、マージ前にメンテナーが確認します。"
+        },
+        "categories": {
+          "label": "カテゴリ",
+          "placeholder": "カスタムカテゴリを追加...",
+          "add": "追加"
+        },
+        "file": {
+          "label": "SVG ファイル",
+          "aria": "SVG ファイルをアップロード",
+          "dropActive": "ここに SVG をドロップ",
+          "drop": "SVG をドラッグ&ドロップ",
+          "hint": "またはクリックして選択(.svg のみ、最大 50KB)",
+          "remove": "ファイルを削除"
+        },
+        "details": "アイコンの詳細",
+        "name": "アイコン名",
+        "namePlaceholder": "例: Vercel",
+        "slug": "スラッグ(kebab-case)",
+        "slugPlaceholder": "例: vercel",
+        "website": "Web サイトの URL",
+        "guidelines": "ブランドガイドラインの URL",
+        "hex": "ブランドの 16 進カラー",
+        "hexPreview": "色のプレビュー: #{{hex}}",
+        "submit": "GitHub から投稿",
+        "copied": "コピーしました",
+        "copy": "投稿内容をコピー",
+        "needsMore": "SVG ファイルのアップロード、アイコン名の入力、ライセンスの選択をすると投稿できます。"
+      }
     }
   }
 }
