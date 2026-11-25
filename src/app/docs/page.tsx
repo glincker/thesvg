@@ -3,7 +3,8 @@ import Link from "next/link";
 import { BookOpen, ArrowRight } from "@/components/own-icons";
 import { getFormattedIconCount } from "@/lib/icons";
 import { JsonLd } from "@/components/json-ld";
-import { DOCS_NAV } from "@/lib/docs-nav";
+import { DOCS_NAV, docsNavGroupKey, docsNavItemKey } from "@/lib/docs-nav";
+import { T } from "@/components/t";
 import { DocsBrandIcon } from "@/components/docs/docs-nav-icon";
 import { FRAMEWORK_GUIDES } from "@/lib/docs-content";
 import { DocsPageFooter } from "@/components/docs/docs-page-footer";
@@ -62,36 +63,46 @@ export default function DocsPage() {
       <div className="mb-10">
         <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-orange-200/50 bg-orange-50/80 px-3 py-1 text-xs font-medium text-orange-600 dark:border-orange-500/20 dark:bg-orange-500/10 dark:text-orange-400">
           <BookOpen className="h-3.5 w-3.5" />
-          Docs
+          <T k="docs.ui.docsBadge" fallback="Docs" />
         </div>
         <div className="mb-2 flex flex-wrap items-center justify-between gap-3">
-          <h1 className="text-2xl font-bold sm:text-3xl">Docs &amp; Guides</h1>
+          <h1 className="text-2xl font-bold sm:text-3xl">
+            <T k="docs.home.heading" fallback="Docs & Guides" />
+          </h1>
           <DocsAskAi pageTitle="Docs & Guides overview" />
         </div>
         <p className="max-w-2xl text-muted-foreground">
-          Everything for using {count}+ brand icons: framework guides, real-world recipes, best
-          practices, tricks, migration guides, and FAQ.
+          <T
+            k="docs.home.intro"
+            fallback="Everything for using {{total}}+ brand icons: framework guides, real-world recipes, best practices, tricks, migration guides, and FAQ."
+            values={{ total: count }}
+          />
         </p>
       </div>
 
       <section className="mb-10">
-        <h2 className="mb-3 text-lg font-semibold">Getting started</h2>
+        <h2 className="mb-3 text-lg font-semibold">
+          <T k="docs.home.gettingStartedTitle" fallback="Getting started" />
+        </h2>
         <p className="max-w-2xl text-sm text-muted-foreground">
-          Pick the guide that matches how you&apos;re building. A handful of known icons in
-          React, Vue, or Svelte: use the matching package. An open-ended or large set (a
-          picker, a directory page): use the CDN guide instead, it has zero bundle cost
-          regardless of how many icons you show. Checking icons into your own repo: use the
-          CLI. Wiring up an AI assistant: see the MCP guide.
+          <T
+            k="docs.home.gettingStartedBody"
+            fallback="Pick the guide that matches how you're building. A handful of known icons in React, Vue, or Svelte: use the matching package. An open-ended or large set (a picker, a directory page): use the CDN guide instead, it has zero bundle cost regardless of how many icons you show. Checking icons into your own repo: use the CLI. Wiring up an AI assistant: see the MCP guide."
+          />
         </p>
       </section>
 
       {DOCS_NAV.filter((group) => group.title !== "Getting Started").map((group) => (
         <section key={group.title} className="mb-10">
-          <h2 className="mb-4 text-lg font-semibold">{group.title}</h2>
+          <h2 className="mb-4 text-lg font-semibold">
+            <T k={docsNavGroupKey(group.title)} fallback={group.title} />
+          </h2>
           <div className="grid gap-3 sm:grid-cols-2">
             {group.items.map((item) => {
               const guide = FRAMEWORK_GUIDES.find((g) => `/docs/${g.id}` === item.href);
-              const description = guide?.summary ?? CARD_DESCRIPTIONS[item.href.replace("/docs/", "")] ?? "";
+              const cardKey = item.href.replace("/docs/", "");
+              const description = guide?.summary ?? CARD_DESCRIPTIONS[cardKey] ?? "";
+              const descriptionKey = guide ? `docs.guides.${guide.id}.summary` : `docs.home.cards.${cardKey}`;
               return (
                 <Link
                   key={item.href}
@@ -105,11 +116,11 @@ export default function DocsPage() {
                   )}
                   <div className="min-w-0 flex-1">
                     <h3 className="mb-1 flex items-center gap-1.5 text-sm font-semibold">
-                      {item.label}
+                      <T k={docsNavItemKey(item.href)} fallback={item.label} />
                       <ArrowRight className="h-3.5 w-3.5 shrink-0 -translate-x-1 text-orange-500 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
                     </h3>
                     <p className="line-clamp-2 text-xs leading-relaxed text-muted-foreground">
-                      {description}
+                      <T k={descriptionKey} fallback={description} />
                     </p>
                   </div>
                 </Link>

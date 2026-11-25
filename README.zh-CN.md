@@ -531,7 +531,7 @@ https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/{slug}/{variant}.s
 
 ## 社区
 
-有问题、想要新图标，或想展示你的作品？欢迎加入官方 GLINR Discord，这里是 theSVG 和 GLINCKER 其他所有开源项目的大本营。theSVG 在那里有自己的论坛，新版本会自动发布到论坛。
+有问题、想要新图标，或想展示你的作品？欢迎加入官方 GLINR Discord，这里是 theSVG 和 GLINR Studios 其他所有开源项目的大本营。theSVG 在那里有自己的论坛，新版本会自动发布到论坛。
 
 <a href="https://discord.gg/Ar5pcaZB99"><img src="https://discord.com/api/guilds/829168897080557579/widget.png?style=banner2" alt="Join the GLINR Discord" /></a>
 
@@ -586,7 +586,7 @@ pnpm dev     # http://localhost:3333
 新图标、品牌换标和新版本每周都有。想跟上进度：
 
 - **点星并关注**仓库。使用 *Watch, Custom, Releases* 获知每个新版本。
-- 在 GitHub 上**关注 [GLINCKER](https://github.com/glincker)**，了解我们构建的其他项目。
+- 在 GitHub 上**关注 [GLINR Studios](https://github.com/glincker)**，了解我们构建的其他项目。
 - **加入 [Discord](https://discord.gg/Ar5pcaZB99)**，提出图标需求，并在新版本发布的第一时间看到它们。
 - **浏览 [thesvg.org](https://thesvg.org)**，看看最近新增了什么。
 
@@ -637,12 +637,12 @@ AWS 架构图标按 [CC BY-ND 2.0](https://creativecommons.org/licenses/by-nd/2.
   <a href="https://github.com/glincker/thesvg/issues">问题反馈</a>
 </p>
 
-<p align="center"><sub>由 GLINCKER 打造。团队的更多作品：</sub></p>
+<p align="center"><sub>由 GLINR Studios 打造。团队的更多作品：</sub></p>
 
 <table align="center">
   <tr>
     <td align="center" width="33%">
-      <a href="https://github.com/glincker"><picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/glincker/light.svg" /><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/glincker/default.svg" height="40" alt="GLINCKER" /></picture><br /><b>GLINCKER</b></a><br />
+      <a href="https://glinr.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/glinr/wordmark-dark.svg" /><img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/glinr/wordmark-light.svg" height="30" alt="GLINR Studios" /></picture></a><br />
       <sub>来自 theSVG 背后团队的开源项目</sub>
     </td>
     <td align="center" width="33%">

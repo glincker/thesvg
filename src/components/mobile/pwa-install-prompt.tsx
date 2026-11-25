@@ -2,6 +2,11 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { Download, Plus, Share, X } from "@/components/own-icons";
+import { useT } from "@/i18n/use-t";
+
+// Sentinels let the translated sentence place the inline icons in any word order.
+const SHARE_TOKEN = "\u0001share\u0001";
+const ADD_TOKEN = "\u0001add\u0001";
 
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>;
@@ -17,6 +22,7 @@ type Mode = "hidden" | "prompt" | "ios";
 // iOS Safari never fires `beforeinstallprompt`, so we route iOS to a
 // custom Share -> Add to Home Screen card instead.
 export function PwaInstallPrompt() {
+  const { t } = useT();
   const [event, setEvent] = useState<BeforeInstallPromptEvent | null>(null);
   const [mode, setMode] = useState<Mode>("hidden");
 
@@ -89,7 +95,7 @@ export function PwaInstallPrompt() {
     return (
       <div
         role="region"
-        aria-label="Install thesvg on iOS"
+        aria-label={t("mobile.pwa.iosAria")}
         className="fixed inset-x-3 z-40 mx-auto flex max-w-sm flex-col gap-2 rounded-2xl border border-border/60 bg-background px-3.5 py-3 shadow-[0_12px_36px_-12px_rgba(0,0,0,0.5),0_2px_8px_-2px_rgba(0,0,0,0.3)] sm:right-6 sm:left-auto sm:max-w-xs dark:border-white/[0.1] dark:bg-[#0f0f10]"
         style={{
           bottom: "calc(var(--dock-height) + var(--safe-bottom) + 16px)",
@@ -101,23 +107,39 @@ export function PwaInstallPrompt() {
           </span>
           <div className="min-w-0 flex-1">
             <p className="text-sm font-semibold text-foreground">
-              Install on iPhone
+              {t("mobile.pwa.installIos")}
             </p>
             <p className="mt-0.5 text-[11px] leading-snug text-muted-foreground">
-              Tap{" "}
-              <Share className="inline h-3.5 w-3.5 -translate-y-px text-blue-500" />{" "}
-              Share, then{" "}
-              <span className="inline-flex items-center gap-0.5 font-medium text-foreground">
-                <Plus className="h-3.5 w-3.5" />
-                Add to Home Screen
-              </span>
-              .
+              {t("mobile.pwa.iosSteps", { share: SHARE_TOKEN, add: ADD_TOKEN })
+                .split(new RegExp(`(${SHARE_TOKEN}|${ADD_TOKEN})`))
+                .map((part, i) => {
+                  if (part === SHARE_TOKEN) {
+                    return (
+                      <Share
+                        key={i}
+                        className="inline h-3.5 w-3.5 -translate-y-px text-blue-500"
+                      />
+                    );
+                  }
+                  if (part === ADD_TOKEN) {
+                    return (
+                      <span
+                        key={i}
+                        className="inline-flex items-center gap-0.5 font-medium text-foreground"
+                      >
+                        <Plus className="h-3.5 w-3.5" />
+                        {t("mobile.pwa.iosAdd")}
+                      </span>
+                    );
+                  }
+                  return part;
+                })}
             </p>
           </div>
           <button
             type="button"
             onClick={dismiss}
-            aria-label="Dismiss"
+            aria-label={t("mobile.pwa.dismiss")}
             className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md text-muted-foreground hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           >
             <X className="h-4 w-4" />
@@ -130,7 +152,7 @@ export function PwaInstallPrompt() {
   return (
     <div
       role="region"
-      aria-label="Install thesvg"
+      aria-label={t("mobile.pwa.installTitle")}
       className="fixed inset-x-3 z-40 mx-auto flex max-w-md items-center gap-3 rounded-2xl border border-border/60 bg-background px-3 py-2.5 shadow-[0_12px_36px_-12px_rgba(0,0,0,0.5),0_2px_8px_-2px_rgba(0,0,0,0.3)] sm:right-6 sm:left-auto sm:max-w-sm dark:border-white/[0.1] dark:bg-[#0f0f10]"
       style={{
         bottom: "calc(var(--dock-height) + var(--safe-bottom) + 16px)",
@@ -140,9 +162,9 @@ export function PwaInstallPrompt() {
         <Download className="h-4 w-4" />
       </span>
       <div className="min-w-0 flex-1">
-        <p className="text-sm font-semibold text-foreground">Install thesvg</p>
+        <p className="text-sm font-semibold text-foreground">{t("mobile.pwa.installTitle")}</p>
         <p className="truncate text-[11px] text-muted-foreground">
-          One tap to install as an app on this device.
+          {t("mobile.pwa.installDesc")}
         </p>
       </div>
       <button
@@ -150,12 +172,12 @@ export function PwaInstallPrompt() {
         onClick={install}
         className="rounded-lg bg-foreground px-3 py-1.5 text-xs font-semibold text-background transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
       >
-        Install
+        {t("mobile.pwa.install")}
       </button>
       <button
         type="button"
         onClick={dismiss}
-        aria-label="Dismiss"
+        aria-label={t("mobile.pwa.dismiss")}
         className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md text-muted-foreground hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
       >
         <X className="h-4 w-4" />

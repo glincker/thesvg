@@ -2,6 +2,7 @@
 
 import { UiGlyph } from "@/components/ui-glyph";
 import { withUtm } from "@/lib/external-link";
+import { useT } from "@/i18n/use-t";
 
 const REPO = "glincker/thesvg";
 
@@ -101,10 +102,10 @@ export function ContributionCta({
   hasMultipleVariants,
   guidelinesMissing = false,
 }: ContributionCtaProps) {
-  const assetLabel = hasMultipleVariants ? "a variant" : "a better version";
-  const label = guidelinesMissing
-    ? `Missing ${assetLabel} or a guidelines link?`
-    : `Missing ${assetLabel}?`;
+  const { t } = useT();
+  const label = t(
+    `icon.contribute.${hasMultipleVariants ? "missingVariant" : "missingBetter"}${guidelinesMissing ? "Guidelines" : ""}`,
+  );
 
   return (
     <div className="group/cta relative overflow-hidden rounded-xl border border-dashed border-border/60 bg-muted/30 p-4 transition-colors duration-200 hover:border-orange-500/30 hover:bg-orange-500/[0.03]">
@@ -118,7 +119,7 @@ export function ContributionCta({
         </div>
         <div className="min-w-0">
           <p className="text-xs font-semibold text-foreground">{label}</p>
-          <p className="text-[10px] text-muted-foreground">Community fixes ship in the next build</p>
+          <p className="text-[10px] text-muted-foreground">{t("icon.contribute.note")}</p>
         </div>
       </div>
       <div className="relative flex flex-wrap gap-2">
@@ -129,7 +130,7 @@ export function ContributionCta({
           className="group flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-1.5 text-[11px] font-medium text-muted-foreground shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:border-foreground/30 hover:text-foreground hover:shadow-md active:translate-y-0 active:scale-95"
         >
           <UiGlyph name="seal-warning" className="h-3.5 w-3.5 transition-transform duration-150 group-hover:rotate-12" />
-          Request via Issue
+          {t("icon.contribute.issue")}
         </a>
         <a
           href={withUtm(buildPrUrl(slug, title, hasMultipleVariants, guidelinesMissing), "contribution_cta")}
@@ -139,7 +140,7 @@ export function ContributionCta({
         >
           <span className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/25 to-transparent" />
           <UiGlyph name="git-pull-request" className="relative h-3.5 w-3.5 transition-transform duration-150 group-hover:-rotate-12" />
-          <span className="relative">Submit a PR</span>
+          <span className="relative">{t("icon.contribute.pr")}</span>
         </a>
       </div>
     </div>

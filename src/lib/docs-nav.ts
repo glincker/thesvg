@@ -63,3 +63,17 @@ export function slugifyHeading(label: string): string {
     .replace(/^-+/, "")
     .replace(/-+$/, "");
 }
+
+/** Locale key helpers: URLs and anchor ids stay English, only labels are looked up. */
+export function docsNavItemKey(href: string): string {
+  const seg = href.replace(/^\/docs\/?/, "");
+  return `docs.nav.items.${seg || "overview"}`;
+}
+
+export function docsNavGroupKey(title: string): string {
+  return `docs.nav.groups.${slugifyHeading(title)}`;
+}
+
+export function docsSnippetKey(label: string): string {
+  return `docs.snippets.${slugifyHeading(label)}`;
+}

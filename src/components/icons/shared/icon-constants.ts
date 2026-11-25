@@ -1,15 +1,5 @@
 import type { CopyFormat } from "@/lib/copy-formats";
 
-export const VARIANT_LABELS: Record<string, string> = {
-  default: "Default",
-  mono: "Mono",
-  light: "Light",
-  dark: "Dark",
-  wordmark: "Wordmark",
-  wordmarkLight: "WM Light",
-  wordmarkDark: "WM Dark",
-};
-
 export const FORMAT_BUTTONS: {
   value: CopyFormat;
   label: string;

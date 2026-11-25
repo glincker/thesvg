@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { FORMAT_BUTTONS, FORMAT_LABELS } from "@/components/icons/shared/icon-constants";
 import { INTERFACE_SIZES, parseInterfaceSize } from "@/lib/interface-size";
+import { useT } from "@/i18n/use-t";
 import { useSettingsStore, type PreviewBackground } from "@/lib/stores/settings-store";
 import { cn } from "@/lib/utils";
 
@@ -26,19 +27,18 @@ const COPY_FORMAT_ICONS: Record<string, ComponentType<{ className?: string }>> =
   "data-uri": Binary,
 };
 
-const PREVIEW_OPTIONS: { value: PreviewBackground; label: string; description: string; swatch: string }[] = [
+// Labels live in the locale files under chrome.display.bg.<key> and <key>Desc.
+const PREVIEW_OPTIONS: { value: PreviewBackground; key: string; swatch: string }[] = [
   {
     value: "auto",
-    label: "Auto",
-    description: "Adapts to each logo so dark and light marks stay visible",
+    key: "auto",
     swatch: "bg-gradient-to-br from-neutral-100 to-neutral-700",
   },
-  { value: "light", label: "Light", description: "Always a light tile", swatch: "bg-neutral-100" },
-  { value: "dark", label: "Dark", description: "Always a dark tile", swatch: "bg-neutral-800" },
+  { value: "light", key: "light", swatch: "bg-neutral-100" },
+  { value: "dark", key: "dark", swatch: "bg-neutral-800" },
   {
     value: "checker",
-    label: "Checkerboard",
-    description: "Shows transparent areas",
+    key: "checker",
     swatch: "bg-[conic-gradient(#d4d4d4_25%,#fafafa_0_50%,#d4d4d4_0_75%,#fafafa_0)] bg-[length:8px_8px]",
   },
 ];
@@ -49,6 +49,7 @@ const PREVIEW_OPTIONS: { value: PreviewBackground; label: string; description: s
  * a single click next to it.
  */
 export function DisplayMenu() {
+  const { t } = useT();
   const defaultCopyFormat = useSettingsStore((s) => s.defaultCopyFormat);
   const setDefaultCopyFormat = useSettingsStore((s) => s.setDefaultCopyFormat);
   const previewBackground = useSettingsStore((s) => s.previewBackground);
@@ -65,8 +66,8 @@ export function DisplayMenu() {
             variant="ghost"
             size="icon"
             className="h-9 w-9 text-muted-foreground hover:text-foreground sm:h-8 sm:w-8"
-            aria-label={`Display settings. Copy format ${formatLabel}`}
-            title={`Display settings (copies as ${formatLabel})`}
+            aria-label={t("chrome.display.aria", { format: formatLabel })}
+            title={t("chrome.display.title", { format: formatLabel })}
           />
         }
       >
@@ -75,9 +76,9 @@ export function DisplayMenu() {
       <DropdownMenuContent align="end" className="w-72">
         <DropdownMenuGroup>
           <DropdownMenuLabel className="font-normal">
-            <p className="text-xs font-semibold text-foreground">Default copy format</p>
+            <p className="text-xs font-semibold text-foreground">{t("chrome.display.copyFormat")}</p>
             <p className="mt-0.5 text-[11px] font-normal text-muted-foreground">
-              Used when you click the copy button on any icon card
+              {t("chrome.display.copyFormatHint")}
             </p>
           </DropdownMenuLabel>
         </DropdownMenuGroup>
@@ -98,7 +99,7 @@ export function DisplayMenu() {
                 </span>
                 <span className="flex flex-1 flex-col gap-0.5">
                   <span className="text-xs font-medium text-foreground">{fmt.label}</span>
-                  <span className="text-[10px] leading-relaxed text-muted-foreground/70">{fmt.description}</span>
+                  <span className="text-[10px] leading-relaxed text-muted-foreground/70">{t(`chrome.display.fmt.${fmt.value === "data-uri" ? "dataUri" : fmt.value}`, { defaultValue: fmt.description })}</span>
                 </span>
               </DropdownMenuRadioItem>
             );
@@ -107,9 +108,9 @@ export function DisplayMenu() {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuLabel className="font-normal">
-            <p className="text-xs font-semibold text-foreground">Preview background</p>
+            <p className="text-xs font-semibold text-foreground">{t("chrome.display.preview")}</p>
             <p className="mt-0.5 text-[11px] font-normal text-muted-foreground">
-              Judge a logo on the surface it will sit on
+              {t("chrome.display.previewHint")}
             </p>
           </DropdownMenuLabel>
         </DropdownMenuGroup>
@@ -127,8 +128,8 @@ export function DisplayMenu() {
                 className={cn("mt-0.5 h-5 w-5 shrink-0 rounded-md border border-border/60", opt.swatch)}
               />
               <span className="flex flex-1 flex-col gap-0.5">
-                <span className="text-xs font-medium text-foreground">{opt.label}</span>
-                <span className="text-[10px] leading-relaxed text-muted-foreground/70">{opt.description}</span>
+                <span className="text-xs font-medium text-foreground">{t(`chrome.display.bg.${opt.key}`)}</span>
+                <span className="text-[10px] leading-relaxed text-muted-foreground/70">{t(`chrome.display.bg.${opt.key}Desc`)}</span>
               </span>
             </DropdownMenuRadioItem>
           ))}
@@ -136,9 +137,9 @@ export function DisplayMenu() {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuLabel className="font-normal">
-            <p className="text-xs font-semibold text-foreground">Interface size</p>
+            <p className="text-xs font-semibold text-foreground">{t("chrome.display.size")}</p>
             <p className="mt-0.5 text-[11px] font-normal text-muted-foreground">
-              Make text, icons and controls bigger, instead of zooming the page
+              {t("chrome.display.sizeHint")}
             </p>
           </DropdownMenuLabel>
         </DropdownMenuGroup>
@@ -146,8 +147,8 @@ export function DisplayMenu() {
           {INTERFACE_SIZES.map((opt) => (
             <DropdownMenuRadioItem key={opt.id} value={opt.id} className="items-start gap-2.5 py-2">
               <span className="flex flex-1 flex-col gap-0.5">
-                <span className="text-xs font-medium text-foreground">{opt.label}</span>
-                <span className="text-[10px] leading-relaxed text-muted-foreground/70">{opt.description}</span>
+                <span className="text-xs font-medium text-foreground">{t(`chrome.display.sz.${opt.id}`, { defaultValue: opt.label })}</span>
+                <span className="text-[10px] leading-relaxed text-muted-foreground/70">{t(`chrome.display.sz.${opt.id}Desc`, { defaultValue: opt.description })}</span>
               </span>
             </DropdownMenuRadioItem>
           ))}

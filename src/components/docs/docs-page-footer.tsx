@@ -5,6 +5,7 @@ import Link from "next/link";
 import { capture } from "@/lib/analytics";
 import { ThumbsUp, ThumbsDown, Check } from "@/components/own-icons";
 import { DocsBrandIcon } from "@/components/docs/docs-nav-icon";
+import { useT } from "@/i18n/use-t";
 
 interface DocsPageFooterProps {
   /** Repo-relative path to the file that actually owns this page's content. */
@@ -14,6 +15,7 @@ interface DocsPageFooterProps {
 
 export function DocsPageFooter({ sourceFile, pageTitle }: Readonly<DocsPageFooterProps>) {
   const [feedback, setFeedback] = useState<"helpful" | "not-helpful" | null>(null);
+  const { t } = useT();
 
   function handleFeedback(helpful: boolean) {
     if (feedback) return;
@@ -30,22 +32,22 @@ export function DocsPageFooter({ sourceFile, pageTitle }: Readonly<DocsPageFoote
         className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground"
       >
         <DocsBrandIcon slug="github" className="h-3.5 w-3.5" />
-        Edit this page on GitHub
+        {t("docs.ui.editOnGithub", { defaultValue: "Edit this page on GitHub" })}
       </Link>
 
       <div className="flex items-center gap-2 text-xs text-muted-foreground">
         {feedback ? (
           <span className="inline-flex items-center gap-1.5 text-green-600 dark:text-green-400">
             <Check className="h-3.5 w-3.5" />
-            Thanks for the feedback
+            {t("docs.ui.thanks", { defaultValue: "Thanks for the feedback" })}
           </span>
         ) : (
           <>
-            <span>Was this page helpful?</span>
+            <span>{t("docs.ui.wasHelpful", { defaultValue: "Was this page helpful?" })}</span>
             <button
               type="button"
               onClick={() => handleFeedback(true)}
-              aria-label="Yes, this page was helpful"
+              aria-label={t("docs.ui.helpfulYes", { defaultValue: "Yes, this page was helpful" })}
               className="rounded-md p-1.5 hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
               <ThumbsUp className="h-3.5 w-3.5" />
@@ -53,7 +55,7 @@ export function DocsPageFooter({ sourceFile, pageTitle }: Readonly<DocsPageFoote
             <button
               type="button"
               onClick={() => handleFeedback(false)}
-              aria-label="No, this page was not helpful"
+              aria-label={t("docs.ui.helpfulNo", { defaultValue: "No, this page was not helpful" })}
               className="rounded-md p-1.5 hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
               <ThumbsDown className="h-3.5 w-3.5" />

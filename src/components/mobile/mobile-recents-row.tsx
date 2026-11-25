@@ -3,13 +3,14 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Clock } from "@/components/own-icons";
+import { useT } from "@/i18n/use-t";
 import { useRecentsStore } from "@/lib/stores/recents-store";
 import { getIconsBySlugMap, loadIconsManifest } from "@/lib/icons-manifest";
 import type { IconEntry } from "@/lib/icons";
 import iconTones from "@/data/icon-tones.json";
 
 interface MobileRecentsRowProps {
-  /** Optional label shown above the row. Defaults to "Recent". */
+  /** Optional label shown above the row. Defaults to the translated "Recent". */
   label?: string;
   /** Max tiles to show. Defaults to 12. */
   limit?: number;
@@ -24,9 +25,10 @@ interface MobileRecentsRowProps {
  * keeps its existing recents surfaces in the header dropdown.
  */
 export function MobileRecentsRow({
-  label = "Recent",
+  label,
   limit = 12,
 }: MobileRecentsRowProps) {
+  const { t } = useT();
   const viewed = useRecentsStore((s) => s.viewed);
   const [icons, setIcons] = useState<IconEntry[]>([]);
 
@@ -58,18 +60,18 @@ export function MobileRecentsRow({
 
   return (
     <section
-      aria-label="Recently viewed icons"
+      aria-label={t("mobile.recents.aria")}
       className="md:hidden"
     >
       <div className="flex items-center justify-between px-3 pb-2">
         <h3 className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-          <Clock className="h-3.5 w-3.5" /> {label}
+          <Clock className="h-3.5 w-3.5" /> {label ?? t("mobile.recents.label")}
         </h3>
         <Link
           href="/recents"
           className="text-[11px] font-medium text-muted-foreground hover:text-foreground"
         >
-          See all
+          {t("mobile.recents.seeAll")}
         </Link>
       </div>
       <ul className="-mx-1 flex gap-2 overflow-x-auto px-3 pb-3 scrollbar-none snap-x snap-mandatory">

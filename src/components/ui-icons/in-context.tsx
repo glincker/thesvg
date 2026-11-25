@@ -6,6 +6,7 @@ import { createContext, useContext, useState } from "react";
 import { VARIANTS, type Glyph as GlyphData } from "@/lib/ui-icons/glyphs";
 import { cn } from "@/lib/ui-icons/utils";
 import { Glyph } from "./glyph";
+import { useLabels } from "./labels";
 import { useUi } from "./ui-state";
 
 type StateName = "rest" | "hover" | "active";
@@ -44,17 +45,19 @@ function StateGlyph({ size = 18 }: { size?: number }) {
 }
 
 function Pick(props: { label: string; value: Variant; onChange: (v: Variant) => void }) {
+  const { look } = useLabels();
   return (
     <label className="flex items-center gap-2 text-[0.75rem] text-muted-foreground">
       {props.label}
       <select value={props.value} onChange={(e) => props.onChange(e.target.value as Variant)} className="rounded-lg border bg-background/60 px-2 py-1 text-xs capitalize text-foreground outline-none focus:border-ring">
-        {VARIANTS.map((v) => <option key={v} value={v}>{v}</option>)}
+        {VARIANTS.map((v) => <option key={v} value={v}>{look(v)}</option>)}
       </select>
     </label>
   );
 }
 
 function Surface({ dark }: { dark: boolean }) {
+  const { t } = useLabels();
   const [pressed, setPressed] = useState(false);
   const [tab, setTab] = useState(0);
   const [focused, setFocused] = useState(false);
@@ -72,20 +75,20 @@ function Surface({ dark }: { dark: boolean }) {
           onClick={() => setPressed(!pressed)}
           className={cn("group inline-flex h-9 items-center gap-2 rounded-lg px-3 text-sm font-medium transition-transform active:scale-95", dark ? "bg-zinc-100 text-zinc-900" : "bg-zinc-900 text-zinc-50")}
         >
-          <StateGlyph /> {pressed ? "Pressed" : "Action"}
+          <StateGlyph /> {pressed ? t("uikit.ctx.pressed") : t("uikit.ctx.action")}
         </button>
         <button type="button" className={cn("group inline-flex h-9 items-center gap-2 rounded-lg border px-3 text-sm transition-colors active:scale-95", edge, hoverBg)}>
-          <StateGlyph /> Secondary
+          <StateGlyph /> {t("uikit.ctx.secondary")}
         </button>
-        <button type="button" aria-label="Icon button" className={cn("group grid size-9 place-items-center rounded-lg border transition-colors active:scale-95", edge, hoverBg)}>
+        <button type="button" aria-label={t("uikit.ctx.iconButton")} className={cn("group grid size-9 place-items-center rounded-lg border transition-colors active:scale-95", edge, hoverBg)}>
           <StateGlyph size={20} />
         </button>
       </div>
 
       <div role="tablist" className={cn("flex items-center gap-1 rounded-xl p-1 text-sm", dark ? "bg-zinc-900" : "bg-zinc-200/70")}>
-        {["Overview", "Activity", "Settings"].map((label, i) => (
+        {(["overview", "activity", "settings"] as const).map((key, i) => (
           <button
-            key={label}
+            key={key}
             type="button"
             role="tab"
             aria-selected={tab === i}
@@ -96,7 +99,7 @@ function Surface({ dark }: { dark: boolean }) {
               tab === i ? (dark ? "bg-zinc-700" : "bg-white shadow-sm") : cn("opacity-70 hover:opacity-100", hoverBg),
             )}
           >
-            <StateGlyph size={16} /> <span className="truncate">{label}</span>
+            <StateGlyph size={16} /> <span className="truncate">{t(`uikit.ctx.tab.${key}`)}</span>
           </button>
         ))}
       </div>
@@ -106,7 +109,7 @@ function Surface({ dark }: { dark: boolean }) {
         className={cn("group flex h-10 items-center gap-2 rounded-xl border px-3 text-sm transition-colors", dark ? "border-zinc-700 text-zinc-300" : "border-zinc-300 text-zinc-700", focused && "border-orange-500")}
       >
         <StateGlyph size={16} />
-        <input onFocus={() => setFocused(true)} onBlur={() => setFocused(false)} placeholder="Type to focus this field" className="min-w-0 flex-1 bg-transparent outline-none placeholder:text-current placeholder:opacity-50" />
+        <input onFocus={() => setFocused(true)} onBlur={() => setFocused(false)} placeholder={t("uikit.ctx.placeholder")} className="min-w-0 flex-1 bg-transparent outline-none placeholder:text-current placeholder:opacity-50" />
         <UiGlyph name="search" className="size-4 opacity-50" />
       </label>
 
@@ -120,14 +123,14 @@ function Surface({ dark }: { dark: boolean }) {
         >
           <StateGlyph size={22} />
           {bell && <span className="absolute right-1.5 top-1.5 size-2 rounded-full bg-orange-500" />}
-          <span className={bell ? "" : "opacity-60"}>Notifications {bell ? "on" : "off"}</span>
+          <span className={bell ? "" : "opacity-60"}>{bell ? t("uikit.ctx.notificationsOn") : t("uikit.ctx.notificationsOff")}</span>
         </button>
         {chips.map((on, i) => (
           <button
             key={i}
             type="button"
             aria-pressed={on}
-            aria-label={`Toggle chip ${i + 1}`}
+            aria-label={t("uikit.ctx.toggleChip", { n: i + 1 })}
             data-on={on}
             onClick={() => setChips((c) => c.map((x, j) => (j === i ? !x : x)))}
             className={cn("group grid size-9 place-items-center rounded-lg border transition-colors active:scale-95", edge, hoverBg, on && (dark ? "bg-zinc-800" : "bg-white shadow-sm"))}
@@ -143,6 +146,7 @@ function Surface({ dark }: { dark: boolean }) {
 /** Interactive demo: hover, focus, press and toggle all work, and each state's look can be chosen. */
 export function InContext({ glyph }: { glyph: GlyphData }) {
   const ui = useUi();
+  const { t, look } = useLabels();
   const [active, setActive] = useState<Variant>("fill");
   const [hover, setHover] = useState<Variant | "same">("same");
   const [force, setForce] = useState<Force>("live");
@@ -150,19 +154,19 @@ export function InContext({ glyph }: { glyph: GlyphData }) {
   return (
     <Ctx.Provider value={{ glyph, map, force, accent: ui.accent }}>
       <div className="mb-3 flex flex-wrap items-center gap-x-5 gap-y-2 glass rounded-xl px-4 py-2">
-        <span className="text-[0.75rem] text-muted-foreground">Rest <span className="ml-1 rounded-md border px-1.5 py-0.5 capitalize text-foreground">{ui.variant}</span></span>
+        <span className="text-[0.75rem] text-muted-foreground">{t("uikit.ctx.rest")} <span className="ml-1 rounded-md border px-1.5 py-0.5 capitalize text-foreground">{look(ui.variant)}</span></span>
         <label className="flex items-center gap-2 text-[0.75rem] text-muted-foreground">
-          Hover
+          {t("uikit.ctx.hover")}
           <select value={hover} onChange={(e) => setHover(e.target.value as Variant | "same")} className="rounded-lg border bg-background/60 px-2 py-1 text-xs capitalize text-foreground outline-none focus:border-ring">
-            <option value="same">same as rest</option>
-            {VARIANTS.map((v) => <option key={v} value={v}>{v}</option>)}
+            <option value="same">{t("uikit.ctx.sameAsRest")}</option>
+            {VARIANTS.map((v) => <option key={v} value={v}>{look(v)}</option>)}
           </select>
         </label>
-        <Pick label="Active" value={active} onChange={setActive} />
-        <div className="ml-auto flex items-center gap-1 rounded-lg border p-0.5" role="group" aria-label="Show state">
+        <Pick label={t("uikit.ctx.active")} value={active} onChange={setActive} />
+        <div className="ml-auto flex items-center gap-1 rounded-lg border p-0.5" role="group" aria-label={t("uikit.ctx.showState")}>
           {(["live", "rest", "hover", "active"] as const).map((f) => (
             <button key={f} type="button" onClick={() => setForce(f)} className={cn("rounded-md px-2.5 py-1 text-xs capitalize text-muted-foreground transition-colors hover:text-foreground", force === f && "bg-foreground text-background hover:text-background")}>
-              {f === "live" ? "Interactive" : f}
+              {t(`uikit.ctx.${f === "live" ? "interactive" : f}`)}
             </button>
           ))}
         </div>

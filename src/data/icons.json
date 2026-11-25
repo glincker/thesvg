@@ -1730,25 +1730,6 @@
     "dateAdded": "2026-05-05"
   },
   {
-    "slug": "aetheriumos",
-    "title": "Aetheriumos",
-    "aliases": [
-      "AetheriumOS"
-    ],
-    "hex": "60A5FA",
-    "categories": [
-      "OS",
-      "Software"
-    ],
-    "variants": {
-      "default": "/icons/aetheriumos/default.svg"
-    },
-    "license": "Apache-2.0",
-    "url": "https://www.aetheriumos.com",
-    "dateAdded": "2026-11-25",
-    "collection": "brands"
-  },
-  {
     "slug": "afdian",
     "title": "AFDIAN",
     "aliases": [
@@ -3970,22 +3951,6 @@
     "license": "CC0-1.0",
     "url": "https://www.anaconda.com",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
-  },
-  {
-    "slug": "anadolujet",
-    "title": "AnadoluJet",
-    "aliases": [],
-    "hex": "EC2E38",
-    "categories": [
-      "Aviation"
-    ],
-    "variants": {
-      "default": "/icons/anadolujet/default.svg"
-    },
-    "license": "Trademark",
-    "url": "https://www.anadolujet.com",
-    "dateAdded": "2026-11-25",
     "collection": "brands"
   },
   {
@@ -94583,22 +94548,6 @@
     "dateAdded": "2026-05-16"
   },
   {
-    "slug": "intelbyte",
-    "title": "IntelByte",
-    "aliases": [],
-    "hex": "000000",
-    "categories": [
-      "Security"
-    ],
-    "variants": {
-      "default": "/icons/intelbyte/default.svg"
-    },
-    "license": "CC0-1.0",
-    "url": "https://www.intelbyte.cc",
-    "dateAdded": "2026-11-25",
-    "collection": "brands"
-  },
-  {
     "slug": "intellij-idea",
     "title": "IntelliJ IDEA",
     "aliases": [],
@@ -101437,24 +101386,6 @@
     "collection": "brands"
   },
   {
-    "slug": "ladybird",
-    "title": "Ladybird",
-    "aliases": [],
-    "hex": "A684FF",
-    "categories": [
-      "Browser",
-      "Linux",
-      "Open Source"
-    ],
-    "variants": {
-      "default": "/icons/ladybird/default.svg"
-    },
-    "license": "BSD-2-Clause",
-    "url": "https://ladybird.org",
-    "dateAdded": "2026-11-25",
-    "collection": "brands"
-  },
-  {
     "slug": "lambda",
     "title": "Lambda",
     "aliases": [],
@@ -103477,22 +103408,6 @@
     "license": "CC0-1.0",
     "url": "https://linear.app/",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
-  },
-  {
-    "slug": "linguaexam",
-    "title": "LinguaExam",
-    "aliases": [],
-    "hex": "683BC1",
-    "categories": [
-      "Education"
-    ],
-    "variants": {
-      "default": "/icons/linguaexam/default.svg"
-    },
-    "license": "CC-BY-SA-4.0",
-    "url": "https://linguaexam.online",
-    "dateAdded": "2026-11-25",
     "collection": "brands"
   },
   {
@@ -123168,26 +123083,6 @@
     "dateAdded": "2026-05-16"
   },
   {
-    "slug": "pfs",
-    "title": "PFS",
-    "aliases": [
-      "Public Free Suffix",
-      "PublicFreeSuffix"
-    ],
-    "hex": "378AFE",
-    "categories": [
-      "Networking",
-      "Hosting"
-    ],
-    "variants": {
-      "default": "/icons/pfs/default.svg"
-    },
-    "license": "MIT",
-    "url": "https://publicfreesuffix.org",
-    "dateAdded": "2026-11-25",
-    "collection": "brands"
-  },
-  {
     "slug": "pfsense",
     "title": "pfSense",
     "aliases": [],
@@ -132324,22 +132219,6 @@
     "family": "jetbrains"
   },
   {
-    "slug": "residual-labs",
-    "title": "Residual Labs",
-    "aliases": [],
-    "hex": "FFF9E8",
-    "categories": [
-      "Agency"
-    ],
-    "variants": {
-      "default": "/icons/residual-labs/default.svg"
-    },
-    "license": "Apache-2.0",
-    "url": "https://residual-labs.fr",
-    "dateAdded": "2026-11-25",
-    "collection": "brands"
-  },
-  {
     "slug": "restream-badge",
     "title": "Restream",
     "aliases": [],
@@ -137046,25 +136925,6 @@
     "url": "https://github.com/pypa/setuptools/blob/c3f486f0f7ebf8fa141dfd7314cbcaba7370db0b/docs/images/logo.svg",
     "guidelines": "https://setuptools.pypa.io/en/latest/artwork.html",
     "dateAdded": "2026-03-07",
-    "collection": "brands"
-  },
-  {
-    "slug": "seus-community",
-    "title": "seus community",
-    "aliases": [
-      "s.eus"
-    ],
-    "hex": "000000",
-    "categories": [
-      "Community",
-      "Communication"
-    ],
-    "variants": {
-      "default": "/icons/seus-community/default.svg"
-    },
-    "license": "MIT",
-    "url": "https://s.eus",
-    "dateAdded": "2026-11-25",
     "collection": "brands"
   },
   {
@@ -156538,25 +156398,6 @@
     "license": "Fair Use",
     "url": "https://www.wendys.com",
     "dateAdded": "2026-03-09",
-    "collection": "brands"
-  },
-  {
-    "slug": "wenitor",
-    "title": "Wenitor",
-    "aliases": [
-      "Wenitor AI"
-    ],
-    "hex": "000000",
-    "categories": [
-      "AI",
-      "Software"
-    ],
-    "variants": {
-      "default": "/icons/wenitor/default.svg"
-    },
-    "license": "Trademark",
-    "url": "https://wenitor-software.oneapp.dev",
-    "dateAdded": "2026-11-25",
     "collection": "brands"
   },
   {

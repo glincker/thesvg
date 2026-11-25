@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { UiGlyph } from "@/components/ui-glyph";
+import { useT } from "@/i18n/use-t";
 import { cn } from "@/lib/utils";
 
 export interface QualityRow {
@@ -10,6 +11,19 @@ export interface QualityRow {
   max: number;
   hint: string;
 }
+
+const ROW_KEYS: Record<string, string> = {
+  Variants: "variants",
+  License: "license",
+  Guidelines: "guidelines",
+  Metadata: "metadata",
+};
+const HINT_KEYS: Record<string, string> = {
+  "Only the default variant": "onlyDefault",
+  "License not specified": "licenseMissing",
+  Linked: "linked",
+  "No guidelines link": "noGuidelines",
+};
 
 function scoreColor(total: number): string {
   if (total >= 75) return "#22c55e";
@@ -56,6 +70,7 @@ export function QualityPanel({
   footnote: React.ReactNode;
   storageKey: string;
 }) {
+  const { t } = useT();
   const [ready, setReady] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -87,6 +102,18 @@ export function QualityPanel({
   }
 
   const doneCount = rows.filter((b) => b.score === b.max).length;
+
+  const rowLabel = (label: string): string =>
+    ROW_KEYS[label] ? t(`icon.quality.row.${ROW_KEYS[label]}`) : label;
+  const rowHint = (hint: string): string => {
+    const fixed = HINT_KEYS[hint];
+    if (fixed) return t(`icon.quality.hint.${fixed}`);
+    const variantCount = /^(\d+) variants$/.exec(hint);
+    if (variantCount) return t("icon.quality.hint.variantsCount", { count: Number(variantCount[1]) });
+    const meta = /^(Aliases, )?(\d+) (?:category|categories)$/.exec(hint);
+    if (meta) return t(meta[1] ? "icon.quality.hint.metaAliases" : "icon.quality.hint.meta", { count: Number(meta[2]) });
+    return hint;
+  };
 
   return (
     <div className="overflow-hidden rounded-xl border border-border/60 bg-card shadow-sm transition-shadow hover:shadow-md">
@@ -120,9 +147,9 @@ export function QualityPanel({
                       <UiGlyph name="circle-x" look="fill" className="h-4 w-4 text-muted-foreground/40" />
                     )}
                     <span className={cn("text-[11px]", done ? "text-foreground" : "text-muted-foreground")}>
-                      {b.label}
+                      {rowLabel(b.label)}
                     </span>
-                    <span className="truncate text-[10px] text-muted-foreground/60">- {b.hint}</span>
+                    <span className="truncate text-[10px] text-muted-foreground/60">- {rowHint(b.hint)}</span>
                   </div>
                 );
               })}

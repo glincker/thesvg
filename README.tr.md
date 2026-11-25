@@ -531,7 +531,7 @@ Repoyu klonlayıp (~30 MB) kendi sunucunuzda da barındırabilirsiniz. Kod taban
 
 ## Topluluk
 
-Sorularınız, ikon istekleriniz var ya da yaptığınızı göstermek mi istiyorsunuz? theSVG'nin ve diğer tüm GLINCKER açık kaynak projelerinin yuvası olan resmi GLINR Discord'una katılın. theSVG'nin orada kendi forumu var ve yeni sürümler oraya otomatik olarak düşüyor.
+Sorularınız, ikon istekleriniz var ya da yaptığınızı göstermek mi istiyorsunuz? theSVG'nin ve diğer tüm GLINR Studios açık kaynak projelerinin yuvası olan resmi GLINR Discord'una katılın. theSVG'nin orada kendi forumu var ve yeni sürümler oraya otomatik olarak düşüyor.
 
 <a href="https://discord.gg/Ar5pcaZB99"><img src="https://discord.com/api/guilds/829168897080557579/widget.png?style=banner2" alt="Join the GLINR Discord" /></a>
 
@@ -586,7 +586,7 @@ Sorular ve ikon istekleri [Discord](https://discord.gg/Ar5pcaZB99)'da memnuniyet
 Yeni ikonlar, yeniden markalaşmalar ve sürümler her hafta geliyor. Haberdar olmak için:
 
 - Repoya **yıldız verin ve izleyin**. Her yeni sürümden haberdar olmak için *Watch, Custom, Releases* seçeneğini kullanın.
-- Geliştirdiğimiz diğer şeyler için GitHub'da **[GLINCKER](https://github.com/glincker)** hesabını takip edin.
+- Geliştirdiğimiz diğer şeyler için GitHub'da **[GLINR Studios](https://github.com/glincker)** hesabını takip edin.
 - İkon istemek ve sürümleri çıktığı anda görmek için **[Discord](https://discord.gg/Ar5pcaZB99)** sunucusuna katılın.
 - Son eklenenleri görmek için **[thesvg.org](https://thesvg.org)** adresine göz atın.
 
@@ -637,12 +637,12 @@ Kod tabanı, araçlar ve UI ikonları için [MIT](./LICENSE). Tek tek marka ikon
   <a href="https://github.com/glincker/thesvg/issues">Issue'lar</a>
 </p>
 
-<p align="center"><sub>GLINCKER tarafından geliştirildi. Ekipten daha fazlası:</sub></p>
+<p align="center"><sub>GLINR Studios tarafından geliştirildi. Ekipten daha fazlası:</sub></p>
 
 <table align="center">
   <tr>
     <td align="center" width="33%">
-      <a href="https://github.com/glincker"><picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/glincker/light.svg" /><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/glincker/default.svg" height="40" alt="GLINCKER" /></picture><br /><b>GLINCKER</b></a><br />
+      <a href="https://glinr.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/glinr/wordmark-dark.svg" /><img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/glinr/wordmark-light.svg" height="30" alt="GLINR Studios" /></picture></a><br />
       <sub>theSVG'nin arkasındaki ekipten açık kaynak</sub>
     </td>
     <td align="center" width="33%">

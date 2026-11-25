@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { GLYPHS, GLYPH_BY_SLUG, VARIANTS } from "@/lib/ui-icons/glyphs";
 import { cn } from "@/lib/ui-icons/utils";
 import { Glyph } from "./glyph";
+import { useLabels } from "./labels";
 import { useUi } from "./ui-state";
 
 const SHOWCASE = ["shield-check", "rocket", "bell-ring"] as const;
@@ -31,6 +32,7 @@ function Marquee() {
 /** A look tile with a spotlight that follows the pointer, and an animated border while selected. */
 function LookTile(props: { look: (typeof VARIANTS)[number]; active: boolean; onPick: () => void }) {
   const ui = useUi();
+  const { look } = useLabels();
   const el = useRef<HTMLButtonElement>(null);
   const move = (e: React.PointerEvent<HTMLButtonElement>) => {
     const r = el.current?.getBoundingClientRect();
@@ -54,13 +56,14 @@ function LookTile(props: { look: (typeof VARIANTS)[number]; active: boolean; onP
           return g ? <Glyph key={slug} nodes={g.nodes} variant={props.look} size={38} accent={ui.accent} className="text-foreground" /> : null;
         })}
       </div>
-      <span className={cn("relative text-[0.75rem] capitalize", props.active ? "text-foreground" : "text-muted-foreground")}>{props.look}</span>
+      <span className={cn("relative text-[0.75rem] capitalize", props.active ? "text-foreground" : "text-muted-foreground")}>{look(props.look)}</span>
     </button>
   );
 }
 
 export function Hero() {
   const ui = useUi();
+  const { t } = useLabels();
   const [hidden, setHidden] = useState(false);
   useEffect(() => {
     try {
@@ -80,25 +83,25 @@ export function Hero() {
   if (hidden) {
     return (
       <button type="button" onClick={() => hide(false)} className="glass flex w-full items-center gap-2 rounded-xl px-3 py-2 text-left text-xs text-muted-foreground transition-colors hover:text-foreground">
-        <UiGlyph name="sparkles" className="size-4 text-orange-400" /> One skeleton, every look <span className="ml-auto">Show intro</span>
+        <UiGlyph name="sparkles" className="size-4 text-orange-400" /> {t("uikit.hero.title")} <span className="ml-auto">{t("uikit.hero.show")}</span>
       </button>
     );
   }
   return (
     <section className="relative overflow-hidden rounded-3xl border p-6 pb-16 [background:radial-gradient(70%_90%_at_12%_0%,color-mix(in_oklab,var(--glow,#f97316)_14%,transparent),transparent_70%),radial-gradient(60%_80%_at_100%_100%,rgba(56,189,248,0.07),transparent_70%),var(--background)] md:p-8 md:pb-16">
       <Marquee />
-      <button type="button" aria-label="Hide intro" onClick={() => hide(true)} className="absolute right-3 top-3 z-10 grid size-7 place-items-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-foreground">
+      <button type="button" aria-label={t("uikit.hero.hide")} onClick={() => hide(true)} className="absolute right-3 top-3 z-10 grid size-7 place-items-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-foreground">
         <UiGlyph name="x" className="size-4" />
       </button>
       <div className="relative grid items-center gap-6 xl:grid-cols-[minmax(0,26rem)_1fr]">
         <div>
           <span className="inline-flex items-center gap-1.5 rounded-full border border-orange-500/20 bg-orange-500/10 px-3 py-1 text-xs font-medium text-orange-400">
-            <UiGlyph name="sparkles" className="size-4" /> New in 4.0: UI icons
+            <UiGlyph name="sparkles" className="size-4" /> {t("uikit.hero.badge")}
           </span>
-          <h1 className="mt-3 text-balance text-2xl font-bold tracking-tight md:text-3xl">One skeleton, every look</h1>
-          <p className="mt-2 text-sm text-muted-foreground">Drawn on a grid, restyled live. Outline, duotone, fill, glass and glass outline, all themeable with currentColor.</p>
+          <h1 className="mt-3 text-balance text-2xl font-bold tracking-tight md:text-3xl">{t("uikit.hero.title")}</h1>
+          <p className="mt-2 text-sm text-muted-foreground">{t("uikit.hero.intro")}</p>
           <a href="#browse" className="mt-4 inline-flex h-10 items-center gap-2 rounded-xl bg-foreground px-4 text-sm font-medium text-background">
-            Browse icons <UiGlyph name="arrow-right" className="size-5" />
+            {t("uikit.hero.browse")} <UiGlyph name="arrow-right" className="size-5" />
           </a>
         </div>
         <div className="grid grid-cols-4 gap-1.5 sm:grid-cols-7">

@@ -531,7 +531,7 @@ https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/{slug}/{variant}.s
 
 ## コミュニティ
 
-質問、アイコンのリクエスト、作ったものの披露など、ぜひ参加してください。公式の GLINR Discord は、theSVG とすべての GLINCKER オープンソースプロジェクトの拠点です。theSVG 専用のフォーラムがあり、新しいリリースは自動で投稿されます。
+質問、アイコンのリクエスト、作ったものの披露など、ぜひ参加してください。公式の GLINR Discord は、theSVG とすべての GLINR Studios オープンソースプロジェクトの拠点です。theSVG 専用のフォーラムがあり、新しいリリースは自動で投稿されます。
 
 <a href="https://discord.gg/Ar5pcaZB99"><img src="https://discord.com/api/guilds/829168897080557579/widget.png?style=banner2" alt="GLINR Discord に参加" /></a>
 
@@ -586,7 +586,7 @@ pnpm dev     # http://localhost:3333
 新しいアイコン、リブランド、リリースは毎週追加されます。追いかけるには:
 
 - リポジトリに **Star を付けてウォッチ**してください。*Watch, Custom, Releases* を使うと、新バージョンごとに通知が届きます。
-- GitHub で **[GLINCKER](https://github.com/glincker) をフォロー**すると、私たちが作っているほかのものも追えます。
+- GitHub で **[GLINR Studios](https://github.com/glincker) をフォロー**すると、私たちが作っているほかのものも追えます。
 - **[Discord](https://discord.gg/Ar5pcaZB99) に参加**して、アイコンをリクエストしたり、リリースの直後に情報を受け取ったりできます。
 - **[thesvg.org](https://thesvg.org) を見て**、最近追加されたものを確認できます。
 
@@ -637,12 +637,12 @@ AWS Architecture Icons は [CC BY-ND 2.0](https://creativecommons.org/licenses/b
   <a href="https://github.com/glincker/thesvg/issues">Issues</a>
 </p>
 
-<p align="center"><sub>GLINCKER が開発しています。チームのほかのプロジェクト:</sub></p>
+<p align="center"><sub>GLINR Studios が開発しています。チームのほかのプロジェクト:</sub></p>
 
 <table align="center">
   <tr>
     <td align="center" width="33%">
-      <a href="https://github.com/glincker"><picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/glincker/light.svg" /><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/glincker/default.svg" height="40" alt="GLINCKER" /></picture><br /><b>GLINCKER</b></a><br />
+      <a href="https://glinr.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/glinr/wordmark-dark.svg" /><img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/glinr/wordmark-light.svg" height="30" alt="GLINR Studios" /></picture></a><br />
       <sub>theSVG を作っているチームのオープンソース</sub>
     </td>
     <td align="center" width="33%">

@@ -8,6 +8,7 @@ import { DOMAINS, GLYPHS } from "@/lib/ui-icons/glyphs";
 import { ICON_SIZE } from "@/lib/chrome-sizes";
 import { cn } from "@/lib/ui-icons/utils";
 import { THEMES, TONES } from "./category-theme";
+import { useT } from "@/i18n/use-t";
 import { useUi } from "./ui-state";
 
 const DOMAIN_ICON: Record<string, string> = {
@@ -56,6 +57,7 @@ function Item({ icon, label, rail, active, badge, hover = "group-hover:text-oran
 
 export function SidebarNav({ onNavigate, rail = false }: { onNavigate?: () => void; rail?: boolean }) {
   const ui = useUi();
+  const { t } = useT();
   const pathname = usePathname();
   const onList = pathname === "/ui";
   const [catsOpen, setCatsOpen] = useState(true);
@@ -89,10 +91,10 @@ export function SidebarNav({ onNavigate, rail = false }: { onNavigate?: () => vo
 
   return (
     <>
-      <Item icon="layout-grid" label="All icons" rail={rail} badge={String(GLYPHS.length)} active={allActive} onClick={go(() => { ui.setSet("all"); ui.setCategory("All"); ui.setOnlyFavorites(false); })} />
-      <Item icon="heart" label="Favorites" rail={rail} badge={String(ui.favorites.length)} active={onList && ui.onlyFavorites} onClick={go(() => { ui.setSet("all"); ui.setCategory("All"); ui.setOnlyFavorites(true); })} />
-      <Item icon="plug" label="Extensions" rail={rail} href="/ui/extensions" active={pathname === "/ui/extensions"} onClick={() => onNavigate?.()} />
-      <Item icon="sparkles" label="What is new" rail={rail} href="/ui/changelog" active={pathname === "/ui/changelog"} onClick={() => onNavigate?.()} />
+      <Item icon="layout-grid" label={t("uikit.nav.allIcons")} rail={rail} badge={String(GLYPHS.length)} active={allActive} onClick={go(() => { ui.setSet("all"); ui.setCategory("All"); ui.setOnlyFavorites(false); })} />
+      <Item icon="heart" label={t("uikit.nav.favorites")} rail={rail} badge={String(ui.favorites.length)} active={onList && ui.onlyFavorites} onClick={go(() => { ui.setSet("all"); ui.setCategory("All"); ui.setOnlyFavorites(true); })} />
+      <Item icon="plug" label={t("uikit.nav.extensions")} rail={rail} href="/ui/extensions" active={pathname === "/ui/extensions"} onClick={() => onNavigate?.()} />
+      <Item icon="sparkles" label={t("uikit.nav.whatIsNew")} rail={rail} href="/ui/changelog" active={pathname === "/ui/changelog"} onClick={() => onNavigate?.()} />
 
       {rail ? (
         <div className="my-1 h-px bg-border/60" role="separator" />
@@ -104,15 +106,15 @@ export function SidebarNav({ onNavigate, rail = false }: { onNavigate?: () => vo
           className="mt-3 flex items-center gap-1.5 px-3 text-left text-[0.75rem] font-semibold uppercase tracking-wider text-muted-foreground transition-colors hover:text-foreground"
         >
           <UiGlyph name="chevron-down" className={cn("h-4 w-4 transition-transform", !catsOpen && "-rotate-90")} />
-          Categories
+          {t("uikit.nav.categories")}
         </button>
       )}
       {(rail || catsOpen) && (
         <>
           {newCount > 0 && (
-            <Item icon="sparkles" label="New" rail={rail} badge={String(newCount)} active={onList && ui.set === "new"} onClick={go(() => { ui.setSet("new"); ui.setCategory("All"); ui.setOnlyFavorites(false); })} />
+            <Item icon="sparkles" label={t("uikit.nav.new")} rail={rail} badge={String(newCount)} active={onList && ui.set === "new"} onClick={go(() => { ui.setSet("new"); ui.setCategory("All"); ui.setOnlyFavorites(false); })} />
           )}
-          <Item icon="layout-grid" label="All categories" rail={rail} href="/ui/categories" active={pathname === "/ui/categories"} onClick={() => onNavigate?.()} />
+          <Item icon="layout-grid" label={t("uikit.nav.allCategories")} rail={rail} href="/ui/categories" active={pathname === "/ui/categories"} onClick={() => onNavigate?.()} />
           {domains.map((d) => (
             <Item
               key={d.id}

@@ -16,6 +16,8 @@ import {
   validateLicenseSelection,
 } from "@/lib/license-options";
 import { Busy } from "@/components/skeletons";
+import { useT } from "@/i18n/use-t";
+import { RichT } from "@/app/contact/rich-t";
 
 const GITHUB_ISSUES_URL =
   "https://github.com/glincker/thesvg/issues/new";
@@ -113,6 +115,7 @@ function ValidationBadge({ passed }: { passed: boolean }) {
 }
 
 function ValidationPanel({ result }: { result: ValidationResult }) {
+  const { t } = useT();
   return (
     <div className="rounded-lg border border-border bg-muted/30 p-4">
       <div className="mb-3 flex items-center gap-2">
@@ -122,7 +125,7 @@ function ValidationPanel({ result }: { result: ValidationResult }) {
           <XCircle className="h-4 w-4 text-red-500" />
         )}
         <span className="text-sm font-medium">
-          {result.valid ? "All checks passed" : "Some checks failed"}
+          {result.valid ? t("pages.submit.form.validation.pass", { defaultValue: "All checks passed" }) : t("pages.submit.form.validation.fail", { defaultValue: "Some checks failed" })}
         </span>
       </div>
       <ul className="space-y-1.5">
@@ -142,14 +145,15 @@ function ValidationPanel({ result }: { result: ValidationResult }) {
 
 function SvgPreview({ dataUrl, name }: { dataUrl: string; name: string }) {
   const SIZES = [16, 32, 64, 128] as const;
+  const { t } = useT();
 
   return (
     <div className="space-y-3">
-      <p className="text-sm font-medium">Preview</p>
+      <p className="text-sm font-medium">{t("pages.submit.form.preview.title", { defaultValue: "Preview" })}</p>
       <div className="grid grid-cols-2 gap-3">
         {/* Light background */}
         <div className="space-y-2">
-          <p className="text-xs text-muted-foreground">Light</p>
+          <p className="text-xs text-muted-foreground">{t("pages.submit.form.preview.light", { defaultValue: "Light" })}</p>
           <div className="icon-preview-bg flex flex-wrap items-end gap-3 rounded-lg p-4">
             {SIZES.map((size) => (
               <div key={size} className="flex flex-col items-center gap-1">
@@ -169,7 +173,7 @@ function SvgPreview({ dataUrl, name }: { dataUrl: string; name: string }) {
 
         {/* Dark background */}
         <div className="space-y-2">
-          <p className="text-xs text-muted-foreground">Dark</p>
+          <p className="text-xs text-muted-foreground">{t("pages.submit.form.preview.dark", { defaultValue: "Dark" })}</p>
           <div className="dark flex flex-wrap items-end gap-3 rounded-lg bg-[oklch(0.18_0.008_260)] p-4">
             {SIZES.map((size) => (
               <div key={size} className="flex flex-col items-center gap-1">
@@ -209,6 +213,7 @@ function LicenseSelector({
   onSuggest,
 }: LicenseSelectorProps) {
   const [helperOpen, setHelperOpen] = useState(false);
+  const { t } = useT();
   const isOther = licenseId === OTHER_LICENSE_ID;
   const showOtherEmptyError =
     !validation.ok && validation.reason === "other_empty" && isOther;
@@ -219,7 +224,7 @@ function LicenseSelector({
     <div className="space-y-2">
       <div className="flex items-center justify-between">
         <label htmlFor="license-select" className="text-sm font-medium">
-          License <span className="text-red-500">*</span>
+          {t("pages.submit.form.license.label", { defaultValue: "License" })} <span className="text-red-500">*</span>
         </label>
         <div className="flex items-center gap-3 text-xs">
           <button
@@ -227,7 +232,7 @@ function LicenseSelector({
             onClick={() => setHelperOpen((v) => !v)}
             className="text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
           >
-            {helperOpen ? "Hide" : "Help me pick"}
+            {helperOpen ? t("pages.submit.form.license.helpHide", { defaultValue: "Hide" }) : t("pages.submit.form.license.helpOpen", { defaultValue: "Help me pick" })}
           </button>
           <a
             href={withUtm(LICENSING_GUIDE_URL, "submit_form")}
@@ -235,7 +240,7 @@ function LicenseSelector({
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
           >
-            Licensing guide
+            {t("pages.submit.form.license.guide", { defaultValue: "Licensing guide" })}
             <ExternalLink className="h-3.5 w-3.5" />
           </a>
         </div>
@@ -243,39 +248,39 @@ function LicenseSelector({
 
       {helperOpen && (
         <div className="rounded-lg border border-border bg-muted/30 p-3 text-xs">
-          <p className="mb-2 font-medium text-foreground">Pick the option that fits:</p>
+          <p className="mb-2 font-medium text-foreground">{t("pages.submit.form.license.pick", { defaultValue: "Pick the option that fits:" })}</p>
           <div className="flex flex-col gap-1.5">
             <button
               type="button"
               onClick={() => onSuggest("CC0-1.0")}
               className="rounded px-2 py-1 text-left transition-colors hover:bg-accent"
             >
-              <strong>I drew it myself</strong>
-              <span className="ml-1 text-muted-foreground">→ CC0 1.0</span>
+              <strong>{t("pages.submit.form.license.own.title", { defaultValue: "I drew it myself" })}</strong>
+              <span className="ml-1 text-muted-foreground">{t("pages.submit.form.license.own.hint", { defaultValue: "→ CC0 1.0" })}</span>
             </button>
             <button
               type="button"
               onClick={() => onSuggest("MIT")}
               className="rounded px-2 py-1 text-left transition-colors hover:bg-accent"
             >
-              <strong>Logo of an MIT / Apache / BSD open-source project</strong>
-              <span className="ml-1 text-muted-foreground">→ match the project&rsquo;s license</span>
+              <strong>{t("pages.submit.form.license.oss.title", { defaultValue: "Logo of an MIT / Apache / BSD open-source project" })}</strong>
+              <span className="ml-1 text-muted-foreground">{t("pages.submit.form.license.oss.hint", { defaultValue: "→ match the project’s license" })}</span>
             </button>
             <button
               type="button"
               onClick={() => onSuggest("CC-BY-4.0")}
               className="rounded px-2 py-1 text-left transition-colors hover:bg-accent"
             >
-              <strong>Brand kit explicitly published as CC BY</strong>
-              <span className="ml-1 text-muted-foreground">→ CC BY 4.0 (or CC BY-SA / CC BY-ND)</span>
+              <strong>{t("pages.submit.form.license.ccby.title", { defaultValue: "Brand kit explicitly published as CC BY" })}</strong>
+              <span className="ml-1 text-muted-foreground">{t("pages.submit.form.license.ccby.hint", { defaultValue: "→ CC BY 4.0 (or CC BY-SA / CC BY-ND)" })}</span>
             </button>
             <button
               type="button"
               onClick={() => onSuggest(OTHER_LICENSE_ID)}
               className="rounded px-2 py-1 text-left transition-colors hover:bg-accent"
             >
-              <strong>Company brand mark, custom license, or unsure</strong>
-              <span className="ml-1 text-muted-foreground">→ Other / custom (we&rsquo;ll verify)</span>
+              <strong>{t("pages.submit.form.license.other.title", { defaultValue: "Company brand mark, custom license, or unsure" })}</strong>
+              <span className="ml-1 text-muted-foreground">{t("pages.submit.form.license.other.hint", { defaultValue: "→ Other / custom (we’ll verify)" })}</span>
             </button>
           </div>
         </div>
@@ -289,7 +294,7 @@ function LicenseSelector({
         /* text-base on mobile prevents iOS auto-zoom on focus. */
         className="h-11 w-full rounded-lg border border-border bg-background px-3 text-base shadow-sm outline-none transition-colors focus:border-ring focus:ring-1 focus:ring-ring sm:h-9 sm:py-2 sm:text-sm"
       >
-        <option value="">Select a license…</option>
+        <option value="">{t("pages.submit.form.license.select", { defaultValue: "Select a license…" })}</option>
         {LICENSE_OPTIONS.map((opt) => (
           <option key={opt.id} value={opt.id}>
             {opt.label}
@@ -306,13 +311,13 @@ function LicenseSelector({
       {isOther && (
         <div className="space-y-1.5">
           <label htmlFor="license-other" className="text-xs font-medium">
-            Describe the license <span className="text-red-500">*</span>
+            {t("pages.submit.form.license.otherLabel", { defaultValue: "Describe the license" })} <span className="text-red-500">*</span>
           </label>
           <Input
             id="license-other"
             value={otherText}
             onChange={(e) => onOtherTextChange(e.target.value)}
-            placeholder="e.g. Acme Brand Guidelines v2 — non-commercial use only"
+            placeholder={t("pages.submit.form.license.otherPlaceholder", { defaultValue: "e.g. Acme Brand Guidelines v2: non-commercial use only" })}
             maxLength={MAX_OTHER_LICENSE_LENGTH}
             className="text-sm"
             aria-invalid={showOtherEmptyError || showOtherTooLongError}
@@ -320,16 +325,20 @@ function LicenseSelector({
           />
           {showOtherEmptyError && (
             <p id="license-other-error" className="text-xs text-red-500">
-              A short description is required when picking Other.
+              {t("pages.submit.form.license.otherEmpty", { defaultValue: "A short description is required when picking Other." })}
             </p>
           )}
           {showOtherTooLongError && (
             <p className="text-xs text-red-500">
-              Keep the description under {MAX_OTHER_LICENSE_LENGTH} characters.
+              {t("pages.submit.form.license.otherTooLong", { defaultValue: "Keep the description under {{max}} characters.", max: MAX_OTHER_LICENSE_LENGTH })}
             </p>
           )}
           <p className="text-xs text-muted-foreground">
-            Your issue will be auto-labeled <code>license-unsure</code> so a maintainer reviews it before merge.
+            <RichT
+              k="pages.submit.form.license.autoLabel"
+              fallback="Your issue will be auto-labeled {{label}} so a maintainer reviews it before merge."
+              slots={{ label: <code>license-unsure</code> }}
+            />
           </p>
         </div>
       )}
@@ -352,9 +361,10 @@ function CategorySelector({
   onNewCategoryChange: (val: string) => void;
   onAddCategory: () => void;
 }) {
+  const { t } = useT();
   return (
     <div className="space-y-2">
-      <label className="text-sm font-medium">Categories</label>
+      <label className="text-sm font-medium">{t("pages.submit.form.categories.label", { defaultValue: "Categories" })}</label>
       <div className="flex flex-wrap gap-1.5">
         {categories.map((cat) => {
           const active = selected.includes(cat);
@@ -390,7 +400,7 @@ function CategorySelector({
       </div>
       <div className="flex gap-2">
         <Input
-          placeholder="Add custom category..."
+          placeholder={t("pages.submit.form.categories.placeholder", { defaultValue: "Add custom category..." })}
           value={newCategory}
           onChange={(e) => onNewCategoryChange(e.target.value)}
           onKeyDown={(e) => {
@@ -408,7 +418,7 @@ function CategorySelector({
           onClick={onAddCategory}
           className="h-10 shrink-0 text-base sm:h-7 sm:text-xs"
         >
-          Add
+          {t("pages.submit.form.categories.add", { defaultValue: "Add" })}
         </Button>
       </div>
     </div>
@@ -422,6 +432,7 @@ export function SubmitForm({
 }: {
   availableCategories?: string[];
 }) {
+  const { t } = useT();
   const [fileState, setFileState] = useState<FileState | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [isValidating, setIsValidating] = useState(false);
@@ -667,7 +678,7 @@ export function SubmitForm({
     <div className="space-y-6">
       {/* Drag & Drop Zone */}
       <div>
-        <p className="mb-2 text-sm font-medium">SVG File</p>
+        <p className="mb-2 text-sm font-medium">{t("pages.submit.form.file.label", { defaultValue: "SVG File" })}</p>
         {!fileState ? (
           <div
             onDragOver={handleDragOver}
@@ -676,7 +687,7 @@ export function SubmitForm({
             onClick={() => fileInputRef.current?.click()}
             role="button"
             tabIndex={0}
-            aria-label="Upload SVG file"
+            aria-label={t("pages.submit.form.file.aria", { defaultValue: "Upload SVG file" })}
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") {
                 e.preventDefault();
@@ -709,10 +720,10 @@ export function SubmitForm({
             </div>
             <div>
               <p className="text-sm font-medium">
-                {isDragging ? "Drop your SVG here" : "Drag & drop your SVG"}
+                {isDragging ? t("pages.submit.form.file.dropActive", { defaultValue: "Drop your SVG here" }) : t("pages.submit.form.file.drop", { defaultValue: "Drag & drop your SVG" })}
               </p>
               <p className="mt-0.5 text-xs text-muted-foreground">
-                or click to browse - .svg files only, max 50KB
+                {t("pages.submit.form.file.hint", { defaultValue: "or click to browse, .svg files only, max 50KB" })}
               </p>
             </div>
           </div>
@@ -737,7 +748,7 @@ export function SubmitForm({
               <button
                 type="button"
                 onClick={clearFile}
-                aria-label="Remove file"
+                aria-label={t("pages.submit.form.file.remove", { defaultValue: "Remove file" })}
                 className="shrink-0 rounded-md p-1 text-muted-foreground hover:bg-muted hover:text-foreground"
               >
                 <X className="h-4 w-4" />
@@ -766,17 +777,17 @@ export function SubmitForm({
 
       {/* Form Fields */}
       <div className="space-y-4">
-        <p className="text-sm font-medium text-foreground">Icon Details</p>
+        <p className="text-sm font-medium text-foreground">{t("pages.submit.form.details", { defaultValue: "Icon Details" })}</p>
 
         <div className="grid gap-4 sm:grid-cols-2">
           {/* Icon Name */}
           <div className="space-y-1.5">
             <label htmlFor="icon-name" className="text-xs font-medium text-muted-foreground">
-              Icon name <span className="text-red-500">*</span>
+              {t("pages.submit.form.name", { defaultValue: "Icon name" })} <span className="text-red-500">*</span>
             </label>
             <Input
               id="icon-name"
-              placeholder="e.g. Vercel"
+              placeholder={t("pages.submit.form.namePlaceholder", { defaultValue: "e.g. Vercel" })}
               value={form.iconName}
               onChange={(e) => handleNameChange(e.target.value)}
             />
@@ -785,11 +796,11 @@ export function SubmitForm({
           {/* Slug */}
           <div className="space-y-1.5">
             <label htmlFor="icon-slug" className="text-xs font-medium text-muted-foreground">
-              Slug (kebab-case)
+              {t("pages.submit.form.slug", { defaultValue: "Slug (kebab-case)" })}
             </label>
             <Input
               id="icon-slug"
-              placeholder="e.g. vercel"
+              placeholder={t("pages.submit.form.slugPlaceholder", { defaultValue: "e.g. vercel" })}
               value={form.slug}
               onChange={(e) => handleSlugChange(e.target.value)}
               className="font-mono text-xs"
@@ -800,7 +811,7 @@ export function SubmitForm({
         {/* Website URL */}
         <div className="space-y-1.5">
           <label htmlFor="website-url" className="text-xs font-medium text-muted-foreground">
-            Website URL
+            {t("pages.submit.form.website", { defaultValue: "Website URL" })}
           </label>
           <Input
             id="website-url"
@@ -814,7 +825,7 @@ export function SubmitForm({
         {/* Brand Guidelines URL */}
         <div className="space-y-1.5">
           <label htmlFor="guidelines-url" className="text-xs font-medium text-muted-foreground">
-            Brand guidelines URL
+            {t("pages.submit.form.guidelines", { defaultValue: "Brand guidelines URL" })}
           </label>
           <Input
             id="guidelines-url"
@@ -828,7 +839,7 @@ export function SubmitForm({
         {/* Brand Color */}
         <div className="space-y-1.5">
           <label htmlFor="brand-hex" className="text-xs font-medium text-muted-foreground">
-            Brand hex color
+            {t("pages.submit.form.hex", { defaultValue: "Brand hex color" })}
           </label>
           <div className="flex items-center gap-2">
             <div className="relative flex items-center">
@@ -851,7 +862,7 @@ export function SubmitForm({
               <div
                 className="h-8 w-8 shrink-0 rounded-lg border border-border"
                 style={{ backgroundColor: `#${form.hex}` }}
-                aria-label={`Color preview: #${form.hex}`}
+                aria-label={t("pages.submit.form.hexPreview", { defaultValue: "Color preview: #{{hex}}", hex: form.hex })}
               />
             )}
           </div>
@@ -910,7 +921,7 @@ export function SubmitForm({
           )}
         >
           <Github className="h-4 w-4" />
-          Submit via GitHub
+          {t("pages.submit.form.submit", { defaultValue: "Submit via GitHub" })}
           <ExternalLink className="h-3.5 w-3.5 opacity-60" />
         </a>
 
@@ -924,12 +935,12 @@ export function SubmitForm({
           {copied ? (
             <>
               <Check className="h-4 w-4 text-green-500" />
-              Copied!
+              {t("pages.submit.form.copied", { defaultValue: "Copied!" })}
             </>
           ) : (
             <>
               <ClipboardCopy className="h-4 w-4" />
-              Copy Submission
+              {t("pages.submit.form.copy", { defaultValue: "Copy Submission" })}
             </>
           )}
         </Button>
@@ -937,7 +948,7 @@ export function SubmitForm({
 
       {!canSubmit && (
         <p className="text-xs text-muted-foreground">
-          Upload an SVG file, enter an icon name, and pick a license to enable submission.
+          {t("pages.submit.form.needsMore", { defaultValue: "Upload an SVG file, enter an icon name, and pick a license to enable submission." })}
         </p>
       )}
     </div>

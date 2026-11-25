@@ -531,7 +531,7 @@ https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/{slug}/{variant}.s
 
 ## Сообщество
 
-Вопросы, запросы иконок или хочется показать, что вы сделали? Заходите в официальный Discord GLINR, дом theSVG и всех остальных open source проектов GLINCKER. У theSVG там свой форум, и новые релизы публикуются в нём автоматически.
+Вопросы, запросы иконок или хочется показать, что вы сделали? Заходите в официальный Discord GLINR, дом theSVG и всех остальных open source проектов GLINR Studios. У theSVG там свой форум, и новые релизы публикуются в нём автоматически.
 
 <a href="https://discord.gg/Ar5pcaZB99"><img src="https://discord.com/api/guilds/829168897080557579/widget.png?style=banner2" alt="Join the GLINR Discord" /></a>
 
@@ -586,7 +586,7 @@ pnpm dev     # http://localhost:3333
 Новые иконки, ребрендинги и релизы появляются каждую неделю. Чтобы быть в курсе:
 
 - **Поставьте звезду и подпишитесь** на репозиторий. Выберите *Watch, Custom, Releases*, чтобы узнавать о каждой новой версии.
-- **Подпишитесь на [GLINCKER](https://github.com/glincker)** на GitHub, чтобы видеть остальные наши проекты.
+- **Подпишитесь на [GLINR Studios](https://github.com/glincker)** на GitHub, чтобы видеть остальные наши проекты.
 - **Присоединяйтесь к [Discord](https://discord.gg/Ar5pcaZB99)**, чтобы запрашивать иконки и видеть релизы сразу после выхода.
 - **Заглядывайте на [thesvg.org](https://thesvg.org)**, чтобы увидеть, что добавлено недавно.
 
@@ -637,12 +637,12 @@ theSVG держится на хостинге, трафике и времени 
   <a href="https://github.com/glincker/thesvg/issues">Задачи</a>
 </p>
 
-<p align="center"><sub>Сделано GLINCKER. Ещё от нашей команды:</sub></p>
+<p align="center"><sub>Сделано GLINR Studios. Ещё от нашей команды:</sub></p>
 
 <table align="center">
   <tr>
     <td align="center" width="33%">
-      <a href="https://github.com/glincker"><picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/glincker/light.svg" /><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/glincker/default.svg" height="40" alt="GLINCKER" /></picture><br /><b>GLINCKER</b></a><br />
+      <a href="https://glinr.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/glinr/wordmark-dark.svg" /><img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/glinr/wordmark-light.svg" height="30" alt="GLINR Studios" /></picture></a><br />
       <sub>Open source от команды, стоящей за theSVG</sub>
     </td>
     <td align="center" width="33%">
