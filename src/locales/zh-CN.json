@@ -27,6 +27,105 @@
     "blogUpdates": "博客与动态",
     "submitAnIcon": "提交图标"
   },
+  "mobile": {
+    "dock": {
+      "primary": "主导航",
+      "browse": "浏览",
+      "favorites": "收藏",
+      "recents": "最近",
+      "submit": "提交",
+      "more": "更多",
+      "favoritesCount": "{{n}} 个收藏"
+    },
+    "recents": {
+      "label": "最近",
+      "aria": "最近查看的图标",
+      "seeAll": "查看全部"
+    },
+    "pwa": {
+      "installIos": "安装到 iPhone",
+      "iosSteps": "点按 {{share}} 分享，然后选择 {{add}}。",
+      "iosAdd": "添加到主屏幕",
+      "iosAria": "在 iOS 上安装 thesvg",
+      "installTitle": "安装 thesvg",
+      "installDesc": "轻点一下即可安装为本设备上的应用。",
+      "install": "安装",
+      "dismiss": "关闭"
+    },
+    "sheet": {
+      "close": "关闭"
+    },
+    "action": {
+      "title": "操作",
+      "copySvg": "复制 SVG",
+      "downloadSvg": "下载 SVG",
+      "openQuickView": "打开快速预览",
+      "openFullPage": "打开完整页面"
+    },
+    "search": {
+      "placeholder": "搜索图标...",
+      "brands": "品牌",
+      "searching": "搜索中...",
+      "results": "结果 · {{n}}",
+      "noMatch": "没有与“{{query}}”匹配的图标",
+      "recentSearches": "最近搜索",
+      "try": "试试"
+    },
+    "more": {
+      "tools": "工具",
+      "learn": "学习",
+      "yourIcons": "我的图标",
+      "integrations": "集成",
+      "families": "品牌系列",
+      "familiesDesc": "Amazon、Google、Microsoft 等",
+      "categoriesDesc": "按产品用途浏览",
+      "awsDesc": "服务和资源图标",
+      "azureDesc": "Microsoft Azure 图标",
+      "gcpDesc": "GCP 架构图标",
+      "k8sDesc": "Kubernetes 组件",
+      "flags": "国旗",
+      "flagsDesc": "ISO 国家和地区旗帜",
+      "viewer": "SVG 查看器",
+      "viewerDesc": "预览、检查并复制任意 SVG",
+      "extensions": "扩展",
+      "extensionsDesc": "VS Code、Raycast、Figma、npm 包",
+      "docs": "文档与指南",
+      "docsDesc": "CDN、React、CLI、MCP 等",
+      "blogDesc": "动态与更新日志",
+      "compare": "对比图标库",
+      "recentsDesc": "最近查看和复制的",
+      "favoritesDesc": "你收藏的图标",
+      "githubDesc": "源码与问题反馈",
+      "discordDesc": "加入社区",
+      "npm": "npm 包",
+      "npmDesc": "npm 上的 thesvg",
+      "raycast": "Raycast 扩展",
+      "raycastDesc": "在 Raycast 中搜索图标",
+      "figma": "Figma 插件",
+      "figmaDesc": "将图标拖入你的 Figma 文件",
+      "vscode": "VS Code 扩展",
+      "vscodeDesc": "在 VS Code 中搜索并复制",
+      "tagline": "开放的品牌 SVG 库"
+    },
+    "icon": {
+      "fallbackTitle": "图标",
+      "previewAlt": "{{title}} 图标预览",
+      "brandColor": "品牌颜色",
+      "removeFavorite": "将 {{title}} 从收藏中移除",
+      "addFavorite": "将 {{title}} 添加到收藏",
+      "copied": "已复制",
+      "license": "许可证",
+      "unknown": "未知",
+      "variants": "变体",
+      "collection": "合集",
+      "slug": "Slug",
+      "openFullDetails": "打开完整详情",
+      "openFullDetailsDesc": "PNG 导出、所有变体、原始 SVG、安装代码片段",
+      "skipPreview": "下次跳过预览",
+      "skipPreviewDesc": "直接跳转到详情页",
+      "loading": "正在加载图标..."
+    }
+  },
   "footer": {
     "headline": "开源，社区驱动。",
     "tagline": "为开发者、设计师和团队提供免费的品牌 SVG。可用于任何项目，无需署名。",

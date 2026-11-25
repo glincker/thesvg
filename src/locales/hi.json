@@ -27,6 +27,105 @@
     "blogUpdates": "ब्लॉग और अपडेट",
     "submitAnIcon": "आइकन सबमिट करें"
   },
+  "mobile": {
+    "dock": {
+      "primary": "मुख्य",
+      "browse": "ब्राउज़",
+      "favorites": "पसंदीदा",
+      "recents": "हाल के",
+      "submit": "सबमिट",
+      "more": "और",
+      "favoritesCount": "{{n}} पसंदीदा"
+    },
+    "recents": {
+      "label": "हाल के",
+      "aria": "हाल में देखे गए आइकन",
+      "seeAll": "सभी देखें"
+    },
+    "pwa": {
+      "installIos": "iPhone पर इंस्टॉल करें",
+      "iosSteps": "{{share}} शेयर पर टैप करें, फिर {{add}} चुनें।",
+      "iosAdd": "होम स्क्रीन पर जोड़ें",
+      "iosAria": "iOS पर thesvg इंस्टॉल करें",
+      "installTitle": "thesvg इंस्टॉल करें",
+      "installDesc": "एक टैप में इस डिवाइस पर ऐप के रूप में इंस्टॉल करें।",
+      "install": "इंस्टॉल करें",
+      "dismiss": "खारिज करें"
+    },
+    "sheet": {
+      "close": "बंद करें"
+    },
+    "action": {
+      "title": "कार्रवाइयाँ",
+      "copySvg": "SVG कॉपी करें",
+      "downloadSvg": "SVG डाउनलोड करें",
+      "openQuickView": "क्विक व्यू खोलें",
+      "openFullPage": "पूरा पेज खोलें"
+    },
+    "search": {
+      "placeholder": "आइकन खोजें...",
+      "brands": "ब्रांड",
+      "searching": "खोज रहे हैं...",
+      "results": "परिणाम · {{n}}",
+      "noMatch": "“{{query}}” से मेल खाता कोई आइकन नहीं",
+      "recentSearches": "हाल की खोजें",
+      "try": "आज़माएँ"
+    },
+    "more": {
+      "tools": "टूल",
+      "learn": "सीखें",
+      "yourIcons": "आपके आइकन",
+      "integrations": "इंटीग्रेशन",
+      "families": "ब्रांड परिवार",
+      "familiesDesc": "Amazon, Google, Microsoft और अन्य",
+      "categoriesDesc": "उत्पाद के काम के अनुसार देखें",
+      "awsDesc": "सेवा और रिसोर्स आइकन",
+      "azureDesc": "Microsoft Azure आइकन",
+      "gcpDesc": "GCP आर्किटेक्चर आइकन",
+      "k8sDesc": "Kubernetes घटक",
+      "flags": "देशों के झंडे",
+      "flagsDesc": "ISO देश और क्षेत्र के झंडे",
+      "viewer": "SVG व्यूअर",
+      "viewerDesc": "किसी भी SVG को देखें, जाँचें और कॉपी करें",
+      "extensions": "एक्सटेंशन",
+      "extensionsDesc": "VS Code, Raycast, Figma, npm पैकेज",
+      "docs": "दस्तावेज़ और गाइड",
+      "docsDesc": "CDN, React, CLI, MCP और अन्य",
+      "blogDesc": "अपडेट और चेंजलॉग",
+      "compare": "लाइब्रेरी की तुलना",
+      "recentsDesc": "हाल में देखे और कॉपी किए गए",
+      "favoritesDesc": "आपके चुने हुए आइकन",
+      "githubDesc": "सोर्स और इश्यू",
+      "discordDesc": "समुदाय से जुड़ें",
+      "npm": "npm पैकेज",
+      "npmDesc": "npm पर thesvg",
+      "raycast": "Raycast एक्सटेंशन",
+      "raycastDesc": "Raycast से आइकन खोजें",
+      "figma": "Figma प्लगइन",
+      "figmaDesc": "अपनी Figma फ़ाइल में आइकन जोड़ें",
+      "vscode": "VS Code एक्सटेंशन",
+      "vscodeDesc": "VS Code से खोजें और कॉपी करें",
+      "tagline": "ओपन SVG ब्रांड लाइब्रेरी"
+    },
+    "icon": {
+      "fallbackTitle": "आइकन",
+      "previewAlt": "{{title}} आइकन का पूर्वावलोकन",
+      "brandColor": "ब्रांड रंग",
+      "removeFavorite": "{{title}} को पसंदीदा से हटाएँ",
+      "addFavorite": "{{title}} को पसंदीदा में जोड़ें",
+      "copied": "कॉपी हो गया",
+      "license": "लाइसेंस",
+      "unknown": "अज्ञात",
+      "variants": "वेरिएंट",
+      "collection": "संग्रह",
+      "slug": "स्लग",
+      "openFullDetails": "पूरी जानकारी खोलें",
+      "openFullDetailsDesc": "PNG एक्सपोर्ट, सभी वेरिएंट, रॉ SVG, इंस्टॉल स्निपेट",
+      "skipPreview": "अगली बार पूर्वावलोकन छोड़ें",
+      "skipPreviewDesc": "सीधे विवरण पेज पर जाएँ",
+      "loading": "आइकन लोड हो रहा है..."
+    }
+  },
   "footer": {
     "headline": "ओपन सोर्स। समुदाय द्वारा संचालित।",
     "tagline": "डेवलपर, डिज़ाइनर और टीमों के लिए मुफ़्त ब्रांड SVG। किसी भी प्रोजेक्ट में इस्तेमाल करें, श्रेय देना ज़रूरी नहीं।",

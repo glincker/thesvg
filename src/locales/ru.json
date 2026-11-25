@@ -27,6 +27,105 @@
     "blogUpdates": "Блог и новости",
     "submitAnIcon": "Добавить иконку"
   },
+  "mobile": {
+    "dock": {
+      "primary": "Основная",
+      "browse": "Обзор",
+      "favorites": "Избранное",
+      "recents": "Недавние",
+      "submit": "Отправить",
+      "more": "Ещё",
+      "favoritesCount": "Избранное: {{n}}"
+    },
+    "recents": {
+      "label": "Недавние",
+      "aria": "Недавно просмотренные значки",
+      "seeAll": "Все"
+    },
+    "pwa": {
+      "installIos": "Установить на iPhone",
+      "iosSteps": "Нажмите {{share}} «Поделиться», затем {{add}}.",
+      "iosAdd": "На экран «Домой»",
+      "iosAria": "Установить thesvg на iOS",
+      "installTitle": "Установить thesvg",
+      "installDesc": "Одно нажатие, и приложение установлено на устройство.",
+      "install": "Установить",
+      "dismiss": "Закрыть"
+    },
+    "sheet": {
+      "close": "Закрыть"
+    },
+    "action": {
+      "title": "Действия",
+      "copySvg": "Копировать SVG",
+      "downloadSvg": "Скачать SVG",
+      "openQuickView": "Открыть быстрый просмотр",
+      "openFullPage": "Открыть полную страницу"
+    },
+    "search": {
+      "placeholder": "Поиск значков...",
+      "brands": "Бренды",
+      "searching": "Поиск...",
+      "results": "Результаты · {{n}}",
+      "noMatch": "Нет значков по запросу «{{query}}»",
+      "recentSearches": "Недавние запросы",
+      "try": "Попробуйте"
+    },
+    "more": {
+      "tools": "Инструменты",
+      "learn": "Изучить",
+      "yourIcons": "Ваши значки",
+      "integrations": "Интеграции",
+      "families": "Семейства брендов",
+      "familiesDesc": "Amazon, Google, Microsoft и другие",
+      "categoriesDesc": "Обзор по назначению продукта",
+      "awsDesc": "Значки сервисов и ресурсов",
+      "azureDesc": "Значки Microsoft Azure",
+      "gcpDesc": "Значки архитектуры GCP",
+      "k8sDesc": "Компоненты Kubernetes",
+      "flags": "Флаги стран",
+      "flagsDesc": "Флаги стран и регионов по ISO",
+      "viewer": "Просмотр SVG",
+      "viewerDesc": "Просмотр, проверка и копирование любого SVG",
+      "extensions": "Расширения",
+      "extensionsDesc": "VS Code, Raycast, Figma, пакет npm",
+      "docs": "Документация и руководства",
+      "docsDesc": "CDN, React, CLI, MCP и другое",
+      "blogDesc": "Новости и список изменений",
+      "compare": "Сравнить библиотеки",
+      "recentsDesc": "Недавно просмотренные и скопированные",
+      "favoritesDesc": "Значки, которые вы отметили",
+      "githubDesc": "Исходный код и задачи",
+      "discordDesc": "Присоединяйтесь к сообществу",
+      "npm": "Пакет npm",
+      "npmDesc": "thesvg в npm",
+      "raycast": "Расширение Raycast",
+      "raycastDesc": "Поиск значков из Raycast",
+      "figma": "Плагин Figma",
+      "figmaDesc": "Добавляйте значки в файл Figma",
+      "vscode": "Расширение VS Code",
+      "vscodeDesc": "Поиск и копирование из VS Code",
+      "tagline": "Открытая библиотека SVG брендов"
+    },
+    "icon": {
+      "fallbackTitle": "Значок",
+      "previewAlt": "Предпросмотр значка {{title}}",
+      "brandColor": "Цвет бренда",
+      "removeFavorite": "Убрать {{title}} из избранного",
+      "addFavorite": "Добавить {{title}} в избранное",
+      "copied": "Скопировано",
+      "license": "Лицензия",
+      "unknown": "Неизвестно",
+      "variants": "Варианты",
+      "collection": "Коллекция",
+      "slug": "Slug",
+      "openFullDetails": "Открыть все подробности",
+      "openFullDetailsDesc": "Экспорт PNG, все варианты, исходный SVG, примеры установки",
+      "skipPreview": "В следующий раз без предпросмотра",
+      "skipPreviewDesc": "Сразу открывать страницу значка",
+      "loading": "Загрузка значка..."
+    }
+  },
   "footer": {
     "headline": "Открытый код. Развивается сообществом.",
     "tagline": "Бесплатные SVG-логотипы брендов для разработчиков, дизайнеров и команд. Используйте в любых проектах, указывать авторство не нужно.",

@@ -27,6 +27,105 @@
     "blogUpdates": "블로그 및 소식",
     "submitAnIcon": "아이콘 제출"
   },
+  "mobile": {
+    "dock": {
+      "primary": "기본",
+      "browse": "둘러보기",
+      "favorites": "즐겨찾기",
+      "recents": "최근",
+      "submit": "제출",
+      "more": "더보기",
+      "favoritesCount": "즐겨찾기 {{n}}개"
+    },
+    "recents": {
+      "label": "최근",
+      "aria": "최근 본 아이콘",
+      "seeAll": "모두 보기"
+    },
+    "pwa": {
+      "installIos": "iPhone에 설치",
+      "iosSteps": "{{share}} 공유를 탭한 다음 {{add}}를 선택하세요.",
+      "iosAdd": "홈 화면에 추가",
+      "iosAria": "iOS에 thesvg 설치",
+      "installTitle": "thesvg 설치",
+      "installDesc": "한 번 탭하면 이 기기에 앱으로 설치됩니다.",
+      "install": "설치",
+      "dismiss": "닫기"
+    },
+    "sheet": {
+      "close": "닫기"
+    },
+    "action": {
+      "title": "작업",
+      "copySvg": "SVG 복사",
+      "downloadSvg": "SVG 다운로드",
+      "openQuickView": "빠른 보기 열기",
+      "openFullPage": "전체 페이지 열기"
+    },
+    "search": {
+      "placeholder": "아이콘 검색...",
+      "brands": "브랜드",
+      "searching": "검색 중...",
+      "results": "결과 · {{n}}",
+      "noMatch": "“{{query}}”와 일치하는 아이콘이 없습니다",
+      "recentSearches": "최근 검색",
+      "try": "검색해 보기"
+    },
+    "more": {
+      "tools": "도구",
+      "learn": "배우기",
+      "yourIcons": "내 아이콘",
+      "integrations": "통합",
+      "families": "브랜드 패밀리",
+      "familiesDesc": "Amazon, Google, Microsoft 등",
+      "categoriesDesc": "제품 기능별로 둘러보기",
+      "awsDesc": "서비스 및 리소스 아이콘",
+      "azureDesc": "Microsoft Azure 아이콘",
+      "gcpDesc": "GCP 아키텍처 아이콘",
+      "k8sDesc": "Kubernetes 구성 요소",
+      "flags": "국기",
+      "flagsDesc": "ISO 국가 및 지역 국기",
+      "viewer": "SVG 뷰어",
+      "viewerDesc": "SVG를 미리보고 검사하고 복사하세요",
+      "extensions": "확장 프로그램",
+      "extensionsDesc": "VS Code, Raycast, Figma, npm 패키지",
+      "docs": "문서 및 가이드",
+      "docsDesc": "CDN, React, CLI, MCP 등",
+      "blogDesc": "소식 및 변경 내역",
+      "compare": "라이브러리 비교",
+      "recentsDesc": "최근 보거나 복사한 항목",
+      "favoritesDesc": "즐겨찾기한 아이콘",
+      "githubDesc": "소스 및 이슈",
+      "discordDesc": "커뮤니티 참여하기",
+      "npm": "npm 패키지",
+      "npmDesc": "npm의 thesvg",
+      "raycast": "Raycast 확장 프로그램",
+      "raycastDesc": "Raycast에서 아이콘 검색",
+      "figma": "Figma 플러그인",
+      "figmaDesc": "아이콘을 Figma 파일에 바로 추가",
+      "vscode": "VS Code 확장 프로그램",
+      "vscodeDesc": "VS Code에서 검색하고 복사",
+      "tagline": "오픈 브랜드 SVG 라이브러리"
+    },
+    "icon": {
+      "fallbackTitle": "아이콘",
+      "previewAlt": "{{title}} 아이콘 미리보기",
+      "brandColor": "브랜드 색상",
+      "removeFavorite": "{{title}} 즐겨찾기에서 제거",
+      "addFavorite": "{{title}} 즐겨찾기에 추가",
+      "copied": "복사됨",
+      "license": "라이선스",
+      "unknown": "알 수 없음",
+      "variants": "변형",
+      "collection": "컬렉션",
+      "slug": "슬러그",
+      "openFullDetails": "전체 상세 열기",
+      "openFullDetailsDesc": "PNG 내보내기, 모든 변형, 원본 SVG, 설치 스니펫",
+      "skipPreview": "다음부터 미리보기 건너뛰기",
+      "skipPreviewDesc": "상세 페이지로 바로 이동",
+      "loading": "아이콘 불러오는 중..."
+    }
+  },
   "footer": {
     "headline": "오픈 소스. 커뮤니티가 만듭니다.",
     "tagline": "개발자, 디자이너, 팀을 위한 무료 브랜드 SVG. 출처 표기 없이 어떤 프로젝트에서든 사용하세요.",

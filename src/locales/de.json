@@ -27,6 +27,105 @@
     "blogUpdates": "Blog & Neuigkeiten",
     "submitAnIcon": "Icon einreichen"
   },
+  "mobile": {
+    "dock": {
+      "primary": "Hauptnavigation",
+      "browse": "Entdecken",
+      "favorites": "Favoriten",
+      "recents": "Zuletzt",
+      "submit": "Senden",
+      "more": "Mehr",
+      "favoritesCount": "{{n}} Favoriten"
+    },
+    "recents": {
+      "label": "Zuletzt",
+      "aria": "Zuletzt angesehene Icons",
+      "seeAll": "Alle ansehen"
+    },
+    "pwa": {
+      "installIos": "Auf dem iPhone installieren",
+      "iosSteps": "Tippe auf {{share}} Teilen, dann {{add}}.",
+      "iosAdd": "Zum Home-Bildschirm",
+      "iosAria": "thesvg unter iOS installieren",
+      "installTitle": "thesvg installieren",
+      "installDesc": "Mit einem Tipp als App auf diesem Gerät installieren.",
+      "install": "Installieren",
+      "dismiss": "Schließen"
+    },
+    "sheet": {
+      "close": "Schließen"
+    },
+    "action": {
+      "title": "Aktionen",
+      "copySvg": "SVG kopieren",
+      "downloadSvg": "SVG herunterladen",
+      "openQuickView": "Schnellansicht öffnen",
+      "openFullPage": "Vollständige Seite öffnen"
+    },
+    "search": {
+      "placeholder": "Icons suchen...",
+      "brands": "Marken",
+      "searching": "Suche läuft...",
+      "results": "Ergebnisse · {{n}}",
+      "noMatch": "Keine Icons für „{{query}}“",
+      "recentSearches": "Letzte Suchen",
+      "try": "Probiere"
+    },
+    "more": {
+      "tools": "Tools",
+      "learn": "Lernen",
+      "yourIcons": "Deine Icons",
+      "integrations": "Integrationen",
+      "families": "Markenfamilien",
+      "familiesDesc": "Amazon, Google, Microsoft und mehr",
+      "categoriesDesc": "Nach Produktfunktion stöbern",
+      "awsDesc": "Service- und Ressourcen-Icons",
+      "azureDesc": "Microsoft-Azure-Icons",
+      "gcpDesc": "GCP-Architektur-Icons",
+      "k8sDesc": "Kubernetes-Komponenten",
+      "flags": "Länderflaggen",
+      "flagsDesc": "ISO-Flaggen von Ländern und Regionen",
+      "viewer": "SVG-Viewer",
+      "viewerDesc": "SVGs ansehen, prüfen und kopieren",
+      "extensions": "Erweiterungen",
+      "extensionsDesc": "VS Code, Raycast, Figma, npm-Paket",
+      "docs": "Doku und Anleitungen",
+      "docsDesc": "CDN, React, CLI, MCP und mehr",
+      "blogDesc": "Updates und Changelog",
+      "compare": "Bibliotheken vergleichen",
+      "recentsDesc": "Zuletzt angesehen und kopiert",
+      "favoritesDesc": "Icons, die du markiert hast",
+      "githubDesc": "Quellcode und Issues",
+      "discordDesc": "Tritt der Community bei",
+      "npm": "npm-Paket",
+      "npmDesc": "thesvg auf npm",
+      "raycast": "Raycast-Erweiterung",
+      "raycastDesc": "Icons direkt in Raycast suchen",
+      "figma": "Figma-Plugin",
+      "figmaDesc": "Icons direkt in deine Figma-Datei einfügen",
+      "vscode": "VS-Code-Erweiterung",
+      "vscodeDesc": "In VS Code suchen und kopieren",
+      "tagline": "Die offene SVG-Markenbibliothek"
+    },
+    "icon": {
+      "fallbackTitle": "Icon",
+      "previewAlt": "Vorschau des Icons {{title}}",
+      "brandColor": "Markenfarbe",
+      "removeFavorite": "{{title}} aus Favoriten entfernen",
+      "addFavorite": "{{title}} zu Favoriten hinzufügen",
+      "copied": "Kopiert",
+      "license": "Lizenz",
+      "unknown": "Unbekannt",
+      "variants": "Varianten",
+      "collection": "Sammlung",
+      "slug": "Slug",
+      "openFullDetails": "Alle Details öffnen",
+      "openFullDetailsDesc": "PNG-Export, alle Varianten, Roh-SVG, Installationsbeispiele",
+      "skipPreview": "Vorschau nächstes Mal überspringen",
+      "skipPreviewDesc": "Direkt zur Detailseite springen",
+      "loading": "Icon wird geladen..."
+    }
+  },
   "footer": {
     "headline": "Open Source. Von der Community getragen.",
     "tagline": "Kostenlose Marken-SVGs für Entwickler, Designer und Teams. In jedem Projekt nutzbar, ohne Namensnennung.",

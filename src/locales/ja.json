@@ -27,6 +27,105 @@
     "blogUpdates": "ブログと更新情報",
     "submitAnIcon": "アイコンを投稿"
   },
+  "mobile": {
+    "dock": {
+      "primary": "メインナビゲーション",
+      "browse": "探す",
+      "favorites": "お気に入り",
+      "recents": "最近",
+      "submit": "投稿",
+      "more": "その他",
+      "favoritesCount": "お気に入り {{n}} 件"
+    },
+    "recents": {
+      "label": "最近",
+      "aria": "最近見たアイコン",
+      "seeAll": "すべて見る"
+    },
+    "pwa": {
+      "installIos": "iPhoneにインストール",
+      "iosSteps": "{{share}} 共有をタップし、{{add}}を選択します。",
+      "iosAdd": "ホーム画面に追加",
+      "iosAria": "iOSにthesvgをインストール",
+      "installTitle": "thesvgをインストール",
+      "installDesc": "ワンタップでこの端末にアプリとして追加できます。",
+      "install": "インストール",
+      "dismiss": "閉じる"
+    },
+    "sheet": {
+      "close": "閉じる"
+    },
+    "action": {
+      "title": "アクション",
+      "copySvg": "SVGをコピー",
+      "downloadSvg": "SVGをダウンロード",
+      "openQuickView": "クイックビューを開く",
+      "openFullPage": "詳細ページを開く"
+    },
+    "search": {
+      "placeholder": "アイコンを検索...",
+      "brands": "ブランド",
+      "searching": "検索中...",
+      "results": "結果 · {{n}}",
+      "noMatch": "「{{query}}」に一致するアイコンはありません",
+      "recentSearches": "最近の検索",
+      "try": "試してみる"
+    },
+    "more": {
+      "tools": "ツール",
+      "learn": "学ぶ",
+      "yourIcons": "マイアイコン",
+      "integrations": "連携",
+      "families": "ブランドファミリー",
+      "familiesDesc": "Amazon、Google、Microsoftなど",
+      "categoriesDesc": "製品の用途で探す",
+      "awsDesc": "サービスとリソースのアイコン",
+      "azureDesc": "Microsoft Azureのアイコン",
+      "gcpDesc": "GCPアーキテクチャのアイコン",
+      "k8sDesc": "Kubernetesのコンポーネント",
+      "flags": "国旗",
+      "flagsDesc": "ISOの国・地域の旗",
+      "viewer": "SVGビューア",
+      "viewerDesc": "あらゆるSVGをプレビュー、確認、コピー",
+      "extensions": "拡張機能",
+      "extensionsDesc": "VS Code、Raycast、Figma、npmパッケージ",
+      "docs": "ドキュメントとガイド",
+      "docsDesc": "CDN、React、CLI、MCPなど",
+      "blogDesc": "お知らせと更新履歴",
+      "compare": "ライブラリを比較",
+      "recentsDesc": "最近見た・コピーしたもの",
+      "favoritesDesc": "スターを付けたアイコン",
+      "githubDesc": "ソースと課題",
+      "discordDesc": "コミュニティに参加",
+      "npm": "npmパッケージ",
+      "npmDesc": "npmのthesvg",
+      "raycast": "Raycast拡張機能",
+      "raycastDesc": "Raycastからアイコンを検索",
+      "figma": "Figmaプラグイン",
+      "figmaDesc": "アイコンをFigmaファイルに追加",
+      "vscode": "VS Code拡張機能",
+      "vscodeDesc": "VS Codeから検索してコピー",
+      "tagline": "オープンなブランドSVGライブラリ"
+    },
+    "icon": {
+      "fallbackTitle": "アイコン",
+      "previewAlt": "{{title}} アイコンのプレビュー",
+      "brandColor": "ブランドカラー",
+      "removeFavorite": "{{title}} をお気に入りから削除",
+      "addFavorite": "{{title}} をお気に入りに追加",
+      "copied": "コピー済み",
+      "license": "ライセンス",
+      "unknown": "不明",
+      "variants": "バリエーション",
+      "collection": "コレクション",
+      "slug": "スラッグ",
+      "openFullDetails": "詳細をすべて開く",
+      "openFullDetailsDesc": "PNG書き出し、全バリエーション、生のSVG、導入スニペット",
+      "skipPreview": "次回からプレビューを省略",
+      "skipPreviewDesc": "詳細ページへ直接移動",
+      "loading": "アイコンを読み込み中..."
+    }
+  },
   "footer": {
     "headline": "オープンソース。コミュニティ主導。",
     "tagline": "開発者、デザイナー、チーム向けの無料のブランド SVG。表記不要で、どんなプロジェクトでも使えます。",

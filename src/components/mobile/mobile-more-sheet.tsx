@@ -18,25 +18,30 @@ import {
 import { BottomSheet, type BottomSheetSnap } from "./bottom-sheet";
 import { useMobileShellStore } from "@/lib/stores/mobile-shell-store";
 import { withUtm } from "@/lib/external-link";
+import { useT } from "@/i18n/use-t";
 
 interface InternalItem {
   href: string;
-  label: string;
-  description: string;
+  /** Translation keys, or a literal when the name is a brand or product. */
+  labelKey?: string;
+  label?: string;
+  descKey?: string;
+  description?: string;
   Icon: typeof Layers;
 }
 
 interface ExternalItem {
   href: string;
-  label: string;
-  description: string;
+  labelKey?: string;
+  label?: string;
+  descKey: string;
   /** Path to a brand SVG inside the catalog itself. Dog-fooded — we
    *  serve the same files we ship to consumers. */
   iconSrc: string;
 }
 
 interface LinkSection {
-  title: string | null;
+  titleKey: string;
   items: ReadonlyArray<InternalItem>;
 }
 
@@ -44,105 +49,105 @@ interface LinkSection {
 // stays scannable on a phone: browse, tools, learn, then personal lists.
 const APP_SECTIONS: ReadonlyArray<LinkSection> = [
   {
-    title: "Browse",
+    titleKey: "mobile.dock.browse",
     items: [
       {
         href: "/families",
-        label: "Brand families",
-        description: "Amazon, Google, Microsoft and more",
+        labelKey: "mobile.more.families",
+        descKey: "mobile.more.familiesDesc",
         Icon: LayoutGrid,
       },
       {
         href: "/categories",
-        label: "Categories",
-        description: "Browse by what a product does",
+        labelKey: "nav.categories",
+        descKey: "mobile.more.categoriesDesc",
         Icon: Shapes,
       },
       {
         href: "/collection/aws",
         label: "AWS Architecture",
-        description: "Service and resource icons",
+        descKey: "mobile.more.awsDesc",
         Icon: Cloud,
       },
       {
         href: "/collection/azure",
         label: "Azure Services",
-        description: "Microsoft Azure icons",
+        descKey: "mobile.more.azureDesc",
         Icon: Cloud,
       },
       {
         href: "/collection/gcp",
         label: "Google Cloud",
-        description: "GCP architecture icons",
+        descKey: "mobile.more.gcpDesc",
         Icon: Cloud,
       },
       {
         href: "/collection/k8s",
         label: "Kubernetes",
-        description: "Kubernetes components",
+        descKey: "mobile.more.k8sDesc",
         Icon: Cloud,
       },
       {
         href: "/collection/flags",
-        label: "Country Flags",
-        description: "ISO country and region flags",
+        labelKey: "mobile.more.flags",
+        descKey: "mobile.more.flagsDesc",
         Icon: Cloud,
       },
     ],
   },
   {
-    title: "Tools",
+    titleKey: "mobile.more.tools",
     items: [
       {
         href: "/viewer",
-        label: "SVG viewer",
-        description: "Preview, inspect and copy any SVG",
+        labelKey: "mobile.more.viewer",
+        descKey: "mobile.more.viewerDesc",
         Icon: Eye,
       },
       {
         href: "/extensions",
-        label: "Extensions",
-        description: "VS Code, Raycast, Figma, npm package",
+        labelKey: "mobile.more.extensions",
+        descKey: "mobile.more.extensionsDesc",
         Icon: Layers,
       },
     ],
   },
   {
-    title: "Learn",
+    titleKey: "mobile.more.learn",
     items: [
       {
         href: "/docs",
-        label: "Docs and guides",
-        description: "CDN, React, CLI, MCP and more",
+        labelKey: "mobile.more.docs",
+        descKey: "mobile.more.docsDesc",
         Icon: BookOpen,
       },
       {
         href: "/blog",
-        label: "Blog",
-        description: "Updates and changelog",
+        labelKey: "nav.blog",
+        descKey: "mobile.more.blogDesc",
         Icon: FileText,
       },
       {
         href: "/compare",
-        label: "Compare libraries",
+        labelKey: "mobile.more.compare",
         description: "theSVG vs Simple Icons, svgl, Iconify",
         Icon: GitCompare,
       },
     ],
   },
   {
-    title: "Your icons",
+    titleKey: "mobile.more.yourIcons",
     items: [
       {
         href: "/recents",
-        label: "Recents",
-        description: "Recently viewed and copied",
+        labelKey: "mobile.dock.recents",
+        descKey: "mobile.more.recentsDesc",
         Icon: BookOpen,
       },
       {
         href: "/?favorites=true",
-        label: "Favorites",
-        description: "Icons you have starred",
+        labelKey: "mobile.dock.favorites",
+        descKey: "mobile.more.favoritesDesc",
         Icon: Heart,
       },
     ],
@@ -153,42 +158,43 @@ const EXTERNAL_LINKS: ReadonlyArray<ExternalItem> = [
   {
     href: "https://github.com/GLINCKER/thesvg",
     label: "GitHub",
-    description: "Source and issues",
+    descKey: "mobile.more.githubDesc",
     iconSrc: "/icons/github/default.svg",
   },
   {
     href: "https://discord.gg/Ar5pcaZB99",
     label: "Discord",
-    description: "Join the community",
+    descKey: "mobile.more.discordDesc",
     iconSrc: "/icons/discord/default.svg",
   },
   {
     href: "https://www.npmjs.com/package/thesvg",
-    label: "npm package",
-    description: "thesvg on npm",
+    labelKey: "mobile.more.npm",
+    descKey: "mobile.more.npmDesc",
     iconSrc: "/icons/npm/default.svg",
   },
   {
     href: "https://www.raycast.com/thegdsks/thesvg",
-    label: "Raycast extension",
-    description: "Search icons from Raycast",
+    labelKey: "mobile.more.raycast",
+    descKey: "mobile.more.raycastDesc",
     iconSrc: "/icons/raycast/default.svg",
   },
   {
     href: "https://www.figma.com/community/plugin/1612997159050367763",
-    label: "Figma plugin",
-    description: "Drop icons into your Figma file",
+    labelKey: "mobile.more.figma",
+    descKey: "mobile.more.figmaDesc",
     iconSrc: "/icons/figma/default.svg",
   },
   {
     href: "https://marketplace.visualstudio.com/items?itemName=glincker.thesvg",
-    label: "VS Code extension",
-    description: "Search and copy from VS Code",
+    labelKey: "mobile.more.vscode",
+    descKey: "mobile.more.vscodeDesc",
     iconSrc: "/icons/visual-studio-code/default.svg",
   },
 ];
 
 export function MobileMoreSheet() {
+  const { t } = useT();
   const sheet = useMobileShellStore((s) => s.sheet);
   const closeSheet = useMobileShellStore((s) => s.closeSheet);
   const open = sheet === "more";
@@ -206,16 +212,14 @@ export function MobileMoreSheet() {
       }}
       snap={snap}
       onSnapChange={setSnap}
-      label="More"
+      label={t("mobile.dock.more")}
     >
       <div className="px-4 pb-4">
         {APP_SECTIONS.map((section, i) => (
-          <div key={section.title ?? i} className={i > 0 ? "mt-4" : undefined}>
-            {section.title && (
-              <p className="pb-1 text-[10px] font-medium uppercase tracking-wider text-muted-foreground/60">
-                {section.title}
-              </p>
-            )}
+          <div key={section.titleKey} className={i > 0 ? "mt-4" : undefined}>
+            <p className="pb-1 text-[10px] font-medium uppercase tracking-wider text-muted-foreground/60">
+              {t(section.titleKey)}
+            </p>
             <ul className="divide-y divide-border/40">
               {section.items.map((item) => (
                 <li key={item.href}>
@@ -229,10 +233,10 @@ export function MobileMoreSheet() {
                     </span>
                     <span className="min-w-0 flex-1">
                       <span className="block text-sm font-medium text-foreground">
-                        {item.label}
+                        {item.labelKey ? t(item.labelKey) : item.label}
                       </span>
                       <span className="block truncate text-[11px] text-muted-foreground">
-                        {item.description}
+                        {item.descKey ? t(item.descKey) : item.description}
                       </span>
                     </span>
                     <ChevronRight className="h-4 w-4 text-muted-foreground/60" />
@@ -244,7 +248,7 @@ export function MobileMoreSheet() {
         ))}
 
         <p className="mt-4 pb-1 text-[10px] font-medium uppercase tracking-wider text-muted-foreground/60">
-          Integrations
+          {t("mobile.more.integrations")}
         </p>
         <ul className="divide-y divide-border/40">
           {EXTERNAL_LINKS.map((item) => (
@@ -268,10 +272,10 @@ export function MobileMoreSheet() {
                 </span>
                 <span className="min-w-0 flex-1">
                   <span className="block text-sm font-medium text-foreground">
-                    {item.label}
+                    {item.labelKey ? t(item.labelKey) : item.label}
                   </span>
                   <span className="block truncate text-[11px] text-muted-foreground">
-                    {item.description}
+                    {t(item.descKey)}
                   </span>
                 </span>
                 <ExternalLink className="h-4 w-4 text-muted-foreground/60" />
@@ -281,7 +285,7 @@ export function MobileMoreSheet() {
         </ul>
 
         <p className="mt-5 text-center text-[11px] text-muted-foreground/60">
-          thesvg.org · The Open SVG Brand Library
+          thesvg.org · {t("mobile.more.tagline")}
         </p>
       </div>
     </BottomSheet>
