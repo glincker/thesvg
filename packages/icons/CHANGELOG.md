@@ -1,5 +1,11 @@
 # @thesvg/icons
 
+## 4.0.18
+
+### Patch Changes
+
+- docs: larger, tighter readme logo and a plain h3 title ([#1615](https://github.com/glincker/thesvg/issues/1615))
+
 ## 4.0.17
 
 ### Patch Changes
