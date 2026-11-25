@@ -14,6 +14,7 @@ import {
 } from "@/lib/icons";
 import { AnimatedCounter } from "@/components/footer-counter";
 import { T } from "@/components/t";
+import { FooterLanguages } from "@/components/footer-languages";
 import uiManifest from "@/data/ui-icons.json";
 
 interface FooterLink {
@@ -335,6 +336,8 @@ export function Footer() {
             </div>
             <FooterColumn title="Legal" titleKey="footer.columns.legal" links={LEGAL_LINKS} />
           </div>
+
+          <FooterLanguages />
 
           {/* GLINR Studios section */}
           <div className="mt-10 border-t border-border/40 pt-8 text-center dark:border-white/[0.06]">
