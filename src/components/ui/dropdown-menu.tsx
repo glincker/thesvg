@@ -195,9 +195,12 @@ function DropdownMenuRadioItem({
   className,
   children,
   inset,
+  showIndicator = true,
   ...props
 }: MenuPrimitive.RadioItem.Props & {
   inset?: boolean
+  /** Hide the trailing check for tile-style options that show selection another way. */
+  showIndicator?: boolean
 }) {
   return (
     <MenuPrimitive.RadioItem
@@ -209,15 +212,17 @@ function DropdownMenuRadioItem({
       )}
       {...props}
     >
-      <span
-        className="pointer-events-none absolute right-2 flex items-center justify-center"
-        data-slot="dropdown-menu-radio-item-indicator"
-      >
-        <MenuPrimitive.RadioItemIndicator>
-          <CheckIcon
-          />
-        </MenuPrimitive.RadioItemIndicator>
-      </span>
+      {showIndicator && (
+        <span
+          className="pointer-events-none absolute right-2 flex items-center justify-center"
+          data-slot="dropdown-menu-radio-item-indicator"
+        >
+          <MenuPrimitive.RadioItemIndicator>
+            <CheckIcon
+            />
+          </MenuPrimitive.RadioItemIndicator>
+        </span>
+      )}
       {children}
     </MenuPrimitive.RadioItem>
   )

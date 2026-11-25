@@ -1,16 +1,13 @@
 "use client";
 
-import type { ComponentType } from "react";
+import type { ComponentType, ReactNode } from "react";
 import { Binary, Braces, Component, FileCode, Link2, SlidersHorizontal } from "@/components/own-icons";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuLabel,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { FORMAT_BUTTONS, FORMAT_LABELS } from "@/components/icons/shared/icon-constants";
@@ -43,6 +40,19 @@ const PREVIEW_OPTIONS: { value: PreviewBackground; key: string; swatch: string }
   },
 ];
 
+const TILE =
+  "relative flex cursor-pointer flex-col items-center justify-center gap-1.5 rounded-xl border border-transparent px-1 py-2.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-muted/70 hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring data-checked:border-orange-500/50 data-checked:bg-orange-500/10 data-checked:text-foreground";
+
+function Section({ title, caption, children }: Readonly<{ title: string; caption: string; children: ReactNode }>) {
+  return (
+    <section className="px-1 pt-2 pb-1">
+      <h3 className="px-1 pb-1.5 text-[10px] font-semibold tracking-widest text-muted-foreground/80 uppercase">{title}</h3>
+      {children}
+      <p className="px-1 pt-2 text-[11px] leading-snug text-muted-foreground">{caption}</p>
+    </section>
+  );
+}
+
 /**
  * One place for the display preferences that used to crowd the header: the
  * default copy format and the icon preview background. The theme toggle stays
@@ -57,6 +67,11 @@ export function DisplayMenu() {
   const interfaceSize = useSettingsStore((s) => s.interfaceSize);
   const setInterfaceSize = useSettingsStore((s) => s.setInterfaceSize);
   const formatLabel = FORMAT_LABELS.get(defaultCopyFormat) || defaultCopyFormat;
+
+  const activeFormat = FORMAT_BUTTONS.find((fmt) => fmt.value === defaultCopyFormat) ?? FORMAT_BUTTONS[0];
+  const activeBg = PREVIEW_OPTIONS.find((opt) => opt.value === previewBackground) ?? PREVIEW_OPTIONS[0];
+  const activeSize = INTERFACE_SIZES.find((opt) => opt.id === interfaceSize) ?? INTERFACE_SIZES[0];
+  const dataUriKey = (value: string): string => (value === "data-uri" ? "dataUri" : value);
 
   return (
     <DropdownMenu>
@@ -73,86 +88,69 @@ export function DisplayMenu() {
       >
         <SlidersHorizontal className="h-4 w-4" />
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-72">
-        <DropdownMenuGroup>
-          <DropdownMenuLabel className="font-normal">
-            <p className="text-xs font-semibold text-foreground">{t("chrome.display.copyFormat")}</p>
-            <p className="mt-0.5 text-[11px] font-normal text-muted-foreground">
-              {t("chrome.display.copyFormatHint")}
-            </p>
-          </DropdownMenuLabel>
-        </DropdownMenuGroup>
-        <DropdownMenuSeparator />
-        <DropdownMenuRadioGroup
-          value={defaultCopyFormat}
-          onValueChange={(value) => {
-            const next = FORMAT_BUTTONS.find((fmt) => fmt.value === value);
-            if (next) setDefaultCopyFormat(next.value);
-          }}
+      <DropdownMenuContent align="end" className="w-[22rem] max-w-[calc(100vw-1.5rem)] rounded-2xl p-2 shadow-xl">
+        <Section
+          title={t("chrome.display.copyFormat")}
+          caption={`${activeFormat.label}: ${t(`chrome.display.fmt.${dataUriKey(activeFormat.value)}`, { defaultValue: activeFormat.description })}`}
         >
-          {FORMAT_BUTTONS.map((fmt) => {
-            const FormatIcon = COPY_FORMAT_ICONS[fmt.value];
-            return (
-              <DropdownMenuRadioItem key={fmt.value} value={fmt.value} className="items-start gap-2.5 py-2">
-                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center text-muted-foreground">
-                  <FormatIcon className="h-3.5 w-3.5" />
-                </span>
-                <span className="flex flex-1 flex-col gap-0.5">
-                  <span className="text-xs font-medium text-foreground">{fmt.label}</span>
-                  <span className="text-[10px] leading-relaxed text-muted-foreground/70">{t(`chrome.display.fmt.${fmt.value === "data-uri" ? "dataUri" : fmt.value}`, { defaultValue: fmt.description })}</span>
-                </span>
+          <DropdownMenuRadioGroup
+            aria-label={t("chrome.display.copyFormat")}
+            className="grid grid-cols-5 gap-1"
+            value={defaultCopyFormat}
+            onValueChange={(value) => {
+              const next = FORMAT_BUTTONS.find((fmt) => fmt.value === value);
+              if (next) setDefaultCopyFormat(next.value);
+            }}
+          >
+            {FORMAT_BUTTONS.map((fmt) => {
+              const FormatIcon = COPY_FORMAT_ICONS[fmt.value];
+              return (
+                <DropdownMenuRadioItem key={fmt.value} value={fmt.value} showIndicator={false} className={TILE}>
+                  <FormatIcon className="h-4 w-4" />
+                  <span>{fmt.label}</span>
+                </DropdownMenuRadioItem>
+              );
+            })}
+          </DropdownMenuRadioGroup>
+        </Section>
+
+        <Section title={t("chrome.display.preview")} caption={t(`chrome.display.bg.${activeBg.key}Desc`)}>
+          <DropdownMenuRadioGroup
+            aria-label={t("chrome.display.preview")}
+            className="grid grid-cols-4 gap-1"
+            value={previewBackground}
+            onValueChange={(value) => {
+              const next = PREVIEW_OPTIONS.find((opt) => opt.value === value);
+              if (next) setPreviewBackground(next.value);
+            }}
+          >
+            {PREVIEW_OPTIONS.map((opt) => (
+              <DropdownMenuRadioItem key={opt.value} value={opt.value} showIndicator={false} className={TILE}>
+                <span aria-hidden="true" className={cn("h-6 w-9 rounded-md border border-border/70 shadow-inner", opt.swatch)} />
+                <span>{t(`chrome.display.bg.${opt.key}`)}</span>
               </DropdownMenuRadioItem>
-            );
-          })}
-        </DropdownMenuRadioGroup>
-        <DropdownMenuSeparator />
-        <DropdownMenuGroup>
-          <DropdownMenuLabel className="font-normal">
-            <p className="text-xs font-semibold text-foreground">{t("chrome.display.preview")}</p>
-            <p className="mt-0.5 text-[11px] font-normal text-muted-foreground">
-              {t("chrome.display.previewHint")}
-            </p>
-          </DropdownMenuLabel>
-        </DropdownMenuGroup>
-        <DropdownMenuRadioGroup
-          value={previewBackground}
-          onValueChange={(value) => {
-            const next = PREVIEW_OPTIONS.find((opt) => opt.value === value);
-            if (next) setPreviewBackground(next.value);
-          }}
+            ))}
+          </DropdownMenuRadioGroup>
+        </Section>
+
+        <Section
+          title={t("chrome.display.size")}
+          caption={t(`chrome.display.sz.${activeSize.id}Desc`, { defaultValue: activeSize.description })}
         >
-          {PREVIEW_OPTIONS.map((opt) => (
-            <DropdownMenuRadioItem key={opt.value} value={opt.value} className="items-start gap-2.5 py-2">
-              <span
-                aria-hidden="true"
-                className={cn("mt-0.5 h-5 w-5 shrink-0 rounded-md border border-border/60", opt.swatch)}
-              />
-              <span className="flex flex-1 flex-col gap-0.5">
-                <span className="text-xs font-medium text-foreground">{t(`chrome.display.bg.${opt.key}`)}</span>
-                <span className="text-[10px] leading-relaxed text-muted-foreground/70">{t(`chrome.display.bg.${opt.key}Desc`)}</span>
-              </span>
-            </DropdownMenuRadioItem>
-          ))}
-        </DropdownMenuRadioGroup>
-        <DropdownMenuSeparator />
-        <DropdownMenuGroup>
-          <DropdownMenuLabel className="font-normal">
-            <p className="text-xs font-semibold text-foreground">{t("chrome.display.size")}</p>
-            <p className="mt-0.5 text-[11px] font-normal text-muted-foreground">
-              {t("chrome.display.sizeHint")}
-            </p>
-          </DropdownMenuLabel>
-        </DropdownMenuGroup>
-        <DropdownMenuRadioGroup value={interfaceSize} onValueChange={(value) => setInterfaceSize(parseInterfaceSize(value))}>
-          {INTERFACE_SIZES.map((opt) => (
-            <DropdownMenuRadioItem key={opt.id} value={opt.id} className="items-start gap-2.5 py-2">
-              <span className="flex flex-1 flex-col gap-0.5">
-                <span className="text-xs font-medium text-foreground">{t(`chrome.display.sz.${opt.id}`, { defaultValue: opt.label })}</span>
-                <span className="text-[10px] leading-relaxed text-muted-foreground/70">{t(`chrome.display.sz.${opt.id}Desc`, { defaultValue: opt.description })}</span>
-              </span>
-            </DropdownMenuRadioItem>
-          ))}
-        </DropdownMenuRadioGroup>
+          <DropdownMenuRadioGroup
+            aria-label={t("chrome.display.size")}
+            className="grid grid-cols-3 gap-1 rounded-xl bg-muted/50 p-1"
+            value={interfaceSize}
+            onValueChange={(value) => setInterfaceSize(parseInterfaceSize(value))}
+          >
+            {INTERFACE_SIZES.map((opt) => (
+              <DropdownMenuRadioItem key={opt.id} value={opt.id} showIndicator={false} className={cn(TILE, "gap-0.5 py-1.5 data-checked:bg-background data-checked:shadow-sm")}>
+                <span>{t(`chrome.display.sz.${opt.id}`, { defaultValue: opt.label })}</span>
+                <span className="text-[10px] font-normal text-muted-foreground tabular-nums">{Math.floor(opt.percent)}%</span>
+              </DropdownMenuRadioItem>
+            ))}
+          </DropdownMenuRadioGroup>
+        </Section>
       </DropdownMenuContent>
     </DropdownMenu>
   );
