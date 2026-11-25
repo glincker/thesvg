@@ -38,26 +38,26 @@ export function NavFlagsPill({ active, label }: Readonly<{ active: boolean; labe
       onClick={markSeen}
       aria-current={active ? "page" : undefined}
       className={cn(
-        "inline-flex items-center gap-2 rounded-full py-1 pl-2 pr-3 text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+        "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
         active ? "bg-foreground text-background shadow-sm" : "text-muted-foreground hover:bg-accent hover:text-foreground",
       )}
     >
-      <span aria-hidden="true" className="flex items-center">
+      <span aria-hidden="true" className="flex items-center pr-0.5">
         {SAMPLE.map((code, i) => (
           // eslint-disable-next-line @next/next/no-img-element
           <img
             key={code}
             src={`/icons/flag-${code}/circle.svg`}
             alt=""
-            width={18}
-            height={18}
+            width={16}
+            height={16}
             decoding="async"
-            className={cn("size-[18px] rounded-full ring-2", active ? "ring-foreground" : "ring-background", i > 0 && "-ml-1.5")}
+            className={cn("size-4 rounded-full bg-white ring-1", active ? "ring-background/60" : "ring-foreground/15", i > 0 && "-ml-1")}
           />
         ))}
       </span>
       {label}
-      {!seen && !active ? <span className="rounded-full bg-orange-500 px-1.5 py-px text-[0.625rem] font-semibold uppercase leading-none tracking-wide text-white">{t("chrome.flagsPill.new")}</span> : null}
+      {!seen && !active ? <span className="ml-0.5 rounded-full bg-orange-500 px-1.5 py-px text-[0.5625rem] font-semibold uppercase leading-none tracking-wide text-white">{t("chrome.flagsPill.new")}</span> : null}
     </Link>
   );
 }
