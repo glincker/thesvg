@@ -1453,5 +1453,350 @@
       "width": "幅",
       "yes": "はい"
     }
+  },
+  "docs": {
+    "ui": {
+      "navLabel": "ドキュメントのナビゲーション",
+      "onThisPage": "このページの内容",
+      "askAi": "AIに質問",
+      "openIn": "{{name}}で開く",
+      "copy": "コピー",
+      "copied": "コピーしました",
+      "copyFailed": "コピーできませんでした",
+      "copyLinkTo": "{{title}}へのリンクをコピー",
+      "editOnGithub": "GitHubでこのページを編集",
+      "thanks": "フィードバックありがとうございます",
+      "wasHelpful": "このページは役に立ちましたか?",
+      "helpfulYes": "はい、役に立ちました",
+      "helpfulNo": "いいえ、役に立ちませんでした",
+      "docsBadge": "ドキュメント",
+      "source": "ソース",
+      "relatedQuestions": "関連する質問",
+      "seeAllFaq": "FAQをすべて見る"
+    },
+    "nav": {
+      "groups": {
+        "getting-started": "はじめに",
+        "frameworks-tools": "フレームワークとツール",
+        "guides": "ガイド",
+        "reference": "リファレンス"
+      },
+      "items": {
+        "overview": "概要",
+        "cdn": "CDN / HTML",
+        "react": "React",
+        "vue": "Vue",
+        "svelte": "Svelte",
+        "react-native": "React Native",
+        "cli": "CLI",
+        "api": "REST API",
+        "mcp": "AIアシスタント (MCP)",
+        "recipes": "レシピ",
+        "best-practices": "ベストプラクティス",
+        "flags": "国旗",
+        "tricks": "小技",
+        "migration": "移行",
+        "faq": "FAQ"
+      }
+    },
+    "home": {
+      "heading": "ドキュメントとガイド",
+      "intro": "{{total}}以上のブランドアイコンを使うためのすべて: フレームワーク別ガイド、実践的なレシピ、ベストプラクティス、小技、移行ガイド、FAQ。",
+      "gettingStartedTitle": "はじめに",
+      "gettingStartedBody": "作りたいものに合うガイドを選んでください。React、Vue、Svelteで少数の決まったアイコンを使う場合: 対応するパッケージを使います。数が決まっていない、または多数のアイコン(ピッカー、ディレクトリページ)の場合: CDNガイドを使ってください。表示するアイコンの数にかかわらずバンドルへの影響はゼロです。アイコンを自分のリポジトリに取り込みたい場合: CLIを使います。AIアシスタントに接続する場合: MCPガイドを参照してください。",
+      "cards": {
+        "flags": "国と地域の国旗: 形、サイズ、アクセシビリティ、ロケールヘルパー、検索、ブラウザ。",
+        "recipes": "具体的な実装パターン: 技術スタックのバッジ、アイコンピッカー、アクセシブルなボタンなど。",
+        "best-practices": "サイズ指定、バリアント選び、CDNのバージョン固定、ダークモードを正しく行う方法。",
+        "tricks": "小さなテクニック: スラッグによる動的アイコン、CSSマスクでの色変更、プリロードヒント。",
+        "migration": "Simple Iconsやsvglからの移行、またはtheSVG、Iconify、Lucideの使い分け。",
+        "faq": "ライセンス、欠けているバリアント、レート制限などのよくある質問。"
+      }
+    },
+    "guides": {
+      "cdn": {
+        "label": "CDN / 素のHTML",
+        "summary": "インストールもビルド手順も不要。<img>タグをCDNのURLに向けるだけです。JavaScriptなしで動作します。"
+      },
+      "react": {
+        "label": "React",
+        "summary": "型付きでツリーシェイク可能なコンポーネント。デフォルトでServer Componentとして動作し、\"use client\"は不要です。"
+      },
+      "vue": {
+        "label": "Vue",
+        "summary": "型付きのVue 3レンダー関数コンポーネント。SFCコンパイラは不要です。"
+      },
+      "svelte": {
+        "label": "Svelte",
+        "summary": "Svelte 4と5向けの型付きコンポーネント。ブラウザ専用APIを使わない素のマークアップなので、SvelteKitのSSRでもクライアントでも同じようにレンダリングされ、onMountガードやクライアント専用ラッパーは不要です。"
+      },
+      "react-native": {
+        "label": "React Native",
+        "summary": "react-native-svg経由でレンダリングします。Expo Goでconfig pluginもネイティブ設定もなしで動作します。"
+      },
+      "cli": {
+        "label": "CLI(自分のリポジトリに取り込む)",
+        "summary": "shadcnのように、アイコンファイルをプロジェクトに直接コピーします。インストールするランタイム依存はありません。"
+      },
+      "api": {
+        "label": "REST API",
+        "summary": "CDNキャッシュされた静的なJSON。認証なし、動的な検索エンドポイントなし: マニフェストを一度取得して、クライアント側で絞り込みます。"
+      },
+      "mcp": {
+        "label": "AIアシスタント (MCP)",
+        "summary": "AIアシスタントがアイコンを直接検索・取得するためのツールを提供する、ローカルのMCPサーバー(stdio)。同じmcpServersのJSONブロックが、MCP対応のあらゆるクライアント(Claude Desktop、Claude Code、Cursor、Windsurf)の設定ファイルで使えます。設定ファイルの場所はお使いのクライアントのドキュメントを確認してください。"
+      }
+    },
+    "snippets": {
+      "basic-usage": "基本的な使い方",
+      "automatic-dark-mode-no-js": "自動ダークモード(JSなし)",
+      "install": "インストール",
+      "usage": "使い方",
+      "variants": "バリアント",
+      "individual-import-smallest-bundle": "個別インポート(最小のバンドル)",
+      "nuxt-3-explicit-import-no-auto-import-config-needed": "Nuxt 3(明示的インポート、自動インポート設定は不要)",
+      "expo-router-screen": "Expo Routerの画面",
+      "add-one-icon": "アイコンを1つ追加",
+      "add-several-as-typed-jsx": "複数追加(型付きJSXとして)",
+      "search-the-catalog": "カタログを検索",
+      "in-a-dockerfile-ci-build-step": "Dockerfile / CIのビルドステップ内で",
+      "full-icon-manifest": "アイコンの完全なマニフェスト",
+      "categories-with-counts": "件数付きのカテゴリ",
+      "direct-svg": "SVGを直接取得",
+      "jsdelivr-mirror-recommended-for-high-traffic": "jsDelivrミラー(高トラフィック向けに推奨)",
+      "mcp-config-claude-desktop-cursor-etc": "MCPの設定(Claude Desktop、Cursorなど)",
+      "dynamic-icon": "動的アイコン",
+      "onerror-fallback": "onErrorでのフォールバック",
+      "css-mask-recolor": "CSSマスクによる色変更",
+      "bulk-add": "まとめて追加",
+      "preload-hint": "プリロードヒント",
+      "client-side-filter": "クライアント側のフィルター",
+      "html-jsx": "HTML / JSX",
+      "markdown-readme": "Markdown(README)",
+      "react": "React",
+      "option-a-skip-optimization-for-this-image": "オプション A: この画像の最適化をスキップする",
+      "option-b-allow-svgs-from-the-icon-domain": "オプション B: アイコンのドメインからのSVGを許可する",
+      "package-json-script": "package.jsonのスクリプト",
+      "dockerfile": "Dockerfile",
+      "before-after": "移行前 / 移行後"
+    },
+    "bestPractices": {
+      "intro": "サイズ指定、バリアント選び、CDNのバージョン固定、ダークモードを正しく行う方法。",
+      "cdn-vs-components": {
+        "title": "グリッドにはCDNの<img>、決まった数のアイコンにはコンポーネント",
+        "body": "数百から数千のアイコン(ピッカーやディレクトリ)を表示する場合は、CDNの<img> URLパターンを使います。表示数にかかわらずバンドルコストはゼロです。@thesvg/react、@thesvg/vue、@thesvg/svelteの名前付きインポートは、ソース内で直接参照する少数の固定アイコンのために取っておきましょう。ツリーシェイクで使うものだけが残ります。"
+      },
+      "set-dimensions": {
+        "title": "必ずwidthとheightを指定する",
+        "body": "<img>は読み込まれるまで固有のサイズを持たないため、widthとheight(または確保したaspect-ratio)のないアイコンはページ読み込み中にレイアウトシフトを起こします。CSSクラスだけでサイズを決めている場合でも、すべてのアイコンに両方を指定してください。"
+      },
+      "recolor-mono": {
+        "title": "色変更はCSSフィルターではなくmonoバリアントで",
+        "body": "アイコンを任意のテキスト色に合わせたい場合は、CSSのfilter: invert()のような手法ではなく、インラインコンポーネントでmonoバリアントを使います(currentColorを継承します)。フィルターは劣化があり、任意の16進数の色には対応できません。"
+      },
+      "pin-jsdelivr": {
+        "title": "jsDelivrミラーは@mainではなくリリースに固定する",
+        "body": "cdn.jsdelivr.net/gh/glincker/thesvg@main/...は動き続けるmainブランチを指します。本番ではリリース済みのgitタグ(例: @{{ref}}、現在のリリース)に固定して、上流での名前変更や削除によってアプリの表示が気づかないうちに変わらないようにしましょう。"
+      },
+      "picture-dark-mode": {
+        "title": "ダークモードにはJSではなく<picture>を使う",
+        "body": "ライトとダークの両方のバリアントがあるアイコンは、<picture>を使えばCSSのメディアクエリだけで切り替えられます。テーマ検出用のJavaScriptも、ハイドレーション時に誤ったバリアントが一瞬見える現象もありません。"
+      },
+      "high-traffic": {
+        "title": "高トラフィックのアプリ: 大規模ではホットリンクせずミラーを使う",
+        "body": "thesvg.orgの/icons/*はCDNキャッシュされ、大規模でも無料ですが、非常に大量のリクエストがある本番アプリでは、jsDelivrミラーを優先するか、リポジトリをクローンしてセルフホストしてください。自分側のトラフィック急増がthesvg.org自体の稼働状況に左右されなくなります。"
+      }
+    },
+    "tricks": {
+      "intro": "知っておきたい小さなテクニック。",
+      "dynamic-slug": {
+        "title": "インポートせずに、スラッグだけで任意のアイコンを表示する",
+        "body": "アイコンが実行時にしか分からない場合(ユーザーが接続した連携、CMSのフィールドなど)、考えられるすべてのコンポーネントをインポートしようとしないでください。スラッグから直接CDNのURLを組み立てます。6,500以上のどのアイコンでも、一括インポートもバンドラーのコストもなしで動作します。"
+      },
+      "fallback-slug": {
+        "title": "未知のスラッグには丁寧にフォールバックする",
+        "body": "スラッグがカタログに存在しない可能性がある場合(ユーザー入力から来た場合など)は、壊れた画像を表示する代わりに、読み込みエラー時に代替アイコンへ切り替えます。"
+      },
+      "css-mask": {
+        "title": "<img>タグのアイコンをCSSマスクで色変更する",
+        "body": "<img>タグは、インラインSVGコンポーネントのようにcurrentColorを継承できません。それでもCSSだけで色を変えたい場合は、背景画像ではなくマスクとして使います。"
+      },
+      "bulk-add": {
+        "title": "1つのコマンドで複数のアイコンを取り込む",
+        "body": "1回の呼び出しで複数のアイコンをリポジトリに直接追加します。エアギャップ環境のCIや、実行時に取得せず自分のコードベースにアイコンをコミットしたい場合に便利です。"
+      },
+      "preload": {
+        "title": "ヒーローロゴをプリロードしてちらつきを防ぐ",
+        "body": "ページ読み込み直後に見えるブランドアイコン(ヒーローロゴ、ファーストビューの連携バッジなど)は、プリロードヒントの恩恵を受けます。レイアウト中に<img>タグが見つかるのを待たず、必要になる前にブラウザが取得します。"
+      },
+      "client-search": {
+        "title": "パッケージなしでクライアント側からカタログを検索する",
+        "body": "独自のアイコンピッカーを作りますか? マニフェストを一度取得して、メモリ内で絞り込みます。検索パッケージも、キー入力ごとのネットワークリクエストも不要です。"
+      }
+    },
+    "recipes": {
+      "intro": "具体的な実装パターン。それぞれ実際の利用場面を想定しています。",
+      "tech-stack-badges": {
+        "title": "「built with」技術スタックのバッジ行",
+        "description": "最も一般的な用途: ランディングページやREADMEに、製品が何で作られているかを示すロゴを並べます。インストール不要の、CDNの<img>タグだけで実現できます。"
+      },
+      "icon-picker": {
+        "title": "検索できるアイコンピッカーのコンボボックス",
+        "description": "マウント時にマニフェストを一度取得し、キー入力のたびにクライアント側で絞り込み、一致したものをCDNのURLで表示します。検索ライブラリも、キー入力ごとのリクエストも不要です。"
+      },
+      "nextjs-image": {
+        "title": "Next.jsの<Image>コンポーネントでアイコンを使う",
+        "description": "Next組み込みの画像オプティマイザーは、デフォルトではSVGをラスタライズしません。画像ごとに最適化を無効にするか、アイコンのドメインでSVGを許可してください。ほとんどのアイコン用途では、素の<img>タグのほうが簡単で、この手順自体が不要になります。"
+      },
+      "accessible-icon-button": {
+        "title": "アクセシブルなアイコンだけのボタン",
+        "description": "目に見えるラベルのないアイコンには、別の方法でアクセシブルな名前が必要です。aria-labelとrole、または視覚的に隠したテキストを使うと、スクリーンリーダーが正しく読み上げます。"
+      },
+      "logo-strip-fallback": {
+        "title": "フォールバック付きの連携・パートナーロゴの帯",
+        "description": "ユーザーが接続したサービスや外部連携のディレクトリでは、スラッグがカタログにないことがあります(タイプミス、ブランド名の変更、未追加など)。壊れた画像を表示する代わりに、フォールバックを用意しましょう。"
+      },
+      "cli-in-ci": {
+        "title": "実行時ではなくCI/ビルド時にアイコンを取り込む",
+        "description": "エアギャップ環境のビルドや、リクエスト時に取得せずビルド成果物にアイコンを含めたい場合は、CLIをビルドステップとして実行します。"
+      }
+    },
+    "migration": {
+      "title": "他のライブラリからの移行",
+      "intro": "機能ごとの詳しい比較は[/compare](/compare)にあります。ここでは短く実用的な内容をまとめます。",
+      "from-simple-icons": {
+        "title": "Simple Iconsからの移行",
+        "summary": "Simple Iconsはモノクロのみ(単色、ライト/ダーク/ワードマークのバリアントなし)で、長年のコミュニティの信頼と幅広いツール対応があります。ほとんどのブランドのスラッグはそのまま移行できます。主な変更点はバリアントを選ぶことです。",
+        "p1": "react-iconsのSi接頭辞付きコンポーネント(SiGithub、SiVercel)を使っているReactアプリは、@thesvg/reactの同等の名前付きエクスポート(Github、Vercel)に切り替えます。",
+        "p2": "Simple Iconsはブランドごとに1つのマークを提供します。theSVGのdefaultバリアントが最も近い代替です。Simple Iconsが常に返す単色の挙動がちょうど必要な場合は、monoを明示的に使ってください。",
+        "p3": "スラッグがtheSVGのカタログにまだない場合は、同等だと決めつけず、/submitでリクエストしてください。対応状況はブランドごとに異なります。"
+      },
+      "from-svgl": {
+        "title": "svglからの移行",
+        "summary": "svglは、カラーとワードマークのバリアントを持つSvelteKitベースのブランドSVGブラウザですが、npmパッケージはなく、SVGのソースを手作業でコピーします。Svelteプロジェクト以外で使う場合や、インストール可能なパッケージが欲しい場合、theSVGは同じ領域をカバーし、さらにCLI、REST API、フレームワーク用パッケージも提供します。",
+        "p1": "コピー&ペーストしていたSVGソースがCDNのURLやパッケージのインポートに置き換わり、上流でロゴが更新されても手作業でコピーし直す必要がなくなります。",
+        "p2": "svglのバリアントモデル(カラー + ワードマーク)は、theSVGのdefault + wordmarkに対応します。theSVGでは、利用可能な場合にmono、light、darkも使えます。",
+        "p3": "Svelteのままで使う場合: 手作業でコピーしたマークアップを@thesvg/svelteコンポーネントに置き換えると(上のSvelteガイドを参照)、型付けと今後の更新が自動で手に入ります。"
+      },
+      "theSVG-vs-iconify-lucide": {
+        "title": "theSVG、Iconify、Lucide: 適切なものの選び方",
+        "summary": "それぞれ解決する問題が異なり、多くのプロジェクトで複数を併用します。機能ごとの完全な比較表は/compareにあります。要点は次のとおりです。",
+        "p1": "ブランドのロゴ(GitHub、Stripe、AWS、連携サービス一覧): theSVG。複数バリアントに対応した、最大級のブランド特化コレクションです。",
+        "p2": "汎用のUIアイコン(矢印、メニュー、設定、シェブロン): Lucide。ブランド向けではなく、インターフェース用に設計されています。",
+        "p3": "ブランドとUIの両方で、無関係な多数のアイコンセットを1つのAPIで扱いたく、大きめの集約サービスでも構わない場合: Iconify。",
+        "p4": "典型的なアプリでは、ブランドロゴにtheSVG、UIにLucideを組み合わせます。thesvg.org自体もそうしています。"
+      }
+    },
+    "faq": {
+      "intro": "theSVGについてのよくある質問。",
+      "licensed": {
+        "q": "これらのロゴは各ブランドから正式にライセンスされていますか?",
+        "a": "いいえ。アイコンは識別目的の指示的フェアユースの範囲で提供されており、ブランドのマークはそれぞれの商標権者の所有物のままです。ロゴを使うことは、推奨や提携を意味しません。詳細は/legalとリポジトリのTRADEMARK.mdを参照してください。"
+      },
+      "commercial": {
+        "q": "これらのアイコンを商用利用できますか?",
+        "a": "はい、識別目的であれば可能です(例: 「Xと連携しています」、技術スタックのバッジ、対応決済方法の一覧)。これは標準的な指示的フェアユースです。実際には存在しない提携や推奨を示唆するような使い方はしないでください。迷う場合は、各ブランド自身のガイドライン(アイコンごとにリンクがある場合あり)を確認してください。"
+      },
+      "missing-variant": {
+        "q": "アイコンにdark、light、wordmarkのバリアントがありません。なぜですか?",
+        "a": "すべてのブランドが7つのバリアントすべてを提供しているわけではありません。確実に存在するのはdefaultだけで、残りはアイコン追加時にきれいな元素材が用意できたかどうかによります。欠けているバリアントのきれいな元素材をお持ちなら、ぜひ投稿してください。"
+      },
+      "request-brand": {
+        "q": "新しいブランドのリクエストや古いロゴの報告はどうすればよいですか?",
+        "a": "/submitでアイコンのリクエストまたは更新の投稿を作成してください。貼り付けるSVGソースは50KB未満で、有効なviewBoxがあり、<script>タグや埋め込みラスター画像を含まないものにしてください。問題があれば、投稿フォームとトリアージボットが知らせます。"
+      },
+      "rate-limit": {
+        "q": "APIにレート制限はありますか?",
+        "a": "/api/registry.jsonと/api/categories.jsonは、データベースを使うエンドポイントではなく、CDNキャッシュされた静的ファイルなので、現時点で実質的なレート制限はありません。非常に大量のリクエストがある場合は、jsDelivrミラーを使ってください。リアルタイム検索とWebhookを備えた、アクセス制限付きの別APIをapi.thesvg.orgで計画しています。"
+      },
+      "ai-assistants": {
+        "q": "AIアシスタントはtheSVGを直接使えますか?",
+        "a": "はい、@thesvg/mcp-serverを使います。Claude Desktop、Claude Code、CursorのMCP設定に追加するローカルのMCPサーバーです(上のAIアシスタントのガイドを参照)。サイトと同じデータに基づく、検索、取得、カテゴリ一覧のツールを提供します。"
+      },
+      "which-package": {
+        "q": "結局どのパッケージをインストールすればよいですか?",
+        "a": "React、Vue、Svelteアプリで少数の決まったアイコンを使う場合: 対応するフレームワークパッケージを使います。ツリーシェイクされ、型も付いています。数が決まっていない、または多数のアイコン(ピッカー、ディレクトリ)の場合: 代わりにCDNの<img>パターンを使います。数にかかわらずバンドルコストはありません。アイコンを自分のリポジトリに取り込みたい場合: CLIを使います。"
+      },
+      "broken-image": {
+        "q": "アイコンが壊れた画像や404になります。何が問題ですか?",
+        "a": "ほとんどの場合はスラッグの不一致です。URLのパスには/api/registry.jsonの正確なスラッグを使いますが、これは必ずしもブランドの表示名とは一致しません(スペース、ドット、大文字小文字は正規化されます)。ブランド名から推測せず、サイトを検索するかレジストリで正確なスラッグを確認してください。"
+      },
+      "nextjs-image": {
+        "q": "theSVGはNext.jsの<Image>コンポーネントで使えますか?",
+        "a": "そのままでは使えません。Next組み込みの画像オプティマイザーはデフォルトでSVGをラスタライズしないため、<Image>にはその画像にunoptimizedプロパティを付けるか、next.configでドメインにdangerouslyAllowSVGを設定する必要があります。ほとんどのアイコン用途では、素の<img>タグ(またはフレームワークパッケージのコンポーネント)のほうが簡単で、オプティマイザー自体を避けられます。"
+      },
+      "typescript-slugs": {
+        "q": "すべてのアイコンのスラッグを列挙するTypeScriptの型はありますか?",
+        "a": "すべてのスラッグのユニオン型はエクスポートされていません。各アイコンはそれぞれ名前付きエクスポート(Github、Figmaなど)なので、存在しないアイコンをインポートすると、文字列リテラル型のエラーではなく、ビルド時にモジュールが見つからないエラーになります。スラッグをデータとして使いたい場合(APIレスポンスなど)、registry.jsonのslugフィールドは通常の文字列です。"
+      },
+      "vs-alternatives": {
+        "q": "theSVGはSimple Icons、svgl、Iconifyとどう違いますか?",
+        "a": "theSVGはブランドアイコンの数が多く、他のどれも扱っていないクラウドプロバイダー(AWS、Azure、GCP)のアイコンがあり、アイコンごとに最大7つのバリアント(color、mono、light、dark、wordmark)を持ち、ツールチェーンも幅広くなっています(フレームワークパッケージ、CLI、REST API、AIエージェント向けMCPサーバー)。Simple Iconsはモノクロのみ、svglはSvelte中心でnpmパッケージがなく、Iconifyは150以上のアイコンセットを集約していますがブランド特化ではありません。詳しい比較は/compareにあります。"
+      },
+      "ssr": {
+        "q": "フレームワークパッケージはサーバーサイドレンダリング(SSR)に対応していますか?",
+        "a": "はい。すべてのフレームワークパッケージ(@thesvg/react、@thesvg/vue、@thesvg/svelte)は、ブラウザ専用APIを使わない素のマークアップを出力するので、デフォルトでSSRに対応しており、クライアント専用ラッパーやハイドレーションのガードは不要です。特に@thesvg/reactのコンポーネントは、\"use client\"ディレクティブなしでReact Server Componentsとして動作します。"
+      },
+      "self-host": {
+        "q": "theSVGをクレジット表記せずにアイコンをセルフホストできますか?",
+        "a": "コードベースとツールはMITライセンスなので、セルフホストにあたって法的にクレジット表記は必須ではありません。ブランドのマーク自体は、ファイルをどこでホストしても商標権者の所有物のままです。/legalを参照してください。リンクを貼ってもらえるとありがたいですが、必須ではありません。"
+      },
+      "dark-mode-differs": {
+        "q": "同じアイコンがダークモードで違って見えるのはなぜですか?",
+        "a": "どこでもdefaultバリアントを表示している場合は想定どおりの動作です。固定のブランドカラーで、テーマには追従しません。ページのテーマに合わせたバリアントにするには、<picture>要素でlight/darkを使うか(上のベストプラクティスを参照)、インラインコンポーネントでmonoバリアントを使ってcurrentColorを継承させてください。"
+      }
+    },
+    "flags": {
+      "intro": "3つの形の{{total}}の国・地域の国旗。`npm i @thesvg/flags`でインストールできます([npmで見る](https://www.npmjs.com/package/@thesvg/flags))。",
+      "usageTitle": "使い方ガイド",
+      "browse": "形、サイズ、色を見て試したいですか? [国旗ブラウザを開く](/collection/flags)。",
+      "creditsTitle": "クレジットとライセンス",
+      "creditsBody": "国旗の図案は、flag-icons(4x3と正方形)とcircle-flags(円形)に由来し、どちらもMITライセンスです。ファイル自体にクレジット表記はありません。完全な通知とファイルごとの出典マップは、リポジトリのTHIRD_PARTY_NOTICES.mdとpackages/flags/src/data/licenses.jsonにあります。国旗は国家や組織の公的なシンボルであり、掲載することは主権についての立場を示すものではありません。",
+      "fullGuide": "プロパティ、ロケール表、Vue、Svelte、素のSVGの例を含む完全なガイド: [docs/flags.md](https://github.com/glincker/thesvg/blob/main/docs/flags.md)。",
+      "sections": {
+        "naming": {
+          "title": "命名",
+          "body": "スラッグは、flag-に小文字のISO 3166-1 alpha-2コード(flag-us、flag-de)または地域コード(flag-gb-eng、flag-es-ct、flag-eu、flag-un)を付けたものです。バリアント: defaultは4x3の長方形、squareは1x1、そしてcircleです。カテゴリはFlagsです。"
+        },
+        "search": {
+          "title": "検索",
+          "body": "国旗は、英語名と現地語名、正式名称、ISOのalpha-2・alpha-3・数値コード、絵文字、旧称、ロケールタグで見つかります。deutschland、DEU、276、holland、england、catalunya、pt-BRなどを試してみてください。"
+        },
+        "shape": {
+          "title": "形の選び方",
+          "body": "正確な比率が重要な場面では4x3、固定の正方形の枠にはsquare、コンパクトなピッカーやチップにはcircleを使います。circleは横長の国旗の端を切り取るので、隣に名前をテキストで添えてください。"
+        },
+        "accessibility": {
+          "title": "アクセシビリティ",
+          "body": "装飾用の国旗にはaria-hiddenを付け、意味は表示されるテキストが担います。国旗が単独で表示される場合にのみtitleを指定してください。アクセシブルな名前付きのrole=imgとして出力されます。"
+        },
+        "language": {
+          "title": "国旗は国であって、言語ではありません",
+          "body": "国旗の横にその言語のネイティブな名前を表示し、国旗だけを言語セレクターにしないでください。getFlagForLocaleは、ロケールを装飾用の一般的な国旗に対応付けます。"
+        },
+        "legal": {
+          "title": "法的事項",
+          "body": "国旗は国家や組織の公的なシンボルです。掲載することは、主権や国境についての立場を示すものではありません。法的通知と免責事項を参照してください。"
+        }
+      },
+      "steps": {
+        "pick": {
+          "head": "1. 国旗を選ぶ。",
+          "body": "[国旗コレクション](/collection/flags)で、名前、ISOコード、絵文字、ロケールから検索します。各国旗には、コピーとダウンロードのボタンがある専用ページがあります。"
+        },
+        "cdn": {
+          "head": "2. インストールせずに使う。",
+          "body": "CDNからファイルをリンクします: `https://cdn.jsdelivr.net/npm/@thesvg/flags/dist/svg/4x3/us.svg`。他の形にするには、`4x3`の代わりに`1x1`または`circle`を使います。"
+        },
+        "install": {
+          "head": "3. またはパッケージをインストールする。",
+          "body": "`npm i @thesvg/flags`([npmのページ](https://www.npmjs.com/package/@thesvg/flags))を実行し、`@thesvg/flags/react/us`から国旗を1つだけインポートすると、その国旗だけがバンドルされます。"
+        },
+        "locale": {
+          "head": "4. ロケールを国旗に対応付ける。",
+          "body": "`getFlagForLocale(\"pt-BR\")`は、装飾用にブラジルを返します。隣には必ず言語名を表示してください。"
+        }
+      }
+    }
   }
 }

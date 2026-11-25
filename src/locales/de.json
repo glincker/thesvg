@@ -1453,5 +1453,350 @@
       "width": "Breite",
       "yes": "Ja"
     }
+  },
+  "docs": {
+    "ui": {
+      "navLabel": "Dokumentationsnavigation",
+      "onThisPage": "Auf dieser Seite",
+      "askAi": "KI fragen",
+      "openIn": "In {{name}} öffnen",
+      "copy": "Kopieren",
+      "copied": "Kopiert",
+      "copyFailed": "Kopieren fehlgeschlagen",
+      "copyLinkTo": "Link zu {{title}} kopieren",
+      "editOnGithub": "Diese Seite auf GitHub bearbeiten",
+      "thanks": "Danke für dein Feedback",
+      "wasHelpful": "War diese Seite hilfreich?",
+      "helpfulYes": "Ja, diese Seite war hilfreich",
+      "helpfulNo": "Nein, diese Seite war nicht hilfreich",
+      "docsBadge": "Doku",
+      "source": "Quellcode",
+      "relatedQuestions": "Verwandte Fragen",
+      "seeAllFaq": "Alle FAQ ansehen"
+    },
+    "nav": {
+      "groups": {
+        "getting-started": "Erste Schritte",
+        "frameworks-tools": "Frameworks und Tools",
+        "guides": "Anleitungen",
+        "reference": "Referenz"
+      },
+      "items": {
+        "overview": "Übersicht",
+        "cdn": "CDN / HTML",
+        "react": "React",
+        "vue": "Vue",
+        "svelte": "Svelte",
+        "react-native": "React Native",
+        "cli": "CLI",
+        "api": "REST-API",
+        "mcp": "KI-Assistenten (MCP)",
+        "recipes": "Rezepte",
+        "best-practices": "Best Practices",
+        "flags": "Flaggen",
+        "tricks": "Tricks",
+        "migration": "Migration",
+        "faq": "FAQ"
+      }
+    },
+    "home": {
+      "heading": "Doku und Anleitungen",
+      "intro": "Alles für die Nutzung von über {{total}} Marken-Icons: Framework-Anleitungen, praxisnahe Rezepte, Best Practices, Tricks, Migrationsanleitungen und FAQ.",
+      "gettingStartedTitle": "Erste Schritte",
+      "gettingStartedBody": "Wähle die Anleitung, die zu deinem Vorhaben passt. Eine Handvoll bekannter Icons in React, Vue oder Svelte: nimm das passende Paket. Eine offene oder große Menge (eine Auswahl, eine Verzeichnisseite): nimm stattdessen die CDN-Anleitung, sie verursacht keine Bundle-Kosten, egal wie viele Icons du anzeigst. Icons in dein eigenes Repository übernehmen: nimm die CLI. Einen KI-Assistenten anbinden: siehe die MCP-Anleitung.",
+      "cards": {
+        "flags": "Länder- und Regionsflaggen: Formen, Größen, Barrierefreiheit, der Locale-Helfer, Suche und Browser.",
+        "recipes": "Konkrete Umsetzungsmuster: Tech-Stack-Badges, Icon-Auswahlen, barrierefreie Buttons und mehr.",
+        "best-practices": "Größen, Variantenwahl, CDN-Pinning und Dark Mode richtig umgesetzt.",
+        "tricks": "Kleine Techniken: dynamische Icons per Slug, Umfärben mit CSS-Maske, Preload-Hinweise.",
+        "migration": "Wechsel von Simple Icons oder svgl, oder die Wahl zwischen theSVG, Iconify und Lucide.",
+        "faq": "Lizenzen, fehlende Varianten, Rate Limits und weitere häufige Fragen."
+      }
+    },
+    "guides": {
+      "cdn": {
+        "label": "CDN / reines HTML",
+        "summary": "Keine Installation, kein Build-Schritt. Zeige mit einem <img>-Tag auf eine CDN-URL. Funktioniert ganz ohne JavaScript."
+      },
+      "react": {
+        "label": "React",
+        "summary": "Typisierte, Tree-Shaking-fähige Komponenten. Funktionieren standardmäßig als Server Components, ohne \"use client\"."
+      },
+      "vue": {
+        "label": "Vue",
+        "summary": "Typisierte Vue-3-Render-Function-Komponenten. Kein SFC-Compiler nötig."
+      },
+      "svelte": {
+        "label": "Svelte",
+        "summary": "Typisierte Komponenten für Svelte 4 und 5. Reines Markup ohne reine Browser-APIs, daher identisches Rendering bei SvelteKit-SSR und im Client: kein onMount-Guard und kein reiner Client-Wrapper nötig."
+      },
+      "react-native": {
+        "label": "React Native",
+        "summary": "Rendert über react-native-svg. Funktioniert in Expo Go ohne Config-Plugin und ohne native Einrichtung."
+      },
+      "cli": {
+        "label": "CLI (ins eigene Repository übernehmen)",
+        "summary": "Kopiert Icon-Dateien direkt in dein Projekt, im Stil von shadcn. Keine Laufzeitabhängigkeit zu installieren."
+      },
+      "api": {
+        "label": "REST-API",
+        "summary": "Statisches, vom CDN gecachtes JSON. Keine Authentifizierung, kein dynamischer Such-Endpunkt: Lade das Manifest einmal und filtere im Client."
+      },
+      "mcp": {
+        "label": "KI-Assistenten (MCP)",
+        "summary": "Ein lokaler MCP-Server (stdio), der KI-Assistenten Werkzeuge zum direkten Suchen und Abrufen von Icons gibt. Derselbe mcpServers-JSON-Block funktioniert in der Konfigurationsdatei jedes MCP-kompatiblen Clients (Claude Desktop, Claude Code, Cursor, Windsurf): Wo diese Datei liegt, steht in der Dokumentation deines Clients."
+      }
+    },
+    "snippets": {
+      "basic-usage": "Grundlegende Verwendung",
+      "automatic-dark-mode-no-js": "Automatischer Dark Mode (ohne JS)",
+      "install": "Installation",
+      "usage": "Verwendung",
+      "variants": "Varianten",
+      "individual-import-smallest-bundle": "Einzelner Import (kleinstes Bundle)",
+      "nuxt-3-explicit-import-no-auto-import-config-needed": "Nuxt 3 (expliziter Import, keine Auto-Import-Konfiguration nötig)",
+      "expo-router-screen": "Expo-Router-Screen",
+      "add-one-icon": "Ein Icon hinzufügen",
+      "add-several-as-typed-jsx": "Mehrere hinzufügen, als typisiertes JSX",
+      "search-the-catalog": "Den Katalog durchsuchen",
+      "in-a-dockerfile-ci-build-step": "In einem Dockerfile / CI-Build-Schritt",
+      "full-icon-manifest": "Vollständiges Icon-Manifest",
+      "categories-with-counts": "Kategorien mit Anzahl",
+      "direct-svg": "SVG direkt",
+      "jsdelivr-mirror-recommended-for-high-traffic": "jsDelivr-Mirror (empfohlen bei hohem Traffic)",
+      "mcp-config-claude-desktop-cursor-etc": "MCP-Konfiguration (Claude Desktop, Cursor usw.)",
+      "dynamic-icon": "Dynamisches Icon",
+      "onerror-fallback": "onError-Fallback",
+      "css-mask-recolor": "Umfärben mit CSS-Maske",
+      "bulk-add": "Mehrere hinzufügen",
+      "preload-hint": "Preload-Hinweis",
+      "client-side-filter": "Filter im Client",
+      "html-jsx": "HTML / JSX",
+      "markdown-readme": "Markdown (README)",
+      "react": "React",
+      "option-a-skip-optimization-for-this-image": "Option A: Optimierung für dieses Bild überspringen",
+      "option-b-allow-svgs-from-the-icon-domain": "Option B: SVGs von der Icon-Domain erlauben",
+      "package-json-script": "package.json-Skript",
+      "dockerfile": "Dockerfile",
+      "before-after": "Vorher / nachher"
+    },
+    "bestPractices": {
+      "intro": "Größen, Variantenwahl, CDN-Pinning und Dark Mode, richtig umgesetzt.",
+      "cdn-vs-components": {
+        "title": "CDN-<img> für Raster, Komponenten für eine bekannte Auswahl",
+        "body": "Du zeigst Hunderte oder Tausende Icons an (eine Auswahl, ein Verzeichnis)? Nutze das CDN-<img>-URL-Muster: keine Bundle-Kosten, egal wie viele du anzeigst. Reserviere benannte Importe aus @thesvg/react, @thesvg/vue oder @thesvg/svelte für eine kleine, feste Menge von Icons, die direkt in deinem Quellcode referenziert werden, wo Tree-Shaking nur das behält, was du nutzt."
+      },
+      "set-dimensions": {
+        "title": "Immer width und height setzen",
+        "body": "Ein <img> hat keine intrinsische Größe, bevor es geladen ist. Ein Icon ohne explizite width/height (oder reserviertes aspect-ratio) verursacht daher Layout-Verschiebungen beim Laden der Seite. Setze beides bei jedem Icon, auch bei solchen, die nur über CSS-Klassen dimensioniert werden."
+      },
+      "recolor-mono": {
+        "title": "Umfärben über die mono-Variante, nicht über CSS-Filter",
+        "body": "Ein Icon soll zu einer beliebigen Textfarbe passen? Nutze die mono-Variante mit einer Inline-Komponente (sie erbt currentColor) statt CSS-Tricks wie filter: invert(): Filter sind verlustbehaftet und lassen sich nicht auf beliebige Hex-Werte abbilden."
+      },
+      "pin-jsdelivr": {
+        "title": "Den jsDelivr-Mirror an ein Release pinnen, nicht an @main",
+        "body": "cdn.jsdelivr.net/gh/glincker/thesvg@main/... folgt dem beweglichen main-Branch. Pinne in Produktion auf einen veröffentlichten Git-Tag (z. B. @{{ref}}, das aktuelle Release), damit eine Umbenennung oder Entfernung im Upstream nicht unbemerkt ändert, was deine App anzeigt."
+      },
+      "picture-dark-mode": {
+        "title": "<picture> für Dark Mode nutzen, nicht JS",
+        "body": "Icons mit hellen und dunklen Varianten lassen sich über <picture> mit einer reinen CSS-Media-Query umschalten: kein JavaScript zur Theme-Erkennung und kein Aufblitzen der falschen Variante bei der Hydration."
+      },
+      "high-traffic": {
+        "title": "Apps mit viel Traffic: spiegeln, nicht in großem Stil hotlinken",
+        "body": "Das /icons/* von thesvg.org wird vom CDN gecacht und ist in großem Maßstab kostenlos, aber sehr stark ausgelastete Produktions-Apps sollten trotzdem den jsDelivr-Mirror bevorzugen oder selbst hosten, indem sie das Repository klonen. So hängt ein Traffic-Spitze bei dir nie von der Verfügbarkeit von thesvg.org ab."
+      }
+    },
+    "tricks": {
+      "intro": "Kleine Techniken, die man kennen sollte.",
+      "dynamic-slug": {
+        "title": "Jedes Icon per Slug rendern, ohne es zu importieren",
+        "body": "Wenn das Icon erst zur Laufzeit bekannt ist (die verbundenen Integrationen eines Nutzers, ein CMS-Feld), versuche nicht, jede mögliche Komponente zu importieren. Baue die CDN-URL direkt aus dem Slug: Das funktioniert für jedes der über 6.500 Icons ohne Sammelimport und ohne Bundler-Kosten."
+      },
+      "fallback-slug": {
+        "title": "Bei unbekanntem Slug sauber auf einen Ersatz ausweichen",
+        "body": "Wenn ein Slug im Katalog möglicherweise nicht existiert (z. B. weil er aus einer Nutzereingabe stammt), wechsle bei einem Ladefehler auf ein Ersatz-Icon, statt ein defektes Bild zu zeigen."
+      },
+      "css-mask": {
+        "title": "Ein <img>-Icon mit einer CSS-Maske umfärben",
+        "body": "Ein <img>-Tag kann currentColor nicht erben wie eine Inline-SVG-Komponente. Um es trotzdem nur mit CSS umzufärben, nutze es als Maske statt als Hintergrundbild."
+      },
+      "bulk-add": {
+        "title": "Mehrere Icons mit einem Befehl übernehmen",
+        "body": "Füge mehrere Icons in einem einzigen Aufruf direkt in dein Repository ein: praktisch für CI ohne Netzwerkzugang oder wenn du Icons lieber in deinen eigenen Code einchecken willst, statt sie zur Laufzeit zu laden."
+      },
+      "preload": {
+        "title": "Ein Hero-Logo vorab laden, um ein Aufblitzen zu vermeiden",
+        "body": "Ein Markenicon, das direkt beim Laden der Seite sichtbar ist (ein Hero-Logo, ein Integrations-Badge im sichtbaren Bereich), profitiert von einem Preload-Hinweis: Der Browser lädt es, bevor es gebraucht wird, statt zu warten, bis er den <img>-Tag beim Layout entdeckt."
+      },
+      "client-search": {
+        "title": "Den Katalog im Client durchsuchen, ohne Paket",
+        "body": "Du baust eine eigene Icon-Auswahl? Lade das Manifest einmal und filtere es im Speicher: kein Such-Paket, keine Netzwerkanfrage pro Tastendruck."
+      }
+    },
+    "recipes": {
+      "intro": "Konkrete Umsetzungsmuster, jeweils für einen realen Anwendungsfall.",
+      "tech-stack-badges": {
+        "title": "Eine \"Gebaut mit\"-Badge-Reihe für den Tech-Stack",
+        "description": "Der häufigste Anwendungsfall: eine Reihe von Logos auf einer Landingpage oder in einer README, die zeigt, womit ein Produkt gebaut ist. Einfache CDN-<img>-Tags, keine Installation."
+      },
+      "icon-picker": {
+        "title": "Eine durchsuchbare Combobox zur Icon-Auswahl",
+        "description": "Lade das Manifest einmal beim Mounten, filtere pro Tastendruck im Client und rendere die Treffer mit der CDN-URL. Keine Suchbibliothek, keine Anfrage pro Tastendruck."
+      },
+      "nextjs-image": {
+        "title": "Icons mit der <Image>-Komponente von Next.js verwenden",
+        "description": "Der eingebaute Bildoptimierer von Next rastert SVGs standardmäßig nicht. Entweder nimmst du ein Bild von der Optimierung aus oder erlaubst SVGs für die Icon-Domain: Ein einfaches <img>-Tag ist für die meisten Icon-Fälle einfacher und umgeht das Ganze."
+      },
+      "accessible-icon-button": {
+        "title": "Ein barrierefreier Button nur mit Icon",
+        "description": "Ein Icon ohne sichtbare Beschriftung braucht auf anderem Weg einen zugänglichen Namen: aria-label plus role oder visuell verborgenen Text, damit Screenreader es korrekt ansagen."
+      },
+      "logo-strip-fallback": {
+        "title": "Eine Logoleiste für Integrationen/Partner mit Fallback",
+        "description": "Ein Verzeichnis nutzerverbundener oder externer Integrationen, bei dem ein Slug im Katalog fehlen kann (Tippfehler, umbenannte Marke, noch nicht hinzugefügt). Weiche auf einen Fallback aus, statt ein defektes Bild zu zeigen."
+      },
+      "cli-in-ci": {
+        "title": "Icons zur CI-/Build-Zeit statt zur Laufzeit einbinden",
+        "description": "Für Builds ohne Netzwerkzugang oder wenn Icons in einem Build-Artefakt liegen sollen, statt zur Anfragezeit geladen zu werden, führe die CLI als Build-Schritt aus."
+      }
+    },
+    "migration": {
+      "title": "Wechsel von anderen Bibliotheken",
+      "intro": "Der vollständige Funktionsvergleich steht auf [/compare](/compare). Hier die kurze, praktische Fassung.",
+      "from-simple-icons": {
+        "title": "Wechsel von Simple Icons",
+        "summary": "Simple Icons ist nur monochrom (eine Farbe, keine Light-/Dark-/Wordmark-Varianten), mit jahrelangem Vertrauen der Community und breiter Tool-Unterstützung. Die meisten Marken-Slugs lassen sich direkt übernehmen; die Hauptänderung ist die Wahl einer Variante.",
+        "p1": "React-Apps, die die Si-präfixierten Komponenten von react-icons nutzen (SiGithub, SiVercel), wechseln zum entsprechenden benannten Export aus @thesvg/react (Github, Vercel).",
+        "p2": "Simple Icons liefert pro Marke ein einziges Zeichen. Die default-Variante von theSVG kommt dem am nächsten; nutze mono ausdrücklich, wenn du genau das einfarbige Verhalten von Simple Icons willst.",
+        "p3": "Wenn ein Slug im Katalog von theSVG noch nicht existiert, beantrage ihn unter /submit, statt von Gleichwertigkeit auszugehen: Die Abdeckung unterscheidet sich je Marke."
+      },
+      "from-svgl": {
+        "title": "Wechsel von svgl",
+        "summary": "svgl ist ein SvelteKit-basierter Browser für Marken-SVGs mit Farb- und Wordmark-Varianten, aber ohne npm-Paket: Du kopierst den SVG-Quelltext von Hand. Wenn du nicht in einem Svelte-Projekt arbeitest oder ein installierbares Paket willst, deckt theSVG dasselbe ab und bietet zusätzlich CLI, REST-API und Framework-Pakete.",
+        "p1": "Kopierter SVG-Quelltext wird zu einer CDN-URL oder einem Paket-Import: kein manuelles Neu-Kopieren mehr, wenn sich ein Logo im Upstream ändert.",
+        "p2": "Das Variantenmodell von svgl (Farbe + Wordmark) entspricht default + wordmark bei theSVG; theSVG bietet zusätzlich mono, light und dark, sofern verfügbar.",
+        "p3": "Wenn du bei Svelte bleibst: Ersetze von Hand kopiertes Markup durch @thesvg/svelte-Komponenten (siehe die Svelte-Anleitung oben), und du bekommst Typisierung und künftige Updates gratis."
+      },
+      "theSVG-vs-iconify-lucide": {
+        "title": "theSVG, Iconify oder Lucide: die richtige Wahl treffen",
+        "summary": "Sie lösen unterschiedliche Probleme, und die meisten Projekte nutzen am Ende mehrere. Die vollständige Funktionsmatrix steht auf /compare; die Kurzfassung:",
+        "p1": "Marken-Logos (GitHub, Stripe, AWS, deine Integrationsliste): theSVG, die größte markenfokussierte Sammlung mit Unterstützung für mehrere Varianten.",
+        "p2": "Allgemeine UI-Icons (Pfeile, Menüs, Einstellungen, Chevrons): Lucide, nicht markenfokussiert und für die Oberfläche gedacht.",
+        "p3": "Eine API über viele unabhängige Icon-Sets, Marken und UI zugleich, und ein größerer Aggregator stört dich nicht: Iconify.",
+        "p4": "Eine typische App kombiniert theSVG für Marken-Logos mit Lucide für die Oberfläche: genau das macht thesvg.org selbst."
+      }
+    },
+    "faq": {
+      "intro": "Häufige Fragen zu theSVG.",
+      "licensed": {
+        "q": "Sind diese Logos offiziell von den jeweiligen Marken lizenziert?",
+        "a": "Nein. Die Icons werden im Rahmen der nominativen Fair Use zu Identifikationszwecken bereitgestellt: Die Marken bleiben Eigentum ihrer jeweiligen Inhaber. Die Verwendung eines Logos bedeutet keine Billigung oder Partnerschaft. Details unter /legal und in der TRADEMARK.md des Repositorys."
+      },
+      "commercial": {
+        "q": "Darf ich diese Icons kommerziell nutzen?",
+        "a": "Ja, zu Identifikationszwecken (z. B. \"wir integrieren X\", ein Tech-Stack-Badge, eine Liste von Zahlungsmethoden): Das ist übliche nominative Fair Use. Verwende ein Zeichen nicht so, dass eine Partnerschaft oder Billigung vorgetäuscht wird, die es nicht gibt. Im Zweifel prüfe die Richtlinien der Marke selbst, die pro Icon verlinkt sind, sofern vorhanden."
+      },
+      "missing-variant": {
+        "q": "Bei einem Icon fehlt eine dark-, light- oder wordmark-Variante. Warum?",
+        "a": "Nicht jede Marke liefert alle 7 Varianten. default ist die einzige, die garantiert vorhanden ist; der Rest hängt davon ab, welche saubere Quellgrafik beim Hinzufügen des Icons verfügbar war. Wenn du eine saubere Quelle für eine fehlende Variante hast, reiche sie ein."
+      },
+      "request-brand": {
+        "q": "Wie beantrage ich eine neue Marke oder melde ein veraltetes Logo?",
+        "a": "Eröffne unter /submit einen Antrag auf ein neues Icon oder ein Icon-Update. Eingefügter SVG-Quelltext muss unter 50 KB bleiben, ein gültiges viewBox haben und darf keine <script>-Tags oder eingebetteten Rasterbilder enthalten: Das Einreichungsformular und der Triage-Bot melden dir, wenn etwas nicht stimmt."
+      },
+      "rate-limit": {
+        "q": "Gibt es ein Rate Limit für die API?",
+        "a": "/api/registry.json und /api/categories.json sind statische, vom CDN gecachte Dateien und kein datenbankgestützter Endpunkt, daher gibt es heute praktisch kein Rate Limit. Bei sehr hohem Anfragevolumen nimm lieber den jsDelivr-Mirror. Eine separate, zugangsbeschränkte API mit Echtzeitsuche und Webhooks ist unter api.thesvg.org geplant."
+      },
+      "ai-assistants": {
+        "q": "Können KI-Assistenten theSVG direkt nutzen?",
+        "a": "Ja, über @thesvg/mcp-server: ein lokaler MCP-Server, den du in der MCP-Konfiguration von Claude Desktop, Claude Code oder Cursor einträgst (siehe die KI-Assistenten-Anleitung oben). Er stellt Werkzeuge zum Suchen, Abrufen und Auflisten von Kategorien bereit, gestützt auf dieselben Daten wie die Website."
+      },
+      "which-package": {
+        "q": "Welches Paket sollte ich tatsächlich installieren?",
+        "a": "Eine Handvoll bekannter Icons in einer React-, Vue- oder Svelte-App: nimm das passende Framework-Paket, es ist Tree-Shaking-fähig und typisiert. Eine offene oder große Menge (eine Auswahl, ein Verzeichnis): nimm stattdessen das CDN-<img>-Muster, ohne Bundle-Kosten, egal wie viele. Icons im eigenen Repository: nimm die CLI."
+      },
+      "broken-image": {
+        "q": "Mein Icon zeigt ein defektes Bild bzw. einen 404. Was ist los?",
+        "a": "Fast immer passt der Slug nicht: Der URL-Pfad verwendet den exakten Slug aus /api/registry.json, der nicht immer dem Anzeigenamen der Marke entspricht (Leerzeichen, Punkte und Groß-/Kleinschreibung werden normalisiert). Suche auf der Website oder schau in der Registry nach dem exakten Slug, statt ihn aus dem Markennamen zu raten."
+      },
+      "nextjs-image": {
+        "q": "Funktioniert theSVG mit der <Image>-Komponente von Next.js?",
+        "a": "Nicht ohne Weiteres. Der eingebaute Bildoptimierer von Next rastert SVGs standardmäßig nicht, daher braucht <Image> für dieses Bild die Eigenschaft unoptimized oder dangerouslyAllowSVG für die Domain in der next.config. Für die meisten Icon-Fälle ist ein einfaches <img>-Tag (oder eine Komponente aus einem Framework-Paket) einfacher und umgeht den Optimierer ganz."
+      },
+      "typescript-slugs": {
+        "q": "Gibt es einen TypeScript-Typ, der alle Icon-Slugs auflistet?",
+        "a": "Es gibt keinen exportierten Union-Typ aller Slugs: Jedes Icon ist ein eigener benannter Export (Github, Figma, ...), daher führt der Import eines nicht existierenden Icons beim Build zu einem Modul-nicht-gefunden-Fehler, nicht zu einem Literaltyp-Fehler. Brauchst du Slugs als Daten (z. B. aus einer API-Antwort), ist das slug-Feld in registry.json ein einfacher String."
+      },
+      "vs-alternatives": {
+        "q": "Wie unterscheidet sich theSVG von Simple Icons, svgl oder Iconify?",
+        "a": "theSVG hat mehr Marken-Icons, dazu Icons von Cloud-Anbietern (AWS, Azure, GCP), die keine der Alternativen abdeckt, bis zu 7 Varianten pro Icon (color, mono, light, dark, wordmark) und eine breitere Toolchain (Framework-Pakete, CLI, REST-API, MCP-Server für KI-Agenten). Simple Icons ist nur monochrom; svgl ist auf Svelte ausgerichtet und hat kein npm-Paket; Iconify bündelt über 150 Icon-Sets, ist aber nicht markenfokussiert. Den ausführlichen Vergleich gibt es unter /compare."
+      },
+      "ssr": {
+        "q": "Unterstützen die Framework-Pakete serverseitiges Rendering (SSR)?",
+        "a": "Ja. Jedes Framework-Paket (@thesvg/react, @thesvg/vue, @thesvg/svelte) rendert reines Markup ohne reine Browser-APIs und ist daher standardmäßig SSR-tauglich: kein reiner Client-Wrapper und kein Hydration-Guard nötig. Die Komponenten von @thesvg/react laufen insbesondere als React Server Components ohne \"use client\"-Direktive."
+      },
+      "self-host": {
+        "q": "Kann ich die Icons selbst hosten, ohne theSVG zu nennen?",
+        "a": "Der Code und die Tools stehen unter der MIT-Lizenz, daher ist für das Self-Hosting rechtlich keine Namensnennung nötig. Die Markenzeichen selbst bleiben Eigentum ihrer Inhaber, unabhängig davon, wo du die Dateien hostest: siehe /legal. Ein Link zurück ist willkommen, aber nicht erforderlich."
+      },
+      "dark-mode-differs": {
+        "q": "Warum sieht dasselbe Icon im Dark Mode anders aus?",
+        "a": "Wenn du überall die default-Variante renderst, ist das zu erwarten: Es ist eine feste Markenfarbe und passt sich dem Theme nicht an. Für eine Variante, die sich dem Seiten-Theme anpasst, nutze light/dark mit einem <picture>-Element (siehe Best Practices oben) oder die mono-Variante mit einer Inline-Komponente, damit sie currentColor erbt."
+      }
+    },
+    "flags": {
+      "intro": "{{total}} Länder- und Regionsflaggen in drei Formen. Installation mit `npm i @thesvg/flags` ([auf npm](https://www.npmjs.com/package/@thesvg/flags)).",
+      "usageTitle": "Nutzungsanleitung",
+      "browse": "Du willst Formen, Größen und Farben durchsehen und ausprobieren? [Öffne den Flaggen-Browser](/collection/flags).",
+      "creditsTitle": "Quellen und Lizenzen",
+      "creditsBody": "Die Flaggengrafiken stammen aus flag-icons (4x3 und quadratisch) und circle-flags (rund), beide unter MIT-Lizenz. Die Dateien selbst enthalten keinen Quellenhinweis; die vollständigen Hinweise und die Quellzuordnung pro Datei stehen in THIRD_PARTY_NOTICES.md und packages/flags/src/data/licenses.json im Repository. Eine Flagge ist ein öffentliches Symbol eines Staates oder einer Organisation, und ihre Aufnahme ist keine Aussage zur Souveränität.",
+      "fullGuide": "Vollständige Anleitung mit Props, Locale-Tabelle sowie Vue-, Svelte- und reinen SVG-Beispielen: [docs/flags.md](https://github.com/glincker/thesvg/blob/main/docs/flags.md).",
+      "sections": {
+        "naming": {
+          "title": "Benennung",
+          "body": "Slugs bestehen aus flag- plus dem kleingeschriebenen ISO-3166-1-Alpha-2-Code (flag-us, flag-de) oder dem Regionalcode (flag-gb-eng, flag-es-ct, flag-eu, flag-un). Varianten: default ist das 4x3-Rechteck, square ist 1x1 und circle. Die Kategorie heißt Flags."
+        },
+        "search": {
+          "title": "Suche",
+          "body": "Flaggen findest du über englische und einheimische Namen, offizielle Namen, ISO-Alpha-2-, Alpha-3- und numerische Codes, Emoji, frühere Namen und Locale-Tags. Probiere deutschland, DEU, 276, holland, england, catalunya oder pt-BR."
+        },
+        "shape": {
+          "title": "Eine Form wählen",
+          "body": "Nimm 4x3, wenn echte Proportionen helfen, square für feste quadratische Plätze und circle für kompakte Auswahlen und Chips. Circle beschneidet die Ränder breiter Flaggen, behalte also den Namen als Text daneben."
+        },
+        "accessibility": {
+          "title": "Barrierefreiheit",
+          "body": "Dekorative Flaggen sind aria-hidden, und der sichtbare Text trägt die Bedeutung. Vergib nur dann einen title, wenn die Flagge allein steht; das erzeugt role=img mit einem zugänglichen Namen."
+        },
+        "language": {
+          "title": "Eine Flagge ist ein Land, keine Sprache",
+          "body": "Zeige den Namen der Sprache in dieser Sprache neben der Flagge und verwende Flaggen nicht als einzige Sprachauswahl. getFlagForLocale ordnet einer Locale eine übliche Flagge zur Dekoration zu."
+        },
+        "legal": {
+          "title": "Rechtliches",
+          "body": "Eine Flagge ist ein öffentliches Symbol eines Staates oder einer Organisation. Ihre Aufnahme ist keine Aussage zu Souveränität oder Grenzen. Siehe Rechtshinweis und Haftungsausschluss."
+        }
+      },
+      "steps": {
+        "pick": {
+          "head": "1. Eine Flagge auswählen.",
+          "body": "Suche nach Name, ISO-Code, Emoji oder Locale in [der Flaggen-Sammlung](/collection/flags). Jede Flagge hat eine eigene Seite mit Kopier- und Download-Buttons."
+        },
+        "cdn": {
+          "head": "2. Ohne Installation verwenden.",
+          "body": "Binde die Datei über das CDN ein: `https://cdn.jsdelivr.net/npm/@thesvg/flags/dist/svg/4x3/us.svg`, oder nimm `1x1` oder `circle` statt `4x3` für die anderen Formen."
+        },
+        "install": {
+          "head": "3. Oder das Paket installieren.",
+          "body": "`npm i @thesvg/flags` ([npm-Seite](https://www.npmjs.com/package/@thesvg/flags)), dann importiere eine einzelne Flagge aus `@thesvg/flags/react/us`, damit nur diese Flagge im Bundle landet."
+        },
+        "locale": {
+          "head": "4. Eine Locale einer Flagge zuordnen.",
+          "body": "`getFlagForLocale(\"pt-BR\")` liefert zur Dekoration Brasilien. Zeige daneben immer den Namen der Sprache."
+        }
+      }
+    }
   }
 }

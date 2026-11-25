@@ -1453,5 +1453,350 @@
       "width": "너비",
       "yes": "예"
     }
+  },
+  "docs": {
+    "ui": {
+      "navLabel": "문서 탐색",
+      "onThisPage": "이 페이지에서",
+      "askAi": "AI에게 질문",
+      "openIn": "{{name}}에서 열기",
+      "copy": "복사",
+      "copied": "복사됨",
+      "copyFailed": "복사하지 못했습니다",
+      "copyLinkTo": "{{title}} 링크 복사",
+      "editOnGithub": "GitHub에서 이 페이지 편집",
+      "thanks": "피드백 감사합니다",
+      "wasHelpful": "이 페이지가 도움이 되었나요?",
+      "helpfulYes": "예, 도움이 되었습니다",
+      "helpfulNo": "아니요, 도움이 되지 않았습니다",
+      "docsBadge": "문서",
+      "source": "소스",
+      "relatedQuestions": "관련 질문",
+      "seeAllFaq": "FAQ 전체 보기"
+    },
+    "nav": {
+      "groups": {
+        "getting-started": "시작하기",
+        "frameworks-tools": "프레임워크 및 도구",
+        "guides": "가이드",
+        "reference": "레퍼런스"
+      },
+      "items": {
+        "overview": "개요",
+        "cdn": "CDN / HTML",
+        "react": "React",
+        "vue": "Vue",
+        "svelte": "Svelte",
+        "react-native": "React Native",
+        "cli": "CLI",
+        "api": "REST API",
+        "mcp": "AI 어시스턴트 (MCP)",
+        "recipes": "레시피",
+        "best-practices": "모범 사례",
+        "flags": "국기",
+        "tricks": "팁",
+        "migration": "마이그레이션",
+        "faq": "FAQ"
+      }
+    },
+    "home": {
+      "heading": "문서 및 가이드",
+      "intro": "{{total}}개 이상의 브랜드 아이콘을 사용하는 데 필요한 모든 것: 프레임워크 가이드, 실전 레시피, 모범 사례, 팁, 마이그레이션 가이드, FAQ.",
+      "gettingStartedTitle": "시작하기",
+      "gettingStartedBody": "만들려는 것에 맞는 가이드를 고르세요. React, Vue, Svelte에서 알려진 소수의 아이콘을 쓴다면 해당 패키지를 사용하세요. 개수가 정해지지 않았거나 많은 경우(선택기, 디렉터리 페이지)에는 CDN 가이드를 사용하세요. 아이콘을 몇 개 보여 주든 번들 비용이 0입니다. 아이콘을 자신의 저장소에 넣으려면 CLI를 사용하세요. AI 어시스턴트를 연결하려면 MCP 가이드를 참고하세요.",
+      "cards": {
+        "flags": "국가 및 지역 국기: 모양, 크기, 접근성, 로케일 도우미, 검색, 브라우저.",
+        "recipes": "구체적인 구현 패턴: 기술 스택 배지, 아이콘 선택기, 접근성 있는 버튼 등.",
+        "best-practices": "크기 지정, 변형 선택, CDN 버전 고정, 다크 모드를 올바르게 처리하는 방법.",
+        "tricks": "작은 기법: 슬러그로 동적 아이콘 사용, CSS 마스크로 색 바꾸기, 프리로드 힌트.",
+        "migration": "Simple Icons나 svgl에서 옮기는 방법, 그리고 theSVG, Iconify, Lucide 중 고르는 방법.",
+        "faq": "라이선스, 누락된 변형, 요청 제한 등 자주 묻는 질문."
+      }
+    },
+    "guides": {
+      "cdn": {
+        "label": "CDN / 순수 HTML",
+        "summary": "설치도 빌드 단계도 필요 없습니다. <img> 태그가 CDN URL을 가리키게 하면 됩니다. JavaScript 없이 동작합니다."
+      },
+      "react": {
+        "label": "React",
+        "summary": "타입이 지정되고 트리 셰이킹이 가능한 컴포넌트. 기본적으로 서버 컴포넌트로 동작하며 \"use client\"가 필요 없습니다."
+      },
+      "vue": {
+        "label": "Vue",
+        "summary": "타입이 지정된 Vue 3 렌더 함수 컴포넌트. SFC 컴파일러가 필요 없습니다."
+      },
+      "svelte": {
+        "label": "Svelte",
+        "summary": "Svelte 4와 5용 타입 지정 컴포넌트. 브라우저 전용 API를 쓰지 않는 순수 마크업이므로 SvelteKit SSR과 클라이언트에서 똑같이 렌더링되며, onMount 가드나 클라이언트 전용 래퍼가 필요 없습니다."
+      },
+      "react-native": {
+        "label": "React Native",
+        "summary": "react-native-svg로 렌더링합니다. Expo Go에서 config plugin이나 네이티브 설정 없이 동작합니다."
+      },
+      "cli": {
+        "label": "CLI (내 저장소에 가져오기)",
+        "summary": "shadcn처럼 아이콘 파일을 프로젝트에 바로 복사합니다. 설치할 런타임 의존성이 없습니다."
+      },
+      "api": {
+        "label": "REST API",
+        "summary": "CDN에 캐시된 정적 JSON. 인증이 없고 동적 검색 엔드포인트도 없으므로, 매니페스트를 한 번 가져와 클라이언트에서 필터링하세요."
+      },
+      "mcp": {
+        "label": "AI 어시스턴트 (MCP)",
+        "summary": "AI 어시스턴트가 아이콘을 직접 검색하고 가져오는 도구를 제공하는 로컬 MCP 서버(stdio)입니다. 같은 mcpServers JSON 블록이 MCP를 지원하는 모든 클라이언트(Claude Desktop, Claude Code, Cursor, Windsurf)의 설정 파일에서 동작합니다. 설정 파일의 위치는 사용 중인 클라이언트의 문서를 확인하세요."
+      }
+    },
+    "snippets": {
+      "basic-usage": "기본 사용법",
+      "automatic-dark-mode-no-js": "자동 다크 모드 (JS 없음)",
+      "install": "설치",
+      "usage": "사용법",
+      "variants": "변형",
+      "individual-import-smallest-bundle": "개별 임포트 (가장 작은 번들)",
+      "nuxt-3-explicit-import-no-auto-import-config-needed": "Nuxt 3 (명시적 임포트, 자동 임포트 설정 불필요)",
+      "expo-router-screen": "Expo Router 화면",
+      "add-one-icon": "아이콘 하나 추가",
+      "add-several-as-typed-jsx": "여러 개 추가 (타입이 지정된 JSX로)",
+      "search-the-catalog": "카탈로그 검색",
+      "in-a-dockerfile-ci-build-step": "Dockerfile / CI 빌드 단계에서",
+      "full-icon-manifest": "전체 아이콘 매니페스트",
+      "categories-with-counts": "개수가 포함된 카테고리",
+      "direct-svg": "SVG 직접 가져오기",
+      "jsdelivr-mirror-recommended-for-high-traffic": "jsDelivr 미러 (트래픽이 많을 때 권장)",
+      "mcp-config-claude-desktop-cursor-etc": "MCP 설정 (Claude Desktop, Cursor 등)",
+      "dynamic-icon": "동적 아이콘",
+      "onerror-fallback": "onError 대체 처리",
+      "css-mask-recolor": "CSS 마스크로 색 바꾸기",
+      "bulk-add": "일괄 추가",
+      "preload-hint": "프리로드 힌트",
+      "client-side-filter": "클라이언트 측 필터",
+      "html-jsx": "HTML / JSX",
+      "markdown-readme": "Markdown (README)",
+      "react": "React",
+      "option-a-skip-optimization-for-this-image": "옵션 A: 이 이미지의 최적화 건너뛰기",
+      "option-b-allow-svgs-from-the-icon-domain": "옵션 B: 아이콘 도메인의 SVG 허용하기",
+      "package-json-script": "package.json 스크립트",
+      "dockerfile": "Dockerfile",
+      "before-after": "이전 / 이후"
+    },
+    "bestPractices": {
+      "intro": "크기 지정, 변형 선택, CDN 버전 고정, 다크 모드를 올바르게 처리하는 방법.",
+      "cdn-vs-components": {
+        "title": "격자에는 CDN <img>, 정해진 집합에는 컴포넌트",
+        "body": "수백, 수천 개의 아이콘(선택기, 디렉터리)을 렌더링하나요? CDN <img> URL 패턴을 사용하세요. 몇 개를 보여 주든 번들 비용이 0입니다. @thesvg/react, @thesvg/vue, @thesvg/svelte의 이름 있는 임포트는 소스에서 직접 참조하는 작고 고정된 아이콘 집합에만 쓰세요. 트리 셰이킹으로 사용하는 것만 남습니다."
+      },
+      "set-dimensions": {
+        "title": "항상 width와 height를 지정하세요",
+        "body": "<img>는 로드되기 전에는 고유 크기가 없으므로, width/height(또는 확보된 aspect-ratio)가 없는 아이콘은 페이지가 로드되는 동안 레이아웃 이동을 일으킵니다. CSS 클래스로만 크기를 정하는 아이콘이라도 모든 아이콘에 둘 다 지정하세요."
+      },
+      "recolor-mono": {
+        "title": "색 변경은 CSS 필터가 아니라 mono 변형으로",
+        "body": "아이콘을 임의의 텍스트 색에 맞추고 싶나요? CSS filter: invert() 같은 꼼수 대신, 인라인 컴포넌트와 mono 변형을 사용하세요(currentColor를 상속합니다). 필터는 품질이 떨어지고 임의의 16진수 색에 대응하지 못합니다."
+      },
+      "pin-jsdelivr": {
+        "title": "jsDelivr 미러는 @main이 아니라 릴리스에 고정하세요",
+        "body": "cdn.jsdelivr.net/gh/glincker/thesvg@main/...은 계속 바뀌는 main 브랜치를 따라갑니다. 프로덕션에서는 배포된 git 태그(예: @{{ref}}, 현재 릴리스)에 고정해, 업스트림의 이름 변경이나 삭제로 앱의 렌더링 결과가 조용히 바뀌지 않게 하세요."
+      },
+      "picture-dark-mode": {
+        "title": "다크 모드에는 JS가 아니라 <picture>를 사용하세요",
+        "body": "라이트와 다크 변형이 모두 있는 아이콘은 <picture>를 통해 순수 CSS 미디어 쿼리만으로 전환할 수 있습니다. 테마 감지용 JavaScript도, 하이드레이션 시 잘못된 변형이 잠깐 보이는 깜빡임도 없습니다."
+      },
+      "high-traffic": {
+        "title": "트래픽이 많은 앱: 대규모에서는 핫링크하지 말고 미러를 쓰세요",
+        "body": "thesvg.org의 /icons/*는 CDN에 캐시되어 대규모에서도 무료지만, 요청량이 매우 많은 프로덕션 앱은 jsDelivr 미러를 쓰거나 저장소를 클론해 직접 호스팅하는 편이 좋습니다. 그러면 내 쪽의 트래픽 급증이 thesvg.org 자체의 가동 상태에 좌우되지 않습니다."
+      }
+    },
+    "tricks": {
+      "intro": "알아 두면 좋은 작은 기법.",
+      "dynamic-slug": {
+        "title": "가져오지 않고 슬러그만으로 아이콘 렌더링하기",
+        "body": "아이콘이 실행 시점에야 정해지는 경우(사용자가 연결한 서비스, CMS 필드 등)에는 가능한 모든 컴포넌트를 임포트하려 하지 마세요. 슬러그로 CDN URL을 직접 만드세요. 6,500개 이상의 어떤 아이콘에도 통하며, 일괄 임포트도 번들러 비용도 없습니다."
+      },
+      "fallback-slug": {
+        "title": "알 수 없는 슬러그는 매끄럽게 대체하기",
+        "body": "슬러그가 카탈로그에 없을 수 있다면(예: 사용자 입력에서 온 경우), 깨진 이미지를 보여 주는 대신 로드 오류 시 대체 아이콘으로 바꾸세요."
+      },
+      "css-mask": {
+        "title": "<img> 태그 아이콘을 CSS 마스크로 색 바꾸기",
+        "body": "<img> 태그는 인라인 SVG 컴포넌트처럼 currentColor를 상속할 수 없습니다. 그래도 순수 CSS로 색을 바꾸고 싶다면 배경 이미지 대신 마스크로 사용하세요."
+      },
+      "bulk-add": {
+        "title": "한 번의 명령으로 아이콘 여러 개 가져오기",
+        "body": "한 번의 호출로 여러 아이콘을 저장소에 바로 추가합니다. 폐쇄망 CI에서, 또는 아이콘을 실행 시점에 가져오는 대신 자신의 코드베이스에 포함하고 싶을 때 유용합니다."
+      },
+      "preload": {
+        "title": "히어로 로고를 미리 불러와 깜빡임 방지하기",
+        "body": "페이지가 로드되자마자 보이는 브랜드 아이콘(히어로 로고, 첫 화면의 연동 배지 등)은 프리로드 힌트의 도움을 받습니다. 브라우저가 레이아웃 중에 <img> 태그를 발견할 때까지 기다리지 않고, 필요해지기 전에 미리 가져옵니다."
+      },
+      "client-search": {
+        "title": "패키지 없이 클라이언트에서 카탈로그 검색하기",
+        "body": "직접 아이콘 선택기를 만드나요? 매니페스트를 한 번 가져와 메모리에서 필터링하세요. 검색 패키지도, 키 입력마다 네트워크 요청도 필요 없습니다."
+      }
+    },
+    "recipes": {
+      "intro": "구체적인 구현 패턴. 각각 실제 사용 사례를 겨냥합니다.",
+      "tech-stack-badges": {
+        "title": "\"built with\" 기술 스택 배지 줄",
+        "description": "가장 흔한 사용 사례: 랜딩 페이지나 README에서 제품이 무엇으로 만들어졌는지 보여 주는 로고 줄입니다. 설치 없이 일반적인 CDN <img> 태그만 사용합니다."
+      },
+      "icon-picker": {
+        "title": "검색 가능한 아이콘 선택기 콤보박스",
+        "description": "마운트 시 매니페스트를 한 번 가져오고, 키 입력마다 클라이언트에서 필터링하며, 일치한 항목을 CDN URL로 렌더링합니다. 검색 라이브러리도, 키 입력별 요청도 없습니다."
+      },
+      "nextjs-image": {
+        "title": "Next.js의 <Image> 컴포넌트로 아이콘 사용하기",
+        "description": "Next의 내장 이미지 최적화 도구는 기본적으로 SVG를 래스터화하지 않습니다. 이미지 하나의 최적화를 끄거나, 아이콘 도메인의 SVG를 허용하세요. 대부분의 아이콘 용도에서는 일반 <img> 태그가 더 간단하고 이 과정을 아예 건너뜁니다."
+      },
+      "accessible-icon-button": {
+        "title": "접근성 있는 아이콘 전용 버튼",
+        "description": "눈에 보이는 레이블이 없는 아이콘에는 다른 방법으로 접근 가능한 이름이 필요합니다. aria-label과 role, 또는 시각적으로 숨긴 텍스트를 사용하면 스크린 리더가 올바르게 읽어 줍니다."
+      },
+      "logo-strip-fallback": {
+        "title": "대체 처리가 포함된 연동/파트너 로고 줄",
+        "description": "사용자가 연결했거나 서드파티인 연동 디렉터리에서는 슬러그가 카탈로그에 없을 수 있습니다(오타, 브랜드 이름 변경, 아직 추가되지 않음). 깨진 이미지를 보여 주는 대신 대체 이미지를 쓰세요."
+      },
+      "cli-in-ci": {
+        "title": "실행 시점이 아닌 CI/빌드 시점에 아이콘 가져오기",
+        "description": "폐쇄망 빌드이거나, 요청 시점에 가져오지 않고 빌드 산출물에 아이콘을 포함하고 싶다면 CLI를 빌드 단계로 실행하세요."
+      }
+    },
+    "migration": {
+      "title": "다른 라이브러리에서 마이그레이션하기",
+      "intro": "기능별 전체 비교는 [/compare](/compare)에 있습니다. 여기서는 짧고 실용적인 버전을 다룹니다.",
+      "from-simple-icons": {
+        "title": "Simple Icons에서 마이그레이션하기",
+        "summary": "Simple Icons는 단색 전용(단일 색상, 라이트/다크/워드마크 변형 없음)이며, 오랜 커뮤니티의 신뢰와 폭넓은 도구 지원이 있습니다. 대부분의 브랜드 슬러그는 그대로 옮길 수 있고, 주요 변경점은 변형을 고르는 것입니다.",
+        "p1": "react-icons의 Si 접두사 컴포넌트(SiGithub, SiVercel)를 쓰는 React 앱은 @thesvg/react의 동등한 이름 있는 익스포트(Github, Vercel)로 바꿉니다.",
+        "p2": "Simple Icons는 브랜드마다 마크 하나를 제공합니다. theSVG의 default 변형이 가장 가까운 대응입니다. Simple Icons가 항상 주는 단색 동작이 꼭 필요하다면 mono를 명시적으로 사용하세요.",
+        "p3": "슬러그가 아직 theSVG 카탈로그에 없다면 동등할 것이라 가정하지 말고 /submit에서 요청하세요. 브랜드마다 지원 범위가 다릅니다."
+      },
+      "from-svgl": {
+        "title": "svgl에서 마이그레이션하기",
+        "summary": "svgl은 컬러와 워드마크 변형이 있는 SvelteKit 기반 브랜드 SVG 브라우저이지만 npm 패키지가 없어 SVG 소스를 직접 복사해야 합니다. Svelte 프로젝트가 아니거나 설치 가능한 패키지를 원한다면, theSVG가 같은 영역을 다루면서 CLI, REST API, 프레임워크 패키지까지 제공합니다.",
+        "p1": "복사해 붙여 넣던 SVG 소스가 CDN URL이나 패키지 임포트로 바뀌어, 업스트림에서 로고가 갱신될 때 직접 다시 복사할 필요가 없습니다.",
+        "p2": "svgl의 변형 모델(컬러 + 워드마크)은 theSVG의 default + wordmark에 대응합니다. theSVG는 가능한 경우 mono, light, dark도 추가로 제공합니다.",
+        "p3": "Svelte를 계속 쓴다면: 직접 복사한 마크업을 @thesvg/svelte 컴포넌트로 바꾸세요(위의 Svelte 가이드 참고). 타입 지원과 이후 업데이트를 별다른 노력 없이 얻습니다."
+      },
+      "theSVG-vs-iconify-lucide": {
+        "title": "theSVG, Iconify, Lucide: 알맞은 것 고르기",
+        "summary": "세 가지는 서로 다른 문제를 해결하며, 대부분의 프로젝트가 둘 이상을 함께 씁니다. 기능별 전체 비교표는 /compare에 있고, 요약하면 다음과 같습니다.",
+        "p1": "브랜드 로고(GitHub, Stripe, AWS, 연동 목록): theSVG. 여러 변형을 지원하는 가장 큰 브랜드 중심 컬렉션입니다.",
+        "p2": "일반 UI 아이콘(화살표, 메뉴, 설정, 쉐브론): Lucide. 브랜드 중심이 아니며 인터페이스용으로 설계되었습니다.",
+        "p3": "브랜드와 UI를 모두 포함해 서로 관련 없는 여러 아이콘 세트를 하나의 API로 쓰고 싶고, 더 큰 통합 서비스도 괜찮다면: Iconify.",
+        "p4": "일반적인 앱은 브랜드 로고에는 theSVG, UI에는 Lucide를 함께 씁니다. thesvg.org 자체도 그렇게 합니다."
+      }
+    },
+    "faq": {
+      "intro": "theSVG에 대해 자주 묻는 질문.",
+      "licensed": {
+        "q": "이 로고들은 각 브랜드에서 공식적으로 라이선스를 받은 것인가요?",
+        "a": "아니요. 아이콘은 식별 목적의 지칭적 공정 이용에 따라 제공되며, 브랜드 마크는 각 상표권자의 자산으로 남습니다. 로고를 사용한다고 해서 보증이나 제휴를 뜻하지는 않습니다. 자세한 내용은 /legal과 저장소의 TRADEMARK.md를 참고하세요."
+      },
+      "commercial": {
+        "q": "이 아이콘을 상업적으로 사용할 수 있나요?",
+        "a": "네, 식별 목적이라면 가능합니다(예: \"X와 연동됩니다\", 기술 스택 배지, 결제 수단 목록). 이는 일반적인 지칭적 공정 이용입니다. 실제로는 없는 제휴나 보증을 암시하는 방식으로 마크를 사용하지 마세요. 확실하지 않다면 브랜드 자체의 가이드라인을 확인하세요. 가능한 경우 아이콘별로 링크되어 있습니다."
+      },
+      "missing-variant": {
+        "q": "아이콘에 dark, light, wordmark 변형이 없습니다. 왜 그런가요?",
+        "a": "모든 브랜드가 7가지 변형을 전부 제공하는 것은 아닙니다. 항상 있는 것은 default뿐이고, 나머지는 아이콘을 추가할 당시 깨끗한 원본 소스가 있었는지에 따라 달라집니다. 누락된 변형의 깨끗한 원본이 있다면 제출해 주세요."
+      },
+      "request-brand": {
+        "q": "새 브랜드를 요청하거나 오래된 로고를 신고하려면 어떻게 하나요?",
+        "a": "/submit에서 아이콘 요청 또는 아이콘 업데이트 제출을 만드세요. 붙여 넣는 SVG 소스는 50KB 미만이어야 하고, 유효한 viewBox가 있어야 하며, <script> 태그나 포함된 래스터 이미지가 없어야 합니다. 문제가 있으면 제출 양식과 분류 봇이 알려 줍니다."
+      },
+      "rate-limit": {
+        "q": "API에 요청 제한이 있나요?",
+        "a": "/api/registry.json과 /api/categories.json은 데이터베이스 기반 엔드포인트가 아니라 CDN에 캐시된 정적 파일이므로, 현재는 사실상 요청 제한이 없습니다. 요청량이 매우 많다면 jsDelivr 미러를 사용하세요. 실시간 검색과 웹훅을 갖춘 별도의 접근 제한 API가 api.thesvg.org로 로드맵에 있습니다."
+      },
+      "ai-assistants": {
+        "q": "AI 어시스턴트가 theSVG를 직접 사용할 수 있나요?",
+        "a": "네, @thesvg/mcp-server를 통해 가능합니다. Claude Desktop, Claude Code, Cursor의 MCP 설정에 추가하는 로컬 MCP 서버입니다(위의 AI 어시스턴트 가이드 참고). 사이트와 같은 데이터를 기반으로 검색, 가져오기, 카테고리 목록 도구를 제공합니다."
+      },
+      "which-package": {
+        "q": "실제로 어떤 패키지를 설치해야 하나요?",
+        "a": "React, Vue, Svelte 앱에서 알려진 소수의 아이콘을 쓴다면 해당 프레임워크 패키지를 사용하세요. 트리 셰이킹이 되고 타입도 지정되어 있습니다. 개수가 정해지지 않았거나 많은 경우(선택기, 디렉터리)에는 대신 CDN <img> 패턴을 쓰세요. 개수와 상관없이 번들 비용이 없습니다. 아이콘을 자신의 저장소에 넣고 싶다면 CLI를 사용하세요."
+      },
+      "broken-image": {
+        "q": "아이콘이 깨진 이미지 또는 404로 보입니다. 무엇이 문제인가요?",
+        "a": "거의 항상 슬러그 불일치입니다. URL 경로에는 /api/registry.json의 정확한 슬러그를 쓰는데, 이는 브랜드 표시 이름과 항상 같지는 않습니다(공백, 점, 대소문자는 정규화됩니다). 브랜드 이름으로 추측하지 말고 사이트에서 검색하거나 레지스트리에서 정확한 슬러그를 확인하세요."
+      },
+      "nextjs-image": {
+        "q": "theSVG는 Next.js의 <Image> 컴포넌트와 함께 동작하나요?",
+        "a": "기본 설정으로는 아닙니다. Next의 내장 이미지 최적화 도구는 기본적으로 SVG를 래스터화하지 않으므로, <Image>에는 해당 이미지에 unoptimized 속성을 주거나 next.config에서 도메인에 dangerouslyAllowSVG를 설정해야 합니다. 대부분의 아이콘 용도에서는 일반 <img> 태그(또는 프레임워크 패키지 컴포넌트)가 더 간단하고 최적화 도구를 완전히 피할 수 있습니다."
+      },
+      "typescript-slugs": {
+        "q": "모든 아이콘 슬러그를 나열하는 TypeScript 타입이 있나요?",
+        "a": "모든 슬러그의 유니온 타입은 내보내지 않습니다. 각 아이콘은 이름 있는 개별 익스포트(Github, Figma 등)이므로, 존재하지 않는 아이콘을 임포트하면 문자열 리터럴 타입 오류가 아니라 빌드 시 모듈을 찾을 수 없다는 오류가 납니다. 슬러그를 데이터로 써야 한다면(예: API 응답에서) registry.json의 slug 필드는 일반 문자열입니다."
+      },
+      "vs-alternatives": {
+        "q": "theSVG는 Simple Icons, svgl, Iconify와 어떻게 다른가요?",
+        "a": "theSVG는 브랜드 아이콘이 더 많고, 다른 대안이 다루지 않는 클라우드 제공업체(AWS, Azure, GCP) 아이콘이 있으며, 아이콘마다 최대 7가지 변형(color, mono, light, dark, wordmark)과 더 폭넓은 도구(프레임워크 패키지, CLI, REST API, AI 에이전트용 MCP 서버)를 갖추고 있습니다. Simple Icons는 단색 전용이고, svgl은 Svelte 중심이며 npm 패키지가 없고, Iconify는 150개 이상의 아이콘 세트를 모으지만 브랜드 중심은 아닙니다. 자세한 비교는 /compare에 있습니다."
+      },
+      "ssr": {
+        "q": "프레임워크 패키지는 서버 사이드 렌더링(SSR)을 지원하나요?",
+        "a": "네. 모든 프레임워크 패키지(@thesvg/react, @thesvg/vue, @thesvg/svelte)는 브라우저 전용 API가 없는 순수 마크업을 렌더링하므로 기본적으로 SSR에 안전하며, 클라이언트 전용 래퍼나 하이드레이션 가드가 필요 없습니다. 특히 @thesvg/react 컴포넌트는 \"use client\" 지시어 없이 React 서버 컴포넌트로 동작합니다."
+      },
+      "self-host": {
+        "q": "theSVG를 표기하지 않고 아이콘을 직접 호스팅해도 되나요?",
+        "a": "코드베이스와 도구는 MIT 라이선스이므로, 직접 호스팅할 때 법적으로 출처 표기가 필요하지 않습니다. 브랜드 마크 자체는 파일을 어디에 호스팅하든 상표권자의 자산으로 남습니다. /legal을 참고하세요. 링크를 걸어 주시면 고맙지만 필수는 아닙니다."
+      },
+      "dark-mode-differs": {
+        "q": "같은 아이콘이 다크 모드에서 다르게 보이는 이유는 무엇인가요?",
+        "a": "어디서나 default 변형을 렌더링하고 있다면 정상입니다. 고정된 브랜드 색이라 테마에 반응하지 않습니다. 페이지 테마에 맞춰 바뀌는 변형이 필요하면 <picture> 요소와 함께 light/dark를 사용하거나(위의 모범 사례 참고), 인라인 컴포넌트와 mono 변형을 써서 currentColor를 상속하게 하세요."
+      }
+    },
+    "flags": {
+      "intro": "세 가지 모양의 국가 및 지역 국기 {{total}}개. `npm i @thesvg/flags`로 설치합니다([npm에서 보기](https://www.npmjs.com/package/@thesvg/flags)).",
+      "usageTitle": "사용 가이드",
+      "browse": "모양, 크기, 색을 둘러보고 써 보고 싶나요? [국기 브라우저 열기](/collection/flags).",
+      "creditsTitle": "출처 및 라이선스",
+      "creditsBody": "국기 도안은 flag-icons(4x3 및 정사각형)와 circle-flags(원형)에서 가져왔으며, 둘 다 MIT 라이선스입니다. 파일 자체에는 출처 표기 텍스트가 없습니다. 전체 고지와 파일별 출처 맵은 저장소의 THIRD_PARTY_NOTICES.md와 packages/flags/src/data/licenses.json에 있습니다. 국기는 국가나 조직의 공적인 상징이며, 포함했다고 해서 주권에 대한 입장을 나타내는 것은 아닙니다.",
+      "fullGuide": "props, 로케일 표, Vue, Svelte, 순수 SVG 예제를 포함한 전체 가이드: [docs/flags.md](https://github.com/glincker/thesvg/blob/main/docs/flags.md).",
+      "sections": {
+        "naming": {
+          "title": "이름 규칙",
+          "body": "슬러그는 flag-에 소문자 ISO 3166-1 alpha-2 코드(flag-us, flag-de) 또는 지역 코드(flag-gb-eng, flag-es-ct, flag-eu, flag-un)를 붙인 형태입니다. 변형: default는 4x3 직사각형, square는 1x1, 그리고 circle입니다. 카테고리는 Flags입니다."
+        },
+        "search": {
+          "title": "검색",
+          "body": "국기는 영어 및 현지어 이름, 공식 이름, ISO alpha-2, alpha-3, 숫자 코드, 이모지, 예전 이름, 로케일 태그로 찾을 수 있습니다. deutschland, DEU, 276, holland, england, catalunya, pt-BR 등을 입력해 보세요."
+        },
+        "shape": {
+          "title": "모양 고르기",
+          "body": "실제 비율이 중요한 곳에는 4x3, 고정된 정사각형 칸에는 square, 간결한 선택기와 칩에는 circle을 쓰세요. circle은 가로로 긴 국기의 가장자리를 잘라내므로 옆에 이름을 텍스트로 함께 두세요."
+        },
+        "accessibility": {
+          "title": "접근성",
+          "body": "장식용 국기는 aria-hidden으로 두고 의미는 보이는 텍스트가 전달합니다. 국기가 단독으로 쓰일 때만 title을 제공하세요. 접근 가능한 이름이 있는 role=img로 렌더링됩니다."
+        },
+        "language": {
+          "title": "국기는 국가이지 언어가 아닙니다",
+          "body": "국기 옆에 해당 언어의 고유 이름을 표시하고, 국기만으로 언어 선택기를 만들지 마세요. getFlagForLocale은 로케일을 장식용으로 쓰는 관례적인 국기에 대응시킵니다."
+        },
+        "legal": {
+          "title": "법적 고지",
+          "body": "국기는 국가나 조직의 공적인 상징입니다. 포함했다고 해서 주권이나 국경에 대한 입장을 나타내는 것은 아닙니다. 법적 고지와 면책 조항을 참고하세요."
+        }
+      },
+      "steps": {
+        "pick": {
+          "head": "1. 국기를 고릅니다.",
+          "body": "[국기 컬렉션](/collection/flags)에서 이름, ISO 코드, 이모지, 로케일로 검색하세요. 각 국기에는 복사 및 다운로드 버튼이 있는 전용 페이지가 있습니다."
+        },
+        "cdn": {
+          "head": "2. 설치 없이 사용합니다.",
+          "body": "CDN에서 파일을 링크하세요: `https://cdn.jsdelivr.net/npm/@thesvg/flags/dist/svg/4x3/us.svg`. 다른 모양은 `4x3` 대신 `1x1` 또는 `circle`을 사용하세요."
+        },
+        "install": {
+          "head": "3. 또는 패키지를 설치합니다.",
+          "body": "`npm i @thesvg/flags`([npm 페이지](https://www.npmjs.com/package/@thesvg/flags))를 실행한 뒤, `@thesvg/flags/react/us`에서 국기 하나만 임포트하면 그 국기만 번들에 포함됩니다."
+        },
+        "locale": {
+          "head": "4. 로케일을 국기에 대응시킵니다.",
+          "body": "`getFlagForLocale(\"pt-BR\")`은 장식용으로 브라질을 반환합니다. 옆에는 항상 언어 이름을 표시하세요."
+        }
+      }
+    }
   }
 }
