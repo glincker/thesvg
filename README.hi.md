@@ -531,7 +531,7 @@ https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/{slug}/{variant}.s
 
 ## समुदाय
 
-सवाल हैं, आइकन का अनुरोध करना है, या अपना बनाया दिखाना है? आधिकारिक GLINR Discord से जुड़ें, जो theSVG और GLINCKER के हर दूसरे ओपन सोर्स प्रोजेक्ट का घर है। वहाँ theSVG का अपना फ़ोरम है, और नए रिलीज़ अपने आप उसमें पोस्ट होते हैं।
+सवाल हैं, आइकन का अनुरोध करना है, या अपना बनाया दिखाना है? आधिकारिक GLINR Discord से जुड़ें, जो theSVG और GLINR Studios के हर दूसरे ओपन सोर्स प्रोजेक्ट का घर है। वहाँ theSVG का अपना फ़ोरम है, और नए रिलीज़ अपने आप उसमें पोस्ट होते हैं।
 
 <a href="https://discord.gg/Ar5pcaZB99"><img src="https://discord.com/api/guilds/829168897080557579/widget.png?style=banner2" alt="Join the GLINR Discord" /></a>
 
@@ -586,7 +586,7 @@ pnpm dev     # http://localhost:3333
 नए आइकन, रीब्रांड और रिलीज़ हर हफ़्ते आते हैं। जुड़े रहने के लिए:
 
 - रिपॉज़िटरी को **स्टार करें और वॉच करें**। हर नए वर्शन की सूचना के लिए *Watch, Custom, Releases* चुनें।
-- हमारे बाक़ी प्रोजेक्ट के लिए GitHub पर **[GLINCKER](https://github.com/glincker)** को फ़ॉलो करें।
+- हमारे बाक़ी प्रोजेक्ट के लिए GitHub पर **[GLINR Studios](https://github.com/glincker)** को फ़ॉलो करें।
 - आइकन माँगने और रिलीज़ के आते ही देखने के लिए **[Discord](https://discord.gg/Ar5pcaZB99)** से जुड़ें।
 - हाल में क्या जुड़ा है यह देखने के लिए **[thesvg.org](https://thesvg.org)** ब्राउज़ करें।
 
@@ -637,12 +637,12 @@ AWS Architecture Icons [CC BY-ND 2.0](https://creativecommons.org/licenses/by-nd
   <a href="https://github.com/glincker/thesvg/issues">इश्यू</a>
 </p>
 
-<p align="center"><sub>GLINCKER द्वारा बनाया गया। टीम से और:</sub></p>
+<p align="center"><sub>GLINR Studios द्वारा बनाया गया। टीम से और:</sub></p>
 
 <table align="center">
   <tr>
     <td align="center" width="33%">
-      <a href="https://github.com/glincker"><picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/glincker/light.svg" /><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/glincker/default.svg" height="40" alt="GLINCKER" /></picture><br /><b>GLINCKER</b></a><br />
+      <a href="https://glinr.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/glinr/dark.svg" /><img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/glinr/light.svg" height="40" alt="GLINR Studios" /></picture><br /><b>GLINR Studios</b></a><br />
       <sub>theSVG के पीछे की टीम का ओपन सोर्स</sub>
     </td>
     <td align="center" width="33%">

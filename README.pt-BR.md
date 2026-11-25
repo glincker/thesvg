@@ -531,7 +531,7 @@ Os ícones são organizados em mais de 150 categorias:
 
 ## Comunidade
 
-Dúvidas, pedidos de ícones ou quer mostrar o que construiu? Entre no Discord oficial da GLINR, casa do theSVG e de todos os outros projetos open source da GLINCKER. O theSVG tem um fórum próprio lá, e os novos lançamentos são publicados nele automaticamente.
+Dúvidas, pedidos de ícones ou quer mostrar o que construiu? Entre no Discord oficial da GLINR, casa do theSVG e de todos os outros projetos open source da GLINR Studios. O theSVG tem um fórum próprio lá, e os novos lançamentos são publicados nele automaticamente.
 
 <a href="https://discord.gg/Ar5pcaZB99"><img src="https://discord.com/api/guilds/829168897080557579/widget.png?style=banner2" alt="Entre no Discord da GLINR" /></a>
 
@@ -586,7 +586,7 @@ Dúvidas e pedidos de ícones são bem-vindos no [Discord](https://discord.gg/Ar
 Novos ícones, rebrands e lançamentos chegam toda semana. Para ficar por dentro:
 
 - **Dê uma estrela e acompanhe (Watch)** o repositório. Use *Watch, Custom, Releases* para saber de cada nova versão.
-- **Siga a [GLINCKER](https://github.com/glincker)** no GitHub para ver o resto do que construímos.
+- **Siga a [GLINR Studios](https://github.com/glincker)** no GitHub para ver o resto do que construímos.
 - **Entre no [Discord](https://discord.gg/Ar5pcaZB99)** para pedir ícones e ver os lançamentos assim que saem.
 - **Navegue em [thesvg.org](https://thesvg.org)** para ver o que foi adicionado recentemente.
 
@@ -637,12 +637,12 @@ Se você é dono de uma marca e quer que um ícone seja atualizado ou removido, 
   <a href="https://github.com/glincker/thesvg/issues">Issues</a>
 </p>
 
-<p align="center"><sub>Feito pela GLINCKER. Mais do time:</sub></p>
+<p align="center"><sub>Feito pela GLINR Studios. Mais do time:</sub></p>
 
 <table align="center">
   <tr>
     <td align="center" width="33%">
-      <a href="https://github.com/glincker"><picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/glincker/light.svg" /><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/glincker/default.svg" height="40" alt="GLINCKER" /></picture><br /><b>GLINCKER</b></a><br />
+      <a href="https://glinr.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/glinr/dark.svg" /><img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/glinr/light.svg" height="40" alt="GLINR Studios" /></picture><br /><b>GLINR Studios</b></a><br />
       <sub>Open source do time por trás do theSVG</sub>
     </td>
     <td align="center" width="33%">

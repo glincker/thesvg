@@ -531,7 +531,7 @@ Icons are organized into 150+ categories:
 
 ## Community
 
-Questions, icon requests, or showing off what you built? Join the official GLINR Discord, home of theSVG and every other GLINCKER open source project. theSVG has its own forum there, and new releases post to it automatically.
+Questions, icon requests, or showing off what you built? Join the official GLINR Discord, home of theSVG and every other GLINR Studios open source project. theSVG has its own forum there, and new releases post to it automatically.
 
 <a href="https://discord.gg/Ar5pcaZB99"><img src="https://discord.com/api/guilds/829168897080557579/widget.png?style=banner2" alt="Join the GLINR Discord" /></a>
 
@@ -586,7 +586,7 @@ Questions and icon requests are welcome in the [Discord](https://discord.gg/Ar5p
 New icons, rebrands and releases land every week. To keep up:
 
 - **Star and watch** the repo. Use *Watch, Custom, Releases* to hear about each new version.
-- **Follow [GLINCKER](https://github.com/glincker)** on GitHub for the rest of what we build.
+- **Follow [GLINR Studios](https://github.com/glincker)** on GitHub for the rest of what we build.
 - **Join the [Discord](https://discord.gg/Ar5pcaZB99)** to request icons and see releases the moment they ship.
 - **Browse [thesvg.org](https://thesvg.org)** to see what was added recently.
 
@@ -637,12 +637,12 @@ If you are a brand owner and would like an icon updated or removed, please [open
   <a href="https://github.com/glincker/thesvg/issues">Issues</a>
 </p>
 
-<p align="center"><sub>Built by GLINCKER. More from the team:</sub></p>
+<p align="center"><sub>Built by GLINR Studios. More from the team:</sub></p>
 
 <table align="center">
   <tr>
     <td align="center" width="33%">
-      <a href="https://github.com/glincker"><picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/glincker/light.svg" /><img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/glincker/default.svg" height="40" alt="GLINCKER" /></picture><br /><b>GLINCKER</b></a><br />
+      <a href="https://glinr.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/glinr/dark.svg" /><img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/glinr/light.svg" height="40" alt="GLINR Studios" /></picture><br /><b>GLINR Studios</b></a><br />
       <sub>Open source from the team behind theSVG</sub>
     </td>
     <td align="center" width="33%">
