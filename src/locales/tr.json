@@ -13,6 +13,233 @@
     "cdnUsage": "CDN Kullanımı",
     "compare": "Karşılaştır"
   },
+  "uikit": {
+    "breadcrumb": "Sayfa yolu",
+    "look": {
+      "outline": "Anahat",
+      "duotone": "Duoton",
+      "offset": "Kaydırmalı",
+      "fill": "Dolgu",
+      "glass": "Cam",
+      "glassOutline": "Cam anahat",
+      "depth": "Derinlik"
+    },
+    "copy": {
+      "name": "Ad"
+    },
+    "copyHint": {
+      "svg": "Çizim, kendi stilinle",
+      "name": "Simge adı",
+      "cli": "Ekleyen komut",
+      "import": "{{pkg}} için içe aktarma ve kullanım",
+      "url": "SVG'nin CDN bağlantısı"
+    },
+    "hero": {
+      "title": "Tek iskelet, her görünüm",
+      "show": "Girişi göster",
+      "hide": "Girişi gizle",
+      "badge": "4.0'da yeni: arayüz simgeleri",
+      "intro": "Bir ızgara üzerinde çizildi, anında yeniden biçimlendirilir. Anahat, duoton, dolgu, cam ve cam anahat, hepsi currentColor ile temalandırılabilir.",
+      "browse": "Simgelere göz at"
+    },
+    "nav": {
+      "allIcons": "Tüm simgeler",
+      "favorites": "Favoriler",
+      "extensions": "Eklentiler",
+      "whatIsNew": "Yenilikler",
+      "categories": "Kategoriler",
+      "new": "Yeni",
+      "allCategories": "Tüm kategoriler",
+      "expandSidebar": "Kenar çubuğunu genişlet",
+      "collapseSidebar": "Kenar çubuğunu daralt",
+      "navigation": "Gezinme"
+    },
+    "mode": {
+      "iconType": "Simge türü"
+    },
+    "browse": {
+      "all": "Tümü",
+      "allUi": "Tüm arayüz simgeleri",
+      "popular": "Popüler",
+      "popularHint": "İlk tercih edeceklerin",
+      "bestMatches": "En iyi eşleşmeler",
+      "related": "İlgili",
+      "relatedHint": "aynı aile, eş anlamlılar ve yakın yazımlar",
+      "noMatch": "Eşleşen simge yok.",
+      "didYouMean": "Şunu mu demek istediniz:",
+      "didYouMeanEnd": "?",
+      "tryAnother": "Başka bir kelime deneyin veya filtreyi temizleyin.",
+      "loadingMore": "Daha fazla simge yükleniyor",
+      "thatIsAll": "Hepsi bu kadar: {{count}}"
+    },
+    "card": {
+      "addFavorite": "Favorilere ekle",
+      "removeFavorite": "Favorilerden kaldır",
+      "backlog": "Bekleyen",
+      "draft": "Taslak",
+      "clickToCopy": "{{what}} kopyalamak için tıkla",
+      "copied": "Kopyalandı",
+      "copiedWhat": "{{what}} kopyalandı",
+      "copyWhat": "{{what}} kopyala",
+      "downloadSvg": "SVG indir",
+      "quickPreview": "Hızlı önizleme",
+      "openFull": "Tam sayfayı aç"
+    },
+    "category": {
+      "count": "{{count}} simge",
+      "countNew": "{{count}} simge, {{fresh}} yeni",
+      "allIn": "Tüm {{name}} simgeleri",
+      "others": "Diğer kategoriler",
+      "browseBy": "Kategoriye göre göz at",
+      "intro": "{{categories}} kategoride {{count}} arayüz simgesi. Her biri aynı ızgarada çizilmiştir ve her görünümde gelir."
+    },
+    "changelog": {
+      "intro": "Şimdiye kadar {{count}} arayüz simgesi yayınlandı, yenileri küçük paketler halinde ekleniyor.",
+      "upcoming": "Yalnızca önizleme: {{drops}} paket daha planlandı, {{icons}} simge."
+    },
+    "quality": {
+      "title": "Çizim kalitesi",
+      "footnote": "Set oluşturulurken puanlanır: ızgaraya uyum, her görünümde temiz render, setin geri kalanına göre kalınlık ve eksiksiz meta veri."
+    },
+    "code": {
+      "form": "Kod biçimi",
+      "source": "Kaynak",
+      "package": "Paket",
+      "customNote": "Özel stil yalnızca kopyalanan kaynağa uygulanır.",
+      "copy": "Kopyala"
+    },
+    "color": {
+      "custom": "Özel renk",
+      "pick": "Renk seç",
+      "satBright": "Doygunluk ve parlaklık",
+      "hue": "Ton",
+      "hex": "Hex renk",
+      "eyedropper": "Ekrandan renk seç",
+      "recent": "Son kullanılanlar",
+      "use": "{{hex}} kullan"
+    },
+    "ctx": {
+      "rest": "Normal",
+      "hover": "Üzerine gelme",
+      "active": "Etkin",
+      "interactive": "Etkileşimli",
+      "sameAsRest": "normalle aynı",
+      "showState": "Durumu göster",
+      "pressed": "Basıldı",
+      "action": "Eylem",
+      "secondary": "İkincil",
+      "iconButton": "Simge düğmesi",
+      "tab": {
+        "overview": "Genel bakış",
+        "activity": "Etkinlik",
+        "settings": "Ayarlar"
+      },
+      "placeholder": "Bu alana odaklanmak için yazın",
+      "notificationsOn": "Bildirimler açık",
+      "notificationsOff": "Bildirimler kapalı",
+      "toggleChip": "{{n}}. çipi değiştir"
+    },
+    "detail": {
+      "iconColour": "Simge rengi",
+      "fit": "Sığdır",
+      "fitLower": "sığdırılmış",
+      "realSize": "Gerçek boyuta dön",
+      "zoomFit": "Sığacak şekilde yakınlaştır",
+      "previewSize": "Önizleme boyutu",
+      "grid": "Izgara",
+      "anchors": "Bağlantı noktaları",
+      "lightCanvas": "Açık zemini aç/kapat",
+      "looks": "Görünümler",
+      "lineOnly": "Bu yalnızca çizgiden oluşan bir glif, bu yüzden dolgu, cam ve derinlik daha kalın bir anahat kullanır. Anahat, duoton, kaydırmalı ve cam anahat onu tam olarak çizer.",
+      "allLooks": "Her görünüm bu glifi tam olarak çizer.",
+      "gridValue": "24 x 24",
+      "category": "Kategori",
+      "color": "Renk",
+      "noTags": "Henüz etiket yok",
+      "subtitle": "{{slug}} · {{category}} arayüz simgesi",
+      "rasterPicked": "Raster, seçtiğiniz rengi kullanır.",
+      "rasterBlack": "Raster koyuya yakın siyah kullanır. Değiştirmek için yukarıdan bir renk seçin.",
+      "officialLogo": "Resmi marka logosu ve varyantlar",
+      "looksHint": "birini seç, aşağıdaki her şey ona uyar",
+      "inContext": "Bağlam içinde",
+      "inContextHint": "üzerine gelme, odak, basma ve geçiş çalışır",
+      "opticalSizes": "Optik boyutlar",
+      "moreIn": "{{category}} içinde daha fazlası",
+      "aboutTitle": "{{title}} simgesi hakkında",
+      "aboutBody": "{{title}} simgesi, 24 x 24 ızgarada çizilmiş bir {{category}} arayüz simgesidir ve {{count}} görünümde bulunur: {{looks}}. currentColor kullandığı için çevresindeki metin rengini alır ve her görünüm SVG, React, Vue, Svelte, HTML veya CSS maskesi olarak kopyalanabilir."
+    },
+    "docs": {
+      "quickStart": "Hızlı başlangıç",
+      "props": "Props",
+      "prop": "Prop",
+      "type": "Tür",
+      "whatItDoes": "Ne yapar",
+      "looks": "Görünümler ve ne zaman kullanılacakları",
+      "states": "Durumlar",
+      "color": "Renk ve temalar",
+      "sizes": "Boyutlar",
+      "a11y": "Erişilebilirlik",
+      "drops": "Setin büyüme şekli"
+    },
+    "ext": {
+      "title": "Arayüz simgeleri: eklentiler ve paketler",
+      "intro": "Arayüz simgelerini geliştirdiğin, tasarladığın ve yayınladığın her yerde kullan. Marka simgelerinin kendi sayfası var.",
+      "buildOwn": "Kendin oluştur",
+      "buildOwnText": "Tüm simge dosyaları, manifest ve her görünüm için bir JSON dosyası (o görünümdeki tüm simgeler, slug'dan SVG'ye) kimlik doğrulama olmadan açıktır. Bir eklenti veya iş akışı geliştirin, ardından burada listelenmesi için PR açın.",
+      "viewGithub": "GitHub'da görüntüle",
+      "cdnDocs": "CDN belgeleri"
+    },
+    "style": {
+      "button": "Stil",
+      "hint": "Simgeleri kendine göre ayarla: kalınlık, köşeler, renk",
+      "quick": "Hızlı stiller",
+      "quickHint": "Tüm ayarlar için Stil'e tıkla",
+      "dialog": "Simge stili",
+      "presets": "Stil ön ayarları",
+      "savedTitle": "Kayıtlı stilin",
+      "live": "Stilin, canlı",
+      "preset": {
+        "house": "Ev stili",
+        "crisp": "Keskin",
+        "soft": "Yumuşak",
+        "bold": "Kalın",
+        "hairline": "İnce çizgi",
+        "float": "Yüzen",
+        "mine": "Benim"
+      },
+      "resetNamed": "{{label}} sıfırla",
+      "backTo": "{{value}} değerine dön",
+      "weight": "Kalınlık",
+      "scale": "Ölçek",
+      "shadow": "Gölge",
+      "corners": "Köşeler",
+      "corner": {
+        "sharp": "Keskin",
+        "chamfer": "Pah",
+        "round": "Yuvarlak"
+      },
+      "cut": "Kesik",
+      "cutEnds": "Kesik uçlar",
+      "plainEnds": "düz uçlar",
+      "weightChip": "kalınlık {{value}}",
+      "colour": "Renk",
+      "colourAccent": "Renk, vurgu rengi önceliklidir",
+      "iconColours": "Simge renkleri",
+      "colorMode": {
+        "natural": "Doğal",
+        "mono": "Tek renk"
+      },
+      "noAccent": "Vurgu yok",
+      "none": "yok",
+      "accentNamed": "Vurgu {{hex}}",
+      "clickCopies": "Tıklayınca kopyala",
+      "clickToCopy": "Kopyalamak için bir simgeye tıkla",
+      "whatCopied": "Ne kopyalanır",
+      "saved": "Kaydedildi",
+      "saveMine": "Benim olarak kaydet",
+      "reset": "Sıfırla"
+    }
+  },
   "header": {
     "home": "theSVG ana sayfa",
     "submitAria": "İkon gönder",

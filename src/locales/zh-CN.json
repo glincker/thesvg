@@ -13,6 +13,233 @@
     "cdnUsage": "CDN 用法",
     "compare": "对比"
   },
+  "uikit": {
+    "breadcrumb": "面包屑导航",
+    "look": {
+      "outline": "轮廓",
+      "duotone": "双色",
+      "offset": "偏移",
+      "fill": "填充",
+      "glass": "玻璃",
+      "glassOutline": "玻璃轮廓",
+      "depth": "立体"
+    },
+    "copy": {
+      "name": "名称"
+    },
+    "copyHint": {
+      "svg": "应用你样式的图形",
+      "name": "图标名称",
+      "cli": "添加它的命令",
+      "import": "{{pkg}} 的导入与用法",
+      "url": "CDN 上 SVG 的链接"
+    },
+    "hero": {
+      "title": "一套骨架，所有风格",
+      "show": "显示介绍",
+      "hide": "隐藏介绍",
+      "badge": "4.0 新增：UI 图标",
+      "intro": "基于网格绘制，实时切换风格。轮廓、双色、填充、玻璃和玻璃轮廓，全部可通过 currentColor 主题化。",
+      "browse": "浏览图标"
+    },
+    "nav": {
+      "allIcons": "全部图标",
+      "favorites": "收藏",
+      "extensions": "扩展",
+      "whatIsNew": "最新动态",
+      "categories": "分类",
+      "new": "新增",
+      "allCategories": "全部分类",
+      "expandSidebar": "展开侧边栏",
+      "collapseSidebar": "收起侧边栏",
+      "navigation": "导航"
+    },
+    "mode": {
+      "iconType": "图标类型"
+    },
+    "browse": {
+      "all": "全部",
+      "allUi": "全部 UI 图标",
+      "popular": "热门",
+      "popularHint": "最常用到的图标",
+      "bestMatches": "最佳匹配",
+      "related": "相关",
+      "relatedHint": "同系列、同义词和相近拼写",
+      "noMatch": "没有匹配的图标。",
+      "didYouMean": "你是不是想找",
+      "didYouMeanEnd": "？",
+      "tryAnother": "换个词试试，或清除筛选条件。",
+      "loadingMore": "正在加载更多图标",
+      "thatIsAll": "共 {{count}} 个，已全部显示"
+    },
+    "card": {
+      "addFavorite": "添加收藏",
+      "removeFavorite": "取消收藏",
+      "backlog": "待办",
+      "draft": "草稿",
+      "clickToCopy": "点击复制 {{what}}",
+      "copied": "已复制",
+      "copiedWhat": "已复制 {{what}}",
+      "copyWhat": "复制 {{what}}",
+      "downloadSvg": "下载 SVG",
+      "quickPreview": "快速预览",
+      "openFull": "打开完整页面"
+    },
+    "category": {
+      "count": "{{count}} 个图标",
+      "countNew": "{{count}} 个图标，{{fresh}} 个新增",
+      "allIn": "全部 {{name}} 图标",
+      "others": "其他分类",
+      "browseBy": "按分类浏览",
+      "intro": "{{categories}} 个分类共 {{count}} 个 UI 图标。每个都绘制在同一网格上，并提供所有风格。"
+    },
+    "changelog": {
+      "intro": "目前已发布 {{count}} 个 UI 图标，后续会分批新增。",
+      "upcoming": "仅供预览：另有 {{drops}} 批更新已排期，共 {{icons}} 个图标。"
+    },
+    "quality": {
+      "title": "制作品质",
+      "footnote": "在构建图标集时评分：网格契合度、各风格下的渲染清晰度、与整套图标的粗细一致性，以及元数据是否完整。"
+    },
+    "code": {
+      "form": "代码形式",
+      "source": "源码",
+      "package": "包",
+      "customNote": "自定义样式仅作用于复制的源码。",
+      "copy": "复制"
+    },
+    "color": {
+      "custom": "自定义颜色",
+      "pick": "选择颜色",
+      "satBright": "饱和度与亮度",
+      "hue": "色相",
+      "hex": "十六进制颜色",
+      "eyedropper": "从屏幕取色",
+      "recent": "最近使用",
+      "use": "使用 {{hex}}"
+    },
+    "ctx": {
+      "rest": "常态",
+      "hover": "悬停",
+      "active": "激活",
+      "interactive": "交互",
+      "sameAsRest": "与常态相同",
+      "showState": "显示状态",
+      "pressed": "已按下",
+      "action": "操作",
+      "secondary": "次要",
+      "iconButton": "图标按钮",
+      "tab": {
+        "overview": "概览",
+        "activity": "动态",
+        "settings": "设置"
+      },
+      "placeholder": "输入以聚焦此输入框",
+      "notificationsOn": "通知已开启",
+      "notificationsOff": "通知已关闭",
+      "toggleChip": "切换标签 {{n}}"
+    },
+    "detail": {
+      "iconColour": "图标颜色",
+      "fit": "适应",
+      "fitLower": "适应",
+      "realSize": "恢复实际大小",
+      "zoomFit": "缩放以适应",
+      "previewSize": "预览大小",
+      "grid": "网格",
+      "anchors": "锚点",
+      "lightCanvas": "切换浅色画布",
+      "looks": "风格",
+      "lineOnly": "这是纯线条图形，因此填充、玻璃和立体风格会使用更粗的轮廓。轮廓、双色、偏移和玻璃轮廓风格可完整绘制。",
+      "allLooks": "所有风格都能完整绘制此图形。",
+      "gridValue": "24 × 24",
+      "category": "分类",
+      "color": "颜色",
+      "noTags": "暂无标签",
+      "subtitle": "{{slug}} · {{category}} UI 图标",
+      "rasterPicked": "位图使用你选择的颜色。",
+      "rasterBlack": "位图使用近黑色。在上方选择颜色即可更改。",
+      "officialLogo": "官方品牌标志及其变体",
+      "looksHint": "选一个，下方内容会同步变化",
+      "inContext": "实际效果",
+      "inContextHint": "悬停、聚焦、按下和切换均可操作",
+      "opticalSizes": "光学尺寸",
+      "moreIn": "更多 {{category}} 图标",
+      "aboutTitle": "关于 {{title}} 图标",
+      "aboutBody": "{{title}} 图标是绘制在 24 × 24 网格上的{{category}}类 UI 图标，提供 {{count}} 种风格：{{looks}}。它使用 currentColor，因此会跟随周围文字的颜色，每种风格都可以复制为 SVG、React、Vue、Svelte、HTML 或 CSS 蒙版。"
+    },
+    "docs": {
+      "quickStart": "快速开始",
+      "props": "属性",
+      "prop": "属性",
+      "type": "类型",
+      "whatItDoes": "作用",
+      "looks": "各种风格及使用场景",
+      "states": "状态",
+      "color": "颜色与主题",
+      "sizes": "尺寸",
+      "a11y": "无障碍",
+      "drops": "图标集如何增长"
+    },
+    "ext": {
+      "title": "UI 图标：扩展与软件包",
+      "intro": "在开发、设计和发布的每个环节都能使用 UI 图标。品牌图标有单独的页面。",
+      "buildOwn": "自己动手构建",
+      "buildOwnText": "所有图标文件、清单以及每种风格对应的 JSON 文件（该风格下所有图标，slug 对应 SVG）均无需认证即可访问。开发插件或工作流后，提交 PR 即可在此收录。",
+      "viewGithub": "在 GitHub 上查看",
+      "cdnDocs": "CDN 文档"
+    },
+    "style": {
+      "button": "样式",
+      "hint": "打造专属图标：粗细、圆角、颜色",
+      "quick": "快捷样式",
+      "quickHint": "点击“样式”查看全部设置",
+      "dialog": "图标样式",
+      "presets": "样式预设",
+      "savedTitle": "你保存的样式",
+      "live": "你的样式（实时）",
+      "preset": {
+        "house": "默认",
+        "crisp": "锐利",
+        "soft": "柔和",
+        "bold": "粗体",
+        "hairline": "极细",
+        "float": "悬浮",
+        "mine": "我的"
+      },
+      "resetNamed": "重置{{label}}",
+      "backTo": "恢复为 {{value}}",
+      "weight": "粗细",
+      "scale": "缩放",
+      "shadow": "阴影",
+      "corners": "转角",
+      "corner": {
+        "sharp": "尖角",
+        "chamfer": "切角",
+        "round": "圆角"
+      },
+      "cut": "截断",
+      "cutEnds": "截断端点",
+      "plainEnds": "普通端点",
+      "weightChip": "粗细 {{value}}",
+      "colour": "颜色",
+      "colourAccent": "颜色（强调色优先）",
+      "iconColours": "图标颜色",
+      "colorMode": {
+        "natural": "原色",
+        "mono": "单色"
+      },
+      "noAccent": "无强调色",
+      "none": "无",
+      "accentNamed": "强调色 {{hex}}",
+      "clickCopies": "点击即复制",
+      "clickToCopy": "点击图标即可复制",
+      "whatCopied": "复制的内容",
+      "saved": "已保存",
+      "saveMine": "保存为我的样式",
+      "reset": "重置"
+    }
+  },
   "header": {
     "home": "theSVG 首页",
     "submitAria": "提交图标",

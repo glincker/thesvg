@@ -9,11 +9,13 @@ import type { Variant } from "@/lib/ui-icons/engine";
 import { codeFor } from "@/lib/ui-icons/snippets";
 import { cn } from "@/lib/ui-icons/utils";
 import { Glyph, svgText } from "./glyph";
+import { useLabels } from "./labels";
 import { useUi } from "./ui-state";
 
 /** Quick preview in a modal, the same pattern thesvg uses for brand icons. The full page stays one click away. */
 export function QuickView({ glyph, onClose }: { glyph: GlyphData; onClose: () => void }) {
   const ui = useUi();
+  const { t, look: lookLabel } = useLabels();
   const [look, setLook] = useState<Variant>(ui.variant);
   const [done, setDone] = useState<string | null>(null);
   const fav = ui.favorites.includes(glyph.slug);
@@ -46,7 +48,7 @@ export function QuickView({ glyph, onClose }: { glyph: GlyphData; onClose: () =>
             <Glyph nodes={glyph.nodes} variant={look} size={112} accent={ui.accent} className="text-foreground" />
             <button
               type="button"
-              aria-label={fav ? "Remove favorite" : "Add favorite"}
+              aria-label={fav ? t("uikit.card.removeFavorite") : t("uikit.card.addFavorite")}
               onClick={() => ui.toggleFavorite(glyph.slug)}
               className={cn("absolute left-3 top-3 grid size-7 place-items-center rounded-full bg-background/60 text-muted-foreground backdrop-blur-sm hover:text-foreground", fav && "text-orange-500")}
             >
@@ -62,23 +64,23 @@ export function QuickView({ glyph, onClose }: { glyph: GlyphData; onClose: () =>
               {VARIANTS.map((v) => (
                 <button key={v} type="button" onClick={() => setLook(v)} aria-pressed={look === v} className={cn("flex flex-col items-center gap-1 rounded-xl border p-2 text-[0.75rem] capitalize text-muted-foreground transition-colors hover:text-foreground", look === v && "border-orange-500/50 text-foreground")}>
                   <Glyph nodes={glyph.nodes} variant={v} size={22} accent={ui.accent} className="text-foreground" />
-                  {v}
+                  {lookLabel(v)}
                 </button>
               ))}
             </div>
             <div className="grid grid-cols-[1fr_1fr_auto] gap-2">
               <button type="button" onClick={() => copy("svg")} className="inline-flex h-9 items-center justify-center gap-1.5 rounded-lg bg-foreground text-xs font-medium text-background">
-                {done === "svg" ? <UiGlyph name="check" className="size-4" /> : <UiGlyph name="copy" className="size-4" />} Copy SVG
+                {done === "svg" ? <UiGlyph name="check" className="size-4" /> : <UiGlyph name="copy" className="size-4" />} {t("uikit.card.copyWhat", { what: "SVG" })}
               </button>
               <button type="button" onClick={() => copy("react")} className="inline-flex h-9 items-center justify-center gap-1.5 rounded-lg border text-xs font-medium hover:bg-accent">
-                {done === "react" ? <UiGlyph name="check" className="size-4" /> : <UiGlyph name="copy" className="size-4" />} Copy React
+                {done === "react" ? <UiGlyph name="check" className="size-4" /> : <UiGlyph name="copy" className="size-4" />} {t("uikit.card.copyWhat", { what: "React" })}
               </button>
-              <button type="button" aria-label="Download SVG" onClick={download} className="grid size-9 place-items-center rounded-lg border hover:bg-accent">
+              <button type="button" aria-label={t("uikit.card.downloadSvg")} onClick={download} className="grid size-9 place-items-center rounded-lg border hover:bg-accent">
                 <UiGlyph name="download" className="size-4" />
               </button>
             </div>
             <Link href={`/ui/${glyph.slug}`} onClick={onClose} className="inline-flex items-center justify-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-foreground">
-              Open full page <UiGlyph name="arrow-right" className="size-4" />
+              {t("uikit.card.openFull")} <UiGlyph name="arrow-right" className="size-4" />
             </Link>
           </div>
         </div>

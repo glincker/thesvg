@@ -13,6 +13,233 @@
     "cdnUsage": "CDN 사용법",
     "compare": "비교"
   },
+  "uikit": {
+    "breadcrumb": "탐색 경로",
+    "look": {
+      "outline": "아웃라인",
+      "duotone": "듀오톤",
+      "offset": "오프셋",
+      "fill": "채움",
+      "glass": "글래스",
+      "glassOutline": "글래스 아웃라인",
+      "depth": "깊이"
+    },
+    "copy": {
+      "name": "이름"
+    },
+    "copyHint": {
+      "svg": "내 스타일이 적용된 그림",
+      "name": "아이콘 이름",
+      "cli": "추가하는 명령어",
+      "import": "{{pkg}} 가져오기 및 사용법",
+      "url": "CDN의 SVG 링크"
+    },
+    "hero": {
+      "title": "하나의 뼈대, 모든 스타일",
+      "show": "소개 보기",
+      "hide": "소개 숨기기",
+      "badge": "4.0 신규: UI 아이콘",
+      "intro": "그리드 위에 그려지고 실시간으로 스타일이 바뀝니다. 아웃라인, 듀오톤, 채움, 글래스, 글래스 아웃라인 모두 currentColor로 테마를 적용할 수 있습니다.",
+      "browse": "아이콘 둘러보기"
+    },
+    "nav": {
+      "allIcons": "모든 아이콘",
+      "favorites": "즐겨찾기",
+      "extensions": "확장 프로그램",
+      "whatIsNew": "새로운 소식",
+      "categories": "카테고리",
+      "new": "신규",
+      "allCategories": "모든 카테고리",
+      "expandSidebar": "사이드바 펼치기",
+      "collapseSidebar": "사이드바 접기",
+      "navigation": "탐색"
+    },
+    "mode": {
+      "iconType": "아이콘 유형"
+    },
+    "browse": {
+      "all": "전체",
+      "allUi": "모든 UI 아이콘",
+      "popular": "인기",
+      "popularHint": "가장 먼저 찾게 될 아이콘",
+      "bestMatches": "가장 일치하는 항목",
+      "related": "관련",
+      "relatedHint": "같은 계열, 동의어, 비슷한 철자",
+      "noMatch": "일치하는 아이콘이 없습니다.",
+      "didYouMean": "혹시",
+      "didYouMeanEnd": "?",
+      "tryAnother": "다른 단어를 입력하거나 필터를 지워 보세요.",
+      "loadingMore": "아이콘을 더 불러오는 중",
+      "thatIsAll": "총 {{count}}개가 전부입니다"
+    },
+    "card": {
+      "addFavorite": "즐겨찾기에 추가",
+      "removeFavorite": "즐겨찾기에서 삭제",
+      "backlog": "백로그",
+      "draft": "초안",
+      "clickToCopy": "클릭하여 {{what}} 복사",
+      "copied": "복사됨",
+      "copiedWhat": "{{what}} 복사됨",
+      "copyWhat": "{{what}} 복사",
+      "downloadSvg": "SVG 다운로드",
+      "quickPreview": "빠른 미리보기",
+      "openFull": "전체 페이지 열기"
+    },
+    "category": {
+      "count": "아이콘 {{count}}개",
+      "countNew": "아이콘 {{count}}개, 신규 {{fresh}}개",
+      "allIn": "{{name}} 아이콘 전체",
+      "others": "다른 카테고리",
+      "browseBy": "카테고리별로 둘러보기",
+      "intro": "{{categories}}개 카테고리에 UI 아이콘 {{count}}개. 모두 같은 그리드로 그려졌고 모든 스타일로 제공됩니다."
+    },
+    "changelog": {
+      "intro": "지금까지 UI 아이콘 {{count}}개를 공개했으며, 앞으로도 조금씩 추가됩니다.",
+      "upcoming": "미리보기 전용: {{drops}}번의 추가가 예정되어 있으며 아이콘 {{icons}}개입니다."
+    },
+    "quality": {
+      "title": "제작 품질",
+      "footnote": "세트를 빌드할 때 점수가 매겨집니다. 그리드 적합도, 모든 스타일에서의 깔끔한 렌더링, 세트 전체와의 굵기 균형, 완전한 메타데이터를 평가합니다."
+    },
+    "code": {
+      "form": "코드 형태",
+      "source": "소스",
+      "package": "패키지",
+      "customNote": "사용자 지정 스타일은 복사한 소스에만 적용됩니다.",
+      "copy": "복사"
+    },
+    "color": {
+      "custom": "사용자 지정 색상",
+      "pick": "색상 선택",
+      "satBright": "채도와 밝기",
+      "hue": "색조",
+      "hex": "16진수 색상",
+      "eyedropper": "화면에서 색상 선택",
+      "recent": "최근",
+      "use": "{{hex}} 사용"
+    },
+    "ctx": {
+      "rest": "기본",
+      "hover": "호버",
+      "active": "활성",
+      "interactive": "인터랙티브",
+      "sameAsRest": "기본과 동일",
+      "showState": "상태 보기",
+      "pressed": "눌림",
+      "action": "동작",
+      "secondary": "보조",
+      "iconButton": "아이콘 버튼",
+      "tab": {
+        "overview": "개요",
+        "activity": "활동",
+        "settings": "설정"
+      },
+      "placeholder": "입력하여 이 필드에 포커스",
+      "notificationsOn": "알림 켜짐",
+      "notificationsOff": "알림 꺼짐",
+      "toggleChip": "칩 {{n}} 전환"
+    },
+    "detail": {
+      "iconColour": "아이콘 색상",
+      "fit": "맞춤",
+      "fitLower": "맞춤",
+      "realSize": "실제 크기로 돌아가기",
+      "zoomFit": "맞춤 확대",
+      "previewSize": "미리보기 크기",
+      "grid": "그리드",
+      "anchors": "앵커",
+      "lightCanvas": "밝은 캔버스 전환",
+      "looks": "스타일",
+      "lineOnly": "선으로만 이루어진 글리프라서 채움, 글래스, 깊이에서는 더 굵은 아웃라인을 사용합니다. 아웃라인, 듀오톤, 오프셋, 글래스 아웃라인에서는 완전하게 그려집니다.",
+      "allLooks": "모든 스타일에서 이 글리프를 완전하게 그립니다.",
+      "gridValue": "24 × 24",
+      "category": "카테고리",
+      "color": "색상",
+      "noTags": "아직 태그가 없습니다",
+      "subtitle": "{{slug}} · {{category}} UI 아이콘",
+      "rasterPicked": "래스터는 선택한 색상을 사용합니다.",
+      "rasterBlack": "래스터는 거의 검정색을 사용합니다. 위에서 색상을 선택하면 바꿀 수 있습니다.",
+      "officialLogo": "공식 브랜드 로고와 변형",
+      "looksHint": "하나를 고르면 아래 모든 것이 따라갑니다",
+      "inContext": "사용 예시",
+      "inContextHint": "호버, 포커스, 누름, 전환이 모두 동작합니다",
+      "opticalSizes": "광학 크기",
+      "moreIn": "{{category}}의 다른 아이콘",
+      "aboutTitle": "{{title}} 아이콘 소개",
+      "aboutBody": "{{title}} 아이콘은 24 × 24 그리드로 그려진 {{category}} UI 아이콘이며 {{count}}가지 스타일({{looks}})로 제공됩니다. currentColor를 사용하므로 주변 텍스트 색상을 따르며, 모든 스타일을 SVG, React, Vue, Svelte, HTML 또는 CSS 마스크로 복사할 수 있습니다."
+    },
+    "docs": {
+      "quickStart": "빠른 시작",
+      "props": "Props",
+      "prop": "Prop",
+      "type": "타입",
+      "whatItDoes": "기능",
+      "looks": "스타일과 사용 시점",
+      "states": "상태",
+      "color": "색상과 테마",
+      "sizes": "크기",
+      "a11y": "접근성",
+      "drops": "세트가 늘어나는 방식"
+    },
+    "ext": {
+      "title": "UI 아이콘: 확장 프로그램과 패키지",
+      "intro": "UI 아이콘을 개발, 디자인, 배포 어디서나 사용하세요. 브랜드 아이콘은 별도 페이지가 있습니다.",
+      "buildOwn": "직접 만들기",
+      "buildOwnText": "모든 아이콘 파일, 매니페스트, 스타일별 JSON 파일(해당 스타일의 모든 아이콘, 슬러그에서 SVG로)은 인증 없이 공개되어 있습니다. 플러그인이나 워크플로를 만든 뒤 PR을 열어 여기에 등록하세요.",
+      "viewGithub": "GitHub에서 보기",
+      "cdnDocs": "CDN 문서"
+    },
+    "style": {
+      "button": "스타일",
+      "hint": "아이콘을 내 스타일로: 굵기, 모서리, 색상",
+      "quick": "빠른 스타일",
+      "quickHint": "스타일을 클릭하면 모든 설정이 나타납니다",
+      "dialog": "아이콘 스타일",
+      "presets": "스타일 프리셋",
+      "savedTitle": "저장한 스타일",
+      "live": "내 스타일 실시간 보기",
+      "preset": {
+        "house": "기본",
+        "crisp": "선명",
+        "soft": "부드러움",
+        "bold": "굵게",
+        "hairline": "헤어라인",
+        "float": "플로트",
+        "mine": "내 스타일"
+      },
+      "resetNamed": "{{label}} 초기화",
+      "backTo": "{{value}}(으)로 되돌리기",
+      "weight": "굵기",
+      "scale": "크기 비율",
+      "shadow": "그림자",
+      "corners": "모서리",
+      "corner": {
+        "sharp": "각진",
+        "chamfer": "모따기",
+        "round": "둥근"
+      },
+      "cut": "절단",
+      "cutEnds": "끝 자르기",
+      "plainEnds": "기본 끝",
+      "weightChip": "굵기 {{value}}",
+      "colour": "색상",
+      "colourAccent": "색상, 강조색이 우선",
+      "iconColours": "아이콘 색상",
+      "colorMode": {
+        "natural": "원색",
+        "mono": "모노"
+      },
+      "noAccent": "강조색 없음",
+      "none": "없음",
+      "accentNamed": "강조색 {{hex}}",
+      "clickCopies": "클릭하여 복사",
+      "clickToCopy": "아이콘을 클릭해 복사",
+      "whatCopied": "복사되는 내용",
+      "saved": "저장됨",
+      "saveMine": "내 스타일로 저장",
+      "reset": "초기화"
+    }
+  },
   "header": {
     "home": "theSVG 홈",
     "submitAria": "아이콘 제출하기",

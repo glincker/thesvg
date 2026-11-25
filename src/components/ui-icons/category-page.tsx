@@ -9,27 +9,29 @@ import { THEMES, TONES, domainGlyphs } from "./category-theme";
 import { Glyph } from "./glyph";
 import { IconCard } from "./icon-card";
 import { StyleBar } from "./lab";
+import { useT } from "@/i18n/use-t";
 import { useUi } from "./ui-state";
 
 /** One category on its own page: its banner, the look bar, every icon, and a way to the other categories. */
 export function CategoryPage({ domainId }: { domainId: string }) {
+  const { t } = useT();
   const domain = DOMAINS.find((d) => d.id === domainId);
   const glyphs = useMemo(() => domainGlyphs(domainId), [domainId]);
   const others = useMemo(() => USED_DOMAINS.filter((d) => d.id !== domainId), [domainId]);
   if (!domain) return null;
   return (
     <div className="flex flex-col gap-4">
-      <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs text-muted-foreground">
-        <Link href="/ui" className="transition-colors hover:text-foreground">UI icons</Link>
+      <nav aria-label={t("uikit.breadcrumb")} className="flex items-center gap-1.5 text-xs text-muted-foreground">
+        <Link href="/ui" className="transition-colors hover:text-foreground">{t("nav.uiIcons")}</Link>
         <span aria-hidden>/</span>
-        <Link href="/ui/categories" className="transition-colors hover:text-foreground">Categories</Link>
+        <Link href="/ui/categories" className="transition-colors hover:text-foreground">{t("nav.categories")}</Link>
         <span aria-hidden>/</span>
         <span className="text-foreground">{domain.label}</span>
       </nav>
       <CategoryBanner category={domain.label} />
       <div className="flex items-center justify-between gap-3">
         <h2 className="text-sm font-semibold">
-          All {domain.label} icons <span className="ml-1 font-normal text-muted-foreground">{glyphs.length}</span>
+          {t("uikit.category.allIn", { name: domain.label })} <span className="ml-1 font-normal text-muted-foreground">{glyphs.length}</span>
         </h2>
         <StyleBar />
       </div>
@@ -38,8 +40,8 @@ export function CategoryPage({ domainId }: { domainId: string }) {
           <IconCard key={g.slug} glyph={g} />
         ))}
       </div>
-      <section aria-label="Other categories" className="mt-4">
-        <h2 className="mb-2 text-sm font-semibold">Other categories</h2>
+      <section aria-label={t("uikit.category.others")} className="mt-4">
+        <h2 className="mb-2 text-sm font-semibold">{t("uikit.category.others")}</h2>
         <div className="flex flex-wrap gap-2">
           {others.map((d) => (
             <Link key={d.id} href={`/ui/category/${d.id}`} className="rounded-full border px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground">
@@ -55,21 +57,22 @@ export function CategoryPage({ domainId }: { domainId: string }) {
 /** Every category as a card with a taste of its icons, for choosing where to look. */
 export function CategoriesIndex() {
   const ui = useUi();
+  const { t } = useT();
   const cards = useMemo(
     () => DOMAINS.map((d) => ({ domain: d, glyphs: domainGlyphs(d.id) })).filter((c) => c.glyphs.length > 0),
     [],
   );
   return (
     <div className="flex flex-col gap-4">
-      <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs text-muted-foreground">
-        <Link href="/ui" className="transition-colors hover:text-foreground">UI icons</Link>
+      <nav aria-label={t("uikit.breadcrumb")} className="flex items-center gap-1.5 text-xs text-muted-foreground">
+        <Link href="/ui" className="transition-colors hover:text-foreground">{t("nav.uiIcons")}</Link>
         <span aria-hidden>/</span>
-        <span className="text-foreground">Categories</span>
+        <span className="text-foreground">{t("nav.categories")}</span>
       </nav>
       <div>
-        <h1 className="text-2xl font-bold tracking-tight md:text-3xl">Browse by category</h1>
+        <h1 className="text-2xl font-bold tracking-tight md:text-3xl">{t("uikit.category.browseBy")}</h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          {GLYPHS.length} UI icons in {cards.length} categories. Each one is drawn on the same grid and comes in every look.
+          {t("uikit.category.intro", { count: GLYPHS.length, categories: cards.length })}
         </p>
       </div>
       <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
