@@ -5,10 +5,10 @@ import { cn } from "@/lib/utils";
 
 type Size = "sm" | "md" | "lg";
 
-// Byline stays readable at every size: the wordmark never drops below 12px tall.
+// Byline stays readable at every size: the wordmark never drops below 12px tall (13px in the navbar).
 const SIZES: Record<Size, { name: string; by: string; mark: string; gap: string; pull: string }> = {
   sm: { name: "text-[17px]", by: "text-[9.5px]", mark: "h-3 w-auto", gap: "gap-0", pull: "-mt-0.5" },
-  md: { name: "text-[22px]", by: "text-[10.5px]", mark: "h-3.5 w-auto", gap: "gap-0", pull: "-mt-1.5" },
+  md: { name: "text-[20px]", by: "text-[10px]", mark: "h-[13px] w-auto", gap: "gap-0", pull: "-mt-1.5" },
   lg: { name: "text-2xl", by: "text-[11px]", mark: "h-4 w-auto", gap: "gap-0", pull: "-mt-1.5" },
 };
 

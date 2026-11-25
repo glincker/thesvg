@@ -386,7 +386,7 @@ export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
               homeLabel={t("header.home")}
               utmSource="header"
               textClassName="hidden sm:flex"
-              mark={<LogoMorph mode={isUi ? "ui" : "brand"} className="h-10 w-10 rounded-lg transition-transform duration-200 group-hover/logo:scale-105" />}
+              mark={<LogoMorph mode={isUi ? "ui" : "brand"} className="h-9 w-9 rounded-lg transition-transform duration-200 group-hover/logo:scale-105" />}
             />
             <ModeSwitch mode={isUi ? "ui" : "brand"} className="ml-1 hidden sm:grid" onChange={(m) => router.push(m === "ui" ? "/ui" : "/")} />
           </div>
