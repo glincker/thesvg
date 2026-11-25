@@ -146798,7 +146798,9 @@
       "dark": "/icons/thesvg/dark.svg",
       "mono": "/icons/thesvg/mono.svg",
       "wordmark": "/icons/thesvg/wordmark.svg",
-      "wordmarkDark": "/icons/thesvg/wordmark-dark.svg"
+      "wordmarkDark": "/icons/thesvg/wordmark-dark.svg",
+      "lockup": "/icons/thesvg/lockup.svg",
+      "lockupDark": "/icons/thesvg/lockup-dark.svg"
     },
     "license": "MIT",
     "url": "https://thesvg.org",

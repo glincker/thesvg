@@ -1403,6 +1403,8 @@
       "dark": "다크",
       "default": "기본",
       "light": "라이트",
+      "lockup": "락업",
+      "lockupDark": "락업 다크",
       "mono": "모노",
       "suffix": "{{name}} 변형",
       "wordmark": "워드마크",

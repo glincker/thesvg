@@ -1403,6 +1403,8 @@
       "dark": "深色",
       "default": "默认",
       "light": "浅色",
+      "lockup": "组合标",
+      "lockupDark": "组合标深色",
       "mono": "单色",
       "suffix": "{{name}}变体",
       "wordmark": "文字标",

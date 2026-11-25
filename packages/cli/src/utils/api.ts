@@ -12,6 +12,8 @@ export interface IconVariants {
   wordmark?: string;
   wordmarkLight?: string;
   wordmarkDark?: string;
+  lockup?: string;
+  lockupDark?: string;
 }
 
 export interface IconEntry {

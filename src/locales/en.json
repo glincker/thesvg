@@ -1403,6 +1403,8 @@
       "dark": "Dark",
       "default": "Default",
       "light": "Light",
+      "lockup": "Lockup",
+      "lockupDark": "Lockup Dark",
       "mono": "Mono",
       "suffix": "{{name}} variant",
       "wordmark": "Wordmark",
