@@ -3,12 +3,12 @@
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-lockup-dark.svg" />
       <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-lockup.svg" />
-      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-lockup.svg" alt="theSVG by GLINR Studios" height="44" />
+      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-lockup.svg" alt="theSVG by GLINR Studios" height="64" />
     </picture>
   </a>
 </p>
 
-<h2 align="center">Открытая библиотека SVG-логотипов брендов</h2>
+<h3 align="center">Открытая библиотека SVG-логотипов брендов</h3>
 
 <p align="center">Более 7 900 логотипов, иконок и флагов в SVG, React, Vue, Svelte, CDN, CLI или MCP. Бесплатно и с открытым кодом.</p>
 

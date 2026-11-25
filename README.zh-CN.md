@@ -3,12 +3,12 @@
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-lockup-dark.svg" />
       <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-lockup.svg" />
-      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-lockup.svg" alt="theSVG by GLINR Studios" height="44" />
+      <img src="https://raw.githubusercontent.com/glincker/thesvg/main/public/logo-lockup.svg" alt="theSVG by GLINR Studios" height="64" />
     </picture>
   </a>
 </p>
 
-<h2 align="center">开放的 SVG 品牌图标库</h2>
+<h3 align="center">开放的 SVG 品牌图标库</h3>
 
 <p align="center">7,900 多个标志、图标和国旗，支持 SVG、React、Vue、Svelte、CDN、CLI 和 MCP。免费开源。</p>
 
