@@ -1,14 +1,14 @@
 "use client";
 
-import { useTranslation } from "react-i18next";
+import { useT } from "@/i18n/use-t";
 import { setLocale } from "@/i18n/config";
 import { LOCALES, matchLocale } from "@/i18n/locales";
 import { cn } from "@/lib/utils";
 
 /** Footer language row: our own flags plus native names, so the choice is easy to find. */
 export function FooterLanguages() {
-  const { t, i18n } = useTranslation();
-  const active = matchLocale(i18n.language) ?? "en";
+  const { t, locale } = useT();
+  const active = matchLocale(locale) ?? "en";
 
   return (
     <div className="mt-8 flex flex-col items-center gap-3 border-t border-border/40 pt-6 dark:border-white/[0.06]">

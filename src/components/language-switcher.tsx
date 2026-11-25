@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslation } from "react-i18next";
+import { useT } from "@/i18n/use-t";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -19,8 +19,8 @@ function Flag({ slug }: Readonly<{ slug: string }>) {
 
 /** Language picker that uses the library's own country flags. */
 export function LanguageSwitcher() {
-  const { t, i18n } = useTranslation();
-  const current = LOCALES.find((l) => l.code === (matchLocale(i18n.language) ?? "en")) ?? LOCALES[0];
+  const { t, locale } = useT();
+  const current = LOCALES.find((l) => l.code === (matchLocale(locale) ?? "en")) ?? LOCALES[0];
 
   return (
     <DropdownMenu>

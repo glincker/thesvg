@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useId, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
-import { useTranslation } from "react-i18next";
+import { useT } from "@/i18n/use-t";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { capture } from "@/lib/analytics";
 import { usePathname, useRouter } from "next/navigation";
@@ -42,7 +42,7 @@ import { withUtm } from "@/lib/external-link";
 const PLACEHOLDER_BRANDS = ["GitHub", "Stripe", "Figma", "Docker", "AWS Lambda", "Azure Functions", "BigQuery", "Vercel", "React", "Tailwind CSS"];
 
 function SubmitButton() {
-  const { t } = useTranslation();
+  const { t } = useT();
   return (
     <Link href="/submit" className="group/submit relative" aria-label={t("header.submitAria")}>
       <span className="relative inline-flex h-9 items-center gap-1.5 overflow-hidden rounded-lg bg-gradient-to-b from-orange-400 to-orange-600 px-3 text-xs font-semibold text-white shadow-[0_1px_3px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all duration-200 hover:from-orange-400 hover:to-orange-500 hover:shadow-[0_3px_12px_rgba(249,115,22,0.4),inset_0_1px_0_rgba(255,255,255,0.25)] active:scale-[0.97] active:shadow-[0_0px_1px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(0,0,0,0.1)] sm:h-8 sm:px-3.5">
@@ -69,7 +69,7 @@ interface HeaderProps {
 }
 
 export function Header({ collectionCounts, githubStars = null }: HeaderProps) {
-  const { t } = useTranslation();
+  const { t } = useT();
   const stars = useGithubStars(githubStars);
   useEffect(() => {
     trackStarCta("header", "viewed", stars);
