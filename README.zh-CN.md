@@ -624,17 +624,11 @@ AWS 架构图标按 [CC BY-ND 2.0](https://creativecommons.org/licenses/by-nd/2.
 
 代码库、工具和 UI 图标采用 [MIT](./LICENSE) 许可。各个品牌图标仍是其各自商标持有者的知识产权。
 
-## Star 历史
-
-<a href="https://star-history.com/#glincker/thesvg&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date" width="600" />
- </picture>
-</a>
-
 ---
+
+<!-- footer-tagline:start -->
+<p align="center"><b>开放的 SVG 品牌图标库</b><br />7,900 多个标志、图标和国旗，支持 SVG、React、Vue、Svelte、CDN、CLI 和 MCP。免费开源。</p>
+<!-- footer-tagline:end -->
 
 <p align="center">
   <a href="https://thesvg.org">thesvg.org</a> &nbsp;&bull;&nbsp;

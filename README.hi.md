@@ -624,17 +624,11 @@ AWS Architecture Icons [CC BY-ND 2.0](https://creativecommons.org/licenses/by-nd
 
 कोडबेस, टूलिंग और UI आइकन के लिए [MIT](./LICENSE)। अलग-अलग ब्रांड आइकन अपने-अपने ट्रेडमार्क धारकों की बौद्धिक संपत्ति बने रहते हैं।
 
-## स्टार इतिहास
-
-<a href="https://star-history.com/#glincker/thesvg&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date" width="600" />
- </picture>
-</a>
-
 ---
+
+<!-- footer-tagline:start -->
+<p align="center"><b>ओपन SVG ब्रांड लाइब्रेरी</b><br />7,900 से अधिक लोगो, आइकन और झंडे SVG, React, Vue, Svelte, CDN, CLI या MCP में। मुफ़्त और ओपन सोर्स।</p>
+<!-- footer-tagline:end -->
 
 <p align="center">
   <a href="https://thesvg.org">thesvg.org</a> &nbsp;&bull;&nbsp;

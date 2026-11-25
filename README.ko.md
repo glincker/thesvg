@@ -624,17 +624,11 @@ AWS Architecture Icons는 [CC BY-ND 2.0](https://creativecommons.org/licenses/by
 
 코드베이스, 도구, UI 아이콘은 [MIT](./LICENSE)입니다. 개별 브랜드 아이콘의 지식재산권은 각 상표권자에게 있습니다.
 
-## Star 히스토리
-
-<a href="https://star-history.com/#glincker/thesvg&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date" />
-   <img alt="스타 히스토리 차트" src="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date" width="600" />
- </picture>
-</a>
-
 ---
+
+<!-- footer-tagline:start -->
+<p align="center"><b>오픈 SVG 브랜드 라이브러리</b><br />7,900개 이상의 로고, 아이콘, 국기를 SVG, React, Vue, Svelte, CDN, CLI, MCP로. 무료 오픈 소스입니다.</p>
+<!-- footer-tagline:end -->
 
 <p align="center">
   <a href="https://thesvg.org">thesvg.org</a> &nbsp;&bull;&nbsp;

@@ -624,17 +624,11 @@ Wenn du Markeninhaber bist und ein Icon aktualisiert oder entfernt haben möchte
 
 [MIT](./LICENSE) für den Code, das Tooling und die UI-Icons. Einzelne Marken-Icons bleiben geistiges Eigentum ihrer jeweiligen Markeninhaber.
 
-## Star-Verlauf
-
-<a href="https://star-history.com/#glincker/thesvg&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date" />
-   <img alt="Star-History-Diagramm" src="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date" width="600" />
- </picture>
-</a>
-
 ---
+
+<!-- footer-tagline:start -->
+<p align="center"><b>Die offene SVG-Markenbibliothek</b><br />Über 7.900 Logos, Icons und Flaggen als SVG, React, Vue, Svelte, CDN, CLI oder MCP. Kostenlos und Open Source.</p>
+<!-- footer-tagline:end -->
 
 <p align="center">
   <a href="https://thesvg.org">thesvg.org</a> &nbsp;&bull;&nbsp;

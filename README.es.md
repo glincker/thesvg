@@ -624,17 +624,11 @@ Si eres titular de una marca y quieres que se actualice o se retire un icono, [a
 
 [MIT](./LICENSE) para el código, las herramientas y los iconos de interfaz. Los iconos de cada marca siguen siendo propiedad intelectual de sus respectivos titulares de marca.
 
-## Historial de estrellas
-
-<a href="https://star-history.com/#glincker/thesvg&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date" width="600" />
- </picture>
-</a>
-
 ---
+
+<!-- footer-tagline:start -->
+<p align="center"><b>La biblioteca abierta de marcas en SVG</b><br />Más de 7.900 logos, iconos y banderas en SVG, React, Vue, Svelte, CDN, CLI o MCP. Gratis y de código abierto.</p>
+<!-- footer-tagline:end -->
 
 <p align="center">
   <a href="https://thesvg.org">thesvg.org</a> &nbsp;&bull;&nbsp;

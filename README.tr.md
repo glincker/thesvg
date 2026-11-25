@@ -624,17 +624,11 @@ Bir marka sahibiyseniz ve bir ikonun güncellenmesini veya kaldırılmasını is
 
 Kod tabanı, araçlar ve UI ikonları için [MIT](./LICENSE). Tek tek marka ikonları, ilgili ticari marka sahiplerinin fikri mülkiyeti olmaya devam eder.
 
-## Yıldız Geçmişi
-
-<a href="https://star-history.com/#glincker/thesvg&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date" width="600" />
- </picture>
-</a>
-
 ---
+
+<!-- footer-tagline:start -->
+<p align="center"><b>Açık SVG marka kütüphanesi</b><br />7.900'den fazla logo, simge ve bayrak: SVG, React, Vue, Svelte, CDN, CLI veya MCP olarak. Ücretsiz ve açık kaynak.</p>
+<!-- footer-tagline:end -->
 
 <p align="center">
   <a href="https://thesvg.org">thesvg.org</a> &nbsp;&bull;&nbsp;

@@ -624,17 +624,11 @@ Si vous êtes propriétaire d'une marque et souhaitez qu'une icône soit mise à
 
 [MIT](./LICENSE) pour le code, l'outillage et les icônes UI. Les icônes de chaque marque restent la propriété intellectuelle de leurs titulaires respectifs.
 
-## Historique des étoiles
-
-<a href="https://star-history.com/#glincker/thesvg&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date" width="600" />
- </picture>
-</a>
-
 ---
+
+<!-- footer-tagline:start -->
+<p align="center"><b>La bibliothèque ouverte de logos de marques en SVG</b><br />Plus de 7 900 logos, icônes et drapeaux en SVG, React, Vue, Svelte, CDN, CLI ou MCP. Gratuit et open source.</p>
+<!-- footer-tagline:end -->
 
 <p align="center">
   <a href="https://thesvg.org">thesvg.org</a> &nbsp;&bull;&nbsp;

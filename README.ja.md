@@ -624,17 +624,11 @@ AWS Architecture Icons は [CC BY-ND 2.0](https://creativecommons.org/licenses/b
 
 コードベース、ツール、UI アイコンは [MIT](./LICENSE) です。個々のブランドアイコンの知的財産権は、それぞれの商標権者に帰属します。
 
-## Star 履歴
-
-<a href="https://star-history.com/#glincker/thesvg&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date" />
-   <img alt="スター履歴チャート" src="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date" width="600" />
- </picture>
-</a>
-
 ---
+
+<!-- footer-tagline:start -->
+<p align="center"><b>オープンな SVG ブランドライブラリ</b><br />7,900 以上のロゴ、アイコン、国旗を SVG、React、Vue、Svelte、CDN、CLI、MCP で。無料のオープンソースです。</p>
+<!-- footer-tagline:end -->
 
 <p align="center">
   <a href="https://thesvg.org">thesvg.org</a> &nbsp;&bull;&nbsp;

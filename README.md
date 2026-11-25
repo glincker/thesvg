@@ -624,17 +624,11 @@ If you are a brand owner and would like an icon updated or removed, please [open
 
 [MIT](./LICENSE) for the codebase, tooling and the UI icons. Individual brand icons remain the intellectual property of their respective trademark holders.
 
-## Star History
-
-<a href="https://star-history.com/#glincker/thesvg&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=glincker/thesvg&type=Date" width="600" />
- </picture>
-</a>
-
 ---
+
+<!-- footer-tagline:start -->
+<p align="center"><b>The open SVG brand library</b><br />7,900+ logos, icons and flags as SVG, React, Vue, Svelte, CDN, CLI or MCP. Free, open source.</p>
+<!-- footer-tagline:end -->
 
 <p align="center">
   <a href="https://thesvg.org">thesvg.org</a> &nbsp;&bull;&nbsp;
