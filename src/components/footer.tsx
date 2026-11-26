@@ -386,12 +386,8 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 opacity-60 transition-opacity hover:opacity-100"
                 >
-                  { }
-                  { }
-                  <img src="/icons/levelrail/mono.svg" alt="Levelrail" width={20} height={20} className="hidden dark:invert dark:block" />
-                  { }
-                  <img src="/icons/levelrail/mono.svg" alt="Levelrail" width={20} height={20} className="block dark:hidden" />
-                  <span className="text-xs text-muted-foreground">levelrail.com</span>
+                  <img src="/icons/levelrail/wordmark-dark.svg" alt="Levelrail" width={72} height={22} className="hidden dark:block" />
+                  <img src="/icons/levelrail/wordmark-light.svg" alt="Levelrail" width={72} height={22} className="block dark:hidden" />
                 </a>
               </div>
             </div>

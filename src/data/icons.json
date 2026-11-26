@@ -102585,7 +102585,10 @@
     ],
     "variants": {
       "default": "/icons/levelrail/default.svg",
-      "mono": "/icons/levelrail/mono.svg"
+      "mono": "/icons/levelrail/mono.svg",
+      "wordmark": "/icons/levelrail/wordmark.svg",
+      "wordmarkLight": "/icons/levelrail/wordmark-light.svg",
+      "wordmarkDark": "/icons/levelrail/wordmark-dark.svg"
     },
     "license": "CC0-1.0",
     "url": "https://levelrail.com",
