@@ -1,5 +1,11 @@
 # @thesvg/solid
 
+## 4.0.19
+
+### Patch Changes
+
+- feat: add Levelrail wordmark variants and use them in the footer ([#1619](https://github.com/glincker/thesvg/issues/1619))
+
 ## 4.0.18
 
 ### Patch Changes
