@@ -38654,6 +38654,25 @@
     "collection": "brands"
   },
   {
+    "slug": "batchfile",
+    "title": "Batchfile",
+    "aliases": [
+      "bat",
+      "cmd"
+    ],
+    "hex": "C0C0C0",
+    "categories": [
+      "Language",
+      "Microsoft"
+    ],
+    "variants": {
+      "default": "/icons/batchfile/default.svg"
+    },
+    "license": "MIT",
+    "dateAdded": "2026-11-28",
+    "collection": "brands"
+  },
+  {
     "slug": "battle-net-badge",
     "title": "Battle.net",
     "aliases": [],
@@ -50888,7 +50907,9 @@
       "UI Library"
     ],
     "variants": {
-      "default": "/icons/customtkinter/default.svg"
+      "default": "/icons/customtkinter/default.svg",
+      "mono": "/icons/customtkinter/mono.svg",
+      "dark": "/icons/customtkinter/dark.svg"
     },
     "license": "MIT",
     "url": "https://customtkinter.tomschimansky.com",
