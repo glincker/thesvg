@@ -1,5 +1,11 @@
 # @thesvg/react
 
+## 4.0.21
+
+### Patch Changes
+
+- feat: list all four contact emails on the contact page and README ([#1628](https://github.com/glincker/thesvg/issues/1628))
+
 ## 4.0.20
 
 ### Patch Changes
