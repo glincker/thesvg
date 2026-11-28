@@ -145034,8 +145034,8 @@
     ],
     "hex": "000000",
     "categories": [
-      "Services",
-      "Business"
+      "Business",
+      "Services"
     ],
     "variants": {
       "default": "/icons/tata-consultancy-services/default.svg",
@@ -145057,8 +145057,8 @@
     ],
     "hex": "000000",
     "categories": [
-      "Services",
-      "Business"
+      "Business",
+      "Services"
     ],
     "variants": {
       "default": "/icons/tata-consultancy-services-legacy/default.svg"
