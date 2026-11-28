@@ -53,7 +53,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.4.6",
     "html-to-image": "^1.11.13",
-    "jsdom": "^26.1.0",
+    "jsdom": "^31.0.1",
     "playwright": "^1.65.0",
     "tailwindcss": "^4.3.5",
     "tsx": "^4.23.15",
