@@ -145011,18 +145011,21 @@
     "aliases": [
       "tcs"
     ],
-    "hex": "EE3984",
+    "hex": "000000",
     "categories": [
       "Services",
       "Business"
     ],
     "variants": {
-      "default": "/icons/tata-consultancy-services/default.svg"
+      "default": "/icons/tata-consultancy-services/default.svg",
+      "light": "/icons/tata-consultancy-services/light.svg",
+      "dark": "/icons/tata-consultancy-services/dark.svg"
     },
     "license": "Trademark",
     "url": "https://www.tcs.com",
     "dateAdded": "2026-05-27",
-    "collection": "brands"
+    "collection": "brands",
+    "guidelines": "https://www.tcs.com/who-we-are/tcs-brand/tcs-logo"
   },
   {
     "slug": "tauri",
