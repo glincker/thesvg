@@ -35,16 +35,30 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://thesvg.org/contact" },
 };
 
-const CONTACT_CHANNELS = [
+const CONTACT_EMAILS = [
   {
-    id: "email",
-    icon: Mail,
-    title: "Email",
-    description: "For trademark requests, DMCA notices, or general inquiries.",
-    action: "support@glinr.com",
-    href: "mailto:support@glinr.com",
-    note: "We respond within 48 hours",
+    id: "supportSite",
+    address: "support@thesvg.org",
+    purpose: "Help using thesvg: icons, downloads, packages and bugs.",
   },
+  {
+    id: "helloSite",
+    address: "hello@thesvg.org",
+    purpose: "General questions, partnerships and press.",
+  },
+  {
+    id: "supportStudio",
+    address: "support@glinr.com",
+    purpose: "Trademark, DMCA and brand owner requests.",
+  },
+  {
+    id: "helloStudio",
+    address: "hello@glinr.com",
+    purpose: "GLINR Studios, the team behind thesvg.",
+  },
+] as const;
+
+const CONTACT_CHANNELS = [
   {
     id: "issues",
     icon: Github,
@@ -86,17 +100,50 @@ export default function ContactPage() {
           </p>
         </div>
 
+        <section
+          aria-labelledby="contact-email"
+          className="mb-4 rounded-xl border border-border/50 bg-card/50 p-5 dark:border-white/[0.06] dark:bg-white/[0.02]"
+        >
+          <div className="mb-4 flex items-center gap-3">
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-muted/50 dark:bg-white/[0.04]">
+              <Mail className="h-4 w-4 text-muted-foreground" />
+            </div>
+            <div>
+              <h2 id="contact-email" className="text-sm font-semibold text-foreground">
+                <T k="pages.contact.email.title" fallback="Email" />
+              </h2>
+              <p className="text-[11px] text-muted-foreground/60">
+                <T k="pages.contact.email.note" fallback="We respond within 48 hours" />
+              </p>
+            </div>
+          </div>
+          <p className="mb-3 text-xs leading-relaxed text-muted-foreground">
+            <T k="pages.contact.email.description" fallback="For trademark requests, DMCA notices, or general inquiries." />
+          </p>
+          <ul className="grid gap-2 sm:grid-cols-2">
+            {CONTACT_EMAILS.map((email) => (
+              <li key={email.id}>
+                <a
+                  href={`mailto:${email.address}`}
+                  className="group flex h-full flex-col gap-1 rounded-lg border border-border/40 px-3.5 py-3 transition-colors hover:border-border hover:bg-card focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500 dark:border-white/[0.06] dark:hover:border-white/[0.1] dark:hover:bg-white/[0.04]"
+                >
+                  <span className="text-sm font-medium text-foreground">{email.address}</span>
+                  <span className="text-xs leading-relaxed text-muted-foreground">
+                    <T k={`pages.contact.emails.${email.id}`} fallback={email.purpose} />
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+
         <div className="grid gap-4 sm:grid-cols-2">
           {CONTACT_CHANNELS.map((channel) => (
             <a
               key={channel.title}
               href={withUtm(channel.href, "contact_page")}
-              target={channel.href.startsWith("mailto") ? undefined : "_blank"}
-              rel={
-                channel.href.startsWith("mailto")
-                  ? undefined
-                  : "noopener noreferrer"
-              }
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex flex-col gap-3 rounded-xl border border-border/50 bg-card/50 p-5 transition-all hover:border-border hover:bg-card hover:shadow-md dark:border-white/[0.06] dark:bg-white/[0.02] dark:hover:border-white/[0.1] dark:hover:bg-white/[0.04]"
             >
               <div className="flex items-center gap-3">
@@ -116,7 +163,7 @@ export default function ContactPage() {
                 <T k={`pages.contact.${channel.id}.description`} fallback={channel.description} />
               </p>
               <span className="mt-auto text-xs font-medium text-foreground/70 transition-colors group-hover:text-foreground">
-                {channel.id === "email" ? channel.action : <T k={`pages.contact.${channel.id}.action`} fallback={channel.action} />} &rarr;
+                <T k={`pages.contact.${channel.id}.action`} fallback={channel.action} /> &rarr;
               </span>
             </a>
           ))}

@@ -884,6 +884,12 @@
         "description": "用于商标请求、DMCA 通知或一般咨询。",
         "note": "我们会在 48 小时内回复"
       },
+      "emails": {
+        "supportSite": "thesvg 使用帮助：图标、下载、软件包和错误反馈。",
+        "helloSite": "一般咨询、合作与媒体联系。",
+        "supportStudio": "商标、DMCA 及品牌所有者请求。",
+        "helloStudio": "GLINR Studios，thesvg 背后的团队。"
+      },
       "issues": {
         "description": "报告 bug、请求新功能或提交图标修正。",
         "action": "提交 issue",

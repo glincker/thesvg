@@ -884,6 +884,12 @@
         "description": "Pour les demandes de marque, les notifications DMCA ou les questions générales.",
         "note": "Nous répondons sous 48 heures"
       },
+      "emails": {
+        "supportSite": "Aide pour thesvg : icônes, téléchargements, paquets et bugs.",
+        "helloSite": "Questions générales, partenariats et presse.",
+        "supportStudio": "Demandes de marques, DMCA et titulaires de marques.",
+        "helloStudio": "GLINR Studios, l'équipe derrière thesvg."
+      },
       "issues": {
         "description": "Signalez des bugs, demandez des fonctionnalités ou proposez des corrections d'icônes.",
         "action": "Ouvrir un ticket",

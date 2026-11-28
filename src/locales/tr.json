@@ -884,6 +884,12 @@
         "description": "Marka talepleri, DMCA bildirimleri veya genel sorular için.",
         "note": "48 saat içinde yanıt veriyoruz"
       },
+      "emails": {
+        "supportSite": "thesvg yardımı: ikonlar, indirmeler, paketler ve hatalar.",
+        "helloSite": "Genel sorular, ortaklıklar ve basın.",
+        "supportStudio": "Marka, DMCA ve marka sahibi talepleri.",
+        "helloStudio": "thesvg'nin arkasındaki ekip, GLINR Studios."
+      },
       "issues": {
         "description": "Hataları bildirin, özellik isteyin veya simge düzeltmeleri gönderin.",
         "action": "Issue aç",

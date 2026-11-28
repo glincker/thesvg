@@ -884,6 +884,12 @@
         "description": "商標に関する依頼、DMCA 通知、一般的なお問い合わせ用です。",
         "note": "48 時間以内に返信します"
       },
+      "emails": {
+        "supportSite": "thesvgの使い方、アイコン、ダウンロード、パッケージ、不具合のサポート。",
+        "helloSite": "一般的なご質問、提携、取材。",
+        "supportStudio": "商標、DMCA、ブランド所有者からのご依頼。",
+        "helloStudio": "thesvgを開発するGLINR Studiosへのお問い合わせ。"
+      },
       "issues": {
         "description": "不具合の報告、機能のリクエスト、アイコンの修正提案ができます。",
         "action": "Issue を作成",

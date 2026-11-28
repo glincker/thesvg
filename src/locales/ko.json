@@ -884,6 +884,12 @@
         "description": "상표 요청, DMCA 통지 또는 일반 문의용입니다.",
         "note": "48시간 이내에 답변드립니다"
       },
+      "emails": {
+        "supportSite": "thesvg 사용 도움말: 아이콘, 다운로드, 패키지, 버그.",
+        "helloSite": "일반 문의, 제휴, 언론 문의.",
+        "supportStudio": "상표, DMCA, 브랜드 소유자 요청.",
+        "helloStudio": "thesvg를 만드는 팀, GLINR Studios."
+      },
       "issues": {
         "description": "버그를 신고하거나 기능을 요청하거나 아이콘 수정을 제출하세요.",
         "action": "이슈 열기",

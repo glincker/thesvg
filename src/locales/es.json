@@ -884,6 +884,12 @@
         "description": "Para solicitudes de marca registrada, avisos DMCA o consultas generales.",
         "note": "Respondemos en 48 horas"
       },
+      "emails": {
+        "supportSite": "Ayuda con thesvg: iconos, descargas, paquetes y errores.",
+        "helloSite": "Preguntas generales, alianzas y prensa.",
+        "supportStudio": "Solicitudes de marcas, DMCA y titulares de marcas.",
+        "helloStudio": "GLINR Studios, el equipo detrás de thesvg."
+      },
       "issues": {
         "description": "Informa de errores, solicita funciones o envía correcciones de iconos.",
         "action": "Abrir un issue",
