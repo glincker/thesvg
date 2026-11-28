@@ -16,7 +16,7 @@
   <a href="https://trendshift.io/repositories/24396?utm_source=trendshift-badge&utm_medium=badge&utm_campaign=badge-trendshift-24396" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/24396/daily?language=TypeScript" alt="glincker/thesvg | Trendshift" width="200" /></a>
 </p>
 
-<p align="center"><sub><a href="https://thesvg.org"><b>Browse icons</b></a> · <a href="https://thesvg.org/docs">Docs</a> · <a href="https://thesvg.org/collection/flags">Flags</a> · <a href="https://thesvg.org/blog/country-flags">New: country flags</a> · <a href="#quick-start">Quick start</a> · <a href="#install">Install</a> · <a href="#extensions">Extensions</a> · <a href="#cdn">CDN</a> · <a href="#api">API</a> · <a href="#packages">Packages</a> · <a href="https://thesvg.org/compare">Compare</a> · <a href="#community">Community</a> · <a href="#contributing">Contribute</a></sub></p>
+<p align="center"><sub><a href="https://thesvg.org"><b>Browse icons</b></a> · <a href="https://thesvg.org/docs">Docs</a> · <a href="https://thesvg.org/collection/flags">Flags</a> · <a href="https://thesvg.org/blog/country-flags">New: country flags</a> · <a href="#quick-start">Quick start</a> · <a href="#install">Install</a> · <a href="#extensions">Extensions</a> · <a href="#cdn">CDN</a> · <a href="#api">API</a> · <a href="#packages">Packages</a> · <a href="https://thesvg.org/compare">Compare</a> · <a href="#community">Community</a> · <a href="#contributing">Contribute</a> · <a href="#contact">Contact</a></sub></p>
 
 <p align="center"><sub><b>English</b> · <a href="README.es.md">Español</a> · <a href="README.fr.md">Français</a> · <a href="README.de.md">Deutsch</a> · <a href="README.pt-BR.md">Português</a> · <a href="README.ja.md">日本語</a> · <a href="README.ko.md">한국어</a> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.ru.md">Русский</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.hi.md">हिन्दी</a></sub></p>
 
@@ -589,6 +589,19 @@ New icons, rebrands and releases land every week. To keep up:
 - **Follow [GLINR Studios](https://github.com/glincker)** on GitHub for the rest of what we build.
 - **Join the [Discord](https://discord.gg/Ar5pcaZB99)** to request icons and see releases the moment they ship.
 - **Browse [thesvg.org](https://thesvg.org)** to see what was added recently.
+
+## Contact
+
+Pick the address that fits.
+
+| Address | Use it for |
+|---------|------------|
+| [support@thesvg.org](mailto:support@thesvg.org) | Help using thesvg: icons, downloads, packages and bugs |
+| [hello@thesvg.org](mailto:hello@thesvg.org) | General questions, partnerships and press |
+| [support@glinr.com](mailto:support@glinr.com) | Trademark, DMCA and brand owner requests |
+| [hello@glinr.com](mailto:hello@glinr.com) | [GLINR Studios](https://glinr.com), the team behind thesvg |
+
+Prefer GitHub? [Open an issue](https://github.com/glincker/thesvg/issues/new/choose) or start a [discussion](https://github.com/glincker/thesvg/discussions). The same details are on the [contact page](https://thesvg.org/contact).
 
 ## Sponsor
 

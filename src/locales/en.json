@@ -884,6 +884,12 @@
         "description": "For trademark requests, DMCA notices, or general inquiries.",
         "note": "We respond within 48 hours"
       },
+      "emails": {
+        "supportSite": "Help using thesvg: icons, downloads, packages and bugs.",
+        "helloSite": "General questions, partnerships and press.",
+        "supportStudio": "Trademark, DMCA and brand owner requests.",
+        "helloStudio": "GLINR Studios, the team behind thesvg."
+      },
       "issues": {
         "description": "Report bugs, request features, or submit icon corrections.",
         "action": "Open an issue",
