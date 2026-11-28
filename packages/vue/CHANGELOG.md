@@ -1,5 +1,11 @@
 # @thesvg/vue
 
+## 4.0.20
+
+### Patch Changes
+
+- feat: keep previous TCS logo as legacy entry ([#1626](https://github.com/glincker/thesvg/issues/1626))
+
 ## 4.0.19
 
 ### Patch Changes
