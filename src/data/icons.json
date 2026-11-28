@@ -145044,9 +145044,30 @@
     },
     "license": "Trademark",
     "url": "https://www.tcs.com",
+    "dateAdded": "2026-11-28",
+    "collection": "brands",
+    "guidelines": "https://www.tcs.com/who-we-are/tcs-brand/tcs-logo",
+    "supersedes": "tata-consultancy-services-legacy"
+  },
+  {
+    "slug": "tata-consultancy-services-legacy",
+    "title": "Tata Consultancy Services (legacy)",
+    "aliases": [
+      "tcs legacy"
+    ],
+    "hex": "000000",
+    "categories": [
+      "Services",
+      "Business"
+    ],
+    "variants": {
+      "default": "/icons/tata-consultancy-services-legacy/default.svg"
+    },
+    "license": "Trademark",
+    "url": "https://www.tcs.com",
     "dateAdded": "2026-05-27",
     "collection": "brands",
-    "guidelines": "https://www.tcs.com/who-we-are/tcs-brand/tcs-logo"
+    "supersededBy": "tata-consultancy-services"
   },
   {
     "slug": "tauri",
